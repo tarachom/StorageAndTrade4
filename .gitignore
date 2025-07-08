@@ -33,12 +33,27 @@ ComparisonAnalize.xml
 InformationSchema.xml
 ConfigurationParam.xml
 
+bin/Debug/net9.0/cs
+bin/Debug/net9.0/de
+bin/Debug/net9.0/es
+bin/Debug/net9.0/fr
+bin/Debug/net9.0/it
+bin/Debug/net9.0/ja
+bin/Debug/net9.0/ko
+bin/Debug/net9.0/pl
+bin/Debug/net9.0/pt-BR
+bin/Debug/net9.0/ru
+bin/Debug/net9.0/tr
+bin/Debug/net9.0/zh-Hans
+bin/Debug/net9.0/zh-Hant
+
 old
-bin/Debug/net8.0/LatoFont
-bin/Debug/net8.0/runtimes
+bin/Debug/net9.0/LatoFont
+bin/Debug/net9.0/runtimes
 
 #StorageAndTrade3
 StorageAndTrade3
+StorageAndTrade4
 Configurator3
 Comparison.xml
 ComparisonAllData.xml
