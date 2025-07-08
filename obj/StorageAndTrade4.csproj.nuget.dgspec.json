@@ -1,0 +1,292 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/tarachom/Projects/StorageAndTrade4/StorageAndTrade4.csproj": {}
+  },
+  "projects": {
+    "/home/tarachom/Projects/AccountingSoftwareLib/AccountingSoftware/AccountingSoftware.csproj": {
+      "version": "3.1.0.7",
+      "restore": {
+        "projectUniqueName": "/home/tarachom/Projects/AccountingSoftwareLib/AccountingSoftware/AccountingSoftware.csproj",
+        "projectName": "AccountingSoftware",
+        "projectPath": "/home/tarachom/Projects/AccountingSoftwareLib/AccountingSoftware/AccountingSoftware.csproj",
+        "packagesPath": "/home/tarachom/.nuget/packages/",
+        "outputPath": "/home/tarachom/Projects/AccountingSoftwareLib/AccountingSoftware/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/tarachom/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "/usr/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/tarachom/Projects/AccountingSoftwareLib/InterfaceGtk4/InterfaceGtk4.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/tarachom/Projects/AccountingSoftwareLib/InterfaceGtk4/InterfaceGtk4.csproj",
+        "projectName": "InterfaceGtk4",
+        "projectPath": "/home/tarachom/Projects/AccountingSoftwareLib/InterfaceGtk4/InterfaceGtk4.csproj",
+        "packagesPath": "/home/tarachom/.nuget/packages/",
+        "outputPath": "/home/tarachom/Projects/AccountingSoftwareLib/InterfaceGtk4/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/tarachom/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "/usr/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/home/tarachom/Projects/AccountingSoftwareLib/AccountingSoftware/AccountingSoftware.csproj": {
+                "projectPath": "/home/tarachom/Projects/AccountingSoftwareLib/AccountingSoftware/AccountingSoftware.csproj"
+              },
+              "/home/tarachom/Projects/AccountingSoftwareLib/InterfaceGtkLib/InterfaceGtkLib.csproj": {
+                "projectPath": "/home/tarachom/Projects/AccountingSoftwareLib/InterfaceGtkLib/InterfaceGtkLib.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "GirCore.GObject-2.0.Integration": {
+              "target": "Package",
+              "version": "[0.6.3, )"
+            },
+            "GirCore.Gtk-4.0": {
+              "target": "Package",
+              "version": "[0.6.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/tarachom/Projects/AccountingSoftwareLib/InterfaceGtkLib/InterfaceGtkLib.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/tarachom/Projects/AccountingSoftwareLib/InterfaceGtkLib/InterfaceGtkLib.csproj",
+        "projectName": "InterfaceGtkLib",
+        "projectPath": "/home/tarachom/Projects/AccountingSoftwareLib/InterfaceGtkLib/InterfaceGtkLib.csproj",
+        "packagesPath": "/home/tarachom/.nuget/packages/",
+        "outputPath": "/home/tarachom/Projects/AccountingSoftwareLib/InterfaceGtkLib/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/tarachom/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "/usr/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/tarachom/Projects/StorageAndTrade4/StorageAndTrade4.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/tarachom/Projects/StorageAndTrade4/StorageAndTrade4.csproj",
+        "projectName": "StorageAndTrade4",
+        "projectPath": "/home/tarachom/Projects/StorageAndTrade4/StorageAndTrade4.csproj",
+        "packagesPath": "/home/tarachom/.nuget/packages/",
+        "outputPath": "/home/tarachom/Projects/StorageAndTrade4/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/tarachom/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "/usr/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/home/tarachom/Projects/AccountingSoftwareLib/AccountingSoftware/AccountingSoftware.csproj": {
+                "projectPath": "/home/tarachom/Projects/AccountingSoftwareLib/AccountingSoftware/AccountingSoftware.csproj"
+              },
+              "/home/tarachom/Projects/AccountingSoftwareLib/InterfaceGtk4/InterfaceGtk4.csproj": {
+                "projectPath": "/home/tarachom/Projects/AccountingSoftwareLib/InterfaceGtk4/InterfaceGtk4.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "GirCore.GObject-2.0.Integration": {
+              "target": "Package",
+              "version": "[0.7.0-preview.1, )"
+            },
+            "GirCore.Gtk-4.0": {
+              "target": "Package",
+              "version": "[0.7.0-preview.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

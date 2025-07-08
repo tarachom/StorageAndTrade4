@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "dgSpecHash": "smf24lqHm3E=",
+  "success": true,
+  "projectFilePath": "/home/tarachom/Projects/StorageAndTrade4/StorageAndTrade4.csproj",
+  "expectedPackageFiles": [
+    "/home/tarachom/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
+    "/home/tarachom/.nuget/packages/gircore.cairo-1.0/0.7.0-preview.1/gircore.cairo-1.0.0.7.0-preview.1.nupkg.sha512",
+    "/home/tarachom/.nuget/packages/gircore.freetype2-2.0/0.7.0-preview.1/gircore.freetype2-2.0.0.7.0-preview.1.nupkg.sha512",
+    "/home/tarachom/.nuget/packages/gircore.gdk-4.0/0.7.0-preview.1/gircore.gdk-4.0.0.7.0-preview.1.nupkg.sha512",
+    "/home/tarachom/.nuget/packages/gircore.gdkpixbuf-2.0/0.7.0-preview.1/gircore.gdkpixbuf-2.0.0.7.0-preview.1.nupkg.sha512",
+    "/home/tarachom/.nuget/packages/gircore.gio-2.0/0.7.0-preview.1/gircore.gio-2.0.0.7.0-preview.1.nupkg.sha512",
+    "/home/tarachom/.nuget/packages/gircore.glib-2.0/0.7.0-preview.1/gircore.glib-2.0.0.7.0-preview.1.nupkg.sha512",
+    "/home/tarachom/.nuget/packages/gircore.gobject-2.0/0.7.0-preview.1/gircore.gobject-2.0.0.7.0-preview.1.nupkg.sha512",
+    "/home/tarachom/.nuget/packages/gircore.gobject-2.0.integration/0.7.0-preview.1/gircore.gobject-2.0.integration.0.7.0-preview.1.nupkg.sha512",
+    "/home/tarachom/.nuget/packages/gircore.graphene-1.0/0.7.0-preview.1/gircore.graphene-1.0.0.7.0-preview.1.nupkg.sha512",
+    "/home/tarachom/.nuget/packages/gircore.gsk-4.0/0.7.0-preview.1/gircore.gsk-4.0.0.7.0-preview.1.nupkg.sha512",
+    "/home/tarachom/.nuget/packages/gircore.gtk-4.0/0.7.0-preview.1/gircore.gtk-4.0.0.7.0-preview.1.nupkg.sha512",
+    "/home/tarachom/.nuget/packages/gircore.harfbuzz-0.0/0.7.0-preview.1/gircore.harfbuzz-0.0.0.7.0-preview.1.nupkg.sha512",
+    "/home/tarachom/.nuget/packages/gircore.pango-1.0/0.7.0-preview.1/gircore.pango-1.0.0.7.0-preview.1.nupkg.sha512",
+    "/home/tarachom/.nuget/packages/gircore.pangocairo-1.0/0.7.0-preview.1/gircore.pangocairo-1.0.0.7.0-preview.1.nupkg.sha512",
+    "/home/tarachom/.nuget/packages/microsoft.codeanalysis.analyzers/3.3.4/microsoft.codeanalysis.analyzers.3.3.4.nupkg.sha512",
+    "/home/tarachom/.nuget/packages/microsoft.codeanalysis.common/4.8.0/microsoft.codeanalysis.common.4.8.0.nupkg.sha512",
+    "/home/tarachom/.nuget/packages/microsoft.codeanalysis.csharp/4.8.0/microsoft.codeanalysis.csharp.4.8.0.nupkg.sha512",
+    "/home/tarachom/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.2/microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
+    "/home/tarachom/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.2/microsoft.extensions.logging.abstractions.8.0.2.nupkg.sha512",
+    "/home/tarachom/.nuget/packages/npgsql/9.0.3/npgsql.9.0.3.nupkg.sha512",
+    "/home/tarachom/.nuget/packages/system.collections.immutable/7.0.0/system.collections.immutable.7.0.0.nupkg.sha512",
+    "/home/tarachom/.nuget/packages/system.reflection.metadata/7.0.0/system.reflection.metadata.7.0.0.nupkg.sha512",
+    "/home/tarachom/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
