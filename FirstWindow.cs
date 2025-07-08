@@ -1,33 +1,16 @@
 
 using Gtk;
 using InterfaceGtk4;
+using GeneratedCode;
+
+namespace StorageAndTrade;
 
 class FirstWindow : FormGeneral
 {
-    public FirstWindow(Application app) : base(app)
+    public FirstWindow(Application app) : base(app, Config.Kernel)
     {
         NotebookFunction.CreateNotebookPage("Home", () => Label.New("Text"), false, null, null, true);
-        NotebookFunction.CreateNotebookPage("Home Home Home Home Home Home Home Home Home Home Home Home", () => Label.New("Text"));
-        NotebookFunction.CreateNotebookPage("Home Home Home Home Home Home Home", () => Label.New("Text"), false, () => Console.WriteLine(1), () => Console.WriteLine(2));
-        NotebookFunction.CreateNotebookPage("Home Home Home 2", () => Label.New("Text"), false, () => Console.WriteLine(1), () => Console.WriteLine(2));
-        string? code = NotebookFunction.CreateNotebookPage("Home Home Home 3", () => Label.New("Text"), false, () => Console.WriteLine(1), () => Console.WriteLine(2));
-
-        if (code != null)
-        {
-            NotebookFunction.SpinnerNotebookPageToCode(true, code);
-            //NotebookFunction.SensitiveNotebookPageToCode(false, code);
-            //NotebookFunction.RenameNotebookPageToCode("sdfsdfsdfs", code);
-
-            Task.Run(async () =>
-            {
-                await Task.Delay(5000);
-                NotebookFunction.SpinnerNotebookPageToCode(false, code);
-            });
-
-            //NotebookFunction.RenameNotebookPageToCode("dfgdfgdf", code);
-        }
-
-        
+        NotebookFunction.CreateNotebookPage("Home2", () => Label.New("Text"));
 
         SetStatusBar();
     }
