@@ -1551,7 +1551,7 @@ WHERE
         }
     }
 
-    static class ЧекККМ_SpendTheDocument
+    class ЧекККМ_SpendTheDocument
     {
         public static async ValueTask<bool> Spend(ЧекККМ_Objest ДокументОбєкт)
         {
