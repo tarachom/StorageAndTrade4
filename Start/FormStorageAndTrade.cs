@@ -5,9 +5,9 @@ using GeneratedCode;
 
 namespace StorageAndTrade;
 
-class FirstWindow : FormGeneral
+class FormStorageAndTrade : FormGeneral
 {
-    public FirstWindow(Application app) : base(app, Config.Kernel)
+    public FormStorageAndTrade() : base(Program.App, Config.Kernel)
     {
         NotebookFunction.CreateNotebookPage("Home", () => Label.New("Text"), false, null, null, true);
         NotebookFunction.CreateNotebookPage("Home2", () => Label.New("Text"));

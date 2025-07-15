@@ -11,6 +11,6 @@ class PageHome : Box
 {
     public PageHome()
     {
-        base.SetOrientation(Orientation.Vertical);
+        SetOrientation(Orientation.Vertical);
     }
 }

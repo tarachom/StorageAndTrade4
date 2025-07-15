@@ -7,6 +7,13 @@ namespace StorageAndTrade;
 
 class Program
 {
+    public static readonly Application App = Application.New("ua.org.accounting.storage_and_trade", Gio.ApplicationFlags.FlagsNone);
+
+    /// <summary>
+    /// Основна форма
+    /// </summary>
+    public static FormStorageAndTrade? GeneralForm { get; set; }
+
     /// <summary>
     /// Авторизований користувач
     /// </summary>
@@ -14,13 +21,8 @@ class Program
 
     static void Main()
     {
-        var app = Application.New("ua.org.accounting.window", Gio.ApplicationFlags.FlagsNone);
-
-        app.OnActivate += (sender, args) =>
-        {
-            FirstWindow firstWindow = new(app);
-            firstWindow.Show();
-        };
+        App.OnActivate += (app, args) => new FormConfigurationSelection().Show();
+        App.OnShutdown += (app, args) => { };
 
         //Settings.GetDefault().GtkThemeName = "Adwaita";
 
@@ -41,6 +43,6 @@ class Program
             }
         }
 
-        app.RunWithSynchronizationContext(null);
+        App.RunWithSynchronizationContext(null);
     }
 }
