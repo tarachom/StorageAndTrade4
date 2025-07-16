@@ -1,4 +1,6 @@
-button.small-button {
+
+/* Кнопка закриття вкладки блокноту */
+button.notebook-page-close {
     font-size: x-small;
     padding: 0;
     min-height: 0;
@@ -7,12 +9,15 @@ button.small-button {
     border-radius: 0;
     background-color: transparent;
 }
+button.notebook-page-close:hover {
+    background-color: lightgray;
+}
 
+/* Ліве меню головного вікна */
 button.left-menu {
     background-color: transparent;
     border: 0;
 }
-
 button.left-menu:hover {
     background-color: lightgray;
 }
