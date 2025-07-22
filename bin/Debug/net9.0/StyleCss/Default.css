@@ -1,5 +1,5 @@
-
 /* Кнопка закриття вкладки блокноту */
+/*
 button.notebook-page-close {
     font-size: x-small;
     padding: 0;
@@ -9,15 +9,35 @@ button.notebook-page-close {
     border-radius: 0;
     background-color: transparent;
 }
+
 button.notebook-page-close:hover {
+    background-color: lightgray;
+}
+*/
+
+notebook tab {
+    padding: 5px 5px;
+}
+
+notebook tab button {
+    font-size: x-small;
+    padding: 0;
+    margin-left: 10px;
+    min-height: 0;
+    min-width: 0;
+    border-radius: 3px;
+    background-color: transparent;
+}
+
+notebook tab button:hover {
     background-color: lightgray;
 }
 
 /* Ліве меню головного вікна */
 button.left-menu {
     background-color: transparent;
-    border: 0;
 }
+
 button.left-menu:hover {
     background-color: lightgray;
 }
