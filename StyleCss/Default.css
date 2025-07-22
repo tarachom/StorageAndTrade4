@@ -25,6 +25,7 @@ notebook tab button {
     margin-left: 10px;
     min-height: 0;
     min-width: 0;
+    border: 0;
     border-radius: 3px;
     background-color: transparent;
 }
@@ -35,6 +36,7 @@ notebook tab button:hover {
 
 /* Ліве меню головного вікна */
 button.left-menu {
+    border: 0;
     background-color: transparent;
 }
 
