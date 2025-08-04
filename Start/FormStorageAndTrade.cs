@@ -11,6 +11,7 @@ class FormStorageAndTrade : FormGeneral
     {
         NotebookFunction.CreateNotebookPage("Home", () => Label.New("Text"), false, null, null, true);
         NotebookFunction.CreateNotebookPage("Home2", () => Label.New("Text"));
+        NotebookFunction.CreateNotebookPage("Home3", () => new PageHome());
 
         SetStatusBar();
     }
@@ -25,17 +26,17 @@ class FormStorageAndTrade : FormGeneral
 
     }
 
-    protected override void Налаштування(Button button)
+    protected override void Налаштування(LinkButton linkButton)
     {
 
     }
 
-    protected override void Сервіс(Button button)
+    protected override void Сервіс(LinkButton linkButton)
     {
 
     }
 
-    protected override void Обробки(Button button)
+    protected override void Обробки(LinkButton linkButton)
     {
 
     }
