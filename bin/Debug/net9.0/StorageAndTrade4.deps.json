@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v9.0": {
       "StorageAndTrade4/1.0.0": {
         "dependencies": {
-          "AccountingSoftware": "3.1.0.7",
+          "AccountingSoftware": "3.1.0.8",
           "GirCore.GObject-2.0.Integration": "0.7.0-preview.1",
           "GirCore.Gtk-4.0": "0.7.0-preview.1",
           "InterfaceGtk4": "1.0.0"
@@ -311,14 +311,14 @@
           }
         }
       },
-      "Npgsql/9.0.3": {
+      "Npgsql/9.0.4": {
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": "8.0.2"
         },
         "runtime": {
           "lib/net8.0/Npgsql.dll": {
-            "assemblyVersion": "9.0.3.0",
-            "fileVersion": "9.0.3.0"
+            "assemblyVersion": "9.0.4.0",
+            "fileVersion": "9.0.4.0"
           }
         }
       },
@@ -329,21 +329,21 @@
         }
       },
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
-      "AccountingSoftware/3.1.0.7": {
+      "AccountingSoftware/3.1.0.8": {
         "dependencies": {
           "BCrypt.Net-Next": "4.0.3",
-          "Npgsql": "9.0.3"
+          "Npgsql": "9.0.4"
         },
         "runtime": {
           "AccountingSoftware.dll": {
-            "assemblyVersion": "3.1.0.7",
-            "fileVersion": "3.1.0.7"
+            "assemblyVersion": "3.1.0.8",
+            "fileVersion": "3.1.0.8"
           }
         }
       },
       "InterfaceGtk4/1.0.0": {
         "dependencies": {
-          "AccountingSoftware": "3.1.0.7",
+          "AccountingSoftware": "3.1.0.8",
           "GirCore.GObject-2.0.Integration": "0.7.0-preview.1",
           "GirCore.Gtk-4.0": "0.7.0-preview.1",
           "InterfaceGtkLib": "1.0.0"
@@ -511,12 +511,12 @@
       "path": "microsoft.extensions.logging.abstractions/8.0.2",
       "hashPath": "microsoft.extensions.logging.abstractions.8.0.2.nupkg.sha512"
     },
-    "Npgsql/9.0.3": {
+    "Npgsql/9.0.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-tPvY61CxOAWxNsKLEBg+oR646X4Bc8UmyQ/tJszL/7mEmIXQnnBhVJZrZEEUv0Bstu0mEsHZD5At3EO8zQRAYw==",
-      "path": "npgsql/9.0.3",
-      "hashPath": "npgsql.9.0.3.nupkg.sha512"
+      "sha512": "sha512-68BASXH0FAEuL/J4J0eRfYC8/3vzqQTmoW8zDzNf0JgaVxc7LZeEkS6jaG0ib3voFLxY5ZiCwJG+uQM+mzuu0Q==",
+      "path": "npgsql/9.0.4",
+      "hashPath": "npgsql.9.0.4.nupkg.sha512"
     },
     "System.Collections.Immutable/7.0.0": {
       "type": "package",
@@ -539,7 +539,7 @@
       "path": "system.runtime.compilerservices.unsafe/6.0.0",
       "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
     },
-    "AccountingSoftware/3.1.0.7": {
+    "AccountingSoftware/3.1.0.8": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

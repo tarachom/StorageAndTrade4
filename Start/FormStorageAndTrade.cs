@@ -11,7 +11,11 @@ class FormStorageAndTrade : FormGeneral
     {
         NotebookFunction.CreateNotebookPage("Home", () => Label.New("Text"), false, null, null, true);
         NotebookFunction.CreateNotebookPage("Home2", () => Label.New("Text"));
-        NotebookFunction.CreateNotebookPage("Home3", () => new PageHome());
+
+        PageHome page = new();
+        NotebookFunction.CreateNotebookPage("Home3", () => page);
+
+        page.SetValue();
 
         SetStatusBar();
     }

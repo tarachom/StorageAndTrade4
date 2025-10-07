@@ -347,7 +347,7 @@
           "buildTransitive/net6.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
         }
       },
-      "Npgsql/9.0.3": {
+      "Npgsql/9.0.4": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": "8.0.2"
@@ -414,12 +414,12 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "AccountingSoftware/3.1.0.7": {
+      "AccountingSoftware/3.1.0.8": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
           "BCrypt.Net-Next": "4.0.3",
-          "Npgsql": "9.0.3"
+          "Npgsql": "9.0.4"
         },
         "compile": {
           "bin/placeholder/AccountingSoftware.dll": {}
@@ -432,7 +432,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
-          "AccountingSoftware": "3.1.0.7",
+          "AccountingSoftware": "3.1.0.8",
           "GirCore.GObject-2.0.Integration": "0.6.3",
           "GirCore.Gtk-4.0": "0.6.3",
           "InterfaceGtkLib": "1.0.0"
@@ -1525,10 +1525,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Npgsql/9.0.3": {
-      "sha512": "tPvY61CxOAWxNsKLEBg+oR646X4Bc8UmyQ/tJszL/7mEmIXQnnBhVJZrZEEUv0Bstu0mEsHZD5At3EO8zQRAYw==",
+    "Npgsql/9.0.4": {
+      "sha512": "68BASXH0FAEuL/J4J0eRfYC8/3vzqQTmoW8zDzNf0JgaVxc7LZeEkS6jaG0ib3voFLxY5ZiCwJG+uQM+mzuu0Q==",
       "type": "package",
-      "path": "npgsql/9.0.3",
+      "path": "npgsql/9.0.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1537,7 +1537,7 @@
         "lib/net6.0/Npgsql.xml",
         "lib/net8.0/Npgsql.dll",
         "lib/net8.0/Npgsql.xml",
-        "npgsql.9.0.3.nupkg.sha512",
+        "npgsql.9.0.4.nupkg.sha512",
         "npgsql.nuspec",
         "postgresql.png"
       ]
@@ -1623,7 +1623,7 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "AccountingSoftware/3.1.0.7": {
+    "AccountingSoftware/3.1.0.8": {
       "type": "project",
       "path": "../AccountingSoftwareLib/AccountingSoftware/AccountingSoftware.csproj",
       "msbuildProject": "../AccountingSoftwareLib/AccountingSoftware/AccountingSoftware.csproj"
@@ -1641,7 +1641,7 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "AccountingSoftware >= 3.1.0.7",
+      "AccountingSoftware >= 3.1.0.8",
       "GirCore.GObject-2.0.Integration >= 0.7.0-preview.1",
       "GirCore.Gtk-4.0 >= 0.7.0-preview.1",
       "InterfaceGtk4 >= 1.0.0"

@@ -5,7 +5,7 @@
   },
   "projects": {
     "/home/tarachom/Projects/AccountingSoftwareLib/AccountingSoftware/AccountingSoftware.csproj": {
-      "version": "3.1.0.7",
+      "version": "3.1.0.8",
       "restore": {
         "projectUniqueName": "/home/tarachom/Projects/AccountingSoftwareLib/AccountingSoftware/AccountingSoftware.csproj",
         "projectName": "AccountingSoftware",
@@ -51,7 +51,7 @@
             },
             "Npgsql": {
               "target": "Package",
-              "version": "[9.0.3, )"
+              "version": "[9.0.4, )"
             }
           },
           "imports": [
