@@ -376,8 +376,8 @@
               "C:\\Work\\VSCode\\AccountingSoftwareLib\\AccountingSoftware\\AccountingSoftware.csproj": {
                 "projectPath": "C:\\Work\\VSCode\\AccountingSoftwareLib\\AccountingSoftware\\AccountingSoftware.csproj"
               },
-              "c:\\Work\\VSCode\\AccountingSoftwareLib\\InterfaceGtkLib\\InterfaceGtkLib.csproj": {
-                "projectPath": "c:\\Work\\VSCode\\AccountingSoftwareLib\\InterfaceGtkLib\\InterfaceGtkLib.csproj"
+              "C:\\Work\\VSCode\\AccountingSoftwareLib\\InterfaceGtkLib\\InterfaceGtkLib.csproj": {
+                "projectPath": "C:\\Work\\VSCode\\AccountingSoftwareLib\\InterfaceGtkLib\\InterfaceGtkLib.csproj"
               }
             }
           }
@@ -701,14 +701,14 @@
         }
       }
     },
-    "c:\\Work\\VSCode\\AccountingSoftwareLib\\InterfaceGtkLib\\InterfaceGtkLib.csproj": {
+    "C:\\Work\\VSCode\\AccountingSoftwareLib\\InterfaceGtkLib\\InterfaceGtkLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Work\\VSCode\\AccountingSoftwareLib\\InterfaceGtkLib\\InterfaceGtkLib.csproj",
+        "projectUniqueName": "C:\\Work\\VSCode\\AccountingSoftwareLib\\InterfaceGtkLib\\InterfaceGtkLib.csproj",
         "projectName": "InterfaceGtkLib",
-        "projectPath": "c:\\Work\\VSCode\\AccountingSoftwareLib\\InterfaceGtkLib\\InterfaceGtkLib.csproj",
+        "projectPath": "C:\\Work\\VSCode\\AccountingSoftwareLib\\InterfaceGtkLib\\InterfaceGtkLib.csproj",
         "packagesPath": "C:\\Users\\yurii.tarakhomyn\\.nuget\\packages\\",
-        "outputPath": "c:\\Work\\VSCode\\AccountingSoftwareLib\\InterfaceGtkLib\\obj\\",
+        "outputPath": "C:\\Work\\VSCode\\AccountingSoftwareLib\\InterfaceGtkLib\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\yurii.tarakhomyn\\AppData\\Roaming\\NuGet\\NuGet.Config",
