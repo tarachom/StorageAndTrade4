@@ -27,9 +27,9 @@ notebook tab button {
 }
 
 
-columnview listview row cell:not(:first-child) {
+/*columnview listview row cell:not(:first-child) {
     border-left: 1px solid shade(#9b9ea1, 1.2);
-}
+}*/
 
 /*
 columnview listview row:nth-child(odd) {

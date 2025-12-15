@@ -17,44 +17,43 @@ partial class PageHome2 : Form
 
     public PageHome2()
     {
+        ScrolledWindow scrolled = ScrolledWindow.New();
+        scrolled.Vexpand = scrolled.Hexpand = true;
+
         ColumnView columnView = ColumnView.New(null);
+        columnView.ShowRowSeparators = true;
+        columnView.ShowColumnSeparators = true;
+
+        scrolled.Child = columnView;
+
         //columnView.Hexpand = columnView.Vexpand = true;
 
         store = ТабличніСписки.Номенклатура_Записи.Create(columnView);
 
-        Append(columnView);
+        Append(scrolled);
 
-        /*
-        var store = Gio.ListStore.New(Row.GetGType());
+        Label label = Label.New("...");
+        Append(label);
 
-        SingleSelection model = SingleSelection.New(store);
-        model.Autoselect = true;
+        Button button = Button.NewWithLabel("Test");
+        Append(button);
 
-        ColumnView columnView = ColumnView.New(model);
-        columnView.Hexpand = columnView.Vexpand = true;
-
-        //Image
+        button.OnClicked += (sender, arrg) =>
         {
-            SignalListItemFactory factory = SignalListItemFactory.New();
-            factory.OnBind += (factory, e) =>
+            SingleSelection model = (SingleSelection)columnView.Model;
+            var obj = model.SelectedItem;
+            if (obj != null)
             {
-                ListItem listitem = (ListItem)e.Object;
-                listitem.SetChild(Image.NewFromIconName("window-close-symbolic"));
-            };
-
-            ColumnViewColumn column = ColumnViewColumn.New("", factory);
-            columnView.AppendColumn(column);
-        }
-
-        
-
-        store.Append(new Row(){});
-        */
+                var row = (DirectoryRow)obj;
+                label.SetText(row.UID.ToString() + " = " + row.Fields["Назва"]);
+            }
+        };
     }
 
     public async void SetValue()
     {
         await ТабличніСписки.Номенклатура_Записи.LoadRecords(store);
-        
+
+
     }
 }

@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 15.12.2025 18:50:01
+ * Дата конфігурації: 15.12.2025 23:27:49
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон Gtk4.xslt
@@ -17,744 +17,6 @@ using AccountingSoftware;
 using GeneratedCode.Перелічення;
 using StorageAndTrade;
 
-namespace GeneratedCode.Rows
-{
-    [Subclass<GObject.Object>]
-    public partial class Row
-    {
-        public UnigueID UID { get; set; } = new();
-        public bool DeletionLabel { get; set; } = false;
-    }
-
-    
-    #region DIRECTORY "Організації"
-        
-    public partial class Row_1_1 : Row
-    {
-        
-        public string Код { get; set; } = "";
-        
-        public string Назва { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "Номенклатура"
-        
-    public partial class Row_2_1 : Row
-    {
-        
-        public string Код { get; set; } = "";
-        
-        public string Назва { get; set; } = "";
-        
-        public string ОдиницяВиміру { get; set; } = "";
-        
-        public string ТипНоменклатури { get; set; } = "";
-        
-        public string Залишок { get; set; } = "";
-        
-        public string ВРезерві { get; set; } = "";
-        
-        public string ВРезервіПідЗамовлення { get; set; } = "";
-        
-        public string ЗалишокВКомірках { get; set; } = "";
-        
-    }
-        
-    public partial class Row_2_2 : Row
-    {
-        
-        public string Код { get; set; } = "";
-        
-        public string Назва { get; set; } = "";
-        
-        public string ОдиницяВиміру { get; set; } = "";
-        
-        public string Залишок { get; set; } = "";
-        
-        public string ВРезерві { get; set; } = "";
-        
-        public string ВРезервіПідЗамовлення { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "Виробники"
-        
-    public partial class Row_3_1 : Row
-    {
-        
-        public string Код { get; set; } = "";
-        
-        public string Назва { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "ВидиНоменклатури"
-        
-    public partial class Row_4_1 : Row
-    {
-        
-        public string Код { get; set; } = "";
-        
-        public string Назва { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "ПакуванняОдиниціВиміру"
-        
-    public partial class Row_5_1 : Row
-    {
-        
-        public string Код { get; set; } = "";
-        
-        public string Назва { get; set; } = "";
-        
-        public string КількістьУпаковок { get; set; } = "";
-        
-        public string НазваПовна { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "Валюти"
-        
-    public partial class Row_6_1 : Row
-    {
-        
-        public string Код { get; set; } = "";
-        
-        public string Назва { get; set; } = "";
-        
-        public string КороткаНазва { get; set; } = "";
-        
-        public string Код_R030 { get; set; } = "";
-        
-        public string ВиводитиКурсНаСтартову { get; set; } = "";
-        
-    }
-        
-    public partial class Row_6_2 : Row
-    {
-        
-        public string Код { get; set; } = "";
-        
-        public string Назва { get; set; } = "";
-        
-        public string КороткаНазва { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "Контрагенти"
-        
-    public partial class Row_7_1 : Row
-    {
-        
-        public string Код { get; set; } = "";
-        
-        public string Назва { get; set; } = "";
-        
-        public string Папка { get; set; } = "";
-        
-        public string Постачальник { get; set; } = "";
-        
-        public string Покупець { get; set; } = "";
-        
-    }
-        
-    public partial class Row_7_2 : Row
-    {
-        
-        public string Код { get; set; } = "";
-        
-        public string Назва { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "Склади"
-        
-    public partial class Row_8_1 : Row
-    {
-        
-        public string Код { get; set; } = "";
-        
-        public string Назва { get; set; } = "";
-        
-        public string ТипСкладу { get; set; } = "";
-        
-        public string НалаштуванняАдресногоЗберігання { get; set; } = "";
-        
-    }
-        
-    public partial class Row_8_2 : Row
-    {
-        
-        public string Код { get; set; } = "";
-        
-        public string Назва { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "ВидиЦін"
-        
-    public partial class Row_9_1 : Row
-    {
-        
-        public string Код { get; set; } = "";
-        
-        public string Назва { get; set; } = "";
-        
-        public string Валюта { get; set; } = "";
-        
-    }
-        
-    public partial class Row_9_2 : Row
-    {
-        
-        public string Назва { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "ВидиЦінПостачальників"
-        
-    public partial class Row_10_1 : Row
-    {
-        
-        public string Код { get; set; } = "";
-        
-        public string Назва { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "Користувачі"
-        
-    public partial class Row_11_1 : Row
-    {
-        
-        public string Код { get; set; } = "";
-        
-        public string Назва { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "ФізичніОсоби"
-        
-    public partial class Row_12_1 : Row
-    {
-        
-        public string Код { get; set; } = "";
-        
-        public string Назва { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "СтруктураПідприємства"
-        
-    public partial class Row_13_1 : Row
-    {
-        
-        public string Код { get; set; } = "";
-        
-        public string Назва { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "КраїниСвіту"
-        
-    public partial class Row_14_1 : Row
-    {
-        
-        public string Код { get; set; } = "";
-        
-        public string Назва { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "Файли"
-        
-    public partial class Row_15_1 : Row
-    {
-        
-        public string Код { get; set; } = "";
-        
-        public string Назва { get; set; } = "";
-        
-        public string НазваФайлу { get; set; } = "";
-        
-        public string Розмір { get; set; } = "";
-        
-        public string ДатаСтворення { get; set; } = "";
-        
-    }
-        
-    public partial class Row_15_2 : Row
-    {
-        
-        public string Назва { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "ХарактеристикиНоменклатури"
-        
-    public partial class Row_16_1 : Row
-    {
-        
-        public string Код { get; set; } = "";
-        
-        public string Номенклатура { get; set; } = "";
-        
-        public string Назва { get; set; } = "";
-        
-        public string Залишки { get; set; } = "";
-        
-        public string ВРезерві { get; set; } = "";
-        
-        public string ВРезервіПідЗамовлення { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "Номенклатура_Папки"
-        
-    public partial class Row_17_1 : Row
-    {
-        
-        public string Назва { get; set; } = "";
-        
-        public string Код { get; set; } = "";
-        
-    }
-        
-    public partial class Row_17_2 : Row
-    {
-        
-        public string Назва { get; set; } = "";
-        
-        public string Код { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "Контрагенти_Папки"
-        
-    public partial class Row_18_1 : Row
-    {
-        
-        public string Назва { get; set; } = "";
-        
-        public string Код { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "Склади_Папки"
-        
-    public partial class Row_19_1 : Row
-    {
-        
-        public string Назва { get; set; } = "";
-        
-        public string Код { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "Каси"
-        
-    public partial class Row_20_1 : Row
-    {
-        
-        public string Код { get; set; } = "";
-        
-        public string Назва { get; set; } = "";
-        
-        public string Валюта { get; set; } = "";
-        
-        public string Залишок { get; set; } = "";
-        
-    }
-        
-    public partial class Row_20_2 : Row
-    {
-        
-        public string Код { get; set; } = "";
-        
-        public string Назва { get; set; } = "";
-        
-        public string Валюта { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "БанківськіРахункиОрганізацій"
-        
-    public partial class Row_21_1 : Row
-    {
-        
-        public string Код { get; set; } = "";
-        
-        public string Назва { get; set; } = "";
-        
-        public string Валюта { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "ДоговориКонтрагентів"
-        
-    public partial class Row_22_1 : Row
-    {
-        
-        public string Код { get; set; } = "";
-        
-        public string Назва { get; set; } = "";
-        
-        public string Контрагент { get; set; } = "";
-        
-        public string ТипДоговору { get; set; } = "";
-        
-    }
-        
-    public partial class Row_22_2 : Row
-    {
-        
-        public string Назва { get; set; } = "";
-        
-        public string Контрагент { get; set; } = "";
-        
-        public string ТипДоговору { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "БанківськіРахункиКонтрагентів"
-        
-    public partial class Row_23_1 : Row
-    {
-        
-        public string Код { get; set; } = "";
-        
-        public string Назва { get; set; } = "";
-        
-        public string Валюта { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "СтаттяРухуКоштів"
-        
-    public partial class Row_24_1 : Row
-    {
-        
-        public string Назва { get; set; } = "";
-        
-        public string Код { get; set; } = "";
-        
-        public string КореспондуючийРахунок { get; set; } = "";
-        
-        public string ВидРухуКоштів { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "СеріїНоменклатури"
-        
-    public partial class Row_25_1 : Row
-    {
-        
-        public string Номер { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "ПартіяТоварівКомпозит"
-        
-    public partial class Row_26_1 : Row
-    {
-        
-        public string Назва { get; set; } = "";
-        
-        public string Дата { get; set; } = "";
-        
-        public string ТипДокументу { get; set; } = "";
-        
-        public string ПоступленняТоварівТаПослуг { get; set; } = "";
-        
-        public string ВведенняЗалишків { get; set; } = "";
-        
-        public string Залишки { get; set; } = "";
-        
-    }
-        
-    public partial class Row_26_2 : Row
-    {
-        
-        public string Назва { get; set; } = "";
-        
-        public string Дата { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "ВидиЗапасів"
-        
-    public partial class Row_27_1 : Row
-    {
-        
-        public string Код { get; set; } = "";
-        
-        public string Назва { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "Банки"
-        
-    public partial class Row_28_1 : Row
-    {
-        
-        public string Код { get; set; } = "";
-        
-        public string Назва { get; set; } = "";
-        
-        public string ПовнаНазва { get; set; } = "";
-        
-        public string КодМФО { get; set; } = "";
-        
-        public string КодЄДРПОУ { get; set; } = "";
-        
-        public string НомерЛіцензії { get; set; } = "";
-        
-        public string ДатаЛіцензії { get; set; } = "";
-        
-        public string Статус { get; set; } = "";
-        
-        public string ТипНаселеногоПункту { get; set; } = "";
-        
-        public string УнікальнийКодБанку { get; set; } = "";
-        
-        public string ПоштовийІндекс { get; set; } = "";
-        
-        public string НазваНаселеногоПункту { get; set; } = "";
-        
-        public string Адреса { get; set; } = "";
-        
-        public string НомерТелефону { get; set; } = "";
-        
-        public string ДатаВідкриттяУстанови { get; set; } = "";
-        
-        public string ДатаЗакриттяУстанови { get; set; } = "";
-        
-        public string КодНБУ { get; set; } = "";
-        
-        public string КодСтатусу { get; set; } = "";
-        
-        public string ДатаЗапису { get; set; } = "";
-        
-    }
-        
-    public partial class Row_28_2 : Row
-    {
-        
-        public string Код { get; set; } = "";
-        
-        public string Назва { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "СкладськіПриміщення"
-        
-    public partial class Row_29_1 : Row
-    {
-        
-        public string Назва { get; set; } = "";
-        
-        public string Склад { get; set; } = "";
-        
-        public string НалаштуванняАдресногоЗберігання { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "СкладськіКомірки"
-        
-    public partial class Row_30_1 : Row
-    {
-        
-        public string Назва { get; set; } = "";
-        
-        public string Приміщення { get; set; } = "";
-        
-        public string Лінія { get; set; } = "";
-        
-        public string Позиція { get; set; } = "";
-        
-        public string Стелаж { get; set; } = "";
-        
-        public string Ярус { get; set; } = "";
-        
-        public string ТипСкладськоїКомірки { get; set; } = "";
-        
-        public string Типорозмір { get; set; } = "";
-        
-        public string Папка { get; set; } = "";
-        
-    }
-        
-    public partial class Row_30_2 : Row
-    {
-        
-        public string Назва { get; set; } = "";
-        
-        public string Приміщення { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "ОбластьЗберігання"
-        
-    public partial class Row_31_1 : Row
-    {
-        
-        public string Назва { get; set; } = "";
-        
-        public string Приміщення { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "ТипорозміриКомірок"
-        
-    public partial class Row_32_1 : Row
-    {
-        
-        public string Назва { get; set; } = "";
-        
-        public string Висота { get; set; } = "";
-        
-        public string Глибина { get; set; } = "";
-        
-        public string Вантажопідйомність { get; set; } = "";
-        
-        public string Обєм { get; set; } = "";
-        
-        public string Ширина { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "СкладськіКомірки_Папки"
-        
-    public partial class Row_33_1 : Row
-    {
-        
-        public string Назва { get; set; } = "";
-        
-        public string Код { get; set; } = "";
-        
-        public string Власник { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "Блокнот"
-        
-    public partial class Row_34_1 : Row
-    {
-        
-        public string Код { get; set; } = "";
-        
-        public string Назва { get; set; } = "";
-        
-        public string ДатаЗапису { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "ЗбереженіЗвіти"
-        
-    public partial class Row_35_1 : Row
-    {
-        
-        public string Код { get; set; } = "";
-        
-        public string Додано { get; set; } = "";
-        
-        public string Назва { get; set; } = "";
-        
-        public string Користувач { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-    #region DIRECTORY "КасиККМ"
-        
-    public partial class Row_36_1 : Row
-    {
-        
-        public string Назва { get; set; } = "";
-        
-        public string Валюта { get; set; } = "";
-        
-        public string Тип { get; set; } = "";
-        
-        public string Склад { get; set; } = "";
-        
-    }
-        
-    #endregion
-    
-}
-
 namespace GeneratedCode.Довідники.ТабличніСписки
 {
     
@@ -764,7 +26,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_1_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -777,8 +39,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_1_1? row = (GeneratedCode.Rows.Row_1_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -799,9 +61,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_1_1? row = (GeneratedCode.Rows.Row_1_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -822,9 +84,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_1_1? row = (GeneratedCode.Rows.Row_1_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -852,11 +114,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) Організації_Select.QuerySelect.Where = (List<Where>)where;
 
-            Організації_Select.QuerySelect.Order.Add(
-               Довідники.Організації_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
+                /* Sort */
+                Організації_Select.QuerySelect.Order.Add(
+                 Довідники.Організації_Const.Назва, SelectOrder.ASC);
             
             await Організації_Select.Select();
             store.RemoveAll();
@@ -865,15 +126,11 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.Організації_Pointer? curr = Організації_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_1_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Код = fields[Організації_Const.Код].ToString() ?? "",
-                            Назва = fields[Організації_Const.Назва].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Організації_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Організації_Const.Назва].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -888,7 +145,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_2_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -901,8 +158,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_2_1? row = (GeneratedCode.Rows.Row_2_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -923,9 +180,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_2_1? row = (GeneratedCode.Rows.Row_2_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -946,9 +203,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_2_1? row = (GeneratedCode.Rows.Row_2_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -969,9 +226,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_2_1? row = (GeneratedCode.Rows.Row_2_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.ОдиницяВиміру);
+                        label.SetText(row.Fields["ОдиницяВиміру"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Пакування", factory);
@@ -992,9 +249,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_2_1? row = (GeneratedCode.Rows.Row_2_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.ТипНоменклатури);
+                        label.SetText(row.Fields["ТипНоменклатури"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Тип", factory);
@@ -1015,9 +272,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_2_1? row = (GeneratedCode.Rows.Row_2_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Залишок);
+                        label.SetText(row.Fields["Залишок"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Залишок", factory);
@@ -1038,9 +295,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_2_1? row = (GeneratedCode.Rows.Row_2_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.ВРезерві);
+                        label.SetText(row.Fields["ВРезерві"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("В резерві", factory);
@@ -1061,9 +318,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_2_1? row = (GeneratedCode.Rows.Row_2_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.ВРезервіПідЗамовлення);
+                        label.SetText(row.Fields["ВРезервіПідЗамовлення"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Під замовлення", factory);
@@ -1084,9 +341,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_2_1? row = (GeneratedCode.Rows.Row_2_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.ЗалишокВКомірках);
+                        label.SetText(row.Fields["ЗалишокВКомірках"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("В комірках", factory);
@@ -1115,12 +372,13 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) Номенклатура_Select.QuerySelect.Where = (List<Where>)where;
 
-            Номенклатура_Select.QuerySelect.Order.Add(
-               Довідники.Номенклатура_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
-            Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
+                /* Sort */
+                Номенклатура_Select.QuerySelect.Order.Add(
+                 Довідники.Номенклатура_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
                 Номенклатура_Select.QuerySelect.Table, "join_tab_1", "ОдиницяВиміру");
             
                 /* Додаткове поле: Залишок */
@@ -1146,22 +404,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.Номенклатура_Pointer? curr = Номенклатура_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_2_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Код = fields[Номенклатура_Const.Код].ToString() ?? "",
-                            Назва = fields[Номенклатура_Const.Назва].ToString() ?? "",
-                            ОдиницяВиміру = fields["ОдиницяВиміру"].ToString() ?? "",
-                            ТипНоменклатури = Перелічення.ПсевдонімиПерелічення.ТипиНоменклатури_Alias((
-                              (Перелічення.ТипиНоменклатури)(fields[Номенклатура_Const.ТипНоменклатури] != DBNull.Value ? fields[Номенклатура_Const.ТипНоменклатури] : 0)) ),
-                            Залишок = fields["Залишок"].ToString() ?? "",
-                        ВРезерві = fields["ВРезерві"].ToString() ?? "",
-                        ВРезервіПідЗамовлення = fields["ВРезервіПідЗамовлення"].ToString() ?? "",
-                        ЗалишокВКомірках = fields["ЗалишокВКомірках"].ToString() ?? "",
-                        
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Номенклатура_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Номенклатура_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("ОдиницяВиміру", Fields["ОдиницяВиміру"].ToString() ?? "");
+                    row.Fields.Add("ТипНоменклатури", Перелічення.ПсевдонімиПерелічення.ТипиНоменклатури_Alias((Перелічення.ТипиНоменклатури)(Fields[Номенклатура_Const.ТипНоменклатури] != DBNull.Value ? Fields[Номенклатура_Const.ТипНоменклатури] : 0) ));
+                    row.Fields.Add("Залишок", Fields["Залишок"].ToString() ?? "");
+                    row.Fields.Add("ВРезерві", Fields["ВРезерві"].ToString() ?? "");
+                    row.Fields.Add("ВРезервіПідЗамовлення", Fields["ВРезервіПідЗамовлення"].ToString() ?? "");
+                    row.Fields.Add("ЗалишокВКомірках", Fields["ЗалишокВКомірках"].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -1172,7 +425,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_2_2.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -1185,8 +438,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_2_2? row = (GeneratedCode.Rows.Row_2_2?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -1207,9 +460,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_2_2? row = (GeneratedCode.Rows.Row_2_2?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -1230,9 +483,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_2_2? row = (GeneratedCode.Rows.Row_2_2?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
@@ -1253,9 +506,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_2_2? row = (GeneratedCode.Rows.Row_2_2?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.ОдиницяВиміру);
+                        label.SetText(row.Fields["ОдиницяВиміру"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Пакування", factory);
@@ -1276,14 +529,13 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_2_2? row = (GeneratedCode.Rows.Row_2_2?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Залишок);
+                        label.SetText(row.Fields["Залишок"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Залишок", factory);
                 column.Resizable = true;
-                
                 columnView.AppendColumn(column);
             }
             
@@ -1300,9 +552,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_2_2? row = (GeneratedCode.Rows.Row_2_2?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.ВРезерві);
+                        label.SetText(row.Fields["ВРезерві"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("В резерві", factory);
@@ -1323,9 +575,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_2_2? row = (GeneratedCode.Rows.Row_2_2?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.ВРезервіПідЗамовлення);
+                        label.SetText(row.Fields["ВРезервіПідЗамовлення"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Під замовлення", factory);
@@ -1353,12 +605,13 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) Номенклатура_Select.QuerySelect.Where = (List<Where>)where;
 
-            Номенклатура_Select.QuerySelect.Order.Add(
-               Довідники.Номенклатура_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
-            Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
+                /* Sort */
+                Номенклатура_Select.QuerySelect.Order.Add(
+                 Довідники.Номенклатура_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
                 Номенклатура_Select.QuerySelect.Table, "join_tab_1", "ОдиницяВиміру");
             
                 /* Додаткове поле: Залишок */
@@ -1380,19 +633,15 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.Номенклатура_Pointer? curr = Номенклатура_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_2_2 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Код = fields[Номенклатура_Const.Код].ToString() ?? "",
-                            Назва = fields[Номенклатура_Const.Назва].ToString() ?? "",
-                            ОдиницяВиміру = fields["ОдиницяВиміру"].ToString() ?? "",
-                            Залишок = fields["Залишок"].ToString() ?? "",
-                        ВРезерві = fields["ВРезерві"].ToString() ?? "",
-                        ВРезервіПідЗамовлення = fields["ВРезервіПідЗамовлення"].ToString() ?? "",
-                        
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Номенклатура_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Номенклатура_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("ОдиницяВиміру", Fields["ОдиницяВиміру"].ToString() ?? "");
+                    row.Fields.Add("Залишок", Fields["Залишок"].ToString() ?? "");
+                    row.Fields.Add("ВРезерві", Fields["ВРезерві"].ToString() ?? "");
+                    row.Fields.Add("ВРезервіПідЗамовлення", Fields["ВРезервіПідЗамовлення"].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -1407,7 +656,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_3_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -1420,8 +669,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_3_1? row = (GeneratedCode.Rows.Row_3_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -1442,9 +691,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_3_1? row = (GeneratedCode.Rows.Row_3_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -1465,9 +714,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_3_1? row = (GeneratedCode.Rows.Row_3_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -1495,11 +744,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) Виробники_Select.QuerySelect.Where = (List<Where>)where;
 
-            Виробники_Select.QuerySelect.Order.Add(
-               Довідники.Виробники_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
+                /* Sort */
+                Виробники_Select.QuerySelect.Order.Add(
+                 Довідники.Виробники_Const.Назва, SelectOrder.ASC);
             
             await Виробники_Select.Select();
             store.RemoveAll();
@@ -1508,15 +756,11 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.Виробники_Pointer? curr = Виробники_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_3_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Код = fields[Виробники_Const.Код].ToString() ?? "",
-                            Назва = fields[Виробники_Const.Назва].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Виробники_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Виробники_Const.Назва].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -1531,7 +775,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_4_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -1544,8 +788,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_4_1? row = (GeneratedCode.Rows.Row_4_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -1566,9 +810,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_4_1? row = (GeneratedCode.Rows.Row_4_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -1589,9 +833,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_4_1? row = (GeneratedCode.Rows.Row_4_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -1619,11 +863,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) ВидиНоменклатури_Select.QuerySelect.Where = (List<Where>)where;
 
-            ВидиНоменклатури_Select.QuerySelect.Order.Add(
-               Довідники.ВидиНоменклатури_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
+                /* Sort */
+                ВидиНоменклатури_Select.QuerySelect.Order.Add(
+                 Довідники.ВидиНоменклатури_Const.Назва, SelectOrder.ASC);
             
             await ВидиНоменклатури_Select.Select();
             store.RemoveAll();
@@ -1632,15 +875,11 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.ВидиНоменклатури_Pointer? curr = ВидиНоменклатури_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_4_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Код = fields[ВидиНоменклатури_Const.Код].ToString() ?? "",
-                            Назва = fields[ВидиНоменклатури_Const.Назва].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[ВидиНоменклатури_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[ВидиНоменклатури_Const.Назва].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -1655,7 +894,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_5_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -1668,8 +907,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_5_1? row = (GeneratedCode.Rows.Row_5_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -1690,9 +929,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_5_1? row = (GeneratedCode.Rows.Row_5_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -1713,9 +952,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_5_1? row = (GeneratedCode.Rows.Row_5_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -1736,9 +975,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_5_1? row = (GeneratedCode.Rows.Row_5_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.КількістьУпаковок);
+                        label.SetText(row.Fields["КількістьУпаковок"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Коєфіціент", factory);
@@ -1759,9 +998,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_5_1? row = (GeneratedCode.Rows.Row_5_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.НазваПовна);
+                        label.SetText(row.Fields["НазваПовна"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Опис", factory);
@@ -1791,11 +1030,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) ПакуванняОдиниціВиміру_Select.QuerySelect.Where = (List<Where>)where;
 
-            ПакуванняОдиниціВиміру_Select.QuerySelect.Order.Add(
-               Довідники.ПакуванняОдиниціВиміру_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
+                /* Sort */
+                ПакуванняОдиниціВиміру_Select.QuerySelect.Order.Add(
+                 Довідники.ПакуванняОдиниціВиміру_Const.Назва, SelectOrder.ASC);
             
             await ПакуванняОдиниціВиміру_Select.Select();
             store.RemoveAll();
@@ -1804,17 +1042,13 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.ПакуванняОдиниціВиміру_Pointer? curr = ПакуванняОдиниціВиміру_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_5_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Код = fields[ПакуванняОдиниціВиміру_Const.Код].ToString() ?? "",
-                            Назва = fields[ПакуванняОдиниціВиміру_Const.Назва].ToString() ?? "",
-                            КількістьУпаковок = fields[ПакуванняОдиниціВиміру_Const.КількістьУпаковок].ToString() ?? "",
-                            НазваПовна = fields[ПакуванняОдиниціВиміру_Const.НазваПовна].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[ПакуванняОдиниціВиміру_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[ПакуванняОдиниціВиміру_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("КількістьУпаковок", Fields[ПакуванняОдиниціВиміру_Const.КількістьУпаковок].ToString() ?? "");
+                    row.Fields.Add("НазваПовна", Fields[ПакуванняОдиниціВиміру_Const.НазваПовна].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -1829,7 +1063,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_6_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -1842,8 +1076,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_6_1? row = (GeneratedCode.Rows.Row_6_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -1864,9 +1098,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_6_1? row = (GeneratedCode.Rows.Row_6_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -1887,9 +1121,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_6_1? row = (GeneratedCode.Rows.Row_6_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -1910,9 +1144,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_6_1? row = (GeneratedCode.Rows.Row_6_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.КороткаНазва);
+                        label.SetText(row.Fields["КороткаНазва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Коротка  назва", factory);
@@ -1933,9 +1167,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_6_1? row = (GeneratedCode.Rows.Row_6_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код_R030);
+                        label.SetText(row.Fields["Код_R030"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("R030", factory);
@@ -1956,9 +1190,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_6_1? row = (GeneratedCode.Rows.Row_6_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.ВиводитиКурсНаСтартову);
+                        label.SetText(row.Fields["ВиводитиКурсНаСтартову"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Показувати на стартовій", factory);
@@ -1989,11 +1223,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) Валюти_Select.QuerySelect.Where = (List<Where>)where;
 
-            Валюти_Select.QuerySelect.Order.Add(
-               Довідники.Валюти_Const.Код, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
+                /* Sort */
+                Валюти_Select.QuerySelect.Order.Add(
+                 Довідники.Валюти_Const.Код, SelectOrder.ASC);
             
             await Валюти_Select.Select();
             store.RemoveAll();
@@ -2002,18 +1235,14 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.Валюти_Pointer? curr = Валюти_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_6_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Код = fields[Валюти_Const.Код].ToString() ?? "",
-                            Назва = fields[Валюти_Const.Назва].ToString() ?? "",
-                            КороткаНазва = fields[Валюти_Const.КороткаНазва].ToString() ?? "",
-                            Код_R030 = fields[Валюти_Const.Код_R030].ToString() ?? "",
-                            ВиводитиКурсНаСтартову = (fields[Валюти_Const.ВиводитиКурсНаСтартову] != DBNull.Value ? (bool)fields[Валюти_Const.ВиводитиКурсНаСтартову] : false) ? "Так" : "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Валюти_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Валюти_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("КороткаНазва", Fields[Валюти_Const.КороткаНазва].ToString() ?? "");
+                    row.Fields.Add("Код_R030", Fields[Валюти_Const.Код_R030].ToString() ?? "");
+                    row.Fields.Add("ВиводитиКурсНаСтартову", (Fields[Валюти_Const.ВиводитиКурсНаСтартову] != DBNull.Value && (bool)Fields[Валюти_Const.ВиводитиКурсНаСтартову]) ? "Так" : "");
+                    
                     store.Append(row);
                 }
             }
@@ -2024,7 +1253,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_6_2.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -2037,8 +1266,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_6_2? row = (GeneratedCode.Rows.Row_6_2?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -2059,9 +1288,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_6_2? row = (GeneratedCode.Rows.Row_6_2?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -2082,9 +1311,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_6_2? row = (GeneratedCode.Rows.Row_6_2?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -2105,9 +1334,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_6_2? row = (GeneratedCode.Rows.Row_6_2?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.КороткаНазва);
+                        label.SetText(row.Fields["КороткаНазва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Коротка назва", factory);
@@ -2136,11 +1365,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) Валюти_Select.QuerySelect.Where = (List<Where>)where;
 
-            Валюти_Select.QuerySelect.Order.Add(
-               Довідники.Валюти_Const.Код, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
+                /* Sort */
+                Валюти_Select.QuerySelect.Order.Add(
+                 Довідники.Валюти_Const.Код, SelectOrder.ASC);
             
             await Валюти_Select.Select();
             store.RemoveAll();
@@ -2149,16 +1377,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.Валюти_Pointer? curr = Валюти_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_6_2 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Код = fields[Валюти_Const.Код].ToString() ?? "",
-                            Назва = fields[Валюти_Const.Назва].ToString() ?? "",
-                            КороткаНазва = fields[Валюти_Const.КороткаНазва].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Валюти_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Валюти_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("КороткаНазва", Fields[Валюти_Const.КороткаНазва].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -2173,7 +1397,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_7_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -2186,8 +1410,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_7_1? row = (GeneratedCode.Rows.Row_7_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -2208,9 +1432,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_7_1? row = (GeneratedCode.Rows.Row_7_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -2231,9 +1455,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_7_1? row = (GeneratedCode.Rows.Row_7_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -2254,9 +1478,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_7_1? row = (GeneratedCode.Rows.Row_7_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Папка);
+                        label.SetText(row.Fields["Папка"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Папка", factory);
@@ -2277,9 +1501,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_7_1? row = (GeneratedCode.Rows.Row_7_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Постачальник);
+                        label.SetText(row.Fields["Постачальник"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Постачальник", factory);
@@ -2300,9 +1524,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_7_1? row = (GeneratedCode.Rows.Row_7_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Покупець);
+                        label.SetText(row.Fields["Покупець"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Покупець", factory);
@@ -2332,12 +1556,13 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) Контрагенти_Select.QuerySelect.Where = (List<Where>)where;
 
-            Контрагенти_Select.QuerySelect.Order.Add(
-               Довідники.Контрагенти_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
-            Довідники.Контрагенти_Папки_Pointer.GetJoin(Контрагенти_Select.QuerySelect, Довідники.Контрагенти_Const.Папка,
+                /* Sort */
+                Контрагенти_Select.QuerySelect.Order.Add(
+                 Довідники.Контрагенти_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.Контрагенти_Папки_Pointer.GetJoin(Контрагенти_Select.QuerySelect, Довідники.Контрагенти_Const.Папка,
                 Контрагенти_Select.QuerySelect.Table, "join_tab_1", "Папка");
             
             await Контрагенти_Select.Select();
@@ -2347,18 +1572,14 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.Контрагенти_Pointer? curr = Контрагенти_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_7_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Код = fields[Контрагенти_Const.Код].ToString() ?? "",
-                            Назва = fields[Контрагенти_Const.Назва].ToString() ?? "",
-                            Папка = fields["Папка"].ToString() ?? "",
-                            Постачальник = (fields[Контрагенти_Const.Постачальник] != DBNull.Value ? (bool)fields[Контрагенти_Const.Постачальник] : false) ? "Так" : "",
-                            Покупець = (fields[Контрагенти_Const.Покупець] != DBNull.Value ? (bool)fields[Контрагенти_Const.Покупець] : false) ? "Так" : "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Контрагенти_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Контрагенти_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Папка", Fields["Папка"].ToString() ?? "");
+                    row.Fields.Add("Постачальник", (Fields[Контрагенти_Const.Постачальник] != DBNull.Value && (bool)Fields[Контрагенти_Const.Постачальник]) ? "Так" : "");
+                    row.Fields.Add("Покупець", (Fields[Контрагенти_Const.Покупець] != DBNull.Value && (bool)Fields[Контрагенти_Const.Покупець]) ? "Так" : "");
+                    
                     store.Append(row);
                 }
             }
@@ -2369,7 +1590,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_7_2.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -2382,8 +1603,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_7_2? row = (GeneratedCode.Rows.Row_7_2?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -2404,9 +1625,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_7_2? row = (GeneratedCode.Rows.Row_7_2?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -2427,9 +1648,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_7_2? row = (GeneratedCode.Rows.Row_7_2?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -2457,11 +1678,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) Контрагенти_Select.QuerySelect.Where = (List<Where>)where;
 
-            Контрагенти_Select.QuerySelect.Order.Add(
-               Довідники.Контрагенти_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
+                /* Sort */
+                Контрагенти_Select.QuerySelect.Order.Add(
+                 Довідники.Контрагенти_Const.Назва, SelectOrder.ASC);
             
             await Контрагенти_Select.Select();
             store.RemoveAll();
@@ -2470,15 +1690,11 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.Контрагенти_Pointer? curr = Контрагенти_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_7_2 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Код = fields[Контрагенти_Const.Код].ToString() ?? "",
-                            Назва = fields[Контрагенти_Const.Назва].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Контрагенти_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Контрагенти_Const.Назва].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -2493,7 +1709,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_8_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -2506,8 +1722,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_8_1? row = (GeneratedCode.Rows.Row_8_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -2528,9 +1744,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_8_1? row = (GeneratedCode.Rows.Row_8_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -2551,9 +1767,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_8_1? row = (GeneratedCode.Rows.Row_8_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -2574,9 +1790,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_8_1? row = (GeneratedCode.Rows.Row_8_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.ТипСкладу);
+                        label.SetText(row.Fields["ТипСкладу"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Тип cкладу", factory);
@@ -2597,9 +1813,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_8_1? row = (GeneratedCode.Rows.Row_8_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.НалаштуванняАдресногоЗберігання);
+                        label.SetText(row.Fields["НалаштуванняАдресногоЗберігання"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Адресне зберігання", factory);
@@ -2629,11 +1845,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) Склади_Select.QuerySelect.Where = (List<Where>)where;
 
-            Склади_Select.QuerySelect.Order.Add(
-               Довідники.Склади_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
+                /* Sort */
+                Склади_Select.QuerySelect.Order.Add(
+                 Довідники.Склади_Const.Назва, SelectOrder.ASC);
             
             await Склади_Select.Select();
             store.RemoveAll();
@@ -2642,19 +1857,13 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.Склади_Pointer? curr = Склади_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_8_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Код = fields[Склади_Const.Код].ToString() ?? "",
-                            Назва = fields[Склади_Const.Назва].ToString() ?? "",
-                            ТипСкладу = Перелічення.ПсевдонімиПерелічення.ТипиСкладів_Alias((
-                              (Перелічення.ТипиСкладів)(fields[Склади_Const.ТипСкладу] != DBNull.Value ? fields[Склади_Const.ТипСкладу] : 0)) ),
-                            НалаштуванняАдресногоЗберігання = Перелічення.ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_Alias((
-                              (Перелічення.НалаштуванняАдресногоЗберігання)(fields[Склади_Const.НалаштуванняАдресногоЗберігання] != DBNull.Value ? fields[Склади_Const.НалаштуванняАдресногоЗберігання] : 0)) ),
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Склади_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Склади_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("ТипСкладу", Перелічення.ПсевдонімиПерелічення.ТипиСкладів_Alias((Перелічення.ТипиСкладів)(Fields[Склади_Const.ТипСкладу] != DBNull.Value ? Fields[Склади_Const.ТипСкладу] : 0) ));
+                    row.Fields.Add("НалаштуванняАдресногоЗберігання", Перелічення.ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_Alias((Перелічення.НалаштуванняАдресногоЗберігання)(Fields[Склади_Const.НалаштуванняАдресногоЗберігання] != DBNull.Value ? Fields[Склади_Const.НалаштуванняАдресногоЗберігання] : 0) ));
+                    
                     store.Append(row);
                 }
             }
@@ -2665,7 +1874,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_8_2.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -2678,8 +1887,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_8_2? row = (GeneratedCode.Rows.Row_8_2?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -2700,9 +1909,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_8_2? row = (GeneratedCode.Rows.Row_8_2?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -2723,9 +1932,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_8_2? row = (GeneratedCode.Rows.Row_8_2?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -2753,11 +1962,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) Склади_Select.QuerySelect.Where = (List<Where>)where;
 
-            Склади_Select.QuerySelect.Order.Add(
-               Довідники.Склади_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
+                /* Sort */
+                Склади_Select.QuerySelect.Order.Add(
+                 Довідники.Склади_Const.Назва, SelectOrder.ASC);
             
             await Склади_Select.Select();
             store.RemoveAll();
@@ -2766,15 +1974,11 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.Склади_Pointer? curr = Склади_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_8_2 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Код = fields[Склади_Const.Код].ToString() ?? "",
-                            Назва = fields[Склади_Const.Назва].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Склади_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Склади_Const.Назва].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -2789,7 +1993,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_9_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -2802,8 +2006,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_9_1? row = (GeneratedCode.Rows.Row_9_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -2824,9 +2028,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_9_1? row = (GeneratedCode.Rows.Row_9_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -2847,9 +2051,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_9_1? row = (GeneratedCode.Rows.Row_9_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -2870,9 +2074,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_9_1? row = (GeneratedCode.Rows.Row_9_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Валюта);
+                        label.SetText(row.Fields["Валюта"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
@@ -2900,12 +2104,13 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) ВидиЦін_Select.QuerySelect.Where = (List<Where>)where;
 
-            ВидиЦін_Select.QuerySelect.Order.Add(
-               Довідники.ВидиЦін_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
-            Довідники.Валюти_Pointer.GetJoin(ВидиЦін_Select.QuerySelect, Довідники.ВидиЦін_Const.Валюта,
+                /* Sort */
+                ВидиЦін_Select.QuerySelect.Order.Add(
+                 Довідники.ВидиЦін_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.Валюти_Pointer.GetJoin(ВидиЦін_Select.QuerySelect, Довідники.ВидиЦін_Const.Валюта,
                 ВидиЦін_Select.QuerySelect.Table, "join_tab_1", "Валюта");
             
             await ВидиЦін_Select.Select();
@@ -2915,16 +2120,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.ВидиЦін_Pointer? curr = ВидиЦін_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_9_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Код = fields[ВидиЦін_Const.Код].ToString() ?? "",
-                            Назва = fields[ВидиЦін_Const.Назва].ToString() ?? "",
-                            Валюта = fields["Валюта"].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[ВидиЦін_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[ВидиЦін_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Валюта", Fields["Валюта"].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -2935,7 +2136,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_9_2.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -2948,8 +2149,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_9_2? row = (GeneratedCode.Rows.Row_9_2?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -2970,9 +2171,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_9_2? row = (GeneratedCode.Rows.Row_9_2?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -2999,11 +2200,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) ВидиЦін_Select.QuerySelect.Where = (List<Where>)where;
 
-            ВидиЦін_Select.QuerySelect.Order.Add(
-               Довідники.ВидиЦін_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
+                /* Sort */
+                ВидиЦін_Select.QuerySelect.Order.Add(
+                 Довідники.ВидиЦін_Const.Назва, SelectOrder.ASC);
             
             await ВидиЦін_Select.Select();
             store.RemoveAll();
@@ -3012,14 +2212,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.ВидиЦін_Pointer? curr = ВидиЦін_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_9_2 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Назва = fields[ВидиЦін_Const.Назва].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[ВидиЦін_Const.Назва].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -3034,7 +2230,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_10_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -3047,8 +2243,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_10_1? row = (GeneratedCode.Rows.Row_10_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -3069,9 +2265,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_10_1? row = (GeneratedCode.Rows.Row_10_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -3092,9 +2288,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_10_1? row = (GeneratedCode.Rows.Row_10_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -3122,11 +2318,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) ВидиЦінПостачальників_Select.QuerySelect.Where = (List<Where>)where;
 
-            ВидиЦінПостачальників_Select.QuerySelect.Order.Add(
-               Довідники.ВидиЦінПостачальників_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
+                /* Sort */
+                ВидиЦінПостачальників_Select.QuerySelect.Order.Add(
+                 Довідники.ВидиЦінПостачальників_Const.Назва, SelectOrder.ASC);
             
             await ВидиЦінПостачальників_Select.Select();
             store.RemoveAll();
@@ -3135,15 +2330,11 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.ВидиЦінПостачальників_Pointer? curr = ВидиЦінПостачальників_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_10_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Код = fields[ВидиЦінПостачальників_Const.Код].ToString() ?? "",
-                            Назва = fields[ВидиЦінПостачальників_Const.Назва].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[ВидиЦінПостачальників_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[ВидиЦінПостачальників_Const.Назва].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -3158,7 +2349,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_11_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -3171,8 +2362,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_11_1? row = (GeneratedCode.Rows.Row_11_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -3193,9 +2384,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_11_1? row = (GeneratedCode.Rows.Row_11_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -3216,9 +2407,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_11_1? row = (GeneratedCode.Rows.Row_11_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -3246,11 +2437,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) Користувачі_Select.QuerySelect.Where = (List<Where>)where;
 
-            Користувачі_Select.QuerySelect.Order.Add(
-               Довідники.Користувачі_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
+                /* Sort */
+                Користувачі_Select.QuerySelect.Order.Add(
+                 Довідники.Користувачі_Const.Назва, SelectOrder.ASC);
             
             await Користувачі_Select.Select();
             store.RemoveAll();
@@ -3259,15 +2449,11 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.Користувачі_Pointer? curr = Користувачі_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_11_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Код = fields[Користувачі_Const.Код].ToString() ?? "",
-                            Назва = fields[Користувачі_Const.Назва].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Користувачі_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Користувачі_Const.Назва].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -3282,7 +2468,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_12_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -3295,8 +2481,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_12_1? row = (GeneratedCode.Rows.Row_12_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -3317,9 +2503,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_12_1? row = (GeneratedCode.Rows.Row_12_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -3340,9 +2526,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_12_1? row = (GeneratedCode.Rows.Row_12_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -3370,11 +2556,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) ФізичніОсоби_Select.QuerySelect.Where = (List<Where>)where;
 
-            ФізичніОсоби_Select.QuerySelect.Order.Add(
-               Довідники.ФізичніОсоби_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
+                /* Sort */
+                ФізичніОсоби_Select.QuerySelect.Order.Add(
+                 Довідники.ФізичніОсоби_Const.Назва, SelectOrder.ASC);
             
             await ФізичніОсоби_Select.Select();
             store.RemoveAll();
@@ -3383,15 +2568,11 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.ФізичніОсоби_Pointer? curr = ФізичніОсоби_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_12_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Код = fields[ФізичніОсоби_Const.Код].ToString() ?? "",
-                            Назва = fields[ФізичніОсоби_Const.Назва].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[ФізичніОсоби_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[ФізичніОсоби_Const.Назва].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -3406,7 +2587,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_13_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -3419,8 +2600,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_13_1? row = (GeneratedCode.Rows.Row_13_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -3441,9 +2622,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_13_1? row = (GeneratedCode.Rows.Row_13_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -3464,9 +2645,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_13_1? row = (GeneratedCode.Rows.Row_13_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -3494,11 +2675,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) СтруктураПідприємства_Select.QuerySelect.Where = (List<Where>)where;
 
-            СтруктураПідприємства_Select.QuerySelect.Order.Add(
-               Довідники.СтруктураПідприємства_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
+                /* Sort */
+                СтруктураПідприємства_Select.QuerySelect.Order.Add(
+                 Довідники.СтруктураПідприємства_Const.Назва, SelectOrder.ASC);
             
             await СтруктураПідприємства_Select.Select();
             store.RemoveAll();
@@ -3507,15 +2687,11 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.СтруктураПідприємства_Pointer? curr = СтруктураПідприємства_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_13_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Код = fields[СтруктураПідприємства_Const.Код].ToString() ?? "",
-                            Назва = fields[СтруктураПідприємства_Const.Назва].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[СтруктураПідприємства_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[СтруктураПідприємства_Const.Назва].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -3530,7 +2706,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_14_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -3543,8 +2719,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_14_1? row = (GeneratedCode.Rows.Row_14_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -3565,9 +2741,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_14_1? row = (GeneratedCode.Rows.Row_14_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -3588,9 +2764,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_14_1? row = (GeneratedCode.Rows.Row_14_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -3618,11 +2794,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) КраїниСвіту_Select.QuerySelect.Where = (List<Where>)where;
 
-            КраїниСвіту_Select.QuerySelect.Order.Add(
-               Довідники.КраїниСвіту_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
+                /* Sort */
+                КраїниСвіту_Select.QuerySelect.Order.Add(
+                 Довідники.КраїниСвіту_Const.Назва, SelectOrder.ASC);
             
             await КраїниСвіту_Select.Select();
             store.RemoveAll();
@@ -3631,15 +2806,11 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.КраїниСвіту_Pointer? curr = КраїниСвіту_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_14_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Код = fields[КраїниСвіту_Const.Код].ToString() ?? "",
-                            Назва = fields[КраїниСвіту_Const.Назва].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[КраїниСвіту_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[КраїниСвіту_Const.Назва].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -3654,7 +2825,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_15_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -3667,8 +2838,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_15_1? row = (GeneratedCode.Rows.Row_15_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -3689,9 +2860,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_15_1? row = (GeneratedCode.Rows.Row_15_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -3712,9 +2883,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_15_1? row = (GeneratedCode.Rows.Row_15_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -3735,9 +2906,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_15_1? row = (GeneratedCode.Rows.Row_15_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.НазваФайлу);
+                        label.SetText(row.Fields["НазваФайлу"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва файлу", factory);
@@ -3758,9 +2929,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_15_1? row = (GeneratedCode.Rows.Row_15_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Розмір);
+                        label.SetText(row.Fields["Розмір"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Розмір", factory);
@@ -3781,9 +2952,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_15_1? row = (GeneratedCode.Rows.Row_15_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.ДатаСтворення);
+                        label.SetText(row.Fields["ДатаСтворення"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Дата створення", factory);
@@ -3814,11 +2985,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) Файли_Select.QuerySelect.Where = (List<Where>)where;
 
-            Файли_Select.QuerySelect.Order.Add(
-               Довідники.Файли_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
+                /* Sort */
+                Файли_Select.QuerySelect.Order.Add(
+                 Довідники.Файли_Const.Назва, SelectOrder.ASC);
             
             await Файли_Select.Select();
             store.RemoveAll();
@@ -3827,18 +2997,14 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.Файли_Pointer? curr = Файли_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_15_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Код = fields[Файли_Const.Код].ToString() ?? "",
-                            Назва = fields[Файли_Const.Назва].ToString() ?? "",
-                            НазваФайлу = fields[Файли_Const.НазваФайлу].ToString() ?? "",
-                            Розмір = fields[Файли_Const.Розмір].ToString() ?? "",
-                            ДатаСтворення = fields[Файли_Const.ДатаСтворення].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Файли_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Файли_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НазваФайлу", Fields[Файли_Const.НазваФайлу].ToString() ?? "");
+                    row.Fields.Add("Розмір", Fields[Файли_Const.Розмір].ToString() ?? "");
+                    row.Fields.Add("ДатаСтворення", Fields[Файли_Const.ДатаСтворення].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -3849,7 +3015,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_15_2.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -3862,8 +3028,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_15_2? row = (GeneratedCode.Rows.Row_15_2?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -3884,9 +3050,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_15_2? row = (GeneratedCode.Rows.Row_15_2?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -3913,11 +3079,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) Файли_Select.QuerySelect.Where = (List<Where>)where;
 
-            Файли_Select.QuerySelect.Order.Add(
-               Довідники.Файли_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
+                /* Sort */
+                Файли_Select.QuerySelect.Order.Add(
+                 Довідники.Файли_Const.Назва, SelectOrder.ASC);
             
             await Файли_Select.Select();
             store.RemoveAll();
@@ -3926,14 +3091,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.Файли_Pointer? curr = Файли_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_15_2 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Назва = fields[Файли_Const.Назва].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[Файли_Const.Назва].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -3948,7 +3109,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_16_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -3961,8 +3122,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_16_1? row = (GeneratedCode.Rows.Row_16_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -3983,9 +3144,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_16_1? row = (GeneratedCode.Rows.Row_16_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -4006,9 +3167,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_16_1? row = (GeneratedCode.Rows.Row_16_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Номенклатура);
+                        label.SetText(row.Fields["Номенклатура"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
@@ -4029,9 +3190,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_16_1? row = (GeneratedCode.Rows.Row_16_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -4052,9 +3213,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_16_1? row = (GeneratedCode.Rows.Row_16_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Залишки);
+                        label.SetText(row.Fields["Залишки"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Залишки", factory);
@@ -4075,9 +3236,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_16_1? row = (GeneratedCode.Rows.Row_16_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.ВРезерві);
+                        label.SetText(row.Fields["ВРезерві"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("В резерві", factory);
@@ -4098,9 +3259,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_16_1? row = (GeneratedCode.Rows.Row_16_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.ВРезервіПідЗамовлення);
+                        label.SetText(row.Fields["ВРезервіПідЗамовлення"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Під замовлення", factory);
@@ -4128,12 +3289,13 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) ХарактеристикиНоменклатури_Select.QuerySelect.Where = (List<Where>)where;
 
-            ХарактеристикиНоменклатури_Select.QuerySelect.Order.Add(
-               Довідники.ХарактеристикиНоменклатури_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
-            Довідники.Номенклатура_Pointer.GetJoin(ХарактеристикиНоменклатури_Select.QuerySelect, Довідники.ХарактеристикиНоменклатури_Const.Номенклатура,
+                /* Sort */
+                ХарактеристикиНоменклатури_Select.QuerySelect.Order.Add(
+                 Довідники.ХарактеристикиНоменклатури_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.Номенклатура_Pointer.GetJoin(ХарактеристикиНоменклатури_Select.QuerySelect, Довідники.ХарактеристикиНоменклатури_Const.Номенклатура,
                 ХарактеристикиНоменклатури_Select.QuerySelect.Table, "join_tab_1", "Номенклатура");
             
                 /* Додаткове поле: Залишки */
@@ -4155,19 +3317,15 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.ХарактеристикиНоменклатури_Pointer? curr = ХарактеристикиНоменклатури_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_16_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Код = fields[ХарактеристикиНоменклатури_Const.Код].ToString() ?? "",
-                            Номенклатура = fields["Номенклатура"].ToString() ?? "",
-                            Назва = fields[ХарактеристикиНоменклатури_Const.Назва].ToString() ?? "",
-                            Залишки = fields["Залишки"].ToString() ?? "",
-                        ВРезерві = fields["ВРезерві"].ToString() ?? "",
-                        ВРезервіПідЗамовлення = fields["ВРезервіПідЗамовлення"].ToString() ?? "",
-                        
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[ХарактеристикиНоменклатури_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Номенклатура", Fields["Номенклатура"].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[ХарактеристикиНоменклатури_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Залишки", Fields["Залишки"].ToString() ?? "");
+                    row.Fields.Add("ВРезерві", Fields["ВРезерві"].ToString() ?? "");
+                    row.Fields.Add("ВРезервіПідЗамовлення", Fields["ВРезервіПідЗамовлення"].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -4182,7 +3340,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_17_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -4195,8 +3353,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_17_1? row = (GeneratedCode.Rows.Row_17_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -4217,9 +3375,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_17_1? row = (GeneratedCode.Rows.Row_17_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -4240,9 +3398,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_17_1? row = (GeneratedCode.Rows.Row_17_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -4270,11 +3428,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) Номенклатура_Папки_Select.QuerySelect.Where = (List<Where>)where;
 
-            Номенклатура_Папки_Select.QuerySelect.Order.Add(
-               Довідники.Номенклатура_Папки_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
+                /* Sort */
+                Номенклатура_Папки_Select.QuerySelect.Order.Add(
+                 Довідники.Номенклатура_Папки_Const.Назва, SelectOrder.ASC);
             
             await Номенклатура_Папки_Select.Select();
             store.RemoveAll();
@@ -4283,15 +3440,11 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.Номенклатура_Папки_Pointer? curr = Номенклатура_Папки_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_17_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Назва = fields[Номенклатура_Папки_Const.Назва].ToString() ?? "",
-                            Код = fields[Номенклатура_Папки_Const.Код].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[Номенклатура_Папки_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Код", Fields[Номенклатура_Папки_Const.Код].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -4302,7 +3455,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_17_2.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -4315,8 +3468,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_17_2? row = (GeneratedCode.Rows.Row_17_2?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -4337,9 +3490,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_17_2? row = (GeneratedCode.Rows.Row_17_2?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -4360,9 +3513,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_17_2? row = (GeneratedCode.Rows.Row_17_2?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -4390,11 +3543,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) Номенклатура_Папки_Select.QuerySelect.Where = (List<Where>)where;
 
-            Номенклатура_Папки_Select.QuerySelect.Order.Add(
-               Довідники.Номенклатура_Папки_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
+                /* Sort */
+                Номенклатура_Папки_Select.QuerySelect.Order.Add(
+                 Довідники.Номенклатура_Папки_Const.Назва, SelectOrder.ASC);
             
             await Номенклатура_Папки_Select.Select();
             store.RemoveAll();
@@ -4403,15 +3555,11 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.Номенклатура_Папки_Pointer? curr = Номенклатура_Папки_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_17_2 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Назва = fields[Номенклатура_Папки_Const.Назва].ToString() ?? "",
-                            Код = fields[Номенклатура_Папки_Const.Код].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[Номенклатура_Папки_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Код", Fields[Номенклатура_Папки_Const.Код].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -4426,7 +3574,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_18_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -4439,8 +3587,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_18_1? row = (GeneratedCode.Rows.Row_18_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -4461,9 +3609,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_18_1? row = (GeneratedCode.Rows.Row_18_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -4484,9 +3632,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_18_1? row = (GeneratedCode.Rows.Row_18_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -4514,11 +3662,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) Контрагенти_Папки_Select.QuerySelect.Where = (List<Where>)where;
 
-            Контрагенти_Папки_Select.QuerySelect.Order.Add(
-               Довідники.Контрагенти_Папки_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
+                /* Sort */
+                Контрагенти_Папки_Select.QuerySelect.Order.Add(
+                 Довідники.Контрагенти_Папки_Const.Назва, SelectOrder.ASC);
             
             await Контрагенти_Папки_Select.Select();
             store.RemoveAll();
@@ -4527,15 +3674,11 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.Контрагенти_Папки_Pointer? curr = Контрагенти_Папки_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_18_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Назва = fields[Контрагенти_Папки_Const.Назва].ToString() ?? "",
-                            Код = fields[Контрагенти_Папки_Const.Код].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[Контрагенти_Папки_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Код", Fields[Контрагенти_Папки_Const.Код].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -4550,7 +3693,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_19_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -4563,8 +3706,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_19_1? row = (GeneratedCode.Rows.Row_19_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -4585,9 +3728,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_19_1? row = (GeneratedCode.Rows.Row_19_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -4608,9 +3751,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_19_1? row = (GeneratedCode.Rows.Row_19_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -4638,11 +3781,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) Склади_Папки_Select.QuerySelect.Where = (List<Where>)where;
 
-            Склади_Папки_Select.QuerySelect.Order.Add(
-               Довідники.Склади_Папки_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
+                /* Sort */
+                Склади_Папки_Select.QuerySelect.Order.Add(
+                 Довідники.Склади_Папки_Const.Назва, SelectOrder.ASC);
             
             await Склади_Папки_Select.Select();
             store.RemoveAll();
@@ -4651,15 +3793,11 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.Склади_Папки_Pointer? curr = Склади_Папки_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_19_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Назва = fields[Склади_Папки_Const.Назва].ToString() ?? "",
-                            Код = fields[Склади_Папки_Const.Код].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[Склади_Папки_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Код", Fields[Склади_Папки_Const.Код].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -4674,7 +3812,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_20_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -4687,8 +3825,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_20_1? row = (GeneratedCode.Rows.Row_20_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -4709,9 +3847,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_20_1? row = (GeneratedCode.Rows.Row_20_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -4732,9 +3870,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_20_1? row = (GeneratedCode.Rows.Row_20_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -4755,9 +3893,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_20_1? row = (GeneratedCode.Rows.Row_20_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Валюта);
+                        label.SetText(row.Fields["Валюта"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
@@ -4778,9 +3916,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_20_1? row = (GeneratedCode.Rows.Row_20_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Залишок);
+                        label.SetText(row.Fields["Залишок"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Залишок", factory);
@@ -4808,12 +3946,13 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) Каси_Select.QuerySelect.Where = (List<Where>)where;
 
-            Каси_Select.QuerySelect.Order.Add(
-               Довідники.Каси_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
-            Довідники.Валюти_Pointer.GetJoin(Каси_Select.QuerySelect, Довідники.Каси_Const.Валюта,
+                /* Sort */
+                Каси_Select.QuerySelect.Order.Add(
+                 Довідники.Каси_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.Валюти_Pointer.GetJoin(Каси_Select.QuerySelect, Довідники.Каси_Const.Валюта,
                 Каси_Select.QuerySelect.Table, "join_tab_1", "Валюта");
             
                 /* Додаткове поле: Залишок */
@@ -4827,17 +3966,13 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.Каси_Pointer? curr = Каси_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_20_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Код = fields[Каси_Const.Код].ToString() ?? "",
-                            Назва = fields[Каси_Const.Назва].ToString() ?? "",
-                            Валюта = fields["Валюта"].ToString() ?? "",
-                            Залишок = fields["Залишок"].ToString() ?? "",
-                        
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Каси_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Каси_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Валюта", Fields["Валюта"].ToString() ?? "");
+                    row.Fields.Add("Залишок", Fields["Залишок"].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -4848,7 +3983,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_20_2.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -4861,8 +3996,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_20_2? row = (GeneratedCode.Rows.Row_20_2?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -4883,9 +4018,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_20_2? row = (GeneratedCode.Rows.Row_20_2?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -4906,9 +4041,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_20_2? row = (GeneratedCode.Rows.Row_20_2?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -4929,9 +4064,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_20_2? row = (GeneratedCode.Rows.Row_20_2?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Валюта);
+                        label.SetText(row.Fields["Валюта"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
@@ -4959,12 +4094,13 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) Каси_Select.QuerySelect.Where = (List<Where>)where;
 
-            Каси_Select.QuerySelect.Order.Add(
-               Довідники.Каси_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
-            Довідники.Валюти_Pointer.GetJoin(Каси_Select.QuerySelect, Довідники.Каси_Const.Валюта,
+                /* Sort */
+                Каси_Select.QuerySelect.Order.Add(
+                 Довідники.Каси_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.Валюти_Pointer.GetJoin(Каси_Select.QuerySelect, Довідники.Каси_Const.Валюта,
                 Каси_Select.QuerySelect.Table, "join_tab_1", "Валюта");
             
             await Каси_Select.Select();
@@ -4974,16 +4110,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.Каси_Pointer? curr = Каси_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_20_2 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Код = fields[Каси_Const.Код].ToString() ?? "",
-                            Назва = fields[Каси_Const.Назва].ToString() ?? "",
-                            Валюта = fields["Валюта"].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Каси_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Каси_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Валюта", Fields["Валюта"].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -4998,7 +4130,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_21_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -5011,8 +4143,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_21_1? row = (GeneratedCode.Rows.Row_21_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -5033,9 +4165,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_21_1? row = (GeneratedCode.Rows.Row_21_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -5056,9 +4188,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_21_1? row = (GeneratedCode.Rows.Row_21_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -5079,9 +4211,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_21_1? row = (GeneratedCode.Rows.Row_21_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Валюта);
+                        label.SetText(row.Fields["Валюта"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
@@ -5109,12 +4241,13 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) БанківськіРахункиОрганізацій_Select.QuerySelect.Where = (List<Where>)where;
 
-            БанківськіРахункиОрганізацій_Select.QuerySelect.Order.Add(
-               Довідники.БанківськіРахункиОрганізацій_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
-            Довідники.Валюти_Pointer.GetJoin(БанківськіРахункиОрганізацій_Select.QuerySelect, Довідники.БанківськіРахункиОрганізацій_Const.Валюта,
+                /* Sort */
+                БанківськіРахункиОрганізацій_Select.QuerySelect.Order.Add(
+                 Довідники.БанківськіРахункиОрганізацій_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.Валюти_Pointer.GetJoin(БанківськіРахункиОрганізацій_Select.QuerySelect, Довідники.БанківськіРахункиОрганізацій_Const.Валюта,
                 БанківськіРахункиОрганізацій_Select.QuerySelect.Table, "join_tab_1", "Валюта");
             
             await БанківськіРахункиОрганізацій_Select.Select();
@@ -5124,16 +4257,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.БанківськіРахункиОрганізацій_Pointer? curr = БанківськіРахункиОрганізацій_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_21_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Код = fields[БанківськіРахункиОрганізацій_Const.Код].ToString() ?? "",
-                            Назва = fields[БанківськіРахункиОрганізацій_Const.Назва].ToString() ?? "",
-                            Валюта = fields["Валюта"].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[БанківськіРахункиОрганізацій_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[БанківськіРахункиОрганізацій_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Валюта", Fields["Валюта"].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -5148,7 +4277,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_22_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -5161,8 +4290,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_22_1? row = (GeneratedCode.Rows.Row_22_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -5183,9 +4312,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_22_1? row = (GeneratedCode.Rows.Row_22_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -5206,9 +4335,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_22_1? row = (GeneratedCode.Rows.Row_22_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -5229,9 +4358,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_22_1? row = (GeneratedCode.Rows.Row_22_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Контрагент);
+                        label.SetText(row.Fields["Контрагент"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
@@ -5252,9 +4381,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_22_1? row = (GeneratedCode.Rows.Row_22_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.ТипДоговору);
+                        label.SetText(row.Fields["ТипДоговору"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Тип", factory);
@@ -5283,12 +4412,13 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) ДоговориКонтрагентів_Select.QuerySelect.Where = (List<Where>)where;
 
-            ДоговориКонтрагентів_Select.QuerySelect.Order.Add(
-               Довідники.ДоговориКонтрагентів_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
-            Довідники.Контрагенти_Pointer.GetJoin(ДоговориКонтрагентів_Select.QuerySelect, Довідники.ДоговориКонтрагентів_Const.Контрагент,
+                /* Sort */
+                ДоговориКонтрагентів_Select.QuerySelect.Order.Add(
+                 Довідники.ДоговориКонтрагентів_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.Контрагенти_Pointer.GetJoin(ДоговориКонтрагентів_Select.QuerySelect, Довідники.ДоговориКонтрагентів_Const.Контрагент,
                 ДоговориКонтрагентів_Select.QuerySelect.Table, "join_tab_1", "Контрагент");
             
             await ДоговориКонтрагентів_Select.Select();
@@ -5298,18 +4428,13 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.ДоговориКонтрагентів_Pointer? curr = ДоговориКонтрагентів_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_22_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Код = fields[ДоговориКонтрагентів_Const.Код].ToString() ?? "",
-                            Назва = fields[ДоговориКонтрагентів_Const.Назва].ToString() ?? "",
-                            Контрагент = fields["Контрагент"].ToString() ?? "",
-                            ТипДоговору = Перелічення.ПсевдонімиПерелічення.ТипДоговорів_Alias((
-                              (Перелічення.ТипДоговорів)(fields[ДоговориКонтрагентів_Const.ТипДоговору] != DBNull.Value ? fields[ДоговориКонтрагентів_Const.ТипДоговору] : 0)) ),
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[ДоговориКонтрагентів_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[ДоговориКонтрагентів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Контрагент", Fields["Контрагент"].ToString() ?? "");
+                    row.Fields.Add("ТипДоговору", Перелічення.ПсевдонімиПерелічення.ТипДоговорів_Alias((Перелічення.ТипДоговорів)(Fields[ДоговориКонтрагентів_Const.ТипДоговору] != DBNull.Value ? Fields[ДоговориКонтрагентів_Const.ТипДоговору] : 0) ));
+                    
                     store.Append(row);
                 }
             }
@@ -5320,7 +4445,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_22_2.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -5333,8 +4458,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_22_2? row = (GeneratedCode.Rows.Row_22_2?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -5355,9 +4480,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_22_2? row = (GeneratedCode.Rows.Row_22_2?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -5378,9 +4503,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_22_2? row = (GeneratedCode.Rows.Row_22_2?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Контрагент);
+                        label.SetText(row.Fields["Контрагент"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
@@ -5401,9 +4526,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_22_2? row = (GeneratedCode.Rows.Row_22_2?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.ТипДоговору);
+                        label.SetText(row.Fields["ТипДоговору"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Тип", factory);
@@ -5431,12 +4556,13 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) ДоговориКонтрагентів_Select.QuerySelect.Where = (List<Where>)where;
 
-            ДоговориКонтрагентів_Select.QuerySelect.Order.Add(
-               Довідники.ДоговориКонтрагентів_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
-            Довідники.Контрагенти_Pointer.GetJoin(ДоговориКонтрагентів_Select.QuerySelect, Довідники.ДоговориКонтрагентів_Const.Контрагент,
+                /* Sort */
+                ДоговориКонтрагентів_Select.QuerySelect.Order.Add(
+                 Довідники.ДоговориКонтрагентів_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.Контрагенти_Pointer.GetJoin(ДоговориКонтрагентів_Select.QuerySelect, Довідники.ДоговориКонтрагентів_Const.Контрагент,
                 ДоговориКонтрагентів_Select.QuerySelect.Table, "join_tab_1", "Контрагент");
             
             await ДоговориКонтрагентів_Select.Select();
@@ -5446,17 +4572,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.ДоговориКонтрагентів_Pointer? curr = ДоговориКонтрагентів_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_22_2 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Назва = fields[ДоговориКонтрагентів_Const.Назва].ToString() ?? "",
-                            Контрагент = fields["Контрагент"].ToString() ?? "",
-                            ТипДоговору = Перелічення.ПсевдонімиПерелічення.ТипДоговорів_Alias((
-                              (Перелічення.ТипДоговорів)(fields[ДоговориКонтрагентів_Const.ТипДоговору] != DBNull.Value ? fields[ДоговориКонтрагентів_Const.ТипДоговору] : 0)) ),
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[ДоговориКонтрагентів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Контрагент", Fields["Контрагент"].ToString() ?? "");
+                    row.Fields.Add("ТипДоговору", Перелічення.ПсевдонімиПерелічення.ТипДоговорів_Alias((Перелічення.ТипДоговорів)(Fields[ДоговориКонтрагентів_Const.ТипДоговору] != DBNull.Value ? Fields[ДоговориКонтрагентів_Const.ТипДоговору] : 0) ));
+                    
                     store.Append(row);
                 }
             }
@@ -5471,7 +4592,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_23_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -5484,8 +4605,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_23_1? row = (GeneratedCode.Rows.Row_23_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -5506,9 +4627,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_23_1? row = (GeneratedCode.Rows.Row_23_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -5529,9 +4650,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_23_1? row = (GeneratedCode.Rows.Row_23_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -5552,9 +4673,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_23_1? row = (GeneratedCode.Rows.Row_23_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Валюта);
+                        label.SetText(row.Fields["Валюта"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
@@ -5582,12 +4703,13 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) БанківськіРахункиКонтрагентів_Select.QuerySelect.Where = (List<Where>)where;
 
-            БанківськіРахункиКонтрагентів_Select.QuerySelect.Order.Add(
-               Довідники.БанківськіРахункиКонтрагентів_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
-            Довідники.Валюти_Pointer.GetJoin(БанківськіРахункиКонтрагентів_Select.QuerySelect, Довідники.БанківськіРахункиКонтрагентів_Const.Валюта,
+                /* Sort */
+                БанківськіРахункиКонтрагентів_Select.QuerySelect.Order.Add(
+                 Довідники.БанківськіРахункиКонтрагентів_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.Валюти_Pointer.GetJoin(БанківськіРахункиКонтрагентів_Select.QuerySelect, Довідники.БанківськіРахункиКонтрагентів_Const.Валюта,
                 БанківськіРахункиКонтрагентів_Select.QuerySelect.Table, "join_tab_1", "Валюта");
             
             await БанківськіРахункиКонтрагентів_Select.Select();
@@ -5597,16 +4719,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.БанківськіРахункиКонтрагентів_Pointer? curr = БанківськіРахункиКонтрагентів_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_23_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Код = fields[БанківськіРахункиКонтрагентів_Const.Код].ToString() ?? "",
-                            Назва = fields[БанківськіРахункиКонтрагентів_Const.Назва].ToString() ?? "",
-                            Валюта = fields["Валюта"].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[БанківськіРахункиКонтрагентів_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[БанківськіРахункиКонтрагентів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Валюта", Fields["Валюта"].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -5621,7 +4739,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_24_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -5634,8 +4752,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_24_1? row = (GeneratedCode.Rows.Row_24_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -5656,9 +4774,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_24_1? row = (GeneratedCode.Rows.Row_24_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -5679,9 +4797,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_24_1? row = (GeneratedCode.Rows.Row_24_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -5702,9 +4820,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_24_1? row = (GeneratedCode.Rows.Row_24_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.КореспондуючийРахунок);
+                        label.SetText(row.Fields["КореспондуючийРахунок"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("КореспондуючийРахунок", factory);
@@ -5725,9 +4843,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_24_1? row = (GeneratedCode.Rows.Row_24_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.ВидРухуКоштів);
+                        label.SetText(row.Fields["ВидРухуКоштів"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("ВидРухуКоштів", factory);
@@ -5757,11 +4875,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) СтаттяРухуКоштів_Select.QuerySelect.Where = (List<Where>)where;
 
-            СтаттяРухуКоштів_Select.QuerySelect.Order.Add(
-               Довідники.СтаттяРухуКоштів_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
+                /* Sort */
+                СтаттяРухуКоштів_Select.QuerySelect.Order.Add(
+                 Довідники.СтаттяРухуКоштів_Const.Назва, SelectOrder.ASC);
             
             await СтаттяРухуКоштів_Select.Select();
             store.RemoveAll();
@@ -5770,18 +4887,13 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.СтаттяРухуКоштів_Pointer? curr = СтаттяРухуКоштів_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_24_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Назва = fields[СтаттяРухуКоштів_Const.Назва].ToString() ?? "",
-                            Код = fields[СтаттяРухуКоштів_Const.Код].ToString() ?? "",
-                            КореспондуючийРахунок = fields[СтаттяРухуКоштів_Const.КореспондуючийРахунок].ToString() ?? "",
-                            ВидРухуКоштів = Перелічення.ПсевдонімиПерелічення.ВидиРухуКоштів_Alias((
-                              (Перелічення.ВидиРухуКоштів)(fields[СтаттяРухуКоштів_Const.ВидРухуКоштів] != DBNull.Value ? fields[СтаттяРухуКоштів_Const.ВидРухуКоштів] : 0)) ),
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[СтаттяРухуКоштів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Код", Fields[СтаттяРухуКоштів_Const.Код].ToString() ?? "");
+                    row.Fields.Add("КореспондуючийРахунок", Fields[СтаттяРухуКоштів_Const.КореспондуючийРахунок].ToString() ?? "");
+                    row.Fields.Add("ВидРухуКоштів", Перелічення.ПсевдонімиПерелічення.ВидиРухуКоштів_Alias((Перелічення.ВидиРухуКоштів)(Fields[СтаттяРухуКоштів_Const.ВидРухуКоштів] != DBNull.Value ? Fields[СтаттяРухуКоштів_Const.ВидРухуКоштів] : 0) ));
+                    
                     store.Append(row);
                 }
             }
@@ -5796,7 +4908,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_25_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -5809,8 +4921,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_25_1? row = (GeneratedCode.Rows.Row_25_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -5831,9 +4943,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_25_1? row = (GeneratedCode.Rows.Row_25_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Номер);
+                        label.SetText(row.Fields["Номер"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
@@ -5860,11 +4972,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) СеріїНоменклатури_Select.QuerySelect.Where = (List<Where>)where;
 
-            СеріїНоменклатури_Select.QuerySelect.Order.Add(
-               Довідники.СеріїНоменклатури_Const.Номер, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
+                /* Sort */
+                СеріїНоменклатури_Select.QuerySelect.Order.Add(
+                 Довідники.СеріїНоменклатури_Const.Номер, SelectOrder.ASC);
             
             await СеріїНоменклатури_Select.Select();
             store.RemoveAll();
@@ -5873,14 +4984,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.СеріїНоменклатури_Pointer? curr = СеріїНоменклатури_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_25_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Номер = fields[СеріїНоменклатури_Const.Номер].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Номер", Fields[СеріїНоменклатури_Const.Номер].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -5895,7 +5002,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_26_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -5908,8 +5015,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_26_1? row = (GeneratedCode.Rows.Row_26_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -5930,9 +5037,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_26_1? row = (GeneratedCode.Rows.Row_26_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -5953,9 +5060,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_26_1? row = (GeneratedCode.Rows.Row_26_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Дата);
+                        label.SetText(row.Fields["Дата"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
@@ -5976,9 +5083,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_26_1? row = (GeneratedCode.Rows.Row_26_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.ТипДокументу);
+                        label.SetText(row.Fields["ТипДокументу"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("ТипДокументу", factory);
@@ -5999,9 +5106,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_26_1? row = (GeneratedCode.Rows.Row_26_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.ПоступленняТоварівТаПослуг);
+                        label.SetText(row.Fields["ПоступленняТоварівТаПослуг"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("ПоступленняТоварівТаПослуг", factory);
@@ -6022,9 +5129,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_26_1? row = (GeneratedCode.Rows.Row_26_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.ВведенняЗалишків);
+                        label.SetText(row.Fields["ВведенняЗалишків"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("ВведенняЗалишків", factory);
@@ -6045,9 +5152,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_26_1? row = (GeneratedCode.Rows.Row_26_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Залишки);
+                        label.SetText(row.Fields["Залишки"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Залишки", factory);
@@ -6076,14 +5183,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) ПартіяТоварівКомпозит_Select.QuerySelect.Where = (List<Where>)where;
 
-            ПартіяТоварівКомпозит_Select.QuerySelect.Order.Add(
-               Довідники.ПартіяТоварівКомпозит_Const.Дата, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
-            Документи.ПоступленняТоварівТаПослуг_Pointer.GetJoin(ПартіяТоварівКомпозит_Select.QuerySelect, Довідники.ПартіяТоварівКомпозит_Const.ПоступленняТоварівТаПослуг,
+                /* Sort */
+                ПартіяТоварівКомпозит_Select.QuerySelect.Order.Add(
+                 Довідники.ПартіяТоварівКомпозит_Const.Дата, SelectOrder.ASC);
+            
+                /* Join */
+                Документи.ПоступленняТоварівТаПослуг_Pointer.GetJoin(ПартіяТоварівКомпозит_Select.QuerySelect, Довідники.ПартіяТоварівКомпозит_Const.ПоступленняТоварівТаПослуг,
                 ПартіяТоварівКомпозит_Select.QuerySelect.Table, "join_tab_1", "ПоступленняТоварівТаПослуг");
-            Документи.ВведенняЗалишків_Pointer.GetJoin(ПартіяТоварівКомпозит_Select.QuerySelect, Довідники.ПартіяТоварівКомпозит_Const.ВведенняЗалишків,
+            
+                /* Join */
+                Документи.ВведенняЗалишків_Pointer.GetJoin(ПартіяТоварівКомпозит_Select.QuerySelect, Довідники.ПартіяТоварівКомпозит_Const.ВведенняЗалишків,
                 ПартіяТоварівКомпозит_Select.QuerySelect.Table, "join_tab_2", "ВведенняЗалишків");
             
                 /* Додаткове поле: Залишки */
@@ -6097,20 +5207,15 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.ПартіяТоварівКомпозит_Pointer? curr = ПартіяТоварівКомпозит_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_26_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Назва = fields[ПартіяТоварівКомпозит_Const.Назва].ToString() ?? "",
-                            Дата = fields[ПартіяТоварівКомпозит_Const.Дата].ToString() ?? "",
-                            ТипДокументу = Перелічення.ПсевдонімиПерелічення.ТипДокументуПартіяТоварівКомпозит_Alias((
-                              (Перелічення.ТипДокументуПартіяТоварівКомпозит)(fields[ПартіяТоварівКомпозит_Const.ТипДокументу] != DBNull.Value ? fields[ПартіяТоварівКомпозит_Const.ТипДокументу] : 0)) ),
-                            ПоступленняТоварівТаПослуг = fields["ПоступленняТоварівТаПослуг"].ToString() ?? "",
-                            ВведенняЗалишків = fields["ВведенняЗалишків"].ToString() ?? "",
-                            Залишки = fields["Залишки"].ToString() ?? "",
-                        
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[ПартіяТоварівКомпозит_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Дата", Fields[ПартіяТоварівКомпозит_Const.Дата].ToString() ?? "");
+                    row.Fields.Add("ТипДокументу", Перелічення.ПсевдонімиПерелічення.ТипДокументуПартіяТоварівКомпозит_Alias((Перелічення.ТипДокументуПартіяТоварівКомпозит)(Fields[ПартіяТоварівКомпозит_Const.ТипДокументу] != DBNull.Value ? Fields[ПартіяТоварівКомпозит_Const.ТипДокументу] : 0) ));
+                    row.Fields.Add("ПоступленняТоварівТаПослуг", Fields["ПоступленняТоварівТаПослуг"].ToString() ?? "");
+                    row.Fields.Add("ВведенняЗалишків", Fields["ВведенняЗалишків"].ToString() ?? "");
+                    row.Fields.Add("Залишки", Fields["Залишки"].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -6121,7 +5226,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_26_2.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -6134,8 +5239,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_26_2? row = (GeneratedCode.Rows.Row_26_2?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -6156,9 +5261,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_26_2? row = (GeneratedCode.Rows.Row_26_2?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -6179,9 +5284,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_26_2? row = (GeneratedCode.Rows.Row_26_2?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Дата);
+                        label.SetText(row.Fields["Дата"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
@@ -6209,11 +5314,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) ПартіяТоварівКомпозит_Select.QuerySelect.Where = (List<Where>)where;
 
-            ПартіяТоварівКомпозит_Select.QuerySelect.Order.Add(
-               Довідники.ПартіяТоварівКомпозит_Const.Дата, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
+                /* Sort */
+                ПартіяТоварівКомпозит_Select.QuerySelect.Order.Add(
+                 Довідники.ПартіяТоварівКомпозит_Const.Дата, SelectOrder.ASC);
             
             await ПартіяТоварівКомпозит_Select.Select();
             store.RemoveAll();
@@ -6222,15 +5326,11 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.ПартіяТоварівКомпозит_Pointer? curr = ПартіяТоварівКомпозит_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_26_2 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Назва = fields[ПартіяТоварівКомпозит_Const.Назва].ToString() ?? "",
-                            Дата = fields[ПартіяТоварівКомпозит_Const.Дата].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[ПартіяТоварівКомпозит_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Дата", Fields[ПартіяТоварівКомпозит_Const.Дата].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -6245,7 +5345,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_27_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -6258,8 +5358,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_27_1? row = (GeneratedCode.Rows.Row_27_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -6280,9 +5380,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_27_1? row = (GeneratedCode.Rows.Row_27_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -6303,9 +5403,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_27_1? row = (GeneratedCode.Rows.Row_27_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -6333,11 +5433,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) ВидиЗапасів_Select.QuerySelect.Where = (List<Where>)where;
 
-            ВидиЗапасів_Select.QuerySelect.Order.Add(
-               Довідники.ВидиЗапасів_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
+                /* Sort */
+                ВидиЗапасів_Select.QuerySelect.Order.Add(
+                 Довідники.ВидиЗапасів_Const.Назва, SelectOrder.ASC);
             
             await ВидиЗапасів_Select.Select();
             store.RemoveAll();
@@ -6346,15 +5445,11 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.ВидиЗапасів_Pointer? curr = ВидиЗапасів_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_27_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Код = fields[ВидиЗапасів_Const.Код].ToString() ?? "",
-                            Назва = fields[ВидиЗапасів_Const.Назва].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[ВидиЗапасів_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[ВидиЗапасів_Const.Назва].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -6369,7 +5464,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_28_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -6382,8 +5477,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_28_1? row = (GeneratedCode.Rows.Row_28_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -6404,9 +5499,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_28_1? row = (GeneratedCode.Rows.Row_28_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -6427,9 +5522,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_28_1? row = (GeneratedCode.Rows.Row_28_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -6450,9 +5545,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_28_1? row = (GeneratedCode.Rows.Row_28_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.ПовнаНазва);
+                        label.SetText(row.Fields["ПовнаНазва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Повна назва", factory);
@@ -6473,9 +5568,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_28_1? row = (GeneratedCode.Rows.Row_28_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.КодМФО);
+                        label.SetText(row.Fields["КодМФО"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код МФО", factory);
@@ -6496,9 +5591,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_28_1? row = (GeneratedCode.Rows.Row_28_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.КодЄДРПОУ);
+                        label.SetText(row.Fields["КодЄДРПОУ"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("ЄДРПОУ", factory);
@@ -6519,9 +5614,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_28_1? row = (GeneratedCode.Rows.Row_28_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.НомерЛіцензії);
+                        label.SetText(row.Fields["НомерЛіцензії"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Номер ліцензії", factory);
@@ -6542,9 +5637,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_28_1? row = (GeneratedCode.Rows.Row_28_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.ДатаЛіцензії);
+                        label.SetText(row.Fields["ДатаЛіцензії"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Дата ліцензії", factory);
@@ -6565,9 +5660,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_28_1? row = (GeneratedCode.Rows.Row_28_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Статус);
+                        label.SetText(row.Fields["Статус"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Статус", factory);
@@ -6588,9 +5683,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_28_1? row = (GeneratedCode.Rows.Row_28_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.ТипНаселеногоПункту);
+                        label.SetText(row.Fields["ТипНаселеногоПункту"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Тип населеного пункту", factory);
@@ -6611,9 +5706,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_28_1? row = (GeneratedCode.Rows.Row_28_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.УнікальнийКодБанку);
+                        label.SetText(row.Fields["УнікальнийКодБанку"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Унікальний код", factory);
@@ -6634,9 +5729,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_28_1? row = (GeneratedCode.Rows.Row_28_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.ПоштовийІндекс);
+                        label.SetText(row.Fields["ПоштовийІндекс"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Поштовий індекс", factory);
@@ -6657,9 +5752,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_28_1? row = (GeneratedCode.Rows.Row_28_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.НазваНаселеногоПункту);
+                        label.SetText(row.Fields["НазваНаселеногоПункту"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Населений пункт", factory);
@@ -6680,9 +5775,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_28_1? row = (GeneratedCode.Rows.Row_28_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Адреса);
+                        label.SetText(row.Fields["Адреса"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Адреса", factory);
@@ -6703,9 +5798,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_28_1? row = (GeneratedCode.Rows.Row_28_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.НомерТелефону);
+                        label.SetText(row.Fields["НомерТелефону"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Телефон", factory);
@@ -6726,9 +5821,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_28_1? row = (GeneratedCode.Rows.Row_28_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.ДатаВідкриттяУстанови);
+                        label.SetText(row.Fields["ДатаВідкриттяУстанови"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Дата відкриття установи", factory);
@@ -6749,9 +5844,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_28_1? row = (GeneratedCode.Rows.Row_28_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.ДатаЗакриттяУстанови);
+                        label.SetText(row.Fields["ДатаЗакриттяУстанови"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Дата закриття установи", factory);
@@ -6772,9 +5867,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_28_1? row = (GeneratedCode.Rows.Row_28_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.КодНБУ);
+                        label.SetText(row.Fields["КодНБУ"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код НБУ", factory);
@@ -6795,9 +5890,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_28_1? row = (GeneratedCode.Rows.Row_28_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.КодСтатусу);
+                        label.SetText(row.Fields["КодСтатусу"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("КодСтатусу", factory);
@@ -6818,9 +5913,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_28_1? row = (GeneratedCode.Rows.Row_28_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.ДатаЗапису);
+                        label.SetText(row.Fields["ДатаЗапису"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("ДатаЗапису", factory);
@@ -6865,11 +5960,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) Банки_Select.QuerySelect.Where = (List<Where>)where;
 
-            Банки_Select.QuerySelect.Order.Add(
-               Довідники.Банки_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
+                /* Sort */
+                Банки_Select.QuerySelect.Order.Add(
+                 Довідники.Банки_Const.Назва, SelectOrder.ASC);
             
             await Банки_Select.Select();
             store.RemoveAll();
@@ -6878,32 +5972,28 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.Банки_Pointer? curr = Банки_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_28_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Код = fields[Банки_Const.Код].ToString() ?? "",
-                            Назва = fields[Банки_Const.Назва].ToString() ?? "",
-                            ПовнаНазва = fields[Банки_Const.ПовнаНазва].ToString() ?? "",
-                            КодМФО = fields[Банки_Const.КодМФО].ToString() ?? "",
-                            КодЄДРПОУ = fields[Банки_Const.КодЄДРПОУ].ToString() ?? "",
-                            НомерЛіцензії = fields[Банки_Const.НомерЛіцензії].ToString() ?? "",
-                            ДатаЛіцензії = fields[Банки_Const.ДатаЛіцензії].ToString() ?? "",
-                            Статус = fields[Банки_Const.Статус].ToString() ?? "",
-                            ТипНаселеногоПункту = fields[Банки_Const.ТипНаселеногоПункту].ToString() ?? "",
-                            УнікальнийКодБанку = fields[Банки_Const.УнікальнийКодБанку].ToString() ?? "",
-                            ПоштовийІндекс = fields[Банки_Const.ПоштовийІндекс].ToString() ?? "",
-                            НазваНаселеногоПункту = fields[Банки_Const.НазваНаселеногоПункту].ToString() ?? "",
-                            Адреса = fields[Банки_Const.Адреса].ToString() ?? "",
-                            НомерТелефону = fields[Банки_Const.НомерТелефону].ToString() ?? "",
-                            ДатаВідкриттяУстанови = fields[Банки_Const.ДатаВідкриттяУстанови].ToString() ?? "",
-                            ДатаЗакриттяУстанови = fields[Банки_Const.ДатаЗакриттяУстанови].ToString() ?? "",
-                            КодНБУ = fields[Банки_Const.КодНБУ].ToString() ?? "",
-                            КодСтатусу = fields[Банки_Const.КодСтатусу].ToString() ?? "",
-                            ДатаЗапису = fields[Банки_Const.ДатаЗапису].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Банки_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Банки_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("ПовнаНазва", Fields[Банки_Const.ПовнаНазва].ToString() ?? "");
+                    row.Fields.Add("КодМФО", Fields[Банки_Const.КодМФО].ToString() ?? "");
+                    row.Fields.Add("КодЄДРПОУ", Fields[Банки_Const.КодЄДРПОУ].ToString() ?? "");
+                    row.Fields.Add("НомерЛіцензії", Fields[Банки_Const.НомерЛіцензії].ToString() ?? "");
+                    row.Fields.Add("ДатаЛіцензії", Fields[Банки_Const.ДатаЛіцензії].ToString() ?? "");
+                    row.Fields.Add("Статус", Fields[Банки_Const.Статус].ToString() ?? "");
+                    row.Fields.Add("ТипНаселеногоПункту", Fields[Банки_Const.ТипНаселеногоПункту].ToString() ?? "");
+                    row.Fields.Add("УнікальнийКодБанку", Fields[Банки_Const.УнікальнийКодБанку].ToString() ?? "");
+                    row.Fields.Add("ПоштовийІндекс", Fields[Банки_Const.ПоштовийІндекс].ToString() ?? "");
+                    row.Fields.Add("НазваНаселеногоПункту", Fields[Банки_Const.НазваНаселеногоПункту].ToString() ?? "");
+                    row.Fields.Add("Адреса", Fields[Банки_Const.Адреса].ToString() ?? "");
+                    row.Fields.Add("НомерТелефону", Fields[Банки_Const.НомерТелефону].ToString() ?? "");
+                    row.Fields.Add("ДатаВідкриттяУстанови", Fields[Банки_Const.ДатаВідкриттяУстанови].ToString() ?? "");
+                    row.Fields.Add("ДатаЗакриттяУстанови", Fields[Банки_Const.ДатаЗакриттяУстанови].ToString() ?? "");
+                    row.Fields.Add("КодНБУ", Fields[Банки_Const.КодНБУ].ToString() ?? "");
+                    row.Fields.Add("КодСтатусу", Fields[Банки_Const.КодСтатусу].ToString() ?? "");
+                    row.Fields.Add("ДатаЗапису", Fields[Банки_Const.ДатаЗапису].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -6914,7 +6004,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_28_2.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -6927,8 +6017,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_28_2? row = (GeneratedCode.Rows.Row_28_2?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -6949,9 +6039,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_28_2? row = (GeneratedCode.Rows.Row_28_2?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -6972,9 +6062,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_28_2? row = (GeneratedCode.Rows.Row_28_2?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -7002,11 +6092,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) Банки_Select.QuerySelect.Where = (List<Where>)where;
 
-            Банки_Select.QuerySelect.Order.Add(
-               Довідники.Банки_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
+                /* Sort */
+                Банки_Select.QuerySelect.Order.Add(
+                 Довідники.Банки_Const.Назва, SelectOrder.ASC);
             
             await Банки_Select.Select();
             store.RemoveAll();
@@ -7015,15 +6104,11 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.Банки_Pointer? curr = Банки_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_28_2 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Код = fields[Банки_Const.Код].ToString() ?? "",
-                            Назва = fields[Банки_Const.Назва].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Банки_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Банки_Const.Назва].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -7038,7 +6123,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_29_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -7051,8 +6136,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_29_1? row = (GeneratedCode.Rows.Row_29_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -7073,9 +6158,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_29_1? row = (GeneratedCode.Rows.Row_29_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -7096,9 +6181,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_29_1? row = (GeneratedCode.Rows.Row_29_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Склад);
+                        label.SetText(row.Fields["Склад"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
@@ -7119,9 +6204,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_29_1? row = (GeneratedCode.Rows.Row_29_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.НалаштуванняАдресногоЗберігання);
+                        label.SetText(row.Fields["НалаштуванняАдресногоЗберігання"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Налаштування", factory);
@@ -7149,12 +6234,13 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) СкладськіПриміщення_Select.QuerySelect.Where = (List<Where>)where;
 
-            СкладськіПриміщення_Select.QuerySelect.Order.Add(
-               Довідники.СкладськіПриміщення_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
-            Довідники.Склади_Pointer.GetJoin(СкладськіПриміщення_Select.QuerySelect, Довідники.СкладськіПриміщення_Const.Склад,
+                /* Sort */
+                СкладськіПриміщення_Select.QuerySelect.Order.Add(
+                 Довідники.СкладськіПриміщення_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.Склади_Pointer.GetJoin(СкладськіПриміщення_Select.QuerySelect, Довідники.СкладськіПриміщення_Const.Склад,
                 СкладськіПриміщення_Select.QuerySelect.Table, "join_tab_1", "Склад");
             
             await СкладськіПриміщення_Select.Select();
@@ -7164,17 +6250,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.СкладськіПриміщення_Pointer? curr = СкладськіПриміщення_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_29_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Назва = fields[СкладськіПриміщення_Const.Назва].ToString() ?? "",
-                            Склад = fields["Склад"].ToString() ?? "",
-                            НалаштуванняАдресногоЗберігання = Перелічення.ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_Alias((
-                              (Перелічення.НалаштуванняАдресногоЗберігання)(fields[СкладськіПриміщення_Const.НалаштуванняАдресногоЗберігання] != DBNull.Value ? fields[СкладськіПриміщення_Const.НалаштуванняАдресногоЗберігання] : 0)) ),
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[СкладськіПриміщення_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Склад", Fields["Склад"].ToString() ?? "");
+                    row.Fields.Add("НалаштуванняАдресногоЗберігання", Перелічення.ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_Alias((Перелічення.НалаштуванняАдресногоЗберігання)(Fields[СкладськіПриміщення_Const.НалаштуванняАдресногоЗберігання] != DBNull.Value ? Fields[СкладськіПриміщення_Const.НалаштуванняАдресногоЗберігання] : 0) ));
+                    
                     store.Append(row);
                 }
             }
@@ -7189,7 +6270,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_30_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -7202,8 +6283,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_30_1? row = (GeneratedCode.Rows.Row_30_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -7224,9 +6305,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_30_1? row = (GeneratedCode.Rows.Row_30_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -7247,9 +6328,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_30_1? row = (GeneratedCode.Rows.Row_30_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Приміщення);
+                        label.SetText(row.Fields["Приміщення"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Приміщення", factory);
@@ -7270,9 +6351,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_30_1? row = (GeneratedCode.Rows.Row_30_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Лінія);
+                        label.SetText(row.Fields["Лінія"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Лінія", factory);
@@ -7293,9 +6374,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_30_1? row = (GeneratedCode.Rows.Row_30_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Позиція);
+                        label.SetText(row.Fields["Позиція"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Позиція", factory);
@@ -7316,9 +6397,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_30_1? row = (GeneratedCode.Rows.Row_30_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Стелаж);
+                        label.SetText(row.Fields["Стелаж"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Стелаж", factory);
@@ -7339,9 +6420,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_30_1? row = (GeneratedCode.Rows.Row_30_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Ярус);
+                        label.SetText(row.Fields["Ярус"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Ярус", factory);
@@ -7362,9 +6443,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_30_1? row = (GeneratedCode.Rows.Row_30_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.ТипСкладськоїКомірки);
+                        label.SetText(row.Fields["ТипСкладськоїКомірки"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Тип комірки", factory);
@@ -7385,9 +6466,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_30_1? row = (GeneratedCode.Rows.Row_30_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Типорозмір);
+                        label.SetText(row.Fields["Типорозмір"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Типорозмір", factory);
@@ -7408,9 +6489,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_30_1? row = (GeneratedCode.Rows.Row_30_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Папка);
+                        label.SetText(row.Fields["Папка"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Папка", factory);
@@ -7442,16 +6523,21 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) СкладськіКомірки_Select.QuerySelect.Where = (List<Where>)where;
 
-            СкладськіКомірки_Select.QuerySelect.Order.Add(
-               Довідники.СкладськіКомірки_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
-            Довідники.СкладськіПриміщення_Pointer.GetJoin(СкладськіКомірки_Select.QuerySelect, Довідники.СкладськіКомірки_Const.Приміщення,
+                /* Sort */
+                СкладськіКомірки_Select.QuerySelect.Order.Add(
+                 Довідники.СкладськіКомірки_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.СкладськіПриміщення_Pointer.GetJoin(СкладськіКомірки_Select.QuerySelect, Довідники.СкладськіКомірки_Const.Приміщення,
                 СкладськіКомірки_Select.QuerySelect.Table, "join_tab_1", "Приміщення");
-            Довідники.ТипорозміриКомірок_Pointer.GetJoin(СкладськіКомірки_Select.QuerySelect, Довідники.СкладськіКомірки_Const.Типорозмір,
+            
+                /* Join */
+                Довідники.ТипорозміриКомірок_Pointer.GetJoin(СкладськіКомірки_Select.QuerySelect, Довідники.СкладськіКомірки_Const.Типорозмір,
                 СкладськіКомірки_Select.QuerySelect.Table, "join_tab_2", "Типорозмір");
-            Довідники.СкладськіКомірки_Папки_Pointer.GetJoin(СкладськіКомірки_Select.QuerySelect, Довідники.СкладськіКомірки_Const.Папка,
+            
+                /* Join */
+                Довідники.СкладськіКомірки_Папки_Pointer.GetJoin(СкладськіКомірки_Select.QuerySelect, Довідники.СкладськіКомірки_Const.Папка,
                 СкладськіКомірки_Select.QuerySelect.Table, "join_tab_3", "Папка");
             
             await СкладськіКомірки_Select.Select();
@@ -7461,23 +6547,18 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.СкладськіКомірки_Pointer? curr = СкладськіКомірки_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_30_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Назва = fields[СкладськіКомірки_Const.Назва].ToString() ?? "",
-                            Приміщення = fields["Приміщення"].ToString() ?? "",
-                            Лінія = fields[СкладськіКомірки_Const.Лінія].ToString() ?? "",
-                            Позиція = fields[СкладськіКомірки_Const.Позиція].ToString() ?? "",
-                            Стелаж = fields[СкладськіКомірки_Const.Стелаж].ToString() ?? "",
-                            Ярус = fields[СкладськіКомірки_Const.Ярус].ToString() ?? "",
-                            ТипСкладськоїКомірки = Перелічення.ПсевдонімиПерелічення.ТипиСкладськихКомірок_Alias((
-                              (Перелічення.ТипиСкладськихКомірок)(fields[СкладськіКомірки_Const.ТипСкладськоїКомірки] != DBNull.Value ? fields[СкладськіКомірки_Const.ТипСкладськоїКомірки] : 0)) ),
-                            Типорозмір = fields["Типорозмір"].ToString() ?? "",
-                            Папка = fields["Папка"].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[СкладськіКомірки_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Приміщення", Fields["Приміщення"].ToString() ?? "");
+                    row.Fields.Add("Лінія", Fields[СкладськіКомірки_Const.Лінія].ToString() ?? "");
+                    row.Fields.Add("Позиція", Fields[СкладськіКомірки_Const.Позиція].ToString() ?? "");
+                    row.Fields.Add("Стелаж", Fields[СкладськіКомірки_Const.Стелаж].ToString() ?? "");
+                    row.Fields.Add("Ярус", Fields[СкладськіКомірки_Const.Ярус].ToString() ?? "");
+                    row.Fields.Add("ТипСкладськоїКомірки", Перелічення.ПсевдонімиПерелічення.ТипиСкладськихКомірок_Alias((Перелічення.ТипиСкладськихКомірок)(Fields[СкладськіКомірки_Const.ТипСкладськоїКомірки] != DBNull.Value ? Fields[СкладськіКомірки_Const.ТипСкладськоїКомірки] : 0) ));
+                    row.Fields.Add("Типорозмір", Fields["Типорозмір"].ToString() ?? "");
+                    row.Fields.Add("Папка", Fields["Папка"].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -7488,7 +6569,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_30_2.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -7501,8 +6582,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_30_2? row = (GeneratedCode.Rows.Row_30_2?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -7523,9 +6604,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_30_2? row = (GeneratedCode.Rows.Row_30_2?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -7546,9 +6627,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_30_2? row = (GeneratedCode.Rows.Row_30_2?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Приміщення);
+                        label.SetText(row.Fields["Приміщення"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Приміщення", factory);
@@ -7575,12 +6656,13 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) СкладськіКомірки_Select.QuerySelect.Where = (List<Where>)where;
 
-            СкладськіКомірки_Select.QuerySelect.Order.Add(
-               Довідники.СкладськіКомірки_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
-            Довідники.СкладськіПриміщення_Pointer.GetJoin(СкладськіКомірки_Select.QuerySelect, Довідники.СкладськіКомірки_Const.Приміщення,
+                /* Sort */
+                СкладськіКомірки_Select.QuerySelect.Order.Add(
+                 Довідники.СкладськіКомірки_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.СкладськіПриміщення_Pointer.GetJoin(СкладськіКомірки_Select.QuerySelect, Довідники.СкладськіКомірки_Const.Приміщення,
                 СкладськіКомірки_Select.QuerySelect.Table, "join_tab_1", "Приміщення");
             
             await СкладськіКомірки_Select.Select();
@@ -7590,15 +6672,11 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.СкладськіКомірки_Pointer? curr = СкладськіКомірки_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_30_2 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Назва = fields[СкладськіКомірки_Const.Назва].ToString() ?? "",
-                            Приміщення = fields["Приміщення"].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[СкладськіКомірки_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Приміщення", Fields["Приміщення"].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -7613,7 +6691,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_31_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -7626,8 +6704,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_31_1? row = (GeneratedCode.Rows.Row_31_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -7648,9 +6726,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_31_1? row = (GeneratedCode.Rows.Row_31_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -7671,9 +6749,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_31_1? row = (GeneratedCode.Rows.Row_31_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Приміщення);
+                        label.SetText(row.Fields["Приміщення"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Приміщення", factory);
@@ -7700,12 +6778,13 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) ОбластьЗберігання_Select.QuerySelect.Where = (List<Where>)where;
 
-            ОбластьЗберігання_Select.QuerySelect.Order.Add(
-               Довідники.ОбластьЗберігання_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
-            Довідники.СкладськіПриміщення_Pointer.GetJoin(ОбластьЗберігання_Select.QuerySelect, Довідники.ОбластьЗберігання_Const.Приміщення,
+                /* Sort */
+                ОбластьЗберігання_Select.QuerySelect.Order.Add(
+                 Довідники.ОбластьЗберігання_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.СкладськіПриміщення_Pointer.GetJoin(ОбластьЗберігання_Select.QuerySelect, Довідники.ОбластьЗберігання_Const.Приміщення,
                 ОбластьЗберігання_Select.QuerySelect.Table, "join_tab_1", "Приміщення");
             
             await ОбластьЗберігання_Select.Select();
@@ -7715,15 +6794,11 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.ОбластьЗберігання_Pointer? curr = ОбластьЗберігання_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_31_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Назва = fields[ОбластьЗберігання_Const.Назва].ToString() ?? "",
-                            Приміщення = fields["Приміщення"].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[ОбластьЗберігання_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Приміщення", Fields["Приміщення"].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -7738,7 +6813,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_32_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -7751,8 +6826,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_32_1? row = (GeneratedCode.Rows.Row_32_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -7773,9 +6848,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_32_1? row = (GeneratedCode.Rows.Row_32_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -7796,9 +6871,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_32_1? row = (GeneratedCode.Rows.Row_32_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Висота);
+                        label.SetText(row.Fields["Висота"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Висота", factory);
@@ -7819,9 +6894,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_32_1? row = (GeneratedCode.Rows.Row_32_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Глибина);
+                        label.SetText(row.Fields["Глибина"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Глибина", factory);
@@ -7842,9 +6917,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_32_1? row = (GeneratedCode.Rows.Row_32_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Вантажопідйомність);
+                        label.SetText(row.Fields["Вантажопідйомність"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Вантажопідйомність", factory);
@@ -7865,9 +6940,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_32_1? row = (GeneratedCode.Rows.Row_32_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Обєм);
+                        label.SetText(row.Fields["Обєм"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Обєм", factory);
@@ -7888,9 +6963,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_32_1? row = (GeneratedCode.Rows.Row_32_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Ширина);
+                        label.SetText(row.Fields["Ширина"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Ширина", factory);
@@ -7922,11 +6997,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) ТипорозміриКомірок_Select.QuerySelect.Where = (List<Where>)where;
 
-            ТипорозміриКомірок_Select.QuerySelect.Order.Add(
-               Довідники.ТипорозміриКомірок_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
+                /* Sort */
+                ТипорозміриКомірок_Select.QuerySelect.Order.Add(
+                 Довідники.ТипорозміриКомірок_Const.Назва, SelectOrder.ASC);
             
             await ТипорозміриКомірок_Select.Select();
             store.RemoveAll();
@@ -7935,19 +7009,15 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.ТипорозміриКомірок_Pointer? curr = ТипорозміриКомірок_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_32_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Назва = fields[ТипорозміриКомірок_Const.Назва].ToString() ?? "",
-                            Висота = fields[ТипорозміриКомірок_Const.Висота].ToString() ?? "",
-                            Глибина = fields[ТипорозміриКомірок_Const.Глибина].ToString() ?? "",
-                            Вантажопідйомність = fields[ТипорозміриКомірок_Const.Вантажопідйомність].ToString() ?? "",
-                            Обєм = fields[ТипорозміриКомірок_Const.Обєм].ToString() ?? "",
-                            Ширина = fields[ТипорозміриКомірок_Const.Ширина].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[ТипорозміриКомірок_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Висота", Fields[ТипорозміриКомірок_Const.Висота].ToString() ?? "");
+                    row.Fields.Add("Глибина", Fields[ТипорозміриКомірок_Const.Глибина].ToString() ?? "");
+                    row.Fields.Add("Вантажопідйомність", Fields[ТипорозміриКомірок_Const.Вантажопідйомність].ToString() ?? "");
+                    row.Fields.Add("Обєм", Fields[ТипорозміриКомірок_Const.Обєм].ToString() ?? "");
+                    row.Fields.Add("Ширина", Fields[ТипорозміриКомірок_Const.Ширина].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -7962,7 +7032,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_33_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -7975,8 +7045,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_33_1? row = (GeneratedCode.Rows.Row_33_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -7997,9 +7067,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_33_1? row = (GeneratedCode.Rows.Row_33_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -8020,9 +7090,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_33_1? row = (GeneratedCode.Rows.Row_33_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -8043,9 +7113,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_33_1? row = (GeneratedCode.Rows.Row_33_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Власник);
+                        label.SetText(row.Fields["Власник"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Власник", factory);
@@ -8073,12 +7143,13 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) СкладськіКомірки_Папки_Select.QuerySelect.Where = (List<Where>)where;
 
-            СкладськіКомірки_Папки_Select.QuerySelect.Order.Add(
-               Довідники.СкладськіКомірки_Папки_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
-            Довідники.СкладськіПриміщення_Pointer.GetJoin(СкладськіКомірки_Папки_Select.QuerySelect, Довідники.СкладськіКомірки_Папки_Const.Власник,
+                /* Sort */
+                СкладськіКомірки_Папки_Select.QuerySelect.Order.Add(
+                 Довідники.СкладськіКомірки_Папки_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.СкладськіПриміщення_Pointer.GetJoin(СкладськіКомірки_Папки_Select.QuerySelect, Довідники.СкладськіКомірки_Папки_Const.Власник,
                 СкладськіКомірки_Папки_Select.QuerySelect.Table, "join_tab_1", "Власник");
             
             await СкладськіКомірки_Папки_Select.Select();
@@ -8088,16 +7159,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.СкладськіКомірки_Папки_Pointer? curr = СкладськіКомірки_Папки_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_33_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Назва = fields[СкладськіКомірки_Папки_Const.Назва].ToString() ?? "",
-                            Код = fields[СкладськіКомірки_Папки_Const.Код].ToString() ?? "",
-                            Власник = fields["Власник"].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[СкладськіКомірки_Папки_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Код", Fields[СкладськіКомірки_Папки_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Власник", Fields["Власник"].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -8112,7 +7179,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_34_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -8125,8 +7192,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_34_1? row = (GeneratedCode.Rows.Row_34_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -8147,9 +7214,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_34_1? row = (GeneratedCode.Rows.Row_34_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -8170,9 +7237,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_34_1? row = (GeneratedCode.Rows.Row_34_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -8193,9 +7260,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_34_1? row = (GeneratedCode.Rows.Row_34_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.ДатаЗапису);
+                        label.SetText(row.Fields["ДатаЗапису"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
@@ -8224,11 +7291,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) Блокнот_Select.QuerySelect.Where = (List<Where>)where;
 
-            Блокнот_Select.QuerySelect.Order.Add(
-               Довідники.Блокнот_Const.ДатаЗапису, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
+                /* Sort */
+                Блокнот_Select.QuerySelect.Order.Add(
+                 Довідники.Блокнот_Const.ДатаЗапису, SelectOrder.ASC);
             
             await Блокнот_Select.Select();
             store.RemoveAll();
@@ -8237,16 +7303,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.Блокнот_Pointer? curr = Блокнот_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_34_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Код = fields[Блокнот_Const.Код].ToString() ?? "",
-                            Назва = fields[Блокнот_Const.Назва].ToString() ?? "",
-                            ДатаЗапису = fields[Блокнот_Const.ДатаЗапису].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Блокнот_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Блокнот_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("ДатаЗапису", Fields[Блокнот_Const.ДатаЗапису].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -8261,7 +7323,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_35_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -8274,8 +7336,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_35_1? row = (GeneratedCode.Rows.Row_35_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -8296,9 +7358,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_35_1? row = (GeneratedCode.Rows.Row_35_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Код);
+                        label.SetText(row.Fields["Код"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
@@ -8319,9 +7381,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_35_1? row = (GeneratedCode.Rows.Row_35_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Додано);
+                        label.SetText(row.Fields["Додано"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Додано", factory);
@@ -8342,9 +7404,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_35_1? row = (GeneratedCode.Rows.Row_35_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -8365,9 +7427,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_35_1? row = (GeneratedCode.Rows.Row_35_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Користувач);
+                        label.SetText(row.Fields["Користувач"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Користувач", factory);
@@ -8396,12 +7458,13 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) ЗбереженіЗвіти_Select.QuerySelect.Where = (List<Where>)where;
 
-            ЗбереженіЗвіти_Select.QuerySelect.Order.Add(
-               Довідники.ЗбереженіЗвіти_Const.Код, SelectOrder.DESC);
             
-
-            /* Приєднання таблиць, JOIN */
-            Довідники.Користувачі_Pointer.GetJoin(ЗбереженіЗвіти_Select.QuerySelect, Довідники.ЗбереженіЗвіти_Const.Користувач,
+                /* Sort */
+                ЗбереженіЗвіти_Select.QuerySelect.Order.Add(
+                 Довідники.ЗбереженіЗвіти_Const.Код, SelectOrder.DESC);
+            
+                /* Join */
+                Довідники.Користувачі_Pointer.GetJoin(ЗбереженіЗвіти_Select.QuerySelect, Довідники.ЗбереженіЗвіти_Const.Користувач,
                 ЗбереженіЗвіти_Select.QuerySelect.Table, "join_tab_1", "Користувач");
             
             await ЗбереженіЗвіти_Select.Select();
@@ -8411,17 +7474,13 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.ЗбереженіЗвіти_Pointer? curr = ЗбереженіЗвіти_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_35_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Код = fields[ЗбереженіЗвіти_Const.Код].ToString() ?? "",
-                            Додано = fields[ЗбереженіЗвіти_Const.Додано].ToString() ?? "",
-                            Назва = fields[ЗбереженіЗвіти_Const.Назва].ToString() ?? "",
-                            Користувач = fields["Користувач"].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[ЗбереженіЗвіти_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Додано", Fields[ЗбереженіЗвіти_Const.Додано].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[ЗбереженіЗвіти_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Користувач", Fields["Користувач"].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
@@ -8436,7 +7495,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
     {
         public static Gio.ListStore Create(ColumnView columnView)
         {
-            Gio.ListStore store = Gio.ListStore.New(GeneratedCode.Rows.Row_36_1.GetGType());
+            Gio.ListStore store = Gio.ListStore.New(DirectoryRow.GetGType());
 
             SingleSelection model = SingleSelection.New(store);
             model.Autoselect = true;
@@ -8449,8 +7508,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    GeneratedCode.Rows.Row_36_1? row = (GeneratedCode.Rows.Row_36_1?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Іконки.ДляТабличногоСписку.Delete : InterfaceGtk4.Іконки.ДляТабличногоСписку.Normal));
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -8471,9 +7530,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_36_1? row = (GeneratedCode.Rows.Row_36_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Назва);
+                        label.SetText(row.Fields["Назва"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
@@ -8494,9 +7553,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_36_1? row = (GeneratedCode.Rows.Row_36_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Валюта);
+                        label.SetText(row.Fields["Валюта"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
@@ -8517,9 +7576,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_36_1? row = (GeneratedCode.Rows.Row_36_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Тип);
+                        label.SetText(row.Fields["Тип"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Тип", factory);
@@ -8540,9 +7599,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     Label? label = (Label?)listItem.Child;
-                    GeneratedCode.Rows.Row_36_1? row = (GeneratedCode.Rows.Row_36_1?)listItem.Item;
+                    DirectoryRow? row = (DirectoryRow?)listItem.Item;
                     if (label != null && row != null)
-                        label.SetText(row.Склад);
+                        label.SetText(row.Fields["Склад"]);
                 };
 
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
@@ -8570,14 +7629,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             //var where = treeView.Data["Where"];
             //if (where != null) КасиККМ_Select.QuerySelect.Where = (List<Where>)where;
 
-            КасиККМ_Select.QuerySelect.Order.Add(
-               Довідники.КасиККМ_Const.Назва, SelectOrder.ASC);
             
-
-            /* Приєднання таблиць, JOIN */
-            Довідники.Валюти_Pointer.GetJoin(КасиККМ_Select.QuerySelect, Довідники.КасиККМ_Const.Валюта,
+                /* Sort */
+                КасиККМ_Select.QuerySelect.Order.Add(
+                 Довідники.КасиККМ_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.Валюти_Pointer.GetJoin(КасиККМ_Select.QuerySelect, Довідники.КасиККМ_Const.Валюта,
                 КасиККМ_Select.QuerySelect.Table, "join_tab_1", "Валюта");
-            Довідники.Склади_Pointer.GetJoin(КасиККМ_Select.QuerySelect, Довідники.КасиККМ_Const.Склад,
+            
+                /* Join */
+                Довідники.Склади_Pointer.GetJoin(КасиККМ_Select.QuerySelect, Довідники.КасиККМ_Const.Склад,
                 КасиККМ_Select.QuerySelect.Table, "join_tab_2", "Склад");
             
             await КасиККМ_Select.Select();
@@ -8587,18 +7649,13 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Довідники.КасиККМ_Pointer? curr = КасиККМ_Select.Current;
                 if (curr != null)
                 {
-                    Dictionary<string, object> fields = curr.Fields;
-                    GeneratedCode.Rows.Row_36_1 row = new()
-                    {
-                        UID = curr.UnigueID,
-                        DeletionLabel = (bool)fields["deletion_label"],
-                        Назва = fields[КасиККМ_Const.Назва].ToString() ?? "",
-                            Валюта = fields["Валюта"].ToString() ?? "",
-                            Тип = Перелічення.ПсевдонімиПерелічення.ТипККМ_Alias((
-                              (Перелічення.ТипККМ)(fields[КасиККМ_Const.Тип] != DBNull.Value ? fields[КасиККМ_Const.Тип] : 0)) ),
-                            Склад = fields["Склад"].ToString() ?? "",
-                            
-                    };
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[КасиККМ_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Валюта", Fields["Валюта"].ToString() ?? "");
+                    row.Fields.Add("Тип", Перелічення.ПсевдонімиПерелічення.ТипККМ_Alias((Перелічення.ТипККМ)(Fields[КасиККМ_Const.Тип] != DBNull.Value ? Fields[КасиККМ_Const.Тип] : 0) ));
+                    row.Fields.Add("Склад", Fields["Склад"].ToString() ?? "");
+                    
                     store.Append(row);
                 }
             }
