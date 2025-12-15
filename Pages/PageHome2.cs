@@ -13,18 +13,16 @@ using ТабличніСписки = GeneratedCode.Довідники.Табли
 
 partial class PageHome2 : Form
 {
+    Gio.ListStore store;
+
     public PageHome2()
     {
-        Console.WriteLine(1);
-        try
-        {
-            ТабличніСписки.Організації_Записи.AddColumns(out ColumnView columnView);
-        }
-        catch(Exception ex)
-        {
-            Console.WriteLine("Error");
-            Console.WriteLine(ex.Message);
-        }
+        ColumnView columnView = ColumnView.New(null);
+        //columnView.Hexpand = columnView.Vexpand = true;
+
+        store = ТабличніСписки.Номенклатура_Записи.Create(columnView);
+
+        Append(columnView);
 
         /*
         var store = Gio.ListStore.New(Row.GetGType());
@@ -48,14 +46,15 @@ partial class PageHome2 : Form
             columnView.AppendColumn(column);
         }
 
-        Append(columnView);
+        
 
         store.Append(new Row(){});
         */
     }
 
-    public void SetValue()
+    public async void SetValue()
     {
-
+        await ТабличніСписки.Номенклатура_Записи.LoadRecords(store);
+        
     }
 }

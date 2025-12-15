@@ -1,8 +1,9 @@
 /* Кнопки лівого меню */
-button.left-menu{
+button.left-menu {
     padding-left: 2px;
     padding-right: 2px;
 }
+
 button.left-menu:hover {
     background-color: rgba(219, 219, 195, 0.541);
 }
@@ -26,6 +27,17 @@ notebook tab button {
 }
 
 
+columnview listview row cell:not(:first-child) {
+    border-left: 1px solid shade(#9b9ea1, 1.2);
+}
+
+columnview listview row:nth-child(odd) {
+    background-color: rgba(236, 236, 230, 0.644);   
+}
+
+columnview listview row:nth-child(even) {
+    background-color: rgba(155, 155, 147, 0.644);   
+}
 
 
 
