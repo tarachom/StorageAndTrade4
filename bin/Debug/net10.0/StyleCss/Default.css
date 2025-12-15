@@ -1,23 +1,53 @@
+/* Кнопки лівого меню */
+button.left-menu{
+    padding-left: 2px;
+    padding-right: 2px;
+}
+button.left-menu:hover {
+    background-color: rgba(219, 219, 195, 0.541);
+}
+
 /* Вкладки блокноту */
 notebook tab {
-    padding: 5px 5px;
+    padding: 3px;
+    border: 0;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
 }
 
 /* Кнопка закриття вкладки блокноту */
 notebook tab button {
     font-size: x-small;
-    padding: 4px 1px 4px 1px;
+    padding: 1px;
+    margin-left: 12px;
+    min-height: 0;
+    min-width: 0;
+    border-radius: 6px;
+}
+
+
+
+
+
+/*-------------------------------------------------------------------*/
+
+
+/* Кнопка закриття вкладки блокноту */
+/*notebook tab button {
+    font-size: x-small;
+    padding: 2px 1px 2px 1px;
     margin-left: 10px;
     min-height: 0;
     min-width: 0;
     border: 0;
     border-radius: 3px;
     background-color: transparent;
-}
+}*/
 
-notebook tab button:hover {
+
+/*notebook tab button:hover {
     background-color: lightgray;
-}
+}*/
 
 /* Ліве меню головного вікна */
 /*
@@ -26,6 +56,3 @@ button.left-menu {
     background-color: transparent;
 }
 */
-button.left-menu:hover {
-    background-color: rgba(235, 235, 228, 0.541);
-}
