@@ -34,8 +34,6 @@ class FormStorageAndTrade : FormGeneral
             }
         });
 
-        Console.WriteLine("+++");
-
         PageHome2 page2 = new();
         NotebookFunction.CreateNotebookPage("Home New", () => page2);
         page2.SetValue();

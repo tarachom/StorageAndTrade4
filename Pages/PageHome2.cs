@@ -4,56 +4,73 @@
 
 */
 
-using Gtk;
-using GObject;
+namespace StorageAndTrade;
 
 using InterfaceGtk4;
 using AccountingSoftware;
-using ТабличніСписки = GeneratedCode.Довідники.ТабличніСписки;
+using ТабличнийСписок = GeneratedCode.Довідники.ТабличніСписки.Номенклатура_Записи;
+using Функції = Номенклатура_Функції;
 
-partial class PageHome2 : Form
+partial class PageHome2 : DocumentJournal
 {
-    Gio.ListStore store;
-
     public PageHome2()
     {
-        ScrolledWindow scrolled = ScrolledWindow.New();
-        scrolled.Vexpand = scrolled.Hexpand = true;
-
-        ColumnView columnView = ColumnView.New(null);
-        columnView.ShowRowSeparators = true;
-        columnView.ShowColumnSeparators = true;
-
-        scrolled.Child = columnView;
-
-        //columnView.Hexpand = columnView.Vexpand = true;
-
-        store = ТабличніСписки.Номенклатура_Записи.Create(columnView);
-
-        Append(scrolled);
-
-        Label label = Label.New("...");
-        Append(label);
-
-        Button button = Button.NewWithLabel("Test");
-        Append(button);
-
-        button.OnClicked += (sender, arrg) =>
-        {
-            SingleSelection model = (SingleSelection)columnView.Model;
-            var obj = model.SelectedItem;
-            if (obj != null)
-            {
-                var row = (DirectoryRow)obj;
-                label.SetText(row.UID.ToString() + " = " + row.Fields["Назва"]);
-            }
-        };
+        ТабличнийСписок.AddColumn(this);
+        SetPagesSettings(100);
     }
 
-    public async void SetValue()
+    public override async ValueTask SetValue()
     {
-        await ТабличніСписки.Номенклатура_Записи.LoadRecords(store);
+        await ТабличнийСписок.LoadRecords(this);
+    }
 
+    public override async ValueTask LoadRecords()
+    {
+        await ТабличнийСписок.LoadRecords(this);
+    }
+
+    protected override async void SetSearch(string searchText)
+    {
+        WhereList = Функції.Відбори(searchText);
+    }
+
+    protected override void FillFilter(FilterControl filterControl)
+    {
+        ТабличнийСписок.CreateFilter(this);
+    }
+
+    protected override async ValueTask OpenPageElement(bool IsNew, UnigueID? unigueID = null)
+    {
+        await Функції.OpenPageElement(IsNew, unigueID, CallBack_LoadRecords, null);
+    }
+
+    protected override async ValueTask SetDeletionLabel(UnigueID unigueID)
+    {
+        await Функції.SetDeletionLabel(unigueID);
+    }
+
+    protected override async ValueTask<UnigueID?> Copy(UnigueID unigueID)
+    {
+        return await Функції.Copy(unigueID);
+    }
+
+    protected override async ValueTask BeforeSetValue()
+    {
+
+    }
+
+    protected override async void PeriodChanged()
+    {
+
+    }
+
+    protected override async ValueTask SpendTheDocument(UnigueID unigueID, bool spendDoc)
+    {
+
+    }
+
+    protected override void ReportSpendTheDocument(UnigueID unigueID)
+    {
 
     }
 }

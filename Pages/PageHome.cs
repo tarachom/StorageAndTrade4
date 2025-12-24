@@ -7,6 +7,8 @@
 using Gtk;
 using InterfaceGtk4;
 
+namespace StorageAndTrade;
+
 class PageHome : Form
 {
     public PageHome()
@@ -65,12 +67,33 @@ class PageHome : Form
         CreateCaptionLink(box1, "CAPTION", () => { });
         CreateCaptionLink(box1, "CAPTION");
         CreateCaptionLink(box1, "CAPTION", () => { });
-        
+
         CreateSeparator(box1);
+
+        DateTimeControl dateTimeControl = new() { OnlyDate = true };
+        Append(dateTimeControl);
+
+        TimeControl timeControl = new();
+        Append(timeControl);
+
+        NumericControl numericControl = new() { Value = 1 };
+        Append(numericControl);
+
+        IntegerControl integerControl = new() { Value = 1 };
+        Append(integerControl);
+
+        PeriodControl periodControl = new() { Period =  PeriodForJournal.TypePeriod.AllPeriod, DateStart = DateTime.Now, DateStop = DateTime.Now };
+        Append(periodControl);
+
+        SearchControl searchControl = new() { MinLength = 3 };
+        Append(searchControl);
+
+        CompositePointerControl cp = new();
+        Append(cp);
     }
 
     public void SetValue()
     {
-        
+
     }
 }
