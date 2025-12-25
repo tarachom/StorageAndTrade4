@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 22.12.2025 21:52:42
+ * Дата конфігурації: 25.12.2025 19:12:27
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон Gtk4.xslt
@@ -146,7 +146,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Назва", Fields[Організації_Const.Назва].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -403,7 +403,6 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         where.Add(new Where(filter.Field, Comparison.EQ, filter.GetValueFunc.Invoke()));
 
                 form.WhereList = where;
-
                 return where.Count != 0;
             };
           
@@ -432,7 +431,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
                 /* Sort */
                 Номенклатура_Select.QuerySelect.Order.Add(
-                 Довідники.Номенклатура_Const.Код, SelectOrder.ASC);
+                 Довідники.Номенклатура_Const.Назва, SelectOrder.ASC);
             
                 /* Join */
                 Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
@@ -479,7 +478,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("ЗалишокВКомірках", Fields["ЗалишокВКомірках"].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -726,7 +725,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("ВРезервіПідЗамовлення", Fields["ВРезервіПідЗамовлення"].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -861,7 +860,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Назва", Fields[Виробники_Const.Назва].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -996,7 +995,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Назва", Fields[ВидиНоменклатури_Const.Назва].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -1183,7 +1182,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("НазваПовна", Fields[ПакуванняОдиниціВиміру_Const.НазваПовна].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -1377,7 +1376,6 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         where.Add(new Where(filter.Field, Comparison.EQ, filter.GetValueFunc.Invoke()));
 
                 form.WhereList = where;
-
                 return where.Count != 0;
             };
           
@@ -1432,7 +1430,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("ВиводитиКурсНаСтартову", (Fields[Валюти_Const.ВиводитиКурсНаСтартову] != DBNull.Value && (bool)Fields[Валюти_Const.ВиводитиКурсНаСтартову]) ? "Так" : "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -1589,7 +1587,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("КороткаНазва", Fields[Валюти_Const.КороткаНазва].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -1783,7 +1781,6 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         where.Add(new Where(filter.Field, Comparison.EQ, filter.GetValueFunc.Invoke()));
 
                 form.WhereList = where;
-
                 return where.Count != 0;
             };
           
@@ -1841,7 +1838,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Покупець", (Fields[Контрагенти_Const.Покупець] != DBNull.Value && (bool)Fields[Контрагенти_Const.Покупець]) ? "Так" : "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -1972,7 +1969,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Назва", Fields[Контрагенти_Const.Назва].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -2146,7 +2143,6 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         where.Add(new Where(filter.Field, Comparison.EQ, filter.GetValueFunc.Invoke()));
 
                 form.WhereList = where;
-
                 return where.Count != 0;
             };
           
@@ -2199,7 +2195,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("НалаштуванняАдресногоЗберігання", Перелічення.ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_Alias((Перелічення.НалаштуванняАдресногоЗберігання)(Fields[Склади_Const.НалаштуванняАдресногоЗберігання] != DBNull.Value ? Fields[Склади_Const.НалаштуванняАдресногоЗберігання] : 0) ));
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -2330,7 +2326,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Назва", Fields[Склади_Const.Назва].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -2494,7 +2490,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Валюта", Fields["Валюта"].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -2599,7 +2595,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Назва", Fields[ВидиЦін_Const.Назва].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -2734,7 +2730,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Назва", Fields[ВидиЦінПостачальників_Const.Назва].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -2869,7 +2865,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Назва", Fields[Користувачі_Const.Назва].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -3004,7 +3000,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Назва", Fields[ФізичніОсоби_Const.Назва].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -3139,7 +3135,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Назва", Fields[СтруктураПідприємства_Const.Назва].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -3274,7 +3270,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Назва", Fields[КраїниСвіту_Const.Назва].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -3487,7 +3483,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("ДатаСтворення", Fields[Файли_Const.ДатаСтворення].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -3592,7 +3588,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Назва", Fields[Файли_Const.Назва].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -3843,7 +3839,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("ВРезервіПідЗамовлення", Fields["ВРезервіПідЗамовлення"].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -3978,7 +3974,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Код", Fields[Номенклатура_Папки_Const.Код].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -4109,7 +4105,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Код", Fields[Номенклатура_Папки_Const.Код].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -4244,7 +4240,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Код", Fields[Контрагенти_Папки_Const.Код].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -4379,7 +4375,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Код", Fields[Склади_Папки_Const.Код].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -4572,7 +4568,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Залишок", Fields["Залишок"].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -4732,7 +4728,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Валюта", Fields["Валюта"].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -4896,7 +4892,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Валюта", Fields["Валюта"].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -5057,7 +5053,6 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         where.Add(new Where(filter.Field, Comparison.EQ, filter.GetValueFunc.Invoke()));
 
                 form.WhereList = where;
-
                 return where.Count != 0;
             };
           
@@ -5113,7 +5108,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("ТипДоговору", Перелічення.ПсевдонімиПерелічення.ТипДоговорів_Alias((Перелічення.ТипДоговорів)(Fields[ДоговориКонтрагентів_Const.ТипДоговору] != DBNull.Value ? Fields[ДоговориКонтрагентів_Const.ТипДоговору] : 0) ));
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -5273,7 +5268,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("ТипДоговору", Перелічення.ПсевдонімиПерелічення.ТипДоговорів_Alias((Перелічення.ТипДоговорів)(Fields[ДоговориКонтрагентів_Const.ТипДоговору] != DBNull.Value ? Fields[ДоговориКонтрагентів_Const.ТипДоговору] : 0) ));
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -5437,7 +5432,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Валюта", Fields["Валюта"].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -5598,7 +5593,6 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         where.Add(new Where(filter.Field, Comparison.EQ, filter.GetValueFunc.Invoke()));
 
                 form.WhereList = where;
-
                 return where.Count != 0;
             };
           
@@ -5651,7 +5645,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("ВидРухуКоштів", Перелічення.ПсевдонімиПерелічення.ВидиРухуКоштів_Alias((Перелічення.ВидиРухуКоштів)(Fields[СтаттяРухуКоштів_Const.ВидРухуКоштів] != DBNull.Value ? Fields[СтаттяРухуКоштів_Const.ВидРухуКоштів] : 0) ));
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -5760,7 +5754,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Номер", Fields[СеріїНоменклатури_Const.Номер].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -5969,7 +5963,6 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         where.Add(new Where(filter.Field, Comparison.EQ, filter.GetValueFunc.Invoke()));
 
                 form.WhereList = where;
-
                 return where.Count != 0;
             };
           
@@ -6035,7 +6028,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Залишки", Fields["Залишки"].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -6166,7 +6159,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Дата", Fields[ПартіяТоварівКомпозит_Const.Дата].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -6301,7 +6294,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Назва", Fields[ВидиЗапасів_Const.Назва].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -6878,7 +6871,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("ДатаЗапису", Fields[Банки_Const.ДатаЗапису].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -7009,7 +7002,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Назва", Fields[Банки_Const.Назва].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -7146,7 +7139,6 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         where.Add(new Where(filter.Field, Comparison.EQ, filter.GetValueFunc.Invoke()));
 
                 form.WhereList = where;
-
                 return where.Count != 0;
             };
           
@@ -7200,7 +7192,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("НалаштуванняАдресногоЗберігання", Перелічення.ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_Alias((Перелічення.НалаштуванняАдресногоЗберігання)(Fields[СкладськіПриміщення_Const.НалаштуванняАдресногоЗберігання] != DBNull.Value ? Fields[СкладськіПриміщення_Const.НалаштуванняАдресногоЗберігання] : 0) ));
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -7526,7 +7518,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Папка", Fields["Папка"].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -7660,7 +7652,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Приміщення", Fields["Приміщення"].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -7798,7 +7790,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Приміщення", Fields["Приміщення"].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -8037,7 +8029,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Ширина", Fields[ТипорозміриКомірок_Const.Ширина].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -8201,7 +8193,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Власник", Fields["Власник"].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -8362,7 +8354,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("ДатаЗапису", Fields[Блокнот_Const.ДатаЗапису].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -8552,7 +8544,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Користувач", Fields["Користувач"].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
@@ -8745,7 +8737,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Склад", Fields["Склад"].ToString() ?? "");
                     
                     form.Store.Append(row);
-                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.NItems;
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterRecordsLoaded(selectPosition);
