@@ -70,7 +70,7 @@ class PageHome : Form
 
         CreateSeparator(box1);
 
-        DateTimeControl dateTimeControl = new() { OnlyDate = true };
+        DateTimeControl dateTimeControl = new() { Value = DateTime.Now };
         Append(dateTimeControl);
 
         TimeControl timeControl = new();
@@ -82,7 +82,7 @@ class PageHome : Form
         IntegerControl integerControl = new() { Value = 1 };
         Append(integerControl);
 
-        PeriodControl periodControl = new() { Period =  PeriodForJournal.TypePeriod.AllPeriod, DateStart = DateTime.Now, DateStop = DateTime.Now };
+        PeriodControl periodControl = new() { Period = PeriodForJournal.TypePeriod.AllPeriod, DateStart = DateTime.Now, DateStop = DateTime.Now };
         Append(periodControl);
 
         SearchControl searchControl = new() { MinLength = 3 };
