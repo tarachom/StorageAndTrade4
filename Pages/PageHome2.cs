@@ -8,6 +8,7 @@ namespace StorageAndTrade;
 
 using InterfaceGtk4;
 using AccountingSoftware;
+
 using ТабличнийСписок = GeneratedCode.Довідники.ТабличніСписки.Номенклатура_Записи;
 using Функції = Номенклатура_Функції;
 
@@ -16,12 +17,7 @@ partial class PageHome2 : DocumentJournal
     public PageHome2()
     {
         ТабличнийСписок.AddColumn(this);
-        SetPagesSettings(100);
-    }
-
-    public override async ValueTask SetValue()
-    {
-        await ТабличнийСписок.LoadRecords(this);
+        SetPagesSettings(50);
     }
 
     public override async ValueTask LoadRecords()
@@ -64,13 +60,48 @@ partial class PageHome2 : DocumentJournal
 
     }
 
-    protected override async ValueTask SpendTheDocument(UnigueID unigueID, bool spendDoc)
+    protected override async ValueTask SpendTheDocument(UnigueID[] unigueID, bool spendDoc)
     {
 
     }
 
-    protected override void ReportSpendTheDocument(UnigueID unigueID)
+    protected override void ReportSpendTheDocument(UnigueID[] unigueID)
     {
 
+    }
+
+    protected override async ValueTask VersionsHistory(UnigueID[] unigueID)
+    {
+
+    }
+
+    protected override NameValue<Action<UnigueID[]>>[]? SetPrintMenu()
+    {
+        return
+        [
+            new ("Друк Документ", PrintDoc),
+            new ("Друк Звіт", PrintDoc)
+        ];
+    }
+
+    void PrintDoc(UnigueID[] unigueIDs)
+    {
+        foreach (var unigueID in unigueIDs)
+            Console.WriteLine(unigueID);
+    }
+
+    protected override NameValue<Action<UnigueID[]>>[]? SetExportMenu()
+    {
+        return
+        [
+            new("Експорт в XML", ExportDoc),
+            new("Експорт в Excel", ExportDoc)
+        ];
+    }
+
+    void ExportDoc(UnigueID[] unigueIDs)
+    {
+        foreach (var unigueID in unigueIDs)
+            Console.WriteLine(unigueID);
     }
 }
