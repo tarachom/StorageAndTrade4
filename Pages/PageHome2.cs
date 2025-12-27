@@ -50,14 +50,17 @@ partial class PageHome2 : DocumentJournal
         return await Функції.Copy(unigueID);
     }
 
+    const string КлючНалаштуванняКористувача = "Документи.ВведенняЗалишків";
+
     protected override async ValueTask BeforeSetValue()
     {
-
+        await ФункціїНалаштуванняКористувача.ОтриматиПеріодДляЖурналу(КлючНалаштуванняКористувача + KeyForSetting, Period);
     }
 
     protected override async void PeriodChanged()
     {
-
+        ФункціїНалаштуванняКористувача.ЗаписатиПеріодДляЖурналу(КлючНалаштуванняКористувача + KeyForSetting, Period.Period.ToString(), Period.DateStart, Period.DateStop);
+        await LoadRecords();
     }
 
     protected override async ValueTask SpendTheDocument(UnigueID[] unigueID, bool spendDoc)
@@ -75,6 +78,20 @@ partial class PageHome2 : DocumentJournal
 
     }
 
+    #region Ввести на основі
+
+    protected override NameValue<Action<UnigueID[]>>[]? SetEnterDocumentBasedMenu()
+    {
+        return
+        [
+            new ("Документ", x=>{})
+        ];
+    }
+
+    #endregion
+
+    #region Друк
+
     protected override NameValue<Action<UnigueID[]>>[]? SetPrintMenu()
     {
         return
@@ -90,6 +107,10 @@ partial class PageHome2 : DocumentJournal
             Console.WriteLine(unigueID);
     }
 
+    #endregion
+
+    #region Експорт
+
     protected override NameValue<Action<UnigueID[]>>[]? SetExportMenu()
     {
         return
@@ -104,4 +125,6 @@ partial class PageHome2 : DocumentJournal
         foreach (var unigueID in unigueIDs)
             Console.WriteLine(unigueID);
     }
+
+    #endregion
 }

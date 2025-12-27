@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 26.12.2025 17:43:07
+ * Дата конфігурації: 27.12.2025 17:03:55
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон GeneratedCode.xslt
@@ -20,10 +20,12 @@ namespace GeneratedCode
         #region Const
 
         //Простір імен згенерованого коду
-        public const string NameSpageCodeGeneration = "GeneratedCode";
+        public const string NameSpageCodeGeneration = "GeneratedCode"; //Видалити
+        public const string NamespaceCodeGeneration = "GeneratedCode";
 
         //Простір імен програми
-        public const string NameSpageProgram = "StorageAndTrade";
+        public const string NameSpageProgram = "StorageAndTrade"; //Видалити
+        public const string NamespaceProgram = "StorageAndTrade";
 
         #endregion
         

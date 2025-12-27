@@ -56,14 +56,16 @@ class FormStorageAndTrade : FormGeneral
 
     }
 
-    protected override void Сервіс(LinkButton linkButton)
+    protected override async void Сервіс(LinkButton linkButton)
     {
-
+        PageService page = new();
+        NotebookFunction.CreateNotebookPage("Сервіс", page);
+        await page.SetValue();
     }
 
     protected override void Обробки(LinkButton linkButton)
     {
-
+        NotebookFunction.CreateNotebookPage("Обробки", new PageProcessing());
     }
 
     protected override void ВідкритиДокументВідповідноДоВиду(string name)

@@ -54,6 +54,11 @@ columnview listview row cell:not(:first-child) {
     border-left: 1px solid shade(var(--columnview-border-color), 1.2);
 }
 
+/*Для Log*/
+textview.log_text_terminal {
+    font: 11px Arial;
+}
+
 /*
 columnview listview row:nth-child(odd) {
    background-color: shade(var(--columnview-border-color), 1.2);
