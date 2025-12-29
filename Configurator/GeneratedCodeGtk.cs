@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 27.12.2025 17:03:55
+ * Дата конфігурації: 29.12.2025 20:00:50
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон Gtk4.xslt
@@ -103,7 +103,61 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.Організації_Select Організації_Select = new();
+            Організації_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Код*/ Довідники.Організації_Const.Код,
+                /*Назва*/ Довідники.Організації_Const.Назва,
+                
+            ]);
+
+            Організації_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                Організації_Select.QuerySelect.Order.Add(
+                 Довідники.Організації_Const.Назва, SelectOrder.ASC);
+            
+            await Організації_Select.Select();
+            while (Організації_Select.MoveNext())
+            {
+                Довідники.Організації_Pointer? curr = Організації_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Організації_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Організації_Const.Назва].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -410,7 +464,88 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.Номенклатура_Select Номенклатура_Select = new();
+            Номенклатура_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Код*/ Довідники.Номенклатура_Const.Код,
+                /*Назва*/ Довідники.Номенклатура_Const.Назва,
+                /*ТипНоменклатури*/ Довідники.Номенклатура_Const.ТипНоменклатури,
+                
+            ]);
+
+            Номенклатура_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                Номенклатура_Select.QuerySelect.Order.Add(
+                 Довідники.Номенклатура_Const.Код, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
+                Номенклатура_Select.QuerySelect.Table, "join_tab_1", "ОдиницяВиміру");
+            
+                /* Додаткове поле: Залишок */
+                Номенклатура_Select.QuerySelect.FieldAndAlias.Add(
+                    new ValueName<string>(@$"(CASE WHEN {Довідники.Номенклатура_Const.TABLE}.{Довідники.Номенклатура_Const.ТипНоменклатури} = {(int)Перелічення.ТипиНоменклатури.Товар} THEN ( WITH Залишки AS ( SELECT ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} AS Номенклатура, SUM(ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.ВНаявності} ) AS ВНаявності FROM {РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.TABLE} AS ТовариНаСкладах WHERE ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} = {Довідники.Номенклатура_Const.TABLE}.uid GROUP BY Номенклатура ) SELECT ROUND(ВНаявності, 1) FROM Залишки ) END)", "Залишок"));
+            
+                /* Додаткове поле: ВРезерві */
+                Номенклатура_Select.QuerySelect.FieldAndAlias.Add(
+                    new ValueName<string>(@$"(CASE WHEN {Довідники.Номенклатура_Const.TABLE}.{Довідники.Номенклатура_Const.ТипНоменклатури} = {(int)Перелічення.ТипиНоменклатури.Товар} THEN ( WITH Залишки AS ( SELECT ВільніЗалишки.{РегістриНакопичення.ВільніЗалишки_Підсумки_TablePart.Номенклатура} AS Номенклатура, SUM(ВільніЗалишки.{РегістриНакопичення.ВільніЗалишки_Підсумки_TablePart.ВРезервіЗіСкладу} ) AS ВРезервіЗіСкладу FROM {РегістриНакопичення.ВільніЗалишки_Підсумки_TablePart.TABLE} AS ВільніЗалишки WHERE ВільніЗалишки.{РегістриНакопичення.ВільніЗалишки_Підсумки_TablePart.Номенклатура} = {Довідники.Номенклатура_Const.TABLE}.uid GROUP BY Номенклатура ) SELECT ROUND(ВРезервіЗіСкладу, 1) FROM Залишки ) END)", "ВРезерві"));
+            
+                /* Додаткове поле: ВРезервіПідЗамовлення */
+                Номенклатура_Select.QuerySelect.FieldAndAlias.Add(
+                    new ValueName<string>(@$"(CASE WHEN {Довідники.Номенклатура_Const.TABLE}.{Довідники.Номенклатура_Const.ТипНоменклатури} = {(int)Перелічення.ТипиНоменклатури.Товар} THEN ( WITH Залишки AS ( SELECT ВільніЗалишки.{РегістриНакопичення.ВільніЗалишки_Підсумки_TablePart.Номенклатура} AS Номенклатура, SUM(ВільніЗалишки.{РегістриНакопичення.ВільніЗалишки_Підсумки_TablePart.ВРезервіПідЗамовлення} ) AS ВРезервіПідЗамовлення FROM {РегістриНакопичення.ВільніЗалишки_Підсумки_TablePart.TABLE} AS ВільніЗалишки WHERE ВільніЗалишки.{РегістриНакопичення.ВільніЗалишки_Підсумки_TablePart.Номенклатура} = {Довідники.Номенклатура_Const.TABLE}.uid GROUP BY Номенклатура ) SELECT ROUND(ВРезервіПідЗамовлення, 1) FROM Залишки ) END)", "ВРезервіПідЗамовлення"));
+            
+                /* Додаткове поле: ЗалишокВКомірках */
+                Номенклатура_Select.QuerySelect.FieldAndAlias.Add(
+                    new ValueName<string>(@$"(CASE WHEN {Довідники.Номенклатура_Const.TABLE}.{Довідники.Номенклатура_Const.ТипНоменклатури} = {(int)Перелічення.ТипиНоменклатури.Товар} THEN ( WITH Залишки AS ( SELECT ТовариВКомірках.{РегістриНакопичення.ТовариВКомірках_Підсумки_TablePart.Номенклатура} AS Номенклатура, SUM(ТовариВКомірках.{РегістриНакопичення.ТовариВКомірках_Підсумки_TablePart.ВНаявності} ) AS ВНаявності FROM {РегістриНакопичення.ТовариВКомірках_Підсумки_TablePart.TABLE} AS ТовариВКомірках WHERE ТовариВКомірках.{РегістриНакопичення.ТовариВКомірках_Підсумки_TablePart.Номенклатура} = {Довідники.Номенклатура_Const.TABLE}.uid GROUP BY Номенклатура ) SELECT ROUND(ВНаявності, 1) FROM Залишки ) END)", "ЗалишокВКомірках"));
+            
+            await Номенклатура_Select.Select();
+            while (Номенклатура_Select.MoveNext())
+            {
+                Довідники.Номенклатура_Pointer? curr = Номенклатура_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Номенклатура_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Номенклатура_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("ОдиницяВиміру", Fields["ОдиницяВиміру"].ToString() ?? "");
+                    row.Fields.Add("ТипНоменклатури", Перелічення.ПсевдонімиПерелічення.ТипиНоменклатури_Alias((Перелічення.ТипиНоменклатури)(Fields[Номенклатура_Const.ТипНоменклатури] != DBNull.Value ? Fields[Номенклатура_Const.ТипНоменклатури] : 0) ));
+                    row.Fields.Add("Залишок", Fields["Залишок"].ToString() ?? "");
+                    row.Fields.Add("ВРезерві", Fields["ВРезерві"].ToString() ?? "");
+                    row.Fields.Add("ВРезервіПідЗамовлення", Fields["ВРезервіПідЗамовлення"].ToString() ?? "");
+                    row.Fields.Add("ЗалишокВКомірках", Fields["ЗалишокВКомірках"].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -435,7 +570,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
                 /* Sort */
                 Номенклатура_Select.QuerySelect.Order.Add(
-                 Довідники.Номенклатура_Const.Назва, SelectOrder.ASC);
+                 Довідники.Номенклатура_Const.Код, SelectOrder.ASC);
             
                 /* Join */
                 Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
@@ -666,7 +801,81 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.Номенклатура_Select Номенклатура_Select = new();
+            Номенклатура_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Код*/ Довідники.Номенклатура_Const.Код,
+                /*Назва*/ Довідники.Номенклатура_Const.Назва,
+                
+            ]);
+
+            Номенклатура_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                Номенклатура_Select.QuerySelect.Order.Add(
+                 Довідники.Номенклатура_Const.Код, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
+                Номенклатура_Select.QuerySelect.Table, "join_tab_1", "ОдиницяВиміру");
+            
+                /* Додаткове поле: Залишок */
+                Номенклатура_Select.QuerySelect.FieldAndAlias.Add(
+                    new ValueName<string>(@$"(CASE WHEN {Довідники.Номенклатура_Const.TABLE}.{Довідники.Номенклатура_Const.ТипНоменклатури} = {(int)Перелічення.ТипиНоменклатури.Товар} THEN ( WITH Залишки AS ( SELECT ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} AS Номенклатура, SUM(ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.ВНаявності} ) AS ВНаявності FROM {РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.TABLE} AS ТовариНаСкладах WHERE ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} = {Довідники.Номенклатура_Const.TABLE}.uid GROUP BY Номенклатура ) SELECT ROUND(ВНаявності, 1) FROM Залишки ) END)", "Залишок"));
+            
+                /* Додаткове поле: ВРезерві */
+                Номенклатура_Select.QuerySelect.FieldAndAlias.Add(
+                    new ValueName<string>(@$"(CASE WHEN {Довідники.Номенклатура_Const.TABLE}.{Довідники.Номенклатура_Const.ТипНоменклатури} = {(int)Перелічення.ТипиНоменклатури.Товар} THEN ( WITH Залишки AS ( SELECT ВільніЗалишки.{РегістриНакопичення.ВільніЗалишки_Підсумки_TablePart.Номенклатура} AS Номенклатура, SUM(ВільніЗалишки.{РегістриНакопичення.ВільніЗалишки_Підсумки_TablePart.ВРезервіЗіСкладу} ) AS ВРезервіЗіСкладу FROM {РегістриНакопичення.ВільніЗалишки_Підсумки_TablePart.TABLE} AS ВільніЗалишки WHERE ВільніЗалишки.{РегістриНакопичення.ВільніЗалишки_Підсумки_TablePart.Номенклатура} = {Довідники.Номенклатура_Const.TABLE}.uid GROUP BY Номенклатура ) SELECT ROUND(ВРезервіЗіСкладу, 1) FROM Залишки ) END)", "ВРезерві"));
+            
+                /* Додаткове поле: ВРезервіПідЗамовлення */
+                Номенклатура_Select.QuerySelect.FieldAndAlias.Add(
+                    new ValueName<string>(@$"(CASE WHEN {Довідники.Номенклатура_Const.TABLE}.{Довідники.Номенклатура_Const.ТипНоменклатури} = {(int)Перелічення.ТипиНоменклатури.Товар} THEN ( WITH Залишки AS ( SELECT ВільніЗалишки.{РегістриНакопичення.ВільніЗалишки_Підсумки_TablePart.Номенклатура} AS Номенклатура, SUM(ВільніЗалишки.{РегістриНакопичення.ВільніЗалишки_Підсумки_TablePart.ВРезервіПідЗамовлення} ) AS ВРезервіПідЗамовлення FROM {РегістриНакопичення.ВільніЗалишки_Підсумки_TablePart.TABLE} AS ВільніЗалишки WHERE ВільніЗалишки.{РегістриНакопичення.ВільніЗалишки_Підсумки_TablePart.Номенклатура} = {Довідники.Номенклатура_Const.TABLE}.uid GROUP BY Номенклатура ) SELECT ROUND(ВРезервіПідЗамовлення, 1) FROM Залишки ) END)", "ВРезервіПідЗамовлення"));
+            
+            await Номенклатура_Select.Select();
+            while (Номенклатура_Select.MoveNext())
+            {
+                Довідники.Номенклатура_Pointer? curr = Номенклатура_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Номенклатура_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Номенклатура_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("ОдиницяВиміру", Fields["ОдиницяВиміру"].ToString() ?? "");
+                    row.Fields.Add("Залишок", Fields["Залишок"].ToString() ?? "");
+                    row.Fields.Add("ВРезерві", Fields["ВРезерві"].ToString() ?? "");
+                    row.Fields.Add("ВРезервіПідЗамовлення", Fields["ВРезервіПідЗамовлення"].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -690,7 +899,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
                 /* Sort */
                 Номенклатура_Select.QuerySelect.Order.Add(
-                 Довідники.Номенклатура_Const.Назва, SelectOrder.ASC);
+                 Довідники.Номенклатура_Const.Код, SelectOrder.ASC);
             
                 /* Join */
                 Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
@@ -823,7 +1032,61 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.Виробники_Select Виробники_Select = new();
+            Виробники_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Код*/ Довідники.Виробники_Const.Код,
+                /*Назва*/ Довідники.Виробники_Const.Назва,
+                
+            ]);
+
+            Виробники_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                Виробники_Select.QuerySelect.Order.Add(
+                 Довідники.Виробники_Const.Назва, SelectOrder.ASC);
+            
+            await Виробники_Select.Select();
+            while (Виробники_Select.MoveNext())
+            {
+                Довідники.Виробники_Pointer? curr = Виробники_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Виробники_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Виробники_Const.Назва].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -960,7 +1223,61 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.ВидиНоменклатури_Select ВидиНоменклатури_Select = new();
+            ВидиНоменклатури_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Код*/ Довідники.ВидиНоменклатури_Const.Код,
+                /*Назва*/ Довідники.ВидиНоменклатури_Const.Назва,
+                
+            ]);
+
+            ВидиНоменклатури_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                ВидиНоменклатури_Select.QuerySelect.Order.Add(
+                 Довідники.ВидиНоменклатури_Const.Назва, SelectOrder.ASC);
+            
+            await ВидиНоменклатури_Select.Select();
+            while (ВидиНоменклатури_Select.MoveNext())
+            {
+                Довідники.ВидиНоменклатури_Pointer? curr = ВидиНоменклатури_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[ВидиНоменклатури_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[ВидиНоменклатури_Const.Назва].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -1145,7 +1462,65 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.ПакуванняОдиниціВиміру_Select ПакуванняОдиниціВиміру_Select = new();
+            ПакуванняОдиниціВиміру_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Код*/ Довідники.ПакуванняОдиниціВиміру_Const.Код,
+                /*Назва*/ Довідники.ПакуванняОдиниціВиміру_Const.Назва,
+                /*КількістьУпаковок*/ Довідники.ПакуванняОдиниціВиміру_Const.КількістьУпаковок,
+                /*НазваПовна*/ Довідники.ПакуванняОдиниціВиміру_Const.НазваПовна,
+                
+            ]);
+
+            ПакуванняОдиниціВиміру_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                ПакуванняОдиниціВиміру_Select.QuerySelect.Order.Add(
+                 Довідники.ПакуванняОдиниціВиміру_Const.Назва, SelectOrder.ASC);
+            
+            await ПакуванняОдиниціВиміру_Select.Select();
+            while (ПакуванняОдиниціВиміру_Select.MoveNext())
+            {
+                Довідники.ПакуванняОдиниціВиміру_Pointer? curr = ПакуванняОдиниціВиміру_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[ПакуванняОдиниціВиміру_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[ПакуванняОдиниціВиміру_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("КількістьУпаковок", Fields[ПакуванняОдиниціВиміру_Const.КількістьУпаковок].ToString() ?? "");
+                    row.Fields.Add("НазваПовна", Fields[ПакуванняОдиниціВиміру_Const.НазваПовна].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -1393,7 +1768,67 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.Валюти_Select Валюти_Select = new();
+            Валюти_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Код*/ Довідники.Валюти_Const.Код,
+                /*Назва*/ Довідники.Валюти_Const.Назва,
+                /*КороткаНазва*/ Довідники.Валюти_Const.КороткаНазва,
+                /*Код_R030*/ Довідники.Валюти_Const.Код_R030,
+                /*ВиводитиКурсНаСтартову*/ Довідники.Валюти_Const.ВиводитиКурсНаСтартову,
+                
+            ]);
+
+            Валюти_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                Валюти_Select.QuerySelect.Order.Add(
+                 Довідники.Валюти_Const.Код, SelectOrder.ASC);
+            
+            await Валюти_Select.Select();
+            while (Валюти_Select.MoveNext())
+            {
+                Довідники.Валюти_Pointer? curr = Валюти_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Валюти_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Валюти_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("КороткаНазва", Fields[Валюти_Const.КороткаНазва].ToString() ?? "");
+                    row.Fields.Add("Код_R030", Fields[Валюти_Const.Код_R030].ToString() ?? "");
+                    row.Fields.Add("ВиводитиКурсНаСтартову", (Fields[Валюти_Const.ВиводитиКурсНаСтартову] != DBNull.Value && (bool)Fields[Валюти_Const.ВиводитиКурсНаСтартову]) ? "Так" : "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -1556,7 +1991,63 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.Валюти_Select Валюти_Select = new();
+            Валюти_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Код*/ Довідники.Валюти_Const.Код,
+                /*Назва*/ Довідники.Валюти_Const.Назва,
+                /*КороткаНазва*/ Довідники.Валюти_Const.КороткаНазва,
+                
+            ]);
+
+            Валюти_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                Валюти_Select.QuerySelect.Order.Add(
+                 Довідники.Валюти_Const.Код, SelectOrder.ASC);
+            
+            await Валюти_Select.Select();
+            while (Валюти_Select.MoveNext())
+            {
+                Довідники.Валюти_Pointer? curr = Валюти_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Валюти_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Валюти_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("КороткаНазва", Fields[Валюти_Const.КороткаНазва].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -1802,7 +2293,70 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.Контрагенти_Select Контрагенти_Select = new();
+            Контрагенти_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Код*/ Довідники.Контрагенти_Const.Код,
+                /*Назва*/ Довідники.Контрагенти_Const.Назва,
+                /*Постачальник*/ Довідники.Контрагенти_Const.Постачальник,
+                /*Покупець*/ Довідники.Контрагенти_Const.Покупець,
+                
+            ]);
+
+            Контрагенти_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                Контрагенти_Select.QuerySelect.Order.Add(
+                 Довідники.Контрагенти_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.Контрагенти_Папки_Pointer.GetJoin(Контрагенти_Select.QuerySelect, Довідники.Контрагенти_Const.Папка,
+                Контрагенти_Select.QuerySelect.Table, "join_tab_1", "Папка");
+            
+            await Контрагенти_Select.Select();
+            while (Контрагенти_Select.MoveNext())
+            {
+                Довідники.Контрагенти_Pointer? curr = Контрагенти_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Контрагенти_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Контрагенти_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Папка", Fields["Папка"].ToString() ?? "");
+                    row.Fields.Add("Постачальник", (Fields[Контрагенти_Const.Постачальник] != DBNull.Value && (bool)Fields[Контрагенти_Const.Постачальник]) ? "Так" : "");
+                    row.Fields.Add("Покупець", (Fields[Контрагенти_Const.Покупець] != DBNull.Value && (bool)Fields[Контрагенти_Const.Покупець]) ? "Так" : "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -1944,7 +2498,61 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.Контрагенти_Select Контрагенти_Select = new();
+            Контрагенти_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Код*/ Довідники.Контрагенти_Const.Код,
+                /*Назва*/ Довідники.Контрагенти_Const.Назва,
+                
+            ]);
+
+            Контрагенти_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                Контрагенти_Select.QuerySelect.Order.Add(
+                 Довідники.Контрагенти_Const.Назва, SelectOrder.ASC);
+            
+            await Контрагенти_Select.Select();
+            while (Контрагенти_Select.MoveNext())
+            {
+                Довідники.Контрагенти_Pointer? curr = Контрагенти_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Контрагенти_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Контрагенти_Const.Назва].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -2168,7 +2776,65 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.Склади_Select Склади_Select = new();
+            Склади_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Код*/ Довідники.Склади_Const.Код,
+                /*Назва*/ Довідники.Склади_Const.Назва,
+                /*ТипСкладу*/ Довідники.Склади_Const.ТипСкладу,
+                /*НалаштуванняАдресногоЗберігання*/ Довідники.Склади_Const.НалаштуванняАдресногоЗберігання,
+                
+            ]);
+
+            Склади_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                Склади_Select.QuerySelect.Order.Add(
+                 Довідники.Склади_Const.Назва, SelectOrder.ASC);
+            
+            await Склади_Select.Select();
+            while (Склади_Select.MoveNext())
+            {
+                Довідники.Склади_Pointer? curr = Склади_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Склади_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Склади_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("ТипСкладу", Перелічення.ПсевдонімиПерелічення.ТипиСкладів_Alias((Перелічення.ТипиСкладів)(Fields[Склади_Const.ТипСкладу] != DBNull.Value ? Fields[Склади_Const.ТипСкладу] : 0) ));
+                    row.Fields.Add("НалаштуванняАдресногоЗберігання", Перелічення.ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_Alias((Перелічення.НалаштуванняАдресногоЗберігання)(Fields[Склади_Const.НалаштуванняАдресногоЗберігання] != DBNull.Value ? Fields[Склади_Const.НалаштуванняАдресногоЗберігання] : 0) ));
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -2305,7 +2971,61 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.Склади_Select Склади_Select = new();
+            Склади_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Код*/ Довідники.Склади_Const.Код,
+                /*Назва*/ Довідники.Склади_Const.Назва,
+                
+            ]);
+
+            Склади_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                Склади_Select.QuerySelect.Order.Add(
+                 Довідники.Склади_Const.Назва, SelectOrder.ASC);
+            
+            await Склади_Select.Select();
+            while (Склади_Select.MoveNext())
+            {
+                Довідники.Склади_Pointer? curr = Склади_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Склади_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Склади_Const.Назва].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -2466,7 +3186,66 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.ВидиЦін_Select ВидиЦін_Select = new();
+            ВидиЦін_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Код*/ Довідники.ВидиЦін_Const.Код,
+                /*Назва*/ Довідники.ВидиЦін_Const.Назва,
+                
+            ]);
+
+            ВидиЦін_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                ВидиЦін_Select.QuerySelect.Order.Add(
+                 Довідники.ВидиЦін_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.Валюти_Pointer.GetJoin(ВидиЦін_Select.QuerySelect, Довідники.ВидиЦін_Const.Валюта,
+                ВидиЦін_Select.QuerySelect.Table, "join_tab_1", "Валюта");
+            
+            await ВидиЦін_Select.Select();
+            while (ВидиЦін_Select.MoveNext())
+            {
+                Довідники.ВидиЦін_Pointer? curr = ВидиЦін_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[ВидиЦін_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[ВидиЦін_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Валюта", Fields["Валюта"].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -2580,7 +3359,59 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.ВидиЦін_Select ВидиЦін_Select = new();
+            ВидиЦін_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Назва*/ Довідники.ВидиЦін_Const.Назва,
+                
+            ]);
+
+            ВидиЦін_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                ВидиЦін_Select.QuerySelect.Order.Add(
+                 Довідники.ВидиЦін_Const.Назва, SelectOrder.ASC);
+            
+            await ВидиЦін_Select.Select();
+            while (ВидиЦін_Select.MoveNext())
+            {
+                Довідники.ВидиЦін_Pointer? curr = ВидиЦін_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[ВидиЦін_Const.Назва].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -2715,7 +3546,61 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.ВидиЦінПостачальників_Select ВидиЦінПостачальників_Select = new();
+            ВидиЦінПостачальників_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Код*/ Довідники.ВидиЦінПостачальників_Const.Код,
+                /*Назва*/ Довідники.ВидиЦінПостачальників_Const.Назва,
+                
+            ]);
+
+            ВидиЦінПостачальників_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                ВидиЦінПостачальників_Select.QuerySelect.Order.Add(
+                 Довідники.ВидиЦінПостачальників_Const.Назва, SelectOrder.ASC);
+            
+            await ВидиЦінПостачальників_Select.Select();
+            while (ВидиЦінПостачальників_Select.MoveNext())
+            {
+                Довідники.ВидиЦінПостачальників_Pointer? curr = ВидиЦінПостачальників_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[ВидиЦінПостачальників_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[ВидиЦінПостачальників_Const.Назва].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -2852,7 +3737,61 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.Користувачі_Select Користувачі_Select = new();
+            Користувачі_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Код*/ Довідники.Користувачі_Const.Код,
+                /*Назва*/ Довідники.Користувачі_Const.Назва,
+                
+            ]);
+
+            Користувачі_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                Користувачі_Select.QuerySelect.Order.Add(
+                 Довідники.Користувачі_Const.Назва, SelectOrder.ASC);
+            
+            await Користувачі_Select.Select();
+            while (Користувачі_Select.MoveNext())
+            {
+                Довідники.Користувачі_Pointer? curr = Користувачі_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Користувачі_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Користувачі_Const.Назва].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -2989,7 +3928,61 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.ФізичніОсоби_Select ФізичніОсоби_Select = new();
+            ФізичніОсоби_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Код*/ Довідники.ФізичніОсоби_Const.Код,
+                /*Назва*/ Довідники.ФізичніОсоби_Const.Назва,
+                
+            ]);
+
+            ФізичніОсоби_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                ФізичніОсоби_Select.QuerySelect.Order.Add(
+                 Довідники.ФізичніОсоби_Const.Назва, SelectOrder.ASC);
+            
+            await ФізичніОсоби_Select.Select();
+            while (ФізичніОсоби_Select.MoveNext())
+            {
+                Довідники.ФізичніОсоби_Pointer? curr = ФізичніОсоби_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[ФізичніОсоби_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[ФізичніОсоби_Const.Назва].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -3126,7 +4119,61 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.СтруктураПідприємства_Select СтруктураПідприємства_Select = new();
+            СтруктураПідприємства_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Код*/ Довідники.СтруктураПідприємства_Const.Код,
+                /*Назва*/ Довідники.СтруктураПідприємства_Const.Назва,
+                
+            ]);
+
+            СтруктураПідприємства_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                СтруктураПідприємства_Select.QuerySelect.Order.Add(
+                 Довідники.СтруктураПідприємства_Const.Назва, SelectOrder.ASC);
+            
+            await СтруктураПідприємства_Select.Select();
+            while (СтруктураПідприємства_Select.MoveNext())
+            {
+                Довідники.СтруктураПідприємства_Pointer? curr = СтруктураПідприємства_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[СтруктураПідприємства_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[СтруктураПідприємства_Const.Назва].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -3263,7 +4310,61 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.КраїниСвіту_Select КраїниСвіту_Select = new();
+            КраїниСвіту_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Код*/ Довідники.КраїниСвіту_Const.Код,
+                /*Назва*/ Довідники.КраїниСвіту_Const.Назва,
+                
+            ]);
+
+            КраїниСвіту_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                КраїниСвіту_Select.QuerySelect.Order.Add(
+                 Довідники.КраїниСвіту_Const.Назва, SelectOrder.ASC);
+            
+            await КраїниСвіту_Select.Select();
+            while (КраїниСвіту_Select.MoveNext())
+            {
+                Довідники.КраїниСвіту_Pointer? curr = КраїниСвіту_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[КраїниСвіту_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[КраїниСвіту_Const.Назва].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -3472,7 +4573,67 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.Файли_Select Файли_Select = new();
+            Файли_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Код*/ Довідники.Файли_Const.Код,
+                /*Назва*/ Довідники.Файли_Const.Назва,
+                /*НазваФайлу*/ Довідники.Файли_Const.НазваФайлу,
+                /*Розмір*/ Довідники.Файли_Const.Розмір,
+                /*ДатаСтворення*/ Довідники.Файли_Const.ДатаСтворення,
+                
+            ]);
+
+            Файли_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                Файли_Select.QuerySelect.Order.Add(
+                 Довідники.Файли_Const.Назва, SelectOrder.ASC);
+            
+            await Файли_Select.Select();
+            while (Файли_Select.MoveNext())
+            {
+                Довідники.Файли_Pointer? curr = Файли_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Файли_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Файли_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НазваФайлу", Fields[Файли_Const.НазваФайлу].ToString() ?? "");
+                    row.Fields.Add("Розмір", Fields[Файли_Const.Розмір].ToString() ?? "");
+                    row.Fields.Add("ДатаСтворення", Fields[Файли_Const.ДатаСтворення].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -3587,7 +4748,59 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.Файли_Select Файли_Select = new();
+            Файли_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Назва*/ Довідники.Файли_Const.Назва,
+                
+            ]);
+
+            Файли_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                Файли_Select.QuerySelect.Order.Add(
+                 Довідники.Файли_Const.Назва, SelectOrder.ASC);
+            
+            await Файли_Select.Select();
+            while (Файли_Select.MoveNext())
+            {
+                Довідники.Файли_Pointer? curr = Файли_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[Файли_Const.Назва].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -3818,7 +5031,81 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.ХарактеристикиНоменклатури_Select ХарактеристикиНоменклатури_Select = new();
+            ХарактеристикиНоменклатури_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Код*/ Довідники.ХарактеристикиНоменклатури_Const.Код,
+                /*Назва*/ Довідники.ХарактеристикиНоменклатури_Const.Назва,
+                
+            ]);
+
+            ХарактеристикиНоменклатури_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                ХарактеристикиНоменклатури_Select.QuerySelect.Order.Add(
+                 Довідники.ХарактеристикиНоменклатури_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.Номенклатура_Pointer.GetJoin(ХарактеристикиНоменклатури_Select.QuerySelect, Довідники.ХарактеристикиНоменклатури_Const.Номенклатура,
+                ХарактеристикиНоменклатури_Select.QuerySelect.Table, "join_tab_1", "Номенклатура");
+            
+                /* Додаткове поле: Залишки */
+                ХарактеристикиНоменклатури_Select.QuerySelect.FieldAndAlias.Add(
+                    new ValueName<string>(@$"(WITH Залишки AS ( SELECT ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.ХарактеристикаНоменклатури} AS Характеристика, SUM(ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.ВНаявності}) AS ВНаявності FROM {РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.TABLE} AS ТовариНаСкладах WHERE ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} = {Довідники.ХарактеристикиНоменклатури_Const.TABLE}.{Довідники.ХарактеристикиНоменклатури_Const.Номенклатура} AND ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.ХарактеристикаНоменклатури} = {Довідники.ХарактеристикиНоменклатури_Const.TABLE}.uid GROUP BY Характеристика ) SELECT ROUND(ВНаявності, 1) FROM Залишки)", "Залишки"));
+            
+                /* Додаткове поле: ВРезерві */
+                ХарактеристикиНоменклатури_Select.QuerySelect.FieldAndAlias.Add(
+                    new ValueName<string>(@$"(WITH Залишки AS ( SELECT ВільніЗалишки.{РегістриНакопичення.ВільніЗалишки_Підсумки_TablePart.ХарактеристикаНоменклатури} AS Характеристика, SUM(ВільніЗалишки.{РегістриНакопичення.ВільніЗалишки_Підсумки_TablePart.ВРезервіЗіСкладу}) AS ВРезервіЗіСкладу FROM {РегістриНакопичення.ВільніЗалишки_Підсумки_TablePart.TABLE} AS ВільніЗалишки WHERE ВільніЗалишки.{РегістриНакопичення.ВільніЗалишки_Підсумки_TablePart.Номенклатура} = {Довідники.ХарактеристикиНоменклатури_Const.TABLE}.{Довідники.ХарактеристикиНоменклатури_Const.Номенклатура} AND ВільніЗалишки.{РегістриНакопичення.ВільніЗалишки_Підсумки_TablePart.ХарактеристикаНоменклатури} = {Довідники.ХарактеристикиНоменклатури_Const.TABLE}.uid GROUP BY Характеристика ) SELECT ROUND(ВРезервіЗіСкладу, 1) FROM Залишки)", "ВРезерві"));
+            
+                /* Додаткове поле: ВРезервіПідЗамовлення */
+                ХарактеристикиНоменклатури_Select.QuerySelect.FieldAndAlias.Add(
+                    new ValueName<string>(@$"(WITH Залишки AS ( SELECT ВільніЗалишки.{РегістриНакопичення.ВільніЗалишки_Підсумки_TablePart.ХарактеристикаНоменклатури} AS Характеристика, SUM(ВільніЗалишки.{РегістриНакопичення.ВільніЗалишки_Підсумки_TablePart.ВРезервіПідЗамовлення}) AS ВРезервіПідЗамовлення FROM {РегістриНакопичення.ВільніЗалишки_Підсумки_TablePart.TABLE} AS ВільніЗалишки WHERE ВільніЗалишки.{РегістриНакопичення.ВільніЗалишки_Підсумки_TablePart.Номенклатура} = {Довідники.ХарактеристикиНоменклатури_Const.TABLE}.{Довідники.ХарактеристикиНоменклатури_Const.Номенклатура} AND ВільніЗалишки.{РегістриНакопичення.ВільніЗалишки_Підсумки_TablePart.ХарактеристикаНоменклатури} = {Довідники.ХарактеристикиНоменклатури_Const.TABLE}.uid GROUP BY Характеристика ) SELECT ROUND(ВРезервіПідЗамовлення, 1) FROM Залишки)", "ВРезервіПідЗамовлення"));
+            
+            await ХарактеристикиНоменклатури_Select.Select();
+            while (ХарактеристикиНоменклатури_Select.MoveNext())
+            {
+                Довідники.ХарактеристикиНоменклатури_Pointer? curr = ХарактеристикиНоменклатури_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[ХарактеристикиНоменклатури_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Номенклатура", Fields["Номенклатура"].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[ХарактеристикиНоменклатури_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Залишки", Fields["Залишки"].ToString() ?? "");
+                    row.Fields.Add("ВРезерві", Fields["ВРезерві"].ToString() ?? "");
+                    row.Fields.Add("ВРезервіПідЗамовлення", Fields["ВРезервіПідЗамовлення"].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -3975,7 +5262,61 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.Номенклатура_Папки_SelectHierarchical Номенклатура_Папки_Select = new();
+            Номенклатура_Папки_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Назва*/ Довідники.Номенклатура_Папки_Const.Назва,
+                /*Код*/ Довідники.Номенклатура_Папки_Const.Код,
+                
+            ]);
+
+            Номенклатура_Папки_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                Номенклатура_Папки_Select.QuerySelect.Order.Add(
+                 Довідники.Номенклатура_Папки_Const.Назва, SelectOrder.ASC);
+            
+            await Номенклатура_Папки_Select.Select();
+            while (Номенклатура_Папки_Select.MoveNext())
+            {
+                Довідники.Номенклатура_Папки_Pointer? curr = Номенклатура_Папки_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[Номенклатура_Папки_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Код", Fields[Номенклатура_Папки_Const.Код].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -4108,7 +5449,61 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.Номенклатура_Папки_SelectHierarchical Номенклатура_Папки_Select = new();
+            Номенклатура_Папки_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Назва*/ Довідники.Номенклатура_Папки_Const.Назва,
+                /*Код*/ Довідники.Номенклатура_Папки_Const.Код,
+                
+            ]);
+
+            Номенклатура_Папки_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                Номенклатура_Папки_Select.QuerySelect.Order.Add(
+                 Довідники.Номенклатура_Папки_Const.Назва, SelectOrder.ASC);
+            
+            await Номенклатура_Папки_Select.Select();
+            while (Номенклатура_Папки_Select.MoveNext())
+            {
+                Довідники.Номенклатура_Папки_Pointer? curr = Номенклатура_Папки_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[Номенклатура_Папки_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Код", Fields[Номенклатура_Папки_Const.Код].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -4245,7 +5640,61 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.Контрагенти_Папки_SelectHierarchical Контрагенти_Папки_Select = new();
+            Контрагенти_Папки_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Назва*/ Довідники.Контрагенти_Папки_Const.Назва,
+                /*Код*/ Довідники.Контрагенти_Папки_Const.Код,
+                
+            ]);
+
+            Контрагенти_Папки_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                Контрагенти_Папки_Select.QuerySelect.Order.Add(
+                 Довідники.Контрагенти_Папки_Const.Назва, SelectOrder.ASC);
+            
+            await Контрагенти_Папки_Select.Select();
+            while (Контрагенти_Папки_Select.MoveNext())
+            {
+                Довідники.Контрагенти_Папки_Pointer? curr = Контрагенти_Папки_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[Контрагенти_Папки_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Код", Fields[Контрагенти_Папки_Const.Код].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -4382,7 +5831,61 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.Склади_Папки_SelectHierarchical Склади_Папки_Select = new();
+            Склади_Папки_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Назва*/ Довідники.Склади_Папки_Const.Назва,
+                /*Код*/ Довідники.Склади_Папки_Const.Код,
+                
+            ]);
+
+            Склади_Папки_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                Склади_Папки_Select.QuerySelect.Order.Add(
+                 Довідники.Склади_Папки_Const.Назва, SelectOrder.ASC);
+            
+            await Склади_Папки_Select.Select();
+            while (Склади_Папки_Select.MoveNext())
+            {
+                Довідники.Склади_Папки_Pointer? curr = Склади_Папки_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[Склади_Папки_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Код", Fields[Склади_Папки_Const.Код].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -4567,7 +6070,71 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.Каси_Select Каси_Select = new();
+            Каси_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Код*/ Довідники.Каси_Const.Код,
+                /*Назва*/ Довідники.Каси_Const.Назва,
+                
+            ]);
+
+            Каси_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                Каси_Select.QuerySelect.Order.Add(
+                 Довідники.Каси_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.Валюти_Pointer.GetJoin(Каси_Select.QuerySelect, Довідники.Каси_Const.Валюта,
+                Каси_Select.QuerySelect.Table, "join_tab_1", "Валюта");
+            
+                /* Додаткове поле: Залишок */
+                Каси_Select.QuerySelect.FieldAndAlias.Add(
+                    new ValueName<string>(@$"(SELECT ROUND(РухКоштів.{РегістриНакопичення.РухКоштів_Підсумки_TablePart.Сума}, 2) AS Сума FROM {РегістриНакопичення.РухКоштів_Підсумки_TablePart.TABLE} AS РухКоштів WHERE РухКоштів.{РегістриНакопичення.РухКоштів_Підсумки_TablePart.Каса} = {Довідники.Каси_Const.TABLE}.uid)", "Залишок"));
+            
+            await Каси_Select.Select();
+            while (Каси_Select.MoveNext())
+            {
+                Довідники.Каси_Pointer? curr = Каси_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Каси_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Каси_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Валюта", Fields["Валюта"].ToString() ?? "");
+                    row.Fields.Add("Залишок", Fields["Залишок"].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -4734,7 +6301,66 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.Каси_Select Каси_Select = new();
+            Каси_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Код*/ Довідники.Каси_Const.Код,
+                /*Назва*/ Довідники.Каси_Const.Назва,
+                
+            ]);
+
+            Каси_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                Каси_Select.QuerySelect.Order.Add(
+                 Довідники.Каси_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.Валюти_Pointer.GetJoin(Каси_Select.QuerySelect, Довідники.Каси_Const.Валюта,
+                Каси_Select.QuerySelect.Table, "join_tab_1", "Валюта");
+            
+            await Каси_Select.Select();
+            while (Каси_Select.MoveNext())
+            {
+                Довідники.Каси_Pointer? curr = Каси_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Каси_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Каси_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Валюта", Fields["Валюта"].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -4900,7 +6526,66 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.БанківськіРахункиОрганізацій_Select БанківськіРахункиОрганізацій_Select = new();
+            БанківськіРахункиОрганізацій_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Код*/ Довідники.БанківськіРахункиОрганізацій_Const.Код,
+                /*Назва*/ Довідники.БанківськіРахункиОрганізацій_Const.Назва,
+                
+            ]);
+
+            БанківськіРахункиОрганізацій_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                БанківськіРахункиОрганізацій_Select.QuerySelect.Order.Add(
+                 Довідники.БанківськіРахункиОрганізацій_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.Валюти_Pointer.GetJoin(БанківськіРахункиОрганізацій_Select.QuerySelect, Довідники.БанківськіРахункиОрганізацій_Const.Валюта,
+                БанківськіРахункиОрганізацій_Select.QuerySelect.Table, "join_tab_1", "Валюта");
+            
+            await БанківськіРахункиОрганізацій_Select.Select();
+            while (БанківськіРахункиОрганізацій_Select.MoveNext())
+            {
+                Довідники.БанківськіРахункиОрганізацій_Pointer? curr = БанківськіРахункиОрганізацій_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[БанківськіРахункиОрганізацій_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[БанківськіРахункиОрганізацій_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Валюта", Fields["Валюта"].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -5116,7 +6801,68 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.ДоговориКонтрагентів_Select ДоговориКонтрагентів_Select = new();
+            ДоговориКонтрагентів_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Код*/ Довідники.ДоговориКонтрагентів_Const.Код,
+                /*Назва*/ Довідники.ДоговориКонтрагентів_Const.Назва,
+                /*ТипДоговору*/ Довідники.ДоговориКонтрагентів_Const.ТипДоговору,
+                
+            ]);
+
+            ДоговориКонтрагентів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                ДоговориКонтрагентів_Select.QuerySelect.Order.Add(
+                 Довідники.ДоговориКонтрагентів_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.Контрагенти_Pointer.GetJoin(ДоговориКонтрагентів_Select.QuerySelect, Довідники.ДоговориКонтрагентів_Const.Контрагент,
+                ДоговориКонтрагентів_Select.QuerySelect.Table, "join_tab_1", "Контрагент");
+            
+            await ДоговориКонтрагентів_Select.Select();
+            while (ДоговориКонтрагентів_Select.MoveNext())
+            {
+                Довідники.ДоговориКонтрагентів_Pointer? curr = ДоговориКонтрагентів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[ДоговориКонтрагентів_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[ДоговориКонтрагентів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Контрагент", Fields["Контрагент"].ToString() ?? "");
+                    row.Fields.Add("ТипДоговору", Перелічення.ПсевдонімиПерелічення.ТипДоговорів_Alias((Перелічення.ТипДоговорів)(Fields[ДоговориКонтрагентів_Const.ТипДоговору] != DBNull.Value ? Fields[ДоговориКонтрагентів_Const.ТипДоговору] : 0) ));
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -5280,7 +7026,66 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.ДоговориКонтрагентів_Select ДоговориКонтрагентів_Select = new();
+            ДоговориКонтрагентів_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Назва*/ Довідники.ДоговориКонтрагентів_Const.Назва,
+                /*ТипДоговору*/ Довідники.ДоговориКонтрагентів_Const.ТипДоговору,
+                
+            ]);
+
+            ДоговориКонтрагентів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                ДоговориКонтрагентів_Select.QuerySelect.Order.Add(
+                 Довідники.ДоговориКонтрагентів_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.Контрагенти_Pointer.GetJoin(ДоговориКонтрагентів_Select.QuerySelect, Довідники.ДоговориКонтрагентів_Const.Контрагент,
+                ДоговориКонтрагентів_Select.QuerySelect.Table, "join_tab_1", "Контрагент");
+            
+            await ДоговориКонтрагентів_Select.Select();
+            while (ДоговориКонтрагентів_Select.MoveNext())
+            {
+                Довідники.ДоговориКонтрагентів_Pointer? curr = ДоговориКонтрагентів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[ДоговориКонтрагентів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Контрагент", Fields["Контрагент"].ToString() ?? "");
+                    row.Fields.Add("ТипДоговору", Перелічення.ПсевдонімиПерелічення.ТипДоговорів_Alias((Перелічення.ТипДоговорів)(Fields[ДоговориКонтрагентів_Const.ТипДоговору] != DBNull.Value ? Fields[ДоговориКонтрагентів_Const.ТипДоговору] : 0) ));
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -5446,7 +7251,66 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.БанківськіРахункиКонтрагентів_Select БанківськіРахункиКонтрагентів_Select = new();
+            БанківськіРахункиКонтрагентів_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Код*/ Довідники.БанківськіРахункиКонтрагентів_Const.Код,
+                /*Назва*/ Довідники.БанківськіРахункиКонтрагентів_Const.Назва,
+                
+            ]);
+
+            БанківськіРахункиКонтрагентів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                БанківськіРахункиКонтрагентів_Select.QuerySelect.Order.Add(
+                 Довідники.БанківськіРахункиКонтрагентів_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.Валюти_Pointer.GetJoin(БанківськіРахункиКонтрагентів_Select.QuerySelect, Довідники.БанківськіРахункиКонтрагентів_Const.Валюта,
+                БанківськіРахункиКонтрагентів_Select.QuerySelect.Table, "join_tab_1", "Валюта");
+            
+            await БанківськіРахункиКонтрагентів_Select.Select();
+            while (БанківськіРахункиКонтрагентів_Select.MoveNext())
+            {
+                Довідники.БанківськіРахункиКонтрагентів_Pointer? curr = БанківськіРахункиКонтрагентів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[БанківськіРахункиКонтрагентів_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[БанківськіРахункиКонтрагентів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Валюта", Fields["Валюта"].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -5662,7 +7526,65 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.СтаттяРухуКоштів_Select СтаттяРухуКоштів_Select = new();
+            СтаттяРухуКоштів_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Назва*/ Довідники.СтаттяРухуКоштів_Const.Назва,
+                /*Код*/ Довідники.СтаттяРухуКоштів_Const.Код,
+                /*КореспондуючийРахунок*/ Довідники.СтаттяРухуКоштів_Const.КореспондуючийРахунок,
+                /*ВидРухуКоштів*/ Довідники.СтаттяРухуКоштів_Const.ВидРухуКоштів,
+                
+            ]);
+
+            СтаттяРухуКоштів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                СтаттяРухуКоштів_Select.QuerySelect.Order.Add(
+                 Довідники.СтаттяРухуКоштів_Const.Назва, SelectOrder.ASC);
+            
+            await СтаттяРухуКоштів_Select.Select();
+            while (СтаттяРухуКоштів_Select.MoveNext())
+            {
+                Довідники.СтаттяРухуКоштів_Pointer? curr = СтаттяРухуКоштів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[СтаттяРухуКоштів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Код", Fields[СтаттяРухуКоштів_Const.Код].ToString() ?? "");
+                    row.Fields.Add("КореспондуючийРахунок", Fields[СтаттяРухуКоштів_Const.КореспондуючийРахунок].ToString() ?? "");
+                    row.Fields.Add("ВидРухуКоштів", Перелічення.ПсевдонімиПерелічення.ВидиРухуКоштів_Alias((Перелічення.ВидиРухуКоштів)(Fields[СтаттяРухуКоштів_Const.ВидРухуКоштів] != DBNull.Value ? Fields[СтаттяРухуКоштів_Const.ВидРухуКоштів] : 0) ));
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -5779,7 +7701,59 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.СеріїНоменклатури_Select СеріїНоменклатури_Select = new();
+            СеріїНоменклатури_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Номер*/ Довідники.СеріїНоменклатури_Const.Номер,
+                
+            ]);
+
+            СеріїНоменклатури_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                СеріїНоменклатури_Select.QuerySelect.Order.Add(
+                 Довідники.СеріїНоменклатури_Const.Номер, SelectOrder.ASC);
+            
+            await СеріїНоменклатури_Select.Select();
+            while (СеріїНоменклатури_Select.MoveNext())
+            {
+                Довідники.СеріїНоменклатури_Pointer? curr = СеріїНоменклатури_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Номер", Fields[СеріїНоменклатури_Const.Номер].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -6036,7 +8010,78 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.ПартіяТоварівКомпозит_Select ПартіяТоварівКомпозит_Select = new();
+            ПартіяТоварівКомпозит_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Назва*/ Довідники.ПартіяТоварівКомпозит_Const.Назва,
+                /*Дата*/ Довідники.ПартіяТоварівКомпозит_Const.Дата,
+                /*ТипДокументу*/ Довідники.ПартіяТоварівКомпозит_Const.ТипДокументу,
+                
+            ]);
+
+            ПартіяТоварівКомпозит_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                ПартіяТоварівКомпозит_Select.QuerySelect.Order.Add(
+                 Довідники.ПартіяТоварівКомпозит_Const.Дата, SelectOrder.ASC);
+            
+                /* Join */
+                Документи.ПоступленняТоварівТаПослуг_Pointer.GetJoin(ПартіяТоварівКомпозит_Select.QuerySelect, Довідники.ПартіяТоварівКомпозит_Const.ПоступленняТоварівТаПослуг,
+                ПартіяТоварівКомпозит_Select.QuerySelect.Table, "join_tab_1", "ПоступленняТоварівТаПослуг");
+            
+                /* Join */
+                Документи.ВведенняЗалишків_Pointer.GetJoin(ПартіяТоварівКомпозит_Select.QuerySelect, Довідники.ПартіяТоварівКомпозит_Const.ВведенняЗалишків,
+                ПартіяТоварівКомпозит_Select.QuerySelect.Table, "join_tab_2", "ВведенняЗалишків");
+            
+                /* Додаткове поле: Залишки */
+                ПартіяТоварівКомпозит_Select.QuerySelect.FieldAndAlias.Add(
+                    new ValueName<string>(@$"(WITH Залишки AS ( SELECT ПартіїТоварів.{РегістриНакопичення.ПартіїТоварів_Підсумки_TablePart.ПартіяТоварівКомпозит} AS ПартіяТоварівКомпозит, SUM(ПартіїТоварів.{РегістриНакопичення.ПартіїТоварів_Підсумки_TablePart.Кількість} ) AS Кількість FROM {РегістриНакопичення.ПартіїТоварів_Підсумки_TablePart.TABLE} AS ПартіїТоварів WHERE ПартіїТоварів.{РегістриНакопичення.ПартіїТоварів_Підсумки_TablePart.ПартіяТоварівКомпозит} = {Довідники.ПартіяТоварівКомпозит_Const.TABLE}.uid GROUP BY ПартіяТоварівКомпозит ) SELECT ROUND(Кількість, 1) FROM Залишки)", "Залишки"));
+            
+            await ПартіяТоварівКомпозит_Select.Select();
+            while (ПартіяТоварівКомпозит_Select.MoveNext())
+            {
+                Довідники.ПартіяТоварівКомпозит_Pointer? curr = ПартіяТоварівКомпозит_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[ПартіяТоварівКомпозит_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Дата", Fields[ПартіяТоварівКомпозит_Const.Дата].ToString() ?? "");
+                    row.Fields.Add("ТипДокументу", Перелічення.ПсевдонімиПерелічення.ТипДокументуПартіяТоварівКомпозит_Alias((Перелічення.ТипДокументуПартіяТоварівКомпозит)(Fields[ПартіяТоварівКомпозит_Const.ТипДокументу] != DBNull.Value ? Fields[ПартіяТоварівКомпозит_Const.ТипДокументу] : 0) ));
+                    row.Fields.Add("ПоступленняТоварівТаПослуг", Fields["ПоступленняТоварівТаПослуг"].ToString() ?? "");
+                    row.Fields.Add("ВведенняЗалишків", Fields["ВведенняЗалишків"].ToString() ?? "");
+                    row.Fields.Add("Залишки", Fields["Залишки"].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -6186,7 +8231,61 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.ПартіяТоварівКомпозит_Select ПартіяТоварівКомпозит_Select = new();
+            ПартіяТоварівКомпозит_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Назва*/ Довідники.ПартіяТоварівКомпозит_Const.Назва,
+                /*Дата*/ Довідники.ПартіяТоварівКомпозит_Const.Дата,
+                
+            ]);
+
+            ПартіяТоварівКомпозит_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                ПартіяТоварівКомпозит_Select.QuerySelect.Order.Add(
+                 Довідники.ПартіяТоварівКомпозит_Const.Дата, SelectOrder.ASC);
+            
+            await ПартіяТоварівКомпозит_Select.Select();
+            while (ПартіяТоварівКомпозит_Select.MoveNext())
+            {
+                Довідники.ПартіяТоварівКомпозит_Pointer? curr = ПартіяТоварівКомпозит_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[ПартіяТоварівКомпозит_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Дата", Fields[ПартіяТоварівКомпозит_Const.Дата].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -6323,7 +8422,61 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.ВидиЗапасів_Select ВидиЗапасів_Select = new();
+            ВидиЗапасів_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Код*/ Довідники.ВидиЗапасів_Const.Код,
+                /*Назва*/ Довідники.ВидиЗапасів_Const.Назва,
+                
+            ]);
+
+            ВидиЗапасів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                ВидиЗапасів_Select.QuerySelect.Order.Add(
+                 Довідники.ВидиЗапасів_Const.Назва, SelectOrder.ASC);
+            
+            await ВидиЗапасів_Select.Select();
+            while (ВидиЗапасів_Select.MoveNext())
+            {
+                Довідники.ВидиЗапасів_Pointer? curr = ВидиЗапасів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[ВидиЗапасів_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[ВидиЗапасів_Const.Назва].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -6868,7 +9021,95 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.Банки_Select Банки_Select = new();
+            Банки_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Код*/ Довідники.Банки_Const.Код,
+                /*Назва*/ Довідники.Банки_Const.Назва,
+                /*ПовнаНазва*/ Довідники.Банки_Const.ПовнаНазва,
+                /*КодМФО*/ Довідники.Банки_Const.КодМФО,
+                /*КодЄДРПОУ*/ Довідники.Банки_Const.КодЄДРПОУ,
+                /*НомерЛіцензії*/ Довідники.Банки_Const.НомерЛіцензії,
+                /*ДатаЛіцензії*/ Довідники.Банки_Const.ДатаЛіцензії,
+                /*Статус*/ Довідники.Банки_Const.Статус,
+                /*ТипНаселеногоПункту*/ Довідники.Банки_Const.ТипНаселеногоПункту,
+                /*УнікальнийКодБанку*/ Довідники.Банки_Const.УнікальнийКодБанку,
+                /*ПоштовийІндекс*/ Довідники.Банки_Const.ПоштовийІндекс,
+                /*НазваНаселеногоПункту*/ Довідники.Банки_Const.НазваНаселеногоПункту,
+                /*Адреса*/ Довідники.Банки_Const.Адреса,
+                /*НомерТелефону*/ Довідники.Банки_Const.НомерТелефону,
+                /*ДатаВідкриттяУстанови*/ Довідники.Банки_Const.ДатаВідкриттяУстанови,
+                /*ДатаЗакриттяУстанови*/ Довідники.Банки_Const.ДатаЗакриттяУстанови,
+                /*КодНБУ*/ Довідники.Банки_Const.КодНБУ,
+                /*КодСтатусу*/ Довідники.Банки_Const.КодСтатусу,
+                /*ДатаЗапису*/ Довідники.Банки_Const.ДатаЗапису,
+                
+            ]);
+
+            Банки_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                Банки_Select.QuerySelect.Order.Add(
+                 Довідники.Банки_Const.Назва, SelectOrder.ASC);
+            
+            await Банки_Select.Select();
+            while (Банки_Select.MoveNext())
+            {
+                Довідники.Банки_Pointer? curr = Банки_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Банки_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Банки_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("ПовнаНазва", Fields[Банки_Const.ПовнаНазва].ToString() ?? "");
+                    row.Fields.Add("КодМФО", Fields[Банки_Const.КодМФО].ToString() ?? "");
+                    row.Fields.Add("КодЄДРПОУ", Fields[Банки_Const.КодЄДРПОУ].ToString() ?? "");
+                    row.Fields.Add("НомерЛіцензії", Fields[Банки_Const.НомерЛіцензії].ToString() ?? "");
+                    row.Fields.Add("ДатаЛіцензії", Fields[Банки_Const.ДатаЛіцензії].ToString() ?? "");
+                    row.Fields.Add("Статус", Fields[Банки_Const.Статус].ToString() ?? "");
+                    row.Fields.Add("ТипНаселеногоПункту", Fields[Банки_Const.ТипНаселеногоПункту].ToString() ?? "");
+                    row.Fields.Add("УнікальнийКодБанку", Fields[Банки_Const.УнікальнийКодБанку].ToString() ?? "");
+                    row.Fields.Add("ПоштовийІндекс", Fields[Банки_Const.ПоштовийІндекс].ToString() ?? "");
+                    row.Fields.Add("НазваНаселеногоПункту", Fields[Банки_Const.НазваНаселеногоПункту].ToString() ?? "");
+                    row.Fields.Add("Адреса", Fields[Банки_Const.Адреса].ToString() ?? "");
+                    row.Fields.Add("НомерТелефону", Fields[Банки_Const.НомерТелефону].ToString() ?? "");
+                    row.Fields.Add("ДатаВідкриттяУстанови", Fields[Банки_Const.ДатаВідкриттяУстанови].ToString() ?? "");
+                    row.Fields.Add("ДатаЗакриттяУстанови", Fields[Банки_Const.ДатаЗакриттяУстанови].ToString() ?? "");
+                    row.Fields.Add("КодНБУ", Fields[Банки_Const.КодНБУ].ToString() ?? "");
+                    row.Fields.Add("КодСтатусу", Fields[Банки_Const.КодСтатусу].ToString() ?? "");
+                    row.Fields.Add("ДатаЗапису", Fields[Банки_Const.ДатаЗапису].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -7035,7 +9276,61 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.Банки_Select Банки_Select = new();
+            Банки_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Код*/ Довідники.Банки_Const.Код,
+                /*Назва*/ Довідники.Банки_Const.Назва,
+                
+            ]);
+
+            Банки_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                Банки_Select.QuerySelect.Order.Add(
+                 Довідники.Банки_Const.Назва, SelectOrder.ASC);
+            
+            await Банки_Select.Select();
+            while (Банки_Select.MoveNext())
+            {
+                Довідники.Банки_Pointer? curr = Банки_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Банки_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Банки_Const.Назва].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -7222,7 +9517,66 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.СкладськіПриміщення_Select СкладськіПриміщення_Select = new();
+            СкладськіПриміщення_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Назва*/ Довідники.СкладськіПриміщення_Const.Назва,
+                /*НалаштуванняАдресногоЗберігання*/ Довідники.СкладськіПриміщення_Const.НалаштуванняАдресногоЗберігання,
+                
+            ]);
+
+            СкладськіПриміщення_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                СкладськіПриміщення_Select.QuerySelect.Order.Add(
+                 Довідники.СкладськіПриміщення_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.Склади_Pointer.GetJoin(СкладськіПриміщення_Select.QuerySelect, Довідники.СкладськіПриміщення_Const.Склад,
+                СкладськіПриміщення_Select.QuerySelect.Table, "join_tab_1", "Склад");
+            
+            await СкладськіПриміщення_Select.Select();
+            while (СкладськіПриміщення_Select.MoveNext())
+            {
+                Довідники.СкладськіПриміщення_Pointer? curr = СкладськіПриміщення_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[СкладськіПриміщення_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Склад", Fields["Склад"].ToString() ?? "");
+                    row.Fields.Add("НалаштуванняАдресногоЗберігання", Перелічення.ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_Alias((Перелічення.НалаштуванняАдресногоЗберігання)(Fields[СкладськіПриміщення_Const.НалаштуванняАдресногоЗберігання] != DBNull.Value ? Fields[СкладськіПриміщення_Const.НалаштуванняАдресногоЗберігання] : 0) ));
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -7532,7 +9886,84 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.СкладськіКомірки_Select СкладськіКомірки_Select = new();
+            СкладськіКомірки_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Назва*/ Довідники.СкладськіКомірки_Const.Назва,
+                /*Лінія*/ Довідники.СкладськіКомірки_Const.Лінія,
+                /*Позиція*/ Довідники.СкладськіКомірки_Const.Позиція,
+                /*Стелаж*/ Довідники.СкладськіКомірки_Const.Стелаж,
+                /*Ярус*/ Довідники.СкладськіКомірки_Const.Ярус,
+                /*ТипСкладськоїКомірки*/ Довідники.СкладськіКомірки_Const.ТипСкладськоїКомірки,
+                
+            ]);
+
+            СкладськіКомірки_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                СкладськіКомірки_Select.QuerySelect.Order.Add(
+                 Довідники.СкладськіКомірки_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.СкладськіПриміщення_Pointer.GetJoin(СкладськіКомірки_Select.QuerySelect, Довідники.СкладськіКомірки_Const.Приміщення,
+                СкладськіКомірки_Select.QuerySelect.Table, "join_tab_1", "Приміщення");
+            
+                /* Join */
+                Довідники.ТипорозміриКомірок_Pointer.GetJoin(СкладськіКомірки_Select.QuerySelect, Довідники.СкладськіКомірки_Const.Типорозмір,
+                СкладськіКомірки_Select.QuerySelect.Table, "join_tab_2", "Типорозмір");
+            
+                /* Join */
+                Довідники.СкладськіКомірки_Папки_Pointer.GetJoin(СкладськіКомірки_Select.QuerySelect, Довідники.СкладськіКомірки_Const.Папка,
+                СкладськіКомірки_Select.QuerySelect.Table, "join_tab_3", "Папка");
+            
+            await СкладськіКомірки_Select.Select();
+            while (СкладськіКомірки_Select.MoveNext())
+            {
+                Довідники.СкладськіКомірки_Pointer? curr = СкладськіКомірки_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[СкладськіКомірки_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Приміщення", Fields["Приміщення"].ToString() ?? "");
+                    row.Fields.Add("Лінія", Fields[СкладськіКомірки_Const.Лінія].ToString() ?? "");
+                    row.Fields.Add("Позиція", Fields[СкладськіКомірки_Const.Позиція].ToString() ?? "");
+                    row.Fields.Add("Стелаж", Fields[СкладськіКомірки_Const.Стелаж].ToString() ?? "");
+                    row.Fields.Add("Ярус", Fields[СкладськіКомірки_Const.Ярус].ToString() ?? "");
+                    row.Fields.Add("ТипСкладськоїКомірки", Перелічення.ПсевдонімиПерелічення.ТипиСкладськихКомірок_Alias((Перелічення.ТипиСкладськихКомірок)(Fields[СкладськіКомірки_Const.ТипСкладськоїКомірки] != DBNull.Value ? Fields[СкладськіКомірки_Const.ТипСкладськоїКомірки] : 0) ));
+                    row.Fields.Add("Типорозмір", Fields["Типорозмір"].ToString() ?? "");
+                    row.Fields.Add("Папка", Fields["Папка"].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -7688,7 +10119,64 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.СкладськіКомірки_Select СкладськіКомірки_Select = new();
+            СкладськіКомірки_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Назва*/ Довідники.СкладськіКомірки_Const.Назва,
+                
+            ]);
+
+            СкладськіКомірки_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                СкладськіКомірки_Select.QuerySelect.Order.Add(
+                 Довідники.СкладськіКомірки_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.СкладськіПриміщення_Pointer.GetJoin(СкладськіКомірки_Select.QuerySelect, Довідники.СкладськіКомірки_Const.Приміщення,
+                СкладськіКомірки_Select.QuerySelect.Table, "join_tab_1", "Приміщення");
+            
+            await СкладськіКомірки_Select.Select();
+            while (СкладськіКомірки_Select.MoveNext())
+            {
+                Довідники.СкладськіКомірки_Pointer? curr = СкладськіКомірки_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[СкладськіКомірки_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Приміщення", Fields["Приміщення"].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -7828,7 +10316,64 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.ОбластьЗберігання_Select ОбластьЗберігання_Select = new();
+            ОбластьЗберігання_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Назва*/ Довідники.ОбластьЗберігання_Const.Назва,
+                
+            ]);
+
+            ОбластьЗберігання_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                ОбластьЗберігання_Select.QuerySelect.Order.Add(
+                 Довідники.ОбластьЗберігання_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.СкладськіПриміщення_Pointer.GetJoin(ОбластьЗберігання_Select.QuerySelect, Довідники.ОбластьЗберігання_Const.Приміщення,
+                ОбластьЗберігання_Select.QuerySelect.Table, "join_tab_1", "Приміщення");
+            
+            await ОбластьЗберігання_Select.Select();
+            while (ОбластьЗберігання_Select.MoveNext())
+            {
+                Довідники.ОбластьЗберігання_Pointer? curr = ОбластьЗберігання_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[ОбластьЗберігання_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Приміщення", Fields["Приміщення"].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -8064,7 +10609,69 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.ТипорозміриКомірок_Select ТипорозміриКомірок_Select = new();
+            ТипорозміриКомірок_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Назва*/ Довідники.ТипорозміриКомірок_Const.Назва,
+                /*Висота*/ Довідники.ТипорозміриКомірок_Const.Висота,
+                /*Глибина*/ Довідники.ТипорозміриКомірок_Const.Глибина,
+                /*Вантажопідйомність*/ Довідники.ТипорозміриКомірок_Const.Вантажопідйомність,
+                /*Обєм*/ Довідники.ТипорозміриКомірок_Const.Обєм,
+                /*Ширина*/ Довідники.ТипорозміриКомірок_Const.Ширина,
+                
+            ]);
+
+            ТипорозміриКомірок_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                ТипорозміриКомірок_Select.QuerySelect.Order.Add(
+                 Довідники.ТипорозміриКомірок_Const.Назва, SelectOrder.ASC);
+            
+            await ТипорозміриКомірок_Select.Select();
+            while (ТипорозміриКомірок_Select.MoveNext())
+            {
+                Довідники.ТипорозміриКомірок_Pointer? curr = ТипорозміриКомірок_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[ТипорозміриКомірок_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Висота", Fields[ТипорозміриКомірок_Const.Висота].ToString() ?? "");
+                    row.Fields.Add("Глибина", Fields[ТипорозміриКомірок_Const.Глибина].ToString() ?? "");
+                    row.Fields.Add("Вантажопідйомність", Fields[ТипорозміриКомірок_Const.Вантажопідйомність].ToString() ?? "");
+                    row.Fields.Add("Обєм", Fields[ТипорозміриКомірок_Const.Обєм].ToString() ?? "");
+                    row.Fields.Add("Ширина", Fields[ТипорозміриКомірок_Const.Ширина].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -8233,7 +10840,66 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.СкладськіКомірки_Папки_SelectHierarchical СкладськіКомірки_Папки_Select = new();
+            СкладськіКомірки_Папки_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Назва*/ Довідники.СкладськіКомірки_Папки_Const.Назва,
+                /*Код*/ Довідники.СкладськіКомірки_Папки_Const.Код,
+                
+            ]);
+
+            СкладськіКомірки_Папки_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                СкладськіКомірки_Папки_Select.QuerySelect.Order.Add(
+                 Довідники.СкладськіКомірки_Папки_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.СкладськіПриміщення_Pointer.GetJoin(СкладськіКомірки_Папки_Select.QuerySelect, Довідники.СкладськіКомірки_Папки_Const.Власник,
+                СкладськіКомірки_Папки_Select.QuerySelect.Table, "join_tab_1", "Власник");
+            
+            await СкладськіКомірки_Папки_Select.Select();
+            while (СкладськіКомірки_Папки_Select.MoveNext())
+            {
+                Довідники.СкладськіКомірки_Папки_Pointer? curr = СкладськіКомірки_Папки_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[СкладськіКомірки_Папки_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Код", Fields[СкладськіКомірки_Папки_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Власник", Fields["Власник"].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -8399,7 +11065,63 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.Блокнот_Select Блокнот_Select = new();
+            Блокнот_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Код*/ Довідники.Блокнот_Const.Код,
+                /*Назва*/ Довідники.Блокнот_Const.Назва,
+                /*ДатаЗапису*/ Довідники.Блокнот_Const.ДатаЗапису,
+                
+            ]);
+
+            Блокнот_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                Блокнот_Select.QuerySelect.Order.Add(
+                 Довідники.Блокнот_Const.ДатаЗапису, SelectOrder.ASC);
+            
+            await Блокнот_Select.Select();
+            while (Блокнот_Select.MoveNext())
+            {
+                Довідники.Блокнот_Pointer? curr = Блокнот_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[Блокнот_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[Блокнот_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("ДатаЗапису", Fields[Блокнот_Const.ДатаЗапису].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -8586,7 +11308,68 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.ЗбереженіЗвіти_Select ЗбереженіЗвіти_Select = new();
+            ЗбереженіЗвіти_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Код*/ Довідники.ЗбереженіЗвіти_Const.Код,
+                /*Додано*/ Довідники.ЗбереженіЗвіти_Const.Додано,
+                /*Назва*/ Довідники.ЗбереженіЗвіти_Const.Назва,
+                
+            ]);
+
+            ЗбереженіЗвіти_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                ЗбереженіЗвіти_Select.QuerySelect.Order.Add(
+                 Довідники.ЗбереженіЗвіти_Const.Код, SelectOrder.DESC);
+            
+                /* Join */
+                Довідники.Користувачі_Pointer.GetJoin(ЗбереженіЗвіти_Select.QuerySelect, Довідники.ЗбереженіЗвіти_Const.Користувач,
+                ЗбереженіЗвіти_Select.QuerySelect.Table, "join_tab_1", "Користувач");
+            
+            await ЗбереженіЗвіти_Select.Select();
+            while (ЗбереженіЗвіти_Select.MoveNext())
+            {
+                Довідники.ЗбереженіЗвіти_Pointer? curr = ЗбереженіЗвіти_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Код", Fields[ЗбереженіЗвіти_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Додано", Fields[ЗбереженіЗвіти_Const.Додано].ToString() ?? "");
+                    row.Fields.Add("Назва", Fields[ЗбереженіЗвіти_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Користувач", Fields["Користувач"].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {
@@ -8778,7 +11561,71 @@ namespace GeneratedCode.Довідники.ТабличніСписки
           
         }
 
-        
+        public static async ValueTask UpdateRecords(DocumentJournal form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            
+            
+            Довідники.КасиККМ_Select КасиККМ_Select = new();
+            КасиККМ_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                /*Назва*/ Довідники.КасиККМ_Const.Назва,
+                /*Тип*/ Довідники.КасиККМ_Const.Тип,
+                
+            ]);
+
+            КасиККМ_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+                /* Sort */
+                КасиККМ_Select.QuerySelect.Order.Add(
+                 Довідники.КасиККМ_Const.Назва, SelectOrder.ASC);
+            
+                /* Join */
+                Довідники.Валюти_Pointer.GetJoin(КасиККМ_Select.QuerySelect, Довідники.КасиККМ_Const.Валюта,
+                КасиККМ_Select.QuerySelect.Table, "join_tab_1", "Валюта");
+            
+                /* Join */
+                Довідники.Склади_Pointer.GetJoin(КасиККМ_Select.QuerySelect, Довідники.КасиККМ_Const.Склад,
+                КасиККМ_Select.QuerySelect.Table, "join_tab_2", "Склад");
+            
+            await КасиККМ_Select.Select();
+            while (КасиККМ_Select.MoveNext())
+            {
+                Довідники.КасиККМ_Pointer? curr = КасиККМ_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    row.Fields.Add("Назва", Fields[КасиККМ_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("Валюта", Fields["Валюта"].ToString() ?? "");
+                    row.Fields.Add("Тип", Перелічення.ПсевдонімиПерелічення.ТипККМ_Alias((Перелічення.ТипККМ)(Fields[КасиККМ_Const.Тип] != DBNull.Value ? Fields[КасиККМ_Const.Тип] : 0) ));
+                    row.Fields.Add("Склад", Fields["Склад"].ToString() ?? "");
+                    
+                    ObjectChanged? obj = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (obj != null)
+                    {
+                        if (obj.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                        else if (obj.Type == TypeObjectChanged.Update)
+                            for (uint i = 0; i < form.Store.GetNItems(); i++)
+                            {
+                                Row? item = (Row?)form.Store.GetObject(i);
+                                if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                                {
+                                    form.Store.Remove(i);
+                                    form.Store.Insert(i, row);
+                                    break;
+                                }
+                            }
+                    }
+                }
+            }
+        }
 
         public static async ValueTask LoadRecords(DocumentJournal form)
         {

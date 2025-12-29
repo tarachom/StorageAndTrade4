@@ -16,6 +16,7 @@ partial class PageHome2 : DocumentJournal
 {
     public PageHome2()
     {
+        TypeName = GeneratedCode.Довідники.Номенклатура_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
     }
@@ -23,6 +24,11 @@ partial class PageHome2 : DocumentJournal
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
+    }
+
+    public override async ValueTask UpdateRecords()
+    {
+        await ТабличнийСписок.UpdateRecords(this);
     }
 
     protected override async void SetSearch(string searchText)
@@ -50,16 +56,14 @@ partial class PageHome2 : DocumentJournal
         return await Функції.Copy(unigueID);
     }
 
-    const string КлючНалаштуванняКористувача = "Документи.ВведенняЗалишків";
-
     protected override async ValueTask BeforeSetValue()
     {
-        await ФункціїНалаштуванняКористувача.ОтриматиПеріодДляЖурналу(КлючНалаштуванняКористувача + KeyForSetting, Period);
+        await ФункціїНалаштуванняКористувача.ОтриматиПеріодДляЖурналу(FormKey, Period);
     }
 
     protected override async void PeriodChanged()
     {
-        ФункціїНалаштуванняКористувача.ЗаписатиПеріодДляЖурналу(КлючНалаштуванняКористувача + KeyForSetting, Period.Period.ToString(), Period.DateStart, Period.DateStop);
+        ФункціїНалаштуванняКористувача.ЗаписатиПеріодДляЖурналу(FormKey, Period.Period.ToString(), Period.DateStart, Period.DateStop);
         await LoadRecords();
     }
 
