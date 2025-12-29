@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 29.12.2025 20:00:50
+ * Дата конфігурації: 29.12.2025 23:01:24
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон Gtk4.xslt
@@ -149,8 +149,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -537,8 +538,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -867,8 +869,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -1078,8 +1081,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -1269,8 +1273,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -1512,8 +1517,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -1820,8 +1826,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -2039,8 +2046,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -2348,8 +2356,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -2544,8 +2553,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -2826,8 +2836,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -3017,8 +3028,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -3237,8 +3249,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -3403,8 +3416,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -3592,8 +3606,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -3783,8 +3798,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -3974,8 +3990,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -4165,8 +4182,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -4356,8 +4374,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -4625,8 +4644,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -4792,8 +4812,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -5097,8 +5118,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -5308,8 +5330,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -5495,8 +5518,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -5686,8 +5710,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -5877,8 +5902,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -6126,8 +6152,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -6352,8 +6379,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -6577,8 +6605,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -6854,8 +6883,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -7077,8 +7107,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -7302,8 +7333,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -7576,8 +7608,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -7745,8 +7778,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -8073,8 +8107,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -8277,8 +8312,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -8468,8 +8504,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -9101,8 +9138,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -9322,8 +9360,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -9568,8 +9607,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -9955,8 +9995,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -10168,8 +10209,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -10365,8 +10407,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -10663,8 +10706,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -10891,8 +10935,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -11113,8 +11158,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -11361,8 +11407,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
@@ -11617,8 +11664,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                                 Row? item = (Row?)form.Store.GetObject(i);
                                 if (item != null && item.UnigueID.Equals(curr.UnigueID))
                                 {
-                                    form.Store.Remove(i);
-                                    form.Store.Insert(i, row);
+                                    bool sel = form.Grid.Model.IsSelected(i);
+                                    form.Store.Splice(i, 1, [row], 1);
+                                    if (sel) form.Grid.Model.SelectItem(i, false);
                                     break;
                                 }
                             }
