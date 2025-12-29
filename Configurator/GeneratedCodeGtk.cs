@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 29.12.2025 23:01:24
+ * Дата конфігурації: 29.12.2025 23:15:35
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон Gtk4.xslt
@@ -107,8 +107,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.Організації_Select Організації_Select = new();
@@ -469,8 +471,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.Номенклатура_Select Номенклатура_Select = new();
@@ -807,8 +811,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.Номенклатура_Select Номенклатура_Select = new();
@@ -1039,8 +1045,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.Виробники_Select Виробники_Select = new();
@@ -1231,8 +1239,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.ВидиНоменклатури_Select ВидиНоменклатури_Select = new();
@@ -1471,8 +1481,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.ПакуванняОдиниціВиміру_Select ПакуванняОдиниціВиміру_Select = new();
@@ -1778,8 +1790,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.Валюти_Select Валюти_Select = new();
@@ -2002,8 +2016,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.Валюти_Select Валюти_Select = new();
@@ -2305,8 +2321,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.Контрагенти_Select Контрагенти_Select = new();
@@ -2511,8 +2529,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.Контрагенти_Select Контрагенти_Select = new();
@@ -2790,8 +2810,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.Склади_Select Склади_Select = new();
@@ -2986,8 +3008,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.Склади_Select Склади_Select = new();
@@ -3202,8 +3226,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.ВидиЦін_Select ВидиЦін_Select = new();
@@ -3376,8 +3402,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.ВидиЦін_Select ВидиЦін_Select = new();
@@ -3564,8 +3592,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.ВидиЦінПостачальників_Select ВидиЦінПостачальників_Select = new();
@@ -3756,8 +3786,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.Користувачі_Select Користувачі_Select = new();
@@ -3948,8 +3980,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.ФізичніОсоби_Select ФізичніОсоби_Select = new();
@@ -4140,8 +4174,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.СтруктураПідприємства_Select СтруктураПідприємства_Select = new();
@@ -4332,8 +4368,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.КраїниСвіту_Select КраїниСвіту_Select = new();
@@ -4596,8 +4634,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.Файли_Select Файли_Select = new();
@@ -4772,8 +4812,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.Файли_Select Файли_Select = new();
@@ -5056,8 +5098,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.ХарактеристикиНоменклатури_Select ХарактеристикиНоменклатури_Select = new();
@@ -5288,8 +5332,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.Номенклатура_Папки_SelectHierarchical Номенклатура_Папки_Select = new();
@@ -5476,8 +5522,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.Номенклатура_Папки_SelectHierarchical Номенклатура_Папки_Select = new();
@@ -5668,8 +5716,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.Контрагенти_Папки_SelectHierarchical Контрагенти_Папки_Select = new();
@@ -5860,8 +5910,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.Склади_Папки_SelectHierarchical Склади_Папки_Select = new();
@@ -6100,8 +6152,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.Каси_Select Каси_Select = new();
@@ -6332,8 +6386,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.Каси_Select Каси_Select = new();
@@ -6558,8 +6614,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.БанківськіРахункиОрганізацій_Select БанківськіРахункиОрганізацій_Select = new();
@@ -6834,8 +6892,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.ДоговориКонтрагентів_Select ДоговориКонтрагентів_Select = new();
@@ -7060,8 +7120,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.ДоговориКонтрагентів_Select ДоговориКонтрагентів_Select = new();
@@ -7286,8 +7348,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.БанківськіРахункиКонтрагентів_Select БанківськіРахункиКонтрагентів_Select = new();
@@ -7562,8 +7626,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.СтаттяРухуКоштів_Select СтаттяРухуКоштів_Select = new();
@@ -7738,8 +7804,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.СеріїНоменклатури_Select СеріїНоменклатури_Select = new();
@@ -8048,8 +8116,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.ПартіяТоварівКомпозит_Select ПартіяТоварівКомпозит_Select = new();
@@ -8270,8 +8340,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.ПартіяТоварівКомпозит_Select ПартіяТоварівКомпозит_Select = new();
@@ -8462,8 +8534,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.ВидиЗапасів_Select ВидиЗапасів_Select = new();
@@ -9062,8 +9136,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.Банки_Select Банки_Select = new();
@@ -9318,8 +9394,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.Банки_Select Банки_Select = new();
@@ -9560,8 +9638,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.СкладськіПриміщення_Select СкладськіПриміщення_Select = new();
@@ -9930,8 +10010,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.СкладськіКомірки_Select СкладськіКомірки_Select = new();
@@ -10164,8 +10246,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.СкладськіКомірки_Select СкладськіКомірки_Select = new();
@@ -10362,8 +10446,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.ОбластьЗберігання_Select ОбластьЗберігання_Select = new();
@@ -10656,8 +10742,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.ТипорозміриКомірок_Select ТипорозміриКомірок_Select = new();
@@ -10888,8 +10976,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.СкладськіКомірки_Папки_SelectHierarchical СкладськіКомірки_Папки_Select = new();
@@ -11114,8 +11204,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.Блокнот_Select Блокнот_Select = new();
@@ -11358,8 +11450,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.ЗбереженіЗвіти_Select ЗбереженіЗвіти_Select = new();
@@ -11612,8 +11706,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
+            {
                 while(form.RecordsChangedQueue.Count > 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
             
             
             Довідники.КасиККМ_Select КасиККМ_Select = new();
