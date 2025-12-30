@@ -2,48 +2,16 @@
 using Gtk;
 using InterfaceGtk4;
 using GeneratedCode;
+using GeneratedCode.Константи;
+using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
 
 class FormStorageAndTrade : FormGeneral
 {
-    public FormStorageAndTrade() : base(Program.App, Config.Kernel)
-    {
-        NotebookFunction.CreateNotebookPage("Home", () => Label.New("Text"), false, null, null, true);
-        NotebookFunction.CreateNotebookPage("Home2", () => Label.New("Text"));
+    public FormStorageAndTrade() : base(Program.App, Config.Kernel) { }
 
-        PageHome page = new();
-        NotebookFunction.CreateNotebookPage("Home3", () => page);
-        page.SetValue();
-        page.SpinnerOn();
-
-        NotebookFunction.CreateNotebookPage("Home4 erw er wer wq qwer wqer wqerqwer", null);
-        NotebookFunction.CreateNotebookPage("Home5", Label.New("Text"));
-        string c = NotebookFunction.CreateNotebookPage("Home6", null);
-
-        Task.Run(async () =>
-        {
-            for (int i = 0; i < 100; i++)
-            {
-                NotebookFunction.SpinnerNotebookPage(c);
-                await Task.Delay(1000);
-                NotebookFunction.SpinnerNotebookPage(c, false);
-                await Task.Delay(1000);
-                NotebookFunction.RenameNotebookPage("Text", c);
-                page.SpinnerOff();
-            }
-        });
-
-        PageHome2 page2 = new();
-        NotebookFunction.CreateNotebookPage("Home New", () => page2);
-        page2.SetValue();
-
-        PageHome3 page3 = new();
-        NotebookFunction.CreateNotebookPage("Home New", () => page3);
-        page3.SetValue();
-
-        SetStatusBar();
-    }
+    #region Override
 
     protected override void ButtonMessageClicked()
     {
@@ -120,5 +88,42 @@ class FormStorageAndTrade : FormGeneral
     protected override void МенюРегістри(Box vBox)
     {
 
+    }
+
+    #endregion
+
+    public async ValueTask OpenFirstPages()
+    {
+        PageHome page = new PageHome();
+        NotebookFunction.CreateNotebookPage("Стартова", () => page, false, null, null, true);
+        await page.SetValue();
+
+        PageHome2 page2 = new();
+        NotebookFunction.CreateNotebookPage("Home New", () => page2);
+        await page2.SetValue();
+
+        PageHome3 page3 = new();
+        NotebookFunction.CreateNotebookPage("Home New", () => page3);
+        await page3.SetValue();
+    }
+
+    public async ValueTask SetCurrentUser()
+    {
+        Користувачі_Pointer ЗнайденийКористувач = await new Користувачі_Select().FindByField(Користувачі_Const.КодВСпеціальнійТаблиці, Config.Kernel.User);
+        if (ЗнайденийКористувач.IsEmpty())
+        {
+            Користувачі_Objest НовийКористувач = new()
+            {
+                КодВСпеціальнійТаблиці = Config.Kernel.User,
+                Назва = await Config.Kernel.DataBase.SpetialTableUsersGetFullName(Config.Kernel.User)
+            };
+
+            await НовийКористувач.New();
+            await НовийКористувач.Save();
+
+            Program.Користувач = НовийКористувач.GetDirectoryPointer();
+        }
+        else
+            Program.Користувач = ЗнайденийКористувач;
     }
 }

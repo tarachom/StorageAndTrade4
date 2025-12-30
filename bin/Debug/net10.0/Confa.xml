@@ -7,7 +7,7 @@
   <Author>Тарахомин Юрій Іванович, accounting.org.ua</Author>
   <Desc>Конфігурація "Зберігання та Торгівля"
 https://accounting.org.ua/storage_and_trade.html</Desc>
-  <DateTimeSave>30.12.2025 20:13:23</DateTimeSave>
+  <DateTimeSave>30.12.2025 21:29:30</DateTimeSave>
   <DictTSearch>simple</DictTSearch>
   <ConstantsBlocks>
     <ConstantsBlock>
@@ -1979,6 +1979,28 @@ https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange</Desc>
               <FilterField>True</FilterField>
               <Type>enum</Type>
               <Pointer>Перелічення.ТипиНоменклатури</Pointer>
+            </Field>
+            <Field>
+              <Name>Виробник</Name>
+              <Caption>Виробник</Caption>
+              <Size>0</Size>
+              <SortNum>100</SortNum>
+              <SortField>False</SortField>
+              <SortDirection>False</SortDirection>
+              <FilterField>False</FilterField>
+              <Type>pointer</Type>
+              <Pointer>Довідники.Виробники</Pointer>
+            </Field>
+            <Field>
+              <Name>ВидНоменклатури</Name>
+              <Caption>ВидНоменклатури</Caption>
+              <Size>0</Size>
+              <SortNum>100</SortNum>
+              <SortField>False</SortField>
+              <SortDirection>False</SortDirection>
+              <FilterField>False</FilterField>
+              <Type>pointer</Type>
+              <Pointer>Довідники.ВидиНоменклатури</Pointer>
             </Field>
             <AdditionalField>
               <Visible>True</Visible>

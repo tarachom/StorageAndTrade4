@@ -9,6 +9,7 @@ using InterfaceGtkLib;
 
 using GeneratedCode;
 using GeneratedCode.Константи;
+using InterfaceGtk4;
 
 namespace StorageAndTrade
 {
@@ -22,23 +23,22 @@ namespace StorageAndTrade
         public override async ValueTask<bool> OpenProgram(ConfigurationParam? openConfigurationParam)
         {
             //Запуск фонових задач
-            //Config.StartBackgroundTask();
+            Config.StartBackgroundTask();
 
             //Значення констант за замовчуванням
-            //if (string.IsNullOrEmpty(ЖурналиДокументів.ОсновнийТипПеріоду_Const))
-            //ЖурналиДокументів.ОсновнийТипПеріоду_Const = ПеріодДляЖурналу.ТипПеріоду.ВесьПеріод.ToString();
+            if (string.IsNullOrEmpty(ЖурналиДокументів.ОсновнийТипПеріоду_Const))
+                ЖурналиДокументів.ОсновнийТипПеріоду_Const = PeriodForJournal.TypePeriod.AllPeriod.ToString();
 
-            FormStorageAndTrade form = new() { OpenConfigurationParam = openConfigurationParam };
-            form.SetStatusBar();
-            form.Show();
+            Program.GeneralForm = new FormStorageAndTrade() { OpenConfigurationParam = openConfigurationParam };
+            Program.GeneralForm.SetStatusBar();
+            Program.GeneralForm.Show();
 
             //Присвоєння користувача
-            //Program.GeneralForm.SetCurrentUser();
+            await Program.GeneralForm.SetCurrentUser();
 
             //Відкрити перші сторінки
-            //Program.GeneralForm.OpenFirstPages();
+            await Program.GeneralForm.OpenFirstPages();
 
-            Program.GeneralForm = form;
             return await ValueTask.FromResult(true);
         }
 

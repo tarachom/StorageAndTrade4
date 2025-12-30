@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 30.12.2025 20:13:23
+ * Дата конфігурації: 30.12.2025 21:31:10
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон Gtk4.xslt
@@ -11790,7 +11790,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRow? row = (DocumentRow?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Ok : null));
+                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -12268,7 +12268,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRow? row = (DocumentRow?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Ok : null));
+                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -12779,7 +12779,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRow? row = (DocumentRow?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Ok : null));
+                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -13290,7 +13290,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRow? row = (DocumentRow?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Ok : null));
+                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -13801,7 +13801,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRow? row = (DocumentRow?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Ok : null));
+                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -14196,7 +14196,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRow? row = (DocumentRow?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Ok : null));
+                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -14701,7 +14701,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRow? row = (DocumentRow?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Ok : null));
+                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -15206,7 +15206,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRow? row = (DocumentRow?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Ok : null));
+                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -15601,7 +15601,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRow? row = (DocumentRow?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Ok : null));
+                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -16112,7 +16112,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRow? row = (DocumentRow?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Ok : null));
+                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -16623,7 +16623,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRow? row = (DocumentRow?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Ok : null));
+                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -17101,7 +17101,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRow? row = (DocumentRow?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Ok : null));
+                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -17529,7 +17529,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRow? row = (DocumentRow?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Ok : null));
+                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -17891,7 +17891,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRow? row = (DocumentRow?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Ok : null));
+                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -18253,7 +18253,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRow? row = (DocumentRow?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Ok : null));
+                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -18648,7 +18648,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRow? row = (DocumentRow?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Ok : null));
+                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -19060,7 +19060,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRow? row = (DocumentRow?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Ok : null));
+                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -19505,7 +19505,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRow? row = (DocumentRow?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Ok : null));
+                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -20016,7 +20016,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRow? row = (DocumentRow?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Ok : null));
+                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -20378,7 +20378,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRow? row = (DocumentRow?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Ok : null));
+                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -20740,7 +20740,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRow? row = (DocumentRow?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Ok : null));
+                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -21102,7 +21102,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRow? row = (DocumentRow?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Ok : null));
+                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -21464,7 +21464,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRow? row = (DocumentRow?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Ok : null));
+                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -21793,7 +21793,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRow? row = (DocumentRow?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Ok : null));
+                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -22344,7 +22344,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRow? row = (DocumentRow?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Ok : null));
+                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -22855,7 +22855,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRow? row = (DocumentRow?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Ok : null));
+                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -23406,7 +23406,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRow? row = (DocumentRow?)listItem.Item;
-                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Ok : null));
+                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);

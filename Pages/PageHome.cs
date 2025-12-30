@@ -6,14 +6,23 @@
 
 using Gtk;
 using InterfaceGtk4;
+using GeneratedCode;
 
 namespace StorageAndTrade;
 
 class PageHome : Form
 {
+    public ActiveUsers activeUsers = new ActiveUsers(Config.Kernel, 800, 300);
+
     public PageHome()
     {
+        {
+            Box hBox = New(Orientation.Horizontal, 0);
+            hBox.Append(activeUsers);
+            Append(hBox);
+        }
 
+        /*
         LinkButton linkButton = LinkButton.New("");
         linkButton.OnActivateLink += (a, f) =>
         {
@@ -90,10 +99,11 @@ class PageHome : Form
 
         CompositePointerControl cp = new();
         Append(cp);
+        */
     }
 
-    public void SetValue()
+    public async ValueTask SetValue()
     {
-
+        await Task.FromResult(true);
     }
 }
