@@ -9,14 +9,14 @@ namespace StorageAndTrade;
 using InterfaceGtk4;
 using AccountingSoftware;
 
-using ТабличнийСписок = GeneratedCode.Довідники.ТабличніСписки.Номенклатура_Записи;
-using Функції = Номенклатура_Функції;
+using ТабличнийСписок = GeneratedCode.Документи.ТабличніСписки.ПоступленняТоварівТаПослуг_Записи;
+using Функції = ПоступленняТоварівТаПослуг_Функції;
 
 partial class PageHome2 : DocumentJournal
 {
     public PageHome2()
     {
-        TypeName = GeneratedCode.Довідники.Номенклатура_Const.POINTER;
+        TypeName = GeneratedCode.Документи.ПоступленняТоварівТаПослуг_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
     }

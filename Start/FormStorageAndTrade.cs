@@ -38,6 +38,10 @@ class FormStorageAndTrade : FormGeneral
         NotebookFunction.CreateNotebookPage("Home New", () => page2);
         page2.SetValue();
 
+        PageHome3 page3 = new();
+        NotebookFunction.CreateNotebookPage("Home New", () => page3);
+        page3.SetValue();
+
         SetStatusBar();
     }
 
