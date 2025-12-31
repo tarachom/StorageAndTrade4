@@ -14,7 +14,7 @@ using Функції = ПоступленняТоварівТаПослуг_Фу
 
 partial class PageHome2 : DocumentJournal
 {
-    public PageHome2()
+    public PageHome2(): base(Program.Form?.Notebook)
     {
         TypeName = GeneratedCode.Документи.ПоступленняТоварівТаПослуг_Const.POINTER;
         ТабличнийСписок.AddColumn(this);

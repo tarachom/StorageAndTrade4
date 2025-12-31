@@ -11,9 +11,9 @@ namespace StorageAndTrade
         Button bStop = Button.NewWithLabel("Зупинити");
         Button bClear = Button.NewWithLabel("Очистити");
         ProgressBar progress = ProgressBar.New();
-        CancellationTokenSource? cancellationToken = null;
+        //CancellationTokenSource? cancellationToken = null;
 
-        public Обробка()
+        public Обробка() : base(Program.Form?.Notebook)
         {
             bRun.MarginEnd = 10;
             bRun.OnClicked += (_, _) => Log.AppendLine("Text");

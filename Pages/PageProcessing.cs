@@ -11,7 +11,7 @@ namespace StorageAndTrade;
 
 class PageProcessing : Form
 {
-    public PageProcessing() : base()
+    public PageProcessing() : base(Program.Form?.Notebook)
     {
         Box vBox = New(Orientation.Vertical, 0);
         Append(vBox);
@@ -19,7 +19,7 @@ class PageProcessing : Form
         CreateLink(vBox, "Обробка", () =>
         {
             Обробка page = new();
-            NotebookFunction.CreateNotebookPage("Обробка", page);
+            Notebook?.CreatePage("Обробка", page);
         });
     }
 }

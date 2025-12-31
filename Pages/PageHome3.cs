@@ -14,7 +14,7 @@ using Функції = Номенклатура_Функції;
 
 partial class PageHome3 : DirectoryJournal
 {
-    public PageHome3()
+    public PageHome3(): base(Program.Form?.Notebook)
     {
         TypeName = GeneratedCode.Довідники.Номенклатура_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
@@ -58,7 +58,7 @@ partial class PageHome3 : DirectoryJournal
 
     protected override async ValueTask BeforeSetValue()
     {
-  
+
     }
 
     protected override async ValueTask VersionsHistory(UnigueID[] unigueID)

@@ -23,69 +23,69 @@ class FormStorageAndTrade : FormGeneral
 
     }
 
-    protected override void Налаштування(LinkButton linkButton)
+    protected override void OpenDocumentByType(string name)
+    {
+        new FunctionForDynamicOpen().OpenDocumentByType(name, null);
+    }
+
+    protected override void OpenDirectoryByType(string name)
+    {
+        new FunctionForDynamicOpen().OpenDirectoryByType(name, null);
+    }
+
+    protected override void OpenJournalByType(string name)
+    {
+        new FunctionForDynamicOpen().OpenJournalByType(name, null);
+    }
+
+    protected override void OpenRegisterInformationByType(string name)
+    {
+        new FunctionForDynamicOpen().OpenRegisterInformationByType(name, null);
+    }
+
+    protected override void OpenRegisterAccumulationByType(string name)
+    {
+        new FunctionForDynamicOpen().OpenRegisterAccumulationByType(name, null);
+    }
+
+    protected override void Settings(LinkButton linkButton)
     {
 
     }
 
-    protected override async void Сервіс(LinkButton linkButton)
+    protected override async void Service(LinkButton linkButton)
     {
         PageService page = new();
-        NotebookFunction.CreateNotebookPage("Сервіс", page);
+        Notebook.CreatePage("Сервіс", page);
         await page.SetValue();
     }
 
-    protected override void Обробки(LinkButton linkButton)
+    protected override void Processing(LinkButton linkButton)
     {
-        NotebookFunction.CreateNotebookPage("Обробки", new PageProcessing());
+        Notebook.CreatePage("Обробки", new PageProcessing());
     }
 
-    protected override void ВідкритиДокументВідповідноДоВиду(string name)
-    {
-
-    }
-
-    protected override void ВідкритиДовідникВідповідноДоВиду(string name)
+    protected override void MenuDocuments(Box vBox)
     {
 
     }
 
-    protected override void ВідкритиЖурналВідповідноДоВиду(string name)
+    protected override void MenuDirectory(Box vBox)
     {
 
     }
 
-    protected override void ВідкритиРегістрВідомостейВідповідноДоВиду(string name)
+    protected override void MenuJournals(Box vBox)
     {
 
     }
 
-    protected override void ВідкритиРегістрНакопиченняВідповідноДоВиду(string name)
+    protected override void MenuReports(Box vBox)
     {
 
     }
 
-    protected override void МенюДокументи(Box vBox)
-    {
-
-    }
-
-    protected override void МенюДовідники(Box vBox)
-    {
-
-    }
-
-    protected override void МенюЖурнали(Box vBox)
-    {
-
-    }
-
-    protected override void МенюЗвіти(Box vBox)
-    {
-
-    }
-
-    protected override void МенюРегістри(Box vBox)
+    protected override void MenuRegisters(Box vBox)
     {
 
     }
@@ -95,15 +95,15 @@ class FormStorageAndTrade : FormGeneral
     public async ValueTask OpenFirstPages()
     {
         PageHome page = new PageHome();
-        NotebookFunction.CreateNotebookPage("Стартова", () => page, false, null, null, true);
+        Notebook.CreatePage("Стартова", () => page, false, null, null, true);
         await page.SetValue();
 
         PageHome2 page2 = new();
-        NotebookFunction.CreateNotebookPage("Home New", () => page2);
+        Notebook.CreatePage("Home New", () => page2);
         await page2.SetValue();
 
         PageHome3 page3 = new();
-        NotebookFunction.CreateNotebookPage("Home New", () => page3);
+        Notebook.CreatePage("Home New", () => page3);
         await page3.SetValue();
     }
 

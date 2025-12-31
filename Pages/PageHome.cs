@@ -14,7 +14,7 @@ class PageHome : Form
 {
     public ActiveUsers activeUsers = new ActiveUsers(Config.Kernel, 800, 300);
 
-    public PageHome()
+    public PageHome() : base(Program.Form?.Notebook)
     {
         {
             Box hBox = New(Orientation.Horizontal, 0);

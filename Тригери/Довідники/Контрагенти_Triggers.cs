@@ -31,7 +31,7 @@ namespace GeneratedCode.Довідники
 
         public static async ValueTask AfterSave(Контрагенти_Objest ДовідникОбєкт)
         {
-            await ФункціїДляДовідників.СтворитиДоговориКонтрагентаЗаЗамовчуванням(ДовідникОбєкт.GetDirectoryPointer());
+            await ФункціїДляДовідників.СтворитиДоговориКонтрагента(ДовідникОбєкт.GetDirectoryPointer());
         }
 
         public static async ValueTask SetDeletionLabel(Контрагенти_Objest ДовідникОбєкт, bool label)

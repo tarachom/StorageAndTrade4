@@ -12,20 +12,18 @@ namespace StorageAndTrade;
 
 class PageService : InterfaceGtk4.PageService
 {
-    public PageService() : base(Config.Kernel, Config.NamespaceProgram, Config.NamespaceCodeGeneration) { }
+    public PageService() : base(Config.Kernel, Config.NamespaceProgram, Config.NamespaceCodeGeneration, Program.Form?.Notebook) { }
 
     protected override CompositePointerControl CreateCompositeControl(string caption, UuidAndText uuidAndText) =>
         new() { Caption = caption, Pointer = uuidAndText, ClearSensetive = false, TypeSelectSensetive = false };
 
-    const string КлючНалаштуванняКористувача = "PageService";
-
     protected override async ValueTask BeforeSetValue()
     {
-        await ФункціїНалаштуванняКористувача.ОтриматиПеріодДляЖурналу(КлючНалаштуванняКористувача, Period);
+        await ФункціїНалаштуванняКористувача.ОтриматиПеріодДляЖурналу(KeyForSettings, Period);
     }
 
     protected override void PeriodChanged()
     {
-        ФункціїНалаштуванняКористувача.ЗаписатиПеріодДляЖурналу(КлючНалаштуванняКористувача, Period.Period.ToString(), Period.DateStart, Period.DateStop);
+        ФункціїНалаштуванняКористувача.ЗаписатиПеріодДляЖурналу(KeyForSettings, Period.Period.ToString(), Period.DateStart, Period.DateStop);
     }
 }

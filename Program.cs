@@ -12,7 +12,7 @@ class Program
     /// <summary>
     /// Основна форма
     /// </summary>
-    public static FormStorageAndTrade? GeneralForm { get; set; }
+    public static FormStorageAndTrade? Form { get; set; }
 
     /// <summary>
     /// Авторизований користувач

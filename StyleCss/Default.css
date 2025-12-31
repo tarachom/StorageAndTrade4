@@ -1,3 +1,13 @@
+/* Назва програми у заголовку */
+headerbar .title {
+    font-weight: normal;
+}
+
+/* Опис програми у заголовку */
+headerbar .subtitle {
+    font-size: small;
+}
+
 /* Кнопки лівого меню */
 button.left-menu {
     padding-left: 2px;
@@ -10,7 +20,7 @@ button.left-menu:hover {
 
 /* Вкладки блокноту */
 notebook tab {
-    padding: 3px;
+    padding: 6px;
     border: 0;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
@@ -27,13 +37,13 @@ notebook tab button {
 }
 
 columnview {
-    border: 1px solid shade(#c7c7c7, 1.2);
+    border: 1px solid shade(#b8b8b8, 1.2);
 }
 
 columnview header button {
-    padding: 2px 6px;
-    border-left: 1px solid shade(#c7c7c7, 1.2);
-    border-bottom: 1px solid shade(#c7c7c7, 1.2);
+    padding: 3px 8px;
+    border-left: 1px solid shade(#b8b8b8, 1.2);
+    border-bottom: 1px solid shade(#b8b8b8, 1.2);
 }
 
 columnview header button:first-child {
@@ -41,15 +51,16 @@ columnview header button:first-child {
 }
 
 columnview listview row cell {
-    padding: 2px 6px;
+    padding: 3px 8px;
 }
 
 columnview listview row cell:not(:first-child) {
-    border-left: 1px solid shade(#c7c7c7, 1.2);
+    border-left: 1px solid shade(#b8b8b8, 1.2);
 }
 
-columnview listview row cell .numeric{
+columnview listview row cell .numeric {
     color: green;
+    font-weight: bold;
 }
 
 /*Для Log*/
@@ -59,7 +70,7 @@ textview.log_text_terminal {
 
 /*
 columnview listview row:nth-child(odd) {
-   background-color: shade(#c7c7c7, 1.2);
+   background-color: shade(#b8b8b8, 1.2);
 }
 
 columnview listview row:nth-child(even) {

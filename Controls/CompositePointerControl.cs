@@ -15,14 +15,10 @@ namespace StorageAndTrade;
 
 class CompositePointerControl : InterfaceGtk4.CompositePointerControl
 {
-    public CompositePointerControl() : base(Config.Kernel, Config.NameSpageProgram, Config.NameSpageCodeGeneration) { }
+    public CompositePointerControl() : base(Config.Kernel, Config.NameSpageProgram, Config.NameSpageCodeGeneration, Program.Form?.Notebook) { }
 
     protected override async ValueTask<CompositePointerPresentation_Record> CompositePointerPresentation(UuidAndText uuidAndText)
     {
         return await GeneratedCode.Functions.CompositePointerPresentation(uuidAndText);
-    }
-    protected override void CreateNotebookPage(string tabName, Func<Widget>? pageWidget)
-    {
-        NotebookFunction.CreateNotebookPage(tabName, pageWidget);
     }
 }

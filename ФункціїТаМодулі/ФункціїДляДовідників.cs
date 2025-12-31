@@ -20,7 +20,7 @@ namespace StorageAndTrade
         /// Функція створює договори для контрагента
         /// </summary>
         /// <param name="Контрагент">Контрагент</param>
-        public static async ValueTask СтворитиДоговориКонтрагентаЗаЗамовчуванням(Довідники.Контрагенти_Pointer Контрагент) //!!ЗаЗамовчуванням
+        public static async ValueTask СтворитиДоговориКонтрагента(Довідники.Контрагенти_Pointer Контрагент) 
         {
             if (Контрагент.IsEmpty())
                 return;
@@ -93,7 +93,7 @@ namespace StorageAndTrade
         /// </summary>
         /// <param name="PathToFile">Шлях до файлу</param>
         /// <returns></returns>
-        public static async Task<Довідники.Файли_Pointer> ЗавантажитиФайл(string PathToFile)
+        public static async ValueTask<Довідники.Файли_Pointer> ЗавантажитиФайл(string PathToFile)
         {
             FileInfo fileInfo = new FileInfo(PathToFile);
 

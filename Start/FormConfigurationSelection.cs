@@ -29,15 +29,15 @@ namespace StorageAndTrade
             if (string.IsNullOrEmpty(ЖурналиДокументів.ОсновнийТипПеріоду_Const))
                 ЖурналиДокументів.ОсновнийТипПеріоду_Const = PeriodForJournal.TypePeriod.AllPeriod.ToString();
 
-            Program.GeneralForm = new FormStorageAndTrade() { OpenConfigurationParam = openConfigurationParam };
-            Program.GeneralForm.SetStatusBar();
-            Program.GeneralForm.Show();
+            Program.Form = new FormStorageAndTrade() { OpenConfigurationParam = openConfigurationParam };
+            Program.Form.SetStatusBar();
+            Program.Form.Show();
 
             //Присвоєння користувача
-            await Program.GeneralForm.SetCurrentUser();
+            await Program.Form.SetCurrentUser();
 
             //Відкрити перші сторінки
-            await Program.GeneralForm.OpenFirstPages();
+            await Program.Form.OpenFirstPages();
 
             return await ValueTask.FromResult(true);
         }
