@@ -60,7 +60,7 @@ columnview listview row cell:not(:first-child) {
 
 columnview listview row cell .numeric {
     color: green;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 
 /*Для Log*/
