@@ -41,7 +41,7 @@ columnview {
 }
 
 columnview header button {
-    padding: 3px 6px;
+    padding: 1px 6px;
     border-left: 1px solid shade(#b8b8b8, 1.2);
     border-bottom: 1px solid shade(#b8b8b8, 1.2);
 }
