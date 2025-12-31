@@ -18,7 +18,7 @@ partial class PageHome2 : DocumentJournal
     {
         TypeName = GeneratedCode.Документи.ПоступленняТоварівТаПослуг_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
-        SetPagesSettings(50);
+        SetPagesSettings(50, Pages.StartingPosition.End);
     }
 
     public override async ValueTask LoadRecords()
