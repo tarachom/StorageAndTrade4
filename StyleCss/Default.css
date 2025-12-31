@@ -20,7 +20,7 @@ button.left-menu:hover {
 
 /* Вкладки блокноту */
 notebook tab {
-    padding: 6px;
+    padding: 3px;
     border: 0;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
@@ -41,7 +41,7 @@ columnview {
 }
 
 columnview header button {
-    padding: 3px 8px;
+    padding: 3px 6px;
     border-left: 1px solid shade(#b8b8b8, 1.2);
     border-bottom: 1px solid shade(#b8b8b8, 1.2);
 }
@@ -51,7 +51,7 @@ columnview header button:first-child {
 }
 
 columnview listview row cell {
-    padding: 3px 8px;
+    padding: 3px 6px;
 }
 
 columnview listview row cell:not(:first-child) {
