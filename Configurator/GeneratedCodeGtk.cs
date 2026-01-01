@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 31.12.2025 13:04:53
+ * Дата конфігурації: 01.01.2026 14:43:36
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон Gtk4.xslt
@@ -185,7 +185,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) Організації_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) Організації_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(Організації_Select.SplitSelectToPages, Організації_Select.QuerySelect, unigueIDSelect);
@@ -591,7 +591,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) Номенклатура_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) Номенклатура_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(Номенклатура_Select.SplitSelectToPages, Номенклатура_Select.QuerySelect, unigueIDSelect);
@@ -915,7 +915,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) Номенклатура_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) Номенклатура_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(Номенклатура_Select.SplitSelectToPages, Номенклатура_Select.QuerySelect, unigueIDSelect);
@@ -1113,7 +1113,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) Виробники_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) Виробники_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(Виробники_Select.SplitSelectToPages, Виробники_Select.QuerySelect, unigueIDSelect);
@@ -1307,7 +1307,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ВидиНоменклатури_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ВидиНоменклатури_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(ВидиНоменклатури_Select.SplitSelectToPages, ВидиНоменклатури_Select.QuerySelect, unigueIDSelect);
@@ -1553,7 +1553,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ПакуванняОдиниціВиміру_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ПакуванняОдиниціВиміру_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(ПакуванняОдиниціВиміру_Select.SplitSelectToPages, ПакуванняОдиниціВиміру_Select.QuerySelect, unigueIDSelect);
@@ -1862,7 +1862,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) Валюти_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) Валюти_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(Валюти_Select.SplitSelectToPages, Валюти_Select.QuerySelect, unigueIDSelect);
@@ -2081,7 +2081,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) Валюти_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) Валюти_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(Валюти_Select.SplitSelectToPages, Валюти_Select.QuerySelect, unigueIDSelect);
@@ -2395,7 +2395,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) Контрагенти_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) Контрагенти_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(Контрагенти_Select.SplitSelectToPages, Контрагенти_Select.QuerySelect, unigueIDSelect);
@@ -2588,7 +2588,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) Контрагенти_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) Контрагенти_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(Контрагенти_Select.SplitSelectToPages, Контрагенти_Select.QuerySelect, unigueIDSelect);
@@ -2873,7 +2873,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) Склади_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) Склади_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(Склади_Select.SplitSelectToPages, Склади_Select.QuerySelect, unigueIDSelect);
@@ -3065,7 +3065,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) Склади_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) Склади_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(Склади_Select.SplitSelectToPages, Склади_Select.QuerySelect, unigueIDSelect);
@@ -3291,7 +3291,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ВидиЦін_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ВидиЦін_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(ВидиЦін_Select.SplitSelectToPages, ВидиЦін_Select.QuerySelect, unigueIDSelect);
@@ -3456,7 +3456,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ВидиЦін_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ВидиЦін_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(ВидиЦін_Select.SplitSelectToPages, ВидиЦін_Select.QuerySelect, unigueIDSelect);
@@ -3649,7 +3649,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ВидиЦінПостачальників_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ВидиЦінПостачальників_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(ВидиЦінПостачальників_Select.SplitSelectToPages, ВидиЦінПостачальників_Select.QuerySelect, unigueIDSelect);
@@ -3843,7 +3843,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) Користувачі_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) Користувачі_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(Користувачі_Select.SplitSelectToPages, Користувачі_Select.QuerySelect, unigueIDSelect);
@@ -4037,7 +4037,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ФізичніОсоби_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ФізичніОсоби_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(ФізичніОсоби_Select.SplitSelectToPages, ФізичніОсоби_Select.QuerySelect, unigueIDSelect);
@@ -4231,7 +4231,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) СтруктураПідприємства_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) СтруктураПідприємства_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(СтруктураПідприємства_Select.SplitSelectToPages, СтруктураПідприємства_Select.QuerySelect, unigueIDSelect);
@@ -4425,7 +4425,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) КраїниСвіту_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) КраїниСвіту_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(КраїниСвіту_Select.SplitSelectToPages, КраїниСвіту_Select.QuerySelect, unigueIDSelect);
@@ -4697,7 +4697,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) Файли_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) Файли_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(Файли_Select.SplitSelectToPages, Файли_Select.QuerySelect, unigueIDSelect);
@@ -4864,7 +4864,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) Файли_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) Файли_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(Файли_Select.SplitSelectToPages, Файли_Select.QuerySelect, unigueIDSelect);
@@ -5185,7 +5185,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ХарактеристикиНоменклатури_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ХарактеристикиНоменклатури_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(ХарактеристикиНоменклатури_Select.SplitSelectToPages, ХарактеристикиНоменклатури_Select.QuerySelect, unigueIDSelect);
@@ -5383,7 +5383,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) Номенклатура_Папки_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) Номенклатура_Папки_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(Номенклатура_Папки_Select.SplitSelectToPages, Номенклатура_Папки_Select.QuerySelect, unigueIDSelect);
@@ -5573,7 +5573,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) Номенклатура_Папки_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) Номенклатура_Папки_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(Номенклатура_Папки_Select.SplitSelectToPages, Номенклатура_Папки_Select.QuerySelect, unigueIDSelect);
@@ -5767,7 +5767,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) Контрагенти_Папки_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) Контрагенти_Папки_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(Контрагенти_Папки_Select.SplitSelectToPages, Контрагенти_Папки_Select.QuerySelect, unigueIDSelect);
@@ -5961,7 +5961,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) Склади_Папки_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) Склади_Папки_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(Склади_Папки_Select.SplitSelectToPages, Склади_Папки_Select.QuerySelect, unigueIDSelect);
@@ -6219,7 +6219,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) Каси_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) Каси_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(Каси_Select.SplitSelectToPages, Каси_Select.QuerySelect, unigueIDSelect);
@@ -6443,7 +6443,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) Каси_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) Каси_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(Каси_Select.SplitSelectToPages, Каси_Select.QuerySelect, unigueIDSelect);
@@ -6670,7 +6670,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) БанківськіРахункиОрганізацій_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) БанківськіРахункиОрганізацій_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(БанківськіРахункиОрганізацій_Select.SplitSelectToPages, БанківськіРахункиОрганізацій_Select.QuerySelect, unigueIDSelect);
@@ -6949,7 +6949,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ДоговориКонтрагентів_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ДоговориКонтрагентів_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(ДоговориКонтрагентів_Select.SplitSelectToPages, ДоговориКонтрагентів_Select.QuerySelect, unigueIDSelect);
@@ -7173,7 +7173,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ДоговориКонтрагентів_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ДоговориКонтрагентів_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(ДоговориКонтрагентів_Select.SplitSelectToPages, ДоговориКонтрагентів_Select.QuerySelect, unigueIDSelect);
@@ -7400,7 +7400,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) БанківськіРахункиКонтрагентів_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) БанківськіРахункиКонтрагентів_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(БанківськіРахункиКонтрагентів_Select.SplitSelectToPages, БанківськіРахункиКонтрагентів_Select.QuerySelect, unigueIDSelect);
@@ -7673,7 +7673,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) СтаттяРухуКоштів_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) СтаттяРухуКоштів_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(СтаттяРухуКоштів_Select.SplitSelectToPages, СтаттяРухуКоштів_Select.QuerySelect, unigueIDSelect);
@@ -7843,7 +7843,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) СеріїНоменклатури_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) СеріїНоменклатури_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(СеріїНоменклатури_Select.SplitSelectToPages, СеріїНоменклатури_Select.QuerySelect, unigueIDSelect);
@@ -8184,7 +8184,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ПартіяТоварівКомпозит_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ПартіяТоварівКомпозит_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(ПартіяТоварівКомпозит_Select.SplitSelectToPages, ПартіяТоварівКомпозит_Select.QuerySelect, unigueIDSelect);
@@ -8378,7 +8378,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ПартіяТоварівКомпозит_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ПартіяТоварівКомпозит_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(ПартіяТоварівКомпозит_Select.SplitSelectToPages, ПартіяТоварівКомпозит_Select.QuerySelect, unigueIDSelect);
@@ -8572,7 +8572,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ВидиЗапасів_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ВидиЗапасів_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(ВидиЗапасів_Select.SplitSelectToPages, ВидиЗапасів_Select.QuerySelect, unigueIDSelect);
@@ -9208,7 +9208,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) Банки_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) Банки_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(Банки_Select.SplitSelectToPages, Банки_Select.QuerySelect, unigueIDSelect);
@@ -9415,7 +9415,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) Банки_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) Банки_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(Банки_Select.SplitSelectToPages, Банки_Select.QuerySelect, unigueIDSelect);
@@ -9667,7 +9667,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) СкладськіПриміщення_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) СкладськіПриміщення_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(СкладськіПриміщення_Select.SplitSelectToPages, СкладськіПриміщення_Select.QuerySelect, unigueIDSelect);
@@ -10062,7 +10062,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) СкладськіКомірки_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) СкладськіКомірки_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(СкладськіКомірки_Select.SplitSelectToPages, СкладськіКомірки_Select.QuerySelect, unigueIDSelect);
@@ -10265,7 +10265,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) СкладськіКомірки_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) СкладськіКомірки_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(СкладськіКомірки_Select.SplitSelectToPages, СкладськіКомірки_Select.QuerySelect, unigueIDSelect);
@@ -10465,7 +10465,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ОбластьЗберігання_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ОбластьЗберігання_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(ОбластьЗберігання_Select.SplitSelectToPages, ОбластьЗберігання_Select.QuerySelect, unigueIDSelect);
@@ -10763,7 +10763,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ТипорозміриКомірок_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ТипорозміриКомірок_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(ТипорозміриКомірок_Select.SplitSelectToPages, ТипорозміриКомірок_Select.QuerySelect, unigueIDSelect);
@@ -10993,7 +10993,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) СкладськіКомірки_Папки_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) СкладськіКомірки_Папки_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(СкладськіКомірки_Папки_Select.SplitSelectToPages, СкладськіКомірки_Папки_Select.QuerySelect, unigueIDSelect);
@@ -11214,7 +11214,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) Блокнот_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) Блокнот_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(Блокнот_Select.SplitSelectToPages, Блокнот_Select.QuerySelect, unigueIDSelect);
@@ -11467,7 +11467,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ЗбереженіЗвіти_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ЗбереженіЗвіти_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(ЗбереженіЗвіти_Select.SplitSelectToPages, ЗбереженіЗвіти_Select.QuerySelect, unigueIDSelect);
@@ -11727,7 +11727,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) КасиККМ_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) КасиККМ_Select.QuerySelect.Where.AddRange(form.WhereList);
 
             /* Cторінки */
             await form.SplitPages(КасиККМ_Select.SplitSelectToPages, КасиККМ_Select.QuerySelect, unigueIDSelect);
@@ -12204,7 +12204,14 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ЗамовленняПостачальнику_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ЗамовленняПостачальнику_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду(Документи.ЗамовленняПостачальнику_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ЗамовленняПостачальнику_Select.QuerySelect.Where.Add(where);
+            }
 
             /* Cторінки */
             await form.SplitPages(ЗамовленняПостачальнику_Select.SplitSelectToPages, ЗамовленняПостачальнику_Select.QuerySelect, unigueIDSelect);
@@ -12714,7 +12721,14 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ПоступленняТоварівТаПослуг_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ПоступленняТоварівТаПослуг_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду(Документи.ПоступленняТоварівТаПослуг_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПоступленняТоварівТаПослуг_Select.QuerySelect.Where.Add(where);
+            }
 
             /* Cторінки */
             await form.SplitPages(ПоступленняТоварівТаПослуг_Select.SplitSelectToPages, ПоступленняТоварівТаПослуг_Select.QuerySelect, unigueIDSelect);
@@ -13225,7 +13239,14 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ЗамовленняКлієнта_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ЗамовленняКлієнта_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду(Документи.ЗамовленняКлієнта_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ЗамовленняКлієнта_Select.QuerySelect.Where.Add(where);
+            }
 
             /* Cторінки */
             await form.SplitPages(ЗамовленняКлієнта_Select.SplitSelectToPages, ЗамовленняКлієнта_Select.QuerySelect, unigueIDSelect);
@@ -13736,7 +13757,14 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) РеалізаціяТоварівТаПослуг_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) РеалізаціяТоварівТаПослуг_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду(Документи.РеалізаціяТоварівТаПослуг_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) РеалізаціяТоварівТаПослуг_Select.QuerySelect.Where.Add(where);
+            }
 
             /* Cторінки */
             await form.SplitPages(РеалізаціяТоварівТаПослуг_Select.SplitSelectToPages, РеалізаціяТоварівТаПослуг_Select.QuerySelect, unigueIDSelect);
@@ -14134,7 +14162,14 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ВстановленняЦінНоменклатури_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ВстановленняЦінНоменклатури_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду(Документи.ВстановленняЦінНоменклатури_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ВстановленняЦінНоменклатури_Select.QuerySelect.Where.Add(where);
+            }
 
             /* Cторінки */
             await form.SplitPages(ВстановленняЦінНоменклатури_Select.SplitSelectToPages, ВстановленняЦінНоменклатури_Select.QuerySelect, unigueIDSelect);
@@ -14636,7 +14671,14 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ПрихіднийКасовийОрдер_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ПрихіднийКасовийОрдер_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду(Документи.ПрихіднийКасовийОрдер_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПрихіднийКасовийОрдер_Select.QuerySelect.Where.Add(where);
+            }
 
             /* Cторінки */
             await form.SplitPages(ПрихіднийКасовийОрдер_Select.SplitSelectToPages, ПрихіднийКасовийОрдер_Select.QuerySelect, unigueIDSelect);
@@ -15141,7 +15183,14 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) РозхіднийКасовийОрдер_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) РозхіднийКасовийОрдер_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду(Документи.РозхіднийКасовийОрдер_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) РозхіднийКасовийОрдер_Select.QuerySelect.Where.Add(where);
+            }
 
             /* Cторінки */
             await form.SplitPages(РозхіднийКасовийОрдер_Select.SplitSelectToPages, РозхіднийКасовийОрдер_Select.QuerySelect, unigueIDSelect);
@@ -15539,7 +15588,14 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ПереміщенняТоварів_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ПереміщенняТоварів_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду(Документи.ПереміщенняТоварів_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПереміщенняТоварів_Select.QuerySelect.Where.Add(where);
+            }
 
             /* Cторінки */
             await form.SplitPages(ПереміщенняТоварів_Select.SplitSelectToPages, ПереміщенняТоварів_Select.QuerySelect, unigueIDSelect);
@@ -16047,7 +16103,14 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ПоверненняТоварівПостачальнику_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ПоверненняТоварівПостачальнику_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду(Документи.ПоверненняТоварівПостачальнику_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПоверненняТоварівПостачальнику_Select.QuerySelect.Where.Add(where);
+            }
 
             /* Cторінки */
             await form.SplitPages(ПоверненняТоварівПостачальнику_Select.SplitSelectToPages, ПоверненняТоварівПостачальнику_Select.QuerySelect, unigueIDSelect);
@@ -16558,7 +16621,14 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ПоверненняТоварівВідКлієнта_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ПоверненняТоварівВідКлієнта_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду(Документи.ПоверненняТоварівВідКлієнта_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПоверненняТоварівВідКлієнта_Select.QuerySelect.Where.Add(where);
+            }
 
             /* Cторінки */
             await form.SplitPages(ПоверненняТоварівВідКлієнта_Select.SplitSelectToPages, ПоверненняТоварівВідКлієнта_Select.QuerySelect, unigueIDSelect);
@@ -17037,7 +17107,14 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) АктВиконанихРобіт_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) АктВиконанихРобіт_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду(Документи.АктВиконанихРобіт_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) АктВиконанихРобіт_Select.QuerySelect.Where.Add(where);
+            }
 
             /* Cторінки */
             await form.SplitPages(АктВиконанихРобіт_Select.SplitSelectToPages, АктВиконанихРобіт_Select.QuerySelect, unigueIDSelect);
@@ -17466,7 +17543,14 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ВведенняЗалишків_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ВведенняЗалишків_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду(Документи.ВведенняЗалишків_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ВведенняЗалишків_Select.QuerySelect.Where.Add(where);
+            }
 
             /* Cторінки */
             await form.SplitPages(ВведенняЗалишків_Select.SplitSelectToPages, ВведенняЗалишків_Select.QuerySelect, unigueIDSelect);
@@ -17830,7 +17914,14 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) НадлишкиТоварів_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) НадлишкиТоварів_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду(Документи.НадлишкиТоварів_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) НадлишкиТоварів_Select.QuerySelect.Where.Add(where);
+            }
 
             /* Cторінки */
             await form.SplitPages(НадлишкиТоварів_Select.SplitSelectToPages, НадлишкиТоварів_Select.QuerySelect, unigueIDSelect);
@@ -18192,7 +18283,14 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ПересортицяТоварів_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ПересортицяТоварів_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду(Документи.ПересортицяТоварів_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПересортицяТоварів_Select.QuerySelect.Where.Add(where);
+            }
 
             /* Cторінки */
             await form.SplitPages(ПересортицяТоварів_Select.SplitSelectToPages, ПересортицяТоварів_Select.QuerySelect, unigueIDSelect);
@@ -18586,7 +18684,14 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ПерерахунокТоварів_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ПерерахунокТоварів_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду(Документи.ПерерахунокТоварів_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПерерахунокТоварів_Select.QuerySelect.Where.Add(where);
+            }
 
             /* Cторінки */
             await form.SplitPages(ПерерахунокТоварів_Select.SplitSelectToPages, ПерерахунокТоварів_Select.QuerySelect, unigueIDSelect);
@@ -18998,7 +19103,14 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ПсуванняТоварів_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ПсуванняТоварів_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду(Документи.ПсуванняТоварів_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПсуванняТоварів_Select.QuerySelect.Where.Add(where);
+            }
 
             /* Cторінки */
             await form.SplitPages(ПсуванняТоварів_Select.SplitSelectToPages, ПсуванняТоварів_Select.QuerySelect, unigueIDSelect);
@@ -19442,7 +19554,14 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ВнутрішнєСпоживанняТоварів_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ВнутрішнєСпоживанняТоварів_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду(Документи.ВнутрішнєСпоживанняТоварів_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ВнутрішнєСпоживанняТоварів_Select.QuerySelect.Where.Add(where);
+            }
 
             /* Cторінки */
             await form.SplitPages(ВнутрішнєСпоживанняТоварів_Select.SplitSelectToPages, ВнутрішнєСпоживанняТоварів_Select.QuerySelect, unigueIDSelect);
@@ -19951,7 +20070,14 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) РахунокФактура_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) РахунокФактура_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду(Документи.РахунокФактура_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) РахунокФактура_Select.QuerySelect.Where.Add(where);
+            }
 
             /* Cторінки */
             await form.SplitPages(РахунокФактура_Select.SplitSelectToPages, РахунокФактура_Select.QuerySelect, unigueIDSelect);
@@ -20317,7 +20443,14 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) РозміщенняТоварівНаСкладі_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) РозміщенняТоварівНаСкладі_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду(Документи.РозміщенняТоварівНаСкладі_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) РозміщенняТоварівНаСкладі_Select.QuerySelect.Where.Add(where);
+            }
 
             /* Cторінки */
             await form.SplitPages(РозміщенняТоварівНаСкладі_Select.SplitSelectToPages, РозміщенняТоварівНаСкладі_Select.QuerySelect, unigueIDSelect);
@@ -20679,7 +20812,14 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ПереміщенняТоварівНаСкладі_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ПереміщенняТоварівНаСкладі_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду(Документи.ПереміщенняТоварівНаСкладі_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПереміщенняТоварівНаСкладі_Select.QuerySelect.Where.Add(where);
+            }
 
             /* Cторінки */
             await form.SplitPages(ПереміщенняТоварівНаСкладі_Select.SplitSelectToPages, ПереміщенняТоварівНаСкладі_Select.QuerySelect, unigueIDSelect);
@@ -21041,7 +21181,14 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ЗбіркаТоварівНаСкладі_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ЗбіркаТоварівНаСкладі_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду(Документи.ЗбіркаТоварівНаСкладі_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ЗбіркаТоварівНаСкладі_Select.QuerySelect.Where.Add(where);
+            }
 
             /* Cторінки */
             await form.SplitPages(ЗбіркаТоварівНаСкладі_Select.SplitSelectToPages, ЗбіркаТоварівНаСкладі_Select.QuerySelect, unigueIDSelect);
@@ -21403,7 +21550,14 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду(Документи.РозміщенняНоменклатуриПоКоміркам_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect.Where.Add(where);
+            }
 
             /* Cторінки */
             await form.SplitPages(РозміщенняНоменклатуриПоКоміркам_Select.SplitSelectToPages, РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect, unigueIDSelect);
@@ -21733,7 +21887,14 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) КорегуванняБоргу_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) КорегуванняБоргу_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду(Документи.КорегуванняБоргу_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) КорегуванняБоргу_Select.QuerySelect.Where.Add(where);
+            }
 
             /* Cторінки */
             await form.SplitPages(КорегуванняБоргу_Select.SplitSelectToPages, КорегуванняБоргу_Select.QuerySelect, unigueIDSelect);
@@ -22278,7 +22439,14 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду(Документи.ЗакриттяЗамовленняКлієнта_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Where.Add(where);
+            }
 
             /* Cторінки */
             await form.SplitPages(ЗакриттяЗамовленняКлієнта_Select.SplitSelectToPages, ЗакриттяЗамовленняКлієнта_Select.QuerySelect, unigueIDSelect);
@@ -22790,7 +22958,14 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ЗакриттяРахункуФактури_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ЗакриттяРахункуФактури_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду(Документи.ЗакриттяРахункуФактури_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ЗакриттяРахункуФактури_Select.QuerySelect.Where.Add(where);
+            }
 
             /* Cторінки */
             await form.SplitPages(ЗакриттяРахункуФактури_Select.SplitSelectToPages, ЗакриттяРахункуФактури_Select.QuerySelect, unigueIDSelect);
@@ -23340,7 +23515,14 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду(Документи.ЗакриттяЗамовленняПостачальнику_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Where.Add(where);
+            }
 
             /* Cторінки */
             await form.SplitPages(ЗакриттяЗамовленняПостачальнику_Select.SplitSelectToPages, ЗакриттяЗамовленняПостачальнику_Select.QuerySelect, unigueIDSelect);
@@ -23857,7 +24039,14 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
 
             /* Відбори */
-            if (form.WhereList != null) ЧекККМ_Select.QuerySelect.Where = form.WhereList;
+            if (form.WhereList != null) ЧекККМ_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду(Документи.ЧекККМ_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ЧекККМ_Select.QuerySelect.Where.Add(where);
+            }
 
             /* Cторінки */
             await form.SplitPages(ЧекККМ_Select.SplitSelectToPages, ЧекККМ_Select.QuerySelect, unigueIDSelect);

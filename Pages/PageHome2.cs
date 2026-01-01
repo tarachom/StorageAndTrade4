@@ -64,7 +64,6 @@ partial class PageHome2 : DocumentJournal
     protected override async void PeriodChanged()
     {
         ФункціїНалаштуванняКористувача.ЗаписатиПеріодДляЖурналу(FormKey, Period.Period.ToString(), Period.DateStart, Period.DateStop);
-        await LoadRecords();
     }
 
     protected override async ValueTask SpendTheDocument(UnigueID[] unigueID, bool spendDoc)
