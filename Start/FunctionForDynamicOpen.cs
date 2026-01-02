@@ -12,6 +12,6 @@ namespace StorageAndTrade
 {
     class FunctionForDynamicOpen : InterfaceGtk4.FunctionForDynamicOpen
     {
-        public FunctionForDynamicOpen() : base(Config.NameSpageProgram, Config.NameSpageCodeGeneration, Program.Form?.Notebook) { }
+        public FunctionForDynamicOpen() : base(Config.NameSpageProgram, Config.NameSpageCodeGeneration, Program.BasicForm?.NotebookFunc) { }
     }
 }

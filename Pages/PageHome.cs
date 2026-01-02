@@ -14,13 +14,19 @@ class PageHome : Form
 {
     public ActiveUsers activeUsers = new ActiveUsers(Config.Kernel, 800, 300);
 
-    public PageHome() : base(Program.Form?.Notebook)
+    public PageHome() : base(Program.BasicForm?.NotebookFunc)
     {
         {
             Box hBox = New(Orientation.Horizontal, 0);
             hBox.Append(activeUsers);
             Append(hBox);
         }
+
+        Номенклатура_PointerControl номенклатура = new();
+        Append(номенклатура);
+
+        ПоступленняТоварівТаПослуг_PointerControl поступлення = new();
+        Append(поступлення);
 
         /*
         LinkButton linkButton = LinkButton.New("");

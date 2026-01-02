@@ -18,7 +18,7 @@ namespace StorageAndTrade
     /// </summary>
     class FormConfigurationSelection : InterfaceGtk4.FormConfigurationSelection
     {
-        public FormConfigurationSelection() : base(Program.App, Config.Kernel, null, TypeForm.WorkingProgram) { }
+        public FormConfigurationSelection() : base(Program.BasicApp, Config.Kernel, null, TypeForm.WorkingProgram) { }
 
         public override async ValueTask<bool> OpenProgram(ConfigurationParam? openConfigurationParam)
         {
@@ -33,7 +33,7 @@ namespace StorageAndTrade
             form.SetStatusBar();
             form.Show();
 
-            Program.Form = form;
+            Program.BasicForm = form;
 
             //Присвоєння користувача
             await form.SetCurrentUser();

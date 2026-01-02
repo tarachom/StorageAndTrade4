@@ -11,12 +11,13 @@ using AccountingSoftware;
 
 using ТабличнийСписок = GeneratedCode.Документи.ТабличніСписки.ПоступленняТоварівТаПослуг_Записи;
 using Функції = ПоступленняТоварівТаПослуг_Функції;
+using Константи = GeneratedCode.Документи.ПоступленняТоварівТаПослуг_Const;
 
-partial class PageHome2 : DocumentJournal
+partial class ПоступленняТоварівТаПослуг : DocumentJournalFull
 {
-    public PageHome2(): base(Program.Form?.Notebook)
+    public ПоступленняТоварівТаПослуг() : base(Program.BasicForm?.NotebookFunc)
     {
-        TypeName = GeneratedCode.Документи.ПоступленняТоварівТаПослуг_Const.POINTER;
+        TypeName = Константи.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50, Pages.StartingPosition.End);
     }

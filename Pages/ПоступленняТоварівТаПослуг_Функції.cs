@@ -26,7 +26,7 @@ namespace StorageAndTrade
                         
                 //КлючовіСловаДляПошуку
                 new Where(Comparison.OR, ПоступленняТоварівТаПослуг_Const.КлючовіСловаДляПошуку, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
-                        
+
             ];
         }
 
@@ -68,17 +68,16 @@ namespace StorageAndTrade
             {
                 ПоступленняТоварівТаПослуг_Objest Новий = await Обєкт.Copy(true);
                 await Новий.Save();
-                
-                    await Новий.Товари_TablePart.Save(false); // Таблична частина "Товари"
-                
+
+                await Новий.Товари_TablePart.Save(false); // Таблична частина "Товари"
+
                 return Новий.UnigueID;
             }
             else
             {
-                Message.Error(null, null, "Не вдалось прочитати!");
+                Message.Error(Program.BasicApp, Program.BasicForm, "Не вдалось прочитати!");
                 return null;
             }
         }
     }
 }
-    

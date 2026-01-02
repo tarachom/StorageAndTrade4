@@ -86,7 +86,7 @@ static class Номенклатура_Функції
         }
         else
         {
-            //Message.Error(Program.GeneralForm, "Не вдалось прочитати!");
+            Message.Error(Program.BasicApp, Program.BasicForm, "Не вдалось прочитати!");
             return null;
         }
     }

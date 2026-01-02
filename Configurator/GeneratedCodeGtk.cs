@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 01.01.2026 14:43:36
+ * Дата конфігурації: 02.01.2026 14:52:53
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон Gtk4.xslt
@@ -24,7 +24,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class Організації_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -95,12 +95,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -163,7 +163,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -218,7 +218,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class Номенклатура_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -427,7 +427,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
             List<FilterControl.FilterListItem> filterList = [];
@@ -458,7 +458,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -548,7 +548,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -624,9 +624,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         }
     }
         
-    public static class Номенклатура_ЗаписиШвидкийВибір
+    public static class Номенклатура_ЗаписиМіні
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -789,12 +789,47 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
+            List<FilterControl.FilterListItem> filterList = [];
+            
+            { /* Код, string */
+                Switch sw = Switch.New();
+                
+                        Entry Код = Entry.New();
+                        Код.WidthRequest = 300;
+                        object get() => Код.GetText();
+                    
+                filterList.Add(new(Номенклатура_Const.Код, get, sw));
+                form.Filter.Append("Код:", Код, sw);
+            }
+            
+            { /* Назва, string */
+                Switch sw = Switch.New();
+                
+                        Entry Назва = Entry.New();
+                        Назва.WidthRequest = 300;
+                        object get() => Назва.GetText();
+                    
+                filterList.Add(new(Номенклатура_Const.Назва, get, sw));
+                form.Filter.Append("Номенклатура:", Назва, sw);
+            }
+            
+            form.Filter.GetWhere = () =>
+            {
+                List<Where> where = [];
+                foreach (var filter in filterList)
+                    if (filter.IsOn.Active)
+                        where.Add(new Where(filter.Field, Comparison.EQ, filter.GetValueFunc.Invoke()));
+
+                form.WhereList = where;
+                return where.Count != 0;
+            };
+        
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -877,7 +912,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -952,7 +987,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class Виробники_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -1023,12 +1058,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -1091,7 +1126,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -1146,7 +1181,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class ВидиНоменклатури_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -1217,12 +1252,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -1285,7 +1320,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -1340,7 +1375,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class ПакуванняОдиниціВиміру_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -1457,12 +1492,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -1529,7 +1564,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -1588,7 +1623,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class Валюти_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -1728,7 +1763,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
             List<FilterControl.FilterListItem> filterList = [];
@@ -1768,7 +1803,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -1837,7 +1872,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -1894,7 +1929,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class Валюти_ЗаписиШвидкийВибір
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -1988,12 +2023,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -2058,7 +2093,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -2115,7 +2150,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class Контрагенти_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -2255,7 +2290,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
             List<FilterControl.FilterListItem> filterList = [];
@@ -2295,7 +2330,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -2367,7 +2402,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -2427,7 +2462,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class Контрагенти_ЗаписиШвидкийВибір
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -2498,12 +2533,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -2566,7 +2601,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -2621,7 +2656,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class Склади_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -2738,7 +2773,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
             List<FilterControl.FilterListItem> filterList = [];
@@ -2782,7 +2817,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -2849,7 +2884,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -2904,7 +2939,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class Склади_ЗаписиШвидкийВибір
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -2975,12 +3010,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -3043,7 +3078,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -3098,7 +3133,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class ВидиЦін_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -3192,12 +3227,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -3265,7 +3300,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -3321,7 +3356,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class ВидиЦін_ЗаписиШвидкийВибір
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -3369,12 +3404,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -3435,7 +3470,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -3488,7 +3523,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class ВидиЦінПостачальників_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -3559,12 +3594,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -3627,7 +3662,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -3682,7 +3717,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class Користувачі_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -3753,12 +3788,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -3821,7 +3856,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -3876,7 +3911,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class ФізичніОсоби_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -3947,12 +3982,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -4015,7 +4050,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -4070,7 +4105,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class СтруктураПідприємства_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -4141,12 +4176,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -4209,7 +4244,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -4264,7 +4299,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class КраїниСвіту_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -4335,12 +4370,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -4403,7 +4438,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -4458,7 +4493,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class Файли_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -4598,12 +4633,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -4672,7 +4707,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -4729,7 +4764,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class Файли_ЗаписиШвидкийВибір
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -4777,12 +4812,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -4843,7 +4878,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -4896,7 +4931,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class ХарактеристикиНоменклатури_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -5059,12 +5094,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -5147,7 +5182,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -5222,7 +5257,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class Номенклатура_Папки_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -5293,12 +5328,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -5361,7 +5396,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -5412,7 +5447,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class Номенклатура_Папки_ЗаписиШвидкийВибір
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -5483,12 +5518,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -5551,7 +5586,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -5606,7 +5641,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class Контрагенти_Папки_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -5677,12 +5712,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -5745,7 +5780,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -5800,7 +5835,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class Склади_Папки_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -5871,12 +5906,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -5939,7 +5974,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -5994,7 +6029,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class Каси_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -6111,12 +6146,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -6189,7 +6224,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -6250,7 +6285,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class Каси_ЗаписиШвидкийВибір
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -6344,12 +6379,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -6417,7 +6452,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -6477,7 +6512,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class БанківськіРахункиОрганізацій_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -6571,12 +6606,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -6644,7 +6679,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -6704,7 +6739,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class ДоговориКонтрагентів_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -6821,7 +6856,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
             List<FilterControl.FilterListItem> filterList = [];
@@ -6852,7 +6887,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -6922,7 +6957,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -6980,7 +7015,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class ДоговориКонтрагентів_ЗаписиШвидкийВибір
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -7074,12 +7109,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -7147,7 +7182,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -7207,7 +7242,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class БанківськіРахункиКонтрагентів_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -7301,12 +7336,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -7374,7 +7409,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -7434,7 +7469,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class СтаттяРухуКоштів_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -7551,7 +7586,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
             List<FilterControl.FilterListItem> filterList = [];
@@ -7582,7 +7617,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -7649,7 +7684,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -7708,7 +7743,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class СеріїНоменклатури_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -7756,12 +7791,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -7822,7 +7857,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -7875,7 +7910,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class ПартіяТоварівКомпозит_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -8038,7 +8073,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
             List<FilterControl.FilterListItem> filterList = [];
@@ -8069,7 +8104,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -8149,7 +8184,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -8217,7 +8252,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class ПартіяТоварівКомпозит_ЗаписиШвидкийВибір
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -8288,12 +8323,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -8356,7 +8391,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -8411,7 +8446,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class ВидиЗапасів_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -8482,12 +8517,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -8550,7 +8585,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -8605,7 +8640,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class Банки_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -9067,12 +9102,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -9169,7 +9204,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -9254,7 +9289,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class Банки_ЗаписиШвидкийВибір
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -9325,12 +9360,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -9393,7 +9428,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -9448,7 +9483,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class СкладськіПриміщення_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -9542,7 +9577,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
             List<FilterControl.FilterListItem> filterList = [];
@@ -9573,7 +9608,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -9641,7 +9676,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -9701,7 +9736,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class СкладськіКомірки_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -9933,12 +9968,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -10024,7 +10059,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -10098,7 +10133,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class СкладськіКомірки_ЗаписиШвидкийВибір
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -10169,12 +10204,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -10240,7 +10275,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -10298,7 +10333,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class ОбластьЗберігання_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -10369,12 +10404,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -10440,7 +10475,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -10498,7 +10533,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class ТипорозміриКомірок_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -10661,12 +10696,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -10737,7 +10772,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -10800,7 +10835,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class СкладськіКомірки_Папки_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -10894,12 +10929,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -10967,7 +11002,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -11027,7 +11062,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class Блокнот_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -11121,12 +11156,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -11191,7 +11226,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -11248,7 +11283,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class ЗбереженіЗвіти_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -11365,12 +11400,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -11440,7 +11475,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -11502,7 +11537,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     public static class КасиККМ_Записи
     {
-        public static void AddColumn(DirectoryJournal form)
+        public static void AddColumn(DirectoryJournalBase form)
         {
             
             //Image
@@ -11619,12 +11654,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DirectoryJournal form)
+        public static void CreateFilter(DirectoryJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DirectoryJournal form)
+        public static async ValueTask UpdateRecords(DirectoryJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -11697,7 +11732,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DirectoryJournal form)
+        public static async ValueTask LoadRecords(DirectoryJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
@@ -11767,7 +11802,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
     public static class ЗамовленняПостачальнику_Записи
     {
-        public static void AddColumn(DocumentJournal form)
+        public static void AddColumn(DocumentJournalBase form)
         {
             
             //Image
@@ -12035,7 +12070,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DocumentJournal form)
+        public static void CreateFilter(DocumentJournalBase form)
         {
             
             List<FilterControl.FilterListItem> filterList = [];
@@ -12063,7 +12098,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
         }
 
-        public static async ValueTask UpdateRecords(DocumentJournal form)
+        public static async ValueTask UpdateRecords(DocumentJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -12158,7 +12193,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DocumentJournal form)
+        public static async ValueTask LoadRecords(DocumentJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
@@ -12252,7 +12287,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
     public static class ПоступленняТоварівТаПослуг_Записи
     {
-        public static void AddColumn(DocumentJournal form)
+        public static void AddColumn(DocumentJournalBase form)
         {
             
             //Image
@@ -12543,7 +12578,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DocumentJournal form)
+        public static void CreateFilter(DocumentJournalBase form)
         {
             
             List<FilterControl.FilterListItem> filterList = [];
@@ -12571,7 +12606,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
         }
 
-        public static async ValueTask UpdateRecords(DocumentJournal form)
+        public static async ValueTask UpdateRecords(DocumentJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -12671,7 +12706,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DocumentJournal form)
+        public static async ValueTask LoadRecords(DocumentJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
@@ -12764,13 +12799,500 @@ namespace GeneratedCode.Документи.ТабличніСписки
         }
     }
         
+    public static class ПоступленняТоварівТаПослуг_ЗаписиМіні
+    {
+        public static void AddColumn(DocumentJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRow? row = (DocumentRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRow? row = (DocumentRow?)listItem.Item;
+                    listItem.SetChild(Picture.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    Label label = Label.New(null);
+                    label.Halign = Align.Start;
+                    listItem.Child = label;
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    Label? label = (Label?)listItem.Child;
+                    DocumentRow? row = (DocumentRow?)listItem.Item;
+                    if (label != null && row != null)
+                        label.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    Label label = Label.New(null);
+                    label.Halign = Align.Start;
+                    listItem.Child = label;
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    Label? label = (Label?)listItem.Child;
+                    DocumentRow? row = (DocumentRow?)listItem.Item;
+                    if (label != null && row != null)
+                        label.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    Label label = Label.New(null);
+                    label.Halign = Align.Start;
+                    listItem.Child = label;
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    Label? label = (Label?)listItem.Child;
+                    DocumentRow? row = (DocumentRow?)listItem.Item;
+                    if (label != null && row != null)
+                        label.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Організація, "Організація"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    Label label = Label.New(null);
+                    label.Halign = Align.Start;
+                    listItem.Child = label;
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    Label? label = (Label?)listItem.Child;
+                    DocumentRow? row = (DocumentRow?)listItem.Item;
+                    if (label != null && row != null)
+                        label.SetText(row.Fields["Організація"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Склад, "Склад"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    Label label = Label.New(null);
+                    label.Halign = Align.Start;
+                    listItem.Child = label;
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    Label? label = (Label?)listItem.Child;
+                    DocumentRow? row = (DocumentRow?)listItem.Item;
+                    if (label != null && row != null)
+                        label.SetText(row.Fields["Склад"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Контрагент, "Контрагент"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    Label label = Label.New(null);
+                    label.Halign = Align.Start;
+                    listItem.Child = label;
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    Label? label = (Label?)listItem.Child;
+                    DocumentRow? row = (DocumentRow?)listItem.Item;
+                    if (label != null && row != null)
+                        label.SetText(row.Fields["Контрагент"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Валюта, "Валюта"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    Label label = Label.New(null);
+                    label.Halign = Align.Start;
+                    listItem.Child = label;
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    Label? label = (Label?)listItem.Child;
+                    DocumentRow? row = (DocumentRow?)listItem.Item;
+                    if (label != null && row != null)
+                        label.SetText(row.Fields["Валюта"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Каса, "Каса"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    Label label = Label.New(null);
+                    label.Halign = Align.Start;
+                    listItem.Child = label;
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    Label? label = (Label?)listItem.Child;
+                    DocumentRow? row = (DocumentRow?)listItem.Item;
+                    if (label != null && row != null)
+                        label.SetText(row.Fields["Каса"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Каса", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: СумаДокументу, "Сума"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    Label label = Label.New(null);
+                    label.AddCssClass("numeric");label.Halign = Align.End;
+                    listItem.Child = label;
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    Label? label = (Label?)listItem.Child;
+                    DocumentRow? row = (DocumentRow?)listItem.Item;
+                    if (label != null && row != null)
+                        label.SetText(row.Fields["СумаДокументу"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Автор, "Автор"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    Label label = Label.New(null);
+                    label.Halign = Align.Start;
+                    listItem.Child = label;
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    Label? label = (Label?)listItem.Child;
+                    DocumentRow? row = (DocumentRow?)listItem.Item;
+                    if (label != null && row != null)
+                        label.SetText(row.Fields["Автор"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentJournalBase form)
+        {
+            
+            List<FilterControl.FilterListItem> filterList = [];
+            
+            { /* СумаДокументу, numeric */
+                Switch sw = Switch.New();
+                
+                        NumericControl СумаДокументу = new();
+                        object get() => СумаДокументу.Value;
+                    
+                filterList.Add(new(ПоступленняТоварівТаПослуг_Const.СумаДокументу, get, sw));
+                form.Filter.Append("Сума:", СумаДокументу, sw);
+            }
+            
+            form.Filter.GetWhere = () =>
+            {
+                List<Where> where = [];
+                foreach (var filter in filterList)
+                    if (filter.IsOn.Active)
+                        where.Add(new Where(filter.Field, Comparison.EQ, filter.GetValueFunc.Invoke()));
+
+                form.WhereList = where;
+                return where.Count != 0;
+            };
+        
+        }
+
+        public static async ValueTask UpdateRecords(DocumentJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ПоступленняТоварівТаПослуг_Select ПоступленняТоварівТаПослуг_Select = new();
+            ПоступленняТоварівТаПослуг_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                "spend",
+                /*Назва*/ Документи.ПоступленняТоварівТаПослуг_Const.Назва,
+                /*НомерДок*/ Документи.ПоступленняТоварівТаПослуг_Const.НомерДок,
+                /*ДатаДок*/ Документи.ПоступленняТоварівТаПослуг_Const.ДатаДок,
+                /*СумаДокументу*/ Документи.ПоступленняТоварівТаПослуг_Const.СумаДокументу,
+                
+            ]);
+
+            
+                /* Сортування */
+                ПоступленняТоварівТаПослуг_Select.QuerySelect.Order.Add(
+                Документи.ПоступленняТоварівТаПослуг_Const.ДатаДок, SelectOrder.ASC);
+            
+                /* Приєднання */
+                Довідники.Організації_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Організація,
+                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_1", "Організація");
+            
+                /* Приєднання */
+                Довідники.Склади_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Склад,
+                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_2", "Склад");
+            
+                /* Приєднання */
+                Довідники.Контрагенти_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Контрагент,
+                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_3", "Контрагент");
+            
+                /* Приєднання */
+                Довідники.Валюти_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Валюта,
+                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_4", "Валюта");
+            
+                /* Приєднання */
+                Довідники.Каси_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Каса,
+                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_5", "Каса");
+            
+                /* Приєднання */
+                Довідники.Користувачі_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Автор,
+                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_6", "Автор");
+            
+
+            /* Відбори */
+            ПоступленняТоварівТаПослуг_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ПоступленняТоварівТаПослуг_Select.Select();
+            while (ПоступленняТоварівТаПослуг_Select.MoveNext())
+            {
+                Документи.ПоступленняТоварівТаПослуг_Pointer? curr = ПоступленняТоварівТаПослуг_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"], Spend = (bool)Fields["spend"] };
+                    row.Fields.Add("Назва", Fields[ПоступленняТоварівТаПослуг_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПоступленняТоварівТаПослуг_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПоступленняТоварівТаПослуг_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Організація", Fields["Організація"].ToString() ?? "");
+                    row.Fields.Add("Склад", Fields["Склад"].ToString() ?? "");
+                    row.Fields.Add("Контрагент", Fields["Контрагент"].ToString() ?? "");
+                    row.Fields.Add("Валюта", Fields["Валюта"].ToString() ?? "");
+                    row.Fields.Add("Каса", Fields["Каса"].ToString() ?? "");
+                    row.Fields.Add("СумаДокументу", Fields[ПоступленняТоварівТаПослуг_Const.СумаДокументу].ToString() ?? "");
+                    row.Fields.Add("Автор", Fields["Автор"].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            Row? item = (Row?)form.Store.GetObject(i);
+                            if (item != null && item.UnigueID.Equals(curr.UnigueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ПоступленняТоварівТаПослуг_Select ПоступленняТоварівТаПослуг_Select = new();
+            ПоступленняТоварівТаПослуг_Select.QuerySelect.Field.AddRange(
+            [
+                "deletion_label",
+                "spend",
+                /*Назва*/ Документи.ПоступленняТоварівТаПослуг_Const.Назва,
+                /*НомерДок*/ Документи.ПоступленняТоварівТаПослуг_Const.НомерДок,
+                /*ДатаДок*/ Документи.ПоступленняТоварівТаПослуг_Const.ДатаДок,
+                /*СумаДокументу*/ Документи.ПоступленняТоварівТаПослуг_Const.СумаДокументу,
+                
+            ]);
+
+            
+                /* Сортування */
+                ПоступленняТоварівТаПослуг_Select.QuerySelect.Order.Add(
+                Документи.ПоступленняТоварівТаПослуг_Const.ДатаДок, SelectOrder.ASC);
+            
+                /* Приєднання */
+                Довідники.Організації_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Організація,
+                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_1", "Організація");
+            
+                /* Приєднання */
+                Довідники.Склади_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Склад,
+                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_2", "Склад");
+            
+                /* Приєднання */
+                Довідники.Контрагенти_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Контрагент,
+                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_3", "Контрагент");
+            
+                /* Приєднання */
+                Довідники.Валюти_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Валюта,
+                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_4", "Валюта");
+            
+                /* Приєднання */
+                Довідники.Каси_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Каса,
+                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_5", "Каса");
+            
+                /* Приєднання */
+                Довідники.Користувачі_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Автор,
+                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_6", "Автор");
+            
+
+            /* Відбори */
+            if (form.WhereList != null) ПоступленняТоварівТаПослуг_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду(Документи.ПоступленняТоварівТаПослуг_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПоступленняТоварівТаПослуг_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ПоступленняТоварівТаПослуг_Select.SplitSelectToPages, ПоступленняТоварівТаПослуг_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ПоступленняТоварівТаПослуг_Select.Select();
+            form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ПоступленняТоварівТаПослуг_Select.MoveNext())
+            {
+                Документи.ПоступленняТоварівТаПослуг_Pointer? curr = ПоступленняТоварівТаПослуг_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"], Spend = (bool)Fields["spend"] };
+                    row.Fields.Add("Назва", Fields[ПоступленняТоварівТаПослуг_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПоступленняТоварівТаПослуг_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПоступленняТоварівТаПослуг_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Організація", Fields["Організація"].ToString() ?? "");
+                    row.Fields.Add("Склад", Fields["Склад"].ToString() ?? "");
+                    row.Fields.Add("Контрагент", Fields["Контрагент"].ToString() ?? "");
+                    row.Fields.Add("Валюта", Fields["Валюта"].ToString() ?? "");
+                    row.Fields.Add("Каса", Fields["Каса"].ToString() ?? "");
+                    row.Fields.Add("СумаДокументу", Fields[ПоступленняТоварівТаПослуг_Const.СумаДокументу].ToString() ?? "");
+                    row.Fields.Add("Автор", Fields["Автор"].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
     #endregion
     
     #region DOCUMENT "ЗамовленняКлієнта"
         
     public static class ЗамовленняКлієнта_Записи
     {
-        public static void AddColumn(DocumentJournal form)
+        public static void AddColumn(DocumentJournalBase form)
         {
             
             //Image
@@ -13061,7 +13583,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DocumentJournal form)
+        public static void CreateFilter(DocumentJournalBase form)
         {
             
             List<FilterControl.FilterListItem> filterList = [];
@@ -13089,7 +13611,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
         }
 
-        public static async ValueTask UpdateRecords(DocumentJournal form)
+        public static async ValueTask UpdateRecords(DocumentJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -13189,7 +13711,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DocumentJournal form)
+        public static async ValueTask LoadRecords(DocumentJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
@@ -13288,7 +13810,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
     public static class РеалізаціяТоварівТаПослуг_Записи
     {
-        public static void AddColumn(DocumentJournal form)
+        public static void AddColumn(DocumentJournalBase form)
         {
             
             //Image
@@ -13579,7 +14101,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DocumentJournal form)
+        public static void CreateFilter(DocumentJournalBase form)
         {
             
             List<FilterControl.FilterListItem> filterList = [];
@@ -13607,7 +14129,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
         }
 
-        public static async ValueTask UpdateRecords(DocumentJournal form)
+        public static async ValueTask UpdateRecords(DocumentJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -13707,7 +14229,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DocumentJournal form)
+        public static async ValueTask LoadRecords(DocumentJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
@@ -13806,7 +14328,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
     public static class ВстановленняЦінНоменклатури_Записи
     {
-        public static void AddColumn(DocumentJournal form)
+        public static void AddColumn(DocumentJournalBase form)
         {
             
             //Image
@@ -14028,12 +14550,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DocumentJournal form)
+        public static void CreateFilter(DocumentJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DocumentJournal form)
+        public static async ValueTask UpdateRecords(DocumentJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -14121,7 +14643,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DocumentJournal form)
+        public static async ValueTask LoadRecords(DocumentJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
@@ -14208,7 +14730,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
     public static class ПрихіднийКасовийОрдер_Записи
     {
-        public static void AddColumn(DocumentJournal form)
+        public static void AddColumn(DocumentJournalBase form)
         {
             
             //Image
@@ -14499,7 +15021,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DocumentJournal form)
+        public static void CreateFilter(DocumentJournalBase form)
         {
             
             List<FilterControl.FilterListItem> filterList = [];
@@ -14527,7 +15049,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
         }
 
-        public static async ValueTask UpdateRecords(DocumentJournal form)
+        public static async ValueTask UpdateRecords(DocumentJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -14624,7 +15146,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DocumentJournal form)
+        public static async ValueTask LoadRecords(DocumentJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
@@ -14720,7 +15242,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
     public static class РозхіднийКасовийОрдер_Записи
     {
-        public static void AddColumn(DocumentJournal form)
+        public static void AddColumn(DocumentJournalBase form)
         {
             
             //Image
@@ -15011,7 +15533,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DocumentJournal form)
+        public static void CreateFilter(DocumentJournalBase form)
         {
             
             List<FilterControl.FilterListItem> filterList = [];
@@ -15039,7 +15561,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
         }
 
-        public static async ValueTask UpdateRecords(DocumentJournal form)
+        public static async ValueTask UpdateRecords(DocumentJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -15136,7 +15658,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DocumentJournal form)
+        public static async ValueTask LoadRecords(DocumentJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
@@ -15232,7 +15754,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
     public static class ПереміщенняТоварів_Записи
     {
-        public static void AddColumn(DocumentJournal form)
+        public static void AddColumn(DocumentJournalBase form)
         {
             
             //Image
@@ -15454,12 +15976,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DocumentJournal form)
+        public static void CreateFilter(DocumentJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DocumentJournal form)
+        public static async ValueTask UpdateRecords(DocumentJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -15547,7 +16069,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DocumentJournal form)
+        public static async ValueTask LoadRecords(DocumentJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
@@ -15634,7 +16156,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
     public static class ПоверненняТоварівПостачальнику_Записи
     {
-        public static void AddColumn(DocumentJournal form)
+        public static void AddColumn(DocumentJournalBase form)
         {
             
             //Image
@@ -15925,7 +16447,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DocumentJournal form)
+        public static void CreateFilter(DocumentJournalBase form)
         {
             
             List<FilterControl.FilterListItem> filterList = [];
@@ -15953,7 +16475,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
         }
 
-        public static async ValueTask UpdateRecords(DocumentJournal form)
+        public static async ValueTask UpdateRecords(DocumentJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -16053,7 +16575,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DocumentJournal form)
+        public static async ValueTask LoadRecords(DocumentJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
@@ -16152,7 +16674,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
     public static class ПоверненняТоварівВідКлієнта_Записи
     {
-        public static void AddColumn(DocumentJournal form)
+        public static void AddColumn(DocumentJournalBase form)
         {
             
             //Image
@@ -16443,7 +16965,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DocumentJournal form)
+        public static void CreateFilter(DocumentJournalBase form)
         {
             
             List<FilterControl.FilterListItem> filterList = [];
@@ -16471,7 +16993,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
         }
 
-        public static async ValueTask UpdateRecords(DocumentJournal form)
+        public static async ValueTask UpdateRecords(DocumentJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -16571,7 +17093,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DocumentJournal form)
+        public static async ValueTask LoadRecords(DocumentJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
@@ -16670,7 +17192,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
     public static class АктВиконанихРобіт_Записи
     {
-        public static void AddColumn(DocumentJournal form)
+        public static void AddColumn(DocumentJournalBase form)
         {
             
             //Image
@@ -16938,7 +17460,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DocumentJournal form)
+        public static void CreateFilter(DocumentJournalBase form)
         {
             
             List<FilterControl.FilterListItem> filterList = [];
@@ -16966,7 +17488,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
         }
 
-        public static async ValueTask UpdateRecords(DocumentJournal form)
+        public static async ValueTask UpdateRecords(DocumentJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -17061,7 +17583,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DocumentJournal form)
+        public static async ValueTask LoadRecords(DocumentJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
@@ -17155,7 +17677,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
     public static class ВведенняЗалишків_Записи
     {
-        public static void AddColumn(DocumentJournal form)
+        public static void AddColumn(DocumentJournalBase form)
         {
             
             //Image
@@ -17400,12 +17922,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DocumentJournal form)
+        public static void CreateFilter(DocumentJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DocumentJournal form)
+        public static async ValueTask UpdateRecords(DocumentJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -17498,7 +18020,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DocumentJournal form)
+        public static async ValueTask LoadRecords(DocumentJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
@@ -17590,7 +18112,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
     public static class НадлишкиТоварів_Записи
     {
-        public static void AddColumn(DocumentJournal form)
+        public static void AddColumn(DocumentJournalBase form)
         {
             
             //Image
@@ -17789,12 +18311,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DocumentJournal form)
+        public static void CreateFilter(DocumentJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DocumentJournal form)
+        public static async ValueTask UpdateRecords(DocumentJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -17877,7 +18399,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DocumentJournal form)
+        public static async ValueTask LoadRecords(DocumentJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
@@ -17959,7 +18481,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
     public static class ПересортицяТоварів_Записи
     {
-        public static void AddColumn(DocumentJournal form)
+        public static void AddColumn(DocumentJournalBase form)
         {
             
             //Image
@@ -18158,12 +18680,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DocumentJournal form)
+        public static void CreateFilter(DocumentJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DocumentJournal form)
+        public static async ValueTask UpdateRecords(DocumentJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -18246,7 +18768,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DocumentJournal form)
+        public static async ValueTask LoadRecords(DocumentJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
@@ -18328,7 +18850,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
     public static class ПерерахунокТоварів_Записи
     {
-        public static void AddColumn(DocumentJournal form)
+        public static void AddColumn(DocumentJournalBase form)
         {
             
             //Image
@@ -18550,12 +19072,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DocumentJournal form)
+        public static void CreateFilter(DocumentJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DocumentJournal form)
+        public static async ValueTask UpdateRecords(DocumentJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -18643,7 +19165,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DocumentJournal form)
+        public static async ValueTask LoadRecords(DocumentJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
@@ -18730,7 +19252,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
     public static class ПсуванняТоварів_Записи
     {
-        public static void AddColumn(DocumentJournal form)
+        public static void AddColumn(DocumentJournalBase form)
         {
             
             //Image
@@ -18952,7 +19474,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DocumentJournal form)
+        public static void CreateFilter(DocumentJournalBase form)
         {
             
             List<FilterControl.FilterListItem> filterList = [];
@@ -18980,7 +19502,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
         }
 
-        public static async ValueTask UpdateRecords(DocumentJournal form)
+        public static async ValueTask UpdateRecords(DocumentJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -19065,7 +19587,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DocumentJournal form)
+        public static async ValueTask LoadRecords(DocumentJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
@@ -19149,7 +19671,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
     public static class ВнутрішнєСпоживанняТоварів_Записи
     {
-        public static void AddColumn(DocumentJournal form)
+        public static void AddColumn(DocumentJournalBase form)
         {
             
             //Image
@@ -19394,7 +19916,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DocumentJournal form)
+        public static void CreateFilter(DocumentJournalBase form)
         {
             
             List<FilterControl.FilterListItem> filterList = [];
@@ -19422,7 +19944,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
         }
 
-        public static async ValueTask UpdateRecords(DocumentJournal form)
+        public static async ValueTask UpdateRecords(DocumentJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -19512,7 +20034,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DocumentJournal form)
+        public static async ValueTask LoadRecords(DocumentJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
@@ -19601,7 +20123,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
     public static class РахунокФактура_Записи
     {
-        public static void AddColumn(DocumentJournal form)
+        public static void AddColumn(DocumentJournalBase form)
         {
             
             //Image
@@ -19892,7 +20414,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DocumentJournal form)
+        public static void CreateFilter(DocumentJournalBase form)
         {
             
             List<FilterControl.FilterListItem> filterList = [];
@@ -19920,7 +20442,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
         }
 
-        public static async ValueTask UpdateRecords(DocumentJournal form)
+        public static async ValueTask UpdateRecords(DocumentJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -20020,7 +20542,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DocumentJournal form)
+        public static async ValueTask LoadRecords(DocumentJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
@@ -20119,7 +20641,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
     public static class РозміщенняТоварівНаСкладі_Записи
     {
-        public static void AddColumn(DocumentJournal form)
+        public static void AddColumn(DocumentJournalBase form)
         {
             
             //Image
@@ -20318,12 +20840,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DocumentJournal form)
+        public static void CreateFilter(DocumentJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DocumentJournal form)
+        public static async ValueTask UpdateRecords(DocumentJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -20406,7 +20928,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DocumentJournal form)
+        public static async ValueTask LoadRecords(DocumentJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
@@ -20488,7 +21010,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
     public static class ПереміщенняТоварівНаСкладі_Записи
     {
-        public static void AddColumn(DocumentJournal form)
+        public static void AddColumn(DocumentJournalBase form)
         {
             
             //Image
@@ -20687,12 +21209,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DocumentJournal form)
+        public static void CreateFilter(DocumentJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DocumentJournal form)
+        public static async ValueTask UpdateRecords(DocumentJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -20775,7 +21297,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DocumentJournal form)
+        public static async ValueTask LoadRecords(DocumentJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
@@ -20857,7 +21379,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
     public static class ЗбіркаТоварівНаСкладі_Записи
     {
-        public static void AddColumn(DocumentJournal form)
+        public static void AddColumn(DocumentJournalBase form)
         {
             
             //Image
@@ -21056,12 +21578,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DocumentJournal form)
+        public static void CreateFilter(DocumentJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DocumentJournal form)
+        public static async ValueTask UpdateRecords(DocumentJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -21144,7 +21666,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DocumentJournal form)
+        public static async ValueTask LoadRecords(DocumentJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
@@ -21226,7 +21748,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
     public static class РозміщенняНоменклатуриПоКоміркам_Записи
     {
-        public static void AddColumn(DocumentJournal form)
+        public static void AddColumn(DocumentJournalBase form)
         {
             
             //Image
@@ -21425,12 +21947,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DocumentJournal form)
+        public static void CreateFilter(DocumentJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DocumentJournal form)
+        public static async ValueTask UpdateRecords(DocumentJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -21513,7 +22035,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DocumentJournal form)
+        public static async ValueTask LoadRecords(DocumentJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
@@ -21595,7 +22117,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
     public static class КорегуванняБоргу_Записи
     {
-        public static void AddColumn(DocumentJournal form)
+        public static void AddColumn(DocumentJournalBase form)
         {
             
             //Image
@@ -21771,12 +22293,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DocumentJournal form)
+        public static void CreateFilter(DocumentJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DocumentJournal form)
+        public static async ValueTask UpdateRecords(DocumentJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -21854,7 +22376,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DocumentJournal form)
+        public static async ValueTask LoadRecords(DocumentJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
@@ -21931,7 +22453,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
     public static class ЗакриттяЗамовленняКлієнта_Записи
     {
-        public static void AddColumn(DocumentJournal form)
+        public static void AddColumn(DocumentJournalBase form)
         {
             
             //Image
@@ -22245,7 +22767,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DocumentJournal form)
+        public static void CreateFilter(DocumentJournalBase form)
         {
             
             List<FilterControl.FilterListItem> filterList = [];
@@ -22286,7 +22808,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
         }
 
-        public static async ValueTask UpdateRecords(DocumentJournal form)
+        public static async ValueTask UpdateRecords(DocumentJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -22388,7 +22910,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DocumentJournal form)
+        public static async ValueTask LoadRecords(DocumentJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
@@ -22489,7 +23011,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
     public static class ЗакриттяРахункуФактури_Записи
     {
-        public static void AddColumn(DocumentJournal form)
+        public static void AddColumn(DocumentJournalBase form)
         {
             
             //Image
@@ -22780,7 +23302,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DocumentJournal form)
+        public static void CreateFilter(DocumentJournalBase form)
         {
             
             List<FilterControl.FilterListItem> filterList = [];
@@ -22808,7 +23330,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
         }
 
-        public static async ValueTask UpdateRecords(DocumentJournal form)
+        public static async ValueTask UpdateRecords(DocumentJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -22908,7 +23430,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DocumentJournal form)
+        public static async ValueTask LoadRecords(DocumentJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
@@ -23007,7 +23529,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
     public static class ЗакриттяЗамовленняПостачальнику_Записи
     {
-        public static void AddColumn(DocumentJournal form)
+        public static void AddColumn(DocumentJournalBase form)
         {
             
             //Image
@@ -23321,7 +23843,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DocumentJournal form)
+        public static void CreateFilter(DocumentJournalBase form)
         {
             
             List<FilterControl.FilterListItem> filterList = [];
@@ -23362,7 +23884,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
         }
 
-        public static async ValueTask UpdateRecords(DocumentJournal form)
+        public static async ValueTask UpdateRecords(DocumentJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -23464,7 +23986,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DocumentJournal form)
+        public static async ValueTask LoadRecords(DocumentJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
@@ -23565,7 +24087,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
         
     public static class ЧекККМ_Записи
     {
-        public static void AddColumn(DocumentJournal form)
+        public static void AddColumn(DocumentJournalBase form)
         {
             
             //Image
@@ -23879,12 +24401,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
   
         }
 
-        public static void CreateFilter(DocumentJournal form)
+        public static void CreateFilter(DocumentJournalBase form)
         {
             
         }
 
-        public static async ValueTask UpdateRecords(DocumentJournal form)
+        public static async ValueTask UpdateRecords(DocumentJournalBase form)
         {
             List<ObjectChanged> records = [];
             lock (form.Loсked)
@@ -23987,7 +24509,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
             }
         }
 
-        public static async ValueTask LoadRecords(DocumentJournal form)
+        public static async ValueTask LoadRecords(DocumentJournalBase form)
         {
             form.BeforeLoadRecords();
             UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;

@@ -13,7 +13,7 @@ namespace StorageAndTrade
         ProgressBar progress = ProgressBar.New();
         //CancellationTokenSource? cancellationToken = null;
 
-        public Обробка() : base(Program.Form?.Notebook)
+        public Обробка() : base(Program.BasicForm?.NotebookFunc)
         {
             bRun.MarginEnd = 10;
             bRun.OnClicked += (_, _) => Log.AppendLine("Text");

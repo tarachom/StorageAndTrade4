@@ -35,7 +35,7 @@ notebook tab button {
     min-width: 0;
     border-radius: 6px;
 }
-
+/* Табличний список */
 columnview {
     border: 1px solid shade(#b8b8b8, 1.2);
 }
@@ -63,9 +63,17 @@ columnview listview row cell .numeric {
     /*font-weight: bold;*/
 }
 
-/*Для Log*/
+/* Для Log */
 textview.log_text_terminal {
     font: 11px Arial;
+}
+
+/* Для LinkButton */
+button.link {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 /*

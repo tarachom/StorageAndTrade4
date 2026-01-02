@@ -1,0 +1,93 @@
+/*
+
+Стартова сторінка
+
+*/
+
+namespace StorageAndTrade;
+
+using InterfaceGtk4;
+using AccountingSoftware;
+
+using ТабличнийСписок = GeneratedCode.Документи.ТабличніСписки.ПоступленняТоварівТаПослуг_ЗаписиМіні;
+using Функції = ПоступленняТоварівТаПослуг_Функції;
+using Константи = GeneratedCode.Документи.ПоступленняТоварівТаПослуг_Const;
+
+partial class ПоступленняТоварівТаПослуг_ШвидкийВибір : DocumentJournalSmall
+{
+    public ПоступленняТоварівТаПослуг_ШвидкийВибір(): base(Program.BasicForm?.NotebookFunc)
+    {
+        TypeName = Константи.POINTER;
+        KeyForSetting = ".Small";
+        ТабличнийСписок.AddColumn(this);
+        SetPagesSettings(50);
+    }
+
+    public override async ValueTask LoadRecords()
+    {
+        await ТабличнийСписок.LoadRecords(this);
+    }
+
+    public override async ValueTask UpdateRecords()
+    {
+        await ТабличнийСписок.UpdateRecords(this);
+    }
+
+    protected override async void SetSearch(string searchText)
+    {
+        WhereList = Функції.Відбори(searchText);
+    }
+
+    protected override void FillFilter(FilterControl filterControl)
+    {
+        ТабличнийСписок.CreateFilter(this);
+    }
+
+    protected override async ValueTask OpenPageList(UnigueID? unigueID = null)
+    {
+        ПоступленняТоварівТаПослуг page = new()
+        {
+            DocumentPointerItem = unigueID,
+            CallBack_OnSelectPointer = CallBack_OnSelectPointer
+        };
+
+        NotebookFunc?.CreatePage(Константи.FULLNAME, () => page);
+        await page.SetValue();
+    }
+
+    protected override async ValueTask OpenPageElement(bool IsNew, UnigueID? unigueID = null)
+    {
+        await Функції.OpenPageElement(IsNew, unigueID, CallBack_LoadRecords, null);
+    }
+
+    protected override async ValueTask SetDeletionLabel(UnigueID unigueID)
+    {
+        await Функції.SetDeletionLabel(unigueID);
+    }
+
+    protected override async ValueTask<UnigueID?> Copy(UnigueID unigueID)
+    {
+        return await Функції.Copy(unigueID);
+    }
+
+    protected override async ValueTask BeforeSetValue()
+    {
+        await ФункціїНалаштуванняКористувача.ОтриматиПеріодДляЖурналу(FormKey, Period);
+    }
+
+    protected override async void PeriodChanged()
+    {
+        ФункціїНалаштуванняКористувача.ЗаписатиПеріодДляЖурналу(FormKey, Period.Period.ToString(), Period.DateStart, Period.DateStop);
+    }
+
+    protected override async ValueTask SpendTheDocument(UnigueID[] unigueID, bool spendDoc)
+    {
+
+    }
+
+    protected override void ReportSpendTheDocument(UnigueID[] unigueID)
+    {
+
+    }
+
+}

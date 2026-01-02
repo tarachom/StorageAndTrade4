@@ -11,12 +11,13 @@ using AccountingSoftware;
 
 using ТабличнийСписок = GeneratedCode.Довідники.ТабличніСписки.Номенклатура_Записи;
 using Функції = Номенклатура_Функції;
+using Константи = GeneratedCode.Довідники.Номенклатура_Const;
 
-partial class PageHome3 : DirectoryJournal
+partial class Номенклатура : DirectoryJournalFull
 {
-    public PageHome3(): base(Program.Form?.Notebook)
+    public Номенклатура(): base(Program.BasicForm?.NotebookFunc)
     {
-        TypeName = GeneratedCode.Довідники.Номенклатура_Const.POINTER;
+        TypeName = Константи.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
     }

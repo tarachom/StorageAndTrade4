@@ -9,7 +9,7 @@ namespace StorageAndTrade;
 
 class FormStorageAndTrade : FormGeneral
 {
-    public FormStorageAndTrade() : base(Program.App, Config.Kernel) { }
+    public FormStorageAndTrade() : base(Program.BasicApp, Config.Kernel) { }
 
     #region Override
 
@@ -56,13 +56,13 @@ class FormStorageAndTrade : FormGeneral
     protected override async void Service(LinkButton linkButton)
     {
         PageService page = new();
-        Notebook.CreatePage("Сервіс", page);
+        NotebookFunc.CreatePage("Сервіс", page);
         await page.SetValue();
     }
 
     protected override void Processing(LinkButton linkButton)
     {
-        Notebook.CreatePage("Обробки", new PageProcessing());
+        NotebookFunc.CreatePage("Обробки", new PageProcessing());
     }
 
     protected override void MenuDocuments(Box vBox)
@@ -95,16 +95,24 @@ class FormStorageAndTrade : FormGeneral
     public async ValueTask OpenFirstPages()
     {
         PageHome page = new PageHome();
-        Notebook.CreatePage("Стартова", () => page, false, null, null, true);
+        NotebookFunc?.CreatePage("Стартова", () => page, false, null, null, true);
         await page.SetValue();
 
-        PageHome2 page2 = new();
-        Notebook.CreatePage("Home New", () => page2);
+        ПоступленняТоварівТаПослуг page2 = new();
+        NotebookFunc?.CreatePage("Home New", () => page2);
         await page2.SetValue();
 
-        PageHome3 page3 = new();
-        Notebook.CreatePage("Home New", () => page3);
+        ПоступленняТоварівТаПослуг_ШвидкийВибір page2_1 = new();
+        NotebookFunc?.CreatePage("Home New1", () => page2_1);
+        await page2_1.SetValue();
+
+        Номенклатура page3 = new();
+        NotebookFunc?.CreatePage("Home New", () => page3);
         await page3.SetValue();
+
+        Номенклатура_ШвидкийВибір page3_1 = new();
+        NotebookFunc?.CreatePage("Home New1", () => page3_1);
+        await page3_1.SetValue();
     }
 
     public async ValueTask SetCurrentUser()
