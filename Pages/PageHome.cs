@@ -7,12 +7,15 @@
 using Gtk;
 using InterfaceGtk4;
 using GeneratedCode;
+using GeneratedCode.Документи;
 
 namespace StorageAndTrade;
 
 class PageHome : Form
 {
     public ActiveUsers activeUsers = new ActiveUsers(Config.Kernel, 800, 300);
+
+    ПоступленняТоварівТаПослуг_ТабличнаЧастина_Товари Товари = new();
 
     public PageHome() : base(Program.BasicForm?.NotebookFunc)
     {
@@ -28,6 +31,16 @@ class PageHome : Form
         ПоступленняТоварівТаПослуг_PointerControl поступлення = new();
         Append(поступлення);
 
+        Товари.Vexpand = Товари.Hexpand = true;
+        Append(Товари);
+
+        Button button = Button.NewWithLabel("Save");
+        button.OnClicked += async (_, _) =>
+        {
+            await Товари.SaveRecords();
+        };
+        Append(button);
+       
         /*
         LinkButton linkButton = LinkButton.New("");
         linkButton.OnActivateLink += (a, f) =>
@@ -110,6 +123,13 @@ class PageHome : Form
 
     public async ValueTask SetValue()
     {
+        var a = await new ПоступленняТоварівТаПослуг_Select().FindByField(ПоступленняТоварівТаПослуг_Const.НомерДок, "00000002");
+        if (!a.IsEmpty())
+        {
+            Товари.ЕлементВласник = await a.GetDocumentObject(true);
+            await Товари.LoadRecords();
+        }
+
         await Task.FromResult(true);
     }
 }

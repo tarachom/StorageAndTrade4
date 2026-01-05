@@ -103,7 +103,7 @@ class FormStorageAndTrade : FormGeneral
         await page2.SetValue();
 
         ПоступленняТоварівТаПослуг_ШвидкийВибір page2_1 = new();
-        NotebookFunc?.CreatePage("Home New1", () => page2_1);
+        NotebookFunc?.CreatePage("ПоступленняТоварівТаПослуг ШвидкийВибір", () => page2_1);
         await page2_1.SetValue();
 
         Номенклатура page3 = new();

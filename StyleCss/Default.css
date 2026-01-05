@@ -35,6 +35,7 @@ notebook tab button {
     min-width: 0;
     border-radius: 6px;
 }
+
 /* Табличний список */
 columnview {
     border: 1px solid shade(#b8b8b8, 1.2);
@@ -51,16 +52,45 @@ columnview header button:first-child {
 }
 
 columnview listview row cell {
-    padding: 3px 6px;
+    padding: 0;
 }
 
 columnview listview row cell:not(:first-child) {
     border-left: 1px solid shade(#b8b8b8, 1.2);
 }
 
-columnview listview row cell .numeric {
+/* Базовий клас для *TablePartControl */
+columnview listview row cell box.base {
+    padding: 3px 6px;
+}
+
+/* Варіант відображення для типу даних numeric для LabelTablePartControl */
+columnview listview row cell box.numeric {
     color: green;
+    background-color: rgba(238, 238, 220, 0.541);
     /*font-weight: bold;*/
+}
+
+/* Базовий клас для PointerTablePartControl */
+columnview listview row cell box.pointer {}
+
+/* Кнопки для PointerTablePartControl */
+columnview listview row cell box.pointer .button {
+    padding: 1px;
+    margin: 0;
+    min-height: 0;
+    min-width: 0;
+    border-radius: 0;
+    border: 0;
+}
+
+columnview listview row cell box.pointer .entry {
+    padding: 0;
+    margin: 0;
+    min-height: 0;
+    min-width: 0; 
+    border-radius: 0;
+    border: 0;
 }
 
 /* Для Log */
@@ -87,7 +117,6 @@ columnview listview row:nth-child(even) {
 */
 
 /*-------------------------------------------------------------------*/
-
 
 /* Кнопка закриття вкладки блокноту */
 /*notebook tab button {
