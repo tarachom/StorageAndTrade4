@@ -30,7 +30,7 @@ public class ПоступленняТоварівТаПослуг_Табличн
                     Номенклатура_ = value;
                     Кількість++;
 
-                    Changed?.Invoke(nameof(Номенклатура));
+                    Changed?.Invoke();
                 }
             }
         }
@@ -44,7 +44,7 @@ public class ПоступленняТоварівТаПослуг_Табличн
                 if (!Кількість_.Equals(value))
                 {
                     Кількість_ = value;
-                    Changed?.Invoke(nameof(Кількість));
+                    Changed?.Invoke();
                 }
             }
         }
@@ -116,12 +116,7 @@ public class ПоступленняТоварівТаПослуг_Табличн
                 {
                     cell.Pointer = row.Номенклатура;
                     cell.OnSelect = async () => row.Номенклатура = cell.Pointer;
-                    row.Changed = x =>
-                    {
-                        Console.WriteLine(x);
-                        if (x == nameof(row.Номенклатура))
-                            cell.Pointer = row.Номенклатура;
-                    };
+                    row.Changed = () => cell.Pointer = row.Номенклатура;
                 }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
@@ -146,11 +141,7 @@ public class ПоступленняТоварівТаПослуг_Табличн
                 if (cell != null && row != null)
                 {
                     cell.SetText(row.Кількість);
-                    row.Changed = x =>
-                    {
-                        if (x == nameof(row.Кількість))
-                            cell.SetText(row.Кількість);
-                    };
+                    row.Changed = () => cell.SetText(row.Кількість); ;
                 }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Число", factory);
