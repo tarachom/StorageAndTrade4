@@ -141,7 +141,7 @@ public class ПоступленняТоварівТаПослуг_Табличн
                 if (cell != null && row != null)
                 {
                     cell.SetText(row.Кількість);
-                    row.Changed = () => cell.SetText(row.Кількість); ;
+                    row.Changed = () => cell.SetText(row.Кількість);
                 }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Число", factory);
