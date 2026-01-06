@@ -16,10 +16,42 @@ public class ПоступленняТоварівТаПослуг_Табличн
 {
     public ПоступленняТоварівТаПослуг_Objest? ЕлементВласник { get; set; }
 
+    #region Data
+
     class Row : RowTablePart
     {
-        public Номенклатура_Pointer Номенклатура { get; set; } = new Номенклатура_Pointer();
+        public Номенклатура_Pointer Номенклатура
+        {
+            get => Номенклатура_;
+            set
+            {
+                if (!Номенклатура_.Equals(value))
+                {
+                    Номенклатура_ = value;
+                    Кількість++;
+
+                    Changed?.Invoke(nameof(Номенклатура));
+                }
+            }
+        }
+        Номенклатура_Pointer Номенклатура_ = new();
+
+        public int Кількість
+        {
+            get => Кількість_;
+            set
+            {
+                if (!Кількість_.Equals(value))
+                {
+                    Кількість_ = value;
+                    Changed?.Invoke(nameof(Кількість));
+                }
+            }
+        }
+        int Кількість_ = 1;
     }
+
+    #endregion
 
     Gio.ListStore Store { get; } = Gio.ListStore.New(Row.GetGType());
 
@@ -50,17 +82,17 @@ public class ПоступленняТоварівТаПослуг_Табличн
             factory.OnSetup += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                LabelTablePartControl labelControl = LabelTablePartControl.New(null);
+                LabelTablePartCell labelControl = LabelTablePartCell.New(null);
                 labelControl.Halign = Align.End;
                 listItem.Child = labelControl;
             };
             factory.OnBind += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                 Row? row = (Row?)listItem.Item;
                 if (labelControl != null && row != null)
-                    labelControl.SetText(row.NumberRow.ToString());
+                    labelControl.SetText(row.NumberRow);
             };
             ColumnViewColumn column = ColumnViewColumn.New("№", factory);
             Grid.AppendColumn(column);
@@ -72,21 +104,56 @@ public class ПоступленняТоварівТаПослуг_Табличн
             factory.OnSetup += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                Номенклатура_PointerTablePartControl p = new();
-                listItem.Child = p;
+                Номенклатура_PointerTablePartCell cell = new();
+                listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var p = (Номенклатура_PointerTablePartControl?)listItem.Child;
+                var cell = (Номенклатура_PointerTablePartCell?)listItem.Child;
                 Row? row = (Row?)listItem.Item;
-                if (p != null && row != null)
+                if (cell != null && row != null)
                 {
-                    p.Pointer = row.Номенклатура;
-                    p.AfterSelectFunc = () => row.Номенклатура = p.Pointer;
+                    cell.Pointer = row.Номенклатура;
+                    cell.OnSelect = async () => row.Номенклатура = cell.Pointer;
+                    row.Changed = x =>
+                    {
+                        Console.WriteLine(x);
+                        if (x == nameof(row.Номенклатура))
+                            cell.Pointer = row.Номенклатура;
+                    };
                 }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
+            column.Resizable = true;
+            Grid.AppendColumn(column);
+        }
+
+        //Кількість
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = LabelTablePartCell.NewFromType("integer");
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = (LabelTablePartCell?)listItem.Child;
+                Row? row = (Row?)listItem.Item;
+                if (cell != null && row != null)
+                {
+                    cell.SetText(row.Кількість);
+                    row.Changed = x =>
+                    {
+                        if (x == nameof(row.Кількість))
+                            cell.SetText(row.Кількість);
+                    };
+                }
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("Число", factory);
             column.Resizable = true;
             Grid.AppendColumn(column);
         }
@@ -126,11 +193,15 @@ public class ПоступленняТоварівТаПослуг_Табличн
             {
                 Row? row = (Row?)Store.GetObject(i);
                 if (row != null)
+                {
                     ЕлементВласник.Товари_TablePart.Records.Add(new()
                     {
                         UID = row.UnigueID.UGuid,
                         Номенклатура = row.Номенклатура
                     });
+                    //if (row.Кількість != 0)
+                    //Console.WriteLine(row.Кількість);
+                }
             }
 
             await ЕлементВласник.Товари_TablePart.Save(true);

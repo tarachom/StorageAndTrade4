@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 05.01.2026 13:52:51
+ * Дата конфігурації: 06.01.2026 13:41:15
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон Gtk4.xslt
@@ -34,7 +34,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -46,12 +46,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -67,12 +67,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -142,7 +142,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -224,7 +224,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -236,12 +236,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -257,12 +257,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -278,12 +278,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ОдиницяВиміру"]);
@@ -299,12 +299,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("enum");
+                    listItem.Child = LabelTablePartCell.NewFromType("enum");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ТипНоменклатури"]);
@@ -320,12 +320,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("numeric");
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Залишок"]);
@@ -341,12 +341,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("numeric");
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ВРезерві"]);
@@ -362,12 +362,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("numeric");
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ВРезервіПідЗамовлення"]);
@@ -383,12 +383,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("numeric");
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ЗалишокВКомірках"]);
@@ -511,7 +511,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -616,7 +616,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -628,12 +628,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -649,12 +649,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -670,12 +670,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ОдиницяВиміру"]);
@@ -691,12 +691,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("numeric");
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Залишок"]);
@@ -712,12 +712,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("numeric");
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ВРезерві"]);
@@ -733,12 +733,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("numeric");
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ВРезервіПідЗамовлення"]);
@@ -863,7 +863,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -965,7 +965,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -977,12 +977,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -998,12 +998,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -1073,7 +1073,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -1155,7 +1155,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -1167,12 +1167,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -1188,12 +1188,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -1263,7 +1263,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -1345,7 +1345,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -1357,12 +1357,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -1378,12 +1378,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -1399,12 +1399,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("integer");
+                    listItem.Child = LabelTablePartCell.NewFromType("integer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["КількістьУпаковок"]);
@@ -1420,12 +1420,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НазваПовна"]);
@@ -1499,7 +1499,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -1585,7 +1585,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -1597,12 +1597,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -1618,12 +1618,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -1639,12 +1639,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["КороткаНазва"]);
@@ -1660,12 +1660,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код_R030"]);
@@ -1681,12 +1681,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("boolean");
+                    listItem.Child = LabelTablePartCell.NewFromType("boolean");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ВиводитиКурсНаСтартову"]);
@@ -1797,7 +1797,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -1881,7 +1881,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -1893,12 +1893,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -1914,12 +1914,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -1935,12 +1935,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["КороткаНазва"]);
@@ -2012,7 +2012,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -2096,7 +2096,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -2108,12 +2108,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -2129,12 +2129,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -2150,12 +2150,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Папка"]);
@@ -2171,12 +2171,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("boolean");
+                    listItem.Child = LabelTablePartCell.NewFromType("boolean");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Постачальник"]);
@@ -2192,12 +2192,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("boolean");
+                    listItem.Child = LabelTablePartCell.NewFromType("boolean");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Покупець"]);
@@ -2311,7 +2311,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -2398,7 +2398,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -2410,12 +2410,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -2431,12 +2431,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -2506,7 +2506,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -2588,7 +2588,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -2600,12 +2600,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -2621,12 +2621,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -2642,12 +2642,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("enum");
+                    listItem.Child = LabelTablePartCell.NewFromType("enum");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ТипСкладу"]);
@@ -2663,12 +2663,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("enum");
+                    listItem.Child = LabelTablePartCell.NewFromType("enum");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НалаштуванняАдресногоЗберігання"]);
@@ -2781,7 +2781,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -2863,7 +2863,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -2875,12 +2875,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -2896,12 +2896,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -2971,7 +2971,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -3053,7 +3053,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -3065,12 +3065,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -3086,12 +3086,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -3107,12 +3107,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Валюта"]);
@@ -3187,7 +3187,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -3270,7 +3270,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -3282,12 +3282,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -3355,7 +3355,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -3435,7 +3435,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -3447,12 +3447,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -3468,12 +3468,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -3543,7 +3543,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -3625,7 +3625,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -3637,12 +3637,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -3658,12 +3658,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -3733,7 +3733,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -3815,7 +3815,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -3827,12 +3827,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -3848,12 +3848,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -3923,7 +3923,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -4005,7 +4005,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -4017,12 +4017,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -4038,12 +4038,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -4113,7 +4113,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -4195,7 +4195,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -4207,12 +4207,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -4228,12 +4228,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -4303,7 +4303,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -4385,7 +4385,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -4397,12 +4397,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -4418,12 +4418,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -4439,12 +4439,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НазваФайлу"]);
@@ -4460,12 +4460,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Розмір"]);
@@ -4481,12 +4481,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаСтворення"]);
@@ -4562,7 +4562,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -4646,7 +4646,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -4658,12 +4658,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -4731,7 +4731,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -4811,7 +4811,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -4823,12 +4823,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -4844,12 +4844,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Номенклатура"]);
@@ -4865,12 +4865,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -4886,12 +4886,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Залишки"]);
@@ -4907,12 +4907,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ВРезерві"]);
@@ -4928,12 +4928,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ВРезервіПідЗамовлення"]);
@@ -5023,7 +5023,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -5125,7 +5125,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -5137,12 +5137,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -5158,12 +5158,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -5233,7 +5233,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -5311,7 +5311,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -5323,12 +5323,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -5344,12 +5344,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -5419,7 +5419,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -5501,7 +5501,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -5513,12 +5513,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -5534,12 +5534,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -5609,7 +5609,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -5691,7 +5691,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -5703,12 +5703,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -5724,12 +5724,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -5799,7 +5799,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -5881,7 +5881,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -5893,12 +5893,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -5914,12 +5914,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -5935,12 +5935,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Валюта"]);
@@ -5956,12 +5956,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Залишок"]);
@@ -6041,7 +6041,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -6129,7 +6129,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -6141,12 +6141,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -6162,12 +6162,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -6183,12 +6183,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Валюта"]);
@@ -6263,7 +6263,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -6350,7 +6350,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -6362,12 +6362,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -6383,12 +6383,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -6404,12 +6404,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Валюта"]);
@@ -6484,7 +6484,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -6571,7 +6571,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -6583,12 +6583,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -6604,12 +6604,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -6625,12 +6625,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Контрагент"]);
@@ -6646,12 +6646,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("enum");
+                    listItem.Child = LabelTablePartCell.NewFromType("enum");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ТипДоговору"]);
@@ -6754,7 +6754,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -6839,7 +6839,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -6851,12 +6851,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -6872,12 +6872,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Контрагент"]);
@@ -6893,12 +6893,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("enum");
+                    listItem.Child = LabelTablePartCell.NewFromType("enum");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ТипДоговору"]);
@@ -6973,7 +6973,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -7060,7 +7060,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -7072,12 +7072,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -7093,12 +7093,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -7114,12 +7114,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Валюта"]);
@@ -7194,7 +7194,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -7281,7 +7281,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -7293,12 +7293,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -7314,12 +7314,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -7335,12 +7335,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["КореспондуючийРахунок"]);
@@ -7356,12 +7356,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("enum");
+                    listItem.Child = LabelTablePartCell.NewFromType("enum");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ВидРухуКоштів"]);
@@ -7461,7 +7461,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -7547,7 +7547,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -7559,12 +7559,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Номер"]);
@@ -7632,7 +7632,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -7712,7 +7712,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -7724,12 +7724,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -7745,12 +7745,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Дата"]);
@@ -7766,12 +7766,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("enum");
+                    listItem.Child = LabelTablePartCell.NewFromType("enum");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ТипДокументу"]);
@@ -7787,12 +7787,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ПоступленняТоварівТаПослуг"]);
@@ -7808,12 +7808,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ВведенняЗалишків"]);
@@ -7829,12 +7829,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Залишки"]);
@@ -7947,7 +7947,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -8042,7 +8042,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -8054,12 +8054,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -8075,12 +8075,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Дата"]);
@@ -8150,7 +8150,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -8232,7 +8232,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -8244,12 +8244,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -8265,12 +8265,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -8340,7 +8340,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -8422,7 +8422,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -8434,12 +8434,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -8455,12 +8455,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -8476,12 +8476,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ПовнаНазва"]);
@@ -8497,12 +8497,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["КодМФО"]);
@@ -8518,12 +8518,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["КодЄДРПОУ"]);
@@ -8539,12 +8539,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НомерЛіцензії"]);
@@ -8560,12 +8560,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаЛіцензії"]);
@@ -8581,12 +8581,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Статус"]);
@@ -8602,12 +8602,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ТипНаселеногоПункту"]);
@@ -8623,12 +8623,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["УнікальнийКодБанку"]);
@@ -8644,12 +8644,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ПоштовийІндекс"]);
@@ -8665,12 +8665,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НазваНаселеногоПункту"]);
@@ -8686,12 +8686,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Адреса"]);
@@ -8707,12 +8707,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НомерТелефону"]);
@@ -8728,12 +8728,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаВідкриттяУстанови"]);
@@ -8749,12 +8749,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаЗакриттяУстанови"]);
@@ -8770,12 +8770,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["КодНБУ"]);
@@ -8791,12 +8791,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["КодСтатусу"]);
@@ -8812,12 +8812,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаЗапису"]);
@@ -8921,7 +8921,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -9033,7 +9033,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -9045,12 +9045,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -9066,12 +9066,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -9141,7 +9141,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -9223,7 +9223,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -9235,12 +9235,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -9256,12 +9256,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Склад"]);
@@ -9277,12 +9277,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("enum");
+                    listItem.Child = LabelTablePartCell.NewFromType("enum");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НалаштуванняАдресногоЗберігання"]);
@@ -9383,7 +9383,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -9470,7 +9470,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -9482,12 +9482,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -9503,12 +9503,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Приміщення"]);
@@ -9524,12 +9524,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Лінія"]);
@@ -9545,12 +9545,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Позиція"]);
@@ -9566,12 +9566,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Стелаж"]);
@@ -9587,12 +9587,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Ярус"]);
@@ -9608,12 +9608,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("enum");
+                    listItem.Child = LabelTablePartCell.NewFromType("enum");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ТипСкладськоїКомірки"]);
@@ -9629,12 +9629,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Типорозмір"]);
@@ -9650,12 +9650,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Папка"]);
@@ -9748,7 +9748,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -9849,7 +9849,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -9861,12 +9861,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -9882,12 +9882,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Приміщення"]);
@@ -9960,7 +9960,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -10045,7 +10045,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -10057,12 +10057,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -10078,12 +10078,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Приміщення"]);
@@ -10156,7 +10156,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -10241,7 +10241,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -10253,12 +10253,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -10274,12 +10274,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Висота"]);
@@ -10295,12 +10295,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Глибина"]);
@@ -10316,12 +10316,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Вантажопідйомність"]);
@@ -10337,12 +10337,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Обєм"]);
@@ -10358,12 +10358,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Ширина"]);
@@ -10441,7 +10441,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -10531,7 +10531,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -10543,12 +10543,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -10564,12 +10564,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -10585,12 +10585,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Власник"]);
@@ -10665,7 +10665,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -10752,7 +10752,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -10764,12 +10764,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -10785,12 +10785,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -10806,12 +10806,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаЗапису"]);
@@ -10883,7 +10883,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -10967,7 +10967,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -10979,12 +10979,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Код"]);
@@ -11000,12 +11000,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Додано"]);
@@ -11021,12 +11021,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -11042,12 +11042,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Користувач"]);
@@ -11124,7 +11124,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -11213,7 +11213,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -11225,12 +11225,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -11246,12 +11246,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Валюта"]);
@@ -11267,12 +11267,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("enum");
+                    listItem.Child = LabelTablePartCell.NewFromType("enum");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Тип"]);
@@ -11288,12 +11288,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Склад"]);
@@ -11373,7 +11373,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -11470,7 +11470,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -11483,7 +11483,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -11495,12 +11495,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -11516,12 +11516,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НомерДок"]);
@@ -11537,12 +11537,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаДок"]);
@@ -11558,12 +11558,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Організація"]);
@@ -11579,12 +11579,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Контрагент"]);
@@ -11600,12 +11600,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Склад"]);
@@ -11621,12 +11621,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Валюта"]);
@@ -11642,12 +11642,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("numeric");
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["СумаДокументу"]);
@@ -11663,12 +11663,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Автор"]);
@@ -11684,12 +11684,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Коментар"]);
@@ -11814,7 +11814,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -11935,7 +11935,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -11948,7 +11948,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -11960,12 +11960,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -11981,12 +11981,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НомерДок"]);
@@ -12002,12 +12002,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаДок"]);
@@ -12023,12 +12023,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Організація"]);
@@ -12044,12 +12044,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Склад"]);
@@ -12065,12 +12065,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Контрагент"]);
@@ -12086,12 +12086,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Валюта"]);
@@ -12107,12 +12107,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Каса"]);
@@ -12128,12 +12128,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("numeric");
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["СумаДокументу"]);
@@ -12149,12 +12149,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Автор"]);
@@ -12170,12 +12170,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Коментар"]);
@@ -12305,7 +12305,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -12427,7 +12427,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -12440,7 +12440,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -12452,12 +12452,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -12473,12 +12473,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НомерДок"]);
@@ -12494,12 +12494,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаДок"]);
@@ -12515,12 +12515,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Організація"]);
@@ -12536,12 +12536,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Склад"]);
@@ -12557,12 +12557,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Контрагент"]);
@@ -12578,12 +12578,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Валюта"]);
@@ -12599,12 +12599,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Каса"]);
@@ -12620,12 +12620,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("numeric");
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["СумаДокументу"]);
@@ -12641,12 +12641,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Автор"]);
@@ -12774,7 +12774,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -12898,7 +12898,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -12911,7 +12911,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -12923,12 +12923,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -12944,12 +12944,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НомерДок"]);
@@ -12965,12 +12965,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаДок"]);
@@ -12986,12 +12986,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Організація"]);
@@ -13007,12 +13007,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Контрагент"]);
@@ -13028,12 +13028,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Валюта"]);
@@ -13049,12 +13049,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Каса"]);
@@ -13070,12 +13070,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Склад"]);
@@ -13091,12 +13091,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("numeric");
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["СумаДокументу"]);
@@ -13112,12 +13112,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Автор"]);
@@ -13133,12 +13133,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Коментар"]);
@@ -13268,7 +13268,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -13394,7 +13394,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -13407,7 +13407,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -13419,12 +13419,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -13440,12 +13440,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НомерДок"]);
@@ -13461,12 +13461,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаДок"]);
@@ -13482,12 +13482,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Організація"]);
@@ -13503,12 +13503,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Контрагент"]);
@@ -13524,12 +13524,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Валюта"]);
@@ -13545,12 +13545,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Каса"]);
@@ -13566,12 +13566,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Склад"]);
@@ -13587,12 +13587,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("numeric");
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["СумаДокументу"]);
@@ -13608,12 +13608,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Автор"]);
@@ -13629,12 +13629,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Коментар"]);
@@ -13764,7 +13764,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -13890,7 +13890,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -13903,7 +13903,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -13915,12 +13915,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -13936,12 +13936,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НомерДок"]);
@@ -13957,12 +13957,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаДок"]);
@@ -13978,12 +13978,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Організація"]);
@@ -13999,12 +13999,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Валюта"]);
@@ -14020,12 +14020,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ВидЦіни"]);
@@ -14041,12 +14041,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Автор"]);
@@ -14062,12 +14062,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Коментар"]);
@@ -14162,7 +14162,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -14276,7 +14276,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -14289,7 +14289,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -14301,12 +14301,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -14322,12 +14322,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НомерДок"]);
@@ -14343,12 +14343,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаДок"]);
@@ -14364,12 +14364,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Організація"]);
@@ -14385,12 +14385,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Валюта"]);
@@ -14406,12 +14406,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Каса"]);
@@ -14427,12 +14427,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Контрагент"]);
@@ -14448,12 +14448,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("numeric");
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["СумаДокументу"]);
@@ -14469,12 +14469,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("enum");
+                    listItem.Child = LabelTablePartCell.NewFromType("enum");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ГосподарськаОперація"]);
@@ -14490,12 +14490,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Автор"]);
@@ -14511,12 +14511,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Коментар"]);
@@ -14643,7 +14643,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -14766,7 +14766,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -14779,7 +14779,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -14791,12 +14791,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -14812,12 +14812,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НомерДок"]);
@@ -14833,12 +14833,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаДок"]);
@@ -14854,12 +14854,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Організація"]);
@@ -14875,12 +14875,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Контрагент"]);
@@ -14896,12 +14896,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Валюта"]);
@@ -14917,12 +14917,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Каса"]);
@@ -14938,12 +14938,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("numeric");
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["СумаДокументу"]);
@@ -14959,12 +14959,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("enum");
+                    listItem.Child = LabelTablePartCell.NewFromType("enum");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ГосподарськаОперація"]);
@@ -14980,12 +14980,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Автор"]);
@@ -15001,12 +15001,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Коментар"]);
@@ -15133,7 +15133,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -15256,7 +15256,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -15269,7 +15269,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -15281,12 +15281,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -15302,12 +15302,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НомерДок"]);
@@ -15323,12 +15323,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаДок"]);
@@ -15344,12 +15344,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Організація"]);
@@ -15365,12 +15365,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["СкладВідправник"]);
@@ -15386,12 +15386,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["СкладОтримувач"]);
@@ -15407,12 +15407,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Автор"]);
@@ -15428,12 +15428,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Коментар"]);
@@ -15528,7 +15528,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -15642,7 +15642,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -15655,7 +15655,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -15667,12 +15667,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -15688,12 +15688,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НомерДок"]);
@@ -15709,12 +15709,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаДок"]);
@@ -15730,12 +15730,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Організація"]);
@@ -15751,12 +15751,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Контрагент"]);
@@ -15772,12 +15772,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Валюта"]);
@@ -15793,12 +15793,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Каса"]);
@@ -15814,12 +15814,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Склад"]);
@@ -15835,12 +15835,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("numeric");
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["СумаДокументу"]);
@@ -15856,12 +15856,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Автор"]);
@@ -15877,12 +15877,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Коментар"]);
@@ -16012,7 +16012,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -16138,7 +16138,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -16151,7 +16151,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -16163,12 +16163,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -16184,12 +16184,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НомерДок"]);
@@ -16205,12 +16205,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаДок"]);
@@ -16226,12 +16226,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Організація"]);
@@ -16247,12 +16247,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Валюта"]);
@@ -16268,12 +16268,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Каса"]);
@@ -16289,12 +16289,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Контрагент"]);
@@ -16310,12 +16310,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Склад"]);
@@ -16331,12 +16331,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("numeric");
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["СумаДокументу"]);
@@ -16352,12 +16352,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Автор"]);
@@ -16373,12 +16373,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Коментар"]);
@@ -16508,7 +16508,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -16634,7 +16634,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -16647,7 +16647,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -16659,12 +16659,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -16680,12 +16680,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НомерДок"]);
@@ -16701,12 +16701,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаДок"]);
@@ -16722,12 +16722,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Організація"]);
@@ -16743,12 +16743,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Валюта"]);
@@ -16764,12 +16764,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Каса"]);
@@ -16785,12 +16785,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Контрагент"]);
@@ -16806,12 +16806,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("numeric");
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["СумаДокументу"]);
@@ -16827,12 +16827,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Автор"]);
@@ -16848,12 +16848,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Коментар"]);
@@ -16978,7 +16978,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -17099,7 +17099,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -17112,7 +17112,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -17124,12 +17124,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -17145,12 +17145,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НомерДок"]);
@@ -17166,12 +17166,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаДок"]);
@@ -17187,12 +17187,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Організація"]);
@@ -17208,12 +17208,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Склад"]);
@@ -17229,12 +17229,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Контрагент"]);
@@ -17250,12 +17250,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Валюта"]);
@@ -17271,12 +17271,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Автор"]);
@@ -17292,12 +17292,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Коментар"]);
@@ -17397,7 +17397,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -17516,7 +17516,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -17529,7 +17529,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -17541,12 +17541,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -17562,12 +17562,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НомерДок"]);
@@ -17583,12 +17583,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаДок"]);
@@ -17604,12 +17604,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Організація"]);
@@ -17625,12 +17625,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Склад"]);
@@ -17646,12 +17646,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Автор"]);
@@ -17667,12 +17667,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Коментар"]);
@@ -17762,7 +17762,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -17871,7 +17871,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -17884,7 +17884,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -17896,12 +17896,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -17917,12 +17917,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НомерДок"]);
@@ -17938,12 +17938,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаДок"]);
@@ -17959,12 +17959,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Організація"]);
@@ -17980,12 +17980,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Склад"]);
@@ -18001,12 +18001,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Автор"]);
@@ -18022,12 +18022,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Коментар"]);
@@ -18117,7 +18117,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -18226,7 +18226,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -18239,7 +18239,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -18251,12 +18251,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -18272,12 +18272,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НомерДок"]);
@@ -18293,12 +18293,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаДок"]);
@@ -18314,12 +18314,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Організація"]);
@@ -18335,12 +18335,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Склад"]);
@@ -18356,12 +18356,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Відповідальний"]);
@@ -18377,12 +18377,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Автор"]);
@@ -18398,12 +18398,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Коментар"]);
@@ -18498,7 +18498,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -18612,7 +18612,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -18625,7 +18625,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -18637,12 +18637,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -18658,12 +18658,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НомерДок"]);
@@ -18679,12 +18679,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаДок"]);
@@ -18700,12 +18700,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Організація"]);
@@ -18721,12 +18721,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Склад"]);
@@ -18742,12 +18742,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("numeric");
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["СумаДокументу"]);
@@ -18763,12 +18763,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Автор"]);
@@ -18784,12 +18784,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Коментар"]);
@@ -18904,7 +18904,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -19015,7 +19015,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -19028,7 +19028,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -19040,12 +19040,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -19061,12 +19061,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НомерДок"]);
@@ -19082,12 +19082,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаДок"]);
@@ -19103,12 +19103,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Організація"]);
@@ -19124,12 +19124,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Склад"]);
@@ -19145,12 +19145,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Валюта"]);
@@ -19166,12 +19166,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("numeric");
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["СумаДокументу"]);
@@ -19187,12 +19187,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Автор"]);
@@ -19208,12 +19208,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Коментар"]);
@@ -19333,7 +19333,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -19449,7 +19449,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -19462,7 +19462,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -19474,12 +19474,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -19495,12 +19495,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НомерДок"]);
@@ -19516,12 +19516,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаДок"]);
@@ -19537,12 +19537,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Організація"]);
@@ -19558,12 +19558,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Контрагент"]);
@@ -19579,12 +19579,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Валюта"]);
@@ -19600,12 +19600,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Каса"]);
@@ -19621,12 +19621,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Склад"]);
@@ -19642,12 +19642,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("numeric");
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["СумаДокументу"]);
@@ -19663,12 +19663,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Автор"]);
@@ -19684,12 +19684,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Коментар"]);
@@ -19819,7 +19819,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -19945,7 +19945,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -19958,7 +19958,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -19970,12 +19970,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -19991,12 +19991,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаДок"]);
@@ -20012,12 +20012,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НомерДок"]);
@@ -20033,12 +20033,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Склад"]);
@@ -20054,12 +20054,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДокументПоступлення"]);
@@ -20075,12 +20075,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Автор"]);
@@ -20096,12 +20096,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Коментар"]);
@@ -20191,7 +20191,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -20300,7 +20300,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -20313,7 +20313,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -20325,12 +20325,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -20346,12 +20346,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаДок"]);
@@ -20367,12 +20367,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НомерДок"]);
@@ -20388,12 +20388,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Склад"]);
@@ -20409,12 +20409,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Організація"]);
@@ -20430,12 +20430,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Автор"]);
@@ -20451,12 +20451,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Коментар"]);
@@ -20546,7 +20546,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -20655,7 +20655,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -20668,7 +20668,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -20680,12 +20680,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -20701,12 +20701,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаДок"]);
@@ -20722,12 +20722,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НомерДок"]);
@@ -20743,12 +20743,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Склад"]);
@@ -20764,12 +20764,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДокументРеалізації"]);
@@ -20785,12 +20785,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Автор"]);
@@ -20806,12 +20806,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Коментар"]);
@@ -20901,7 +20901,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -21010,7 +21010,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -21023,7 +21023,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -21035,12 +21035,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -21056,12 +21056,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаДок"]);
@@ -21077,12 +21077,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НомерДок"]);
@@ -21098,12 +21098,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Організація"]);
@@ -21119,12 +21119,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Склад"]);
@@ -21140,12 +21140,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Автор"]);
@@ -21161,12 +21161,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Коментар"]);
@@ -21256,7 +21256,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -21365,7 +21365,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -21378,7 +21378,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -21390,12 +21390,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -21411,12 +21411,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НомерДок"]);
@@ -21432,12 +21432,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаДок"]);
@@ -21453,12 +21453,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Організація"]);
@@ -21474,12 +21474,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Автор"]);
@@ -21495,12 +21495,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Коментар"]);
@@ -21585,7 +21585,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -21689,7 +21689,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -21702,7 +21702,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -21714,12 +21714,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -21735,12 +21735,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НомерДок"]);
@@ -21756,12 +21756,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаДок"]);
@@ -21777,12 +21777,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Організація"]);
@@ -21798,12 +21798,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Контрагент"]);
@@ -21819,12 +21819,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Валюта"]);
@@ -21840,12 +21840,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Каса"]);
@@ -21861,12 +21861,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Склад"]);
@@ -21882,12 +21882,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("numeric");
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["СумаДокументу"]);
@@ -21903,12 +21903,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("enum");
+                    listItem.Child = LabelTablePartCell.NewFromType("enum");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ПричинаЗакриттяЗамовлення"]);
@@ -21924,12 +21924,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Автор"]);
@@ -21945,12 +21945,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Коментар"]);
@@ -22095,7 +22095,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -22223,7 +22223,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -22236,7 +22236,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -22248,12 +22248,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -22269,12 +22269,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НомерДок"]);
@@ -22290,12 +22290,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаДок"]);
@@ -22311,12 +22311,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Організація"]);
@@ -22332,12 +22332,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Контрагент"]);
@@ -22353,12 +22353,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Валюта"]);
@@ -22374,12 +22374,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Каса"]);
@@ -22395,12 +22395,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Склад"]);
@@ -22416,12 +22416,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("numeric");
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["СумаДокументу"]);
@@ -22437,12 +22437,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Автор"]);
@@ -22458,12 +22458,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Коментар"]);
@@ -22593,7 +22593,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -22719,7 +22719,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -22732,7 +22732,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -22744,12 +22744,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -22765,12 +22765,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НомерДок"]);
@@ -22786,12 +22786,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаДок"]);
@@ -22807,12 +22807,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Організація"]);
@@ -22828,12 +22828,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Контрагент"]);
@@ -22849,12 +22849,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Валюта"]);
@@ -22870,12 +22870,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Каса"]);
@@ -22891,12 +22891,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Склад"]);
@@ -22912,12 +22912,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("numeric");
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["СумаДокументу"]);
@@ -22933,12 +22933,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("enum");
+                    listItem.Child = LabelTablePartCell.NewFromType("enum");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ПричинаЗакриттяЗамовлення"]);
@@ -22954,12 +22954,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Автор"]);
@@ -22975,12 +22975,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Коментар"]);
@@ -23125,7 +23125,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
@@ -23253,7 +23253,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -23266,7 +23266,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 {
                     ListItem listItem = (ListItem)args.Object;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartControl.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                    listItem.SetChild(ImageTablePartCell.NewForPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -23278,12 +23278,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Назва"]);
@@ -23299,12 +23299,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["НомерДок"]);
@@ -23320,12 +23320,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("datetime");
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["ДатаДок"]);
@@ -23341,12 +23341,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Організація"]);
@@ -23362,12 +23362,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Валюта"]);
@@ -23383,12 +23383,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Склад"]);
@@ -23404,12 +23404,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("numeric");
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["СумаБезЗнижки"]);
@@ -23425,12 +23425,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("numeric");
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Знижка"]);
@@ -23446,12 +23446,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("numeric");
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["СумаДокументу"]);
@@ -23467,12 +23467,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Автор"]);
@@ -23488,12 +23488,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("pointer");
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["КасаККМ"]);
@@ -23509,12 +23509,12 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartControl.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
                 };
                 factory.OnBind += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartControl? labelControl = (LabelTablePartControl?)listItem.Child;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
                     DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
                     if (labelControl != null && row != null)
                         labelControl.SetText(row.Fields["Коментар"]);
@@ -23624,7 +23624,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            Row? item = (Row?)form.Store.GetObject(i);
+                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
