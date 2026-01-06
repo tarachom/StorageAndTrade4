@@ -20,35 +20,52 @@ public class ПоступленняТоварівТаПослуг_Табличн
 
     class Row : RowTablePart
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public Номенклатура_Pointer Номенклатура
         {
             get => Номенклатура_;
             set
             {
-                if (!Номенклатура_.Equals(value))
-                {
-                    Номенклатура_ = value;
-                    Кількість++;
-
-                    Changed?.Invoke();
-                }
+                Номенклатура_ = value;
+                Кількість++;
+                Сhanged_Номенклатура?.Invoke();
             }
         }
         Номенклатура_Pointer Номенклатура_ = new();
+        public Action? Сhanged_Номенклатура;
 
+        /// <summary>
+        /// 
+        /// </summary>
         public int Кількість
         {
             get => Кількість_;
             set
             {
-                if (!Кількість_.Equals(value))
-                {
-                    Кількість_ = value;
-                    Changed?.Invoke();
-                }
+                Кількість_ = value;
+                Довжина = Кількість * 0.2m;
+                Сhanged_Кількість?.Invoke();
             }
         }
         int Кількість_ = 1;
+        public Action? Сhanged_Кількість;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public decimal Довжина
+        {
+            get => Довжина_;
+            set
+            {
+                Довжина_ = value;
+                Сhanged_Довжина?.Invoke();
+            }
+        }
+        decimal Довжина_ = 0.01m;
+        public Action? Сhanged_Довжина;
     }
 
     #endregion
@@ -116,7 +133,7 @@ public class ПоступленняТоварівТаПослуг_Табличн
                 {
                     cell.Pointer = row.Номенклатура;
                     cell.OnSelect = async () => row.Номенклатура = cell.Pointer;
-                    row.Changed = () => cell.Pointer = row.Номенклатура;
+                    row.Сhanged_Номенклатура = () => cell.Pointer = row.Номенклатура;
                 }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
@@ -141,10 +158,35 @@ public class ПоступленняТоварівТаПослуг_Табличн
                 if (cell != null && row != null)
                 {
                     cell.SetText(row.Кількість);
-                    row.Changed = () => cell.SetText(row.Кількість);
+                    row.Сhanged_Кількість = () => cell.SetText(row.Кількість);
                 }
             };
-            ColumnViewColumn column = ColumnViewColumn.New("Число", factory);
+            ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
+            column.Resizable = true;
+            Grid.AppendColumn(column);
+        }
+
+        //Довжина
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = LabelTablePartCell.NewFromType("numeric");
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = (LabelTablePartCell?)listItem.Child;
+                Row? row = (Row?)listItem.Item;
+                if (cell != null && row != null)
+                {
+                    cell.SetText(row.Довжина);
+                    row.Сhanged_Довжина = () => cell.SetText(row.Довжина);
+                }
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("Довжина", factory);
             column.Resizable = true;
             Grid.AppendColumn(column);
         }
@@ -190,8 +232,6 @@ public class ПоступленняТоварівТаПослуг_Табличн
                         UID = row.UnigueID.UGuid,
                         Номенклатура = row.Номенклатура
                     });
-                    //if (row.Кількість != 0)
-                    //Console.WriteLine(row.Кількість);
                 }
             }
 
