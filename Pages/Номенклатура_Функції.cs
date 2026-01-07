@@ -21,48 +21,45 @@ static class Номенклатура_Функції
             //Назва
             new Where(Номенклатура_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
                         
-                //Код
-                new Where(Comparison.OR, Номенклатура_Const.Код, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
-                        
-                //НазваПовна
-                new Where(Comparison.OR, Номенклатура_Const.НазваПовна, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
-                        
-                //Опис
-                new Where(Comparison.OR, Номенклатура_Const.Опис, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
-                        
-                //Артикул
-                new Where(Comparison.OR, Номенклатура_Const.Артикул, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
+            //Код
+            new Where(Comparison.OR, Номенклатура_Const.Код, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
+                    
+            //НазваПовна
+            new Where(Comparison.OR, Номенклатура_Const.НазваПовна, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
+                    
+            //Опис
+            new Where(Comparison.OR, Номенклатура_Const.Опис, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
+                    
+            //Артикул
+            new Where(Comparison.OR, Номенклатура_Const.Артикул, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
 
-            ];
+        ];
     }
 
     public static async ValueTask OpenPageElement(bool IsNew, UnigueID? unigueID = null,
         Action<UnigueID?>? сallBack_LoadRecords = null,
         Action<UnigueID>? сallBack_OnSelectPointer = null)
     {
-        Console.WriteLine(unigueID);
-        /* Номенклатура_Елемент page = new Номенклатура_Елемент
-         {
-             IsNew = IsNew,
-             CallBack_LoadRecords = сallBack_LoadRecords,
-             CallBack_OnSelectPointer = сallBack_OnSelectPointer
-         };
+        Номенклатура_Елемент page = new()
+        {
+            IsNew = IsNew,
+            CallBack_LoadRecords = сallBack_LoadRecords,
+            CallBack_OnSelectPointer = сallBack_OnSelectPointer
+        };
 
-         if (IsNew)
-         {
-             await page.Елемент.New();
+        if (IsNew)
+        {
+            await page.Елемент.New();
 
-         }
-         else if (unigueID == null || !await page.Елемент.Read(unigueID))
-         {
-             Message.Error(Program.GeneralForm, "Не вдалось прочитати!");
-             return;
-         }
+        }
+        else if (unigueID == null || !await page.Елемент.Read(unigueID))
+        {
+            Message.Error(Program.BasicApp, Program.BasicForm, "Не вдалось прочитати!");
+            return;
+        }
 
-         NotebookFunction.CreateNotebookPage(Program.GeneralNotebook, page.Caption, () => page);
-         await NotebookFunction.AddLockObjectFunc(Program.GeneralNotebook, page.Name, page.Елемент);
-         await page.LockInfo(page.Елемент);
-         page.SetValue();*/
+        Program.BasicForm?.NotebookFunc.CreatePage(page.Caption, () => page);
+        page.SetValue();
     }
 
     public static async ValueTask SetDeletionLabel(UnigueID unigueID)

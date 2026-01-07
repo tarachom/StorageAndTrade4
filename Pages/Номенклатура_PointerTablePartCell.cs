@@ -53,7 +53,7 @@ namespace StorageAndTrade
             await page.SetValue();
         }
 
-        protected override async void Clear(Button button, EventArgs args)
+        protected override async void Clear()
         {
             await PointerChange(null);
         }

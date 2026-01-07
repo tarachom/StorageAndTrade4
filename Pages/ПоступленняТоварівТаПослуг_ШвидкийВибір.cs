@@ -57,7 +57,7 @@ partial class ПоступленняТоварівТаПослуг_Швидки�
 
     protected override async ValueTask OpenPageElement(bool IsNew, UnigueID? unigueID = null)
     {
-        await Функції.OpenPageElement(IsNew, unigueID, CallBack_LoadRecords, null);
+        await Функції.OpenPageElement(IsNew, unigueID, CallBack_LoadRecords, CallBack_OnSelectPointer);
     }
 
     protected override async ValueTask SetDeletionLabel(UnigueID unigueID)

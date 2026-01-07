@@ -15,7 +15,7 @@ class PageHome : Form
 {
     public ActiveUsers activeUsers = new ActiveUsers(Config.Kernel, 800, 300);
 
-    ПоступленняТоварівТаПослуг_ТабличнаЧастина_Товари Товари = new();
+    //ПоступленняТоварівТаПослуг_ТабличнаЧастина_Товари Товари = new();
 
     public PageHome() : base(Program.BasicForm?.NotebookFunc)
     {
@@ -31,7 +31,7 @@ class PageHome : Form
         ПоступленняТоварівТаПослуг_PointerControl поступлення = new();
         Append(поступлення);
 
-        Товари.Vexpand = Товари.Hexpand = true;
+        /*Товари.Vexpand = Товари.Hexpand = true;
         Append(Товари);
 
         Button button = Button.NewWithLabel("Save");
@@ -39,7 +39,7 @@ class PageHome : Form
         {
             await Товари.SaveRecords();
         };
-        Append(button);
+        Append(button);*/
        
         /*
         LinkButton linkButton = LinkButton.New("");
@@ -123,13 +123,13 @@ class PageHome : Form
 
     public async ValueTask SetValue()
     {
-        var a = await new ПоступленняТоварівТаПослуг_Select().FindByField(ПоступленняТоварівТаПослуг_Const.НомерДок, "00000002");
+        /*var a = await new ПоступленняТоварівТаПослуг_Select().FindByField(ПоступленняТоварівТаПослуг_Const.НомерДок, "00000002");
         if (!a.IsEmpty())
         {
             Товари.ЕлементВласник = await a.GetDocumentObject(true);
             await Товари.LoadRecords();
         }
 
-        await Task.FromResult(true);
+        await Task.FromResult(true);*/
     }
 }

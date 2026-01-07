@@ -34,7 +34,7 @@ namespace StorageAndTrade
             Action<UnigueID?>? сallBack_LoadRecords = null,
             Action<UnigueID>? сallBack_OnSelectPointer = null)
         {
-            /*ПоступленняТоварівТаПослуг_Елемент page = new ПоступленняТоварівТаПослуг_Елемент
+            ПоступленняТоварівТаПослуг_Елемент page = new ПоступленняТоварівТаПослуг_Елемент
             {
                 IsNew = IsNew,
                 CallBack_LoadRecords = сallBack_LoadRecords
@@ -44,14 +44,12 @@ namespace StorageAndTrade
                 await page.Елемент.New();
             else if (unigueID == null || !await page.Елемент.Read(unigueID))
             {
-                Message.Error(Program.GeneralForm, "Не вдалось прочитати!");
+                Message.Error(Program.BasicApp, Program.BasicForm, "Не вдалось прочитати!");
                 return;
             }
 
-            NotebookFunction.CreateNotebookPage(Program.GeneralNotebook, page.Caption, () => page);
-            await NotebookFunction.AddLockObjectFunc(Program.GeneralNotebook, page.Name, page.Елемент);
-            await page.LockInfo(page.Елемент);
-            page.SetValue();*/
+            Program.BasicForm?.NotebookFunc.CreatePage(page.Caption, () => page);
+            page.SetValue();
         }
 
         public static async ValueTask SetDeletionLabel(UnigueID unigueID)
