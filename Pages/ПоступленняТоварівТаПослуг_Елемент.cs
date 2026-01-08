@@ -37,8 +37,7 @@ namespace StorageAndTrade
 
         public ПоступленняТоварівТаПослуг_Елемент() : base(Program.BasicForm?.NotebookFunc)
         {
-            Елемент.UnigueIDChanged += UnigueIDChanged;
-            Елемент.CaptionChanged += CaptionChanged;
+            Element = Елемент;
 
             CreateDocName(ПоступленняТоварівТаПослуг_Const.FULLNAME, НомерДок, ДатаДок);
             CreateField(HBoxComment, "Коментар:", Коментар);
@@ -70,7 +69,7 @@ namespace StorageAndTrade
 
         #region Присвоєння / зчитування значень
 
-        public override async void SetValue()
+        public override async ValueTask BeforeSetValue()
         {
             if (IsNew)
             {
@@ -108,7 +107,7 @@ namespace StorageAndTrade
                     isSave = true;
                 }
             }
-            catch (Exception ex)
+            catch /*(Exception ex)*/
             {
 
             }

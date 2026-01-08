@@ -42,7 +42,6 @@ static class Номенклатура_Функції
     {
         Номенклатура_Елемент page = new()
         {
-            IsNew = IsNew,
             CallBack_LoadRecords = сallBack_LoadRecords,
             CallBack_OnSelectPointer = сallBack_OnSelectPointer
         };
@@ -59,7 +58,7 @@ static class Номенклатура_Функції
         }
 
         Program.BasicForm?.NotebookFunc.CreatePage(page.Caption, () => page);
-        page.SetValue();
+        await page.SetValue();
     }
 
     public static async ValueTask SetDeletionLabel(UnigueID unigueID)

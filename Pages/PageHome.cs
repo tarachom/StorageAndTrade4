@@ -14,6 +14,7 @@ namespace StorageAndTrade;
 class PageHome : Form
 {
     public ActiveUsers activeUsers = new ActiveUsers(Config.Kernel, 800, 300);
+    public LockObjects lockObjects = new LockObjects(800, 300);
 
     //ПоступленняТоварівТаПослуг_ТабличнаЧастина_Товари Товари = new();
 
@@ -21,7 +22,14 @@ class PageHome : Form
     {
         {
             Box hBox = New(Orientation.Horizontal, 0);
+            hBox.MarginBottom = 10;
             hBox.Append(activeUsers);
+            Append(hBox);
+        }
+
+        {
+            Box hBox = New(Orientation.Horizontal, 0);
+            hBox.Append(lockObjects);
             Append(hBox);
         }
 
@@ -40,7 +48,7 @@ class PageHome : Form
             await Товари.SaveRecords();
         };
         Append(button);*/
-       
+
         /*
         LinkButton linkButton = LinkButton.New("");
         linkButton.OnActivateLink += (a, f) =>

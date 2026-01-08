@@ -34,10 +34,10 @@ namespace StorageAndTrade
             Action<UnigueID?>? сallBack_LoadRecords = null,
             Action<UnigueID>? сallBack_OnSelectPointer = null)
         {
-            ПоступленняТоварівТаПослуг_Елемент page = new ПоступленняТоварівТаПослуг_Елемент
+            ПоступленняТоварівТаПослуг_Елемент page = new()
             {
-                IsNew = IsNew,
-                CallBack_LoadRecords = сallBack_LoadRecords
+                CallBack_LoadRecords = сallBack_LoadRecords,
+                CallBack_OnSelectPointer = сallBack_OnSelectPointer
             };
 
             if (IsNew)
@@ -49,7 +49,7 @@ namespace StorageAndTrade
             }
 
             Program.BasicForm?.NotebookFunc.CreatePage(page.Caption, () => page);
-            page.SetValue();
+            await page.SetValue();
         }
 
         public static async ValueTask SetDeletionLabel(UnigueID unigueID)

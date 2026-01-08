@@ -14,7 +14,7 @@ using GeneratedCode.Перелічення;
 
 partial class Номенклатура_Елемент : DirectoryElement
 {
-    public Номенклатура_Objest Елемент { get; set; } = new Номенклатура_Objest();
+    public Номенклатура_Objest Елемент { get; } = new Номенклатура_Objest();
 
     #region Fields
 
@@ -29,8 +29,7 @@ partial class Номенклатура_Елемент : DirectoryElement
 
     public Номенклатура_Елемент() : base(Program.BasicForm?.NotebookFunc)
     {
-        Елемент.UnigueIDChanged += UnigueIDChanged;
-        Елемент.CaptionChanged += CaptionChanged;
+        Element = Елемент;
     }
 
     protected override void CreateStartBloc(Box vBox)
@@ -64,7 +63,7 @@ partial class Номенклатура_Елемент : DirectoryElement
 
     #region Присвоєння / зчитування значень
 
-    public override async void SetValue()
+    public override async ValueTask BeforeSetValue()
     {
         if (IsNew)
         {
@@ -102,7 +101,7 @@ partial class Номенклатура_Елемент : DirectoryElement
 
             return true;
         }
-        catch (Exception ex)
+        catch /*(Exception ex)*/
         {
 
             return false;

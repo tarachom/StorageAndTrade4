@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 07.01.2026 14:48:00
+ * Дата конфігурації: 08.01.2026 16:50:25
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон GeneratedCode.xslt
@@ -1894,9 +1894,6 @@ namespace GeneratedCode.Довідники
 
     public class Організації_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public Організації_Objest() : base(Config.Kernel, "tab_a01", Організації_Const.TYPE,
              ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", "col_b1", ], true)
         {
@@ -1909,8 +1906,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, Організації_Const.FULLNAME + " *");
+            Caption = Організації_Const.FULLNAME + " *";
             
                 await Організації_Triggers.New(this);
               
@@ -1939,8 +1935,7 @@ namespace GeneratedCode.Довідники
                     await Контакти_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -1967,7 +1962,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, НазваПовна, НазваСкорочена, КраїнаРеєстрації, СвідоцтвоСеріяНомер, СвідоцтвоДатаВидачі, КлючовіСловаДляПошуку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -2288,9 +2283,6 @@ namespace GeneratedCode.Довідники
 
     public class Номенклатура_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public Номенклатура_Objest() : base(Config.Kernel, "tab_a03", Номенклатура_Const.TYPE,
              ["col_b1", "col_b2", "col_b4", "col_a1", "col_b3", "col_b5", "col_a2", "col_a3", "col_a4", "col_a5", "col_a7", ], true)
         {
@@ -2303,8 +2295,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, Номенклатура_Const.FULLNAME + " *");
+            Caption = Номенклатура_Const.FULLNAME + " *";
             
                 await Номенклатура_Triggers.New(this);
               
@@ -2334,8 +2325,7 @@ namespace GeneratedCode.Довідники
                     await Файли_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -2363,7 +2353,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, НазваПовна, Опис, Артикул, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -2667,9 +2657,6 @@ namespace GeneratedCode.Довідники
 
     public class Виробники_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public Виробники_Objest() : base(Config.Kernel, "tab_a04", Виробники_Const.TYPE,
              ["col_b6", "col_b7", ], true)
         {
@@ -2679,8 +2666,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, Виробники_Const.FULLNAME + " *");
+            Caption = Виробники_Const.FULLNAME + " *";
             
                 await Виробники_Triggers.New(this);
               
@@ -2695,8 +2681,7 @@ namespace GeneratedCode.Довідники
                 
                 BaseClear();
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -2715,7 +2700,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -2868,9 +2853,6 @@ namespace GeneratedCode.Довідники
 
     public class ВидиНоменклатури_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ВидиНоменклатури_Objest() : base(Config.Kernel, "tab_a05", ВидиНоменклатури_Const.TYPE,
              ["col_b8", "col_b9", "col_a2", "col_a1", "col_a4", ], true)
         {
@@ -2880,8 +2862,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ВидиНоменклатури_Const.FULLNAME + " *");
+            Caption = ВидиНоменклатури_Const.FULLNAME + " *";
             
                 await ВидиНоменклатури_Triggers.New(this);
               
@@ -2899,8 +2880,7 @@ namespace GeneratedCode.Довідники
                 
                 BaseClear();
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -2922,7 +2902,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, Опис, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -3080,9 +3060,6 @@ namespace GeneratedCode.Довідники
 
     public class ПакуванняОдиниціВиміру_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ПакуванняОдиниціВиміру_Objest() : base(Config.Kernel, "tab_a06", ПакуванняОдиниціВиміру_Const.TYPE,
              ["col_c1", "col_c2", "col_c3", "col_c4", ], true)
         {
@@ -3092,8 +3069,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ПакуванняОдиниціВиміру_Const.FULLNAME + " *");
+            Caption = ПакуванняОдиниціВиміру_Const.FULLNAME + " *";
             
                 await ПакуванняОдиниціВиміру_Triggers.New(this);
               
@@ -3110,8 +3086,7 @@ namespace GeneratedCode.Довідники
                 
                 BaseClear();
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -3134,7 +3109,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, НазваПовна, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -3291,9 +3266,6 @@ namespace GeneratedCode.Довідники
 
     public class Валюти_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public Валюти_Objest() : base(Config.Kernel, "tab_a07", Валюти_Const.TYPE,
              ["col_c5", "col_a2", "col_c6", "col_a1", "col_a3", ], true)
         {
@@ -3303,8 +3275,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, Валюти_Const.FULLNAME + " *");
+            Caption = Валюти_Const.FULLNAME + " *";
             
                 await Валюти_Triggers.New(this);
               
@@ -3322,8 +3293,7 @@ namespace GeneratedCode.Довідники
                 
                 BaseClear();
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -3345,7 +3315,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, КороткаНазва, Код_R030, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -3514,9 +3484,6 @@ namespace GeneratedCode.Довідники
 
     public class Контрагенти_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public Контрагенти_Objest() : base(Config.Kernel, "tab_a08", Контрагенти_Const.TYPE,
              ["col_c7", "col_c8", "col_c9", "col_d1", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", ], true)
         {
@@ -3530,8 +3497,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, Контрагенти_Const.FULLNAME + " *");
+            Caption = Контрагенти_Const.FULLNAME + " *";
             
                 await Контрагенти_Triggers.New(this);
               
@@ -3560,8 +3526,7 @@ namespace GeneratedCode.Довідники
                     await Файли_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -3589,7 +3554,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, НазваПовна, РеєстраційнийНомер, Опис, КлючовіСловаДляПошуку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -4029,9 +3994,6 @@ namespace GeneratedCode.Довідники
 
     public class Склади_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public Склади_Objest() : base(Config.Kernel, "tab_a10", Склади_Const.TYPE,
              ["col_d9", "col_e1", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", ], true)
         {
@@ -4044,8 +4006,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, Склади_Const.FULLNAME + " *");
+            Caption = Склади_Const.FULLNAME + " *";
             
                 await Склади_Triggers.New(this);
               
@@ -4073,8 +4034,7 @@ namespace GeneratedCode.Довідники
                     await Контакти_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -4100,7 +4060,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, КлючовіСловаДляПошуку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -4411,9 +4371,6 @@ namespace GeneratedCode.Довідники
 
     public class ВидиЦін_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ВидиЦін_Objest() : base(Config.Kernel, "tab_a12", ВидиЦін_Const.TYPE,
              ["col_e9", "col_f1", "col_f2", ], true)
         {
@@ -4423,8 +4380,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ВидиЦін_Const.FULLNAME + " *");
+            Caption = ВидиЦін_Const.FULLNAME + " *";
             
                 await ВидиЦін_Triggers.New(this);
               
@@ -4440,8 +4396,7 @@ namespace GeneratedCode.Довідники
                 
                 BaseClear();
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -4461,7 +4416,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -4614,9 +4569,6 @@ namespace GeneratedCode.Довідники
 
     public class ВидиЦінПостачальників_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ВидиЦінПостачальників_Objest() : base(Config.Kernel, "tab_a13", ВидиЦінПостачальників_Const.TYPE,
              ["col_f3", "col_f4", "col_f5", ], true)
         {
@@ -4626,8 +4578,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ВидиЦінПостачальників_Const.FULLNAME + " *");
+            Caption = ВидиЦінПостачальників_Const.FULLNAME + " *";
             
                 await ВидиЦінПостачальників_Triggers.New(this);
               
@@ -4643,8 +4594,7 @@ namespace GeneratedCode.Довідники
                 
                 BaseClear();
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -4664,7 +4614,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -4819,9 +4769,6 @@ namespace GeneratedCode.Довідники
 
     public class Користувачі_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public Користувачі_Objest() : base(Config.Kernel, "tab_a14", Користувачі_Const.TYPE,
              ["col_f6", "col_f7", "col_a1", "col_g6", "col_a2", ], true)
         {
@@ -4834,8 +4781,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, Користувачі_Const.FULLNAME + " *");
+            Caption = Користувачі_Const.FULLNAME + " *";
             
                 await Користувачі_Triggers.New(this);
               
@@ -4859,8 +4805,7 @@ namespace GeneratedCode.Довідники
                     await Контакти_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -4882,7 +4827,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, Коментар, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -5175,9 +5120,6 @@ namespace GeneratedCode.Довідники
 
     public class ФізичніОсоби_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ФізичніОсоби_Objest() : base(Config.Kernel, "tab_a16", ФізичніОсоби_Const.TYPE,
              ["col_g7", "col_g8", "col_g9", "col_a1", "col_a2", ], true)
         {
@@ -5190,8 +5132,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ФізичніОсоби_Const.FULLNAME + " *");
+            Caption = ФізичніОсоби_Const.FULLNAME + " *";
             
                 await ФізичніОсоби_Triggers.New(this);
               
@@ -5215,8 +5156,7 @@ namespace GeneratedCode.Довідники
                     await Контакти_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -5238,7 +5178,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, ІПН, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -5541,9 +5481,6 @@ namespace GeneratedCode.Довідники
 
     public class СтруктураПідприємства_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public СтруктураПідприємства_Objest() : base(Config.Kernel, "tab_a18", СтруктураПідприємства_Const.TYPE,
              ["col_h8", "col_h9", "col_i1", ], true)
         {
@@ -5553,8 +5490,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, СтруктураПідприємства_Const.FULLNAME + " *");
+            Caption = СтруктураПідприємства_Const.FULLNAME + " *";
             
                 await СтруктураПідприємства_Triggers.New(this);
               
@@ -5570,8 +5506,7 @@ namespace GeneratedCode.Довідники
                 
                 BaseClear();
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -5591,7 +5526,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -5743,9 +5678,6 @@ namespace GeneratedCode.Довідники
 
     public class КраїниСвіту_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public КраїниСвіту_Objest() : base(Config.Kernel, "tab_a19", КраїниСвіту_Const.TYPE,
              ["col_i2", "col_i3", ], true)
         {
@@ -5755,8 +5687,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, КраїниСвіту_Const.FULLNAME + " *");
+            Caption = КраїниСвіту_Const.FULLNAME + " *";
             
                 await КраїниСвіту_Triggers.New(this);
               
@@ -5771,8 +5702,7 @@ namespace GeneratedCode.Довідники
                 
                 BaseClear();
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -5791,7 +5721,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -5945,9 +5875,6 @@ namespace GeneratedCode.Довідники
 
     public class Файли_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public Файли_Objest() : base(Config.Kernel, "tab_a20", Файли_Const.TYPE,
              ["col_i6", "col_i5", "col_a2", "col_a1", "col_a3", "col_a4", ], true)
         {
@@ -5957,8 +5884,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, Файли_Const.FULLNAME + " *");
+            Caption = Файли_Const.FULLNAME + " *";
             
                 await Файли_Triggers.New(this);
               
@@ -5977,8 +5903,7 @@ namespace GeneratedCode.Довідники
                 
                 BaseClear();
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -6001,7 +5926,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, НазваФайлу, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -6161,9 +6086,6 @@ namespace GeneratedCode.Довідники
 
     public class ХарактеристикиНоменклатури_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ХарактеристикиНоменклатури_Objest() : base(Config.Kernel, "tab_a21", ХарактеристикиНоменклатури_Const.TYPE,
              ["col_i7", "col_i8", "col_i9", "col_a1", ], true)
         {
@@ -6173,8 +6095,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ХарактеристикиНоменклатури_Const.FULLNAME + " *");
+            Caption = ХарактеристикиНоменклатури_Const.FULLNAME + " *";
             
                 await ХарактеристикиНоменклатури_Triggers.New(this);
               
@@ -6191,8 +6112,7 @@ namespace GeneratedCode.Довідники
                 
                 BaseClear();
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -6213,7 +6133,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, НазваПовна, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -6368,9 +6288,6 @@ namespace GeneratedCode.Довідники
 
     public class Номенклатура_Папки_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public Номенклатура_Папки_Objest() : base(Config.Kernel, "tab_a22", Номенклатура_Папки_Const.TYPE,
              ["col_j1", "col_j2", "col_j3", ], true)
         {
@@ -6380,8 +6297,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, Номенклатура_Папки_Const.FULLNAME + " *");
+            Caption = Номенклатура_Папки_Const.FULLNAME + " *";
             
                 await Номенклатура_Папки_Triggers.New(this);
               
@@ -6397,8 +6313,7 @@ namespace GeneratedCode.Довідники
                 
                 BaseClear();
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -6418,7 +6333,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -6591,9 +6506,6 @@ namespace GeneratedCode.Довідники
 
     public class Контрагенти_Папки_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public Контрагенти_Папки_Objest() : base(Config.Kernel, "tab_a23", Контрагенти_Папки_Const.TYPE,
              ["col_j4", "col_j5", "col_j6", ], true)
         {
@@ -6603,8 +6515,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, Контрагенти_Папки_Const.FULLNAME + " *");
+            Caption = Контрагенти_Папки_Const.FULLNAME + " *";
             
                 await Контрагенти_Папки_Triggers.New(this);
               
@@ -6620,8 +6531,7 @@ namespace GeneratedCode.Довідники
                 
                 BaseClear();
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -6641,7 +6551,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -6814,9 +6724,6 @@ namespace GeneratedCode.Довідники
 
     public class Склади_Папки_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public Склади_Папки_Objest() : base(Config.Kernel, "tab_a24", Склади_Папки_Const.TYPE,
              ["col_j7", "col_j8", "col_a1", ], true)
         {
@@ -6826,8 +6733,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, Склади_Папки_Const.FULLNAME + " *");
+            Caption = Склади_Папки_Const.FULLNAME + " *";
             
                 await Склади_Папки_Triggers.New(this);
               
@@ -6843,8 +6749,7 @@ namespace GeneratedCode.Довідники
                 
                 BaseClear();
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -6864,7 +6769,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -7038,9 +6943,6 @@ namespace GeneratedCode.Довідники
 
     public class Каси_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public Каси_Objest() : base(Config.Kernel, "tab_a26", Каси_Const.TYPE,
              ["col_k8", "col_k9", "col_a2", "col_a1", ], true)
         {
@@ -7050,8 +6952,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, Каси_Const.FULLNAME + " *");
+            Caption = Каси_Const.FULLNAME + " *";
             
                 await Каси_Triggers.New(this);
               
@@ -7068,8 +6969,7 @@ namespace GeneratedCode.Довідники
                 
                 BaseClear();
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -7090,7 +6990,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -7249,9 +7149,6 @@ namespace GeneratedCode.Довідники
 
     public class БанківськіРахункиОрганізацій_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public БанківськіРахункиОрганізацій_Objest() : base(Config.Kernel, "tab_a27", БанківськіРахункиОрганізацій_Const.TYPE,
              ["col_l1", "col_l2", "col_l3", "col_l4", "col_l5", "col_l7", "col_a1", ], true)
         {
@@ -7261,8 +7158,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, БанківськіРахункиОрганізацій_Const.FULLNAME + " *");
+            Caption = БанківськіРахункиОрганізацій_Const.FULLNAME + " *";
             
                 await БанківськіРахункиОрганізацій_Triggers.New(this);
               
@@ -7282,8 +7178,7 @@ namespace GeneratedCode.Довідники
                 
                 BaseClear();
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -7307,7 +7202,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, НомерРахунку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -7485,9 +7380,6 @@ namespace GeneratedCode.Довідники
 
     public class ДоговориКонтрагентів_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ДоговориКонтрагентів_Objest() : base(Config.Kernel, "tab_a28", ДоговориКонтрагентів_Const.TYPE,
              ["col_n4", "col_n5", "col_n6", "col_a1", "col_a2", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", "col_b1", "col_b2", "col_b3", "col_b4", "col_b5", "col_b8", "col_b6", "col_b7", "col_a3", ], true)
         {
@@ -7497,8 +7389,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ДоговориКонтрагентів_Const.FULLNAME + " *");
+            Caption = ДоговориКонтрагентів_Const.FULLNAME + " *";
             
                 await ДоговориКонтрагентів_Triggers.New(this);
               
@@ -7531,8 +7422,7 @@ namespace GeneratedCode.Довідники
                 
                 BaseClear();
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ТипДоговоруПредставлення, ]));
+                Caption = string.Join(", ", [Назва, ТипДоговоруПредставлення, ]);
                 return true;
             }
             else
@@ -7571,7 +7461,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, Коментар, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ТипДоговоруПредставлення, ]));
+            Caption = string.Join(", ", [Назва, ТипДоговоруПредставлення, ]);
             return result;
         }
 
@@ -7761,9 +7651,6 @@ namespace GeneratedCode.Довідники
 
     public class БанківськіРахункиКонтрагентів_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public БанківськіРахункиКонтрагентів_Objest() : base(Config.Kernel, "tab_a29", БанківськіРахункиКонтрагентів_Const.TYPE,
              ["col_n7", "col_n8", "col_n9", "col_m1", "col_m5", "col_o3", ], true)
         {
@@ -7773,8 +7660,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, БанківськіРахункиКонтрагентів_Const.FULLNAME + " *");
+            Caption = БанківськіРахункиКонтрагентів_Const.FULLNAME + " *";
             
                 await БанківськіРахункиКонтрагентів_Triggers.New(this);
               
@@ -7793,8 +7679,7 @@ namespace GeneratedCode.Довідники
                 
                 BaseClear();
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -7817,7 +7702,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -7978,9 +7863,6 @@ namespace GeneratedCode.Довідники
 
     public class СтаттяРухуКоштів_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public СтаттяРухуКоштів_Objest() : base(Config.Kernel, "tab_a45", СтаттяРухуКоштів_Const.TYPE,
              ["col_i7", "col_i8", "col_i9", "col_j2", "col_j1", ], true)
         {
@@ -7993,8 +7875,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, СтаттяРухуКоштів_Const.FULLNAME + " *");
+            Caption = СтаттяРухуКоштів_Const.FULLNAME + " *";
             
                 await СтаттяРухуКоштів_Triggers.New(this);
               
@@ -8018,8 +7899,7 @@ namespace GeneratedCode.Довідники
                     await ГосподарськіОперації_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -8041,7 +7921,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, Опис, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -8308,9 +8188,6 @@ namespace GeneratedCode.Довідники
 
     public class СеріїНоменклатури_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public СеріїНоменклатури_Objest() : base(Config.Kernel, "tab_b02", СеріїНоменклатури_Const.TYPE,
              ["col_a3", "col_a1", "col_a2", ], true)
         {
@@ -8320,8 +8197,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, СеріїНоменклатури_Const.FULLNAME + " *");
+            Caption = СеріїНоменклатури_Const.FULLNAME + " *";
             
                 await СеріїНоменклатури_Triggers.New(this);
               
@@ -8337,8 +8213,7 @@ namespace GeneratedCode.Довідники
                 
                 BaseClear();
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Номер, ]));
+                Caption = string.Join(", ", [Номер, ]);
                 return true;
             }
             else
@@ -8360,7 +8235,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Номер, Коментар, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Номер, ]));
+            Caption = string.Join(", ", [Номер, ]);
             return result;
         }
 
@@ -8516,9 +8391,6 @@ namespace GeneratedCode.Довідники
 
     public class ПартіяТоварівКомпозит_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ПартіяТоварівКомпозит_Objest() : base(Config.Kernel, "tab_b06", ПартіяТоварівКомпозит_Const.TYPE,
              ["col_a1", "col_a2", "col_a3", "col_a6", "col_a4", "col_a5", ], true)
         {
@@ -8528,8 +8400,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ПартіяТоварівКомпозит_Const.FULLNAME + " *");
+            Caption = ПартіяТоварівКомпозит_Const.FULLNAME + " *";
             
                 await ValueTask.FromResult(true);
               
@@ -8548,8 +8419,7 @@ namespace GeneratedCode.Довідники
                 
                 BaseClear();
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -8572,7 +8442,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -8733,9 +8603,6 @@ namespace GeneratedCode.Довідники
 
     public class ВидиЗапасів_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ВидиЗапасів_Objest() : base(Config.Kernel, "tab_b13", ВидиЗапасів_Const.TYPE,
              ["col_a5", "col_b3", "col_a7", "col_a9", "col_b1", "col_b2", "col_a1", ], true)
         {
@@ -8745,8 +8612,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ВидиЗапасів_Const.FULLNAME + " *");
+            Caption = ВидиЗапасів_Const.FULLNAME + " *";
             
                 await ВидиЗапасів_Triggers.New(this);
               
@@ -8766,8 +8632,7 @@ namespace GeneratedCode.Довідники
                 
                 BaseClear();
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -8791,7 +8656,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -8977,9 +8842,6 @@ namespace GeneratedCode.Довідники
 
     public class Банки_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public Банки_Objest() : base(Config.Kernel, "tab_a39", Банки_Const.TYPE,
              ["col_a1", "col_a2", "col_b4", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", "col_b1", "col_b2", "col_b3", "col_b5", "col_b6", "col_b7", "col_b8", "col_b9", "col_c1", "col_c2", "col_c3", "col_c4", "col_c5", "col_c6", "col_c7", "col_c8", "col_c9", "col_d1", ], true)
         {
@@ -8989,8 +8851,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, Банки_Const.FULLNAME + " *");
+            Caption = Банки_Const.FULLNAME + " *";
             
                 await Банки_Triggers.New(this);
               
@@ -9031,8 +8892,7 @@ namespace GeneratedCode.Довідники
                 
                 BaseClear();
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -9077,7 +8937,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, КодМФО, КодЄДРПОУ, НазваНаселеногоПункту, Адреса, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -9280,9 +9140,6 @@ namespace GeneratedCode.Довідники
 
     public class СкладськіПриміщення_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public СкладськіПриміщення_Objest() : base(Config.Kernel, "tab_a71", СкладськіПриміщення_Const.TYPE,
              ["col_a2", "col_a3", "col_a1", ], true)
         {
@@ -9292,8 +9149,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, СкладськіПриміщення_Const.FULLNAME + " *");
+            Caption = СкладськіПриміщення_Const.FULLNAME + " *";
             
                 await ValueTask.FromResult(true);
               
@@ -9309,8 +9165,7 @@ namespace GeneratedCode.Довідники
                 
                 BaseClear();
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -9330,7 +9185,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -9490,9 +9345,6 @@ namespace GeneratedCode.Довідники
 
     public class СкладськіКомірки_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public СкладськіКомірки_Objest() : base(Config.Kernel, "tab_a72", СкладськіКомірки_Const.TYPE,
              ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", "col_b1", ], true)
         {
@@ -9502,8 +9354,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, СкладськіКомірки_Const.FULLNAME + " *");
+            Caption = СкладськіКомірки_Const.FULLNAME + " *";
             
                 await ValueTask.FromResult(true);
               
@@ -9526,8 +9377,7 @@ namespace GeneratedCode.Довідники
                 
                 BaseClear();
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -9554,7 +9404,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -9721,9 +9571,6 @@ namespace GeneratedCode.Довідники
 
     public class ОбластьЗберігання_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ОбластьЗберігання_Objest() : base(Config.Kernel, "tab_a73", ОбластьЗберігання_Const.TYPE,
              ["col_a2", "col_a3", "col_a4", ], true)
         {
@@ -9733,8 +9580,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ОбластьЗберігання_Const.FULLNAME + " *");
+            Caption = ОбластьЗберігання_Const.FULLNAME + " *";
             
                 await ValueTask.FromResult(true);
               
@@ -9750,8 +9596,7 @@ namespace GeneratedCode.Довідники
                 
                 BaseClear();
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -9771,7 +9616,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -9925,9 +9770,6 @@ namespace GeneratedCode.Довідники
 
     public class ТипорозміриКомірок_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ТипорозміриКомірок_Objest() : base(Config.Kernel, "tab_a75", ТипорозміриКомірок_Const.TYPE,
              ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", ], true)
         {
@@ -9937,8 +9779,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ТипорозміриКомірок_Const.FULLNAME + " *");
+            Caption = ТипорозміриКомірок_Const.FULLNAME + " *";
             
                 await ValueTask.FromResult(true);
               
@@ -9957,8 +9798,7 @@ namespace GeneratedCode.Довідники
                 
                 BaseClear();
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -9981,7 +9821,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -10141,9 +9981,6 @@ namespace GeneratedCode.Довідники
 
     public class СкладськіКомірки_Папки_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public СкладськіКомірки_Папки_Objest() : base(Config.Kernel, "tab_a76", СкладськіКомірки_Папки_Const.TYPE,
              ["col_j1", "col_j2", "col_j3", "col_a1", ], true)
         {
@@ -10153,8 +9990,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, СкладськіКомірки_Папки_Const.FULLNAME + " *");
+            Caption = СкладськіКомірки_Папки_Const.FULLNAME + " *";
             
                 await СкладськіКомірки_Папки_Triggers.New(this);
               
@@ -10171,8 +10007,7 @@ namespace GeneratedCode.Довідники
                 
                 BaseClear();
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -10193,7 +10028,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -10370,9 +10205,6 @@ namespace GeneratedCode.Довідники
 
     public class Блокнот_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public Блокнот_Objest() : base(Config.Kernel, "tab_a41", Блокнот_Const.TYPE,
              ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", ], true)
         {
@@ -10382,8 +10214,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, Блокнот_Const.FULLNAME + " *");
+            Caption = Блокнот_Const.FULLNAME + " *";
             
                 await Блокнот_Triggers.New(this);
               
@@ -10401,8 +10232,7 @@ namespace GeneratedCode.Довідники
                 
                 BaseClear();
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -10424,7 +10254,7 @@ namespace GeneratedCode.Довідники
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, Опис, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -10584,9 +10414,6 @@ namespace GeneratedCode.Довідники
 
     public class ЗбереженіЗвіти_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ЗбереженіЗвіти_Objest() : base(Config.Kernel, "tab_b04", ЗбереженіЗвіти_Const.TYPE,
              ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", ], true)
         {
@@ -10599,8 +10426,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ЗбереженіЗвіти_Const.FULLNAME + " *");
+            Caption = ЗбереженіЗвіти_Const.FULLNAME + " *";
             
                 await ЗбереженіЗвіти_Triggers.New(this);
               
@@ -10625,8 +10451,7 @@ namespace GeneratedCode.Довідники
                     await ЗвітСторінка_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -10647,7 +10472,7 @@ namespace GeneratedCode.Довідники
             {
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -11053,9 +10878,6 @@ namespace GeneratedCode.Довідники
 
     public class КасиККМ_Objest : DirectoryObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public КасиККМ_Objest() : base(Config.Kernel, "tab_b52", КасиККМ_Const.TYPE,
              ["col_a2", "col_a3", "col_a4", "col_a1", ], true)
         {
@@ -11065,8 +10887,7 @@ namespace GeneratedCode.Довідники
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, КасиККМ_Const.FULLNAME + " *");
+            Caption = КасиККМ_Const.FULLNAME + " *";
             
                 await КасиККМ_Triggers.New(this);
               
@@ -11083,8 +10904,7 @@ namespace GeneratedCode.Довідники
                 
                 BaseClear();
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -11103,7 +10923,7 @@ namespace GeneratedCode.Довідники
             {
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -12459,9 +12279,6 @@ namespace GeneratedCode.Документи
 
     public class ЗамовленняПостачальнику_Objest : DocumentObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ЗамовленняПостачальнику_Objest() : base(Config.Kernel, "tab_a25", ЗамовленняПостачальнику_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_k2", "col_k3", "col_k4", "col_k5", "col_k6", "col_k7", "col_a1", "col_a3", "col_a4", "col_a5", "col_a7", "col_a8", "col_a9", "col_b1", "col_b2", "col_b3", "col_b4", "col_a6", "col_b5", "col_b6", "col_b7", "col_b8", "col_a2", "col_b9", ], true)
         {
@@ -12474,8 +12291,7 @@ namespace GeneratedCode.Документи
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ЗамовленняПостачальнику_Const.FULLNAME + " *");
+            Caption = ЗамовленняПостачальнику_Const.FULLNAME + " *";
             
                 await ЗамовленняПостачальнику_Triggers.New(this);
               
@@ -12521,8 +12337,7 @@ namespace GeneratedCode.Документи
                     await Товари_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -12568,7 +12383,7 @@ namespace GeneratedCode.Документи
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, НомерДок, Коментар, КлючовіСловаДляПошуку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -13229,9 +13044,6 @@ namespace GeneratedCode.Документи
 
     public class ПоступленняТоварівТаПослуг_Objest : DocumentObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ПоступленняТоварівТаПослуг_Objest() : base(Config.Kernel, "tab_a32", ПоступленняТоварівТаПослуг_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", "col_b2", "col_b3", "col_b4", "col_b5", "col_b6", "col_b7", "col_b8", "col_b9", "col_c1", "col_c2", "col_c3", "col_c4", "col_c5", "col_c6", "col_c7", "col_c8", "col_c9", "col_d1", "col_d2", "col_d3", "col_a1", "col_b1", "col_a2", ], true)
         {
@@ -13244,8 +13056,7 @@ namespace GeneratedCode.Документи
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ПоступленняТоварівТаПослуг_Const.FULLNAME + " *");
+            Caption = ПоступленняТоварівТаПослуг_Const.FULLNAME + " *";
             
                 await ПоступленняТоварівТаПослуг_Triggers.New(this);
               
@@ -13297,8 +13108,7 @@ namespace GeneratedCode.Документи
                     await Товари_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -13350,7 +13160,7 @@ namespace GeneratedCode.Документи
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, НомерДок, Коментар, КлючовіСловаДляПошуку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -14065,9 +13875,6 @@ namespace GeneratedCode.Документи
 
     public class ЗамовленняКлієнта_Objest : DocumentObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ЗамовленняКлієнта_Objest() : base(Config.Kernel, "tab_a34", ЗамовленняКлієнта_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_b4", "col_b5", "col_b6", "col_b7", "col_b8", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_b1", "col_a9", "col_b9", "col_c2", "col_c3", "col_c4", "col_c5", "col_c6", "col_c7", "col_c8", "col_c9", "col_c1", "col_b2", "col_b3", "col_d1", ], true)
         {
@@ -14080,8 +13887,7 @@ namespace GeneratedCode.Документи
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ЗамовленняКлієнта_Const.FULLNAME + " *");
+            Caption = ЗамовленняКлієнта_Const.FULLNAME + " *";
             
                 await ЗамовленняКлієнта_Triggers.New(this);
               
@@ -14131,8 +13937,7 @@ namespace GeneratedCode.Документи
                     await Товари_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -14182,7 +13987,7 @@ namespace GeneratedCode.Документи
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, НомерДок, Коментар, КлючовіСловаДляПошуку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -14850,9 +14655,6 @@ namespace GeneratedCode.Документи
 
     public class РеалізаціяТоварівТаПослуг_Objest : DocumentObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public РеалізаціяТоварівТаПослуг_Objest() : base(Config.Kernel, "tab_a36", РеалізаціяТоварівТаПослуг_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", "col_b1", "col_b3", "col_b4", "col_b5", "col_b6", "col_b7", "col_b8", "col_b9", "col_c1", "col_c2", "col_c3", "col_c4", "col_c5", "col_c6", "col_c7", "col_c8", "col_d2", "col_b2", "col_c9", "col_d1", ], true)
         {
@@ -14865,8 +14667,7 @@ namespace GeneratedCode.Документи
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, РеалізаціяТоварівТаПослуг_Const.FULLNAME + " *");
+            Caption = РеалізаціяТоварівТаПослуг_Const.FULLNAME + " *";
             
                 await РеалізаціяТоварівТаПослуг_Triggers.New(this);
               
@@ -14917,8 +14718,7 @@ namespace GeneratedCode.Документи
                     await Товари_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -14969,7 +14769,7 @@ namespace GeneratedCode.Документи
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, НомерДок, Коментар, КлючовіСловаДляПошуку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -15665,9 +15465,6 @@ namespace GeneratedCode.Документи
 
     public class ВстановленняЦінНоменклатури_Objest : DocumentObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ВстановленняЦінНоменклатури_Objest() : base(Config.Kernel, "tab_a42", ВстановленняЦінНоменклатури_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a2", "col_a1", "col_a3", "col_g9", "col_a4", "col_a5", "col_a6", ], true)
         {
@@ -15680,8 +15477,7 @@ namespace GeneratedCode.Документи
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ВстановленняЦінНоменклатури_Const.FULLNAME + " *");
+            Caption = ВстановленняЦінНоменклатури_Const.FULLNAME + " *";
             
                 await ВстановленняЦінНоменклатури_Triggers.New(this);
               
@@ -15710,8 +15506,7 @@ namespace GeneratedCode.Документи
                     await Товари_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -15740,7 +15535,7 @@ namespace GeneratedCode.Документи
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, НомерДок, Коментар, КлючовіСловаДляПошуку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -16163,9 +15958,6 @@ namespace GeneratedCode.Документи
 
     public class ПрихіднийКасовийОрдер_Objest : DocumentObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ПрихіднийКасовийОрдер_Objest() : base(Config.Kernel, "tab_a44", ПрихіднийКасовийОрдер_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_h8", "col_h9", "col_i1", "col_i2", "col_i3", "col_i4", "col_a6", "col_i5", "col_i6", "col_a1", "col_a2", "col_a4", "col_a3", "col_a5", "col_a7", ], true)
         {
@@ -16178,8 +15970,7 @@ namespace GeneratedCode.Документи
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ПрихіднийКасовийОрдер_Const.FULLNAME + " *");
+            Caption = ПрихіднийКасовийОрдер_Const.FULLNAME + " *";
             
                 await ПрихіднийКасовийОрдер_Triggers.New(this);
               
@@ -16216,8 +16007,7 @@ namespace GeneratedCode.Документи
                     await РозшифруванняПлатежу_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -16254,7 +16044,7 @@ namespace GeneratedCode.Документи
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, НомерДок, Коментар, КлючовіСловаДляПошуку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -16716,9 +16506,6 @@ namespace GeneratedCode.Документи
 
     public class РозхіднийКасовийОрдер_Objest : DocumentObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public РозхіднийКасовийОрдер_Objest() : base(Config.Kernel, "tab_a48", РозхіднийКасовийОрдер_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_k2", "col_k3", "col_a3", "col_a5", "col_k5", "col_k4", "col_k7", "col_a4", "col_k8", "col_k9", "col_l2", "col_k6", "col_a2", "col_a1", "col_l1", "col_a6", "col_a7", ], true)
         {
@@ -16731,8 +16518,7 @@ namespace GeneratedCode.Документи
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, РозхіднийКасовийОрдер_Const.FULLNAME + " *");
+            Caption = РозхіднийКасовийОрдер_Const.FULLNAME + " *";
             
                 await РозхіднийКасовийОрдер_Triggers.New(this);
               
@@ -16771,8 +16557,7 @@ namespace GeneratedCode.Документи
                     await РозшифруванняПлатежу_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -16811,7 +16596,7 @@ namespace GeneratedCode.Документи
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, НомерДок, Коментар, КлючовіСловаДляПошуку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -17282,9 +17067,6 @@ namespace GeneratedCode.Документи
 
     public class ПереміщенняТоварів_Objest : DocumentObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ПереміщенняТоварів_Objest() : base(Config.Kernel, "tab_a31", ПереміщенняТоварів_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a3", "col_a4", "col_a5", "col_a7", "col_a8", "col_a9", "col_b1", "col_b2", "col_b3", "col_b4", "col_b5", "col_b6", "col_b7", "col_b8", "col_a6", "col_a1", "col_a2", "col_b9", ], true)
         {
@@ -17297,8 +17079,7 @@ namespace GeneratedCode.Документи
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ПереміщенняТоварів_Const.FULLNAME + " *");
+            Caption = ПереміщенняТоварів_Const.FULLNAME + " *";
             
                 await ПереміщенняТоварів_Triggers.New(this);
               
@@ -17338,8 +17119,7 @@ namespace GeneratedCode.Документи
                     await Товари_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -17379,7 +17159,7 @@ namespace GeneratedCode.Документи
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, НомерДок, Коментар, КлючовіСловаДляПошуку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -17862,9 +17642,6 @@ namespace GeneratedCode.Документи
 
     public class ПоверненняТоварівПостачальнику_Objest : DocumentObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ПоверненняТоварівПостачальнику_Objest() : base(Config.Kernel, "tab_a51", ПоверненняТоварівПостачальнику_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_c2", "col_c3", "col_c4", "col_c5", "col_c6", "col_c7", "col_c9", "col_d1", "col_d2", "col_d3", "col_d4", "col_d5", "col_d6", "col_d7", "col_a1", "col_a2", "col_c8", "col_a3", "col_a4", "col_a5", ], true)
         {
@@ -17877,8 +17654,7 @@ namespace GeneratedCode.Документи
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ПоверненняТоварівПостачальнику_Const.FULLNAME + " *");
+            Caption = ПоверненняТоварівПостачальнику_Const.FULLNAME + " *";
             
                 await ПоверненняТоварівПостачальнику_Triggers.New(this);
               
@@ -17920,8 +17696,7 @@ namespace GeneratedCode.Документи
                     await Товари_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -17963,7 +17738,7 @@ namespace GeneratedCode.Документи
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, НомерДок, Коментар, КлючовіСловаДляПошуку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -18462,9 +18237,6 @@ namespace GeneratedCode.Документи
 
     public class ПоверненняТоварівВідКлієнта_Objest : DocumentObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ПоверненняТоварівВідКлієнта_Objest() : base(Config.Kernel, "tab_a53", ПоверненняТоварівВідКлієнта_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_e8", "col_e9", "col_f1", "col_f2", "col_f3", "col_f5", "col_f7", "col_f8", "col_f9", "col_g1", "col_g2", "col_a1", "col_a2", "col_f6", "col_a3", "col_a4", ], true)
         {
@@ -18477,8 +18249,7 @@ namespace GeneratedCode.Документи
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ПоверненняТоварівВідКлієнта_Const.FULLNAME + " *");
+            Caption = ПоверненняТоварівВідКлієнта_Const.FULLNAME + " *";
             
                 await ПоверненняТоварівВідКлієнта_Triggers.New(this);
               
@@ -18516,8 +18287,7 @@ namespace GeneratedCode.Документи
                     await Товари_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -18555,7 +18325,7 @@ namespace GeneratedCode.Документи
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, НомерДок, Коментар, КлючовіСловаДляПошуку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -19049,9 +18819,6 @@ namespace GeneratedCode.Документи
 
     public class АктВиконанихРобіт_Objest : DocumentObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public АктВиконанихРобіт_Objest() : base(Config.Kernel, "tab_a81", АктВиконанихРобіт_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_b2", "col_b3", "col_b4", "col_b5", "col_b6", "col_a5", "col_a2", "col_a3", "col_a4", "col_a6", "col_a1", "col_a7", "col_a8", "col_a9", "col_b1", ], true)
         {
@@ -19064,8 +18831,7 @@ namespace GeneratedCode.Документи
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, АктВиконанихРобіт_Const.FULLNAME + " *");
+            Caption = АктВиконанихРобіт_Const.FULLNAME + " *";
             
                 await АктВиконанихРобіт_Triggers.New(this);
               
@@ -19102,8 +18868,7 @@ namespace GeneratedCode.Документи
                     await Послуги_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -19140,7 +18905,7 @@ namespace GeneratedCode.Документи
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, НомерДок, Коментар, КлючовіСловаДляПошуку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -19716,9 +19481,6 @@ namespace GeneratedCode.Документи
 
     public class ВведенняЗалишків_Objest : DocumentObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ВведенняЗалишків_Objest() : base(Config.Kernel, "tab_a83", ВведенняЗалишків_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_c8", "col_d5", "col_c9", "col_d2", "col_d3", "col_d4", "col_a1", "col_d1", "col_a3", "col_a2", "col_a4", ], true)
         {
@@ -19734,8 +19496,7 @@ namespace GeneratedCode.Документи
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ВведенняЗалишків_Const.FULLNAME + " *");
+            Caption = ВведенняЗалишків_Const.FULLNAME + " *";
             
                 await ВведенняЗалишків_Triggers.New(this);
               
@@ -19771,8 +19532,7 @@ namespace GeneratedCode.Документи
                     await РозрахункиЗКонтрагентами_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -19805,7 +19565,7 @@ namespace GeneratedCode.Документи
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, НомерДок, Коментар, КлючовіСловаДляПошуку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -20704,9 +20464,6 @@ namespace GeneratedCode.Документи
 
     public class НадлишкиТоварів_Objest : DocumentObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public НадлишкиТоварів_Objest() : base(Config.Kernel, "tab_a88", НадлишкиТоварів_Const.TYPE,
              ["col_f6", "col_f7", "col_f8", "col_f9", "col_g1", "docnomer", "docdate", "docname", "col_a1", "col_a2", ], true)
         {
@@ -20719,8 +20476,7 @@ namespace GeneratedCode.Документи
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, НадлишкиТоварів_Const.FULLNAME + " *");
+            Caption = НадлишкиТоварів_Const.FULLNAME + " *";
             
                 await ValueTask.FromResult(true);
               
@@ -20749,8 +20505,7 @@ namespace GeneratedCode.Документи
                     await Товари_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -20777,7 +20532,7 @@ namespace GeneratedCode.Документи
                 await BaseWriteFullTextSearch(GetBasis(), [КлючовіСловаДляПошуку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -21167,9 +20922,6 @@ namespace GeneratedCode.Документи
 
     public class ПересортицяТоварів_Objest : DocumentObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ПересортицяТоварів_Objest() : base(Config.Kernel, "tab_a90", ПересортицяТоварів_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_h2", "col_h3", "col_h4", "col_h5", "col_h6", "col_a1", "col_a2", ], true)
         {
@@ -21182,8 +20934,7 @@ namespace GeneratedCode.Документи
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ПересортицяТоварів_Const.FULLNAME + " *");
+            Caption = ПересортицяТоварів_Const.FULLNAME + " *";
             
                 await ValueTask.FromResult(true);
               
@@ -21212,8 +20963,7 @@ namespace GeneratedCode.Документи
                     await Товари_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -21240,7 +20990,7 @@ namespace GeneratedCode.Документи
                 await BaseWriteFullTextSearch(GetBasis(), [КлючовіСловаДляПошуку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -21643,9 +21393,6 @@ namespace GeneratedCode.Документи
 
     public class ПерерахунокТоварів_Objest : DocumentObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ПерерахунокТоварів_Objest() : base(Config.Kernel, "tab_a92", ПерерахунокТоварів_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_i6", "col_i7", "col_i5", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", ], true)
         {
@@ -21658,8 +21405,7 @@ namespace GeneratedCode.Документи
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ПерерахунокТоварів_Const.FULLNAME + " *");
+            Caption = ПерерахунокТоварів_Const.FULLNAME + " *";
             
                 await ПерерахунокТоварів_Triggers.New(this);
               
@@ -21689,8 +21435,7 @@ namespace GeneratedCode.Документи
                     await Товари_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -21720,7 +21465,7 @@ namespace GeneratedCode.Документи
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, Коментар, КлючовіСловаДляПошуку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -22150,9 +21895,6 @@ namespace GeneratedCode.Документи
 
     public class ПсуванняТоварів_Objest : DocumentObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ПсуванняТоварів_Objest() : base(Config.Kernel, "tab_a94", ПсуванняТоварів_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a6", "col_a7", "col_a4", "col_a8", "col_a1", "col_a5", "col_a2", "col_a3", "col_b2", ], true)
         {
@@ -22165,8 +21907,7 @@ namespace GeneratedCode.Документи
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ПсуванняТоварів_Const.FULLNAME + " *");
+            Caption = ПсуванняТоварів_Const.FULLNAME + " *";
             
                 await ПсуванняТоварів_Triggers.New(this);
               
@@ -22197,8 +21938,7 @@ namespace GeneratedCode.Документи
                     await Товари_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -22229,7 +21969,7 @@ namespace GeneratedCode.Документи
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, Причина, Коментар, КлючовіСловаДляПошуку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -22692,9 +22432,6 @@ namespace GeneratedCode.Документи
 
     public class ВнутрішнєСпоживанняТоварів_Objest : DocumentObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ВнутрішнєСпоживанняТоварів_Objest() : base(Config.Kernel, "tab_b07", ВнутрішнєСпоживанняТоварів_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_b1", "col_a2", "col_a9", "col_a8", "col_b7", "col_b9", "col_b4", "col_b2", "col_a3", ], true)
         {
@@ -22707,8 +22444,7 @@ namespace GeneratedCode.Документи
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ВнутрішнєСпоживанняТоварів_Const.FULLNAME + " *");
+            Caption = ВнутрішнєСпоживанняТоварів_Const.FULLNAME + " *";
             
                 await ВнутрішнєСпоживанняТоварів_Triggers.New(this);
               
@@ -22740,8 +22476,7 @@ namespace GeneratedCode.Документи
                     await Товари_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -22773,7 +22508,7 @@ namespace GeneratedCode.Документи
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, НомерДок, Коментар, КлючовіСловаДляПошуку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -23246,9 +22981,6 @@ namespace GeneratedCode.Документи
 
     public class РахунокФактура_Objest : DocumentObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public РахунокФактура_Objest() : base(Config.Kernel, "tab_b10", РахунокФактура_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_b4", "col_b5", "col_b6", "col_b7", "col_b8", "col_a1", "col_a3", "col_a4", "col_a5", "col_a6", "col_b9", "col_c2", "col_c3", "col_c4", "col_c1", "col_a2", "col_a7", "col_a8", ], true)
         {
@@ -23261,8 +22993,7 @@ namespace GeneratedCode.Документи
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, РахунокФактура_Const.FULLNAME + " *");
+            Caption = РахунокФактура_Const.FULLNAME + " *";
             
                 await РахунокФактура_Triggers.New(this);
               
@@ -23302,8 +23033,7 @@ namespace GeneratedCode.Документи
                     await Товари_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -23343,7 +23073,7 @@ namespace GeneratedCode.Документи
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, НомерДок, Коментар, КлючовіСловаДляПошуку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -23966,9 +23696,6 @@ namespace GeneratedCode.Документи
 
     public class РозміщенняТоварівНаСкладі_Objest : DocumentObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public РозміщенняТоварівНаСкладі_Objest() : base(Config.Kernel, "tab_a64", РозміщенняТоварівНаСкладі_Const.TYPE,
              ["docname", "docdate", "docnomer", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", ], true)
         {
@@ -23981,8 +23708,7 @@ namespace GeneratedCode.Документи
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, РозміщенняТоварівНаСкладі_Const.FULLNAME + " *");
+            Caption = РозміщенняТоварівНаСкладі_Const.FULLNAME + " *";
             
                 await РозміщенняТоварівНаСкладі_Triggers.New(this);
               
@@ -24012,8 +23738,7 @@ namespace GeneratedCode.Документи
                     await Товари_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -24043,7 +23768,7 @@ namespace GeneratedCode.Документи
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, НомерДок, Коментар, КлючовіСловаДляПошуку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -24485,9 +24210,6 @@ namespace GeneratedCode.Документи
 
     public class ПереміщенняТоварівНаСкладі_Objest : DocumentObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ПереміщенняТоварівНаСкладі_Objest() : base(Config.Kernel, "tab_b09", ПереміщенняТоварівНаСкладі_Const.TYPE,
              ["docname", "docdate", "docnomer", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", ], true)
         {
@@ -24500,8 +24222,7 @@ namespace GeneratedCode.Документи
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ПереміщенняТоварівНаСкладі_Const.FULLNAME + " *");
+            Caption = ПереміщенняТоварівНаСкладі_Const.FULLNAME + " *";
             
                 await ПереміщенняТоварівНаСкладі_Triggers.New(this);
               
@@ -24530,8 +24251,7 @@ namespace GeneratedCode.Документи
                     await Товари_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -24560,7 +24280,7 @@ namespace GeneratedCode.Документи
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, НомерДок, Коментар, КлючовіСловаДляПошуку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -25007,9 +24727,6 @@ namespace GeneratedCode.Документи
 
     public class ЗбіркаТоварівНаСкладі_Objest : DocumentObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ЗбіркаТоварівНаСкладі_Objest() : base(Config.Kernel, "tab_b27", ЗбіркаТоварівНаСкладі_Const.TYPE,
              ["docname", "docdate", "docnomer", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", ], true)
         {
@@ -25022,8 +24739,7 @@ namespace GeneratedCode.Документи
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ЗбіркаТоварівНаСкладі_Const.FULLNAME + " *");
+            Caption = ЗбіркаТоварівНаСкладі_Const.FULLNAME + " *";
             
                 await ЗбіркаТоварівНаСкладі_Triggers.New(this);
               
@@ -25053,8 +24769,7 @@ namespace GeneratedCode.Документи
                     await Товари_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -25084,7 +24799,7 @@ namespace GeneratedCode.Документи
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, НомерДок, Коментар, КлючовіСловаДляПошуку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -25526,9 +25241,6 @@ namespace GeneratedCode.Документи
 
     public class РозміщенняНоменклатуриПоКоміркам_Objest : DocumentObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public РозміщенняНоменклатуриПоКоміркам_Objest() : base(Config.Kernel, "tab_b29", РозміщенняНоменклатуриПоКоміркам_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a2", "col_a1", "col_g9", "col_a4", "col_a3", "col_a5", "col_a6", ], true)
         {
@@ -25541,8 +25253,7 @@ namespace GeneratedCode.Документи
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, РозміщенняНоменклатуриПоКоміркам_Const.FULLNAME + " *");
+            Caption = РозміщенняНоменклатуриПоКоміркам_Const.FULLNAME + " *";
             
                 await РозміщенняНоменклатуриПоКоміркам_Triggers.New(this);
               
@@ -25571,8 +25282,7 @@ namespace GeneratedCode.Документи
                     await Товари_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -25601,7 +25311,7 @@ namespace GeneratedCode.Документи
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, НомерДок, Коментар, КлючовіСловаДляПошуку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -26006,9 +25716,6 @@ namespace GeneratedCode.Документи
 
     public class КорегуванняБоргу_Objest : DocumentObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public КорегуванняБоргу_Objest() : base(Config.Kernel, "tab_a65", КорегуванняБоргу_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_c8", "col_d5", "col_d1", "col_a3", "col_a2", "col_a1", ], true)
         {
@@ -26021,8 +25728,7 @@ namespace GeneratedCode.Документи
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, КорегуванняБоргу_Const.FULLNAME + " *");
+            Caption = КорегуванняБоргу_Const.FULLNAME + " *";
             
                 await КорегуванняБоргу_Triggers.New(this);
               
@@ -26050,8 +25756,7 @@ namespace GeneratedCode.Документи
                     await РозрахункиЗКонтрагентами_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -26079,7 +25784,7 @@ namespace GeneratedCode.Документи
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, НомерДок, Коментар, КлючовіСловаДляПошуку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -26510,9 +26215,6 @@ namespace GeneratedCode.Документи
 
     public class ЗакриттяЗамовленняКлієнта_Objest : DocumentObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ЗакриттяЗамовленняКлієнта_Objest() : base(Config.Kernel, "tab_a96", ЗакриттяЗамовленняКлієнта_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_b4", "col_b5", "col_b6", "col_a2", "col_b8", "col_a1", "col_a6", "col_c2", "col_c4", "col_c1", "col_b2", "col_b3", "col_a3", "col_a4", ], true)
         {
@@ -26525,8 +26227,7 @@ namespace GeneratedCode.Документи
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ЗакриттяЗамовленняКлієнта_Const.FULLNAME + " *");
+            Caption = ЗакриттяЗамовленняКлієнта_Const.FULLNAME + " *";
             
                 await ЗакриттяЗамовленняКлієнта_Triggers.New(this);
               
@@ -26562,8 +26263,7 @@ namespace GeneratedCode.Документи
                     await Товари_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -26599,7 +26299,7 @@ namespace GeneratedCode.Документи
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, НомерДок, Коментар, КлючовіСловаДляПошуку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -27066,9 +26766,6 @@ namespace GeneratedCode.Документи
 
     public class ЗакриттяРахункуФактури_Objest : DocumentObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ЗакриттяРахункуФактури_Objest() : base(Config.Kernel, "tab_b41", ЗакриттяРахункуФактури_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_b4", "col_b5", "col_b6", "col_a2", "col_b8", "col_a1", "col_a6", "col_c2", "col_c4", "col_c1", "col_b2", "col_b3", "col_a3", "col_a4", ], true)
         {
@@ -27081,8 +26778,7 @@ namespace GeneratedCode.Документи
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ЗакриттяРахункуФактури_Const.FULLNAME + " *");
+            Caption = ЗакриттяРахункуФактури_Const.FULLNAME + " *";
             
                 await ЗакриттяРахункуФактури_Triggers.New(this);
               
@@ -27118,8 +26814,7 @@ namespace GeneratedCode.Документи
                     await Товари_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -27155,7 +26850,7 @@ namespace GeneratedCode.Документи
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, НомерДок, Коментар, КлючовіСловаДляПошуку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -27618,9 +27313,6 @@ namespace GeneratedCode.Документи
 
     public class ЗакриттяЗамовленняПостачальнику_Objest : DocumentObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ЗакриттяЗамовленняПостачальнику_Objest() : base(Config.Kernel, "tab_b44", ЗакриттяЗамовленняПостачальнику_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_b4", "col_b5", "col_b6", "col_a2", "col_b8", "col_a1", "col_a6", "col_c2", "col_c4", "col_c1", "col_b2", "col_b3", "col_a3", "col_a4", ], true)
         {
@@ -27633,8 +27325,7 @@ namespace GeneratedCode.Документи
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ЗакриттяЗамовленняПостачальнику_Const.FULLNAME + " *");
+            Caption = ЗакриттяЗамовленняПостачальнику_Const.FULLNAME + " *";
             
                 await ЗакриттяЗамовленняПостачальнику_Triggers.New(this);
               
@@ -27670,8 +27361,7 @@ namespace GeneratedCode.Документи
                     await Товари_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -27707,7 +27397,7 @@ namespace GeneratedCode.Документи
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, НомерДок, Коментар, КлючовіСловаДляПошуку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -28167,9 +27857,6 @@ namespace GeneratedCode.Документи
 
     public class ЧекККМ_Objest : DocumentObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
         public ЧекККМ_Objest() : base(Config.Kernel, "tab_b51", ЧекККМ_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a7", "col_a8", "col_a9", "col_b1", "col_a6", "col_b2", ], true)
         {
@@ -28182,8 +27869,7 @@ namespace GeneratedCode.Документи
         public async ValueTask New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ЧекККМ_Const.FULLNAME + " *");
+            Caption = ЧекККМ_Const.FULLNAME + " *";
             
                 await ЧекККМ_Triggers.New(this);
               
@@ -28216,8 +27902,7 @@ namespace GeneratedCode.Документи
                     await Товари_TablePart.Read();
                 }
                 
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+                Caption = string.Join(", ", [Назва, ]);
                 return true;
             }
             else
@@ -28250,7 +27935,7 @@ namespace GeneratedCode.Документи
                 await BaseWriteFullTextSearch(GetBasis(), [Коментар, КлючовіСловаДляПошуку, ]);
                 
             }
-            CaptionChanged?.Invoke(this, string.Join(", ", [Назва, ]));
+            Caption = string.Join(", ", [Назва, ]);
             return result;
         }
 
@@ -28890,17 +28575,13 @@ namespace GeneratedCode.РегістриВідомостей
 
     public class ЦіниНоменклатури_Objest : RegisterInformationObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
 		    public ЦіниНоменклатури_Objest() : base(Config.Kernel, "tab_a40",
              ["col_f5", "col_f6", "col_f7", "col_f8", "col_f9", "col_g2", ]) { }
 
         public void New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ЦіниНоменклатури_Const.FULLNAME + " *");
+            Caption = ЦіниНоменклатури_Const.FULLNAME + " *";
         }
 
         public async ValueTask<bool> Read(UnigueID uid)
@@ -28915,8 +28596,7 @@ namespace GeneratedCode.РегістриВідомостей
                 Валюта = new Довідники.Валюти_Pointer(base.FieldValue["col_g2"]);
                 
                 BaseClear();
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Period.ToString(), ]));
+                Caption = string.Join(", ", [Period.ToString(), ]);
                 return true;
             }
             else
@@ -28933,7 +28613,7 @@ namespace GeneratedCode.РегістриВідомостей
             base.FieldValue["col_g2"] = Валюта.UnigueID.UGuid;
             
             bool result = await BaseSave();
-            CaptionChanged?.Invoke(this, string.Join(", ", [Period.ToString(), ]));
+            Caption = string.Join(", ", [Period.ToString(), ]);
             return result;
         }
 
@@ -29088,17 +28768,13 @@ namespace GeneratedCode.РегістриВідомостей
 
     public class КурсиВалют_Objest : RegisterInformationObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
 		    public КурсиВалют_Objest() : base(Config.Kernel, "tab_a59",
              ["col_a1", "col_a2", "col_a3", ]) { }
 
         public void New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, КурсиВалют_Const.FULLNAME + " *");
+            Caption = КурсиВалют_Const.FULLNAME + " *";
         }
 
         public async ValueTask<bool> Read(UnigueID uid)
@@ -29110,8 +28786,7 @@ namespace GeneratedCode.РегістриВідомостей
                 Кратність = (base.FieldValue["col_a3"] != DBNull.Value) ? (int)base.FieldValue["col_a3"] : 0;
                 
                 BaseClear();
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Period.ToString(), Курс, ]));
+                Caption = string.Join(", ", [Period.ToString(), Курс, ]);
                 return true;
             }
             else
@@ -29125,7 +28800,7 @@ namespace GeneratedCode.РегістриВідомостей
             base.FieldValue["col_a3"] = Кратність;
             
             bool result = await BaseSave();
-            CaptionChanged?.Invoke(this, string.Join(", ", [Period.ToString(), Курс, ]));
+            Caption = string.Join(", ", [Period.ToString(), Курс, ]);
             return result;
         }
 
@@ -29284,17 +28959,13 @@ namespace GeneratedCode.РегістриВідомостей
 
     public class ШтрихкодиНоменклатури_Objest : RegisterInformationObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
 		    public ШтрихкодиНоменклатури_Objest() : base(Config.Kernel, "tab_b17",
              ["col_a1", "col_a2", "col_a3", "col_a4", ]) { }
 
         public void New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ШтрихкодиНоменклатури_Const.FULLNAME + " *");
+            Caption = ШтрихкодиНоменклатури_Const.FULLNAME + " *";
         }
 
         public async ValueTask<bool> Read(UnigueID uid)
@@ -29307,8 +28978,7 @@ namespace GeneratedCode.РегістриВідомостей
                 Пакування = new Довідники.ПакуванняОдиниціВиміру_Pointer(base.FieldValue["col_a4"]);
                 
                 BaseClear();
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Period.ToString(), Штрихкод, ]));
+                Caption = string.Join(", ", [Period.ToString(), Штрихкод, ]);
                 return true;
             }
             else
@@ -29323,7 +28993,7 @@ namespace GeneratedCode.РегістриВідомостей
             base.FieldValue["col_a4"] = Пакування.UnigueID.UGuid;
             
             bool result = await BaseSave();
-            CaptionChanged?.Invoke(this, string.Join(", ", [Period.ToString(), Штрихкод, ]));
+            Caption = string.Join(", ", [Period.ToString(), Штрихкод, ]);
             return result;
         }
 
@@ -29466,17 +29136,13 @@ namespace GeneratedCode.РегістриВідомостей
 
     public class ФайлиДокументів_Objest : RegisterInformationObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
 		    public ФайлиДокументів_Objest() : base(Config.Kernel, "tab_b23",
              ["col_a1", ]) { }
 
         public void New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, ФайлиДокументів_Const.FULLNAME + " *");
+            Caption = ФайлиДокументів_Const.FULLNAME + " *";
         }
 
         public async ValueTask<bool> Read(UnigueID uid)
@@ -29486,8 +29152,7 @@ namespace GeneratedCode.РегістриВідомостей
                 Файл = new Довідники.Файли_Pointer(base.FieldValue["col_a1"]);
                 
                 BaseClear();
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Period.ToString(), ]));
+                Caption = string.Join(", ", [Period.ToString(), ]);
                 return true;
             }
             else
@@ -29499,7 +29164,7 @@ namespace GeneratedCode.РегістриВідомостей
             base.FieldValue["col_a1"] = Файл.UnigueID.UGuid;
             
             bool result = await BaseSave();
-            CaptionChanged?.Invoke(this, string.Join(", ", [Period.ToString(), ]));
+            Caption = string.Join(", ", [Period.ToString(), ]);
             return result;
         }
 
@@ -29657,17 +29322,13 @@ namespace GeneratedCode.РегістриВідомостей
 
     public class РозміщенняНоменклатуриПоКоміркамНаСкладі_Objest : RegisterInformationObject
     {
-        public event EventHandler<UnigueID>? UnigueIDChanged;
-        public event EventHandler<string>? CaptionChanged;
-
 		    public РозміщенняНоменклатуриПоКоміркамНаСкладі_Objest() : base(Config.Kernel, "tab_a74",
              ["col_a1", "col_a2", "col_a3", "col_a4", ]) { }
 
         public void New()
         {
             BaseNew();
-            UnigueIDChanged?.Invoke(this, base.UnigueID);
-            CaptionChanged?.Invoke(this, РозміщенняНоменклатуриПоКоміркамНаСкладі_Const.FULLNAME + " *");
+            Caption = РозміщенняНоменклатуриПоКоміркамНаСкладі_Const.FULLNAME + " *";
         }
 
         public async ValueTask<bool> Read(UnigueID uid)
@@ -29680,8 +29341,7 @@ namespace GeneratedCode.РегістриВідомостей
                 Комірка = new Довідники.СкладськіКомірки_Pointer(base.FieldValue["col_a4"]);
                 
                 BaseClear();
-                UnigueIDChanged?.Invoke(this, base.UnigueID);
-                CaptionChanged?.Invoke(this, string.Join(", ", [Period.ToString(), ]));
+                Caption = string.Join(", ", [Period.ToString(), ]);
                 return true;
             }
             else
@@ -29696,7 +29356,7 @@ namespace GeneratedCode.РегістриВідомостей
             base.FieldValue["col_a4"] = Комірка.UnigueID.UGuid;
             
             bool result = await BaseSave();
-            CaptionChanged?.Invoke(this, string.Join(", ", [Period.ToString(), ]));
+            Caption = string.Join(", ", [Period.ToString(), ]);
             return result;
         }
 
