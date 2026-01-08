@@ -131,7 +131,7 @@ public class ПоступленняТоварівТаПослуг_Табличн
                 ItemRow? row = (ItemRow?)listItem.Item;
                 if (cell != null && row != null)
                 {
-                    cell.OnActivate = () => Grid.Model.SelectItem(listItem.Position, true);
+                    cell.OnActivate = () => Grid.Model.SelectItem(listItem.Position, false);
                     cell.OnSelect = async () => row.Номенклатура = cell.Pointer;
                     (row.Сhanged_Номенклатура = () => cell.Pointer = row.Номенклатура).Invoke();
                 }
