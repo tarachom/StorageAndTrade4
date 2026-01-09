@@ -12,7 +12,7 @@ using GeneratedCode;
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
 
-public class ПоступленняТоварівТаПослуг_ТабличнаЧастина_Товари : Box
+public class ПоступленняТоварівТаПослуг_ТабличнаЧастина_Товари : DocumentFormTablePart
 {
     public ПоступленняТоварівТаПослуг_Objest? ЕлементВласник { get; set; }
 
@@ -66,32 +66,41 @@ public class ПоступленняТоварівТаПослуг_Табличн
         }
         decimal Довжина_ = 0.01m;
         public Action? Сhanged_Довжина;
+
+        /*
+        Функції
+        */
+
+        /// <summary>
+        /// Копіювання
+        /// </summary>
+        public override ItemRow Copy()
+        {
+            return new()
+            {
+                Номенклатура = Номенклатура.Copy(),
+                Кількість = Кількість,
+                Довжина = Довжина
+            };
+        }
     }
 
     #endregion
 
-    Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());
+    /// <summary>
+    /// Перевизначення сховища для нового типу даних 
+    /// </summary>
+    protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());
 
-    ColumnView Grid { get; }
-
-    public ПоступленняТоварівТаПослуг_ТабличнаЧастина_Товари()
+    public ПоступленняТоварівТаПослуг_ТабличнаЧастина_Товари() : base(Program.BasicForm?.NotebookFunc)
     {
-        SetOrientation(Orientation.Vertical);
-
         MultiSelection model = MultiSelection.New(Store);
-
-        Grid = ColumnView.New(model);
-        Grid.Reorderable = false;
-        Columns();
-
-        ScrolledWindow scroll = ScrolledWindow.New();
-        scroll.SetPolicy(PolicyType.Automatic, PolicyType.Automatic);
-        scroll.Vexpand = true;
-        scroll.SetChild(Grid);
-        Append(scroll);
+        model.OnSelectionChanged += GridOnSelectionChanged;
+        
+        Grid.Model = model;
     }
 
-    void Columns()
+    protected override void Columns()
     {
         //Номер рядка
         {
@@ -131,14 +140,13 @@ public class ПоступленняТоварівТаПослуг_Табличн
                 ItemRow? row = (ItemRow?)listItem.Item;
                 if (cell != null && row != null)
                 {
-                    cell.OnActivate = () => Grid.Model.SelectItem(listItem.Position, false);
                     cell.OnSelect = async () => row.Номенклатура = cell.Pointer;
                     (row.Сhanged_Номенклатура = () => cell.Pointer = row.Номенклатура).Invoke();
                 }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
             column.Resizable = true;
-            //column.Expand = true;
+            column.FixedWidth = 500;
             Grid.AppendColumn(column);
         }
 
@@ -194,7 +202,7 @@ public class ПоступленняТоварівТаПослуг_Табличн
         }
     }
 
-    public async ValueTask LoadRecords()
+    public override async ValueTask LoadRecords()
     {
         if (ЕлементВласник != null)
         {
@@ -209,10 +217,16 @@ public class ПоступленняТоварівТаПослуг_Табличн
                     NumberRow = record.НомерРядка,
                     Номенклатура = record.Номенклатура
                 });
+
+            if (SelectPosition > 0)
+            {
+                Grid.Model.SelectItem(SelectPosition, true);
+                ScrollTo(SelectPosition);
+            }
         }
     }
 
-    public async ValueTask SaveRecords()
+    public override async ValueTask SaveRecords()
     {
         if (ЕлементВласник != null)
         {
@@ -235,4 +249,9 @@ public class ПоступленняТоварівТаПослуг_Табличн
         }
     }
 
+    public override bool NewRecord()
+    {
+        Store.Append(new ItemRow());
+        return true;
+    }
 }

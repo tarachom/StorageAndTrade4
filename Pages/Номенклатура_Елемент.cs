@@ -12,7 +12,7 @@ using InterfaceGtk4;
 using GeneratedCode.Довідники;
 using GeneratedCode.Перелічення;
 
-partial class Номенклатура_Елемент : DirectoryElement
+partial class Номенклатура_Елемент : DirectoryFormElement
 {
     public Номенклатура_Objest Елемент { get; } = new Номенклатура_Objest();
 

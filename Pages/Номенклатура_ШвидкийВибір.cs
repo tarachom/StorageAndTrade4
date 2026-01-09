@@ -13,7 +13,7 @@ using ТабличнийСписок = GeneratedCode.Довідники.Табл
 using Функції = Номенклатура_Функції;
 using Константи = GeneratedCode.Довідники.Номенклатура_Const;
 
-partial class Номенклатура_ШвидкийВибір : DirectoryJournalSmall
+partial class Номенклатура_ШвидкийВибір : DirectoryFormJournalSmall
 {
     public Номенклатура_ШвидкийВибір() : base(Program.BasicForm?.NotebookFunc)
     {

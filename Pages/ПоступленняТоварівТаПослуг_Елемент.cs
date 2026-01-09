@@ -17,7 +17,7 @@ using Перелічення = GeneratedCode.Перелічення;
 
 namespace StorageAndTrade
 {
-    class ПоступленняТоварівТаПослуг_Елемент : DocumentElement
+    class ПоступленняТоварівТаПослуг_Елемент : DocumentFormElement
     {
         public ПоступленняТоварівТаПослуг_Objest Елемент { get; init; } = new ПоступленняТоварівТаПослуг_Objest();
 

@@ -13,7 +13,7 @@ using ТабличнийСписок = GeneratedCode.Документи.Табл
 using Функції = ПоступленняТоварівТаПослуг_Функції;
 using Константи = GeneratedCode.Документи.ПоступленняТоварівТаПослуг_Const;
 
-partial class ПоступленняТоварівТаПослуг_ШвидкийВибір : DocumentJournalSmall
+partial class ПоступленняТоварівТаПослуг_ШвидкийВибір : DocumentFormJournalSmall
 {
     public ПоступленняТоварівТаПослуг_ШвидкийВибір(): base(Program.BasicForm?.NotebookFunc)
     {
