@@ -74,6 +74,24 @@ public class ПоступленняТоварівТаПослуг_Табличн
         decimal Довжина_ = 0.01m;
         public Action? Сhanged_Довжина;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Варіант
+        {
+            get => Варіант_;
+            set
+            {
+                if (Варіант_ != value)
+                {
+                    Варіант_ = value;
+                    Сhanged_Варіант?.Invoke();
+                }
+            }
+        }
+        string Варіант_ = "a";
+        public Action? Сhanged_Варіант;
+
         /*
         Функції
         */
@@ -204,6 +222,35 @@ public class ПоступленняТоварівТаПослуг_Табличн
                 }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Довжина", factory);
+            column.Resizable = true;
+            column.FixedWidth = 100;
+            Grid.AppendColumn(column);
+        }
+
+        //Варіант
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = new ComboTextTablePartCell();
+                cell.Combo.Append("a", "a");
+                cell.Combo.Append("b", "b");
+                cell.Combo.Append("c", "c");
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = (ComboTextTablePartCell?)listItem.Child;
+                ItemRow? row = (ItemRow?)listItem.Item;
+                if (cell != null && row != null)
+                {
+                    cell.OnСhanged = () => row.Варіант = cell.Value;
+                    (row.Сhanged_Варіант = () => cell.Value = row.Варіант).Invoke();
+                }
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("Варіант", factory);
             column.Resizable = true;
             column.FixedWidth = 100;
             Grid.AppendColumn(column);

@@ -84,6 +84,7 @@ columnview listview row cell box.pointer .button {
     min-width: 0;
     border-radius: 0;
     border: 0;
+    background: transparent;
 }
 
 /* Текст для PointerTablePartCell */
@@ -93,7 +94,7 @@ columnview listview row cell box.pointer .text {
 }
 
 /* IntegerTablePartCell */
-columnview listview row cell box.integer entry, 
+columnview listview row cell box.integer entry,
 columnview listview row cell box.numeric entry {
     padding-left: 3px;
     padding-right: 3px;
@@ -102,16 +103,27 @@ columnview listview row cell box.numeric entry {
     min-width: 0;
     border-radius: 0;
     border: 0;
+    background: transparent;
 }
 
 /* Для підсвітки помилки */
 columnview listview row cell box.integer entry.error,
 columnview listview row cell box.numeric entry.error {
-    border: 0px solid red;
+    border: 1px solid red;
+}
+
+/* Для ComboTextTablePartCell */
+columnview listview row cell box.combotext combobox button.combo {
+    padding: 0px 3px;
+    margin: 0;
+    min-height: 0;
+    min-width: 0;
+    border-radius: 0;
+    border: 0;
+    background: transparent;
 }
 
 /* <<<--------------- Клітинки табличної частини ------------------ */
-
 
 
 
