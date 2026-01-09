@@ -9,9 +9,9 @@ using GeneratedCode;
 
 namespace StorageAndTrade
 {
-    class LockObjects : InterfaceGtk4.LockObjects
+    class LockObjectsView : InterfaceGtk4.LockObjectsView
     {
-        public LockObjects(int widthRequest = 800, int heightRequest = 500) : base(Config.Kernel, widthRequest, heightRequest) { }
+        public LockObjectsView(int widthRequest = 800, int heightRequest = 500) : base(Config.Kernel, widthRequest, heightRequest) { }
 
         protected override async ValueTask<CompositePointerPresentation_Record> CompositePointerPresentation(UuidAndText uuidAndText)
         {

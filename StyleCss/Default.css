@@ -59,22 +59,23 @@ columnview listview row cell:not(:first-child) {
     border-left: 1px solid shade(#b8b8b8, 1.2);
 }
 
-/* Базовий клас для *TablePartControl */
+/* ------------------ Клітинки табличної частини --------------->>> */
+
+/* Базовий клас для *TablePartCell */
 columnview listview row cell box.base {
     padding: 3px 6px;
 }
 
-/* Варіант відображення для типу даних numeric для LabelTablePartControl */
+/* 
+Варіант відображення для типу даних numeric для LabelTablePartCell 
+Відображення числа як текст
+*/
 columnview listview row cell box.numeric {
     color: green;
-    background-color: rgba(238, 238, 220, 0.541);
-    /*font-weight: bold;*/
+    background-color: rgba(238, 238, 220, 0.2);
 }
 
-/* Базовий клас для PointerTablePartControl */
-columnview listview row cell box.pointer {}
-
-/* Кнопки для PointerTablePartControl */
+/* Кнопки для PointerTablePartCell */
 columnview listview row cell box.pointer .button {
     padding-left: 3px;
     padding-right: 3px;
@@ -82,18 +83,37 @@ columnview listview row cell box.pointer .button {
     min-height: 0;
     min-width: 0;
     border-radius: 0;
-    border: 0px;
+    border: 0;
 }
 
+/* Текст для PointerTablePartCell */
 columnview listview row cell box.pointer .text {
     padding-left: 3px;
     padding-right: 3px;
-    /*margin: 0;
+}
+
+/* IntegerTablePartCell */
+columnview listview row cell box.integer entry, 
+columnview listview row cell box.numeric entry {
+    padding-left: 3px;
+    padding-right: 3px;
+    margin: 0;
     min-height: 0;
     min-width: 0;
     border-radius: 0;
-    border: 0px;*/
+    border: 0;
 }
+
+/* Для підсвітки помилки */
+columnview listview row cell box.integer entry.error,
+columnview listview row cell box.numeric entry.error {
+    border: 0px solid red;
+}
+
+/* <<<--------------- Клітинки табличної частини ------------------ */
+
+
+
 
 /* Для Log */
 textview.log_text_terminal {

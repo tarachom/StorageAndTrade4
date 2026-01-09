@@ -7,8 +7,6 @@ namespace StorageAndTrade;
 
 using Gtk;
 using InterfaceGtk4;
-using AccountingSoftware;
-using GeneratedCode;
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
 
@@ -28,9 +26,12 @@ public class ПоступленняТоварівТаПослуг_Табличн
             get => Номенклатура_;
             set
             {
-                Номенклатура_ = value;
-                Кількість++;
-                Сhanged_Номенклатура?.Invoke();
+                if (!Номенклатура_.Equals(value))
+                {
+                    Номенклатура_ = value;
+                    Кількість++;
+                    Сhanged_Номенклатура?.Invoke();
+                }
             }
         }
         Номенклатура_Pointer Номенклатура_ = new();
@@ -44,12 +45,15 @@ public class ПоступленняТоварівТаПослуг_Табличн
             get => Кількість_;
             set
             {
-                Кількість_ = value;
-                Довжина = Кількість * 0.2m;
-                Сhanged_Кількість?.Invoke();
+                if (Кількість_ != value)
+                {
+                    Кількість_ = value;
+                    Довжина = Кількість * 0.2m;
+                    Сhanged_Кількість?.Invoke();
+                }
             }
         }
-        int Кількість_ = 1;
+        int Кількість_ = 0;
         public Action? Сhanged_Кількість;
 
         /// <summary>
@@ -60,8 +64,11 @@ public class ПоступленняТоварівТаПослуг_Табличн
             get => Довжина_;
             set
             {
-                Довжина_ = value;
-                Сhanged_Довжина?.Invoke();
+                if (Довжина_ != value)
+                {
+                    Довжина_ = value;
+                    Сhanged_Довжина?.Invoke();
+                }
             }
         }
         decimal Довжина_ = 0.01m;
@@ -96,7 +103,7 @@ public class ПоступленняТоварівТаПослуг_Табличн
     {
         MultiSelection model = MultiSelection.New(Store);
         model.OnSelectionChanged += GridOnSelectionChanged;
-        
+
         Grid.Model = model;
     }
 
@@ -156,19 +163,23 @@ public class ПоступленняТоварівТаПослуг_Табличн
             factory.OnSetup += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = LabelTablePartCell.NewFromType("integer");
+                var cell = new IntegerTablePartCell();
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = (LabelTablePartCell?)listItem.Child;
+                var cell = (IntegerTablePartCell?)listItem.Child;
                 ItemRow? row = (ItemRow?)listItem.Item;
                 if (cell != null && row != null)
-                    (row.Сhanged_Кількість = () => cell.SetText(row.Кількість)).Invoke();
+                {
+                    cell.OnСhanged = () => row.Кількість = cell.Value;
+                    (row.Сhanged_Кількість = () => cell.Value = row.Кількість).Invoke();
+                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
             column.Resizable = true;
+            column.FixedWidth = 100;
             Grid.AppendColumn(column);
         }
 
@@ -178,19 +189,23 @@ public class ПоступленняТоварівТаПослуг_Табличн
             factory.OnSetup += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = LabelTablePartCell.NewFromType("numeric");
+                var cell = new NumericTablePartCell();
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = (LabelTablePartCell?)listItem.Child;
+                var cell = (NumericTablePartCell?)listItem.Child;
                 ItemRow? row = (ItemRow?)listItem.Item;
                 if (cell != null && row != null)
-                    (row.Сhanged_Довжина = () => cell.SetText(row.Довжина)).Invoke();
+                {
+                    cell.OnСhanged = () => row.Довжина = cell.Value;
+                    (row.Сhanged_Довжина = () => cell.Value = row.Довжина).Invoke();
+                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Довжина", factory);
             column.Resizable = true;
+            column.FixedWidth = 100;
             Grid.AppendColumn(column);
         }
 
