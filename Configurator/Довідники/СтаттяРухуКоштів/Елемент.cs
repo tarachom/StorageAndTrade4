@@ -18,8 +18,8 @@ class СтаттяРухуКоштів_Елемент : DirectoryFormElement
     public СтаттяРухуКоштів_Objest Елемент { get; init; } = new СтаттяРухуКоштів_Objest();
     
     #region Fields
-    Entry Назва = new() { WidthRequest = 500 };
-                    Entry Код = new() { WidthRequest = 500 };
+    Entry Код = new() { WidthRequest = 100 };
+                    Entry Назва = new() { WidthRequest = 500 };
                     Entry КореспондуючийРахунок = new() { WidthRequest = 500 };
                     ComboBoxText ВидРухуКоштів = new ComboBoxText();
             Entry Опис = new() { WidthRequest = 500 };
@@ -50,17 +50,17 @@ class СтаттяРухуКоштів_Елемент : DirectoryFormElement
     protected override void CreateStart(Box vBox)
     {
         
-            // Назва
-            CreateField(vBox, "Назва:", Назва);
-                        
             // Код
             CreateField(vBox, "Код:", Код);
                         
+            // Назва
+            CreateField(vBox, "Назва:", Назва);
+                        
             // КореспондуючийРахунок
-            CreateField(vBox, "КореспондуючийРахунок:", КореспондуючийРахунок);
+            CreateField(vBox, "Кореспондуючий рахунок:", КореспондуючийРахунок);
                         
             // ВидРухуКоштів
-            CreateField(vBox, "ВидРухуКоштів:", ВидРухуКоштів);
+            CreateField(vBox, "Вид руху коштів:", ВидРухуКоштів);
                 
             // Опис
             CreateField(vBox, "Опис:", Опис);
@@ -76,8 +76,8 @@ class СтаттяРухуКоштів_Елемент : DirectoryFormElement
 
     public override async ValueTask AssignValue()
     {
-        Назва.SetText(Елемент.Назва);
-                        Код.SetText(Елемент.Код);
+        Код.SetText(Елемент.Код);
+                        Назва.SetText(Елемент.Назва);
                         КореспондуючийРахунок.SetText(Елемент.КореспондуючийРахунок);
                         ВидРухуКоштів.ActiveId = Елемент.ВидРухуКоштів.ToString();
                 Опис.SetText(Елемент.Опис);
@@ -86,8 +86,8 @@ class СтаттяРухуКоштів_Елемент : DirectoryFormElement
 
     protected override void GetValue()
     {
-        Елемент.Назва = Назва.GetText();
-                        Елемент.Код = Код.GetText();
+        Елемент.Код = Код.GetText();
+                        Елемент.Назва = Назва.GetText();
                         Елемент.КореспондуючийРахунок = КореспондуючийРахунок.GetText();
                         Елемент.ВидРухуКоштів = ПсевдонімиПерелічення.ВидиРухуКоштів_FindByName(ВидРухуКоштів.ActiveId);
                 Елемент.Опис = Опис.GetText();
@@ -107,7 +107,7 @@ class СтаттяРухуКоштів_Елемент : DirectoryFormElement
                 isSaved = true;
             }
         }
-        catch
+        catch (Exception ex)
         {
             //ФункціїДляПовідомлень.ДодатиПовідомлення(Елемент.GetBasis(), Caption, ex);
         }

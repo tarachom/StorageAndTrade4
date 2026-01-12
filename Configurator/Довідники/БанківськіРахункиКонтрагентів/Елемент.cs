@@ -102,7 +102,7 @@ class БанківськіРахункиКонтрагентів_Елемент 
                 isSaved = true;
             }
         }
-        catch 
+        catch (Exception ex)
         {
             //ФункціїДляПовідомлень.ДодатиПовідомлення(Елемент.GetBasis(), Caption, ex);
         }

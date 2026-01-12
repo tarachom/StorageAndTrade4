@@ -61,7 +61,7 @@ class ХарактеристикиНоменклатури_Елемент : Dire
 
     #region Присвоєння / зчитування значень
 
-    public override  async ValueTask AssignValue()
+    public override async ValueTask AssignValue()
     {
         
         if (IsNew) 
@@ -95,7 +95,7 @@ class ХарактеристикиНоменклатури_Елемент : Dire
                 isSaved = true;
             }
         }
-        catch 
+        catch (Exception ex)
         {
             //ФункціїДляПовідомлень.ДодатиПовідомлення(Елемент.GetBasis(), Caption, ex);
         }

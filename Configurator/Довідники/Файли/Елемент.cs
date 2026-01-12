@@ -18,11 +18,10 @@ class Файли_Елемент : DirectoryFormElement
     public Файли_Objest Елемент { get; init; } = new Файли_Objest();
     
     #region Fields
-    Entry Код = new() { WidthRequest = 500 };
+    Entry Код = new() { WidthRequest = 100 };
                     Entry Назва = new() { WidthRequest = 500 };
                     Entry НазваФайлу = new() { WidthRequest = 500 };
-                    //byte[] БінарніДані = [];
-            Entry Розмір = new() { WidthRequest = 500 };
+                    Entry Розмір = new() { WidthRequest = 500 };
                     DateTimeControl ДатаСтворення = new();
             
     #endregion
@@ -47,14 +46,13 @@ class Файли_Елемент : DirectoryFormElement
             CreateField(vBox, "Назва:", Назва);
                         
             // НазваФайлу
-            CreateField(vBox, "НазваФайлу:", НазваФайлу);
+            CreateField(vBox, "Назва файлу:", НазваФайлу);
                         
-            // БінарніДані
             // Розмір
             CreateField(vBox, "Розмір:", Розмір);
                         
             // ДатаСтворення
-            CreateField(vBox, "ДатаСтворення:", ДатаСтворення);
+            CreateField(vBox, "Дата створення:", ДатаСтворення);
                         
     }
 
@@ -65,13 +63,12 @@ class Файли_Елемент : DirectoryFormElement
 
     #region Присвоєння / зчитування значень
 
-    public override async  ValueTask AssignValue()
+    public override async ValueTask AssignValue()
     {
         Код.SetText(Елемент.Код);
                         Назва.SetText(Елемент.Назва);
                         НазваФайлу.SetText(Елемент.НазваФайлу);
-                        //БінарніДані = Елемент.БінарніДані;
-                Розмір.SetText(Елемент.Розмір);
+                        Розмір.SetText(Елемент.Розмір);
                         ДатаСтворення.Value = Елемент.ДатаСтворення;
                 
     }
@@ -81,8 +78,7 @@ class Файли_Елемент : DirectoryFormElement
         Елемент.Код = Код.GetText();
                         Елемент.Назва = Назва.GetText();
                         Елемент.НазваФайлу = НазваФайлу.GetText();
-                        //Елемент.БінарніДані = БінарніДані;
-                Елемент.Розмір = Розмір.GetText();
+                        Елемент.Розмір = Розмір.GetText();
                         Елемент.ДатаСтворення = ДатаСтворення.Value;
                 
     }
@@ -100,7 +96,7 @@ class Файли_Елемент : DirectoryFormElement
                 isSaved = true;
             }
         }
-        catch 
+        catch (Exception ex)
         {
             //ФункціїДляПовідомлень.ДодатиПовідомлення(Елемент.GetBasis(), Caption, ex);
         }

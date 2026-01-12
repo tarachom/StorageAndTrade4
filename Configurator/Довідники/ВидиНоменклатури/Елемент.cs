@@ -74,7 +74,7 @@ class ВидиНоменклатури_Елемент : DirectoryFormElement
 
     #region Присвоєння / зчитування значень
 
-    public override async  ValueTask AssignValue()
+    public override async ValueTask AssignValue()
     {
         Код.SetText(Елемент.Код);
                         Назва.SetText(Елемент.Назва);
@@ -107,7 +107,7 @@ class ВидиНоменклатури_Елемент : DirectoryFormElement
                 isSaved = true;
             }
         }
-        catch 
+        catch (Exception ex)
         {
             //ФункціїДляПовідомлень.ДодатиПовідомлення(Елемент.GetBasis(), Caption, ex);
         }

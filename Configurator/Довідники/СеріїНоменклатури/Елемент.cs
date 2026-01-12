@@ -44,7 +44,7 @@ class СеріїНоменклатури_Елемент : DirectoryFormElement
             CreateField(vBox, "Коментар:", Коментар);
                         
             // ДатаСтворення
-            CreateField(vBox, "ДатаСтворення:", ДатаСтворення);
+            CreateField(vBox, "Дата створення:", ДатаСтворення);
                         
     }
 
@@ -55,7 +55,7 @@ class СеріїНоменклатури_Елемент : DirectoryFormElement
 
     #region Присвоєння / зчитування значень
 
-    public override  async ValueTask AssignValue()
+    public override async ValueTask AssignValue()
     {
         Номер.SetText(Елемент.Номер);
                         Коментар.SetText(Елемент.Коментар);
@@ -84,7 +84,7 @@ class СеріїНоменклатури_Елемент : DirectoryFormElement
                 isSaved = true;
             }
         }
-        catch 
+        catch (Exception ex)
         {
             //ФункціїДляПовідомлень.ДодатиПовідомлення(Елемент.GetBasis(), Caption, ex);
         }

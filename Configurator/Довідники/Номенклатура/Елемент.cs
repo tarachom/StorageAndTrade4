@@ -18,8 +18,8 @@ class Номенклатура_Елемент : DirectoryFormElement
     public Номенклатура_Objest Елемент { get; init; } = new Номенклатура_Objest();
     
     #region Fields
-    Entry Назва = new() { WidthRequest = 500 };
-                    Entry Код = new() { WidthRequest = 100 };
+    Entry Код = new() { WidthRequest = 100 };
+                    Entry Назва = new() { WidthRequest = 500 };
                     Entry НазваПовна = new() { WidthRequest = 500 };
                     TextView Опис = new TextView() { WrapMode = WrapMode.Word };
                     Entry Артикул = new() { WidthRequest = 500 };
@@ -59,11 +59,11 @@ class Номенклатура_Елемент : DirectoryFormElement
     protected override void CreateStart(Box vBox)
     {
         
-            // Назва
-            CreateField(vBox, "Назва:", Назва);
-                        
             // Код
             CreateField(vBox, "Код:", Код);
+                        
+            // Назва
+            CreateField(vBox, "Назва:", Назва);
                         
             // НазваПовна
             CreateField(vBox, "НазваПовна:", НазваПовна);
@@ -106,8 +106,8 @@ class Номенклатура_Елемент : DirectoryFormElement
 
     public override async ValueTask AssignValue()
     {
-        Назва.SetText(Елемент.Назва);
-                        Код.SetText(Елемент.Код);
+        Код.SetText(Елемент.Код);
+                        Назва.SetText(Елемент.Назва);
                         НазваПовна.SetText(Елемент.НазваПовна);
                         Опис.Buffer?.Text = Елемент.Опис;
                         Артикул.SetText(Елемент.Артикул);
@@ -126,8 +126,8 @@ class Номенклатура_Елемент : DirectoryFormElement
 
     protected override void GetValue()
     {
-        Елемент.Назва = Назва.GetText();
-                        Елемент.Код = Код.GetText();
+        Елемент.Код = Код.GetText();
+                        Елемент.Назва = Назва.GetText();
                         Елемент.НазваПовна = НазваПовна.GetText();
                         Елемент.Опис = Опис.Buffer?.Text ?? "";
                         Елемент.Артикул = Артикул.GetText();

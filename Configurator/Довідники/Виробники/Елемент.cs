@@ -18,8 +18,8 @@ class Виробники_Елемент : DirectoryFormElement
     public Виробники_Objest Елемент { get; init; } = new Виробники_Objest();
     
     #region Fields
-    Entry Назва = new() { WidthRequest = 500 };
-                    Entry Код = new() { WidthRequest = 500 };
+    Entry Код = new() { WidthRequest = 100 };
+                    Entry Назва = new() { WidthRequest = 500 };
                     
     #endregion
 
@@ -36,11 +36,11 @@ class Виробники_Елемент : DirectoryFormElement
     protected override void CreateStart(Box vBox)
     {
         
-            // Назва
-            CreateField(vBox, "Назва:", Назва);
-                        
             // Код
             CreateField(vBox, "Код:", Код);
+                        
+            // Назва
+            CreateField(vBox, "Назва:", Назва);
                         
     }
 
@@ -53,15 +53,15 @@ class Виробники_Елемент : DirectoryFormElement
 
     public override async ValueTask AssignValue()
     {
-        Назва.SetText(Елемент.Назва);
-                        Код.SetText(Елемент.Код);
+        Код.SetText(Елемент.Код);
+                        Назва.SetText(Елемент.Назва);
                         
     }
 
     protected override void GetValue()
     {
-        Елемент.Назва = Назва.GetText();
-                        Елемент.Код = Код.GetText();
+        Елемент.Код = Код.GetText();
+                        Елемент.Назва = Назва.GetText();
                         
     }
 

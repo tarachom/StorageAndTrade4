@@ -18,8 +18,8 @@ class ВидиЦін_Елемент : DirectoryFormElement
     public ВидиЦін_Objest Елемент { get; init; } = new ВидиЦін_Objest();
     
     #region Fields
-    Entry Назва = new() { WidthRequest = 500 };
-                    Entry Код = new() { WidthRequest = 500 };
+    Entry Код = new() { WidthRequest = 100 };
+                    Entry Назва = new() { WidthRequest = 500 };
                     Валюти_PointerControl Валюта = new() { Caption = "Валюта", WidthPresentation = 500 };
             
     #endregion
@@ -37,11 +37,11 @@ class ВидиЦін_Елемент : DirectoryFormElement
     protected override void CreateStart(Box vBox)
     {
         
-            // Назва
-            CreateField(vBox, "Назва:", Назва);
-                        
             // Код
             CreateField(vBox, "Код:", Код);
+                        
+            // Назва
+            CreateField(vBox, "Назва:", Назва);
                         
             // Валюта
             CreateField(vBox, null, Валюта);
@@ -55,18 +55,18 @@ class ВидиЦін_Елемент : DirectoryFormElement
 
     #region Присвоєння / зчитування значень
 
-    public override async  ValueTask AssignValue()
+    public override async ValueTask AssignValue()
     {
-        Назва.SetText(Елемент.Назва);
-                        Код.SetText(Елемент.Код);
+        Код.SetText(Елемент.Код);
+                        Назва.SetText(Елемент.Назва);
                         Валюта.Pointer = Елемент.Валюта;
                 
     }
 
     protected override void GetValue()
     {
-        Елемент.Назва = Назва.GetText();
-                        Елемент.Код = Код.GetText();
+        Елемент.Код = Код.GetText();
+                        Елемент.Назва = Назва.GetText();
                         Елемент.Валюта = Валюта.Pointer;
                 
     }
@@ -84,7 +84,7 @@ class ВидиЦін_Елемент : DirectoryFormElement
                 isSaved = true;
             }
         }
-        catch 
+        catch (Exception ex)
         {
             //ФункціїДляПовідомлень.ДодатиПовідомлення(Елемент.GetBasis(), Caption, ex);
         }

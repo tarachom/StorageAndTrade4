@@ -18,8 +18,8 @@ class ПакуванняОдиниціВиміру_Елемент : DirectoryFor
     public ПакуванняОдиниціВиміру_Objest Елемент { get; init; } = new ПакуванняОдиниціВиміру_Objest();
     
     #region Fields
-    Entry Назва = new() { WidthRequest = 500 };
-                    Entry Код = new() { WidthRequest = 500 };
+    Entry Код = new() { WidthRequest = 100 };
+                    Entry Назва = new() { WidthRequest = 500 };
                     Entry НазваПовна = new() { WidthRequest = 500 };
                     IntegerControl КількістьУпаковок = new();
             
@@ -38,17 +38,17 @@ class ПакуванняОдиниціВиміру_Елемент : DirectoryFor
     protected override void CreateStart(Box vBox)
     {
         
-            // Назва
-            CreateField(vBox, "Назва:", Назва);
-                        
             // Код
             CreateField(vBox, "Код:", Код);
                         
+            // Назва
+            CreateField(vBox, "Назва:", Назва);
+                        
             // НазваПовна
-            CreateField(vBox, "НазваПовна:", НазваПовна);
+            CreateField(vBox, "Опис:", НазваПовна);
                         
             // КількістьУпаковок
-            CreateField(vBox, "КількістьУпаковок:", КількістьУпаковок);
+            CreateField(vBox, "Коефіцієнт:", КількістьУпаковок);
                         
     }
 
@@ -59,19 +59,19 @@ class ПакуванняОдиниціВиміру_Елемент : DirectoryFor
 
     #region Присвоєння / зчитування значень
 
-    public override  async ValueTask AssignValue()
+    public override async ValueTask AssignValue()
     {
-        Назва.SetText(Елемент.Назва);
-                        Код.SetText(Елемент.Код);
+        Код.SetText(Елемент.Код);
+                        Назва.SetText(Елемент.Назва);
                         НазваПовна.SetText(Елемент.НазваПовна);
                         КількістьУпаковок.Value = Елемент.КількістьУпаковок;
-               
+                
     }
 
     protected override void GetValue()
     {
-        Елемент.Назва = Назва.GetText();
-                        Елемент.Код = Код.GetText();
+        Елемент.Код = Код.GetText();
+                        Елемент.Назва = Назва.GetText();
                         Елемент.НазваПовна = НазваПовна.GetText();
                         Елемент.КількістьУпаковок = КількістьУпаковок.Value;
                 

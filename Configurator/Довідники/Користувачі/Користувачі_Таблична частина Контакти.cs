@@ -11,7 +11,6 @@ using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
 using GeneratedCode.Перелічення;
 
-
 namespace StorageAndTrade;
 
 class Користувачі_ТабличнаЧастина_Контакти : DirectoryFormTablePart
@@ -24,6 +23,25 @@ class Користувачі_ТабличнаЧастина_Контакти : D
 
     class ItemRow : RowTablePart
     {
+    
+        //
+        // НомерРядка
+        //
+        public int НомерРядка
+        {
+            get => НомерРядка_;
+            set
+            {
+                if (!НомерРядка_.Equals(value))
+                {
+                    НомерРядка_ = value;
+                    Сhanged_НомерРядка?.Invoke();
+                }
+            }
+        }
+        int НомерРядка_ = 0;
+        public Action? Сhanged_НомерРядка;
+
     
         //
         // Тип
@@ -42,6 +60,25 @@ class Користувачі_ТабличнаЧастина_Контакти : D
         }
         ТипиКонтактноїІнформації Тип_ = 0;
         public Action? Сhanged_Тип;
+
+    
+        //
+        // Значення
+        //
+        public string Значення
+        {
+            get => Значення_;
+            set
+            {
+                if (!Значення_.Equals(value))
+                {
+                    Значення_ = value;
+                    Сhanged_Значення?.Invoke();
+                }
+            }
+        }
+        string Значення_ = "";
+        public Action? Сhanged_Значення;
 
     
         //
@@ -167,7 +204,9 @@ class Користувачі_ТабличнаЧастина_Контакти : D
         {
             return new()
             {
+                НомерРядка = НомерРядка,
                 Тип = Тип,
+                Значення = Значення,
                 Телефон = Телефон,
                 ЕлектроннаПошта = ЕлектроннаПошта,
                 Країна = Країна,
@@ -194,6 +233,36 @@ class Користувачі_ТабличнаЧастина_Контакти : D
     protected override void Columns()
     {
         
+        //НомерРядка
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = LabelTablePartCell.New(null);
+                
+                cell.Halign = Align.End;
+                    
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = (LabelTablePartCell?)listItem.Child;
+                ItemRow? row = (ItemRow?)listItem.Item;
+                if (cell != null && row != null)
+                {
+                    
+                    (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke();
+                        
+                }
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("№", factory);
+            column.Resizable = true;
+            
+            Grid.AppendColumn(column);
+        }
+        
         //Тип
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
@@ -214,12 +283,41 @@ class Користувачі_ТабличнаЧастина_Контакти : D
                 if (cell != null && row != null)
                 {
                     
-                    cell.OnСhanged = () => row.Тип = ПсевдонімиПерелічення.ТипиКонтактноїІнформації_FindByName(cell.Value);
+                    cell.OnСhanged = () => row.Тип = ПсевдонімиПерелічення.ТипиКонтактноїІнформації_FindByName(cell.Combo.ActiveId);
                     (row.Сhanged_Тип = () => cell.Value = row.Тип.ToString()).Invoke();
                         
                 }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Тип", factory);
+            column.Resizable = true;
+            
+            Grid.AppendColumn(column);
+        }
+        
+        //Значення
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = new TextTablePartCell();
+                
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = (TextTablePartCell?)listItem.Child;
+                ItemRow? row = (ItemRow?)listItem.Item;
+                if (cell != null && row != null)
+                {
+                    
+                    cell.OnСhanged = () => row.Значення = cell.Value;
+                    (row.Сhanged_Значення = () => cell.Value = row.Значення).Invoke();
+                        
+                }
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("Значення", factory);
             column.Resizable = true;
             
             Grid.AppendColumn(column);
@@ -231,19 +329,20 @@ class Користувачі_ТабличнаЧастина_Контакти : D
             factory.OnSetup += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = LabelTablePartCell.New(null);
+                var cell = new TextTablePartCell();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = (LabelTablePartCell?)listItem.Child;
+                var cell = (TextTablePartCell?)listItem.Child;
                 ItemRow? row = (ItemRow?)listItem.Item;
                 if (cell != null && row != null)
                 {
                     
-                    (row.Сhanged_Телефон = () => cell.SetText(row.NumberRow)).Invoke();
+                    cell.OnСhanged = () => row.Телефон = cell.Value;
+                    (row.Сhanged_Телефон = () => cell.Value = row.Телефон).Invoke();
                         
                 }
             };
@@ -259,19 +358,20 @@ class Користувачі_ТабличнаЧастина_Контакти : D
             factory.OnSetup += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = LabelTablePartCell.New(null);
+                var cell = new TextTablePartCell();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = (LabelTablePartCell?)listItem.Child;
+                var cell = (TextTablePartCell?)listItem.Child;
                 ItemRow? row = (ItemRow?)listItem.Item;
                 if (cell != null && row != null)
                 {
                     
-                    (row.Сhanged_ЕлектроннаПошта = () => cell.SetText(row.NumberRow)).Invoke();
+                    cell.OnСhanged = () => row.ЕлектроннаПошта = cell.Value;
+                    (row.Сhanged_ЕлектроннаПошта = () => cell.Value = row.ЕлектроннаПошта).Invoke();
                         
                 }
             };
@@ -287,19 +387,20 @@ class Користувачі_ТабличнаЧастина_Контакти : D
             factory.OnSetup += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = LabelTablePartCell.New(null);
+                var cell = new TextTablePartCell();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = (LabelTablePartCell?)listItem.Child;
+                var cell = (TextTablePartCell?)listItem.Child;
                 ItemRow? row = (ItemRow?)listItem.Item;
                 if (cell != null && row != null)
                 {
                     
-                    (row.Сhanged_Країна = () => cell.SetText(row.NumberRow)).Invoke();
+                    cell.OnСhanged = () => row.Країна = cell.Value;
+                    (row.Сhanged_Країна = () => cell.Value = row.Країна).Invoke();
                         
                 }
             };
@@ -315,19 +416,20 @@ class Користувачі_ТабличнаЧастина_Контакти : D
             factory.OnSetup += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = LabelTablePartCell.New(null);
+                var cell = new TextTablePartCell();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = (LabelTablePartCell?)listItem.Child;
+                var cell = (TextTablePartCell?)listItem.Child;
                 ItemRow? row = (ItemRow?)listItem.Item;
                 if (cell != null && row != null)
                 {
                     
-                    (row.Сhanged_Область = () => cell.SetText(row.NumberRow)).Invoke();
+                    cell.OnСhanged = () => row.Область = cell.Value;
+                    (row.Сhanged_Область = () => cell.Value = row.Область).Invoke();
                         
                 }
             };
@@ -343,19 +445,20 @@ class Користувачі_ТабличнаЧастина_Контакти : D
             factory.OnSetup += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = LabelTablePartCell.New(null);
+                var cell = new TextTablePartCell();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = (LabelTablePartCell?)listItem.Child;
+                var cell = (TextTablePartCell?)listItem.Child;
                 ItemRow? row = (ItemRow?)listItem.Item;
                 if (cell != null && row != null)
                 {
                     
-                    (row.Сhanged_Район = () => cell.SetText(row.NumberRow)).Invoke();
+                    cell.OnСhanged = () => row.Район = cell.Value;
+                    (row.Сhanged_Район = () => cell.Value = row.Район).Invoke();
                         
                 }
             };
@@ -371,19 +474,20 @@ class Користувачі_ТабличнаЧастина_Контакти : D
             factory.OnSetup += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = LabelTablePartCell.New(null);
+                var cell = new TextTablePartCell();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = (LabelTablePartCell?)listItem.Child;
+                var cell = (TextTablePartCell?)listItem.Child;
                 ItemRow? row = (ItemRow?)listItem.Item;
                 if (cell != null && row != null)
                 {
                     
-                    (row.Сhanged_Місто = () => cell.SetText(row.NumberRow)).Invoke();
+                    cell.OnСhanged = () => row.Місто = cell.Value;
+                    (row.Сhanged_Місто = () => cell.Value = row.Місто).Invoke();
                         
                 }
             };
@@ -407,7 +511,7 @@ class Користувачі_ТабличнаЧастина_Контакти : D
         if (ЕлементВласник != null) 
         {
             
-            ЕлементВласник.Контакти_TablePart.FillJoin([]);
+            ЕлементВласник.Контакти_TablePart.FillJoin([Користувачі_Контакти_TablePart.НомерРядка,]);
             await ЕлементВласник.Контакти_TablePart.Read();
             
 
@@ -419,7 +523,9 @@ class Користувачі_ТабличнаЧастина_Контакти : D
             Store.Append(new ItemRow()
             {
                 UnigueID = new(record.UID),
+                НомерРядка = record.НомерРядка,
                 Тип = record.Тип,
+                Значення = record.Значення,
                 Телефон = record.Телефон,
                 ЕлектроннаПошта = record.ЕлектроннаПошта,
                 Країна = record.Країна,
@@ -452,7 +558,9 @@ class Користувачі_ТабличнаЧастина_Контакти : D
                 ЕлементВласник.Контакти_TablePart.Records.Add(new()
                 {
                     UID = row.UnigueID.UGuid,
+                    НомерРядка = row.НомерРядка,
                     Тип = row.Тип,
+                    Значення = row.Значення,
                     Телефон = row.Телефон,
                     ЕлектроннаПошта = row.ЕлектроннаПошта,
                     Країна = row.Країна,

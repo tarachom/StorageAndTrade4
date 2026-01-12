@@ -11,7 +11,6 @@ using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
 using GeneratedCode.Перелічення;
 
-
 namespace StorageAndTrade;
 
 class ЗамовленняПостачальнику_ТабличнаЧастина_Товари : DocumentFormTablePart
@@ -260,20 +259,21 @@ class ЗамовленняПостачальнику_ТабличнаЧасти�
             factory.OnSetup += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = new IntegerTablePartCell();
+                var cell = LabelTablePartCell.New(null);
                 
+                cell.Halign = Align.End;
+                    
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = (IntegerTablePartCell?)listItem.Child;
+                var cell = (LabelTablePartCell?)listItem.Child;
                 ItemRow? row = (ItemRow?)listItem.Item;
                 if (cell != null && row != null)
                 {
                     
-                    cell.OnСhanged = () => row.НомерРядка = cell.Value;
-                    (row.Сhanged_НомерРядка = () => cell.Value = row.НомерРядка).Invoke();
+                    (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke();
                         
                 }
             };
@@ -309,6 +309,8 @@ class ЗамовленняПостачальнику_ТабличнаЧасти�
             ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
             column.Resizable = true;
             
+            column.FixedWidth = 300;
+            
             Grid.AppendColumn(column);
         }
         
@@ -337,6 +339,8 @@ class ЗамовленняПостачальнику_ТабличнаЧасти�
             };
             ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
             column.Resizable = true;
+            
+            column.FixedWidth = 300;
             
             Grid.AppendColumn(column);
         }
@@ -395,6 +399,8 @@ class ЗамовленняПостачальнику_ТабличнаЧасти�
             };
             ColumnViewColumn column = ColumnViewColumn.New("Пакування", factory);
             column.Resizable = true;
+            
+            column.FixedWidth = 100;
             
             Grid.AppendColumn(column);
         }
@@ -540,6 +546,8 @@ class ЗамовленняПостачальнику_ТабличнаЧасти�
             };
             ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
             column.Resizable = true;
+            
+            column.FixedWidth = 300;
             
             Grid.AppendColumn(column);
         }

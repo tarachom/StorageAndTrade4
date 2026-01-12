@@ -11,7 +11,6 @@ using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
 using GeneratedCode.Перелічення;
 
-
 namespace StorageAndTrade;
 
 class РеалізаціяТоварівТаПослуг_ТабличнаЧастина_Товари : DocumentFormTablePart
@@ -410,6 +409,8 @@ class РеалізаціяТоварівТаПослуг_ТабличнаЧас�
             ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
             column.Resizable = true;
             
+            column.FixedWidth = 300;
+            
             Grid.AppendColumn(column);
         }
         
@@ -439,6 +440,8 @@ class РеалізаціяТоварівТаПослуг_ТабличнаЧас�
             ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
             column.Resizable = true;
             
+            column.FixedWidth = 300;
+            
             Grid.AppendColumn(column);
         }
         
@@ -467,6 +470,8 @@ class РеалізаціяТоварівТаПослуг_ТабличнаЧас�
             };
             ColumnViewColumn column = ColumnViewColumn.New("Серія", factory);
             column.Resizable = true;
+            
+            column.FixedWidth = 300;
             
             Grid.AppendColumn(column);
         }
@@ -526,6 +531,8 @@ class РеалізаціяТоварівТаПослуг_ТабличнаЧас�
             ColumnViewColumn column = ColumnViewColumn.New("Пакування", factory);
             column.Resizable = true;
             
+            column.FixedWidth = 100;
+            
             Grid.AppendColumn(column);
         }
         
@@ -583,6 +590,8 @@ class РеалізаціяТоварівТаПослуг_ТабличнаЧас�
             };
             ColumnViewColumn column = ColumnViewColumn.New("Вид ціни", factory);
             column.Resizable = true;
+            
+            column.FixedWidth = 200;
             
             Grid.AppendColumn(column);
         }
@@ -700,6 +709,8 @@ class РеалізаціяТоварівТаПослуг_ТабличнаЧас�
             ColumnViewColumn column = ColumnViewColumn.New("Замовлення клієнта", factory);
             column.Resizable = true;
             
+            column.FixedWidth = 300;
+            
             Grid.AppendColumn(column);
         }
         
@@ -728,6 +739,8 @@ class РеалізаціяТоварівТаПослуг_ТабличнаЧас�
             };
             ColumnViewColumn column = ColumnViewColumn.New("Рахунок фактура", factory);
             column.Resizable = true;
+            
+            column.FixedWidth = 300;
             
             Grid.AppendColumn(column);
         }
@@ -758,6 +771,8 @@ class РеалізаціяТоварівТаПослуг_ТабличнаЧас�
             ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
             column.Resizable = true;
             
+            column.FixedWidth = 300;
+            
             Grid.AppendColumn(column);
         }
         
@@ -786,6 +801,8 @@ class РеалізаціяТоварівТаПослуг_ТабличнаЧас�
             };
             ColumnViewColumn column = ColumnViewColumn.New("Партія", factory);
             column.Resizable = true;
+            
+            column.FixedWidth = 300;
             
             Grid.AppendColumn(column);
         }

@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 12.01.2026 16:39:29
+ * Дата конфігурації: 12.01.2026 21:08:55
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон GeneratedCode.xslt
@@ -2125,10 +2125,12 @@ namespace GeneratedCode.Довідники
     public class Організації_Контакти_TablePart : DirectoryTablePart
     {
         public Організації_Контакти_TablePart(Організації_Objest owner) : base(Config.Kernel, "tab_a02",
-             ["col_a9", "col_a4", "col_a5", "col_a1", "col_a6", "col_a2", "col_a3", "col_a8", ], true)
+             ["col_a9", "col_a4", "col_a5", "col_a1", "col_a6", "col_a2", "col_a3", "col_a8", "col_a7", ], true)
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
+            
+            QuerySelect.Order.Add(НомерРядка, SelectOrder.ASC);
             
         }
 
@@ -2142,6 +2144,7 @@ namespace GeneratedCode.Довідники
         public const string Район = "col_a2";
         public const string Місто = "col_a3";
         public const string Значення = "col_a8";
+        public const string НомерРядка = "col_a7";
 
         public Організації_Objest Owner { get; private set; }
         
@@ -2157,6 +2160,12 @@ namespace GeneratedCode.Довідники
             {
               foreach(string field in orderFields)
                 QuerySelect.Order.Add(field, SelectOrder.ASC);
+            }
+            
+            else
+            { 
+              QuerySelect.Order.Add(НомерРядка, SelectOrder.ASC);
+              
             }
             
         }
@@ -2179,6 +2188,7 @@ namespace GeneratedCode.Довідники
                     Район = fieldValue["col_a2"].ToString() ?? "",
                     Місто = fieldValue["col_a3"].ToString() ?? "",
                     Значення = fieldValue["col_a8"].ToString() ?? "",
+                    НомерРядка = (fieldValue["col_a7"] != DBNull.Value) ? (int)fieldValue["col_a7"] : 0,
                     
                 };
                 Records.Add(record);
@@ -2204,8 +2214,12 @@ namespace GeneratedCode.Довідники
                 await base.BaseDelete(Owner.UnigueID);
             
             
+            int sequenceNumber_НомерРядка = 0;
+            
             foreach (Record record in Records)
             {
+                
+                record.НомерРядка = ++sequenceNumber_НомерРядка;
                 
                 Dictionary<string, object> fieldValue = new()
                 {
@@ -2217,6 +2231,7 @@ namespace GeneratedCode.Довідники
                     {"col_a2", record.Район},
                     {"col_a3", record.Місто},
                     {"col_a8", record.Значення},
+                    {"col_a7", record.НомерРядка},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UnigueID, fieldValue);
@@ -2251,6 +2266,7 @@ namespace GeneratedCode.Довідники
             public string Район { get; set; } = "";
             public string Місто { get; set; } = "";
             public string Значення { get; set; } = "";
+            public int НомерРядка { get; set; } = 0;
             
         }
     }
@@ -2524,10 +2540,12 @@ namespace GeneratedCode.Довідники
     public class Номенклатура_Файли_TablePart : DirectoryTablePart
     {
         public Номенклатура_Файли_TablePart(Номенклатура_Objest owner) : base(Config.Kernel, "tab_b19",
-             ["col_a1", "col_a3", ], true)
+             ["col_a1", "col_a3", "col_a2", ], true)
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
+            
+            QuerySelect.Order.Add(НомерРядка, SelectOrder.ASC);
             
         }
 
@@ -2535,6 +2553,7 @@ namespace GeneratedCode.Довідники
         
         public const string Файл = "col_a1";
         public const string Основний = "col_a3";
+        public const string НомерРядка = "col_a2";
 
         public Номенклатура_Objest Owner { get; private set; }
         
@@ -2550,6 +2569,12 @@ namespace GeneratedCode.Довідники
             {
               foreach(string field in orderFields)
                 QuerySelect.Order.Add(field, SelectOrder.ASC);
+            }
+            
+            else
+            { 
+              QuerySelect.Order.Add(НомерРядка, SelectOrder.ASC);
+              
             }
             Довідники.Файли_Pointer.GetJoin(QuerySelect, Файл, "tab_b19", "join_tab_1", "Файл");
                 
@@ -2567,6 +2592,7 @@ namespace GeneratedCode.Довідники
                     UID = (Guid)fieldValue["uid"],
                     Файл = new Довідники.Файли_Pointer(fieldValue["col_a1"]),
                     Основний = (fieldValue["col_a3"] != DBNull.Value) ? (bool)fieldValue["col_a3"] : false,
+                    НомерРядка = (fieldValue["col_a2"] != DBNull.Value) ? (int)fieldValue["col_a2"] : 0,
                     
                 };
                 Records.Add(record);
@@ -2599,13 +2625,18 @@ namespace GeneratedCode.Довідники
                 await base.BaseDelete(Owner.UnigueID);
             
             
+            int sequenceNumber_НомерРядка = 0;
+            
             foreach (Record record in Records)
             {
+                
+                record.НомерРядка = ++sequenceNumber_НомерРядка;
                 
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.Файл.UnigueID.UGuid},
                     {"col_a3", record.Основний},
+                    {"col_a2", record.НомерРядка},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UnigueID, fieldValue);
@@ -2634,6 +2665,7 @@ namespace GeneratedCode.Довідники
         {
             public Довідники.Файли_Pointer Файл { get; set; } = new Довідники.Файли_Pointer();
             public bool Основний { get; set; } = false;
+            public int НомерРядка { get; set; } = 0;
             
         }
     }
@@ -3724,10 +3756,12 @@ namespace GeneratedCode.Довідники
     public class Контрагенти_Контакти_TablePart : DirectoryTablePart
     {
         public Контрагенти_Контакти_TablePart(Контрагенти_Objest owner) : base(Config.Kernel, "tab_a09",
-             ["col_d2", "col_d8", "col_d7", "col_d3", "col_d5", "col_d4", "col_d6", "col_a1", ], true)
+             ["col_d2", "col_d8", "col_d7", "col_d3", "col_d5", "col_d4", "col_d6", "col_a1", "col_a2", ], true)
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
+            
+            QuerySelect.Order.Add(НомерРядка, SelectOrder.ASC);
             
         }
 
@@ -3741,6 +3775,7 @@ namespace GeneratedCode.Довідники
         public const string Район = "col_d4";
         public const string Місто = "col_d6";
         public const string Значення = "col_a1";
+        public const string НомерРядка = "col_a2";
 
         public Контрагенти_Objest Owner { get; private set; }
         
@@ -3756,6 +3791,12 @@ namespace GeneratedCode.Довідники
             {
               foreach(string field in orderFields)
                 QuerySelect.Order.Add(field, SelectOrder.ASC);
+            }
+            
+            else
+            { 
+              QuerySelect.Order.Add(НомерРядка, SelectOrder.ASC);
+              
             }
             
         }
@@ -3778,6 +3819,7 @@ namespace GeneratedCode.Довідники
                     Район = fieldValue["col_d4"].ToString() ?? "",
                     Місто = fieldValue["col_d6"].ToString() ?? "",
                     Значення = fieldValue["col_a1"].ToString() ?? "",
+                    НомерРядка = (fieldValue["col_a2"] != DBNull.Value) ? (int)fieldValue["col_a2"] : 0,
                     
                 };
                 Records.Add(record);
@@ -3803,8 +3845,12 @@ namespace GeneratedCode.Довідники
                 await base.BaseDelete(Owner.UnigueID);
             
             
+            int sequenceNumber_НомерРядка = 0;
+            
             foreach (Record record in Records)
             {
+                
+                record.НомерРядка = ++sequenceNumber_НомерРядка;
                 
                 Dictionary<string, object> fieldValue = new()
                 {
@@ -3816,6 +3862,7 @@ namespace GeneratedCode.Довідники
                     {"col_d4", record.Район},
                     {"col_d6", record.Місто},
                     {"col_a1", record.Значення},
+                    {"col_a2", record.НомерРядка},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UnigueID, fieldValue);
@@ -3850,6 +3897,7 @@ namespace GeneratedCode.Довідники
             public string Район { get; set; } = "";
             public string Місто { get; set; } = "";
             public string Значення { get; set; } = "";
+            public int НомерРядка { get; set; } = 0;
             
         }
     }
@@ -3858,16 +3906,19 @@ namespace GeneratedCode.Довідники
     public class Контрагенти_Файли_TablePart : DirectoryTablePart
     {
         public Контрагенти_Файли_TablePart(Контрагенти_Objest owner) : base(Config.Kernel, "tab_b20",
-             ["col_a1", ], true)
+             ["col_a1", "col_a2", ], true)
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
+            
+            QuerySelect.Order.Add(НомерРядка, SelectOrder.ASC);
             
         }
 
         public const string TABLE = "tab_b20";
         
         public const string Файл = "col_a1";
+        public const string НомерРядка = "col_a2";
 
         public Контрагенти_Objest Owner { get; private set; }
         
@@ -3884,6 +3935,12 @@ namespace GeneratedCode.Довідники
               foreach(string field in orderFields)
                 QuerySelect.Order.Add(field, SelectOrder.ASC);
             }
+            
+            else
+            { 
+              QuerySelect.Order.Add(НомерРядка, SelectOrder.ASC);
+              
+            }
             Довідники.Файли_Pointer.GetJoin(QuerySelect, Файл, "tab_b20", "join_tab_1", "Файл");
                 
         }
@@ -3899,6 +3956,7 @@ namespace GeneratedCode.Довідники
                 {
                     UID = (Guid)fieldValue["uid"],
                     Файл = new Довідники.Файли_Pointer(fieldValue["col_a1"]),
+                    НомерРядка = (fieldValue["col_a2"] != DBNull.Value) ? (int)fieldValue["col_a2"] : 0,
                     
                 };
                 Records.Add(record);
@@ -3931,12 +3989,17 @@ namespace GeneratedCode.Довідники
                 await base.BaseDelete(Owner.UnigueID);
             
             
+            int sequenceNumber_НомерРядка = 0;
+            
             foreach (Record record in Records)
             {
+                
+                record.НомерРядка = ++sequenceNumber_НомерРядка;
                 
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.Файл.UnigueID.UGuid},
+                    {"col_a2", record.НомерРядка},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UnigueID, fieldValue);
@@ -3964,6 +4027,7 @@ namespace GeneratedCode.Довідники
         public class Record : DirectoryTablePartRecord
         {
             public Довідники.Файли_Pointer Файл { get; set; } = new Довідники.Файли_Pointer();
+            public int НомерРядка { get; set; } = 0;
             
         }
     }
@@ -4221,10 +4285,12 @@ namespace GeneratedCode.Довідники
     public class Склади_Контакти_TablePart : DirectoryTablePart
     {
         public Склади_Контакти_TablePart(Склади_Objest owner) : base(Config.Kernel, "tab_a11",
-             ["col_e2", "col_e8", "col_e7", "col_e3", "col_e5", "col_e4", "col_e6", "col_a1", ], true)
+             ["col_e2", "col_e8", "col_e7", "col_e3", "col_e5", "col_e4", "col_e6", "col_a1", "col_a2", ], true)
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
+            
+            QuerySelect.Order.Add(НомерРядка, SelectOrder.ASC);
             
         }
 
@@ -4238,6 +4304,7 @@ namespace GeneratedCode.Довідники
         public const string Район = "col_e4";
         public const string Місто = "col_e6";
         public const string Значення = "col_a1";
+        public const string НомерРядка = "col_a2";
 
         public Склади_Objest Owner { get; private set; }
         
@@ -4253,6 +4320,12 @@ namespace GeneratedCode.Довідники
             {
               foreach(string field in orderFields)
                 QuerySelect.Order.Add(field, SelectOrder.ASC);
+            }
+            
+            else
+            { 
+              QuerySelect.Order.Add(НомерРядка, SelectOrder.ASC);
+              
             }
             
         }
@@ -4275,6 +4348,7 @@ namespace GeneratedCode.Довідники
                     Район = fieldValue["col_e4"].ToString() ?? "",
                     Місто = fieldValue["col_e6"].ToString() ?? "",
                     Значення = fieldValue["col_a1"].ToString() ?? "",
+                    НомерРядка = (fieldValue["col_a2"] != DBNull.Value) ? (int)fieldValue["col_a2"] : 0,
                     
                 };
                 Records.Add(record);
@@ -4300,8 +4374,12 @@ namespace GeneratedCode.Довідники
                 await base.BaseDelete(Owner.UnigueID);
             
             
+            int sequenceNumber_НомерРядка = 0;
+            
             foreach (Record record in Records)
             {
+                
+                record.НомерРядка = ++sequenceNumber_НомерРядка;
                 
                 Dictionary<string, object> fieldValue = new()
                 {
@@ -4313,6 +4391,7 @@ namespace GeneratedCode.Довідники
                     {"col_e4", record.Район},
                     {"col_e6", record.Місто},
                     {"col_a1", record.Значення},
+                    {"col_a2", record.НомерРядка},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UnigueID, fieldValue);
@@ -4347,6 +4426,7 @@ namespace GeneratedCode.Довідники
             public string Район { get; set; } = "";
             public string Місто { get; set; } = "";
             public string Значення { get; set; } = "";
+            public int НомерРядка { get; set; } = 0;
             
         }
     }
@@ -4980,10 +5060,12 @@ namespace GeneratedCode.Довідники
     public class Користувачі_Контакти_TablePart : DirectoryTablePart
     {
         public Користувачі_Контакти_TablePart(Користувачі_Objest owner) : base(Config.Kernel, "tab_a15",
-             ["col_f8", "col_g5", "col_g4", "col_f9", "col_g1", "col_g2", "col_g3", ])
+             ["col_f8", "col_g5", "col_g4", "col_f9", "col_g1", "col_g2", "col_g3", "col_a1", "col_a2", ])
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
+            
+            QuerySelect.Order.Add(НомерРядка, SelectOrder.ASC);
             
         }
 
@@ -4996,6 +5078,8 @@ namespace GeneratedCode.Довідники
         public const string Область = "col_g1";
         public const string Район = "col_g2";
         public const string Місто = "col_g3";
+        public const string НомерРядка = "col_a1";
+        public const string Значення = "col_a2";
 
         public Користувачі_Objest Owner { get; private set; }
         
@@ -5011,6 +5095,12 @@ namespace GeneratedCode.Довідники
             {
               foreach(string field in orderFields)
                 QuerySelect.Order.Add(field, SelectOrder.ASC);
+            }
+            
+            else
+            { 
+              QuerySelect.Order.Add(НомерРядка, SelectOrder.ASC);
+              
             }
             
         }
@@ -5032,6 +5122,8 @@ namespace GeneratedCode.Довідники
                     Область = fieldValue["col_g1"].ToString() ?? "",
                     Район = fieldValue["col_g2"].ToString() ?? "",
                     Місто = fieldValue["col_g3"].ToString() ?? "",
+                    НомерРядка = (fieldValue["col_a1"] != DBNull.Value) ? (int)fieldValue["col_a1"] : 0,
+                    Значення = fieldValue["col_a2"].ToString() ?? "",
                     
                 };
                 Records.Add(record);
@@ -5053,8 +5145,12 @@ namespace GeneratedCode.Довідники
                 await base.BaseDelete(Owner.UnigueID);
             
             
+            int sequenceNumber_НомерРядка = 0;
+            
             foreach (Record record in Records)
             {
+                
+                record.НомерРядка = ++sequenceNumber_НомерРядка;
                 
                 Dictionary<string, object> fieldValue = new()
                 {
@@ -5065,6 +5161,8 @@ namespace GeneratedCode.Довідники
                     {"col_g1", record.Область},
                     {"col_g2", record.Район},
                     {"col_g3", record.Місто},
+                    {"col_a1", record.НомерРядка},
+                    {"col_a2", record.Значення},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UnigueID, fieldValue);
@@ -5094,6 +5192,8 @@ namespace GeneratedCode.Довідники
             public string Область { get; set; } = "";
             public string Район { get; set; } = "";
             public string Місто { get; set; } = "";
+            public int НомерРядка { get; set; } = 0;
+            public string Значення { get; set; } = "";
             
         }
     }
@@ -5331,10 +5431,12 @@ namespace GeneratedCode.Довідники
     public class ФізичніОсоби_Контакти_TablePart : DirectoryTablePart
     {
         public ФізичніОсоби_Контакти_TablePart(ФізичніОсоби_Objest owner) : base(Config.Kernel, "tab_a17",
-             ["col_h1", "col_h7", "col_h6", "col_h2", "col_h3", "col_h4", "col_h5", "col_a1", ], true)
+             ["col_h1", "col_h7", "col_h6", "col_h2", "col_h3", "col_h4", "col_h5", "col_a1", "col_a2", ], true)
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
+            
+            QuerySelect.Order.Add(НомерРядка, SelectOrder.ASC);
             
         }
 
@@ -5348,6 +5450,7 @@ namespace GeneratedCode.Довідники
         public const string Район = "col_h4";
         public const string Місто = "col_h5";
         public const string Значення = "col_a1";
+        public const string НомерРядка = "col_a2";
 
         public ФізичніОсоби_Objest Owner { get; private set; }
         
@@ -5363,6 +5466,12 @@ namespace GeneratedCode.Довідники
             {
               foreach(string field in orderFields)
                 QuerySelect.Order.Add(field, SelectOrder.ASC);
+            }
+            
+            else
+            { 
+              QuerySelect.Order.Add(НомерРядка, SelectOrder.ASC);
+              
             }
             
         }
@@ -5385,6 +5494,7 @@ namespace GeneratedCode.Довідники
                     Район = fieldValue["col_h4"].ToString() ?? "",
                     Місто = fieldValue["col_h5"].ToString() ?? "",
                     Значення = fieldValue["col_a1"].ToString() ?? "",
+                    НомерРядка = (fieldValue["col_a2"] != DBNull.Value) ? (int)fieldValue["col_a2"] : 0,
                     
                 };
                 Records.Add(record);
@@ -5410,8 +5520,12 @@ namespace GeneratedCode.Довідники
                 await base.BaseDelete(Owner.UnigueID);
             
             
+            int sequenceNumber_НомерРядка = 0;
+            
             foreach (Record record in Records)
             {
+                
+                record.НомерРядка = ++sequenceNumber_НомерРядка;
                 
                 Dictionary<string, object> fieldValue = new()
                 {
@@ -5423,6 +5537,7 @@ namespace GeneratedCode.Довідники
                     {"col_h4", record.Район},
                     {"col_h5", record.Місто},
                     {"col_a1", record.Значення},
+                    {"col_a2", record.НомерРядка},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UnigueID, fieldValue);
@@ -5457,6 +5572,7 @@ namespace GeneratedCode.Довідники
             public string Район { get; set; } = "";
             public string Місто { get; set; } = "";
             public string Значення { get; set; } = "";
+            public int НомерРядка { get; set; } = 0;
             
         }
     }

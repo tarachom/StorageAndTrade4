@@ -18,8 +18,8 @@ class Каси_Елемент : DirectoryFormElement
     public Каси_Objest Елемент { get; init; } = new Каси_Objest();
     
     #region Fields
-    Entry Назва = new() { WidthRequest = 500 };
-                    Entry Код = new() { WidthRequest = 500 };
+    Entry Код = new() { WidthRequest = 100 };
+                    Entry Назва = new() { WidthRequest = 500 };
                     Валюти_PointerControl Валюта = new() { Caption = "Валюта", WidthPresentation = 500 };
             СтруктураПідприємства_PointerControl Підрозділ = new() { Caption = "Підрозділ", WidthPresentation = 500 };
             
@@ -38,11 +38,11 @@ class Каси_Елемент : DirectoryFormElement
     protected override void CreateStart(Box vBox)
     {
         
-            // Назва
-            CreateField(vBox, "Назва:", Назва);
-                        
             // Код
             CreateField(vBox, "Код:", Код);
+                        
+            // Назва
+            CreateField(vBox, "Назва:", Назва);
                         
             // Валюта
             CreateField(vBox, null, Валюта);
@@ -61,8 +61,8 @@ class Каси_Елемент : DirectoryFormElement
 
     public override async ValueTask AssignValue()
     {
-        Назва.SetText(Елемент.Назва);
-                        Код.SetText(Елемент.Код);
+        Код.SetText(Елемент.Код);
+                        Назва.SetText(Елемент.Назва);
                         Валюта.Pointer = Елемент.Валюта;
                 Підрозділ.Pointer = Елемент.Підрозділ;
                 
@@ -70,8 +70,8 @@ class Каси_Елемент : DirectoryFormElement
 
     protected override void GetValue()
     {
-        Елемент.Назва = Назва.GetText();
-                        Елемент.Код = Код.GetText();
+        Елемент.Код = Код.GetText();
+                        Елемент.Назва = Назва.GetText();
                         Елемент.Валюта = Валюта.Pointer;
                 Елемент.Підрозділ = Підрозділ.Pointer;
                 

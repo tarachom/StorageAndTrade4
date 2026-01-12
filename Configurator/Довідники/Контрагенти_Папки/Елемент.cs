@@ -20,8 +20,8 @@ class Контрагенти_Папки_Елемент : DirectoryFormElement
     public Контрагенти_Папки_Pointer РодичДляНового { get; set; } = new Контрагенти_Папки_Pointer();
     
     #region Fields
-    Entry Назва = new() { WidthRequest = 500 };
-                    Entry Код = new() { WidthRequest = 500 };
+    Entry Код = new() { WidthRequest = 100 };
+                    Entry Назва = new() { WidthRequest = 500 };
                     Контрагенти_Папки_PointerControl Родич = new() { Caption = "Родич", WidthPresentation = 500 };
             
     #endregion
@@ -39,11 +39,11 @@ class Контрагенти_Папки_Елемент : DirectoryFormElement
     protected override void CreateStart(Box vBox)
     {
         
-            // Назва
-            CreateField(vBox, "Назва:", Назва);
-                        
             // Код
             CreateField(vBox, "Код:", Код);
+                        
+            // Назва
+            CreateField(vBox, "Назва:", Назва);
                         
             // Родич
             CreateField(vBox, null, Родич);
@@ -64,16 +64,16 @@ class Контрагенти_Папки_Елемент : DirectoryFormElement
                     Елемент.Родич = РодичДляНового;
                 else
                     Родич.OpenFolder = Елемент.UnigueID;
-            Назва.SetText(Елемент.Назва);
-                        Код.SetText(Елемент.Код);
+            Код.SetText(Елемент.Код);
+                        Назва.SetText(Елемент.Назва);
                         Родич.Pointer = Елемент.Родич;
                 
     }
 
     protected override void GetValue()
     {
-        Елемент.Назва = Назва.GetText();
-                        Елемент.Код = Код.GetText();
+        Елемент.Код = Код.GetText();
+                        Елемент.Назва = Назва.GetText();
                         Елемент.Родич = Родич.Pointer;
                 
     }

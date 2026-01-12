@@ -71,7 +71,7 @@ class FormStorageAndTrade : FormGeneral
 
     protected override void MenuDirectory(Box vBox)
     {
-
+        vBox.Append(new Menu_Directory());
     }
 
     protected override void MenuJournals(Box vBox)

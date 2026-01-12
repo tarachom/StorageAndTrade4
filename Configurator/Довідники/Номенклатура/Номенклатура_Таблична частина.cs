@@ -11,7 +11,6 @@ using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
 using GeneratedCode.Перелічення;
 
-
 namespace StorageAndTrade;
 
 class Номенклатура_ТабличнаЧастина_Файли : DirectoryFormTablePart
@@ -24,6 +23,25 @@ class Номенклатура_ТабличнаЧастина_Файли : Direc
 
     class ItemRow : RowTablePart
     {
+    
+        //
+        // НомерРядка
+        //
+        public int НомерРядка
+        {
+            get => НомерРядка_;
+            set
+            {
+                if (!НомерРядка_.Equals(value))
+                {
+                    НомерРядка_ = value;
+                    Сhanged_НомерРядка?.Invoke();
+                }
+            }
+        }
+        int НомерРядка_ = 0;
+        public Action? Сhanged_НомерРядка;
+
     
         //
         // Основний
@@ -72,6 +90,7 @@ class Номенклатура_ТабличнаЧастина_Файли : Direc
         {
             return new()
             {
+                НомерРядка = НомерРядка,
                 Основний = Основний,
                 Файл = Файл.Copy(),
                 
@@ -94,7 +113,7 @@ class Номенклатура_ТабличнаЧастина_Файли : Direc
     protected override void Columns()
     {
         
-        //Основний
+        //НомерРядка
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
@@ -102,6 +121,8 @@ class Номенклатура_ТабличнаЧастина_Файли : Direc
                 ListItem listItem = (ListItem)args.Object;
                 var cell = LabelTablePartCell.New(null);
                 
+                cell.Halign = Align.End;
+                    
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
@@ -112,7 +133,38 @@ class Номенклатура_ТабличнаЧастина_Файли : Direc
                 if (cell != null && row != null)
                 {
                     
-                    (row.Сhanged_Основний = () => cell.SetText(row.NumberRow)).Invoke();
+                    (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke();
+                        
+                }
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("№", factory);
+            column.Resizable = true;
+            
+            Grid.AppendColumn(column);
+        }
+        
+        //Основний
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = new CheckTablePartCell();
+                
+                cell.Halign = Align.Center;
+                    
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = (CheckTablePartCell?)listItem.Child;
+                ItemRow? row = (ItemRow?)listItem.Item;
+                if (cell != null && row != null)
+                {
+                    
+                    cell.OnСhanged = () => row.Основний = cell.Check.Active;
+                    (row.Сhanged_Основний = () => cell.Value = row.Основний).Invoke();
                         
                 }
             };
@@ -148,6 +200,8 @@ class Номенклатура_ТабличнаЧастина_Файли : Direc
             ColumnViewColumn column = ColumnViewColumn.New("Файл", factory);
             column.Resizable = true;
             
+            column.FixedWidth = 500;
+            
             Grid.AppendColumn(column);
         }
         
@@ -165,7 +219,7 @@ class Номенклатура_ТабличнаЧастина_Файли : Direc
         if (ЕлементВласник != null) 
         {
             
-            ЕлементВласник.Файли_TablePart.FillJoin([]);
+            ЕлементВласник.Файли_TablePart.FillJoin([Номенклатура_Файли_TablePart.НомерРядка,]);
             await ЕлементВласник.Файли_TablePart.Read();
             
 
@@ -177,6 +231,7 @@ class Номенклатура_ТабличнаЧастина_Файли : Direc
             Store.Append(new ItemRow()
             {
                 UnigueID = new(record.UID),
+                НомерРядка = record.НомерРядка,
                 Основний = record.Основний,
                 Файл = record.Файл,
                 
@@ -205,6 +260,7 @@ class Номенклатура_ТабличнаЧастина_Файли : Direc
                 ЕлементВласник.Файли_TablePart.Records.Add(new()
                 {
                     UID = row.UnigueID.UGuid,
+                    НомерРядка = row.НомерРядка,
                     Основний = row.Основний,
                     Файл = row.Файл,
                     

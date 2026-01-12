@@ -11,7 +11,6 @@ using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
 using GeneratedCode.Перелічення;
 
-
 namespace StorageAndTrade;
 
 class Контрагенти_ТабличнаЧастина_Контакти : DirectoryFormTablePart
@@ -24,6 +23,25 @@ class Контрагенти_ТабличнаЧастина_Контакти : D
 
     class ItemRow : RowTablePart
     {
+    
+        //
+        // НомерРядка
+        //
+        public int НомерРядка
+        {
+            get => НомерРядка_;
+            set
+            {
+                if (!НомерРядка_.Equals(value))
+                {
+                    НомерРядка_ = value;
+                    Сhanged_НомерРядка?.Invoke();
+                }
+            }
+        }
+        int НомерРядка_ = 0;
+        public Action? Сhanged_НомерРядка;
+
     
         //
         // Тип
@@ -186,6 +204,7 @@ class Контрагенти_ТабличнаЧастина_Контакти : D
         {
             return new()
             {
+                НомерРядка = НомерРядка,
                 Тип = Тип,
                 Значення = Значення,
                 Телефон = Телефон,
@@ -213,6 +232,36 @@ class Контрагенти_ТабличнаЧастина_Контакти : D
 
     protected override void Columns()
     {
+        
+        //НомерРядка
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = LabelTablePartCell.New(null);
+                
+                cell.Halign = Align.End;
+                    
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = (LabelTablePartCell?)listItem.Child;
+                ItemRow? row = (ItemRow?)listItem.Item;
+                if (cell != null && row != null)
+                {
+                    
+                    (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke();
+                        
+                }
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("№", factory);
+            column.Resizable = true;
+            
+            Grid.AppendColumn(column);
+        }
         
         //Тип
         {
@@ -462,7 +511,7 @@ class Контрагенти_ТабличнаЧастина_Контакти : D
         if (ЕлементВласник != null) 
         {
             
-            ЕлементВласник.Контакти_TablePart.FillJoin([]);
+            ЕлементВласник.Контакти_TablePart.FillJoin([Контрагенти_Контакти_TablePart.НомерРядка,]);
             await ЕлементВласник.Контакти_TablePart.Read();
             
 
@@ -474,6 +523,7 @@ class Контрагенти_ТабличнаЧастина_Контакти : D
             Store.Append(new ItemRow()
             {
                 UnigueID = new(record.UID),
+                НомерРядка = record.НомерРядка,
                 Тип = record.Тип,
                 Значення = record.Значення,
                 Телефон = record.Телефон,
@@ -508,6 +558,7 @@ class Контрагенти_ТабличнаЧастина_Контакти : D
                 ЕлементВласник.Контакти_TablePart.Records.Add(new()
                 {
                     UID = row.UnigueID.UGuid,
+                    НомерРядка = row.НомерРядка,
                     Тип = row.Тип,
                     Значення = row.Значення,
                     Телефон = row.Телефон,

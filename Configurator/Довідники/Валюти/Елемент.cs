@@ -18,9 +18,9 @@ class Валюти_Елемент : DirectoryFormElement
     public Валюти_Objest Елемент { get; init; } = new Валюти_Objest();
     
     #region Fields
-    Entry Назва = new() { WidthRequest = 500 };
+    Entry Код = new() { WidthRequest = 100 };
+                    Entry Назва = new() { WidthRequest = 500 };
                     Entry КороткаНазва = new() { WidthRequest = 500 };
-                    Entry Код = new() { WidthRequest = 500 };
                     Entry Код_R030 = new() { WidthRequest = 500 };
                     CheckButton ВиводитиКурсНаСтартову = CheckButton.NewWithLabel("ВиводитиКурсНаСтартову");
             
@@ -39,17 +39,17 @@ class Валюти_Елемент : DirectoryFormElement
     protected override void CreateStart(Box vBox)
     {
         
+            // Код
+            CreateField(vBox, "Код:", Код);
+                        
             // Назва
             CreateField(vBox, "Назва:", Назва);
                         
             // КороткаНазва
-            CreateField(vBox, "КороткаНазва:", КороткаНазва);
-                        
-            // Код
-            CreateField(vBox, "Код:", Код);
+            CreateField(vBox, "Коротка назва:", КороткаНазва);
                         
             // Код_R030
-            CreateField(vBox, "Код_R030:", Код_R030);
+            CreateField(vBox, "Код R030:", Код_R030);
                         
             // ВиводитиКурсНаСтартову
             CreateField(vBox, null, ВиводитиКурсНаСтартову);
@@ -65,9 +65,9 @@ class Валюти_Елемент : DirectoryFormElement
 
     public override async ValueTask AssignValue()
     {
-        Назва.SetText(Елемент.Назва);
+        Код.SetText(Елемент.Код);
+                        Назва.SetText(Елемент.Назва);
                         КороткаНазва.SetText(Елемент.КороткаНазва);
-                        Код.SetText(Елемент.Код);
                         Код_R030.SetText(Елемент.Код_R030);
                         ВиводитиКурсНаСтартову.Active = Елемент.ВиводитиКурсНаСтартову;
                 
@@ -75,9 +75,9 @@ class Валюти_Елемент : DirectoryFormElement
 
     protected override void GetValue()
     {
-        Елемент.Назва = Назва.GetText();
+        Елемент.Код = Код.GetText();
+                        Елемент.Назва = Назва.GetText();
                         Елемент.КороткаНазва = КороткаНазва.GetText();
-                        Елемент.Код = Код.GetText();
                         Елемент.Код_R030 = Код_R030.GetText();
                         Елемент.ВиводитиКурсНаСтартову = ВиводитиКурсНаСтартову.Active;
                 
@@ -96,7 +96,7 @@ class Валюти_Елемент : DirectoryFormElement
                 isSaved = true;
             }
         }
-        catch 
+        catch (Exception ex)
         {
             //ФункціїДляПовідомлень.ДодатиПовідомлення(Елемент.GetBasis(), Caption, ex);
         }

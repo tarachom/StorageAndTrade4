@@ -18,14 +18,14 @@ class Організації_Елемент : DirectoryFormElement
     public Організації_Objest Елемент { get; init; } = new Організації_Objest();
     
     #region Fields
-    Entry Назва = new() { WidthRequest = 500 };
-                    Entry Код = new() { WidthRequest = 500 };
+    Entry Код = new() { WidthRequest = 100 };
+                    Entry Назва = new() { WidthRequest = 500 };
                     Entry НазваПовна = new() { WidthRequest = 500 };
                     Entry НазваСкорочена = new() { WidthRequest = 500 };
                     DateTimeControl ДатаРеєстрації = new(){ OnlyDate = true };
             Entry КраїнаРеєстрації = new() { WidthRequest = 500 };
-                    Entry СвідоцтвоСеріяНомер = new() { WidthRequest = 500 };
-                    Entry СвідоцтвоДатаВидачі = new() { WidthRequest = 500 };
+                    Entry СвідоцтвоСеріяНомер = new() { WidthRequest = 200 };
+                    Entry СвідоцтвоДатаВидачі = new() { WidthRequest = 200 };
                     Організації_PointerControl Холдинг = new() { Caption = "Холдинг", WidthPresentation = 500 };
             
     #endregion
@@ -46,11 +46,11 @@ class Організації_Елемент : DirectoryFormElement
     protected override void CreateStart(Box vBox)
     {
         
-            // Назва
-            CreateField(vBox, "Назва:", Назва);
-                        
             // Код
             CreateField(vBox, "Код:", Код);
+                        
+            // Назва
+            CreateField(vBox, "Назва:", Назва);
                         
             // НазваПовна
             CreateField(vBox, "Назва повна:", НазваПовна);
@@ -87,8 +87,8 @@ class Організації_Елемент : DirectoryFormElement
 
     public override async ValueTask AssignValue()
     {
-        Назва.SetText(Елемент.Назва);
-                        Код.SetText(Елемент.Код);
+        Код.SetText(Елемент.Код);
+                        Назва.SetText(Елемент.Назва);
                         НазваПовна.SetText(Елемент.НазваПовна);
                         НазваСкорочена.SetText(Елемент.НазваСкорочена);
                         ДатаРеєстрації.Value = Елемент.ДатаРеєстрації;
@@ -105,8 +105,8 @@ class Організації_Елемент : DirectoryFormElement
 
     protected override void GetValue()
     {
-        Елемент.Назва = Назва.GetText();
-                        Елемент.Код = Код.GetText();
+        Елемент.Код = Код.GetText();
+                        Елемент.Назва = Назва.GetText();
                         Елемент.НазваПовна = НазваПовна.GetText();
                         Елемент.НазваСкорочена = НазваСкорочена.GetText();
                         Елемент.ДатаРеєстрації = ДатаРеєстрації.Value;

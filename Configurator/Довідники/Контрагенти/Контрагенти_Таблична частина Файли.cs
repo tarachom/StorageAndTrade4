@@ -11,7 +11,6 @@ using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
 using GeneratedCode.Перелічення;
 
-
 namespace StorageAndTrade;
 
 class Контрагенти_ТабличнаЧастина_Файли : DirectoryFormTablePart
@@ -24,6 +23,25 @@ class Контрагенти_ТабличнаЧастина_Файли : Directo
 
     class ItemRow : RowTablePart
     {
+    
+        //
+        // НомерРядка
+        //
+        public int НомерРядка
+        {
+            get => НомерРядка_;
+            set
+            {
+                if (!НомерРядка_.Equals(value))
+                {
+                    НомерРядка_ = value;
+                    Сhanged_НомерРядка?.Invoke();
+                }
+            }
+        }
+        int НомерРядка_ = 0;
+        public Action? Сhanged_НомерРядка;
+
     
         //
         // Файл
@@ -53,6 +71,7 @@ class Контрагенти_ТабличнаЧастина_Файли : Directo
         {
             return new()
             {
+                НомерРядка = НомерРядка,
                 Файл = Файл.Copy(),
                 
             };
@@ -73,6 +92,36 @@ class Контрагенти_ТабличнаЧастина_Файли : Directo
 
     protected override void Columns()
     {
+        
+        //НомерРядка
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = LabelTablePartCell.New(null);
+                
+                cell.Halign = Align.End;
+                    
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = (LabelTablePartCell?)listItem.Child;
+                ItemRow? row = (ItemRow?)listItem.Item;
+                if (cell != null && row != null)
+                {
+                    
+                    (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke();
+                        
+                }
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("№", factory);
+            column.Resizable = true;
+            
+            Grid.AppendColumn(column);
+        }
         
         //Файл
         {
@@ -117,7 +166,7 @@ class Контрагенти_ТабличнаЧастина_Файли : Directo
         if (ЕлементВласник != null) 
         {
             
-            ЕлементВласник.Файли_TablePart.FillJoin([]);
+            ЕлементВласник.Файли_TablePart.FillJoin([Контрагенти_Файли_TablePart.НомерРядка,]);
             await ЕлементВласник.Файли_TablePart.Read();
             
 
@@ -129,6 +178,7 @@ class Контрагенти_ТабличнаЧастина_Файли : Directo
             Store.Append(new ItemRow()
             {
                 UnigueID = new(record.UID),
+                НомерРядка = record.НомерРядка,
                 Файл = record.Файл,
                 
             });
@@ -156,6 +206,7 @@ class Контрагенти_ТабличнаЧастина_Файли : Directo
                 ЕлементВласник.Файли_TablePart.Records.Add(new()
                 {
                     UID = row.UnigueID.UGuid,
+                    НомерРядка = row.НомерРядка,
                     Файл = row.Файл,
                     
                 });

@@ -18,16 +18,15 @@ class Склади_Елемент : DirectoryFormElement
     public Склади_Objest Елемент { get; init; } = new Склади_Objest();
     
     #region Fields
-    Entry Назва = new() { WidthRequest = 500 };
-                    Entry Код = new() { WidthRequest = 500 };
-                    ComboBoxText ТипСкладу = new ComboBoxText();
+    Entry Код = new() { WidthRequest = 100 };
+                    Entry Назва = new() { WidthRequest = 500 };
+                    Склади_Папки_PointerControl Папка = new() { Caption = "Папка", WidthPresentation = 500 };
+            ComboBoxText ТипСкладу = new ComboBoxText();
             ФізичніОсоби_PointerControl Відповідальний = new() { Caption = "Відповідальний", WidthPresentation = 500 };
-            ВидиЦін_PointerControl ВидЦін = new() { Caption = "ВидЦін", WidthPresentation = 500 };
+            ВидиЦін_PointerControl ВидЦін = new() { Caption = "Вид цін", WidthPresentation = 500 };
             СтруктураПідприємства_PointerControl Підрозділ = new() { Caption = "Підрозділ", WidthPresentation = 500 };
-            Склади_Папки_PointerControl Папка = new() { Caption = "Папка", WidthPresentation = 500 };
             ComboBoxText НалаштуванняАдресногоЗберігання = new ComboBoxText();
-            Entry КлючовіСловаДляПошуку = new() { WidthRequest = 500 };
-                    
+            
     #endregion
 
     #region TabularParts
@@ -68,14 +67,17 @@ class Склади_Елемент : DirectoryFormElement
     protected override void CreateStart(Box vBox)
     {
         
-            // Назва
-            CreateField(vBox, "Назва:", Назва);
-                        
             // Код
             CreateField(vBox, "Код:", Код);
                         
+            // Назва
+            CreateField(vBox, "Назва:", Назва);
+                        
+            // Папка
+            CreateField(vBox, null, Папка);
+                
             // ТипСкладу
-            CreateField(vBox, "ТипСкладу:", ТипСкладу);
+            CreateField(vBox, "Тип складу:", ТипСкладу);
                 
             // Відповідальний
             CreateField(vBox, null, Відповідальний);
@@ -86,15 +88,9 @@ class Склади_Елемент : DirectoryFormElement
             // Підрозділ
             CreateField(vBox, null, Підрозділ);
                 
-            // Папка
-            CreateField(vBox, null, Папка);
-                
             // НалаштуванняАдресногоЗберігання
-            CreateField(vBox, "НалаштуванняАдресногоЗберігання:", НалаштуванняАдресногоЗберігання);
+            CreateField(vBox, "Адресне зберігання:", НалаштуванняАдресногоЗберігання);
                 
-            // КлючовіСловаДляПошуку
-            CreateField(vBox, "КлючовіСловаДляПошуку:", КлючовіСловаДляПошуку);
-                        
     }
 
     protected override void CreateEnd(Box vBox)
@@ -109,16 +105,15 @@ class Склади_Елемент : DirectoryFormElement
 
     public override async ValueTask AssignValue()
     {
-        Назва.SetText(Елемент.Назва);
-                        Код.SetText(Елемент.Код);
-                        ТипСкладу.ActiveId = Елемент.ТипСкладу.ToString();
+        Код.SetText(Елемент.Код);
+                        Назва.SetText(Елемент.Назва);
+                        Папка.Pointer = Елемент.Папка;
+                ТипСкладу.ActiveId = Елемент.ТипСкладу.ToString();
                 Відповідальний.Pointer = Елемент.Відповідальний;
                 ВидЦін.Pointer = Елемент.ВидЦін;
                 Підрозділ.Pointer = Елемент.Підрозділ;
-                Папка.Pointer = Елемент.Папка;
                 НалаштуванняАдресногоЗберігання.ActiveId = Елемент.НалаштуванняАдресногоЗберігання.ToString();
-                КлючовіСловаДляПошуку.SetText(Елемент.КлючовіСловаДляПошуку);
-                        
+                
             // Таблична частина "Контакти"
             Контакти.ЕлементВласник = Елемент;
             await Контакти.LoadRecords();
@@ -127,16 +122,15 @@ class Склади_Елемент : DirectoryFormElement
 
     protected override void GetValue()
     {
-        Елемент.Назва = Назва.GetText();
-                        Елемент.Код = Код.GetText();
-                        Елемент.ТипСкладу = ПсевдонімиПерелічення.ТипиСкладів_FindByName(ТипСкладу.ActiveId);
+        Елемент.Код = Код.GetText();
+                        Елемент.Назва = Назва.GetText();
+                        Елемент.Папка = Папка.Pointer;
+                Елемент.ТипСкладу = ПсевдонімиПерелічення.ТипиСкладів_FindByName(ТипСкладу.ActiveId);
                 Елемент.Відповідальний = Відповідальний.Pointer;
                 Елемент.ВидЦін = ВидЦін.Pointer;
                 Елемент.Підрозділ = Підрозділ.Pointer;
-                Елемент.Папка = Папка.Pointer;
                 Елемент.НалаштуванняАдресногоЗберігання = ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_FindByName(НалаштуванняАдресногоЗберігання.ActiveId);
-                Елемент.КлючовіСловаДляПошуку = КлючовіСловаДляПошуку.GetText();
-                        
+                
     }
 
     #endregion
@@ -153,7 +147,7 @@ class Склади_Елемент : DirectoryFormElement
                 isSaved = true;
             }
         }
-        catch 
+        catch (Exception ex)
         {
             //ФункціїДляПовідомлень.ДодатиПовідомлення(Елемент.GetBasis(), Caption, ex);
         }

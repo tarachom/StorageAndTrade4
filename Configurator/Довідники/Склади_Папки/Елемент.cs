@@ -20,8 +20,8 @@ class Склади_Папки_Елемент : DirectoryFormElement
     public Склади_Папки_Pointer РодичДляНового { get; set; } = new Склади_Папки_Pointer();
     
     #region Fields
-    Entry Назва = new() { WidthRequest = 100 };
-                    Entry Код = new() { WidthRequest = 500 };
+    Entry Код = new() { WidthRequest = 100 };
+                    Entry Назва = new() { WidthRequest = 500 };
                     Склади_Папки_PointerControl Родич = new() { Caption = "Папка:", WidthPresentation = 500 };
             
     #endregion
@@ -39,11 +39,11 @@ class Склади_Папки_Елемент : DirectoryFormElement
     protected override void CreateStart(Box vBox)
     {
         
-            // Назва
-            CreateField(vBox, "Назва:", Назва);
-                        
             // Код
             CreateField(vBox, "Код:", Код);
+                        
+            // Назва
+            CreateField(vBox, "Назва:", Назва);
                         
             // Родич
             CreateField(vBox, null, Родич);
@@ -57,23 +57,23 @@ class Склади_Папки_Елемент : DirectoryFormElement
 
     #region Присвоєння / зчитування значень
 
-    public override async  ValueTask AssignValue()
+    public override async ValueTask AssignValue()
     {
         
                 if (IsNew)
                     Елемент.Родич = РодичДляНового;
                 else
                     Родич.OpenFolder = Елемент.UnigueID;
-            Назва.SetText(Елемент.Назва);
-                        Код.SetText(Елемент.Код);
+            Код.SetText(Елемент.Код);
+                        Назва.SetText(Елемент.Назва);
                         Родич.Pointer = Елемент.Родич;
                 
     }
 
     protected override void GetValue()
     {
-        Елемент.Назва = Назва.GetText();
-                        Елемент.Код = Код.GetText();
+        Елемент.Код = Код.GetText();
+                        Елемент.Назва = Назва.GetText();
                         Елемент.Родич = Родич.Pointer;
                 
     }
@@ -91,7 +91,7 @@ class Склади_Папки_Елемент : DirectoryFormElement
                 isSaved = true;
             }
         }
-        catch
+        catch (Exception ex)
         {
             //ФункціїДляПовідомлень.ДодатиПовідомлення(Елемент.GetBasis(), Caption, ex);
         }

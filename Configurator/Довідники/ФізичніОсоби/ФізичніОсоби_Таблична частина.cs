@@ -11,7 +11,6 @@ using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
 using GeneratedCode.Перелічення;
 
-
 namespace StorageAndTrade;
 
 class ФізичніОсоби_ТабличнаЧастина_Контакти : DirectoryFormTablePart
@@ -24,6 +23,25 @@ class ФізичніОсоби_ТабличнаЧастина_Контакти :
 
     class ItemRow : RowTablePart
     {
+    
+        //
+        // НомерРядка
+        //
+        public int НомерРядка
+        {
+            get => НомерРядка_;
+            set
+            {
+                if (!НомерРядка_.Equals(value))
+                {
+                    НомерРядка_ = value;
+                    Сhanged_НомерРядка?.Invoke();
+                }
+            }
+        }
+        int НомерРядка_ = 0;
+        public Action? Сhanged_НомерРядка;
+
     
         //
         // Тип
@@ -186,6 +204,7 @@ class ФізичніОсоби_ТабличнаЧастина_Контакти :
         {
             return new()
             {
+                НомерРядка = НомерРядка,
                 Тип = Тип,
                 Значення = Значення,
                 Телефон = Телефон,
@@ -214,6 +233,36 @@ class ФізичніОсоби_ТабличнаЧастина_Контакти :
     protected override void Columns()
     {
         
+        //НомерРядка
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = LabelTablePartCell.New(null);
+                
+                cell.Halign = Align.End;
+                    
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = (LabelTablePartCell?)listItem.Child;
+                ItemRow? row = (ItemRow?)listItem.Item;
+                if (cell != null && row != null)
+                {
+                    
+                    (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke();
+                        
+                }
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("№", factory);
+            column.Resizable = true;
+            
+            Grid.AppendColumn(column);
+        }
+        
         //Тип
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
@@ -234,7 +283,7 @@ class ФізичніОсоби_ТабличнаЧастина_Контакти :
                 if (cell != null && row != null)
                 {
                     
-                    cell.OnСhanged = () => row.Тип = ПсевдонімиПерелічення.ТипиКонтактноїІнформації_FindByName(cell.Value);
+                    cell.OnСhanged = () => row.Тип = ПсевдонімиПерелічення.ТипиКонтактноїІнформації_FindByName(cell.Combo.ActiveId);
                     (row.Сhanged_Тип = () => cell.Value = row.Тип.ToString()).Invoke();
                         
                 }
@@ -251,19 +300,20 @@ class ФізичніОсоби_ТабличнаЧастина_Контакти :
             factory.OnSetup += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = LabelTablePartCell.New(null);
+                var cell = new TextTablePartCell();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = (LabelTablePartCell?)listItem.Child;
+                var cell = (TextTablePartCell?)listItem.Child;
                 ItemRow? row = (ItemRow?)listItem.Item;
                 if (cell != null && row != null)
                 {
                     
-                    (row.Сhanged_Значення = () => cell.SetText(row.NumberRow)).Invoke();
+                    cell.OnСhanged = () => row.Значення = cell.Value;
+                    (row.Сhanged_Значення = () => cell.Value = row.Значення).Invoke();
                         
                 }
             };
@@ -281,19 +331,20 @@ class ФізичніОсоби_ТабличнаЧастина_Контакти :
             factory.OnSetup += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = LabelTablePartCell.New(null);
+                var cell = new TextTablePartCell();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = (LabelTablePartCell?)listItem.Child;
+                var cell = (TextTablePartCell?)listItem.Child;
                 ItemRow? row = (ItemRow?)listItem.Item;
                 if (cell != null && row != null)
                 {
                     
-                    (row.Сhanged_Телефон = () => cell.SetText(row.NumberRow)).Invoke();
+                    cell.OnСhanged = () => row.Телефон = cell.Value;
+                    (row.Сhanged_Телефон = () => cell.Value = row.Телефон).Invoke();
                         
                 }
             };
@@ -309,19 +360,20 @@ class ФізичніОсоби_ТабличнаЧастина_Контакти :
             factory.OnSetup += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = LabelTablePartCell.New(null);
+                var cell = new TextTablePartCell();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = (LabelTablePartCell?)listItem.Child;
+                var cell = (TextTablePartCell?)listItem.Child;
                 ItemRow? row = (ItemRow?)listItem.Item;
                 if (cell != null && row != null)
                 {
                     
-                    (row.Сhanged_ЕлектроннаПошта = () => cell.SetText(row.NumberRow)).Invoke();
+                    cell.OnСhanged = () => row.ЕлектроннаПошта = cell.Value;
+                    (row.Сhanged_ЕлектроннаПошта = () => cell.Value = row.ЕлектроннаПошта).Invoke();
                         
                 }
             };
@@ -337,19 +389,20 @@ class ФізичніОсоби_ТабличнаЧастина_Контакти :
             factory.OnSetup += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = LabelTablePartCell.New(null);
+                var cell = new TextTablePartCell();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = (LabelTablePartCell?)listItem.Child;
+                var cell = (TextTablePartCell?)listItem.Child;
                 ItemRow? row = (ItemRow?)listItem.Item;
                 if (cell != null && row != null)
                 {
                     
-                    (row.Сhanged_Країна = () => cell.SetText(row.NumberRow)).Invoke();
+                    cell.OnСhanged = () => row.Країна = cell.Value;
+                    (row.Сhanged_Країна = () => cell.Value = row.Країна).Invoke();
                         
                 }
             };
@@ -365,19 +418,20 @@ class ФізичніОсоби_ТабличнаЧастина_Контакти :
             factory.OnSetup += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = LabelTablePartCell.New(null);
+                var cell = new TextTablePartCell();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = (LabelTablePartCell?)listItem.Child;
+                var cell = (TextTablePartCell?)listItem.Child;
                 ItemRow? row = (ItemRow?)listItem.Item;
                 if (cell != null && row != null)
                 {
                     
-                    (row.Сhanged_Область = () => cell.SetText(row.NumberRow)).Invoke();
+                    cell.OnСhanged = () => row.Область = cell.Value;
+                    (row.Сhanged_Область = () => cell.Value = row.Область).Invoke();
                         
                 }
             };
@@ -393,19 +447,20 @@ class ФізичніОсоби_ТабличнаЧастина_Контакти :
             factory.OnSetup += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = LabelTablePartCell.New(null);
+                var cell = new TextTablePartCell();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = (LabelTablePartCell?)listItem.Child;
+                var cell = (TextTablePartCell?)listItem.Child;
                 ItemRow? row = (ItemRow?)listItem.Item;
                 if (cell != null && row != null)
                 {
                     
-                    (row.Сhanged_Район = () => cell.SetText(row.NumberRow)).Invoke();
+                    cell.OnСhanged = () => row.Район = cell.Value;
+                    (row.Сhanged_Район = () => cell.Value = row.Район).Invoke();
                         
                 }
             };
@@ -421,19 +476,20 @@ class ФізичніОсоби_ТабличнаЧастина_Контакти :
             factory.OnSetup += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = LabelTablePartCell.New(null);
+                var cell = new TextTablePartCell();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = (LabelTablePartCell?)listItem.Child;
+                var cell = (TextTablePartCell?)listItem.Child;
                 ItemRow? row = (ItemRow?)listItem.Item;
                 if (cell != null && row != null)
                 {
                     
-                    (row.Сhanged_Місто = () => cell.SetText(row.NumberRow)).Invoke();
+                    cell.OnСhanged = () => row.Місто = cell.Value;
+                    (row.Сhanged_Місто = () => cell.Value = row.Місто).Invoke();
                         
                 }
             };
@@ -457,7 +513,7 @@ class ФізичніОсоби_ТабличнаЧастина_Контакти :
         if (ЕлементВласник != null) 
         {
             
-            ЕлементВласник.Контакти_TablePart.FillJoin([]);
+            ЕлементВласник.Контакти_TablePart.FillJoin([ФізичніОсоби_Контакти_TablePart.НомерРядка,]);
             await ЕлементВласник.Контакти_TablePart.Read();
             
 
@@ -469,6 +525,7 @@ class ФізичніОсоби_ТабличнаЧастина_Контакти :
             Store.Append(new ItemRow()
             {
                 UnigueID = new(record.UID),
+                НомерРядка = record.НомерРядка,
                 Тип = record.Тип,
                 Значення = record.Значення,
                 Телефон = record.Телефон,
@@ -503,6 +560,7 @@ class ФізичніОсоби_ТабличнаЧастина_Контакти :
                 ЕлементВласник.Контакти_TablePart.Records.Add(new()
                 {
                     UID = row.UnigueID.UGuid,
+                    НомерРядка = row.НомерРядка,
                     Тип = row.Тип,
                     Значення = row.Значення,
                     Телефон = row.Телефон,

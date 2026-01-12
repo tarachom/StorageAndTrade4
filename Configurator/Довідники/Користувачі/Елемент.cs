@@ -18,12 +18,11 @@ class Користувачі_Елемент : DirectoryFormElement
     public Користувачі_Objest Елемент { get; init; } = new Користувачі_Objest();
     
     #region Fields
-    Entry Назва = new() { WidthRequest = 500 };
-                    Entry Код = new() { WidthRequest = 500 };
-                    ФізичніОсоби_PointerControl ФізичнаОсоба = new() { Caption = "ФізичнаОсоба", WidthPresentation = 500 };
+    Entry Код = new() { WidthRequest = 100 };
+                    Entry Назва = new() { WidthRequest = 500 };
+                    ФізичніОсоби_PointerControl ФізичнаОсоба = new() { Caption = "Фізична особа", WidthPresentation = 500 };
             Entry Коментар = new() { WidthRequest = 500 };
-                    //Guid КодВСпеціальнійТаблиці = new();
-            
+                    
     #endregion
 
     #region TabularParts
@@ -42,11 +41,11 @@ class Користувачі_Елемент : DirectoryFormElement
     protected override void CreateStart(Box vBox)
     {
         
-            // Назва
-            CreateField(vBox, "Назва:", Назва);
-                        
             // Код
             CreateField(vBox, "Код:", Код);
+                        
+            // Назва
+            CreateField(vBox, "Назва:", Назва);
                         
             // ФізичнаОсоба
             CreateField(vBox, null, ФізичнаОсоба);
@@ -54,7 +53,6 @@ class Користувачі_Елемент : DirectoryFormElement
             // Коментар
             CreateField(vBox, "Коментар:", Коментар);
                         
-            // КодВСпеціальнійТаблиці
     }
 
     protected override void CreateEnd(Box vBox)
@@ -69,12 +67,11 @@ class Користувачі_Елемент : DirectoryFormElement
 
     public override async ValueTask AssignValue()
     {
-        Назва.SetText(Елемент.Назва);
-                        Код.SetText(Елемент.Код);
+        Код.SetText(Елемент.Код);
+                        Назва.SetText(Елемент.Назва);
                         ФізичнаОсоба.Pointer = Елемент.ФізичнаОсоба;
                 Коментар.SetText(Елемент.Коментар);
-                        //КодВСпеціальнійТаблиці = Елемент.КодВСпеціальнійТаблиці;
-                
+                        
             // Таблична частина "Контакти"
             Контакти.ЕлементВласник = Елемент;
             await Контакти.LoadRecords();
@@ -83,12 +80,11 @@ class Користувачі_Елемент : DirectoryFormElement
 
     protected override void GetValue()
     {
-        Елемент.Назва = Назва.GetText();
-                        Елемент.Код = Код.GetText();
+        Елемент.Код = Код.GetText();
+                        Елемент.Назва = Назва.GetText();
                         Елемент.ФізичнаОсоба = ФізичнаОсоба.Pointer;
                 Елемент.Коментар = Коментар.GetText();
-                        //Елемент.КодВСпеціальнійТаблиці = КодВСпеціальнійТаблиці;
-                
+                        
     }
 
     #endregion

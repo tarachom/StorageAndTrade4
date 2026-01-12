@@ -11,7 +11,6 @@ using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
 using GeneratedCode.Перелічення;
 
-
 namespace StorageAndTrade;
 
 class ПоступленняТоварівТаПослуг_ТабличнаЧастина_Товари : DocumentFormTablePart
@@ -253,6 +252,25 @@ class ПоступленняТоварівТаПослуг_ТабличнаЧа�
         public Action? Сhanged_Сума;
 
     
+        //
+        // ЗамовленняПостачальнику
+        //
+        public ЗамовленняПостачальнику_Pointer ЗамовленняПостачальнику
+        {
+            get => ЗамовленняПостачальнику_;
+            set
+            {
+                if (!ЗамовленняПостачальнику_.Equals(value))
+                {
+                    ЗамовленняПостачальнику_ = value;
+                    Сhanged_ЗамовленняПостачальнику?.Invoke();
+                }
+            }
+        }
+        ЗамовленняПостачальнику_Pointer ЗамовленняПостачальнику_ = new();
+        public Action? Сhanged_ЗамовленняПостачальнику;
+
+    
 
         /*
         Функції
@@ -274,6 +292,7 @@ class ПоступленняТоварівТаПослуг_ТабличнаЧа�
                 Склад = Склад.Copy(),
                 Скидка = Скидка,
                 Сума = Сума,
+                ЗамовленняПостачальнику = ЗамовленняПостачальнику.Copy(),
                 
             };
         }
@@ -314,7 +333,7 @@ class ПоступленняТоварівТаПослуг_ТабличнаЧа�
                 if (cell != null && row != null)
                 {
                     
-                    (row.Сhanged_НомерРядка = () => cell.SetText(row.NumberRow)).Invoke();
+                    (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke();
                         
                 }
             };
@@ -350,7 +369,7 @@ class ПоступленняТоварівТаПослуг_ТабличнаЧа�
             ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
             column.Resizable = true;
             
-            column.FixedWidth = 500;
+            column.FixedWidth = 300;
             
             Grid.AppendColumn(column);
         }
@@ -381,7 +400,7 @@ class ПоступленняТоварівТаПослуг_ТабличнаЧа�
             ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
             column.Resizable = true;
             
-            column.FixedWidth = 500;
+            column.FixedWidth = 300;
             
             Grid.AppendColumn(column);
         }
@@ -411,6 +430,8 @@ class ПоступленняТоварівТаПослуг_ТабличнаЧа�
             };
             ColumnViewColumn column = ColumnViewColumn.New("Серія", factory);
             column.Resizable = true;
+            
+            column.FixedWidth = 300;
             
             Grid.AppendColumn(column);
         }
@@ -469,6 +490,8 @@ class ПоступленняТоварівТаПослуг_ТабличнаЧа�
             };
             ColumnViewColumn column = ColumnViewColumn.New("Пакування", factory);
             column.Resizable = true;
+            
+            column.FixedWidth = 200;
             
             Grid.AppendColumn(column);
         }
@@ -586,6 +609,8 @@ class ПоступленняТоварівТаПослуг_ТабличнаЧа�
             ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
             column.Resizable = true;
             
+            column.FixedWidth = 300;
+            
             Grid.AppendColumn(column);
         }
         
@@ -647,6 +672,37 @@ class ПоступленняТоварівТаПослуг_ТабличнаЧа�
             Grid.AppendColumn(column);
         }
         
+        //ЗамовленняПостачальнику
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = new ЗамовленняПостачальнику_PointerTablePartCell();
+                
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = (ЗамовленняПостачальнику_PointerTablePartCell?)listItem.Child;
+                ItemRow? row = (ItemRow?)listItem.Item;
+                if (cell != null && row != null)
+                {
+                    
+                    cell.OnSelect = () => row.ЗамовленняПостачальнику = cell.Pointer;
+                    (row.Сhanged_ЗамовленняПостачальнику = () => cell.Pointer = row.ЗамовленняПостачальнику).Invoke();
+                        
+                }
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("ЗамовленняПостачальнику", factory);
+            column.Resizable = true;
+            
+            column.FixedWidth = 300;
+            
+            Grid.AppendColumn(column);
+        }
+        
         { /* Пуста колонка для заповнення вільного простору */
             ColumnViewColumn column = ColumnViewColumn.New(null, null);
             column.Resizable = true;
@@ -685,6 +741,7 @@ class ПоступленняТоварівТаПослуг_ТабличнаЧа�
                 Склад = record.Склад,
                 Скидка = record.Скидка,
                 Сума = record.Сума,
+                ЗамовленняПостачальнику = record.ЗамовленняПостачальнику,
                 
             });
 
@@ -723,6 +780,7 @@ class ПоступленняТоварівТаПослуг_ТабличнаЧа�
                     Склад = row.Склад,
                     Скидка = row.Скидка,
                     Сума = row.Сума,
+                    ЗамовленняПостачальнику = row.ЗамовленняПостачальнику,
                     
                 });
             }

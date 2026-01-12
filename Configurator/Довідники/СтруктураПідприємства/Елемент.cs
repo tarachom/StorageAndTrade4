@@ -18,8 +18,8 @@ class СтруктураПідприємства_Елемент : DirectoryFormE
     public СтруктураПідприємства_Objest Елемент { get; init; } = new СтруктураПідприємства_Objest();
     
     #region Fields
-    Entry Назва = new() { WidthRequest = 500 };
-                    Entry Код = new() { WidthRequest = 500 };
+    Entry Код = new() { WidthRequest = 100 };
+                    Entry Назва = new() { WidthRequest = 500 };
                     ФізичніОсоби_PointerControl Керівник = new() { Caption = "Керівник", WidthPresentation = 500 };
             
     #endregion
@@ -37,11 +37,11 @@ class СтруктураПідприємства_Елемент : DirectoryFormE
     protected override void CreateStart(Box vBox)
     {
         
-            // Назва
-            CreateField(vBox, "Назва:", Назва);
-                        
             // Код
             CreateField(vBox, "Код:", Код);
+                        
+            // Назва
+            CreateField(vBox, "Назва:", Назва);
                         
             // Керівник
             CreateField(vBox, null, Керівник);
@@ -57,16 +57,16 @@ class СтруктураПідприємства_Елемент : DirectoryFormE
 
     public override async ValueTask AssignValue()
     {
-        Назва.SetText(Елемент.Назва);
-                        Код.SetText(Елемент.Код);
+        Код.SetText(Елемент.Код);
+                        Назва.SetText(Елемент.Назва);
                         Керівник.Pointer = Елемент.Керівник;
                 
     }
 
     protected override void GetValue()
     {
-        Елемент.Назва = Назва.GetText();
-                        Елемент.Код = Код.GetText();
+        Елемент.Код = Код.GetText();
+                        Елемент.Назва = Назва.GetText();
                         Елемент.Керівник = Керівник.Pointer;
                 
     }

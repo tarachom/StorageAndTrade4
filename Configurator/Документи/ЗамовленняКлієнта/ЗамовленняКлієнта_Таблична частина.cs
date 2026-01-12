@@ -11,7 +11,6 @@ using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
 using GeneratedCode.Перелічення;
 
-
 namespace StorageAndTrade;
 
 class ЗамовленняКлієнта_ТабличнаЧастина_Товари : DocumentFormTablePart
@@ -330,6 +329,8 @@ class ЗамовленняКлієнта_ТабличнаЧастина_Това
             ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
             column.Resizable = true;
             
+            column.FixedWidth = 300;
+            
             Grid.AppendColumn(column);
         }
         
@@ -358,6 +359,8 @@ class ЗамовленняКлієнта_ТабличнаЧастина_Това
             };
             ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
             column.Resizable = true;
+            
+            column.FixedWidth = 300;
             
             Grid.AppendColumn(column);
         }
@@ -417,6 +420,8 @@ class ЗамовленняКлієнта_ТабличнаЧастина_Това
             ColumnViewColumn column = ColumnViewColumn.New("Пакування", factory);
             column.Resizable = true;
             
+            column.FixedWidth = 200;
+            
             Grid.AppendColumn(column);
         }
         
@@ -474,6 +479,8 @@ class ЗамовленняКлієнта_ТабличнаЧастина_Това
             };
             ColumnViewColumn column = ColumnViewColumn.New("Вид ціни", factory);
             column.Resizable = true;
+            
+            column.FixedWidth = 300;
             
             Grid.AppendColumn(column);
         }
@@ -590,6 +597,8 @@ class ЗамовленняКлієнта_ТабличнаЧастина_Това
             };
             ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
             column.Resizable = true;
+            
+            column.FixedWidth = 300;
             
             Grid.AppendColumn(column);
         }
