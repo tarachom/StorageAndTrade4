@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 09.01.2026 16:07:19
+ * Дата конфігурації: 12.01.2026 16:39:29
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон GeneratedCode.xslt
@@ -11327,7 +11327,7 @@ namespace GeneratedCode.Перелічення
             };
         }
 
-        public static ТипиКонтактноїІнформації ТипиКонтактноїІнформації_FindByName(string name)
+        public static ТипиКонтактноїІнформації ТипиКонтактноїІнформації_FindByName(string? name)
         {
             return name switch
             {
@@ -11369,7 +11369,7 @@ namespace GeneratedCode.Перелічення
             };
         }
 
-        public static ТипиНоменклатури ТипиНоменклатури_FindByName(string name)
+        public static ТипиНоменклатури ТипиНоменклатури_FindByName(string? name)
         {
             return name switch
             {
@@ -11405,7 +11405,7 @@ namespace GeneratedCode.Перелічення
             };
         }
 
-        public static ТипиСкладів ТипиСкладів_FindByName(string name)
+        public static ТипиСкладів ТипиСкладів_FindByName(string? name)
         {
             return name switch
             {
@@ -11435,7 +11435,7 @@ namespace GeneratedCode.Перелічення
             };
         }
 
-        public static СтатьФізичноїОсоби СтатьФізичноїОсоби_FindByName(string name)
+        public static СтатьФізичноїОсоби СтатьФізичноїОсоби_FindByName(string? name)
         {
             return name switch
             {
@@ -11466,7 +11466,7 @@ namespace GeneratedCode.Перелічення
             };
         }
 
-        public static СтатусиДоговорівКонтрагентів СтатусиДоговорівКонтрагентів_FindByName(string name)
+        public static СтатусиДоговорівКонтрагентів СтатусиДоговорівКонтрагентів_FindByName(string? name)
         {
             return name switch
             {
@@ -11522,7 +11522,7 @@ namespace GeneratedCode.Перелічення
             };
         }
 
-        public static ГосподарськіОперації ГосподарськіОперації_FindByName(string name)
+        public static ГосподарськіОперації ГосподарськіОперації_FindByName(string? name)
         {
             return name switch
             {
@@ -11623,7 +11623,7 @@ namespace GeneratedCode.Перелічення
             };
         }
 
-        public static ТипДоговорів ТипДоговорів_FindByName(string name)
+        public static ТипДоговорів ТипДоговорів_FindByName(string? name)
         {
             return name switch
             {
@@ -11658,7 +11658,7 @@ namespace GeneratedCode.Перелічення
             };
         }
 
-        public static СпособиДоставки СпособиДоставки_FindByName(string name)
+        public static СпособиДоставки СпособиДоставки_FindByName(string? name)
         {
             return name switch
             {
@@ -11699,7 +11699,7 @@ namespace GeneratedCode.Перелічення
             };
         }
 
-        public static ФормаОплати ФормаОплати_FindByName(string name)
+        public static ФормаОплати ФормаОплати_FindByName(string? name)
         {
             return name switch
             {
@@ -11733,7 +11733,7 @@ namespace GeneratedCode.Перелічення
             };
         }
 
-        public static СтатусиЗамовленьКлієнтів СтатусиЗамовленьКлієнтів_FindByName(string name)
+        public static СтатусиЗамовленьКлієнтів СтатусиЗамовленьКлієнтів_FindByName(string? name)
         {
             return name switch
             {
@@ -11768,7 +11768,7 @@ namespace GeneratedCode.Перелічення
             };
         }
 
-        public static СтатусиРеалізаціїТоварівТаПослуг СтатусиРеалізаціїТоварівТаПослуг_FindByName(string name)
+        public static СтатусиРеалізаціїТоварівТаПослуг СтатусиРеалізаціїТоварівТаПослуг_FindByName(string? name)
         {
             return name switch
             {
@@ -11801,7 +11801,7 @@ namespace GeneratedCode.Перелічення
             };
         }
 
-        public static ВидиРухуКоштів ВидиРухуКоштів_FindByName(string name)
+        public static ВидиРухуКоштів ВидиРухуКоштів_FindByName(string? name)
         {
             return name switch
             {
@@ -11836,7 +11836,7 @@ namespace GeneratedCode.Перелічення
             };
         }
 
-        public static СтатусиПереміщенняТоварів СтатусиПереміщенняТоварів_FindByName(string name)
+        public static СтатусиПереміщенняТоварів СтатусиПереміщенняТоварів_FindByName(string? name)
         {
             return name switch
             {
@@ -11868,7 +11868,7 @@ namespace GeneratedCode.Перелічення
             };
         }
 
-        public static СтатусиЗамовленьПостачальникам СтатусиЗамовленьПостачальникам_FindByName(string name)
+        public static СтатусиЗамовленьПостачальникам СтатусиЗамовленьПостачальникам_FindByName(string? name)
         {
             return name switch
             {
@@ -11902,7 +11902,7 @@ namespace GeneratedCode.Перелічення
             };
         }
 
-        public static ТипДокументуПартіяТоварівКомпозит ТипДокументуПартіяТоварівКомпозит_FindByName(string name)
+        public static ТипДокументуПартіяТоварівКомпозит ТипДокументуПартіяТоварівКомпозит_FindByName(string? name)
         {
             return name switch
             {
@@ -11934,7 +11934,7 @@ namespace GeneratedCode.Перелічення
             };
         }
 
-        public static ТипЗапасів ТипЗапасів_FindByName(string name)
+        public static ТипЗапасів ТипЗапасів_FindByName(string? name)
         {
             return name switch
             {
@@ -11965,7 +11965,7 @@ namespace GeneratedCode.Перелічення
             };
         }
 
-        public static ТипДокументуПродажіДокументКомпозит ТипДокументуПродажіДокументКомпозит_FindByName(string name)
+        public static ТипДокументуПродажіДокументКомпозит ТипДокументуПродажіДокументКомпозит_FindByName(string? name)
         {
             return name switch
             {
@@ -11997,7 +11997,7 @@ namespace GeneratedCode.Перелічення
             };
         }
 
-        public static МетодиСписанняПартій МетодиСписанняПартій_FindByName(string name)
+        public static МетодиСписанняПартій МетодиСписанняПартій_FindByName(string? name)
         {
             return name switch
             {
@@ -12029,7 +12029,7 @@ namespace GeneratedCode.Перелічення
             };
         }
 
-        public static ТипиКонтрагентів ТипиКонтрагентів_FindByName(string name)
+        public static ТипиКонтрагентів ТипиКонтрагентів_FindByName(string? name)
         {
             return name switch
             {
@@ -12059,7 +12059,7 @@ namespace GeneratedCode.Перелічення
             };
         }
 
-        public static НалаштуванняАдресногоЗберігання НалаштуванняАдресногоЗберігання_FindByName(string name)
+        public static НалаштуванняАдресногоЗберігання НалаштуванняАдресногоЗберігання_FindByName(string? name)
         {
             return name switch
             {
@@ -12091,7 +12091,7 @@ namespace GeneratedCode.Перелічення
             };
         }
 
-        public static ТипиСкладськихКомірок ТипиСкладськихКомірок_FindByName(string name)
+        public static ТипиСкладськихКомірок ТипиСкладськихКомірок_FindByName(string? name)
         {
             return name switch
             {
@@ -12123,7 +12123,7 @@ namespace GeneratedCode.Перелічення
             };
         }
 
-        public static ПричиниЗакриттяЗамовленняКлієнта ПричиниЗакриттяЗамовленняКлієнта_FindByName(string name)
+        public static ПричиниЗакриттяЗамовленняКлієнта ПричиниЗакриттяЗамовленняКлієнта_FindByName(string? name)
         {
             return name switch
             {
@@ -12153,7 +12153,7 @@ namespace GeneratedCode.Перелічення
             };
         }
 
-        public static ПричиниЗакриттяРахункуФактури ПричиниЗакриттяРахункуФактури_FindByName(string name)
+        public static ПричиниЗакриттяРахункуФактури ПричиниЗакриттяРахункуФактури_FindByName(string? name)
         {
             return name switch
             {
@@ -12183,7 +12183,7 @@ namespace GeneratedCode.Перелічення
             };
         }
 
-        public static ПричиниЗакриттяЗамовленняПостачальнику ПричиниЗакриттяЗамовленняПостачальнику_FindByName(string name)
+        public static ПричиниЗакриттяЗамовленняПостачальнику ПричиниЗакриттяЗамовленняПостачальнику_FindByName(string? name)
         {
             return name switch
             {
@@ -12212,7 +12212,7 @@ namespace GeneratedCode.Перелічення
             };
         }
 
-        public static ТипККМ ТипККМ_FindByName(string name)
+        public static ТипККМ ТипККМ_FindByName(string? name)
         {
             return name switch
             {

@@ -7,77 +7,42 @@
 using GeneratedCode.Константи;
 using AccountingSoftware;
 
-namespace GeneratedCode.Довідники
+namespace GeneratedCode.Довідники;
+
+class Номенклатура_Папки_Triggers
 {
-    class Номенклатура_Папки_Triggers
+    public static async ValueTask New(Номенклатура_Папки_Objest ДовідникОбєкт)
     {
-        public static async ValueTask New(Номенклатура_Папки_Objest ДовідникОбєкт)
-        {
-            ДовідникОбєкт.Код = (++НумераціяДовідників.Номенклатура_Папки_Const).ToString("D6");
-            await ValueTask.FromResult(true);
-        }
+        ДовідникОбєкт.Код = (++НумераціяДовідників.Номенклатура_Папки_Const).ToString("D6");
+        await ValueTask.FromResult(true);
+    }
 
-        public static async ValueTask Copying(Номенклатура_Папки_Objest ДовідникОбєкт, Номенклатура_Папки_Objest Основа)
-        {
-            ДовідникОбєкт.Назва += " - Копія";
-            await ValueTask.FromResult(true);
-        }
+    public static async ValueTask Copying(Номенклатура_Папки_Objest ДовідникОбєкт, Номенклатура_Папки_Objest Основа)
+    {
+        ДовідникОбєкт.Назва += " - Копія";
+        await ValueTask.FromResult(true);
+    }
 
-        public static async ValueTask BeforeSave(Номенклатура_Папки_Objest ДовідникОбєкт)
-        {
-            await ValueTask.FromResult(true);
-        }
+    public static async ValueTask BeforeSave(Номенклатура_Папки_Objest ДовідникОбєкт)
+    {
+        await ValueTask.FromResult(true);
+    }
 
-        public static async ValueTask AfterSave(Номенклатура_Папки_Objest ДовідникОбєкт)
-        {
-            await ValueTask.FromResult(true);
-        }
+    public static async ValueTask AfterSave(Номенклатура_Папки_Objest ДовідникОбєкт)
+    {
+        await ValueTask.FromResult(true);
+    }
 
-        public static async ValueTask SetDeletionLabel(Номенклатура_Папки_Objest ДовідникОбєкт, bool label)
+    public static async ValueTask SetDeletionLabel(Номенклатура_Папки_Objest ДовідникОбєкт, bool label)
+    {
+        //Якщо встановлюється мітка на видалення
+        if (label)
         {
-            //Якщо встановлюється мітка на видалення
-            if (label)
+            //Елементи помічаються на видалення
             {
-                //Елементи помічаються на видалення
-                {
-                    Номенклатура_Select select = new Номенклатура_Select();
-                    select.QuerySelect.Where.Add(new Where(Номенклатура_Const.Папка, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
-                    select.QuerySelect.Where.Add(new Where(Номенклатура_Const.DELETION_LABEL, Comparison.NOT, true));
-                    await select.Select();
-
-                    while (select.MoveNext())
-                        if (select.Current != null)
-                        {
-                            Номенклатура_Objest? Обєкт = await select.Current.GetDirectoryObject();
-                            if (Обєкт != null)
-                                await Обєкт.SetDeletionLabel();
-                        }
-                }
-
-                //Вкладені папки помічаються на видалення
-                {
-                    Номенклатура_Папки_Select select = new Номенклатура_Папки_Select();
-                    select.QuerySelect.Where.Add(new Where(Номенклатура_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
-                    await select.Select();
-
-                    while (select.MoveNext())
-                        if (select.Current != null)
-                        {
-                            Номенклатура_Папки_Objest? Обєкт = await select.Current.GetDirectoryObject();
-                            if (Обєкт != null)
-                                await Обєкт.SetDeletionLabel();
-
-                        }
-                }
-            }
-        }
-
-        public static async ValueTask BeforeDelete(Номенклатура_Папки_Objest ДовідникОбєкт)
-        {
-            //Елементи переносяться на верхній рівень
-            {
-                Номенклатура_Select select = new Номенклатура_Select();
+                Номенклатура_Select select = new();
                 select.QuerySelect.Where.Add(new Where(Номенклатура_Const.Папка, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
+                select.QuerySelect.Where.Add(new Where(Номенклатура_Const.DELETION_LABEL, Comparison.NOT, true));
                 await select.Select();
 
                 while (select.MoveNext())
@@ -85,19 +50,13 @@ namespace GeneratedCode.Довідники
                     {
                         Номенклатура_Objest? Обєкт = await select.Current.GetDirectoryObject();
                         if (Обєкт != null)
-                        {
-                            //Ставиться помітка на видалення для елементу
                             await Обєкт.SetDeletionLabel();
-
-                            Обєкт.Папка = new Номенклатура_Папки_Pointer();
-                            await Обєкт.Save();
-                        }
                     }
             }
 
-            //Вкладені папки видяляються. Для кожної папки буде викликана функція BeforeDelete
+            //Вкладені папки помічаються на видалення
             {
-                Номенклатура_Папки_Select select = new Номенклатура_Папки_Select();
+                Номенклатура_Папки_Select select = new();
                 select.QuerySelect.Where.Add(new Where(Номенклатура_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
                 await select.Select();
 
@@ -106,9 +65,49 @@ namespace GeneratedCode.Довідники
                     {
                         Номенклатура_Папки_Objest? Обєкт = await select.Current.GetDirectoryObject();
                         if (Обєкт != null)
-                            await Обєкт.Delete();
+                            await Обєкт.SetDeletionLabel();
+
                     }
             }
+        }
+    }
+
+    public static async ValueTask BeforeDelete(Номенклатура_Папки_Objest ДовідникОбєкт)
+    {
+        //Елементи переносяться на верхній рівень
+        {
+            Номенклатура_Select select = new();
+            select.QuerySelect.Where.Add(new Where(Номенклатура_Const.Папка, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
+            await select.Select();
+
+            while (select.MoveNext())
+                if (select.Current != null)
+                {
+                    Номенклатура_Objest? Обєкт = await select.Current.GetDirectoryObject();
+                    if (Обєкт != null)
+                    {
+                        //Ставиться помітка на видалення для елементу
+                        await Обєкт.SetDeletionLabel();
+
+                        Обєкт.Папка = new Номенклатура_Папки_Pointer();
+                        await Обєкт.Save();
+                    }
+                }
+        }
+
+        //Вкладені папки видяляються. Для кожної папки буде викликана функція BeforeDelete
+        {
+            Номенклатура_Папки_Select select = new();
+            select.QuerySelect.Where.Add(new Where(Номенклатура_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
+            await select.Select();
+
+            while (select.MoveNext())
+                if (select.Current != null)
+                {
+                    Номенклатура_Папки_Objest? Обєкт = await select.Current.GetDirectoryObject();
+                    if (Обєкт != null)
+                        await Обєкт.Delete();
+                }
         }
     }
 }

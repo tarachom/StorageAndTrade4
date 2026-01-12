@@ -4,40 +4,39 @@
     Тригери для довідника ТипорозміриКомірок
 */
 
-namespace GeneratedCode.Довідники
+namespace GeneratedCode.Довідники;
+
+class ТипорозміриКомірок_Triggers
 {
-    class ТипорозміриКомірок_Triggers
+    public static async ValueTask New(ТипорозміриКомірок_Objest ДовідникОбєкт)
     {
-        public static async ValueTask New(ТипорозміриКомірок_Objest ДовідникОбєкт)
-        {
-            
-            await ValueTask.FromResult(true);
-        }
 
-        public static async ValueTask Copying(ТипорозміриКомірок_Objest ДовідникОбєкт, ТипорозміриКомірок_Objest Основа)
-        {
-            ДовідникОбєкт.Назва += " - Копія";
-            await ValueTask.FromResult(true);
-        }
+        await ValueTask.FromResult(true);
+    }
 
-        public static async ValueTask BeforeSave(ТипорозміриКомірок_Objest ДовідникОбєкт)
-        {
-            await ValueTask.FromResult(true);
-        }
+    public static async ValueTask Copying(ТипорозміриКомірок_Objest ДовідникОбєкт, ТипорозміриКомірок_Objest Основа)
+    {
+        ДовідникОбєкт.Назва += " - Копія";
+        await ValueTask.FromResult(true);
+    }
 
-        public static async ValueTask AfterSave(ТипорозміриКомірок_Objest ДовідникОбєкт)
-        {
-            await ValueTask.FromResult(true);
-        }
+    public static async ValueTask BeforeSave(ТипорозміриКомірок_Objest ДовідникОбєкт)
+    {
+        await ValueTask.FromResult(true);
+    }
 
-        public static async ValueTask SetDeletionLabel(ТипорозміриКомірок_Objest ДовідникОбєкт, bool label)
-        {
-            await ValueTask.FromResult(true);
-        }
+    public static async ValueTask AfterSave(ТипорозміриКомірок_Objest ДовідникОбєкт)
+    {
+        await ValueTask.FromResult(true);
+    }
 
-        public static async ValueTask BeforeDelete(ТипорозміриКомірок_Objest ДовідникОбєкт)
-        {
-            await ValueTask.FromResult(true);
-        }
+    public static async ValueTask SetDeletionLabel(ТипорозміриКомірок_Objest ДовідникОбєкт, bool label)
+    {
+        await ValueTask.FromResult(true);
+    }
+
+    public static async ValueTask BeforeDelete(ТипорозміриКомірок_Objest ДовідникОбєкт)
+    {
+        await ValueTask.FromResult(true);
     }
 }

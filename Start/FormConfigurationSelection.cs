@@ -1,9 +1,8 @@
 
 /*
-        FormConfigurationSelection.cs
+    FormConfigurationSelection.cs
 */
 
-using Gtk;
 using AccountingSoftware;
 using InterfaceGtkLib;
 
@@ -11,48 +10,47 @@ using GeneratedCode;
 using GeneratedCode.Константи;
 using InterfaceGtk4;
 
-namespace StorageAndTrade
+namespace StorageAndTrade;
+
+/// <summary>
+/// Переоприділення форми вибору бази
+/// </summary>
+class FormConfigurationSelection : InterfaceGtk4.FormConfigurationSelection
 {
-    /// <summary>
-    /// Переоприділення форми вибору бази
-    /// </summary>
-    class FormConfigurationSelection : InterfaceGtk4.FormConfigurationSelection
+    public FormConfigurationSelection() : base(Program.BasicApp, Config.Kernel, null, TypeForm.WorkingProgram) { }
+
+    public override async ValueTask<bool> OpenProgram(ConfigurationParam? openConfigurationParam)
     {
-        public FormConfigurationSelection() : base(Program.BasicApp, Config.Kernel, null, TypeForm.WorkingProgram) { }
+        //Запуск фонових задач
+        Config.StartBackgroundTask();
 
-        public override async ValueTask<bool> OpenProgram(ConfigurationParam? openConfigurationParam)
-        {
-            //Запуск фонових задач
-            Config.StartBackgroundTask();
+        //Значення констант за замовчуванням
+        if (string.IsNullOrEmpty(ЖурналиДокументів.ОсновнийТипПеріоду_Const))
+            ЖурналиДокументів.ОсновнийТипПеріоду_Const = PeriodForJournal.TypePeriod.AllPeriod.ToString();
 
-            //Значення констант за замовчуванням
-            if (string.IsNullOrEmpty(ЖурналиДокументів.ОсновнийТипПеріоду_Const))
-                ЖурналиДокументів.ОсновнийТипПеріоду_Const = PeriodForJournal.TypePeriod.AllPeriod.ToString();
+        FormStorageAndTrade form = new() { OpenConfigurationParam = openConfigurationParam };
+        form.SetStatusBar();
+        form.Show();
 
-            FormStorageAndTrade form = new() { OpenConfigurationParam = openConfigurationParam };
-            form.SetStatusBar();
-            form.Show();
+        Program.BasicForm = form;
 
-            Program.BasicForm = form;
+        //Присвоєння користувача
+        await form.SetCurrentUser();
 
-            //Присвоєння користувача
-            await form.SetCurrentUser();
+        //Відкрити перші сторінки
+        await form.OpenFirstPages();
 
-            //Відкрити перші сторінки
-            await form.OpenFirstPages();
+        return true;
+    }
 
-            return await ValueTask.FromResult(true);
-        }
+    public override async ValueTask<bool> OpenConfigurator(ConfigurationParam? openConfigurationParam)
+    {
+        // Configurator.FormConfigurator сonfigurator = new() { OpenConfigurationParam = openConfigurationParam };
+        // сonfigurator.Show();
 
-        public override async ValueTask<bool> OpenConfigurator(ConfigurationParam? openConfigurationParam)
-        {
-            // Configurator.FormConfigurator сonfigurator = new() { OpenConfigurationParam = openConfigurationParam };
-            // сonfigurator.Show();
+        // сonfigurator.SetValue();
+        // сonfigurator.LoadTreeAsync();
 
-            // сonfigurator.SetValue();
-            // сonfigurator.LoadTreeAsync();
-
-            return await ValueTask.FromResult(true);
-        }
+        return await ValueTask.FromResult(true);
     }
 }

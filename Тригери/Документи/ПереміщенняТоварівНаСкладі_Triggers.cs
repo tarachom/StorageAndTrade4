@@ -7,44 +7,43 @@
 using GeneratedCode.Константи;
 using StorageAndTrade;
 
-namespace GeneratedCode.Документи
+namespace GeneratedCode.Документи;
+
+class ПереміщенняТоварівНаСкладі_Triggers
 {
-    class ПереміщенняТоварівНаСкладі_Triggers
+    public static async ValueTask New(ПереміщенняТоварівНаСкладі_Objest ДокументОбєкт)
     {
-        public static async ValueTask New(ПереміщенняТоварівНаСкладі_Objest ДокументОбєкт)
-        {
-            ДокументОбєкт.НомерДок = (++НумераціяДокументів.ПереміщенняТоварівНаСкладі_Const).ToString("D8");
-            ДокументОбєкт.ДатаДок = DateTime.Now;
-            ДокументОбєкт.Автор = Program.Користувач;
-            
-            await ValueTask.FromResult(true);
-        }
+        ДокументОбєкт.НомерДок = (++НумераціяДокументів.ПереміщенняТоварівНаСкладі_Const).ToString("D8");
+        ДокументОбєкт.ДатаДок = DateTime.Now;
+        ДокументОбєкт.Автор = Program.Користувач;
 
-        public static async ValueTask Copying(ПереміщенняТоварівНаСкладі_Objest ДокументОбєкт, ПереміщенняТоварівНаСкладі_Objest Основа)
-        {
-            ДокументОбєкт.Назва += " - Копія";
-            await ValueTask.FromResult(true);
-        }
+        await ValueTask.FromResult(true);
+    }
 
-        public static async ValueTask BeforeSave(ПереміщенняТоварівНаСкладі_Objest ДокументОбєкт)
-        {
-            ДокументОбєкт.Назва = $"{ПереміщенняТоварівНаСкладі_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
-            await ValueTask.FromResult(true);
-        }
+    public static async ValueTask Copying(ПереміщенняТоварівНаСкладі_Objest ДокументОбєкт, ПереміщенняТоварівНаСкладі_Objest Основа)
+    {
+        ДокументОбєкт.Назва += " - Копія";
+        await ValueTask.FromResult(true);
+    }
 
-        public static async ValueTask AfterSave(ПереміщенняТоварівНаСкладі_Objest ДокументОбєкт)
-        {
-            await ValueTask.FromResult(true);
-        }
+    public static async ValueTask BeforeSave(ПереміщенняТоварівНаСкладі_Objest ДокументОбєкт)
+    {
+        ДокументОбєкт.Назва = $"{ПереміщенняТоварівНаСкладі_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
+        await ValueTask.FromResult(true);
+    }
 
-        public static async ValueTask SetDeletionLabel(ПереміщенняТоварівНаСкладі_Objest ДокументОбєкт, bool label)
-        {
-            await ValueTask.FromResult(true);
-        }
+    public static async ValueTask AfterSave(ПереміщенняТоварівНаСкладі_Objest ДокументОбєкт)
+    {
+        await ValueTask.FromResult(true);
+    }
 
-        public static async ValueTask BeforeDelete(ПереміщенняТоварівНаСкладі_Objest ДокументОбєкт)
-        {
-            await ValueTask.FromResult(true);
-        }
+    public static async ValueTask SetDeletionLabel(ПереміщенняТоварівНаСкладі_Objest ДокументОбєкт, bool label)
+    {
+        await ValueTask.FromResult(true);
+    }
+
+    public static async ValueTask BeforeDelete(ПереміщенняТоварівНаСкладі_Objest ДокументОбєкт)
+    {
+        await ValueTask.FromResult(true);
     }
 }

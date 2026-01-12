@@ -6,40 +6,39 @@
 
 using GeneratedCode.Константи;
 
-namespace GeneratedCode.Довідники
+namespace GeneratedCode.Довідники;
+
+class БанківськіРахункиОрганізацій_Triggers
 {
-    class БанківськіРахункиОрганізацій_Triggers
+    public static async ValueTask New(БанківськіРахункиОрганізацій_Objest ДовідникОбєкт)
     {
-        public static async ValueTask New(БанківськіРахункиОрганізацій_Objest ДовідникОбєкт)
-        {
-            ДовідникОбєкт.Код = (++НумераціяДовідників.БанківськіРахункиОрганізацій_Const).ToString("D6");
-            await ValueTask.FromResult(true);
-        }
+        ДовідникОбєкт.Код = (++НумераціяДовідників.БанківськіРахункиОрганізацій_Const).ToString("D6");
+        await ValueTask.FromResult(true);
+    }
 
-        public static async ValueTask Copying(БанківськіРахункиОрганізацій_Objest ДовідникОбєкт, БанківськіРахункиОрганізацій_Objest Основа)
-        {
-            ДовідникОбєкт.Назва += " - Копія";
-            await ValueTask.FromResult(true);
-        }
+    public static async ValueTask Copying(БанківськіРахункиОрганізацій_Objest ДовідникОбєкт, БанківськіРахункиОрганізацій_Objest Основа)
+    {
+        ДовідникОбєкт.Назва += " - Копія";
+        await ValueTask.FromResult(true);
+    }
 
-        public static async ValueTask BeforeSave(БанківськіРахункиОрганізацій_Objest ДовідникОбєкт)
-        {
-            await ValueTask.FromResult(true);
-        }
+    public static async ValueTask BeforeSave(БанківськіРахункиОрганізацій_Objest ДовідникОбєкт)
+    {
+        await ValueTask.FromResult(true);
+    }
 
-        public static async ValueTask AfterSave(БанківськіРахункиОрганізацій_Objest ДовідникОбєкт)
-        {
-            await ValueTask.FromResult(true);
-        }
+    public static async ValueTask AfterSave(БанківськіРахункиОрганізацій_Objest ДовідникОбєкт)
+    {
+        await ValueTask.FromResult(true);
+    }
 
-        public static async ValueTask SetDeletionLabel(БанківськіРахункиОрганізацій_Objest ДовідникОбєкт, bool label)
-        {
-            await ValueTask.FromResult(true);
-        }
+    public static async ValueTask SetDeletionLabel(БанківськіРахункиОрганізацій_Objest ДовідникОбєкт, bool label)
+    {
+        await ValueTask.FromResult(true);
+    }
 
-        public static async ValueTask BeforeDelete(БанківськіРахункиОрганізацій_Objest ДовідникОбєкт)
-        {
-            await ValueTask.FromResult(true);
-        }
+    public static async ValueTask BeforeDelete(БанківськіРахункиОрганізацій_Objest ДовідникОбєкт)
+    {
+        await ValueTask.FromResult(true);
     }
 }

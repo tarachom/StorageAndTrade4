@@ -11,7 +11,7 @@ using GeneratedCode.Константи;
 
 namespace StorageAndTrade;
 
-class ФункціїНалаштуванняКористувача
+static class ФункціїНалаштуванняКористувача
 {
     /// <summary>
     /// Функція отримує збережені налаштування користувача і зразу заповнює PeriodControl

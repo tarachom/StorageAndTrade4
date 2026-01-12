@@ -7,15 +7,10 @@
 using AccountingSoftware;
 using GeneratedCode;
 
-namespace StorageAndTrade
-{
-    class LockObjectsView : InterfaceGtk4.LockObjectsView
-    {
-        public LockObjectsView(int widthRequest = 800, int heightRequest = 500) : base(Config.Kernel, widthRequest, heightRequest) { }
+namespace StorageAndTrade;
 
-        protected override async ValueTask<CompositePointerPresentation_Record> CompositePointerPresentation(UuidAndText uuidAndText)
-        {
-            return await Functions.CompositePointerPresentation(uuidAndText);
-        }
-    }
+class LockObjectsView(int width = 800, int height = 500) : InterfaceGtk4.LockObjectsView(Config.Kernel, width, height)
+{
+    protected override async ValueTask<CompositePointerPresentation_Record> CompositePointerPresentation(UuidAndText uuidAndText) =>
+        await Functions.CompositePointerPresentation(uuidAndText);
 }

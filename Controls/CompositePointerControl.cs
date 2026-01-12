@@ -17,8 +17,6 @@ class CompositePointerControl : InterfaceGtk4.CompositePointerControl
 {
     public CompositePointerControl() : base(Config.Kernel, Config.NameSpageProgram, Config.NameSpageCodeGeneration, Program.BasicForm?.NotebookFunc) { }
 
-    protected override async ValueTask<CompositePointerPresentation_Record> CompositePointerPresentation(UuidAndText uuidAndText)
-    {
-        return await GeneratedCode.Functions.CompositePointerPresentation(uuidAndText);
-    }
+    protected override async ValueTask<CompositePointerPresentation_Record> CompositePointerPresentation(UuidAndText uuidAndText) =>
+        await GeneratedCode.Functions.CompositePointerPresentation(uuidAndText);
 }

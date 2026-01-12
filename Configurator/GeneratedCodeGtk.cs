@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 09.01.2026 16:07:19
+ * Дата конфігурації: 12.01.2026 16:39:29
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон Gtk4.xslt
@@ -412,6 +412,15 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
             List<FilterControl.FilterListItem> filterList = [];
             
+            { /* ОдиницяВиміру, pointer */
+                Switch sw = Switch.New();
+                ПакуванняОдиниціВиміру_PointerControl ОдиницяВиміру = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => ОдиницяВиміру.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(Номенклатура_Const.ОдиницяВиміру, get, sw));
+                form.Filter.Append("Пакування:", ОдиницяВиміру, sw);
+            }
+            
             { /* ТипНоменклатури, enum */
                 Switch sw = Switch.New();
                 
@@ -782,6 +791,15 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     
                 filterList.Add(new(Номенклатура_Const.Назва, get, sw));
                 form.Filter.Append("Номенклатура:", Назва, sw);
+            }
+            
+            { /* ОдиницяВиміру, pointer */
+                Switch sw = Switch.New();
+                ПакуванняОдиниціВиміру_PointerControl ОдиницяВиміру = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => ОдиницяВиміру.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(Номенклатура_Const.ОдиницяВиміру, get, sw));
+                form.Filter.Append("Пакування:", ОдиницяВиміру, sw);
             }
             
             form.Filter.GetWhere = () =>
@@ -3134,6 +3152,28 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         public static void CreateFilter(DirectoryFormJournalBase form)
         {
             
+            List<FilterControl.FilterListItem> filterList = [];
+            
+            { /* Валюта, pointer */
+                Switch sw = Switch.New();
+                Валюти_PointerControl Валюта = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Валюта.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ВидиЦін_Const.Валюта, get, sw));
+                form.Filter.Append("Валюта:", Валюта, sw);
+            }
+            
+            form.Filter.GetWhere = () =>
+            {
+                List<Where> where = [];
+                foreach (var filter in filterList)
+                    if (filter.IsOn.Active)
+                        where.Add(new Where(filter.Field, Comparison.EQ, filter.GetValueFunc.Invoke()));
+
+                form.WhereList = where;
+                return where.Count != 0;
+            };
+        
         }
 
         public static async ValueTask UpdateRecords(DirectoryFormJournalBase form)
@@ -5983,6 +6023,28 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         public static void CreateFilter(DirectoryFormJournalBase form)
         {
             
+            List<FilterControl.FilterListItem> filterList = [];
+            
+            { /* Валюта, pointer */
+                Switch sw = Switch.New();
+                Валюти_PointerControl Валюта = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Валюта.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(Каси_Const.Валюта, get, sw));
+                form.Filter.Append("Валюта:", Валюта, sw);
+            }
+            
+            form.Filter.GetWhere = () =>
+            {
+                List<Where> where = [];
+                foreach (var filter in filterList)
+                    if (filter.IsOn.Active)
+                        where.Add(new Where(filter.Field, Comparison.EQ, filter.GetValueFunc.Invoke()));
+
+                form.WhereList = where;
+                return where.Count != 0;
+            };
+        
         }
 
         public static async ValueTask UpdateRecords(DirectoryFormJournalBase form)
@@ -6431,6 +6493,28 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         public static void CreateFilter(DirectoryFormJournalBase form)
         {
             
+            List<FilterControl.FilterListItem> filterList = [];
+            
+            { /* Валюта, pointer */
+                Switch sw = Switch.New();
+                Валюти_PointerControl Валюта = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Валюта.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(БанківськіРахункиОрганізацій_Const.Валюта, get, sw));
+                form.Filter.Append("Валюта:", Валюта, sw);
+            }
+            
+            form.Filter.GetWhere = () =>
+            {
+                List<Where> where = [];
+                foreach (var filter in filterList)
+                    if (filter.IsOn.Active)
+                        where.Add(new Where(filter.Field, Comparison.EQ, filter.GetValueFunc.Invoke()));
+
+                form.WhereList = where;
+                return where.Count != 0;
+            };
+        
         }
 
         public static async ValueTask UpdateRecords(DirectoryFormJournalBase form)
@@ -6674,6 +6758,15 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         {
             
             List<FilterControl.FilterListItem> filterList = [];
+            
+            { /* Контрагент, pointer */
+                Switch sw = Switch.New();
+                Контрагенти_PointerControl Контрагент = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Контрагент.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ДоговориКонтрагентів_Const.Контрагент, get, sw));
+                form.Filter.Append("Контрагент:", Контрагент, sw);
+            }
             
             { /* ТипДоговору, enum */
                 Switch sw = Switch.New();
@@ -7141,6 +7234,28 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         public static void CreateFilter(DirectoryFormJournalBase form)
         {
             
+            List<FilterControl.FilterListItem> filterList = [];
+            
+            { /* Валюта, pointer */
+                Switch sw = Switch.New();
+                Валюти_PointerControl Валюта = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Валюта.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(БанківськіРахункиКонтрагентів_Const.Валюта, get, sw));
+                form.Filter.Append("Валюта:", Валюта, sw);
+            }
+            
+            form.Filter.GetWhere = () =>
+            {
+                List<Where> where = [];
+                foreach (var filter in filterList)
+                    if (filter.IsOn.Active)
+                        where.Add(new Where(filter.Field, Comparison.EQ, filter.GetValueFunc.Invoke()));
+
+                form.WhereList = where;
+                return where.Count != 0;
+            };
+        
         }
 
         public static async ValueTask UpdateRecords(DirectoryFormJournalBase form)
@@ -9306,6 +9421,15 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
             List<FilterControl.FilterListItem> filterList = [];
             
+            { /* Склад, pointer */
+                Switch sw = Switch.New();
+                Склади_PointerControl Склад = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Склад.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(СкладськіПриміщення_Const.Склад, get, sw));
+                form.Filter.Append("Склад:", Склад, sw);
+            }
+            
             { /* НалаштуванняАдресногоЗберігання, enum */
                 Switch sw = Switch.New();
                 
@@ -9677,6 +9801,28 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         public static void CreateFilter(DirectoryFormJournalBase form)
         {
             
+            List<FilterControl.FilterListItem> filterList = [];
+            
+            { /* Приміщення, pointer */
+                Switch sw = Switch.New();
+                СкладськіПриміщення_PointerControl Приміщення = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Приміщення.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(СкладськіКомірки_Const.Приміщення, get, sw));
+                form.Filter.Append("Приміщення:", Приміщення, sw);
+            }
+            
+            form.Filter.GetWhere = () =>
+            {
+                List<Where> where = [];
+                foreach (var filter in filterList)
+                    if (filter.IsOn.Active)
+                        where.Add(new Where(filter.Field, Comparison.EQ, filter.GetValueFunc.Invoke()));
+
+                form.WhereList = where;
+                return where.Count != 0;
+            };
+        
         }
 
         public static async ValueTask UpdateRecords(DirectoryFormJournalBase form)
@@ -11713,6 +11859,42 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
             List<FilterControl.FilterListItem> filterList = [];
             
+            { /* Організація, pointer */
+                Switch sw = Switch.New();
+                Організації_PointerControl Організація = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Організація.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗамовленняПостачальнику_Const.Організація, get, sw));
+                form.Filter.Append("Організація:", Організація, sw);
+            }
+            
+            { /* Контрагент, pointer */
+                Switch sw = Switch.New();
+                Контрагенти_PointerControl Контрагент = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Контрагент.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗамовленняПостачальнику_Const.Контрагент, get, sw));
+                form.Filter.Append("Контрагент:", Контрагент, sw);
+            }
+            
+            { /* Склад, pointer */
+                Switch sw = Switch.New();
+                Склади_PointerControl Склад = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Склад.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗамовленняПостачальнику_Const.Склад, get, sw));
+                form.Filter.Append("Склад:", Склад, sw);
+            }
+            
+            { /* Валюта, pointer */
+                Switch sw = Switch.New();
+                Валюти_PointerControl Валюта = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Валюта.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗамовленняПостачальнику_Const.Валюта, get, sw));
+                form.Filter.Append("Валюта:", Валюта, sw);
+            }
+            
             { /* СумаДокументу, numeric */
                 Switch sw = Switch.New();
                 
@@ -11721,6 +11903,15 @@ namespace GeneratedCode.Документи.ТабличніСписки
                     
                 filterList.Add(new(ЗамовленняПостачальнику_Const.СумаДокументу, get, sw));
                 form.Filter.Append("Сума:", СумаДокументу, sw);
+            }
+            
+            { /* Автор, pointer */
+                Switch sw = Switch.New();
+                Користувачі_PointerControl Автор = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Автор.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗамовленняПостачальнику_Const.Автор, get, sw));
+                form.Filter.Append("Автор:", Автор, sw);
             }
             
             form.Filter.GetWhere = () =>
@@ -12199,6 +12390,51 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
             List<FilterControl.FilterListItem> filterList = [];
             
+            { /* Організація, pointer */
+                Switch sw = Switch.New();
+                Організації_PointerControl Організація = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Організація.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПоступленняТоварівТаПослуг_Const.Організація, get, sw));
+                form.Filter.Append("Організація:", Організація, sw);
+            }
+            
+            { /* Склад, pointer */
+                Switch sw = Switch.New();
+                Склади_PointerControl Склад = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Склад.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПоступленняТоварівТаПослуг_Const.Склад, get, sw));
+                form.Filter.Append("Склад:", Склад, sw);
+            }
+            
+            { /* Контрагент, pointer */
+                Switch sw = Switch.New();
+                Контрагенти_PointerControl Контрагент = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Контрагент.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПоступленняТоварівТаПослуг_Const.Контрагент, get, sw));
+                form.Filter.Append("Контрагент:", Контрагент, sw);
+            }
+            
+            { /* Валюта, pointer */
+                Switch sw = Switch.New();
+                Валюти_PointerControl Валюта = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Валюта.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПоступленняТоварівТаПослуг_Const.Валюта, get, sw));
+                form.Filter.Append("Валюта:", Валюта, sw);
+            }
+            
+            { /* Каса, pointer */
+                Switch sw = Switch.New();
+                Каси_PointerControl Каса = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Каса.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПоступленняТоварівТаПослуг_Const.Каса, get, sw));
+                form.Filter.Append("Каса:", Каса, sw);
+            }
+            
             { /* СумаДокументу, numeric */
                 Switch sw = Switch.New();
                 
@@ -12207,6 +12443,15 @@ namespace GeneratedCode.Документи.ТабличніСписки
                     
                 filterList.Add(new(ПоступленняТоварівТаПослуг_Const.СумаДокументу, get, sw));
                 form.Filter.Append("Сума:", СумаДокументу, sw);
+            }
+            
+            { /* Автор, pointer */
+                Switch sw = Switch.New();
+                Користувачі_PointerControl Автор = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Автор.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПоступленняТоварівТаПослуг_Const.Автор, get, sw));
+                form.Filter.Append("Автор:", Автор, sw);
             }
             
             form.Filter.GetWhere = () =>
@@ -12670,6 +12915,51 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
             List<FilterControl.FilterListItem> filterList = [];
             
+            { /* Організація, pointer */
+                Switch sw = Switch.New();
+                Організації_PointerControl Організація = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Організація.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПоступленняТоварівТаПослуг_Const.Організація, get, sw));
+                form.Filter.Append("Організація:", Організація, sw);
+            }
+            
+            { /* Склад, pointer */
+                Switch sw = Switch.New();
+                Склади_PointerControl Склад = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Склад.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПоступленняТоварівТаПослуг_Const.Склад, get, sw));
+                form.Filter.Append("Склад:", Склад, sw);
+            }
+            
+            { /* Контрагент, pointer */
+                Switch sw = Switch.New();
+                Контрагенти_PointerControl Контрагент = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Контрагент.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПоступленняТоварівТаПослуг_Const.Контрагент, get, sw));
+                form.Filter.Append("Контрагент:", Контрагент, sw);
+            }
+            
+            { /* Валюта, pointer */
+                Switch sw = Switch.New();
+                Валюти_PointerControl Валюта = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Валюта.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПоступленняТоварівТаПослуг_Const.Валюта, get, sw));
+                form.Filter.Append("Валюта:", Валюта, sw);
+            }
+            
+            { /* Каса, pointer */
+                Switch sw = Switch.New();
+                Каси_PointerControl Каса = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Каса.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПоступленняТоварівТаПослуг_Const.Каса, get, sw));
+                form.Filter.Append("Каса:", Каса, sw);
+            }
+            
             { /* СумаДокументу, numeric */
                 Switch sw = Switch.New();
                 
@@ -12678,6 +12968,15 @@ namespace GeneratedCode.Документи.ТабличніСписки
                     
                 filterList.Add(new(ПоступленняТоварівТаПослуг_Const.СумаДокументу, get, sw));
                 form.Filter.Append("Сума:", СумаДокументу, sw);
+            }
+            
+            { /* Автор, pointer */
+                Switch sw = Switch.New();
+                Користувачі_PointerControl Автор = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Автор.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПоступленняТоварівТаПослуг_Const.Автор, get, sw));
+                form.Filter.Append("Автор:", Автор, sw);
             }
             
             form.Filter.GetWhere = () =>
@@ -13162,6 +13461,51 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
             List<FilterControl.FilterListItem> filterList = [];
             
+            { /* Організація, pointer */
+                Switch sw = Switch.New();
+                Організації_PointerControl Організація = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Організація.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗамовленняКлієнта_Const.Організація, get, sw));
+                form.Filter.Append("Організація:", Організація, sw);
+            }
+            
+            { /* Контрагент, pointer */
+                Switch sw = Switch.New();
+                Контрагенти_PointerControl Контрагент = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Контрагент.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗамовленняКлієнта_Const.Контрагент, get, sw));
+                form.Filter.Append("Контрагент:", Контрагент, sw);
+            }
+            
+            { /* Валюта, pointer */
+                Switch sw = Switch.New();
+                Валюти_PointerControl Валюта = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Валюта.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗамовленняКлієнта_Const.Валюта, get, sw));
+                form.Filter.Append("Валюта:", Валюта, sw);
+            }
+            
+            { /* Каса, pointer */
+                Switch sw = Switch.New();
+                Каси_PointerControl Каса = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Каса.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗамовленняКлієнта_Const.Каса, get, sw));
+                form.Filter.Append("Каса:", Каса, sw);
+            }
+            
+            { /* Склад, pointer */
+                Switch sw = Switch.New();
+                Склади_PointerControl Склад = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Склад.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗамовленняКлієнта_Const.Склад, get, sw));
+                form.Filter.Append("Склад:", Склад, sw);
+            }
+            
             { /* СумаДокументу, numeric */
                 Switch sw = Switch.New();
                 
@@ -13170,6 +13514,15 @@ namespace GeneratedCode.Документи.ТабличніСписки
                     
                 filterList.Add(new(ЗамовленняКлієнта_Const.СумаДокументу, get, sw));
                 form.Filter.Append("Сума:", СумаДокументу, sw);
+            }
+            
+            { /* Автор, pointer */
+                Switch sw = Switch.New();
+                Користувачі_PointerControl Автор = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Автор.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗамовленняКлієнта_Const.Автор, get, sw));
+                form.Filter.Append("Автор:", Автор, sw);
             }
             
             form.Filter.GetWhere = () =>
@@ -13658,6 +14011,51 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
             List<FilterControl.FilterListItem> filterList = [];
             
+            { /* Організація, pointer */
+                Switch sw = Switch.New();
+                Організації_PointerControl Організація = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Організація.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(РеалізаціяТоварівТаПослуг_Const.Організація, get, sw));
+                form.Filter.Append("Організація:", Організація, sw);
+            }
+            
+            { /* Контрагент, pointer */
+                Switch sw = Switch.New();
+                Контрагенти_PointerControl Контрагент = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Контрагент.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(РеалізаціяТоварівТаПослуг_Const.Контрагент, get, sw));
+                form.Filter.Append("Контрагент:", Контрагент, sw);
+            }
+            
+            { /* Валюта, pointer */
+                Switch sw = Switch.New();
+                Валюти_PointerControl Валюта = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Валюта.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(РеалізаціяТоварівТаПослуг_Const.Валюта, get, sw));
+                form.Filter.Append("Валюта:", Валюта, sw);
+            }
+            
+            { /* Каса, pointer */
+                Switch sw = Switch.New();
+                Каси_PointerControl Каса = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Каса.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(РеалізаціяТоварівТаПослуг_Const.Каса, get, sw));
+                form.Filter.Append("Каса:", Каса, sw);
+            }
+            
+            { /* Склад, pointer */
+                Switch sw = Switch.New();
+                Склади_PointerControl Склад = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Склад.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(РеалізаціяТоварівТаПослуг_Const.Склад, get, sw));
+                form.Filter.Append("Склад:", Склад, sw);
+            }
+            
             { /* СумаДокументу, numeric */
                 Switch sw = Switch.New();
                 
@@ -13666,6 +14064,15 @@ namespace GeneratedCode.Документи.ТабличніСписки
                     
                 filterList.Add(new(РеалізаціяТоварівТаПослуг_Const.СумаДокументу, get, sw));
                 form.Filter.Append("Сума:", СумаДокументу, sw);
+            }
+            
+            { /* Автор, pointer */
+                Switch sw = Switch.New();
+                Користувачі_PointerControl Автор = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Автор.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(РеалізаціяТоварівТаПослуг_Const.Автор, get, sw));
+                form.Filter.Append("Автор:", Автор, sw);
             }
             
             form.Filter.GetWhere = () =>
@@ -14089,6 +14496,55 @@ namespace GeneratedCode.Документи.ТабличніСписки
         public static void CreateFilter(DocumentFormJournalBase form)
         {
             
+            List<FilterControl.FilterListItem> filterList = [];
+            
+            { /* Організація, pointer */
+                Switch sw = Switch.New();
+                Організації_PointerControl Організація = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Організація.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ВстановленняЦінНоменклатури_Const.Організація, get, sw));
+                form.Filter.Append("Організація:", Організація, sw);
+            }
+            
+            { /* Валюта, pointer */
+                Switch sw = Switch.New();
+                Валюти_PointerControl Валюта = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Валюта.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ВстановленняЦінНоменклатури_Const.Валюта, get, sw));
+                form.Filter.Append("Валюта:", Валюта, sw);
+            }
+            
+            { /* ВидЦіни, pointer */
+                Switch sw = Switch.New();
+                ВидиЦін_PointerControl ВидЦіни = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => ВидЦіни.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ВстановленняЦінНоменклатури_Const.ВидЦіни, get, sw));
+                form.Filter.Append("Вид ціни:", ВидЦіни, sw);
+            }
+            
+            { /* Автор, pointer */
+                Switch sw = Switch.New();
+                Користувачі_PointerControl Автор = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Автор.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ВстановленняЦінНоменклатури_Const.Автор, get, sw));
+                form.Filter.Append("Автор:", Автор, sw);
+            }
+            
+            form.Filter.GetWhere = () =>
+            {
+                List<Where> where = [];
+                foreach (var filter in filterList)
+                    if (filter.IsOn.Active)
+                        where.Add(new Where(filter.Field, Comparison.EQ, filter.GetValueFunc.Invoke()));
+
+                form.WhereList = where;
+                return where.Count != 0;
+            };
+        
         }
 
         public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
@@ -14540,6 +14996,42 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
             List<FilterControl.FilterListItem> filterList = [];
             
+            { /* Організація, pointer */
+                Switch sw = Switch.New();
+                Організації_PointerControl Організація = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Організація.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПрихіднийКасовийОрдер_Const.Організація, get, sw));
+                form.Filter.Append("Організація:", Організація, sw);
+            }
+            
+            { /* Валюта, pointer */
+                Switch sw = Switch.New();
+                Валюти_PointerControl Валюта = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Валюта.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПрихіднийКасовийОрдер_Const.Валюта, get, sw));
+                form.Filter.Append("Валюта:", Валюта, sw);
+            }
+            
+            { /* Каса, pointer */
+                Switch sw = Switch.New();
+                Каси_PointerControl Каса = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Каса.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПрихіднийКасовийОрдер_Const.Каса, get, sw));
+                form.Filter.Append("Каса:", Каса, sw);
+            }
+            
+            { /* Контрагент, pointer */
+                Switch sw = Switch.New();
+                Контрагенти_PointerControl Контрагент = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Контрагент.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПрихіднийКасовийОрдер_Const.Контрагент, get, sw));
+                form.Filter.Append("Контрагент:", Контрагент, sw);
+            }
+            
             { /* СумаДокументу, numeric */
                 Switch sw = Switch.New();
                 
@@ -14548,6 +15040,15 @@ namespace GeneratedCode.Документи.ТабличніСписки
                     
                 filterList.Add(new(ПрихіднийКасовийОрдер_Const.СумаДокументу, get, sw));
                 form.Filter.Append("Сума:", СумаДокументу, sw);
+            }
+            
+            { /* Автор, pointer */
+                Switch sw = Switch.New();
+                Користувачі_PointerControl Автор = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Автор.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПрихіднийКасовийОрдер_Const.Автор, get, sw));
+                form.Filter.Append("Автор:", Автор, sw);
             }
             
             form.Filter.GetWhere = () =>
@@ -15030,6 +15531,42 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
             List<FilterControl.FilterListItem> filterList = [];
             
+            { /* Організація, pointer */
+                Switch sw = Switch.New();
+                Організації_PointerControl Організація = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Організація.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(РозхіднийКасовийОрдер_Const.Організація, get, sw));
+                form.Filter.Append("Організація:", Організація, sw);
+            }
+            
+            { /* Контрагент, pointer */
+                Switch sw = Switch.New();
+                Контрагенти_PointerControl Контрагент = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Контрагент.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(РозхіднийКасовийОрдер_Const.Контрагент, get, sw));
+                form.Filter.Append("Контрагент:", Контрагент, sw);
+            }
+            
+            { /* Валюта, pointer */
+                Switch sw = Switch.New();
+                Валюти_PointerControl Валюта = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Валюта.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(РозхіднийКасовийОрдер_Const.Валюта, get, sw));
+                form.Filter.Append("Валюта:", Валюта, sw);
+            }
+            
+            { /* Каса, pointer */
+                Switch sw = Switch.New();
+                Каси_PointerControl Каса = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Каса.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(РозхіднийКасовийОрдер_Const.Каса, get, sw));
+                form.Filter.Append("Каса:", Каса, sw);
+            }
+            
             { /* СумаДокументу, numeric */
                 Switch sw = Switch.New();
                 
@@ -15038,6 +15575,15 @@ namespace GeneratedCode.Документи.ТабличніСписки
                     
                 filterList.Add(new(РозхіднийКасовийОрдер_Const.СумаДокументу, get, sw));
                 form.Filter.Append("Сума:", СумаДокументу, sw);
+            }
+            
+            { /* Автор, pointer */
+                Switch sw = Switch.New();
+                Користувачі_PointerControl Автор = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Автор.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(РозхіднийКасовийОрдер_Const.Автор, get, sw));
+                form.Filter.Append("Автор:", Автор, sw);
             }
             
             form.Filter.GetWhere = () =>
@@ -15455,6 +16001,55 @@ namespace GeneratedCode.Документи.ТабличніСписки
         public static void CreateFilter(DocumentFormJournalBase form)
         {
             
+            List<FilterControl.FilterListItem> filterList = [];
+            
+            { /* Організація, pointer */
+                Switch sw = Switch.New();
+                Організації_PointerControl Організація = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Організація.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПереміщенняТоварів_Const.Організація, get, sw));
+                form.Filter.Append("Організація:", Організація, sw);
+            }
+            
+            { /* СкладВідправник, pointer */
+                Switch sw = Switch.New();
+                Склади_PointerControl СкладВідправник = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => СкладВідправник.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПереміщенняТоварів_Const.СкладВідправник, get, sw));
+                form.Filter.Append("Склад відправник:", СкладВідправник, sw);
+            }
+            
+            { /* СкладОтримувач, pointer */
+                Switch sw = Switch.New();
+                Склади_PointerControl СкладОтримувач = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => СкладОтримувач.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПереміщенняТоварів_Const.СкладОтримувач, get, sw));
+                form.Filter.Append("Склад отримувач:", СкладОтримувач, sw);
+            }
+            
+            { /* Автор, pointer */
+                Switch sw = Switch.New();
+                Користувачі_PointerControl Автор = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Автор.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПереміщенняТоварів_Const.Автор, get, sw));
+                form.Filter.Append("Автор:", Автор, sw);
+            }
+            
+            form.Filter.GetWhere = () =>
+            {
+                List<Where> where = [];
+                foreach (var filter in filterList)
+                    if (filter.IsOn.Active)
+                        where.Add(new Where(filter.Field, Comparison.EQ, filter.GetValueFunc.Invoke()));
+
+                form.WhereList = where;
+                return where.Count != 0;
+            };
+        
         }
 
         public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
@@ -15906,6 +16501,51 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
             List<FilterControl.FilterListItem> filterList = [];
             
+            { /* Організація, pointer */
+                Switch sw = Switch.New();
+                Організації_PointerControl Організація = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Організація.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПоверненняТоварівПостачальнику_Const.Організація, get, sw));
+                form.Filter.Append("Організація:", Організація, sw);
+            }
+            
+            { /* Контрагент, pointer */
+                Switch sw = Switch.New();
+                Контрагенти_PointerControl Контрагент = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Контрагент.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПоверненняТоварівПостачальнику_Const.Контрагент, get, sw));
+                form.Filter.Append("Контрагент:", Контрагент, sw);
+            }
+            
+            { /* Валюта, pointer */
+                Switch sw = Switch.New();
+                Валюти_PointerControl Валюта = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Валюта.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПоверненняТоварівПостачальнику_Const.Валюта, get, sw));
+                form.Filter.Append("Валюта:", Валюта, sw);
+            }
+            
+            { /* Каса, pointer */
+                Switch sw = Switch.New();
+                Каси_PointerControl Каса = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Каса.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПоверненняТоварівПостачальнику_Const.Каса, get, sw));
+                form.Filter.Append("Каса:", Каса, sw);
+            }
+            
+            { /* Склад, pointer */
+                Switch sw = Switch.New();
+                Склади_PointerControl Склад = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Склад.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПоверненняТоварівПостачальнику_Const.Склад, get, sw));
+                form.Filter.Append("Склад:", Склад, sw);
+            }
+            
             { /* СумаДокументу, numeric */
                 Switch sw = Switch.New();
                 
@@ -15914,6 +16554,15 @@ namespace GeneratedCode.Документи.ТабличніСписки
                     
                 filterList.Add(new(ПоверненняТоварівПостачальнику_Const.СумаДокументу, get, sw));
                 form.Filter.Append("Сума:", СумаДокументу, sw);
+            }
+            
+            { /* Автор, pointer */
+                Switch sw = Switch.New();
+                Користувачі_PointerControl Автор = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Автор.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПоверненняТоварівПостачальнику_Const.Автор, get, sw));
+                form.Filter.Append("Автор:", Автор, sw);
             }
             
             form.Filter.GetWhere = () =>
@@ -16402,6 +17051,51 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
             List<FilterControl.FilterListItem> filterList = [];
             
+            { /* Організація, pointer */
+                Switch sw = Switch.New();
+                Організації_PointerControl Організація = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Організація.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПоверненняТоварівВідКлієнта_Const.Організація, get, sw));
+                form.Filter.Append("Організація:", Організація, sw);
+            }
+            
+            { /* Валюта, pointer */
+                Switch sw = Switch.New();
+                Валюти_PointerControl Валюта = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Валюта.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПоверненняТоварівВідКлієнта_Const.Валюта, get, sw));
+                form.Filter.Append("Валюта:", Валюта, sw);
+            }
+            
+            { /* Каса, pointer */
+                Switch sw = Switch.New();
+                Каси_PointerControl Каса = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Каса.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПоверненняТоварівВідКлієнта_Const.Каса, get, sw));
+                form.Filter.Append("Каса:", Каса, sw);
+            }
+            
+            { /* Контрагент, pointer */
+                Switch sw = Switch.New();
+                Контрагенти_PointerControl Контрагент = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Контрагент.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПоверненняТоварівВідКлієнта_Const.Контрагент, get, sw));
+                form.Filter.Append("Контрагент:", Контрагент, sw);
+            }
+            
+            { /* Склад, pointer */
+                Switch sw = Switch.New();
+                Склади_PointerControl Склад = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Склад.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПоверненняТоварівВідКлієнта_Const.Склад, get, sw));
+                form.Filter.Append("Склад:", Склад, sw);
+            }
+            
             { /* СумаДокументу, numeric */
                 Switch sw = Switch.New();
                 
@@ -16410,6 +17104,15 @@ namespace GeneratedCode.Документи.ТабличніСписки
                     
                 filterList.Add(new(ПоверненняТоварівВідКлієнта_Const.СумаДокументу, get, sw));
                 form.Filter.Append("Сума:", СумаДокументу, sw);
+            }
+            
+            { /* Автор, pointer */
+                Switch sw = Switch.New();
+                Користувачі_PointerControl Автор = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Автор.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПоверненняТоварівВідКлієнта_Const.Автор, get, sw));
+                form.Filter.Append("Автор:", Автор, sw);
             }
             
             form.Filter.GetWhere = () =>
@@ -16877,6 +17580,42 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
             List<FilterControl.FilterListItem> filterList = [];
             
+            { /* Організація, pointer */
+                Switch sw = Switch.New();
+                Організації_PointerControl Організація = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Організація.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(АктВиконанихРобіт_Const.Організація, get, sw));
+                form.Filter.Append("Організація:", Організація, sw);
+            }
+            
+            { /* Валюта, pointer */
+                Switch sw = Switch.New();
+                Валюти_PointerControl Валюта = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Валюта.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(АктВиконанихРобіт_Const.Валюта, get, sw));
+                form.Filter.Append("Валюта:", Валюта, sw);
+            }
+            
+            { /* Каса, pointer */
+                Switch sw = Switch.New();
+                Каси_PointerControl Каса = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Каса.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(АктВиконанихРобіт_Const.Каса, get, sw));
+                form.Filter.Append("Каса:", Каса, sw);
+            }
+            
+            { /* Контрагент, pointer */
+                Switch sw = Switch.New();
+                Контрагенти_PointerControl Контрагент = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Контрагент.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(АктВиконанихРобіт_Const.Контрагент, get, sw));
+                form.Filter.Append("Контрагент:", Контрагент, sw);
+            }
+            
             { /* СумаДокументу, numeric */
                 Switch sw = Switch.New();
                 
@@ -16885,6 +17624,15 @@ namespace GeneratedCode.Документи.ТабличніСписки
                     
                 filterList.Add(new(АктВиконанихРобіт_Const.СумаДокументу, get, sw));
                 form.Filter.Append("Сума:", СумаДокументу, sw);
+            }
+            
+            { /* Автор, pointer */
+                Switch sw = Switch.New();
+                Користувачі_PointerControl Автор = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Автор.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(АктВиконанихРобіт_Const.Автор, get, sw));
+                form.Filter.Append("Автор:", Автор, sw);
             }
             
             form.Filter.GetWhere = () =>
@@ -17319,6 +18067,64 @@ namespace GeneratedCode.Документи.ТабличніСписки
         public static void CreateFilter(DocumentFormJournalBase form)
         {
             
+            List<FilterControl.FilterListItem> filterList = [];
+            
+            { /* Організація, pointer */
+                Switch sw = Switch.New();
+                Організації_PointerControl Організація = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Організація.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ВведенняЗалишків_Const.Організація, get, sw));
+                form.Filter.Append("Організація:", Організація, sw);
+            }
+            
+            { /* Склад, pointer */
+                Switch sw = Switch.New();
+                Склади_PointerControl Склад = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Склад.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ВведенняЗалишків_Const.Склад, get, sw));
+                form.Filter.Append("Склад:", Склад, sw);
+            }
+            
+            { /* Контрагент, pointer */
+                Switch sw = Switch.New();
+                Контрагенти_PointerControl Контрагент = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Контрагент.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ВведенняЗалишків_Const.Контрагент, get, sw));
+                form.Filter.Append("Контрагент:", Контрагент, sw);
+            }
+            
+            { /* Валюта, pointer */
+                Switch sw = Switch.New();
+                Валюти_PointerControl Валюта = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Валюта.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ВведенняЗалишків_Const.Валюта, get, sw));
+                form.Filter.Append("Валюта:", Валюта, sw);
+            }
+            
+            { /* Автор, pointer */
+                Switch sw = Switch.New();
+                Користувачі_PointerControl Автор = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Автор.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ВведенняЗалишків_Const.Автор, get, sw));
+                form.Filter.Append("Автор:", Автор, sw);
+            }
+            
+            form.Filter.GetWhere = () =>
+            {
+                List<Where> where = [];
+                foreach (var filter in filterList)
+                    if (filter.IsOn.Active)
+                        where.Add(new Where(filter.Field, Comparison.EQ, filter.GetValueFunc.Invoke()));
+
+                form.WhereList = where;
+                return where.Count != 0;
+            };
+        
         }
 
         public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
@@ -17694,6 +18500,46 @@ namespace GeneratedCode.Документи.ТабличніСписки
         public static void CreateFilter(DocumentFormJournalBase form)
         {
             
+            List<FilterControl.FilterListItem> filterList = [];
+            
+            { /* Організація, pointer */
+                Switch sw = Switch.New();
+                Організації_PointerControl Організація = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Організація.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(НадлишкиТоварів_Const.Організація, get, sw));
+                form.Filter.Append("Організація:", Організація, sw);
+            }
+            
+            { /* Склад, pointer */
+                Switch sw = Switch.New();
+                Склади_PointerControl Склад = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Склад.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(НадлишкиТоварів_Const.Склад, get, sw));
+                form.Filter.Append("Склад:", Склад, sw);
+            }
+            
+            { /* Автор, pointer */
+                Switch sw = Switch.New();
+                Користувачі_PointerControl Автор = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Автор.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(НадлишкиТоварів_Const.Автор, get, sw));
+                form.Filter.Append("Автор:", Автор, sw);
+            }
+            
+            form.Filter.GetWhere = () =>
+            {
+                List<Where> where = [];
+                foreach (var filter in filterList)
+                    if (filter.IsOn.Active)
+                        where.Add(new Where(filter.Field, Comparison.EQ, filter.GetValueFunc.Invoke()));
+
+                form.WhereList = where;
+                return where.Count != 0;
+            };
+        
         }
 
         public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
@@ -18049,6 +18895,46 @@ namespace GeneratedCode.Документи.ТабличніСписки
         public static void CreateFilter(DocumentFormJournalBase form)
         {
             
+            List<FilterControl.FilterListItem> filterList = [];
+            
+            { /* Організація, pointer */
+                Switch sw = Switch.New();
+                Організації_PointerControl Організація = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Організація.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПересортицяТоварів_Const.Організація, get, sw));
+                form.Filter.Append("Організація:", Організація, sw);
+            }
+            
+            { /* Склад, pointer */
+                Switch sw = Switch.New();
+                Склади_PointerControl Склад = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Склад.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПересортицяТоварів_Const.Склад, get, sw));
+                form.Filter.Append("Склад:", Склад, sw);
+            }
+            
+            { /* Автор, pointer */
+                Switch sw = Switch.New();
+                Користувачі_PointerControl Автор = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Автор.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПересортицяТоварів_Const.Автор, get, sw));
+                form.Filter.Append("Автор:", Автор, sw);
+            }
+            
+            form.Filter.GetWhere = () =>
+            {
+                List<Where> where = [];
+                foreach (var filter in filterList)
+                    if (filter.IsOn.Active)
+                        where.Add(new Where(filter.Field, Comparison.EQ, filter.GetValueFunc.Invoke()));
+
+                form.WhereList = where;
+                return where.Count != 0;
+            };
+        
         }
 
         public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
@@ -18425,6 +19311,55 @@ namespace GeneratedCode.Документи.ТабличніСписки
         public static void CreateFilter(DocumentFormJournalBase form)
         {
             
+            List<FilterControl.FilterListItem> filterList = [];
+            
+            { /* Організація, pointer */
+                Switch sw = Switch.New();
+                Організації_PointerControl Організація = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Організація.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПерерахунокТоварів_Const.Організація, get, sw));
+                form.Filter.Append("Організація:", Організація, sw);
+            }
+            
+            { /* Склад, pointer */
+                Switch sw = Switch.New();
+                Склади_PointerControl Склад = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Склад.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПерерахунокТоварів_Const.Склад, get, sw));
+                form.Filter.Append("Склад:", Склад, sw);
+            }
+            
+            { /* Відповідальний, pointer */
+                Switch sw = Switch.New();
+                ФізичніОсоби_PointerControl Відповідальний = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Відповідальний.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПерерахунокТоварів_Const.Відповідальний, get, sw));
+                form.Filter.Append("Відповідальний:", Відповідальний, sw);
+            }
+            
+            { /* Автор, pointer */
+                Switch sw = Switch.New();
+                Користувачі_PointerControl Автор = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Автор.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПерерахунокТоварів_Const.Автор, get, sw));
+                form.Filter.Append("Автор:", Автор, sw);
+            }
+            
+            form.Filter.GetWhere = () =>
+            {
+                List<Where> where = [];
+                foreach (var filter in filterList)
+                    if (filter.IsOn.Active)
+                        where.Add(new Where(filter.Field, Comparison.EQ, filter.GetValueFunc.Invoke()));
+
+                form.WhereList = where;
+                return where.Count != 0;
+            };
+        
         }
 
         public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
@@ -18813,6 +19748,24 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
             List<FilterControl.FilterListItem> filterList = [];
             
+            { /* Організація, pointer */
+                Switch sw = Switch.New();
+                Організації_PointerControl Організація = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Організація.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПсуванняТоварів_Const.Організація, get, sw));
+                form.Filter.Append("Організація:", Організація, sw);
+            }
+            
+            { /* Склад, pointer */
+                Switch sw = Switch.New();
+                Склади_PointerControl Склад = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Склад.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПсуванняТоварів_Const.Склад, get, sw));
+                form.Filter.Append("Склад:", Склад, sw);
+            }
+            
             { /* СумаДокументу, numeric */
                 Switch sw = Switch.New();
                 
@@ -18821,6 +19774,15 @@ namespace GeneratedCode.Документи.ТабличніСписки
                     
                 filterList.Add(new(ПсуванняТоварів_Const.СумаДокументу, get, sw));
                 form.Filter.Append("Сума:", СумаДокументу, sw);
+            }
+            
+            { /* Автор, pointer */
+                Switch sw = Switch.New();
+                Користувачі_PointerControl Автор = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Автор.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПсуванняТоварів_Const.Автор, get, sw));
+                form.Filter.Append("Автор:", Автор, sw);
             }
             
             form.Filter.GetWhere = () =>
@@ -19237,6 +20199,33 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
             List<FilterControl.FilterListItem> filterList = [];
             
+            { /* Організація, pointer */
+                Switch sw = Switch.New();
+                Організації_PointerControl Організація = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Організація.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ВнутрішнєСпоживанняТоварів_Const.Організація, get, sw));
+                form.Filter.Append("Організація:", Організація, sw);
+            }
+            
+            { /* Склад, pointer */
+                Switch sw = Switch.New();
+                Склади_PointerControl Склад = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Склад.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ВнутрішнєСпоживанняТоварів_Const.Склад, get, sw));
+                form.Filter.Append("Склад:", Склад, sw);
+            }
+            
+            { /* Валюта, pointer */
+                Switch sw = Switch.New();
+                Валюти_PointerControl Валюта = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Валюта.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ВнутрішнєСпоживанняТоварів_Const.Валюта, get, sw));
+                form.Filter.Append("Валюта:", Валюта, sw);
+            }
+            
             { /* СумаДокументу, numeric */
                 Switch sw = Switch.New();
                 
@@ -19245,6 +20234,15 @@ namespace GeneratedCode.Документи.ТабличніСписки
                     
                 filterList.Add(new(ВнутрішнєСпоживанняТоварів_Const.СумаДокументу, get, sw));
                 form.Filter.Append("Сума:", СумаДокументу, sw);
+            }
+            
+            { /* Автор, pointer */
+                Switch sw = Switch.New();
+                Користувачі_PointerControl Автор = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Автор.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ВнутрішнєСпоживанняТоварів_Const.Автор, get, sw));
+                form.Filter.Append("Автор:", Автор, sw);
             }
             
             form.Filter.GetWhere = () =>
@@ -19713,6 +20711,51 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
             List<FilterControl.FilterListItem> filterList = [];
             
+            { /* Організація, pointer */
+                Switch sw = Switch.New();
+                Організації_PointerControl Організація = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Організація.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(РахунокФактура_Const.Організація, get, sw));
+                form.Filter.Append("Організація:", Організація, sw);
+            }
+            
+            { /* Контрагент, pointer */
+                Switch sw = Switch.New();
+                Контрагенти_PointerControl Контрагент = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Контрагент.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(РахунокФактура_Const.Контрагент, get, sw));
+                form.Filter.Append("Контрагент:", Контрагент, sw);
+            }
+            
+            { /* Валюта, pointer */
+                Switch sw = Switch.New();
+                Валюти_PointerControl Валюта = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Валюта.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(РахунокФактура_Const.Валюта, get, sw));
+                form.Filter.Append("Валюта:", Валюта, sw);
+            }
+            
+            { /* Каса, pointer */
+                Switch sw = Switch.New();
+                Каси_PointerControl Каса = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Каса.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(РахунокФактура_Const.Каса, get, sw));
+                form.Filter.Append("Каса:", Каса, sw);
+            }
+            
+            { /* Склад, pointer */
+                Switch sw = Switch.New();
+                Склади_PointerControl Склад = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Склад.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(РахунокФактура_Const.Склад, get, sw));
+                form.Filter.Append("Склад:", Склад, sw);
+            }
+            
             { /* СумаДокументу, numeric */
                 Switch sw = Switch.New();
                 
@@ -19721,6 +20764,15 @@ namespace GeneratedCode.Документи.ТабличніСписки
                     
                 filterList.Add(new(РахунокФактура_Const.СумаДокументу, get, sw));
                 form.Filter.Append("Сума:", СумаДокументу, sw);
+            }
+            
+            { /* Автор, pointer */
+                Switch sw = Switch.New();
+                Користувачі_PointerControl Автор = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Автор.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(РахунокФактура_Const.Автор, get, sw));
+                form.Filter.Append("Автор:", Автор, sw);
             }
             
             form.Filter.GetWhere = () =>
@@ -20123,6 +21175,46 @@ namespace GeneratedCode.Документи.ТабличніСписки
         public static void CreateFilter(DocumentFormJournalBase form)
         {
             
+            List<FilterControl.FilterListItem> filterList = [];
+            
+            { /* Склад, pointer */
+                Switch sw = Switch.New();
+                Склади_PointerControl Склад = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Склад.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(РозміщенняТоварівНаСкладі_Const.Склад, get, sw));
+                form.Filter.Append("Склад:", Склад, sw);
+            }
+            
+            { /* ДокументПоступлення, pointer */
+                Switch sw = Switch.New();
+                ПоступленняТоварівТаПослуг_PointerControl ДокументПоступлення = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => ДокументПоступлення.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(РозміщенняТоварівНаСкладі_Const.ДокументПоступлення, get, sw));
+                form.Filter.Append("Документ поступлення:", ДокументПоступлення, sw);
+            }
+            
+            { /* Автор, pointer */
+                Switch sw = Switch.New();
+                Користувачі_PointerControl Автор = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Автор.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(РозміщенняТоварівНаСкладі_Const.Автор, get, sw));
+                form.Filter.Append("Автор:", Автор, sw);
+            }
+            
+            form.Filter.GetWhere = () =>
+            {
+                List<Where> where = [];
+                foreach (var filter in filterList)
+                    if (filter.IsOn.Active)
+                        where.Add(new Where(filter.Field, Comparison.EQ, filter.GetValueFunc.Invoke()));
+
+                form.WhereList = where;
+                return where.Count != 0;
+            };
+        
         }
 
         public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
@@ -20478,6 +21570,46 @@ namespace GeneratedCode.Документи.ТабличніСписки
         public static void CreateFilter(DocumentFormJournalBase form)
         {
             
+            List<FilterControl.FilterListItem> filterList = [];
+            
+            { /* Склад, pointer */
+                Switch sw = Switch.New();
+                Склади_PointerControl Склад = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Склад.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПереміщенняТоварівНаСкладі_Const.Склад, get, sw));
+                form.Filter.Append("Склад:", Склад, sw);
+            }
+            
+            { /* Організація, pointer */
+                Switch sw = Switch.New();
+                Організації_PointerControl Організація = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Організація.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПереміщенняТоварівНаСкладі_Const.Організація, get, sw));
+                form.Filter.Append("Організація:", Організація, sw);
+            }
+            
+            { /* Автор, pointer */
+                Switch sw = Switch.New();
+                Користувачі_PointerControl Автор = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Автор.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ПереміщенняТоварівНаСкладі_Const.Автор, get, sw));
+                form.Filter.Append("Автор:", Автор, sw);
+            }
+            
+            form.Filter.GetWhere = () =>
+            {
+                List<Where> where = [];
+                foreach (var filter in filterList)
+                    if (filter.IsOn.Active)
+                        where.Add(new Where(filter.Field, Comparison.EQ, filter.GetValueFunc.Invoke()));
+
+                form.WhereList = where;
+                return where.Count != 0;
+            };
+        
         }
 
         public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
@@ -20833,6 +21965,46 @@ namespace GeneratedCode.Документи.ТабличніСписки
         public static void CreateFilter(DocumentFormJournalBase form)
         {
             
+            List<FilterControl.FilterListItem> filterList = [];
+            
+            { /* Склад, pointer */
+                Switch sw = Switch.New();
+                Склади_PointerControl Склад = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Склад.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗбіркаТоварівНаСкладі_Const.Склад, get, sw));
+                form.Filter.Append("Склад:", Склад, sw);
+            }
+            
+            { /* ДокументРеалізації, pointer */
+                Switch sw = Switch.New();
+                РеалізаціяТоварівТаПослуг_PointerControl ДокументРеалізації = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => ДокументРеалізації.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗбіркаТоварівНаСкладі_Const.ДокументРеалізації, get, sw));
+                form.Filter.Append("Документ реалізації:", ДокументРеалізації, sw);
+            }
+            
+            { /* Автор, pointer */
+                Switch sw = Switch.New();
+                Користувачі_PointerControl Автор = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Автор.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗбіркаТоварівНаСкладі_Const.Автор, get, sw));
+                form.Filter.Append("Автор:", Автор, sw);
+            }
+            
+            form.Filter.GetWhere = () =>
+            {
+                List<Where> where = [];
+                foreach (var filter in filterList)
+                    if (filter.IsOn.Active)
+                        where.Add(new Where(filter.Field, Comparison.EQ, filter.GetValueFunc.Invoke()));
+
+                form.WhereList = where;
+                return where.Count != 0;
+            };
+        
         }
 
         public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
@@ -21188,6 +22360,46 @@ namespace GeneratedCode.Документи.ТабличніСписки
         public static void CreateFilter(DocumentFormJournalBase form)
         {
             
+            List<FilterControl.FilterListItem> filterList = [];
+            
+            { /* Організація, pointer */
+                Switch sw = Switch.New();
+                Організації_PointerControl Організація = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Організація.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(РозміщенняНоменклатуриПоКоміркам_Const.Організація, get, sw));
+                form.Filter.Append("Організація:", Організація, sw);
+            }
+            
+            { /* Склад, pointer */
+                Switch sw = Switch.New();
+                Склади_PointerControl Склад = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Склад.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(РозміщенняНоменклатуриПоКоміркам_Const.Склад, get, sw));
+                form.Filter.Append("Склад:", Склад, sw);
+            }
+            
+            { /* Автор, pointer */
+                Switch sw = Switch.New();
+                Користувачі_PointerControl Автор = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Автор.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(РозміщенняНоменклатуриПоКоміркам_Const.Автор, get, sw));
+                form.Filter.Append("Автор:", Автор, sw);
+            }
+            
+            form.Filter.GetWhere = () =>
+            {
+                List<Where> where = [];
+                foreach (var filter in filterList)
+                    if (filter.IsOn.Active)
+                        where.Add(new Where(filter.Field, Comparison.EQ, filter.GetValueFunc.Invoke()));
+
+                form.WhereList = where;
+                return where.Count != 0;
+            };
+        
         }
 
         public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
@@ -21522,6 +22734,37 @@ namespace GeneratedCode.Документи.ТабличніСписки
         public static void CreateFilter(DocumentFormJournalBase form)
         {
             
+            List<FilterControl.FilterListItem> filterList = [];
+            
+            { /* Організація, pointer */
+                Switch sw = Switch.New();
+                Організації_PointerControl Організація = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Організація.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(КорегуванняБоргу_Const.Організація, get, sw));
+                form.Filter.Append("Організація:", Організація, sw);
+            }
+            
+            { /* Автор, pointer */
+                Switch sw = Switch.New();
+                Користувачі_PointerControl Автор = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Автор.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(КорегуванняБоргу_Const.Автор, get, sw));
+                form.Filter.Append("Автор:", Автор, sw);
+            }
+            
+            form.Filter.GetWhere = () =>
+            {
+                List<Where> where = [];
+                foreach (var filter in filterList)
+                    if (filter.IsOn.Active)
+                        where.Add(new Where(filter.Field, Comparison.EQ, filter.GetValueFunc.Invoke()));
+
+                form.WhereList = where;
+                return where.Count != 0;
+            };
+        
         }
 
         public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
@@ -21974,6 +23217,51 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
             List<FilterControl.FilterListItem> filterList = [];
             
+            { /* Організація, pointer */
+                Switch sw = Switch.New();
+                Організації_PointerControl Організація = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Організація.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗакриттяЗамовленняКлієнта_Const.Організація, get, sw));
+                form.Filter.Append("Організація:", Організація, sw);
+            }
+            
+            { /* Контрагент, pointer */
+                Switch sw = Switch.New();
+                Контрагенти_PointerControl Контрагент = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Контрагент.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗакриттяЗамовленняКлієнта_Const.Контрагент, get, sw));
+                form.Filter.Append("Контрагент:", Контрагент, sw);
+            }
+            
+            { /* Валюта, pointer */
+                Switch sw = Switch.New();
+                Валюти_PointerControl Валюта = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Валюта.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗакриттяЗамовленняКлієнта_Const.Валюта, get, sw));
+                form.Filter.Append("Валюта:", Валюта, sw);
+            }
+            
+            { /* Каса, pointer */
+                Switch sw = Switch.New();
+                Каси_PointerControl Каса = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Каса.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗакриттяЗамовленняКлієнта_Const.Каса, get, sw));
+                form.Filter.Append("Каса:", Каса, sw);
+            }
+            
+            { /* Склад, pointer */
+                Switch sw = Switch.New();
+                Склади_PointerControl Склад = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Склад.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗакриттяЗамовленняКлієнта_Const.Склад, get, sw));
+                form.Filter.Append("Склад:", Склад, sw);
+            }
+            
             { /* СумаДокументу, numeric */
                 Switch sw = Switch.New();
                 
@@ -21995,6 +23283,15 @@ namespace GeneratedCode.Документи.ТабличніСписки
                     
                 filterList.Add(new(ЗакриттяЗамовленняКлієнта_Const.ПричинаЗакриттяЗамовлення, get, sw));
                 form.Filter.Append("Причина:", ПричинаЗакриттяЗамовлення, sw);
+            }
+            
+            { /* Автор, pointer */
+                Switch sw = Switch.New();
+                Користувачі_PointerControl Автор = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Автор.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗакриттяЗамовленняКлієнта_Const.Автор, get, sw));
+                form.Filter.Append("Автор:", Автор, sw);
             }
             
             form.Filter.GetWhere = () =>
@@ -22487,6 +23784,51 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
             List<FilterControl.FilterListItem> filterList = [];
             
+            { /* Організація, pointer */
+                Switch sw = Switch.New();
+                Організації_PointerControl Організація = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Організація.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗакриттяРахункуФактури_Const.Організація, get, sw));
+                form.Filter.Append("Організація:", Організація, sw);
+            }
+            
+            { /* Контрагент, pointer */
+                Switch sw = Switch.New();
+                Контрагенти_PointerControl Контрагент = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Контрагент.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗакриттяРахункуФактури_Const.Контрагент, get, sw));
+                form.Filter.Append("Контрагент:", Контрагент, sw);
+            }
+            
+            { /* Валюта, pointer */
+                Switch sw = Switch.New();
+                Валюти_PointerControl Валюта = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Валюта.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗакриттяРахункуФактури_Const.Валюта, get, sw));
+                form.Filter.Append("Валюта:", Валюта, sw);
+            }
+            
+            { /* Каса, pointer */
+                Switch sw = Switch.New();
+                Каси_PointerControl Каса = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Каса.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗакриттяРахункуФактури_Const.Каса, get, sw));
+                form.Filter.Append("Каса:", Каса, sw);
+            }
+            
+            { /* Склад, pointer */
+                Switch sw = Switch.New();
+                Склади_PointerControl Склад = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Склад.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗакриттяРахункуФактури_Const.Склад, get, sw));
+                form.Filter.Append("Склад:", Склад, sw);
+            }
+            
             { /* СумаДокументу, numeric */
                 Switch sw = Switch.New();
                 
@@ -22495,6 +23837,15 @@ namespace GeneratedCode.Документи.ТабличніСписки
                     
                 filterList.Add(new(ЗакриттяРахункуФактури_Const.СумаДокументу, get, sw));
                 form.Filter.Append("Сума:", СумаДокументу, sw);
+            }
+            
+            { /* Автор, pointer */
+                Switch sw = Switch.New();
+                Користувачі_PointerControl Автор = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Автор.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗакриттяРахункуФактури_Const.Автор, get, sw));
+                form.Filter.Append("Автор:", Автор, sw);
             }
             
             form.Filter.GetWhere = () =>
@@ -23004,6 +24355,51 @@ namespace GeneratedCode.Документи.ТабличніСписки
             
             List<FilterControl.FilterListItem> filterList = [];
             
+            { /* Організація, pointer */
+                Switch sw = Switch.New();
+                Організації_PointerControl Організація = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Організація.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗакриттяЗамовленняПостачальнику_Const.Організація, get, sw));
+                form.Filter.Append("Організація:", Організація, sw);
+            }
+            
+            { /* Контрагент, pointer */
+                Switch sw = Switch.New();
+                Контрагенти_PointerControl Контрагент = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Контрагент.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗакриттяЗамовленняПостачальнику_Const.Контрагент, get, sw));
+                form.Filter.Append("Контрагент:", Контрагент, sw);
+            }
+            
+            { /* Валюта, pointer */
+                Switch sw = Switch.New();
+                Валюти_PointerControl Валюта = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Валюта.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗакриттяЗамовленняПостачальнику_Const.Валюта, get, sw));
+                form.Filter.Append("Валюта:", Валюта, sw);
+            }
+            
+            { /* Каса, pointer */
+                Switch sw = Switch.New();
+                Каси_PointerControl Каса = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Каса.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗакриттяЗамовленняПостачальнику_Const.Каса, get, sw));
+                form.Filter.Append("Каса:", Каса, sw);
+            }
+            
+            { /* Склад, pointer */
+                Switch sw = Switch.New();
+                Склади_PointerControl Склад = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Склад.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗакриттяЗамовленняПостачальнику_Const.Склад, get, sw));
+                form.Filter.Append("Склад:", Склад, sw);
+            }
+            
             { /* СумаДокументу, numeric */
                 Switch sw = Switch.New();
                 
@@ -23025,6 +24421,15 @@ namespace GeneratedCode.Документи.ТабличніСписки
                     
                 filterList.Add(new(ЗакриттяЗамовленняПостачальнику_Const.ПричинаЗакриттяЗамовлення, get, sw));
                 form.Filter.Append("Причина:", ПричинаЗакриттяЗамовлення, sw);
+            }
+            
+            { /* Автор, pointer */
+                Switch sw = Switch.New();
+                Користувачі_PointerControl Автор = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Автор.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ЗакриттяЗамовленняПостачальнику_Const.Автор, get, sw));
+                form.Filter.Append("Автор:", Автор, sw);
             }
             
             form.Filter.GetWhere = () =>

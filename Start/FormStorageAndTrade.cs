@@ -2,7 +2,6 @@
 using Gtk;
 using InterfaceGtk4;
 using GeneratedCode;
-using GeneratedCode.Константи;
 using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
@@ -23,29 +22,29 @@ class FormStorageAndTrade : FormGeneral
 
     }
 
-    protected override void OpenDocumentByType(string name)
+    protected override bool OpenDocumentByType(string name)
     {
-        new FunctionForDynamicOpen().OpenDocumentByType(name, null);
+        return new FunctionForDynamicOpen().OpenDocumentByType(name, null);
     }
 
-    protected override void OpenDirectoryByType(string name)
+    protected override bool OpenDirectoryByType(string name)
     {
-        new FunctionForDynamicOpen().OpenDirectoryByType(name, null);
+        return new FunctionForDynamicOpen().OpenDirectoryByType(name, null);
     }
 
-    protected override void OpenJournalByType(string name)
+    protected override bool OpenJournalByType(string name)
     {
-        new FunctionForDynamicOpen().OpenJournalByType(name, null);
+        return new FunctionForDynamicOpen().OpenJournalByType(name, null);
     }
 
-    protected override void OpenRegisterInformationByType(string name)
+    protected override bool OpenRegisterInformationByType(string name)
     {
-        new FunctionForDynamicOpen().OpenRegisterInformationByType(name, null);
+        return new FunctionForDynamicOpen().OpenRegisterInformationByType(name, null);
     }
 
-    protected override void OpenRegisterAccumulationByType(string name)
+    protected override bool OpenRegisterAccumulationByType(string name)
     {
-        new FunctionForDynamicOpen().OpenRegisterAccumulationByType(name, null);
+        return new FunctionForDynamicOpen().OpenRegisterAccumulationByType(name, null);
     }
 
     protected override void Settings(LinkButton linkButton)
@@ -94,11 +93,11 @@ class FormStorageAndTrade : FormGeneral
 
     public async ValueTask OpenFirstPages()
     {
-        PageHome page = new PageHome();
+        PageHome page = new();
         NotebookFunc?.CreatePage("Стартова", () => page, false, null, null, true);
         await page.SetValue();
 
-        ПоступленняТоварівТаПослуг page2 = new();
+        /*ПоступленняТоварівТаПослуг page2 = new();
         NotebookFunc?.CreatePage("Home New", () => page2);
         await page2.SetValue();
 
@@ -112,7 +111,7 @@ class FormStorageAndTrade : FormGeneral
 
         Номенклатура_ШвидкийВибір page3_1 = new();
         NotebookFunc?.CreatePage("Home New1", () => page3_1);
-        await page3_1.SetValue();
+        await page3_1.SetValue();*/
     }
 
     public async ValueTask SetCurrentUser()

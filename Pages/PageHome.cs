@@ -7,7 +7,6 @@
 using Gtk;
 using InterfaceGtk4;
 using GeneratedCode;
-using GeneratedCode.Документи;
 
 namespace StorageAndTrade;
 

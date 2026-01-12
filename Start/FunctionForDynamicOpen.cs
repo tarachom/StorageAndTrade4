@@ -4,14 +4,11 @@
 
 */
 
-using Gtk;
-using InterfaceGtk4;
 using GeneratedCode;
 
-namespace StorageAndTrade
+namespace StorageAndTrade;
+
+class FunctionForDynamicOpen : InterfaceGtk4.FunctionForDynamicOpen
 {
-    class FunctionForDynamicOpen : InterfaceGtk4.FunctionForDynamicOpen
-    {
-        public FunctionForDynamicOpen() : base(Config.NameSpageProgram, Config.NameSpageCodeGeneration, Program.BasicForm?.NotebookFunc) { }
-    }
+    public FunctionForDynamicOpen() : base(Config.NamespaceProgram, Config.NamespaceCodeGeneration, Program.BasicForm?.NotebookFunc) { }
 }
