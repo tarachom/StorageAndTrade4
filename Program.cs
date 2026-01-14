@@ -24,8 +24,6 @@ class Program
         BasicApp.OnActivate += (app, args) => new FormConfigurationSelection().Show();
         BasicApp.OnShutdown += (app, args) => { };
 
-        //Settings.GetDefault().GtkThemeName = "Adwaita";
-
         Display? display = Display.GetDefault();
         if (display != null)
         {

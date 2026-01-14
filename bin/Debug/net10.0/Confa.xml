@@ -7,7 +7,7 @@
   <Author>Тарахомин Юрій Іванович, accounting.org.ua</Author>
   <Desc>Конфігурація "Зберігання та Торгівля"
 https://accounting.org.ua/storage_and_trade.html</Desc>
-  <DateTimeSave>12.01.2026 21:08:55</DateTimeSave>
+  <DateTimeSave>13.01.2026 18:06:45</DateTimeSave>
   <DictTSearch>simple</DictTSearch>
   <GtkVersion>Gtk4</GtkVersion>
   <ConstantsBlocks>
@@ -52058,7 +52058,7 @@ public class РозхіднийКасовийОрдер_PointerTablePartCell : P
             <AfterSave Action="0">AfterSave</AfterSave>
           </TriggerFunctions>
           <Forms>
-            <Form Modified="1">
+            <Form Modified="0">
               <Name>Таблична частина</Name>
               <Desc>Таблична частина</Desc>
               <Type>TablePart</Type>
@@ -52818,7 +52818,7 @@ class ПереміщенняТоварів_ТабличнаЧастина_Тов
         <ClearSpend Action="0">ClearSpend</ClearSpend>
       </SpendFunctions>
       <Forms>
-        <Form Modified="1">
+        <Form Modified="0">
           <Name>PointerControl</Name>
           <Desc>PointerControl</Desc>
           <Type>PointerControl</Type>
@@ -52893,7 +52893,7 @@ public class ПереміщенняТоварів_PointerControl : PointerContro
     ]]></GeneratedCode>
           <NotSaveToFile>0</NotSaveToFile>
         </Form>
-        <Form Modified="1">
+        <Form Modified="0">
           <Name>Функції</Name>
           <Desc>Функції</Desc>
           <Type>Function</Type>
@@ -52992,7 +52992,7 @@ static class ПереміщенняТоварів_Функції
     ]]></GeneratedCode>
           <NotSaveToFile>0</NotSaveToFile>
         </Form>
-        <Form Modified="1">
+        <Form Modified="0">
           <Name>Список</Name>
           <Desc>Список</Desc>
           <Type>List</Type>
@@ -53089,7 +53089,7 @@ public class ПереміщенняТоварів_Список : DocumentFormJou
           <NotSaveToFile>0</NotSaveToFile>
           <TabularList>Записи</TabularList>
         </Form>
-        <Form Modified="1">
+        <Form Modified="0">
           <Name>Елемент</Name>
           <Desc>Елемент</Desc>
           <Type>Element</Type>
@@ -53578,7 +53578,7 @@ class ПереміщенняТоварів_Елемент : DocumentFormElement
             </TablePart>
           </ElementTableParts>
         </Form>
-        <Form Modified="1">
+        <Form Modified="0">
           <Name>PointerTablePartCell</Name>
           <Desc>PointerTablePartCell</Desc>
           <Type>PointerTablePartCell</Type>
@@ -53645,7 +53645,7 @@ public class ПереміщенняТоварів_PointerTablePartCell : Pointer
     ]]></GeneratedCode>
           <NotSaveToFile>0</NotSaveToFile>
         </Form>
-        <Form Modified="1">
+        <Form Modified="0">
           <Name>Швидкий вибір</Name>
           <Desc>Швидкий вибір</Desc>
           <Type>ListSmallSelect</Type>

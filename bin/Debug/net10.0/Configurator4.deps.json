@@ -6,16 +6,15 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v10.0": {
-      "StorageAndTrade4/4.0.0.0": {
+      "Configurator4/4.0.0.0": {
         "dependencies": {
           "AccountingSoftware": "3.1.2.1",
-          "Configurator4": "4.0.0",
           "GirCore.GObject-2.0.Integration": "0.7.0",
           "GirCore.Gtk-4.0": "0.7.0",
           "InterfaceGtk4": "1.0.0"
         },
         "runtime": {
-          "StorageAndTrade4.dll": {}
+          "Configurator4.dll": {}
         }
       },
       "BCrypt.Net-Next/4.0.3": {
@@ -327,20 +326,6 @@
           }
         }
       },
-      "Configurator4/4.0.0": {
-        "dependencies": {
-          "AccountingSoftware": "3.1.2.1",
-          "GirCore.GObject-2.0.Integration": "0.7.0",
-          "GirCore.Gtk-4.0": "0.7.0",
-          "InterfaceGtk4": "1.0.0"
-        },
-        "runtime": {
-          "Configurator4.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.0.0.0"
-          }
-        }
-      },
       "InterfaceGtk4/1.0.0": {
         "dependencies": {
           "AccountingSoftware": "3.1.2.1",
@@ -366,7 +351,7 @@
     }
   },
   "libraries": {
-    "StorageAndTrade4/4.0.0.0": {
+    "Configurator4/4.0.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -512,11 +497,6 @@
       "hashPath": "npgsql.10.0.1.nupkg.sha512"
     },
     "AccountingSoftware/3.1.2.1": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Configurator4/4.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

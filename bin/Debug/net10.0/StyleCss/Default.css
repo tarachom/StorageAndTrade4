@@ -10,8 +10,7 @@ headerbar .subtitle {
 
 /* Кнопки лівого меню */
 button.left-menu {
-    padding-left: 2px;
-    padding-right: 2px;
+    padding: 2px;
 }
 
 button.left-menu:hover {
