@@ -11,7 +11,6 @@ using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
 using GeneratedCode.Перелічення;
 
-
 namespace StorageAndTrade;
 
 class ВведенняЗалишків_ТабличнаЧастина_Каси : DocumentFormTablePart
@@ -170,6 +169,8 @@ class ВведенняЗалишків_ТабличнаЧастина_Каси :
             ColumnViewColumn column = ColumnViewColumn.New("Каса", factory);
             column.Resizable = true;
             
+            column.FixedWidth = 300;
+            
             Grid.AppendColumn(column);
         }
         
@@ -223,7 +224,7 @@ class ВведенняЗалишків_ТабличнаЧастина_Каси :
         Store.RemoveAll();
 
         
-        foreach (ВведенняЗалишків_Каси_TablePart.Record record in ЕлементВласник.Каси_TablePart.Records)
+        foreach (var record in ЕлементВласник.Каси_TablePart.Records)
         {
             Store.Append(new ItemRow()
             {
@@ -265,7 +266,24 @@ class ВведенняЗалишків_ТабличнаЧастина_Каси :
             }
         }
         await ЕлементВласник.Каси_TablePart.Save(true);
-        await LoadRecords();
+        //Update
+        {
+            uint position = 0;
+            foreach (var record in ЕлементВласник.Каси_TablePart.Records)
+            {
+                bool sel = Grid.Model.IsSelected(position);
+                Store.Splice(position, 1, [new ItemRow()
+                {
+                    UnigueID = new(record.UID),
+                    НомерРядка = record.НомерРядка,
+                    Каса = record.Каса,
+                    Сума = record.Сума,
+                    
+                }], 1);
+                if (sel) Grid.Model.SelectItem(position, false);
+                position++;
+            }
+        }
         }
     }
 

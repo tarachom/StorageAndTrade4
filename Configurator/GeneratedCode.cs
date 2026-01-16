@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 13.01.2026 18:06:45
+ * Дата конфігурації: 14.01.2026 17:47:53
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон GeneratedCode.xslt
@@ -20872,10 +20872,12 @@ namespace GeneratedCode.Документи
     public class НадлишкиТоварів_Товари_TablePart : DocumentTablePart
     {
         public НадлишкиТоварів_Товари_TablePart(НадлишкиТоварів_Objest owner) : base(Config.Kernel, "tab_a89",
-             ["col_g2", "col_g3", "col_g4", "col_g5", "col_g6", ], true)
+             ["col_g2", "col_g3", "col_g4", "col_g5", "col_g6", "col_a1", ], true)
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
+            
+            QuerySelect.Order.Add(НомерРядка, SelectOrder.ASC);
             
         }
 
@@ -20886,6 +20888,7 @@ namespace GeneratedCode.Документи
         public const string Кількість = "col_g4";
         public const string Ціна = "col_g5";
         public const string Сума = "col_g6";
+        public const string НомерРядка = "col_a1";
 
         public НадлишкиТоварів_Objest Owner { get; private set; }
         
@@ -20901,6 +20904,12 @@ namespace GeneratedCode.Документи
             {
               foreach(string field in orderFields)
                 QuerySelect.Order.Add(field, SelectOrder.ASC);
+            }
+            
+            else
+            { 
+              QuerySelect.Order.Add(НомерРядка, SelectOrder.ASC);
+              
             }
             Довідники.Номенклатура_Pointer.GetJoin(QuerySelect, Номенклатура, "tab_a89", "join_tab_1", "Номенклатура");
                 Довідники.ХарактеристикиНоменклатури_Pointer.GetJoin(QuerySelect, ХарактеристикаНоменклатури, "tab_a89", "join_tab_2", "ХарактеристикаНоменклатури");
@@ -20922,6 +20931,7 @@ namespace GeneratedCode.Документи
                     Кількість = (fieldValue["col_g4"] != DBNull.Value) ? (decimal)fieldValue["col_g4"] : 0,
                     Ціна = (fieldValue["col_g5"] != DBNull.Value) ? (decimal)fieldValue["col_g5"] : 0,
                     Сума = (fieldValue["col_g6"] != DBNull.Value) ? (decimal)fieldValue["col_g6"] : 0,
+                    НомерРядка = (fieldValue["col_a1"] != DBNull.Value) ? (int)fieldValue["col_a1"] : 0,
                     
                 };
                 Records.Add(record);
@@ -20955,8 +20965,12 @@ namespace GeneratedCode.Документи
                 await base.BaseDelete(Owner.UnigueID);
 
             
+            int sequenceNumber_НомерРядка = 0;
+            
             foreach (Record record in Records)
             {
+                
+                record.НомерРядка = ++sequenceNumber_НомерРядка;
                 
                 Dictionary<string, object> fieldValue = new()
                 {
@@ -20965,6 +20979,7 @@ namespace GeneratedCode.Документи
                     {"col_g4", record.Кількість},
                     {"col_g5", record.Ціна},
                     {"col_g6", record.Сума},
+                    {"col_a1", record.НомерРядка},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UnigueID, fieldValue);
@@ -20996,6 +21011,7 @@ namespace GeneratedCode.Документи
             public decimal Кількість { get; set; } = 0;
             public decimal Ціна { get; set; } = 0;
             public decimal Сума { get; set; } = 0;
+            public int НомерРядка { get; set; } = 0;
             
         }
     }

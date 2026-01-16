@@ -11,7 +11,6 @@ using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
 using GeneratedCode.Перелічення;
 
-
 namespace StorageAndTrade;
 
 class ВведенняЗалишків_ТабличнаЧастина_БанківськіРахунки : DocumentFormTablePart
@@ -170,6 +169,8 @@ class ВведенняЗалишків_ТабличнаЧастина_Банкі
             ColumnViewColumn column = ColumnViewColumn.New("Банківський рахунок", factory);
             column.Resizable = true;
             
+            column.FixedWidth = 300;
+            
             Grid.AppendColumn(column);
         }
         
@@ -223,7 +224,7 @@ class ВведенняЗалишків_ТабличнаЧастина_Банкі
         Store.RemoveAll();
 
         
-        foreach (ВведенняЗалишків_БанківськіРахунки_TablePart.Record record in ЕлементВласник.БанківськіРахунки_TablePart.Records)
+        foreach (var record in ЕлементВласник.БанківськіРахунки_TablePart.Records)
         {
             Store.Append(new ItemRow()
             {
@@ -265,7 +266,24 @@ class ВведенняЗалишків_ТабличнаЧастина_Банкі
             }
         }
         await ЕлементВласник.БанківськіРахунки_TablePart.Save(true);
-        await LoadRecords();
+        //Update
+        {
+            uint position = 0;
+            foreach (var record in ЕлементВласник.БанківськіРахунки_TablePart.Records)
+            {
+                bool sel = Grid.Model.IsSelected(position);
+                Store.Splice(position, 1, [new ItemRow()
+                {
+                    UnigueID = new(record.UID),
+                    НомерРядка = record.НомерРядка,
+                    БанківськийРахунок = record.БанківськийРахунок,
+                    Сума = record.Сума,
+                    
+                }], 1);
+                if (sel) Grid.Model.SelectItem(position, false);
+                position++;
+            }
+        }
         }
     }
 

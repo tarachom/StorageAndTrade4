@@ -22,18 +22,16 @@ class ВведенняЗалишків_Елемент : DocumentFormElement
     public ВведенняЗалишків_Objest Елемент { get; init; } = new();
 
     #region Fields
-    Entry НомерДок = new() { WidthRequest = 500 };
+    Entry НомерДок = new() { WidthRequest = 100 };
                     DateTimeControl ДатаДок = new();
-            Організації_PointerControl Організація = new() { Caption = "Організація", WidthPresentation = 500 };
-            СтруктураПідприємства_PointerControl Підрозділ = new() { Caption = "Підрозділ", WidthPresentation = 500 };
-            Склади_PointerControl Склад = new() { Caption = "Склад", WidthPresentation = 500 };
-            Валюти_PointerControl Валюта = new() { Caption = "Валюта", WidthPresentation = 500 };
-            Контрагенти_PointerControl Контрагент = new() { Caption = "Контрагент", WidthPresentation = 500 };
-            ДоговориКонтрагентів_PointerControl Договір = new() { Caption = "Договір", WidthPresentation = 500 };
+            Організації_PointerControl Організація = new() { Caption = "Організація", WidthPresentation = 300 };
+            СтруктураПідприємства_PointerControl Підрозділ = new() { Caption = "Підрозділ", WidthPresentation = 300 };
+            Склади_PointerControl Склад = new() { Caption = "Склад", WidthPresentation = 300 };
+            Валюти_PointerControl Валюта = new() { Caption = "Валюта", WidthPresentation = 300 };
+            Контрагенти_PointerControl Контрагент = new() { Caption = "Контрагент", WidthPresentation = 300 };
+            ДоговориКонтрагентів_PointerControl Договір = new() { Caption = "Договір", WidthPresentation = 300 };
             ComboBoxText ГосподарськаОперація = new ComboBoxText();
-            Entry Коментар = new() { WidthRequest = 500 };
-                    Користувачі_PointerControl Автор = new() { Caption = "Автор", WidthPresentation = 500 };
-            Entry КлючовіСловаДляПошуку = new() { WidthRequest = 500 };
+            Entry Коментар = new() { WidthRequest = 300 };
                     CompositePointerControl Основа = new() { BoundConfType = "Документи.ВведенняЗалишків.Основа" };
             
     #endregion
@@ -121,14 +119,8 @@ class ВведенняЗалишків_Елемент : DocumentFormElement
             CreateField(vBox, null, Договір);
                 
             // ГосподарськаОперація
-            CreateField(vBox, "ГосподарськаОперація:", ГосподарськаОперація);
+            CreateField(vBox, "Господарська операція:", ГосподарськаОперація);
                 
-            // Автор
-            CreateField(vBox, null, Автор);
-                
-            // КлючовіСловаДляПошуку
-            CreateField(vBox, "КлючовіСловаДляПошуку:", КлючовіСловаДляПошуку);
-                        
             // Основа
             CreateField(vBox, null, Основа);
                 
@@ -153,8 +145,6 @@ class ВведенняЗалишків_Елемент : DocumentFormElement
                 Договір.Pointer = Елемент.Договір;
                 ГосподарськаОперація.ActiveId = Елемент.ГосподарськаОперація.ToString();
                 Коментар.SetText(Елемент.Коментар);
-                        Автор.Pointer = Елемент.Автор;
-                КлючовіСловаДляПошуку.SetText(Елемент.КлючовіСловаДляПошуку);
                         Основа.Pointer = Елемент.Основа;
                 
             // Таблична частина "Товари" 
@@ -187,8 +177,6 @@ class ВведенняЗалишків_Елемент : DocumentFormElement
                 Елемент.Договір = Договір.Pointer;
                 Елемент.ГосподарськаОперація = ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.ActiveId);
                 Елемент.Коментар = Коментар.GetText();
-                        Елемент.Автор = Автор.Pointer;
-                Елемент.КлючовіСловаДляПошуку = КлючовіСловаДляПошуку.GetText();
                         Елемент.Основа = Основа.Pointer;
                 
     }
@@ -196,7 +184,7 @@ class ВведенняЗалишків_Елемент : DocumentFormElement
     
     /*string КлючовіСловаДляПошуку()
     {
-        return $"\n {Організація.Pointer.Назва} {Підрозділ.Pointer.Назва} {Склад.Pointer.Назва} {Валюта.Pointer.Назва} {Контрагент.Pointer.Назва} {Договір.Pointer.Назва} {Автор.Pointer.Назва}"
+        return $"\n {Організація.Pointer.Назва} {Підрозділ.Pointer.Назва} {Склад.Pointer.Назва} {Валюта.Pointer.Назва} {Контрагент.Pointer.Назва} {Договір.Pointer.Назва}"
          + Товари.КлючовіСловаДляПошуку() + Каси.КлючовіСловаДляПошуку() + БанківськіРахунки.КлючовіСловаДляПошуку() + РозрахункиЗКонтрагентами.КлючовіСловаДляПошуку();
     }*/
     

@@ -11,7 +11,6 @@ using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
 using GeneratedCode.Перелічення;
 
-
 namespace StorageAndTrade;
 
 class ВведенняЗалишків_ТабличнаЧастина_РозрахункиЗКонтрагентами : DocumentFormTablePart
@@ -241,6 +240,8 @@ class ВведенняЗалишків_ТабличнаЧастина_Розра
             ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
             column.Resizable = true;
             
+            column.FixedWidth = 300;
+            
             Grid.AppendColumn(column);
         }
         
@@ -269,6 +270,8 @@ class ВведенняЗалишків_ТабличнаЧастина_Розра
             };
             ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
             column.Resizable = true;
+            
+            column.FixedWidth = 200;
             
             Grid.AppendColumn(column);
         }
@@ -323,7 +326,7 @@ class ВведенняЗалишків_ТабличнаЧастина_Розра
         Store.RemoveAll();
 
         
-        foreach (ВведенняЗалишків_РозрахункиЗКонтрагентами_TablePart.Record record in ЕлементВласник.РозрахункиЗКонтрагентами_TablePart.Records)
+        foreach (var record in ЕлементВласник.РозрахункиЗКонтрагентами_TablePart.Records)
         {
             Store.Append(new ItemRow()
             {
@@ -369,7 +372,26 @@ class ВведенняЗалишків_ТабличнаЧастина_Розра
             }
         }
         await ЕлементВласник.РозрахункиЗКонтрагентами_TablePart.Save(true);
-        await LoadRecords();
+        //Update
+        {
+            uint position = 0;
+            foreach (var record in ЕлементВласник.РозрахункиЗКонтрагентами_TablePart.Records)
+            {
+                bool sel = Grid.Model.IsSelected(position);
+                Store.Splice(position, 1, [new ItemRow()
+                {
+                    UnigueID = new(record.UID),
+                    НомерРядка = record.НомерРядка,
+                    ТипКонтрагента = record.ТипКонтрагента,
+                    Контрагент = record.Контрагент,
+                    Валюта = record.Валюта,
+                    Сума = record.Сума,
+                    
+                }], 1);
+                if (sel) Grid.Model.SelectItem(position, false);
+                position++;
+            }
+        }
         }
     }
 

@@ -1691,7 +1691,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         Store.RemoveAll();
 
         
-        foreach (ЗбереженіЗвіти_ЗвітСторінка_TablePart.Record record in ЕлементВласник.ЗвітСторінка_TablePart.Records)
+        foreach (var record in ЕлементВласник.ЗвітСторінка_TablePart.Records)
         {
             Store.Append(new ItemRow()
             {
@@ -1793,7 +1793,54 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             }
         }
         await ЕлементВласник.ЗвітСторінка_TablePart.Save(true);
-        await LoadRecords();
+        //Update
+        {
+            uint position = 0;
+            foreach (var record in ЕлементВласник.ЗвітСторінка_TablePart.Records)
+            {
+                bool sel = Grid.Model.IsSelected(position);
+                Store.Splice(position, 1, [new ItemRow()
+                {
+                    UnigueID = new(record.UID),
+                    А = record.А,
+                    Б = record.Б,
+                    В = record.В,
+                    Г = record.Г,
+                    Ґ = record.Ґ,
+                    Д = record.Д,
+                    Е = record.Е,
+                    Є = record.Є,
+                    Ж = record.Ж,
+                    З = record.З,
+                    И = record.И,
+                    І = record.І,
+                    Ї = record.Ї,
+                    Й = record.Й,
+                    К = record.К,
+                    Л = record.Л,
+                    М = record.М,
+                    Н = record.Н,
+                    О = record.О,
+                    П = record.П,
+                    Р = record.Р,
+                    С = record.С,
+                    Т = record.Т,
+                    У = record.У,
+                    Ф = record.Ф,
+                    Х = record.Х,
+                    Ц = record.Ц,
+                    Ч = record.Ч,
+                    Ш = record.Ш,
+                    Щ = record.Щ,
+                    Ь = record.Ь,
+                    Ю = record.Ю,
+                    Я = record.Я,
+                    
+                }], 1);
+                if (sel) Grid.Model.SelectItem(position, false);
+                position++;
+            }
+        }
         }
     }
 

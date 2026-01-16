@@ -22,25 +22,21 @@ class РахунокФактура_Елемент : DocumentFormElement
     public РахунокФактура_Objest Елемент { get; init; } = new();
 
     #region Fields
-    Entry НомерДок = new() { WidthRequest = 500 };
+    Entry НомерДок = new() { WidthRequest = 100 };
                     DateTimeControl ДатаДок = new();
-            Контрагенти_PointerControl Контрагент = new() { Caption = "Контрагент", WidthPresentation = 500 };
-            Організації_PointerControl Організація = new() { Caption = "Організація", WidthPresentation = 500 };
-            Валюти_PointerControl Валюта = new() { Caption = "Валюта", WidthPresentation = 500 };
-            NumericControl СумаДокументу = new();
-            Склади_PointerControl Склад = new() { Caption = "Склад", WidthPresentation = 500 };
+            Контрагенти_PointerControl Контрагент = new() { Caption = "Контрагент", WidthPresentation = 300 };
+            Організації_PointerControl Організація = new() { Caption = "Організація", WidthPresentation = 300 };
+            Валюти_PointerControl Валюта = new() { Caption = "Валюта", WidthPresentation = 300 };
+            Склади_PointerControl Склад = new() { Caption = "Склад", WidthPresentation = 300 };
             ComboBoxText Статус = new ComboBoxText();
             ComboBoxText ФормаОплати = new ComboBoxText();
-            БанківськіРахункиОрганізацій_PointerControl БанківськийРахунок = new() { Caption = "БанківськийРахунок", WidthPresentation = 500 };
-            БанківськіРахункиКонтрагентів_PointerControl БанківськийРахунокКонтрагента = new() { Caption = "БанківськийРахунокКонтрагента", WidthPresentation = 500 };
-            Каси_PointerControl Каса = new() { Caption = "Каса", WidthPresentation = 500 };
+            БанківськіРахункиОрганізацій_PointerControl БанківськийРахунок = new() { Caption = "Банківський рахунок", WidthPresentation = 300 };
+            БанківськіРахункиКонтрагентів_PointerControl БанківськийРахунокКонтрагента = new() { Caption = "Банківський рахунок контрагента", WidthPresentation = 300 };
+            Каси_PointerControl Каса = new() { Caption = "Каса", WidthPresentation = 300 };
             ComboBoxText ГосподарськаОперація = new ComboBoxText();
-            ДоговориКонтрагентів_PointerControl Договір = new() { Caption = "Договір", WidthPresentation = 500 };
-            СтруктураПідприємства_PointerControl Підрозділ = new() { Caption = "Підрозділ", WidthPresentation = 500 };
-            Користувачі_PointerControl Автор = new() { Caption = "Автор", WidthPresentation = 500 };
-            Entry Коментар = new() { WidthRequest = 500 };
-                    Користувачі_PointerControl Менеджер = new() { Caption = "Менеджер", WidthPresentation = 500 };
-            Entry КлючовіСловаДляПошуку = new() { WidthRequest = 500 };
+            ДоговориКонтрагентів_PointerControl Договір = new() { Caption = "Договір", WidthPresentation = 300 };
+            СтруктураПідприємства_PointerControl Підрозділ = new() { Caption = "Підрозділ", WidthPresentation = 300 };
+            Entry Коментар = new() { WidthRequest = 300 };
                     CompositePointerControl Основа = new() { BoundConfType = "Документи.РахунокФактура.Основа" };
             
     #endregion
@@ -122,9 +118,6 @@ class РахунокФактура_Елемент : DocumentFormElement
             // Валюта
             CreateField(vBox, null, Валюта);
                 
-            // СумаДокументу
-            CreateField(vBox, "СумаДокументу:", СумаДокументу);
-                        
             // Склад
             CreateField(vBox, null, Склад);
                 
@@ -144,7 +137,7 @@ class РахунокФактура_Елемент : DocumentFormElement
             CreateField(vBox, null, Каса);
                 
             // ГосподарськаОперація
-            CreateField(vBox, "ГосподарськаОперація:", ГосподарськаОперація);
+            CreateField(vBox, "Господарська операція:", ГосподарськаОперація);
                 
             // Договір
             CreateField(vBox, null, Договір);
@@ -152,15 +145,6 @@ class РахунокФактура_Елемент : DocumentFormElement
             // Підрозділ
             CreateField(vBox, null, Підрозділ);
                 
-            // Автор
-            CreateField(vBox, null, Автор);
-                
-            // Менеджер
-            CreateField(vBox, null, Менеджер);
-                
-            // КлючовіСловаДляПошуку
-            CreateField(vBox, "КлючовіСловаДляПошуку:", КлючовіСловаДляПошуку);
-                        
             // Основа
             CreateField(vBox, null, Основа);
                 
@@ -180,7 +164,6 @@ class РахунокФактура_Елемент : DocumentFormElement
                 Контрагент.Pointer = Елемент.Контрагент;
                 Організація.Pointer = Елемент.Організація;
                 Валюта.Pointer = Елемент.Валюта;
-                СумаДокументу.Value = Елемент.СумаДокументу;
                 Склад.Pointer = Елемент.Склад;
                 Статус.ActiveId = Елемент.Статус.ToString();
                 ФормаОплати.ActiveId = Елемент.ФормаОплати.ToString();
@@ -190,10 +173,7 @@ class РахунокФактура_Елемент : DocumentFormElement
                 ГосподарськаОперація.ActiveId = Елемент.ГосподарськаОперація.ToString();
                 Договір.Pointer = Елемент.Договір;
                 Підрозділ.Pointer = Елемент.Підрозділ;
-                Автор.Pointer = Елемент.Автор;
                 Коментар.SetText(Елемент.Коментар);
-                        Менеджер.Pointer = Елемент.Менеджер;
-                КлючовіСловаДляПошуку.SetText(Елемент.КлючовіСловаДляПошуку);
                         Основа.Pointer = Елемент.Основа;
                 
             // Таблична частина "Товари" 
@@ -209,7 +189,6 @@ class РахунокФактура_Елемент : DocumentFormElement
                 Елемент.Контрагент = Контрагент.Pointer;
                 Елемент.Організація = Організація.Pointer;
                 Елемент.Валюта = Валюта.Pointer;
-                Елемент.СумаДокументу = СумаДокументу.Value;
                 Елемент.Склад = Склад.Pointer;
                 Елемент.Статус = ПсевдонімиПерелічення.СтатусиЗамовленьКлієнтів_FindByName(Статус.ActiveId);
                 Елемент.ФормаОплати = ПсевдонімиПерелічення.ФормаОплати_FindByName(ФормаОплати.ActiveId);
@@ -219,10 +198,7 @@ class РахунокФактура_Елемент : DocumentFormElement
                 Елемент.ГосподарськаОперація = ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.ActiveId);
                 Елемент.Договір = Договір.Pointer;
                 Елемент.Підрозділ = Підрозділ.Pointer;
-                Елемент.Автор = Автор.Pointer;
                 Елемент.Коментар = Коментар.GetText();
-                        Елемент.Менеджер = Менеджер.Pointer;
-                Елемент.КлючовіСловаДляПошуку = КлючовіСловаДляПошуку.GetText();
                         Елемент.Основа = Основа.Pointer;
                 
     }
@@ -230,7 +206,7 @@ class РахунокФактура_Елемент : DocumentFormElement
     
     /*string КлючовіСловаДляПошуку()
     {
-        return $"\n {Контрагент.Pointer.Назва} {Організація.Pointer.Назва} {Валюта.Pointer.Назва} {Склад.Pointer.Назва} {БанківськийРахунок.Pointer.Назва} {БанківськийРахунокКонтрагента.Pointer.Назва} {Каса.Pointer.Назва} {Договір.Pointer.Назва} {Підрозділ.Pointer.Назва} {Автор.Pointer.Назва} {Менеджер.Pointer.Назва}"
+        return $"\n {Контрагент.Pointer.Назва} {Організація.Pointer.Назва} {Валюта.Pointer.Назва} {Склад.Pointer.Назва} {БанківськийРахунок.Pointer.Назва} {БанківськийРахунокКонтрагента.Pointer.Назва} {Каса.Pointer.Назва} {Договір.Pointer.Назва} {Підрозділ.Pointer.Назва}"
          + Товари.КлючовіСловаДляПошуку();
     }*/
     

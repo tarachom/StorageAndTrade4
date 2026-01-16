@@ -518,7 +518,7 @@ class Контрагенти_ТабличнаЧастина_Контакти : D
         Store.RemoveAll();
 
         
-        foreach (Контрагенти_Контакти_TablePart.Record record in ЕлементВласник.Контакти_TablePart.Records)
+        foreach (var record in ЕлементВласник.Контакти_TablePart.Records)
         {
             Store.Append(new ItemRow()
             {
@@ -572,7 +572,30 @@ class Контрагенти_ТабличнаЧастина_Контакти : D
             }
         }
         await ЕлементВласник.Контакти_TablePart.Save(true);
-        await LoadRecords();
+        //Update
+        {
+            uint position = 0;
+            foreach (var record in ЕлементВласник.Контакти_TablePart.Records)
+            {
+                bool sel = Grid.Model.IsSelected(position);
+                Store.Splice(position, 1, [new ItemRow()
+                {
+                    UnigueID = new(record.UID),
+                    НомерРядка = record.НомерРядка,
+                    Тип = record.Тип,
+                    Значення = record.Значення,
+                    Телефон = record.Телефон,
+                    ЕлектроннаПошта = record.ЕлектроннаПошта,
+                    Країна = record.Країна,
+                    Область = record.Область,
+                    Район = record.Район,
+                    Місто = record.Місто,
+                    
+                }], 1);
+                if (sel) Grid.Model.SelectItem(position, false);
+                position++;
+            }
+        }
         }
     }
 

@@ -11,7 +11,6 @@ using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
 using GeneratedCode.Перелічення;
 
-
 namespace StorageAndTrade;
 
 class РахунокФактура_ТабличнаЧастина_Товари : DocumentFormTablePart
@@ -330,6 +329,8 @@ class РахунокФактура_ТабличнаЧастина_Товари :
             ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
             column.Resizable = true;
             
+            column.FixedWidth = 300;
+            
             Grid.AppendColumn(column);
         }
         
@@ -358,6 +359,8 @@ class РахунокФактура_ТабличнаЧастина_Товари :
             };
             ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
             column.Resizable = true;
+            
+            column.FixedWidth = 300;
             
             Grid.AppendColumn(column);
         }
@@ -417,6 +420,8 @@ class РахунокФактура_ТабличнаЧастина_Товари :
             ColumnViewColumn column = ColumnViewColumn.New("Пакування", factory);
             column.Resizable = true;
             
+            column.FixedWidth = 200;
+            
             Grid.AppendColumn(column);
         }
         
@@ -474,6 +479,8 @@ class РахунокФактура_ТабличнаЧастина_Товари :
             };
             ColumnViewColumn column = ColumnViewColumn.New("Вид ціни", factory);
             column.Resizable = true;
+            
+            column.FixedWidth = 200;
             
             Grid.AppendColumn(column);
         }
@@ -591,6 +598,8 @@ class РахунокФактура_ТабличнаЧастина_Товари :
             ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
             column.Resizable = true;
             
+            column.FixedWidth = 300;
+            
             Grid.AppendColumn(column);
         }
         
@@ -615,7 +624,7 @@ class РахунокФактура_ТабличнаЧастина_Товари :
         Store.RemoveAll();
 
         
-        foreach (РахунокФактура_Товари_TablePart.Record record in ЕлементВласник.Товари_TablePart.Records)
+        foreach (var record in ЕлементВласник.Товари_TablePart.Records)
         {
             Store.Append(new ItemRow()
             {
@@ -673,7 +682,32 @@ class РахунокФактура_ТабличнаЧастина_Товари :
             }
         }
         await ЕлементВласник.Товари_TablePart.Save(true);
-        await LoadRecords();
+        //Update
+        {
+            uint position = 0;
+            foreach (var record in ЕлементВласник.Товари_TablePart.Records)
+            {
+                bool sel = Grid.Model.IsSelected(position);
+                Store.Splice(position, 1, [new ItemRow()
+                {
+                    UnigueID = new(record.UID),
+                    НомерРядка = record.НомерРядка,
+                    Номенклатура = record.Номенклатура,
+                    ХарактеристикаНоменклатури = record.ХарактеристикаНоменклатури,
+                    КількістьУпаковок = record.КількістьУпаковок,
+                    Пакування = record.Пакування,
+                    Кількість = record.Кількість,
+                    ВидЦіни = record.ВидЦіни,
+                    Ціна = record.Ціна,
+                    Сума = record.Сума,
+                    Скидка = record.Скидка,
+                    Склад = record.Склад,
+                    
+                }], 1);
+                if (sel) Grid.Model.SelectItem(position, false);
+                position++;
+            }
+        }
         }
     }
 

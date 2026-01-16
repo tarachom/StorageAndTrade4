@@ -226,7 +226,7 @@ class Номенклатура_ТабличнаЧастина_Файли : Direc
         Store.RemoveAll();
 
         
-        foreach (Номенклатура_Файли_TablePart.Record record in ЕлементВласник.Файли_TablePart.Records)
+        foreach (var record in ЕлементВласник.Файли_TablePart.Records)
         {
             Store.Append(new ItemRow()
             {
@@ -268,7 +268,24 @@ class Номенклатура_ТабличнаЧастина_Файли : Direc
             }
         }
         await ЕлементВласник.Файли_TablePart.Save(true);
-        await LoadRecords();
+        //Update
+        {
+            uint position = 0;
+            foreach (var record in ЕлементВласник.Файли_TablePart.Records)
+            {
+                bool sel = Grid.Model.IsSelected(position);
+                Store.Splice(position, 1, [new ItemRow()
+                {
+                    UnigueID = new(record.UID),
+                    НомерРядка = record.НомерРядка,
+                    Основний = record.Основний,
+                    Файл = record.Файл,
+                    
+                }], 1);
+                if (sel) Grid.Model.SelectItem(position, false);
+                position++;
+            }
+        }
         }
     }
 

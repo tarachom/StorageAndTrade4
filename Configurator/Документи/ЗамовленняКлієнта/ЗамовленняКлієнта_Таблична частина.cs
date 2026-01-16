@@ -624,7 +624,7 @@ class ЗамовленняКлієнта_ТабличнаЧастина_Това
         Store.RemoveAll();
 
         
-        foreach (ЗамовленняКлієнта_Товари_TablePart.Record record in ЕлементВласник.Товари_TablePart.Records)
+        foreach (var record in ЕлементВласник.Товари_TablePart.Records)
         {
             Store.Append(new ItemRow()
             {
@@ -682,7 +682,32 @@ class ЗамовленняКлієнта_ТабличнаЧастина_Това
             }
         }
         await ЕлементВласник.Товари_TablePart.Save(true);
-        await LoadRecords();
+        //Update
+        {
+            uint position = 0;
+            foreach (var record in ЕлементВласник.Товари_TablePart.Records)
+            {
+                bool sel = Grid.Model.IsSelected(position);
+                Store.Splice(position, 1, [new ItemRow()
+                {
+                    UnigueID = new(record.UID),
+                    НомерРядка = record.НомерРядка,
+                    Номенклатура = record.Номенклатура,
+                    ХарактеристикаНоменклатури = record.ХарактеристикаНоменклатури,
+                    КількістьУпаковок = record.КількістьУпаковок,
+                    Пакування = record.Пакування,
+                    Кількість = record.Кількість,
+                    ВидЦіни = record.ВидЦіни,
+                    Ціна = record.Ціна,
+                    Сума = record.Сума,
+                    Скидка = record.Скидка,
+                    Склад = record.Склад,
+                    
+                }], 1);
+                if (sel) Grid.Model.SelectItem(position, false);
+                position++;
+            }
+        }
         }
     }
 

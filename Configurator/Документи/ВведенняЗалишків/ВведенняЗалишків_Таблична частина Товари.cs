@@ -11,7 +11,6 @@ using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
 using GeneratedCode.Перелічення;
 
-
 namespace StorageAndTrade;
 
 class ВведенняЗалишків_ТабличнаЧастина_Товари : DocumentFormTablePart
@@ -290,6 +289,8 @@ class ВведенняЗалишків_ТабличнаЧастина_Товар
             ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
             column.Resizable = true;
             
+            column.FixedWidth = 300;
+            
             Grid.AppendColumn(column);
         }
         
@@ -319,6 +320,8 @@ class ВведенняЗалишків_ТабличнаЧастина_Товар
             ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
             column.Resizable = true;
             
+            column.FixedWidth = 300;
+            
             Grid.AppendColumn(column);
         }
         
@@ -347,6 +350,8 @@ class ВведенняЗалишків_ТабличнаЧастина_Товар
             };
             ColumnViewColumn column = ColumnViewColumn.New("Серія", factory);
             column.Resizable = true;
+            
+            column.FixedWidth = 200;
             
             Grid.AppendColumn(column);
         }
@@ -405,6 +410,8 @@ class ВведенняЗалишків_ТабличнаЧастина_Товар
             };
             ColumnViewColumn column = ColumnViewColumn.New("Пакування", factory);
             column.Resizable = true;
+            
+            column.FixedWidth = 200;
             
             Grid.AppendColumn(column);
         }
@@ -517,7 +524,7 @@ class ВведенняЗалишків_ТабличнаЧастина_Товар
         Store.RemoveAll();
 
         
-        foreach (ВведенняЗалишків_Товари_TablePart.Record record in ЕлементВласник.Товари_TablePart.Records)
+        foreach (var record in ЕлементВласник.Товари_TablePart.Records)
         {
             Store.Append(new ItemRow()
             {
@@ -571,7 +578,30 @@ class ВведенняЗалишків_ТабличнаЧастина_Товар
             }
         }
         await ЕлементВласник.Товари_TablePart.Save(true);
-        await LoadRecords();
+        //Update
+        {
+            uint position = 0;
+            foreach (var record in ЕлементВласник.Товари_TablePart.Records)
+            {
+                bool sel = Grid.Model.IsSelected(position);
+                Store.Splice(position, 1, [new ItemRow()
+                {
+                    UnigueID = new(record.UID),
+                    НомерРядка = record.НомерРядка,
+                    Номенклатура = record.Номенклатура,
+                    ХарактеристикаНоменклатури = record.ХарактеристикаНоменклатури,
+                    Серія = record.Серія,
+                    КількістьУпаковок = record.КількістьУпаковок,
+                    Пакування = record.Пакування,
+                    Кількість = record.Кількість,
+                    Ціна = record.Ціна,
+                    Сума = record.Сума,
+                    
+                }], 1);
+                if (sel) Grid.Model.SelectItem(position, false);
+                position++;
+            }
+        }
         }
     }
 
