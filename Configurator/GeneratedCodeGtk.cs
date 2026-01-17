@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 17.01.2026 13:13:29
+ * Дата конфігурації: 17.01.2026 21:54:39
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон Gtk4.xslt
@@ -108,18 +108,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Організації_Select Організації_Select = new();
             Організації_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Організації_Const.Код,
-                /*Назва*/ Довідники.Організації_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Організації_Const.Код,
+                    /*Назва*/ Довідники.Організації_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Організації_Select.QuerySelect.Order.Add(
+                    Довідники.Організації_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Організації_Select.QuerySelect.Order.Add(
-                Довідники.Організації_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             Організації_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -167,18 +166,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Організації_Select Організації_Select = new();
             Організації_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Організації_Const.Код,
-                /*Назва*/ Довідники.Організації_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Організації_Const.Код,
+                    /*Назва*/ Довідники.Організації_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Організації_Select.QuerySelect.Order.Add(
+                    Довідники.Організації_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Організації_Select.QuerySelect.Order.Add(
-                Довідники.Організації_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             if (form.WhereList != null) Організації_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -459,23 +457,22 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Номенклатура_Select Номенклатура_Select = new();
             Номенклатура_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Номенклатура_Const.Код,
-                /*Назва*/ Довідники.Номенклатура_Const.Назва,
-                /*ТипНоменклатури*/ Довідники.Номенклатура_Const.ТипНоменклатури,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Номенклатура_Const.Код,
+                    /*Назва*/ Довідники.Номенклатура_Const.Назва,
+                    /*ТипНоменклатури*/ Довідники.Номенклатура_Const.ТипНоменклатури,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Номенклатура_Select.QuerySelect.Order.Add(
+                    Довідники.Номенклатура_Const.Код, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Номенклатура_Select.QuerySelect.Order.Add(
-                Довідники.Номенклатура_Const.Код, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
-                Номенклатура_Select.QuerySelect.Table, "join_tab_1", "ОдиницяВиміру");
-            
+                    /* Приєднання */
+                    Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
+                    Номенклатура_Select.QuerySelect.Table, "join_tab_1", "ОдиницяВиміру");
+                
                 /* Додаткове поле: Залишок */
                 Номенклатура_Select.QuerySelect.FieldAndAlias.Add(
                     new ValueName<string>(@$"(CASE WHEN {Довідники.Номенклатура_Const.TABLE}.{Довідники.Номенклатура_Const.ТипНоменклатури} = {(int)Перелічення.ТипиНоменклатури.Товар} THEN ( WITH Залишки AS ( SELECT ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} AS Номенклатура, SUM(ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.ВНаявності} ) AS ВНаявності FROM {РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.TABLE} AS ТовариНаСкладах WHERE ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} = {Довідники.Номенклатура_Const.TABLE}.uid GROUP BY Номенклатура ) SELECT ROUND(ВНаявності, 1) FROM Залишки ) END)", "Залишок"));
@@ -545,23 +542,22 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Номенклатура_Select Номенклатура_Select = new();
             Номенклатура_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Номенклатура_Const.Код,
-                /*Назва*/ Довідники.Номенклатура_Const.Назва,
-                /*ТипНоменклатури*/ Довідники.Номенклатура_Const.ТипНоменклатури,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Номенклатура_Const.Код,
+                    /*Назва*/ Довідники.Номенклатура_Const.Назва,
+                    /*ТипНоменклатури*/ Довідники.Номенклатура_Const.ТипНоменклатури,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Номенклатура_Select.QuerySelect.Order.Add(
+                    Довідники.Номенклатура_Const.Код, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Номенклатура_Select.QuerySelect.Order.Add(
-                Довідники.Номенклатура_Const.Код, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
-                Номенклатура_Select.QuerySelect.Table, "join_tab_1", "ОдиницяВиміру");
-            
+                    /* Приєднання */
+                    Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
+                    Номенклатура_Select.QuerySelect.Table, "join_tab_1", "ОдиницяВиміру");
+                
                 /* Додаткове поле: Залишок */
                 Номенклатура_Select.QuerySelect.FieldAndAlias.Add(
                     new ValueName<string>(@$"(CASE WHEN {Довідники.Номенклатура_Const.TABLE}.{Довідники.Номенклатура_Const.ТипНоменклатури} = {(int)Перелічення.ТипиНоменклатури.Товар} THEN ( WITH Залишки AS ( SELECT ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} AS Номенклатура, SUM(ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.ВНаявності} ) AS ВНаявності FROM {РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.TABLE} AS ТовариНаСкладах WHERE ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} = {Довідники.Номенклатура_Const.TABLE}.uid GROUP BY Номенклатура ) SELECT ROUND(ВНаявності, 1) FROM Залишки ) END)", "Залишок"));
@@ -827,22 +823,21 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Номенклатура_Select Номенклатура_Select = new();
             Номенклатура_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Номенклатура_Const.Код,
-                /*Назва*/ Довідники.Номенклатура_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Номенклатура_Const.Код,
+                    /*Назва*/ Довідники.Номенклатура_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Номенклатура_Select.QuerySelect.Order.Add(
+                    Довідники.Номенклатура_Const.Код, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Номенклатура_Select.QuerySelect.Order.Add(
-                Довідники.Номенклатура_Const.Код, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
-                Номенклатура_Select.QuerySelect.Table, "join_tab_1", "ОдиницяВиміру");
-            
+                    /* Приєднання */
+                    Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
+                    Номенклатура_Select.QuerySelect.Table, "join_tab_1", "ОдиницяВиміру");
+                
                 /* Додаткове поле: Залишок */
                 Номенклатура_Select.QuerySelect.FieldAndAlias.Add(
                     new ValueName<string>(@$"(CASE WHEN {Довідники.Номенклатура_Const.TABLE}.{Довідники.Номенклатура_Const.ТипНоменклатури} = {(int)Перелічення.ТипиНоменклатури.Товар} THEN ( WITH Залишки AS ( SELECT ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} AS Номенклатура, SUM(ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.ВНаявності} ) AS ВНаявності FROM {РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.TABLE} AS ТовариНаСкладах WHERE ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} = {Довідники.Номенклатура_Const.TABLE}.uid GROUP BY Номенклатура ) SELECT ROUND(ВНаявності, 1) FROM Залишки ) END)", "Залишок"));
@@ -906,22 +901,21 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Номенклатура_Select Номенклатура_Select = new();
             Номенклатура_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Номенклатура_Const.Код,
-                /*Назва*/ Довідники.Номенклатура_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Номенклатура_Const.Код,
+                    /*Назва*/ Довідники.Номенклатура_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Номенклатура_Select.QuerySelect.Order.Add(
+                    Довідники.Номенклатура_Const.Код, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Номенклатура_Select.QuerySelect.Order.Add(
-                Довідники.Номенклатура_Const.Код, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
-                Номенклатура_Select.QuerySelect.Table, "join_tab_1", "ОдиницяВиміру");
-            
+                    /* Приєднання */
+                    Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
+                    Номенклатура_Select.QuerySelect.Table, "join_tab_1", "ОдиницяВиміру");
+                
                 /* Додаткове поле: Залишок */
                 Номенклатура_Select.QuerySelect.FieldAndAlias.Add(
                     new ValueName<string>(@$"(CASE WHEN {Довідники.Номенклатура_Const.TABLE}.{Довідники.Номенклатура_Const.ТипНоменклатури} = {(int)Перелічення.ТипиНоменклатури.Товар} THEN ( WITH Залишки AS ( SELECT ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} AS Номенклатура, SUM(ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.ВНаявності} ) AS ВНаявності FROM {РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.TABLE} AS ТовариНаСкладах WHERE ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} = {Довідники.Номенклатура_Const.TABLE}.uid GROUP BY Номенклатура ) SELECT ROUND(ВНаявності, 1) FROM Залишки ) END)", "Залишок"));
@@ -1057,18 +1051,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Виробники_Select Виробники_Select = new();
             Виробники_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Виробники_Const.Код,
-                /*Назва*/ Довідники.Виробники_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Виробники_Const.Код,
+                    /*Назва*/ Довідники.Виробники_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Виробники_Select.QuerySelect.Order.Add(
+                    Довідники.Виробники_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Виробники_Select.QuerySelect.Order.Add(
-                Довідники.Виробники_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             Виробники_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -1116,18 +1109,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Виробники_Select Виробники_Select = new();
             Виробники_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Виробники_Const.Код,
-                /*Назва*/ Довідники.Виробники_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Виробники_Const.Код,
+                    /*Назва*/ Довідники.Виробники_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Виробники_Select.QuerySelect.Order.Add(
+                    Довідники.Виробники_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Виробники_Select.QuerySelect.Order.Add(
-                Довідники.Виробники_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             if (form.WhereList != null) Виробники_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -1247,18 +1239,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.ВидиНоменклатури_Select ВидиНоменклатури_Select = new();
             ВидиНоменклатури_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.ВидиНоменклатури_Const.Код,
-                /*Назва*/ Довідники.ВидиНоменклатури_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.ВидиНоменклатури_Const.Код,
+                    /*Назва*/ Довідники.ВидиНоменклатури_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ВидиНоменклатури_Select.QuerySelect.Order.Add(
+                    Довідники.ВидиНоменклатури_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ВидиНоменклатури_Select.QuerySelect.Order.Add(
-                Довідники.ВидиНоменклатури_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             ВидиНоменклатури_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -1306,18 +1297,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.ВидиНоменклатури_Select ВидиНоменклатури_Select = new();
             ВидиНоменклатури_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.ВидиНоменклатури_Const.Код,
-                /*Назва*/ Довідники.ВидиНоменклатури_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.ВидиНоменклатури_Const.Код,
+                    /*Назва*/ Довідники.ВидиНоменклатури_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ВидиНоменклатури_Select.QuerySelect.Order.Add(
+                    Довідники.ВидиНоменклатури_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ВидиНоменклатури_Select.QuerySelect.Order.Add(
-                Довідники.ВидиНоменклатури_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             if (form.WhereList != null) ВидиНоменклатури_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -1479,20 +1469,19 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.ПакуванняОдиниціВиміру_Select ПакуванняОдиниціВиміру_Select = new();
             ПакуванняОдиниціВиміру_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.ПакуванняОдиниціВиміру_Const.Код,
-                /*Назва*/ Довідники.ПакуванняОдиниціВиміру_Const.Назва,
-                /*КількістьУпаковок*/ Довідники.ПакуванняОдиниціВиміру_Const.КількістьУпаковок,
-                /*НазваПовна*/ Довідники.ПакуванняОдиниціВиміру_Const.НазваПовна,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.ПакуванняОдиниціВиміру_Const.Код,
+                    /*Назва*/ Довідники.ПакуванняОдиниціВиміру_Const.Назва,
+                    /*КількістьУпаковок*/ Довідники.ПакуванняОдиниціВиміру_Const.КількістьУпаковок,
+                    /*НазваПовна*/ Довідники.ПакуванняОдиниціВиміру_Const.НазваПовна,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПакуванняОдиниціВиміру_Select.QuerySelect.Order.Add(
+                    Довідники.ПакуванняОдиниціВиміру_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ПакуванняОдиниціВиміру_Select.QuerySelect.Order.Add(
-                Довідники.ПакуванняОдиниціВиміру_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             ПакуванняОдиниціВиміру_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -1542,20 +1531,19 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.ПакуванняОдиниціВиміру_Select ПакуванняОдиниціВиміру_Select = new();
             ПакуванняОдиниціВиміру_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.ПакуванняОдиниціВиміру_Const.Код,
-                /*Назва*/ Довідники.ПакуванняОдиниціВиміру_Const.Назва,
-                /*КількістьУпаковок*/ Довідники.ПакуванняОдиниціВиміру_Const.КількістьУпаковок,
-                /*НазваПовна*/ Довідники.ПакуванняОдиниціВиміру_Const.НазваПовна,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.ПакуванняОдиниціВиміру_Const.Код,
+                    /*Назва*/ Довідники.ПакуванняОдиниціВиміру_Const.Назва,
+                    /*КількістьУпаковок*/ Довідники.ПакуванняОдиниціВиміру_Const.КількістьУпаковок,
+                    /*НазваПовна*/ Довідники.ПакуванняОдиниціВиміру_Const.НазваПовна,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПакуванняОдиниціВиміру_Select.QuerySelect.Order.Add(
+                    Довідники.ПакуванняОдиниціВиміру_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ПакуванняОдиниціВиміру_Select.QuerySelect.Order.Add(
-                Довідники.ПакуванняОдиниціВиміру_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             if (form.WhereList != null) ПакуванняОдиниціВиміру_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -1775,21 +1763,20 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Валюти_Select Валюти_Select = new();
             Валюти_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Валюти_Const.Код,
-                /*Назва*/ Довідники.Валюти_Const.Назва,
-                /*КороткаНазва*/ Довідники.Валюти_Const.КороткаНазва,
-                /*Код_R030*/ Довідники.Валюти_Const.Код_R030,
-                /*ВиводитиКурсНаСтартову*/ Довідники.Валюти_Const.ВиводитиКурсНаСтартову,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Валюти_Const.Код,
+                    /*Назва*/ Довідники.Валюти_Const.Назва,
+                    /*КороткаНазва*/ Довідники.Валюти_Const.КороткаНазва,
+                    /*Код_R030*/ Довідники.Валюти_Const.Код_R030,
+                    /*ВиводитиКурсНаСтартову*/ Довідники.Валюти_Const.ВиводитиКурсНаСтартову,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Валюти_Select.QuerySelect.Order.Add(
+                    Довідники.Валюти_Const.Код, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Валюти_Select.QuerySelect.Order.Add(
-                Довідники.Валюти_Const.Код, SelectOrder.ASC);
-            
 
             /* Відбори */
             Валюти_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -1840,21 +1827,20 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Валюти_Select Валюти_Select = new();
             Валюти_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Валюти_Const.Код,
-                /*Назва*/ Довідники.Валюти_Const.Назва,
-                /*КороткаНазва*/ Довідники.Валюти_Const.КороткаНазва,
-                /*Код_R030*/ Довідники.Валюти_Const.Код_R030,
-                /*ВиводитиКурсНаСтартову*/ Довідники.Валюти_Const.ВиводитиКурсНаСтартову,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Валюти_Const.Код,
+                    /*Назва*/ Довідники.Валюти_Const.Назва,
+                    /*КороткаНазва*/ Довідники.Валюти_Const.КороткаНазва,
+                    /*Код_R030*/ Довідники.Валюти_Const.Код_R030,
+                    /*ВиводитиКурсНаСтартову*/ Довідники.Валюти_Const.ВиводитиКурсНаСтартову,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Валюти_Select.QuerySelect.Order.Add(
+                    Довідники.Валюти_Const.Код, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Валюти_Select.QuerySelect.Order.Add(
-                Довідники.Валюти_Const.Код, SelectOrder.ASC);
-            
 
             /* Відбори */
             if (form.WhereList != null) Валюти_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -1994,19 +1980,18 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Валюти_Select Валюти_Select = new();
             Валюти_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Валюти_Const.Код,
-                /*Назва*/ Довідники.Валюти_Const.Назва,
-                /*КороткаНазва*/ Довідники.Валюти_Const.КороткаНазва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Валюти_Const.Код,
+                    /*Назва*/ Довідники.Валюти_Const.Назва,
+                    /*КороткаНазва*/ Довідники.Валюти_Const.КороткаНазва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Валюти_Select.QuerySelect.Order.Add(
+                    Довідники.Валюти_Const.Код, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Валюти_Select.QuerySelect.Order.Add(
-                Довідники.Валюти_Const.Код, SelectOrder.ASC);
-            
 
             /* Відбори */
             Валюти_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -2055,19 +2040,18 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Валюти_Select Валюти_Select = new();
             Валюти_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Валюти_Const.Код,
-                /*Назва*/ Довідники.Валюти_Const.Назва,
-                /*КороткаНазва*/ Довідники.Валюти_Const.КороткаНазва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Валюти_Const.Код,
+                    /*Назва*/ Довідники.Валюти_Const.Назва,
+                    /*КороткаНазва*/ Довідники.Валюти_Const.КороткаНазва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Валюти_Select.QuerySelect.Order.Add(
+                    Довідники.Валюти_Const.Код, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Валюти_Select.QuerySelect.Order.Add(
-                Довідники.Валюти_Const.Код, SelectOrder.ASC);
-            
 
             /* Відбори */
             if (form.WhereList != null) Валюти_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -2286,24 +2270,23 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Контрагенти_Select Контрагенти_Select = new();
             Контрагенти_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Контрагенти_Const.Код,
-                /*Назва*/ Довідники.Контрагенти_Const.Назва,
-                /*Постачальник*/ Довідники.Контрагенти_Const.Постачальник,
-                /*Покупець*/ Довідники.Контрагенти_Const.Покупець,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Контрагенти_Const.Код,
+                    /*Назва*/ Довідники.Контрагенти_Const.Назва,
+                    /*Постачальник*/ Довідники.Контрагенти_Const.Постачальник,
+                    /*Покупець*/ Довідники.Контрагенти_Const.Покупець,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Контрагенти_Select.QuerySelect.Order.Add(
+                    Довідники.Контрагенти_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Контрагенти_Select.QuerySelect.Order.Add(
-                Довідники.Контрагенти_Const.Назва, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Папки_Pointer.GetJoin(Контрагенти_Select.QuerySelect, Довідники.Контрагенти_Const.Папка,
-                Контрагенти_Select.QuerySelect.Table, "join_tab_1", "Папка");
-            
+                    /* Приєднання */
+                    Довідники.Контрагенти_Папки_Pointer.GetJoin(Контрагенти_Select.QuerySelect, Довідники.Контрагенти_Const.Папка,
+                    Контрагенти_Select.QuerySelect.Table, "join_tab_1", "Папка");
+                
 
             /* Відбори */
             Контрагенти_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -2354,24 +2337,23 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Контрагенти_Select Контрагенти_Select = new();
             Контрагенти_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Контрагенти_Const.Код,
-                /*Назва*/ Довідники.Контрагенти_Const.Назва,
-                /*Постачальник*/ Довідники.Контрагенти_Const.Постачальник,
-                /*Покупець*/ Довідники.Контрагенти_Const.Покупець,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Контрагенти_Const.Код,
+                    /*Назва*/ Довідники.Контрагенти_Const.Назва,
+                    /*Постачальник*/ Довідники.Контрагенти_Const.Постачальник,
+                    /*Покупець*/ Довідники.Контрагенти_Const.Покупець,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Контрагенти_Select.QuerySelect.Order.Add(
+                    Довідники.Контрагенти_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Контрагенти_Select.QuerySelect.Order.Add(
-                Довідники.Контрагенти_Const.Назва, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Папки_Pointer.GetJoin(Контрагенти_Select.QuerySelect, Довідники.Контрагенти_Const.Папка,
-                Контрагенти_Select.QuerySelect.Table, "join_tab_1", "Папка");
-            
+                    /* Приєднання */
+                    Довідники.Контрагенти_Папки_Pointer.GetJoin(Контрагенти_Select.QuerySelect, Довідники.Контрагенти_Const.Папка,
+                    Контрагенти_Select.QuerySelect.Table, "join_tab_1", "Папка");
+                
 
             /* Відбори */
             if (form.WhereList != null) Контрагенти_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -2490,18 +2472,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Контрагенти_Select Контрагенти_Select = new();
             Контрагенти_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Контрагенти_Const.Код,
-                /*Назва*/ Довідники.Контрагенти_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Контрагенти_Const.Код,
+                    /*Назва*/ Довідники.Контрагенти_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Контрагенти_Select.QuerySelect.Order.Add(
+                    Довідники.Контрагенти_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Контрагенти_Select.QuerySelect.Order.Add(
-                Довідники.Контрагенти_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             Контрагенти_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -2549,18 +2530,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Контрагенти_Select Контрагенти_Select = new();
             Контрагенти_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Контрагенти_Const.Код,
-                /*Назва*/ Довідники.Контрагенти_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Контрагенти_Const.Код,
+                    /*Назва*/ Довідники.Контрагенти_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Контрагенти_Select.QuerySelect.Order.Add(
+                    Довідники.Контрагенти_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Контрагенти_Select.QuerySelect.Order.Add(
-                Довідники.Контрагенти_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             if (form.WhereList != null) Контрагенти_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -2761,20 +2741,19 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Склади_Select Склади_Select = new();
             Склади_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Склади_Const.Код,
-                /*Назва*/ Довідники.Склади_Const.Назва,
-                /*ТипСкладу*/ Довідники.Склади_Const.ТипСкладу,
-                /*НалаштуванняАдресногоЗберігання*/ Довідники.Склади_Const.НалаштуванняАдресногоЗберігання,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Склади_Const.Код,
+                    /*Назва*/ Довідники.Склади_Const.Назва,
+                    /*ТипСкладу*/ Довідники.Склади_Const.ТипСкладу,
+                    /*НалаштуванняАдресногоЗберігання*/ Довідники.Склади_Const.НалаштуванняАдресногоЗберігання,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Склади_Select.QuerySelect.Order.Add(
+                    Довідники.Склади_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Склади_Select.QuerySelect.Order.Add(
-                Довідники.Склади_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             Склади_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -2824,20 +2803,19 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Склади_Select Склади_Select = new();
             Склади_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Склади_Const.Код,
-                /*Назва*/ Довідники.Склади_Const.Назва,
-                /*ТипСкладу*/ Довідники.Склади_Const.ТипСкладу,
-                /*НалаштуванняАдресногоЗберігання*/ Довідники.Склади_Const.НалаштуванняАдресногоЗберігання,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Склади_Const.Код,
+                    /*Назва*/ Довідники.Склади_Const.Назва,
+                    /*ТипСкладу*/ Довідники.Склади_Const.ТипСкладу,
+                    /*НалаштуванняАдресногоЗберігання*/ Довідники.Склади_Const.НалаштуванняАдресногоЗберігання,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Склади_Select.QuerySelect.Order.Add(
+                    Довідники.Склади_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Склади_Select.QuerySelect.Order.Add(
-                Довідники.Склади_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             if (form.WhereList != null) Склади_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -2955,18 +2933,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Склади_Select Склади_Select = new();
             Склади_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Склади_Const.Код,
-                /*Назва*/ Довідники.Склади_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Склади_Const.Код,
+                    /*Назва*/ Довідники.Склади_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Склади_Select.QuerySelect.Order.Add(
+                    Довідники.Склади_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Склади_Select.QuerySelect.Order.Add(
-                Довідники.Склади_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             Склади_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -3014,18 +2991,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Склади_Select Склади_Select = new();
             Склади_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Склади_Const.Код,
-                /*Назва*/ Довідники.Склади_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Склади_Const.Код,
+                    /*Назва*/ Довідники.Склади_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Склади_Select.QuerySelect.Order.Add(
+                    Довідники.Склади_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Склади_Select.QuerySelect.Order.Add(
-                Довідники.Склади_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             if (form.WhereList != null) Склади_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -3188,22 +3164,21 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.ВидиЦін_Select ВидиЦін_Select = new();
             ВидиЦін_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.ВидиЦін_Const.Код,
-                /*Назва*/ Довідники.ВидиЦін_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.ВидиЦін_Const.Код,
+                    /*Назва*/ Довідники.ВидиЦін_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ВидиЦін_Select.QuerySelect.Order.Add(
+                    Довідники.ВидиЦін_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ВидиЦін_Select.QuerySelect.Order.Add(
-                Довідники.ВидиЦін_Const.Назва, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(ВидиЦін_Select.QuerySelect, Довідники.ВидиЦін_Const.Валюта,
-                ВидиЦін_Select.QuerySelect.Table, "join_tab_1", "Валюта");
-            
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(ВидиЦін_Select.QuerySelect, Довідники.ВидиЦін_Const.Валюта,
+                    ВидиЦін_Select.QuerySelect.Table, "join_tab_1", "Валюта");
+                
 
             /* Відбори */
             ВидиЦін_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -3252,22 +3227,21 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.ВидиЦін_Select ВидиЦін_Select = new();
             ВидиЦін_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.ВидиЦін_Const.Код,
-                /*Назва*/ Довідники.ВидиЦін_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.ВидиЦін_Const.Код,
+                    /*Назва*/ Довідники.ВидиЦін_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ВидиЦін_Select.QuerySelect.Order.Add(
+                    Довідники.ВидиЦін_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ВидиЦін_Select.QuerySelect.Order.Add(
-                Довідники.ВидиЦін_Const.Назва, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(ВидиЦін_Select.QuerySelect, Довідники.ВидиЦін_Const.Валюта,
-                ВидиЦін_Select.QuerySelect.Table, "join_tab_1", "Валюта");
-            
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(ВидиЦін_Select.QuerySelect, Довідники.ВидиЦін_Const.Валюта,
+                    ВидиЦін_Select.QuerySelect.Table, "join_tab_1", "Валюта");
+                
 
             /* Відбори */
             if (form.WhereList != null) ВидиЦін_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -3363,17 +3337,16 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.ВидиЦін_Select ВидиЦін_Select = new();
             ВидиЦін_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.ВидиЦін_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.ВидиЦін_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ВидиЦін_Select.QuerySelect.Order.Add(
+                    Довідники.ВидиЦін_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ВидиЦін_Select.QuerySelect.Order.Add(
-                Довідники.ВидиЦін_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             ВидиЦін_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -3420,17 +3393,16 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.ВидиЦін_Select ВидиЦін_Select = new();
             ВидиЦін_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.ВидиЦін_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.ВидиЦін_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ВидиЦін_Select.QuerySelect.Order.Add(
+                    Довідники.ВидиЦін_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ВидиЦін_Select.QuerySelect.Order.Add(
-                Довідники.ВидиЦін_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             if (form.WhereList != null) ВидиЦін_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -3549,18 +3521,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.ВидиЦінПостачальників_Select ВидиЦінПостачальників_Select = new();
             ВидиЦінПостачальників_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.ВидиЦінПостачальників_Const.Код,
-                /*Назва*/ Довідники.ВидиЦінПостачальників_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.ВидиЦінПостачальників_Const.Код,
+                    /*Назва*/ Довідники.ВидиЦінПостачальників_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ВидиЦінПостачальників_Select.QuerySelect.Order.Add(
+                    Довідники.ВидиЦінПостачальників_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ВидиЦінПостачальників_Select.QuerySelect.Order.Add(
-                Довідники.ВидиЦінПостачальників_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             ВидиЦінПостачальників_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -3608,18 +3579,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.ВидиЦінПостачальників_Select ВидиЦінПостачальників_Select = new();
             ВидиЦінПостачальників_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.ВидиЦінПостачальників_Const.Код,
-                /*Назва*/ Довідники.ВидиЦінПостачальників_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.ВидиЦінПостачальників_Const.Код,
+                    /*Назва*/ Довідники.ВидиЦінПостачальників_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ВидиЦінПостачальників_Select.QuerySelect.Order.Add(
+                    Довідники.ВидиЦінПостачальників_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ВидиЦінПостачальників_Select.QuerySelect.Order.Add(
-                Довідники.ВидиЦінПостачальників_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             if (form.WhereList != null) ВидиЦінПостачальників_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -3739,18 +3709,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Користувачі_Select Користувачі_Select = new();
             Користувачі_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Користувачі_Const.Код,
-                /*Назва*/ Довідники.Користувачі_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Користувачі_Const.Код,
+                    /*Назва*/ Довідники.Користувачі_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Користувачі_Select.QuerySelect.Order.Add(
+                    Довідники.Користувачі_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Користувачі_Select.QuerySelect.Order.Add(
-                Довідники.Користувачі_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             Користувачі_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -3798,18 +3767,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Користувачі_Select Користувачі_Select = new();
             Користувачі_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Користувачі_Const.Код,
-                /*Назва*/ Довідники.Користувачі_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Користувачі_Const.Код,
+                    /*Назва*/ Довідники.Користувачі_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Користувачі_Select.QuerySelect.Order.Add(
+                    Довідники.Користувачі_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Користувачі_Select.QuerySelect.Order.Add(
-                Довідники.Користувачі_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             if (form.WhereList != null) Користувачі_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -3929,18 +3897,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.ФізичніОсоби_Select ФізичніОсоби_Select = new();
             ФізичніОсоби_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.ФізичніОсоби_Const.Код,
-                /*Назва*/ Довідники.ФізичніОсоби_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.ФізичніОсоби_Const.Код,
+                    /*Назва*/ Довідники.ФізичніОсоби_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ФізичніОсоби_Select.QuerySelect.Order.Add(
+                    Довідники.ФізичніОсоби_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ФізичніОсоби_Select.QuerySelect.Order.Add(
-                Довідники.ФізичніОсоби_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             ФізичніОсоби_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -3988,18 +3955,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.ФізичніОсоби_Select ФізичніОсоби_Select = new();
             ФізичніОсоби_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.ФізичніОсоби_Const.Код,
-                /*Назва*/ Довідники.ФізичніОсоби_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.ФізичніОсоби_Const.Код,
+                    /*Назва*/ Довідники.ФізичніОсоби_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ФізичніОсоби_Select.QuerySelect.Order.Add(
+                    Довідники.ФізичніОсоби_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ФізичніОсоби_Select.QuerySelect.Order.Add(
-                Довідники.ФізичніОсоби_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             if (form.WhereList != null) ФізичніОсоби_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -4119,18 +4085,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.СтруктураПідприємства_Select СтруктураПідприємства_Select = new();
             СтруктураПідприємства_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.СтруктураПідприємства_Const.Код,
-                /*Назва*/ Довідники.СтруктураПідприємства_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.СтруктураПідприємства_Const.Код,
+                    /*Назва*/ Довідники.СтруктураПідприємства_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    СтруктураПідприємства_Select.QuerySelect.Order.Add(
+                    Довідники.СтруктураПідприємства_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                СтруктураПідприємства_Select.QuerySelect.Order.Add(
-                Довідники.СтруктураПідприємства_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             СтруктураПідприємства_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -4178,18 +4143,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.СтруктураПідприємства_Select СтруктураПідприємства_Select = new();
             СтруктураПідприємства_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.СтруктураПідприємства_Const.Код,
-                /*Назва*/ Довідники.СтруктураПідприємства_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.СтруктураПідприємства_Const.Код,
+                    /*Назва*/ Довідники.СтруктураПідприємства_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    СтруктураПідприємства_Select.QuerySelect.Order.Add(
+                    Довідники.СтруктураПідприємства_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                СтруктураПідприємства_Select.QuerySelect.Order.Add(
-                Довідники.СтруктураПідприємства_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             if (form.WhereList != null) СтруктураПідприємства_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -4309,18 +4273,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.КраїниСвіту_Select КраїниСвіту_Select = new();
             КраїниСвіту_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.КраїниСвіту_Const.Код,
-                /*Назва*/ Довідники.КраїниСвіту_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.КраїниСвіту_Const.Код,
+                    /*Назва*/ Довідники.КраїниСвіту_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    КраїниСвіту_Select.QuerySelect.Order.Add(
+                    Довідники.КраїниСвіту_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                КраїниСвіту_Select.QuerySelect.Order.Add(
-                Довідники.КраїниСвіту_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             КраїниСвіту_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -4368,18 +4331,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.КраїниСвіту_Select КраїниСвіту_Select = new();
             КраїниСвіту_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.КраїниСвіту_Const.Код,
-                /*Назва*/ Довідники.КраїниСвіту_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.КраїниСвіту_Const.Код,
+                    /*Назва*/ Довідники.КраїниСвіту_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    КраїниСвіту_Select.QuerySelect.Order.Add(
+                    Довідники.КраїниСвіту_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                КраїниСвіту_Select.QuerySelect.Order.Add(
-                Довідники.КраїниСвіту_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             if (form.WhereList != null) КраїниСвіту_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -4562,21 +4524,20 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Файли_Select Файли_Select = new();
             Файли_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Файли_Const.Код,
-                /*Назва*/ Довідники.Файли_Const.Назва,
-                /*НазваФайлу*/ Довідники.Файли_Const.НазваФайлу,
-                /*Розмір*/ Довідники.Файли_Const.Розмір,
-                /*ДатаСтворення*/ Довідники.Файли_Const.ДатаСтворення,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Файли_Const.Код,
+                    /*Назва*/ Довідники.Файли_Const.Назва,
+                    /*НазваФайлу*/ Довідники.Файли_Const.НазваФайлу,
+                    /*Розмір*/ Довідники.Файли_Const.Розмір,
+                    /*ДатаСтворення*/ Довідники.Файли_Const.ДатаСтворення,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Файли_Select.QuerySelect.Order.Add(
+                    Довідники.Файли_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Файли_Select.QuerySelect.Order.Add(
-                Довідники.Файли_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             Файли_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -4627,21 +4588,20 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Файли_Select Файли_Select = new();
             Файли_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Файли_Const.Код,
-                /*Назва*/ Довідники.Файли_Const.Назва,
-                /*НазваФайлу*/ Довідники.Файли_Const.НазваФайлу,
-                /*Розмір*/ Довідники.Файли_Const.Розмір,
-                /*ДатаСтворення*/ Довідники.Файли_Const.ДатаСтворення,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Файли_Const.Код,
+                    /*Назва*/ Довідники.Файли_Const.Назва,
+                    /*НазваФайлу*/ Довідники.Файли_Const.НазваФайлу,
+                    /*Розмір*/ Довідники.Файли_Const.Розмір,
+                    /*ДатаСтворення*/ Довідники.Файли_Const.ДатаСтворення,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Файли_Select.QuerySelect.Order.Add(
+                    Довідники.Файли_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Файли_Select.QuerySelect.Order.Add(
-                Довідники.Файли_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             if (form.WhereList != null) Файли_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -4739,17 +4699,16 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Файли_Select Файли_Select = new();
             Файли_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.Файли_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.Файли_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Файли_Select.QuerySelect.Order.Add(
+                    Довідники.Файли_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Файли_Select.QuerySelect.Order.Add(
-                Довідники.Файли_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             Файли_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -4796,17 +4755,16 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Файли_Select Файли_Select = new();
             Файли_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.Файли_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.Файли_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Файли_Select.QuerySelect.Order.Add(
+                    Довідники.Файли_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Файли_Select.QuerySelect.Order.Add(
-                Довідники.Файли_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             if (form.WhereList != null) Файли_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -5009,22 +4967,21 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.ХарактеристикиНоменклатури_Select ХарактеристикиНоменклатури_Select = new();
             ХарактеристикиНоменклатури_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.ХарактеристикиНоменклатури_Const.Код,
-                /*Назва*/ Довідники.ХарактеристикиНоменклатури_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.ХарактеристикиНоменклатури_Const.Код,
+                    /*Назва*/ Довідники.ХарактеристикиНоменклатури_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ХарактеристикиНоменклатури_Select.QuerySelect.Order.Add(
+                    Довідники.ХарактеристикиНоменклатури_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ХарактеристикиНоменклатури_Select.QuerySelect.Order.Add(
-                Довідники.ХарактеристикиНоменклатури_Const.Назва, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Номенклатура_Pointer.GetJoin(ХарактеристикиНоменклатури_Select.QuerySelect, Довідники.ХарактеристикиНоменклатури_Const.Номенклатура,
-                ХарактеристикиНоменклатури_Select.QuerySelect.Table, "join_tab_1", "Номенклатура");
-            
+                    /* Приєднання */
+                    Довідники.Номенклатура_Pointer.GetJoin(ХарактеристикиНоменклатури_Select.QuerySelect, Довідники.ХарактеристикиНоменклатури_Const.Номенклатура,
+                    ХарактеристикиНоменклатури_Select.QuerySelect.Table, "join_tab_1", "Номенклатура");
+                
                 /* Додаткове поле: Залишки */
                 ХарактеристикиНоменклатури_Select.QuerySelect.FieldAndAlias.Add(
                     new ValueName<string>(@$"(WITH Залишки AS ( SELECT ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.ХарактеристикаНоменклатури} AS Характеристика, SUM(ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.ВНаявності}) AS ВНаявності FROM {РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.TABLE} AS ТовариНаСкладах WHERE ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} = {Довідники.ХарактеристикиНоменклатури_Const.TABLE}.{Довідники.ХарактеристикиНоменклатури_Const.Номенклатура} AND ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.ХарактеристикаНоменклатури} = {Довідники.ХарактеристикиНоменклатури_Const.TABLE}.uid GROUP BY Характеристика ) SELECT ROUND(ВНаявності, 1) FROM Залишки)", "Залишки"));
@@ -5088,22 +5045,21 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.ХарактеристикиНоменклатури_Select ХарактеристикиНоменклатури_Select = new();
             ХарактеристикиНоменклатури_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.ХарактеристикиНоменклатури_Const.Код,
-                /*Назва*/ Довідники.ХарактеристикиНоменклатури_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.ХарактеристикиНоменклатури_Const.Код,
+                    /*Назва*/ Довідники.ХарактеристикиНоменклатури_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ХарактеристикиНоменклатури_Select.QuerySelect.Order.Add(
+                    Довідники.ХарактеристикиНоменклатури_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ХарактеристикиНоменклатури_Select.QuerySelect.Order.Add(
-                Довідники.ХарактеристикиНоменклатури_Const.Назва, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Номенклатура_Pointer.GetJoin(ХарактеристикиНоменклатури_Select.QuerySelect, Довідники.ХарактеристикиНоменклатури_Const.Номенклатура,
-                ХарактеристикиНоменклатури_Select.QuerySelect.Table, "join_tab_1", "Номенклатура");
-            
+                    /* Приєднання */
+                    Довідники.Номенклатура_Pointer.GetJoin(ХарактеристикиНоменклатури_Select.QuerySelect, Довідники.ХарактеристикиНоменклатури_Const.Номенклатура,
+                    ХарактеристикиНоменклатури_Select.QuerySelect.Table, "join_tab_1", "Номенклатура");
+                
                 /* Додаткове поле: Залишки */
                 ХарактеристикиНоменклатури_Select.QuerySelect.FieldAndAlias.Add(
                     new ValueName<string>(@$"(WITH Залишки AS ( SELECT ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.ХарактеристикаНоменклатури} AS Характеристика, SUM(ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.ВНаявності}) AS ВНаявності FROM {РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.TABLE} AS ТовариНаСкладах WHERE ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} = {Довідники.ХарактеристикиНоменклатури_Const.TABLE}.{Довідники.ХарактеристикиНоменклатури_Const.Номенклатура} AND ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.ХарактеристикаНоменклатури} = {Довідники.ХарактеристикиНоменклатури_Const.TABLE}.uid GROUP BY Характеристика ) SELECT ROUND(ВНаявності, 1) FROM Залишки)", "Залишки"));
@@ -5239,18 +5195,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Номенклатура_Папки_SelectHierarchical Номенклатура_Папки_Select = new();
             Номенклатура_Папки_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.Номенклатура_Папки_Const.Назва,
-                /*Код*/ Довідники.Номенклатура_Папки_Const.Код,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.Номенклатура_Папки_Const.Назва,
+                    /*Код*/ Довідники.Номенклатура_Папки_Const.Код,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Номенклатура_Папки_Select.QuerySelect.Order.Add(
+                    Довідники.Номенклатура_Папки_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Номенклатура_Папки_Select.QuerySelect.Order.Add(
-                Довідники.Номенклатура_Папки_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             Номенклатура_Папки_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -5298,18 +5253,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Номенклатура_Папки_SelectHierarchical Номенклатура_Папки_Select = new();
             Номенклатура_Папки_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.Номенклатура_Папки_Const.Назва,
-                /*Код*/ Довідники.Номенклатура_Папки_Const.Код,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.Номенклатура_Папки_Const.Назва,
+                    /*Код*/ Довідники.Номенклатура_Папки_Const.Код,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Номенклатура_Папки_Select.QuerySelect.Order.Add(
+                    Довідники.Номенклатура_Папки_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Номенклатура_Папки_Select.QuerySelect.Order.Add(
-                Довідники.Номенклатура_Папки_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             if (form.WhereList != null) Номенклатура_Папки_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -5425,18 +5379,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Номенклатура_Папки_SelectHierarchical Номенклатура_Папки_Select = new();
             Номенклатура_Папки_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.Номенклатура_Папки_Const.Назва,
-                /*Код*/ Довідники.Номенклатура_Папки_Const.Код,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.Номенклатура_Папки_Const.Назва,
+                    /*Код*/ Довідники.Номенклатура_Папки_Const.Код,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Номенклатура_Папки_Select.QuerySelect.Order.Add(
+                    Довідники.Номенклатура_Папки_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Номенклатура_Папки_Select.QuerySelect.Order.Add(
-                Довідники.Номенклатура_Папки_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             Номенклатура_Папки_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -5484,18 +5437,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Номенклатура_Папки_SelectHierarchical Номенклатура_Папки_Select = new();
             Номенклатура_Папки_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.Номенклатура_Папки_Const.Назва,
-                /*Код*/ Довідники.Номенклатура_Папки_Const.Код,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.Номенклатура_Папки_Const.Назва,
+                    /*Код*/ Довідники.Номенклатура_Папки_Const.Код,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Номенклатура_Папки_Select.QuerySelect.Order.Add(
+                    Довідники.Номенклатура_Папки_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Номенклатура_Папки_Select.QuerySelect.Order.Add(
-                Довідники.Номенклатура_Папки_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             if (form.WhereList != null) Номенклатура_Папки_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -5615,18 +5567,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Контрагенти_Папки_SelectHierarchical Контрагенти_Папки_Select = new();
             Контрагенти_Папки_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.Контрагенти_Папки_Const.Назва,
-                /*Код*/ Довідники.Контрагенти_Папки_Const.Код,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.Контрагенти_Папки_Const.Назва,
+                    /*Код*/ Довідники.Контрагенти_Папки_Const.Код,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Контрагенти_Папки_Select.QuerySelect.Order.Add(
+                    Довідники.Контрагенти_Папки_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Контрагенти_Папки_Select.QuerySelect.Order.Add(
-                Довідники.Контрагенти_Папки_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             Контрагенти_Папки_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -5674,18 +5625,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Контрагенти_Папки_SelectHierarchical Контрагенти_Папки_Select = new();
             Контрагенти_Папки_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.Контрагенти_Папки_Const.Назва,
-                /*Код*/ Довідники.Контрагенти_Папки_Const.Код,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.Контрагенти_Папки_Const.Назва,
+                    /*Код*/ Довідники.Контрагенти_Папки_Const.Код,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Контрагенти_Папки_Select.QuerySelect.Order.Add(
+                    Довідники.Контрагенти_Папки_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Контрагенти_Папки_Select.QuerySelect.Order.Add(
-                Довідники.Контрагенти_Папки_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             if (form.WhereList != null) Контрагенти_Папки_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -5805,18 +5755,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Склади_Папки_SelectHierarchical Склади_Папки_Select = new();
             Склади_Папки_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.Склади_Папки_Const.Назва,
-                /*Код*/ Довідники.Склади_Папки_Const.Код,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.Склади_Папки_Const.Назва,
+                    /*Код*/ Довідники.Склади_Папки_Const.Код,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Склади_Папки_Select.QuerySelect.Order.Add(
+                    Довідники.Склади_Папки_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Склади_Папки_Select.QuerySelect.Order.Add(
-                Довідники.Склади_Папки_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             Склади_Папки_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -5864,18 +5813,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Склади_Папки_SelectHierarchical Склади_Папки_Select = new();
             Склади_Папки_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.Склади_Папки_Const.Назва,
-                /*Код*/ Довідники.Склади_Папки_Const.Код,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.Склади_Папки_Const.Назва,
+                    /*Код*/ Довідники.Склади_Папки_Const.Код,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Склади_Папки_Select.QuerySelect.Order.Add(
+                    Довідники.Склади_Папки_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Склади_Папки_Select.QuerySelect.Order.Add(
-                Довідники.Склади_Папки_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             if (form.WhereList != null) Склади_Папки_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -6059,22 +6007,21 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Каси_Select Каси_Select = new();
             Каси_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Каси_Const.Код,
-                /*Назва*/ Довідники.Каси_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Каси_Const.Код,
+                    /*Назва*/ Довідники.Каси_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Каси_Select.QuerySelect.Order.Add(
+                    Довідники.Каси_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Каси_Select.QuerySelect.Order.Add(
-                Довідники.Каси_Const.Назва, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(Каси_Select.QuerySelect, Довідники.Каси_Const.Валюта,
-                Каси_Select.QuerySelect.Table, "join_tab_1", "Валюта");
-            
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(Каси_Select.QuerySelect, Довідники.Каси_Const.Валюта,
+                    Каси_Select.QuerySelect.Table, "join_tab_1", "Валюта");
+                
                 /* Додаткове поле: Залишок */
                 Каси_Select.QuerySelect.FieldAndAlias.Add(
                     new ValueName<string>(@$"(SELECT ROUND(РухКоштів.{РегістриНакопичення.РухКоштів_Підсумки_TablePart.Сума}, 2) AS Сума FROM {РегістриНакопичення.РухКоштів_Підсумки_TablePart.TABLE} AS РухКоштів WHERE РухКоштів.{РегістриНакопичення.РухКоштів_Підсумки_TablePart.Каса} = {Довідники.Каси_Const.TABLE}.uid)", "Залишок"));
@@ -6128,22 +6075,21 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Каси_Select Каси_Select = new();
             Каси_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Каси_Const.Код,
-                /*Назва*/ Довідники.Каси_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Каси_Const.Код,
+                    /*Назва*/ Довідники.Каси_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Каси_Select.QuerySelect.Order.Add(
+                    Довідники.Каси_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Каси_Select.QuerySelect.Order.Add(
-                Довідники.Каси_Const.Назва, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(Каси_Select.QuerySelect, Довідники.Каси_Const.Валюта,
-                Каси_Select.QuerySelect.Table, "join_tab_1", "Валюта");
-            
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(Каси_Select.QuerySelect, Довідники.Каси_Const.Валюта,
+                    Каси_Select.QuerySelect.Table, "join_tab_1", "Валюта");
+                
                 /* Додаткове поле: Залишок */
                 Каси_Select.QuerySelect.FieldAndAlias.Add(
                     new ValueName<string>(@$"(SELECT ROUND(РухКоштів.{РегістриНакопичення.РухКоштів_Підсумки_TablePart.Сума}, 2) AS Сума FROM {РегістриНакопичення.РухКоштів_Підсумки_TablePart.TABLE} AS РухКоштів WHERE РухКоштів.{РегістриНакопичення.РухКоштів_Підсумки_TablePart.Каса} = {Довідники.Каси_Const.TABLE}.uid)", "Залишок"));
@@ -6286,22 +6232,21 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Каси_Select Каси_Select = new();
             Каси_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Каси_Const.Код,
-                /*Назва*/ Довідники.Каси_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Каси_Const.Код,
+                    /*Назва*/ Довідники.Каси_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Каси_Select.QuerySelect.Order.Add(
+                    Довідники.Каси_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Каси_Select.QuerySelect.Order.Add(
-                Довідники.Каси_Const.Назва, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(Каси_Select.QuerySelect, Довідники.Каси_Const.Валюта,
-                Каси_Select.QuerySelect.Table, "join_tab_1", "Валюта");
-            
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(Каси_Select.QuerySelect, Довідники.Каси_Const.Валюта,
+                    Каси_Select.QuerySelect.Table, "join_tab_1", "Валюта");
+                
 
             /* Відбори */
             Каси_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -6350,22 +6295,21 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Каси_Select Каси_Select = new();
             Каси_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Каси_Const.Код,
-                /*Назва*/ Довідники.Каси_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Каси_Const.Код,
+                    /*Назва*/ Довідники.Каси_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Каси_Select.QuerySelect.Order.Add(
+                    Довідники.Каси_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Каси_Select.QuerySelect.Order.Add(
-                Довідники.Каси_Const.Назва, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(Каси_Select.QuerySelect, Довідники.Каси_Const.Валюта,
-                Каси_Select.QuerySelect.Table, "join_tab_1", "Валюта");
-            
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(Каси_Select.QuerySelect, Довідники.Каси_Const.Валюта,
+                    Каси_Select.QuerySelect.Table, "join_tab_1", "Валюта");
+                
 
             /* Відбори */
             if (form.WhereList != null) Каси_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -6529,22 +6473,21 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.БанківськіРахункиОрганізацій_Select БанківськіРахункиОрганізацій_Select = new();
             БанківськіРахункиОрганізацій_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.БанківськіРахункиОрганізацій_Const.Код,
-                /*Назва*/ Довідники.БанківськіРахункиОрганізацій_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.БанківськіРахункиОрганізацій_Const.Код,
+                    /*Назва*/ Довідники.БанківськіРахункиОрганізацій_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    БанківськіРахункиОрганізацій_Select.QuerySelect.Order.Add(
+                    Довідники.БанківськіРахункиОрганізацій_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                БанківськіРахункиОрганізацій_Select.QuerySelect.Order.Add(
-                Довідники.БанківськіРахункиОрганізацій_Const.Назва, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(БанківськіРахункиОрганізацій_Select.QuerySelect, Довідники.БанківськіРахункиОрганізацій_Const.Валюта,
-                БанківськіРахункиОрганізацій_Select.QuerySelect.Table, "join_tab_1", "Валюта");
-            
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(БанківськіРахункиОрганізацій_Select.QuerySelect, Довідники.БанківськіРахункиОрганізацій_Const.Валюта,
+                    БанківськіРахункиОрганізацій_Select.QuerySelect.Table, "join_tab_1", "Валюта");
+                
 
             /* Відбори */
             БанківськіРахункиОрганізацій_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -6593,22 +6536,21 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.БанківськіРахункиОрганізацій_Select БанківськіРахункиОрганізацій_Select = new();
             БанківськіРахункиОрганізацій_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.БанківськіРахункиОрганізацій_Const.Код,
-                /*Назва*/ Довідники.БанківськіРахункиОрганізацій_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.БанківськіРахункиОрганізацій_Const.Код,
+                    /*Назва*/ Довідники.БанківськіРахункиОрганізацій_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    БанківськіРахункиОрганізацій_Select.QuerySelect.Order.Add(
+                    Довідники.БанківськіРахункиОрганізацій_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                БанківськіРахункиОрганізацій_Select.QuerySelect.Order.Add(
-                Довідники.БанківськіРахункиОрганізацій_Const.Назва, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(БанківськіРахункиОрганізацій_Select.QuerySelect, Довідники.БанківськіРахункиОрганізацій_Const.Валюта,
-                БанківськіРахункиОрганізацій_Select.QuerySelect.Table, "join_tab_1", "Валюта");
-            
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(БанківськіРахункиОрганізацій_Select.QuerySelect, Довідники.БанківськіРахункиОрганізацій_Const.Валюта,
+                    БанківськіРахункиОрганізацій_Select.QuerySelect.Table, "join_tab_1", "Валюта");
+                
 
             /* Відбори */
             if (form.WhereList != null) БанківськіРахункиОрганізацій_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -6806,23 +6748,22 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.ДоговориКонтрагентів_Select ДоговориКонтрагентів_Select = new();
             ДоговориКонтрагентів_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.ДоговориКонтрагентів_Const.Код,
-                /*Назва*/ Довідники.ДоговориКонтрагентів_Const.Назва,
-                /*ТипДоговору*/ Довідники.ДоговориКонтрагентів_Const.ТипДоговору,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.ДоговориКонтрагентів_Const.Код,
+                    /*Назва*/ Довідники.ДоговориКонтрагентів_Const.Назва,
+                    /*ТипДоговору*/ Довідники.ДоговориКонтрагентів_Const.ТипДоговору,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ДоговориКонтрагентів_Select.QuerySelect.Order.Add(
+                    Довідники.ДоговориКонтрагентів_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ДоговориКонтрагентів_Select.QuerySelect.Order.Add(
-                Довідники.ДоговориКонтрагентів_Const.Назва, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(ДоговориКонтрагентів_Select.QuerySelect, Довідники.ДоговориКонтрагентів_Const.Контрагент,
-                ДоговориКонтрагентів_Select.QuerySelect.Table, "join_tab_1", "Контрагент");
-            
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(ДоговориКонтрагентів_Select.QuerySelect, Довідники.ДоговориКонтрагентів_Const.Контрагент,
+                    ДоговориКонтрагентів_Select.QuerySelect.Table, "join_tab_1", "Контрагент");
+                
 
             /* Відбори */
             ДоговориКонтрагентів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -6872,23 +6813,22 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.ДоговориКонтрагентів_Select ДоговориКонтрагентів_Select = new();
             ДоговориКонтрагентів_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.ДоговориКонтрагентів_Const.Код,
-                /*Назва*/ Довідники.ДоговориКонтрагентів_Const.Назва,
-                /*ТипДоговору*/ Довідники.ДоговориКонтрагентів_Const.ТипДоговору,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.ДоговориКонтрагентів_Const.Код,
+                    /*Назва*/ Довідники.ДоговориКонтрагентів_Const.Назва,
+                    /*ТипДоговору*/ Довідники.ДоговориКонтрагентів_Const.ТипДоговору,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ДоговориКонтрагентів_Select.QuerySelect.Order.Add(
+                    Довідники.ДоговориКонтрагентів_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ДоговориКонтрагентів_Select.QuerySelect.Order.Add(
-                Довідники.ДоговориКонтрагентів_Const.Назва, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(ДоговориКонтрагентів_Select.QuerySelect, Довідники.ДоговориКонтрагентів_Const.Контрагент,
-                ДоговориКонтрагентів_Select.QuerySelect.Table, "join_tab_1", "Контрагент");
-            
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(ДоговориКонтрагентів_Select.QuerySelect, Довідники.ДоговориКонтрагентів_Const.Контрагент,
+                    ДоговориКонтрагентів_Select.QuerySelect.Table, "join_tab_1", "Контрагент");
+                
 
             /* Відбори */
             if (form.WhereList != null) ДоговориКонтрагентів_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -7027,22 +6967,21 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.ДоговориКонтрагентів_Select ДоговориКонтрагентів_Select = new();
             ДоговориКонтрагентів_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.ДоговориКонтрагентів_Const.Назва,
-                /*ТипДоговору*/ Довідники.ДоговориКонтрагентів_Const.ТипДоговору,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.ДоговориКонтрагентів_Const.Назва,
+                    /*ТипДоговору*/ Довідники.ДоговориКонтрагентів_Const.ТипДоговору,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ДоговориКонтрагентів_Select.QuerySelect.Order.Add(
+                    Довідники.ДоговориКонтрагентів_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ДоговориКонтрагентів_Select.QuerySelect.Order.Add(
-                Довідники.ДоговориКонтрагентів_Const.Назва, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(ДоговориКонтрагентів_Select.QuerySelect, Довідники.ДоговориКонтрагентів_Const.Контрагент,
-                ДоговориКонтрагентів_Select.QuerySelect.Table, "join_tab_1", "Контрагент");
-            
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(ДоговориКонтрагентів_Select.QuerySelect, Довідники.ДоговориКонтрагентів_Const.Контрагент,
+                    ДоговориКонтрагентів_Select.QuerySelect.Table, "join_tab_1", "Контрагент");
+                
 
             /* Відбори */
             ДоговориКонтрагентів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -7091,22 +7030,21 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.ДоговориКонтрагентів_Select ДоговориКонтрагентів_Select = new();
             ДоговориКонтрагентів_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.ДоговориКонтрагентів_Const.Назва,
-                /*ТипДоговору*/ Довідники.ДоговориКонтрагентів_Const.ТипДоговору,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.ДоговориКонтрагентів_Const.Назва,
+                    /*ТипДоговору*/ Довідники.ДоговориКонтрагентів_Const.ТипДоговору,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ДоговориКонтрагентів_Select.QuerySelect.Order.Add(
+                    Довідники.ДоговориКонтрагентів_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ДоговориКонтрагентів_Select.QuerySelect.Order.Add(
-                Довідники.ДоговориКонтрагентів_Const.Назва, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(ДоговориКонтрагентів_Select.QuerySelect, Довідники.ДоговориКонтрагентів_Const.Контрагент,
-                ДоговориКонтрагентів_Select.QuerySelect.Table, "join_tab_1", "Контрагент");
-            
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(ДоговориКонтрагентів_Select.QuerySelect, Довідники.ДоговориКонтрагентів_Const.Контрагент,
+                    ДоговориКонтрагентів_Select.QuerySelect.Table, "join_tab_1", "Контрагент");
+                
 
             /* Відбори */
             if (form.WhereList != null) ДоговориКонтрагентів_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -7270,22 +7208,21 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.БанківськіРахункиКонтрагентів_Select БанківськіРахункиКонтрагентів_Select = new();
             БанківськіРахункиКонтрагентів_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.БанківськіРахункиКонтрагентів_Const.Код,
-                /*Назва*/ Довідники.БанківськіРахункиКонтрагентів_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.БанківськіРахункиКонтрагентів_Const.Код,
+                    /*Назва*/ Довідники.БанківськіРахункиКонтрагентів_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    БанківськіРахункиКонтрагентів_Select.QuerySelect.Order.Add(
+                    Довідники.БанківськіРахункиКонтрагентів_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                БанківськіРахункиКонтрагентів_Select.QuerySelect.Order.Add(
-                Довідники.БанківськіРахункиКонтрагентів_Const.Назва, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(БанківськіРахункиКонтрагентів_Select.QuerySelect, Довідники.БанківськіРахункиКонтрагентів_Const.Валюта,
-                БанківськіРахункиКонтрагентів_Select.QuerySelect.Table, "join_tab_1", "Валюта");
-            
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(БанківськіРахункиКонтрагентів_Select.QuerySelect, Довідники.БанківськіРахункиКонтрагентів_Const.Валюта,
+                    БанківськіРахункиКонтрагентів_Select.QuerySelect.Table, "join_tab_1", "Валюта");
+                
 
             /* Відбори */
             БанківськіРахункиКонтрагентів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -7334,22 +7271,21 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.БанківськіРахункиКонтрагентів_Select БанківськіРахункиКонтрагентів_Select = new();
             БанківськіРахункиКонтрагентів_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.БанківськіРахункиКонтрагентів_Const.Код,
-                /*Назва*/ Довідники.БанківськіРахункиКонтрагентів_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.БанківськіРахункиКонтрагентів_Const.Код,
+                    /*Назва*/ Довідники.БанківськіРахункиКонтрагентів_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    БанківськіРахункиКонтрагентів_Select.QuerySelect.Order.Add(
+                    Довідники.БанківськіРахункиКонтрагентів_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                БанківськіРахункиКонтрагентів_Select.QuerySelect.Order.Add(
-                Довідники.БанківськіРахункиКонтрагентів_Const.Назва, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(БанківськіРахункиКонтрагентів_Select.QuerySelect, Довідники.БанківськіРахункиКонтрагентів_Const.Валюта,
-                БанківськіРахункиКонтрагентів_Select.QuerySelect.Table, "join_tab_1", "Валюта");
-            
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(БанківськіРахункиКонтрагентів_Select.QuerySelect, Довідники.БанківськіРахункиКонтрагентів_Const.Валюта,
+                    БанківськіРахункиКонтрагентів_Select.QuerySelect.Table, "join_tab_1", "Валюта");
+                
 
             /* Відбори */
             if (form.WhereList != null) БанківськіРахункиКонтрагентів_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -7538,20 +7474,19 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.СтаттяРухуКоштів_Select СтаттяРухуКоштів_Select = new();
             СтаттяРухуКоштів_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.СтаттяРухуКоштів_Const.Назва,
-                /*Код*/ Довідники.СтаттяРухуКоштів_Const.Код,
-                /*КореспондуючийРахунок*/ Довідники.СтаттяРухуКоштів_Const.КореспондуючийРахунок,
-                /*ВидРухуКоштів*/ Довідники.СтаттяРухуКоштів_Const.ВидРухуКоштів,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.СтаттяРухуКоштів_Const.Назва,
+                    /*Код*/ Довідники.СтаттяРухуКоштів_Const.Код,
+                    /*КореспондуючийРахунок*/ Довідники.СтаттяРухуКоштів_Const.КореспондуючийРахунок,
+                    /*ВидРухуКоштів*/ Довідники.СтаттяРухуКоштів_Const.ВидРухуКоштів,
+                    
+                ]);
+            
+                    /* Сортування */
+                    СтаттяРухуКоштів_Select.QuerySelect.Order.Add(
+                    Довідники.СтаттяРухуКоштів_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                СтаттяРухуКоштів_Select.QuerySelect.Order.Add(
-                Довідники.СтаттяРухуКоштів_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             СтаттяРухуКоштів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -7601,20 +7536,19 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.СтаттяРухуКоштів_Select СтаттяРухуКоштів_Select = new();
             СтаттяРухуКоштів_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.СтаттяРухуКоштів_Const.Назва,
-                /*Код*/ Довідники.СтаттяРухуКоштів_Const.Код,
-                /*КореспондуючийРахунок*/ Довідники.СтаттяРухуКоштів_Const.КореспондуючийРахунок,
-                /*ВидРухуКоштів*/ Довідники.СтаттяРухуКоштів_Const.ВидРухуКоштів,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.СтаттяРухуКоштів_Const.Назва,
+                    /*Код*/ Довідники.СтаттяРухуКоштів_Const.Код,
+                    /*КореспондуючийРахунок*/ Довідники.СтаттяРухуКоштів_Const.КореспондуючийРахунок,
+                    /*ВидРухуКоштів*/ Довідники.СтаттяРухуКоштів_Const.ВидРухуКоштів,
+                    
+                ]);
+            
+                    /* Сортування */
+                    СтаттяРухуКоштів_Select.QuerySelect.Order.Add(
+                    Довідники.СтаттяРухуКоштів_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                СтаттяРухуКоштів_Select.QuerySelect.Order.Add(
-                Довідники.СтаттяРухуКоштів_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             if (form.WhereList != null) СтаттяРухуКоштів_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -7715,17 +7649,16 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.СеріїНоменклатури_Select СеріїНоменклатури_Select = new();
             СеріїНоменклатури_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Номер*/ Довідники.СеріїНоменклатури_Const.Номер,
+                [
+                    "deletion_label",
+                    /*Номер*/ Довідники.СеріїНоменклатури_Const.Номер,
+                    
+                ]);
+            
+                    /* Сортування */
+                    СеріїНоменклатури_Select.QuerySelect.Order.Add(
+                    Довідники.СеріїНоменклатури_Const.Номер, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                СеріїНоменклатури_Select.QuerySelect.Order.Add(
-                Довідники.СеріїНоменклатури_Const.Номер, SelectOrder.ASC);
-            
 
             /* Відбори */
             СеріїНоменклатури_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -7772,17 +7705,16 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.СеріїНоменклатури_Select СеріїНоменклатури_Select = new();
             СеріїНоменклатури_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Номер*/ Довідники.СеріїНоменклатури_Const.Номер,
+                [
+                    "deletion_label",
+                    /*Номер*/ Довідники.СеріїНоменклатури_Const.Номер,
+                    
+                ]);
+            
+                    /* Сортування */
+                    СеріїНоменклатури_Select.QuerySelect.Order.Add(
+                    Довідники.СеріїНоменклатури_Const.Номер, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                СеріїНоменклатури_Select.QuerySelect.Order.Add(
-                Довідники.СеріїНоменклатури_Const.Номер, SelectOrder.ASC);
-            
 
             /* Відбори */
             if (form.WhereList != null) СеріїНоменклатури_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -8011,27 +7943,26 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.ПартіяТоварівКомпозит_Select ПартіяТоварівКомпозит_Select = new();
             ПартіяТоварівКомпозит_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.ПартіяТоварівКомпозит_Const.Назва,
-                /*Дата*/ Довідники.ПартіяТоварівКомпозит_Const.Дата,
-                /*ТипДокументу*/ Довідники.ПартіяТоварівКомпозит_Const.ТипДокументу,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.ПартіяТоварівКомпозит_Const.Назва,
+                    /*Дата*/ Довідники.ПартіяТоварівКомпозит_Const.Дата,
+                    /*ТипДокументу*/ Довідники.ПартіяТоварівКомпозит_Const.ТипДокументу,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПартіяТоварівКомпозит_Select.QuerySelect.Order.Add(
+                    Довідники.ПартіяТоварівКомпозит_Const.Дата, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ПартіяТоварівКомпозит_Select.QuerySelect.Order.Add(
-                Довідники.ПартіяТоварівКомпозит_Const.Дата, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Документи.ПоступленняТоварівТаПослуг_Pointer.GetJoin(ПартіяТоварівКомпозит_Select.QuerySelect, Довідники.ПартіяТоварівКомпозит_Const.ПоступленняТоварівТаПослуг,
-                ПартіяТоварівКомпозит_Select.QuerySelect.Table, "join_tab_1", "ПоступленняТоварівТаПослуг");
-            
-                /* Приєднання */
-                Документи.ВведенняЗалишків_Pointer.GetJoin(ПартіяТоварівКомпозит_Select.QuerySelect, Довідники.ПартіяТоварівКомпозит_Const.ВведенняЗалишків,
-                ПартіяТоварівКомпозит_Select.QuerySelect.Table, "join_tab_2", "ВведенняЗалишків");
-            
+                    /* Приєднання */
+                    Документи.ПоступленняТоварівТаПослуг_Pointer.GetJoin(ПартіяТоварівКомпозит_Select.QuerySelect, Довідники.ПартіяТоварівКомпозит_Const.ПоступленняТоварівТаПослуг,
+                    ПартіяТоварівКомпозит_Select.QuerySelect.Table, "join_tab_1", "ПоступленняТоварівТаПослуг");
+                
+                    /* Приєднання */
+                    Документи.ВведенняЗалишків_Pointer.GetJoin(ПартіяТоварівКомпозит_Select.QuerySelect, Довідники.ПартіяТоварівКомпозит_Const.ВведенняЗалишків,
+                    ПартіяТоварівКомпозит_Select.QuerySelect.Table, "join_tab_2", "ВведенняЗалишків");
+                
                 /* Додаткове поле: Залишки */
                 ПартіяТоварівКомпозит_Select.QuerySelect.FieldAndAlias.Add(
                     new ValueName<string>(@$"(WITH Залишки AS ( SELECT ПартіїТоварів.{РегістриНакопичення.ПартіїТоварів_Підсумки_TablePart.ПартіяТоварівКомпозит} AS ПартіяТоварівКомпозит, SUM(ПартіїТоварів.{РегістриНакопичення.ПартіїТоварів_Підсумки_TablePart.Кількість} ) AS Кількість FROM {РегістриНакопичення.ПартіїТоварів_Підсумки_TablePart.TABLE} AS ПартіїТоварів WHERE ПартіїТоварів.{РегістриНакопичення.ПартіїТоварів_Підсумки_TablePart.ПартіяТоварівКомпозит} = {Довідники.ПартіяТоварівКомпозит_Const.TABLE}.uid GROUP BY ПартіяТоварівКомпозит ) SELECT ROUND(Кількість, 1) FROM Залишки)", "Залишки"));
@@ -8087,27 +8018,26 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.ПартіяТоварівКомпозит_Select ПартіяТоварівКомпозит_Select = new();
             ПартіяТоварівКомпозит_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.ПартіяТоварівКомпозит_Const.Назва,
-                /*Дата*/ Довідники.ПартіяТоварівКомпозит_Const.Дата,
-                /*ТипДокументу*/ Довідники.ПартіяТоварівКомпозит_Const.ТипДокументу,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.ПартіяТоварівКомпозит_Const.Назва,
+                    /*Дата*/ Довідники.ПартіяТоварівКомпозит_Const.Дата,
+                    /*ТипДокументу*/ Довідники.ПартіяТоварівКомпозит_Const.ТипДокументу,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПартіяТоварівКомпозит_Select.QuerySelect.Order.Add(
+                    Довідники.ПартіяТоварівКомпозит_Const.Дата, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ПартіяТоварівКомпозит_Select.QuerySelect.Order.Add(
-                Довідники.ПартіяТоварівКомпозит_Const.Дата, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Документи.ПоступленняТоварівТаПослуг_Pointer.GetJoin(ПартіяТоварівКомпозит_Select.QuerySelect, Довідники.ПартіяТоварівКомпозит_Const.ПоступленняТоварівТаПослуг,
-                ПартіяТоварівКомпозит_Select.QuerySelect.Table, "join_tab_1", "ПоступленняТоварівТаПослуг");
-            
-                /* Приєднання */
-                Документи.ВведенняЗалишків_Pointer.GetJoin(ПартіяТоварівКомпозит_Select.QuerySelect, Довідники.ПартіяТоварівКомпозит_Const.ВведенняЗалишків,
-                ПартіяТоварівКомпозит_Select.QuerySelect.Table, "join_tab_2", "ВведенняЗалишків");
-            
+                    /* Приєднання */
+                    Документи.ПоступленняТоварівТаПослуг_Pointer.GetJoin(ПартіяТоварівКомпозит_Select.QuerySelect, Довідники.ПартіяТоварівКомпозит_Const.ПоступленняТоварівТаПослуг,
+                    ПартіяТоварівКомпозит_Select.QuerySelect.Table, "join_tab_1", "ПоступленняТоварівТаПослуг");
+                
+                    /* Приєднання */
+                    Документи.ВведенняЗалишків_Pointer.GetJoin(ПартіяТоварівКомпозит_Select.QuerySelect, Довідники.ПартіяТоварівКомпозит_Const.ВведенняЗалишків,
+                    ПартіяТоварівКомпозит_Select.QuerySelect.Table, "join_tab_2", "ВведенняЗалишків");
+                
                 /* Додаткове поле: Залишки */
                 ПартіяТоварівКомпозит_Select.QuerySelect.FieldAndAlias.Add(
                     new ValueName<string>(@$"(WITH Залишки AS ( SELECT ПартіїТоварів.{РегістриНакопичення.ПартіїТоварів_Підсумки_TablePart.ПартіяТоварівКомпозит} AS ПартіяТоварівКомпозит, SUM(ПартіїТоварів.{РегістриНакопичення.ПартіїТоварів_Підсумки_TablePart.Кількість} ) AS Кількість FROM {РегістриНакопичення.ПартіїТоварів_Підсумки_TablePart.TABLE} AS ПартіїТоварів WHERE ПартіїТоварів.{РегістриНакопичення.ПартіїТоварів_Підсумки_TablePart.ПартіяТоварівКомпозит} = {Довідники.ПартіяТоварівКомпозит_Const.TABLE}.uid GROUP BY ПартіяТоварівКомпозит ) SELECT ROUND(Кількість, 1) FROM Залишки)", "Залишки"));
@@ -8231,18 +8161,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.ПартіяТоварівКомпозит_Select ПартіяТоварівКомпозит_Select = new();
             ПартіяТоварівКомпозит_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.ПартіяТоварівКомпозит_Const.Назва,
-                /*Дата*/ Довідники.ПартіяТоварівКомпозит_Const.Дата,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.ПартіяТоварівКомпозит_Const.Назва,
+                    /*Дата*/ Довідники.ПартіяТоварівКомпозит_Const.Дата,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПартіяТоварівКомпозит_Select.QuerySelect.Order.Add(
+                    Довідники.ПартіяТоварівКомпозит_Const.Дата, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ПартіяТоварівКомпозит_Select.QuerySelect.Order.Add(
-                Довідники.ПартіяТоварівКомпозит_Const.Дата, SelectOrder.ASC);
-            
 
             /* Відбори */
             ПартіяТоварівКомпозит_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -8290,18 +8219,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.ПартіяТоварівКомпозит_Select ПартіяТоварівКомпозит_Select = new();
             ПартіяТоварівКомпозит_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.ПартіяТоварівКомпозит_Const.Назва,
-                /*Дата*/ Довідники.ПартіяТоварівКомпозит_Const.Дата,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.ПартіяТоварівКомпозит_Const.Назва,
+                    /*Дата*/ Довідники.ПартіяТоварівКомпозит_Const.Дата,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПартіяТоварівКомпозит_Select.QuerySelect.Order.Add(
+                    Довідники.ПартіяТоварівКомпозит_Const.Дата, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ПартіяТоварівКомпозит_Select.QuerySelect.Order.Add(
-                Довідники.ПартіяТоварівКомпозит_Const.Дата, SelectOrder.ASC);
-            
 
             /* Відбори */
             if (form.WhereList != null) ПартіяТоварівКомпозит_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -8421,18 +8349,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.ВидиЗапасів_Select ВидиЗапасів_Select = new();
             ВидиЗапасів_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.ВидиЗапасів_Const.Код,
-                /*Назва*/ Довідники.ВидиЗапасів_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.ВидиЗапасів_Const.Код,
+                    /*Назва*/ Довідники.ВидиЗапасів_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ВидиЗапасів_Select.QuerySelect.Order.Add(
+                    Довідники.ВидиЗапасів_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ВидиЗапасів_Select.QuerySelect.Order.Add(
-                Довідники.ВидиЗапасів_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             ВидиЗапасів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -8480,18 +8407,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.ВидиЗапасів_Select ВидиЗапасів_Select = new();
             ВидиЗапасів_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.ВидиЗапасів_Const.Код,
-                /*Назва*/ Довідники.ВидиЗапасів_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.ВидиЗапасів_Const.Код,
+                    /*Назва*/ Довідники.ВидиЗапасів_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ВидиЗапасів_Select.QuerySelect.Order.Add(
+                    Довідники.ВидиЗапасів_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ВидиЗапасів_Select.QuerySelect.Order.Add(
-                Довідники.ВидиЗапасів_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             if (form.WhereList != null) ВидиЗапасів_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -8968,35 +8894,34 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Банки_Select Банки_Select = new();
             Банки_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Банки_Const.Код,
-                /*Назва*/ Довідники.Банки_Const.Назва,
-                /*ПовнаНазва*/ Довідники.Банки_Const.ПовнаНазва,
-                /*КодМФО*/ Довідники.Банки_Const.КодМФО,
-                /*КодЄДРПОУ*/ Довідники.Банки_Const.КодЄДРПОУ,
-                /*НомерЛіцензії*/ Довідники.Банки_Const.НомерЛіцензії,
-                /*ДатаЛіцензії*/ Довідники.Банки_Const.ДатаЛіцензії,
-                /*Статус*/ Довідники.Банки_Const.Статус,
-                /*ТипНаселеногоПункту*/ Довідники.Банки_Const.ТипНаселеногоПункту,
-                /*УнікальнийКодБанку*/ Довідники.Банки_Const.УнікальнийКодБанку,
-                /*ПоштовийІндекс*/ Довідники.Банки_Const.ПоштовийІндекс,
-                /*НазваНаселеногоПункту*/ Довідники.Банки_Const.НазваНаселеногоПункту,
-                /*Адреса*/ Довідники.Банки_Const.Адреса,
-                /*НомерТелефону*/ Довідники.Банки_Const.НомерТелефону,
-                /*ДатаВідкриттяУстанови*/ Довідники.Банки_Const.ДатаВідкриттяУстанови,
-                /*ДатаЗакриттяУстанови*/ Довідники.Банки_Const.ДатаЗакриттяУстанови,
-                /*КодНБУ*/ Довідники.Банки_Const.КодНБУ,
-                /*КодСтатусу*/ Довідники.Банки_Const.КодСтатусу,
-                /*ДатаЗапису*/ Довідники.Банки_Const.ДатаЗапису,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Банки_Const.Код,
+                    /*Назва*/ Довідники.Банки_Const.Назва,
+                    /*ПовнаНазва*/ Довідники.Банки_Const.ПовнаНазва,
+                    /*КодМФО*/ Довідники.Банки_Const.КодМФО,
+                    /*КодЄДРПОУ*/ Довідники.Банки_Const.КодЄДРПОУ,
+                    /*НомерЛіцензії*/ Довідники.Банки_Const.НомерЛіцензії,
+                    /*ДатаЛіцензії*/ Довідники.Банки_Const.ДатаЛіцензії,
+                    /*Статус*/ Довідники.Банки_Const.Статус,
+                    /*ТипНаселеногоПункту*/ Довідники.Банки_Const.ТипНаселеногоПункту,
+                    /*УнікальнийКодБанку*/ Довідники.Банки_Const.УнікальнийКодБанку,
+                    /*ПоштовийІндекс*/ Довідники.Банки_Const.ПоштовийІндекс,
+                    /*НазваНаселеногоПункту*/ Довідники.Банки_Const.НазваНаселеногоПункту,
+                    /*Адреса*/ Довідники.Банки_Const.Адреса,
+                    /*НомерТелефону*/ Довідники.Банки_Const.НомерТелефону,
+                    /*ДатаВідкриттяУстанови*/ Довідники.Банки_Const.ДатаВідкриттяУстанови,
+                    /*ДатаЗакриттяУстанови*/ Довідники.Банки_Const.ДатаЗакриттяУстанови,
+                    /*КодНБУ*/ Довідники.Банки_Const.КодНБУ,
+                    /*КодСтатусу*/ Довідники.Банки_Const.КодСтатусу,
+                    /*ДатаЗапису*/ Довідники.Банки_Const.ДатаЗапису,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Банки_Select.QuerySelect.Order.Add(
+                    Довідники.Банки_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Банки_Select.QuerySelect.Order.Add(
-                Довідники.Банки_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             Банки_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -9061,35 +8986,34 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Банки_Select Банки_Select = new();
             Банки_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Банки_Const.Код,
-                /*Назва*/ Довідники.Банки_Const.Назва,
-                /*ПовнаНазва*/ Довідники.Банки_Const.ПовнаНазва,
-                /*КодМФО*/ Довідники.Банки_Const.КодМФО,
-                /*КодЄДРПОУ*/ Довідники.Банки_Const.КодЄДРПОУ,
-                /*НомерЛіцензії*/ Довідники.Банки_Const.НомерЛіцензії,
-                /*ДатаЛіцензії*/ Довідники.Банки_Const.ДатаЛіцензії,
-                /*Статус*/ Довідники.Банки_Const.Статус,
-                /*ТипНаселеногоПункту*/ Довідники.Банки_Const.ТипНаселеногоПункту,
-                /*УнікальнийКодБанку*/ Довідники.Банки_Const.УнікальнийКодБанку,
-                /*ПоштовийІндекс*/ Довідники.Банки_Const.ПоштовийІндекс,
-                /*НазваНаселеногоПункту*/ Довідники.Банки_Const.НазваНаселеногоПункту,
-                /*Адреса*/ Довідники.Банки_Const.Адреса,
-                /*НомерТелефону*/ Довідники.Банки_Const.НомерТелефону,
-                /*ДатаВідкриттяУстанови*/ Довідники.Банки_Const.ДатаВідкриттяУстанови,
-                /*ДатаЗакриттяУстанови*/ Довідники.Банки_Const.ДатаЗакриттяУстанови,
-                /*КодНБУ*/ Довідники.Банки_Const.КодНБУ,
-                /*КодСтатусу*/ Довідники.Банки_Const.КодСтатусу,
-                /*ДатаЗапису*/ Довідники.Банки_Const.ДатаЗапису,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Банки_Const.Код,
+                    /*Назва*/ Довідники.Банки_Const.Назва,
+                    /*ПовнаНазва*/ Довідники.Банки_Const.ПовнаНазва,
+                    /*КодМФО*/ Довідники.Банки_Const.КодМФО,
+                    /*КодЄДРПОУ*/ Довідники.Банки_Const.КодЄДРПОУ,
+                    /*НомерЛіцензії*/ Довідники.Банки_Const.НомерЛіцензії,
+                    /*ДатаЛіцензії*/ Довідники.Банки_Const.ДатаЛіцензії,
+                    /*Статус*/ Довідники.Банки_Const.Статус,
+                    /*ТипНаселеногоПункту*/ Довідники.Банки_Const.ТипНаселеногоПункту,
+                    /*УнікальнийКодБанку*/ Довідники.Банки_Const.УнікальнийКодБанку,
+                    /*ПоштовийІндекс*/ Довідники.Банки_Const.ПоштовийІндекс,
+                    /*НазваНаселеногоПункту*/ Довідники.Банки_Const.НазваНаселеногоПункту,
+                    /*Адреса*/ Довідники.Банки_Const.Адреса,
+                    /*НомерТелефону*/ Довідники.Банки_Const.НомерТелефону,
+                    /*ДатаВідкриттяУстанови*/ Довідники.Банки_Const.ДатаВідкриттяУстанови,
+                    /*ДатаЗакриттяУстанови*/ Довідники.Банки_Const.ДатаЗакриттяУстанови,
+                    /*КодНБУ*/ Довідники.Банки_Const.КодНБУ,
+                    /*КодСтатусу*/ Довідники.Банки_Const.КодСтатусу,
+                    /*ДатаЗапису*/ Довідники.Банки_Const.ДатаЗапису,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Банки_Select.QuerySelect.Order.Add(
+                    Довідники.Банки_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Банки_Select.QuerySelect.Order.Add(
-                Довідники.Банки_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             if (form.WhereList != null) Банки_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -9222,18 +9146,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Банки_Select Банки_Select = new();
             Банки_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Банки_Const.Код,
-                /*Назва*/ Довідники.Банки_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Банки_Const.Код,
+                    /*Назва*/ Довідники.Банки_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Банки_Select.QuerySelect.Order.Add(
+                    Довідники.Банки_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Банки_Select.QuerySelect.Order.Add(
-                Довідники.Банки_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             Банки_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -9281,18 +9204,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Банки_Select Банки_Select = new();
             Банки_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Банки_Const.Код,
-                /*Назва*/ Довідники.Банки_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Банки_Const.Код,
+                    /*Назва*/ Довідники.Банки_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Банки_Select.QuerySelect.Order.Add(
+                    Довідники.Банки_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Банки_Select.QuerySelect.Order.Add(
-                Довідники.Банки_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             if (form.WhereList != null) Банки_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -9468,22 +9390,21 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.СкладськіПриміщення_Select СкладськіПриміщення_Select = new();
             СкладськіПриміщення_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.СкладськіПриміщення_Const.Назва,
-                /*НалаштуванняАдресногоЗберігання*/ Довідники.СкладськіПриміщення_Const.НалаштуванняАдресногоЗберігання,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.СкладськіПриміщення_Const.Назва,
+                    /*НалаштуванняАдресногоЗберігання*/ Довідники.СкладськіПриміщення_Const.НалаштуванняАдресногоЗберігання,
+                    
+                ]);
+            
+                    /* Сортування */
+                    СкладськіПриміщення_Select.QuerySelect.Order.Add(
+                    Довідники.СкладськіПриміщення_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                СкладськіПриміщення_Select.QuerySelect.Order.Add(
-                Довідники.СкладськіПриміщення_Const.Назва, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(СкладськіПриміщення_Select.QuerySelect, Довідники.СкладськіПриміщення_Const.Склад,
-                СкладськіПриміщення_Select.QuerySelect.Table, "join_tab_1", "Склад");
-            
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(СкладськіПриміщення_Select.QuerySelect, Довідники.СкладськіПриміщення_Const.Склад,
+                    СкладськіПриміщення_Select.QuerySelect.Table, "join_tab_1", "Склад");
+                
 
             /* Відбори */
             СкладськіПриміщення_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -9532,22 +9453,21 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.СкладськіПриміщення_Select СкладськіПриміщення_Select = new();
             СкладськіПриміщення_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.СкладськіПриміщення_Const.Назва,
-                /*НалаштуванняАдресногоЗберігання*/ Довідники.СкладськіПриміщення_Const.НалаштуванняАдресногоЗберігання,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.СкладськіПриміщення_Const.Назва,
+                    /*НалаштуванняАдресногоЗберігання*/ Довідники.СкладськіПриміщення_Const.НалаштуванняАдресногоЗберігання,
+                    
+                ]);
+            
+                    /* Сортування */
+                    СкладськіПриміщення_Select.QuerySelect.Order.Add(
+                    Довідники.СкладськіПриміщення_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                СкладськіПриміщення_Select.QuerySelect.Order.Add(
-                Довідники.СкладськіПриміщення_Const.Назва, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(СкладськіПриміщення_Select.QuerySelect, Довідники.СкладськіПриміщення_Const.Склад,
-                СкладськіПриміщення_Select.QuerySelect.Table, "join_tab_1", "Склад");
-            
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(СкладськіПриміщення_Select.QuerySelect, Довідники.СкладськіПриміщення_Const.Склад,
+                    СкладськіПриміщення_Select.QuerySelect.Table, "join_tab_1", "Склад");
+                
 
             /* Відбори */
             if (form.WhereList != null) СкладськіПриміщення_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -9837,34 +9757,33 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.СкладськіКомірки_Select СкладськіКомірки_Select = new();
             СкладськіКомірки_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.СкладськіКомірки_Const.Назва,
-                /*Лінія*/ Довідники.СкладськіКомірки_Const.Лінія,
-                /*Позиція*/ Довідники.СкладськіКомірки_Const.Позиція,
-                /*Стелаж*/ Довідники.СкладськіКомірки_Const.Стелаж,
-                /*Ярус*/ Довідники.СкладськіКомірки_Const.Ярус,
-                /*ТипСкладськоїКомірки*/ Довідники.СкладськіКомірки_Const.ТипСкладськоїКомірки,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.СкладськіКомірки_Const.Назва,
+                    /*Лінія*/ Довідники.СкладськіКомірки_Const.Лінія,
+                    /*Позиція*/ Довідники.СкладськіКомірки_Const.Позиція,
+                    /*Стелаж*/ Довідники.СкладськіКомірки_Const.Стелаж,
+                    /*Ярус*/ Довідники.СкладськіКомірки_Const.Ярус,
+                    /*ТипСкладськоїКомірки*/ Довідники.СкладськіКомірки_Const.ТипСкладськоїКомірки,
+                    
+                ]);
+            
+                    /* Сортування */
+                    СкладськіКомірки_Select.QuerySelect.Order.Add(
+                    Довідники.СкладськіКомірки_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                СкладськіКомірки_Select.QuerySelect.Order.Add(
-                Довідники.СкладськіКомірки_Const.Назва, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.СкладськіПриміщення_Pointer.GetJoin(СкладськіКомірки_Select.QuerySelect, Довідники.СкладськіКомірки_Const.Приміщення,
-                СкладськіКомірки_Select.QuerySelect.Table, "join_tab_1", "Приміщення");
-            
-                /* Приєднання */
-                Довідники.ТипорозміриКомірок_Pointer.GetJoin(СкладськіКомірки_Select.QuerySelect, Довідники.СкладськіКомірки_Const.Типорозмір,
-                СкладськіКомірки_Select.QuerySelect.Table, "join_tab_2", "Типорозмір");
-            
-                /* Приєднання */
-                Довідники.СкладськіКомірки_Папки_Pointer.GetJoin(СкладськіКомірки_Select.QuerySelect, Довідники.СкладськіКомірки_Const.Папка,
-                СкладськіКомірки_Select.QuerySelect.Table, "join_tab_3", "Папка");
-            
+                    /* Приєднання */
+                    Довідники.СкладськіПриміщення_Pointer.GetJoin(СкладськіКомірки_Select.QuerySelect, Довідники.СкладськіКомірки_Const.Приміщення,
+                    СкладськіКомірки_Select.QuerySelect.Table, "join_tab_1", "Приміщення");
+                
+                    /* Приєднання */
+                    Довідники.ТипорозміриКомірок_Pointer.GetJoin(СкладськіКомірки_Select.QuerySelect, Довідники.СкладськіКомірки_Const.Типорозмір,
+                    СкладськіКомірки_Select.QuerySelect.Table, "join_tab_2", "Типорозмір");
+                
+                    /* Приєднання */
+                    Довідники.СкладськіКомірки_Папки_Pointer.GetJoin(СкладськіКомірки_Select.QuerySelect, Довідники.СкладськіКомірки_Const.Папка,
+                    СкладськіКомірки_Select.QuerySelect.Table, "join_tab_3", "Папка");
+                
 
             /* Відбори */
             СкладськіКомірки_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -9919,34 +9838,33 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.СкладськіКомірки_Select СкладськіКомірки_Select = new();
             СкладськіКомірки_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.СкладськіКомірки_Const.Назва,
-                /*Лінія*/ Довідники.СкладськіКомірки_Const.Лінія,
-                /*Позиція*/ Довідники.СкладськіКомірки_Const.Позиція,
-                /*Стелаж*/ Довідники.СкладськіКомірки_Const.Стелаж,
-                /*Ярус*/ Довідники.СкладськіКомірки_Const.Ярус,
-                /*ТипСкладськоїКомірки*/ Довідники.СкладськіКомірки_Const.ТипСкладськоїКомірки,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.СкладськіКомірки_Const.Назва,
+                    /*Лінія*/ Довідники.СкладськіКомірки_Const.Лінія,
+                    /*Позиція*/ Довідники.СкладськіКомірки_Const.Позиція,
+                    /*Стелаж*/ Довідники.СкладськіКомірки_Const.Стелаж,
+                    /*Ярус*/ Довідники.СкладськіКомірки_Const.Ярус,
+                    /*ТипСкладськоїКомірки*/ Довідники.СкладськіКомірки_Const.ТипСкладськоїКомірки,
+                    
+                ]);
+            
+                    /* Сортування */
+                    СкладськіКомірки_Select.QuerySelect.Order.Add(
+                    Довідники.СкладськіКомірки_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                СкладськіКомірки_Select.QuerySelect.Order.Add(
-                Довідники.СкладськіКомірки_Const.Назва, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.СкладськіПриміщення_Pointer.GetJoin(СкладськіКомірки_Select.QuerySelect, Довідники.СкладськіКомірки_Const.Приміщення,
-                СкладськіКомірки_Select.QuerySelect.Table, "join_tab_1", "Приміщення");
-            
-                /* Приєднання */
-                Довідники.ТипорозміриКомірок_Pointer.GetJoin(СкладськіКомірки_Select.QuerySelect, Довідники.СкладськіКомірки_Const.Типорозмір,
-                СкладськіКомірки_Select.QuerySelect.Table, "join_tab_2", "Типорозмір");
-            
-                /* Приєднання */
-                Довідники.СкладськіКомірки_Папки_Pointer.GetJoin(СкладськіКомірки_Select.QuerySelect, Довідники.СкладськіКомірки_Const.Папка,
-                СкладськіКомірки_Select.QuerySelect.Table, "join_tab_3", "Папка");
-            
+                    /* Приєднання */
+                    Довідники.СкладськіПриміщення_Pointer.GetJoin(СкладськіКомірки_Select.QuerySelect, Довідники.СкладськіКомірки_Const.Приміщення,
+                    СкладськіКомірки_Select.QuerySelect.Table, "join_tab_1", "Приміщення");
+                
+                    /* Приєднання */
+                    Довідники.ТипорозміриКомірок_Pointer.GetJoin(СкладськіКомірки_Select.QuerySelect, Довідники.СкладськіКомірки_Const.Типорозмір,
+                    СкладськіКомірки_Select.QuerySelect.Table, "join_tab_2", "Типорозмір");
+                
+                    /* Приєднання */
+                    Довідники.СкладськіКомірки_Папки_Pointer.GetJoin(СкладськіКомірки_Select.QuerySelect, Довідники.СкладськіКомірки_Const.Папка,
+                    СкладськіКомірки_Select.QuerySelect.Table, "join_tab_3", "Папка");
+                
 
             /* Відбори */
             if (form.WhereList != null) СкладськіКомірки_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -10069,21 +9987,20 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.СкладськіКомірки_Select СкладськіКомірки_Select = new();
             СкладськіКомірки_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.СкладськіКомірки_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.СкладськіКомірки_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    СкладськіКомірки_Select.QuerySelect.Order.Add(
+                    Довідники.СкладськіКомірки_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                СкладськіКомірки_Select.QuerySelect.Order.Add(
-                Довідники.СкладськіКомірки_Const.Назва, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.СкладськіПриміщення_Pointer.GetJoin(СкладськіКомірки_Select.QuerySelect, Довідники.СкладськіКомірки_Const.Приміщення,
-                СкладськіКомірки_Select.QuerySelect.Table, "join_tab_1", "Приміщення");
-            
+                    /* Приєднання */
+                    Довідники.СкладськіПриміщення_Pointer.GetJoin(СкладськіКомірки_Select.QuerySelect, Довідники.СкладськіКомірки_Const.Приміщення,
+                    СкладськіКомірки_Select.QuerySelect.Table, "join_tab_1", "Приміщення");
+                
 
             /* Відбори */
             СкладськіКомірки_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -10131,21 +10048,20 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.СкладськіКомірки_Select СкладськіКомірки_Select = new();
             СкладськіКомірки_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.СкладськіКомірки_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.СкладськіКомірки_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    СкладськіКомірки_Select.QuerySelect.Order.Add(
+                    Довідники.СкладськіКомірки_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                СкладськіКомірки_Select.QuerySelect.Order.Add(
-                Довідники.СкладськіКомірки_Const.Назва, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.СкладськіПриміщення_Pointer.GetJoin(СкладськіКомірки_Select.QuerySelect, Довідники.СкладськіКомірки_Const.Приміщення,
-                СкладськіКомірки_Select.QuerySelect.Table, "join_tab_1", "Приміщення");
-            
+                    /* Приєднання */
+                    Довідники.СкладськіПриміщення_Pointer.GetJoin(СкладськіКомірки_Select.QuerySelect, Довідники.СкладськіКомірки_Const.Приміщення,
+                    СкладськіКомірки_Select.QuerySelect.Table, "join_tab_1", "Приміщення");
+                
 
             /* Відбори */
             if (form.WhereList != null) СкладськіКомірки_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -10265,21 +10181,20 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.ОбластьЗберігання_Select ОбластьЗберігання_Select = new();
             ОбластьЗберігання_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.ОбластьЗберігання_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.ОбластьЗберігання_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ОбластьЗберігання_Select.QuerySelect.Order.Add(
+                    Довідники.ОбластьЗберігання_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ОбластьЗберігання_Select.QuerySelect.Order.Add(
-                Довідники.ОбластьЗберігання_Const.Назва, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.СкладськіПриміщення_Pointer.GetJoin(ОбластьЗберігання_Select.QuerySelect, Довідники.ОбластьЗберігання_Const.Приміщення,
-                ОбластьЗберігання_Select.QuerySelect.Table, "join_tab_1", "Приміщення");
-            
+                    /* Приєднання */
+                    Довідники.СкладськіПриміщення_Pointer.GetJoin(ОбластьЗберігання_Select.QuerySelect, Довідники.ОбластьЗберігання_Const.Приміщення,
+                    ОбластьЗберігання_Select.QuerySelect.Table, "join_tab_1", "Приміщення");
+                
 
             /* Відбори */
             ОбластьЗберігання_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -10327,21 +10242,20 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.ОбластьЗберігання_Select ОбластьЗберігання_Select = new();
             ОбластьЗберігання_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.ОбластьЗберігання_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.ОбластьЗберігання_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ОбластьЗберігання_Select.QuerySelect.Order.Add(
+                    Довідники.ОбластьЗберігання_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ОбластьЗберігання_Select.QuerySelect.Order.Add(
-                Довідники.ОбластьЗберігання_Const.Назва, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.СкладськіПриміщення_Pointer.GetJoin(ОбластьЗберігання_Select.QuerySelect, Довідники.ОбластьЗберігання_Const.Приміщення,
-                ОбластьЗберігання_Select.QuerySelect.Table, "join_tab_1", "Приміщення");
-            
+                    /* Приєднання */
+                    Довідники.СкладськіПриміщення_Pointer.GetJoin(ОбластьЗберігання_Select.QuerySelect, Довідники.ОбластьЗберігання_Const.Приміщення,
+                    ОбластьЗберігання_Select.QuerySelect.Table, "join_tab_1", "Приміщення");
+                
 
             /* Відбори */
             if (form.WhereList != null) ОбластьЗберігання_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -10545,22 +10459,21 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.ТипорозміриКомірок_Select ТипорозміриКомірок_Select = new();
             ТипорозміриКомірок_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.ТипорозміриКомірок_Const.Назва,
-                /*Висота*/ Довідники.ТипорозміриКомірок_Const.Висота,
-                /*Глибина*/ Довідники.ТипорозміриКомірок_Const.Глибина,
-                /*Вантажопідйомність*/ Довідники.ТипорозміриКомірок_Const.Вантажопідйомність,
-                /*Обєм*/ Довідники.ТипорозміриКомірок_Const.Обєм,
-                /*Ширина*/ Довідники.ТипорозміриКомірок_Const.Ширина,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.ТипорозміриКомірок_Const.Назва,
+                    /*Висота*/ Довідники.ТипорозміриКомірок_Const.Висота,
+                    /*Глибина*/ Довідники.ТипорозміриКомірок_Const.Глибина,
+                    /*Вантажопідйомність*/ Довідники.ТипорозміриКомірок_Const.Вантажопідйомність,
+                    /*Обєм*/ Довідники.ТипорозміриКомірок_Const.Обєм,
+                    /*Ширина*/ Довідники.ТипорозміриКомірок_Const.Ширина,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ТипорозміриКомірок_Select.QuerySelect.Order.Add(
+                    Довідники.ТипорозміриКомірок_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ТипорозміриКомірок_Select.QuerySelect.Order.Add(
-                Довідники.ТипорозміриКомірок_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             ТипорозміриКомірок_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -10612,22 +10525,21 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.ТипорозміриКомірок_Select ТипорозміриКомірок_Select = new();
             ТипорозміриКомірок_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.ТипорозміриКомірок_Const.Назва,
-                /*Висота*/ Довідники.ТипорозміриКомірок_Const.Висота,
-                /*Глибина*/ Довідники.ТипорозміриКомірок_Const.Глибина,
-                /*Вантажопідйомність*/ Довідники.ТипорозміриКомірок_Const.Вантажопідйомність,
-                /*Обєм*/ Довідники.ТипорозміриКомірок_Const.Обєм,
-                /*Ширина*/ Довідники.ТипорозміриКомірок_Const.Ширина,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.ТипорозміриКомірок_Const.Назва,
+                    /*Висота*/ Довідники.ТипорозміриКомірок_Const.Висота,
+                    /*Глибина*/ Довідники.ТипорозміриКомірок_Const.Глибина,
+                    /*Вантажопідйомність*/ Довідники.ТипорозміриКомірок_Const.Вантажопідйомність,
+                    /*Обєм*/ Довідники.ТипорозміриКомірок_Const.Обєм,
+                    /*Ширина*/ Довідники.ТипорозміриКомірок_Const.Ширина,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ТипорозміриКомірок_Select.QuerySelect.Order.Add(
+                    Довідники.ТипорозміриКомірок_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ТипорозміриКомірок_Select.QuerySelect.Order.Add(
-                Довідники.ТипорозміриКомірок_Const.Назва, SelectOrder.ASC);
-            
 
             /* Відбори */
             if (form.WhereList != null) ТипорозміриКомірок_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -10772,22 +10684,21 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.СкладськіКомірки_Папки_SelectHierarchical СкладськіКомірки_Папки_Select = new();
             СкладськіКомірки_Папки_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.СкладськіКомірки_Папки_Const.Назва,
-                /*Код*/ Довідники.СкладськіКомірки_Папки_Const.Код,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.СкладськіКомірки_Папки_Const.Назва,
+                    /*Код*/ Довідники.СкладськіКомірки_Папки_Const.Код,
+                    
+                ]);
+            
+                    /* Сортування */
+                    СкладськіКомірки_Папки_Select.QuerySelect.Order.Add(
+                    Довідники.СкладськіКомірки_Папки_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                СкладськіКомірки_Папки_Select.QuerySelect.Order.Add(
-                Довідники.СкладськіКомірки_Папки_Const.Назва, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.СкладськіПриміщення_Pointer.GetJoin(СкладськіКомірки_Папки_Select.QuerySelect, Довідники.СкладськіКомірки_Папки_Const.Власник,
-                СкладськіКомірки_Папки_Select.QuerySelect.Table, "join_tab_1", "Власник");
-            
+                    /* Приєднання */
+                    Довідники.СкладськіПриміщення_Pointer.GetJoin(СкладськіКомірки_Папки_Select.QuerySelect, Довідники.СкладськіКомірки_Папки_Const.Власник,
+                    СкладськіКомірки_Папки_Select.QuerySelect.Table, "join_tab_1", "Власник");
+                
 
             /* Відбори */
             СкладськіКомірки_Папки_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -10836,22 +10747,21 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.СкладськіКомірки_Папки_SelectHierarchical СкладськіКомірки_Папки_Select = new();
             СкладськіКомірки_Папки_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.СкладськіКомірки_Папки_Const.Назва,
-                /*Код*/ Довідники.СкладськіКомірки_Папки_Const.Код,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.СкладськіКомірки_Папки_Const.Назва,
+                    /*Код*/ Довідники.СкладськіКомірки_Папки_Const.Код,
+                    
+                ]);
+            
+                    /* Сортування */
+                    СкладськіКомірки_Папки_Select.QuerySelect.Order.Add(
+                    Довідники.СкладськіКомірки_Папки_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                СкладськіКомірки_Папки_Select.QuerySelect.Order.Add(
-                Довідники.СкладськіКомірки_Папки_Const.Назва, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.СкладськіПриміщення_Pointer.GetJoin(СкладськіКомірки_Папки_Select.QuerySelect, Довідники.СкладськіКомірки_Папки_Const.Власник,
-                СкладськіКомірки_Папки_Select.QuerySelect.Table, "join_tab_1", "Власник");
-            
+                    /* Приєднання */
+                    Довідники.СкладськіПриміщення_Pointer.GetJoin(СкладськіКомірки_Папки_Select.QuerySelect, Довідники.СкладськіКомірки_Папки_Const.Власник,
+                    СкладськіКомірки_Папки_Select.QuerySelect.Table, "join_tab_1", "Власник");
+                
 
             /* Відбори */
             if (form.WhereList != null) СкладськіКомірки_Папки_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -10993,19 +10903,18 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Блокнот_Select Блокнот_Select = new();
             Блокнот_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Блокнот_Const.Код,
-                /*Назва*/ Довідники.Блокнот_Const.Назва,
-                /*ДатаЗапису*/ Довідники.Блокнот_Const.ДатаЗапису,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Блокнот_Const.Код,
+                    /*Назва*/ Довідники.Блокнот_Const.Назва,
+                    /*ДатаЗапису*/ Довідники.Блокнот_Const.ДатаЗапису,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Блокнот_Select.QuerySelect.Order.Add(
+                    Довідники.Блокнот_Const.ДатаЗапису, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Блокнот_Select.QuerySelect.Order.Add(
-                Довідники.Блокнот_Const.ДатаЗапису, SelectOrder.ASC);
-            
 
             /* Відбори */
             Блокнот_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -11054,19 +10963,18 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.Блокнот_Select Блокнот_Select = new();
             Блокнот_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.Блокнот_Const.Код,
-                /*Назва*/ Довідники.Блокнот_Const.Назва,
-                /*ДатаЗапису*/ Довідники.Блокнот_Const.ДатаЗапису,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.Блокнот_Const.Код,
+                    /*Назва*/ Довідники.Блокнот_Const.Назва,
+                    /*ДатаЗапису*/ Довідники.Блокнот_Const.ДатаЗапису,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Блокнот_Select.QuerySelect.Order.Add(
+                    Довідники.Блокнот_Const.ДатаЗапису, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                Блокнот_Select.QuerySelect.Order.Add(
-                Довідники.Блокнот_Const.ДатаЗапису, SelectOrder.ASC);
-            
 
             /* Відбори */
             if (form.WhereList != null) Блокнот_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -11229,23 +11137,22 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.ЗбереженіЗвіти_Select ЗбереженіЗвіти_Select = new();
             ЗбереженіЗвіти_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.ЗбереженіЗвіти_Const.Код,
-                /*Додано*/ Довідники.ЗбереженіЗвіти_Const.Додано,
-                /*Назва*/ Довідники.ЗбереженіЗвіти_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.ЗбереженіЗвіти_Const.Код,
+                    /*Додано*/ Довідники.ЗбереженіЗвіти_Const.Додано,
+                    /*Назва*/ Довідники.ЗбереженіЗвіти_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ЗбереженіЗвіти_Select.QuerySelect.Order.Add(
+                    Довідники.ЗбереженіЗвіти_Const.Код, SelectOrder.DESC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ЗбереженіЗвіти_Select.QuerySelect.Order.Add(
-                Довідники.ЗбереженіЗвіти_Const.Код, SelectOrder.DESC);
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ЗбереженіЗвіти_Select.QuerySelect, Довідники.ЗбереженіЗвіти_Const.Користувач,
-                ЗбереженіЗвіти_Select.QuerySelect.Table, "join_tab_1", "Користувач");
-            
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ЗбереженіЗвіти_Select.QuerySelect, Довідники.ЗбереженіЗвіти_Const.Користувач,
+                    ЗбереженіЗвіти_Select.QuerySelect.Table, "join_tab_1", "Користувач");
+                
 
             /* Відбори */
             ЗбереженіЗвіти_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -11295,23 +11202,22 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.ЗбереженіЗвіти_Select ЗбереженіЗвіти_Select = new();
             ЗбереженіЗвіти_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Код*/ Довідники.ЗбереженіЗвіти_Const.Код,
-                /*Додано*/ Довідники.ЗбереженіЗвіти_Const.Додано,
-                /*Назва*/ Довідники.ЗбереженіЗвіти_Const.Назва,
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.ЗбереженіЗвіти_Const.Код,
+                    /*Додано*/ Довідники.ЗбереженіЗвіти_Const.Додано,
+                    /*Назва*/ Довідники.ЗбереженіЗвіти_Const.Назва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ЗбереженіЗвіти_Select.QuerySelect.Order.Add(
+                    Довідники.ЗбереженіЗвіти_Const.Код, SelectOrder.DESC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ЗбереженіЗвіти_Select.QuerySelect.Order.Add(
-                Довідники.ЗбереженіЗвіти_Const.Код, SelectOrder.DESC);
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ЗбереженіЗвіти_Select.QuerySelect, Довідники.ЗбереженіЗвіти_Const.Користувач,
-                ЗбереженіЗвіти_Select.QuerySelect.Table, "join_tab_1", "Користувач");
-            
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ЗбереженіЗвіти_Select.QuerySelect, Довідники.ЗбереженіЗвіти_Const.Користувач,
+                    ЗбереженіЗвіти_Select.QuerySelect.Table, "join_tab_1", "Користувач");
+                
 
             /* Відбори */
             if (form.WhereList != null) ЗбереженіЗвіти_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -11475,26 +11381,25 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.КасиККМ_Select КасиККМ_Select = new();
             КасиККМ_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.КасиККМ_Const.Назва,
-                /*Тип*/ Довідники.КасиККМ_Const.Тип,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.КасиККМ_Const.Назва,
+                    /*Тип*/ Довідники.КасиККМ_Const.Тип,
+                    
+                ]);
+            
+                    /* Сортування */
+                    КасиККМ_Select.QuerySelect.Order.Add(
+                    Довідники.КасиККМ_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                КасиККМ_Select.QuerySelect.Order.Add(
-                Довідники.КасиККМ_Const.Назва, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(КасиККМ_Select.QuerySelect, Довідники.КасиККМ_Const.Валюта,
-                КасиККМ_Select.QuerySelect.Table, "join_tab_1", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(КасиККМ_Select.QuerySelect, Довідники.КасиККМ_Const.Склад,
-                КасиККМ_Select.QuerySelect.Table, "join_tab_2", "Склад");
-            
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(КасиККМ_Select.QuerySelect, Довідники.КасиККМ_Const.Валюта,
+                    КасиККМ_Select.QuerySelect.Table, "join_tab_1", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(КасиККМ_Select.QuerySelect, Довідники.КасиККМ_Const.Склад,
+                    КасиККМ_Select.QuerySelect.Table, "join_tab_2", "Склад");
+                
 
             /* Відбори */
             КасиККМ_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -11544,26 +11449,25 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Вибірка */
             Довідники.КасиККМ_Select КасиККМ_Select = new();
             КасиККМ_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                /*Назва*/ Довідники.КасиККМ_Const.Назва,
-                /*Тип*/ Довідники.КасиККМ_Const.Тип,
+                [
+                    "deletion_label",
+                    /*Назва*/ Довідники.КасиККМ_Const.Назва,
+                    /*Тип*/ Довідники.КасиККМ_Const.Тип,
+                    
+                ]);
+            
+                    /* Сортування */
+                    КасиККМ_Select.QuerySelect.Order.Add(
+                    Довідники.КасиККМ_Const.Назва, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                КасиККМ_Select.QuerySelect.Order.Add(
-                Довідники.КасиККМ_Const.Назва, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(КасиККМ_Select.QuerySelect, Довідники.КасиККМ_Const.Валюта,
-                КасиККМ_Select.QuerySelect.Table, "join_tab_1", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(КасиККМ_Select.QuerySelect, Довідники.КасиККМ_Const.Склад,
-                КасиККМ_Select.QuerySelect.Table, "join_tab_2", "Склад");
-            
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(КасиККМ_Select.QuerySelect, Довідники.КасиККМ_Const.Валюта,
+                    КасиККМ_Select.QuerySelect.Table, "join_tab_1", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(КасиККМ_Select.QuerySelect, Довідники.КасиККМ_Const.Склад,
+                    КасиККМ_Select.QuerySelect.Table, "join_tab_2", "Склад");
+                
 
             /* Відбори */
             if (form.WhereList != null) КасиККМ_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -11939,42 +11843,41 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ЗамовленняПостачальнику_Select ЗамовленняПостачальнику_Select = new();
             ЗамовленняПостачальнику_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ЗамовленняПостачальнику_Const.Назва,
-                /*НомерДок*/ Документи.ЗамовленняПостачальнику_Const.НомерДок,
-                /*ДатаДок*/ Документи.ЗамовленняПостачальнику_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.ЗамовленняПостачальнику_Const.СумаДокументу,
-                /*Коментар*/ Документи.ЗамовленняПостачальнику_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ЗамовленняПостачальнику_Const.Назва,
+                    /*НомерДок*/ Документи.ЗамовленняПостачальнику_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ЗамовленняПостачальнику_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.ЗамовленняПостачальнику_Const.СумаДокументу,
+                    /*Коментар*/ Документи.ЗамовленняПостачальнику_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ЗамовленняПостачальнику_Select.QuerySelect.Order.Add(
+                    Документи.ЗамовленняПостачальнику_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ЗамовленняПостачальнику_Select.QuerySelect.Order.Add(
-                Документи.ЗамовленняПостачальнику_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗамовленняПостачальнику_Const.Організація,
-                ЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(ЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗамовленняПостачальнику_Const.Контрагент,
-                ЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗамовленняПостачальнику_Const.Склад,
-                ЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_3", "Склад");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(ЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗамовленняПостачальнику_Const.Валюта,
-                ЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_4", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗамовленняПостачальнику_Const.Автор,
-                ЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_5", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗамовленняПостачальнику_Const.Організація,
+                    ЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(ЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗамовленняПостачальнику_Const.Контрагент,
+                    ЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗамовленняПостачальнику_Const.Склад,
+                    ЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_3", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(ЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗамовленняПостачальнику_Const.Валюта,
+                    ЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_4", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗамовленняПостачальнику_Const.Автор,
+                    ЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_5", "Автор");
+                
 
             /* Відбори */
             ЗамовленняПостачальнику_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -12030,42 +11933,41 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ЗамовленняПостачальнику_Select ЗамовленняПостачальнику_Select = new();
             ЗамовленняПостачальнику_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ЗамовленняПостачальнику_Const.Назва,
-                /*НомерДок*/ Документи.ЗамовленняПостачальнику_Const.НомерДок,
-                /*ДатаДок*/ Документи.ЗамовленняПостачальнику_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.ЗамовленняПостачальнику_Const.СумаДокументу,
-                /*Коментар*/ Документи.ЗамовленняПостачальнику_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ЗамовленняПостачальнику_Const.Назва,
+                    /*НомерДок*/ Документи.ЗамовленняПостачальнику_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ЗамовленняПостачальнику_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.ЗамовленняПостачальнику_Const.СумаДокументу,
+                    /*Коментар*/ Документи.ЗамовленняПостачальнику_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ЗамовленняПостачальнику_Select.QuerySelect.Order.Add(
+                    Документи.ЗамовленняПостачальнику_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ЗамовленняПостачальнику_Select.QuerySelect.Order.Add(
-                Документи.ЗамовленняПостачальнику_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗамовленняПостачальнику_Const.Організація,
-                ЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(ЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗамовленняПостачальнику_Const.Контрагент,
-                ЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗамовленняПостачальнику_Const.Склад,
-                ЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_3", "Склад");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(ЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗамовленняПостачальнику_Const.Валюта,
-                ЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_4", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗамовленняПостачальнику_Const.Автор,
-                ЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_5", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗамовленняПостачальнику_Const.Організація,
+                    ЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(ЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗамовленняПостачальнику_Const.Контрагент,
+                    ЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗамовленняПостачальнику_Const.Склад,
+                    ЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_3", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(ЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗамовленняПостачальнику_Const.Валюта,
+                    ЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_4", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗамовленняПостачальнику_Const.Автор,
+                    ЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_5", "Автор");
+                
 
             /* Відбори */
             if (form.WhereList != null) ЗамовленняПостачальнику_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -12479,46 +12381,45 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ПоступленняТоварівТаПослуг_Select ПоступленняТоварівТаПослуг_Select = new();
             ПоступленняТоварівТаПослуг_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ПоступленняТоварівТаПослуг_Const.Назва,
-                /*НомерДок*/ Документи.ПоступленняТоварівТаПослуг_Const.НомерДок,
-                /*ДатаДок*/ Документи.ПоступленняТоварівТаПослуг_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.ПоступленняТоварівТаПослуг_Const.СумаДокументу,
-                /*Коментар*/ Документи.ПоступленняТоварівТаПослуг_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ПоступленняТоварівТаПослуг_Const.Назва,
+                    /*НомерДок*/ Документи.ПоступленняТоварівТаПослуг_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПоступленняТоварівТаПослуг_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.ПоступленняТоварівТаПослуг_Const.СумаДокументу,
+                    /*Коментар*/ Документи.ПоступленняТоварівТаПослуг_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПоступленняТоварівТаПослуг_Select.QuerySelect.Order.Add(
+                    Документи.ПоступленняТоварівТаПослуг_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ПоступленняТоварівТаПослуг_Select.QuerySelect.Order.Add(
-                Документи.ПоступленняТоварівТаПослуг_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Організація,
-                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Склад,
-                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_2", "Склад");
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Контрагент,
-                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_3", "Контрагент");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Валюта,
-                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_4", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Каси_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Каса,
-                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_5", "Каса");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Автор,
-                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_6", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Організація,
+                    ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Склад,
+                    ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_2", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Контрагент,
+                    ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_3", "Контрагент");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Валюта,
+                    ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_4", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Каси_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Каса,
+                    ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_5", "Каса");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Автор,
+                    ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_6", "Автор");
+                
 
             /* Відбори */
             ПоступленняТоварівТаПослуг_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -12575,46 +12476,45 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ПоступленняТоварівТаПослуг_Select ПоступленняТоварівТаПослуг_Select = new();
             ПоступленняТоварівТаПослуг_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ПоступленняТоварівТаПослуг_Const.Назва,
-                /*НомерДок*/ Документи.ПоступленняТоварівТаПослуг_Const.НомерДок,
-                /*ДатаДок*/ Документи.ПоступленняТоварівТаПослуг_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.ПоступленняТоварівТаПослуг_Const.СумаДокументу,
-                /*Коментар*/ Документи.ПоступленняТоварівТаПослуг_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ПоступленняТоварівТаПослуг_Const.Назва,
+                    /*НомерДок*/ Документи.ПоступленняТоварівТаПослуг_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПоступленняТоварівТаПослуг_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.ПоступленняТоварівТаПослуг_Const.СумаДокументу,
+                    /*Коментар*/ Документи.ПоступленняТоварівТаПослуг_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПоступленняТоварівТаПослуг_Select.QuerySelect.Order.Add(
+                    Документи.ПоступленняТоварівТаПослуг_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ПоступленняТоварівТаПослуг_Select.QuerySelect.Order.Add(
-                Документи.ПоступленняТоварівТаПослуг_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Організація,
-                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Склад,
-                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_2", "Склад");
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Контрагент,
-                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_3", "Контрагент");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Валюта,
-                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_4", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Каси_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Каса,
-                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_5", "Каса");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Автор,
-                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_6", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Організація,
+                    ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Склад,
+                    ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_2", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Контрагент,
+                    ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_3", "Контрагент");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Валюта,
+                    ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_4", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Каси_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Каса,
+                    ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_5", "Каса");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Автор,
+                    ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_6", "Автор");
+                
 
             /* Відбори */
             if (form.WhereList != null) ПоступленняТоварівТаПослуг_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -13004,45 +12904,44 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ПоступленняТоварівТаПослуг_Select ПоступленняТоварівТаПослуг_Select = new();
             ПоступленняТоварівТаПослуг_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ПоступленняТоварівТаПослуг_Const.Назва,
-                /*НомерДок*/ Документи.ПоступленняТоварівТаПослуг_Const.НомерДок,
-                /*ДатаДок*/ Документи.ПоступленняТоварівТаПослуг_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.ПоступленняТоварівТаПослуг_Const.СумаДокументу,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ПоступленняТоварівТаПослуг_Const.Назва,
+                    /*НомерДок*/ Документи.ПоступленняТоварівТаПослуг_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПоступленняТоварівТаПослуг_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.ПоступленняТоварівТаПослуг_Const.СумаДокументу,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПоступленняТоварівТаПослуг_Select.QuerySelect.Order.Add(
+                    Документи.ПоступленняТоварівТаПослуг_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ПоступленняТоварівТаПослуг_Select.QuerySelect.Order.Add(
-                Документи.ПоступленняТоварівТаПослуг_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Організація,
-                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Склад,
-                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_2", "Склад");
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Контрагент,
-                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_3", "Контрагент");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Валюта,
-                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_4", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Каси_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Каса,
-                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_5", "Каса");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Автор,
-                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_6", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Організація,
+                    ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Склад,
+                    ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_2", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Контрагент,
+                    ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_3", "Контрагент");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Валюта,
+                    ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_4", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Каси_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Каса,
+                    ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_5", "Каса");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Автор,
+                    ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_6", "Автор");
+                
 
             /* Відбори */
             ПоступленняТоварівТаПослуг_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -13098,45 +12997,44 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ПоступленняТоварівТаПослуг_Select ПоступленняТоварівТаПослуг_Select = new();
             ПоступленняТоварівТаПослуг_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ПоступленняТоварівТаПослуг_Const.Назва,
-                /*НомерДок*/ Документи.ПоступленняТоварівТаПослуг_Const.НомерДок,
-                /*ДатаДок*/ Документи.ПоступленняТоварівТаПослуг_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.ПоступленняТоварівТаПослуг_Const.СумаДокументу,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ПоступленняТоварівТаПослуг_Const.Назва,
+                    /*НомерДок*/ Документи.ПоступленняТоварівТаПослуг_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПоступленняТоварівТаПослуг_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.ПоступленняТоварівТаПослуг_Const.СумаДокументу,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПоступленняТоварівТаПослуг_Select.QuerySelect.Order.Add(
+                    Документи.ПоступленняТоварівТаПослуг_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ПоступленняТоварівТаПослуг_Select.QuerySelect.Order.Add(
-                Документи.ПоступленняТоварівТаПослуг_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Організація,
-                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Склад,
-                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_2", "Склад");
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Контрагент,
-                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_3", "Контрагент");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Валюта,
-                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_4", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Каси_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Каса,
-                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_5", "Каса");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Автор,
-                ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_6", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Організація,
+                    ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Склад,
+                    ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_2", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Контрагент,
+                    ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_3", "Контрагент");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Валюта,
+                    ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_4", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Каси_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Каса,
+                    ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_5", "Каса");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ПоступленняТоварівТаПослуг_Select.QuerySelect, Документи.ПоступленняТоварівТаПослуг_Const.Автор,
+                    ПоступленняТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_6", "Автор");
+                
 
             /* Відбори */
             if (form.WhereList != null) ПоступленняТоварівТаПослуг_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -13550,46 +13448,45 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ЗамовленняКлієнта_Select ЗамовленняКлієнта_Select = new();
             ЗамовленняКлієнта_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ЗамовленняКлієнта_Const.Назва,
-                /*НомерДок*/ Документи.ЗамовленняКлієнта_Const.НомерДок,
-                /*ДатаДок*/ Документи.ЗамовленняКлієнта_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.ЗамовленняКлієнта_Const.СумаДокументу,
-                /*Коментар*/ Документи.ЗамовленняКлієнта_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ЗамовленняКлієнта_Const.Назва,
+                    /*НомерДок*/ Документи.ЗамовленняКлієнта_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ЗамовленняКлієнта_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.ЗамовленняКлієнта_Const.СумаДокументу,
+                    /*Коментар*/ Документи.ЗамовленняКлієнта_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ЗамовленняКлієнта_Select.QuerySelect.Order.Add(
+                    Документи.ЗамовленняКлієнта_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ЗамовленняКлієнта_Select.QuerySelect.Order.Add(
-                Документи.ЗамовленняКлієнта_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ЗамовленняКлієнта_Select.QuerySelect, Документи.ЗамовленняКлієнта_Const.Організація,
-                ЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(ЗамовленняКлієнта_Select.QuerySelect, Документи.ЗамовленняКлієнта_Const.Контрагент,
-                ЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(ЗамовленняКлієнта_Select.QuerySelect, Документи.ЗамовленняКлієнта_Const.Валюта,
-                ЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_3", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Каси_Pointer.GetJoin(ЗамовленняКлієнта_Select.QuerySelect, Документи.ЗамовленняКлієнта_Const.Каса,
-                ЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_4", "Каса");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ЗамовленняКлієнта_Select.QuerySelect, Документи.ЗамовленняКлієнта_Const.Склад,
-                ЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_5", "Склад");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ЗамовленняКлієнта_Select.QuerySelect, Документи.ЗамовленняКлієнта_Const.Автор,
-                ЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_6", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ЗамовленняКлієнта_Select.QuerySelect, Документи.ЗамовленняКлієнта_Const.Організація,
+                    ЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(ЗамовленняКлієнта_Select.QuerySelect, Документи.ЗамовленняКлієнта_Const.Контрагент,
+                    ЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(ЗамовленняКлієнта_Select.QuerySelect, Документи.ЗамовленняКлієнта_Const.Валюта,
+                    ЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_3", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Каси_Pointer.GetJoin(ЗамовленняКлієнта_Select.QuerySelect, Документи.ЗамовленняКлієнта_Const.Каса,
+                    ЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_4", "Каса");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ЗамовленняКлієнта_Select.QuerySelect, Документи.ЗамовленняКлієнта_Const.Склад,
+                    ЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_5", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ЗамовленняКлієнта_Select.QuerySelect, Документи.ЗамовленняКлієнта_Const.Автор,
+                    ЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_6", "Автор");
+                
 
             /* Відбори */
             ЗамовленняКлієнта_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -13646,46 +13543,45 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ЗамовленняКлієнта_Select ЗамовленняКлієнта_Select = new();
             ЗамовленняКлієнта_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ЗамовленняКлієнта_Const.Назва,
-                /*НомерДок*/ Документи.ЗамовленняКлієнта_Const.НомерДок,
-                /*ДатаДок*/ Документи.ЗамовленняКлієнта_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.ЗамовленняКлієнта_Const.СумаДокументу,
-                /*Коментар*/ Документи.ЗамовленняКлієнта_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ЗамовленняКлієнта_Const.Назва,
+                    /*НомерДок*/ Документи.ЗамовленняКлієнта_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ЗамовленняКлієнта_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.ЗамовленняКлієнта_Const.СумаДокументу,
+                    /*Коментар*/ Документи.ЗамовленняКлієнта_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ЗамовленняКлієнта_Select.QuerySelect.Order.Add(
+                    Документи.ЗамовленняКлієнта_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ЗамовленняКлієнта_Select.QuerySelect.Order.Add(
-                Документи.ЗамовленняКлієнта_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ЗамовленняКлієнта_Select.QuerySelect, Документи.ЗамовленняКлієнта_Const.Організація,
-                ЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(ЗамовленняКлієнта_Select.QuerySelect, Документи.ЗамовленняКлієнта_Const.Контрагент,
-                ЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(ЗамовленняКлієнта_Select.QuerySelect, Документи.ЗамовленняКлієнта_Const.Валюта,
-                ЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_3", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Каси_Pointer.GetJoin(ЗамовленняКлієнта_Select.QuerySelect, Документи.ЗамовленняКлієнта_Const.Каса,
-                ЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_4", "Каса");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ЗамовленняКлієнта_Select.QuerySelect, Документи.ЗамовленняКлієнта_Const.Склад,
-                ЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_5", "Склад");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ЗамовленняКлієнта_Select.QuerySelect, Документи.ЗамовленняКлієнта_Const.Автор,
-                ЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_6", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ЗамовленняКлієнта_Select.QuerySelect, Документи.ЗамовленняКлієнта_Const.Організація,
+                    ЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(ЗамовленняКлієнта_Select.QuerySelect, Документи.ЗамовленняКлієнта_Const.Контрагент,
+                    ЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(ЗамовленняКлієнта_Select.QuerySelect, Документи.ЗамовленняКлієнта_Const.Валюта,
+                    ЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_3", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Каси_Pointer.GetJoin(ЗамовленняКлієнта_Select.QuerySelect, Документи.ЗамовленняКлієнта_Const.Каса,
+                    ЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_4", "Каса");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ЗамовленняКлієнта_Select.QuerySelect, Документи.ЗамовленняКлієнта_Const.Склад,
+                    ЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_5", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ЗамовленняКлієнта_Select.QuerySelect, Документи.ЗамовленняКлієнта_Const.Автор,
+                    ЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_6", "Автор");
+                
 
             /* Відбори */
             if (form.WhereList != null) ЗамовленняКлієнта_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -14100,46 +13996,45 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.РеалізаціяТоварівТаПослуг_Select РеалізаціяТоварівТаПослуг_Select = new();
             РеалізаціяТоварівТаПослуг_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.РеалізаціяТоварівТаПослуг_Const.Назва,
-                /*НомерДок*/ Документи.РеалізаціяТоварівТаПослуг_Const.НомерДок,
-                /*ДатаДок*/ Документи.РеалізаціяТоварівТаПослуг_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.РеалізаціяТоварівТаПослуг_Const.СумаДокументу,
-                /*Коментар*/ Документи.РеалізаціяТоварівТаПослуг_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.РеалізаціяТоварівТаПослуг_Const.Назва,
+                    /*НомерДок*/ Документи.РеалізаціяТоварівТаПослуг_Const.НомерДок,
+                    /*ДатаДок*/ Документи.РеалізаціяТоварівТаПослуг_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.РеалізаціяТоварівТаПослуг_Const.СумаДокументу,
+                    /*Коментар*/ Документи.РеалізаціяТоварівТаПослуг_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    РеалізаціяТоварівТаПослуг_Select.QuerySelect.Order.Add(
+                    Документи.РеалізаціяТоварівТаПослуг_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                РеалізаціяТоварівТаПослуг_Select.QuerySelect.Order.Add(
-                Документи.РеалізаціяТоварівТаПослуг_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(РеалізаціяТоварівТаПослуг_Select.QuerySelect, Документи.РеалізаціяТоварівТаПослуг_Const.Організація,
-                РеалізаціяТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(РеалізаціяТоварівТаПослуг_Select.QuerySelect, Документи.РеалізаціяТоварівТаПослуг_Const.Контрагент,
-                РеалізаціяТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(РеалізаціяТоварівТаПослуг_Select.QuerySelect, Документи.РеалізаціяТоварівТаПослуг_Const.Валюта,
-                РеалізаціяТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_3", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Каси_Pointer.GetJoin(РеалізаціяТоварівТаПослуг_Select.QuerySelect, Документи.РеалізаціяТоварівТаПослуг_Const.Каса,
-                РеалізаціяТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_4", "Каса");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(РеалізаціяТоварівТаПослуг_Select.QuerySelect, Документи.РеалізаціяТоварівТаПослуг_Const.Склад,
-                РеалізаціяТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_5", "Склад");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(РеалізаціяТоварівТаПослуг_Select.QuerySelect, Документи.РеалізаціяТоварівТаПослуг_Const.Автор,
-                РеалізаціяТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_6", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(РеалізаціяТоварівТаПослуг_Select.QuerySelect, Документи.РеалізаціяТоварівТаПослуг_Const.Організація,
+                    РеалізаціяТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(РеалізаціяТоварівТаПослуг_Select.QuerySelect, Документи.РеалізаціяТоварівТаПослуг_Const.Контрагент,
+                    РеалізаціяТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(РеалізаціяТоварівТаПослуг_Select.QuerySelect, Документи.РеалізаціяТоварівТаПослуг_Const.Валюта,
+                    РеалізаціяТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_3", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Каси_Pointer.GetJoin(РеалізаціяТоварівТаПослуг_Select.QuerySelect, Документи.РеалізаціяТоварівТаПослуг_Const.Каса,
+                    РеалізаціяТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_4", "Каса");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(РеалізаціяТоварівТаПослуг_Select.QuerySelect, Документи.РеалізаціяТоварівТаПослуг_Const.Склад,
+                    РеалізаціяТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_5", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(РеалізаціяТоварівТаПослуг_Select.QuerySelect, Документи.РеалізаціяТоварівТаПослуг_Const.Автор,
+                    РеалізаціяТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_6", "Автор");
+                
 
             /* Відбори */
             РеалізаціяТоварівТаПослуг_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -14196,46 +14091,45 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.РеалізаціяТоварівТаПослуг_Select РеалізаціяТоварівТаПослуг_Select = new();
             РеалізаціяТоварівТаПослуг_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.РеалізаціяТоварівТаПослуг_Const.Назва,
-                /*НомерДок*/ Документи.РеалізаціяТоварівТаПослуг_Const.НомерДок,
-                /*ДатаДок*/ Документи.РеалізаціяТоварівТаПослуг_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.РеалізаціяТоварівТаПослуг_Const.СумаДокументу,
-                /*Коментар*/ Документи.РеалізаціяТоварівТаПослуг_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.РеалізаціяТоварівТаПослуг_Const.Назва,
+                    /*НомерДок*/ Документи.РеалізаціяТоварівТаПослуг_Const.НомерДок,
+                    /*ДатаДок*/ Документи.РеалізаціяТоварівТаПослуг_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.РеалізаціяТоварівТаПослуг_Const.СумаДокументу,
+                    /*Коментар*/ Документи.РеалізаціяТоварівТаПослуг_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    РеалізаціяТоварівТаПослуг_Select.QuerySelect.Order.Add(
+                    Документи.РеалізаціяТоварівТаПослуг_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                РеалізаціяТоварівТаПослуг_Select.QuerySelect.Order.Add(
-                Документи.РеалізаціяТоварівТаПослуг_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(РеалізаціяТоварівТаПослуг_Select.QuerySelect, Документи.РеалізаціяТоварівТаПослуг_Const.Організація,
-                РеалізаціяТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(РеалізаціяТоварівТаПослуг_Select.QuerySelect, Документи.РеалізаціяТоварівТаПослуг_Const.Контрагент,
-                РеалізаціяТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(РеалізаціяТоварівТаПослуг_Select.QuerySelect, Документи.РеалізаціяТоварівТаПослуг_Const.Валюта,
-                РеалізаціяТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_3", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Каси_Pointer.GetJoin(РеалізаціяТоварівТаПослуг_Select.QuerySelect, Документи.РеалізаціяТоварівТаПослуг_Const.Каса,
-                РеалізаціяТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_4", "Каса");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(РеалізаціяТоварівТаПослуг_Select.QuerySelect, Документи.РеалізаціяТоварівТаПослуг_Const.Склад,
-                РеалізаціяТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_5", "Склад");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(РеалізаціяТоварівТаПослуг_Select.QuerySelect, Документи.РеалізаціяТоварівТаПослуг_Const.Автор,
-                РеалізаціяТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_6", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(РеалізаціяТоварівТаПослуг_Select.QuerySelect, Документи.РеалізаціяТоварівТаПослуг_Const.Організація,
+                    РеалізаціяТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(РеалізаціяТоварівТаПослуг_Select.QuerySelect, Документи.РеалізаціяТоварівТаПослуг_Const.Контрагент,
+                    РеалізаціяТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(РеалізаціяТоварівТаПослуг_Select.QuerySelect, Документи.РеалізаціяТоварівТаПослуг_Const.Валюта,
+                    РеалізаціяТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_3", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Каси_Pointer.GetJoin(РеалізаціяТоварівТаПослуг_Select.QuerySelect, Документи.РеалізаціяТоварівТаПослуг_Const.Каса,
+                    РеалізаціяТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_4", "Каса");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(РеалізаціяТоварівТаПослуг_Select.QuerySelect, Документи.РеалізаціяТоварівТаПослуг_Const.Склад,
+                    РеалізаціяТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_5", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(РеалізаціяТоварівТаПослуг_Select.QuerySelect, Документи.РеалізаціяТоварівТаПослуг_Const.Автор,
+                    РеалізаціяТоварівТаПослуг_Select.QuerySelect.Table, "join_tab_6", "Автор");
+                
 
             /* Відбори */
             if (form.WhereList != null) РеалізаціяТоварівТаПослуг_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -14559,37 +14453,36 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ВстановленняЦінНоменклатури_Select ВстановленняЦінНоменклатури_Select = new();
             ВстановленняЦінНоменклатури_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ВстановленняЦінНоменклатури_Const.Назва,
-                /*НомерДок*/ Документи.ВстановленняЦінНоменклатури_Const.НомерДок,
-                /*ДатаДок*/ Документи.ВстановленняЦінНоменклатури_Const.ДатаДок,
-                /*Коментар*/ Документи.ВстановленняЦінНоменклатури_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ВстановленняЦінНоменклатури_Const.Назва,
+                    /*НомерДок*/ Документи.ВстановленняЦінНоменклатури_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ВстановленняЦінНоменклатури_Const.ДатаДок,
+                    /*Коментар*/ Документи.ВстановленняЦінНоменклатури_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ВстановленняЦінНоменклатури_Select.QuerySelect.Order.Add(
+                    Документи.ВстановленняЦінНоменклатури_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ВстановленняЦінНоменклатури_Select.QuerySelect.Order.Add(
-                Документи.ВстановленняЦінНоменклатури_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ВстановленняЦінНоменклатури_Select.QuerySelect, Документи.ВстановленняЦінНоменклатури_Const.Організація,
-                ВстановленняЦінНоменклатури_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(ВстановленняЦінНоменклатури_Select.QuerySelect, Документи.ВстановленняЦінНоменклатури_Const.Валюта,
-                ВстановленняЦінНоменклатури_Select.QuerySelect.Table, "join_tab_2", "Валюта");
-            
-                /* Приєднання */
-                Довідники.ВидиЦін_Pointer.GetJoin(ВстановленняЦінНоменклатури_Select.QuerySelect, Документи.ВстановленняЦінНоменклатури_Const.ВидЦіни,
-                ВстановленняЦінНоменклатури_Select.QuerySelect.Table, "join_tab_3", "ВидЦіни");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ВстановленняЦінНоменклатури_Select.QuerySelect, Документи.ВстановленняЦінНоменклатури_Const.Автор,
-                ВстановленняЦінНоменклатури_Select.QuerySelect.Table, "join_tab_4", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ВстановленняЦінНоменклатури_Select.QuerySelect, Документи.ВстановленняЦінНоменклатури_Const.Організація,
+                    ВстановленняЦінНоменклатури_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(ВстановленняЦінНоменклатури_Select.QuerySelect, Документи.ВстановленняЦінНоменклатури_Const.Валюта,
+                    ВстановленняЦінНоменклатури_Select.QuerySelect.Table, "join_tab_2", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.ВидиЦін_Pointer.GetJoin(ВстановленняЦінНоменклатури_Select.QuerySelect, Документи.ВстановленняЦінНоменклатури_Const.ВидЦіни,
+                    ВстановленняЦінНоменклатури_Select.QuerySelect.Table, "join_tab_3", "ВидЦіни");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ВстановленняЦінНоменклатури_Select.QuerySelect, Документи.ВстановленняЦінНоменклатури_Const.Автор,
+                    ВстановленняЦінНоменклатури_Select.QuerySelect.Table, "join_tab_4", "Автор");
+                
 
             /* Відбори */
             ВстановленняЦінНоменклатури_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -14643,37 +14536,36 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ВстановленняЦінНоменклатури_Select ВстановленняЦінНоменклатури_Select = new();
             ВстановленняЦінНоменклатури_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ВстановленняЦінНоменклатури_Const.Назва,
-                /*НомерДок*/ Документи.ВстановленняЦінНоменклатури_Const.НомерДок,
-                /*ДатаДок*/ Документи.ВстановленняЦінНоменклатури_Const.ДатаДок,
-                /*Коментар*/ Документи.ВстановленняЦінНоменклатури_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ВстановленняЦінНоменклатури_Const.Назва,
+                    /*НомерДок*/ Документи.ВстановленняЦінНоменклатури_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ВстановленняЦінНоменклатури_Const.ДатаДок,
+                    /*Коментар*/ Документи.ВстановленняЦінНоменклатури_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ВстановленняЦінНоменклатури_Select.QuerySelect.Order.Add(
+                    Документи.ВстановленняЦінНоменклатури_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ВстановленняЦінНоменклатури_Select.QuerySelect.Order.Add(
-                Документи.ВстановленняЦінНоменклатури_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ВстановленняЦінНоменклатури_Select.QuerySelect, Документи.ВстановленняЦінНоменклатури_Const.Організація,
-                ВстановленняЦінНоменклатури_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(ВстановленняЦінНоменклатури_Select.QuerySelect, Документи.ВстановленняЦінНоменклатури_Const.Валюта,
-                ВстановленняЦінНоменклатури_Select.QuerySelect.Table, "join_tab_2", "Валюта");
-            
-                /* Приєднання */
-                Довідники.ВидиЦін_Pointer.GetJoin(ВстановленняЦінНоменклатури_Select.QuerySelect, Документи.ВстановленняЦінНоменклатури_Const.ВидЦіни,
-                ВстановленняЦінНоменклатури_Select.QuerySelect.Table, "join_tab_3", "ВидЦіни");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ВстановленняЦінНоменклатури_Select.QuerySelect, Документи.ВстановленняЦінНоменклатури_Const.Автор,
-                ВстановленняЦінНоменклатури_Select.QuerySelect.Table, "join_tab_4", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ВстановленняЦінНоменклатури_Select.QuerySelect, Документи.ВстановленняЦінНоменклатури_Const.Організація,
+                    ВстановленняЦінНоменклатури_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(ВстановленняЦінНоменклатури_Select.QuerySelect, Документи.ВстановленняЦінНоменклатури_Const.Валюта,
+                    ВстановленняЦінНоменклатури_Select.QuerySelect.Table, "join_tab_2", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.ВидиЦін_Pointer.GetJoin(ВстановленняЦінНоменклатури_Select.QuerySelect, Документи.ВстановленняЦінНоменклатури_Const.ВидЦіни,
+                    ВстановленняЦінНоменклатури_Select.QuerySelect.Table, "join_tab_3", "ВидЦіни");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ВстановленняЦінНоменклатури_Select.QuerySelect, Документи.ВстановленняЦінНоменклатури_Const.Автор,
+                    ВстановленняЦінНоменклатури_Select.QuerySelect.Table, "join_tab_4", "Автор");
+                
 
             /* Відбори */
             if (form.WhereList != null) ВстановленняЦінНоменклатури_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -15076,43 +14968,42 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ПрихіднийКасовийОрдер_Select ПрихіднийКасовийОрдер_Select = new();
             ПрихіднийКасовийОрдер_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ПрихіднийКасовийОрдер_Const.Назва,
-                /*НомерДок*/ Документи.ПрихіднийКасовийОрдер_Const.НомерДок,
-                /*ДатаДок*/ Документи.ПрихіднийКасовийОрдер_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.ПрихіднийКасовийОрдер_Const.СумаДокументу,
-                /*ГосподарськаОперація*/ Документи.ПрихіднийКасовийОрдер_Const.ГосподарськаОперація,
-                /*Коментар*/ Документи.ПрихіднийКасовийОрдер_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ПрихіднийКасовийОрдер_Const.Назва,
+                    /*НомерДок*/ Документи.ПрихіднийКасовийОрдер_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПрихіднийКасовийОрдер_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.ПрихіднийКасовийОрдер_Const.СумаДокументу,
+                    /*ГосподарськаОперація*/ Документи.ПрихіднийКасовийОрдер_Const.ГосподарськаОперація,
+                    /*Коментар*/ Документи.ПрихіднийКасовийОрдер_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПрихіднийКасовийОрдер_Select.QuerySelect.Order.Add(
+                    Документи.ПрихіднийКасовийОрдер_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ПрихіднийКасовийОрдер_Select.QuerySelect.Order.Add(
-                Документи.ПрихіднийКасовийОрдер_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ПрихіднийКасовийОрдер_Select.QuerySelect, Документи.ПрихіднийКасовийОрдер_Const.Організація,
-                ПрихіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(ПрихіднийКасовийОрдер_Select.QuerySelect, Документи.ПрихіднийКасовийОрдер_Const.Валюта,
-                ПрихіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_2", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Каси_Pointer.GetJoin(ПрихіднийКасовийОрдер_Select.QuerySelect, Документи.ПрихіднийКасовийОрдер_Const.Каса,
-                ПрихіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_3", "Каса");
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(ПрихіднийКасовийОрдер_Select.QuerySelect, Документи.ПрихіднийКасовийОрдер_Const.Контрагент,
-                ПрихіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_4", "Контрагент");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ПрихіднийКасовийОрдер_Select.QuerySelect, Документи.ПрихіднийКасовийОрдер_Const.Автор,
-                ПрихіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_5", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ПрихіднийКасовийОрдер_Select.QuerySelect, Документи.ПрихіднийКасовийОрдер_Const.Організація,
+                    ПрихіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(ПрихіднийКасовийОрдер_Select.QuerySelect, Документи.ПрихіднийКасовийОрдер_Const.Валюта,
+                    ПрихіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_2", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Каси_Pointer.GetJoin(ПрихіднийКасовийОрдер_Select.QuerySelect, Документи.ПрихіднийКасовийОрдер_Const.Каса,
+                    ПрихіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_3", "Каса");
+                
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(ПрихіднийКасовийОрдер_Select.QuerySelect, Документи.ПрихіднийКасовийОрдер_Const.Контрагент,
+                    ПрихіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_4", "Контрагент");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ПрихіднийКасовийОрдер_Select.QuerySelect, Документи.ПрихіднийКасовийОрдер_Const.Автор,
+                    ПрихіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_5", "Автор");
+                
 
             /* Відбори */
             ПрихіднийКасовийОрдер_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -15169,43 +15060,42 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ПрихіднийКасовийОрдер_Select ПрихіднийКасовийОрдер_Select = new();
             ПрихіднийКасовийОрдер_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ПрихіднийКасовийОрдер_Const.Назва,
-                /*НомерДок*/ Документи.ПрихіднийКасовийОрдер_Const.НомерДок,
-                /*ДатаДок*/ Документи.ПрихіднийКасовийОрдер_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.ПрихіднийКасовийОрдер_Const.СумаДокументу,
-                /*ГосподарськаОперація*/ Документи.ПрихіднийКасовийОрдер_Const.ГосподарськаОперація,
-                /*Коментар*/ Документи.ПрихіднийКасовийОрдер_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ПрихіднийКасовийОрдер_Const.Назва,
+                    /*НомерДок*/ Документи.ПрихіднийКасовийОрдер_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПрихіднийКасовийОрдер_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.ПрихіднийКасовийОрдер_Const.СумаДокументу,
+                    /*ГосподарськаОперація*/ Документи.ПрихіднийКасовийОрдер_Const.ГосподарськаОперація,
+                    /*Коментар*/ Документи.ПрихіднийКасовийОрдер_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПрихіднийКасовийОрдер_Select.QuerySelect.Order.Add(
+                    Документи.ПрихіднийКасовийОрдер_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ПрихіднийКасовийОрдер_Select.QuerySelect.Order.Add(
-                Документи.ПрихіднийКасовийОрдер_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ПрихіднийКасовийОрдер_Select.QuerySelect, Документи.ПрихіднийКасовийОрдер_Const.Організація,
-                ПрихіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(ПрихіднийКасовийОрдер_Select.QuerySelect, Документи.ПрихіднийКасовийОрдер_Const.Валюта,
-                ПрихіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_2", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Каси_Pointer.GetJoin(ПрихіднийКасовийОрдер_Select.QuerySelect, Документи.ПрихіднийКасовийОрдер_Const.Каса,
-                ПрихіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_3", "Каса");
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(ПрихіднийКасовийОрдер_Select.QuerySelect, Документи.ПрихіднийКасовийОрдер_Const.Контрагент,
-                ПрихіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_4", "Контрагент");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ПрихіднийКасовийОрдер_Select.QuerySelect, Документи.ПрихіднийКасовийОрдер_Const.Автор,
-                ПрихіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_5", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ПрихіднийКасовийОрдер_Select.QuerySelect, Документи.ПрихіднийКасовийОрдер_Const.Організація,
+                    ПрихіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(ПрихіднийКасовийОрдер_Select.QuerySelect, Документи.ПрихіднийКасовийОрдер_Const.Валюта,
+                    ПрихіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_2", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Каси_Pointer.GetJoin(ПрихіднийКасовийОрдер_Select.QuerySelect, Документи.ПрихіднийКасовийОрдер_Const.Каса,
+                    ПрихіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_3", "Каса");
+                
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(ПрихіднийКасовийОрдер_Select.QuerySelect, Документи.ПрихіднийКасовийОрдер_Const.Контрагент,
+                    ПрихіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_4", "Контрагент");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ПрихіднийКасовийОрдер_Select.QuerySelect, Документи.ПрихіднийКасовийОрдер_Const.Автор,
+                    ПрихіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_5", "Автор");
+                
 
             /* Відбори */
             if (form.WhereList != null) ПрихіднийКасовийОрдер_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -15611,43 +15501,42 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.РозхіднийКасовийОрдер_Select РозхіднийКасовийОрдер_Select = new();
             РозхіднийКасовийОрдер_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.РозхіднийКасовийОрдер_Const.Назва,
-                /*НомерДок*/ Документи.РозхіднийКасовийОрдер_Const.НомерДок,
-                /*ДатаДок*/ Документи.РозхіднийКасовийОрдер_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.РозхіднийКасовийОрдер_Const.СумаДокументу,
-                /*ГосподарськаОперація*/ Документи.РозхіднийКасовийОрдер_Const.ГосподарськаОперація,
-                /*Коментар*/ Документи.РозхіднийКасовийОрдер_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.РозхіднийКасовийОрдер_Const.Назва,
+                    /*НомерДок*/ Документи.РозхіднийКасовийОрдер_Const.НомерДок,
+                    /*ДатаДок*/ Документи.РозхіднийКасовийОрдер_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.РозхіднийКасовийОрдер_Const.СумаДокументу,
+                    /*ГосподарськаОперація*/ Документи.РозхіднийКасовийОрдер_Const.ГосподарськаОперація,
+                    /*Коментар*/ Документи.РозхіднийКасовийОрдер_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    РозхіднийКасовийОрдер_Select.QuerySelect.Order.Add(
+                    Документи.РозхіднийКасовийОрдер_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                РозхіднийКасовийОрдер_Select.QuerySelect.Order.Add(
-                Документи.РозхіднийКасовийОрдер_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(РозхіднийКасовийОрдер_Select.QuerySelect, Документи.РозхіднийКасовийОрдер_Const.Організація,
-                РозхіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(РозхіднийКасовийОрдер_Select.QuerySelect, Документи.РозхіднийКасовийОрдер_Const.Контрагент,
-                РозхіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(РозхіднийКасовийОрдер_Select.QuerySelect, Документи.РозхіднийКасовийОрдер_Const.Валюта,
-                РозхіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_3", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Каси_Pointer.GetJoin(РозхіднийКасовийОрдер_Select.QuerySelect, Документи.РозхіднийКасовийОрдер_Const.Каса,
-                РозхіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_4", "Каса");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(РозхіднийКасовийОрдер_Select.QuerySelect, Документи.РозхіднийКасовийОрдер_Const.Автор,
-                РозхіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_5", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(РозхіднийКасовийОрдер_Select.QuerySelect, Документи.РозхіднийКасовийОрдер_Const.Організація,
+                    РозхіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(РозхіднийКасовийОрдер_Select.QuerySelect, Документи.РозхіднийКасовийОрдер_Const.Контрагент,
+                    РозхіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(РозхіднийКасовийОрдер_Select.QuerySelect, Документи.РозхіднийКасовийОрдер_Const.Валюта,
+                    РозхіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_3", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Каси_Pointer.GetJoin(РозхіднийКасовийОрдер_Select.QuerySelect, Документи.РозхіднийКасовийОрдер_Const.Каса,
+                    РозхіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_4", "Каса");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(РозхіднийКасовийОрдер_Select.QuerySelect, Документи.РозхіднийКасовийОрдер_Const.Автор,
+                    РозхіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_5", "Автор");
+                
 
             /* Відбори */
             РозхіднийКасовийОрдер_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -15704,43 +15593,42 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.РозхіднийКасовийОрдер_Select РозхіднийКасовийОрдер_Select = new();
             РозхіднийКасовийОрдер_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.РозхіднийКасовийОрдер_Const.Назва,
-                /*НомерДок*/ Документи.РозхіднийКасовийОрдер_Const.НомерДок,
-                /*ДатаДок*/ Документи.РозхіднийКасовийОрдер_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.РозхіднийКасовийОрдер_Const.СумаДокументу,
-                /*ГосподарськаОперація*/ Документи.РозхіднийКасовийОрдер_Const.ГосподарськаОперація,
-                /*Коментар*/ Документи.РозхіднийКасовийОрдер_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.РозхіднийКасовийОрдер_Const.Назва,
+                    /*НомерДок*/ Документи.РозхіднийКасовийОрдер_Const.НомерДок,
+                    /*ДатаДок*/ Документи.РозхіднийКасовийОрдер_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.РозхіднийКасовийОрдер_Const.СумаДокументу,
+                    /*ГосподарськаОперація*/ Документи.РозхіднийКасовийОрдер_Const.ГосподарськаОперація,
+                    /*Коментар*/ Документи.РозхіднийКасовийОрдер_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    РозхіднийКасовийОрдер_Select.QuerySelect.Order.Add(
+                    Документи.РозхіднийКасовийОрдер_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                РозхіднийКасовийОрдер_Select.QuerySelect.Order.Add(
-                Документи.РозхіднийКасовийОрдер_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(РозхіднийКасовийОрдер_Select.QuerySelect, Документи.РозхіднийКасовийОрдер_Const.Організація,
-                РозхіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(РозхіднийКасовийОрдер_Select.QuerySelect, Документи.РозхіднийКасовийОрдер_Const.Контрагент,
-                РозхіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(РозхіднийКасовийОрдер_Select.QuerySelect, Документи.РозхіднийКасовийОрдер_Const.Валюта,
-                РозхіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_3", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Каси_Pointer.GetJoin(РозхіднийКасовийОрдер_Select.QuerySelect, Документи.РозхіднийКасовийОрдер_Const.Каса,
-                РозхіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_4", "Каса");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(РозхіднийКасовийОрдер_Select.QuerySelect, Документи.РозхіднийКасовийОрдер_Const.Автор,
-                РозхіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_5", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(РозхіднийКасовийОрдер_Select.QuerySelect, Документи.РозхіднийКасовийОрдер_Const.Організація,
+                    РозхіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(РозхіднийКасовийОрдер_Select.QuerySelect, Документи.РозхіднийКасовийОрдер_Const.Контрагент,
+                    РозхіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(РозхіднийКасовийОрдер_Select.QuerySelect, Документи.РозхіднийКасовийОрдер_Const.Валюта,
+                    РозхіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_3", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Каси_Pointer.GetJoin(РозхіднийКасовийОрдер_Select.QuerySelect, Документи.РозхіднийКасовийОрдер_Const.Каса,
+                    РозхіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_4", "Каса");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(РозхіднийКасовийОрдер_Select.QuerySelect, Документи.РозхіднийКасовийОрдер_Const.Автор,
+                    РозхіднийКасовийОрдер_Select.QuerySelect.Table, "join_tab_5", "Автор");
+                
 
             /* Відбори */
             if (form.WhereList != null) РозхіднийКасовийОрдер_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -16064,37 +15952,36 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ПереміщенняТоварів_Select ПереміщенняТоварів_Select = new();
             ПереміщенняТоварів_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ПереміщенняТоварів_Const.Назва,
-                /*НомерДок*/ Документи.ПереміщенняТоварів_Const.НомерДок,
-                /*ДатаДок*/ Документи.ПереміщенняТоварів_Const.ДатаДок,
-                /*Коментар*/ Документи.ПереміщенняТоварів_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ПереміщенняТоварів_Const.Назва,
+                    /*НомерДок*/ Документи.ПереміщенняТоварів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПереміщенняТоварів_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПереміщенняТоварів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПереміщенняТоварів_Select.QuerySelect.Order.Add(
+                    Документи.ПереміщенняТоварів_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ПереміщенняТоварів_Select.QuerySelect.Order.Add(
-                Документи.ПереміщенняТоварів_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ПереміщенняТоварів_Select.QuerySelect, Документи.ПереміщенняТоварів_Const.Організація,
-                ПереміщенняТоварів_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ПереміщенняТоварів_Select.QuerySelect, Документи.ПереміщенняТоварів_Const.СкладВідправник,
-                ПереміщенняТоварів_Select.QuerySelect.Table, "join_tab_2", "СкладВідправник");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ПереміщенняТоварів_Select.QuerySelect, Документи.ПереміщенняТоварів_Const.СкладОтримувач,
-                ПереміщенняТоварів_Select.QuerySelect.Table, "join_tab_3", "СкладОтримувач");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ПереміщенняТоварів_Select.QuerySelect, Документи.ПереміщенняТоварів_Const.Автор,
-                ПереміщенняТоварів_Select.QuerySelect.Table, "join_tab_4", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ПереміщенняТоварів_Select.QuerySelect, Документи.ПереміщенняТоварів_Const.Організація,
+                    ПереміщенняТоварів_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ПереміщенняТоварів_Select.QuerySelect, Документи.ПереміщенняТоварів_Const.СкладВідправник,
+                    ПереміщенняТоварів_Select.QuerySelect.Table, "join_tab_2", "СкладВідправник");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ПереміщенняТоварів_Select.QuerySelect, Документи.ПереміщенняТоварів_Const.СкладОтримувач,
+                    ПереміщенняТоварів_Select.QuerySelect.Table, "join_tab_3", "СкладОтримувач");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ПереміщенняТоварів_Select.QuerySelect, Документи.ПереміщенняТоварів_Const.Автор,
+                    ПереміщенняТоварів_Select.QuerySelect.Table, "join_tab_4", "Автор");
+                
 
             /* Відбори */
             ПереміщенняТоварів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -16148,37 +16035,36 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ПереміщенняТоварів_Select ПереміщенняТоварів_Select = new();
             ПереміщенняТоварів_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ПереміщенняТоварів_Const.Назва,
-                /*НомерДок*/ Документи.ПереміщенняТоварів_Const.НомерДок,
-                /*ДатаДок*/ Документи.ПереміщенняТоварів_Const.ДатаДок,
-                /*Коментар*/ Документи.ПереміщенняТоварів_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ПереміщенняТоварів_Const.Назва,
+                    /*НомерДок*/ Документи.ПереміщенняТоварів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПереміщенняТоварів_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПереміщенняТоварів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПереміщенняТоварів_Select.QuerySelect.Order.Add(
+                    Документи.ПереміщенняТоварів_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ПереміщенняТоварів_Select.QuerySelect.Order.Add(
-                Документи.ПереміщенняТоварів_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ПереміщенняТоварів_Select.QuerySelect, Документи.ПереміщенняТоварів_Const.Організація,
-                ПереміщенняТоварів_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ПереміщенняТоварів_Select.QuerySelect, Документи.ПереміщенняТоварів_Const.СкладВідправник,
-                ПереміщенняТоварів_Select.QuerySelect.Table, "join_tab_2", "СкладВідправник");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ПереміщенняТоварів_Select.QuerySelect, Документи.ПереміщенняТоварів_Const.СкладОтримувач,
-                ПереміщенняТоварів_Select.QuerySelect.Table, "join_tab_3", "СкладОтримувач");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ПереміщенняТоварів_Select.QuerySelect, Документи.ПереміщенняТоварів_Const.Автор,
-                ПереміщенняТоварів_Select.QuerySelect.Table, "join_tab_4", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ПереміщенняТоварів_Select.QuerySelect, Документи.ПереміщенняТоварів_Const.Організація,
+                    ПереміщенняТоварів_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ПереміщенняТоварів_Select.QuerySelect, Документи.ПереміщенняТоварів_Const.СкладВідправник,
+                    ПереміщенняТоварів_Select.QuerySelect.Table, "join_tab_2", "СкладВідправник");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ПереміщенняТоварів_Select.QuerySelect, Документи.ПереміщенняТоварів_Const.СкладОтримувач,
+                    ПереміщенняТоварів_Select.QuerySelect.Table, "join_tab_3", "СкладОтримувач");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ПереміщенняТоварів_Select.QuerySelect, Документи.ПереміщенняТоварів_Const.Автор,
+                    ПереміщенняТоварів_Select.QuerySelect.Table, "join_tab_4", "Автор");
+                
 
             /* Відбори */
             if (form.WhereList != null) ПереміщенняТоварів_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -16590,46 +16476,45 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ПоверненняТоварівПостачальнику_Select ПоверненняТоварівПостачальнику_Select = new();
             ПоверненняТоварівПостачальнику_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ПоверненняТоварівПостачальнику_Const.Назва,
-                /*НомерДок*/ Документи.ПоверненняТоварівПостачальнику_Const.НомерДок,
-                /*ДатаДок*/ Документи.ПоверненняТоварівПостачальнику_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.ПоверненняТоварівПостачальнику_Const.СумаДокументу,
-                /*Коментар*/ Документи.ПоверненняТоварівПостачальнику_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ПоверненняТоварівПостачальнику_Const.Назва,
+                    /*НомерДок*/ Документи.ПоверненняТоварівПостачальнику_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПоверненняТоварівПостачальнику_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.ПоверненняТоварівПостачальнику_Const.СумаДокументу,
+                    /*Коментар*/ Документи.ПоверненняТоварівПостачальнику_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПоверненняТоварівПостачальнику_Select.QuerySelect.Order.Add(
+                    Документи.ПоверненняТоварівПостачальнику_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ПоверненняТоварівПостачальнику_Select.QuerySelect.Order.Add(
-                Документи.ПоверненняТоварівПостачальнику_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ПоверненняТоварівПостачальнику_Select.QuerySelect, Документи.ПоверненняТоварівПостачальнику_Const.Організація,
-                ПоверненняТоварівПостачальнику_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(ПоверненняТоварівПостачальнику_Select.QuerySelect, Документи.ПоверненняТоварівПостачальнику_Const.Контрагент,
-                ПоверненняТоварівПостачальнику_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(ПоверненняТоварівПостачальнику_Select.QuerySelect, Документи.ПоверненняТоварівПостачальнику_Const.Валюта,
-                ПоверненняТоварівПостачальнику_Select.QuerySelect.Table, "join_tab_3", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Каси_Pointer.GetJoin(ПоверненняТоварівПостачальнику_Select.QuerySelect, Документи.ПоверненняТоварівПостачальнику_Const.Каса,
-                ПоверненняТоварівПостачальнику_Select.QuerySelect.Table, "join_tab_4", "Каса");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ПоверненняТоварівПостачальнику_Select.QuerySelect, Документи.ПоверненняТоварівПостачальнику_Const.Склад,
-                ПоверненняТоварівПостачальнику_Select.QuerySelect.Table, "join_tab_5", "Склад");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ПоверненняТоварівПостачальнику_Select.QuerySelect, Документи.ПоверненняТоварівПостачальнику_Const.Автор,
-                ПоверненняТоварівПостачальнику_Select.QuerySelect.Table, "join_tab_6", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ПоверненняТоварівПостачальнику_Select.QuerySelect, Документи.ПоверненняТоварівПостачальнику_Const.Організація,
+                    ПоверненняТоварівПостачальнику_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(ПоверненняТоварівПостачальнику_Select.QuerySelect, Документи.ПоверненняТоварівПостачальнику_Const.Контрагент,
+                    ПоверненняТоварівПостачальнику_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(ПоверненняТоварівПостачальнику_Select.QuerySelect, Документи.ПоверненняТоварівПостачальнику_Const.Валюта,
+                    ПоверненняТоварівПостачальнику_Select.QuerySelect.Table, "join_tab_3", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Каси_Pointer.GetJoin(ПоверненняТоварівПостачальнику_Select.QuerySelect, Документи.ПоверненняТоварівПостачальнику_Const.Каса,
+                    ПоверненняТоварівПостачальнику_Select.QuerySelect.Table, "join_tab_4", "Каса");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ПоверненняТоварівПостачальнику_Select.QuerySelect, Документи.ПоверненняТоварівПостачальнику_Const.Склад,
+                    ПоверненняТоварівПостачальнику_Select.QuerySelect.Table, "join_tab_5", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ПоверненняТоварівПостачальнику_Select.QuerySelect, Документи.ПоверненняТоварівПостачальнику_Const.Автор,
+                    ПоверненняТоварівПостачальнику_Select.QuerySelect.Table, "join_tab_6", "Автор");
+                
 
             /* Відбори */
             ПоверненняТоварівПостачальнику_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -16686,46 +16571,45 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ПоверненняТоварівПостачальнику_Select ПоверненняТоварівПостачальнику_Select = new();
             ПоверненняТоварівПостачальнику_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ПоверненняТоварівПостачальнику_Const.Назва,
-                /*НомерДок*/ Документи.ПоверненняТоварівПостачальнику_Const.НомерДок,
-                /*ДатаДок*/ Документи.ПоверненняТоварівПостачальнику_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.ПоверненняТоварівПостачальнику_Const.СумаДокументу,
-                /*Коментар*/ Документи.ПоверненняТоварівПостачальнику_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ПоверненняТоварівПостачальнику_Const.Назва,
+                    /*НомерДок*/ Документи.ПоверненняТоварівПостачальнику_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПоверненняТоварівПостачальнику_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.ПоверненняТоварівПостачальнику_Const.СумаДокументу,
+                    /*Коментар*/ Документи.ПоверненняТоварівПостачальнику_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПоверненняТоварівПостачальнику_Select.QuerySelect.Order.Add(
+                    Документи.ПоверненняТоварівПостачальнику_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ПоверненняТоварівПостачальнику_Select.QuerySelect.Order.Add(
-                Документи.ПоверненняТоварівПостачальнику_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ПоверненняТоварівПостачальнику_Select.QuerySelect, Документи.ПоверненняТоварівПостачальнику_Const.Організація,
-                ПоверненняТоварівПостачальнику_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(ПоверненняТоварівПостачальнику_Select.QuerySelect, Документи.ПоверненняТоварівПостачальнику_Const.Контрагент,
-                ПоверненняТоварівПостачальнику_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(ПоверненняТоварівПостачальнику_Select.QuerySelect, Документи.ПоверненняТоварівПостачальнику_Const.Валюта,
-                ПоверненняТоварівПостачальнику_Select.QuerySelect.Table, "join_tab_3", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Каси_Pointer.GetJoin(ПоверненняТоварівПостачальнику_Select.QuerySelect, Документи.ПоверненняТоварівПостачальнику_Const.Каса,
-                ПоверненняТоварівПостачальнику_Select.QuerySelect.Table, "join_tab_4", "Каса");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ПоверненняТоварівПостачальнику_Select.QuerySelect, Документи.ПоверненняТоварівПостачальнику_Const.Склад,
-                ПоверненняТоварівПостачальнику_Select.QuerySelect.Table, "join_tab_5", "Склад");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ПоверненняТоварівПостачальнику_Select.QuerySelect, Документи.ПоверненняТоварівПостачальнику_Const.Автор,
-                ПоверненняТоварівПостачальнику_Select.QuerySelect.Table, "join_tab_6", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ПоверненняТоварівПостачальнику_Select.QuerySelect, Документи.ПоверненняТоварівПостачальнику_Const.Організація,
+                    ПоверненняТоварівПостачальнику_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(ПоверненняТоварівПостачальнику_Select.QuerySelect, Документи.ПоверненняТоварівПостачальнику_Const.Контрагент,
+                    ПоверненняТоварівПостачальнику_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(ПоверненняТоварівПостачальнику_Select.QuerySelect, Документи.ПоверненняТоварівПостачальнику_Const.Валюта,
+                    ПоверненняТоварівПостачальнику_Select.QuerySelect.Table, "join_tab_3", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Каси_Pointer.GetJoin(ПоверненняТоварівПостачальнику_Select.QuerySelect, Документи.ПоверненняТоварівПостачальнику_Const.Каса,
+                    ПоверненняТоварівПостачальнику_Select.QuerySelect.Table, "join_tab_4", "Каса");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ПоверненняТоварівПостачальнику_Select.QuerySelect, Документи.ПоверненняТоварівПостачальнику_Const.Склад,
+                    ПоверненняТоварівПостачальнику_Select.QuerySelect.Table, "join_tab_5", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ПоверненняТоварівПостачальнику_Select.QuerySelect, Документи.ПоверненняТоварівПостачальнику_Const.Автор,
+                    ПоверненняТоварівПостачальнику_Select.QuerySelect.Table, "join_tab_6", "Автор");
+                
 
             /* Відбори */
             if (form.WhereList != null) ПоверненняТоварівПостачальнику_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -17140,46 +17024,45 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ПоверненняТоварівВідКлієнта_Select ПоверненняТоварівВідКлієнта_Select = new();
             ПоверненняТоварівВідКлієнта_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ПоверненняТоварівВідКлієнта_Const.Назва,
-                /*НомерДок*/ Документи.ПоверненняТоварівВідКлієнта_Const.НомерДок,
-                /*ДатаДок*/ Документи.ПоверненняТоварівВідКлієнта_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.ПоверненняТоварівВідКлієнта_Const.СумаДокументу,
-                /*Коментар*/ Документи.ПоверненняТоварівВідКлієнта_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ПоверненняТоварівВідКлієнта_Const.Назва,
+                    /*НомерДок*/ Документи.ПоверненняТоварівВідКлієнта_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПоверненняТоварівВідКлієнта_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.ПоверненняТоварівВідКлієнта_Const.СумаДокументу,
+                    /*Коментар*/ Документи.ПоверненняТоварівВідКлієнта_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПоверненняТоварівВідКлієнта_Select.QuerySelect.Order.Add(
+                    Документи.ПоверненняТоварівВідКлієнта_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ПоверненняТоварівВідКлієнта_Select.QuerySelect.Order.Add(
-                Документи.ПоверненняТоварівВідКлієнта_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ПоверненняТоварівВідКлієнта_Select.QuerySelect, Документи.ПоверненняТоварівВідКлієнта_Const.Організація,
-                ПоверненняТоварівВідКлієнта_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(ПоверненняТоварівВідКлієнта_Select.QuerySelect, Документи.ПоверненняТоварівВідКлієнта_Const.Валюта,
-                ПоверненняТоварівВідКлієнта_Select.QuerySelect.Table, "join_tab_2", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Каси_Pointer.GetJoin(ПоверненняТоварівВідКлієнта_Select.QuerySelect, Документи.ПоверненняТоварівВідКлієнта_Const.Каса,
-                ПоверненняТоварівВідКлієнта_Select.QuerySelect.Table, "join_tab_3", "Каса");
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(ПоверненняТоварівВідКлієнта_Select.QuerySelect, Документи.ПоверненняТоварівВідКлієнта_Const.Контрагент,
-                ПоверненняТоварівВідКлієнта_Select.QuerySelect.Table, "join_tab_4", "Контрагент");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ПоверненняТоварівВідКлієнта_Select.QuerySelect, Документи.ПоверненняТоварівВідКлієнта_Const.Склад,
-                ПоверненняТоварівВідКлієнта_Select.QuerySelect.Table, "join_tab_5", "Склад");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ПоверненняТоварівВідКлієнта_Select.QuerySelect, Документи.ПоверненняТоварівВідКлієнта_Const.Автор,
-                ПоверненняТоварівВідКлієнта_Select.QuerySelect.Table, "join_tab_6", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ПоверненняТоварівВідКлієнта_Select.QuerySelect, Документи.ПоверненняТоварівВідКлієнта_Const.Організація,
+                    ПоверненняТоварівВідКлієнта_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(ПоверненняТоварівВідКлієнта_Select.QuerySelect, Документи.ПоверненняТоварівВідКлієнта_Const.Валюта,
+                    ПоверненняТоварівВідКлієнта_Select.QuerySelect.Table, "join_tab_2", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Каси_Pointer.GetJoin(ПоверненняТоварівВідКлієнта_Select.QuerySelect, Документи.ПоверненняТоварівВідКлієнта_Const.Каса,
+                    ПоверненняТоварівВідКлієнта_Select.QuerySelect.Table, "join_tab_3", "Каса");
+                
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(ПоверненняТоварівВідКлієнта_Select.QuerySelect, Документи.ПоверненняТоварівВідКлієнта_Const.Контрагент,
+                    ПоверненняТоварівВідКлієнта_Select.QuerySelect.Table, "join_tab_4", "Контрагент");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ПоверненняТоварівВідКлієнта_Select.QuerySelect, Документи.ПоверненняТоварівВідКлієнта_Const.Склад,
+                    ПоверненняТоварівВідКлієнта_Select.QuerySelect.Table, "join_tab_5", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ПоверненняТоварівВідКлієнта_Select.QuerySelect, Документи.ПоверненняТоварівВідКлієнта_Const.Автор,
+                    ПоверненняТоварівВідКлієнта_Select.QuerySelect.Table, "join_tab_6", "Автор");
+                
 
             /* Відбори */
             ПоверненняТоварівВідКлієнта_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -17236,46 +17119,45 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ПоверненняТоварівВідКлієнта_Select ПоверненняТоварівВідКлієнта_Select = new();
             ПоверненняТоварівВідКлієнта_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ПоверненняТоварівВідКлієнта_Const.Назва,
-                /*НомерДок*/ Документи.ПоверненняТоварівВідКлієнта_Const.НомерДок,
-                /*ДатаДок*/ Документи.ПоверненняТоварівВідКлієнта_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.ПоверненняТоварівВідКлієнта_Const.СумаДокументу,
-                /*Коментар*/ Документи.ПоверненняТоварівВідКлієнта_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ПоверненняТоварівВідКлієнта_Const.Назва,
+                    /*НомерДок*/ Документи.ПоверненняТоварівВідКлієнта_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПоверненняТоварівВідКлієнта_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.ПоверненняТоварівВідКлієнта_Const.СумаДокументу,
+                    /*Коментар*/ Документи.ПоверненняТоварівВідКлієнта_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПоверненняТоварівВідКлієнта_Select.QuerySelect.Order.Add(
+                    Документи.ПоверненняТоварівВідКлієнта_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ПоверненняТоварівВідКлієнта_Select.QuerySelect.Order.Add(
-                Документи.ПоверненняТоварівВідКлієнта_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ПоверненняТоварівВідКлієнта_Select.QuerySelect, Документи.ПоверненняТоварівВідКлієнта_Const.Організація,
-                ПоверненняТоварівВідКлієнта_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(ПоверненняТоварівВідКлієнта_Select.QuerySelect, Документи.ПоверненняТоварівВідКлієнта_Const.Валюта,
-                ПоверненняТоварівВідКлієнта_Select.QuerySelect.Table, "join_tab_2", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Каси_Pointer.GetJoin(ПоверненняТоварівВідКлієнта_Select.QuerySelect, Документи.ПоверненняТоварівВідКлієнта_Const.Каса,
-                ПоверненняТоварівВідКлієнта_Select.QuerySelect.Table, "join_tab_3", "Каса");
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(ПоверненняТоварівВідКлієнта_Select.QuerySelect, Документи.ПоверненняТоварівВідКлієнта_Const.Контрагент,
-                ПоверненняТоварівВідКлієнта_Select.QuerySelect.Table, "join_tab_4", "Контрагент");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ПоверненняТоварівВідКлієнта_Select.QuerySelect, Документи.ПоверненняТоварівВідКлієнта_Const.Склад,
-                ПоверненняТоварівВідКлієнта_Select.QuerySelect.Table, "join_tab_5", "Склад");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ПоверненняТоварівВідКлієнта_Select.QuerySelect, Документи.ПоверненняТоварівВідКлієнта_Const.Автор,
-                ПоверненняТоварівВідКлієнта_Select.QuerySelect.Table, "join_tab_6", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ПоверненняТоварівВідКлієнта_Select.QuerySelect, Документи.ПоверненняТоварівВідКлієнта_Const.Організація,
+                    ПоверненняТоварівВідКлієнта_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(ПоверненняТоварівВідКлієнта_Select.QuerySelect, Документи.ПоверненняТоварівВідКлієнта_Const.Валюта,
+                    ПоверненняТоварівВідКлієнта_Select.QuerySelect.Table, "join_tab_2", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Каси_Pointer.GetJoin(ПоверненняТоварівВідКлієнта_Select.QuerySelect, Документи.ПоверненняТоварівВідКлієнта_Const.Каса,
+                    ПоверненняТоварівВідКлієнта_Select.QuerySelect.Table, "join_tab_3", "Каса");
+                
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(ПоверненняТоварівВідКлієнта_Select.QuerySelect, Документи.ПоверненняТоварівВідКлієнта_Const.Контрагент,
+                    ПоверненняТоварівВідКлієнта_Select.QuerySelect.Table, "join_tab_4", "Контрагент");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ПоверненняТоварівВідКлієнта_Select.QuerySelect, Документи.ПоверненняТоварівВідКлієнта_Const.Склад,
+                    ПоверненняТоварівВідКлієнта_Select.QuerySelect.Table, "join_tab_5", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ПоверненняТоварівВідКлієнта_Select.QuerySelect, Документи.ПоверненняТоварівВідКлієнта_Const.Автор,
+                    ПоверненняТоварівВідКлієнта_Select.QuerySelect.Table, "join_tab_6", "Автор");
+                
 
             /* Відбори */
             if (form.WhereList != null) ПоверненняТоварівВідКлієнта_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -17660,42 +17542,41 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.АктВиконанихРобіт_Select АктВиконанихРобіт_Select = new();
             АктВиконанихРобіт_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.АктВиконанихРобіт_Const.Назва,
-                /*НомерДок*/ Документи.АктВиконанихРобіт_Const.НомерДок,
-                /*ДатаДок*/ Документи.АктВиконанихРобіт_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.АктВиконанихРобіт_Const.СумаДокументу,
-                /*Коментар*/ Документи.АктВиконанихРобіт_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.АктВиконанихРобіт_Const.Назва,
+                    /*НомерДок*/ Документи.АктВиконанихРобіт_Const.НомерДок,
+                    /*ДатаДок*/ Документи.АктВиконанихРобіт_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.АктВиконанихРобіт_Const.СумаДокументу,
+                    /*Коментар*/ Документи.АктВиконанихРобіт_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    АктВиконанихРобіт_Select.QuerySelect.Order.Add(
+                    Документи.АктВиконанихРобіт_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                АктВиконанихРобіт_Select.QuerySelect.Order.Add(
-                Документи.АктВиконанихРобіт_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(АктВиконанихРобіт_Select.QuerySelect, Документи.АктВиконанихРобіт_Const.Організація,
-                АктВиконанихРобіт_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(АктВиконанихРобіт_Select.QuerySelect, Документи.АктВиконанихРобіт_Const.Валюта,
-                АктВиконанихРобіт_Select.QuerySelect.Table, "join_tab_2", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Каси_Pointer.GetJoin(АктВиконанихРобіт_Select.QuerySelect, Документи.АктВиконанихРобіт_Const.Каса,
-                АктВиконанихРобіт_Select.QuerySelect.Table, "join_tab_3", "Каса");
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(АктВиконанихРобіт_Select.QuerySelect, Документи.АктВиконанихРобіт_Const.Контрагент,
-                АктВиконанихРобіт_Select.QuerySelect.Table, "join_tab_4", "Контрагент");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(АктВиконанихРобіт_Select.QuerySelect, Документи.АктВиконанихРобіт_Const.Автор,
-                АктВиконанихРобіт_Select.QuerySelect.Table, "join_tab_5", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(АктВиконанихРобіт_Select.QuerySelect, Документи.АктВиконанихРобіт_Const.Організація,
+                    АктВиконанихРобіт_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(АктВиконанихРобіт_Select.QuerySelect, Документи.АктВиконанихРобіт_Const.Валюта,
+                    АктВиконанихРобіт_Select.QuerySelect.Table, "join_tab_2", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Каси_Pointer.GetJoin(АктВиконанихРобіт_Select.QuerySelect, Документи.АктВиконанихРобіт_Const.Каса,
+                    АктВиконанихРобіт_Select.QuerySelect.Table, "join_tab_3", "Каса");
+                
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(АктВиконанихРобіт_Select.QuerySelect, Документи.АктВиконанихРобіт_Const.Контрагент,
+                    АктВиконанихРобіт_Select.QuerySelect.Table, "join_tab_4", "Контрагент");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(АктВиконанихРобіт_Select.QuerySelect, Документи.АктВиконанихРобіт_Const.Автор,
+                    АктВиконанихРобіт_Select.QuerySelect.Table, "join_tab_5", "Автор");
+                
 
             /* Відбори */
             АктВиконанихРобіт_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -17751,42 +17632,41 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.АктВиконанихРобіт_Select АктВиконанихРобіт_Select = new();
             АктВиконанихРобіт_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.АктВиконанихРобіт_Const.Назва,
-                /*НомерДок*/ Документи.АктВиконанихРобіт_Const.НомерДок,
-                /*ДатаДок*/ Документи.АктВиконанихРобіт_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.АктВиконанихРобіт_Const.СумаДокументу,
-                /*Коментар*/ Документи.АктВиконанихРобіт_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.АктВиконанихРобіт_Const.Назва,
+                    /*НомерДок*/ Документи.АктВиконанихРобіт_Const.НомерДок,
+                    /*ДатаДок*/ Документи.АктВиконанихРобіт_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.АктВиконанихРобіт_Const.СумаДокументу,
+                    /*Коментар*/ Документи.АктВиконанихРобіт_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    АктВиконанихРобіт_Select.QuerySelect.Order.Add(
+                    Документи.АктВиконанихРобіт_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                АктВиконанихРобіт_Select.QuerySelect.Order.Add(
-                Документи.АктВиконанихРобіт_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(АктВиконанихРобіт_Select.QuerySelect, Документи.АктВиконанихРобіт_Const.Організація,
-                АктВиконанихРобіт_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(АктВиконанихРобіт_Select.QuerySelect, Документи.АктВиконанихРобіт_Const.Валюта,
-                АктВиконанихРобіт_Select.QuerySelect.Table, "join_tab_2", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Каси_Pointer.GetJoin(АктВиконанихРобіт_Select.QuerySelect, Документи.АктВиконанихРобіт_Const.Каса,
-                АктВиконанихРобіт_Select.QuerySelect.Table, "join_tab_3", "Каса");
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(АктВиконанихРобіт_Select.QuerySelect, Документи.АктВиконанихРобіт_Const.Контрагент,
-                АктВиконанихРобіт_Select.QuerySelect.Table, "join_tab_4", "Контрагент");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(АктВиконанихРобіт_Select.QuerySelect, Документи.АктВиконанихРобіт_Const.Автор,
-                АктВиконанихРобіт_Select.QuerySelect.Table, "join_tab_5", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(АктВиконанихРобіт_Select.QuerySelect, Документи.АктВиконанихРобіт_Const.Організація,
+                    АктВиконанихРобіт_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(АктВиконанихРобіт_Select.QuerySelect, Документи.АктВиконанихРобіт_Const.Валюта,
+                    АктВиконанихРобіт_Select.QuerySelect.Table, "join_tab_2", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Каси_Pointer.GetJoin(АктВиконанихРобіт_Select.QuerySelect, Документи.АктВиконанихРобіт_Const.Каса,
+                    АктВиконанихРобіт_Select.QuerySelect.Table, "join_tab_3", "Каса");
+                
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(АктВиконанихРобіт_Select.QuerySelect, Документи.АктВиконанихРобіт_Const.Контрагент,
+                    АктВиконанихРобіт_Select.QuerySelect.Table, "join_tab_4", "Контрагент");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(АктВиконанихРобіт_Select.QuerySelect, Документи.АктВиконанихРобіт_Const.Автор,
+                    АктВиконанихРобіт_Select.QuerySelect.Table, "join_tab_5", "Автор");
+                
 
             /* Відбори */
             if (form.WhereList != null) АктВиконанихРобіт_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -18139,41 +18019,40 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ВведенняЗалишків_Select ВведенняЗалишків_Select = new();
             ВведенняЗалишків_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ВведенняЗалишків_Const.Назва,
-                /*НомерДок*/ Документи.ВведенняЗалишків_Const.НомерДок,
-                /*ДатаДок*/ Документи.ВведенняЗалишків_Const.ДатаДок,
-                /*Коментар*/ Документи.ВведенняЗалишків_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ВведенняЗалишків_Const.Назва,
+                    /*НомерДок*/ Документи.ВведенняЗалишків_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ВведенняЗалишків_Const.ДатаДок,
+                    /*Коментар*/ Документи.ВведенняЗалишків_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ВведенняЗалишків_Select.QuerySelect.Order.Add(
+                    Документи.ВведенняЗалишків_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ВведенняЗалишків_Select.QuerySelect.Order.Add(
-                Документи.ВведенняЗалишків_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ВведенняЗалишків_Select.QuerySelect, Документи.ВведенняЗалишків_Const.Організація,
-                ВведенняЗалишків_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ВведенняЗалишків_Select.QuerySelect, Документи.ВведенняЗалишків_Const.Склад,
-                ВведенняЗалишків_Select.QuerySelect.Table, "join_tab_2", "Склад");
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(ВведенняЗалишків_Select.QuerySelect, Документи.ВведенняЗалишків_Const.Контрагент,
-                ВведенняЗалишків_Select.QuerySelect.Table, "join_tab_3", "Контрагент");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(ВведенняЗалишків_Select.QuerySelect, Документи.ВведенняЗалишків_Const.Валюта,
-                ВведенняЗалишків_Select.QuerySelect.Table, "join_tab_4", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ВведенняЗалишків_Select.QuerySelect, Документи.ВведенняЗалишків_Const.Автор,
-                ВведенняЗалишків_Select.QuerySelect.Table, "join_tab_5", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ВведенняЗалишків_Select.QuerySelect, Документи.ВведенняЗалишків_Const.Організація,
+                    ВведенняЗалишків_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ВведенняЗалишків_Select.QuerySelect, Документи.ВведенняЗалишків_Const.Склад,
+                    ВведенняЗалишків_Select.QuerySelect.Table, "join_tab_2", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(ВведенняЗалишків_Select.QuerySelect, Документи.ВведенняЗалишків_Const.Контрагент,
+                    ВведенняЗалишків_Select.QuerySelect.Table, "join_tab_3", "Контрагент");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(ВведенняЗалишків_Select.QuerySelect, Документи.ВведенняЗалишків_Const.Валюта,
+                    ВведенняЗалишків_Select.QuerySelect.Table, "join_tab_4", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ВведенняЗалишків_Select.QuerySelect, Документи.ВведенняЗалишків_Const.Автор,
+                    ВведенняЗалишків_Select.QuerySelect.Table, "join_tab_5", "Автор");
+                
 
             /* Відбори */
             ВведенняЗалишків_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -18228,41 +18107,40 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ВведенняЗалишків_Select ВведенняЗалишків_Select = new();
             ВведенняЗалишків_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ВведенняЗалишків_Const.Назва,
-                /*НомерДок*/ Документи.ВведенняЗалишків_Const.НомерДок,
-                /*ДатаДок*/ Документи.ВведенняЗалишків_Const.ДатаДок,
-                /*Коментар*/ Документи.ВведенняЗалишків_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ВведенняЗалишків_Const.Назва,
+                    /*НомерДок*/ Документи.ВведенняЗалишків_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ВведенняЗалишків_Const.ДатаДок,
+                    /*Коментар*/ Документи.ВведенняЗалишків_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ВведенняЗалишків_Select.QuerySelect.Order.Add(
+                    Документи.ВведенняЗалишків_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ВведенняЗалишків_Select.QuerySelect.Order.Add(
-                Документи.ВведенняЗалишків_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ВведенняЗалишків_Select.QuerySelect, Документи.ВведенняЗалишків_Const.Організація,
-                ВведенняЗалишків_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ВведенняЗалишків_Select.QuerySelect, Документи.ВведенняЗалишків_Const.Склад,
-                ВведенняЗалишків_Select.QuerySelect.Table, "join_tab_2", "Склад");
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(ВведенняЗалишків_Select.QuerySelect, Документи.ВведенняЗалишків_Const.Контрагент,
-                ВведенняЗалишків_Select.QuerySelect.Table, "join_tab_3", "Контрагент");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(ВведенняЗалишків_Select.QuerySelect, Документи.ВведенняЗалишків_Const.Валюта,
-                ВведенняЗалишків_Select.QuerySelect.Table, "join_tab_4", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ВведенняЗалишків_Select.QuerySelect, Документи.ВведенняЗалишків_Const.Автор,
-                ВведенняЗалишків_Select.QuerySelect.Table, "join_tab_5", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ВведенняЗалишків_Select.QuerySelect, Документи.ВведенняЗалишків_Const.Організація,
+                    ВведенняЗалишків_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ВведенняЗалишків_Select.QuerySelect, Документи.ВведенняЗалишків_Const.Склад,
+                    ВведенняЗалишків_Select.QuerySelect.Table, "join_tab_2", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(ВведенняЗалишків_Select.QuerySelect, Документи.ВведенняЗалишків_Const.Контрагент,
+                    ВведенняЗалишків_Select.QuerySelect.Table, "join_tab_3", "Контрагент");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(ВведенняЗалишків_Select.QuerySelect, Документи.ВведенняЗалишків_Const.Валюта,
+                    ВведенняЗалишків_Select.QuerySelect.Table, "join_tab_4", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ВведенняЗалишків_Select.QuerySelect, Документи.ВведенняЗалишків_Const.Автор,
+                    ВведенняЗалишків_Select.QuerySelect.Table, "join_tab_5", "Автор");
+                
 
             /* Відбори */
             if (form.WhereList != null) ВведенняЗалишків_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -18554,33 +18432,32 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.НадлишкиТоварів_Select НадлишкиТоварів_Select = new();
             НадлишкиТоварів_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.НадлишкиТоварів_Const.Назва,
-                /*НомерДок*/ Документи.НадлишкиТоварів_Const.НомерДок,
-                /*ДатаДок*/ Документи.НадлишкиТоварів_Const.ДатаДок,
-                /*Коментар*/ Документи.НадлишкиТоварів_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.НадлишкиТоварів_Const.Назва,
+                    /*НомерДок*/ Документи.НадлишкиТоварів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.НадлишкиТоварів_Const.ДатаДок,
+                    /*Коментар*/ Документи.НадлишкиТоварів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    НадлишкиТоварів_Select.QuerySelect.Order.Add(
+                    Документи.НадлишкиТоварів_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                НадлишкиТоварів_Select.QuerySelect.Order.Add(
-                Документи.НадлишкиТоварів_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(НадлишкиТоварів_Select.QuerySelect, Документи.НадлишкиТоварів_Const.Організація,
-                НадлишкиТоварів_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(НадлишкиТоварів_Select.QuerySelect, Документи.НадлишкиТоварів_Const.Склад,
-                НадлишкиТоварів_Select.QuerySelect.Table, "join_tab_2", "Склад");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(НадлишкиТоварів_Select.QuerySelect, Документи.НадлишкиТоварів_Const.Автор,
-                НадлишкиТоварів_Select.QuerySelect.Table, "join_tab_3", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(НадлишкиТоварів_Select.QuerySelect, Документи.НадлишкиТоварів_Const.Організація,
+                    НадлишкиТоварів_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(НадлишкиТоварів_Select.QuerySelect, Документи.НадлишкиТоварів_Const.Склад,
+                    НадлишкиТоварів_Select.QuerySelect.Table, "join_tab_2", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(НадлишкиТоварів_Select.QuerySelect, Документи.НадлишкиТоварів_Const.Автор,
+                    НадлишкиТоварів_Select.QuerySelect.Table, "join_tab_3", "Автор");
+                
 
             /* Відбори */
             НадлишкиТоварів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -18633,33 +18510,32 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.НадлишкиТоварів_Select НадлишкиТоварів_Select = new();
             НадлишкиТоварів_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.НадлишкиТоварів_Const.Назва,
-                /*НомерДок*/ Документи.НадлишкиТоварів_Const.НомерДок,
-                /*ДатаДок*/ Документи.НадлишкиТоварів_Const.ДатаДок,
-                /*Коментар*/ Документи.НадлишкиТоварів_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.НадлишкиТоварів_Const.Назва,
+                    /*НомерДок*/ Документи.НадлишкиТоварів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.НадлишкиТоварів_Const.ДатаДок,
+                    /*Коментар*/ Документи.НадлишкиТоварів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    НадлишкиТоварів_Select.QuerySelect.Order.Add(
+                    Документи.НадлишкиТоварів_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                НадлишкиТоварів_Select.QuerySelect.Order.Add(
-                Документи.НадлишкиТоварів_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(НадлишкиТоварів_Select.QuerySelect, Документи.НадлишкиТоварів_Const.Організація,
-                НадлишкиТоварів_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(НадлишкиТоварів_Select.QuerySelect, Документи.НадлишкиТоварів_Const.Склад,
-                НадлишкиТоварів_Select.QuerySelect.Table, "join_tab_2", "Склад");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(НадлишкиТоварів_Select.QuerySelect, Документи.НадлишкиТоварів_Const.Автор,
-                НадлишкиТоварів_Select.QuerySelect.Table, "join_tab_3", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(НадлишкиТоварів_Select.QuerySelect, Документи.НадлишкиТоварів_Const.Організація,
+                    НадлишкиТоварів_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(НадлишкиТоварів_Select.QuerySelect, Документи.НадлишкиТоварів_Const.Склад,
+                    НадлишкиТоварів_Select.QuerySelect.Table, "join_tab_2", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(НадлишкиТоварів_Select.QuerySelect, Документи.НадлишкиТоварів_Const.Автор,
+                    НадлишкиТоварів_Select.QuerySelect.Table, "join_tab_3", "Автор");
+                
 
             /* Відбори */
             if (form.WhereList != null) НадлишкиТоварів_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -18949,33 +18825,32 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ПересортицяТоварів_Select ПересортицяТоварів_Select = new();
             ПересортицяТоварів_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ПересортицяТоварів_Const.Назва,
-                /*НомерДок*/ Документи.ПересортицяТоварів_Const.НомерДок,
-                /*ДатаДок*/ Документи.ПересортицяТоварів_Const.ДатаДок,
-                /*Коментар*/ Документи.ПересортицяТоварів_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ПересортицяТоварів_Const.Назва,
+                    /*НомерДок*/ Документи.ПересортицяТоварів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПересортицяТоварів_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПересортицяТоварів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПересортицяТоварів_Select.QuerySelect.Order.Add(
+                    Документи.ПересортицяТоварів_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ПересортицяТоварів_Select.QuerySelect.Order.Add(
-                Документи.ПересортицяТоварів_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ПересортицяТоварів_Select.QuerySelect, Документи.ПересортицяТоварів_Const.Організація,
-                ПересортицяТоварів_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ПересортицяТоварів_Select.QuerySelect, Документи.ПересортицяТоварів_Const.Склад,
-                ПересортицяТоварів_Select.QuerySelect.Table, "join_tab_2", "Склад");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ПересортицяТоварів_Select.QuerySelect, Документи.ПересортицяТоварів_Const.Автор,
-                ПересортицяТоварів_Select.QuerySelect.Table, "join_tab_3", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ПересортицяТоварів_Select.QuerySelect, Документи.ПересортицяТоварів_Const.Організація,
+                    ПересортицяТоварів_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ПересортицяТоварів_Select.QuerySelect, Документи.ПересортицяТоварів_Const.Склад,
+                    ПересортицяТоварів_Select.QuerySelect.Table, "join_tab_2", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ПересортицяТоварів_Select.QuerySelect, Документи.ПересортицяТоварів_Const.Автор,
+                    ПересортицяТоварів_Select.QuerySelect.Table, "join_tab_3", "Автор");
+                
 
             /* Відбори */
             ПересортицяТоварів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -19028,33 +18903,32 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ПересортицяТоварів_Select ПересортицяТоварів_Select = new();
             ПересортицяТоварів_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ПересортицяТоварів_Const.Назва,
-                /*НомерДок*/ Документи.ПересортицяТоварів_Const.НомерДок,
-                /*ДатаДок*/ Документи.ПересортицяТоварів_Const.ДатаДок,
-                /*Коментар*/ Документи.ПересортицяТоварів_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ПересортицяТоварів_Const.Назва,
+                    /*НомерДок*/ Документи.ПересортицяТоварів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПересортицяТоварів_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПересортицяТоварів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПересортицяТоварів_Select.QuerySelect.Order.Add(
+                    Документи.ПересортицяТоварів_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ПересортицяТоварів_Select.QuerySelect.Order.Add(
-                Документи.ПересортицяТоварів_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ПересортицяТоварів_Select.QuerySelect, Документи.ПересортицяТоварів_Const.Організація,
-                ПересортицяТоварів_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ПересортицяТоварів_Select.QuerySelect, Документи.ПересортицяТоварів_Const.Склад,
-                ПересортицяТоварів_Select.QuerySelect.Table, "join_tab_2", "Склад");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ПересортицяТоварів_Select.QuerySelect, Документи.ПересортицяТоварів_Const.Автор,
-                ПересортицяТоварів_Select.QuerySelect.Table, "join_tab_3", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ПересортицяТоварів_Select.QuerySelect, Документи.ПересортицяТоварів_Const.Організація,
+                    ПересортицяТоварів_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ПересортицяТоварів_Select.QuerySelect, Документи.ПересортицяТоварів_Const.Склад,
+                    ПересортицяТоварів_Select.QuerySelect.Table, "join_tab_2", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ПересортицяТоварів_Select.QuerySelect, Документи.ПересортицяТоварів_Const.Автор,
+                    ПересортицяТоварів_Select.QuerySelect.Table, "join_tab_3", "Автор");
+                
 
             /* Відбори */
             if (form.WhereList != null) ПересортицяТоварів_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -19374,37 +19248,36 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ПерерахунокТоварів_Select ПерерахунокТоварів_Select = new();
             ПерерахунокТоварів_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ПерерахунокТоварів_Const.Назва,
-                /*НомерДок*/ Документи.ПерерахунокТоварів_Const.НомерДок,
-                /*ДатаДок*/ Документи.ПерерахунокТоварів_Const.ДатаДок,
-                /*Коментар*/ Документи.ПерерахунокТоварів_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ПерерахунокТоварів_Const.Назва,
+                    /*НомерДок*/ Документи.ПерерахунокТоварів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПерерахунокТоварів_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПерерахунокТоварів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПерерахунокТоварів_Select.QuerySelect.Order.Add(
+                    Документи.ПерерахунокТоварів_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ПерерахунокТоварів_Select.QuerySelect.Order.Add(
-                Документи.ПерерахунокТоварів_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ПерерахунокТоварів_Select.QuerySelect, Документи.ПерерахунокТоварів_Const.Організація,
-                ПерерахунокТоварів_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ПерерахунокТоварів_Select.QuerySelect, Документи.ПерерахунокТоварів_Const.Склад,
-                ПерерахунокТоварів_Select.QuerySelect.Table, "join_tab_2", "Склад");
-            
-                /* Приєднання */
-                Довідники.ФізичніОсоби_Pointer.GetJoin(ПерерахунокТоварів_Select.QuerySelect, Документи.ПерерахунокТоварів_Const.Відповідальний,
-                ПерерахунокТоварів_Select.QuerySelect.Table, "join_tab_3", "Відповідальний");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ПерерахунокТоварів_Select.QuerySelect, Документи.ПерерахунокТоварів_Const.Автор,
-                ПерерахунокТоварів_Select.QuerySelect.Table, "join_tab_4", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ПерерахунокТоварів_Select.QuerySelect, Документи.ПерерахунокТоварів_Const.Організація,
+                    ПерерахунокТоварів_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ПерерахунокТоварів_Select.QuerySelect, Документи.ПерерахунокТоварів_Const.Склад,
+                    ПерерахунокТоварів_Select.QuerySelect.Table, "join_tab_2", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.ФізичніОсоби_Pointer.GetJoin(ПерерахунокТоварів_Select.QuerySelect, Документи.ПерерахунокТоварів_Const.Відповідальний,
+                    ПерерахунокТоварів_Select.QuerySelect.Table, "join_tab_3", "Відповідальний");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ПерерахунокТоварів_Select.QuerySelect, Документи.ПерерахунокТоварів_Const.Автор,
+                    ПерерахунокТоварів_Select.QuerySelect.Table, "join_tab_4", "Автор");
+                
 
             /* Відбори */
             ПерерахунокТоварів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -19458,37 +19331,36 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ПерерахунокТоварів_Select ПерерахунокТоварів_Select = new();
             ПерерахунокТоварів_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ПерерахунокТоварів_Const.Назва,
-                /*НомерДок*/ Документи.ПерерахунокТоварів_Const.НомерДок,
-                /*ДатаДок*/ Документи.ПерерахунокТоварів_Const.ДатаДок,
-                /*Коментар*/ Документи.ПерерахунокТоварів_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ПерерахунокТоварів_Const.Назва,
+                    /*НомерДок*/ Документи.ПерерахунокТоварів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПерерахунокТоварів_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПерерахунокТоварів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПерерахунокТоварів_Select.QuerySelect.Order.Add(
+                    Документи.ПерерахунокТоварів_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ПерерахунокТоварів_Select.QuerySelect.Order.Add(
-                Документи.ПерерахунокТоварів_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ПерерахунокТоварів_Select.QuerySelect, Документи.ПерерахунокТоварів_Const.Організація,
-                ПерерахунокТоварів_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ПерерахунокТоварів_Select.QuerySelect, Документи.ПерерахунокТоварів_Const.Склад,
-                ПерерахунокТоварів_Select.QuerySelect.Table, "join_tab_2", "Склад");
-            
-                /* Приєднання */
-                Довідники.ФізичніОсоби_Pointer.GetJoin(ПерерахунокТоварів_Select.QuerySelect, Документи.ПерерахунокТоварів_Const.Відповідальний,
-                ПерерахунокТоварів_Select.QuerySelect.Table, "join_tab_3", "Відповідальний");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ПерерахунокТоварів_Select.QuerySelect, Документи.ПерерахунокТоварів_Const.Автор,
-                ПерерахунокТоварів_Select.QuerySelect.Table, "join_tab_4", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ПерерахунокТоварів_Select.QuerySelect, Документи.ПерерахунокТоварів_Const.Організація,
+                    ПерерахунокТоварів_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ПерерахунокТоварів_Select.QuerySelect, Документи.ПерерахунокТоварів_Const.Склад,
+                    ПерерахунокТоварів_Select.QuerySelect.Table, "join_tab_2", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.ФізичніОсоби_Pointer.GetJoin(ПерерахунокТоварів_Select.QuerySelect, Документи.ПерерахунокТоварів_Const.Відповідальний,
+                    ПерерахунокТоварів_Select.QuerySelect.Table, "join_tab_3", "Відповідальний");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ПерерахунокТоварів_Select.QuerySelect, Документи.ПерерахунокТоварів_Const.Автор,
+                    ПерерахунокТоварів_Select.QuerySelect.Table, "join_tab_4", "Автор");
+                
 
             /* Відбори */
             if (form.WhereList != null) ПерерахунокТоварів_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -19810,34 +19682,33 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ПсуванняТоварів_Select ПсуванняТоварів_Select = new();
             ПсуванняТоварів_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ПсуванняТоварів_Const.Назва,
-                /*НомерДок*/ Документи.ПсуванняТоварів_Const.НомерДок,
-                /*ДатаДок*/ Документи.ПсуванняТоварів_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.ПсуванняТоварів_Const.СумаДокументу,
-                /*Коментар*/ Документи.ПсуванняТоварів_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ПсуванняТоварів_Const.Назва,
+                    /*НомерДок*/ Документи.ПсуванняТоварів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПсуванняТоварів_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.ПсуванняТоварів_Const.СумаДокументу,
+                    /*Коментар*/ Документи.ПсуванняТоварів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПсуванняТоварів_Select.QuerySelect.Order.Add(
+                    Документи.ПсуванняТоварів_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ПсуванняТоварів_Select.QuerySelect.Order.Add(
-                Документи.ПсуванняТоварів_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ПсуванняТоварів_Select.QuerySelect, Документи.ПсуванняТоварів_Const.Організація,
-                ПсуванняТоварів_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ПсуванняТоварів_Select.QuerySelect, Документи.ПсуванняТоварів_Const.Склад,
-                ПсуванняТоварів_Select.QuerySelect.Table, "join_tab_2", "Склад");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ПсуванняТоварів_Select.QuerySelect, Документи.ПсуванняТоварів_Const.Автор,
-                ПсуванняТоварів_Select.QuerySelect.Table, "join_tab_3", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ПсуванняТоварів_Select.QuerySelect, Документи.ПсуванняТоварів_Const.Організація,
+                    ПсуванняТоварів_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ПсуванняТоварів_Select.QuerySelect, Документи.ПсуванняТоварів_Const.Склад,
+                    ПсуванняТоварів_Select.QuerySelect.Table, "join_tab_2", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ПсуванняТоварів_Select.QuerySelect, Документи.ПсуванняТоварів_Const.Автор,
+                    ПсуванняТоварів_Select.QuerySelect.Table, "join_tab_3", "Автор");
+                
 
             /* Відбори */
             ПсуванняТоварів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -19891,34 +19762,33 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ПсуванняТоварів_Select ПсуванняТоварів_Select = new();
             ПсуванняТоварів_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ПсуванняТоварів_Const.Назва,
-                /*НомерДок*/ Документи.ПсуванняТоварів_Const.НомерДок,
-                /*ДатаДок*/ Документи.ПсуванняТоварів_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.ПсуванняТоварів_Const.СумаДокументу,
-                /*Коментар*/ Документи.ПсуванняТоварів_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ПсуванняТоварів_Const.Назва,
+                    /*НомерДок*/ Документи.ПсуванняТоварів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПсуванняТоварів_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.ПсуванняТоварів_Const.СумаДокументу,
+                    /*Коментар*/ Документи.ПсуванняТоварів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПсуванняТоварів_Select.QuerySelect.Order.Add(
+                    Документи.ПсуванняТоварів_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ПсуванняТоварів_Select.QuerySelect.Order.Add(
-                Документи.ПсуванняТоварів_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ПсуванняТоварів_Select.QuerySelect, Документи.ПсуванняТоварів_Const.Організація,
-                ПсуванняТоварів_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ПсуванняТоварів_Select.QuerySelect, Документи.ПсуванняТоварів_Const.Склад,
-                ПсуванняТоварів_Select.QuerySelect.Table, "join_tab_2", "Склад");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ПсуванняТоварів_Select.QuerySelect, Документи.ПсуванняТоварів_Const.Автор,
-                ПсуванняТоварів_Select.QuerySelect.Table, "join_tab_3", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ПсуванняТоварів_Select.QuerySelect, Документи.ПсуванняТоварів_Const.Організація,
+                    ПсуванняТоварів_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ПсуванняТоварів_Select.QuerySelect, Документи.ПсуванняТоварів_Const.Склад,
+                    ПсуванняТоварів_Select.QuerySelect.Table, "join_tab_2", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ПсуванняТоварів_Select.QuerySelect, Документи.ПсуванняТоварів_Const.Автор,
+                    ПсуванняТоварів_Select.QuerySelect.Table, "join_tab_3", "Автор");
+                
 
             /* Відбори */
             if (form.WhereList != null) ПсуванняТоварів_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -20270,38 +20140,37 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ВнутрішнєСпоживанняТоварів_Select ВнутрішнєСпоживанняТоварів_Select = new();
             ВнутрішнєСпоживанняТоварів_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ВнутрішнєСпоживанняТоварів_Const.Назва,
-                /*НомерДок*/ Документи.ВнутрішнєСпоживанняТоварів_Const.НомерДок,
-                /*ДатаДок*/ Документи.ВнутрішнєСпоживанняТоварів_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.ВнутрішнєСпоживанняТоварів_Const.СумаДокументу,
-                /*Коментар*/ Документи.ВнутрішнєСпоживанняТоварів_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ВнутрішнєСпоживанняТоварів_Const.Назва,
+                    /*НомерДок*/ Документи.ВнутрішнєСпоживанняТоварів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ВнутрішнєСпоживанняТоварів_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.ВнутрішнєСпоживанняТоварів_Const.СумаДокументу,
+                    /*Коментар*/ Документи.ВнутрішнєСпоживанняТоварів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ВнутрішнєСпоживанняТоварів_Select.QuerySelect.Order.Add(
+                    Документи.ВнутрішнєСпоживанняТоварів_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ВнутрішнєСпоживанняТоварів_Select.QuerySelect.Order.Add(
-                Документи.ВнутрішнєСпоживанняТоварів_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ВнутрішнєСпоживанняТоварів_Select.QuerySelect, Документи.ВнутрішнєСпоживанняТоварів_Const.Організація,
-                ВнутрішнєСпоживанняТоварів_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ВнутрішнєСпоживанняТоварів_Select.QuerySelect, Документи.ВнутрішнєСпоживанняТоварів_Const.Склад,
-                ВнутрішнєСпоживанняТоварів_Select.QuerySelect.Table, "join_tab_2", "Склад");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(ВнутрішнєСпоживанняТоварів_Select.QuerySelect, Документи.ВнутрішнєСпоживанняТоварів_Const.Валюта,
-                ВнутрішнєСпоживанняТоварів_Select.QuerySelect.Table, "join_tab_3", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ВнутрішнєСпоживанняТоварів_Select.QuerySelect, Документи.ВнутрішнєСпоживанняТоварів_Const.Автор,
-                ВнутрішнєСпоживанняТоварів_Select.QuerySelect.Table, "join_tab_4", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ВнутрішнєСпоживанняТоварів_Select.QuerySelect, Документи.ВнутрішнєСпоживанняТоварів_Const.Організація,
+                    ВнутрішнєСпоживанняТоварів_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ВнутрішнєСпоживанняТоварів_Select.QuerySelect, Документи.ВнутрішнєСпоживанняТоварів_Const.Склад,
+                    ВнутрішнєСпоживанняТоварів_Select.QuerySelect.Table, "join_tab_2", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(ВнутрішнєСпоживанняТоварів_Select.QuerySelect, Документи.ВнутрішнєСпоживанняТоварів_Const.Валюта,
+                    ВнутрішнєСпоживанняТоварів_Select.QuerySelect.Table, "join_tab_3", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ВнутрішнєСпоживанняТоварів_Select.QuerySelect, Документи.ВнутрішнєСпоживанняТоварів_Const.Автор,
+                    ВнутрішнєСпоживанняТоварів_Select.QuerySelect.Table, "join_tab_4", "Автор");
+                
 
             /* Відбори */
             ВнутрішнєСпоживанняТоварів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -20356,38 +20225,37 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ВнутрішнєСпоживанняТоварів_Select ВнутрішнєСпоживанняТоварів_Select = new();
             ВнутрішнєСпоживанняТоварів_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ВнутрішнєСпоживанняТоварів_Const.Назва,
-                /*НомерДок*/ Документи.ВнутрішнєСпоживанняТоварів_Const.НомерДок,
-                /*ДатаДок*/ Документи.ВнутрішнєСпоживанняТоварів_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.ВнутрішнєСпоживанняТоварів_Const.СумаДокументу,
-                /*Коментар*/ Документи.ВнутрішнєСпоживанняТоварів_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ВнутрішнєСпоживанняТоварів_Const.Назва,
+                    /*НомерДок*/ Документи.ВнутрішнєСпоживанняТоварів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ВнутрішнєСпоживанняТоварів_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.ВнутрішнєСпоживанняТоварів_Const.СумаДокументу,
+                    /*Коментар*/ Документи.ВнутрішнєСпоживанняТоварів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ВнутрішнєСпоживанняТоварів_Select.QuerySelect.Order.Add(
+                    Документи.ВнутрішнєСпоживанняТоварів_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ВнутрішнєСпоживанняТоварів_Select.QuerySelect.Order.Add(
-                Документи.ВнутрішнєСпоживанняТоварів_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ВнутрішнєСпоживанняТоварів_Select.QuerySelect, Документи.ВнутрішнєСпоживанняТоварів_Const.Організація,
-                ВнутрішнєСпоживанняТоварів_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ВнутрішнєСпоживанняТоварів_Select.QuerySelect, Документи.ВнутрішнєСпоживанняТоварів_Const.Склад,
-                ВнутрішнєСпоживанняТоварів_Select.QuerySelect.Table, "join_tab_2", "Склад");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(ВнутрішнєСпоживанняТоварів_Select.QuerySelect, Документи.ВнутрішнєСпоживанняТоварів_Const.Валюта,
-                ВнутрішнєСпоживанняТоварів_Select.QuerySelect.Table, "join_tab_3", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ВнутрішнєСпоживанняТоварів_Select.QuerySelect, Документи.ВнутрішнєСпоживанняТоварів_Const.Автор,
-                ВнутрішнєСпоживанняТоварів_Select.QuerySelect.Table, "join_tab_4", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ВнутрішнєСпоживанняТоварів_Select.QuerySelect, Документи.ВнутрішнєСпоживанняТоварів_Const.Організація,
+                    ВнутрішнєСпоживанняТоварів_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ВнутрішнєСпоживанняТоварів_Select.QuerySelect, Документи.ВнутрішнєСпоживанняТоварів_Const.Склад,
+                    ВнутрішнєСпоживанняТоварів_Select.QuerySelect.Table, "join_tab_2", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(ВнутрішнєСпоживанняТоварів_Select.QuerySelect, Документи.ВнутрішнєСпоживанняТоварів_Const.Валюта,
+                    ВнутрішнєСпоживанняТоварів_Select.QuerySelect.Table, "join_tab_3", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ВнутрішнєСпоживанняТоварів_Select.QuerySelect, Документи.ВнутрішнєСпоживанняТоварів_Const.Автор,
+                    ВнутрішнєСпоживанняТоварів_Select.QuerySelect.Table, "join_tab_4", "Автор");
+                
 
             /* Відбори */
             if (form.WhereList != null) ВнутрішнєСпоживанняТоварів_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -20800,46 +20668,45 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.РахунокФактура_Select РахунокФактура_Select = new();
             РахунокФактура_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.РахунокФактура_Const.Назва,
-                /*НомерДок*/ Документи.РахунокФактура_Const.НомерДок,
-                /*ДатаДок*/ Документи.РахунокФактура_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.РахунокФактура_Const.СумаДокументу,
-                /*Коментар*/ Документи.РахунокФактура_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.РахунокФактура_Const.Назва,
+                    /*НомерДок*/ Документи.РахунокФактура_Const.НомерДок,
+                    /*ДатаДок*/ Документи.РахунокФактура_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.РахунокФактура_Const.СумаДокументу,
+                    /*Коментар*/ Документи.РахунокФактура_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    РахунокФактура_Select.QuerySelect.Order.Add(
+                    Документи.РахунокФактура_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                РахунокФактура_Select.QuerySelect.Order.Add(
-                Документи.РахунокФактура_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(РахунокФактура_Select.QuerySelect, Документи.РахунокФактура_Const.Організація,
-                РахунокФактура_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(РахунокФактура_Select.QuerySelect, Документи.РахунокФактура_Const.Контрагент,
-                РахунокФактура_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(РахунокФактура_Select.QuerySelect, Документи.РахунокФактура_Const.Валюта,
-                РахунокФактура_Select.QuerySelect.Table, "join_tab_3", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Каси_Pointer.GetJoin(РахунокФактура_Select.QuerySelect, Документи.РахунокФактура_Const.Каса,
-                РахунокФактура_Select.QuerySelect.Table, "join_tab_4", "Каса");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(РахунокФактура_Select.QuerySelect, Документи.РахунокФактура_Const.Склад,
-                РахунокФактура_Select.QuerySelect.Table, "join_tab_5", "Склад");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(РахунокФактура_Select.QuerySelect, Документи.РахунокФактура_Const.Автор,
-                РахунокФактура_Select.QuerySelect.Table, "join_tab_6", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(РахунокФактура_Select.QuerySelect, Документи.РахунокФактура_Const.Організація,
+                    РахунокФактура_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(РахунокФактура_Select.QuerySelect, Документи.РахунокФактура_Const.Контрагент,
+                    РахунокФактура_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(РахунокФактура_Select.QuerySelect, Документи.РахунокФактура_Const.Валюта,
+                    РахунокФактура_Select.QuerySelect.Table, "join_tab_3", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Каси_Pointer.GetJoin(РахунокФактура_Select.QuerySelect, Документи.РахунокФактура_Const.Каса,
+                    РахунокФактура_Select.QuerySelect.Table, "join_tab_4", "Каса");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(РахунокФактура_Select.QuerySelect, Документи.РахунокФактура_Const.Склад,
+                    РахунокФактура_Select.QuerySelect.Table, "join_tab_5", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(РахунокФактура_Select.QuerySelect, Документи.РахунокФактура_Const.Автор,
+                    РахунокФактура_Select.QuerySelect.Table, "join_tab_6", "Автор");
+                
 
             /* Відбори */
             РахунокФактура_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -20896,46 +20763,45 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.РахунокФактура_Select РахунокФактура_Select = new();
             РахунокФактура_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.РахунокФактура_Const.Назва,
-                /*НомерДок*/ Документи.РахунокФактура_Const.НомерДок,
-                /*ДатаДок*/ Документи.РахунокФактура_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.РахунокФактура_Const.СумаДокументу,
-                /*Коментар*/ Документи.РахунокФактура_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.РахунокФактура_Const.Назва,
+                    /*НомерДок*/ Документи.РахунокФактура_Const.НомерДок,
+                    /*ДатаДок*/ Документи.РахунокФактура_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.РахунокФактура_Const.СумаДокументу,
+                    /*Коментар*/ Документи.РахунокФактура_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    РахунокФактура_Select.QuerySelect.Order.Add(
+                    Документи.РахунокФактура_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                РахунокФактура_Select.QuerySelect.Order.Add(
-                Документи.РахунокФактура_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(РахунокФактура_Select.QuerySelect, Документи.РахунокФактура_Const.Організація,
-                РахунокФактура_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(РахунокФактура_Select.QuerySelect, Документи.РахунокФактура_Const.Контрагент,
-                РахунокФактура_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(РахунокФактура_Select.QuerySelect, Документи.РахунокФактура_Const.Валюта,
-                РахунокФактура_Select.QuerySelect.Table, "join_tab_3", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Каси_Pointer.GetJoin(РахунокФактура_Select.QuerySelect, Документи.РахунокФактура_Const.Каса,
-                РахунокФактура_Select.QuerySelect.Table, "join_tab_4", "Каса");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(РахунокФактура_Select.QuerySelect, Документи.РахунокФактура_Const.Склад,
-                РахунокФактура_Select.QuerySelect.Table, "join_tab_5", "Склад");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(РахунокФактура_Select.QuerySelect, Документи.РахунокФактура_Const.Автор,
-                РахунокФактура_Select.QuerySelect.Table, "join_tab_6", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(РахунокФактура_Select.QuerySelect, Документи.РахунокФактура_Const.Організація,
+                    РахунокФактура_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(РахунокФактура_Select.QuerySelect, Документи.РахунокФактура_Const.Контрагент,
+                    РахунокФактура_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(РахунокФактура_Select.QuerySelect, Документи.РахунокФактура_Const.Валюта,
+                    РахунокФактура_Select.QuerySelect.Table, "join_tab_3", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Каси_Pointer.GetJoin(РахунокФактура_Select.QuerySelect, Документи.РахунокФактура_Const.Каса,
+                    РахунокФактура_Select.QuerySelect.Table, "join_tab_4", "Каса");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(РахунокФактура_Select.QuerySelect, Документи.РахунокФактура_Const.Склад,
+                    РахунокФактура_Select.QuerySelect.Table, "join_tab_5", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(РахунокФактура_Select.QuerySelect, Документи.РахунокФактура_Const.Автор,
+                    РахунокФактура_Select.QuerySelect.Table, "join_tab_6", "Автор");
+                
 
             /* Відбори */
             if (form.WhereList != null) РахунокФактура_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -21229,33 +21095,32 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.РозміщенняТоварівНаСкладі_Select РозміщенняТоварівНаСкладі_Select = new();
             РозміщенняТоварівНаСкладі_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.РозміщенняТоварівНаСкладі_Const.Назва,
-                /*ДатаДок*/ Документи.РозміщенняТоварівНаСкладі_Const.ДатаДок,
-                /*НомерДок*/ Документи.РозміщенняТоварівНаСкладі_Const.НомерДок,
-                /*Коментар*/ Документи.РозміщенняТоварівНаСкладі_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.РозміщенняТоварівНаСкладі_Const.Назва,
+                    /*ДатаДок*/ Документи.РозміщенняТоварівНаСкладі_Const.ДатаДок,
+                    /*НомерДок*/ Документи.РозміщенняТоварівНаСкладі_Const.НомерДок,
+                    /*Коментар*/ Документи.РозміщенняТоварівНаСкладі_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    РозміщенняТоварівНаСкладі_Select.QuerySelect.Order.Add(
+                    Документи.РозміщенняТоварівНаСкладі_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                РозміщенняТоварівНаСкладі_Select.QuerySelect.Order.Add(
-                Документи.РозміщенняТоварівНаСкладі_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(РозміщенняТоварівНаСкладі_Select.QuerySelect, Документи.РозміщенняТоварівНаСкладі_Const.Склад,
-                РозміщенняТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_1", "Склад");
-            
-                /* Приєднання */
-                Документи.ПоступленняТоварівТаПослуг_Pointer.GetJoin(РозміщенняТоварівНаСкладі_Select.QuerySelect, Документи.РозміщенняТоварівНаСкладі_Const.ДокументПоступлення,
-                РозміщенняТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_2", "ДокументПоступлення");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(РозміщенняТоварівНаСкладі_Select.QuerySelect, Документи.РозміщенняТоварівНаСкладі_Const.Автор,
-                РозміщенняТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_3", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(РозміщенняТоварівНаСкладі_Select.QuerySelect, Документи.РозміщенняТоварівНаСкладі_Const.Склад,
+                    РозміщенняТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_1", "Склад");
+                
+                    /* Приєднання */
+                    Документи.ПоступленняТоварівТаПослуг_Pointer.GetJoin(РозміщенняТоварівНаСкладі_Select.QuerySelect, Документи.РозміщенняТоварівНаСкладі_Const.ДокументПоступлення,
+                    РозміщенняТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_2", "ДокументПоступлення");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(РозміщенняТоварівНаСкладі_Select.QuerySelect, Документи.РозміщенняТоварівНаСкладі_Const.Автор,
+                    РозміщенняТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_3", "Автор");
+                
 
             /* Відбори */
             РозміщенняТоварівНаСкладі_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -21308,33 +21173,32 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.РозміщенняТоварівНаСкладі_Select РозміщенняТоварівНаСкладі_Select = new();
             РозміщенняТоварівНаСкладі_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.РозміщенняТоварівНаСкладі_Const.Назва,
-                /*ДатаДок*/ Документи.РозміщенняТоварівНаСкладі_Const.ДатаДок,
-                /*НомерДок*/ Документи.РозміщенняТоварівНаСкладі_Const.НомерДок,
-                /*Коментар*/ Документи.РозміщенняТоварівНаСкладі_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.РозміщенняТоварівНаСкладі_Const.Назва,
+                    /*ДатаДок*/ Документи.РозміщенняТоварівНаСкладі_Const.ДатаДок,
+                    /*НомерДок*/ Документи.РозміщенняТоварівНаСкладі_Const.НомерДок,
+                    /*Коментар*/ Документи.РозміщенняТоварівНаСкладі_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    РозміщенняТоварівНаСкладі_Select.QuerySelect.Order.Add(
+                    Документи.РозміщенняТоварівНаСкладі_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                РозміщенняТоварівНаСкладі_Select.QuerySelect.Order.Add(
-                Документи.РозміщенняТоварівНаСкладі_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(РозміщенняТоварівНаСкладі_Select.QuerySelect, Документи.РозміщенняТоварівНаСкладі_Const.Склад,
-                РозміщенняТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_1", "Склад");
-            
-                /* Приєднання */
-                Документи.ПоступленняТоварівТаПослуг_Pointer.GetJoin(РозміщенняТоварівНаСкладі_Select.QuerySelect, Документи.РозміщенняТоварівНаСкладі_Const.ДокументПоступлення,
-                РозміщенняТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_2", "ДокументПоступлення");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(РозміщенняТоварівНаСкладі_Select.QuerySelect, Документи.РозміщенняТоварівНаСкладі_Const.Автор,
-                РозміщенняТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_3", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(РозміщенняТоварівНаСкладі_Select.QuerySelect, Документи.РозміщенняТоварівНаСкладі_Const.Склад,
+                    РозміщенняТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_1", "Склад");
+                
+                    /* Приєднання */
+                    Документи.ПоступленняТоварівТаПослуг_Pointer.GetJoin(РозміщенняТоварівНаСкладі_Select.QuerySelect, Документи.РозміщенняТоварівНаСкладі_Const.ДокументПоступлення,
+                    РозміщенняТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_2", "ДокументПоступлення");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(РозміщенняТоварівНаСкладі_Select.QuerySelect, Документи.РозміщенняТоварівНаСкладі_Const.Автор,
+                    РозміщенняТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_3", "Автор");
+                
 
             /* Відбори */
             if (form.WhereList != null) РозміщенняТоварівНаСкладі_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -21624,33 +21488,32 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ПереміщенняТоварівНаСкладі_Select ПереміщенняТоварівНаСкладі_Select = new();
             ПереміщенняТоварівНаСкладі_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ПереміщенняТоварівНаСкладі_Const.Назва,
-                /*ДатаДок*/ Документи.ПереміщенняТоварівНаСкладі_Const.ДатаДок,
-                /*НомерДок*/ Документи.ПереміщенняТоварівНаСкладі_Const.НомерДок,
-                /*Коментар*/ Документи.ПереміщенняТоварівНаСкладі_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ПереміщенняТоварівНаСкладі_Const.Назва,
+                    /*ДатаДок*/ Документи.ПереміщенняТоварівНаСкладі_Const.ДатаДок,
+                    /*НомерДок*/ Документи.ПереміщенняТоварівНаСкладі_Const.НомерДок,
+                    /*Коментар*/ Документи.ПереміщенняТоварівНаСкладі_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПереміщенняТоварівНаСкладі_Select.QuerySelect.Order.Add(
+                    Документи.ПереміщенняТоварівНаСкладі_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ПереміщенняТоварівНаСкладі_Select.QuerySelect.Order.Add(
-                Документи.ПереміщенняТоварівНаСкладі_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ПереміщенняТоварівНаСкладі_Select.QuerySelect, Документи.ПереміщенняТоварівНаСкладі_Const.Склад,
-                ПереміщенняТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_1", "Склад");
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ПереміщенняТоварівНаСкладі_Select.QuerySelect, Документи.ПереміщенняТоварівНаСкладі_Const.Організація,
-                ПереміщенняТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_2", "Організація");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ПереміщенняТоварівНаСкладі_Select.QuerySelect, Документи.ПереміщенняТоварівНаСкладі_Const.Автор,
-                ПереміщенняТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_3", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ПереміщенняТоварівНаСкладі_Select.QuerySelect, Документи.ПереміщенняТоварівНаСкладі_Const.Склад,
+                    ПереміщенняТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_1", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ПереміщенняТоварівНаСкладі_Select.QuerySelect, Документи.ПереміщенняТоварівНаСкладі_Const.Організація,
+                    ПереміщенняТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_2", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ПереміщенняТоварівНаСкладі_Select.QuerySelect, Документи.ПереміщенняТоварівНаСкладі_Const.Автор,
+                    ПереміщенняТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_3", "Автор");
+                
 
             /* Відбори */
             ПереміщенняТоварівНаСкладі_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -21703,33 +21566,32 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ПереміщенняТоварівНаСкладі_Select ПереміщенняТоварівНаСкладі_Select = new();
             ПереміщенняТоварівНаСкладі_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ПереміщенняТоварівНаСкладі_Const.Назва,
-                /*ДатаДок*/ Документи.ПереміщенняТоварівНаСкладі_Const.ДатаДок,
-                /*НомерДок*/ Документи.ПереміщенняТоварівНаСкладі_Const.НомерДок,
-                /*Коментар*/ Документи.ПереміщенняТоварівНаСкладі_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ПереміщенняТоварівНаСкладі_Const.Назва,
+                    /*ДатаДок*/ Документи.ПереміщенняТоварівНаСкладі_Const.ДатаДок,
+                    /*НомерДок*/ Документи.ПереміщенняТоварівНаСкладі_Const.НомерДок,
+                    /*Коментар*/ Документи.ПереміщенняТоварівНаСкладі_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПереміщенняТоварівНаСкладі_Select.QuerySelect.Order.Add(
+                    Документи.ПереміщенняТоварівНаСкладі_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ПереміщенняТоварівНаСкладі_Select.QuerySelect.Order.Add(
-                Документи.ПереміщенняТоварівНаСкладі_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ПереміщенняТоварівНаСкладі_Select.QuerySelect, Документи.ПереміщенняТоварівНаСкладі_Const.Склад,
-                ПереміщенняТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_1", "Склад");
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ПереміщенняТоварівНаСкладі_Select.QuerySelect, Документи.ПереміщенняТоварівНаСкладі_Const.Організація,
-                ПереміщенняТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_2", "Організація");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ПереміщенняТоварівНаСкладі_Select.QuerySelect, Документи.ПереміщенняТоварівНаСкладі_Const.Автор,
-                ПереміщенняТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_3", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ПереміщенняТоварівНаСкладі_Select.QuerySelect, Документи.ПереміщенняТоварівНаСкладі_Const.Склад,
+                    ПереміщенняТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_1", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ПереміщенняТоварівНаСкладі_Select.QuerySelect, Документи.ПереміщенняТоварівНаСкладі_Const.Організація,
+                    ПереміщенняТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_2", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ПереміщенняТоварівНаСкладі_Select.QuerySelect, Документи.ПереміщенняТоварівНаСкладі_Const.Автор,
+                    ПереміщенняТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_3", "Автор");
+                
 
             /* Відбори */
             if (form.WhereList != null) ПереміщенняТоварівНаСкладі_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -22019,33 +21881,32 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ЗбіркаТоварівНаСкладі_Select ЗбіркаТоварівНаСкладі_Select = new();
             ЗбіркаТоварівНаСкладі_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ЗбіркаТоварівНаСкладі_Const.Назва,
-                /*ДатаДок*/ Документи.ЗбіркаТоварівНаСкладі_Const.ДатаДок,
-                /*НомерДок*/ Документи.ЗбіркаТоварівНаСкладі_Const.НомерДок,
-                /*Коментар*/ Документи.ЗбіркаТоварівНаСкладі_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ЗбіркаТоварівНаСкладі_Const.Назва,
+                    /*ДатаДок*/ Документи.ЗбіркаТоварівНаСкладі_Const.ДатаДок,
+                    /*НомерДок*/ Документи.ЗбіркаТоварівНаСкладі_Const.НомерДок,
+                    /*Коментар*/ Документи.ЗбіркаТоварівНаСкладі_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ЗбіркаТоварівНаСкладі_Select.QuerySelect.Order.Add(
+                    Документи.ЗбіркаТоварівНаСкладі_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ЗбіркаТоварівНаСкладі_Select.QuerySelect.Order.Add(
-                Документи.ЗбіркаТоварівНаСкладі_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ЗбіркаТоварівНаСкладі_Select.QuerySelect, Документи.ЗбіркаТоварівНаСкладі_Const.Склад,
-                ЗбіркаТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_1", "Склад");
-            
-                /* Приєднання */
-                Документи.РеалізаціяТоварівТаПослуг_Pointer.GetJoin(ЗбіркаТоварівНаСкладі_Select.QuerySelect, Документи.ЗбіркаТоварівНаСкладі_Const.ДокументРеалізації,
-                ЗбіркаТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_2", "ДокументРеалізації");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ЗбіркаТоварівНаСкладі_Select.QuerySelect, Документи.ЗбіркаТоварівНаСкладі_Const.Автор,
-                ЗбіркаТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_3", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ЗбіркаТоварівНаСкладі_Select.QuerySelect, Документи.ЗбіркаТоварівНаСкладі_Const.Склад,
+                    ЗбіркаТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_1", "Склад");
+                
+                    /* Приєднання */
+                    Документи.РеалізаціяТоварівТаПослуг_Pointer.GetJoin(ЗбіркаТоварівНаСкладі_Select.QuerySelect, Документи.ЗбіркаТоварівНаСкладі_Const.ДокументРеалізації,
+                    ЗбіркаТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_2", "ДокументРеалізації");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ЗбіркаТоварівНаСкладі_Select.QuerySelect, Документи.ЗбіркаТоварівНаСкладі_Const.Автор,
+                    ЗбіркаТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_3", "Автор");
+                
 
             /* Відбори */
             ЗбіркаТоварівНаСкладі_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -22098,33 +21959,32 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ЗбіркаТоварівНаСкладі_Select ЗбіркаТоварівНаСкладі_Select = new();
             ЗбіркаТоварівНаСкладі_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ЗбіркаТоварівНаСкладі_Const.Назва,
-                /*ДатаДок*/ Документи.ЗбіркаТоварівНаСкладі_Const.ДатаДок,
-                /*НомерДок*/ Документи.ЗбіркаТоварівНаСкладі_Const.НомерДок,
-                /*Коментар*/ Документи.ЗбіркаТоварівНаСкладі_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ЗбіркаТоварівНаСкладі_Const.Назва,
+                    /*ДатаДок*/ Документи.ЗбіркаТоварівНаСкладі_Const.ДатаДок,
+                    /*НомерДок*/ Документи.ЗбіркаТоварівНаСкладі_Const.НомерДок,
+                    /*Коментар*/ Документи.ЗбіркаТоварівНаСкладі_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ЗбіркаТоварівНаСкладі_Select.QuerySelect.Order.Add(
+                    Документи.ЗбіркаТоварівНаСкладі_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ЗбіркаТоварівНаСкладі_Select.QuerySelect.Order.Add(
-                Документи.ЗбіркаТоварівНаСкладі_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ЗбіркаТоварівНаСкладі_Select.QuerySelect, Документи.ЗбіркаТоварівНаСкладі_Const.Склад,
-                ЗбіркаТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_1", "Склад");
-            
-                /* Приєднання */
-                Документи.РеалізаціяТоварівТаПослуг_Pointer.GetJoin(ЗбіркаТоварівНаСкладі_Select.QuerySelect, Документи.ЗбіркаТоварівНаСкладі_Const.ДокументРеалізації,
-                ЗбіркаТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_2", "ДокументРеалізації");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ЗбіркаТоварівНаСкладі_Select.QuerySelect, Документи.ЗбіркаТоварівНаСкладі_Const.Автор,
-                ЗбіркаТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_3", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ЗбіркаТоварівНаСкладі_Select.QuerySelect, Документи.ЗбіркаТоварівНаСкладі_Const.Склад,
+                    ЗбіркаТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_1", "Склад");
+                
+                    /* Приєднання */
+                    Документи.РеалізаціяТоварівТаПослуг_Pointer.GetJoin(ЗбіркаТоварівНаСкладі_Select.QuerySelect, Документи.ЗбіркаТоварівНаСкладі_Const.ДокументРеалізації,
+                    ЗбіркаТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_2", "ДокументРеалізації");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ЗбіркаТоварівНаСкладі_Select.QuerySelect, Документи.ЗбіркаТоварівНаСкладі_Const.Автор,
+                    ЗбіркаТоварівНаСкладі_Select.QuerySelect.Table, "join_tab_3", "Автор");
+                
 
             /* Відбори */
             if (form.WhereList != null) ЗбіркаТоварівНаСкладі_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -22414,33 +22274,32 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.РозміщенняНоменклатуриПоКоміркам_Select РозміщенняНоменклатуриПоКоміркам_Select = new();
             РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.РозміщенняНоменклатуриПоКоміркам_Const.Назва,
-                /*ДатаДок*/ Документи.РозміщенняНоменклатуриПоКоміркам_Const.ДатаДок,
-                /*НомерДок*/ Документи.РозміщенняНоменклатуриПоКоміркам_Const.НомерДок,
-                /*Коментар*/ Документи.РозміщенняНоменклатуриПоКоміркам_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.РозміщенняНоменклатуриПоКоміркам_Const.Назва,
+                    /*ДатаДок*/ Документи.РозміщенняНоменклатуриПоКоміркам_Const.ДатаДок,
+                    /*НомерДок*/ Документи.РозміщенняНоменклатуриПоКоміркам_Const.НомерДок,
+                    /*Коментар*/ Документи.РозміщенняНоменклатуриПоКоміркам_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect.Order.Add(
+                    Документи.РозміщенняНоменклатуриПоКоміркам_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect.Order.Add(
-                Документи.РозміщенняНоменклатуриПоКоміркам_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect, Документи.РозміщенняНоменклатуриПоКоміркам_Const.Організація,
-                РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect, Документи.РозміщенняНоменклатуриПоКоміркам_Const.Склад,
-                РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect.Table, "join_tab_2", "Склад");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect, Документи.РозміщенняНоменклатуриПоКоміркам_Const.Автор,
-                РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect.Table, "join_tab_3", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect, Документи.РозміщенняНоменклатуриПоКоміркам_Const.Організація,
+                    РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect, Документи.РозміщенняНоменклатуриПоКоміркам_Const.Склад,
+                    РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect.Table, "join_tab_2", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect, Документи.РозміщенняНоменклатуриПоКоміркам_Const.Автор,
+                    РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect.Table, "join_tab_3", "Автор");
+                
 
             /* Відбори */
             РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -22493,33 +22352,32 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.РозміщенняНоменклатуриПоКоміркам_Select РозміщенняНоменклатуриПоКоміркам_Select = new();
             РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.РозміщенняНоменклатуриПоКоміркам_Const.Назва,
-                /*ДатаДок*/ Документи.РозміщенняНоменклатуриПоКоміркам_Const.ДатаДок,
-                /*НомерДок*/ Документи.РозміщенняНоменклатуриПоКоміркам_Const.НомерДок,
-                /*Коментар*/ Документи.РозміщенняНоменклатуриПоКоміркам_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.РозміщенняНоменклатуриПоКоміркам_Const.Назва,
+                    /*ДатаДок*/ Документи.РозміщенняНоменклатуриПоКоміркам_Const.ДатаДок,
+                    /*НомерДок*/ Документи.РозміщенняНоменклатуриПоКоміркам_Const.НомерДок,
+                    /*Коментар*/ Документи.РозміщенняНоменклатуриПоКоміркам_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect.Order.Add(
+                    Документи.РозміщенняНоменклатуриПоКоміркам_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect.Order.Add(
-                Документи.РозміщенняНоменклатуриПоКоміркам_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect, Документи.РозміщенняНоменклатуриПоКоміркам_Const.Організація,
-                РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect, Документи.РозміщенняНоменклатуриПоКоміркам_Const.Склад,
-                РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect.Table, "join_tab_2", "Склад");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect, Документи.РозміщенняНоменклатуриПоКоміркам_Const.Автор,
-                РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect.Table, "join_tab_3", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect, Документи.РозміщенняНоменклатуриПоКоміркам_Const.Організація,
+                    РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect, Документи.РозміщенняНоменклатуриПоКоміркам_Const.Склад,
+                    РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect.Table, "join_tab_2", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect, Документи.РозміщенняНоменклатуриПоКоміркам_Const.Автор,
+                    РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect.Table, "join_tab_3", "Автор");
+                
 
             /* Відбори */
             if (form.WhereList != null) РозміщенняНоменклатуриПоКоміркам_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -22779,29 +22637,28 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.КорегуванняБоргу_Select КорегуванняБоргу_Select = new();
             КорегуванняБоргу_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.КорегуванняБоргу_Const.Назва,
-                /*НомерДок*/ Документи.КорегуванняБоргу_Const.НомерДок,
-                /*ДатаДок*/ Документи.КорегуванняБоргу_Const.ДатаДок,
-                /*Коментар*/ Документи.КорегуванняБоргу_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.КорегуванняБоргу_Const.Назва,
+                    /*НомерДок*/ Документи.КорегуванняБоргу_Const.НомерДок,
+                    /*ДатаДок*/ Документи.КорегуванняБоргу_Const.ДатаДок,
+                    /*Коментар*/ Документи.КорегуванняБоргу_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    КорегуванняБоргу_Select.QuerySelect.Order.Add(
+                    Документи.КорегуванняБоргу_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                КорегуванняБоргу_Select.QuerySelect.Order.Add(
-                Документи.КорегуванняБоргу_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(КорегуванняБоргу_Select.QuerySelect, Документи.КорегуванняБоргу_Const.Організація,
-                КорегуванняБоргу_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(КорегуванняБоргу_Select.QuerySelect, Документи.КорегуванняБоргу_Const.Автор,
-                КорегуванняБоргу_Select.QuerySelect.Table, "join_tab_2", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(КорегуванняБоргу_Select.QuerySelect, Документи.КорегуванняБоргу_Const.Організація,
+                    КорегуванняБоргу_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(КорегуванняБоргу_Select.QuerySelect, Документи.КорегуванняБоргу_Const.Автор,
+                    КорегуванняБоргу_Select.QuerySelect.Table, "join_tab_2", "Автор");
+                
 
             /* Відбори */
             КорегуванняБоргу_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -22853,29 +22710,28 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.КорегуванняБоргу_Select КорегуванняБоргу_Select = new();
             КорегуванняБоргу_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.КорегуванняБоргу_Const.Назва,
-                /*НомерДок*/ Документи.КорегуванняБоргу_Const.НомерДок,
-                /*ДатаДок*/ Документи.КорегуванняБоргу_Const.ДатаДок,
-                /*Коментар*/ Документи.КорегуванняБоргу_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.КорегуванняБоргу_Const.Назва,
+                    /*НомерДок*/ Документи.КорегуванняБоргу_Const.НомерДок,
+                    /*ДатаДок*/ Документи.КорегуванняБоргу_Const.ДатаДок,
+                    /*Коментар*/ Документи.КорегуванняБоргу_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    КорегуванняБоргу_Select.QuerySelect.Order.Add(
+                    Документи.КорегуванняБоргу_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                КорегуванняБоргу_Select.QuerySelect.Order.Add(
-                Документи.КорегуванняБоргу_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(КорегуванняБоргу_Select.QuerySelect, Документи.КорегуванняБоргу_Const.Організація,
-                КорегуванняБоргу_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(КорегуванняБоргу_Select.QuerySelect, Документи.КорегуванняБоргу_Const.Автор,
-                КорегуванняБоргу_Select.QuerySelect.Table, "join_tab_2", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(КорегуванняБоргу_Select.QuerySelect, Документи.КорегуванняБоргу_Const.Організація,
+                    КорегуванняБоргу_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(КорегуванняБоргу_Select.QuerySelect, Документи.КорегуванняБоргу_Const.Автор,
+                    КорегуванняБоргу_Select.QuerySelect.Table, "join_tab_2", "Автор");
+                
 
             /* Відбори */
             if (form.WhereList != null) КорегуванняБоргу_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -23319,47 +23175,46 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ЗакриттяЗамовленняКлієнта_Select ЗакриттяЗамовленняКлієнта_Select = new();
             ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ЗакриттяЗамовленняКлієнта_Const.Назва,
-                /*НомерДок*/ Документи.ЗакриттяЗамовленняКлієнта_Const.НомерДок,
-                /*ДатаДок*/ Документи.ЗакриттяЗамовленняКлієнта_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.ЗакриттяЗамовленняКлієнта_Const.СумаДокументу,
-                /*ПричинаЗакриттяЗамовлення*/ Документи.ЗакриттяЗамовленняКлієнта_Const.ПричинаЗакриттяЗамовлення,
-                /*Коментар*/ Документи.ЗакриттяЗамовленняКлієнта_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ЗакриттяЗамовленняКлієнта_Const.Назва,
+                    /*НомерДок*/ Документи.ЗакриттяЗамовленняКлієнта_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ЗакриттяЗамовленняКлієнта_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.ЗакриттяЗамовленняКлієнта_Const.СумаДокументу,
+                    /*ПричинаЗакриттяЗамовлення*/ Документи.ЗакриттяЗамовленняКлієнта_Const.ПричинаЗакриттяЗамовлення,
+                    /*Коментар*/ Документи.ЗакриттяЗамовленняКлієнта_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Order.Add(
+                    Документи.ЗакриттяЗамовленняКлієнта_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Order.Add(
-                Документи.ЗакриттяЗамовленняКлієнта_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ЗакриттяЗамовленняКлієнта_Select.QuerySelect, Документи.ЗакриттяЗамовленняКлієнта_Const.Організація,
-                ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(ЗакриттяЗамовленняКлієнта_Select.QuerySelect, Документи.ЗакриттяЗамовленняКлієнта_Const.Контрагент,
-                ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(ЗакриттяЗамовленняКлієнта_Select.QuerySelect, Документи.ЗакриттяЗамовленняКлієнта_Const.Валюта,
-                ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_3", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Каси_Pointer.GetJoin(ЗакриттяЗамовленняКлієнта_Select.QuerySelect, Документи.ЗакриттяЗамовленняКлієнта_Const.Каса,
-                ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_4", "Каса");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ЗакриттяЗамовленняКлієнта_Select.QuerySelect, Документи.ЗакриттяЗамовленняКлієнта_Const.Склад,
-                ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_5", "Склад");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ЗакриттяЗамовленняКлієнта_Select.QuerySelect, Документи.ЗакриттяЗамовленняКлієнта_Const.Автор,
-                ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_6", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ЗакриттяЗамовленняКлієнта_Select.QuerySelect, Документи.ЗакриттяЗамовленняКлієнта_Const.Організація,
+                    ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(ЗакриттяЗамовленняКлієнта_Select.QuerySelect, Документи.ЗакриттяЗамовленняКлієнта_Const.Контрагент,
+                    ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(ЗакриттяЗамовленняКлієнта_Select.QuerySelect, Документи.ЗакриттяЗамовленняКлієнта_Const.Валюта,
+                    ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_3", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Каси_Pointer.GetJoin(ЗакриттяЗамовленняКлієнта_Select.QuerySelect, Документи.ЗакриттяЗамовленняКлієнта_Const.Каса,
+                    ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_4", "Каса");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ЗакриттяЗамовленняКлієнта_Select.QuerySelect, Документи.ЗакриттяЗамовленняКлієнта_Const.Склад,
+                    ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_5", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ЗакриттяЗамовленняКлієнта_Select.QuerySelect, Документи.ЗакриттяЗамовленняКлієнта_Const.Автор,
+                    ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_6", "Автор");
+                
 
             /* Відбори */
             ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -23417,47 +23272,46 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ЗакриттяЗамовленняКлієнта_Select ЗакриттяЗамовленняКлієнта_Select = new();
             ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ЗакриттяЗамовленняКлієнта_Const.Назва,
-                /*НомерДок*/ Документи.ЗакриттяЗамовленняКлієнта_Const.НомерДок,
-                /*ДатаДок*/ Документи.ЗакриттяЗамовленняКлієнта_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.ЗакриттяЗамовленняКлієнта_Const.СумаДокументу,
-                /*ПричинаЗакриттяЗамовлення*/ Документи.ЗакриттяЗамовленняКлієнта_Const.ПричинаЗакриттяЗамовлення,
-                /*Коментар*/ Документи.ЗакриттяЗамовленняКлієнта_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ЗакриттяЗамовленняКлієнта_Const.Назва,
+                    /*НомерДок*/ Документи.ЗакриттяЗамовленняКлієнта_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ЗакриттяЗамовленняКлієнта_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.ЗакриттяЗамовленняКлієнта_Const.СумаДокументу,
+                    /*ПричинаЗакриттяЗамовлення*/ Документи.ЗакриттяЗамовленняКлієнта_Const.ПричинаЗакриттяЗамовлення,
+                    /*Коментар*/ Документи.ЗакриттяЗамовленняКлієнта_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Order.Add(
+                    Документи.ЗакриттяЗамовленняКлієнта_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Order.Add(
-                Документи.ЗакриттяЗамовленняКлієнта_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ЗакриттяЗамовленняКлієнта_Select.QuerySelect, Документи.ЗакриттяЗамовленняКлієнта_Const.Організація,
-                ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(ЗакриттяЗамовленняКлієнта_Select.QuerySelect, Документи.ЗакриттяЗамовленняКлієнта_Const.Контрагент,
-                ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(ЗакриттяЗамовленняКлієнта_Select.QuerySelect, Документи.ЗакриттяЗамовленняКлієнта_Const.Валюта,
-                ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_3", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Каси_Pointer.GetJoin(ЗакриттяЗамовленняКлієнта_Select.QuerySelect, Документи.ЗакриттяЗамовленняКлієнта_Const.Каса,
-                ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_4", "Каса");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ЗакриттяЗамовленняКлієнта_Select.QuerySelect, Документи.ЗакриттяЗамовленняКлієнта_Const.Склад,
-                ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_5", "Склад");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ЗакриттяЗамовленняКлієнта_Select.QuerySelect, Документи.ЗакриттяЗамовленняКлієнта_Const.Автор,
-                ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_6", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ЗакриттяЗамовленняКлієнта_Select.QuerySelect, Документи.ЗакриттяЗамовленняКлієнта_Const.Організація,
+                    ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(ЗакриттяЗамовленняКлієнта_Select.QuerySelect, Документи.ЗакриттяЗамовленняКлієнта_Const.Контрагент,
+                    ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(ЗакриттяЗамовленняКлієнта_Select.QuerySelect, Документи.ЗакриттяЗамовленняКлієнта_Const.Валюта,
+                    ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_3", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Каси_Pointer.GetJoin(ЗакриттяЗамовленняКлієнта_Select.QuerySelect, Документи.ЗакриттяЗамовленняКлієнта_Const.Каса,
+                    ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_4", "Каса");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ЗакриттяЗамовленняКлієнта_Select.QuerySelect, Документи.ЗакриттяЗамовленняКлієнта_Const.Склад,
+                    ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_5", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ЗакриттяЗамовленняКлієнта_Select.QuerySelect, Документи.ЗакриттяЗамовленняКлієнта_Const.Автор,
+                    ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Table, "join_tab_6", "Автор");
+                
 
             /* Відбори */
             if (form.WhereList != null) ЗакриттяЗамовленняКлієнта_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -23873,46 +23727,45 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ЗакриттяРахункуФактури_Select ЗакриттяРахункуФактури_Select = new();
             ЗакриттяРахункуФактури_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ЗакриттяРахункуФактури_Const.Назва,
-                /*НомерДок*/ Документи.ЗакриттяРахункуФактури_Const.НомерДок,
-                /*ДатаДок*/ Документи.ЗакриттяРахункуФактури_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.ЗакриттяРахункуФактури_Const.СумаДокументу,
-                /*Коментар*/ Документи.ЗакриттяРахункуФактури_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ЗакриттяРахункуФактури_Const.Назва,
+                    /*НомерДок*/ Документи.ЗакриттяРахункуФактури_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ЗакриттяРахункуФактури_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.ЗакриттяРахункуФактури_Const.СумаДокументу,
+                    /*Коментар*/ Документи.ЗакриттяРахункуФактури_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ЗакриттяРахункуФактури_Select.QuerySelect.Order.Add(
+                    Документи.ЗакриттяРахункуФактури_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ЗакриттяРахункуФактури_Select.QuerySelect.Order.Add(
-                Документи.ЗакриттяРахункуФактури_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ЗакриттяРахункуФактури_Select.QuerySelect, Документи.ЗакриттяРахункуФактури_Const.Організація,
-                ЗакриттяРахункуФактури_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(ЗакриттяРахункуФактури_Select.QuerySelect, Документи.ЗакриттяРахункуФактури_Const.Контрагент,
-                ЗакриттяРахункуФактури_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(ЗакриттяРахункуФактури_Select.QuerySelect, Документи.ЗакриттяРахункуФактури_Const.Валюта,
-                ЗакриттяРахункуФактури_Select.QuerySelect.Table, "join_tab_3", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Каси_Pointer.GetJoin(ЗакриттяРахункуФактури_Select.QuerySelect, Документи.ЗакриттяРахункуФактури_Const.Каса,
-                ЗакриттяРахункуФактури_Select.QuerySelect.Table, "join_tab_4", "Каса");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ЗакриттяРахункуФактури_Select.QuerySelect, Документи.ЗакриттяРахункуФактури_Const.Склад,
-                ЗакриттяРахункуФактури_Select.QuerySelect.Table, "join_tab_5", "Склад");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ЗакриттяРахункуФактури_Select.QuerySelect, Документи.ЗакриттяРахункуФактури_Const.Автор,
-                ЗакриттяРахункуФактури_Select.QuerySelect.Table, "join_tab_6", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ЗакриттяРахункуФактури_Select.QuerySelect, Документи.ЗакриттяРахункуФактури_Const.Організація,
+                    ЗакриттяРахункуФактури_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(ЗакриттяРахункуФактури_Select.QuerySelect, Документи.ЗакриттяРахункуФактури_Const.Контрагент,
+                    ЗакриттяРахункуФактури_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(ЗакриттяРахункуФактури_Select.QuerySelect, Документи.ЗакриттяРахункуФактури_Const.Валюта,
+                    ЗакриттяРахункуФактури_Select.QuerySelect.Table, "join_tab_3", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Каси_Pointer.GetJoin(ЗакриттяРахункуФактури_Select.QuerySelect, Документи.ЗакриттяРахункуФактури_Const.Каса,
+                    ЗакриттяРахункуФактури_Select.QuerySelect.Table, "join_tab_4", "Каса");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ЗакриттяРахункуФактури_Select.QuerySelect, Документи.ЗакриттяРахункуФактури_Const.Склад,
+                    ЗакриттяРахункуФактури_Select.QuerySelect.Table, "join_tab_5", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ЗакриттяРахункуФактури_Select.QuerySelect, Документи.ЗакриттяРахункуФактури_Const.Автор,
+                    ЗакриттяРахункуФактури_Select.QuerySelect.Table, "join_tab_6", "Автор");
+                
 
             /* Відбори */
             ЗакриттяРахункуФактури_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -23969,46 +23822,45 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ЗакриттяРахункуФактури_Select ЗакриттяРахункуФактури_Select = new();
             ЗакриттяРахункуФактури_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ЗакриттяРахункуФактури_Const.Назва,
-                /*НомерДок*/ Документи.ЗакриттяРахункуФактури_Const.НомерДок,
-                /*ДатаДок*/ Документи.ЗакриттяРахункуФактури_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.ЗакриттяРахункуФактури_Const.СумаДокументу,
-                /*Коментар*/ Документи.ЗакриттяРахункуФактури_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ЗакриттяРахункуФактури_Const.Назва,
+                    /*НомерДок*/ Документи.ЗакриттяРахункуФактури_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ЗакриттяРахункуФактури_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.ЗакриттяРахункуФактури_Const.СумаДокументу,
+                    /*Коментар*/ Документи.ЗакриттяРахункуФактури_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ЗакриттяРахункуФактури_Select.QuerySelect.Order.Add(
+                    Документи.ЗакриттяРахункуФактури_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ЗакриттяРахункуФактури_Select.QuerySelect.Order.Add(
-                Документи.ЗакриттяРахункуФактури_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ЗакриттяРахункуФактури_Select.QuerySelect, Документи.ЗакриттяРахункуФактури_Const.Організація,
-                ЗакриттяРахункуФактури_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(ЗакриттяРахункуФактури_Select.QuerySelect, Документи.ЗакриттяРахункуФактури_Const.Контрагент,
-                ЗакриттяРахункуФактури_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(ЗакриттяРахункуФактури_Select.QuerySelect, Документи.ЗакриттяРахункуФактури_Const.Валюта,
-                ЗакриттяРахункуФактури_Select.QuerySelect.Table, "join_tab_3", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Каси_Pointer.GetJoin(ЗакриттяРахункуФактури_Select.QuerySelect, Документи.ЗакриттяРахункуФактури_Const.Каса,
-                ЗакриттяРахункуФактури_Select.QuerySelect.Table, "join_tab_4", "Каса");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ЗакриттяРахункуФактури_Select.QuerySelect, Документи.ЗакриттяРахункуФактури_Const.Склад,
-                ЗакриттяРахункуФактури_Select.QuerySelect.Table, "join_tab_5", "Склад");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ЗакриттяРахункуФактури_Select.QuerySelect, Документи.ЗакриттяРахункуФактури_Const.Автор,
-                ЗакриттяРахункуФактури_Select.QuerySelect.Table, "join_tab_6", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ЗакриттяРахункуФактури_Select.QuerySelect, Документи.ЗакриттяРахункуФактури_Const.Організація,
+                    ЗакриттяРахункуФактури_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(ЗакриттяРахункуФактури_Select.QuerySelect, Документи.ЗакриттяРахункуФактури_Const.Контрагент,
+                    ЗакриттяРахункуФактури_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(ЗакриттяРахункуФактури_Select.QuerySelect, Документи.ЗакриттяРахункуФактури_Const.Валюта,
+                    ЗакриттяРахункуФактури_Select.QuerySelect.Table, "join_tab_3", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Каси_Pointer.GetJoin(ЗакриттяРахункуФактури_Select.QuerySelect, Документи.ЗакриттяРахункуФактури_Const.Каса,
+                    ЗакриттяРахункуФактури_Select.QuerySelect.Table, "join_tab_4", "Каса");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ЗакриттяРахункуФактури_Select.QuerySelect, Документи.ЗакриттяРахункуФактури_Const.Склад,
+                    ЗакриттяРахункуФактури_Select.QuerySelect.Table, "join_tab_5", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ЗакриттяРахункуФактури_Select.QuerySelect, Документи.ЗакриттяРахункуФактури_Const.Автор,
+                    ЗакриттяРахункуФактури_Select.QuerySelect.Table, "join_tab_6", "Автор");
+                
 
             /* Відбори */
             if (form.WhereList != null) ЗакриттяРахункуФактури_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -24457,47 +24309,46 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ЗакриттяЗамовленняПостачальнику_Select ЗакриттяЗамовленняПостачальнику_Select = new();
             ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ЗакриттяЗамовленняПостачальнику_Const.Назва,
-                /*НомерДок*/ Документи.ЗакриттяЗамовленняПостачальнику_Const.НомерДок,
-                /*ДатаДок*/ Документи.ЗакриттяЗамовленняПостачальнику_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.ЗакриттяЗамовленняПостачальнику_Const.СумаДокументу,
-                /*ПричинаЗакриттяЗамовлення*/ Документи.ЗакриттяЗамовленняПостачальнику_Const.ПричинаЗакриттяЗамовлення,
-                /*Коментар*/ Документи.ЗакриттяЗамовленняПостачальнику_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ЗакриттяЗамовленняПостачальнику_Const.Назва,
+                    /*НомерДок*/ Документи.ЗакриттяЗамовленняПостачальнику_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ЗакриттяЗамовленняПостачальнику_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.ЗакриттяЗамовленняПостачальнику_Const.СумаДокументу,
+                    /*ПричинаЗакриттяЗамовлення*/ Документи.ЗакриттяЗамовленняПостачальнику_Const.ПричинаЗакриттяЗамовлення,
+                    /*Коментар*/ Документи.ЗакриттяЗамовленняПостачальнику_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Order.Add(
+                    Документи.ЗакриттяЗамовленняПостачальнику_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Order.Add(
-                Документи.ЗакриттяЗамовленняПостачальнику_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ЗакриттяЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗакриттяЗамовленняПостачальнику_Const.Організація,
-                ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(ЗакриттяЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗакриттяЗамовленняПостачальнику_Const.Контрагент,
-                ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(ЗакриттяЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗакриттяЗамовленняПостачальнику_Const.Валюта,
-                ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_3", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Каси_Pointer.GetJoin(ЗакриттяЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗакриттяЗамовленняПостачальнику_Const.Каса,
-                ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_4", "Каса");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ЗакриттяЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗакриттяЗамовленняПостачальнику_Const.Склад,
-                ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_5", "Склад");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ЗакриттяЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗакриттяЗамовленняПостачальнику_Const.Автор,
-                ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_6", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ЗакриттяЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗакриттяЗамовленняПостачальнику_Const.Організація,
+                    ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(ЗакриттяЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗакриттяЗамовленняПостачальнику_Const.Контрагент,
+                    ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(ЗакриттяЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗакриттяЗамовленняПостачальнику_Const.Валюта,
+                    ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_3", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Каси_Pointer.GetJoin(ЗакриттяЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗакриттяЗамовленняПостачальнику_Const.Каса,
+                    ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_4", "Каса");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ЗакриттяЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗакриттяЗамовленняПостачальнику_Const.Склад,
+                    ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_5", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ЗакриттяЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗакриттяЗамовленняПостачальнику_Const.Автор,
+                    ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_6", "Автор");
+                
 
             /* Відбори */
             ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -24555,47 +24406,46 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ЗакриттяЗамовленняПостачальнику_Select ЗакриттяЗамовленняПостачальнику_Select = new();
             ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ЗакриттяЗамовленняПостачальнику_Const.Назва,
-                /*НомерДок*/ Документи.ЗакриттяЗамовленняПостачальнику_Const.НомерДок,
-                /*ДатаДок*/ Документи.ЗакриттяЗамовленняПостачальнику_Const.ДатаДок,
-                /*СумаДокументу*/ Документи.ЗакриттяЗамовленняПостачальнику_Const.СумаДокументу,
-                /*ПричинаЗакриттяЗамовлення*/ Документи.ЗакриттяЗамовленняПостачальнику_Const.ПричинаЗакриттяЗамовлення,
-                /*Коментар*/ Документи.ЗакриттяЗамовленняПостачальнику_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ЗакриттяЗамовленняПостачальнику_Const.Назва,
+                    /*НомерДок*/ Документи.ЗакриттяЗамовленняПостачальнику_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ЗакриттяЗамовленняПостачальнику_Const.ДатаДок,
+                    /*СумаДокументу*/ Документи.ЗакриттяЗамовленняПостачальнику_Const.СумаДокументу,
+                    /*ПричинаЗакриттяЗамовлення*/ Документи.ЗакриттяЗамовленняПостачальнику_Const.ПричинаЗакриттяЗамовлення,
+                    /*Коментар*/ Документи.ЗакриттяЗамовленняПостачальнику_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Order.Add(
+                    Документи.ЗакриттяЗамовленняПостачальнику_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Order.Add(
-                Документи.ЗакриттяЗамовленняПостачальнику_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ЗакриттяЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗакриттяЗамовленняПостачальнику_Const.Організація,
-                ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Контрагенти_Pointer.GetJoin(ЗакриттяЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗакриттяЗамовленняПостачальнику_Const.Контрагент,
-                ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(ЗакриттяЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗакриттяЗамовленняПостачальнику_Const.Валюта,
-                ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_3", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Каси_Pointer.GetJoin(ЗакриттяЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗакриттяЗамовленняПостачальнику_Const.Каса,
-                ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_4", "Каса");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ЗакриттяЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗакриттяЗамовленняПостачальнику_Const.Склад,
-                ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_5", "Склад");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ЗакриттяЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗакриттяЗамовленняПостачальнику_Const.Автор,
-                ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_6", "Автор");
-            
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ЗакриттяЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗакриттяЗамовленняПостачальнику_Const.Організація,
+                    ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Контрагенти_Pointer.GetJoin(ЗакриттяЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗакриттяЗамовленняПостачальнику_Const.Контрагент,
+                    ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_2", "Контрагент");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(ЗакриттяЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗакриттяЗамовленняПостачальнику_Const.Валюта,
+                    ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_3", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Каси_Pointer.GetJoin(ЗакриттяЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗакриттяЗамовленняПостачальнику_Const.Каса,
+                    ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_4", "Каса");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ЗакриттяЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗакриттяЗамовленняПостачальнику_Const.Склад,
+                    ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_5", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ЗакриттяЗамовленняПостачальнику_Select.QuerySelect, Документи.ЗакриттяЗамовленняПостачальнику_Const.Автор,
+                    ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Table, "join_tab_6", "Автор");
+                
 
             /* Відбори */
             if (form.WhereList != null) ЗакриттяЗамовленняПостачальнику_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -24955,48 +24805,47 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ЧекККМ_Select ЧекККМ_Select = new();
             ЧекККМ_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ЧекККМ_Const.Назва,
-                /*НомерДок*/ Документи.ЧекККМ_Const.НомерДок,
-                /*ДатаДок*/ Документи.ЧекККМ_Const.ДатаДок,
-                /*СумаБезЗнижки*/ Документи.ЧекККМ_Const.СумаБезЗнижки,
-                /*Знижка*/ Документи.ЧекККМ_Const.Знижка,
-                /*СумаДокументу*/ Документи.ЧекККМ_Const.СумаДокументу,
-                /*Коментар*/ Документи.ЧекККМ_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ЧекККМ_Const.Назва,
+                    /*НомерДок*/ Документи.ЧекККМ_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ЧекККМ_Const.ДатаДок,
+                    /*СумаБезЗнижки*/ Документи.ЧекККМ_Const.СумаБезЗнижки,
+                    /*Знижка*/ Документи.ЧекККМ_Const.Знижка,
+                    /*СумаДокументу*/ Документи.ЧекККМ_Const.СумаДокументу,
+                    /*Коментар*/ Документи.ЧекККМ_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ЧекККМ_Select.QuerySelect.Order.Add(
+                    Документи.ЧекККМ_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ЧекККМ_Select.QuerySelect.Order.Add(
-                Документи.ЧекККМ_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Сортування */
-                ЧекККМ_Select.QuerySelect.Order.Add(
-                "Автор", SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ЧекККМ_Select.QuerySelect, Документи.ЧекККМ_Const.Організація,
-                ЧекККМ_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(ЧекККМ_Select.QuerySelect, Документи.ЧекККМ_Const.Валюта,
-                ЧекККМ_Select.QuerySelect.Table, "join_tab_2", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ЧекККМ_Select.QuerySelect, Документи.ЧекККМ_Const.Склад,
-                ЧекККМ_Select.QuerySelect.Table, "join_tab_3", "Склад");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ЧекККМ_Select.QuerySelect, Документи.ЧекККМ_Const.Автор,
-                ЧекККМ_Select.QuerySelect.Table, "join_tab_4", "Автор");
-            
-                /* Приєднання */
-                Довідники.КасиККМ_Pointer.GetJoin(ЧекККМ_Select.QuerySelect, Документи.ЧекККМ_Const.КасаККМ,
-                ЧекККМ_Select.QuerySelect.Table, "join_tab_5", "КасаККМ");
-            
+                    /* Сортування */
+                    ЧекККМ_Select.QuerySelect.Order.Add(
+                    "Автор", SelectOrder.ASC);
+                
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ЧекККМ_Select.QuerySelect, Документи.ЧекККМ_Const.Організація,
+                    ЧекККМ_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(ЧекККМ_Select.QuerySelect, Документи.ЧекККМ_Const.Валюта,
+                    ЧекККМ_Select.QuerySelect.Table, "join_tab_2", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ЧекККМ_Select.QuerySelect, Документи.ЧекККМ_Const.Склад,
+                    ЧекККМ_Select.QuerySelect.Table, "join_tab_3", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ЧекККМ_Select.QuerySelect, Документи.ЧекККМ_Const.Автор,
+                    ЧекККМ_Select.QuerySelect.Table, "join_tab_4", "Автор");
+                
+                    /* Приєднання */
+                    Довідники.КасиККМ_Pointer.GetJoin(ЧекККМ_Select.QuerySelect, Документи.ЧекККМ_Const.КасаККМ,
+                    ЧекККМ_Select.QuerySelect.Table, "join_tab_5", "КасаККМ");
+                
 
             /* Відбори */
             ЧекККМ_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -25054,48 +24903,47 @@ namespace GeneratedCode.Документи.ТабличніСписки
             /* Вибірка */
             Документи.ЧекККМ_Select ЧекККМ_Select = new();
             ЧекККМ_Select.QuerySelect.Field.AddRange(
-            [
-                "deletion_label",
-                "spend",
-                /*Назва*/ Документи.ЧекККМ_Const.Назва,
-                /*НомерДок*/ Документи.ЧекККМ_Const.НомерДок,
-                /*ДатаДок*/ Документи.ЧекККМ_Const.ДатаДок,
-                /*СумаБезЗнижки*/ Документи.ЧекККМ_Const.СумаБезЗнижки,
-                /*Знижка*/ Документи.ЧекККМ_Const.Знижка,
-                /*СумаДокументу*/ Документи.ЧекККМ_Const.СумаДокументу,
-                /*Коментар*/ Документи.ЧекККМ_Const.Коментар,
+                [
+                    "deletion_label",
+                    "spend",
+                    /*Назва*/ Документи.ЧекККМ_Const.Назва,
+                    /*НомерДок*/ Документи.ЧекККМ_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ЧекККМ_Const.ДатаДок,
+                    /*СумаБезЗнижки*/ Документи.ЧекККМ_Const.СумаБезЗнижки,
+                    /*Знижка*/ Документи.ЧекККМ_Const.Знижка,
+                    /*СумаДокументу*/ Документи.ЧекККМ_Const.СумаДокументу,
+                    /*Коментар*/ Документи.ЧекККМ_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ЧекККМ_Select.QuerySelect.Order.Add(
+                    Документи.ЧекККМ_Const.ДатаДок, SelectOrder.ASC);
                 
-            ]);
-
-            
-                /* Сортування */
-                ЧекККМ_Select.QuerySelect.Order.Add(
-                Документи.ЧекККМ_Const.ДатаДок, SelectOrder.ASC);
-            
-                /* Сортування */
-                ЧекККМ_Select.QuerySelect.Order.Add(
-                "Автор", SelectOrder.ASC);
-            
-                /* Приєднання */
-                Довідники.Організації_Pointer.GetJoin(ЧекККМ_Select.QuerySelect, Документи.ЧекККМ_Const.Організація,
-                ЧекККМ_Select.QuerySelect.Table, "join_tab_1", "Організація");
-            
-                /* Приєднання */
-                Довідники.Валюти_Pointer.GetJoin(ЧекККМ_Select.QuerySelect, Документи.ЧекККМ_Const.Валюта,
-                ЧекККМ_Select.QuerySelect.Table, "join_tab_2", "Валюта");
-            
-                /* Приєднання */
-                Довідники.Склади_Pointer.GetJoin(ЧекККМ_Select.QuerySelect, Документи.ЧекККМ_Const.Склад,
-                ЧекККМ_Select.QuerySelect.Table, "join_tab_3", "Склад");
-            
-                /* Приєднання */
-                Довідники.Користувачі_Pointer.GetJoin(ЧекККМ_Select.QuerySelect, Документи.ЧекККМ_Const.Автор,
-                ЧекККМ_Select.QuerySelect.Table, "join_tab_4", "Автор");
-            
-                /* Приєднання */
-                Довідники.КасиККМ_Pointer.GetJoin(ЧекККМ_Select.QuerySelect, Документи.ЧекККМ_Const.КасаККМ,
-                ЧекККМ_Select.QuerySelect.Table, "join_tab_5", "КасаККМ");
-            
+                    /* Сортування */
+                    ЧекККМ_Select.QuerySelect.Order.Add(
+                    "Автор", SelectOrder.ASC);
+                
+                    /* Приєднання */
+                    Довідники.Організації_Pointer.GetJoin(ЧекККМ_Select.QuerySelect, Документи.ЧекККМ_Const.Організація,
+                    ЧекККМ_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                
+                    /* Приєднання */
+                    Довідники.Валюти_Pointer.GetJoin(ЧекККМ_Select.QuerySelect, Документи.ЧекККМ_Const.Валюта,
+                    ЧекККМ_Select.QuerySelect.Table, "join_tab_2", "Валюта");
+                
+                    /* Приєднання */
+                    Довідники.Склади_Pointer.GetJoin(ЧекККМ_Select.QuerySelect, Документи.ЧекККМ_Const.Склад,
+                    ЧекККМ_Select.QuerySelect.Table, "join_tab_3", "Склад");
+                
+                    /* Приєднання */
+                    Довідники.Користувачі_Pointer.GetJoin(ЧекККМ_Select.QuerySelect, Документи.ЧекККМ_Const.Автор,
+                    ЧекККМ_Select.QuerySelect.Table, "join_tab_4", "Автор");
+                
+                    /* Приєднання */
+                    Довідники.КасиККМ_Pointer.GetJoin(ЧекККМ_Select.QuerySelect, Документи.ЧекККМ_Const.КасаККМ,
+                    ЧекККМ_Select.QuerySelect.Table, "join_tab_5", "КасаККМ");
+                
 
             /* Відбори */
             if (form.WhereList != null) ЧекККМ_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -25142,6 +24990,3624 @@ namespace GeneratedCode.Документи.ТабличніСписки
         }
     }
         
+    #endregion
+    
+}
+
+namespace GeneratedCode.РегістриНакопичення.ТабличніСписки
+{
+    
+    #region REGISTER "ТовариНаСкладах"
+    
+      
+    public static class ТовариНаСкладах_Записи
+    {
+        public static void AddColumn(RegisterAccumulationFormJournalBase form)
+        {
+            
+            //Income
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    var cell = LabelTablePartCell.New(null);
+                    cell.Halign = Align.Center;
+                    listItem.Child = cell;
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Income ? "+" : "-");
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Рух", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Period
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Period);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Період", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Owner
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Owner.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Власник", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //OwnerType
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.OwnerType.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Тип власника", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //OwnerName
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.OwnerName.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Власник назва", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Номенклатура, "Номенклатура"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Номенклатура"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ХарактеристикаНоменклатури, "Характеристика"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["ХарактеристикаНоменклатури"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Склад, "Склад"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Склад"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Серія, "Серія"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Серія"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Серія", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ВНаявності, "В наявності"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["ВНаявності"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("В наявності", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(RegisterAccumulationFormJournalBase form)
+        {
+            
+            List<FilterControl.FilterListItem> filterList = [];
+            
+            { /* Номенклатура, pointer */
+                Switch sw = Switch.New();
+                Номенклатура_PointerControl Номенклатура = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Номенклатура.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ТовариНаСкладах_Const.Номенклатура, get, sw));
+                form.Filter.Append("Номенклатура:", Номенклатура, sw);
+            }
+            
+            { /* ХарактеристикаНоменклатури, pointer */
+                Switch sw = Switch.New();
+                ХарактеристикиНоменклатури_PointerControl ХарактеристикаНоменклатури = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => ХарактеристикаНоменклатури.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ТовариНаСкладах_Const.ХарактеристикаНоменклатури, get, sw));
+                form.Filter.Append("Характеристика:", ХарактеристикаНоменклатури, sw);
+            }
+            
+            { /* Склад, pointer */
+                Switch sw = Switch.New();
+                Склади_PointerControl Склад = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Склад.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ТовариНаСкладах_Const.Склад, get, sw));
+                form.Filter.Append("Склад:", Склад, sw);
+            }
+            
+            { /* Серія, pointer */
+                Switch sw = Switch.New();
+                СеріїНоменклатури_PointerControl Серія = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Серія.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(ТовариНаСкладах_Const.Серія, get, sw));
+                form.Filter.Append("Серія:", Серія, sw);
+            }
+            
+            { /* ВНаявності, numeric */
+                Switch sw = Switch.New();
+                
+                        NumericControl ВНаявності = new();
+                        object get() => ВНаявності.Value;
+                    
+                filterList.Add(new(ТовариНаСкладах_Const.ВНаявності, get, sw));
+                form.Filter.Append("В наявності:", ВНаявності, sw);
+            }
+            
+            form.Filter.GetWhere = () =>
+            {
+                List<Where> where = [];
+                foreach (var filter in filterList)
+                    if (filter.IsOn.Active)
+                        where.Add(new Where(filter.Field, Comparison.EQ, filter.GetValueFunc.Invoke()));
+
+                form.WhereList = where;
+                return where.Count != 0;
+            };
+        
+        }
+
+        public static async ValueTask LoadRecords(RegisterAccumulationFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UnigueID? unigueIDSelect = form.SelectPointerItem;
+
+            /* Вибірка */
+            РегістриНакопичення.ТовариНаСкладах_RecordsSet ТовариНаСкладах_Select = new();
+            
+
+            /* Приєднання */
+            ТовариНаСкладах_Select.FillJoin(["period"]);
+
+            /* Відбори */
+            if (form.WhereList != null) ТовариНаСкладах_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+            if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду("period", form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ТовариНаСкладах_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ТовариНаСкладах_Select.SplitSelectToPages, ТовариНаСкладах_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ТовариНаСкладах_Select.Read();
+            form.Store.RemoveAll();
+            uint selectPosition = 0;
+            foreach (ТовариНаСкладах_RecordsSet.Record record in ТовариНаСкладах_Select.Records)
+            {
+                RegisterAccumulationRowJournal row = new() { UnigueID = new UnigueID(record.UID), Income = record.Income, Period = record.Period, Owner = record.Owner, OwnerType = record.OwnerType, OwnerName = record.OwnerName };
+                row.Fields.Add("Номенклатура", record.Номенклатура.Name);
+                row.Fields.Add("ХарактеристикаНоменклатури", record.ХарактеристикаНоменклатури.Name);
+                row.Fields.Add("Склад", record.Склад.Name);
+                row.Fields.Add("Серія", record.Серія.Name);
+                row.Fields.Add("ВНаявності", record.ВНаявності.ToString());
+                
+                form.Store.Append(row);
+                if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+	    
+    #endregion
+    
+    #region REGISTER "ЗамовленняКлієнтів"
+    
+      
+    public static class ЗамовленняКлієнтів_Записи
+    {
+        public static void AddColumn(RegisterAccumulationFormJournalBase form)
+        {
+            
+            //Income
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    var cell = LabelTablePartCell.New(null);
+                    cell.Halign = Align.Center;
+                    listItem.Child = cell;
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Income ? "+" : "-");
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Рух", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Period
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Period);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Період", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Owner
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Owner.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Власник", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //OwnerType
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.OwnerType.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Тип власника", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //OwnerName
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.OwnerName.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Власник назва", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: ЗамовленняКлієнта, "Замовлення клієнта"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["ЗамовленняКлієнта"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Замовлення клієнта", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Номенклатура, "Номенклатура"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Номенклатура"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ХарактеристикаНоменклатури, "Характеристика"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["ХарактеристикаНоменклатури"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Склад, "Склад"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Склад"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Замовлено, "Замовлено"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Замовлено"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Замовлено", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Сума, "Сума"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Сума"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(RegisterAccumulationFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask LoadRecords(RegisterAccumulationFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UnigueID? unigueIDSelect = form.SelectPointerItem;
+
+            /* Вибірка */
+            РегістриНакопичення.ЗамовленняКлієнтів_RecordsSet ЗамовленняКлієнтів_Select = new();
+            
+
+            /* Приєднання */
+            ЗамовленняКлієнтів_Select.FillJoin(["period"]);
+
+            /* Відбори */
+            if (form.WhereList != null) ЗамовленняКлієнтів_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+            if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду("period", form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ЗамовленняКлієнтів_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ЗамовленняКлієнтів_Select.SplitSelectToPages, ЗамовленняКлієнтів_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ЗамовленняКлієнтів_Select.Read();
+            form.Store.RemoveAll();
+            uint selectPosition = 0;
+            foreach (ЗамовленняКлієнтів_RecordsSet.Record record in ЗамовленняКлієнтів_Select.Records)
+            {
+                RegisterAccumulationRowJournal row = new() { UnigueID = new UnigueID(record.UID), Income = record.Income, Period = record.Period, Owner = record.Owner, OwnerType = record.OwnerType, OwnerName = record.OwnerName };
+                row.Fields.Add("ЗамовленняКлієнта", record.ЗамовленняКлієнта.Name);
+                row.Fields.Add("Номенклатура", record.Номенклатура.Name);
+                row.Fields.Add("ХарактеристикаНоменклатури", record.ХарактеристикаНоменклатури.Name);
+                row.Fields.Add("Склад", record.Склад.Name);
+                row.Fields.Add("Замовлено", record.Замовлено.ToString());
+                row.Fields.Add("Сума", record.Сума.ToString());
+                
+                form.Store.Append(row);
+                if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+	    
+    #endregion
+    
+    #region REGISTER "РозрахункиЗКлієнтами"
+    
+      
+    public static class РозрахункиЗКлієнтами_Записи
+    {
+        public static void AddColumn(RegisterAccumulationFormJournalBase form)
+        {
+            
+            //Income
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    var cell = LabelTablePartCell.New(null);
+                    cell.Halign = Align.Center;
+                    listItem.Child = cell;
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Income ? "+" : "-");
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Рух", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Period
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Period);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Період", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Owner
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Owner.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Власник", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //OwnerType
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.OwnerType.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Тип власника", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //OwnerName
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.OwnerName.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Власник назва", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Валюта, "Валюта"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Валюта"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Контрагент, "Контрагент"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Контрагент"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Сума, "Сума"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Сума"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(RegisterAccumulationFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask LoadRecords(RegisterAccumulationFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UnigueID? unigueIDSelect = form.SelectPointerItem;
+
+            /* Вибірка */
+            РегістриНакопичення.РозрахункиЗКлієнтами_RecordsSet РозрахункиЗКлієнтами_Select = new();
+            
+
+            /* Приєднання */
+            РозрахункиЗКлієнтами_Select.FillJoin(["period"]);
+
+            /* Відбори */
+            if (form.WhereList != null) РозрахункиЗКлієнтами_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+            if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду("period", form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) РозрахункиЗКлієнтами_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(РозрахункиЗКлієнтами_Select.SplitSelectToPages, РозрахункиЗКлієнтами_Select.QuerySelect, unigueIDSelect);
+
+            
+            await РозрахункиЗКлієнтами_Select.Read();
+            form.Store.RemoveAll();
+            uint selectPosition = 0;
+            foreach (РозрахункиЗКлієнтами_RecordsSet.Record record in РозрахункиЗКлієнтами_Select.Records)
+            {
+                RegisterAccumulationRowJournal row = new() { UnigueID = new UnigueID(record.UID), Income = record.Income, Period = record.Period, Owner = record.Owner, OwnerType = record.OwnerType, OwnerName = record.OwnerName };
+                row.Fields.Add("Валюта", record.Валюта.Name);
+                row.Fields.Add("Контрагент", record.Контрагент.Name);
+                row.Fields.Add("Сума", record.Сума.ToString());
+                
+                form.Store.Append(row);
+                if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+	    
+    #endregion
+    
+    #region REGISTER "Закупівлі"
+    
+      
+    public static class Закупівлі_Записи
+    {
+        public static void AddColumn(RegisterAccumulationFormJournalBase form)
+        {
+            
+            //Income
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    var cell = LabelTablePartCell.New(null);
+                    cell.Halign = Align.Center;
+                    listItem.Child = cell;
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Income ? "+" : "-");
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Рух", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Period
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Period);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Період", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Owner
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Owner.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Власник", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //OwnerType
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.OwnerType.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Тип власника", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //OwnerName
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.OwnerName.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Власник назва", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Організація, "Організація"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Організація"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Склад, "Склад"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Склад"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Контрагент, "Контрагент"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Контрагент"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Договір, "Договір"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Договір"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Договір", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Номенклатура, "Номенклатура"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Номенклатура"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ХарактеристикаНоменклатури, "Характеристика"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["ХарактеристикаНоменклатури"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Кількість, "Кількість"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Кількість"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Сума, "Сума"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Сума"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Собівартість, "Собівартість"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Собівартість"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Собівартість", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(RegisterAccumulationFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask LoadRecords(RegisterAccumulationFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UnigueID? unigueIDSelect = form.SelectPointerItem;
+
+            /* Вибірка */
+            РегістриНакопичення.Закупівлі_RecordsSet Закупівлі_Select = new();
+            
+
+            /* Приєднання */
+            Закупівлі_Select.FillJoin(["period"]);
+
+            /* Відбори */
+            if (form.WhereList != null) Закупівлі_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+            if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду("period", form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) Закупівлі_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(Закупівлі_Select.SplitSelectToPages, Закупівлі_Select.QuerySelect, unigueIDSelect);
+
+            
+            await Закупівлі_Select.Read();
+            form.Store.RemoveAll();
+            uint selectPosition = 0;
+            foreach (Закупівлі_RecordsSet.Record record in Закупівлі_Select.Records)
+            {
+                RegisterAccumulationRowJournal row = new() { UnigueID = new UnigueID(record.UID), Income = record.Income, Period = record.Period, Owner = record.Owner, OwnerType = record.OwnerType, OwnerName = record.OwnerName };
+                row.Fields.Add("Організація", record.Організація.Name);
+                row.Fields.Add("Склад", record.Склад.Name);
+                row.Fields.Add("Контрагент", record.Контрагент.Name);
+                row.Fields.Add("Договір", record.Договір.Name);
+                row.Fields.Add("Номенклатура", record.Номенклатура.Name);
+                row.Fields.Add("ХарактеристикаНоменклатури", record.ХарактеристикаНоменклатури.Name);
+                row.Fields.Add("Кількість", record.Кількість.ToString());
+                row.Fields.Add("Сума", record.Сума.ToString());
+                row.Fields.Add("Собівартість", record.Собівартість.ToString());
+                
+                form.Store.Append(row);
+                if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+	    
+    #endregion
+    
+    #region REGISTER "ВільніЗалишки"
+    
+      
+    public static class ВільніЗалишки_Записи
+    {
+        public static void AddColumn(RegisterAccumulationFormJournalBase form)
+        {
+            
+            //Income
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    var cell = LabelTablePartCell.New(null);
+                    cell.Halign = Align.Center;
+                    listItem.Child = cell;
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Income ? "+" : "-");
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Рух", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Period
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Period);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Період", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Owner
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Owner.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Власник", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //OwnerType
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.OwnerType.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Тип власника", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //OwnerName
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.OwnerName.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Власник назва", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Номенклатура, "Номенклатура"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Номенклатура"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ХарактеристикаНоменклатури, "Характеристика"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["ХарактеристикаНоменклатури"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Склад, "Склад"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Склад"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ВНаявності, "В наявності"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["ВНаявності"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("В наявності", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ВРезервіЗіСкладу, "В резерві зі складу"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["ВРезервіЗіСкладу"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("В резерві зі складу", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ВРезервіПідЗамовлення, "В резерві під замовлення"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["ВРезервіПідЗамовлення"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("В резерві під замовлення", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(RegisterAccumulationFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask LoadRecords(RegisterAccumulationFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UnigueID? unigueIDSelect = form.SelectPointerItem;
+
+            /* Вибірка */
+            РегістриНакопичення.ВільніЗалишки_RecordsSet ВільніЗалишки_Select = new();
+            
+
+            /* Приєднання */
+            ВільніЗалишки_Select.FillJoin(["period"]);
+
+            /* Відбори */
+            if (form.WhereList != null) ВільніЗалишки_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+            if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду("period", form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ВільніЗалишки_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ВільніЗалишки_Select.SplitSelectToPages, ВільніЗалишки_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ВільніЗалишки_Select.Read();
+            form.Store.RemoveAll();
+            uint selectPosition = 0;
+            foreach (ВільніЗалишки_RecordsSet.Record record in ВільніЗалишки_Select.Records)
+            {
+                RegisterAccumulationRowJournal row = new() { UnigueID = new UnigueID(record.UID), Income = record.Income, Period = record.Period, Owner = record.Owner, OwnerType = record.OwnerType, OwnerName = record.OwnerName };
+                row.Fields.Add("Номенклатура", record.Номенклатура.Name);
+                row.Fields.Add("ХарактеристикаНоменклатури", record.ХарактеристикаНоменклатури.Name);
+                row.Fields.Add("Склад", record.Склад.Name);
+                row.Fields.Add("ВНаявності", record.ВНаявності.ToString());
+                row.Fields.Add("ВРезервіЗіСкладу", record.ВРезервіЗіСкладу.ToString());
+                row.Fields.Add("ВРезервіПідЗамовлення", record.ВРезервіПідЗамовлення.ToString());
+                
+                form.Store.Append(row);
+                if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+	    
+    #endregion
+    
+    #region REGISTER "ЗамовленняПостачальникам"
+    
+      
+    public static class ЗамовленняПостачальникам_Записи
+    {
+        public static void AddColumn(RegisterAccumulationFormJournalBase form)
+        {
+            
+            //Income
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    var cell = LabelTablePartCell.New(null);
+                    cell.Halign = Align.Center;
+                    listItem.Child = cell;
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Income ? "+" : "-");
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Рух", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Period
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Period);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Період", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Owner
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Owner.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Власник", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //OwnerType
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.OwnerType.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Тип власника", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //OwnerName
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.OwnerName.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Власник назва", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: ЗамовленняПостачальнику, "Замовлення постачальнику"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["ЗамовленняПостачальнику"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Замовлення постачальнику", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Номенклатура, "Номенклатура"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Номенклатура"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ХарактеристикаНоменклатури, "Характеристика"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["ХарактеристикаНоменклатури"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Склад, "Склад"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Склад"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Замовлено, "Замовлено"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Замовлено"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Замовлено", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(RegisterAccumulationFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask LoadRecords(RegisterAccumulationFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UnigueID? unigueIDSelect = form.SelectPointerItem;
+
+            /* Вибірка */
+            РегістриНакопичення.ЗамовленняПостачальникам_RecordsSet ЗамовленняПостачальникам_Select = new();
+            
+
+            /* Приєднання */
+            ЗамовленняПостачальникам_Select.FillJoin(["period"]);
+
+            /* Відбори */
+            if (form.WhereList != null) ЗамовленняПостачальникам_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+            if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду("period", form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ЗамовленняПостачальникам_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ЗамовленняПостачальникам_Select.SplitSelectToPages, ЗамовленняПостачальникам_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ЗамовленняПостачальникам_Select.Read();
+            form.Store.RemoveAll();
+            uint selectPosition = 0;
+            foreach (ЗамовленняПостачальникам_RecordsSet.Record record in ЗамовленняПостачальникам_Select.Records)
+            {
+                RegisterAccumulationRowJournal row = new() { UnigueID = new UnigueID(record.UID), Income = record.Income, Period = record.Period, Owner = record.Owner, OwnerType = record.OwnerType, OwnerName = record.OwnerName };
+                row.Fields.Add("ЗамовленняПостачальнику", record.ЗамовленняПостачальнику.Name);
+                row.Fields.Add("Номенклатура", record.Номенклатура.Name);
+                row.Fields.Add("ХарактеристикаНоменклатури", record.ХарактеристикаНоменклатури.Name);
+                row.Fields.Add("Склад", record.Склад.Name);
+                row.Fields.Add("Замовлено", record.Замовлено.ToString());
+                
+                form.Store.Append(row);
+                if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+	    
+    #endregion
+    
+    #region REGISTER "РозрахункиЗПостачальниками"
+    
+      
+    public static class РозрахункиЗПостачальниками_Записи
+    {
+        public static void AddColumn(RegisterAccumulationFormJournalBase form)
+        {
+            
+            //Income
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    var cell = LabelTablePartCell.New(null);
+                    cell.Halign = Align.Center;
+                    listItem.Child = cell;
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Income ? "+" : "-");
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Рух", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Period
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Period);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Період", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Owner
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Owner.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Власник", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //OwnerType
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.OwnerType.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Тип власника", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //OwnerName
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.OwnerName.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Власник назва", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Контрагент, "Контрагент"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Контрагент"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Валюта, "Валюта"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Валюта"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Сума, "Сума"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Сума"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(RegisterAccumulationFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask LoadRecords(RegisterAccumulationFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UnigueID? unigueIDSelect = form.SelectPointerItem;
+
+            /* Вибірка */
+            РегістриНакопичення.РозрахункиЗПостачальниками_RecordsSet РозрахункиЗПостачальниками_Select = new();
+            
+
+            /* Приєднання */
+            РозрахункиЗПостачальниками_Select.FillJoin(["period"]);
+
+            /* Відбори */
+            if (form.WhereList != null) РозрахункиЗПостачальниками_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+            if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду("period", form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) РозрахункиЗПостачальниками_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(РозрахункиЗПостачальниками_Select.SplitSelectToPages, РозрахункиЗПостачальниками_Select.QuerySelect, unigueIDSelect);
+
+            
+            await РозрахункиЗПостачальниками_Select.Read();
+            form.Store.RemoveAll();
+            uint selectPosition = 0;
+            foreach (РозрахункиЗПостачальниками_RecordsSet.Record record in РозрахункиЗПостачальниками_Select.Records)
+            {
+                RegisterAccumulationRowJournal row = new() { UnigueID = new UnigueID(record.UID), Income = record.Income, Period = record.Period, Owner = record.Owner, OwnerType = record.OwnerType, OwnerName = record.OwnerName };
+                row.Fields.Add("Контрагент", record.Контрагент.Name);
+                row.Fields.Add("Валюта", record.Валюта.Name);
+                row.Fields.Add("Сума", record.Сума.ToString());
+                
+                form.Store.Append(row);
+                if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+	    
+    #endregion
+    
+    #region REGISTER "РухКоштів"
+    
+      
+    public static class РухКоштів_Записи
+    {
+        public static void AddColumn(RegisterAccumulationFormJournalBase form)
+        {
+            
+            //Income
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    var cell = LabelTablePartCell.New(null);
+                    cell.Halign = Align.Center;
+                    listItem.Child = cell;
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Income ? "+" : "-");
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Рух", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Period
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Period);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Період", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Owner
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Owner.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Власник", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //OwnerType
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.OwnerType.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Тип власника", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //OwnerName
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.OwnerName.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Власник назва", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Організація, "Організація"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Організація"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Каса, "Каса"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Каса"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Каса", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Валюта, "Валюта"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Валюта"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Сума, "Сума"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Сума"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(RegisterAccumulationFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask LoadRecords(RegisterAccumulationFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UnigueID? unigueIDSelect = form.SelectPointerItem;
+
+            /* Вибірка */
+            РегістриНакопичення.РухКоштів_RecordsSet РухКоштів_Select = new();
+            
+
+            /* Приєднання */
+            РухКоштів_Select.FillJoin(["period"]);
+
+            /* Відбори */
+            if (form.WhereList != null) РухКоштів_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+            if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду("period", form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) РухКоштів_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(РухКоштів_Select.SplitSelectToPages, РухКоштів_Select.QuerySelect, unigueIDSelect);
+
+            
+            await РухКоштів_Select.Read();
+            form.Store.RemoveAll();
+            uint selectPosition = 0;
+            foreach (РухКоштів_RecordsSet.Record record in РухКоштів_Select.Records)
+            {
+                RegisterAccumulationRowJournal row = new() { UnigueID = new UnigueID(record.UID), Income = record.Income, Period = record.Period, Owner = record.Owner, OwnerType = record.OwnerType, OwnerName = record.OwnerName };
+                row.Fields.Add("Організація", record.Організація.Name);
+                row.Fields.Add("Каса", record.Каса.Name);
+                row.Fields.Add("Валюта", record.Валюта.Name);
+                row.Fields.Add("Сума", record.Сума.ToString());
+                
+                form.Store.Append(row);
+                if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+	    
+    #endregion
+    
+    #region REGISTER "ПартіїТоварів"
+    
+      
+    public static class ПартіїТоварів_Записи
+    {
+        public static void AddColumn(RegisterAccumulationFormJournalBase form)
+        {
+            
+            //Income
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    var cell = LabelTablePartCell.New(null);
+                    cell.Halign = Align.Center;
+                    listItem.Child = cell;
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Income ? "+" : "-");
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Рух", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Period
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Period);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Період", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Owner
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Owner.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Власник", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //OwnerType
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.OwnerType.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Тип власника", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //OwnerName
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.OwnerName.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Власник назва", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Організація, "Організація"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Організація"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ПартіяТоварівКомпозит, "Партія"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["ПартіяТоварівКомпозит"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Партія", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Номенклатура, "Номенклатура"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Номенклатура"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ХарактеристикаНоменклатури, "Характеристика"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["ХарактеристикаНоменклатури"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Серія, "Серія"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Серія"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Серія", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Склад, "Склад"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Склад"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Рядок, "Рядок"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("integer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Рядок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Рядок", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Кількість, "Кількість"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Кількість"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Собівартість, "Собівартість"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Собівартість"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Собівартість", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: СписанаСобівартість, "Списана собівартість"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["СписанаСобівартість"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Списана собівартість", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(RegisterAccumulationFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask LoadRecords(RegisterAccumulationFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UnigueID? unigueIDSelect = form.SelectPointerItem;
+
+            /* Вибірка */
+            РегістриНакопичення.ПартіїТоварів_RecordsSet ПартіїТоварів_Select = new();
+            
+
+            /* Приєднання */
+            ПартіїТоварів_Select.FillJoin(["period"]);
+
+            /* Відбори */
+            if (form.WhereList != null) ПартіїТоварів_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+            if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду("period", form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПартіїТоварів_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ПартіїТоварів_Select.SplitSelectToPages, ПартіїТоварів_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ПартіїТоварів_Select.Read();
+            form.Store.RemoveAll();
+            uint selectPosition = 0;
+            foreach (ПартіїТоварів_RecordsSet.Record record in ПартіїТоварів_Select.Records)
+            {
+                RegisterAccumulationRowJournal row = new() { UnigueID = new UnigueID(record.UID), Income = record.Income, Period = record.Period, Owner = record.Owner, OwnerType = record.OwnerType, OwnerName = record.OwnerName };
+                row.Fields.Add("Організація", record.Організація.Name);
+                row.Fields.Add("ПартіяТоварівКомпозит", record.ПартіяТоварівКомпозит.Name);
+                row.Fields.Add("Номенклатура", record.Номенклатура.Name);
+                row.Fields.Add("ХарактеристикаНоменклатури", record.ХарактеристикаНоменклатури.Name);
+                row.Fields.Add("Серія", record.Серія.Name);
+                row.Fields.Add("Склад", record.Склад.Name);
+                row.Fields.Add("Рядок", record.Рядок.ToString());
+                row.Fields.Add("Кількість", record.Кількість.ToString());
+                row.Fields.Add("Собівартість", record.Собівартість.ToString());
+                row.Fields.Add("СписанаСобівартість", record.СписанаСобівартість.ToString());
+                
+                form.Store.Append(row);
+                if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+	    
+    #endregion
+    
+    #region REGISTER "Продажі"
+    
+      
+    public static class Продажі_Записи
+    {
+        public static void AddColumn(RegisterAccumulationFormJournalBase form)
+        {
+            
+            //Income
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    var cell = LabelTablePartCell.New(null);
+                    cell.Halign = Align.Center;
+                    listItem.Child = cell;
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Income ? "+" : "-");
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Рух", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Period
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Period);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Період", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Owner
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Owner.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Власник", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //OwnerType
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.OwnerType.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Тип власника", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //OwnerName
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.OwnerName.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Власник назва", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Організація, "Організація"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Організація"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Склад, "Склад"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Склад"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Контрагент, "Контрагент"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Контрагент"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Договір, "Договір"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Договір"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Договір", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Номенклатура, "Номенклатура"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Номенклатура"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ХарактеристикаНоменклатури, "Характеристика"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["ХарактеристикаНоменклатури"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Кількість, "Кількість"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Кількість"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Сума, "Сума"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Сума"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Дохід, "Дохід"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Дохід"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дохід", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Собівартість, "Собівартість"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Собівартість"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Собівартість", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(RegisterAccumulationFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask LoadRecords(RegisterAccumulationFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UnigueID? unigueIDSelect = form.SelectPointerItem;
+
+            /* Вибірка */
+            РегістриНакопичення.Продажі_RecordsSet Продажі_Select = new();
+            
+
+            /* Приєднання */
+            Продажі_Select.FillJoin(["period"]);
+
+            /* Відбори */
+            if (form.WhereList != null) Продажі_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+            if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду("period", form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) Продажі_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(Продажі_Select.SplitSelectToPages, Продажі_Select.QuerySelect, unigueIDSelect);
+
+            
+            await Продажі_Select.Read();
+            form.Store.RemoveAll();
+            uint selectPosition = 0;
+            foreach (Продажі_RecordsSet.Record record in Продажі_Select.Records)
+            {
+                RegisterAccumulationRowJournal row = new() { UnigueID = new UnigueID(record.UID), Income = record.Income, Period = record.Period, Owner = record.Owner, OwnerType = record.OwnerType, OwnerName = record.OwnerName };
+                row.Fields.Add("Організація", record.Організація.Name);
+                row.Fields.Add("Склад", record.Склад.Name);
+                row.Fields.Add("Контрагент", record.Контрагент.Name);
+                row.Fields.Add("Договір", record.Договір.Name);
+                row.Fields.Add("Номенклатура", record.Номенклатура.Name);
+                row.Fields.Add("ХарактеристикаНоменклатури", record.ХарактеристикаНоменклатури.Name);
+                row.Fields.Add("Кількість", record.Кількість.ToString());
+                row.Fields.Add("Сума", record.Сума.ToString());
+                row.Fields.Add("Дохід", record.Дохід.ToString());
+                row.Fields.Add("Собівартість", record.Собівартість.ToString());
+                
+                form.Store.Append(row);
+                if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+	    
+    #endregion
+    
+    #region REGISTER "ТовариВКомірках"
+    
+      
+    public static class ТовариВКомірках_Записи
+    {
+        public static void AddColumn(RegisterAccumulationFormJournalBase form)
+        {
+            
+            //Income
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    var cell = LabelTablePartCell.New(null);
+                    cell.Halign = Align.Center;
+                    listItem.Child = cell;
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Income ? "+" : "-");
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Рух", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Period
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Period);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Період", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Owner
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Owner.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Власник", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //OwnerType
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.OwnerType.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Тип власника", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //OwnerName
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.OwnerName.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Власник назва", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Номенклатура, "Номенклатура"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Номенклатура"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ХарактеристикаНоменклатури, "Характеристика"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["ХарактеристикаНоменклатури"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Пакування, "Пакування"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Пакування"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Пакування", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Комірка, "Комірка"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Комірка"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Комірка", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Серія, "Серія"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Серія"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Серія", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ВНаявності, "В наявності"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["ВНаявності"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("В наявності", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(RegisterAccumulationFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask LoadRecords(RegisterAccumulationFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UnigueID? unigueIDSelect = form.SelectPointerItem;
+
+            /* Вибірка */
+            РегістриНакопичення.ТовариВКомірках_RecordsSet ТовариВКомірках_Select = new();
+            
+
+            /* Приєднання */
+            ТовариВКомірках_Select.FillJoin(["period"]);
+
+            /* Відбори */
+            if (form.WhereList != null) ТовариВКомірках_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+            if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду("period", form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ТовариВКомірках_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ТовариВКомірках_Select.SplitSelectToPages, ТовариВКомірках_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ТовариВКомірках_Select.Read();
+            form.Store.RemoveAll();
+            uint selectPosition = 0;
+            foreach (ТовариВКомірках_RecordsSet.Record record in ТовариВКомірках_Select.Records)
+            {
+                RegisterAccumulationRowJournal row = new() { UnigueID = new UnigueID(record.UID), Income = record.Income, Period = record.Period, Owner = record.Owner, OwnerType = record.OwnerType, OwnerName = record.OwnerName };
+                row.Fields.Add("Номенклатура", record.Номенклатура.Name);
+                row.Fields.Add("ХарактеристикаНоменклатури", record.ХарактеристикаНоменклатури.Name);
+                row.Fields.Add("Пакування", record.Пакування.Name);
+                row.Fields.Add("Комірка", record.Комірка.Name);
+                row.Fields.Add("Серія", record.Серія.Name);
+                row.Fields.Add("ВНаявності", record.ВНаявності.ToString());
+                
+                form.Store.Append(row);
+                if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+	    
+    #endregion
+    
+    #region REGISTER "РухКоштівККМ"
+    
+      
+    public static class РухКоштівККМ_Записи
+    {
+        public static void AddColumn(RegisterAccumulationFormJournalBase form)
+        {
+            
+            //Income
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    var cell = LabelTablePartCell.New(null);
+                    cell.Halign = Align.Center;
+                    listItem.Child = cell;
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Income ? "+" : "-");
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Рух", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Period
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Period);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Період", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Owner
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Owner.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Власник", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //OwnerType
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.OwnerType.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Тип власника", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //OwnerName
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.New(null);
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.OwnerName.ToString());
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Власник назва", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Організація, "Організація"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Організація"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: КасаККМ, "Каса ККМ"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["КасаККМ"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Каса ККМ", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Валюта, "Валюта"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Валюта"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Сума, "Сума"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? labelControl = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (labelControl != null && row != null)
+                        labelControl.SetText(row.Fields["Сума"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(RegisterAccumulationFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask LoadRecords(RegisterAccumulationFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UnigueID? unigueIDSelect = form.SelectPointerItem;
+
+            /* Вибірка */
+            РегістриНакопичення.РухКоштівККМ_RecordsSet РухКоштівККМ_Select = new();
+            
+
+            /* Приєднання */
+            РухКоштівККМ_Select.FillJoin(["period"]);
+
+            /* Відбори */
+            if (form.WhereList != null) РухКоштівККМ_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+            if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.ВідбірПоПеріоду("period", form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) РухКоштівККМ_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(РухКоштівККМ_Select.SplitSelectToPages, РухКоштівККМ_Select.QuerySelect, unigueIDSelect);
+
+            
+            await РухКоштівККМ_Select.Read();
+            form.Store.RemoveAll();
+            uint selectPosition = 0;
+            foreach (РухКоштівККМ_RecordsSet.Record record in РухКоштівККМ_Select.Records)
+            {
+                RegisterAccumulationRowJournal row = new() { UnigueID = new UnigueID(record.UID), Income = record.Income, Period = record.Period, Owner = record.Owner, OwnerType = record.OwnerType, OwnerName = record.OwnerName };
+                row.Fields.Add("Організація", record.Організація.Name);
+                row.Fields.Add("КасаККМ", record.КасаККМ.Name);
+                row.Fields.Add("Валюта", record.Валюта.Name);
+                row.Fields.Add("Сума", record.Сума.ToString());
+                
+                form.Store.Append(row);
+                if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+	    
     #endregion
     
 }

@@ -1,0 +1,36 @@
+
+
+/*     
+        ТовариНаСкладах.cs
+        Список
+
+        Табличний список - Записи
+*/
+
+using InterfaceGtk4;
+using AccountingSoftware;
+using GeneratedCode.РегістриНакопичення;
+
+using ТабличнийСписок = GeneratedCode.РегістриНакопичення.ТабличніСписки.ТовариНаСкладах_Записи;
+
+namespace StorageAndTrade.РегістриНакопичення;
+
+public class ТовариНаСкладах_СписокМіні : RegisterAccumulationFormJournalSmall
+{
+    public ТовариНаСкладах_СписокМіні() : base(Program.BasicForm?.NotebookFunc)
+    {
+        TypeName = ТовариНаСкладах_Const.TYPENAME;
+        ТабличнийСписок.AddColumn(this);
+        SetPagesSettings(100);
+    }
+
+    #region Override
+
+    public override async ValueTask LoadRecords()
+    {
+        await ТабличнийСписок.LoadRecords(this);
+    }
+
+    #endregion
+}
+    
