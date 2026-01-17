@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 14.01.2026 17:47:53
+ * Дата конфігурації: 17.01.2026 13:13:29
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон GeneratedCode.xslt
@@ -3756,7 +3756,7 @@ namespace GeneratedCode.Довідники
     public class Контрагенти_Контакти_TablePart : DirectoryTablePart
     {
         public Контрагенти_Контакти_TablePart(Контрагенти_Objest owner) : base(Config.Kernel, "tab_a09",
-             ["col_d2", "col_d8", "col_d7", "col_d3", "col_d5", "col_d4", "col_d6", "col_a1", "col_a2", ], true)
+             ["col_d2", "col_d8", "col_d7", "col_d3", "col_d5", "col_d4", "col_d6", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", ], true)
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
@@ -3776,6 +3776,9 @@ namespace GeneratedCode.Довідники
         public const string Місто = "col_d6";
         public const string Значення = "col_a1";
         public const string НомерРядка = "col_a2";
+        public const string ДатаЧас = "col_a3";
+        public const string Дата = "col_a4";
+        public const string Час = "col_a5";
 
         public Контрагенти_Objest Owner { get; private set; }
         
@@ -3820,6 +3823,9 @@ namespace GeneratedCode.Довідники
                     Місто = fieldValue["col_d6"].ToString() ?? "",
                     Значення = fieldValue["col_a1"].ToString() ?? "",
                     НомерРядка = (fieldValue["col_a2"] != DBNull.Value) ? (int)fieldValue["col_a2"] : 0,
+                    ДатаЧас = (fieldValue["col_a3"] != DBNull.Value) ? DateTime.Parse(fieldValue["col_a3"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue,
+                    Дата = (fieldValue["col_a4"] != DBNull.Value) ? DateTime.Parse(fieldValue["col_a4"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue,
+                    Час = (fieldValue["col_a5"] != DBNull.Value) ? TimeSpan.Parse(fieldValue["col_a5"]?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay,
                     
                 };
                 Records.Add(record);
@@ -3863,6 +3869,9 @@ namespace GeneratedCode.Довідники
                     {"col_d6", record.Місто},
                     {"col_a1", record.Значення},
                     {"col_a2", record.НомерРядка},
+                    {"col_a3", record.ДатаЧас},
+                    {"col_a4", record.Дата},
+                    {"col_a5", record.Час},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UnigueID, fieldValue);
@@ -3898,6 +3907,9 @@ namespace GeneratedCode.Довідники
             public string Місто { get; set; } = "";
             public string Значення { get; set; } = "";
             public int НомерРядка { get; set; } = 0;
+            public DateTime ДатаЧас { get; set; } = DateTime.MinValue;
+            public DateTime Дата { get; set; } = DateTime.MinValue;
+            public TimeSpan Час { get; set; } = DateTime.MinValue.TimeOfDay;
             
         }
     }

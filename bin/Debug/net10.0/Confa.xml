@@ -7,7 +7,7 @@
   <Author>Тарахомин Юрій Іванович, accounting.org.ua</Author>
   <Desc>Конфігурація "Зберігання та Торгівля"
 https://accounting.org.ua/storage_and_trade.html</Desc>
-  <DateTimeSave>14.01.2026 17:47:53</DateTimeSave>
+  <DateTimeSave>17.01.2026 13:13:29</DateTimeSave>
   <DictTSearch>simple</DictTSearch>
   <GtkVersion>Gtk4</GtkVersion>
   <ConstantsBlocks>
@@ -7733,6 +7733,36 @@ public class Валюти_PointerTablePartCell : PointerTablePartCell
               <IsExport>0</IsExport>
               <AutomaticNumbering>1</AutomaticNumbering>
             </Field>
+            <Field>
+              <Name>ДатаЧас</Name>
+              <FullName>Дата та час</FullName>
+              <NameInTable>col_a3</NameInTable>
+              <Type>datetime</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>Дата</Name>
+              <FullName>Дата</FullName>
+              <NameInTable>col_a4</NameInTable>
+              <Type>date</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>Час</Name>
+              <FullName>Час</FullName>
+              <NameInTable>col_a5</NameInTable>
+              <Type>time</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
           </Fields>
           <TabularLists />
           <TriggerFunctions>
@@ -7740,7 +7770,7 @@ public class Валюти_PointerTablePartCell : PointerTablePartCell
             <AfterSave Action="0">AfterSave</AfterSave>
           </TriggerFunctions>
           <Forms>
-            <Form Modified="0">
+            <Form Modified="1">
               <Name>Таблична частин Контакти</Name>
               <Desc>Таблична частина</Desc>
               <Type>TablePart</Type>
@@ -7941,6 +7971,63 @@ class Контрагенти_ТабличнаЧастина_Контакти : D
         public Action? Сhanged_Місто;
 
     
+        //
+        // ДатаЧас
+        //
+        public DateTime ДатаЧас
+        {
+            get => ДатаЧас_;
+            set
+            {
+                if (!ДатаЧас_.Equals(value))
+                {
+                    ДатаЧас_ = value;
+                    Сhanged_ДатаЧас?.Invoke();
+                }
+            }
+        }
+        DateTime ДатаЧас_ = DateTime.MinValue;
+        public Action? Сhanged_ДатаЧас;
+
+    
+        //
+        // Дата
+        //
+        public DateTime Дата
+        {
+            get => Дата_;
+            set
+            {
+                if (!Дата_.Equals(value))
+                {
+                    Дата_ = value;
+                    Сhanged_Дата?.Invoke();
+                }
+            }
+        }
+        DateTime Дата_ = DateTime.MinValue;
+        public Action? Сhanged_Дата;
+
+    
+        //
+        // Час
+        //
+        public TimeSpan Час
+        {
+            get => Час_;
+            set
+            {
+                if (!Час_.Equals(value))
+                {
+                    Час_ = value;
+                    Сhanged_Час?.Invoke();
+                }
+            }
+        }
+        TimeSpan Час_ = DateTime.MinValue.TimeOfDay;
+        public Action? Сhanged_Час;
+
+    
 
         /*
         Функції
@@ -7959,6 +8046,9 @@ class Контрагенти_ТабличнаЧастина_Контакти : D
                 Область = Область,
                 Район = Район,
                 Місто = Місто,
+                ДатаЧас = ДатаЧас,
+                Дата = Дата,
+                Час = Час,
                 
             };
         }
@@ -8243,6 +8333,101 @@ class Контрагенти_ТабличнаЧастина_Контакти : D
             Grid.AppendColumn(column);
         }
         
+        //ДатаЧас
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = new DateTimeTablePartCell();
+                
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = (DateTimeTablePartCell?)listItem.Child;
+                ItemRow? row = (ItemRow?)listItem.Item;
+                if (cell != null && row != null)
+                {
+                    
+                    cell.OnСhanged = () => row.ДатаЧас = cell.Value;
+                    (row.Сhanged_ДатаЧас = () => cell.Value = row.ДатаЧас).Invoke();
+                        
+                }
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("Дата та час", factory);
+            column.Resizable = true;
+            
+            column.FixedWidth = 200;
+            
+            Grid.AppendColumn(column);
+        }
+        
+        //Дата
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = new DateTimeTablePartCell();
+                
+                cell.OnlyDate = true;
+                    
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = (DateTimeTablePartCell?)listItem.Child;
+                ItemRow? row = (ItemRow?)listItem.Item;
+                if (cell != null && row != null)
+                {
+                    
+                    cell.OnСhanged = () => row.Дата = cell.Value;
+                    (row.Сhanged_Дата = () => cell.Value = row.Дата).Invoke();
+                        
+                }
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+            column.Resizable = true;
+            
+            column.FixedWidth = 100;
+            
+            Grid.AppendColumn(column);
+        }
+        
+        //Час
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = new TimeTablePartCell();
+                
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = (TimeTablePartCell?)listItem.Child;
+                ItemRow? row = (ItemRow?)listItem.Item;
+                if (cell != null && row != null)
+                {
+                    
+                    cell.OnСhanged = () => row.Час = cell.Value;
+                    (row.Сhanged_Час = () => cell.Value = row.Час).Invoke();
+                        
+                }
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("Час", factory);
+            column.Resizable = true;
+            
+            column.FixedWidth = 100;
+            
+            Grid.AppendColumn(column);
+        }
+        
         { /* Пуста колонка для заповнення вільного простору */
             ColumnViewColumn column = ColumnViewColumn.New(null, null);
             column.Resizable = true;
@@ -8278,6 +8463,9 @@ class Контрагенти_ТабличнаЧастина_Контакти : D
                 Область = record.Область,
                 Район = record.Район,
                 Місто = record.Місто,
+                ДатаЧас = record.ДатаЧас,
+                Дата = record.Дата,
+                Час = record.Час,
                 
             });
 
@@ -8313,6 +8501,9 @@ class Контрагенти_ТабличнаЧастина_Контакти : D
                     Область = row.Область,
                     Район = row.Район,
                     Місто = row.Місто,
+                    ДатаЧас = row.ДатаЧас,
+                    Дата = row.Дата,
+                    Час = row.Час,
                     
                 });
             }
@@ -8336,6 +8527,9 @@ class Контрагенти_ТабличнаЧастина_Контакти : D
                     Область = record.Область,
                     Район = record.Район,
                     Місто = record.Місто,
+                    ДатаЧас = record.ДатаЧас,
+                    Дата = record.Дата,
+                    Час = record.Час,
                     
                 }], 1);
                 if (sel) Grid.Model.SelectItem(position, false);
@@ -8443,6 +8637,33 @@ class Контрагенти_ТабличнаЧастина_Контакти : D
                   <ReadOnly>0</ReadOnly>
                   <Type>string</Type>
                   <Multiline>0</Multiline>
+                </Field>
+                <Field>
+                  <Name>ДатаЧас</Name>
+                  <Caption>Дата та час</Caption>
+                  <Size>200</Size>
+                  <Height>0</Height>
+                  <SortNum>100</SortNum>
+                  <ReadOnly>0</ReadOnly>
+                  <Type>datetime</Type>
+                </Field>
+                <Field>
+                  <Name>Дата</Name>
+                  <Caption>Дата</Caption>
+                  <Size>100</Size>
+                  <Height>0</Height>
+                  <SortNum>100</SortNum>
+                  <ReadOnly>0</ReadOnly>
+                  <Type>date</Type>
+                </Field>
+                <Field>
+                  <Name>Час</Name>
+                  <Caption>Час</Caption>
+                  <Size>100</Size>
+                  <Height>0</Height>
+                  <SortNum>100</SortNum>
+                  <ReadOnly>0</ReadOnly>
+                  <Type>time</Type>
                 </Field>
               </ElementFields>
               <IncludeIconColumn>0</IncludeIconColumn>
@@ -38795,7 +39016,7 @@ public class ЗамовленняПостачальнику_PointerTablePartCell
     ]]></GeneratedCode>
           <NotSaveToFile>0</NotSaveToFile>
         </Form>
-        <Form Modified="1">
+        <Form Modified="0">
           <Name>Проведення документу</Name>
           <Desc>Проведення документу</Desc>
           <Type>SpendTheDocument</Type>

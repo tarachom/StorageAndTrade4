@@ -195,6 +195,63 @@ class Контрагенти_ТабличнаЧастина_Контакти : D
         public Action? Сhanged_Місто;
 
     
+        //
+        // ДатаЧас
+        //
+        public DateTime ДатаЧас
+        {
+            get => ДатаЧас_;
+            set
+            {
+                if (!ДатаЧас_.Equals(value))
+                {
+                    ДатаЧас_ = value;
+                    Сhanged_ДатаЧас?.Invoke();
+                }
+            }
+        }
+        DateTime ДатаЧас_ = DateTime.MinValue;
+        public Action? Сhanged_ДатаЧас;
+
+    
+        //
+        // Дата
+        //
+        public DateTime Дата
+        {
+            get => Дата_;
+            set
+            {
+                if (!Дата_.Equals(value))
+                {
+                    Дата_ = value;
+                    Сhanged_Дата?.Invoke();
+                }
+            }
+        }
+        DateTime Дата_ = DateTime.MinValue;
+        public Action? Сhanged_Дата;
+
+    
+        //
+        // Час
+        //
+        public TimeSpan Час
+        {
+            get => Час_;
+            set
+            {
+                if (!Час_.Equals(value))
+                {
+                    Час_ = value;
+                    Сhanged_Час?.Invoke();
+                }
+            }
+        }
+        TimeSpan Час_ = DateTime.MinValue.TimeOfDay;
+        public Action? Сhanged_Час;
+
+    
 
         /*
         Функції
@@ -213,6 +270,9 @@ class Контрагенти_ТабличнаЧастина_Контакти : D
                 Область = Область,
                 Район = Район,
                 Місто = Місто,
+                ДатаЧас = ДатаЧас,
+                Дата = Дата,
+                Час = Час,
                 
             };
         }
@@ -497,6 +557,101 @@ class Контрагенти_ТабличнаЧастина_Контакти : D
             Grid.AppendColumn(column);
         }
         
+        //ДатаЧас
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = new DateTimeTablePartCell();
+                
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = (DateTimeTablePartCell?)listItem.Child;
+                ItemRow? row = (ItemRow?)listItem.Item;
+                if (cell != null && row != null)
+                {
+                    
+                    cell.OnСhanged = () => row.ДатаЧас = cell.Value;
+                    (row.Сhanged_ДатаЧас = () => cell.Value = row.ДатаЧас).Invoke();
+                        
+                }
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("Дата та час", factory);
+            column.Resizable = true;
+            
+            column.FixedWidth = 200;
+            
+            Grid.AppendColumn(column);
+        }
+        
+        //Дата
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = new DateTimeTablePartCell();
+                
+                cell.OnlyDate = true;
+                    
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = (DateTimeTablePartCell?)listItem.Child;
+                ItemRow? row = (ItemRow?)listItem.Item;
+                if (cell != null && row != null)
+                {
+                    
+                    cell.OnСhanged = () => row.Дата = cell.Value;
+                    (row.Сhanged_Дата = () => cell.Value = row.Дата).Invoke();
+                        
+                }
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+            column.Resizable = true;
+            
+            column.FixedWidth = 100;
+            
+            Grid.AppendColumn(column);
+        }
+        
+        //Час
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = new TimeTablePartCell();
+                
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                ListItem listItem = (ListItem)args.Object;
+                var cell = (TimeTablePartCell?)listItem.Child;
+                ItemRow? row = (ItemRow?)listItem.Item;
+                if (cell != null && row != null)
+                {
+                    
+                    cell.OnСhanged = () => row.Час = cell.Value;
+                    (row.Сhanged_Час = () => cell.Value = row.Час).Invoke();
+                        
+                }
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("Час", factory);
+            column.Resizable = true;
+            
+            column.FixedWidth = 100;
+            
+            Grid.AppendColumn(column);
+        }
+        
         { /* Пуста колонка для заповнення вільного простору */
             ColumnViewColumn column = ColumnViewColumn.New(null, null);
             column.Resizable = true;
@@ -532,6 +687,9 @@ class Контрагенти_ТабличнаЧастина_Контакти : D
                 Область = record.Область,
                 Район = record.Район,
                 Місто = record.Місто,
+                ДатаЧас = record.ДатаЧас,
+                Дата = record.Дата,
+                Час = record.Час,
                 
             });
 
@@ -567,6 +725,9 @@ class Контрагенти_ТабличнаЧастина_Контакти : D
                     Область = row.Область,
                     Район = row.Район,
                     Місто = row.Місто,
+                    ДатаЧас = row.ДатаЧас,
+                    Дата = row.Дата,
+                    Час = row.Час,
                     
                 });
             }
@@ -590,6 +751,9 @@ class Контрагенти_ТабличнаЧастина_Контакти : D
                     Область = record.Область,
                     Район = record.Район,
                     Місто = record.Місто,
+                    ДатаЧас = record.ДатаЧас,
+                    Дата = record.Дата,
+                    Час = record.Час,
                     
                 }], 1);
                 if (sel) Grid.Model.SelectItem(position, false);

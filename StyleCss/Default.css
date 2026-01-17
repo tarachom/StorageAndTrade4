@@ -133,6 +133,54 @@ columnview listview row cell box.text entry {
     background: transparent;
 }
 
+/* Для DateTimeTablePartCell */
+columnview listview row cell box.datetime entry {
+    padding-left: 3px;
+    padding-right: 3px;
+    margin: 0;
+    min-height: 0;
+    min-width: 0;
+    border-radius: 0;
+    border: 0;
+    background: transparent;
+}
+
+/* Кнопки для DateTimeTablePartCell */
+columnview listview row cell box.datetime .button {
+    padding-left: 3px;
+    padding-right: 3px;
+    margin: 0;
+    min-height: 0;
+    min-width: 0;
+    border-radius: 0;
+    border: 0;
+    background: transparent;
+}
+
+/* Для TimeTablePartCell */
+columnview listview row cell box.time entry {
+    padding-left: 3px;
+    padding-right: 3px;
+    margin: 0;
+    min-height: 0;
+    min-width: 0;
+    border-radius: 0;
+    border: 0;
+    background: transparent;
+}
+
+/* Кнопки для TimeTablePartCell */
+columnview listview row cell box.time .button {
+    padding-left: 3px;
+    padding-right: 3px;
+    margin: 0;
+    min-height: 0;
+    min-width: 0;
+    border-radius: 0;
+    border: 0;
+    background: transparent;
+}
+
 /* <<<--------------- Клітинки табличної частини ------------------ */
 
 
