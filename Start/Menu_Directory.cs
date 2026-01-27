@@ -35,6 +35,13 @@ class Menu_Directory : Form
             await page.SetValue();
         });
 
+        CreateLink(vLeft, Номенклатура_Папки_Const.FULLNAME, async () =>
+        {
+            Номенклатура_Папки_Список page = new();
+            NotebookFunc?.CreatePage(Номенклатура_Папки_Const.FULLNAME, page);
+            await page.SetValue();
+        });
+
         CreateLink(vLeft, Склади_Const.FULLNAME, async () =>
         {
             Склади_Список page = new();
