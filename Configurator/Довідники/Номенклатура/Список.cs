@@ -16,11 +16,41 @@ namespace StorageAndTrade;
 
 class Номенклатура_Список : DirectoryFormJournalFull
 {
+    Номенклатура_Папки_Список Папки = new();
+
     public Номенклатура_Список() : base(Program.BasicForm?.NotebookFunc)
     {
         TypeName = Номенклатура_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+        
+        CompositeMode = true;
+
+        //Папки
+        {
+            Box vBox = New(Orientation.Vertical, 0);
+            vBox.MarginStart = 5;
+            vBox.Append(Папки);
+
+            HPanedTable.SetEndChild(vBox);
+            HPanedTable.Position = 1200;
+
+            Папки.CallBack_Activate = async unigueID =>
+            {
+                ParentWhereList = [new(Номенклатура_Const.Папка, Comparison.EQ, unigueID.UGuid)];
+                if (TypeWhereState == TypeWhere.Standart)
+                {
+                    PagesClear();
+                    await LoadRecords();
+                }
+            };
+        }
+    }
+
+    protected override async ValueTask BeforeSetValue()
+    {
+        await Папки.SetValue();
+        Папки.CallBack_Activate?.Invoke(new UnigueID());
     }
 
     public override async ValueTask LoadRecords()
@@ -58,4 +88,3 @@ class Номенклатура_Список : DirectoryFormJournalFull
         return await Функції.Copy(unigueID);
     }
 }
-    
