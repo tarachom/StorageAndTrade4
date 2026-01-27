@@ -313,7 +313,7 @@ class ПоступленняТоварівТаПослуг_Елемент : Docu
 
     protected override void ReportSpendTheDocument(UnigueID unigueID)
     {
-        //СпільніФорми_РухДокументуПоРегістрах.СформуватиЗвіт(new ПоступленняТоварівТаПослуг_Pointer(unigueID));
+        CommonForms_DocumentMovementThroughRegisters.Create(new ПоступленняТоварівТаПослуг_Pointer(unigueID));
     }
 
     protected override async ValueTask InJournal(UnigueID unigueID)

@@ -16,8 +16,6 @@ namespace StorageAndTrade;
 
 class Номенклатура_Список : DirectoryFormJournalFull
 {
-    
-    
     public Номенклатура_Список() : base(Program.BasicForm?.NotebookFunc)
     {
         TypeName = Номенклатура_Const.POINTER;

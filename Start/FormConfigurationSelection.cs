@@ -45,18 +45,6 @@ class FormConfigurationSelection : InterfaceGtk4.FormConfigurationSelection
 
     public override async ValueTask<bool> OpenConfigurator(ConfigurationParam? openConfigurationParam)
     {
-        //ProcessStartInfo processStartInfo = new ProcessStartInfo();
-        //processStartInfo.FileName = Path.Combine(@"D:\Debug\Work\VSCode\Configurator3\bin\Debug\net10.0", "Configurator3.exe");
-        //processStartInfo.WorkingDirectory = AppContext.BaseDirectory;
-        //Process.Start(processStartInfo);
-
-        //Console.WriteLine("ok");
-        // Configurator.FormConfigurator сonfigurator = new() { OpenConfigurationParam = openConfigurationParam };
-        // сonfigurator.Show();
-
-        // сonfigurator.SetValue();
-        // сonfigurator.LoadTreeAsync();
-
         Configurator.FormConfigurator form = new(Program.BasicApp, Config.Kernel) { OpenConfigurationParam = openConfigurationParam };
         form.SetStatusBar();
         form.Show();

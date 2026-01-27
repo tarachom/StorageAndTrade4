@@ -42,110 +42,117 @@ class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.CommonForms_D
 {
     public CommonForms_DocumentMovementThroughRegisters() : base(Program.BasicForm?.NotebookFunc) { }
 
+    public static async void Create(DocumentPointer documentPointer)
+    {
+        CommonForms_DocumentMovementThroughRegisters page = new();
+        Program.BasicForm?.NotebookFunc.CreatePage("Проводки", () => page);
+        await page.Fill(documentPointer);
+    }
+
     /// <summary>
     /// Контрол який відображає документ для якого виводяться рухи по регістрах
     /// </summary>
     /// <param name="documentPointer">Документ вказівник</param>
     /// <returns>Widget</returns>
     protected override Widget Document_PointerControl(DocumentPointer documentPointer) =>
-        new CompositePointerControl { Pointer = documentPointer.GetBasis(), Caption = "Документ:", TypeSelectSensetive = false, ClearSensetive = false };
+        new CompositePointerControl { Pointer = documentPointer.GetBasis(), Caption = "Документ:", TypeSelectSensetive = false, ClearSensetive = false, WidthPresentation = 500 };
 
-    public async ValueTask Заповнити(DocumentPointer documentPointer)
+    public async ValueTask Fill(DocumentPointer documentPointer)
+    {
+        AddDocumentToForm(documentPointer);
+
+        foreach (string regAccumName in Config.Kernel.Conf.Documents[documentPointer.TypeDocument].AllowRegisterAccumulation)
         {
-            AddDocumentToForm(documentPointer);
-
-            foreach (string regAccumName in Config.Kernel.Conf.Documents[documentPointer.TypeDocument].AllowRegisterAccumulation)
+            /*switch (regAccumName)
             {
-                /*switch (regAccumName)
-                {
-                    case "ТовариНаСкладах":
-                        {
-                            ДодатиБлокНаФорму("Товари на складах", treeView);
+                case "ТовариНаСкладах":
+                    {
+                        ДодатиБлокНаФорму("Товари на складах", treeView);
 
-                            ТабличніСписки.ТовариНаСкладах_Записи.AddColumn();
-                            ТабличніСписки.ТовариНаСкладах_Записи.ДодатиВідбірПоДокументу(treeView, ДокументВказівник.UnigueID.UGuid);
-                            await ТабличніСписки.ТовариНаСкладах_Записи.LoadRecords(treeView, null, false, false);
+                        ТабличніСписки.ТовариНаСкладах_Записи.AddColumn();
+                        ТабличніСписки.ТовариНаСкладах_Записи.ДодатиВідбірПоДокументу(treeView, ДокументВказівник.UnigueID.UGuid);
+                        await ТабличніСписки.ТовариНаСкладах_Записи.LoadRecords(treeView, null, false, false);
 
-                            break;
-                        }
-                    case "ПартіїТоварів":
-                        {
-                            ДодатиБлокНаФорму("Партії товарів", treeView);
+                        break;
+                    }
+                case "ПартіїТоварів":
+                    {
+                        ДодатиБлокНаФорму("Партії товарів", treeView);
 
 
-                            break;
-                        }
-                    case "ЗамовленняКлієнтів":
-                        {
-                            ДодатиБлокНаФорму("Замовлення клієнтів", treeView);
+                        break;
+                    }
+                case "ЗамовленняКлієнтів":
+                    {
+                        ДодатиБлокНаФорму("Замовлення клієнтів", treeView);
 
 
-                            break;
-                        }
-                    case "РозрахункиЗКлієнтами":
-                        {
-                            ДодатиБлокНаФорму("Розрахунки з клієнтами", treeView);
+                        break;
+                    }
+                case "РозрахункиЗКлієнтами":
+                    {
+                        ДодатиБлокНаФорму("Розрахунки з клієнтами", treeView);
 
 
-                            break;
-                        }
-                    case "ВільніЗалишки":
-                        {
-                            ДодатиБлокНаФорму("Вільні залишки", treeView);
+                        break;
+                    }
+                case "ВільніЗалишки":
+                    {
+                        ДодатиБлокНаФорму("Вільні залишки", treeView);
 
 
-                            break;
-                        }
-                    case "ЗамовленняПостачальникам":
-                        {
-                            ДодатиБлокНаФорму("Замовлення постачальникам", treeView);
+                        break;
+                    }
+                case "ЗамовленняПостачальникам":
+                    {
+                        ДодатиБлокНаФорму("Замовлення постачальникам", treeView);
 
 
-                            break;
-                        }
-                    case "РозрахункиЗПостачальниками":
-                        {
-                            ДодатиБлокНаФорму("Розрахунки з постачальниками", treeView);
+                        break;
+                    }
+                case "РозрахункиЗПостачальниками":
+                    {
+                        ДодатиБлокНаФорму("Розрахунки з постачальниками", treeView);
 
 
-                            break;
-                        }
-                    case "РухКоштів":
-                        {
-                            ДодатиБлокНаФорму("Рух коштів", treeView);
+                        break;
+                    }
+                case "РухКоштів":
+                    {
+                        ДодатиБлокНаФорму("Рух коштів", treeView);
 
 
-                            break;
-                        }
-                    case "РухКоштівККМ":
-                        {
-                            ДодатиБлокНаФорму("Рух коштів ККМ", treeView);
+                        break;
+                    }
+                case "РухКоштівККМ":
+                    {
+                        ДодатиБлокНаФорму("Рух коштів ККМ", treeView);
 
 
-                            break;
-                        }
-                    case "Закупівлі":
-                        {
-                            ДодатиБлокНаФорму("Закупівлі", treeView);
+                        break;
+                    }
+                case "Закупівлі":
+                    {
+                        ДодатиБлокНаФорму("Закупівлі", treeView);
 
 
-                            break;
-                        }
-                    case "Продажі":
-                        {
-                            ДодатиБлокНаФорму("Продажі", treeView);
+                        break;
+                    }
+                case "Продажі":
+                    {
+                        ДодатиБлокНаФорму("Продажі", treeView);
 
 
-                            break;
-                        }
-                    case "ТовариВКомірках":
-                        {
-                            ДодатиБлокНаФорму("Товари в комірках", treeView);
+                        break;
+                    }
+                case "ТовариВКомірках":
+                    {
+                        ДодатиБлокНаФорму("Товари в комірках", treeView);
 
 
-                            break;
-                        }
-                }*/
-            }
+                        break;
+                    }
+            }*/
         }
+    }
 }

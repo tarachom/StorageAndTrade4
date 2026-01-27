@@ -14,7 +14,7 @@ using Функції = StorageAndTrade.Номенклатура_Папки_Фу�
 
 namespace StorageAndTrade;
 
-class Номенклатура_Папки_ШвидкийВибір : DirectoryFormJournalSmall
+class Номенклатура_Папки_ШвидкийВибір : DirectoryFormJournalBaseTree
 {
     
     
@@ -46,10 +46,10 @@ class Номенклатура_Папки_ШвидкийВибір : DirectoryFo
         ТабличнийСписок.CreateFilter(this);
     }
 
-    protected override async ValueTask OpenPageList(UnigueID? unigueID = null)
+    /*protected override async ValueTask OpenPageList(UnigueID? unigueID = null)
     {
         await Функції.OpenPageList(unigueID, CallBack_OnSelectPointer);
-    }
+    }*/
 
     protected override async ValueTask OpenPageElement(bool IsNew, UnigueID? unigueID = null)
     {

@@ -6,8 +6,6 @@ CompositePointerControl - контрол тип якого оприділяєт�
 
 */
 
-using Gtk;
-using InterfaceGtk4;
 using AccountingSoftware;
 using GeneratedCode;
 

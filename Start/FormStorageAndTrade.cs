@@ -96,22 +96,6 @@ class FormStorageAndTrade : FormGeneral
         PageHome page = new();
         NotebookFunc?.CreatePage("Стартова", () => page, false, null, null, true);
         await page.SetValue();
-
-        /*ПоступленняТоварівТаПослуг page2 = new();
-        NotebookFunc?.CreatePage("Home New", () => page2);
-        await page2.SetValue();
-
-        ПоступленняТоварівТаПослуг_ШвидкийВибір page2_1 = new();
-        NotebookFunc?.CreatePage("ПоступленняТоварівТаПослуг ШвидкийВибір", () => page2_1);
-        await page2_1.SetValue();
-
-        Номенклатура page3 = new();
-        NotebookFunc?.CreatePage("Home New", () => page3);
-        await page3.SetValue();
-
-        Номенклатура_ШвидкийВибір page3_1 = new();
-        NotebookFunc?.CreatePage("Home New1", () => page3_1);
-        await page3_1.SetValue();*/
     }
 
     public async ValueTask SetCurrentUser()

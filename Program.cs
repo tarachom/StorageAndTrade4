@@ -30,7 +30,7 @@ class Program
             //Icon
             IconTheme iconTheme = IconTheme.GetForDisplay(display);
             iconTheme.AddSearchPath(Path.Combine(AppContext.BaseDirectory, "images"));
-
+            
             //Css
             string styleDefaultFile = Path.Combine(AppContext.BaseDirectory, "StyleCss/Default.css");
             if (File.Exists(styleDefaultFile))
@@ -44,3 +44,5 @@ class Program
         BasicApp.RunWithSynchronizationContext(null);
     }
 }
+
+//https://specifications.freedesktop.org/icon-naming/latest/
