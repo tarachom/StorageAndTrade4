@@ -49,6 +49,7 @@ public class Номенклатура_Папки_PointerControl : PointerControl
         {
             PopoverParent = popover,
             DirectoryPointerItem = Pointer.UnigueID,
+            OpenFolder = OpenFolder,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new Номенклатура_Папки_Pointer(selectPointer);

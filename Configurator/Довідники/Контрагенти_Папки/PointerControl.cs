@@ -49,6 +49,7 @@ public class Контрагенти_Папки_PointerControl : PointerControl
         {
             PopoverParent = popover,
             DirectoryPointerItem = Pointer.UnigueID,
+            OpenFolder = OpenFolder,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new Контрагенти_Папки_Pointer(selectPointer);

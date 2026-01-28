@@ -7,7 +7,7 @@
   <Author>Тарахомин Юрій Іванович, accounting.org.ua</Author>
   <Desc>Конфігурація "Зберігання та Торгівля"
 https://accounting.org.ua/storage_and_trade.html</Desc>
-  <DateTimeSave>27.01.2026 23:37:12</DateTimeSave>
+  <DateTimeSave>28.01.2026 13:07:23</DateTimeSave>
   <DictTSearch>simple</DictTSearch>
   <GtkVersion>Gtk4</GtkVersion>
   <ConstantsBlocks>
@@ -3460,6 +3460,17 @@ class Номенклатура_ТабличнаЧастина_Файли : Direc
               <Type>enum</Type>
               <Pointer>Перелічення.ТипиНоменклатури</Pointer>
             </Field>
+            <Field>
+              <Name>Папка</Name>
+              <Caption>Папка</Caption>
+              <Size>0</Size>
+              <SortNum>6</SortNum>
+              <SortField>False</SortField>
+              <SortDirection>False</SortDirection>
+              <FilterField>True</FilterField>
+              <Type>pointer</Type>
+              <Pointer>Довідники.Номенклатура_Папки</Pointer>
+            </Field>
             <AdditionalField>
               <Visible>True</Visible>
               <Name>Залишок</Name>
@@ -3590,7 +3601,7 @@ END]]></Value>
               <SortNum>1</SortNum>
               <SortField>True</SortField>
               <SortDirection>False</SortDirection>
-              <FilterField>True</FilterField>
+              <FilterField>False</FilterField>
               <Type>string</Type>
               <Multiline>0</Multiline>
             </Field>
@@ -3601,7 +3612,7 @@ END]]></Value>
               <SortNum>2</SortNum>
               <SortField>False</SortField>
               <SortDirection>False</SortDirection>
-              <FilterField>True</FilterField>
+              <FilterField>False</FilterField>
               <Type>string</Type>
               <Multiline>0</Multiline>
             </Field>
@@ -3615,6 +3626,28 @@ END]]></Value>
               <FilterField>True</FilterField>
               <Type>pointer</Type>
               <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
+            </Field>
+            <Field>
+              <Name>ТипНоменклатури</Name>
+              <Caption>Тип</Caption>
+              <Size>0</Size>
+              <SortNum>4</SortNum>
+              <SortField>True</SortField>
+              <SortDirection>False</SortDirection>
+              <FilterField>True</FilterField>
+              <Type>enum</Type>
+              <Pointer>Перелічення.ТипиНоменклатури</Pointer>
+            </Field>
+            <Field>
+              <Name>Папка</Name>
+              <Caption>Папка</Caption>
+              <Size>0</Size>
+              <SortNum>5</SortNum>
+              <SortField>False</SortField>
+              <SortDirection>False</SortDirection>
+              <FilterField>True</FilterField>
+              <Type>pointer</Type>
+              <Pointer>Довідники.Номенклатура_Папки</Pointer>
             </Field>
             <AdditionalField>
               <Visible>True</Visible>
@@ -18695,7 +18728,7 @@ public class ХарактеристикиНоменклатури_PointerTablePa
           <IsPresentation>1</IsPresentation>
           <IsIndex>0</IsIndex>
           <IsFullTextSearch>1</IsFullTextSearch>
-          <IsSearch>0</IsSearch>
+          <IsSearch>1</IsSearch>
           <IsExport>0</IsExport>
           <Multiline>0</Multiline>
         </Field>
@@ -18708,7 +18741,7 @@ public class ХарактеристикиНоменклатури_PointerTablePa
           <IsPresentation>0</IsPresentation>
           <IsIndex>0</IsIndex>
           <IsFullTextSearch>0</IsFullTextSearch>
-          <IsSearch>0</IsSearch>
+          <IsSearch>1</IsSearch>
           <IsExport>0</IsExport>
           <Multiline>0</Multiline>
         </Field>
@@ -18814,11 +18847,11 @@ static class Номенклатура_Папки_Функції
         return
         [
             
-            //Код
-            new Where(Номенклатура_Папки_Const.Код, Comparison.LIKE, searchText) { FuncToField = "TO_CHAR", FuncToField_Param1 = "''" },
-                    
             //Назва
-            new Where(Comparison.OR, Номенклатура_Папки_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "TO_CHAR", FuncToField_Param1 = "''" },
+            new Where(Номенклатура_Папки_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
+                    
+            //Код
+            new Where(Comparison.OR, Номенклатура_Папки_Const.Код, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
                     
         ];
     }
@@ -19012,6 +19045,7 @@ public class Номенклатура_Папки_PointerControl : PointerControl
         {
             PopoverParent = popover,
             DirectoryPointerItem = Pointer.UnigueID,
+            OpenFolder = OpenFolder,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new Номенклатура_Папки_Pointer(selectPointer);
@@ -19737,6 +19771,7 @@ public class Контрагенти_Папки_PointerControl : PointerControl
         {
             PopoverParent = popover,
             DirectoryPointerItem = Pointer.UnigueID,
+            OpenFolder = OpenFolder,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new Контрагенти_Папки_Pointer(selectPointer);
@@ -20386,6 +20421,7 @@ public class Склади_Папки_PointerControl : PointerControl
         {
             PopoverParent = popover,
             DirectoryPointerItem = Pointer.UnigueID,
+            OpenFolder = OpenFolder,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new Склади_Папки_Pointer(selectPointer);
@@ -31692,6 +31728,7 @@ public class СкладськіКомірки_Папки_PointerControl : Pointe
         {
             PopoverParent = popover,
             DirectoryPointerItem = Pointer.UnigueID,
+            OpenFolder = OpenFolder,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new СкладськіКомірки_Папки_Pointer(selectPointer);

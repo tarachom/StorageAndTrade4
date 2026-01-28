@@ -16,14 +16,14 @@ namespace StorageAndTrade;
 
 class Номенклатура_Список : DirectoryFormJournalFull
 {
-    Номенклатура_Папки_Список Папки = new();
+    Номенклатура_Папки_Список Папки = new() { InsertEmptyFirstRow = true };
 
     public Номенклатура_Список() : base(Program.BasicForm?.NotebookFunc)
     {
         TypeName = Номенклатура_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
-        
+
         CompositeMode = true;
 
         //Папки
@@ -34,9 +34,11 @@ class Номенклатура_Список : DirectoryFormJournalFull
 
             HPanedTable.SetEndChild(vBox);
             HPanedTable.Position = 1200;
+            HPanedTable.StartChild?.MarginEnd = 5;
 
             Папки.CallBack_Activate = async unigueID =>
             {
+                //Відбір по поля Папка
                 ParentWhereList = [new(Номенклатура_Const.Папка, Comparison.EQ, unigueID.UGuid)];
                 if (TypeWhereState == TypeWhere.Standart)
                 {
@@ -49,8 +51,14 @@ class Номенклатура_Список : DirectoryFormJournalFull
 
     protected override async ValueTask BeforeSetValue()
     {
+        //Пошук папки для елементу
+        if (SelectPointerItem != null || DirectoryPointerItem != null)
+        {
+            Номенклатура_Objest? Обєкт = await new Номенклатура_Pointer(SelectPointerItem ?? DirectoryPointerItem ?? new UnigueID()).GetDirectoryObject();
+            if (Обєкт != null) Папки.SelectPointerItem = Обєкт.Папка.UnigueID;
+        }
+
         await Папки.SetValue();
-        Папки.CallBack_Activate?.Invoke(new UnigueID());
     }
 
     public override async ValueTask LoadRecords()

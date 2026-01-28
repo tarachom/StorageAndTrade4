@@ -17,11 +17,11 @@ static class Номенклатура_Папки_Функції
         return
         [
             
-            //Код
-            new Where(Номенклатура_Папки_Const.Код, Comparison.LIKE, searchText) { FuncToField = "TO_CHAR", FuncToField_Param1 = "''" },
-                    
             //Назва
-            new Where(Comparison.OR, Номенклатура_Папки_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "TO_CHAR", FuncToField_Param1 = "''" },
+            new Where(Номенклатура_Папки_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
+                    
+            //Код
+            new Where(Comparison.OR, Номенклатура_Папки_Const.Код, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
                     
         ];
     }

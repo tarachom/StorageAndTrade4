@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 27.01.2026 23:37:12
+ * Дата конфігурації: 28.01.2026 13:07:23
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон Gtk4.xslt
@@ -319,6 +319,27 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 form.Grid.AppendColumn(column);
             }
         
+            //Назва: Папка, "Папка"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Папка"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Папка", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
             //Назва: Залишок, "Залишок"
             {
                 SignalListItemFactory factory = SignalListItemFactory.New();
@@ -439,6 +460,15 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 form.Filter.Append("Тип:", ТипНоменклатури, sw);
             }
             
+            { /* Папка, pointer */
+                Switch sw = Switch.New();
+                Номенклатура_Папки_PointerControl Папка = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Папка.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(Номенклатура_Const.Папка, get, sw));
+                form.Filter.Append("Папка:", Папка, sw);
+            }
+            
             form.Filter.GetWhere = () =>
             {
                 List<Where> where = [];
@@ -480,6 +510,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
                     Номенклатура_Select.QuerySelect.Table, "join_tab_1", "ОдиницяВиміру");
                 
+                    /* Приєднання */
+                    Довідники.Номенклатура_Папки_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.Папка,
+                    Номенклатура_Select.QuerySelect.Table, "join_tab_2", "Папка");
+                
                 /* Додаткове поле: Залишок */
                 Номенклатура_Select.QuerySelect.FieldAndAlias.Add(
                     new ValueName<string>(@$"(CASE WHEN {Довідники.Номенклатура_Const.TABLE}.{Довідники.Номенклатура_Const.ТипНоменклатури} = {(int)Перелічення.ТипиНоменклатури.Товар} THEN ( WITH Залишки AS ( SELECT ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} AS Номенклатура, SUM(ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.ВНаявності} ) AS ВНаявності FROM {РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.TABLE} AS ТовариНаСкладах WHERE ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} = {Довідники.Номенклатура_Const.TABLE}.uid GROUP BY Номенклатура ) SELECT ROUND(ВНаявності, 1) FROM Залишки ) END)", "Залишок"));
@@ -513,6 +547,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Назва", Fields[Номенклатура_Const.Назва].ToString() ?? "");
                     row.Fields.Add("ОдиницяВиміру", Fields["ОдиницяВиміру"].ToString() ?? "");
                     row.Fields.Add("ТипНоменклатури", Перелічення.ПсевдонімиПерелічення.ТипиНоменклатури_Alias((Перелічення.ТипиНоменклатури)(Fields[Номенклатура_Const.ТипНоменклатури] != DBNull.Value ? Fields[Номенклатура_Const.ТипНоменклатури] : 0) ));
+                    row.Fields.Add("Папка", Fields["Папка"].ToString() ?? "");
                     row.Fields.Add("Залишок", Fields["Залишок"].ToString() ?? "");
                     row.Fields.Add("ВРезерві", Fields["ВРезерві"].ToString() ?? "");
                     row.Fields.Add("ВРезервіПідЗамовлення", Fields["ВРезервіПідЗамовлення"].ToString() ?? "");
@@ -565,6 +600,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
                     Номенклатура_Select.QuerySelect.Table, "join_tab_1", "ОдиницяВиміру");
                 
+                    /* Приєднання */
+                    Довідники.Номенклатура_Папки_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.Папка,
+                    Номенклатура_Select.QuerySelect.Table, "join_tab_2", "Папка");
+                
                 /* Додаткове поле: Залишок */
                 Номенклатура_Select.QuerySelect.FieldAndAlias.Add(
                     new ValueName<string>(@$"(CASE WHEN {Довідники.Номенклатура_Const.TABLE}.{Довідники.Номенклатура_Const.ТипНоменклатури} = {(int)Перелічення.ТипиНоменклатури.Товар} THEN ( WITH Залишки AS ( SELECT ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} AS Номенклатура, SUM(ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.ВНаявності} ) AS ВНаявності FROM {РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.TABLE} AS ТовариНаСкладах WHERE ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} = {Довідники.Номенклатура_Const.TABLE}.uid GROUP BY Номенклатура ) SELECT ROUND(ВНаявності, 1) FROM Залишки ) END)", "Залишок"));
@@ -607,6 +646,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Назва", Fields[Номенклатура_Const.Назва].ToString() ?? "");
                     row.Fields.Add("ОдиницяВиміру", Fields["ОдиницяВиміру"].ToString() ?? "");
                     row.Fields.Add("ТипНоменклатури", Перелічення.ПсевдонімиПерелічення.ТипиНоменклатури_Alias((Перелічення.ТипиНоменклатури)(Fields[Номенклатура_Const.ТипНоменклатури] != DBNull.Value ? Fields[Номенклатура_Const.ТипНоменклатури] : 0) ));
+                    row.Fields.Add("Папка", Fields["Папка"].ToString() ?? "");
                     row.Fields.Add("Залишок", Fields["Залишок"].ToString() ?? "");
                     row.Fields.Add("ВРезерві", Fields["ВРезерві"].ToString() ?? "");
                     row.Fields.Add("ВРезервіПідЗамовлення", Fields["ВРезервіПідЗамовлення"].ToString() ?? "");
@@ -704,6 +744,48 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 form.Grid.AppendColumn(column);
             }
         
+            //Назва: ТипНоменклатури, "Тип"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("enum");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ТипНоменклатури"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Тип", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Папка, "Папка"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Папка"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Папка", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
             //Назва: Залишок, "Залишок"
             {
                 SignalListItemFactory factory = SignalListItemFactory.New();
@@ -781,28 +863,6 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
             List<FilterControl.FilterListItem> filterList = [];
             
-            { /* Код, string */
-                Switch sw = Switch.New();
-                
-                        Entry Код = Entry.New();
-                        Код.WidthRequest = 300;
-                        object get() => Код.GetText();
-                    
-                filterList.Add(new(Номенклатура_Const.Код, get, sw));
-                form.Filter.Append("Код:", Код, sw);
-            }
-            
-            { /* Назва, string */
-                Switch sw = Switch.New();
-                
-                        Entry Назва = Entry.New();
-                        Назва.WidthRequest = 300;
-                        object get() => Назва.GetText();
-                    
-                filterList.Add(new(Номенклатура_Const.Назва, get, sw));
-                form.Filter.Append("Номенклатура:", Назва, sw);
-            }
-            
             { /* ОдиницяВиміру, pointer */
                 Switch sw = Switch.New();
                 ПакуванняОдиниціВиміру_PointerControl ОдиницяВиміру = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
@@ -810,6 +870,28 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     
                 filterList.Add(new(Номенклатура_Const.ОдиницяВиміру, get, sw));
                 form.Filter.Append("Пакування:", ОдиницяВиміру, sw);
+            }
+            
+            { /* ТипНоменклатури, enum */
+                Switch sw = Switch.New();
+                
+                        ComboBoxText ТипНоменклатури = new();
+                        foreach (var item in ПсевдонімиПерелічення.ТипиНоменклатури_List())
+                            ТипНоменклатури.Append(item.Value.ToString(), item.Name);
+                        ТипНоменклатури.Active = 0;
+                        object get() => Enum.TryParse(ТипНоменклатури.ActiveId, out ТипиНоменклатури value) ? (int)value: 0;
+                    
+                filterList.Add(new(Номенклатура_Const.ТипНоменклатури, get, sw));
+                form.Filter.Append("Тип:", ТипНоменклатури, sw);
+            }
+            
+            { /* Папка, pointer */
+                Switch sw = Switch.New();
+                Номенклатура_Папки_PointerControl Папка = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Папка.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(Номенклатура_Const.Папка, get, sw));
+                form.Filter.Append("Папка:", Папка, sw);
             }
             
             form.Filter.GetWhere = () =>
@@ -841,6 +923,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     "deletion_label",
                     /*Код*/ Довідники.Номенклатура_Const.Код,
                     /*Назва*/ Довідники.Номенклатура_Const.Назва,
+                    /*ТипНоменклатури*/ Довідники.Номенклатура_Const.ТипНоменклатури,
                     
                 ]);
             
@@ -848,9 +931,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     Номенклатура_Select.QuerySelect.Order.Add(
                     Довідники.Номенклатура_Const.Код, SelectOrder.ASC);
                 
+                    /* Сортування */
+                    Номенклатура_Select.QuerySelect.Order.Add(
+                    Довідники.Номенклатура_Const.ТипНоменклатури, SelectOrder.ASC);
+                
                     /* Приєднання */
                     Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
                     Номенклатура_Select.QuerySelect.Table, "join_tab_1", "ОдиницяВиміру");
+                
+                    /* Приєднання */
+                    Довідники.Номенклатура_Папки_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.Папка,
+                    Номенклатура_Select.QuerySelect.Table, "join_tab_2", "Папка");
                 
                 /* Додаткове поле: Залишок */
                 Номенклатура_Select.QuerySelect.FieldAndAlias.Add(
@@ -880,6 +971,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Код", Fields[Номенклатура_Const.Код].ToString() ?? "");
                     row.Fields.Add("Назва", Fields[Номенклатура_Const.Назва].ToString() ?? "");
                     row.Fields.Add("ОдиницяВиміру", Fields["ОдиницяВиміру"].ToString() ?? "");
+                    row.Fields.Add("ТипНоменклатури", Перелічення.ПсевдонімиПерелічення.ТипиНоменклатури_Alias((Перелічення.ТипиНоменклатури)(Fields[Номенклатура_Const.ТипНоменклатури] != DBNull.Value ? Fields[Номенклатура_Const.ТипНоменклатури] : 0) ));
+                    row.Fields.Add("Папка", Fields["Папка"].ToString() ?? "");
                     row.Fields.Add("Залишок", Fields["Залишок"].ToString() ?? "");
                     row.Fields.Add("ВРезерві", Fields["ВРезерві"].ToString() ?? "");
                     row.Fields.Add("ВРезервіПідЗамовлення", Fields["ВРезервіПідЗамовлення"].ToString() ?? "");
@@ -919,6 +1012,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     "deletion_label",
                     /*Код*/ Довідники.Номенклатура_Const.Код,
                     /*Назва*/ Довідники.Номенклатура_Const.Назва,
+                    /*ТипНоменклатури*/ Довідники.Номенклатура_Const.ТипНоменклатури,
                     
                 ]);
             
@@ -926,9 +1020,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     Номенклатура_Select.QuerySelect.Order.Add(
                     Довідники.Номенклатура_Const.Код, SelectOrder.ASC);
                 
+                    /* Сортування */
+                    Номенклатура_Select.QuerySelect.Order.Add(
+                    Довідники.Номенклатура_Const.ТипНоменклатури, SelectOrder.ASC);
+                
                     /* Приєднання */
                     Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
                     Номенклатура_Select.QuerySelect.Table, "join_tab_1", "ОдиницяВиміру");
+                
+                    /* Приєднання */
+                    Довідники.Номенклатура_Папки_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.Папка,
+                    Номенклатура_Select.QuerySelect.Table, "join_tab_2", "Папка");
                 
                 /* Додаткове поле: Залишок */
                 Номенклатура_Select.QuerySelect.FieldAndAlias.Add(
@@ -967,6 +1069,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Код", Fields[Номенклатура_Const.Код].ToString() ?? "");
                     row.Fields.Add("Назва", Fields[Номенклатура_Const.Назва].ToString() ?? "");
                     row.Fields.Add("ОдиницяВиміру", Fields["ОдиницяВиміру"].ToString() ?? "");
+                    row.Fields.Add("ТипНоменклатури", Перелічення.ПсевдонімиПерелічення.ТипиНоменклатури_Alias((Перелічення.ТипиНоменклатури)(Fields[Номенклатура_Const.ТипНоменклатури] != DBNull.Value ? Fields[Номенклатура_Const.ТипНоменклатури] : 0) ));
+                    row.Fields.Add("Папка", Fields["Папка"].ToString() ?? "");
                     row.Fields.Add("Залишок", Fields["Залишок"].ToString() ?? "");
                     row.Fields.Add("ВРезерві", Fields["ВРезерві"].ToString() ?? "");
                     row.Fields.Add("ВРезервіПідЗамовлення", Fields["ВРезервіПідЗамовлення"].ToString() ?? "");
@@ -5268,6 +5372,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         public static void AddColumn(DirectoryFormJournalBase form)
         {
             
+            //TreeExpander and Image
             {
                 SignalListItemFactory factory = SignalListItemFactory.New();
                 factory.OnSetup += (_, args) =>
@@ -5287,8 +5392,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         expander.SetListRow(treeRow);
                         ImageTablePartCell? cell = (ImageTablePartCell?)expander.GetChild();
                         DirectoryHierarchicalRow? row = (DirectoryHierarchicalRow?)treeRow.Item;
-                        if (cell != null && row != null)
-                            cell.SetImage((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal);
+                        if (cell != null && row != null && !row.UnigueID.IsEmpty()) 
+                            cell.SetImage((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTree.Delete : InterfaceGtk4.Icon.ForTree.Normal);
                     }
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -5450,8 +5555,22 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Номенклатура_Папки_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
             
+            /* Сховати відкриту папку для вибору */
+            if (form.OpenFolder != null)
+                Номенклатура_Папки_Select.QuerySelect.Where.Add(new("uid", Comparison.NOT, form.OpenFolder.UGuid));
+
             Dictionary<string, DirectoryHierarchicalRow> rows = [];
             List<DirectoryHierarchicalRow> topRows = [];
+
+            /* Пустий рядок */
+            if (form.InsertEmptyFirstRow)
+            {
+                DirectoryHierarchicalRow emptyFirstRow = new();
+                emptyFirstRow.Fields.Add("Назва", "-");
+                emptyFirstRow.Fields.Add("Код", "");
+                
+                topRows.Add(emptyFirstRow);
+            }
                 
             await Номенклатура_Папки_Select.Select();
             form.Store.RemoveAll();
@@ -5470,7 +5589,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         topRows.Add(row);
                     else if (parent != null && rows.TryGetValue(parent.UnigueID.ToString(), out DirectoryHierarchicalRow? parentRow))
                         parentRow.Sub.Add(row);
-                    rows.Add(curr.UnigueID.ToString(), row);
+                    if (!rows.ContainsKey(curr.UnigueID.ToString())) rows.Add(curr.UnigueID.ToString(), row);
                         
                 }
             }
@@ -5488,6 +5607,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         public static void AddColumn(DirectoryFormJournalBase form)
         {
             
+            //TreeExpander and Image
             {
                 SignalListItemFactory factory = SignalListItemFactory.New();
                 factory.OnSetup += (_, args) =>
@@ -5507,8 +5627,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         expander.SetListRow(treeRow);
                         ImageTablePartCell? cell = (ImageTablePartCell?)expander.GetChild();
                         DirectoryHierarchicalRow? row = (DirectoryHierarchicalRow?)treeRow.Item;
-                        if (cell != null && row != null)
-                            cell.SetImage((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal);
+                        if (cell != null && row != null && !row.UnigueID.IsEmpty()) 
+                            cell.SetImage((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTree.Delete : InterfaceGtk4.Icon.ForTree.Normal);
                     }
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -5670,8 +5790,22 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Номенклатура_Папки_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
             
+            /* Сховати відкриту папку для вибору */
+            if (form.OpenFolder != null)
+                Номенклатура_Папки_Select.QuerySelect.Where.Add(new("uid", Comparison.NOT, form.OpenFolder.UGuid));
+
             Dictionary<string, DirectoryHierarchicalRow> rows = [];
             List<DirectoryHierarchicalRow> topRows = [];
+
+            /* Пустий рядок */
+            if (form.InsertEmptyFirstRow)
+            {
+                DirectoryHierarchicalRow emptyFirstRow = new();
+                emptyFirstRow.Fields.Add("Назва", "-");
+                emptyFirstRow.Fields.Add("Код", "");
+                
+                topRows.Add(emptyFirstRow);
+            }
                 
             await Номенклатура_Папки_Select.Select();
             form.Store.RemoveAll();
@@ -5690,7 +5824,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         topRows.Add(row);
                     else if (parent != null && rows.TryGetValue(parent.UnigueID.ToString(), out DirectoryHierarchicalRow? parentRow))
                         parentRow.Sub.Add(row);
-                    rows.Add(curr.UnigueID.ToString(), row);
+                    if (!rows.ContainsKey(curr.UnigueID.ToString())) rows.Add(curr.UnigueID.ToString(), row);
                         
                 }
             }
@@ -5712,6 +5846,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         public static void AddColumn(DirectoryFormJournalBase form)
         {
             
+            //TreeExpander and Image
             {
                 SignalListItemFactory factory = SignalListItemFactory.New();
                 factory.OnSetup += (_, args) =>
@@ -5731,8 +5866,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         expander.SetListRow(treeRow);
                         ImageTablePartCell? cell = (ImageTablePartCell?)expander.GetChild();
                         DirectoryHierarchicalRow? row = (DirectoryHierarchicalRow?)treeRow.Item;
-                        if (cell != null && row != null)
-                            cell.SetImage((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal);
+                        if (cell != null && row != null && !row.UnigueID.IsEmpty()) 
+                            cell.SetImage((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTree.Delete : InterfaceGtk4.Icon.ForTree.Normal);
                     }
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -5894,8 +6029,22 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Контрагенти_Папки_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
             
+            /* Сховати відкриту папку для вибору */
+            if (form.OpenFolder != null)
+                Контрагенти_Папки_Select.QuerySelect.Where.Add(new("uid", Comparison.NOT, form.OpenFolder.UGuid));
+
             Dictionary<string, DirectoryHierarchicalRow> rows = [];
             List<DirectoryHierarchicalRow> topRows = [];
+
+            /* Пустий рядок */
+            if (form.InsertEmptyFirstRow)
+            {
+                DirectoryHierarchicalRow emptyFirstRow = new();
+                emptyFirstRow.Fields.Add("Назва", "-");
+                emptyFirstRow.Fields.Add("Код", "");
+                
+                topRows.Add(emptyFirstRow);
+            }
                 
             await Контрагенти_Папки_Select.Select();
             form.Store.RemoveAll();
@@ -5914,7 +6063,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         topRows.Add(row);
                     else if (parent != null && rows.TryGetValue(parent.UnigueID.ToString(), out DirectoryHierarchicalRow? parentRow))
                         parentRow.Sub.Add(row);
-                    rows.Add(curr.UnigueID.ToString(), row);
+                    if (!rows.ContainsKey(curr.UnigueID.ToString())) rows.Add(curr.UnigueID.ToString(), row);
                         
                 }
             }
@@ -5936,6 +6085,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         public static void AddColumn(DirectoryFormJournalBase form)
         {
             
+            //TreeExpander and Image
             {
                 SignalListItemFactory factory = SignalListItemFactory.New();
                 factory.OnSetup += (_, args) =>
@@ -5955,8 +6105,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         expander.SetListRow(treeRow);
                         ImageTablePartCell? cell = (ImageTablePartCell?)expander.GetChild();
                         DirectoryHierarchicalRow? row = (DirectoryHierarchicalRow?)treeRow.Item;
-                        if (cell != null && row != null)
-                            cell.SetImage((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal);
+                        if (cell != null && row != null && !row.UnigueID.IsEmpty()) 
+                            cell.SetImage((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTree.Delete : InterfaceGtk4.Icon.ForTree.Normal);
                     }
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -6118,8 +6268,22 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Склади_Папки_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
             
+            /* Сховати відкриту папку для вибору */
+            if (form.OpenFolder != null)
+                Склади_Папки_Select.QuerySelect.Where.Add(new("uid", Comparison.NOT, form.OpenFolder.UGuid));
+
             Dictionary<string, DirectoryHierarchicalRow> rows = [];
             List<DirectoryHierarchicalRow> topRows = [];
+
+            /* Пустий рядок */
+            if (form.InsertEmptyFirstRow)
+            {
+                DirectoryHierarchicalRow emptyFirstRow = new();
+                emptyFirstRow.Fields.Add("Назва", "-");
+                emptyFirstRow.Fields.Add("Код", "");
+                
+                topRows.Add(emptyFirstRow);
+            }
                 
             await Склади_Папки_Select.Select();
             form.Store.RemoveAll();
@@ -6138,7 +6302,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         topRows.Add(row);
                     else if (parent != null && rows.TryGetValue(parent.UnigueID.ToString(), out DirectoryHierarchicalRow? parentRow))
                         parentRow.Sub.Add(row);
-                    rows.Add(curr.UnigueID.ToString(), row);
+                    if (!rows.ContainsKey(curr.UnigueID.ToString())) rows.Add(curr.UnigueID.ToString(), row);
                         
                 }
             }
@@ -11006,6 +11170,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         public static void AddColumn(DirectoryFormJournalBase form)
         {
             
+            //TreeExpander and Image
             {
                 SignalListItemFactory factory = SignalListItemFactory.New();
                 factory.OnSetup += (_, args) =>
@@ -11025,8 +11190,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         expander.SetListRow(treeRow);
                         ImageTablePartCell? cell = (ImageTablePartCell?)expander.GetChild();
                         DirectoryHierarchicalRow? row = (DirectoryHierarchicalRow?)treeRow.Item;
-                        if (cell != null && row != null)
-                            cell.SetImage((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal);
+                        if (cell != null && row != null && !row.UnigueID.IsEmpty()) 
+                            cell.SetImage((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTree.Delete : InterfaceGtk4.Icon.ForTree.Normal);
                     }
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -11222,8 +11387,23 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 СкладськіКомірки_Папки_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
             
+            /* Сховати відкриту папку для вибору */
+            if (form.OpenFolder != null)
+                СкладськіКомірки_Папки_Select.QuerySelect.Where.Add(new("uid", Comparison.NOT, form.OpenFolder.UGuid));
+
             Dictionary<string, DirectoryHierarchicalRow> rows = [];
             List<DirectoryHierarchicalRow> topRows = [];
+
+            /* Пустий рядок */
+            if (form.InsertEmptyFirstRow)
+            {
+                DirectoryHierarchicalRow emptyFirstRow = new();
+                emptyFirstRow.Fields.Add("Назва", "-");
+                emptyFirstRow.Fields.Add("Код", "");
+                emptyFirstRow.Fields.Add("Власник", "");
+                
+                topRows.Add(emptyFirstRow);
+            }
                 
             await СкладськіКомірки_Папки_Select.Select();
             form.Store.RemoveAll();
@@ -11243,7 +11423,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         topRows.Add(row);
                     else if (parent != null && rows.TryGetValue(parent.UnigueID.ToString(), out DirectoryHierarchicalRow? parentRow))
                         parentRow.Sub.Add(row);
-                    rows.Add(curr.UnigueID.ToString(), row);
+                    if (!rows.ContainsKey(curr.UnigueID.ToString())) rows.Add(curr.UnigueID.ToString(), row);
                         
                 }
             }
