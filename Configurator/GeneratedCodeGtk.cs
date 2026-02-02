@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 28.01.2026 13:07:23
+ * Дата конфігурації: 02.02.2026 15:34:13
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон Gtk4.xslt
@@ -181,7 +181,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) Організації_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 Організації_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -624,7 +624,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) Номенклатура_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 Номенклатура_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -1048,7 +1048,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) Номенклатура_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 Номенклатура_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -1249,7 +1249,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) Виробники_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 Виробники_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -1444,7 +1444,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) ВидиНоменклатури_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 ВидиНоменклатури_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -1687,7 +1687,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) ПакуванняОдиниціВиміру_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 ПакуванняОдиниціВиміру_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -1991,7 +1991,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) Валюти_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 Валюти_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -2209,7 +2209,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) Валюти_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 Валюти_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -2518,7 +2518,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) Контрагенти_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 Контрагенти_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -2712,7 +2712,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) Контрагенти_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 Контрагенти_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -2994,7 +2994,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) Склади_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 Склади_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -3187,7 +3187,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) Склади_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 Склади_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -3434,7 +3434,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) ВидиЦін_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 ВидиЦін_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -3602,7 +3602,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) ВидиЦін_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 ВидиЦін_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -3796,7 +3796,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) ВидиЦінПостачальників_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 ВидиЦінПостачальників_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -3991,7 +3991,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) Користувачі_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 Користувачі_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -4186,7 +4186,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) ФізичніОсоби_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 ФізичніОсоби_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -4381,7 +4381,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) СтруктураПідприємства_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 СтруктураПідприємства_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -4576,7 +4576,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) КраїниСвіту_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 КраїниСвіту_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -4843,7 +4843,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) Файли_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 Файли_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -5013,7 +5013,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) Файли_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 Файли_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -5327,10 +5327,14 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) ХарактеристикиНоменклатури_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 ХарактеристикиНоменклатури_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
+            
+            /* Додатковий відбір Owner */
+            if (form.OwnerWhereListFunc != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
+                ХарактеристикиНоменклатури_Select.QuerySelect.Where.AddRange(form.OwnerWhereListFunc.Invoke());
             
             /* Cторінки */
             await form.SplitPages(ХарактеристикиНоменклатури_Select.SplitSelectToPages, ХарактеристикиНоменклатури_Select.QuerySelect, unigueIDSelect);
@@ -5550,7 +5554,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) Номенклатура_Папки_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 Номенклатура_Папки_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -5785,7 +5789,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) Номенклатура_Папки_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 Номенклатура_Папки_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -6024,7 +6028,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) Контрагенти_Папки_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 Контрагенти_Папки_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -6263,7 +6267,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) Склади_Папки_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 Склади_Папки_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -6560,7 +6564,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) Каси_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 Каси_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -6783,7 +6787,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) Каси_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 Каси_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -7031,7 +7035,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) БанківськіРахункиОрганізацій_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 БанківськіРахункиОрганізацій_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -7316,10 +7320,14 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) ДоговориКонтрагентів_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 ДоговориКонтрагентів_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
+            
+            /* Додатковий відбір Owner */
+            if (form.OwnerWhereListFunc != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
+                ДоговориКонтрагентів_Select.QuerySelect.Where.AddRange(form.OwnerWhereListFunc.Invoke());
             
             /* Cторінки */
             await form.SplitPages(ДоговориКонтрагентів_Select.SplitSelectToPages, ДоговориКонтрагентів_Select.QuerySelect, unigueIDSelect);
@@ -7539,10 +7547,14 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) ДоговориКонтрагентів_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 ДоговориКонтрагентів_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
+            
+            /* Додатковий відбір Owner */
+            if (form.OwnerWhereListFunc != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
+                ДоговориКонтрагентів_Select.QuerySelect.Where.AddRange(form.OwnerWhereListFunc.Invoke());
             
             /* Cторінки */
             await form.SplitPages(ДоговориКонтрагентів_Select.SplitSelectToPages, ДоговориКонтрагентів_Select.QuerySelect, unigueIDSelect);
@@ -7787,7 +7799,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) БанківськіРахункиКонтрагентів_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 БанківськіРахункиКонтрагентів_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -8057,7 +8069,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) СтаттяРухуКоштів_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 СтаттяРухуКоштів_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -8230,7 +8242,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) СеріїНоменклатури_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 СеріїНоменклатури_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -8564,7 +8576,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) ПартіяТоварівКомпозит_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 ПартіяТоварівКомпозит_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -8759,7 +8771,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) ПартіяТоварівКомпозит_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 ПартіяТоварівКомпозит_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -8954,7 +8966,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) ВидиЗапасів_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 ВидиЗапасів_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -9557,7 +9569,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) Банки_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 Банки_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -9765,7 +9777,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) Банки_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 Банки_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -10025,10 +10037,14 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) СкладськіПриміщення_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 СкладськіПриміщення_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
+            
+            /* Додатковий відбір Owner */
+            if (form.OwnerWhereListFunc != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
+                СкладськіПриміщення_Select.QuerySelect.Where.AddRange(form.OwnerWhereListFunc.Invoke());
             
             /* Cторінки */
             await form.SplitPages(СкладськіПриміщення_Select.SplitSelectToPages, СкладськіПриміщення_Select.QuerySelect, unigueIDSelect);
@@ -10429,10 +10445,14 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) СкладськіКомірки_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 СкладськіКомірки_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
+            
+            /* Додатковий відбір Owner */
+            if (form.OwnerWhereListFunc != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
+                СкладськіКомірки_Select.QuerySelect.Where.AddRange(form.OwnerWhereListFunc.Invoke());
             
             /* Cторінки */
             await form.SplitPages(СкладськіКомірки_Select.SplitSelectToPages, СкладськіКомірки_Select.QuerySelect, unigueIDSelect);
@@ -10633,10 +10653,14 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) СкладськіКомірки_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 СкладськіКомірки_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
+            
+            /* Додатковий відбір Owner */
+            if (form.OwnerWhereListFunc != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
+                СкладськіКомірки_Select.QuerySelect.Where.AddRange(form.OwnerWhereListFunc.Invoke());
             
             /* Cторінки */
             await form.SplitPages(СкладськіКомірки_Select.SplitSelectToPages, СкладськіКомірки_Select.QuerySelect, unigueIDSelect);
@@ -10834,7 +10858,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) ОбластьЗберігання_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 ОбластьЗберігання_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -11125,7 +11149,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) ТипорозміриКомірок_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 ТипорозміриКомірок_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -11382,10 +11406,14 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) СкладськіКомірки_Папки_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 СкладськіКомірки_Папки_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
+            
+            /* Додатковий відбір Owner */
+            if (form.OwnerWhereListFunc != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
+                СкладськіКомірки_Папки_Select.QuerySelect.Where.AddRange(form.OwnerWhereListFunc.Invoke());
             
             /* Сховати відкриту папку для вибору */
             if (form.OpenFolder != null)
@@ -11623,7 +11651,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) Блокнот_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 Блокнот_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
@@ -11873,10 +11901,14 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) ЗбереженіЗвіти_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 ЗбереженіЗвіти_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
+            
+            /* Додатковий відбір Owner */
+            if (form.OwnerWhereListFunc != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
+                ЗбереженіЗвіти_Select.QuerySelect.Where.AddRange(form.OwnerWhereListFunc.Invoke());
             
             /* Cторінки */
             await form.SplitPages(ЗбереженіЗвіти_Select.SplitSelectToPages, ЗбереженіЗвіти_Select.QuerySelect, unigueIDSelect);
@@ -12130,7 +12162,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Відбори */
             if (form.WhereList != null) КасиККМ_Select.QuerySelect.Where.AddRange(form.WhereList);
 
-            /* Додатковий відбір */
+            /* Додатковий відбір Parent */
             if (form.ParentWhereList != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 КасиККМ_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 

@@ -76,5 +76,12 @@ class Menu_Directory : Form
             NotebookFunc?.CreatePage(Блокнот_Const.FULLNAME, page);
             await page.SetValue();
         });
+
+        CreateLink(vLeft, ХарактеристикиНоменклатури_Const.FULLNAME, async () =>
+        {
+            ХарактеристикиНоменклатури_Список page = new();
+            NotebookFunc?.CreatePage(ХарактеристикиНоменклатури_Const.FULLNAME, page);
+            await page.SetValue();
+        });
     }
 }

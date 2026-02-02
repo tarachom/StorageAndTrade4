@@ -18,7 +18,7 @@ static class СкладськіКомірки_Функції
         [
             
             //Назва
-            new Where(СкладськіКомірки_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "TO_CHAR", FuncToField_Param1 = "''" },
+            new Where(СкладськіКомірки_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
                     
         ];
     }

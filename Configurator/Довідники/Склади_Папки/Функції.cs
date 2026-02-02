@@ -17,11 +17,11 @@ static class Склади_Папки_Функції
         return
         [
             
-            //Код
-            new Where(Склади_Папки_Const.Код, Comparison.LIKE, searchText) { FuncToField = "TO_CHAR", FuncToField_Param1 = "''" },
-                    
             //Назва
-            new Where(Comparison.OR, Склади_Папки_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "TO_CHAR", FuncToField_Param1 = "''" },
+            new Where(Склади_Папки_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
+                    
+            //Код
+            new Where(Comparison.OR, Склади_Папки_Const.Код, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
                     
         ];
     }
@@ -51,14 +51,15 @@ static class Склади_Папки_Функції
         await page.SetValue();
     }
 
-    public static async ValueTask OpenPageList(UnigueID? unigueID = null, Action<UnigueID>? сallBack_OnSelectPointer = null)
+    public static async ValueTask OpenPageList(UnigueID? unigueID = null, 
+        Action<UnigueID>? сallBack_OnSelectPointer = null)
     {
         Склади_Папки_Список page = new()
         {
             DirectoryPointerItem = unigueID,
             CallBack_OnSelectPointer = сallBack_OnSelectPointer
         };
-
+        
         Program.BasicForm?.NotebookFunc.CreatePage(Склади_Папки_Const.FULLNAME, page);
         await page.SetValue();
     }

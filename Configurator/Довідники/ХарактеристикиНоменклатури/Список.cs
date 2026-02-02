@@ -17,7 +17,7 @@ namespace StorageAndTrade;
 class ХарактеристикиНоменклатури_Список : DirectoryFormJournalFull
 {
     
-    public Номенклатура_PointerControl Власник = new Номенклатура_PointerControl() { Caption = "Номенклатура:" };
+    public Номенклатура_PointerControl Власник = new() { Caption = "Номенклатура:" };
     
     
     public ХарактеристикиНоменклатури_Список() : base(Program.BasicForm?.NotebookFunc)
@@ -25,6 +25,19 @@ class ХарактеристикиНоменклатури_Список : Direct
         TypeName = ХарактеристикиНоменклатури_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+
+        
+        //Власник
+        {
+            HBoxTop.Append(Власник);
+            OwnerWhereListFunc = () => Власник.Pointer.IsEmpty() ? [] : [new(ХарактеристикиНоменклатури_Const.Номенклатура, Comparison.EQ, Власник.Pointer.UnigueID.UGuid)];
+            Власник.AfterSelectFunc = async () =>
+            {
+                PagesClear();
+                await LoadRecords();
+            };
+        }
+        
     }
 
     public override async ValueTask LoadRecords()
@@ -49,7 +62,7 @@ class ХарактеристикиНоменклатури_Список : Direct
 
     protected override async ValueTask OpenPageElement(bool IsNew, UnigueID? unigueID = null)
     {
-        await Функції.OpenPageElement(IsNew, unigueID, CallBack_LoadRecords, CallBack_OnSelectPointer);
+        await Функції.OpenPageElement(IsNew, unigueID, CallBack_LoadRecords, CallBack_OnSelectPointer, Власник.Pointer);
     }
 
     protected override async ValueTask SetDeletionLabel(UnigueID unigueID)

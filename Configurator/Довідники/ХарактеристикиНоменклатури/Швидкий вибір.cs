@@ -17,7 +17,7 @@ namespace StorageAndTrade;
 class ХарактеристикиНоменклатури_ШвидкийВибір : DirectoryFormJournalSmall
 {
     
-    public Номенклатура_PointerControl Власник = new Номенклатура_PointerControl() { Caption = "Номенклатура:" };
+    public Номенклатура_PointerControl Власник = new() { Caption = "Номенклатура:" };
     
     
     public ХарактеристикиНоменклатури_ШвидкийВибір() : base(Program.BasicForm?.NotebookFunc)
@@ -26,6 +26,19 @@ class ХарактеристикиНоменклатури_ШвидкийВиб�
         KeyForSetting = ".Small";
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+
+        
+        //Власник
+        {
+            HBoxTop.Append(Власник);
+            OwnerWhereListFunc = () => Власник.Pointer.IsEmpty() ? [] : [new(ХарактеристикиНоменклатури_Const.Номенклатура, Comparison.EQ, Власник.Pointer.UnigueID.UGuid)];
+            Власник.AfterSelectFunc = async () =>
+            {
+                PagesClear();
+                await LoadRecords();
+            };
+        }
+        
     }
 
     public override async ValueTask LoadRecords()
@@ -50,12 +63,12 @@ class ХарактеристикиНоменклатури_ШвидкийВиб�
 
     protected override async ValueTask OpenPageList(UnigueID? unigueID = null)
     {
-        await Функції.OpenPageList(unigueID, CallBack_OnSelectPointer);
+        await Функції.OpenPageList(unigueID, CallBack_OnSelectPointer, Власник.Pointer);
     }
 
     protected override async ValueTask OpenPageElement(bool IsNew, UnigueID? unigueID = null)
     {
-        await Функції.OpenPageElement(IsNew, unigueID, CallBack_LoadRecords, CallBack_OnSelectPointer);
+        await Функції.OpenPageElement(IsNew, unigueID, CallBack_LoadRecords, CallBack_OnSelectPointer, Власник.Pointer);
     }
 
     protected override async ValueTask SetDeletionLabel(UnigueID unigueID)

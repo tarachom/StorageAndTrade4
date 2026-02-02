@@ -60,14 +60,15 @@ static class Номенклатура_Функції
         await page.SetValue();
     }
 
-    public static async ValueTask OpenPageList(UnigueID? unigueID = null, Action<UnigueID>? сallBack_OnSelectPointer = null)
+    public static async ValueTask OpenPageList(UnigueID? unigueID = null, 
+        Action<UnigueID>? сallBack_OnSelectPointer = null)
     {
         Номенклатура_Список page = new()
         {
             DirectoryPointerItem = unigueID,
             CallBack_OnSelectPointer = сallBack_OnSelectPointer
         };
-
+        
         Program.BasicForm?.NotebookFunc.CreatePage(Номенклатура_Const.FULLNAME, page);
         await page.SetValue();
     }

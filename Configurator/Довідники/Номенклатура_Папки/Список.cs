@@ -14,14 +14,17 @@ using Функції = StorageAndTrade.Номенклатура_Папки_Фу�
 
 namespace StorageAndTrade;
 
-class Номенклатура_Папки_Список : DirectoryFormJournalBaseTree
+class Номенклатура_Папки_Список : DirectoryFormJournalFullTree
 {
+    
+    
     public Номенклатура_Папки_Список() : base(Program.BasicForm?.NotebookFunc)
     {
         TypeName = Номенклатура_Папки_Const.POINTER;
-        Console.WriteLine(Store.GetItemType().ToString());
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+
+        
     }
 
     public override async ValueTask LoadRecords()

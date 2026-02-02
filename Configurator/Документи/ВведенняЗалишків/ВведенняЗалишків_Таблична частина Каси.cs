@@ -162,6 +162,7 @@ class ВведенняЗалишків_ТабличнаЧастина_Каси :
                 {
                     
                     cell.OnSelect = () => row.Каса = cell.Pointer;
+                        
                     (row.Сhanged_Каса = () => cell.Pointer = row.Каса).Invoke();
                         
                 }

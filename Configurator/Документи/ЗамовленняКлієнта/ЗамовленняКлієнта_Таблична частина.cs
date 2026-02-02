@@ -352,6 +352,8 @@ class ЗамовленняКлієнта_ТабличнаЧастина_Това
                 if (cell != null && row != null)
                 {
                     
+                    cell.BeforeClickOpenFunc = () => cell.Власник  = row.Номенклатура;
+                            
                     cell.OnSelect = () => row.ХарактеристикаНоменклатури = cell.Pointer;
                     (row.Сhanged_ХарактеристикаНоменклатури = () => cell.Pointer = row.ХарактеристикаНоменклатури).Invoke();
                         

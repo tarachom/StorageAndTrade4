@@ -1,7 +1,7 @@
 
 /*     
-        Номенклатура.cs
-        Список
+        Склади.cs 
+        Список з Деревом
 */
 
 using Gtk;
@@ -9,25 +9,26 @@ using InterfaceGtk4;
 using AccountingSoftware;
 using GeneratedCode.Довідники;
 
-using ТабличнийСписок = GeneratedCode.Довідники.ТабличніСписки.Номенклатура_Записи;
-using Функції = StorageAndTrade.Номенклатура_Функції;
+using ТабличнийСписок = GeneratedCode.Довідники.ТабличніСписки.Склади_Записи;
+using Функції = StorageAndTrade.Склади_Функції;
 
 namespace StorageAndTrade;
 
-class Номенклатура_Список : DirectoryFormJournalFull
+class Склади_Список : DirectoryFormJournalFull
 {
-    Номенклатура_Папки_Список Папки = new() { InsertEmptyFirstRow = true };
+    Склади_Папки_Список Папки = new() { InsertEmptyFirstRow = true };
+    
 
-    public Номенклатура_Список() : base(Program.BasicForm?.NotebookFunc)
+    public Склади_Список() : base(Program.BasicForm?.NotebookFunc)
     {
-        TypeName = Номенклатура_Const.POINTER;
+        TypeName = Склади_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
 
-        CompositeMode = true;
-
         //Папки
         {
+            CompositeMode = true;
+
             Box vBox = New(Orientation.Vertical, 0);
             vBox.MarginStart = 5;
             vBox.Append(Папки);
@@ -38,8 +39,8 @@ class Номенклатура_Список : DirectoryFormJournalFull
 
             Папки.CallBack_Activate = async unigueID =>
             {
-                //Відбір по поля Папка
-                ParentWhereList = [new(Номенклатура_Const.Папка, Comparison.EQ, unigueID.UGuid)];
+                //Відбір по полю Папка
+                ParentWhereList = [new(Склади_Const.Папка, Comparison.EQ, unigueID.UGuid)];
                 if (TypeWhereState == TypeWhere.Standart)
                 {
                     PagesClear();
@@ -48,13 +49,12 @@ class Номенклатура_Список : DirectoryFormJournalFull
             };
         }
     }
-
+    
     protected override async ValueTask BeforeSetValue()
     {
-        //Пошук папки для елементу
         if (SelectPointerItem != null || DirectoryPointerItem != null)
         {
-            Номенклатура_Objest? Обєкт = await new Номенклатура_Pointer(SelectPointerItem ?? DirectoryPointerItem ?? new UnigueID()).GetDirectoryObject();
+            Склади_Objest? Обєкт = await new Склади_Pointer(SelectPointerItem ?? DirectoryPointerItem ?? new UnigueID()).GetDirectoryObject();
             if (Обєкт != null) Папки.SelectPointerItem = Обєкт.Папка.UnigueID;
         }
 
@@ -96,3 +96,4 @@ class Номенклатура_Список : DirectoryFormJournalFull
         return await Функції.Copy(unigueID);
     }
 }
+    

@@ -14,7 +14,7 @@ using Функції = StorageAndTrade.Склади_Папки_Функції;
 
 namespace StorageAndTrade;
 
-class Склади_Папки_Список : DirectoryFormJournalFull
+class Склади_Папки_Список : DirectoryFormJournalFullTree
 {
     
     
@@ -23,6 +23,8 @@ class Склади_Папки_Список : DirectoryFormJournalFull
         TypeName = Склади_Папки_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+
+        
     }
 
     public override async ValueTask LoadRecords()

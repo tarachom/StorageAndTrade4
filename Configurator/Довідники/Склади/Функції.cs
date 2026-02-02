@@ -17,11 +17,14 @@ static class Склади_Функції
         return
         [
             
-            //Код
-            new Where(Склади_Const.Код, Comparison.LIKE, searchText) { FuncToField = "TO_CHAR", FuncToField_Param1 = "''" },
-                    
             //Назва
-            new Where(Comparison.OR, Склади_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "TO_CHAR", FuncToField_Param1 = "''" },
+            new Where(Склади_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
+                    
+            //Код
+            new Where(Comparison.OR, Склади_Const.Код, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
+                    
+            //КлючовіСловаДляПошуку
+            new Where(Comparison.OR, Склади_Const.КлючовіСловаДляПошуку, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
                     
         ];
     }

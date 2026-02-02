@@ -262,6 +262,7 @@ class ЗбіркаТоварівНаСкладі_ТабличнаЧастина_
                 {
                     
                     cell.OnSelect = () => row.Номенклатура = cell.Pointer;
+                        
                     (row.Сhanged_Номенклатура = () => cell.Pointer = row.Номенклатура).Invoke();
                         
                 }
@@ -293,6 +294,9 @@ class ЗбіркаТоварівНаСкладі_ТабличнаЧастина_
                 {
                     
                     cell.OnSelect = () => row.ХарактеристикаНоменклатури = cell.Pointer;
+                        
+                    (row.Сhanged_Номенклатура = () => cell.Власник  = row.Номенклатура).Invoke();
+                            
                     (row.Сhanged_ХарактеристикаНоменклатури = () => cell.Pointer = row.ХарактеристикаНоменклатури).Invoke();
                         
                 }
@@ -324,6 +328,7 @@ class ЗбіркаТоварівНаСкладі_ТабличнаЧастина_
                 {
                     
                     cell.OnSelect = () => row.Серія = cell.Pointer;
+                        
                     (row.Сhanged_Серія = () => cell.Pointer = row.Серія).Invoke();
                         
                 }
@@ -384,6 +389,7 @@ class ЗбіркаТоварівНаСкладі_ТабличнаЧастина_
                 {
                     
                     cell.OnSelect = () => row.Пакування = cell.Pointer;
+                        
                     (row.Сhanged_Пакування = () => cell.Pointer = row.Пакування).Invoke();
                         
                 }
@@ -444,6 +450,7 @@ class ЗбіркаТоварівНаСкладі_ТабличнаЧастина_
                 {
                     
                     cell.OnSelect = () => row.Комірка = cell.Pointer;
+                        
                     (row.Сhanged_Комірка = () => cell.Pointer = row.Комірка).Invoke();
                         
                 }

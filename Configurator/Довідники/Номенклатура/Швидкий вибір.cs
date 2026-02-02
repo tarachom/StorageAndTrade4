@@ -24,6 +24,8 @@ class Номенклатура_ШвидкийВибір : DirectoryFormJournalSm
         KeyForSetting = ".Small";
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+
+        
     }
 
     public override async ValueTask LoadRecords()

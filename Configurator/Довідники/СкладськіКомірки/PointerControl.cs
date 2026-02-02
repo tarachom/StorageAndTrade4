@@ -51,6 +51,7 @@ public class СкладськіКомірки_PointerControl : PointerControl
         {
             PopoverParent = popover,
             DirectoryPointerItem = Pointer.UnigueID,
+            OpenFolder = OpenFolder,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new СкладськіКомірки_Pointer(selectPointer);

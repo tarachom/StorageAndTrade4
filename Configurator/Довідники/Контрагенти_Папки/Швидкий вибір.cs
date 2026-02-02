@@ -14,7 +14,7 @@ using Функції = StorageAndTrade.Контрагенти_Папки_Фун�
 
 namespace StorageAndTrade;
 
-class Контрагенти_Папки_ШвидкийВибір : DirectoryFormJournalSmall
+class Контрагенти_Папки_ШвидкийВибір : DirectoryFormJournalSmallTree
 {
     
     

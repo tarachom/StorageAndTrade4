@@ -233,6 +233,7 @@ class ВведенняЗалишків_ТабличнаЧастина_Розра
                 {
                     
                     cell.OnSelect = () => row.Контрагент = cell.Pointer;
+                        
                     (row.Сhanged_Контрагент = () => cell.Pointer = row.Контрагент).Invoke();
                         
                 }
@@ -264,6 +265,7 @@ class ВведенняЗалишків_ТабличнаЧастина_Розра
                 {
                     
                     cell.OnSelect = () => row.Валюта = cell.Pointer;
+                        
                     (row.Сhanged_Валюта = () => cell.Pointer = row.Валюта).Invoke();
                         
                 }

@@ -17,7 +17,7 @@ namespace StorageAndTrade;
 class СкладськіПриміщення_ШвидкийВибір : DirectoryFormJournalSmall
 {
     
-    public Склади_PointerControl Власник = new Склади_PointerControl() { Caption = "Склад:" };
+    public Склади_PointerControl Власник = new() { Caption = "Склад:" };
     
     
     public СкладськіПриміщення_ШвидкийВибір() : base(Program.BasicForm?.NotebookFunc)
@@ -26,6 +26,19 @@ class СкладськіПриміщення_ШвидкийВибір : Director
         KeyForSetting = ".Small";
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+
+        
+        //Власник
+        {
+            HBoxTop.Append(Власник);
+            OwnerWhereListFunc = () => Власник.Pointer.IsEmpty() ? [] : [new(СкладськіПриміщення_Const.Склад, Comparison.EQ, Власник.Pointer.UnigueID.UGuid)];
+            Власник.AfterSelectFunc = async () =>
+            {
+                PagesClear();
+                await LoadRecords();
+            };
+        }
+        
     }
 
     public override async ValueTask LoadRecords()

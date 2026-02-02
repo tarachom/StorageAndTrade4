@@ -322,6 +322,7 @@ class РахунокФактура_ТабличнаЧастина_Товари :
                 {
                     
                     cell.OnSelect = () => row.Номенклатура = cell.Pointer;
+                        
                     (row.Сhanged_Номенклатура = () => cell.Pointer = row.Номенклатура).Invoke();
                         
                 }
@@ -353,6 +354,9 @@ class РахунокФактура_ТабличнаЧастина_Товари :
                 {
                     
                     cell.OnSelect = () => row.ХарактеристикаНоменклатури = cell.Pointer;
+                        
+                    (row.Сhanged_Номенклатура = () => cell.Власник  = row.Номенклатура).Invoke();
+                            
                     (row.Сhanged_ХарактеристикаНоменклатури = () => cell.Pointer = row.ХарактеристикаНоменклатури).Invoke();
                         
                 }
@@ -413,6 +417,7 @@ class РахунокФактура_ТабличнаЧастина_Товари :
                 {
                     
                     cell.OnSelect = () => row.Пакування = cell.Pointer;
+                        
                     (row.Сhanged_Пакування = () => cell.Pointer = row.Пакування).Invoke();
                         
                 }
@@ -473,6 +478,7 @@ class РахунокФактура_ТабличнаЧастина_Товари :
                 {
                     
                     cell.OnSelect = () => row.ВидЦіни = cell.Pointer;
+                        
                     (row.Сhanged_ВидЦіни = () => cell.Pointer = row.ВидЦіни).Invoke();
                         
                 }
@@ -591,6 +597,7 @@ class РахунокФактура_ТабличнаЧастина_Товари :
                 {
                     
                     cell.OnSelect = () => row.Склад = cell.Pointer;
+                        
                     (row.Сhanged_Склад = () => cell.Pointer = row.Склад).Invoke();
                         
                 }

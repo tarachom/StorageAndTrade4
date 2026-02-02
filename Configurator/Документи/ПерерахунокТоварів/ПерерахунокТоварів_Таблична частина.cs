@@ -282,6 +282,7 @@ class ПерерахунокТоварів_ТабличнаЧастина_Тов
                 {
                     
                     cell.OnSelect = () => row.Номенклатура = cell.Pointer;
+                        
                     (row.Сhanged_Номенклатура = () => cell.Pointer = row.Номенклатура).Invoke();
                         
                 }
@@ -313,6 +314,9 @@ class ПерерахунокТоварів_ТабличнаЧастина_Тов
                 {
                     
                     cell.OnSelect = () => row.ХарактеристикаНоменклатури = cell.Pointer;
+                        
+                    (row.Сhanged_Номенклатура = () => cell.Власник  = row.Номенклатура).Invoke();
+                            
                     (row.Сhanged_ХарактеристикаНоменклатури = () => cell.Pointer = row.ХарактеристикаНоменклатури).Invoke();
                         
                 }
@@ -402,6 +406,7 @@ class ПерерахунокТоварів_ТабличнаЧастина_Тов
                 {
                     
                     cell.OnSelect = () => row.Пакування = cell.Pointer;
+                        
                     (row.Сhanged_Пакування = () => cell.Pointer = row.Пакування).Invoke();
                         
                 }

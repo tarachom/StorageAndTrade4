@@ -149,10 +149,11 @@ class Номенклатура_ТабличнаЧастина_Файли : Direc
             factory.OnSetup += (_, args) =>
             {
                 ListItem listItem = (ListItem)args.Object;
-                var cell = new CheckTablePartCell();
-                
-                cell.Halign = Align.Center;
-                    
+                var cell = new CheckTablePartCell
+                {
+                    Halign = Align.Center
+                };
+
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>

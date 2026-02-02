@@ -51,6 +51,7 @@ public class ХарактеристикиНоменклатури_PointerControl
         {
             PopoverParent = popover,
             DirectoryPointerItem = Pointer.UnigueID,
+            OpenFolder = OpenFolder,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new ХарактеристикиНоменклатури_Pointer(selectPointer);

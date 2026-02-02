@@ -302,6 +302,7 @@ class ПсуванняТоварів_ТабличнаЧастина_Товари
                 {
                     
                     cell.OnSelect = () => row.Номенклатура = cell.Pointer;
+                        
                     (row.Сhanged_Номенклатура = () => cell.Pointer = row.Номенклатура).Invoke();
                         
                 }
@@ -333,6 +334,9 @@ class ПсуванняТоварів_ТабличнаЧастина_Товари
                 {
                     
                     cell.OnSelect = () => row.ХарактеристикаНоменклатури = cell.Pointer;
+                        
+                    (row.Сhanged_Номенклатура = () => cell.Власник  = row.Номенклатура).Invoke();
+                            
                     (row.Сhanged_ХарактеристикаНоменклатури = () => cell.Pointer = row.ХарактеристикаНоменклатури).Invoke();
                         
                 }
@@ -364,6 +368,7 @@ class ПсуванняТоварів_ТабличнаЧастина_Товари
                 {
                     
                     cell.OnSelect = () => row.Серія = cell.Pointer;
+                        
                     (row.Сhanged_Серія = () => cell.Pointer = row.Серія).Invoke();
                         
                 }
@@ -424,6 +429,7 @@ class ПсуванняТоварів_ТабличнаЧастина_Товари
                 {
                     
                     cell.OnSelect = () => row.Пакування = cell.Pointer;
+                        
                     (row.Сhanged_Пакування = () => cell.Pointer = row.Пакування).Invoke();
                         
                 }
@@ -542,6 +548,7 @@ class ПсуванняТоварів_ТабличнаЧастина_Товари
                 {
                     
                     cell.OnSelect = () => row.Партія = cell.Pointer;
+                        
                     (row.Сhanged_Партія = () => cell.Pointer = row.Партія).Invoke();
                         
                 }

@@ -57,14 +57,18 @@ static class ХарактеристикиНоменклатури_Функції
         await page.SetValue();
     }
 
-    public static async ValueTask OpenPageList(UnigueID? unigueID = null, Action<UnigueID>? сallBack_OnSelectPointer = null)
+    public static async ValueTask OpenPageList(UnigueID? unigueID = null, 
+        Action<UnigueID>? сallBack_OnSelectPointer = null,
+            Номенклатура_Pointer? Власник = null)
     {
         ХарактеристикиНоменклатури_Список page = new()
         {
             DirectoryPointerItem = unigueID,
             CallBack_OnSelectPointer = сallBack_OnSelectPointer
         };
-
+        
+            if (Власник != null) page.Власник.Pointer = Власник;
+        
         Program.BasicForm?.NotebookFunc.CreatePage(ХарактеристикиНоменклатури_Const.FULLNAME, page);
         await page.SetValue();
     }

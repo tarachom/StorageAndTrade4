@@ -17,7 +17,7 @@ namespace StorageAndTrade;
 class СкладськіПриміщення_Список : DirectoryFormJournalFull
 {
     
-    public Склади_PointerControl Власник = new Склади_PointerControl() { Caption = "Склад:" };
+    public Склади_PointerControl Власник = new() { Caption = "Склад:" };
     
     
     public СкладськіПриміщення_Список() : base(Program.BasicForm?.NotebookFunc)
@@ -25,6 +25,19 @@ class СкладськіПриміщення_Список : DirectoryFormJournal
         TypeName = СкладськіПриміщення_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+
+        
+        //Власник
+        {
+            HBoxTop.Append(Власник);
+            OwnerWhereListFunc = () => Власник.Pointer.IsEmpty() ? [] : [new(СкладськіПриміщення_Const.Склад, Comparison.EQ, Власник.Pointer.UnigueID.UGuid)];
+            Власник.AfterSelectFunc = async () =>
+            {
+                PagesClear();
+                await LoadRecords();
+            };
+        }
+        
     }
 
     public override async ValueTask LoadRecords()

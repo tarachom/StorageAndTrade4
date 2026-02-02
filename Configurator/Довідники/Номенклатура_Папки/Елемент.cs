@@ -15,68 +15,67 @@ namespace StorageAndTrade;
 
 class Номенклатура_Папки_Елемент : DirectoryFormElement
 {
-    public Номенклатура_Папки_Objest Елемент { get; init; } = new Номенклатура_Папки_Objest();
-
-    public Номенклатура_Папки_Pointer РодичДляНового { get; set; } = new Номенклатура_Папки_Pointer();
-
+    public Номенклатура_Папки_Objest Елемент { get; init; } = new();
+    
+    public Номенклатура_Папки_Pointer РодичДляНового { get; set; } = new();
+    
     #region Fields
     Entry Код = new() { WidthRequest = 100 };
-    Entry Назва = new() { WidthRequest = 500 };
-    Номенклатура_Папки_PointerControl Родич = new() { Caption = "Папка", WidthPresentation = 500 };
-
+                    Entry Назва = new() { WidthRequest = 300 };
+                    Номенклатура_Папки_PointerControl Родич = new() { Caption = "Папка", WidthPresentation = 300 };
+            
     #endregion
 
     #region TabularParts
-
+    
     #endregion
 
     public Номенклатура_Папки_Елемент() : base(Program.BasicForm?.NotebookFunc)
-    {
+    { 
         Element = Елемент;
-
+        
     }
 
     protected override void CreateStart(Box vBox)
     {
-
-        // Код
-        CreateField(vBox, "Код:", Код);
-
-        // Назва
-        CreateField(vBox, "Назва:", Назва);
-
-        // Родич
-        CreateField(vBox, null, Родич);
-
+        
+            // Код
+            CreateField(vBox, "Код:", Код);
+                        
+            // Назва
+            CreateField(vBox, "Назва:", Назва);
+                        
+            // Родич
+            CreateField(vBox, null, Родич);
+                
     }
 
     protected override void CreateEnd(Box vBox)
     {
-
+        
     }
 
     #region Присвоєння / зчитування значень
 
     public override async ValueTask AssignValue()
     {
-
-        if (IsNew)
-            Елемент.Родич = РодичДляНового;
-        else
-            Родич.OpenFolder = Елемент.UnigueID;
-
-        Код.SetText(Елемент.Код);
-        Назва.SetText(Елемент.Назва);
-        Родич.Pointer = Елемент.Родич;
-
+        
+                if (IsNew)
+                    Елемент.Родич = РодичДляНового;
+                else
+                    Родич.OpenFolder = Елемент.UnigueID;
+            Код.SetText(Елемент.Код);
+                        Назва.SetText(Елемент.Назва);
+                        Родич.Pointer = Елемент.Родич;
+                
     }
 
     protected override void GetValue()
     {
         Елемент.Код = Код.GetText();
-        Елемент.Назва = Назва.GetText();
-        Елемент.Родич = Родич.Pointer;
-
+                        Елемент.Назва = Назва.GetText();
+                        Елемент.Родич = Родич.Pointer;
+                
     }
 
     #endregion
@@ -88,7 +87,7 @@ class Номенклатура_Папки_Елемент : DirectoryFormElement
         {
             if (await Елемент.Save())
             {
-
+                
                 isSaved = true;
             }
         }
@@ -99,3 +98,4 @@ class Номенклатура_Папки_Елемент : DirectoryFormElement
         return isSaved;
     }
 }
+    

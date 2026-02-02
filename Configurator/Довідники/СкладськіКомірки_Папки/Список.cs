@@ -14,10 +14,10 @@ using Функції = StorageAndTrade.СкладськіКомірки_Папк
 
 namespace StorageAndTrade;
 
-class СкладськіКомірки_Папки_Список : DirectoryFormJournalFull
+class СкладськіКомірки_Папки_Список : DirectoryFormJournalFullTree
 {
     
-    public СкладськіПриміщення_PointerControl Власник = new СкладськіПриміщення_PointerControl() { Caption = "Власник:" };
+    public СкладськіПриміщення_PointerControl Власник = new() { Caption = "Власник:" };
     
     
     public СкладськіКомірки_Папки_Список() : base(Program.BasicForm?.NotebookFunc)
@@ -25,6 +25,19 @@ class СкладськіКомірки_Папки_Список : DirectoryFormJo
         TypeName = СкладськіКомірки_Папки_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+
+        
+        //Власник
+        {
+            HBoxTop.Append(Власник);
+            OwnerWhereListFunc = () => Власник.Pointer.IsEmpty() ? [] : [new(СкладськіКомірки_Папки_Const.Власник, Comparison.EQ, Власник.Pointer.UnigueID.UGuid)];
+            Власник.AfterSelectFunc = async () =>
+            {
+                PagesClear();
+                await LoadRecords();
+            };
+        }
+        
     }
 
     public override async ValueTask LoadRecords()

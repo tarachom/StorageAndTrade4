@@ -14,7 +14,7 @@ using Функції = StorageAndTrade.Склади_Папки_Функції;
 
 namespace StorageAndTrade;
 
-class Склади_Папки_ШвидкийВибір : DirectoryFormJournalSmall
+class Склади_Папки_ШвидкийВибір : DirectoryFormJournalSmallTree
 {
     
     
@@ -24,6 +24,8 @@ class Склади_Папки_ШвидкийВибір : DirectoryFormJournalSma
         KeyForSetting = ".Small";
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+
+        
     }
 
     public override async ValueTask LoadRecords()

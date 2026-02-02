@@ -1,7 +1,7 @@
 
 /*     
-        СкладськіКомірки_ШвидкийВибір.cs
-        ШвидкийВибір
+        СкладськіКомірки.cs 
+        Список з Деревом
 */
 
 using Gtk;
@@ -9,23 +9,47 @@ using InterfaceGtk4;
 using AccountingSoftware;
 using GeneratedCode.Довідники;
 
-using ТабличнийСписок = GeneratedCode.Довідники.ТабличніСписки.СкладськіКомірки_ЗаписиШвидкийВибір;
+using ТабличнийСписок = GeneratedCode.Довідники.ТабличніСписки.СкладськіКомірки_Записи;
 using Функції = StorageAndTrade.СкладськіКомірки_Функції;
 
 namespace StorageAndTrade;
 
-class СкладськіКомірки_ШвидкийВибір : DirectoryFormJournalSmall
+class СкладськіКомірки_Список : DirectoryFormJournalFull
 {
+    СкладськіКомірки_Папки_Список Папки = new() { InsertEmptyFirstRow = true };
     
     public СкладськіПриміщення_PointerControl Власник = new() { Caption = "Приміщення:" };
     
-    
-    public СкладськіКомірки_ШвидкийВибір() : base(Program.BasicForm?.NotebookFunc)
+
+    public СкладськіКомірки_Список() : base(Program.BasicForm?.NotebookFunc)
     {
         TypeName = СкладськіКомірки_Const.POINTER;
-        KeyForSetting = ".Small";
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+
+        //Папки
+        {
+            CompositeMode = true;
+
+            Box vBox = New(Orientation.Vertical, 0);
+            vBox.MarginStart = 5;
+            vBox.Append(Папки);
+
+            HPanedTable.SetEndChild(vBox);
+            HPanedTable.Position = 1200;
+            HPanedTable.StartChild?.MarginEnd = 5;
+
+            Папки.CallBack_Activate = async unigueID =>
+            {
+                //Відбір по полю Папка
+                ParentWhereList = [new(СкладськіКомірки_Const.Папка, Comparison.EQ, unigueID.UGuid)];
+                if (TypeWhereState == TypeWhere.Standart)
+                {
+                    PagesClear();
+                    await LoadRecords();
+                }
+            };
+        }
 
         
         //Власник
@@ -39,6 +63,17 @@ class СкладськіКомірки_ШвидкийВибір : DirectoryFormJ
             };
         }
         
+    }
+    
+    protected override async ValueTask BeforeSetValue()
+    {
+        if (SelectPointerItem != null || DirectoryPointerItem != null)
+        {
+            СкладськіКомірки_Objest? Обєкт = await new СкладськіКомірки_Pointer(SelectPointerItem ?? DirectoryPointerItem ?? new UnigueID()).GetDirectoryObject();
+            if (Обєкт != null) Папки.SelectPointerItem = Обєкт.Папка.UnigueID;
+        }
+
+        await Папки.SetValue();
     }
 
     public override async ValueTask LoadRecords()
@@ -59,11 +94,6 @@ class СкладськіКомірки_ШвидкийВибір : DirectoryFormJ
     protected override void FillFilter(FilterControl filterControl)
     {
         ТабличнийСписок.CreateFilter(this);
-    }
-
-    protected override async ValueTask OpenPageList(UnigueID? unigueID = null)
-    {
-        await Функції.OpenPageList(unigueID, CallBack_OnSelectPointer);
     }
 
     protected override async ValueTask OpenPageElement(bool IsNew, UnigueID? unigueID = null)
