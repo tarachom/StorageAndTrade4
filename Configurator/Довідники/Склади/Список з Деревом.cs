@@ -28,6 +28,7 @@ class Склади_Список : DirectoryFormJournalFull
         //Папки
         {
             CompositeMode = true;
+            AddSwitchUseHierarchy();
 
             Box vBox = New(Orientation.Vertical, 0);
             vBox.MarginStart = 5;
@@ -41,13 +42,14 @@ class Склади_Список : DirectoryFormJournalFull
             {
                 //Відбір по полю Папка
                 ParentWhereList = [new(Склади_Const.Папка, Comparison.EQ, unigueID.UGuid)];
-                if (TypeWhereState == TypeWhere.Standart)
+                if (!UseHierarchy.Active && TypeWhereState == TypeWhere.Standart)
                 {
                     PagesClear();
                     await LoadRecords();
                 }
             };
         }
+        
     }
     
     protected override async ValueTask BeforeSetValue()

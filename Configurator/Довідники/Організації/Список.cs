@@ -23,6 +23,8 @@ class Організації_Список : DirectoryFormJournalFull
         TypeName = Організації_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+
+        
     }
 
     public override async ValueTask LoadRecords()
