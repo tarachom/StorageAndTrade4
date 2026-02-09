@@ -226,7 +226,7 @@ class АктВиконанихРобіт_Елемент : DocumentFormElement
 
     protected override void ReportSpendTheDocument(UnigueID unigueID)
     {
-        //СпільніФорми_РухДокументуПоРегістрах.СформуватиЗвіт(new АктВиконанихРобіт_Pointer(unigueID));
+        CommonForms_DocumentMovementThroughRegisters.Create(new АктВиконанихРобіт_Pointer(unigueID));
     }
 
     protected override async ValueTask InJournal(UnigueID unigueID)

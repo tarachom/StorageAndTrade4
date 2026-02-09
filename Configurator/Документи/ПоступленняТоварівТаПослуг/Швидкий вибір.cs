@@ -83,7 +83,8 @@ public class ПоступленняТоварівТаПослуг_Швидкий
 
     protected override void ReportSpendTheDocument(UnigueID[] unigueID)
     {
-
+        foreach (var uid in unigueID)
+            CommonForms_DocumentMovementThroughRegisters.Create(new ПоступленняТоварівТаПослуг_Pointer(uid));
     }
 
     #endregion

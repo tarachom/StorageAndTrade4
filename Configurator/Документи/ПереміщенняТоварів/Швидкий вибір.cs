@@ -83,7 +83,8 @@ public class ПереміщенняТоварів_ШвидкийВибір : Doc
 
     protected override void ReportSpendTheDocument(UnigueID[] unigueID)
     {
-
+        foreach (var uid in unigueID)
+            CommonForms_DocumentMovementThroughRegisters.Create(new ПереміщенняТоварів_Pointer(uid));
     }
 
     #endregion

@@ -77,8 +77,8 @@ public class ПоступленняТоварівТаПослуг_Список :
 
     protected override void ReportSpendTheDocument(UnigueID[] unigueID)
     {
-        foreach (var item in unigueID)
-            CommonForms_DocumentMovementThroughRegisters.Create(new ПоступленняТоварівТаПослуг_Pointer(item));
+        foreach (var uid in unigueID)
+            CommonForms_DocumentMovementThroughRegisters.Create(new ПоступленняТоварівТаПослуг_Pointer(uid));
     }
 
     protected override async ValueTask VersionsHistory(UnigueID[] unigueID)
@@ -88,3 +88,4 @@ public class ПоступленняТоварівТаПослуг_Список :
 
     #endregion
 }
+    

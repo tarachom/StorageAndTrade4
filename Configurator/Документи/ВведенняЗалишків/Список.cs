@@ -77,7 +77,8 @@ public class ВведенняЗалишків_Список : DocumentFormJournal
 
     protected override void ReportSpendTheDocument(UnigueID[] unigueID)
     {
-
+        foreach (var uid in unigueID)
+            CommonForms_DocumentMovementThroughRegisters.Create(new ВведенняЗалишків_Pointer(uid));
     }
 
     protected override async ValueTask VersionsHistory(UnigueID[] unigueID)

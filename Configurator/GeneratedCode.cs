@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 06.02.2026 18:11:43
+ * Дата конфігурації: 09.02.2026 19:52:42
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон GeneratedCode.xslt
@@ -28643,6 +28643,7 @@ namespace GeneratedCode.РегістриВідомостей
                 
                   if (JoinValue.TryGetValue(record.UID.ToString(), out var ItemValue))
                   {
+                    record.JoinItemValue = ItemValue;
                     record.Номенклатура.Name = ItemValue["Номенклатура"];
                         record.ХарактеристикаНоменклатури.Name = ItemValue["ХарактеристикаНоменклатури"];
                         record.ВидЦіни.Name = ItemValue["ВидЦіни"];
@@ -28846,6 +28847,7 @@ namespace GeneratedCode.РегістриВідомостей
                 
                   if (JoinValue.TryGetValue(record.UID.ToString(), out var ItemValue))
                   {
+                    record.JoinItemValue = ItemValue;
                     record.Валюта.Name = ItemValue["Валюта"];
                         
                   }
@@ -29033,6 +29035,7 @@ namespace GeneratedCode.РегістриВідомостей
                 
                   if (JoinValue.TryGetValue(record.UID.ToString(), out var ItemValue))
                   {
+                    record.JoinItemValue = ItemValue;
                     record.Номенклатура.Name = ItemValue["Номенклатура"];
                         record.ХарактеристикаНоменклатури.Name = ItemValue["ХарактеристикаНоменклатури"];
                         record.Пакування.Name = ItemValue["Пакування"];
@@ -29218,6 +29221,7 @@ namespace GeneratedCode.РегістриВідомостей
                 
                   if (JoinValue.TryGetValue(record.UID.ToString(), out var ItemValue))
                   {
+                    record.JoinItemValue = ItemValue;
                     record.Файл.Name = ItemValue["Файл"];
                         
                   }
@@ -29395,6 +29399,7 @@ namespace GeneratedCode.РегістриВідомостей
                 
                   if (JoinValue.TryGetValue(record.UID.ToString(), out var ItemValue))
                   {
+                    record.JoinItemValue = ItemValue;
                     record.Номенклатура.Name = ItemValue["Номенклатура"];
                         record.Склад.Name = ItemValue["Склад"];
                         record.Приміщення.Name = ItemValue["Приміщення"];
@@ -29949,7 +29954,7 @@ namespace GeneratedCode.РегістриНакопичення
                 
                 if (JoinValue.TryGetValue(record.UID.ToString(), out var ItemValue))
                 {
-                    //record.JoinItemValue = ItemValue;
+                    record.JoinItemValue = ItemValue;
                     if (ItemValue.TryGetValue("docname", out var ownerName)) record.OwnerName = ownerName;
                     record.Номенклатура.Name = ItemValue["Номенклатура"];
                         record.ХарактеристикаНоменклатури.Name = ItemValue["ХарактеристикаНоменклатури"];
@@ -30403,7 +30408,7 @@ namespace GeneratedCode.РегістриНакопичення
                 
                 if (JoinValue.TryGetValue(record.UID.ToString(), out var ItemValue))
                 {
-                    //record.JoinItemValue = ItemValue;
+                    record.JoinItemValue = ItemValue;
                     if (ItemValue.TryGetValue("docname", out var ownerName)) record.OwnerName = ownerName;
                     record.ЗамовленняКлієнта.Name = ItemValue["ЗамовленняКлієнта"];
                         record.Номенклатура.Name = ItemValue["Номенклатура"];
@@ -30633,7 +30638,7 @@ namespace GeneratedCode.РегістриНакопичення
                 
                 if (JoinValue.TryGetValue(record.UID.ToString(), out var ItemValue))
                 {
-                    //record.JoinItemValue = ItemValue;
+                    record.JoinItemValue = ItemValue;
                     if (ItemValue.TryGetValue("docname", out var ownerName)) record.OwnerName = ownerName;
                     record.Валюта.Name = ItemValue["Валюта"];
                         record.Контрагент.Name = ItemValue["Контрагент"];
@@ -30960,7 +30965,7 @@ namespace GeneratedCode.РегістриНакопичення
                 
                 if (JoinValue.TryGetValue(record.UID.ToString(), out var ItemValue))
                 {
-                    //record.JoinItemValue = ItemValue;
+                    record.JoinItemValue = ItemValue;
                     if (ItemValue.TryGetValue("docname", out var ownerName)) record.OwnerName = ownerName;
                     record.Організація.Name = ItemValue["Організація"];
                         record.Склад.Name = ItemValue["Склад"];
@@ -31220,7 +31225,7 @@ namespace GeneratedCode.РегістриНакопичення
                 
                 if (JoinValue.TryGetValue(record.UID.ToString(), out var ItemValue))
                 {
-                    //record.JoinItemValue = ItemValue;
+                    record.JoinItemValue = ItemValue;
                     if (ItemValue.TryGetValue("docname", out var ownerName)) record.OwnerName = ownerName;
                     record.Номенклатура.Name = ItemValue["Номенклатура"];
                         record.ХарактеристикаНоменклатури.Name = ItemValue["ХарактеристикаНоменклатури"];
@@ -31556,7 +31561,7 @@ namespace GeneratedCode.РегістриНакопичення
                 
                 if (JoinValue.TryGetValue(record.UID.ToString(), out var ItemValue))
                 {
-                    //record.JoinItemValue = ItemValue;
+                    record.JoinItemValue = ItemValue;
                     if (ItemValue.TryGetValue("docname", out var ownerName)) record.OwnerName = ownerName;
                     record.ЗамовленняПостачальнику.Name = ItemValue["ЗамовленняПостачальнику"];
                         record.Номенклатура.Name = ItemValue["Номенклатура"];
@@ -31780,7 +31785,7 @@ namespace GeneratedCode.РегістриНакопичення
                 
                 if (JoinValue.TryGetValue(record.UID.ToString(), out var ItemValue))
                 {
-                    //record.JoinItemValue = ItemValue;
+                    record.JoinItemValue = ItemValue;
                     if (ItemValue.TryGetValue("docname", out var ownerName)) record.OwnerName = ownerName;
                     record.Контрагент.Name = ItemValue["Контрагент"];
                         record.Валюта.Name = ItemValue["Валюта"];
@@ -32091,7 +32096,7 @@ namespace GeneratedCode.РегістриНакопичення
                 
                 if (JoinValue.TryGetValue(record.UID.ToString(), out var ItemValue))
                 {
-                    //record.JoinItemValue = ItemValue;
+                    record.JoinItemValue = ItemValue;
                     if (ItemValue.TryGetValue("docname", out var ownerName)) record.OwnerName = ownerName;
                     record.Організація.Name = ItemValue["Організація"];
                         record.Каса.Name = ItemValue["Каса"];
@@ -32520,7 +32525,7 @@ namespace GeneratedCode.РегістриНакопичення
                 
                 if (JoinValue.TryGetValue(record.UID.ToString(), out var ItemValue))
                 {
-                    //record.JoinItemValue = ItemValue;
+                    record.JoinItemValue = ItemValue;
                     if (ItemValue.TryGetValue("docname", out var ownerName)) record.OwnerName = ownerName;
                     record.Організація.Name = ItemValue["Організація"];
                         record.ПартіяТоварівКомпозит.Name = ItemValue["ПартіяТоварівКомпозит"];
@@ -33024,7 +33029,7 @@ namespace GeneratedCode.РегістриНакопичення
                 
                 if (JoinValue.TryGetValue(record.UID.ToString(), out var ItemValue))
                 {
-                    //record.JoinItemValue = ItemValue;
+                    record.JoinItemValue = ItemValue;
                     if (ItemValue.TryGetValue("docname", out var ownerName)) record.OwnerName = ownerName;
                     record.Організація.Name = ItemValue["Організація"];
                         record.Склад.Name = ItemValue["Склад"];
@@ -33292,7 +33297,7 @@ namespace GeneratedCode.РегістриНакопичення
                 
                 if (JoinValue.TryGetValue(record.UID.ToString(), out var ItemValue))
                 {
-                    //record.JoinItemValue = ItemValue;
+                    record.JoinItemValue = ItemValue;
                     if (ItemValue.TryGetValue("docname", out var ownerName)) record.OwnerName = ownerName;
                     record.Номенклатура.Name = ItemValue["Номенклатура"];
                         record.ХарактеристикаНоменклатури.Name = ItemValue["ХарактеристикаНоменклатури"];
@@ -33733,7 +33738,7 @@ namespace GeneratedCode.РегістриНакопичення
                 
                 if (JoinValue.TryGetValue(record.UID.ToString(), out var ItemValue))
                 {
-                    //record.JoinItemValue = ItemValue;
+                    record.JoinItemValue = ItemValue;
                     if (ItemValue.TryGetValue("docname", out var ownerName)) record.OwnerName = ownerName;
                     record.Організація.Name = ItemValue["Організація"];
                         record.КасаККМ.Name = ItemValue["КасаККМ"];

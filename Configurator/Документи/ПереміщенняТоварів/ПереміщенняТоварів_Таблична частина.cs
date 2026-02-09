@@ -262,7 +262,6 @@ class ПереміщенняТоварів_ТабличнаЧастина_Тов
                 {
                     
                     cell.OnSelect = () => row.Номенклатура = cell.Pointer;
-                        
                     (row.Сhanged_Номенклатура = () => cell.Pointer = row.Номенклатура).Invoke();
                         
                 }
@@ -293,10 +292,9 @@ class ПереміщенняТоварів_ТабличнаЧастина_Тов
                 if (cell != null && row != null)
                 {
                     
-                    cell.OnSelect = () => row.ХарактеристикаНоменклатури = cell.Pointer;
-                        
-                    (row.Сhanged_Номенклатура = () => cell.Власник  = row.Номенклатура).Invoke();
+                    cell.BeforeClickOpenFunc = () => cell.Власник  = row.Номенклатура;
                             
+                    cell.OnSelect = () => row.ХарактеристикаНоменклатури = cell.Pointer;
                     (row.Сhanged_ХарактеристикаНоменклатури = () => cell.Pointer = row.ХарактеристикаНоменклатури).Invoke();
                         
                 }
@@ -328,7 +326,6 @@ class ПереміщенняТоварів_ТабличнаЧастина_Тов
                 {
                     
                     cell.OnSelect = () => row.Серія = cell.Pointer;
-                        
                     (row.Сhanged_Серія = () => cell.Pointer = row.Серія).Invoke();
                         
                 }
@@ -389,7 +386,6 @@ class ПереміщенняТоварів_ТабличнаЧастина_Тов
                 {
                     
                     cell.OnSelect = () => row.Пакування = cell.Pointer;
-                        
                     (row.Сhanged_Пакування = () => cell.Pointer = row.Пакування).Invoke();
                         
                 }
@@ -450,7 +446,6 @@ class ПереміщенняТоварів_ТабличнаЧастина_Тов
                 {
                     
                     cell.OnSelect = () => row.Партія = cell.Pointer;
-                        
                     (row.Сhanged_Партія = () => cell.Pointer = row.Партія).Invoke();
                         
                 }

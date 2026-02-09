@@ -30,6 +30,7 @@ limitations under the License.
 using Gtk;
 using AccountingSoftware;
 using GeneratedCode;
+using StorageAndTrade.РегістриНакопичення;
 
 using ТабличніСписки = GeneratedCode.РегістриНакопичення.ТабличніСписки;
 
@@ -63,96 +64,117 @@ class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.CommonForms_D
 
         foreach (string regAccumName in Config.Kernel.Conf.Documents[documentPointer.TypeDocument].AllowRegisterAccumulation)
         {
-            /*switch (regAccumName)
+            switch (regAccumName)
             {
                 case "ТовариНаСкладах":
                     {
-                        ДодатиБлокНаФорму("Товари на складах", treeView);
+                        ТовариНаСкладах_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
+                        page.SetHeight(300);
+                        await page.SetValue();
 
-                        ТабличніСписки.ТовариНаСкладах_Записи.AddColumn();
-                        ТабличніСписки.ТовариНаСкладах_Записи.ДодатиВідбірПоДокументу(treeView, ДокументВказівник.UnigueID.UGuid);
-                        await ТабличніСписки.ТовариНаСкладах_Записи.LoadRecords(treeView, null, false, false);
-
+                        ДодатиБлокНаФорму("Товари на складах", page);
                         break;
                     }
                 case "ПартіїТоварів":
                     {
-                        ДодатиБлокНаФорму("Партії товарів", treeView);
+                        ПартіїТоварів_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
+                        page.SetHeight(300);
+                        await page.SetValue();
 
-
+                        ДодатиБлокНаФорму("Партії товарів", page);
                         break;
                     }
                 case "ЗамовленняКлієнтів":
                     {
-                        ДодатиБлокНаФорму("Замовлення клієнтів", treeView);
+                        ЗамовленняКлієнтів_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
+                        page.SetHeight(300);
+                        await page.SetValue();
 
-
+                        ДодатиБлокНаФорму("Замовлення клієнтів", page);
                         break;
                     }
                 case "РозрахункиЗКлієнтами":
                     {
-                        ДодатиБлокНаФорму("Розрахунки з клієнтами", treeView);
+                        РозрахункиЗКлієнтами_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
+                        page.SetHeight(300);
+                        await page.SetValue();
 
-
+                        ДодатиБлокНаФорму("Розрахунки з клієнтами", page);
                         break;
                     }
                 case "ВільніЗалишки":
                     {
-                        ДодатиБлокНаФорму("Вільні залишки", treeView);
+                        ВільніЗалишки_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
+                        page.SetHeight(300);
+                        await page.SetValue();
 
-
+                        ДодатиБлокНаФорму("Вільні залишки", page);
                         break;
                     }
                 case "ЗамовленняПостачальникам":
                     {
-                        ДодатиБлокНаФорму("Замовлення постачальникам", treeView);
+                        ЗамовленняПостачальникам_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
+                        page.SetHeight(300);
+                        await page.SetValue();
 
-
+                        ДодатиБлокНаФорму("Замовлення постачальникам", page);
                         break;
                     }
                 case "РозрахункиЗПостачальниками":
                     {
-                        ДодатиБлокНаФорму("Розрахунки з постачальниками", treeView);
+                        РозрахункиЗПостачальниками_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
+                        page.SetHeight(300);
+                        await page.SetValue();
 
-
+                        ДодатиБлокНаФорму("Розрахунки з постачальниками", page);
                         break;
                     }
                 case "РухКоштів":
                     {
-                        ДодатиБлокНаФорму("Рух коштів", treeView);
+                        РухКоштів_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
+                        page.SetHeight(300);
+                        await page.SetValue();
 
-
+                        ДодатиБлокНаФорму("Рух коштів", page);
                         break;
                     }
                 case "РухКоштівККМ":
                     {
-                        ДодатиБлокНаФорму("Рух коштів ККМ", treeView);
+                        РухКоштівККМ_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
+                        page.SetHeight(300);
+                        await page.SetValue();
 
-
+                        ДодатиБлокНаФорму("Рух коштів ККМ", page);
                         break;
                     }
                 case "Закупівлі":
                     {
-                        ДодатиБлокНаФорму("Закупівлі", treeView);
+                        Закупівлі_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
+                        page.SetHeight(300);
+                        await page.SetValue();
 
-
+                        ДодатиБлокНаФорму("Закупівлі", page);
                         break;
                     }
                 case "Продажі":
                     {
-                        ДодатиБлокНаФорму("Продажі", treeView);
+                        Продажі_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
+                        page.SetHeight(300);
+                        await page.SetValue();
 
-
+                        ДодатиБлокНаФорму("Продажі", page);
                         break;
                     }
                 case "ТовариВКомірках":
                     {
-                        ДодатиБлокНаФорму("Товари в комірках", treeView);
+                        ТовариВКомірках_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
+                        page.SetHeight(300);
+                        await page.SetValue();
 
-
+                        ДодатиБлокНаФорму("Товари в комірках", page);
                         break;
                     }
-            }*/
+            }
         }
     }
 }

@@ -77,7 +77,8 @@ public class АктВиконанихРобіт_Список : DocumentFormJourn
 
     protected override void ReportSpendTheDocument(UnigueID[] unigueID)
     {
-
+        foreach (var uid in unigueID)
+            CommonForms_DocumentMovementThroughRegisters.Create(new АктВиконанихРобіт_Pointer(uid));
     }
 
     protected override async ValueTask VersionsHistory(UnigueID[] unigueID)

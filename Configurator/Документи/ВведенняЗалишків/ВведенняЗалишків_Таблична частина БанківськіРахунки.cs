@@ -162,7 +162,6 @@ class ВведенняЗалишків_ТабличнаЧастина_Банкі
                 {
                     
                     cell.OnSelect = () => row.БанківськийРахунок = cell.Pointer;
-                        
                     (row.Сhanged_БанківськийРахунок = () => cell.Pointer = row.БанківськийРахунок).Invoke();
                         
                 }

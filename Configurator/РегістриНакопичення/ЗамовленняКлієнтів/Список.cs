@@ -1,7 +1,7 @@
 
 
 /*     
-        ТовариНаСкладах.cs
+        ЗамовленняКлієнтів.cs
         Список
 
         Табличний список - Записи
@@ -11,17 +11,17 @@ using InterfaceGtk4;
 using AccountingSoftware;
 using GeneratedCode.РегістриНакопичення;
 
-using ТабличнийСписок = GeneratedCode.РегістриНакопичення.ТабличніСписки.ТовариНаСкладах_Записи;
+using ТабличнийСписок = GeneratedCode.РегістриНакопичення.ТабличніСписки.ЗамовленняКлієнтів_Записи;
 
 namespace StorageAndTrade.РегістриНакопичення;
 
-public class ТовариНаСкладах_Список : RegisterAccumulationFormJournalBase
+public class ЗамовленняКлієнтів_Список : RegisterAccumulationFormJournalBase
 {
-    public ТовариНаСкладах_Список() : base(Program.BasicForm?.NotebookFunc)
+    public ЗамовленняКлієнтів_Список() : base(Program.BasicForm?.NotebookFunc)
     {
-        TypeName = ТовариНаСкладах_Const.TYPENAME;
+        TypeName = ЗамовленняКлієнтів_Const.TYPENAME;
         ТабличнийСписок.AddColumn(this);
-        SetPagesSettings(100);
+        SetPagesSettings(50);
     }
 
     #region Override

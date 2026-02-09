@@ -83,7 +83,8 @@ public class АктВиконанихРобіт_ШвидкийВибір : Docum
 
     protected override void ReportSpendTheDocument(UnigueID[] unigueID)
     {
-
+        foreach (var uid in unigueID)
+            CommonForms_DocumentMovementThroughRegisters.Create(new АктВиконанихРобіт_Pointer(uid));
     }
 
     #endregion

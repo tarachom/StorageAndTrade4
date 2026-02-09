@@ -67,10 +67,10 @@ class ВведенняЗалишків_Елемент : DocumentFormElement
             NotebookTablePart.InsertPage(Каси, Label.New("Каси"), 1);
             
             // Таблична частина "БанківськіРахунки" 
-            NotebookTablePart.InsertPage(БанківськіРахунки, Label.New("БанківськіРахунки"), 2);
+            NotebookTablePart.InsertPage(БанківськіРахунки, Label.New("Банківські рахунки"), 2);
             
             // Таблична частина "РозрахункиЗКонтрагентами" 
-            NotebookTablePart.InsertPage(РозрахункиЗКонтрагентами, Label.New("РозрахункиЗКонтрагентами"), 3);
+            NotebookTablePart.InsertPage(РозрахункиЗКонтрагентами, Label.New("Розрахунки з контрагентами"), 3);
             
             NotebookTablePart.SetCurrentPage(0);
         
@@ -230,7 +230,7 @@ class ВведенняЗалишків_Елемент : DocumentFormElement
 
     protected override void ReportSpendTheDocument(UnigueID unigueID)
     {
-        //СпільніФорми_РухДокументуПоРегістрах.СформуватиЗвіт(new ВведенняЗалишків_Pointer(unigueID));
+        CommonForms_DocumentMovementThroughRegisters.Create(new ВведенняЗалишків_Pointer(unigueID));
     }
 
     protected override async ValueTask InJournal(UnigueID unigueID)
