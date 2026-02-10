@@ -46,17 +46,14 @@ class ПоступленняТоварівТаПослуг_Triggers
         if (label)
         {
             ПартіяТоварівКомпозит_Select select = new();
-            select.QuerySelect.Where.Add(new Where(ПартіяТоварівКомпозит_Const.ПоступленняТоварівТаПослуг, Comparison.EQ, ДокументОбєкт.UnigueID.UGuid));
-            select.QuerySelect.Where.Add(new Where(ПартіяТоварівКомпозит_Const.DELETION_LABEL, Comparison.NOT, true));
+            select.QuerySelect.Where.AddRange([
+                new(ПартіяТоварівКомпозит_Const.ПоступленняТоварівТаПослуг, Comparison.EQ, ДокументОбєкт.UnigueID.UGuid),
+                new(ПартіяТоварівКомпозит_Const.DELETION_LABEL, Comparison.NOT, true)
+            ]);
             await select.Select();
-
             while (select.MoveNext())
                 if (select.Current != null)
-                {
-                    ПартіяТоварівКомпозит_Objest? Обєкт = await select.Current.GetDirectoryObject();
-                    if (Обєкт != null)
-                        await Обєкт.SetDeletionLabel();
-                }
+                    await select.Current.SetDeletionLabel();
         }
     }
 

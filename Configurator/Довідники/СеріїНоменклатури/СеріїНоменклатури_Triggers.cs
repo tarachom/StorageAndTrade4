@@ -26,9 +26,10 @@ class СеріїНоменклатури_Triggers
     public static async ValueTask BeforeSave(СеріїНоменклатури_Objest ДовідникОбєкт)
     {
         СеріїНоменклатури_Select select = new();
-        select.QuerySelect.Where.Add(new Where(СеріїНоменклатури_Const.Номер, Comparison.EQ, ДовідникОбєкт.Номер));
-        select.QuerySelect.Where.Add(new Where("uid", Comparison.NOT, ДовідникОбєкт.UnigueID.UGuid));
-
+        select.QuerySelect.Where.AddRange([
+            new(СеріїНоменклатури_Const.Номер, Comparison.EQ, ДовідникОбєкт.Номер),
+            new("uid", Comparison.NOT, ДовідникОбєкт.UnigueID.UGuid)
+        ]);
         if (await select.SelectSingle())
         {
             ДовідникОбєкт.Коментар = $"Помилка: Серійний номер [ {ДовідникОбєкт.Номер} ] вже існує в базі даних. " + ДовідникОбєкт.Коментар;

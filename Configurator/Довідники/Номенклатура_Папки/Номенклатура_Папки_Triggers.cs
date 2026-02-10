@@ -41,33 +41,24 @@ class Номенклатура_Папки_Triggers
             //Елементи помічаються на видалення
             {
                 Номенклатура_Select select = new();
-                select.QuerySelect.Where.Add(new Where(Номенклатура_Const.Папка, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
-                select.QuerySelect.Where.Add(new Where(Номенклатура_Const.DELETION_LABEL, Comparison.NOT, true));
+                select.QuerySelect.Where.AddRange([
+                    new(Номенклатура_Const.Папка, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid),
+                    new(Номенклатура_Const.DELETION_LABEL, Comparison.NOT, true)
+                ]);
                 await select.Select();
-
                 while (select.MoveNext())
                     if (select.Current != null)
-                    {
-                        Номенклатура_Objest? Обєкт = await select.Current.GetDirectoryObject();
-                        if (Обєкт != null)
-                            await Обєкт.SetDeletionLabel();
-                    }
+                        await select.Current.SetDeletionLabel();
             }
 
             //Вкладені папки помічаються на видалення
             {
                 Номенклатура_Папки_Select select = new();
-                select.QuerySelect.Where.Add(new Where(Номенклатура_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
+                select.QuerySelect.Where.Add(new(Номенклатура_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
                 await select.Select();
-
                 while (select.MoveNext())
                     if (select.Current != null)
-                    {
-                        Номенклатура_Папки_Objest? Обєкт = await select.Current.GetDirectoryObject();
-                        if (Обєкт != null)
-                            await Обєкт.SetDeletionLabel();
-
-                    }
+                        await select.Current.SetDeletionLabel();
             }
         }
     }
@@ -77,7 +68,7 @@ class Номенклатура_Папки_Triggers
         //Елементи переносяться на верхній рівень
         {
             Номенклатура_Select select = new();
-            select.QuerySelect.Where.Add(new Where(Номенклатура_Const.Папка, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
+            select.QuerySelect.Where.Add(new(Номенклатура_Const.Папка, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
             await select.Select();
 
             while (select.MoveNext())
@@ -98,7 +89,7 @@ class Номенклатура_Папки_Triggers
         //Вкладені папки видяляються. Для кожної папки буде викликана функція BeforeDelete
         {
             Номенклатура_Папки_Select select = new();
-            select.QuerySelect.Where.Add(new Where(Номенклатура_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
+            select.QuerySelect.Where.Add(new(Номенклатура_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
             await select.Select();
 
             while (select.MoveNext())

@@ -49,9 +49,9 @@ WHERE
 ";
 
         Dictionary<string, object> paramQuery = new()
-            {
-                { "Валюта", ДовідникОбєкт.UnigueID.UGuid }
-            };
+        {
+            { "Валюта", ДовідникОбєкт.UnigueID.UGuid }
+        };
 
         await Config.Kernel.DataBase.ExecuteSQL(query, paramQuery);
     }

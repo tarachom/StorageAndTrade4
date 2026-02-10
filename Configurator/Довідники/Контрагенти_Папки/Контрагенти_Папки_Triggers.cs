@@ -41,33 +41,24 @@ class Контрагенти_Папки_Triggers
             //Елементи помічаються на видалення
             {
                 Контрагенти_Select select = new();
-                select.QuerySelect.Where.Add(new Where(Контрагенти_Const.Папка, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
-                select.QuerySelect.Where.Add(new Where(Контрагенти_Const.DELETION_LABEL, Comparison.NOT, true));
+                select.QuerySelect.Where.AddRange([
+                    new(Контрагенти_Const.Папка, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid),
+                    new(Контрагенти_Const.DELETION_LABEL, Comparison.NOT, true)
+                ]);
                 await select.Select();
-
                 while (select.MoveNext())
                     if (select.Current != null)
-                    {
-                        Контрагенти_Objest? Обєкт = await select.Current.GetDirectoryObject();
-                        if (Обєкт != null)
-                            await Обєкт.SetDeletionLabel();
-                    }
+                        await select.Current.SetDeletionLabel();
             }
 
             //Вкладені папки помічаються на видалення
             {
                 Контрагенти_Папки_Select select = new();
-                select.QuerySelect.Where.Add(new Where(Контрагенти_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
+                select.QuerySelect.Where.Add(new(Контрагенти_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
                 await select.Select();
-
                 while (select.MoveNext())
                     if (select.Current != null)
-                    {
-                        Контрагенти_Папки_Objest? Обєкт = await select.Current.GetDirectoryObject();
-                        if (Обєкт != null)
-                            await Обєкт.SetDeletionLabel();
-
-                    }
+                        await select.Current.SetDeletionLabel();
             }
         }
     }
@@ -77,7 +68,7 @@ class Контрагенти_Папки_Triggers
         //Елементи переносяться на верхній рівень
         {
             Контрагенти_Select select = new();
-            select.QuerySelect.Where.Add(new Where(Контрагенти_Const.Папка, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
+            select.QuerySelect.Where.Add(new(Контрагенти_Const.Папка, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
             await select.Select();
 
             while (select.MoveNext())
@@ -99,7 +90,7 @@ class Контрагенти_Папки_Triggers
         //Вкладені папки видаляються. Для кожної папки буде викликана функція BeforeDelete
         {
             Контрагенти_Папки_Select select = new();
-            select.QuerySelect.Where.Add(new Where(Контрагенти_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
+            select.QuerySelect.Where.Add(new(Контрагенти_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
             await select.Select();
 
             while (select.MoveNext())

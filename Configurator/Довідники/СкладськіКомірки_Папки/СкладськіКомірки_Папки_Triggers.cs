@@ -41,32 +41,24 @@ class СкладськіКомірки_Папки_Triggers
             //Елементи помічаються на видалення
             {
                 СкладськіКомірки_Select select = new();
-                select.QuerySelect.Where.Add(new Where(СкладськіКомірки_Const.Папка, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
-                select.QuerySelect.Where.Add(new Where(СкладськіКомірки_Const.DELETION_LABEL, Comparison.NOT, true));
+                select.QuerySelect.Where.AddRange([
+                    new(СкладськіКомірки_Const.Папка, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid),
+                    new(СкладськіКомірки_Const.DELETION_LABEL, Comparison.NOT, true)
+                ]);
                 await select.Select();
-
                 while (select.MoveNext())
                     if (select.Current != null)
-                    {
-                        СкладськіКомірки_Objest? Обєкт = await select.Current.GetDirectoryObject();
-                        if (Обєкт != null)
-                            await Обєкт.SetDeletionLabel();
-                    }
+                        await select.Current.SetDeletionLabel();
             }
 
             //Вкладені папки помічаються на видалення
             {
                 СкладськіКомірки_Папки_Select select = new();
-                select.QuerySelect.Where.Add(new Where(СкладськіКомірки_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
+                select.QuerySelect.Where.Add(new(СкладськіКомірки_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
                 await select.Select();
-
                 while (select.MoveNext())
                     if (select.Current != null)
-                    {
-                        СкладськіКомірки_Папки_Objest? Обєкт = await select.Current.GetDirectoryObject();
-                        if (Обєкт != null)
-                            await Обєкт.SetDeletionLabel();
-                    }
+                        await select.Current.SetDeletionLabel();
             }
         }
     }
@@ -76,10 +68,11 @@ class СкладськіКомірки_Папки_Triggers
         //Елементи помічаються на видалення
         {
             СкладськіКомірки_Select select = new();
-            select.QuerySelect.Where.Add(new Where(СкладськіКомірки_Const.Папка, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
-            select.QuerySelect.Where.Add(new Where(СкладськіКомірки_Const.DELETION_LABEL, Comparison.NOT, true));
+            select.QuerySelect.Where.AddRange([
+                new(СкладськіКомірки_Const.Папка, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid),
+                new(СкладськіКомірки_Const.DELETION_LABEL, Comparison.NOT, true)
+            ]);
             await select.Select();
-
             while (select.MoveNext())
                 if (select.Current != null)
                 {
@@ -97,7 +90,7 @@ class СкладськіКомірки_Папки_Triggers
         //Вкладені папки помічаються на видалення
         {
             СкладськіКомірки_Папки_Select select = new();
-            select.QuerySelect.Where.Add(new Where(СкладськіКомірки_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
+            select.QuerySelect.Where.Add(new(СкладськіКомірки_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
             await select.Select();
 
             while (select.MoveNext())

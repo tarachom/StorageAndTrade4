@@ -32,8 +32,6 @@ using AccountingSoftware;
 using GeneratedCode;
 using StorageAndTrade.РегістриНакопичення;
 
-using ТабличніСписки = GeneratedCode.РегістриНакопичення.ТабличніСписки;
-
 namespace StorageAndTrade;
 
 /// <summary>
@@ -72,7 +70,7 @@ class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.CommonForms_D
                         page.SetHeight(300);
                         await page.SetValue();
 
-                        ДодатиБлокНаФорму("Товари на складах", page);
+                        AddBlockToForm("Товари на складах", page);
                         break;
                     }
                 case "ПартіїТоварів":
@@ -81,7 +79,7 @@ class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.CommonForms_D
                         page.SetHeight(300);
                         await page.SetValue();
 
-                        ДодатиБлокНаФорму("Партії товарів", page);
+                        AddBlockToForm("Партії товарів", page);
                         break;
                     }
                 case "ЗамовленняКлієнтів":
@@ -90,7 +88,7 @@ class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.CommonForms_D
                         page.SetHeight(300);
                         await page.SetValue();
 
-                        ДодатиБлокНаФорму("Замовлення клієнтів", page);
+                        AddBlockToForm("Замовлення клієнтів", page);
                         break;
                     }
                 case "РозрахункиЗКлієнтами":
@@ -99,7 +97,7 @@ class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.CommonForms_D
                         page.SetHeight(300);
                         await page.SetValue();
 
-                        ДодатиБлокНаФорму("Розрахунки з клієнтами", page);
+                        AddBlockToForm("Розрахунки з клієнтами", page);
                         break;
                     }
                 case "ВільніЗалишки":
@@ -108,7 +106,7 @@ class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.CommonForms_D
                         page.SetHeight(300);
                         await page.SetValue();
 
-                        ДодатиБлокНаФорму("Вільні залишки", page);
+                        AddBlockToForm("Вільні залишки", page);
                         break;
                     }
                 case "ЗамовленняПостачальникам":
@@ -117,7 +115,7 @@ class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.CommonForms_D
                         page.SetHeight(300);
                         await page.SetValue();
 
-                        ДодатиБлокНаФорму("Замовлення постачальникам", page);
+                        AddBlockToForm("Замовлення постачальникам", page);
                         break;
                     }
                 case "РозрахункиЗПостачальниками":
@@ -126,7 +124,7 @@ class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.CommonForms_D
                         page.SetHeight(300);
                         await page.SetValue();
 
-                        ДодатиБлокНаФорму("Розрахунки з постачальниками", page);
+                        AddBlockToForm("Розрахунки з постачальниками", page);
                         break;
                     }
                 case "РухКоштів":
@@ -135,7 +133,7 @@ class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.CommonForms_D
                         page.SetHeight(300);
                         await page.SetValue();
 
-                        ДодатиБлокНаФорму("Рух коштів", page);
+                        AddBlockToForm("Рух коштів", page);
                         break;
                     }
                 case "РухКоштівККМ":
@@ -144,7 +142,7 @@ class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.CommonForms_D
                         page.SetHeight(300);
                         await page.SetValue();
 
-                        ДодатиБлокНаФорму("Рух коштів ККМ", page);
+                        AddBlockToForm("Рух коштів ККМ", page);
                         break;
                     }
                 case "Закупівлі":
@@ -153,7 +151,7 @@ class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.CommonForms_D
                         page.SetHeight(300);
                         await page.SetValue();
 
-                        ДодатиБлокНаФорму("Закупівлі", page);
+                        AddBlockToForm("Закупівлі", page);
                         break;
                     }
                 case "Продажі":
@@ -162,7 +160,7 @@ class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.CommonForms_D
                         page.SetHeight(300);
                         await page.SetValue();
 
-                        ДодатиБлокНаФорму("Продажі", page);
+                        AddBlockToForm("Продажі", page);
                         break;
                     }
                 case "ТовариВКомірках":
@@ -171,7 +169,7 @@ class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.CommonForms_D
                         page.SetHeight(300);
                         await page.SetValue();
 
-                        ДодатиБлокНаФорму("Товари в комірках", page);
+                        AddBlockToForm("Товари в комірках", page);
                         break;
                     }
             }

@@ -41,32 +41,24 @@ class Склади_Папки_Triggers
             //Елементи помічаються на видалення
             {
                 Склади_Select select = new();
-                select.QuerySelect.Where.Add(new Where(Склади_Const.Папка, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
-                select.QuerySelect.Where.Add(new Where(Склади_Const.DELETION_LABEL, Comparison.NOT, true));
+                select.QuerySelect.Where.AddRange([
+                    new(Склади_Const.Папка, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid),
+                    new(Склади_Const.DELETION_LABEL, Comparison.NOT, true)
+                ]);
                 await select.Select();
-
                 while (select.MoveNext())
                     if (select.Current != null)
-                    {
-                        Склади_Objest? Обєкт = await select.Current.GetDirectoryObject();
-                        if (Обєкт != null)
-                            await Обєкт.SetDeletionLabel();
-                    }
+                        await select.Current.SetDeletionLabel();
             }
 
             //Вкладені папки помічаються на видалення
             {
                 Склади_Папки_Select select = new();
-                select.QuerySelect.Where.Add(new Where(Склади_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
+                select.QuerySelect.Where.Add(new(Склади_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
                 await select.Select();
-
                 while (select.MoveNext())
                     if (select.Current != null)
-                    {
-                        Склади_Папки_Objest? Обєкт = await select.Current.GetDirectoryObject();
-                        if (Обєкт != null)
-                            await Обєкт.SetDeletionLabel();
-                    }
+                        await select.Current.SetDeletionLabel();
             }
         }
     }
@@ -76,7 +68,7 @@ class Склади_Папки_Triggers
         //Елементи переносяться на верхній рівень
         {
             Склади_Select select = new();
-            select.QuerySelect.Where.Add(new Where(Склади_Const.Папка, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
+            select.QuerySelect.Where.Add(new(Склади_Const.Папка, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
             await select.Select();
 
             while (select.MoveNext())
@@ -98,7 +90,7 @@ class Склади_Папки_Triggers
         //Вкладені папки видяляються. Для кожної папки буде викликана функція BeforeDelete
         {
             Склади_Папки_Select select = new();
-            select.QuerySelect.Where.Add(new Where(Склади_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
+            select.QuerySelect.Where.Add(new(Склади_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
             await select.Select();
 
             while (select.MoveNext())

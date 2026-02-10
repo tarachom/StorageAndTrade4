@@ -40,17 +40,14 @@ class Контрагенти_Triggers
         if (label)
         {
             ДоговориКонтрагентів_Select select = new();
-            select.QuerySelect.Where.Add(new Where(ДоговориКонтрагентів_Const.Контрагент, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
-            select.QuerySelect.Where.Add(new Where(ДоговориКонтрагентів_Const.DELETION_LABEL, Comparison.NOT, true));
+            select.QuerySelect.Where.AddRange([
+                new(ДоговориКонтрагентів_Const.Контрагент, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid),
+                new(ДоговориКонтрагентів_Const.DELETION_LABEL, Comparison.NOT, true)
+            ]);
             await select.Select();
-
             while (select.MoveNext())
                 if (select.Current != null)
-                {
-                    ДоговориКонтрагентів_Objest? Обєкт = await select.Current.GetDirectoryObject();
-                    if (Обєкт != null)
-                        await Обєкт.SetDeletionLabel();
-                }
+                    await select.Current.SetDeletionLabel();
         }
     }
 
