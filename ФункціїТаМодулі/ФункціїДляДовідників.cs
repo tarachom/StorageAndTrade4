@@ -5,9 +5,8 @@
 */
 
 using AccountingSoftware;
-
-using Довідники = GeneratedCode.Довідники;
-using Перелічення = GeneratedCode.Перелічення;
+using GeneratedCode.Довідники;
+using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
@@ -20,46 +19,39 @@ static class ФункціїДляДовідників
     /// Функція створює договори для контрагента
     /// </summary>
     /// <param name="Контрагент">Контрагент</param>
-    public static async ValueTask СтворитиДоговориКонтрагента(Довідники.Контрагенти_Pointer Контрагент)
+    public static async ValueTask СтворитиДоговориКонтрагента(Контрагенти_Pointer контрагент)
     {
-        if (Контрагент.IsEmpty())
+        if (контрагент.IsEmpty())
             return;
 
-        Довідники.ДоговориКонтрагентів_Objest НовийДоговір = new()
+        await СтворитиДоговір(ТипДоговорів.ЗПокупцями, ГосподарськіОперації.ПоступленняОплатиВідКлієнта);
+        await СтворитиДоговір(ТипДоговорів.ЗПостачальниками, ГосподарськіОперації.ОплатаПостачальнику);
+
+        //Внутрішня функція
+        async ValueTask СтворитиДоговір(ТипДоговорів типДоговору, ГосподарськіОперації операція)
         {
-            Назва = "Основний договір",
-            Контрагент = Контрагент,
-            Статус = Перелічення.СтатусиДоговорівКонтрагентів.Діє,
-            Дата = DateTime.Now
-        };
+            ДоговориКонтрагентів_Select Вибірка = new();
 
-        Довідники.ДоговориКонтрагентів_Select ВибіркаДоговорівКонтрагента = new();
+            Вибірка.QuerySelect.Where.AddRange([
+                new(ДоговориКонтрагентів_Const.Контрагент, Comparison.EQ, контрагент.UnigueID.UGuid), //Відбір по контрагенту
+                new(ДоговориКонтрагентів_Const.ТипДоговору, Comparison.EQ, (int)типДоговору)          //Відбір по типу договору
+            ]);
 
-        //Відбір по контрагенту
-        ВибіркаДоговорівКонтрагента.QuerySelect.Where.Add(
-            new Where(Довідники.ДоговориКонтрагентів_Const.Контрагент, Comparison.EQ, Контрагент.UnigueID.UGuid));
+            if (!await Вибірка.Select())
+            {
+                ДоговориКонтрагентів_Objest Новий = new()
+                {
+                    Назва = "Основний договір",
+                    Контрагент = контрагент,
+                    Статус = СтатусиДоговорівКонтрагентів.Діє,
+                    Дата = DateTime.Now,
+                    ТипДоговору = типДоговору,
+                    ГосподарськаОперація = операція
+                };
 
-        //Відбір по типу договору
-        ВибіркаДоговорівКонтрагента.QuerySelect.Where.Add(
-            new Where(Довідники.ДоговориКонтрагентів_Const.ТипДоговору, Comparison.EQ, (int)Перелічення.ТипДоговорів.ЗПокупцями));
-
-        if (!await ВибіркаДоговорівКонтрагента.Select())
-        {
-            await НовийДоговір.New();
-            НовийДоговір.ТипДоговору = Перелічення.ТипДоговорів.ЗПокупцями;
-            НовийДоговір.ГосподарськаОперація = Перелічення.ГосподарськіОперації.ПоступленняОплатиВідКлієнта;
-            await НовийДоговір.Save();
-        }
-
-        //Відбір по типу договору
-        ВибіркаДоговорівКонтрагента.QuerySelect.Where[1].Value = (int)Перелічення.ТипДоговорів.ЗПостачальниками;
-
-        if (!await ВибіркаДоговорівКонтрагента.Select())
-        {
-            await НовийДоговір.New();
-            НовийДоговір.ТипДоговору = Перелічення.ТипДоговорів.ЗПостачальниками;
-            НовийДоговір.ГосподарськаОперація = Перелічення.ГосподарськіОперації.ОплатаПостачальнику;
-            await НовийДоговір.Save();
+                await Новий.New();
+                await Новий.Save();
+            }
         }
     }
 
@@ -67,24 +59,20 @@ static class ФункціїДляДовідників
     /// Функція повертає вказівник на серійний номер, або створює новий
     /// </summary>
     /// <returns>Вказівник на елемент довідника СеріїНоменклатури</returns>
-    public static async ValueTask<Довідники.СеріїНоменклатури_Pointer> ОтриматиВказівникНаСеріюНоменклатури(string СерійнийНомер)
+    public static async ValueTask<СеріїНоменклатури_Pointer?> ОтриматиВказівникНаСеріюНоменклатури(string номер)
     {
-        СерійнийНомер = СерійнийНомер.Trim();
+        номер = номер.Trim();
 
-        Довідники.СеріїНоменклатури_Select серіїНоменклатури_Select = new(); //!!!use Find
-        серіїНоменклатури_Select.QuerySelect.Where.Add(new Where(Довідники.СеріїНоменклатури_Const.Номер, Comparison.EQ, СерійнийНомер));
-
-        if (await серіїНоменклатури_Select.SelectSingle())
-            return серіїНоменклатури_Select.Current!;
+        СеріїНоменклатури_Pointer ЗнайденаСеріяНоменклатури = await new СеріїНоменклатури_Select().FindByField(СеріїНоменклатури_Const.Номер, номер);
+        if (!ЗнайденаСеріяНоменклатури.IsEmpty())
+            return ЗнайденаСеріяНоменклатури;
         else
         {
-            Довідники.СеріїНоменклатури_Objest серіїНоменклатури_Objest = new();
-            await серіїНоменклатури_Objest.New();
-            серіїНоменклатури_Objest.Номер = СерійнийНомер;
-            серіїНоменклатури_Objest.ДатаСтворення = DateTime.Now;
-            await серіїНоменклатури_Objest.Save();
+            СеріїНоменклатури_Objest НоваСеріяНоменклатури = new() { Номер = номер };
+            await НоваСеріяНоменклатури.New();
+            await НоваСеріяНоменклатури.Save();
 
-            return серіїНоменклатури_Objest.GetDirectoryPointer();
+            return НоваСеріяНоменклатури.GetDirectoryPointer();
         }
     }
 
@@ -93,19 +81,22 @@ static class ФункціїДляДовідників
     /// </summary>
     /// <param name="PathToFile">Шлях до файлу</param>
     /// <returns></returns>
-    public static async ValueTask<Довідники.Файли_Pointer> ЗавантажитиФайл(string PathToFile)
+    public static async ValueTask<Файли_Pointer> ЗавантажитиФайл(string pathToFile)
     {
-        FileInfo fileInfo = new(PathToFile);
+        FileInfo fileInfo = new(pathToFile);
 
-        Довідники.Файли_Objest файли_Objest = new();
-        await файли_Objest.New();
-        файли_Objest.НазваФайлу = fileInfo.Name;
-        файли_Objest.Назва = Path.GetFileNameWithoutExtension(PathToFile);
-        файли_Objest.Розмір = Math.Round((decimal)(fileInfo.Length / 1024)).ToString() + " KB";
-        файли_Objest.ДатаСтворення = DateTime.Now;
-        файли_Objest.БінарніДані = File.ReadAllBytes(PathToFile);
-        await файли_Objest.Save();
+        Файли_Objest Обєкт = new()
+        {
+            НазваФайлу = fileInfo.Name,
+            Назва = Path.GetFileNameWithoutExtension(pathToFile),
+            Розмір = Math.Round((decimal)(fileInfo.Length / 1024)).ToString() + " KB",
+            ДатаСтворення = DateTime.Now,
+            БінарніДані = File.ReadAllBytes(pathToFile)
+        };
 
-        return файли_Objest.GetDirectoryPointer();
+        await Обєкт.New();
+        await Обєкт.Save();
+
+        return Обєкт.GetDirectoryPointer();
     }
 }

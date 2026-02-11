@@ -44,5 +44,3 @@ class Program
         BasicApp.RunWithSynchronizationContext(null);
     }
 }
-
-//https://specifications.freedesktop.org/icon-naming/latest/

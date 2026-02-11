@@ -69,15 +69,17 @@ static class ФункціїНалаштуванняКористувача
             return ("", null, null);
     }
 
+    /// <summary>
+    /// Відбори
+    /// </summary>
+    /// <param name="Налаштування_TablePart">Таблична частина</param>
+    /// <param name="НазваЖурналу">Ключ</param>
     static void ЗаповнитиВідбір(Системні.НалаштуванняКористувача_ПеріодиЖурналів_TablePart Налаштування_TablePart, string НазваЖурналу)
     {
-        //Відбір по користувачу
-        Налаштування_TablePart.QuerySelect.Where.Add(
-            new Where(Системні.НалаштуванняКористувача_ПеріодиЖурналів_TablePart.Користувач, Comparison.EQ, Program.Користувач.UnigueID.UGuid));
-
-        //Відбір по журналу
-        Налаштування_TablePart.QuerySelect.Where.Add(
-            new Where(Системні.НалаштуванняКористувача_ПеріодиЖурналів_TablePart.Журнал, Comparison.EQ, НазваЖурналу));
+        Налаштування_TablePart.QuerySelect.Where.AddRange([
+            new(Системні.НалаштуванняКористувача_ПеріодиЖурналів_TablePart.Користувач, Comparison.EQ, Program.Користувач.UnigueID.UGuid), //Відбір по користувачу
+            new(Системні.НалаштуванняКористувача_ПеріодиЖурналів_TablePart.Журнал, Comparison.EQ, НазваЖурналу)                           //Відбір по журналу
+        ]);
     }
 
     /// <summary>
