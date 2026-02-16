@@ -77,7 +77,8 @@ public class ЗамовленняКлієнта_Список : DocumentFormJourn
 
     protected override void ReportSpendTheDocument(UnigueID[] unigueID)
     {
-
+        foreach (var uid in unigueID)
+            CommonForms_DocumentMovementThroughRegisters.Create(new ЗамовленняКлієнта_Pointer(uid));
     }
 
     protected override async ValueTask VersionsHistory(UnigueID[] unigueID)
@@ -87,4 +88,3 @@ public class ЗамовленняКлієнта_Список : DocumentFormJourn
 
     #endregion
 }
-    

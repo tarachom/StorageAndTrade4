@@ -312,7 +312,7 @@ class ЗамовленняКлієнта_Елемент : DocumentFormElement
 
     protected override void ReportSpendTheDocument(UnigueID unigueID)
     {
-        //СпільніФорми_РухДокументуПоРегістрах.СформуватиЗвіт(new ЗамовленняКлієнта_Pointer(unigueID));
+         CommonForms_DocumentMovementThroughRegisters.Create(new ЗамовленняКлієнта_Pointer(unigueID));
     }
 
     protected override async ValueTask InJournal(UnigueID unigueID)

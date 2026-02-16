@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 09.02.2026 19:52:42
+ * Дата конфігурації: 16.02.2026 15:15:44
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон Gtk4.xslt
@@ -5397,7 +5397,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         ImageTablePartCell? cell = (ImageTablePartCell?)expander.GetChild();
                         DirectoryHierarchicalRow? row = (DirectoryHierarchicalRow?)treeRow.Item;
                         if (cell != null && row != null && !row.UnigueID.IsEmpty()) 
-                            cell.SetImage((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTree.Delete : InterfaceGtk4.Icon.ForTree.Normal);
+                            cell.SetImage(row.IsFolder? 
+                                (row.DeletionLabel ? InterfaceGtk4.Icon.ForTree.Delete : InterfaceGtk4.Icon.ForTree.Normal) : 
+                                (row.DeletionLabel ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                     }
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -5562,6 +5564,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Сховати відкриту папку для вибору */
             if (form.OpenFolder != null)
                 Номенклатура_Папки_Select.QuerySelect.Where.Add(new("uid", Comparison.NOT, form.OpenFolder.UGuid));
+            
+            
 
             Dictionary<string, DirectoryHierarchicalRow> rows = [];
             List<DirectoryHierarchicalRow> topRows = [];
@@ -5588,6 +5592,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Назва", Fields[Номенклатура_Папки_Const.Назва].ToString() ?? "");
                     row.Fields.Add("Код", Fields[Номенклатура_Папки_Const.Код].ToString() ?? "");
                     
+                    row.IsFolder = Номенклатура_Папки_Select.IsFolder;
                     Довідники.Номенклатура_Папки_Pointer? parent = Номенклатура_Папки_Select.Parent;
                     if (Номенклатура_Папки_Select.Level == 1)
                         topRows.Add(row);
@@ -5632,7 +5637,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         ImageTablePartCell? cell = (ImageTablePartCell?)expander.GetChild();
                         DirectoryHierarchicalRow? row = (DirectoryHierarchicalRow?)treeRow.Item;
                         if (cell != null && row != null && !row.UnigueID.IsEmpty()) 
-                            cell.SetImage((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTree.Delete : InterfaceGtk4.Icon.ForTree.Normal);
+                            cell.SetImage(row.IsFolder? 
+                                (row.DeletionLabel ? InterfaceGtk4.Icon.ForTree.Delete : InterfaceGtk4.Icon.ForTree.Normal) : 
+                                (row.DeletionLabel ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                     }
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -5797,6 +5804,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Сховати відкриту папку для вибору */
             if (form.OpenFolder != null)
                 Номенклатура_Папки_Select.QuerySelect.Where.Add(new("uid", Comparison.NOT, form.OpenFolder.UGuid));
+            
+            
 
             Dictionary<string, DirectoryHierarchicalRow> rows = [];
             List<DirectoryHierarchicalRow> topRows = [];
@@ -5823,6 +5832,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Назва", Fields[Номенклатура_Папки_Const.Назва].ToString() ?? "");
                     row.Fields.Add("Код", Fields[Номенклатура_Папки_Const.Код].ToString() ?? "");
                     
+                    row.IsFolder = Номенклатура_Папки_Select.IsFolder;
                     Довідники.Номенклатура_Папки_Pointer? parent = Номенклатура_Папки_Select.Parent;
                     if (Номенклатура_Папки_Select.Level == 1)
                         topRows.Add(row);
@@ -5871,7 +5881,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         ImageTablePartCell? cell = (ImageTablePartCell?)expander.GetChild();
                         DirectoryHierarchicalRow? row = (DirectoryHierarchicalRow?)treeRow.Item;
                         if (cell != null && row != null && !row.UnigueID.IsEmpty()) 
-                            cell.SetImage((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTree.Delete : InterfaceGtk4.Icon.ForTree.Normal);
+                            cell.SetImage(row.IsFolder? 
+                                (row.DeletionLabel ? InterfaceGtk4.Icon.ForTree.Delete : InterfaceGtk4.Icon.ForTree.Normal) : 
+                                (row.DeletionLabel ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                     }
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -6036,6 +6048,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Сховати відкриту папку для вибору */
             if (form.OpenFolder != null)
                 Контрагенти_Папки_Select.QuerySelect.Where.Add(new("uid", Comparison.NOT, form.OpenFolder.UGuid));
+            
+            
 
             Dictionary<string, DirectoryHierarchicalRow> rows = [];
             List<DirectoryHierarchicalRow> topRows = [];
@@ -6062,6 +6076,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Назва", Fields[Контрагенти_Папки_Const.Назва].ToString() ?? "");
                     row.Fields.Add("Код", Fields[Контрагенти_Папки_Const.Код].ToString() ?? "");
                     
+                    row.IsFolder = Контрагенти_Папки_Select.IsFolder;
                     Довідники.Контрагенти_Папки_Pointer? parent = Контрагенти_Папки_Select.Parent;
                     if (Контрагенти_Папки_Select.Level == 1)
                         topRows.Add(row);
@@ -6110,7 +6125,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         ImageTablePartCell? cell = (ImageTablePartCell?)expander.GetChild();
                         DirectoryHierarchicalRow? row = (DirectoryHierarchicalRow?)treeRow.Item;
                         if (cell != null && row != null && !row.UnigueID.IsEmpty()) 
-                            cell.SetImage((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTree.Delete : InterfaceGtk4.Icon.ForTree.Normal);
+                            cell.SetImage(row.IsFolder? 
+                                (row.DeletionLabel ? InterfaceGtk4.Icon.ForTree.Delete : InterfaceGtk4.Icon.ForTree.Normal) : 
+                                (row.DeletionLabel ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                     }
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -6275,6 +6292,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Сховати відкриту папку для вибору */
             if (form.OpenFolder != null)
                 Склади_Папки_Select.QuerySelect.Where.Add(new("uid", Comparison.NOT, form.OpenFolder.UGuid));
+            
+            
 
             Dictionary<string, DirectoryHierarchicalRow> rows = [];
             List<DirectoryHierarchicalRow> topRows = [];
@@ -6301,6 +6320,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Назва", Fields[Склади_Папки_Const.Назва].ToString() ?? "");
                     row.Fields.Add("Код", Fields[Склади_Папки_Const.Код].ToString() ?? "");
                     
+                    row.IsFolder = Склади_Папки_Select.IsFolder;
                     Довідники.Склади_Папки_Pointer? parent = Склади_Папки_Select.Parent;
                     if (Склади_Папки_Select.Level == 1)
                         topRows.Add(row);
@@ -11215,7 +11235,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         ImageTablePartCell? cell = (ImageTablePartCell?)expander.GetChild();
                         DirectoryHierarchicalRow? row = (DirectoryHierarchicalRow?)treeRow.Item;
                         if (cell != null && row != null && !row.UnigueID.IsEmpty()) 
-                            cell.SetImage((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTree.Delete : InterfaceGtk4.Icon.ForTree.Normal);
+                            cell.SetImage(row.IsFolder? 
+                                (row.DeletionLabel ? InterfaceGtk4.Icon.ForTree.Delete : InterfaceGtk4.Icon.ForTree.Normal) : 
+                                (row.DeletionLabel ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
                     }
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
@@ -11418,6 +11440,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             /* Сховати відкриту папку для вибору */
             if (form.OpenFolder != null)
                 СкладськіКомірки_Папки_Select.QuerySelect.Where.Add(new("uid", Comparison.NOT, form.OpenFolder.UGuid));
+            
+            
 
             Dictionary<string, DirectoryHierarchicalRow> rows = [];
             List<DirectoryHierarchicalRow> topRows = [];
@@ -11446,6 +11470,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Код", Fields[СкладськіКомірки_Папки_Const.Код].ToString() ?? "");
                     row.Fields.Add("Власник", Fields["Власник"].ToString() ?? "");
                     
+                    row.IsFolder = СкладськіКомірки_Папки_Select.IsFolder;
                     Довідники.СкладськіКомірки_Папки_Pointer? parent = СкладськіКомірки_Папки_Select.Parent;
                     if (СкладськіКомірки_Папки_Select.Level == 1)
                         topRows.Add(row);

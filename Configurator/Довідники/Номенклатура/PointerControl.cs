@@ -49,6 +49,7 @@ public class Номенклатура_PointerControl : PointerControl
         {
             PopoverParent = popover,
             DirectoryPointerItem = Pointer.UnigueID,
+            OpenSelect = true,
             OpenFolder = OpenFolder,
             CallBack_OnSelectPointer = selectPointer =>
             {

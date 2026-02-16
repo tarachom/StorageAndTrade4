@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 09.02.2026 19:52:42
+ * Дата конфігурації: 16.02.2026 15:15:44
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон GeneratedCode.xslt
@@ -6602,16 +6602,18 @@ namespace GeneratedCode.Довідники
     
     public class Номенклатура_Папки_SelectHierarchical : DirectorySelectHierarchical
     {
-        public Номенклатура_Папки_SelectHierarchical() : base(Config.Kernel, "tab_a22", "col_j3") { }        
+        public Номенклатура_Папки_SelectHierarchical() : base(Config.Kernel, "tab_a22", "col_j3", "") { }        
         public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; return false; } }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPositionHierarchical.HasValue) { 
           Current = new Номенклатура_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.UnigueID, base.CurrentPointerPositionHierarchical.Value.Fields); 
           Parent = new Номенклатура_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.Parent); 
-          Level = base.CurrentPointerPositionHierarchical.Value.Level; return true; } else { Current = Parent = null; Level = 0; return false; } }
+          IsFolder = true;
+          Level = base.CurrentPointerPositionHierarchical.Value.Level; return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
         public Номенклатура_Папки_Pointer? Current { get; private set; }
         public Номенклатура_Папки_Pointer? Parent { get; private set; }
         public int Level { get; private set; } = 0;
+        public bool IsFolder { get; private set; }
     }
     
    
@@ -6820,16 +6822,18 @@ namespace GeneratedCode.Довідники
     
     public class Контрагенти_Папки_SelectHierarchical : DirectorySelectHierarchical
     {
-        public Контрагенти_Папки_SelectHierarchical() : base(Config.Kernel, "tab_a23", "col_j6") { }        
+        public Контрагенти_Папки_SelectHierarchical() : base(Config.Kernel, "tab_a23", "col_j6", "") { }        
         public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; return false; } }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPositionHierarchical.HasValue) { 
           Current = new Контрагенти_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.UnigueID, base.CurrentPointerPositionHierarchical.Value.Fields); 
           Parent = new Контрагенти_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.Parent); 
-          Level = base.CurrentPointerPositionHierarchical.Value.Level; return true; } else { Current = Parent = null; Level = 0; return false; } }
+          IsFolder = true;
+          Level = base.CurrentPointerPositionHierarchical.Value.Level; return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
         public Контрагенти_Папки_Pointer? Current { get; private set; }
         public Контрагенти_Папки_Pointer? Parent { get; private set; }
         public int Level { get; private set; } = 0;
+        public bool IsFolder { get; private set; }
     }
     
    
@@ -7038,16 +7042,18 @@ namespace GeneratedCode.Довідники
     
     public class Склади_Папки_SelectHierarchical : DirectorySelectHierarchical
     {
-        public Склади_Папки_SelectHierarchical() : base(Config.Kernel, "tab_a24", "col_a1") { }        
+        public Склади_Папки_SelectHierarchical() : base(Config.Kernel, "tab_a24", "col_a1", "") { }        
         public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; return false; } }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPositionHierarchical.HasValue) { 
           Current = new Склади_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.UnigueID, base.CurrentPointerPositionHierarchical.Value.Fields); 
           Parent = new Склади_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.Parent); 
-          Level = base.CurrentPointerPositionHierarchical.Value.Level; return true; } else { Current = Parent = null; Level = 0; return false; } }
+          IsFolder = true;
+          Level = base.CurrentPointerPositionHierarchical.Value.Level; return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
         public Склади_Папки_Pointer? Current { get; private set; }
         public Склади_Папки_Pointer? Parent { get; private set; }
         public int Level { get; private set; } = 0;
+        public bool IsFolder { get; private set; }
     }
     
    
@@ -10299,16 +10305,18 @@ namespace GeneratedCode.Довідники
     
     public class СкладськіКомірки_Папки_SelectHierarchical : DirectorySelectHierarchical
     {
-        public СкладськіКомірки_Папки_SelectHierarchical() : base(Config.Kernel, "tab_a76", "col_j3") { }        
+        public СкладськіКомірки_Папки_SelectHierarchical() : base(Config.Kernel, "tab_a76", "col_j3", "") { }        
         public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; return false; } }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPositionHierarchical.HasValue) { 
           Current = new СкладськіКомірки_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.UnigueID, base.CurrentPointerPositionHierarchical.Value.Fields); 
           Parent = new СкладськіКомірки_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.Parent); 
-          Level = base.CurrentPointerPositionHierarchical.Value.Level; return true; } else { Current = Parent = null; Level = 0; return false; } }
+          IsFolder = true;
+          Level = base.CurrentPointerPositionHierarchical.Value.Level; return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
         public СкладськіКомірки_Папки_Pointer? Current { get; private set; }
         public СкладськіКомірки_Папки_Pointer? Parent { get; private set; }
         public int Level { get; private set; } = 0;
+        public bool IsFolder { get; private set; }
     }
     
    

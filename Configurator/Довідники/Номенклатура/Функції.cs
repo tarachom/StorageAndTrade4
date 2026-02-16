@@ -60,11 +60,13 @@ static class Номенклатура_Функції
         await page.SetValue();
     }
 
-    public static async ValueTask OpenPageList(UnigueID? unigueID = null, 
+    public static async ValueTask OpenPageList(UnigueID? unigueID = null, bool openSelect = false, UnigueID? openFolder = null,
         Action<UnigueID>? сallBack_OnSelectPointer = null)
     {
         Номенклатура_Список page = new()
         {
+            OpenSelect = openSelect,
+            OpenFolder = openFolder,
             DirectoryPointerItem = unigueID,
             CallBack_OnSelectPointer = сallBack_OnSelectPointer
         };

@@ -15,20 +15,20 @@ namespace StorageAndTrade;
 
 class Номенклатура_Елемент : DirectoryFormElement
 {
-    public Номенклатура_Objest Елемент { get; init; } = new Номенклатура_Objest();
+    public Номенклатура_Objest Елемент { get; init; } = new();
     
     #region Fields
     Entry Код = new() { WidthRequest = 100 };
-                    Entry Назва = new() { WidthRequest = 500 };
-                    Entry НазваПовна = new() { WidthRequest = 500 };
+                    Entry Назва = new() { WidthRequest = 300 };
+                    Entry НазваПовна = new() { WidthRequest = 300 };
                     TextView Опис = new TextView() { WrapMode = WrapMode.Word };
-                    Entry Артикул = new() { WidthRequest = 500 };
+                    Entry Артикул = new() { WidthRequest = 300 };
                     ComboBoxText ТипНоменклатури = new ComboBoxText();
-            Виробники_PointerControl Виробник = new() { Caption = "Виробник", WidthPresentation = 500 };
-            ВидиНоменклатури_PointerControl ВидНоменклатури = new() { Caption = "ВидНоменклатури", WidthPresentation = 500 };
-            ПакуванняОдиниціВиміру_PointerControl ОдиницяВиміру = new() { Caption = "ОдиницяВиміру", WidthPresentation = 500 };
-            Номенклатура_Папки_PointerControl Папка = new() { Caption = "Папка", WidthPresentation = 500 };
-            Файли_PointerControl ОсновнаКартинкаФайл = new() { Caption = "ОсновнаКартинкаФайл", WidthPresentation = 500 };
+            Виробники_PointerControl Виробник = new() { Caption = "Виробник", WidthPresentation = 300 };
+            ВидиНоменклатури_PointerControl ВидНоменклатури = new() { Caption = "ВидНоменклатури", WidthPresentation = 300 };
+            ПакуванняОдиниціВиміру_PointerControl ОдиницяВиміру = new() { Caption = "ОдиницяВиміру", WidthPresentation = 300 };
+            Номенклатура_Папки_PointerControl Папка = new() { Caption = "Папка", WidthPresentation = 300 };
+            Файли_PointerControl ОсновнаКартинкаФайл = new() { Caption = "ОсновнаКартинкаФайл", WidthPresentation = 300 };
             
     #endregion
 

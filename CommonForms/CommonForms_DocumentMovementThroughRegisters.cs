@@ -58,7 +58,7 @@ class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.CommonForms_D
 
     public async ValueTask Fill(DocumentPointer documentPointer)
     {
-        AddDocumentToForm(documentPointer);
+        AddDocument(documentPointer);
 
         foreach (string regAccumName in Config.Kernel.Conf.Documents[documentPointer.TypeDocument].AllowRegisterAccumulation)
         {
@@ -66,110 +66,159 @@ class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.CommonForms_D
             {
                 case "ТовариНаСкладах":
                     {
-                        ТовариНаСкладах_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
-                        page.SetHeight(300);
-                        await page.SetValue();
+                        async ValueTask<Widget> getForm(bool small = true)
+                        {
+                            ТовариНаСкладах_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
+                            if (small) page.SetHeight(300);
+                            await page.SetValue();
+                            return page;
+                        }
 
-                        AddBlockToForm("Товари на складах", page);
+                        await AddForm("Товари на складах", getForm);
                         break;
                     }
                 case "ПартіїТоварів":
                     {
-                        ПартіїТоварів_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
-                        page.SetHeight(300);
-                        await page.SetValue();
+                        async ValueTask<Widget> getForm(bool small = true)
+                        {
+                            ПартіїТоварів_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
+                            if (small) page.SetHeight(300);
+                            await page.SetValue();
+                            return page;
+                        }
 
-                        AddBlockToForm("Партії товарів", page);
+                        await AddForm("Партії товарів", getForm);
                         break;
                     }
                 case "ЗамовленняКлієнтів":
                     {
-                        ЗамовленняКлієнтів_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
-                        page.SetHeight(300);
-                        await page.SetValue();
+                        async ValueTask<Widget> getForm(bool small = true)
+                        {
+                            ЗамовленняКлієнтів_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
+                            if (small) page.SetHeight(300);
+                            await page.SetValue();
+                            return page;
+                        }
 
-                        AddBlockToForm("Замовлення клієнтів", page);
+                        await AddForm("Замовлення клієнтів", getForm);
                         break;
                     }
                 case "РозрахункиЗКлієнтами":
                     {
-                        РозрахункиЗКлієнтами_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
-                        page.SetHeight(300);
-                        await page.SetValue();
+                        async ValueTask<Widget> getForm(bool small = true)
+                        {
+                            РозрахункиЗКлієнтами_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
+                            if (small) page.SetHeight(300);
+                            await page.SetValue();
+                            return page;
+                        }
 
-                        AddBlockToForm("Розрахунки з клієнтами", page);
+                        await AddForm("Розрахунки з клієнтами", getForm);
                         break;
                     }
                 case "ВільніЗалишки":
                     {
-                        ВільніЗалишки_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
-                        page.SetHeight(300);
-                        await page.SetValue();
+                        async ValueTask<Widget> getForm(bool small = true)
+                        {
+                            ВільніЗалишки_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
+                            if (small) page.SetHeight(300);
+                            await page.SetValue();
+                            return page;
+                        }
 
-                        AddBlockToForm("Вільні залишки", page);
+                        await AddForm("Вільні залишки", getForm);
                         break;
                     }
                 case "ЗамовленняПостачальникам":
                     {
-                        ЗамовленняПостачальникам_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
-                        page.SetHeight(300);
-                        await page.SetValue();
+                        async ValueTask<Widget> getForm(bool small = true)
+                        {
+                            ЗамовленняПостачальникам_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
+                            if (small) page.SetHeight(300);
+                            await page.SetValue();
+                            return page;
+                        }
 
-                        AddBlockToForm("Замовлення постачальникам", page);
+                        await AddForm("Замовлення постачальникам", getForm);
                         break;
                     }
                 case "РозрахункиЗПостачальниками":
                     {
-                        РозрахункиЗПостачальниками_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
-                        page.SetHeight(300);
-                        await page.SetValue();
+                        async ValueTask<Widget> getForm(bool small = true)
+                        {
+                            РозрахункиЗПостачальниками_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
+                            if (small) page.SetHeight(300);
+                            await page.SetValue();
+                            return page;
+                        }
 
-                        AddBlockToForm("Розрахунки з постачальниками", page);
+                        await AddForm("Розрахунки з постачальниками", getForm);
                         break;
                     }
                 case "РухКоштів":
                     {
-                        РухКоштів_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
-                        page.SetHeight(300);
-                        await page.SetValue();
+                        async ValueTask<Widget> getForm(bool small = true)
+                        {
+                            РухКоштів_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
+                            if (small) page.SetHeight(300);
+                            await page.SetValue();
+                            return page;
+                        }
 
-                        AddBlockToForm("Рух коштів", page);
+                        await AddForm("Рух коштів", getForm);
                         break;
                     }
                 case "РухКоштівККМ":
                     {
-                        РухКоштівККМ_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
-                        page.SetHeight(300);
-                        await page.SetValue();
+                        async ValueTask<Widget> getForm(bool small = true)
+                        {
+                            РухКоштівККМ_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
+                            if (small) page.SetHeight(300);
+                            await page.SetValue();
+                            return page;
+                        }
 
-                        AddBlockToForm("Рух коштів ККМ", page);
+                        await AddForm("Рух коштів ККМ", getForm);
                         break;
                     }
                 case "Закупівлі":
                     {
-                        Закупівлі_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
-                        page.SetHeight(300);
-                        await page.SetValue();
+                        async ValueTask<Widget> getForm(bool small = true)
+                        {
+                            Закупівлі_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
+                            if (small) page.SetHeight(300);
+                            await page.SetValue();
+                            return page;
+                        }
 
-                        AddBlockToForm("Закупівлі", page);
+                        await AddForm("Закупівлі", getForm);
                         break;
                     }
                 case "Продажі":
                     {
-                        Продажі_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
-                        page.SetHeight(300);
-                        await page.SetValue();
+                        async ValueTask<Widget> getForm(bool small = true)
+                        {
+                            Продажі_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
+                            if (small) page.SetHeight(300);
+                            await page.SetValue();
+                            return page;
+                        }
 
-                        AddBlockToForm("Продажі", page);
+                        await AddForm("Продажі", getForm);
                         break;
                     }
                 case "ТовариВКомірках":
                     {
-                        ТовариВКомірках_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
-                        page.SetHeight(300);
-                        await page.SetValue();
+                        async ValueTask<Widget> getForm(bool small = true)
+                        {
+                            ТовариВКомірках_СписокМіні page = new() { WhereList = [new("owner", Comparison.EQ, documentPointer.UnigueID.UGuid)] };
+                            if (small) page.SetHeight(300);
+                            await page.SetValue();
 
-                        AddBlockToForm("Товари в комірках", page);
+                            return page;
+                        }
+
+                        await AddForm("Товари в комірках", getForm);
                         break;
                     }
             }

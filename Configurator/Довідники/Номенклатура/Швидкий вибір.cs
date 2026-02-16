@@ -50,7 +50,7 @@ class Номенклатура_ШвидкийВибір : DirectoryFormJournalSm
 
     protected override async ValueTask OpenPageList(UnigueID? unigueID = null)
     {
-        await Функції.OpenPageList(unigueID, CallBack_OnSelectPointer);
+        await Функції.OpenPageList(unigueID, OpenSelect, OpenFolder, CallBack_OnSelectPointer);
     }
 
     protected override async ValueTask OpenPageElement(bool IsNew, UnigueID? unigueID = null)
