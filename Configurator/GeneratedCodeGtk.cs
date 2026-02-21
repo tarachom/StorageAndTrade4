@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 16.02.2026 15:15:44
+ * Дата конфігурації: 21.02.2026 20:02:02
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон Gtk4.xslt
@@ -5457,6 +5457,31 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 form.Grid.AppendColumn(column);
             }
         
+            //Назва: Родич, "Родич"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    TreeListRow? treeRow = (TreeListRow?)listItem.GetItem();
+                    if (treeRow != null)
+                    {
+                        LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                        DirectoryHierarchicalRow? row = (DirectoryHierarchicalRow?)treeRow.Item;
+                        if (cell != null && row != null)
+                            cell.SetText(row.Fields["Родич"]);
+                    }
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Родич", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
             { /* Пуста колонка для заповнення вільного простору */
                 ColumnViewColumn column = ColumnViewColumn.New(null, null);
                 column.Resizable = true;
@@ -5469,6 +5494,28 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         public static void CreateFilter(DirectoryFormJournalBase form)
         {
             
+            List<FilterControl.FilterListItem> filterList = [];
+            
+            { /* Родич, pointer */
+                Switch sw = Switch.New();
+                Номенклатура_Папки_PointerControl Родич = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Родич.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(Номенклатура_Папки_Const.Родич, get, sw));
+                form.Filter.Append("Родич:", Родич, sw);
+            }
+            
+            form.Filter.GetWhere = () =>
+            {
+                List<Where> where = [];
+                foreach (var filter in filterList)
+                    if (filter.IsOn.Active)
+                        where.Add(new Where(filter.Field, Comparison.EQ, filter.GetValueFunc.Invoke()));
+
+                form.WhereList = where;
+                return where.Count != 0;
+            };
+        
         }
 
         public static async ValueTask UpdateRecords(DirectoryFormJournalBase form)
@@ -5494,6 +5541,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     Номенклатура_Папки_Select.QuerySelect.Order.Add(
                     Довідники.Номенклатура_Папки_Const.Назва, SelectOrder.ASC);
                 
+                    /* Приєднання */
+                    Довідники.Номенклатура_Папки_Pointer.GetJoin(Номенклатура_Папки_Select.QuerySelect, Довідники.Номенклатура_Папки_Const.Родич,
+                    Номенклатура_Папки_Select.QuerySelect.Table, "join_tab_1", "Родич");
+                
 
             /* Відбори */
             Номенклатура_Папки_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -5509,6 +5560,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     DirectoryHierarchicalRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
                     row.Fields.Add("Назва", Fields[Номенклатура_Папки_Const.Назва].ToString() ?? "");
                     row.Fields.Add("Код", Fields[Номенклатура_Папки_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Родич", Fields["Родич"].ToString() ?? "");
                     
                     ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
                     if (objCh != null)
@@ -5552,6 +5604,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     Номенклатура_Папки_Select.QuerySelect.Order.Add(
                     Довідники.Номенклатура_Папки_Const.Назва, SelectOrder.ASC);
                 
+                    /* Приєднання */
+                    Довідники.Номенклатура_Папки_Pointer.GetJoin(Номенклатура_Папки_Select.QuerySelect, Довідники.Номенклатура_Папки_Const.Родич,
+                    Номенклатура_Папки_Select.QuerySelect.Table, "join_tab_1", "Родич");
+                
 
             /* Відбори */
             if (form.WhereList != null) Номенклатура_Папки_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -5565,7 +5621,11 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             if (form.OpenFolder != null)
                 Номенклатура_Папки_Select.QuerySelect.Where.Add(new("uid", Comparison.NOT, form.OpenFolder.UGuid));
             
-            
+                
+
+            /* Для пошуку і фільтру застосувати плоский список */
+            if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Search || form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter)
+                Номенклатура_Папки_Select.QuerySelect.FlatList = true;
 
             Dictionary<string, DirectoryHierarchicalRow> rows = [];
             List<DirectoryHierarchicalRow> topRows = [];
@@ -5576,9 +5636,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 DirectoryHierarchicalRow emptyFirstRow = new();
                 emptyFirstRow.Fields.Add("Назва", "-");
                 emptyFirstRow.Fields.Add("Код", "");
+                emptyFirstRow.Fields.Add("Родич", "");
                 
                 topRows.Add(emptyFirstRow);
-            }
+            }            
                 
             await Номенклатура_Папки_Select.Select();
             form.Store.RemoveAll();
@@ -5591,6 +5652,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     DirectoryHierarchicalRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
                     row.Fields.Add("Назва", Fields[Номенклатура_Папки_Const.Назва].ToString() ?? "");
                     row.Fields.Add("Код", Fields[Номенклатура_Папки_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Родич", Fields["Родич"].ToString() ?? "");
                     
                     row.IsFolder = Номенклатура_Папки_Select.IsFolder;
                     Довідники.Номенклатура_Папки_Pointer? parent = Номенклатура_Папки_Select.Parent;
@@ -5598,7 +5660,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         topRows.Add(row);
                     else if (parent != null && rows.TryGetValue(parent.UnigueID.ToString(), out DirectoryHierarchicalRow? parentRow))
                         parentRow.Sub.Add(row);
-                    if (!rows.ContainsKey(curr.UnigueID.ToString())) rows.Add(curr.UnigueID.ToString(), row);
+                    if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart && !rows.ContainsKey(curr.UnigueID.ToString()))
+                        rows.Add(curr.UnigueID.ToString(), row);
                         
                 }
             }
@@ -5697,6 +5760,31 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 form.Grid.AppendColumn(column);
             }
         
+            //Назва: Родич, "Родич"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    TreeListRow? treeRow = (TreeListRow?)listItem.GetItem();
+                    if (treeRow != null)
+                    {
+                        LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                        DirectoryHierarchicalRow? row = (DirectoryHierarchicalRow?)treeRow.Item;
+                        if (cell != null && row != null)
+                            cell.SetText(row.Fields["Родич"]);
+                    }
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Родич", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
             { /* Пуста колонка для заповнення вільного простору */
                 ColumnViewColumn column = ColumnViewColumn.New(null, null);
                 column.Resizable = true;
@@ -5709,6 +5797,28 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         public static void CreateFilter(DirectoryFormJournalBase form)
         {
             
+            List<FilterControl.FilterListItem> filterList = [];
+            
+            { /* Родич, pointer */
+                Switch sw = Switch.New();
+                Номенклатура_Папки_PointerControl Родич = new() { Caption = "", AfterSelectFunc = () => sw.Active = true };
+                        object get() => Родич.Pointer.UnigueID.UGuid;
+                    
+                filterList.Add(new(Номенклатура_Папки_Const.Родич, get, sw));
+                form.Filter.Append("Родич:", Родич, sw);
+            }
+            
+            form.Filter.GetWhere = () =>
+            {
+                List<Where> where = [];
+                foreach (var filter in filterList)
+                    if (filter.IsOn.Active)
+                        where.Add(new Where(filter.Field, Comparison.EQ, filter.GetValueFunc.Invoke()));
+
+                form.WhereList = where;
+                return where.Count != 0;
+            };
+        
         }
 
         public static async ValueTask UpdateRecords(DirectoryFormJournalBase form)
@@ -5734,6 +5844,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     Номенклатура_Папки_Select.QuerySelect.Order.Add(
                     Довідники.Номенклатура_Папки_Const.Назва, SelectOrder.ASC);
                 
+                    /* Приєднання */
+                    Довідники.Номенклатура_Папки_Pointer.GetJoin(Номенклатура_Папки_Select.QuerySelect, Довідники.Номенклатура_Папки_Const.Родич,
+                    Номенклатура_Папки_Select.QuerySelect.Table, "join_tab_1", "Родич");
+                
 
             /* Відбори */
             Номенклатура_Папки_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -5749,6 +5863,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     DirectoryHierarchicalRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
                     row.Fields.Add("Назва", Fields[Номенклатура_Папки_Const.Назва].ToString() ?? "");
                     row.Fields.Add("Код", Fields[Номенклатура_Папки_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Родич", Fields["Родич"].ToString() ?? "");
                     
                     ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UnigueID.UGuid));
                     if (objCh != null)
@@ -5792,6 +5907,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     Номенклатура_Папки_Select.QuerySelect.Order.Add(
                     Довідники.Номенклатура_Папки_Const.Назва, SelectOrder.ASC);
                 
+                    /* Приєднання */
+                    Довідники.Номенклатура_Папки_Pointer.GetJoin(Номенклатура_Папки_Select.QuerySelect, Довідники.Номенклатура_Папки_Const.Родич,
+                    Номенклатура_Папки_Select.QuerySelect.Table, "join_tab_1", "Родич");
+                
 
             /* Відбори */
             if (form.WhereList != null) Номенклатура_Папки_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -5805,7 +5924,11 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             if (form.OpenFolder != null)
                 Номенклатура_Папки_Select.QuerySelect.Where.Add(new("uid", Comparison.NOT, form.OpenFolder.UGuid));
             
-            
+                
+
+            /* Для пошуку і фільтру застосувати плоский список */
+            if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Search || form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter)
+                Номенклатура_Папки_Select.QuerySelect.FlatList = true;
 
             Dictionary<string, DirectoryHierarchicalRow> rows = [];
             List<DirectoryHierarchicalRow> topRows = [];
@@ -5816,9 +5939,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 DirectoryHierarchicalRow emptyFirstRow = new();
                 emptyFirstRow.Fields.Add("Назва", "-");
                 emptyFirstRow.Fields.Add("Код", "");
+                emptyFirstRow.Fields.Add("Родич", "");
                 
                 topRows.Add(emptyFirstRow);
-            }
+            }            
                 
             await Номенклатура_Папки_Select.Select();
             form.Store.RemoveAll();
@@ -5831,6 +5955,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     DirectoryHierarchicalRow row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
                     row.Fields.Add("Назва", Fields[Номенклатура_Папки_Const.Назва].ToString() ?? "");
                     row.Fields.Add("Код", Fields[Номенклатура_Папки_Const.Код].ToString() ?? "");
+                    row.Fields.Add("Родич", Fields["Родич"].ToString() ?? "");
                     
                     row.IsFolder = Номенклатура_Папки_Select.IsFolder;
                     Довідники.Номенклатура_Папки_Pointer? parent = Номенклатура_Папки_Select.Parent;
@@ -5838,7 +5963,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         topRows.Add(row);
                     else if (parent != null && rows.TryGetValue(parent.UnigueID.ToString(), out DirectoryHierarchicalRow? parentRow))
                         parentRow.Sub.Add(row);
-                    if (!rows.ContainsKey(curr.UnigueID.ToString())) rows.Add(curr.UnigueID.ToString(), row);
+                    if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart && !rows.ContainsKey(curr.UnigueID.ToString()))
+                        rows.Add(curr.UnigueID.ToString(), row);
                         
                 }
             }
@@ -6049,7 +6175,11 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             if (form.OpenFolder != null)
                 Контрагенти_Папки_Select.QuerySelect.Where.Add(new("uid", Comparison.NOT, form.OpenFolder.UGuid));
             
-            
+                
+
+            /* Для пошуку і фільтру застосувати плоский список */
+            if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Search || form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter)
+                Контрагенти_Папки_Select.QuerySelect.FlatList = true;
 
             Dictionary<string, DirectoryHierarchicalRow> rows = [];
             List<DirectoryHierarchicalRow> topRows = [];
@@ -6062,7 +6192,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 emptyFirstRow.Fields.Add("Код", "");
                 
                 topRows.Add(emptyFirstRow);
-            }
+            }            
                 
             await Контрагенти_Папки_Select.Select();
             form.Store.RemoveAll();
@@ -6082,7 +6212,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         topRows.Add(row);
                     else if (parent != null && rows.TryGetValue(parent.UnigueID.ToString(), out DirectoryHierarchicalRow? parentRow))
                         parentRow.Sub.Add(row);
-                    if (!rows.ContainsKey(curr.UnigueID.ToString())) rows.Add(curr.UnigueID.ToString(), row);
+                    if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart && !rows.ContainsKey(curr.UnigueID.ToString()))
+                        rows.Add(curr.UnigueID.ToString(), row);
                         
                 }
             }
@@ -6293,7 +6424,11 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             if (form.OpenFolder != null)
                 Склади_Папки_Select.QuerySelect.Where.Add(new("uid", Comparison.NOT, form.OpenFolder.UGuid));
             
-            
+                
+
+            /* Для пошуку і фільтру застосувати плоский список */
+            if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Search || form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter)
+                Склади_Папки_Select.QuerySelect.FlatList = true;
 
             Dictionary<string, DirectoryHierarchicalRow> rows = [];
             List<DirectoryHierarchicalRow> topRows = [];
@@ -6306,7 +6441,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 emptyFirstRow.Fields.Add("Код", "");
                 
                 topRows.Add(emptyFirstRow);
-            }
+            }            
                 
             await Склади_Папки_Select.Select();
             form.Store.RemoveAll();
@@ -6326,7 +6461,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         topRows.Add(row);
                     else if (parent != null && rows.TryGetValue(parent.UnigueID.ToString(), out DirectoryHierarchicalRow? parentRow))
                         parentRow.Sub.Add(row);
-                    if (!rows.ContainsKey(curr.UnigueID.ToString())) rows.Add(curr.UnigueID.ToString(), row);
+                    if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart && !rows.ContainsKey(curr.UnigueID.ToString()))
+                        rows.Add(curr.UnigueID.ToString(), row);
                         
                 }
             }
@@ -11441,7 +11577,11 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             if (form.OpenFolder != null)
                 СкладськіКомірки_Папки_Select.QuerySelect.Where.Add(new("uid", Comparison.NOT, form.OpenFolder.UGuid));
             
-            
+                
+
+            /* Для пошуку і фільтру застосувати плоский список */
+            if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Search || form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter)
+                СкладськіКомірки_Папки_Select.QuerySelect.FlatList = true;
 
             Dictionary<string, DirectoryHierarchicalRow> rows = [];
             List<DirectoryHierarchicalRow> topRows = [];
@@ -11455,7 +11595,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 emptyFirstRow.Fields.Add("Власник", "");
                 
                 topRows.Add(emptyFirstRow);
-            }
+            }            
                 
             await СкладськіКомірки_Папки_Select.Select();
             form.Store.RemoveAll();
@@ -11476,7 +11616,8 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         topRows.Add(row);
                     else if (parent != null && rows.TryGetValue(parent.UnigueID.ToString(), out DirectoryHierarchicalRow? parentRow))
                         parentRow.Sub.Add(row);
-                    if (!rows.ContainsKey(curr.UnigueID.ToString())) rows.Add(curr.UnigueID.ToString(), row);
+                    if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart && !rows.ContainsKey(curr.UnigueID.ToString()))
+                        rows.Add(curr.UnigueID.ToString(), row);
                         
                 }
             }

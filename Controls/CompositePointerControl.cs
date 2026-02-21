@@ -13,7 +13,7 @@ namespace StorageAndTrade;
 
 class CompositePointerControl : InterfaceGtk4.CompositePointerControl
 {
-    public CompositePointerControl() : base(Config.Kernel, Config.NameSpageProgram, Config.NameSpageCodeGeneration, Program.BasicForm?.NotebookFunc) { }
+    public CompositePointerControl() : base(Config.Kernel, Config.NamespaceProgram, Config.NamespaceCodeGeneration, Program.BasicForm?.NotebookFunc) { }
 
     protected override async ValueTask<CompositePointerPresentation_Record> CompositePointerPresentation(UuidAndText uuidAndText) =>
         await Functions.CompositePointerPresentation(uuidAndText);
