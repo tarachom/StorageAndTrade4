@@ -48,7 +48,7 @@ public class КраїниСвіту_PointerControl : PointerControl
         КраїниСвіту_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = Pointer.UnigueID,
+            DirectoryPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new КраїниСвіту_Pointer(selectPointer);

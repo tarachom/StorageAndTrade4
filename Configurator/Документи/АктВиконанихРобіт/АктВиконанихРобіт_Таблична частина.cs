@@ -381,7 +381,7 @@ class АктВиконанихРобіт_ТабличнаЧастина_Посл
         {
             Store.Append(new ItemRow()
             {
-                UnigueID = new(record.UID),
+                UniqueID = new(record.UID),
                 НомерРядка = record.НомерРядка,
                 Номенклатура = record.Номенклатура,
                 ХарактеристикаНоменклатури = record.ХарактеристикаНоменклатури,
@@ -413,7 +413,7 @@ class АктВиконанихРобіт_ТабличнаЧастина_Посл
             {
                 ЕлементВласник.Послуги_TablePart.Records.Add(new()
                 {
-                    UID = row.UnigueID.UGuid,
+                    UID = row.UniqueID.UGuid,
                     НомерРядка = row.НомерРядка,
                     Номенклатура = row.Номенклатура,
                     ХарактеристикаНоменклатури = row.ХарактеристикаНоменклатури,
@@ -433,7 +433,7 @@ class АктВиконанихРобіт_ТабличнаЧастина_Посл
                 bool sel = Grid.Model.IsSelected(position);
                 Store.Splice(position, 1, [new ItemRow()
                 {
-                    UnigueID = new(record.UID),
+                    UniqueID = new(record.UID),
                     НомерРядка = record.НомерРядка,
                     Номенклатура = record.Номенклатура,
                     ХарактеристикаНоменклатури = record.ХарактеристикаНоменклатури,

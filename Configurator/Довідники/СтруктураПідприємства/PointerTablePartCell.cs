@@ -26,9 +26,9 @@ public class СтруктураПідприємства_PointerTablePartCell : P
 
     public async ValueTask GetPresentation() => Presentation = pointer != null ? await pointer.GetPresentation() : "";
 
-    async ValueTask PointerChange(UnigueID? p)
+    async ValueTask PointerChange(UniqueID? p)
     {
-        Pointer = new СтруктураПідприємства_Pointer(p ?? new UnigueID());
+        Pointer = new СтруктураПідприємства_Pointer(p ?? new UniqueID());
         await GetPresentation();
         OnSelect?.Invoke();
     }
@@ -45,7 +45,7 @@ public class СтруктураПідприємства_PointerTablePartCell : P
         СтруктураПідприємства_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = pointer.UnigueID,
+            DirectoryPointerItem = pointer.UniqueID,
             CallBack_OnSelectPointer = async p => await PointerChange(p)
         };
         

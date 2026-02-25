@@ -38,10 +38,10 @@ class Номенклатура_Список : DirectoryFormJournalFull
             HPanedTable.Position = 1200;
             HPanedTable.StartChild?.MarginEnd = 5;
 
-            Папки.CallBack_Activate = async unigueID =>
+            Папки.CallBack_Activate = async uniqueID =>
             {
                 //Відбір по полю Папка
-                ParentWhereList = [new(Номенклатура_Const.Папка, Comparison.EQ, unigueID.UGuid)];
+                ParentWhereList = [new(Номенклатура_Const.Папка, Comparison.EQ, uniqueID.UGuid)];
                 if (!UseHierarchy.Active && TypeWhereState == TypeWhere.Standart)
                 {
                     PagesClear();
@@ -56,8 +56,8 @@ class Номенклатура_Список : DirectoryFormJournalFull
     {
         if (SelectPointerItem != null || DirectoryPointerItem != null)
         {
-            Номенклатура_Objest? Обєкт = await new Номенклатура_Pointer(SelectPointerItem ?? DirectoryPointerItem ?? new UnigueID()).GetDirectoryObject();
-            if (Обєкт != null) Папки.SelectPointerItem = Обєкт.Папка.UnigueID;
+            Номенклатура_Objest? Обєкт = await new Номенклатура_Pointer(SelectPointerItem ?? DirectoryPointerItem ?? new UniqueID()).GetDirectoryObject();
+            if (Обєкт != null) Папки.SelectPointerItem = Обєкт.Папка.UniqueID;
         }
 
         await Папки.SetValue();
@@ -83,19 +83,19 @@ class Номенклатура_Список : DirectoryFormJournalFull
         ТабличнийСписок.CreateFilter(this);
     }
 
-    protected override async ValueTask OpenPageElement(bool IsNew, UnigueID? unigueID = null)
+    protected override async ValueTask OpenPageElement(bool IsNew, UniqueID? uniqueID = null)
     {
-        await Функції.OpenPageElement(IsNew, unigueID, CallBack_LoadRecords, CallBack_OnSelectPointer);
+        await Функції.OpenPageElement(IsNew, uniqueID, CallBack_LoadRecords, CallBack_OnSelectPointer);
     }
 
-    protected override async ValueTask SetDeletionLabel(UnigueID unigueID)
+    protected override async ValueTask SetDeletionLabel(UniqueID uniqueID)
     {
-        await Функції.SetDeletionLabel(unigueID);
+        await Функції.SetDeletionLabel(uniqueID);
     }
 
-    protected override async ValueTask<UnigueID?> Copy(UnigueID unigueID)
+    protected override async ValueTask<UniqueID?> Copy(UniqueID uniqueID)
     {
-        return await Функції.Copy(unigueID);
+        return await Функції.Copy(uniqueID);
     }
 }
     

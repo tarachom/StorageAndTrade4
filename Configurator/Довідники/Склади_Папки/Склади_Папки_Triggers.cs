@@ -42,7 +42,7 @@ class Склади_Папки_Triggers
             {
                 Склади_Select select = new();
                 select.QuerySelect.Where.AddRange([
-                    new(Склади_Const.Папка, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid),
+                    new(Склади_Const.Папка, Comparison.EQ, ДовідникОбєкт.UniqueID.UGuid),
                     new(Склади_Const.DELETION_LABEL, Comparison.NOT, true)
                 ]);
                 await select.Select();
@@ -54,7 +54,7 @@ class Склади_Папки_Triggers
             //Вкладені папки помічаються на видалення
             {
                 Склади_Папки_Select select = new();
-                select.QuerySelect.Where.Add(new(Склади_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
+                select.QuerySelect.Where.Add(new(Склади_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UniqueID.UGuid));
                 await select.Select();
                 while (select.MoveNext())
                     if (select.Current != null)
@@ -68,7 +68,7 @@ class Склади_Папки_Triggers
         //Елементи переносяться на верхній рівень
         {
             Склади_Select select = new();
-            select.QuerySelect.Where.Add(new(Склади_Const.Папка, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
+            select.QuerySelect.Where.Add(new(Склади_Const.Папка, Comparison.EQ, ДовідникОбєкт.UniqueID.UGuid));
             await select.Select();
 
             while (select.MoveNext())
@@ -90,7 +90,7 @@ class Склади_Папки_Triggers
         //Вкладені папки видяляються. Для кожної папки буде викликана функція BeforeDelete
         {
             Склади_Папки_Select select = new();
-            select.QuerySelect.Where.Add(new(Склади_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
+            select.QuerySelect.Where.Add(new(Склади_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UniqueID.UGuid));
             await select.Select();
 
             while (select.MoveNext())

@@ -26,9 +26,9 @@ public class Номенклатура_Папки_PointerTablePartCell : PointerT
 
     public async ValueTask GetPresentation() => Presentation = pointer != null ? await pointer.GetPresentation() : "";
 
-    async ValueTask PointerChange(UnigueID? p)
+    async ValueTask PointerChange(UniqueID? p)
     {
-        Pointer = new Номенклатура_Папки_Pointer(p ?? new UnigueID());
+        Pointer = new Номенклатура_Папки_Pointer(p ?? new UniqueID());
         await GetPresentation();
         OnSelect?.Invoke();
     }
@@ -45,7 +45,7 @@ public class Номенклатура_Папки_PointerTablePartCell : PointerT
         Номенклатура_Папки_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = pointer.UnigueID,
+            DirectoryPointerItem = pointer.UniqueID,
             CallBack_OnSelectPointer = async p => 
             {
                 await PointerChange(p);

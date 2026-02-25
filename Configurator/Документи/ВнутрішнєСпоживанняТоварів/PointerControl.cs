@@ -46,7 +46,7 @@ public class ВнутрішнєСпоживанняТоварів_PointerControl
         ВнутрішнєСпоживанняТоварів_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DocumentPointerItem = Pointer.UnigueID,
+            DocumentPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new ВнутрішнєСпоживанняТоварів_Pointer(selectPointer);

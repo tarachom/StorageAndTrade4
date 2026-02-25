@@ -48,7 +48,7 @@ public class Блокнот_PointerControl : PointerControl
         Блокнот_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = Pointer.UnigueID,
+            DirectoryPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new Блокнот_Pointer(selectPointer);

@@ -177,7 +177,7 @@ class Контрагенти_ТабличнаЧастина_Файли : Directo
         {
             Store.Append(new ItemRow()
             {
-                UnigueID = new(record.UID),
+                UniqueID = new(record.UID),
                 НомерРядка = record.НомерРядка,
                 Файл = record.Файл,
                 
@@ -205,7 +205,7 @@ class Контрагенти_ТабличнаЧастина_Файли : Directo
             {
                 ЕлементВласник.Файли_TablePart.Records.Add(new()
                 {
-                    UID = row.UnigueID.UGuid,
+                    UID = row.UniqueID.UGuid,
                     НомерРядка = row.НомерРядка,
                     Файл = row.Файл,
                     
@@ -221,7 +221,7 @@ class Контрагенти_ТабличнаЧастина_Файли : Directo
                 bool sel = Grid.Model.IsSelected(position);
                 Store.Splice(position, 1, [new ItemRow()
                 {
-                    UnigueID = new(record.UID),
+                    UniqueID = new(record.UID),
                     НомерРядка = record.НомерРядка,
                     Файл = record.Файл,
                     

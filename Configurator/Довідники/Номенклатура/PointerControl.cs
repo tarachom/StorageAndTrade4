@@ -48,7 +48,7 @@ public class Номенклатура_PointerControl : PointerControl
         Номенклатура_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = Pointer.UnigueID,
+            DirectoryPointerItem = Pointer.UniqueID,
             OpenSelect = true,
             OpenFolder = OpenFolder,
             CallBack_OnSelectPointer = selectPointer =>

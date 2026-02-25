@@ -42,7 +42,7 @@ class СкладськіКомірки_Папки_Triggers
             {
                 СкладськіКомірки_Select select = new();
                 select.QuerySelect.Where.AddRange([
-                    new(СкладськіКомірки_Const.Папка, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid),
+                    new(СкладськіКомірки_Const.Папка, Comparison.EQ, ДовідникОбєкт.UniqueID.UGuid),
                     new(СкладськіКомірки_Const.DELETION_LABEL, Comparison.NOT, true)
                 ]);
                 await select.Select();
@@ -54,7 +54,7 @@ class СкладськіКомірки_Папки_Triggers
             //Вкладені папки помічаються на видалення
             {
                 СкладськіКомірки_Папки_Select select = new();
-                select.QuerySelect.Where.Add(new(СкладськіКомірки_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
+                select.QuerySelect.Where.Add(new(СкладськіКомірки_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UniqueID.UGuid));
                 await select.Select();
                 while (select.MoveNext())
                     if (select.Current != null)
@@ -69,7 +69,7 @@ class СкладськіКомірки_Папки_Triggers
         {
             СкладськіКомірки_Select select = new();
             select.QuerySelect.Where.AddRange([
-                new(СкладськіКомірки_Const.Папка, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid),
+                new(СкладськіКомірки_Const.Папка, Comparison.EQ, ДовідникОбєкт.UniqueID.UGuid),
                 new(СкладськіКомірки_Const.DELETION_LABEL, Comparison.NOT, true)
             ]);
             await select.Select();
@@ -90,7 +90,7 @@ class СкладськіКомірки_Папки_Triggers
         //Вкладені папки помічаються на видалення
         {
             СкладськіКомірки_Папки_Select select = new();
-            select.QuerySelect.Where.Add(new(СкладськіКомірки_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
+            select.QuerySelect.Where.Add(new(СкладськіКомірки_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UniqueID.UGuid));
             await select.Select();
 
             while (select.MoveNext())

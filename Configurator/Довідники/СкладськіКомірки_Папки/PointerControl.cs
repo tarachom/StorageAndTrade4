@@ -50,7 +50,7 @@ public class СкладськіКомірки_Папки_PointerControl : Pointe
         СкладськіКомірки_Папки_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = Pointer.UnigueID,
+            DirectoryPointerItem = Pointer.UniqueID,
             OpenFolder = OpenFolder,
             CallBack_OnSelectPointer = selectPointer =>
             {

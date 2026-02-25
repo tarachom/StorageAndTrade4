@@ -42,7 +42,7 @@ class Номенклатура_Папки_Triggers
             {
                 Номенклатура_Select select = new();
                 select.QuerySelect.Where.AddRange([
-                    new(Номенклатура_Const.Папка, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid),
+                    new(Номенклатура_Const.Папка, Comparison.EQ, ДовідникОбєкт.UniqueID.UGuid),
                     new(Номенклатура_Const.DELETION_LABEL, Comparison.NOT, true)
                 ]);
                 await select.Select();
@@ -54,7 +54,7 @@ class Номенклатура_Папки_Triggers
             //Вкладені папки помічаються на видалення
             {
                 Номенклатура_Папки_Select select = new();
-                select.QuerySelect.Where.Add(new(Номенклатура_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
+                select.QuerySelect.Where.Add(new(Номенклатура_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UniqueID.UGuid));
                 await select.Select();
                 while (select.MoveNext())
                     if (select.Current != null)
@@ -68,7 +68,7 @@ class Номенклатура_Папки_Triggers
         //Елементи переносяться на верхній рівень
         {
             Номенклатура_Select select = new();
-            select.QuerySelect.Where.Add(new(Номенклатура_Const.Папка, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
+            select.QuerySelect.Where.Add(new(Номенклатура_Const.Папка, Comparison.EQ, ДовідникОбєкт.UniqueID.UGuid));
             await select.Select();
 
             while (select.MoveNext())
@@ -89,7 +89,7 @@ class Номенклатура_Папки_Triggers
         //Вкладені папки видяляються. Для кожної папки буде викликана функція BeforeDelete
         {
             Номенклатура_Папки_Select select = new();
-            select.QuerySelect.Where.Add(new(Номенклатура_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
+            select.QuerySelect.Where.Add(new(Номенклатура_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UniqueID.UGuid));
             await select.Select();
 
             while (select.MoveNext())

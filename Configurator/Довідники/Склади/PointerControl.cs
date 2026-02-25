@@ -48,7 +48,7 @@ public class Склади_PointerControl : PointerControl
         Склади_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = Pointer.UnigueID,
+            DirectoryPointerItem = Pointer.UniqueID,
             OpenFolder = OpenFolder,
             CallBack_OnSelectPointer = selectPointer =>
             {

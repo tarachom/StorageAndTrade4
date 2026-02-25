@@ -46,7 +46,7 @@ public class ПерерахунокТоварів_PointerControl : PointerContro
         ПерерахунокТоварів_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DocumentPointerItem = Pointer.UnigueID,
+            DocumentPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new ПерерахунокТоварів_Pointer(selectPointer);

@@ -30,9 +30,9 @@ static class АктВиконанихРобіт_Функції
         ];
     }
 
-    public static async ValueTask OpenPageElement(bool IsNew, UnigueID? unigueID = null, 
-        Action<UnigueID?>? сallBack_LoadRecords = null,
-        Action<UnigueID>? сallBack_OnSelectPointer = null)
+    public static async ValueTask OpenPageElement(bool IsNew, UniqueID? uniqueID = null, 
+        Action<UniqueID?>? сallBack_LoadRecords = null,
+        Action<UniqueID>? сallBack_OnSelectPointer = null)
     {
         АктВиконанихРобіт_Елемент page = new()
         {
@@ -42,7 +42,7 @@ static class АктВиконанихРобіт_Функції
 
         if (IsNew)
             await page.Елемент.New();
-        else if (unigueID == null || !await page.Елемент.Read(unigueID))
+        else if (uniqueID == null || !await page.Елемент.Read(uniqueID))
         {
             Message.Error(Program.BasicApp, Program.BasicForm, "Не вдалось прочитати!");
             return;
@@ -52,11 +52,11 @@ static class АктВиконанихРобіт_Функції
         await page.SetValue();
     }
 
-    public static async ValueTask OpenPageList(UnigueID? unigueID = null, Action<UnigueID>? сallBack_OnSelectPointer = null)
+    public static async ValueTask OpenPageList(UniqueID? uniqueID = null, Action<UniqueID>? сallBack_OnSelectPointer = null)
     {
         АктВиконанихРобіт_Список page = new()
         {
-            DocumentPointerItem = unigueID,
+            DocumentPointerItem = uniqueID,
             CallBack_OnSelectPointer = сallBack_OnSelectPointer
         };
 
@@ -64,24 +64,24 @@ static class АктВиконанихРобіт_Функції
         await page.SetValue();
     }
 
-    public static async ValueTask SetDeletionLabel(UnigueID unigueID)
+    public static async ValueTask SetDeletionLabel(UniqueID uniqueID)
     {
-        АктВиконанихРобіт_Pointer Вказівник = new(unigueID);
+        АктВиконанихРобіт_Pointer Вказівник = new(uniqueID);
         bool? label = await Вказівник.GetDeletionLabel();
         if (label.HasValue) await Вказівник.SetDeletionLabel(!label.Value);
     }
 
-    public static async ValueTask<UnigueID?> Copy(UnigueID unigueID)
+    public static async ValueTask<UniqueID?> Copy(UniqueID uniqueID)
     {
         АктВиконанихРобіт_Objest Обєкт = new();
-        if (await Обєкт.Read(unigueID))
+        if (await Обєкт.Read(uniqueID))
         {
             АктВиконанихРобіт_Objest Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
                 await Новий.Послуги_TablePart.Save(false); // Таблична частина "Послуги"
             
-            return Новий.UnigueID;
+            return Новий.UniqueID;
         }
         else
         {

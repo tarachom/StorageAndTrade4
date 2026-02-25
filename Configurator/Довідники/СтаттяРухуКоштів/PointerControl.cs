@@ -48,7 +48,7 @@ public class СтаттяРухуКоштів_PointerControl : PointerControl
         СтаттяРухуКоштів_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = Pointer.UnigueID,
+            DirectoryPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new СтаттяРухуКоштів_Pointer(selectPointer);

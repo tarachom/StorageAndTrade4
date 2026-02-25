@@ -46,7 +46,7 @@ public class ПереміщенняТоварівНаСкладі_PointerControl
         ПереміщенняТоварівНаСкладі_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DocumentPointerItem = Pointer.UnigueID,
+            DocumentPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new ПереміщенняТоварівНаСкладі_Pointer(selectPointer);

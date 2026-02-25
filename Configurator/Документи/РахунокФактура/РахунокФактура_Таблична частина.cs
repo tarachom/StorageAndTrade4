@@ -635,7 +635,7 @@ class РахунокФактура_ТабличнаЧастина_Товари :
         {
             Store.Append(new ItemRow()
             {
-                UnigueID = new(record.UID),
+                UniqueID = new(record.UID),
                 НомерРядка = record.НомерРядка,
                 Номенклатура = record.Номенклатура,
                 ХарактеристикаНоменклатури = record.ХарактеристикаНоменклатури,
@@ -672,7 +672,7 @@ class РахунокФактура_ТабличнаЧастина_Товари :
             {
                 ЕлементВласник.Товари_TablePart.Records.Add(new()
                 {
-                    UID = row.UnigueID.UGuid,
+                    UID = row.UniqueID.UGuid,
                     НомерРядка = row.НомерРядка,
                     Номенклатура = row.Номенклатура,
                     ХарактеристикаНоменклатури = row.ХарактеристикаНоменклатури,
@@ -697,7 +697,7 @@ class РахунокФактура_ТабличнаЧастина_Товари :
                 bool sel = Grid.Model.IsSelected(position);
                 Store.Splice(position, 1, [new ItemRow()
                 {
-                    UnigueID = new(record.UID),
+                    UniqueID = new(record.UID),
                     НомерРядка = record.НомерРядка,
                     Номенклатура = record.Номенклатура,
                     ХарактеристикаНоменклатури = record.ХарактеристикаНоменклатури,

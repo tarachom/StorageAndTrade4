@@ -48,7 +48,7 @@ static class ФункціїДляДокументів
         ПартіяТоварівКомпозит_Objest партіяТоварівКомпозитНовий = new();
         if (ПартіяТоварівКомпозит.IsEmpty())
             await партіяТоварівКомпозитНовий.New();
-        else if (!await партіяТоварівКомпозитНовий.Read(ПартіяТоварівКомпозит.UnigueID))
+        else if (!await партіяТоварівКомпозитНовий.Read(ПартіяТоварівКомпозит.UniqueID))
             await партіяТоварівКомпозитНовий.New();
 
         партіяТоварівКомпозитНовий.ТипДокументу = ТипДокументу;
@@ -93,7 +93,7 @@ static class ФункціїДляДокументів
         ДоговориКонтрагентів_Select договориКонтрагентів = new();
 
         //Відбір по контрагенту
-        договориКонтрагентів.QuerySelect.Where.Add(new(ДоговориКонтрагентів_Const.Контрагент, Comparison.EQ, Контрагент.UnigueID.UGuid));
+        договориКонтрагентів.QuerySelect.Where.Add(new(ДоговориКонтрагентів_Const.Контрагент, Comparison.EQ, Контрагент.UniqueID.UGuid));
 
         //Відбір по типу договору
         if (ТипДоговору != 0)
@@ -126,7 +126,7 @@ LIMIT 1
 ";
         Dictionary<string, object> paramQuery = new()
         {
-            { "valuta", Валюта.UnigueID.UGuid },
+            { "valuta", Валюта.UniqueID.UGuid },
             { "date_curs", new DateTime(ДатаКурсу.Year, ДатаКурсу.Month, ДатаКурсу.Day, 23, 59, 59) }
         };
 

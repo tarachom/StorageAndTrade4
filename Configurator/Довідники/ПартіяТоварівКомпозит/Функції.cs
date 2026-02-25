@@ -23,9 +23,9 @@ static class ПартіяТоварівКомпозит_Функції
         ];
     }
 
-    public static async ValueTask OpenPageElement(bool IsNew, UnigueID? unigueID = null, 
-        Action<UnigueID?>? сallBack_LoadRecords = null, 
-        Action<UnigueID>? сallBack_OnSelectPointer = null)
+    public static async ValueTask OpenPageElement(bool IsNew, UniqueID? uniqueID = null, 
+        Action<UniqueID?>? сallBack_LoadRecords = null, 
+        Action<UniqueID>? сallBack_OnSelectPointer = null)
     {
         ПартіяТоварівКомпозит_Елемент page = new()
         {
@@ -38,7 +38,7 @@ static class ПартіяТоварівКомпозит_Функції
             await page.Елемент.New();
             
         }
-        else if (unigueID == null || !await page.Елемент.Read(unigueID))
+        else if (uniqueID == null || !await page.Елемент.Read(uniqueID))
         {
             Message.Error(Program.BasicApp, Program.BasicForm, "Не вдалось прочитати!");
             return;
@@ -48,11 +48,11 @@ static class ПартіяТоварівКомпозит_Функції
         await page.SetValue();
     }
 
-    public static async ValueTask OpenPageList(UnigueID? unigueID = null, Action<UnigueID>? сallBack_OnSelectPointer = null)
+    public static async ValueTask OpenPageList(UniqueID? uniqueID = null, Action<UniqueID>? сallBack_OnSelectPointer = null)
     {
         ПартіяТоварівКомпозит_Список page = new()
         {
-            DirectoryPointerItem = unigueID,
+            DirectoryPointerItem = uniqueID,
             CallBack_OnSelectPointer = сallBack_OnSelectPointer
         };
 
@@ -60,22 +60,22 @@ static class ПартіяТоварівКомпозит_Функції
         await page.SetValue();
     }
 
-    public static async ValueTask SetDeletionLabel(UnigueID unigueID)
+    public static async ValueTask SetDeletionLabel(UniqueID uniqueID)
     {
-        ПартіяТоварівКомпозит_Pointer Вказівник = new(unigueID);
+        ПартіяТоварівКомпозит_Pointer Вказівник = new(uniqueID);
         bool? label = await Вказівник.GetDeletionLabel();
         if (label.HasValue) await Вказівник.SetDeletionLabel(!label.Value);
     }
 
-    public static async ValueTask<UnigueID?> Copy(UnigueID unigueID)
+    public static async ValueTask<UniqueID?> Copy(UniqueID uniqueID)
     {
         ПартіяТоварівКомпозит_Objest Обєкт = new();
-        if (await Обєкт.Read(unigueID))
+        if (await Обєкт.Read(uniqueID))
         {
             ПартіяТоварівКомпозит_Objest Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
-            return Новий.UnigueID;
+            return Новий.UniqueID;
         }
         else
         {

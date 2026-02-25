@@ -50,7 +50,7 @@ public class ЗбереженіЗвіти_PointerControl : PointerControl
         ЗбереженіЗвіти_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = Pointer.UnigueID,
+            DirectoryPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new ЗбереженіЗвіти_Pointer(selectPointer);

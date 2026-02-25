@@ -43,7 +43,7 @@ static class Номенклатура_Triggers
         {
             ХарактеристикиНоменклатури_Select select = new ХарактеристикиНоменклатури_Select();
             select.QuerySelect.Where.AddRange([
-                new(ХарактеристикиНоменклатури_Const.Номенклатура, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid),
+                new(ХарактеристикиНоменклатури_Const.Номенклатура, Comparison.EQ, ДовідникОбєкт.UniqueID.UGuid),
                 new(ХарактеристикиНоменклатури_Const.DELETION_LABEL, Comparison.NOT, true)
             ]);
 

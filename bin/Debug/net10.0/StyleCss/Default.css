@@ -58,6 +58,13 @@ columnview listview row cell:not(:first-child) {
     border-left: 1px solid shade(#b8b8b8, 1.2);
 }
 
+/* Ще потрібно пропрацювати прибирання впливу виділеного рядка */
+columnview row:selected button.link,
+columnview row:selected button.link > label {
+    color: inherit; 
+    border-color: transparent;
+}
+
 /* ------------------ Клітинки табличної частини --------------->>> */
 
 /* Базовий клас для *TablePartCell */

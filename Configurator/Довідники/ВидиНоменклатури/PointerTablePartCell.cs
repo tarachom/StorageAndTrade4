@@ -26,9 +26,9 @@ public class ВидиНоменклатури_PointerTablePartCell : PointerTabl
 
     public async ValueTask GetPresentation() => Presentation = pointer != null ? await pointer.GetPresentation() : "";
 
-    async ValueTask PointerChange(UnigueID? p)
+    async ValueTask PointerChange(UniqueID? p)
     {
-        Pointer = new ВидиНоменклатури_Pointer(p ?? new UnigueID());
+        Pointer = new ВидиНоменклатури_Pointer(p ?? new UniqueID());
         await GetPresentation();
         OnSelect?.Invoke();
     }
@@ -45,7 +45,7 @@ public class ВидиНоменклатури_PointerTablePartCell : PointerTabl
         ВидиНоменклатури_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = pointer.UnigueID,
+            DirectoryPointerItem = pointer.UniqueID,
             CallBack_OnSelectPointer = async p => await PointerChange(p)
         };
         

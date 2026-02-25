@@ -48,7 +48,7 @@ public class Контрагенти_Папки_PointerControl : PointerControl
         Контрагенти_Папки_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = Pointer.UnigueID,
+            DirectoryPointerItem = Pointer.UniqueID,
             OpenFolder = OpenFolder,
             CallBack_OnSelectPointer = selectPointer =>
             {

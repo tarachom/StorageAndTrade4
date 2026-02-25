@@ -46,7 +46,7 @@ public class ПереміщенняТоварів_PointerControl : PointerContro
         ПереміщенняТоварів_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DocumentPointerItem = Pointer.UnigueID,
+            DocumentPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new ПереміщенняТоварів_Pointer(selectPointer);

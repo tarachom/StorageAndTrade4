@@ -41,7 +41,7 @@ class Контрагенти_Triggers
         {
             ДоговориКонтрагентів_Select select = new();
             select.QuerySelect.Where.AddRange([
-                new(ДоговориКонтрагентів_Const.Контрагент, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid),
+                new(ДоговориКонтрагентів_Const.Контрагент, Comparison.EQ, ДовідникОбєкт.UniqueID.UGuid),
                 new(ДоговориКонтрагентів_Const.DELETION_LABEL, Comparison.NOT, true)
             ]);
             await select.Select();

@@ -62,7 +62,7 @@ class Контрагенти_Папки_Елемент : DirectoryFormElement
         if (IsNew)
             Елемент.Родич = РодичДляНового;
         else
-            Родич.OpenFolder = Елемент.UnigueID;
+            Родич.OpenFolder = Елемент.UniqueID;
 
         Код.SetText(Елемент.Код);
         Назва.SetText(Елемент.Назва);

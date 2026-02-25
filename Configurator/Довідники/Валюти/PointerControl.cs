@@ -48,7 +48,7 @@ public class Валюти_PointerControl : PointerControl
         Валюти_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = Pointer.UnigueID,
+            DirectoryPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new Валюти_Pointer(selectPointer);

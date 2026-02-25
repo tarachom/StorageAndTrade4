@@ -48,7 +48,7 @@ public class ПакуванняОдиниціВиміру_PointerControl : Point
         ПакуванняОдиниціВиміру_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = Pointer.UnigueID,
+            DirectoryPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new ПакуванняОдиниціВиміру_Pointer(selectPointer);

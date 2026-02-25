@@ -228,7 +228,7 @@ class ВведенняЗалишків_ТабличнаЧастина_Банкі
         {
             Store.Append(new ItemRow()
             {
-                UnigueID = new(record.UID),
+                UniqueID = new(record.UID),
                 НомерРядка = record.НомерРядка,
                 БанківськийРахунок = record.БанківськийРахунок,
                 Сума = record.Сума,
@@ -257,7 +257,7 @@ class ВведенняЗалишків_ТабличнаЧастина_Банкі
             {
                 ЕлементВласник.БанківськіРахунки_TablePart.Records.Add(new()
                 {
-                    UID = row.UnigueID.UGuid,
+                    UID = row.UniqueID.UGuid,
                     НомерРядка = row.НомерРядка,
                     БанківськийРахунок = row.БанківськийРахунок,
                     Сума = row.Сума,
@@ -274,7 +274,7 @@ class ВведенняЗалишків_ТабличнаЧастина_Банкі
                 bool sel = Grid.Model.IsSelected(position);
                 Store.Splice(position, 1, [new ItemRow()
                 {
-                    UnigueID = new(record.UID),
+                    UniqueID = new(record.UID),
                     НомерРядка = record.НомерРядка,
                     БанківськийРахунок = record.БанківськийРахунок,
                     Сума = record.Сума,

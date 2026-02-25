@@ -31,8 +31,6 @@ class PageHome : Form
             hBox.Append(lockObjectsView);
             Append(hBox);
         }
-
-
     }
 
     public async ValueTask SetValue()

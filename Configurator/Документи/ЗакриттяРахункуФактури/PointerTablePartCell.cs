@@ -26,9 +26,9 @@ public class ЗакриттяРахункуФактури_PointerTablePartCell :
 
     public async ValueTask GetPresentation() => Presentation = pointer != null ? await pointer.GetPresentation() : "";
 
-    async ValueTask PointerChange(UnigueID? p)
+    async ValueTask PointerChange(UniqueID? p)
     {
-        Pointer = new ЗакриттяРахункуФактури_Pointer(p ?? new UnigueID());
+        Pointer = new ЗакриттяРахункуФактури_Pointer(p ?? new UniqueID());
         await GetPresentation();
         OnSelect?.Invoke();
     }
@@ -43,7 +43,7 @@ public class ЗакриттяРахункуФактури_PointerTablePartCell :
         ЗакриттяРахункуФактури_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DocumentPointerItem = pointer.UnigueID,
+            DocumentPointerItem = pointer.UniqueID,
             CallBack_OnSelectPointer = async p => await PointerChange(p)
         };
 

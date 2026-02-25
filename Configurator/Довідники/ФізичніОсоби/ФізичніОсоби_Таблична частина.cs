@@ -524,7 +524,7 @@ class ФізичніОсоби_ТабличнаЧастина_Контакти :
         {
             Store.Append(new ItemRow()
             {
-                UnigueID = new(record.UID),
+                UniqueID = new(record.UID),
                 НомерРядка = record.НомерРядка,
                 Тип = record.Тип,
                 Значення = record.Значення,
@@ -559,7 +559,7 @@ class ФізичніОсоби_ТабличнаЧастина_Контакти :
             {
                 ЕлементВласник.Контакти_TablePart.Records.Add(new()
                 {
-                    UID = row.UnigueID.UGuid,
+                    UID = row.UniqueID.UGuid,
                     НомерРядка = row.НомерРядка,
                     Тип = row.Тип,
                     Значення = row.Значення,
@@ -582,7 +582,7 @@ class ФізичніОсоби_ТабличнаЧастина_Контакти :
                 bool sel = Grid.Model.IsSelected(position);
                 Store.Splice(position, 1, [new ItemRow()
                 {
-                    UnigueID = new(record.UID),
+                    UniqueID = new(record.UID),
                     НомерРядка = record.НомерРядка,
                     Тип = record.Тип,
                     Значення = record.Значення,

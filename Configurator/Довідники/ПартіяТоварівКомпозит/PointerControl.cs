@@ -48,7 +48,7 @@ public class ПартіяТоварівКомпозит_PointerControl : Pointer
         ПартіяТоварівКомпозит_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = Pointer.UnigueID,
+            DirectoryPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new ПартіяТоварівКомпозит_Pointer(selectPointer);

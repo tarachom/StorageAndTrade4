@@ -26,9 +26,9 @@ public class ЗакриттяЗамовленняПостачальнику_Poin
 
     public async ValueTask GetPresentation() => Presentation = pointer != null ? await pointer.GetPresentation() : "";
 
-    async ValueTask PointerChange(UnigueID? p)
+    async ValueTask PointerChange(UniqueID? p)
     {
-        Pointer = new ЗакриттяЗамовленняПостачальнику_Pointer(p ?? new UnigueID());
+        Pointer = new ЗакриттяЗамовленняПостачальнику_Pointer(p ?? new UniqueID());
         await GetPresentation();
         OnSelect?.Invoke();
     }
@@ -43,7 +43,7 @@ public class ЗакриттяЗамовленняПостачальнику_Poin
         ЗакриттяЗамовленняПостачальнику_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DocumentPointerItem = pointer.UnigueID,
+            DocumentPointerItem = pointer.UniqueID,
             CallBack_OnSelectPointer = async p => await PointerChange(p)
         };
 

@@ -48,7 +48,7 @@ public class БанківськіРахункиОрганізацій_PointerCon
         БанківськіРахункиОрганізацій_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = Pointer.UnigueID,
+            DirectoryPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new БанківськіРахункиОрганізацій_Pointer(selectPointer);

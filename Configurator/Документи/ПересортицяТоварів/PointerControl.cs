@@ -46,7 +46,7 @@ public class ПересортицяТоварів_PointerControl : PointerContro
         ПересортицяТоварів_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DocumentPointerItem = Pointer.UnigueID,
+            DocumentPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new ПересортицяТоварів_Pointer(selectPointer);

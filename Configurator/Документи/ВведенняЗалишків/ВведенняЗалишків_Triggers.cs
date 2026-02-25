@@ -46,7 +46,7 @@ class ВведенняЗалишків_Triggers
         {
             ПартіяТоварівКомпозит_Select select = new();
             select.QuerySelect.Where.AddRange([
-                new(ПартіяТоварівКомпозит_Const.ВведенняЗалишків, Comparison.EQ, ДокументОбєкт.UnigueID.UGuid),
+                new(ПартіяТоварівКомпозит_Const.ВведенняЗалишків, Comparison.EQ, ДокументОбєкт.UniqueID.UGuid),
                 new(ПартіяТоварівКомпозит_Const.DELETION_LABEL, Comparison.NOT, true)
             ]);
             await select.Select();

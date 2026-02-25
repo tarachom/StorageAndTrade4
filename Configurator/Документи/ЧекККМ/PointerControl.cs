@@ -46,7 +46,7 @@ public class ЧекККМ_PointerControl : PointerControl
         ЧекККМ_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DocumentPointerItem = Pointer.UnigueID,
+            DocumentPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new ЧекККМ_Pointer(selectPointer);

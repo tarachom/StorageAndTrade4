@@ -48,7 +48,7 @@ public class СеріїНоменклатури_PointerControl : PointerControl
         СеріїНоменклатури_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = Pointer.UnigueID,
+            DirectoryPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new СеріїНоменклатури_Pointer(selectPointer);

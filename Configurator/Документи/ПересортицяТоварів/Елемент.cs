@@ -150,7 +150,7 @@ class ПересортицяТоварів_Елемент : DocumentFormElement
         if (spendDoc)
         {
             bool isSpend = await Елемент.SpendTheDocument(Елемент.ДатаДок);
-            //if (!isSpend) ФункціїДляПовідомлень.ПоказатиПовідомлення(Елемент.UnigueID);
+            //if (!isSpend) ФункціїДляПовідомлень.ПоказатиПовідомлення(Елемент.UniqueID);
             return isSpend;
         }
         else
@@ -160,14 +160,14 @@ class ПересортицяТоварів_Елемент : DocumentFormElement
         }
     }
 
-    protected override void ReportSpendTheDocument(UnigueID unigueID)
+    protected override void ReportSpendTheDocument(UniqueID uniqueID)
     {
-        //СпільніФорми_РухДокументуПоРегістрах.СформуватиЗвіт(new ПересортицяТоварів_Pointer(unigueID));
+        //СпільніФорми_РухДокументуПоРегістрах.СформуватиЗвіт(new ПересортицяТоварів_Pointer(uniqueID));
     }
 
-    protected override async ValueTask InJournal(UnigueID unigueID)
+    protected override async ValueTask InJournal(UniqueID uniqueID)
     {
-        await Функції.OpenPageList(unigueID);
+        await Функції.OpenPageList(uniqueID);
     }
 }
     

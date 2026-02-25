@@ -48,7 +48,7 @@ public class ТипорозміриКомірок_PointerControl : PointerContro
         ТипорозміриКомірок_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = Pointer.UnigueID,
+            DirectoryPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new ТипорозміриКомірок_Pointer(selectPointer);

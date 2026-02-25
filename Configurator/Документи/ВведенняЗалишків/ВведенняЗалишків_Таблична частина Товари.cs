@@ -530,7 +530,7 @@ class ВведенняЗалишків_ТабличнаЧастина_Товар
         {
             Store.Append(new ItemRow()
             {
-                UnigueID = new(record.UID),
+                UniqueID = new(record.UID),
                 НомерРядка = record.НомерРядка,
                 Номенклатура = record.Номенклатура,
                 ХарактеристикаНоменклатури = record.ХарактеристикаНоменклатури,
@@ -565,7 +565,7 @@ class ВведенняЗалишків_ТабличнаЧастина_Товар
             {
                 ЕлементВласник.Товари_TablePart.Records.Add(new()
                 {
-                    UID = row.UnigueID.UGuid,
+                    UID = row.UniqueID.UGuid,
                     НомерРядка = row.НомерРядка,
                     Номенклатура = row.Номенклатура,
                     ХарактеристикаНоменклатури = row.ХарактеристикаНоменклатури,
@@ -588,7 +588,7 @@ class ВведенняЗалишків_ТабличнаЧастина_Товар
                 bool sel = Grid.Model.IsSelected(position);
                 Store.Splice(position, 1, [new ItemRow()
                 {
-                    UnigueID = new(record.UID),
+                    UniqueID = new(record.UID),
                     НомерРядка = record.НомерРядка,
                     Номенклатура = record.Номенклатура,
                     ХарактеристикаНоменклатури = record.ХарактеристикаНоменклатури,

@@ -35,9 +35,9 @@ static class Номенклатура_Функції
         ];
     }
 
-    public static async ValueTask OpenPageElement(bool IsNew, UnigueID? unigueID = null, 
-        Action<UnigueID?>? сallBack_LoadRecords = null, 
-        Action<UnigueID>? сallBack_OnSelectPointer = null)
+    public static async ValueTask OpenPageElement(bool IsNew, UniqueID? uniqueID = null, 
+        Action<UniqueID?>? сallBack_LoadRecords = null, 
+        Action<UniqueID>? сallBack_OnSelectPointer = null)
     {
         Номенклатура_Елемент page = new()
         {
@@ -50,7 +50,7 @@ static class Номенклатура_Функції
             await page.Елемент.New();
             
         }
-        else if (unigueID == null || !await page.Елемент.Read(unigueID))
+        else if (uniqueID == null || !await page.Елемент.Read(uniqueID))
         {
             Message.Error(Program.BasicApp, Program.BasicForm, "Не вдалось прочитати!");
             return;
@@ -60,14 +60,14 @@ static class Номенклатура_Функції
         await page.SetValue();
     }
 
-    public static async ValueTask OpenPageList(UnigueID? unigueID = null, bool openSelect = false, UnigueID? openFolder = null,
-        Action<UnigueID>? сallBack_OnSelectPointer = null)
+    public static async ValueTask OpenPageList(UniqueID? uniqueID = null, bool openSelect = false, UniqueID? openFolder = null,
+        Action<UniqueID>? сallBack_OnSelectPointer = null)
     {
         Номенклатура_Список page = new()
         {
             OpenSelect = openSelect,
             OpenFolder = openFolder,
-            DirectoryPointerItem = unigueID,
+            DirectoryPointerItem = uniqueID,
             CallBack_OnSelectPointer = сallBack_OnSelectPointer
         };
         
@@ -75,24 +75,24 @@ static class Номенклатура_Функції
         await page.SetValue();
     }
 
-    public static async ValueTask SetDeletionLabel(UnigueID unigueID)
+    public static async ValueTask SetDeletionLabel(UniqueID uniqueID)
     {
-        Номенклатура_Pointer Вказівник = new(unigueID);
+        Номенклатура_Pointer Вказівник = new(uniqueID);
         bool? label = await Вказівник.GetDeletionLabel();
         if (label.HasValue) await Вказівник.SetDeletionLabel(!label.Value);
     }
 
-    public static async ValueTask<UnigueID?> Copy(UnigueID unigueID)
+    public static async ValueTask<UniqueID?> Copy(UniqueID uniqueID)
     {
         Номенклатура_Objest Обєкт = new();
-        if (await Обєкт.Read(unigueID))
+        if (await Обєкт.Read(uniqueID))
         {
             Номенклатура_Objest Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
                 await Новий.Файли_TablePart.Save(false); // Таблична частина "Файли"
             
-            return Новий.UnigueID;
+            return Новий.UniqueID;
         }
         else
         {

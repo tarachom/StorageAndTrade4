@@ -48,7 +48,7 @@ public class СтруктураПідприємства_PointerControl : Pointer
         СтруктураПідприємства_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = Pointer.UnigueID,
+            DirectoryPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new СтруктураПідприємства_Pointer(selectPointer);

@@ -46,7 +46,7 @@ public class РозміщенняТоварівНаСкладі_PointerControl :
         РозміщенняТоварівНаСкладі_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DocumentPointerItem = Pointer.UnigueID,
+            DocumentPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new РозміщенняТоварівНаСкладі_Pointer(selectPointer);

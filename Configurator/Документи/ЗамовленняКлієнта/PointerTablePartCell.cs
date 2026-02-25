@@ -26,9 +26,9 @@ public class ЗамовленняКлієнта_PointerTablePartCell : PointerTa
 
     public async ValueTask GetPresentation() => Presentation = pointer != null ? await pointer.GetPresentation() : "";
 
-    async ValueTask PointerChange(UnigueID? p)
+    async ValueTask PointerChange(UniqueID? p)
     {
-        Pointer = new ЗамовленняКлієнта_Pointer(p ?? new UnigueID());
+        Pointer = new ЗамовленняКлієнта_Pointer(p ?? new UniqueID());
         await GetPresentation();
         OnSelect?.Invoke();
     }
@@ -43,7 +43,7 @@ public class ЗамовленняКлієнта_PointerTablePartCell : PointerTa
         ЗамовленняКлієнта_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DocumentPointerItem = pointer.UnigueID,
+            DocumentPointerItem = pointer.UniqueID,
             CallBack_OnSelectPointer = async p => await PointerChange(p)
         };
 

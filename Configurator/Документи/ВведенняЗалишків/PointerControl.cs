@@ -46,7 +46,7 @@ public class ВведенняЗалишків_PointerControl : PointerControl
         ВведенняЗалишків_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DocumentPointerItem = Pointer.UnigueID,
+            DocumentPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new ВведенняЗалишків_Pointer(selectPointer);

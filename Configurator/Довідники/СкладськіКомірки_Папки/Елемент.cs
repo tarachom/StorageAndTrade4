@@ -72,7 +72,7 @@ class СкладськіКомірки_Папки_Елемент : DirectoryForm
                 if (IsNew)
                     Елемент.Родич = РодичДляНового;
                 else
-                    Родич.OpenFolder = Елемент.UnigueID;
+                    Родич.OpenFolder = Елемент.UniqueID;
             Код.SetText(Елемент.Код);
                         Назва.SetText(Елемент.Назва);
                         Родич.Pointer = Елемент.Родич;

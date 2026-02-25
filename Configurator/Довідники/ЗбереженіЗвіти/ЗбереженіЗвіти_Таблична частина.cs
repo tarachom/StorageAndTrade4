@@ -1695,7 +1695,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         {
             Store.Append(new ItemRow()
             {
-                UnigueID = new(record.UID),
+                UniqueID = new(record.UID),
                 А = record.А,
                 Б = record.Б,
                 В = record.В,
@@ -1754,7 +1754,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             {
                 ЕлементВласник.ЗвітСторінка_TablePart.Records.Add(new()
                 {
-                    UID = row.UnigueID.UGuid,
+                    UID = row.UniqueID.UGuid,
                     А = row.А,
                     Б = row.Б,
                     В = row.В,
@@ -1801,7 +1801,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
                 bool sel = Grid.Model.IsSelected(position);
                 Store.Splice(position, 1, [new ItemRow()
                 {
-                    UnigueID = new(record.UID),
+                    UniqueID = new(record.UID),
                     А = record.А,
                     Б = record.Б,
                     В = record.В,

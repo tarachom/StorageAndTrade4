@@ -46,7 +46,7 @@ public class НадлишкиТоварів_PointerControl : PointerControl
         НадлишкиТоварів_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DocumentPointerItem = Pointer.UnigueID,
+            DocumentPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new НадлишкиТоварів_Pointer(selectPointer);

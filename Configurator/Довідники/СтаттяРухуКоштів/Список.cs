@@ -45,19 +45,19 @@ class СтаттяРухуКоштів_Список : DirectoryFormJournalFull
         ТабличнийСписок.CreateFilter(this);
     }
 
-    protected override async ValueTask OpenPageElement(bool IsNew, UnigueID? unigueID = null)
+    protected override async ValueTask OpenPageElement(bool IsNew, UniqueID? uniqueID = null)
     {
-        await Функції.OpenPageElement(IsNew, unigueID, CallBack_LoadRecords, CallBack_OnSelectPointer);
+        await Функції.OpenPageElement(IsNew, uniqueID, CallBack_LoadRecords, CallBack_OnSelectPointer);
     }
 
-    protected override async ValueTask SetDeletionLabel(UnigueID unigueID)
+    protected override async ValueTask SetDeletionLabel(UniqueID uniqueID)
     {
-        await Функції.SetDeletionLabel(unigueID);
+        await Функції.SetDeletionLabel(uniqueID);
     }
 
-    protected override async ValueTask<UnigueID?> Copy(UnigueID unigueID)
+    protected override async ValueTask<UniqueID?> Copy(UniqueID uniqueID)
     {
-        return await Функції.Copy(unigueID);
+        return await Функції.Copy(uniqueID);
     }
 }
     

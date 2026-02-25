@@ -228,7 +228,7 @@ class ВведенняЗалишків_ТабличнаЧастина_Каси :
         {
             Store.Append(new ItemRow()
             {
-                UnigueID = new(record.UID),
+                UniqueID = new(record.UID),
                 НомерРядка = record.НомерРядка,
                 Каса = record.Каса,
                 Сума = record.Сума,
@@ -257,7 +257,7 @@ class ВведенняЗалишків_ТабличнаЧастина_Каси :
             {
                 ЕлементВласник.Каси_TablePart.Records.Add(new()
                 {
-                    UID = row.UnigueID.UGuid,
+                    UID = row.UniqueID.UGuid,
                     НомерРядка = row.НомерРядка,
                     Каса = row.Каса,
                     Сума = row.Сума,
@@ -274,7 +274,7 @@ class ВведенняЗалишків_ТабличнаЧастина_Каси :
                 bool sel = Grid.Model.IsSelected(position);
                 Store.Splice(position, 1, [new ItemRow()
                 {
-                    UnigueID = new(record.UID),
+                    UniqueID = new(record.UID),
                     НомерРядка = record.НомерРядка,
                     Каса = record.Каса,
                     Сума = record.Сума,

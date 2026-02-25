@@ -48,7 +48,7 @@ public class Контрагенти_PointerControl : PointerControl
         Контрагенти_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = Pointer.UnigueID,
+            DirectoryPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new Контрагенти_Pointer(selectPointer);

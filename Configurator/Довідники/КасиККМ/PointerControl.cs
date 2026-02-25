@@ -48,7 +48,7 @@ public class КасиККМ_PointerControl : PointerControl
         КасиККМ_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = Pointer.UnigueID,
+            DirectoryPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new КасиККМ_Pointer(selectPointer);

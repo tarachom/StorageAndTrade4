@@ -50,7 +50,7 @@ public class ХарактеристикиНоменклатури_PointerControl
         ХарактеристикиНоменклатури_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = Pointer.UnigueID,
+            DirectoryPointerItem = Pointer.UniqueID,
             OpenFolder = OpenFolder,
             CallBack_OnSelectPointer = selectPointer =>
             {

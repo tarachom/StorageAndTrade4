@@ -46,7 +46,7 @@ public class АктВиконанихРобіт_PointerControl : PointerControl
         АктВиконанихРобіт_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DocumentPointerItem = Pointer.UnigueID,
+            DocumentPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new АктВиконанихРобіт_Pointer(selectPointer);

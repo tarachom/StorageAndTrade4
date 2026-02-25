@@ -46,7 +46,7 @@ public class РозміщенняНоменклатуриПоКоміркам_Po
         РозміщенняНоменклатуриПоКоміркам_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DocumentPointerItem = Pointer.UnigueID,
+            DocumentPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new РозміщенняНоменклатуриПоКоміркам_Pointer(selectPointer);

@@ -46,7 +46,7 @@ public class ПоверненняТоварівПостачальнику_Pointe
         ПоверненняТоварівПостачальнику_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DocumentPointerItem = Pointer.UnigueID,
+            DocumentPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new ПоверненняТоварівПостачальнику_Pointer(selectPointer);

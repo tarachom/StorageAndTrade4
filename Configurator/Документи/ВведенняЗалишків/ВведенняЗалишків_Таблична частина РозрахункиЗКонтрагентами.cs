@@ -330,7 +330,7 @@ class ВведенняЗалишків_ТабличнаЧастина_Розра
         {
             Store.Append(new ItemRow()
             {
-                UnigueID = new(record.UID),
+                UniqueID = new(record.UID),
                 НомерРядка = record.НомерРядка,
                 ТипКонтрагента = record.ТипКонтрагента,
                 Контрагент = record.Контрагент,
@@ -361,7 +361,7 @@ class ВведенняЗалишків_ТабличнаЧастина_Розра
             {
                 ЕлементВласник.РозрахункиЗКонтрагентами_TablePart.Records.Add(new()
                 {
-                    UID = row.UnigueID.UGuid,
+                    UID = row.UniqueID.UGuid,
                     НомерРядка = row.НомерРядка,
                     ТипКонтрагента = row.ТипКонтрагента,
                     Контрагент = row.Контрагент,
@@ -380,7 +380,7 @@ class ВведенняЗалишків_ТабличнаЧастина_Розра
                 bool sel = Grid.Model.IsSelected(position);
                 Store.Splice(position, 1, [new ItemRow()
                 {
-                    UnigueID = new(record.UID),
+                    UniqueID = new(record.UID),
                     НомерРядка = record.НомерРядка,
                     ТипКонтрагента = record.ТипКонтрагента,
                     Контрагент = record.Контрагент,

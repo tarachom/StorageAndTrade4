@@ -231,7 +231,7 @@ class Номенклатура_ТабличнаЧастина_Файли : Direc
             {
                 Store.Append(new ItemRow()
                 {
-                    UnigueID = new(record.UID),
+                    UniqueID = new(record.UID),
                     НомерРядка = record.НомерРядка,
                     Основний = record.Основний,
                     Файл = record.Файл,
@@ -260,7 +260,7 @@ class Номенклатура_ТабличнаЧастина_Файли : Direc
                 {
                     ЕлементВласник.Файли_TablePart.Records.Add(new()
                     {
-                        UID = row.UnigueID.UGuid,
+                        UID = row.UniqueID.UGuid,
                         НомерРядка = row.НомерРядка,
                         Основний = row.Основний,
                         Файл = row.Файл,
@@ -277,7 +277,7 @@ class Номенклатура_ТабличнаЧастина_Файли : Direc
                     bool sel = Grid.Model.IsSelected(position);
                     Store.Splice(position, 1, [new ItemRow()
                     {
-                        UnigueID = new(record.UID),
+                        UniqueID = new(record.UID),
                         НомерРядка = record.НомерРядка,
                         Основний = record.Основний,
                         Файл = record.Файл,

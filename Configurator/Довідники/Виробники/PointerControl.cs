@@ -48,7 +48,7 @@ public class Виробники_PointerControl : PointerControl
         Виробники_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = Pointer.UnigueID,
+            DirectoryPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new Виробники_Pointer(selectPointer);

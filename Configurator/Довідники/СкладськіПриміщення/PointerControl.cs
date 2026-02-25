@@ -50,7 +50,7 @@ public class СкладськіПриміщення_PointerControl : PointerCont
         СкладськіПриміщення_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = Pointer.UnigueID,
+            DirectoryPointerItem = Pointer.UniqueID,
             OpenFolder = OpenFolder,
             CallBack_OnSelectPointer = selectPointer =>
             {

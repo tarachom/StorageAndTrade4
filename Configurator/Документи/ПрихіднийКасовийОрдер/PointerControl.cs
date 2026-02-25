@@ -46,7 +46,7 @@ public class ПрихіднийКасовийОрдер_PointerControl : Pointer
         ПрихіднийКасовийОрдер_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DocumentPointerItem = Pointer.UnigueID,
+            DocumentPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new ПрихіднийКасовийОрдер_Pointer(selectPointer);

@@ -48,7 +48,7 @@ public class Файли_PointerControl : PointerControl
         Файли_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = Pointer.UnigueID,
+            DirectoryPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new Файли_Pointer(selectPointer);

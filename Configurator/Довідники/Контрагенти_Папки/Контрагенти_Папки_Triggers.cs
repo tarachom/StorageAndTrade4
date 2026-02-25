@@ -42,7 +42,7 @@ class Контрагенти_Папки_Triggers
             {
                 Контрагенти_Select select = new();
                 select.QuerySelect.Where.AddRange([
-                    new(Контрагенти_Const.Папка, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid),
+                    new(Контрагенти_Const.Папка, Comparison.EQ, ДовідникОбєкт.UniqueID.UGuid),
                     new(Контрагенти_Const.DELETION_LABEL, Comparison.NOT, true)
                 ]);
                 await select.Select();
@@ -54,7 +54,7 @@ class Контрагенти_Папки_Triggers
             //Вкладені папки помічаються на видалення
             {
                 Контрагенти_Папки_Select select = new();
-                select.QuerySelect.Where.Add(new(Контрагенти_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
+                select.QuerySelect.Where.Add(new(Контрагенти_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UniqueID.UGuid));
                 await select.Select();
                 while (select.MoveNext())
                     if (select.Current != null)
@@ -68,7 +68,7 @@ class Контрагенти_Папки_Triggers
         //Елементи переносяться на верхній рівень
         {
             Контрагенти_Select select = new();
-            select.QuerySelect.Where.Add(new(Контрагенти_Const.Папка, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
+            select.QuerySelect.Where.Add(new(Контрагенти_Const.Папка, Comparison.EQ, ДовідникОбєкт.UniqueID.UGuid));
             await select.Select();
 
             while (select.MoveNext())
@@ -90,7 +90,7 @@ class Контрагенти_Папки_Triggers
         //Вкладені папки видаляються. Для кожної папки буде викликана функція BeforeDelete
         {
             Контрагенти_Папки_Select select = new();
-            select.QuerySelect.Where.Add(new(Контрагенти_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UnigueID.UGuid));
+            select.QuerySelect.Where.Add(new(Контрагенти_Папки_Const.Родич, Comparison.EQ, ДовідникОбєкт.UniqueID.UGuid));
             await select.Select();
 
             while (select.MoveNext())

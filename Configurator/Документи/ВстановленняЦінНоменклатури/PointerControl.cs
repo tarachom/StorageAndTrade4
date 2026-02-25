@@ -46,7 +46,7 @@ public class ВстановленняЦінНоменклатури_PointerContr
         ВстановленняЦінНоменклатури_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DocumentPointerItem = Pointer.UnigueID,
+            DocumentPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new ВстановленняЦінНоменклатури_Pointer(selectPointer);

@@ -46,7 +46,7 @@ public class ЗбіркаТоварівНаСкладі_PointerControl : Pointer
         ЗбіркаТоварівНаСкладі_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DocumentPointerItem = Pointer.UnigueID,
+            DocumentPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new ЗбіркаТоварівНаСкладі_Pointer(selectPointer);

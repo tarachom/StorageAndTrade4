@@ -48,7 +48,7 @@ public class ВидиЦін_PointerControl : PointerControl
         ВидиЦін_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = Pointer.UnigueID,
+            DirectoryPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new ВидиЦін_Pointer(selectPointer);

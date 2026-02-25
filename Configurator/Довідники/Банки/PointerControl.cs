@@ -48,7 +48,7 @@ public class Банки_PointerControl : PointerControl
         Банки_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = Pointer.UnigueID,
+            DirectoryPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new Банки_Pointer(selectPointer);

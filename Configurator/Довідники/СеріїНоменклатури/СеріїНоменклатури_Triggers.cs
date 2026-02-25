@@ -28,7 +28,7 @@ class СеріїНоменклатури_Triggers
         СеріїНоменклатури_Select select = new();
         select.QuerySelect.Where.AddRange([
             new(СеріїНоменклатури_Const.Номер, Comparison.EQ, ДовідникОбєкт.Номер),
-            new("uid", Comparison.NOT, ДовідникОбєкт.UnigueID.UGuid)
+            new("uid", Comparison.NOT, ДовідникОбєкт.UniqueID.UGuid)
         ]);
         if (await select.SelectSingle())
         {

@@ -33,7 +33,7 @@ static class ФункціїДляДовідників
             ДоговориКонтрагентів_Select Вибірка = new();
 
             Вибірка.QuerySelect.Where.AddRange([
-                new(ДоговориКонтрагентів_Const.Контрагент, Comparison.EQ, контрагент.UnigueID.UGuid), //Відбір по контрагенту
+                new(ДоговориКонтрагентів_Const.Контрагент, Comparison.EQ, контрагент.UniqueID.UGuid), //Відбір по контрагенту
                 new(ДоговориКонтрагентів_Const.ТипДоговору, Comparison.EQ, (int)типДоговору)          //Відбір по типу договору
             ]);
 

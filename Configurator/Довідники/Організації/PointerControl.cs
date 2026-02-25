@@ -48,7 +48,7 @@ public class Організації_PointerControl : PointerControl
         Організації_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = Pointer.UnigueID,
+            DirectoryPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new Організації_Pointer(selectPointer);

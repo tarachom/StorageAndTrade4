@@ -46,7 +46,7 @@ public class КорегуванняБоргу_PointerControl : PointerControl
         КорегуванняБоргу_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DocumentPointerItem = Pointer.UnigueID,
+            DocumentPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new КорегуванняБоргу_Pointer(selectPointer);

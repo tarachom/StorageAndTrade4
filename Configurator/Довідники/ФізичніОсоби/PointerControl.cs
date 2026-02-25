@@ -48,7 +48,7 @@ public class ФізичніОсоби_PointerControl : PointerControl
         ФізичніОсоби_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = Pointer.UnigueID,
+            DirectoryPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new ФізичніОсоби_Pointer(selectPointer);
