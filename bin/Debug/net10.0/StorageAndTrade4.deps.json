@@ -8,21 +8,47 @@
     ".NETCoreApp,Version=v10.0": {
       "StorageAndTrade4/4.0.0.0": {
         "dependencies": {
-          "AccountingSoftware": "3.1.2.1",
+          "AccountingSoftware": "3.1.3",
           "Configurator4": "4.0.0",
           "GirCore.GObject-2.0.Integration": "0.7.0",
           "GirCore.Gtk-4.0": "0.7.0",
-          "InterfaceGtk4": "1.0.0"
+          "InterfaceGtk4": "1.0.0",
+          "NPOI": "2.7.6",
+          "QuestPDF": "2026.2.2"
         },
         "runtime": {
           "StorageAndTrade4.dll": {}
         }
       },
-      "BCrypt.Net-Next/4.0.3": {
+      "BCrypt.Net-Next/4.1.0": {
         "runtime": {
-          "lib/net6.0/BCrypt.Net-Next.dll": {
-            "assemblyVersion": "4.0.3.0",
-            "fileVersion": "4.0.3.0"
+          "lib/net10.0/BCrypt.Net-Next.dll": {
+            "assemblyVersion": "4.1.0.0",
+            "fileVersion": "4.1.0.0"
+          }
+        }
+      },
+      "BouncyCastle.Cryptography/2.6.2": {
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.6.2.46322"
+          }
+        }
+      },
+      "Enums.NET/5.0.0": {
+        "runtime": {
+          "lib/net7.0/Enums.NET.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.0"
+          }
+        }
+      },
+      "ExtendedNumerics.BigDecimal/2025.1001.2.129": {
+        "runtime": {
+          "lib/net8.0/ExtendedNumerics.BigDecimal.dll": {
+            "assemblyVersion": "2025.1001.2.129",
+            "fileVersion": "2025.1001.2.129"
           }
         }
       },
@@ -184,6 +210,14 @@
           }
         }
       },
+      "MathNet.Numerics.Signed/5.0.0": {
+        "runtime": {
+          "lib/net6.0/MathNet.Numerics.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.0"
+          }
+        }
+      },
       "Microsoft.CodeAnalysis.Common/4.8.0": {
         "runtime": {
           "lib/net7.0/Microsoft.CodeAnalysis.dll": {
@@ -304,6 +338,14 @@
           }
         }
       },
+      "Microsoft.IO.RecyclableMemoryStream/3.0.1": {
+        "runtime": {
+          "lib/net6.0/Microsoft.IO.RecyclableMemoryStream.dll": {
+            "assemblyVersion": "3.0.1.0",
+            "fileVersion": "3.0.1.0"
+          }
+        }
+      },
       "Npgsql/10.0.1": {
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": "10.0.0"
@@ -315,21 +357,241 @@
           }
         }
       },
-      "AccountingSoftware/3.1.2.1": {
+      "NPOI/2.7.6": {
         "dependencies": {
-          "BCrypt.Net-Next": "4.0.3",
+          "BouncyCastle.Cryptography": "2.6.2",
+          "Enums.NET": "5.0.0",
+          "ExtendedNumerics.BigDecimal": "2025.1001.2.129",
+          "MathNet.Numerics.Signed": "5.0.0",
+          "Microsoft.IO.RecyclableMemoryStream": "3.0.1",
+          "NSax": "1.0.2",
+          "SharpZipLib": "1.4.2",
+          "SixLabors.Fonts": "1.0.1",
+          "SixLabors.ImageSharp": "2.1.11",
+          "System.Security.Cryptography.Xml": "8.0.2",
+          "ZString": "2.6.0"
+        },
+        "runtime": {
+          "lib/net8.0/NPOI.Core.dll": {
+            "assemblyVersion": "2.7.6.0",
+            "fileVersion": "2.7.6.0"
+          },
+          "lib/net8.0/NPOI.OOXML.dll": {
+            "assemblyVersion": "2.7.6.0",
+            "fileVersion": "2.7.6.0"
+          },
+          "lib/net8.0/NPOI.OpenXml4Net.dll": {
+            "assemblyVersion": "2.7.6.0",
+            "fileVersion": "2.7.6.0"
+          },
+          "lib/net8.0/NPOI.OpenXmlFormats.dll": {
+            "assemblyVersion": "2.7.6.0",
+            "fileVersion": "2.7.6.0"
+          }
+        }
+      },
+      "NSax/1.0.2": {
+        "runtime": {
+          "lib/net6.0/NSax.dll": {
+            "assemblyVersion": "1.0.2.0",
+            "fileVersion": "1.0.2.0"
+          }
+        }
+      },
+      "QuestPDF/2026.2.2": {
+        "runtime": {
+          "lib/net10.0/QuestPDF.dll": {
+            "assemblyVersion": "2026.2.2.0",
+            "fileVersion": "2026.2.2.0"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/linux-arm64/native/libQuestPdfSkia.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm64/native/libqpdf.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/libQuestPdfSkia.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/libqpdf.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libQuestPdfSkia.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libqpdf.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-arm64/native/libQuestPdfSkia.dylib": {
+            "rid": "osx-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-arm64/native/libqpdf.dylib": {
+            "rid": "osx-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/libQuestPdfSkia.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/libqpdf.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/QuestPdfSkia.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/libgcc_s_seh-1.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/libstdc++-6.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/libwinpthread-1.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "1.0.0.0"
+          },
+          "runtimes/win-x64/native/qpdf.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/zlib1.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/QuestPdfSkia.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/libgcc_s_dw2-1.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/libstdc++-6.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/libwinpthread-1.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "1.0.0.0"
+          },
+          "runtimes/win-x86/native/qpdf.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/zlib1.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "SharpZipLib/1.4.2": {
+        "runtime": {
+          "lib/net6.0/ICSharpCode.SharpZipLib.dll": {
+            "assemblyVersion": "1.4.2.13",
+            "fileVersion": "1.4.2.13"
+          }
+        }
+      },
+      "SixLabors.Fonts/1.0.1": {
+        "runtime": {
+          "lib/netcoreapp3.1/SixLabors.Fonts.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.1.0"
+          }
+        }
+      },
+      "SixLabors.ImageSharp/2.1.11": {
+        "runtime": {
+          "lib/netcoreapp3.1/SixLabors.ImageSharp.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.1.11.0"
+          }
+        }
+      },
+      "System.Security.Cryptography.Pkcs/8.0.1": {
+        "runtime": {
+          "lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.1024.46610"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.1024.46610"
+          }
+        }
+      },
+      "System.Security.Cryptography.Xml/8.0.2": {
+        "dependencies": {
+          "System.Security.Cryptography.Pkcs": "8.0.1"
+        },
+        "runtime": {
+          "lib/net8.0/System.Security.Cryptography.Xml.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.1024.46610"
+          }
+        }
+      },
+      "ZString/2.6.0": {
+        "runtime": {
+          "lib/net7.0/ZString.dll": {
+            "assemblyVersion": "2.6.0.0",
+            "fileVersion": "2.6.0.0"
+          }
+        }
+      },
+      "AccountingSoftware/3.1.3": {
+        "dependencies": {
+          "BCrypt.Net-Next": "4.1.0",
           "Npgsql": "10.0.1"
         },
         "runtime": {
           "AccountingSoftware.dll": {
-            "assemblyVersion": "3.1.2.1",
-            "fileVersion": "3.1.2.1"
+            "assemblyVersion": "3.1.3.0",
+            "fileVersion": "3.1.3.0"
           }
         }
       },
       "Configurator4/4.0.0": {
         "dependencies": {
-          "AccountingSoftware": "3.1.2.1",
+          "AccountingSoftware": "3.1.3",
           "GirCore.GObject-2.0.Integration": "0.7.0",
           "GirCore.Gtk-4.0": "0.7.0",
           "InterfaceGtk4": "1.0.0"
@@ -343,7 +605,7 @@
       },
       "InterfaceGtk4/1.0.0": {
         "dependencies": {
-          "AccountingSoftware": "3.1.2.1",
+          "AccountingSoftware": "3.1.3",
           "GirCore.GObject-2.0.Integration": "0.7.0",
           "GirCore.Gtk-4.0": "0.7.0",
           "InterfaceGtkLib": "1.0.0"
@@ -371,12 +633,33 @@
       "serviceable": false,
       "sha512": ""
     },
-    "BCrypt.Net-Next/4.0.3": {
+    "BCrypt.Net-Next/4.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-W+U9WvmZQgi5cX6FS5GDtDoPzUCV4LkBLkywq/kRZhuDwcbavOzcDAr3LXJFqHUi952Yj3LEYoWW0jbEUQChsA==",
-      "path": "bcrypt.net-next/4.0.3",
-      "hashPath": "bcrypt.net-next.4.0.3.nupkg.sha512"
+      "sha512": "sha512-5YT3DKllmtkyW68PjURu/V1TOe4MKiByKwsRNVcfYE1S5KuFTeozdmKzyNzolKiQF391OXCaQtINvYT3j1ERzQ==",
+      "path": "bcrypt.net-next/4.1.0",
+      "hashPath": "bcrypt.net-next.4.1.0.nupkg.sha512"
+    },
+    "BouncyCastle.Cryptography/2.6.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7oWOcvnntmMKNzDLsdxAYqApt+AjpRpP2CShjMfIa3umZ42UQMvH0tl1qAliYPNYO6vTdcGMqnRrCPmsfzTI1w==",
+      "path": "bouncycastle.cryptography/2.6.2",
+      "hashPath": "bouncycastle.cryptography.2.6.2.nupkg.sha512"
+    },
+    "Enums.NET/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NfGq1iLJZ15XZPgBhjk4Ns1XZ+beaGk6cog6B4LxcROdGoSMdgCJqYXF70P6VTd3dz/vFRY4h1u1lAMqW/DC2w==",
+      "path": "enums.net/5.0.0",
+      "hashPath": "enums.net.5.0.0.nupkg.sha512"
+    },
+    "ExtendedNumerics.BigDecimal/2025.1001.2.129": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+woGT1lsBtwkntOpx2EZbdbySv0aWPefE0vrfvclxVdbi4oa2bbtphFPWgMiQe+kRCPICbfFJwp6w1DuR7Ge2Q==",
+      "path": "extendednumerics.bigdecimal/2025.1001.2.129",
+      "hashPath": "extendednumerics.bigdecimal.2025.1001.2.129.nupkg.sha512"
     },
     "GirCore.Cairo-1.0/0.7.0": {
       "type": "package",
@@ -476,6 +759,13 @@
       "path": "gircore.pangocairo-1.0/0.7.0",
       "hashPath": "gircore.pangocairo-1.0.0.7.0.nupkg.sha512"
     },
+    "MathNet.Numerics.Signed/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PSrHBVMf41SjbhlnpOMnoir8YgkyEJ6/nwxvjYpH+vJCexNcx2ms6zRww5yLVqLet1xLJgZ39swtKRTLhWdnAw==",
+      "path": "mathnet.numerics.signed/5.0.0",
+      "hashPath": "mathnet.numerics.signed.5.0.0.nupkg.sha512"
+    },
     "Microsoft.CodeAnalysis.Common/4.8.0": {
       "type": "package",
       "serviceable": true,
@@ -504,6 +794,13 @@
       "path": "microsoft.extensions.logging.abstractions/10.0.0",
       "hashPath": "microsoft.extensions.logging.abstractions.10.0.0.nupkg.sha512"
     },
+    "Microsoft.IO.RecyclableMemoryStream/3.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-s/s20YTVY9r9TPfTrN5g8zPF1YhwxyqO6PxUkrYTGI2B+OGPe9AdajWZrLhFqXIvqIW23fnUE4+ztrUWNU1+9g==",
+      "path": "microsoft.io.recyclablememorystream/3.0.1",
+      "hashPath": "microsoft.io.recyclablememorystream.3.0.1.nupkg.sha512"
+    },
     "Npgsql/10.0.1": {
       "type": "package",
       "serviceable": true,
@@ -511,7 +808,70 @@
       "path": "npgsql/10.0.1",
       "hashPath": "npgsql.10.0.1.nupkg.sha512"
     },
-    "AccountingSoftware/3.1.2.1": {
+    "NPOI/2.7.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-itLDt6M2VFcWjTGpzeRNy7Axmp2cVjHpTtf4zVLm6XQvuINlkHFBabBd4s8iCRAupx/NBSzqPxqe7+5fJOY8NQ==",
+      "path": "npoi/2.7.6",
+      "hashPath": "npoi.2.7.6.nupkg.sha512"
+    },
+    "NSax/1.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7txlId2RJTQBL3YdSGO7x70+r3HUOCw725lu0OoBgThRl/e3RhAZ2QKYxW2y9dPRtqbFZYHVa8siIeB8+L//Cg==",
+      "path": "nsax/1.0.2",
+      "hashPath": "nsax.1.0.2.nupkg.sha512"
+    },
+    "QuestPDF/2026.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LAcnbU7Zx/adNX5+JBwRSazCLhNNrm2HMQJQVhUtzjq2hXl7QWOVS8a8bb+a6AjhV2hdC9saVqgYzjCpYgMa1g==",
+      "path": "questpdf/2026.2.2",
+      "hashPath": "questpdf.2026.2.2.nupkg.sha512"
+    },
+    "SharpZipLib/1.4.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yjj+3zgz8zgXpiiC3ZdF/iyTBbz2fFvMxZFEBPUcwZjIvXOf37Ylm+K58hqMfIBt5JgU/Z2uoUS67JmTLe973A==",
+      "path": "sharpziplib/1.4.2",
+      "hashPath": "sharpziplib.1.4.2.nupkg.sha512"
+    },
+    "SixLabors.Fonts/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ljezRHWc7N0azdQViib7Aa5v+DagRVkKI2/93kEbtjVczLs+yTkSq6gtGmvOcx4IqyNbO3GjLt7SAQTpLkySNw==",
+      "path": "sixlabors.fonts/1.0.1",
+      "hashPath": "sixlabors.fonts.1.0.1.nupkg.sha512"
+    },
+    "SixLabors.ImageSharp/2.1.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tUvsejgzUmEbES114yLseRxmFiYlQbH5RyaYXUQsEL7ksDo1/kW+ZL1EfD6iSUfxj7LHU8p110oFvSrRfsaWSQ==",
+      "path": "sixlabors.imagesharp/2.1.11",
+      "hashPath": "sixlabors.imagesharp.2.1.11.nupkg.sha512"
+    },
+    "System.Security.Cryptography.Pkcs/8.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CoCRHFym33aUSf/NtWSVSZa99dkd0Hm7OCZUxORBjRB16LNhIEOf8THPqzIYlvKM0nNDAPTRBa1FxEECrgaxxA==",
+      "path": "system.security.cryptography.pkcs/8.0.1",
+      "hashPath": "system.security.cryptography.pkcs.8.0.1.nupkg.sha512"
+    },
+    "System.Security.Cryptography.Xml/8.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aDM/wm0ZGEZ6ZYJLzgqjp2FZdHbDHh6/OmpGfb7AdZ105zYmPn/83JRU2xLIbwgoNz9U1SLUTJN0v5th3qmvjA==",
+      "path": "system.security.cryptography.xml/8.0.2",
+      "hashPath": "system.security.cryptography.xml.8.0.2.nupkg.sha512"
+    },
+    "ZString/2.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XE8a+11nZg0LRaf+RGABEWaHIf8yGd5w8v/Ra1iWxMBmAVzwuKbW7G21mS0U7w7sh1lYcgckInWGgnz4qyET8A==",
+      "path": "zstring/2.6.0",
+      "hashPath": "zstring.2.6.0.nupkg.sha512"
+    },
+    "AccountingSoftware/3.1.3": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
