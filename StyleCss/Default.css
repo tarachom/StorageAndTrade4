@@ -60,9 +60,15 @@ columnview listview row cell:not(:first-child) {
 
 /* Ще потрібно пропрацювати прибирання впливу виділеного рядка */
 columnview row:selected button.link,
-columnview row:selected button.link > label {
-    color: inherit; 
+columnview row:selected button.link>label {
+    color: inherit;
     border-color: transparent;
+}
+
+/* ------------------ Контроли для числа, дати і т.д. де потрібна валідація ------------------------ */
+
+entry.error {
+    border: 1px solid red;
 }
 
 /* ------------------ Клітинки табличної частини --------------->>> */

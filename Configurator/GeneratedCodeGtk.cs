@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 02.03.2026 07:45:42
+ * Дата конфігурації: 12.03.2026 17:33:56
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон Gtk4.xslt
@@ -141,9 +141,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -451,6 +452,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Switch sw = Switch.New();
                 
                         ComboBoxText ТипНоменклатури = new();
+                        ТипНоменклатури.MarginStart = 5;
                         foreach (var item in ПсевдонімиПерелічення.ТипиНоменклатури_List())
                             ТипНоменклатури.Append(item.Value.ToString(), item.Name);
                         ТипНоменклатури.Active = 0;
@@ -559,9 +561,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -876,6 +879,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Switch sw = Switch.New();
                 
                         ComboBoxText ТипНоменклатури = new();
+                        ТипНоменклатури.MarginStart = 5;
                         foreach (var item in ПсевдонімиПерелічення.ТипиНоменклатури_List())
                             ТипНоменклатури.Append(item.Value.ToString(), item.Name);
                         ТипНоменклатури.Active = 0;
@@ -983,9 +987,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -1209,9 +1214,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -1404,9 +1410,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -1645,9 +1652,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -1948,9 +1956,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -2168,9 +2177,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -2472,9 +2482,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -2672,9 +2683,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -2868,6 +2880,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Switch sw = Switch.New();
                 
                         ComboBoxText ТипСкладу = new();
+                        ТипСкладу.MarginStart = 5;
                         foreach (var item in ПсевдонімиПерелічення.ТипиСкладів_List())
                             ТипСкладу.Append(item.Value.ToString(), item.Name);
                         ТипСкладу.Active = 0;
@@ -2881,6 +2894,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Switch sw = Switch.New();
                 
                         ComboBoxText НалаштуванняАдресногоЗберігання = new();
+                        НалаштуванняАдресногоЗберігання.MarginStart = 5;
                         foreach (var item in ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_List())
                             НалаштуванняАдресногоЗберігання.Append(item.Value.ToString(), item.Name);
                         НалаштуванняАдресногоЗберігання.Active = 0;
@@ -2952,9 +2966,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -3147,9 +3162,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -3390,9 +3406,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -3563,9 +3580,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -3756,9 +3774,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -3951,9 +3970,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -4146,9 +4166,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -4341,9 +4362,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -4536,9 +4558,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -4800,9 +4823,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -4974,9 +4998,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -5271,9 +5296,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -5528,7 +5554,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
             
             /* Вибірка */
-            Довідники.Номенклатура_Папки_SelectHierarchical Номенклатура_Папки_Select = new();
+            Довідники.Номенклатура_Папки_Select Номенклатура_Папки_Select = new();
             Номенклатура_Папки_Select.QuerySelect.Field.AddRange(
                 [
                     "deletion_label",
@@ -5562,15 +5588,18 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Код", Fields[Номенклатура_Папки_Const.Код].ToString() ?? "");
                     row.Fields.Add("Родич", Fields["Родич"].ToString() ?? "");
                     
+                    row.IsFolder = true;
+                    
                     ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
                     if (objCh != null)
                     {
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryHierarchicalRow? item = (DirectoryHierarchicalRow?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                row.Sub = item.Sub;
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -5831,7 +5860,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
             
             /* Вибірка */
-            Довідники.Номенклатура_Папки_SelectHierarchical Номенклатура_Папки_Select = new();
+            Довідники.Номенклатура_Папки_Select Номенклатура_Папки_Select = new();
             Номенклатура_Папки_Select.QuerySelect.Field.AddRange(
                 [
                     "deletion_label",
@@ -5865,15 +5894,18 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Код", Fields[Номенклатура_Папки_Const.Код].ToString() ?? "");
                     row.Fields.Add("Родич", Fields["Родич"].ToString() ?? "");
                     
+                    row.IsFolder = true;
+                    
                     ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
                     if (objCh != null)
                     {
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryHierarchicalRow? item = (DirectoryHierarchicalRow?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                row.Sub = item.Sub;
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -6091,7 +6123,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
             
             /* Вибірка */
-            Довідники.Контрагенти_Папки_SelectHierarchical Контрагенти_Папки_Select = new();
+            Довідники.Контрагенти_Папки_Select Контрагенти_Папки_Select = new();
             Контрагенти_Папки_Select.QuerySelect.Field.AddRange(
                 [
                     "deletion_label",
@@ -6120,15 +6152,18 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Назва", Fields[Контрагенти_Папки_Const.Назва].ToString() ?? "");
                     row.Fields.Add("Код", Fields[Контрагенти_Папки_Const.Код].ToString() ?? "");
                     
+                    row.IsFolder = true;
+                    
                     ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
                     if (objCh != null)
                     {
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryHierarchicalRow? item = (DirectoryHierarchicalRow?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                row.Sub = item.Sub;
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -6340,7 +6375,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
             
             /* Вибірка */
-            Довідники.Склади_Папки_SelectHierarchical Склади_Папки_Select = new();
+            Довідники.Склади_Папки_Select Склади_Папки_Select = new();
             Склади_Папки_Select.QuerySelect.Field.AddRange(
                 [
                     "deletion_label",
@@ -6369,15 +6404,18 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Назва", Fields[Склади_Папки_Const.Назва].ToString() ?? "");
                     row.Fields.Add("Код", Fields[Склади_Папки_Const.Код].ToString() ?? "");
                     
+                    row.IsFolder = true;
+                    
                     ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
                     if (objCh != null)
                     {
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryHierarchicalRow? item = (DirectoryHierarchicalRow?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                row.Sub = item.Sub;
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -6672,9 +6710,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -6899,9 +6938,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -7147,9 +7187,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -7357,6 +7398,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Switch sw = Switch.New();
                 
                         ComboBoxText ТипДоговору = new();
+                        ТипДоговору.MarginStart = 5;
                         foreach (var item in ПсевдонімиПерелічення.ТипДоговорів_List())
                             ТипДоговору.Append(item.Value.ToString(), item.Name);
                         ТипДоговору.Active = 0;
@@ -7431,9 +7473,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -7659,9 +7702,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -7911,9 +7955,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -8112,6 +8157,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Switch sw = Switch.New();
                 
                         ComboBoxText ВидРухуКоштів = new();
+                        ВидРухуКоштів.MarginStart = 5;
                         foreach (var item in ПсевдонімиПерелічення.ВидиРухуКоштів_List())
                             ВидРухуКоштів.Append(item.Value.ToString(), item.Name);
                         ВидРухуКоштів.Active = 0;
@@ -8183,9 +8229,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -8359,9 +8406,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -8595,6 +8643,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Switch sw = Switch.New();
                 
                         ComboBoxText ТипДокументу = new();
+                        ТипДокументу.MarginStart = 5;
                         foreach (var item in ПсевдонімиПерелічення.ТипДокументуПартіяТоварівКомпозит_List())
                             ТипДокументу.Append(item.Value.ToString(), item.Name);
                         ТипДокументу.Active = 0;
@@ -8679,9 +8728,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -8887,9 +8937,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -9082,9 +9133,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -9668,9 +9720,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -9893,9 +9946,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -10077,6 +10131,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Switch sw = Switch.New();
                 
                         ComboBoxText НалаштуванняАдресногоЗберігання = new();
+                        НалаштуванняАдресногоЗберігання.MarginStart = 5;
                         foreach (var item in ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_List())
                             НалаштуванняАдресногоЗберігання.Append(item.Value.ToString(), item.Name);
                         НалаштуванняАдресногоЗберігання.Active = 0;
@@ -10149,9 +10204,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -10545,9 +10601,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -10766,9 +10823,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -10971,9 +11029,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -11261,9 +11320,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -11480,7 +11540,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             }
             
             /* Вибірка */
-            Довідники.СкладськіКомірки_Папки_SelectHierarchical СкладськіКомірки_Папки_Select = new();
+            Довідники.СкладськіКомірки_Папки_Select СкладськіКомірки_Папки_Select = new();
             СкладськіКомірки_Папки_Select.QuerySelect.Field.AddRange(
                 [
                     "deletion_label",
@@ -11514,15 +11574,18 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Код", Fields[СкладськіКомірки_Папки_Const.Код].ToString() ?? "");
                     row.Fields.Add("Власник", Fields["Власник"].ToString() ?? "");
                     
+                    row.IsFolder = true;
+                    
                     ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
                     if (objCh != null)
                     {
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryHierarchicalRow? item = (DirectoryHierarchicalRow?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                row.Sub = item.Sub;
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -11776,9 +11839,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -12022,9 +12086,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -12280,9 +12345,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         bool exist = false;
                         for (uint i = 0; i < form.Store.GetNItems(); i++)
                         {
-                            RowJournal? item = (RowJournal?)form.Store.GetObject(i);
+                            DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
                             if (item != null && item.UniqueID.Equals(curr.UniqueID))
                             {
+                                
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
                                 if (sel) form.Grid.Model.SelectItem(i, false);
@@ -23995,6 +24061,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Switch sw = Switch.New();
                 
                         ComboBoxText ПричинаЗакриттяЗамовлення = new();
+                        ПричинаЗакриттяЗамовлення.MarginStart = 5;
                         foreach (var item in ПсевдонімиПерелічення.ПричиниЗакриттяЗамовленняКлієнта_List())
                             ПричинаЗакриттяЗамовлення.Append(item.Value.ToString(), item.Name);
                         ПричинаЗакриттяЗамовлення.Active = 0;
@@ -25129,6 +25196,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Switch sw = Switch.New();
                 
                         ComboBoxText ПричинаЗакриттяЗамовлення = new();
+                        ПричинаЗакриттяЗамовлення.MarginStart = 5;
                         foreach (var item in ПсевдонімиПерелічення.ПричиниЗакриттяЗамовленняПостачальнику_List())
                             ПричинаЗакриттяЗамовлення.Append(item.Value.ToString(), item.Name);
                         ПричинаЗакриттяЗамовлення.Active = 0;

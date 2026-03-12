@@ -7,8 +7,6 @@
 using Gtk;
 using InterfaceGtk4;
 using GeneratedCode;
-using GeneratedCode.Довідники;
-using AccountingSoftware;
 
 namespace StorageAndTrade;
 
@@ -38,4 +36,3 @@ class PageHome : Form
         
     }
 }
-
