@@ -77,7 +77,8 @@ public class РахунокФактура_Список : DocumentFormJournalFull
 
     protected override void ReportSpendTheDocument(UniqueID[] uniqueID)
     {
-
+        foreach (var uid in uniqueID)
+            CommonForms_DocumentMovementThroughRegisters.Create(new РахунокФактура_Pointer(uid));
     }
 
     protected override async ValueTask VersionsHistory(UniqueID[] uniqueID)

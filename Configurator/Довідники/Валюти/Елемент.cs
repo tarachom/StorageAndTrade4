@@ -15,13 +15,13 @@ namespace StorageAndTrade;
 
 class Валюти_Елемент : DirectoryFormElement
 {
-    public Валюти_Objest Елемент { get; init; } = new Валюти_Objest();
+    public Валюти_Objest Елемент { get; init; } = new();
     
     #region Fields
-    Entry Код = new() { WidthRequest = 100 };
-                    Entry Назва = new() { WidthRequest = 500 };
-                    Entry КороткаНазва = new() { WidthRequest = 500 };
-                    Entry Код_R030 = new() { WidthRequest = 500 };
+    Entry Код = Entry.New();
+                    Entry Назва = Entry.New();
+                    Entry КороткаНазва = Entry.New();
+                    Entry Код_R030 = Entry.New();
                     CheckButton ВиводитиКурсНаСтартову = CheckButton.NewWithLabel("ВиводитиКурсНаСтартову");
             
     #endregion
@@ -33,7 +33,12 @@ class Валюти_Елемент : DirectoryFormElement
     public Валюти_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
+
+        Код.WidthRequest = 100;
+                        Назва.WidthRequest = 300;
+                        КороткаНазва.WidthRequest = 300;
+                        Код_R030.WidthRequest = 300;
+                        
     }
 
     protected override void CreateStart(Box vBox)

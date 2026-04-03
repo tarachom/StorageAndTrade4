@@ -10,19 +10,21 @@ using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
 
-public class ВидиЗапасів_PointerControl : PointerControl
+[GObject.Subclass<PointerControl>("PointerControl_h1jEWQhotk61zNNc18cLA")]
+public partial class ВидиЗапасів_PointerControl : PointerControl
 {
-    event EventHandler<ВидиЗапасів_Pointer> PointerChanged;
+    event EventHandler<ВидиЗапасів_Pointer>? PointerChanged;
 
-    public ВидиЗапасів_PointerControl()
+    partial void Initialize()
     {
-        pointer = new ВидиЗапасів_Pointer();
         WidthPresentation = 300;
         Caption = $"{ВидиЗапасів_Const.FULLNAME}:";
         PointerChanged += async (_, pointer) => Presentation = pointer != null ? await pointer.GetPresentation() : "";
     }
 
-    ВидиЗапасів_Pointer pointer;
+    public static ВидиЗапасів_PointerControl New() => NewWithProperties([]);
+
+    ВидиЗапасів_Pointer pointer = new();
     public ВидиЗапасів_Pointer Pointer
     {
         get
@@ -49,6 +51,8 @@ public class ВидиЗапасів_PointerControl : PointerControl
         {
             PopoverParent = popover,
             DirectoryPointerItem = Pointer.UniqueID,
+            OpenSelect = true,
+            OpenFolder = OpenFolder,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new ВидиЗапасів_Pointer(selectPointer);

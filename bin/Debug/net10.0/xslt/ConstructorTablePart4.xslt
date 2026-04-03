@@ -362,7 +362,7 @@ class <xsl:value-of select="$OwnerName"/>_ТабличнаЧастина_<xsl:va
         {
             Store.Append(new ItemRow()
             {
-                UniqueID = new(record.UID),
+                UnigueID = new(record.UID),
                 <xsl:for-each select="$FieldsTL">
                 <xsl:value-of select="Name"/> = record.<xsl:value-of select="Name"/>,
                 </xsl:for-each>
@@ -398,7 +398,7 @@ class <xsl:value-of select="$OwnerName"/>_ТабличнаЧастина_<xsl:va
             {
                 <xsl:value-of select="$Records"/>.Records.Add(new()
                 {
-                    UID = row.UniqueID.UGuid,
+                    UID = row.UnigueID.UGuid,
                     <xsl:for-each select="$FieldsTL">
                         <xsl:value-of select="Name"/> = row.<xsl:value-of select="Name"/>,
                     </xsl:for-each>

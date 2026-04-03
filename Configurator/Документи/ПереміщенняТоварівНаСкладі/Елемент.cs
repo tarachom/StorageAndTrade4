@@ -22,14 +22,14 @@ class ПереміщенняТоварівНаСкладі_Елемент : Docu
     public ПереміщенняТоварівНаСкладі_Objest Елемент { get; init; } = new();
 
     #region Fields
-    DateTimeControl ДатаДок = new();
-            Entry НомерДок = new() { WidthRequest = 100 };
-                    Entry Коментар = new() { WidthRequest = 300 };
-                    CompositePointerControl Основа = new() { BoundConfType = "Документи.ПереміщенняТоварівНаСкладі.Основа" };
-            Склади_PointerControl Склад = new() { Caption = "Склад", WidthPresentation = 300 };
-            Користувачі_PointerControl Автор = new() { Caption = "Автор", WidthPresentation = 300 };
-            Організації_PointerControl Організація = new() { Caption = "Організація", WidthPresentation = 300 };
-            СтруктураПідприємства_PointerControl Підрозділ = new() { Caption = "Підрозділ", WidthPresentation = 300 };
+    DateTimeControl ДатаДок = DateTimeControl.New();
+            Entry НомерДок = Entry.New();
+                    Entry Коментар = Entry.New();
+                    CompositePointerControl Основа = CompositePointerControl.New();
+            Склади_PointerControl Склад = Склади_PointerControl.New();
+            Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
+            Організації_PointerControl Організація = Організації_PointerControl.New();
+            СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
             
     #endregion
 
@@ -52,7 +52,18 @@ class ПереміщенняТоварівНаСкладі_Елемент : Docu
             NotebookTablePart.InsertPage(Товари, Label.New("Товари"), 0);
             
             NotebookTablePart.SetCurrentPage(0);
-        
+        НомерДок.WidthRequest = 100;
+                        Коментар.WidthRequest = 300;
+                        Основа.BoundConfType = "Документи.ПереміщенняТоварівНаСкладі.Основа";
+                Склад.Caption = "Склад";
+                    Склад.WidthPresentation = 300;
+                Автор.Caption = "Автор";
+                    Автор.WidthPresentation = 300;
+                Організація.Caption = "Організація";
+                    Організація.WidthPresentation = 300;
+                Підрозділ.Caption = "Підрозділ";
+                    Підрозділ.WidthPresentation = 300;
+                
     }
 
     protected override void CreateTopStart(Box vBox)
@@ -168,7 +179,7 @@ class ПереміщенняТоварівНаСкладі_Елемент : Docu
 
     protected override void ReportSpendTheDocument(UniqueID uniqueID)
     {
-        //СпільніФорми_РухДокументуПоРегістрах.СформуватиЗвіт(new ПереміщенняТоварівНаСкладі_Pointer(uniqueID));
+        CommonForms_DocumentMovementThroughRegisters.Create(new ПереміщенняТоварівНаСкладі_Pointer(uniqueID));
     }
 
     protected override async ValueTask InJournal(UniqueID uniqueID)

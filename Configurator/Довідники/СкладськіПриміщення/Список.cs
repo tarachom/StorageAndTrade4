@@ -17,7 +17,7 @@ namespace StorageAndTrade;
 class СкладськіПриміщення_Список : DirectoryFormJournalFull
 {
     
-    public Склади_PointerControl Власник = new() { Caption = "Склад:" };
+    public Склади_PointerControl Власник = Склади_PointerControl.New();
     
     
     public СкладськіПриміщення_Список() : base(Program.BasicForm?.NotebookFunc)
@@ -29,6 +29,7 @@ class СкладськіПриміщення_Список : DirectoryFormJournal
         
         //Власник
         {
+            Власник.Caption = "Склад:";
             HBoxTop.Append(Власник);
             OwnerWhereListFunc = () => Власник.Pointer.IsEmpty() ? [] : [new(СкладськіПриміщення_Const.Склад, Comparison.EQ, Власник.Pointer.UniqueID.UGuid)];
             Власник.AfterSelectFunc = async () =>
@@ -62,7 +63,7 @@ class СкладськіПриміщення_Список : DirectoryFormJournal
 
     protected override async ValueTask OpenPageElement(bool IsNew, UniqueID? uniqueID = null)
     {
-        await Функції.OpenPageElement(IsNew, uniqueID, CallBack_LoadRecords, CallBack_OnSelectPointer);
+        await Функції.OpenPageElement(IsNew, uniqueID, CallBack_LoadRecords, CallBack_OnSelectPointer, Власник.Pointer);
     }
 
     protected override async ValueTask SetDeletionLabel(UniqueID uniqueID)

@@ -22,12 +22,12 @@ class КорегуванняБоргу_Елемент : DocumentFormElement
     public КорегуванняБоргу_Objest Елемент { get; init; } = new();
 
     #region Fields
-    Entry НомерДок = new() { WidthRequest = 100 };
-                    DateTimeControl ДатаДок = new();
-            Організації_PointerControl Організація = new() { Caption = "Організація", WidthPresentation = 300 };
-            СтруктураПідприємства_PointerControl Підрозділ = new() { Caption = "Підрозділ", WidthPresentation = 300 };
-            Entry Коментар = new() { WidthRequest = 300 };
-                    CompositePointerControl Основа = new() { BoundConfType = "Документи.КорегуванняБоргу.Основа" };
+    Entry НомерДок = Entry.New();
+                    DateTimeControl ДатаДок = DateTimeControl.New();
+            Організації_PointerControl Організація = Організації_PointerControl.New();
+            СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
+            Entry Коментар = Entry.New();
+                    CompositePointerControl Основа = CompositePointerControl.New();
             
     #endregion
 
@@ -50,7 +50,14 @@ class КорегуванняБоргу_Елемент : DocumentFormElement
             NotebookTablePart.InsertPage(РозрахункиЗКонтрагентами, Label.New("Розрахунки з контрагентами"), 0);
             
             NotebookTablePart.SetCurrentPage(0);
-        
+        НомерДок.WidthRequest = 100;
+                        Організація.Caption = "Організація";
+                    Організація.WidthPresentation = 300;
+                Підрозділ.Caption = "Підрозділ";
+                    Підрозділ.WidthPresentation = 300;
+                Коментар.WidthRequest = 300;
+                        Основа.BoundConfType = "Документи.КорегуванняБоргу.Основа";
+                
     }
 
     protected override void CreateTopStart(Box vBox)
@@ -156,7 +163,7 @@ class КорегуванняБоргу_Елемент : DocumentFormElement
 
     protected override void ReportSpendTheDocument(UniqueID uniqueID)
     {
-        //СпільніФорми_РухДокументуПоРегістрах.СформуватиЗвіт(new КорегуванняБоргу_Pointer(uniqueID));
+        CommonForms_DocumentMovementThroughRegisters.Create(new КорегуванняБоргу_Pointer(uniqueID));
     }
 
     protected override async ValueTask InJournal(UniqueID uniqueID)

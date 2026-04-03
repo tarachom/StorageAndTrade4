@@ -15,14 +15,14 @@ namespace StorageAndTrade;
 
 class Склади_Папки_Елемент : DirectoryFormElement
 {
-    public Склади_Папки_Objest Елемент { get; init; } = new Склади_Папки_Objest();
+    public Склади_Папки_Objest Елемент { get; init; } = new();
     
-    public Склади_Папки_Pointer РодичДляНового { get; set; } = new Склади_Папки_Pointer();
+    public Склади_Папки_Pointer РодичДляНового { get; set; } = new();
     
     #region Fields
-    Entry Код = new() { WidthRequest = 100 };
-                    Entry Назва = new() { WidthRequest = 500 };
-                    Склади_Папки_PointerControl Родич = new() { Caption = "Папка:", WidthPresentation = 500 };
+    Entry Код = Entry.New();
+                    Entry Назва = Entry.New();
+                    Склади_Папки_PointerControl Родич = Склади_Папки_PointerControl.New();
             
     #endregion
 
@@ -33,7 +33,12 @@ class Склади_Папки_Елемент : DirectoryFormElement
     public Склади_Папки_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
+
+        Код.WidthRequest = 100;
+                        Назва.WidthRequest = 300;
+                        Родич.Caption = "Папка:";
+                    Родич.WidthPresentation = 300;
+                
     }
 
     protected override void CreateStart(Box vBox)

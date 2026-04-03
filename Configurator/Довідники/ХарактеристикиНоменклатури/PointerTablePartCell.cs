@@ -11,8 +11,11 @@ using AccountingSoftware;
 
 namespace StorageAndTrade;
 
-public class ХарактеристикиНоменклатури_PointerTablePartCell : PointerTablePartCell
+[GObject.Subclass<PointerTablePartCell>("PointerTablePartCell_Xi96QXFAzkWELzvRombbvg")]
+public partial class ХарактеристикиНоменклатури_PointerTablePartCell : PointerTablePartCell
 {
+    public static ХарактеристикиНоменклатури_PointerTablePartCell New() => NewWithProperties([]);
+
     ХарактеристикиНоменклатури_Pointer pointer = new();
     public ХарактеристикиНоменклатури_Pointer Pointer
     {

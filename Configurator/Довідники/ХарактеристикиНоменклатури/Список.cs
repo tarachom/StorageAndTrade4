@@ -17,7 +17,7 @@ namespace StorageAndTrade;
 class ХарактеристикиНоменклатури_Список : DirectoryFormJournalFull
 {
     
-    public Номенклатура_PointerControl Власник = new() { Caption = "Номенклатура:" };
+    public Номенклатура_PointerControl Власник = Номенклатура_PointerControl.New();
     
     
     public ХарактеристикиНоменклатури_Список() : base(Program.BasicForm?.NotebookFunc)
@@ -29,6 +29,7 @@ class ХарактеристикиНоменклатури_Список : Direct
         
         //Власник
         {
+            Власник.Caption = "Номенклатура:";
             HBoxTop.Append(Власник);
             OwnerWhereListFunc = () => Власник.Pointer.IsEmpty() ? [] : [new(ХарактеристикиНоменклатури_Const.Номенклатура, Comparison.EQ, Власник.Pointer.UniqueID.UGuid)];
             Власник.AfterSelectFunc = async () =>

@@ -13,20 +13,30 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-class КорегуванняБоргу_ТабличнаЧастина_РозрахункиЗКонтрагентами : DocumentFormTablePart
+partial class КорегуванняБоргу_ТабличнаЧастина_РозрахункиЗКонтрагентами : DocumentFormTablePart
 {
-    
-    public КорегуванняБоргу_Objest? ЕлементВласник { get; set; }
-        
-    
     #region Data
-
-    class ItemRow : RowTablePart
-    {
     
-        //
-        // НомерРядка
-        //
+    [GObject.Subclass<GObject.Object>("ItemRow_fqOljr90ek2McBc5aSkKdw")]
+    public partial class ItemRow : IRowTablePart
+    {
+        public static ItemRow New() => NewWithProperties([]);
+
+        // Унікальний ідентифікатор
+        public UniqueID UniqueID
+        {
+            get => UnigueID_;
+            set
+            {
+                UnigueID_ = value;
+                Сhanged_UnigueID?.Invoke();
+            }
+        }
+        UniqueID UnigueID_ = new();
+        public Action? Сhanged_UnigueID;
+
+    
+        /* НомерРядка */
         public int НомерРядка
         {
             get => НомерРядка_;
@@ -43,9 +53,7 @@ class КорегуванняБоргу_ТабличнаЧастина_Розра
         public Action? Сhanged_НомерРядка;
 
     
-        //
-        // ТипКонтрагента
-        //
+        /* ТипКонтрагента */
         public ТипиКонтрагентів ТипКонтрагента
         {
             get => ТипКонтрагента_;
@@ -62,9 +70,7 @@ class КорегуванняБоргу_ТабличнаЧастина_Розра
         public Action? Сhanged_ТипКонтрагента;
 
     
-        //
-        // Контрагент
-        //
+        /* Контрагент */
         public Контрагенти_Pointer Контрагент
         {
             get => Контрагент_;
@@ -81,9 +87,7 @@ class КорегуванняБоргу_ТабличнаЧастина_Розра
         public Action? Сhanged_Контрагент;
 
     
-        //
-        // Валюта
-        //
+        /* Валюта */
         public Валюти_Pointer Валюта
         {
             get => Валюта_;
@@ -100,9 +104,7 @@ class КорегуванняБоргу_ТабличнаЧастина_Розра
         public Action? Сhanged_Валюта;
 
     
-        //
-        // Сума
-        //
+        /* Сума */
         public decimal Сума
         {
             get => Сума_;
@@ -124,22 +126,25 @@ class КорегуванняБоргу_ТабличнаЧастина_Розра
         Функції
         */
         
-        public override ItemRow Copy()
+        public GObject.Object Copy()
         {
-            return new()
-            {
-                НомерРядка = НомерРядка,
-                ТипКонтрагента = ТипКонтрагента,
-                Контрагент = Контрагент.Copy(),
-                Валюта = Валюта.Copy(),
-                Сума = Сума,
-                
-            };
+            var itemRow = New();
+            itemRow.НомерРядка = НомерРядка;
+            itemRow.ТипКонтрагента = ТипКонтрагента;
+            itemRow.Контрагент = Контрагент.Copy();
+            itemRow.Валюта = Валюта.Copy();
+            itemRow.Сума = Сума;
+            
+            return itemRow;
         }
     }
 
     #endregion
 
+    
+    public КорегуванняБоргу_Objest? ЕлементВласник { get; set; }
+        
+    
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());
 
     public КорегуванняБоргу_ТабличнаЧастина_РозрахункиЗКонтрагентами() : base(Program.BasicForm?.NotebookFunc)
@@ -158,8 +163,8 @@ class КорегуванняБоргу_ТабличнаЧастина_Розра
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = LabelTablePartCell.New(null);
+                if (args.Object is not ListItem listItem) return;
+                var cell = LabelTablePartCell.New();
                 
                 cell.Halign = Align.End;
                     
@@ -167,15 +172,12 @@ class КорегуванняБоргу_ТабличнаЧастина_Розра
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (LabelTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not LabelTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke();
                     
-                    (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("№", factory);
             column.Resizable = true;
@@ -188,8 +190,8 @@ class КорегуванняБоргу_ТабличнаЧастина_Розра
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new ComboTextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = ComboTextTablePartCell.New();
                 foreach (var field in ПсевдонімиПерелічення.ТипиКонтрагентів_List())
                     cell.Combo.Append(field.Value.ToString(), field.Name);
                 
@@ -197,16 +199,13 @@ class КорегуванняБоргу_ТабличнаЧастина_Розра
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (ComboTextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not ComboTextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.ТипКонтрагента = ПсевдонімиПерелічення.ТипиКонтрагентів_FindByName(cell.Combo.ActiveId);
+                (row.Сhanged_ТипКонтрагента = () => cell.Value = row.ТипКонтрагента.ToString()).Invoke();
                     
-                    cell.OnСhanged = () => row.ТипКонтрагента = ПсевдонімиПерелічення.ТипиКонтрагентів_FindByName(cell.Combo.ActiveId);
-                    (row.Сhanged_ТипКонтрагента = () => cell.Value = row.ТипКонтрагента.ToString()).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("ТипКонтрагента", factory);
             column.Resizable = true;
@@ -219,24 +218,20 @@ class КорегуванняБоргу_ТабличнаЧастина_Розра
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new Контрагенти_PointerTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = Контрагенти_PointerTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (Контрагенти_PointerTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not Контрагенти_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnSelect = () => row.Контрагент = cell.Pointer;
+                (row.Сhanged_Контрагент = () => cell.Pointer = row.Контрагент).Invoke();
                     
-                    cell.OnSelect = () => row.Контрагент = cell.Pointer;
-                        
-                    (row.Сhanged_Контрагент = () => cell.Pointer = row.Контрагент).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
             column.Resizable = true;
@@ -251,24 +246,20 @@ class КорегуванняБоргу_ТабличнаЧастина_Розра
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new Валюти_PointerTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = Валюти_PointerTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (Валюти_PointerTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not Валюти_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnSelect = () => row.Валюта = cell.Pointer;
+                (row.Сhanged_Валюта = () => cell.Pointer = row.Валюта).Invoke();
                     
-                    cell.OnSelect = () => row.Валюта = cell.Pointer;
-                        
-                    (row.Сhanged_Валюта = () => cell.Pointer = row.Валюта).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
             column.Resizable = true;
@@ -283,23 +274,20 @@ class КорегуванняБоргу_ТабличнаЧастина_Розра
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new NumericTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = NumericTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (NumericTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.Сума = cell.Value;
+                (row.Сhanged_Сума = () => cell.Value = row.Сума).Invoke();
                     
-                    cell.OnСhanged = () => row.Сума = cell.Value;
-                    (row.Сhanged_Сума = () => cell.Value = row.Сума).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
             column.Resizable = true;
@@ -330,16 +318,15 @@ class КорегуванняБоргу_ТабличнаЧастина_Розра
         
         foreach (var record in ЕлементВласник.РозрахункиЗКонтрагентами_TablePart.Records)
         {
-            Store.Append(new ItemRow()
-            {
-                UniqueID = new(record.UID),
-                НомерРядка = record.НомерРядка,
-                ТипКонтрагента = record.ТипКонтрагента,
-                Контрагент = record.Контрагент,
-                Валюта = record.Валюта,
-                Сума = record.Сума,
-                
-            });
+            var row = ItemRow.New();
+            row.UniqueID = new(record.UID);
+            row.НомерРядка = record.НомерРядка;
+            row.ТипКонтрагента = record.ТипКонтрагента;
+            row.Контрагент = record.Контрагент;
+            row.Валюта = record.Валюта;
+            row.Сума = record.Сума;
+            
+            Store.Append(row);
 
             if (SelectPosition > 0)
             {
@@ -380,16 +367,16 @@ class КорегуванняБоргу_ТабличнаЧастина_Розра
             foreach (var record in ЕлементВласник.РозрахункиЗКонтрагентами_TablePart.Records)
             {
                 bool sel = Grid.Model.IsSelected(position);
-                Store.Splice(position, 1, [new ItemRow()
-                {
-                    UniqueID = new(record.UID),
-                    НомерРядка = record.НомерРядка,
-                    ТипКонтрагента = record.ТипКонтрагента,
-                    Контрагент = record.Контрагент,
-                    Валюта = record.Валюта,
-                    Сума = record.Сума,
-                    
-                }], 1);
+
+                var row = ItemRow.New();
+                row.UniqueID = new(record.UID);
+                row.НомерРядка = record.НомерРядка;
+                row.ТипКонтрагента = record.ТипКонтрагента;
+                row.Контрагент = record.Контрагент;
+                row.Валюта = record.Валюта;
+                row.Сума = record.Сума;
+                
+                Store.Splice(position, 1, [row], 1);
                 if (sel) Grid.Model.SelectItem(position, false);
                 position++;
             }
@@ -399,7 +386,7 @@ class КорегуванняБоргу_ТабличнаЧастина_Розра
 
     public override bool NewRecord()
     {
-        Store.Append(new ItemRow());
+        Store.Append(ItemRow.New());
         return true;
     }
 }

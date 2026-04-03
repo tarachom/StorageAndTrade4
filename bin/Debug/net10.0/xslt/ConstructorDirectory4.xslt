@@ -176,9 +176,9 @@ static class <xsl:value-of select="$DirectoryName"/>_Функції
         ];
     }
 
-    public static async ValueTask OpenPageElement(bool IsNew, UniqueID? uniqueID = null, 
-        Action&lt;UniqueID?&gt;? сallBack_LoadRecords = null, 
-        Action&lt;UniqueID&gt;? сallBack_OnSelectPointer = null<xsl:if test="normalize-space($DirectoryOwner) != ''">,
+    public static async ValueTask OpenPageElement(bool IsNew, UnigueID? unigueID = null, 
+        Action&lt;UnigueID?&gt;? сallBack_LoadRecords = null, 
+        Action&lt;UnigueID&gt;? сallBack_OnSelectPointer = null<xsl:if test="normalize-space($DirectoryOwner) != ''">,
             <xsl:variable name="namePointer" select="substring-after($DirectoryOwner, '.')" />
         <xsl:value-of select="$namePointer"/>_Pointer? Власник = null</xsl:if>)
     {
@@ -196,7 +196,7 @@ static class <xsl:value-of select="$DirectoryName"/>_Функції
                 if (Власник != null) page.ВласникДляНового = Власник;
             </xsl:if>
         }
-        else if (uniqueID == null || !await page.Елемент.Read(uniqueID))
+        else if (unigueID == null || !await page.Елемент.Read(unigueID))
         {
             Message.Error(Program.BasicApp, Program.BasicForm, "Не вдалось прочитати!");
             return;
@@ -206,11 +206,11 @@ static class <xsl:value-of select="$DirectoryName"/>_Функції
         await page.SetValue();
     }
 
-    public static async ValueTask OpenPageList(UniqueID? uniqueID = null, Action&lt;UniqueID&gt;? сallBack_OnSelectPointer = null)
+    public static async ValueTask OpenPageList(UnigueID? unigueID = null, Action&lt;UnigueID&gt;? сallBack_OnSelectPointer = null)
     {
         <xsl:value-of select="$DirectoryName"/>_Список page = new()
         {
-            DirectoryPointerItem = uniqueID,
+            DirectoryPointerItem = unigueID,
             CallBack_OnSelectPointer = сallBack_OnSelectPointer
         };
 
@@ -218,24 +218,24 @@ static class <xsl:value-of select="$DirectoryName"/>_Функції
         await page.SetValue();
     }
 
-    public static async ValueTask SetDeletionLabel(UniqueID uniqueID)
+    public static async ValueTask SetDeletionLabel(UnigueID unigueID)
     {
-        <xsl:value-of select="$DirectoryName"/>_Pointer Вказівник = new(uniqueID);
+        <xsl:value-of select="$DirectoryName"/>_Pointer Вказівник = new(unigueID);
         bool? label = await Вказівник.GetDeletionLabel();
         if (label.HasValue) await Вказівник.SetDeletionLabel(!label.Value);
     }
 
-    public static async ValueTask&lt;UniqueID?&gt; Copy(UniqueID uniqueID)
+    public static async ValueTask&lt;UnigueID?&gt; Copy(UnigueID unigueID)
     {
         <xsl:value-of select="$DirectoryName"/>_Objest Обєкт = new();
-        if (await Обєкт.Read(uniqueID))
+        if (await Обєкт.Read(unigueID))
         {
             <xsl:value-of select="$DirectoryName"/>_Objest Новий = await Обєкт.Copy(true);
             await Новий.Save();
             <xsl:for-each select="$TabularParts">
                 await Новий.<xsl:value-of select="Name"/>_TablePart.Save(false); // Таблична частина "<xsl:value-of select="Name"/>"
             </xsl:for-each>
-            return Новий.UniqueID;
+            return Новий.UnigueID;
         }
         else
         {
@@ -458,7 +458,7 @@ class <xsl:value-of select="$DirectoryName"/>_Елемент : DirectoryFormElem
                 if (IsNew)
                     Елемент.<xsl:value-of select="$ParentField"/> = РодичДляНового;
                 else
-                    <xsl:value-of select="$ParentField"/>.OpenFolder = Елемент.UniqueID;
+                    <xsl:value-of select="$ParentField"/>.OpenFolder = Елемент.UnigueID;
             </xsl:when>
         </xsl:choose>
 
@@ -630,19 +630,19 @@ class <xsl:value-of select="$DirectoryName"/>_Список : DirectoryFormJourna
         ТабличнийСписок.CreateFilter(this);
     }
 
-    protected override async ValueTask OpenPageElement(bool IsNew, UniqueID? uniqueID = null)
+    protected override async ValueTask OpenPageElement(bool IsNew, UnigueID? unigueID = null)
     {
-        await Функції.OpenPageElement(IsNew, uniqueID, CallBack_LoadRecords, CallBack_OnSelectPointer);
+        await Функції.OpenPageElement(IsNew, unigueID, CallBack_LoadRecords, CallBack_OnSelectPointer);
     }
 
-    protected override async ValueTask SetDeletionLabel(UniqueID uniqueID)
+    protected override async ValueTask SetDeletionLabel(UnigueID unigueID)
     {
-        await Функції.SetDeletionLabel(uniqueID);
+        await Функції.SetDeletionLabel(unigueID);
     }
 
-    protected override async ValueTask&lt;UniqueID?&gt; Copy(UniqueID uniqueID)
+    protected override async ValueTask&lt;UnigueID?&gt; Copy(UnigueID unigueID)
     {
-        return await Функції.Copy(uniqueID);
+        return await Функції.Copy(unigueID);
     }
 }
     </xsl:template>
@@ -715,24 +715,24 @@ class <xsl:value-of select="$DirectoryName"/>_ШвидкийВибір : Directo
         ТабличнийСписок.CreateFilter(this);
     }
 
-    protected override async ValueTask OpenPageList(UniqueID? uniqueID = null)
+    protected override async ValueTask OpenPageList(UnigueID? unigueID = null)
     {
-        await Функції.OpenPageList(uniqueID, CallBack_OnSelectPointer);
+        await Функції.OpenPageList(unigueID, CallBack_OnSelectPointer);
     }
 
-    protected override async ValueTask OpenPageElement(bool IsNew, UniqueID? uniqueID = null)
+    protected override async ValueTask OpenPageElement(bool IsNew, UnigueID? unigueID = null)
     {
-        await Функції.OpenPageElement(IsNew, uniqueID, CallBack_LoadRecords, CallBack_OnSelectPointer);
+        await Функції.OpenPageElement(IsNew, unigueID, CallBack_LoadRecords, CallBack_OnSelectPointer);
     }
 
-    protected override async ValueTask SetDeletionLabel(UniqueID uniqueID)
+    protected override async ValueTask SetDeletionLabel(UnigueID unigueID)
     {
-        await Функції.SetDeletionLabel(uniqueID);
+        await Функції.SetDeletionLabel(unigueID);
     }
 
-    protected override async ValueTask&lt;UniqueID?&gt; Copy(UniqueID uniqueID)
+    protected override async ValueTask&lt;UnigueID?&gt; Copy(UnigueID unigueID)
     {
-        return await Функції.Copy(uniqueID);
+        return await Функції.Copy(unigueID);
     }
 }
     </xsl:template>
@@ -819,8 +819,8 @@ namespace <xsl:value-of select="$NameSpace"/>
             {
                 if (DirectoryPointerItem != null || SelectPointerItem != null)
                 {
-                    <xsl:value-of select="$DirectoryName"/>_Objest? Обєкт = await new <xsl:value-of select="$DirectoryName"/>_Pointer(SelectPointerItem ?? DirectoryPointerItem ?? new UniqueID()).GetDirectoryObject();
-                    if (Обєкт != null) ДеревоПапок.SelectPointerItem = Обєкт.<xsl:value-of select="$FieldFolder"/>.UniqueID;
+                    <xsl:value-of select="$DirectoryName"/>_Objest? Обєкт = await new <xsl:value-of select="$DirectoryName"/>_Pointer(SelectPointerItem ?? DirectoryPointerItem ?? new UnigueID()).GetDirectoryObject();
+                    if (Обєкт != null) ДеревоПапок.SelectPointerItem = Обєкт.<xsl:value-of select="$FieldFolder"/>.UnigueID;
                 }
 
                 await ДеревоПапок.LoadRecords();
@@ -833,13 +833,13 @@ namespace <xsl:value-of select="$NameSpace"/>
         {
             ТабличніСписки.<xsl:value-of select="$DirectoryName"/>_<xsl:value-of select="$TabularList"/>.ОчиститиВідбір(TreeViewGrid);
             <xsl:if test="normalize-space($DirectoryOwner) != ''">
-            if (!Власник.Pointer.UniqueID.IsEmpty())
+            if (!Власник.Pointer.UnigueID.IsEmpty())
                 ТабличніСписки.<xsl:value-of select="$DirectoryName"/>_<xsl:value-of select="$TabularList"/>.ДодатиВідбір(TreeViewGrid,
-                    new Where(<xsl:value-of select="$DirectoryName"/>_Const.<xsl:value-of select="$PointerFieldOwner"/>, Comparison.EQ, Власник.Pointer.UniqueID.UGuid));
+                    new Where(<xsl:value-of select="$DirectoryName"/>_Const.<xsl:value-of select="$PointerFieldOwner"/>, Comparison.EQ, Власник.Pointer.UnigueID.UGuid));
             </xsl:if>
             if (checkButtonIsHierarchy.Active)
                 ТабличніСписки.<xsl:value-of select="$DirectoryName"/>_<xsl:value-of select="$TabularList"/>.ДодатиВідбір(TreeViewGrid,
-                    new Where(<xsl:value-of select="$DirectoryName"/>_Const.<xsl:value-of select="$FieldFolder"/>, Comparison.EQ, ДеревоПапок.SelectPointerItem?.UGuid ?? new UniqueID().UGuid));
+                    new Where(<xsl:value-of select="$DirectoryName"/>_Const.<xsl:value-of select="$FieldFolder"/>, Comparison.EQ, ДеревоПапок.SelectPointerItem?.UGuid ?? new UnigueID().UGuid));
 
             await ТабличніСписки.<xsl:value-of select="$DirectoryName"/>_<xsl:value-of select="$TabularList"/>.LoadRecords(TreeViewGrid, OpenFolder, SelectPointerItem, DirectoryPointerItem);
         }
@@ -848,9 +848,9 @@ namespace <xsl:value-of select="$NameSpace"/>
         {
             ТабличніСписки.<xsl:value-of select="$DirectoryName"/>_<xsl:value-of select="$TabularList"/>.ОчиститиВідбір(TreeViewGrid);
             <xsl:if test="normalize-space($DirectoryOwner) != ''">
-            if (!Власник.Pointer.UniqueID.IsEmpty())
+            if (!Власник.Pointer.UnigueID.IsEmpty())
                 ТабличніСписки.<xsl:value-of select="$DirectoryName"/>_<xsl:value-of select="$TabularList"/>.ДодатиВідбір(TreeViewGrid,
-                    new Where(<xsl:value-of select="$DirectoryName"/>_Const.<xsl:value-of select="$PointerFieldOwner"/>, Comparison.EQ, Власник.Pointer.UniqueID.UGuid));
+                    new Where(<xsl:value-of select="$DirectoryName"/>_Const.<xsl:value-of select="$PointerFieldOwner"/>, Comparison.EQ, Власник.Pointer.UnigueID.UGuid));
             </xsl:if>
             //Відбори
             ТабличніСписки.<xsl:value-of select="$DirectoryName"/>_<xsl:value-of select="$TabularList"/>.ДодатиВідбір(TreeViewGrid, <xsl:value-of select="$DirectoryName"/>_Функції.Відбори(searchText));
@@ -868,19 +868,19 @@ namespace <xsl:value-of select="$NameSpace"/>
             ТабличніСписки.<xsl:value-of select="$DirectoryName"/>_<xsl:value-of select="$TabularList"/>.CreateFilter(TreeViewGrid, filterControl);
         }
 
-        protected override async ValueTask OpenPageElement(bool IsNew, UniqueID? uniqueID = null)
+        protected override async ValueTask OpenPageElement(bool IsNew, UnigueID? unigueID = null)
         {
-            await  <xsl:value-of select="$DirectoryName"/>_Функції.OpenPageElement(IsNew, uniqueID, CallBack_LoadRecords, null<xsl:if test="normalize-space($DirectoryOwner) != ''">, Власник.Pointer</xsl:if>);
+            await  <xsl:value-of select="$DirectoryName"/>_Функції.OpenPageElement(IsNew, unigueID, CallBack_LoadRecords, null<xsl:if test="normalize-space($DirectoryOwner) != ''">, Власник.Pointer</xsl:if>);
         }
 
-        protected override async ValueTask SetDeletionLabel(UniqueID uniqueID)
+        protected override async ValueTask SetDeletionLabel(UnigueID unigueID)
         {
-            await  <xsl:value-of select="$DirectoryName"/>_Функції.SetDeletionLabel(uniqueID);
+            await  <xsl:value-of select="$DirectoryName"/>_Функції.SetDeletionLabel(unigueID);
         }
 
-        protected override async ValueTask&lt;UniqueID?&gt; Copy(UniqueID uniqueID)
+        protected override async ValueTask&lt;UnigueID?&gt; Copy(UnigueID unigueID)
         {
-            return await  <xsl:value-of select="$DirectoryName"/>_Функції.Copy(uniqueID);
+            return await  <xsl:value-of select="$DirectoryName"/>_Функції.Copy(unigueID);
         }
 
         protected override async ValueTask BeforeSetValue()
@@ -959,7 +959,7 @@ public class <xsl:value-of select="$DirectoryName"/>_PointerControl : PointerCon
         <xsl:value-of select="$DirectoryName"/>_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = Pointer.UniqueID,
+            DirectoryPointerItem = Pointer.UnigueID,
             CallBack_OnSelectPointer = selectPointer =&gt;
             {
                 Pointer = new <xsl:value-of select="$DirectoryName"/>_Pointer(selectPointer);
@@ -1025,9 +1025,9 @@ public class <xsl:value-of select="$DirectoryName"/>_PointerTablePartCell : Poin
 
     public async ValueTask GetPresentation() =&gt; Presentation = pointer != null ? await pointer.GetPresentation() : "";
 
-    async ValueTask PointerChange(UniqueID? p)
+    async ValueTask PointerChange(UnigueID? p)
     {
-        Pointer = new <xsl:value-of select="$DirectoryName"/>_Pointer(p ?? new UniqueID());
+        Pointer = new <xsl:value-of select="$DirectoryName"/>_Pointer(p ?? new UnigueID());
         await GetPresentation();
         OnSelect?.Invoke();
     }
@@ -1047,7 +1047,7 @@ public class <xsl:value-of select="$DirectoryName"/>_PointerTablePartCell : Poin
         <xsl:value-of select="$DirectoryName"/>_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = pointer.UniqueID,
+            DirectoryPointerItem = pointer.UnigueID,
             CallBack_OnSelectPointer = async p =&gt; await PointerChange(p)
         };
         <xsl:if test="normalize-space($DirectoryOwner) != ''">
@@ -1135,7 +1135,7 @@ namespace <xsl:value-of select="$NameSpace"/>
 
         void Add(<xsl:value-of select="$DirectoryName"/>_Pointer item)
         {
-            if (!pointers.Exists((<xsl:value-of select="$DirectoryName"/>_Pointer x) =&gt; x.UniqueID.ToString() == item.UniqueID.ToString()))
+            if (!pointers.Exists((<xsl:value-of select="$DirectoryName"/>_Pointer x) =&gt; x.UnigueID.ToString() == item.UnigueID.ToString()))
                 pointers.Add(item);
 
             Pointer = item;
@@ -1154,7 +1154,7 @@ namespace <xsl:value-of select="$NameSpace"/>
             <xsl:value-of select="$DirectoryName"/>_ШвидкийВибір page = new <xsl:value-of select="$DirectoryName"/>_ШвидкийВибір
             {
                 PopoverParent = popover,
-                DirectoryPointerItem = pointer.UniqueID,
+                DirectoryPointerItem = pointer.UnigueID,
                 CallBack_OnSelectPointer = selectPointer =&gt;
                 {
                     Add(new <xsl:value-of select="$DirectoryName"/>_Pointer(selectPointer));
@@ -1186,7 +1186,7 @@ namespace <xsl:value-of select="$NameSpace"/>
                 LinkButton linkName = new LinkButton("", SubstringName(presentation)) { Halign = Align.Start, Image = new Image(InterfaceGtk3.Іконки.ДляКнопок.Doc), AlwaysShowImage = true, TooltipText = presentation };
                 linkName.Clicked += (sender, args) =&gt;
                 {
-                    if (Pointer.UniqueID.ToString() != item.UniqueID.ToString())
+                    if (Pointer.UnigueID.ToString() != item.UnigueID.ToString())
                         Pointer = item;
                 };
 
@@ -1199,7 +1199,7 @@ namespace <xsl:value-of select="$NameSpace"/>
                     pointers.Remove(item);
                     listBox.Remove(listBoxRow);
 
-                    if (Pointer.UniqueID.ToString() == item.UniqueID.ToString())
+                    if (Pointer.UnigueID.ToString() == item.UnigueID.ToString())
                         Pointer = pointers.Count &gt; 0 ? pointers[0] : new <xsl:value-of select="$DirectoryName"/>_Pointer();
                     else
                         PointerChanged?.Invoke(null, pointer);

@@ -10,19 +10,21 @@ using GeneratedCode.Документи;
 
 namespace StorageAndTrade;
 
-public class РозхіднийКасовийОрдер_PointerControl : PointerControl
+[GObject.Subclass<PointerControl>("PointerControl_0SdJvhhSxUiZ2mi6X5SnxQ")]
+public partial class РозхіднийКасовийОрдер_PointerControl : PointerControl
 {
-    event EventHandler<РозхіднийКасовийОрдер_Pointer> PointerChanged;
+    event EventHandler<РозхіднийКасовийОрдер_Pointer>? PointerChanged;
 
-    public РозхіднийКасовийОрдер_PointerControl()
+    partial void Initialize()
     {
-        pointer = new РозхіднийКасовийОрдер_Pointer();
         WidthPresentation = 300;
         Caption = $"{РозхіднийКасовийОрдер_Const.FULLNAME}:";
         PointerChanged += async (_, pointer) => Presentation = pointer != null ? await pointer.GetPresentation() : "";
     }
 
-    РозхіднийКасовийОрдер_Pointer pointer;
+    public static РозхіднийКасовийОрдер_PointerControl New() => NewWithProperties([]);
+
+    РозхіднийКасовийОрдер_Pointer pointer = new();
     public РозхіднийКасовийОрдер_Pointer Pointer
     {
         get

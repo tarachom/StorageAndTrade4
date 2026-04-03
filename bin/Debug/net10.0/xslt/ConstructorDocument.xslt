@@ -216,8 +216,8 @@ namespace <xsl:value-of select="$NameSpace"/>
             ];
         }
 
-        public static async ValueTask OpenPageElement(bool IsNew, UniqueID? uniqueID = null, 
-            Action&lt;UniqueID?&gt;? сallBack_LoadRecords = null)
+        public static async ValueTask OpenPageElement(bool IsNew, UnigueID? unigueID = null, 
+            Action&lt;UnigueID?&gt;? сallBack_LoadRecords = null)
         {
             <xsl:value-of select="$DocumentName"/>_Елемент page = new <xsl:value-of select="$DocumentName"/>_Елемент
             {
@@ -227,7 +227,7 @@ namespace <xsl:value-of select="$NameSpace"/>
 
             if (IsNew)
                 await page.Елемент.New();
-            else if (uniqueID == null || !await page.Елемент.Read(uniqueID))
+            else if (unigueID == null || !await page.Елемент.Read(unigueID))
             {
                 Message.Error(Program.GeneralForm, "Не вдалось прочитати!");
                 return;
@@ -239,24 +239,24 @@ namespace <xsl:value-of select="$NameSpace"/>
             page.SetValue();
         }
 
-        public static async ValueTask SetDeletionLabel(UniqueID uniqueID)
+        public static async ValueTask SetDeletionLabel(UnigueID unigueID)
         {
-            <xsl:value-of select="$DocumentName"/>_Pointer Вказівник = new(uniqueID);
+            <xsl:value-of select="$DocumentName"/>_Pointer Вказівник = new(unigueID);
             bool? label = await Вказівник.GetDeletionLabel();
             if (label.HasValue) await Вказівник.SetDeletionLabel(!label.Value);
         }
 
-        public static async ValueTask&lt;UniqueID?&gt; Copy(UniqueID uniqueID)
+        public static async ValueTask&lt;UnigueID?&gt; Copy(UnigueID unigueID)
         {
             <xsl:value-of select="$DocumentName"/>_Objest Обєкт = new <xsl:value-of select="$DocumentName"/>_Objest();
-            if (await Обєкт.Read(uniqueID))
+            if (await Обєкт.Read(unigueID))
             {
                 <xsl:value-of select="$DocumentName"/>_Objest Новий = await Обєкт.Copy(true);
                 await Новий.Save();
                 <xsl:for-each select="$TabularParts">
                     await Новий.<xsl:value-of select="Name"/>_TablePart.Save(false); // Таблична частина "<xsl:value-of select="Name"/>"
                 </xsl:for-each>
-                return Новий.UniqueID;
+                return Новий.UnigueID;
             }
             else
             {
@@ -594,7 +594,7 @@ namespace <xsl:value-of select="$NameSpace"/>
             if (spendDoc)
             {
                 bool isSpend = await Елемент.SpendTheDocument(Елемент.ДатаДок);
-                if (!isSpend) ФункціїДляПовідомлень.ПоказатиПовідомлення(Елемент.UniqueID);
+                if (!isSpend) ФункціїДляПовідомлень.ПоказатиПовідомлення(Елемент.UnigueID);
                 return isSpend;
             }
             else
@@ -604,14 +604,14 @@ namespace <xsl:value-of select="$NameSpace"/>
             }
         }
 
-        protected override void ReportSpendTheDocument(UniqueID uniqueID)
+        protected override void ReportSpendTheDocument(UnigueID unigueID)
         {
-            СпільніФорми_РухДокументуПоРегістрах.СформуватиЗвіт(new <xsl:value-of select="$DocumentName"/>_Pointer(uniqueID));
+            СпільніФорми_РухДокументуПоРегістрах.СформуватиЗвіт(new <xsl:value-of select="$DocumentName"/>_Pointer(unigueID));
         }
 
-        protected override async ValueTask InJournal(UniqueID uniqueID)
+        protected override async ValueTask InJournal(UnigueID unigueID)
         {
-            <xsl:value-of select="$DocumentName"/> page = new <xsl:value-of select="$DocumentName"/>() { SelectPointerItem = uniqueID };
+            <xsl:value-of select="$DocumentName"/> page = new <xsl:value-of select="$DocumentName"/>() { SelectPointerItem = unigueID };
             NotebookFunction.CreateNotebookPage(Program.GeneralNotebook, <xsl:value-of select="$DocumentName"/>_Const.FULLNAME, () => page);
             await page.SetValue();
         }
@@ -690,24 +690,24 @@ namespace <xsl:value-of select="$NameSpace"/>
             ТабличніСписки.<xsl:value-of select="$DocumentName"/>_<xsl:value-of select="$TabularList"/>.CreateFilter(TreeViewGrid, filterControl);
         }
 
-        protected override async ValueTask OpenPageElement(bool IsNew, UniqueID? uniqueID = null)
+        protected override async ValueTask OpenPageElement(bool IsNew, UnigueID? unigueID = null)
         {
-            await <xsl:value-of select="$DocumentName"/>_Функції.OpenPageElement(IsNew, uniqueID, CallBack_LoadRecords);
+            await <xsl:value-of select="$DocumentName"/>_Функції.OpenPageElement(IsNew, unigueID, CallBack_LoadRecords);
         }
 
-        protected override async ValueTask SetDeletionLabel(UniqueID uniqueID)
+        protected override async ValueTask SetDeletionLabel(UnigueID unigueID)
         {
-            await <xsl:value-of select="$DocumentName"/>_Функції.SetDeletionLabel(uniqueID);
+            await <xsl:value-of select="$DocumentName"/>_Функції.SetDeletionLabel(unigueID);
         }
 
-        protected override async ValueTask&lt;UniqueID?&gt; Copy(UniqueID uniqueID)
+        protected override async ValueTask&lt;UnigueID?&gt; Copy(UnigueID unigueID)
         {
-            return await <xsl:value-of select="$DocumentName"/>_Функції.Copy(uniqueID);
+            return await <xsl:value-of select="$DocumentName"/>_Функції.Copy(unigueID);
         }
 
-        protected override async ValueTask VersionsHistory(UniqueID uniqueID)
+        protected override async ValueTask VersionsHistory(UnigueID unigueID)
         {
-            await СпільніФорми_ІсторіяЗміниДаних_Список.Сформувати(new <xsl:value-of select="$DocumentName"/>_Pointer(uniqueID).GetBasis());
+            await СпільніФорми_ІсторіяЗміниДаних_Список.Сформувати(new <xsl:value-of select="$DocumentName"/>_Pointer(unigueID).GetBasis());
         }
 
         const string КлючНалаштуванняКористувача = "Документи.<xsl:value-of select="$DocumentName"/>";
@@ -724,29 +724,29 @@ namespace <xsl:value-of select="$NameSpace"/>
             await BeforeLoadRecords();
         }
 
-        protected override async ValueTask SpendTheDocument(UniqueID uniqueID, bool spendDoc)
+        protected override async ValueTask SpendTheDocument(UnigueID unigueID, bool spendDoc)
         {
-            <xsl:value-of select="$DocumentName"/>_Objest? Обєкт = await new <xsl:value-of select="$DocumentName"/>_Pointer(uniqueID).GetDocumentObject(true);
+            <xsl:value-of select="$DocumentName"/>_Objest? Обєкт = await new <xsl:value-of select="$DocumentName"/>_Pointer(unigueID).GetDocumentObject(true);
             if (Обєкт == null) return;
 
             if (spendDoc)
             {
                 if (!await Обєкт.SpendTheDocument(Обєкт.ДатаДок))
-                    ФункціїДляПовідомлень.ПоказатиПовідомлення(Обєкт.UniqueID);
+                    ФункціїДляПовідомлень.ПоказатиПовідомлення(Обєкт.UnigueID);
             }
             else
                 await Обєкт.ClearSpendTheDocument();
         }
 
-        protected override void ReportSpendTheDocument(UniqueID uniqueID)
+        protected override void ReportSpendTheDocument(UnigueID unigueID)
         {
-            СпільніФорми_РухДокументуПоРегістрах.СформуватиЗвіт(new <xsl:value-of select="$DocumentName"/>_Pointer(uniqueID));
+            СпільніФорми_РухДокументуПоРегістрах.СформуватиЗвіт(new <xsl:value-of select="$DocumentName"/>_Pointer(unigueID));
         }
         
         protected override bool IsExportXML() { return <xsl:choose><xsl:when test="$DocumentExportXML = '1'">true</xsl:when><xsl:otherwise>false</xsl:otherwise></xsl:choose>; } //Дозволити експорт документу
-        protected override async ValueTask ExportXML(UniqueID uniqueID, string pathToFolder)
+        protected override async ValueTask ExportXML(UnigueID unigueID, string pathToFolder)
         {
-            <xsl:value-of select="$DocumentName"/>_Pointer Вказівник = new <xsl:value-of select="$DocumentName"/>_Pointer(uniqueID);
+            <xsl:value-of select="$DocumentName"/>_Pointer Вказівник = new <xsl:value-of select="$DocumentName"/>_Pointer(unigueID);
             await Вказівник.GetPresentation();
             string path = System.IO.Path.Combine(pathToFolder, $"{Вказівник.Назва}.xml");
 
@@ -755,9 +755,9 @@ namespace <xsl:value-of select="$NameSpace"/>
         }
 
         /*
-        protected override async ValueTask PrintingDoc(UniqueID uniqueID)
+        protected override async ValueTask PrintingDoc(UnigueID unigueID)
         {
-            await <xsl:value-of select="$DocumentName"/>_Друк.PDF(uniqueID);
+            await <xsl:value-of select="$DocumentName"/>_Друк.PDF(unigueID);
         }
         */
 
@@ -818,7 +818,7 @@ namespace <xsl:value-of select="$NameSpace"/>
             BeforeClickOpenFunc?.Invoke();
             <xsl:value-of select="$DocumentName"/> page = new <xsl:value-of select="$DocumentName"/>
             {
-                DocumentPointerItem = Pointer.UniqueID,
+                DocumentPointerItem = Pointer.UnigueID,
                 CallBack_OnSelectPointer = selectPointer =&gt;
                 {
                     Pointer = new <xsl:value-of select="$DocumentName"/>_Pointer(selectPointer);

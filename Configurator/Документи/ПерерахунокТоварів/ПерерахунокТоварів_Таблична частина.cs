@@ -13,20 +13,30 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-class ПерерахунокТоварів_ТабличнаЧастина_Товари : DocumentFormTablePart
+partial class ПерерахунокТоварів_ТабличнаЧастина_Товари : DocumentFormTablePart
 {
-    
-    public ПерерахунокТоварів_Objest? ЕлементВласник { get; set; }
-        
-    
     #region Data
-
-    class ItemRow : RowTablePart
-    {
     
-        //
-        // НомерРядка
-        //
+    [GObject.Subclass<GObject.Object>("ItemRow_z48ei7Df5kWrQJELYHsh8A")]
+    public partial class ItemRow : IRowTablePart
+    {
+        public static ItemRow New() => NewWithProperties([]);
+
+        // Унікальний ідентифікатор
+        public UniqueID UniqueID
+        {
+            get => UnigueID_;
+            set
+            {
+                UnigueID_ = value;
+                Сhanged_UnigueID?.Invoke();
+            }
+        }
+        UniqueID UnigueID_ = new();
+        public Action? Сhanged_UnigueID;
+
+    
+        /* НомерРядка */
         public int НомерРядка
         {
             get => НомерРядка_;
@@ -43,9 +53,7 @@ class ПерерахунокТоварів_ТабличнаЧастина_Тов
         public Action? Сhanged_НомерРядка;
 
     
-        //
-        // Номенклатура
-        //
+        /* Номенклатура */
         public Номенклатура_Pointer Номенклатура
         {
             get => Номенклатура_;
@@ -62,9 +70,7 @@ class ПерерахунокТоварів_ТабличнаЧастина_Тов
         public Action? Сhanged_Номенклатура;
 
     
-        //
-        // ХарактеристикаНоменклатури
-        //
+        /* ХарактеристикаНоменклатури */
         public ХарактеристикиНоменклатури_Pointer ХарактеристикаНоменклатури
         {
             get => ХарактеристикаНоменклатури_;
@@ -81,9 +87,7 @@ class ПерерахунокТоварів_ТабличнаЧастина_Тов
         public Action? Сhanged_ХарактеристикаНоменклатури;
 
     
-        //
-        // КількістьУпаковок
-        //
+        /* КількістьУпаковок */
         public int КількістьУпаковок
         {
             get => КількістьУпаковок_;
@@ -100,9 +104,7 @@ class ПерерахунокТоварів_ТабличнаЧастина_Тов
         public Action? Сhanged_КількістьУпаковок;
 
     
-        //
-        // КількістьУпаковокФакт
-        //
+        /* КількістьУпаковокФакт */
         public int КількістьУпаковокФакт
         {
             get => КількістьУпаковокФакт_;
@@ -119,9 +121,7 @@ class ПерерахунокТоварів_ТабличнаЧастина_Тов
         public Action? Сhanged_КількістьУпаковокФакт;
 
     
-        //
-        // Пакування
-        //
+        /* Пакування */
         public ПакуванняОдиниціВиміру_Pointer Пакування
         {
             get => Пакування_;
@@ -138,9 +138,7 @@ class ПерерахунокТоварів_ТабличнаЧастина_Тов
         public Action? Сhanged_Пакування;
 
     
-        //
-        // Кількість
-        //
+        /* Кількість */
         public decimal Кількість
         {
             get => Кількість_;
@@ -157,9 +155,7 @@ class ПерерахунокТоварів_ТабличнаЧастина_Тов
         public Action? Сhanged_Кількість;
 
     
-        //
-        // КількістьФакт
-        //
+        /* КількістьФакт */
         public decimal КількістьФакт
         {
             get => КількістьФакт_;
@@ -176,9 +172,7 @@ class ПерерахунокТоварів_ТабличнаЧастина_Тов
         public Action? Сhanged_КількістьФакт;
 
     
-        //
-        // Коментар
-        //
+        /* Коментар */
         public string Коментар
         {
             get => Коментар_;
@@ -200,26 +194,29 @@ class ПерерахунокТоварів_ТабличнаЧастина_Тов
         Функції
         */
         
-        public override ItemRow Copy()
+        public GObject.Object Copy()
         {
-            return new()
-            {
-                НомерРядка = НомерРядка,
-                Номенклатура = Номенклатура.Copy(),
-                ХарактеристикаНоменклатури = ХарактеристикаНоменклатури.Copy(),
-                КількістьУпаковок = КількістьУпаковок,
-                КількістьУпаковокФакт = КількістьУпаковокФакт,
-                Пакування = Пакування.Copy(),
-                Кількість = Кількість,
-                КількістьФакт = КількістьФакт,
-                Коментар = Коментар,
-                
-            };
+            var itemRow = New();
+            itemRow.НомерРядка = НомерРядка;
+            itemRow.Номенклатура = Номенклатура.Copy();
+            itemRow.ХарактеристикаНоменклатури = ХарактеристикаНоменклатури.Copy();
+            itemRow.КількістьУпаковок = КількістьУпаковок;
+            itemRow.КількістьУпаковокФакт = КількістьУпаковокФакт;
+            itemRow.Пакування = Пакування.Copy();
+            itemRow.Кількість = Кількість;
+            itemRow.КількістьФакт = КількістьФакт;
+            itemRow.Коментар = Коментар;
+            
+            return itemRow;
         }
     }
 
     #endregion
 
+    
+    public ПерерахунокТоварів_Objest? ЕлементВласник { get; set; }
+        
+    
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());
 
     public ПерерахунокТоварів_ТабличнаЧастина_Товари() : base(Program.BasicForm?.NotebookFunc)
@@ -238,8 +235,8 @@ class ПерерахунокТоварів_ТабличнаЧастина_Тов
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = LabelTablePartCell.New(null);
+                if (args.Object is not ListItem listItem) return;
+                var cell = LabelTablePartCell.New();
                 
                 cell.Halign = Align.End;
                     
@@ -247,15 +244,12 @@ class ПерерахунокТоварів_ТабличнаЧастина_Тов
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (LabelTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not LabelTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke();
                     
-                    (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("№", factory);
             column.Resizable = true;
@@ -268,24 +262,20 @@ class ПерерахунокТоварів_ТабличнаЧастина_Тов
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new Номенклатура_PointerTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = Номенклатура_PointerTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (Номенклатура_PointerTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not Номенклатура_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnSelect = () => row.Номенклатура = cell.Pointer;
+                (row.Сhanged_Номенклатура = () => cell.Pointer = row.Номенклатура).Invoke();
                     
-                    cell.OnSelect = () => row.Номенклатура = cell.Pointer;
-                        
-                    (row.Сhanged_Номенклатура = () => cell.Pointer = row.Номенклатура).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
             column.Resizable = true;
@@ -300,26 +290,22 @@ class ПерерахунокТоварів_ТабличнаЧастина_Тов
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new ХарактеристикиНоменклатури_PointerTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = ХарактеристикиНоменклатури_PointerTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (ХарактеристикиНоменклатури_PointerTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not ХарактеристикиНоменклатури_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.BeforeClickOpenFunc = () => cell.Власник  = row.Номенклатура;
+                        
+                cell.OnSelect = () => row.ХарактеристикаНоменклатури = cell.Pointer;
+                (row.Сhanged_ХарактеристикаНоменклатури = () => cell.Pointer = row.ХарактеристикаНоменклатури).Invoke();
                     
-                    cell.OnSelect = () => row.ХарактеристикаНоменклатури = cell.Pointer;
-                        
-                    (row.Сhanged_Номенклатура = () => cell.Власник  = row.Номенклатура).Invoke();
-                            
-                    (row.Сhanged_ХарактеристикаНоменклатури = () => cell.Pointer = row.ХарактеристикаНоменклатури).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
             column.Resizable = true;
@@ -334,23 +320,20 @@ class ПерерахунокТоварів_ТабличнаЧастина_Тов
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new IntegerTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = IntegerTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (IntegerTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not IntegerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.КількістьУпаковок = cell.Value;
+                (row.Сhanged_КількістьУпаковок = () => cell.Value = row.КількістьУпаковок).Invoke();
                     
-                    cell.OnСhanged = () => row.КількістьУпаковок = cell.Value;
-                    (row.Сhanged_КількістьУпаковок = () => cell.Value = row.КількістьУпаковок).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Пак", factory);
             column.Resizable = true;
@@ -363,23 +346,20 @@ class ПерерахунокТоварів_ТабличнаЧастина_Тов
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new IntegerTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = IntegerTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (IntegerTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not IntegerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.КількістьУпаковокФакт = cell.Value;
+                (row.Сhanged_КількістьУпаковокФакт = () => cell.Value = row.КількістьУпаковокФакт).Invoke();
                     
-                    cell.OnСhanged = () => row.КількістьУпаковокФакт = cell.Value;
-                    (row.Сhanged_КількістьУпаковокФакт = () => cell.Value = row.КількістьУпаковокФакт).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Пак факт", factory);
             column.Resizable = true;
@@ -392,24 +372,20 @@ class ПерерахунокТоварів_ТабличнаЧастина_Тов
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new ПакуванняОдиниціВиміру_PointerTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = ПакуванняОдиниціВиміру_PointerTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (ПакуванняОдиниціВиміру_PointerTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not ПакуванняОдиниціВиміру_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnSelect = () => row.Пакування = cell.Pointer;
+                (row.Сhanged_Пакування = () => cell.Pointer = row.Пакування).Invoke();
                     
-                    cell.OnSelect = () => row.Пакування = cell.Pointer;
-                        
-                    (row.Сhanged_Пакування = () => cell.Pointer = row.Пакування).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Пакування", factory);
             column.Resizable = true;
@@ -424,23 +400,20 @@ class ПерерахунокТоварів_ТабличнаЧастина_Тов
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new NumericTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = NumericTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (NumericTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.Кількість = cell.Value;
+                (row.Сhanged_Кількість = () => cell.Value = row.Кількість).Invoke();
                     
-                    cell.OnСhanged = () => row.Кількість = cell.Value;
-                    (row.Сhanged_Кількість = () => cell.Value = row.Кількість).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
             column.Resizable = true;
@@ -453,23 +426,20 @@ class ПерерахунокТоварів_ТабличнаЧастина_Тов
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new NumericTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = NumericTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (NumericTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.КількістьФакт = cell.Value;
+                (row.Сhanged_КількістьФакт = () => cell.Value = row.КількістьФакт).Invoke();
                     
-                    cell.OnСhanged = () => row.КількістьФакт = cell.Value;
-                    (row.Сhanged_КількістьФакт = () => cell.Value = row.КількістьФакт).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Кількість факт", factory);
             column.Resizable = true;
@@ -482,23 +452,20 @@ class ПерерахунокТоварів_ТабличнаЧастина_Тов
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.Коментар = cell.Value;
+                (row.Сhanged_Коментар = () => cell.Value = row.Коментар).Invoke();
                     
-                    cell.OnСhanged = () => row.Коментар = cell.Value;
-                    (row.Сhanged_Коментар = () => cell.Value = row.Коментар).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
             column.Resizable = true;
@@ -529,20 +496,19 @@ class ПерерахунокТоварів_ТабличнаЧастина_Тов
         
         foreach (var record in ЕлементВласник.Товари_TablePart.Records)
         {
-            Store.Append(new ItemRow()
-            {
-                UniqueID = new(record.UID),
-                НомерРядка = record.НомерРядка,
-                Номенклатура = record.Номенклатура,
-                ХарактеристикаНоменклатури = record.ХарактеристикаНоменклатури,
-                КількістьУпаковок = record.КількістьУпаковок,
-                КількістьУпаковокФакт = record.КількістьУпаковокФакт,
-                Пакування = record.Пакування,
-                Кількість = record.Кількість,
-                КількістьФакт = record.КількістьФакт,
-                Коментар = record.Коментар,
-                
-            });
+            var row = ItemRow.New();
+            row.UniqueID = new(record.UID);
+            row.НомерРядка = record.НомерРядка;
+            row.Номенклатура = record.Номенклатура;
+            row.ХарактеристикаНоменклатури = record.ХарактеристикаНоменклатури;
+            row.КількістьУпаковок = record.КількістьУпаковок;
+            row.КількістьУпаковокФакт = record.КількістьУпаковокФакт;
+            row.Пакування = record.Пакування;
+            row.Кількість = record.Кількість;
+            row.КількістьФакт = record.КількістьФакт;
+            row.Коментар = record.Коментар;
+            
+            Store.Append(row);
 
             if (SelectPosition > 0)
             {
@@ -587,20 +553,20 @@ class ПерерахунокТоварів_ТабличнаЧастина_Тов
             foreach (var record in ЕлементВласник.Товари_TablePart.Records)
             {
                 bool sel = Grid.Model.IsSelected(position);
-                Store.Splice(position, 1, [new ItemRow()
-                {
-                    UniqueID = new(record.UID),
-                    НомерРядка = record.НомерРядка,
-                    Номенклатура = record.Номенклатура,
-                    ХарактеристикаНоменклатури = record.ХарактеристикаНоменклатури,
-                    КількістьУпаковок = record.КількістьУпаковок,
-                    КількістьУпаковокФакт = record.КількістьУпаковокФакт,
-                    Пакування = record.Пакування,
-                    Кількість = record.Кількість,
-                    КількістьФакт = record.КількістьФакт,
-                    Коментар = record.Коментар,
-                    
-                }], 1);
+
+                var row = ItemRow.New();
+                row.UniqueID = new(record.UID);
+                row.НомерРядка = record.НомерРядка;
+                row.Номенклатура = record.Номенклатура;
+                row.ХарактеристикаНоменклатури = record.ХарактеристикаНоменклатури;
+                row.КількістьУпаковок = record.КількістьУпаковок;
+                row.КількістьУпаковокФакт = record.КількістьУпаковокФакт;
+                row.Пакування = record.Пакування;
+                row.Кількість = record.Кількість;
+                row.КількістьФакт = record.КількістьФакт;
+                row.Коментар = record.Коментар;
+                
+                Store.Splice(position, 1, [row], 1);
                 if (sel) Grid.Model.SelectItem(position, false);
                 position++;
             }
@@ -610,7 +576,7 @@ class ПерерахунокТоварів_ТабличнаЧастина_Тов
 
     public override bool NewRecord()
     {
-        Store.Append(new ItemRow());
+        Store.Append(ItemRow.New());
         return true;
     }
 }

@@ -10,19 +10,21 @@ using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
 
-public class Каси_PointerControl : PointerControl
+[GObject.Subclass<PointerControl>("PointerControl_dP8lGfH7k06Oxch4X61fg")]
+public partial class Каси_PointerControl : PointerControl
 {
-    event EventHandler<Каси_Pointer> PointerChanged;
+    event EventHandler<Каси_Pointer>? PointerChanged;
 
-    public Каси_PointerControl()
+    partial void Initialize()
     {
-        pointer = new Каси_Pointer();
         WidthPresentation = 300;
         Caption = $"{Каси_Const.FULLNAME}:";
         PointerChanged += async (_, pointer) => Presentation = pointer != null ? await pointer.GetPresentation() : "";
     }
 
-    Каси_Pointer pointer;
+    public static Каси_PointerControl New() => NewWithProperties([]);
+
+    Каси_Pointer pointer = new();
     public Каси_Pointer Pointer
     {
         get
@@ -49,6 +51,8 @@ public class Каси_PointerControl : PointerControl
         {
             PopoverParent = popover,
             DirectoryPointerItem = Pointer.UniqueID,
+            OpenSelect = true,
+            OpenFolder = OpenFolder,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new Каси_Pointer(selectPointer);

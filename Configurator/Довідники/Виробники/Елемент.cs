@@ -15,11 +15,11 @@ namespace StorageAndTrade;
 
 class Виробники_Елемент : DirectoryFormElement
 {
-    public Виробники_Objest Елемент { get; init; } = new Виробники_Objest();
+    public Виробники_Objest Елемент { get; init; } = new();
     
     #region Fields
-    Entry Код = new() { WidthRequest = 100 };
-                    Entry Назва = new() { WidthRequest = 500 };
+    Entry Код = Entry.New();
+                    Entry Назва = Entry.New();
                     
     #endregion
 
@@ -30,7 +30,10 @@ class Виробники_Елемент : DirectoryFormElement
     public Виробники_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
+
+        Код.WidthRequest = 100;
+                        Назва.WidthRequest = 300;
+                        
     }
 
     protected override void CreateStart(Box vBox)

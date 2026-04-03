@@ -15,12 +15,12 @@ namespace StorageAndTrade;
 
 class СтруктураПідприємства_Елемент : DirectoryFormElement
 {
-    public СтруктураПідприємства_Objest Елемент { get; init; } = new СтруктураПідприємства_Objest();
+    public СтруктураПідприємства_Objest Елемент { get; init; } = new();
     
     #region Fields
-    Entry Код = new() { WidthRequest = 100 };
-                    Entry Назва = new() { WidthRequest = 500 };
-                    ФізичніОсоби_PointerControl Керівник = new() { Caption = "Керівник", WidthPresentation = 500 };
+    Entry Код = Entry.New();
+                    Entry Назва = Entry.New();
+                    ФізичніОсоби_PointerControl Керівник = ФізичніОсоби_PointerControl.New();
             
     #endregion
 
@@ -31,7 +31,12 @@ class СтруктураПідприємства_Елемент : DirectoryFormE
     public СтруктураПідприємства_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
+
+        Код.WidthRequest = 100;
+                        Назва.WidthRequest = 300;
+                        Керівник.Caption = "Керівник";
+                    Керівник.WidthPresentation = 300;
+                
     }
 
     protected override void CreateStart(Box vBox)

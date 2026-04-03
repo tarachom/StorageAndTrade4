@@ -1,3 +1,4 @@
+
 /*     
         Номенклатура.cs 
         Список з Деревом
@@ -17,6 +18,7 @@ class Номенклатура_Список : DirectoryFormJournalFull
 {
     Номенклатура_Папки_Список Папки = new() { InsertEmptyFirstRow = true };
     
+
     public Номенклатура_Список() : base(Program.BasicForm?.NotebookFunc)
     {
         TypeName = Номенклатура_Const.POINTER;
@@ -47,6 +49,7 @@ class Номенклатура_Список : DirectoryFormJournalFull
                 }
             };
         }
+        
     }
     
     protected override async ValueTask BeforeSetValue()

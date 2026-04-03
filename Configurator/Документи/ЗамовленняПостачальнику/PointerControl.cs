@@ -10,19 +10,21 @@ using GeneratedCode.Документи;
 
 namespace StorageAndTrade;
 
-public class ЗамовленняПостачальнику_PointerControl : PointerControl
+[GObject.Subclass<PointerControl>("PointerControl_GUSFyEXF2k2QWajH3n1fOQ")]
+public partial class ЗамовленняПостачальнику_PointerControl : PointerControl
 {
-    event EventHandler<ЗамовленняПостачальнику_Pointer> PointerChanged;
+    event EventHandler<ЗамовленняПостачальнику_Pointer>? PointerChanged;
 
-    public ЗамовленняПостачальнику_PointerControl()
+    partial void Initialize()
     {
-        pointer = new ЗамовленняПостачальнику_Pointer();
         WidthPresentation = 300;
         Caption = $"{ЗамовленняПостачальнику_Const.FULLNAME}:";
         PointerChanged += async (_, pointer) => Presentation = pointer != null ? await pointer.GetPresentation() : "";
     }
 
-    ЗамовленняПостачальнику_Pointer pointer;
+    public static ЗамовленняПостачальнику_PointerControl New() => NewWithProperties([]);
+
+    ЗамовленняПостачальнику_Pointer pointer = new();
     public ЗамовленняПостачальнику_Pointer Pointer
     {
         get

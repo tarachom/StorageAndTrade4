@@ -11,8 +11,11 @@ using AccountingSoftware;
 
 namespace StorageAndTrade;
 
-public class АктВиконанихРобіт_PointerTablePartCell : PointerTablePartCell
+[GObject.Subclass<PointerTablePartCell>("PointerTablePartCell_uA1U6iIGkGa6XRhqZVAA")]
+public partial class АктВиконанихРобіт_PointerTablePartCell : PointerTablePartCell
 {
+    public static АктВиконанихРобіт_PointerTablePartCell New() => NewWithProperties([]);
+
     АктВиконанихРобіт_Pointer pointer = new();
     public АктВиконанихРобіт_Pointer Pointer
     {

@@ -10,19 +10,21 @@ using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
 
-public class СкладськіКомірки_Папки_PointerControl : PointerControl
+[GObject.Subclass<PointerControl>("PointerControl_2rhuU0vRTEura2PaPFxLIg")]
+public partial class СкладськіКомірки_Папки_PointerControl : PointerControl
 {
-    event EventHandler<СкладськіКомірки_Папки_Pointer> PointerChanged;
+    event EventHandler<СкладськіКомірки_Папки_Pointer>? PointerChanged;
 
-    public СкладськіКомірки_Папки_PointerControl()
+    partial void Initialize()
     {
-        pointer = new СкладськіКомірки_Папки_Pointer();
         WidthPresentation = 300;
         Caption = $"{СкладськіКомірки_Папки_Const.FULLNAME}:";
         PointerChanged += async (_, pointer) => Presentation = pointer != null ? await pointer.GetPresentation() : "";
     }
 
-    СкладськіКомірки_Папки_Pointer pointer;
+    public static СкладськіКомірки_Папки_PointerControl New() => NewWithProperties([]);
+
+    СкладськіКомірки_Папки_Pointer pointer = new();
     public СкладськіКомірки_Папки_Pointer Pointer
     {
         get
@@ -51,6 +53,7 @@ public class СкладськіКомірки_Папки_PointerControl : Pointe
         {
             PopoverParent = popover,
             DirectoryPointerItem = Pointer.UniqueID,
+            OpenSelect = true,
             OpenFolder = OpenFolder,
             CallBack_OnSelectPointer = selectPointer =>
             {

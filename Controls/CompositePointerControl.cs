@@ -11,9 +11,19 @@ using GeneratedCode;
 
 namespace StorageAndTrade;
 
-class CompositePointerControl : InterfaceGtk4.CompositePointerControl
+[GObject.Subclass<InterfaceGtk4.CompositePointerControl>]
+partial class CompositePointerControl : InterfaceGtk4.CompositePointerControl
 {
-    public CompositePointerControl() : base(Config.Kernel, Config.NamespaceProgram, Config.NamespaceCodeGeneration, Program.BasicForm?.NotebookFunc) { }
+    public static CompositePointerControl New()
+    {
+        CompositePointerControl control = NewWithProperties([]);
+        control.Kernel = Config.Kernel;
+        control.NamespaceProgram = Config.NamespaceProgram;
+        control.NamespaceCodeGeneration = Config.NamespaceCodeGeneration;
+        control.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return control;
+    }
 
     protected override async ValueTask<CompositePointerPresentation_Record> CompositePointerPresentation(UuidAndText uuidAndText) =>
         await Functions.CompositePointerPresentation(uuidAndText);

@@ -15,12 +15,12 @@ namespace StorageAndTrade;
 
 class ВидиЦін_Елемент : DirectoryFormElement
 {
-    public ВидиЦін_Objest Елемент { get; init; } = new ВидиЦін_Objest();
+    public ВидиЦін_Objest Елемент { get; init; } = new();
     
     #region Fields
-    Entry Код = new() { WidthRequest = 100 };
-                    Entry Назва = new() { WidthRequest = 500 };
-                    Валюти_PointerControl Валюта = new() { Caption = "Валюта", WidthPresentation = 500 };
+    Entry Код = Entry.New();
+                    Entry Назва = Entry.New();
+                    Валюти_PointerControl Валюта = Валюти_PointerControl.New();
             
     #endregion
 
@@ -31,7 +31,12 @@ class ВидиЦін_Елемент : DirectoryFormElement
     public ВидиЦін_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
+
+        Код.WidthRequest = 100;
+                        Назва.WidthRequest = 300;
+                        Валюта.Caption = "Валюта";
+                    Валюта.WidthPresentation = 300;
+                
     }
 
     protected override void CreateStart(Box vBox)

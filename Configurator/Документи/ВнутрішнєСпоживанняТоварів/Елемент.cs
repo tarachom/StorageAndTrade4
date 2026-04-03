@@ -22,15 +22,15 @@ class ВнутрішнєСпоживанняТоварів_Елемент : Docu
     public ВнутрішнєСпоживанняТоварів_Objest Елемент { get; init; } = new();
 
     #region Fields
-    Entry НомерДок = new() { WidthRequest = 100 };
-                    DateTimeControl ДатаДок = new();
-            Організації_PointerControl Організація = new() { Caption = "Організація", WidthPresentation = 300 };
-            Склади_PointerControl Склад = new() { Caption = "Склад", WidthPresentation = 300 };
-            Валюти_PointerControl Валюта = new() { Caption = "Валюта", WidthPresentation = 300 };
-            СтруктураПідприємства_PointerControl Підрозділ = new() { Caption = "Підрозділ", WidthPresentation = 300 };
-            CompositePointerControl Основа = new() { BoundConfType = "Документи.ВнутрішнєСпоживанняТоварів.Основа" };
-            ComboBoxText ГосподарськаОперація = new ComboBoxText();
-            Entry Коментар = new() { WidthRequest = 300 };
+    Entry НомерДок = Entry.New();
+                    DateTimeControl ДатаДок = DateTimeControl.New();
+            Організації_PointerControl Організація = Організації_PointerControl.New();
+            Склади_PointerControl Склад = Склади_PointerControl.New();
+            Валюти_PointerControl Валюта = Валюти_PointerControl.New();
+            СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
+            CompositePointerControl Основа = CompositePointerControl.New();
+            ComboBoxText ГосподарськаОперація = ComboBoxText.New();
+            Entry Коментар = Entry.New();
                     
     #endregion
 
@@ -53,18 +53,29 @@ class ВнутрішнєСпоживанняТоварів_Елемент : Docu
             NotebookTablePart.InsertPage(Товари, Label.New("Товари"), 0);
             
             NotebookTablePart.SetCurrentPage(0);
-        
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.ГосподарськіОперації_List())
-                ГосподарськаОперація.Append(field.Value.ToString(), field.Name);
+        НомерДок.WidthRequest = 100;
+                        Організація.Caption = "Організація";
+                    Організація.WidthPresentation = 300;
+                Склад.Caption = "Склад";
+                    Склад.WidthPresentation = 300;
+                Валюта.Caption = "Валюта";
+                    Валюта.WidthPresentation = 300;
+                Підрозділ.Caption = "Підрозділ";
+                    Підрозділ.WidthPresentation = 300;
+                Основа.BoundConfType = "Документи.ВнутрішнєСпоживанняТоварів.Основа";
+                
+            {
+                //Заповнення списку
+                foreach (var field in ПсевдонімиПерелічення.ГосподарськіОперації_List())
+                    ГосподарськаОперація.Append(field.Value.ToString(), field.Name);
 
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            ГосподарськаОперація.AddController(controller);
-            controller.OnScroll += (_, _) => true;
-        }
-        
+                //Заборона прокрутки списку
+                EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
+                ГосподарськаОперація.AddController(controller);
+                controller.OnScroll += (_, _) => true;
+            }
+                Коментар.WidthRequest = 300;
+                        
     }
 
     protected override void CreateTopStart(Box vBox)
@@ -185,7 +196,7 @@ class ВнутрішнєСпоживанняТоварів_Елемент : Docu
 
     protected override void ReportSpendTheDocument(UniqueID uniqueID)
     {
-        //СпільніФорми_РухДокументуПоРегістрах.СформуватиЗвіт(new ВнутрішнєСпоживанняТоварів_Pointer(uniqueID));
+        CommonForms_DocumentMovementThroughRegisters.Create(new ВнутрішнєСпоживанняТоварів_Pointer(uniqueID));
     }
 
     protected override async ValueTask InJournal(UniqueID uniqueID)

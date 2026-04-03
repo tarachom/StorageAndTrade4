@@ -13,20 +13,30 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСторінка : DirectoryFormTablePart
+partial class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСторінка : DirectoryFormTablePart
 {
-    
-    public ЗбереженіЗвіти_Objest? ЕлементВласник { get; set; }
-        
-    
     #region Data
-
-    class ItemRow : RowTablePart
-    {
     
-        //
-        // А
-        //
+    [GObject.Subclass<GObject.Object>("ItemRow_4RKfvMdgE0upWfOqQmro7g")]
+    public partial class ItemRow : IRowTablePart
+    {
+        public static ItemRow New() => NewWithProperties([]);
+
+        // Унікальний ідентифікатор
+        public UniqueID UniqueID
+        {
+            get => UnigueID_;
+            set
+            {
+                UnigueID_ = value;
+                Сhanged_UnigueID?.Invoke();
+            }
+        }
+        UniqueID UnigueID_ = new();
+        public Action? Сhanged_UnigueID;
+
+    
+        /* А */
         public string А
         {
             get => А_;
@@ -43,9 +53,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_А;
 
     
-        //
-        // Б
-        //
+        /* Б */
         public string Б
         {
             get => Б_;
@@ -62,9 +70,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_Б;
 
     
-        //
-        // В
-        //
+        /* В */
         public string В
         {
             get => В_;
@@ -81,9 +87,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_В;
 
     
-        //
-        // Г
-        //
+        /* Г */
         public string Г
         {
             get => Г_;
@@ -100,9 +104,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_Г;
 
     
-        //
-        // Ґ
-        //
+        /* Ґ */
         public string Ґ
         {
             get => Ґ_;
@@ -119,9 +121,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_Ґ;
 
     
-        //
-        // Д
-        //
+        /* Д */
         public string Д
         {
             get => Д_;
@@ -138,9 +138,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_Д;
 
     
-        //
-        // Е
-        //
+        /* Е */
         public string Е
         {
             get => Е_;
@@ -157,9 +155,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_Е;
 
     
-        //
-        // Є
-        //
+        /* Є */
         public string Є
         {
             get => Є_;
@@ -176,9 +172,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_Є;
 
     
-        //
-        // Ж
-        //
+        /* Ж */
         public string Ж
         {
             get => Ж_;
@@ -195,9 +189,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_Ж;
 
     
-        //
-        // З
-        //
+        /* З */
         public string З
         {
             get => З_;
@@ -214,9 +206,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_З;
 
     
-        //
-        // И
-        //
+        /* И */
         public string И
         {
             get => И_;
@@ -233,9 +223,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_И;
 
     
-        //
-        // І
-        //
+        /* І */
         public string І
         {
             get => І_;
@@ -252,9 +240,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_І;
 
     
-        //
-        // Ї
-        //
+        /* Ї */
         public string Ї
         {
             get => Ї_;
@@ -271,9 +257,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_Ї;
 
     
-        //
-        // Й
-        //
+        /* Й */
         public string Й
         {
             get => Й_;
@@ -290,9 +274,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_Й;
 
     
-        //
-        // К
-        //
+        /* К */
         public string К
         {
             get => К_;
@@ -309,9 +291,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_К;
 
     
-        //
-        // Л
-        //
+        /* Л */
         public string Л
         {
             get => Л_;
@@ -328,9 +308,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_Л;
 
     
-        //
-        // М
-        //
+        /* М */
         public string М
         {
             get => М_;
@@ -347,9 +325,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_М;
 
     
-        //
-        // Н
-        //
+        /* Н */
         public string Н
         {
             get => Н_;
@@ -366,9 +342,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_Н;
 
     
-        //
-        // О
-        //
+        /* О */
         public string О
         {
             get => О_;
@@ -385,9 +359,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_О;
 
     
-        //
-        // П
-        //
+        /* П */
         public string П
         {
             get => П_;
@@ -404,9 +376,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_П;
 
     
-        //
-        // Р
-        //
+        /* Р */
         public string Р
         {
             get => Р_;
@@ -423,9 +393,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_Р;
 
     
-        //
-        // С
-        //
+        /* С */
         public string С
         {
             get => С_;
@@ -442,9 +410,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_С;
 
     
-        //
-        // Т
-        //
+        /* Т */
         public string Т
         {
             get => Т_;
@@ -461,9 +427,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_Т;
 
     
-        //
-        // У
-        //
+        /* У */
         public string У
         {
             get => У_;
@@ -480,9 +444,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_У;
 
     
-        //
-        // Ф
-        //
+        /* Ф */
         public string Ф
         {
             get => Ф_;
@@ -499,9 +461,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_Ф;
 
     
-        //
-        // Х
-        //
+        /* Х */
         public string Х
         {
             get => Х_;
@@ -518,9 +478,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_Х;
 
     
-        //
-        // Ц
-        //
+        /* Ц */
         public string Ц
         {
             get => Ц_;
@@ -537,9 +495,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_Ц;
 
     
-        //
-        // Ч
-        //
+        /* Ч */
         public string Ч
         {
             get => Ч_;
@@ -556,9 +512,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_Ч;
 
     
-        //
-        // Ш
-        //
+        /* Ш */
         public string Ш
         {
             get => Ш_;
@@ -575,9 +529,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_Ш;
 
     
-        //
-        // Щ
-        //
+        /* Щ */
         public string Щ
         {
             get => Щ_;
@@ -594,9 +546,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_Щ;
 
     
-        //
-        // Ь
-        //
+        /* Ь */
         public string Ь
         {
             get => Ь_;
@@ -613,9 +563,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_Ь;
 
     
-        //
-        // Ю
-        //
+        /* Ю */
         public string Ю
         {
             get => Ю_;
@@ -632,9 +580,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         public Action? Сhanged_Ю;
 
     
-        //
-        // Я
-        //
+        /* Я */
         public string Я
         {
             get => Я_;
@@ -656,50 +602,53 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         Функції
         */
         
-        public override ItemRow Copy()
+        public GObject.Object Copy()
         {
-            return new()
-            {
-                А = А,
-                Б = Б,
-                В = В,
-                Г = Г,
-                Ґ = Ґ,
-                Д = Д,
-                Е = Е,
-                Є = Є,
-                Ж = Ж,
-                З = З,
-                И = И,
-                І = І,
-                Ї = Ї,
-                Й = Й,
-                К = К,
-                Л = Л,
-                М = М,
-                Н = Н,
-                О = О,
-                П = П,
-                Р = Р,
-                С = С,
-                Т = Т,
-                У = У,
-                Ф = Ф,
-                Х = Х,
-                Ц = Ц,
-                Ч = Ч,
-                Ш = Ш,
-                Щ = Щ,
-                Ь = Ь,
-                Ю = Ю,
-                Я = Я,
-                
-            };
+            var itemRow = New();
+            itemRow.А = А;
+            itemRow.Б = Б;
+            itemRow.В = В;
+            itemRow.Г = Г;
+            itemRow.Ґ = Ґ;
+            itemRow.Д = Д;
+            itemRow.Е = Е;
+            itemRow.Є = Є;
+            itemRow.Ж = Ж;
+            itemRow.З = З;
+            itemRow.И = И;
+            itemRow.І = І;
+            itemRow.Ї = Ї;
+            itemRow.Й = Й;
+            itemRow.К = К;
+            itemRow.Л = Л;
+            itemRow.М = М;
+            itemRow.Н = Н;
+            itemRow.О = О;
+            itemRow.П = П;
+            itemRow.Р = Р;
+            itemRow.С = С;
+            itemRow.Т = Т;
+            itemRow.У = У;
+            itemRow.Ф = Ф;
+            itemRow.Х = Х;
+            itemRow.Ц = Ц;
+            itemRow.Ч = Ч;
+            itemRow.Ш = Ш;
+            itemRow.Щ = Щ;
+            itemRow.Ь = Ь;
+            itemRow.Ю = Ю;
+            itemRow.Я = Я;
+            
+            return itemRow;
         }
     }
 
     #endregion
 
+    
+    public ЗбереженіЗвіти_Objest? ЕлементВласник { get; set; }
+        
+    
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());
 
     public ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСторінка() : base(Program.BasicForm?.NotebookFunc)
@@ -718,23 +667,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.А = cell.Value;
+                (row.Сhanged_А = () => cell.Value = row.А).Invoke();
                     
-                    cell.OnСhanged = () => row.А = cell.Value;
-                    (row.Сhanged_А = () => cell.Value = row.А).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("А", factory);
             column.Resizable = true;
@@ -747,23 +693,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.Б = cell.Value;
+                (row.Сhanged_Б = () => cell.Value = row.Б).Invoke();
                     
-                    cell.OnСhanged = () => row.Б = cell.Value;
-                    (row.Сhanged_Б = () => cell.Value = row.Б).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Б", factory);
             column.Resizable = true;
@@ -776,23 +719,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.В = cell.Value;
+                (row.Сhanged_В = () => cell.Value = row.В).Invoke();
                     
-                    cell.OnСhanged = () => row.В = cell.Value;
-                    (row.Сhanged_В = () => cell.Value = row.В).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("В", factory);
             column.Resizable = true;
@@ -805,23 +745,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.Г = cell.Value;
+                (row.Сhanged_Г = () => cell.Value = row.Г).Invoke();
                     
-                    cell.OnСhanged = () => row.Г = cell.Value;
-                    (row.Сhanged_Г = () => cell.Value = row.Г).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Г", factory);
             column.Resizable = true;
@@ -834,23 +771,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.Ґ = cell.Value;
+                (row.Сhanged_Ґ = () => cell.Value = row.Ґ).Invoke();
                     
-                    cell.OnСhanged = () => row.Ґ = cell.Value;
-                    (row.Сhanged_Ґ = () => cell.Value = row.Ґ).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Ґ", factory);
             column.Resizable = true;
@@ -863,23 +797,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.Д = cell.Value;
+                (row.Сhanged_Д = () => cell.Value = row.Д).Invoke();
                     
-                    cell.OnСhanged = () => row.Д = cell.Value;
-                    (row.Сhanged_Д = () => cell.Value = row.Д).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Д", factory);
             column.Resizable = true;
@@ -892,23 +823,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.Е = cell.Value;
+                (row.Сhanged_Е = () => cell.Value = row.Е).Invoke();
                     
-                    cell.OnСhanged = () => row.Е = cell.Value;
-                    (row.Сhanged_Е = () => cell.Value = row.Е).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Е", factory);
             column.Resizable = true;
@@ -921,23 +849,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.Є = cell.Value;
+                (row.Сhanged_Є = () => cell.Value = row.Є).Invoke();
                     
-                    cell.OnСhanged = () => row.Є = cell.Value;
-                    (row.Сhanged_Є = () => cell.Value = row.Є).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Є", factory);
             column.Resizable = true;
@@ -950,23 +875,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.Ж = cell.Value;
+                (row.Сhanged_Ж = () => cell.Value = row.Ж).Invoke();
                     
-                    cell.OnСhanged = () => row.Ж = cell.Value;
-                    (row.Сhanged_Ж = () => cell.Value = row.Ж).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Ж", factory);
             column.Resizable = true;
@@ -979,23 +901,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.З = cell.Value;
+                (row.Сhanged_З = () => cell.Value = row.З).Invoke();
                     
-                    cell.OnСhanged = () => row.З = cell.Value;
-                    (row.Сhanged_З = () => cell.Value = row.З).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("З", factory);
             column.Resizable = true;
@@ -1008,23 +927,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.И = cell.Value;
+                (row.Сhanged_И = () => cell.Value = row.И).Invoke();
                     
-                    cell.OnСhanged = () => row.И = cell.Value;
-                    (row.Сhanged_И = () => cell.Value = row.И).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("И", factory);
             column.Resizable = true;
@@ -1037,23 +953,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.І = cell.Value;
+                (row.Сhanged_І = () => cell.Value = row.І).Invoke();
                     
-                    cell.OnСhanged = () => row.І = cell.Value;
-                    (row.Сhanged_І = () => cell.Value = row.І).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("І", factory);
             column.Resizable = true;
@@ -1066,23 +979,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.Ї = cell.Value;
+                (row.Сhanged_Ї = () => cell.Value = row.Ї).Invoke();
                     
-                    cell.OnСhanged = () => row.Ї = cell.Value;
-                    (row.Сhanged_Ї = () => cell.Value = row.Ї).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Ї", factory);
             column.Resizable = true;
@@ -1095,23 +1005,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.Й = cell.Value;
+                (row.Сhanged_Й = () => cell.Value = row.Й).Invoke();
                     
-                    cell.OnСhanged = () => row.Й = cell.Value;
-                    (row.Сhanged_Й = () => cell.Value = row.Й).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Й", factory);
             column.Resizable = true;
@@ -1124,23 +1031,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.К = cell.Value;
+                (row.Сhanged_К = () => cell.Value = row.К).Invoke();
                     
-                    cell.OnСhanged = () => row.К = cell.Value;
-                    (row.Сhanged_К = () => cell.Value = row.К).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("К", factory);
             column.Resizable = true;
@@ -1153,23 +1057,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.Л = cell.Value;
+                (row.Сhanged_Л = () => cell.Value = row.Л).Invoke();
                     
-                    cell.OnСhanged = () => row.Л = cell.Value;
-                    (row.Сhanged_Л = () => cell.Value = row.Л).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Л", factory);
             column.Resizable = true;
@@ -1182,23 +1083,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.М = cell.Value;
+                (row.Сhanged_М = () => cell.Value = row.М).Invoke();
                     
-                    cell.OnСhanged = () => row.М = cell.Value;
-                    (row.Сhanged_М = () => cell.Value = row.М).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("М", factory);
             column.Resizable = true;
@@ -1211,23 +1109,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.Н = cell.Value;
+                (row.Сhanged_Н = () => cell.Value = row.Н).Invoke();
                     
-                    cell.OnСhanged = () => row.Н = cell.Value;
-                    (row.Сhanged_Н = () => cell.Value = row.Н).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Н", factory);
             column.Resizable = true;
@@ -1240,23 +1135,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.О = cell.Value;
+                (row.Сhanged_О = () => cell.Value = row.О).Invoke();
                     
-                    cell.OnСhanged = () => row.О = cell.Value;
-                    (row.Сhanged_О = () => cell.Value = row.О).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("О", factory);
             column.Resizable = true;
@@ -1269,23 +1161,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.П = cell.Value;
+                (row.Сhanged_П = () => cell.Value = row.П).Invoke();
                     
-                    cell.OnСhanged = () => row.П = cell.Value;
-                    (row.Сhanged_П = () => cell.Value = row.П).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("П", factory);
             column.Resizable = true;
@@ -1298,23 +1187,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.Р = cell.Value;
+                (row.Сhanged_Р = () => cell.Value = row.Р).Invoke();
                     
-                    cell.OnСhanged = () => row.Р = cell.Value;
-                    (row.Сhanged_Р = () => cell.Value = row.Р).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Р", factory);
             column.Resizable = true;
@@ -1327,23 +1213,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.С = cell.Value;
+                (row.Сhanged_С = () => cell.Value = row.С).Invoke();
                     
-                    cell.OnСhanged = () => row.С = cell.Value;
-                    (row.Сhanged_С = () => cell.Value = row.С).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("С", factory);
             column.Resizable = true;
@@ -1356,23 +1239,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.Т = cell.Value;
+                (row.Сhanged_Т = () => cell.Value = row.Т).Invoke();
                     
-                    cell.OnСhanged = () => row.Т = cell.Value;
-                    (row.Сhanged_Т = () => cell.Value = row.Т).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Т", factory);
             column.Resizable = true;
@@ -1385,23 +1265,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.У = cell.Value;
+                (row.Сhanged_У = () => cell.Value = row.У).Invoke();
                     
-                    cell.OnСhanged = () => row.У = cell.Value;
-                    (row.Сhanged_У = () => cell.Value = row.У).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("У", factory);
             column.Resizable = true;
@@ -1414,23 +1291,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.Ф = cell.Value;
+                (row.Сhanged_Ф = () => cell.Value = row.Ф).Invoke();
                     
-                    cell.OnСhanged = () => row.Ф = cell.Value;
-                    (row.Сhanged_Ф = () => cell.Value = row.Ф).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Ф", factory);
             column.Resizable = true;
@@ -1443,23 +1317,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.Х = cell.Value;
+                (row.Сhanged_Х = () => cell.Value = row.Х).Invoke();
                     
-                    cell.OnСhanged = () => row.Х = cell.Value;
-                    (row.Сhanged_Х = () => cell.Value = row.Х).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Х", factory);
             column.Resizable = true;
@@ -1472,23 +1343,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.Ц = cell.Value;
+                (row.Сhanged_Ц = () => cell.Value = row.Ц).Invoke();
                     
-                    cell.OnСhanged = () => row.Ц = cell.Value;
-                    (row.Сhanged_Ц = () => cell.Value = row.Ц).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Ц", factory);
             column.Resizable = true;
@@ -1501,23 +1369,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.Ч = cell.Value;
+                (row.Сhanged_Ч = () => cell.Value = row.Ч).Invoke();
                     
-                    cell.OnСhanged = () => row.Ч = cell.Value;
-                    (row.Сhanged_Ч = () => cell.Value = row.Ч).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Ч", factory);
             column.Resizable = true;
@@ -1530,23 +1395,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.Ш = cell.Value;
+                (row.Сhanged_Ш = () => cell.Value = row.Ш).Invoke();
                     
-                    cell.OnСhanged = () => row.Ш = cell.Value;
-                    (row.Сhanged_Ш = () => cell.Value = row.Ш).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Ш", factory);
             column.Resizable = true;
@@ -1559,23 +1421,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.Щ = cell.Value;
+                (row.Сhanged_Щ = () => cell.Value = row.Щ).Invoke();
                     
-                    cell.OnСhanged = () => row.Щ = cell.Value;
-                    (row.Сhanged_Щ = () => cell.Value = row.Щ).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Щ", factory);
             column.Resizable = true;
@@ -1588,23 +1447,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.Ь = cell.Value;
+                (row.Сhanged_Ь = () => cell.Value = row.Ь).Invoke();
                     
-                    cell.OnСhanged = () => row.Ь = cell.Value;
-                    (row.Сhanged_Ь = () => cell.Value = row.Ь).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Ь", factory);
             column.Resizable = true;
@@ -1617,23 +1473,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.Ю = cell.Value;
+                (row.Сhanged_Ю = () => cell.Value = row.Ю).Invoke();
                     
-                    cell.OnСhanged = () => row.Ю = cell.Value;
-                    (row.Сhanged_Ю = () => cell.Value = row.Ю).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Ю", factory);
             column.Resizable = true;
@@ -1646,23 +1499,20 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new TextTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = TextTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (TextTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.Я = cell.Value;
+                (row.Сhanged_Я = () => cell.Value = row.Я).Invoke();
                     
-                    cell.OnСhanged = () => row.Я = cell.Value;
-                    (row.Сhanged_Я = () => cell.Value = row.Я).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Я", factory);
             column.Resizable = true;
@@ -1693,44 +1543,43 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
         
         foreach (var record in ЕлементВласник.ЗвітСторінка_TablePart.Records)
         {
-            Store.Append(new ItemRow()
-            {
-                UniqueID = new(record.UID),
-                А = record.А,
-                Б = record.Б,
-                В = record.В,
-                Г = record.Г,
-                Ґ = record.Ґ,
-                Д = record.Д,
-                Е = record.Е,
-                Є = record.Є,
-                Ж = record.Ж,
-                З = record.З,
-                И = record.И,
-                І = record.І,
-                Ї = record.Ї,
-                Й = record.Й,
-                К = record.К,
-                Л = record.Л,
-                М = record.М,
-                Н = record.Н,
-                О = record.О,
-                П = record.П,
-                Р = record.Р,
-                С = record.С,
-                Т = record.Т,
-                У = record.У,
-                Ф = record.Ф,
-                Х = record.Х,
-                Ц = record.Ц,
-                Ч = record.Ч,
-                Ш = record.Ш,
-                Щ = record.Щ,
-                Ь = record.Ь,
-                Ю = record.Ю,
-                Я = record.Я,
-                
-            });
+            var row = ItemRow.New();
+            row.UniqueID = new(record.UID);
+            row.А = record.А;
+            row.Б = record.Б;
+            row.В = record.В;
+            row.Г = record.Г;
+            row.Ґ = record.Ґ;
+            row.Д = record.Д;
+            row.Е = record.Е;
+            row.Є = record.Є;
+            row.Ж = record.Ж;
+            row.З = record.З;
+            row.И = record.И;
+            row.І = record.І;
+            row.Ї = record.Ї;
+            row.Й = record.Й;
+            row.К = record.К;
+            row.Л = record.Л;
+            row.М = record.М;
+            row.Н = record.Н;
+            row.О = record.О;
+            row.П = record.П;
+            row.Р = record.Р;
+            row.С = record.С;
+            row.Т = record.Т;
+            row.У = record.У;
+            row.Ф = record.Ф;
+            row.Х = record.Х;
+            row.Ц = record.Ц;
+            row.Ч = record.Ч;
+            row.Ш = record.Ш;
+            row.Щ = record.Щ;
+            row.Ь = record.Ь;
+            row.Ю = record.Ю;
+            row.Я = record.Я;
+            
+            Store.Append(row);
 
             if (SelectPosition > 0)
             {
@@ -1799,44 +1648,44 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
             foreach (var record in ЕлементВласник.ЗвітСторінка_TablePart.Records)
             {
                 bool sel = Grid.Model.IsSelected(position);
-                Store.Splice(position, 1, [new ItemRow()
-                {
-                    UniqueID = new(record.UID),
-                    А = record.А,
-                    Б = record.Б,
-                    В = record.В,
-                    Г = record.Г,
-                    Ґ = record.Ґ,
-                    Д = record.Д,
-                    Е = record.Е,
-                    Є = record.Є,
-                    Ж = record.Ж,
-                    З = record.З,
-                    И = record.И,
-                    І = record.І,
-                    Ї = record.Ї,
-                    Й = record.Й,
-                    К = record.К,
-                    Л = record.Л,
-                    М = record.М,
-                    Н = record.Н,
-                    О = record.О,
-                    П = record.П,
-                    Р = record.Р,
-                    С = record.С,
-                    Т = record.Т,
-                    У = record.У,
-                    Ф = record.Ф,
-                    Х = record.Х,
-                    Ц = record.Ц,
-                    Ч = record.Ч,
-                    Ш = record.Ш,
-                    Щ = record.Щ,
-                    Ь = record.Ь,
-                    Ю = record.Ю,
-                    Я = record.Я,
-                    
-                }], 1);
+
+                var row = ItemRow.New();
+                row.UniqueID = new(record.UID);
+                row.А = record.А;
+                row.Б = record.Б;
+                row.В = record.В;
+                row.Г = record.Г;
+                row.Ґ = record.Ґ;
+                row.Д = record.Д;
+                row.Е = record.Е;
+                row.Є = record.Є;
+                row.Ж = record.Ж;
+                row.З = record.З;
+                row.И = record.И;
+                row.І = record.І;
+                row.Ї = record.Ї;
+                row.Й = record.Й;
+                row.К = record.К;
+                row.Л = record.Л;
+                row.М = record.М;
+                row.Н = record.Н;
+                row.О = record.О;
+                row.П = record.П;
+                row.Р = record.Р;
+                row.С = record.С;
+                row.Т = record.Т;
+                row.У = record.У;
+                row.Ф = record.Ф;
+                row.Х = record.Х;
+                row.Ц = record.Ц;
+                row.Ч = record.Ч;
+                row.Ш = record.Ш;
+                row.Щ = record.Щ;
+                row.Ь = record.Ь;
+                row.Ю = record.Ю;
+                row.Я = record.Я;
+                
+                Store.Splice(position, 1, [row], 1);
                 if (sel) Grid.Model.SelectItem(position, false);
                 position++;
             }
@@ -1846,7 +1695,7 @@ class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСто
 
     public override bool NewRecord()
     {
-        Store.Append(new ItemRow());
+        Store.Append(ItemRow.New());
         return true;
     }
 }

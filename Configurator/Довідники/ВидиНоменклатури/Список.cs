@@ -23,6 +23,8 @@ class ВидиНоменклатури_Список : DirectoryFormJournalFull
         TypeName = ВидиНоменклатури_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+
+        
     }
 
     public override async ValueTask LoadRecords()

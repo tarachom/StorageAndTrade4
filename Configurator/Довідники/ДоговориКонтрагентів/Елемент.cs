@@ -15,30 +15,30 @@ namespace StorageAndTrade;
 
 class ДоговориКонтрагентів_Елемент : DirectoryFormElement
 {
-    public ДоговориКонтрагентів_Objest Елемент { get; init; } = new ДоговориКонтрагентів_Objest();
+    public ДоговориКонтрагентів_Objest Елемент { get; init; } = new();
     
-    public Контрагенти_Pointer ВласникДляНового = new Контрагенти_Pointer();
+    public Контрагенти_Pointer ВласникДляНового = new();
     
     #region Fields
-    Entry Код = new() { WidthRequest = 100 };
-                    Entry Назва = new() { WidthRequest = 500 };
-                    БанківськіРахункиОрганізацій_PointerControl БанківськийРахунок = new() { Caption = "Банківський рахунок", WidthPresentation = 500 };
-            БанківськіРахункиКонтрагентів_PointerControl БанківськийРахунокКонтрагента = new() { Caption = "Банківський рахунок контрагента", WidthPresentation = 500 };
-            Валюти_PointerControl ВалютаВзаєморозрахунків = new() { Caption = "Валюта", WidthPresentation = 500 };
-            DateTimeControl ДатаПочаткуДії = new(){ OnlyDate = true };
-            DateTimeControl ДатаЗакінченняДії = new(){ OnlyDate = true };
-            Організації_PointerControl Організація = new() { Caption = "Організація", WidthPresentation = 500 };
-            Контрагенти_PointerControl Контрагент = new() { Caption = "Контрагент", WidthPresentation = 500 };
-            DateTimeControl Дата = new(){ OnlyDate = true };
-            Entry Номер = new() { WidthRequest = 500 };
-                    СтруктураПідприємства_PointerControl Підрозділ = new() { Caption = "Підрозділ", WidthPresentation = 500 };
+    Entry Код = Entry.New();
+                    Entry Назва = Entry.New();
+                    БанківськіРахункиОрганізацій_PointerControl БанківськийРахунок = БанківськіРахункиОрганізацій_PointerControl.New();
+            БанківськіРахункиКонтрагентів_PointerControl БанківськийРахунокКонтрагента = БанківськіРахункиКонтрагентів_PointerControl.New();
+            Валюти_PointerControl ВалютаВзаєморозрахунків = Валюти_PointerControl.New();
+            DateTimeControl ДатаПочаткуДії = DateTimeControl.New();
+            DateTimeControl ДатаЗакінченняДії = DateTimeControl.New();
+            Організації_PointerControl Організація = Організації_PointerControl.New();
+            Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
+            DateTimeControl Дата = DateTimeControl.New();
+            Entry Номер = Entry.New();
+                    СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
             CheckButton Узгоджений = CheckButton.NewWithLabel("Узгоджений");
-            ComboBoxText Статус = new ComboBoxText();
-            ComboBoxText ГосподарськаОперація = new ComboBoxText();
-            ComboBoxText ТипДоговору = new ComboBoxText();
-            NumericControl ДопустимаСумаЗаборгованості = new();
-            NumericControl Сума = new();
-            Entry Коментар = new() { WidthRequest = 500 };
+            ComboBoxText Статус = ComboBoxText.New();
+            ComboBoxText ГосподарськаОперація = ComboBoxText.New();
+            ComboBoxText ТипДоговору = ComboBoxText.New();
+            NumericControl ДопустимаСумаЗаборгованості = NumericControl.New();
+            NumericControl Сума = NumericControl.New();
+            Entry Коментар = Entry.New();
                     
     #endregion
 
@@ -49,40 +49,60 @@ class ДоговориКонтрагентів_Елемент : DirectoryFormEle
     public ДоговориКонтрагентів_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.СтатусиДоговорівКонтрагентів_List())
-                Статус.Append(field.Value.ToString(), field.Name);
 
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            Статус.AddController(controller);
-            controller.OnScroll += (_, _) => true;
-        }
-        
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.ГосподарськіОперації_List())
-                ГосподарськаОперація.Append(field.Value.ToString(), field.Name);
+        Код.WidthRequest = 100;
+                        Назва.WidthRequest = 300;
+                        БанківськийРахунок.Caption = "Банківський рахунок";
+                    БанківськийРахунок.WidthPresentation = 300;
+                БанківськийРахунокКонтрагента.Caption = "Банківський рахунок контрагента";
+                    БанківськийРахунокКонтрагента.WidthPresentation = 300;
+                ВалютаВзаєморозрахунків.Caption = "Валюта";
+                    ВалютаВзаєморозрахунків.WidthPresentation = 300;
+                ДатаПочаткуДії.OnlyDate = true;
+                ДатаЗакінченняДії.OnlyDate = true;
+                Організація.Caption = "Організація";
+                    Організація.WidthPresentation = 300;
+                Контрагент.Caption = "Контрагент";
+                    Контрагент.WidthPresentation = 300;
+                Дата.OnlyDate = true;
+                Номер.WidthRequest = 300;
+                        Підрозділ.Caption = "Підрозділ";
+                    Підрозділ.WidthPresentation = 300;
+                
+            {
+                //Заповнення списку
+                foreach (var field in ПсевдонімиПерелічення.СтатусиДоговорівКонтрагентів_List())
+                    Статус.Append(field.Value.ToString(), field.Name);
 
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            ГосподарськаОперація.AddController(controller);
-            controller.OnScroll += (_, _) => true;
-        }
-        
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.ТипДоговорів_List())
-                ТипДоговору.Append(field.Value.ToString(), field.Name);
+                //Заборона прокрутки списку
+                EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
+                Статус.AddController(controller);
+                controller.OnScroll += (_, _) => true;
+            }
+                
+            {
+                //Заповнення списку
+                foreach (var field in ПсевдонімиПерелічення.ГосподарськіОперації_List())
+                    ГосподарськаОперація.Append(field.Value.ToString(), field.Name);
 
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            ТипДоговору.AddController(controller);
-            controller.OnScroll += (_, _) => true;
-        }
-        
+                //Заборона прокрутки списку
+                EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
+                ГосподарськаОперація.AddController(controller);
+                controller.OnScroll += (_, _) => true;
+            }
+                
+            {
+                //Заповнення списку
+                foreach (var field in ПсевдонімиПерелічення.ТипДоговорів_List())
+                    ТипДоговору.Append(field.Value.ToString(), field.Name);
+
+                //Заборона прокрутки списку
+                EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
+                ТипДоговору.AddController(controller);
+                controller.OnScroll += (_, _) => true;
+            }
+                Коментар.WidthRequest = 300;
+                        
     }
 
     protected override void CreateStart(Box vBox)

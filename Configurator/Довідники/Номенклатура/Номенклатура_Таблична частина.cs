@@ -13,20 +13,30 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-class Номенклатура_ТабличнаЧастина_Файли : DirectoryFormTablePart
+partial class Номенклатура_ТабличнаЧастина_Файли : DirectoryFormTablePart
 {
-
-    public Номенклатура_Objest? ЕлементВласник { get; set; }
-
-
     #region Data
-
-    class ItemRow : RowTablePart
+    
+    [GObject.Subclass<GObject.Object>("ItemRow_bhpDo5SYH0Kjtm8AudyNg")]
+    public partial class ItemRow : IRowTablePart
     {
+        public static ItemRow New() => NewWithProperties([]);
 
-        //
-        // НомерРядка
-        //
+        // Унікальний ідентифікатор
+        public UniqueID UniqueID
+        {
+            get => UnigueID_;
+            set
+            {
+                UnigueID_ = value;
+                Сhanged_UnigueID?.Invoke();
+            }
+        }
+        UniqueID UnigueID_ = new();
+        public Action? Сhanged_UnigueID;
+
+    
+        /* НомерРядка */
         public int НомерРядка
         {
             get => НомерРядка_;
@@ -42,10 +52,8 @@ class Номенклатура_ТабличнаЧастина_Файли : Direc
         int НомерРядка_ = 0;
         public Action? Сhanged_НомерРядка;
 
-
-        //
-        // Основний
-        //
+    
+        /* Основний */
         public bool Основний
         {
             get => Основний_;
@@ -61,10 +69,8 @@ class Номенклатура_ТабличнаЧастина_Файли : Direc
         bool Основний_ = false;
         public Action? Сhanged_Основний;
 
-
-        //
-        // Файл
-        //
+    
+        /* Файл */
         public Файли_Pointer Файл
         {
             get => Файл_;
@@ -80,26 +86,29 @@ class Номенклатура_ТабличнаЧастина_Файли : Direc
         Файли_Pointer Файл_ = new();
         public Action? Сhanged_Файл;
 
-
+    
 
         /*
         Функції
         */
-
-        public override ItemRow Copy()
+        
+        public GObject.Object Copy()
         {
-            return new()
-            {
-                НомерРядка = НомерРядка,
-                Основний = Основний,
-                Файл = Файл.Copy(),
-
-            };
+            var itemRow = New();
+            itemRow.НомерРядка = НомерРядка;
+            itemRow.Основний = Основний;
+            itemRow.Файл = Файл.Copy();
+            
+            return itemRow;
         }
     }
 
     #endregion
 
+    
+    public Номенклатура_Objest? ЕлементВласник { get; set; }
+        
+    
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());
 
     public Номенклатура_ТабличнаЧастина_Файли() : base(Program.BasicForm?.NotebookFunc)
@@ -112,100 +121,90 @@ class Номенклатура_ТабличнаЧастина_Файли : Direc
 
     protected override void Columns()
     {
-
+        
         //НомерРядка
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = LabelTablePartCell.New(null);
-
+                if (args.Object is not ListItem listItem) return;
+                var cell = LabelTablePartCell.New();
+                
                 cell.Halign = Align.End;
-
+                    
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (LabelTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
-
-                    (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke();
-
-                }
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not LabelTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke();
+                    
             };
             ColumnViewColumn column = ColumnViewColumn.New("№", factory);
             column.Resizable = true;
-
+            
             Grid.AppendColumn(column);
         }
-
+        
         //Основний
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new CheckTablePartCell
-                {
-                    Halign = Align.Center
-                };
-
+                if (args.Object is not ListItem listItem) return;
+                var cell = CheckTablePartCell.New();
+                
+                cell.Halign = Align.Center;
+                    
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (CheckTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
-
-                    cell.OnСhanged = () => row.Основний = cell.Check.Active;
-                    (row.Сhanged_Основний = () => cell.Value = row.Основний).Invoke();
-
-                }
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not CheckTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.Основний = cell.Check.Active;
+                (row.Сhanged_Основний = () => cell.Value = row.Основний).Invoke();
+                    
             };
             ColumnViewColumn column = ColumnViewColumn.New("Основний", factory);
             column.Resizable = true;
-
+            
             Grid.AppendColumn(column);
         }
-
+        
         //Файл
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new Файли_PointerTablePartCell();
-
+                if (args.Object is not ListItem listItem) return;
+                var cell = Файли_PointerTablePartCell.New();
+                
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (Файли_PointerTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
-
-                    cell.OnSelect = () => row.Файл = cell.Pointer;
-                    (row.Сhanged_Файл = () => cell.Pointer = row.Файл).Invoke();
-
-                }
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not Файли_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnSelect = () => row.Файл = cell.Pointer;
+                (row.Сhanged_Файл = () => cell.Pointer = row.Файл).Invoke();
+                    
             };
             ColumnViewColumn column = ColumnViewColumn.New("Файл", factory);
             column.Resizable = true;
-
+            
             column.FixedWidth = 500;
-
+            
             Grid.AppendColumn(column);
         }
-
+        
         { /* Пуста колонка для заповнення вільного простору */
             ColumnViewColumn column = ColumnViewColumn.New(null, null);
             column.Resizable = true;
@@ -216,83 +215,83 @@ class Номенклатура_ТабличнаЧастина_Файли : Direc
 
     public override async ValueTask LoadRecords()
     {
-
-        if (ЕлементВласник != null)
+        
+        if (ЕлементВласник != null) 
         {
-
+            
             ЕлементВласник.Файли_TablePart.FillJoin([Номенклатура_Файли_TablePart.НомерРядка,]);
             await ЕлементВласник.Файли_TablePart.Read();
+            
 
+        Store.RemoveAll();
 
-            Store.RemoveAll();
+        
+        foreach (var record in ЕлементВласник.Файли_TablePart.Records)
+        {
+            var row = ItemRow.New();
+            row.UniqueID = new(record.UID);
+            row.НомерРядка = record.НомерРядка;
+            row.Основний = record.Основний;
+            row.Файл = record.Файл;
+            
+            Store.Append(row);
 
-
-            foreach (var record in ЕлементВласник.Файли_TablePart.Records)
+            if (SelectPosition > 0)
             {
-                Store.Append(new ItemRow()
-                {
-                    UniqueID = new(record.UID),
-                    НомерРядка = record.НомерРядка,
-                    Основний = record.Основний,
-                    Файл = record.Файл,
-
-                });
-
-                if (SelectPosition > 0)
-                {
-                    Grid.Model.SelectItem(SelectPosition, true);
-                    ScrollTo(SelectPosition);
-                }
+                Grid.Model.SelectItem(SelectPosition, true);
+                ScrollTo(SelectPosition);
             }
+        }
         }
     }
 
     public override async ValueTask SaveRecords()
     {
-
+        
         if (ЕлементВласник != null)
         {
-            ЕлементВласник.Файли_TablePart.Records.Clear();
-            for (uint i = 0; i <= Store.GetNItems(); i++)
+        ЕлементВласник.Файли_TablePart.Records.Clear();
+        for (uint i = 0; i <= Store.GetNItems(); i++)
+        {
+            ItemRow? row = (ItemRow?)Store.GetObject(i);
+            if (row != null)
             {
-                ItemRow? row = (ItemRow?)Store.GetObject(i);
-                if (row != null)
+                ЕлементВласник.Файли_TablePart.Records.Add(new()
                 {
-                    ЕлементВласник.Файли_TablePart.Records.Add(new()
-                    {
-                        UID = row.UniqueID.UGuid,
-                        НомерРядка = row.НомерРядка,
-                        Основний = row.Основний,
-                        Файл = row.Файл,
-
-                    });
-                }
+                    UID = row.UniqueID.UGuid,
+                    НомерРядка = row.НомерРядка,
+                    Основний = row.Основний,
+                    Файл = row.Файл,
+                    
+                });
             }
-            await ЕлементВласник.Файли_TablePart.Save(true);
-            //Update
+        }
+        await ЕлементВласник.Файли_TablePart.Save(true);
+        //Update
+        {
+            uint position = 0;
+            foreach (var record in ЕлементВласник.Файли_TablePart.Records)
             {
-                uint position = 0;
-                foreach (var record in ЕлементВласник.Файли_TablePart.Records)
-                {
-                    bool sel = Grid.Model.IsSelected(position);
-                    Store.Splice(position, 1, [new ItemRow()
-                    {
-                        UniqueID = new(record.UID),
-                        НомерРядка = record.НомерРядка,
-                        Основний = record.Основний,
-                        Файл = record.Файл,
+                bool sel = Grid.Model.IsSelected(position);
 
-                    }], 1);
-                    if (sel) Grid.Model.SelectItem(position, false);
-                    position++;
-                }
+                var row = ItemRow.New();
+                row.UniqueID = new(record.UID);
+                row.НомерРядка = record.НомерРядка;
+                row.Основний = record.Основний;
+                row.Файл = record.Файл;
+                
+                Store.Splice(position, 1, [row], 1);
+                if (sel) Grid.Model.SelectItem(position, false);
+                position++;
             }
+        }
         }
     }
 
     public override bool NewRecord()
     {
-        Store.Append(new ItemRow());
+        Store.Append(ItemRow.New());
         return true;
     }
 }
+    

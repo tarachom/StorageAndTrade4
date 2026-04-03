@@ -77,7 +77,8 @@ public class ЗакриттяЗамовленняПостачальнику_Сп
 
     protected override void ReportSpendTheDocument(UniqueID[] uniqueID)
     {
-
+        foreach (var uid in uniqueID)
+            CommonForms_DocumentMovementThroughRegisters.Create(new ЗакриттяЗамовленняПостачальнику_Pointer(uid));
     }
 
     protected override async ValueTask VersionsHistory(UniqueID[] uniqueID)

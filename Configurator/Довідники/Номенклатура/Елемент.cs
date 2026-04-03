@@ -18,17 +18,17 @@ class Номенклатура_Елемент : DirectoryFormElement
     public Номенклатура_Objest Елемент { get; init; } = new();
     
     #region Fields
-    Entry Код = new() { WidthRequest = 100 };
-                    Entry Назва = new() { WidthRequest = 300 };
-                    Entry НазваПовна = new() { WidthRequest = 300 };
-                    TextView Опис = new TextView() { WrapMode = WrapMode.Word };
-                    Entry Артикул = new() { WidthRequest = 300 };
-                    ComboBoxText ТипНоменклатури = new ComboBoxText();
-            Виробники_PointerControl Виробник = new() { Caption = "Виробник", WidthPresentation = 300 };
-            ВидиНоменклатури_PointerControl ВидНоменклатури = new() { Caption = "ВидНоменклатури", WidthPresentation = 300 };
-            ПакуванняОдиниціВиміру_PointerControl ОдиницяВиміру = new() { Caption = "ОдиницяВиміру", WidthPresentation = 300 };
-            Номенклатура_Папки_PointerControl Папка = new() { Caption = "Папка", WidthPresentation = 300 };
-            Файли_PointerControl ОсновнаКартинкаФайл = new() { Caption = "ОсновнаКартинкаФайл", WidthPresentation = 300 };
+    Entry Код = Entry.New();
+                    Entry Назва = Entry.New();
+                    Entry НазваПовна = Entry.New();
+                    TextView Опис = TextView.New();
+                    Entry Артикул = Entry.New();
+                    ComboBoxText ТипНоменклатури = ComboBoxText.New();
+            Виробники_PointerControl Виробник = Виробники_PointerControl.New();
+            ВидиНоменклатури_PointerControl ВидНоменклатури = ВидиНоменклатури_PointerControl.New();
+            ПакуванняОдиниціВиміру_PointerControl ОдиницяВиміру = ПакуванняОдиниціВиміру_PointerControl.New();
+            Номенклатура_Папки_PointerControl Папка = Номенклатура_Папки_PointerControl.New();
+            Файли_PointerControl ОсновнаКартинкаФайл = Файли_PointerControl.New();
             
     #endregion
 
@@ -42,18 +42,34 @@ class Номенклатура_Елемент : DirectoryFormElement
     public Номенклатура_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.ТипиНоменклатури_List())
-                ТипНоменклатури.Append(field.Value.ToString(), field.Name);
 
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            ТипНоменклатури.AddController(controller);
-            controller.OnScroll += (_, _) => true;
-        }
-        
+        Код.WidthRequest = 100;
+                        Назва.WidthRequest = 300;
+                        НазваПовна.WidthRequest = 300;
+                        Опис.WrapMode = WrapMode.Word;
+                        Артикул.WidthRequest = 300;
+                        
+            {
+                //Заповнення списку
+                foreach (var field in ПсевдонімиПерелічення.ТипиНоменклатури_List())
+                    ТипНоменклатури.Append(field.Value.ToString(), field.Name);
+
+                //Заборона прокрутки списку
+                EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
+                ТипНоменклатури.AddController(controller);
+                controller.OnScroll += (_, _) => true;
+            }
+                Виробник.Caption = "Виробник";
+                    Виробник.WidthPresentation = 300;
+                ВидНоменклатури.Caption = "ВидНоменклатури";
+                    ВидНоменклатури.WidthPresentation = 300;
+                ОдиницяВиміру.Caption = "ОдиницяВиміру";
+                    ОдиницяВиміру.WidthPresentation = 300;
+                Папка.Caption = "Папка";
+                    Папка.WidthPresentation = 300;
+                ОсновнаКартинкаФайл.Caption = "ОсновнаКартинкаФайл";
+                    ОсновнаКартинкаФайл.WidthPresentation = 300;
+                
     }
 
     protected override void CreateStart(Box vBox)

@@ -23,6 +23,8 @@ class Банки_Список : DirectoryFormJournalFull
         TypeName = Банки_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+
+        
     }
 
     public override async ValueTask LoadRecords()

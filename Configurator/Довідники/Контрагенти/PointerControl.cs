@@ -10,19 +10,21 @@ using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
 
-public class Контрагенти_PointerControl : PointerControl
+[GObject.Subclass<PointerControl>("PointerControl_rGFDwnq4n0StyMTYwMbSSA")]
+public partial class Контрагенти_PointerControl : PointerControl
 {
-    event EventHandler<Контрагенти_Pointer> PointerChanged;
+    event EventHandler<Контрагенти_Pointer>? PointerChanged;
 
-    public Контрагенти_PointerControl()
+    partial void Initialize()
     {
-        pointer = new Контрагенти_Pointer();
         WidthPresentation = 300;
         Caption = $"{Контрагенти_Const.FULLNAME}:";
         PointerChanged += async (_, pointer) => Presentation = pointer != null ? await pointer.GetPresentation() : "";
     }
 
-    Контрагенти_Pointer pointer;
+    public static Контрагенти_PointerControl New() => NewWithProperties([]);
+
+    Контрагенти_Pointer pointer = new();
     public Контрагенти_Pointer Pointer
     {
         get
@@ -49,6 +51,8 @@ public class Контрагенти_PointerControl : PointerControl
         {
             PopoverParent = popover,
             DirectoryPointerItem = Pointer.UniqueID,
+            OpenSelect = true,
+            OpenFolder = OpenFolder,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new Контрагенти_Pointer(selectPointer);

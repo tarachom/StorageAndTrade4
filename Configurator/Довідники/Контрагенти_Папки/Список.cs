@@ -23,6 +23,8 @@ class Контрагенти_Папки_Список : DirectoryFormJournalFullT
         TypeName = Контрагенти_Папки_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+
+        
     }
 
     public override async ValueTask LoadRecords()

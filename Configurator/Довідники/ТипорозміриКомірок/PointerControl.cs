@@ -10,19 +10,21 @@ using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
 
-public class ТипорозміриКомірок_PointerControl : PointerControl
+[GObject.Subclass<PointerControl>("PointerControl_m3mPEbhGUE6r9cd6HrJqYg")]
+public partial class ТипорозміриКомірок_PointerControl : PointerControl
 {
-    event EventHandler<ТипорозміриКомірок_Pointer> PointerChanged;
+    event EventHandler<ТипорозміриКомірок_Pointer>? PointerChanged;
 
-    public ТипорозміриКомірок_PointerControl()
+    partial void Initialize()
     {
-        pointer = new ТипорозміриКомірок_Pointer();
         WidthPresentation = 300;
         Caption = $"{ТипорозміриКомірок_Const.FULLNAME}:";
         PointerChanged += async (_, pointer) => Presentation = pointer != null ? await pointer.GetPresentation() : "";
     }
 
-    ТипорозміриКомірок_Pointer pointer;
+    public static ТипорозміриКомірок_PointerControl New() => NewWithProperties([]);
+
+    ТипорозміриКомірок_Pointer pointer = new();
     public ТипорозміриКомірок_Pointer Pointer
     {
         get
@@ -49,6 +51,8 @@ public class ТипорозміриКомірок_PointerControl : PointerContro
         {
             PopoverParent = popover,
             DirectoryPointerItem = Pointer.UniqueID,
+            OpenSelect = true,
+            OpenFolder = OpenFolder,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new ТипорозміриКомірок_Pointer(selectPointer);

@@ -15,15 +15,15 @@ namespace StorageAndTrade;
 
 class ТипорозміриКомірок_Елемент : DirectoryFormElement
 {
-    public ТипорозміриКомірок_Objest Елемент { get; init; } = new ТипорозміриКомірок_Objest();
+    public ТипорозміриКомірок_Objest Елемент { get; init; } = new();
     
     #region Fields
-    Entry Назва = new() { WidthRequest = 250 };
-                    Entry Висота = new() { WidthRequest = 100 };
-                    Entry Ширина = new() { WidthRequest = 100 };
-                    Entry Глибина = new() { WidthRequest = 100 };
-                    Entry Обєм = new() { WidthRequest = 100 };
-                    Entry Вантажопідйомність = new() { WidthRequest = 100 };
+    Entry Назва = Entry.New();
+                    Entry Висота = Entry.New();
+                    Entry Ширина = Entry.New();
+                    Entry Глибина = Entry.New();
+                    Entry Обєм = Entry.New();
+                    Entry Вантажопідйомність = Entry.New();
                     
     #endregion
 
@@ -34,7 +34,14 @@ class ТипорозміриКомірок_Елемент : DirectoryFormElement
     public ТипорозміриКомірок_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
+
+        Назва.WidthRequest = 250;
+                        Висота.WidthRequest = 100;
+                        Ширина.WidthRequest = 100;
+                        Глибина.WidthRequest = 100;
+                        Обєм.WidthRequest = 100;
+                        Вантажопідйомність.WidthRequest = 100;
+                        
     }
 
     protected override void CreateStart(Box vBox)

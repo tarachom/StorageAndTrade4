@@ -22,16 +22,16 @@ class ЗакриттяРахункуФактури_Елемент : DocumentForm
     public ЗакриттяРахункуФактури_Objest Елемент { get; init; } = new();
 
     #region Fields
-    Entry НомерДок = new() { WidthRequest = 100 };
-                    DateTimeControl ДатаДок = new();
-            Контрагенти_PointerControl Контрагент = new() { Caption = "Контрагент", WidthPresentation = 300 };
-            Організації_PointerControl Організація = new() { Caption = "Організація", WidthPresentation = 300 };
-            Валюти_PointerControl Валюта = new() { Caption = "Валюта", WidthPresentation = 300 };
-            Склади_PointerControl Склад = new() { Caption = "Склад", WidthPresentation = 300 };
-            Каси_PointerControl Каса = new() { Caption = "Каса", WidthPresentation = 300 };
-            ДоговориКонтрагентів_PointerControl Договір = new() { Caption = "Договір", WidthPresentation = 300 };
-            Entry Коментар = new() { WidthRequest = 300 };
-                    CompositePointerControl Основа = new() { BoundConfType = "Документи.ЗакриттяРахункуФактури.Основа" };
+    Entry НомерДок = Entry.New();
+                    DateTimeControl ДатаДок = DateTimeControl.New();
+            Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
+            Організації_PointerControl Організація = Організації_PointerControl.New();
+            Валюти_PointerControl Валюта = Валюти_PointerControl.New();
+            Склади_PointerControl Склад = Склади_PointerControl.New();
+            Каси_PointerControl Каса = Каси_PointerControl.New();
+            ДоговориКонтрагентів_PointerControl Договір = ДоговориКонтрагентів_PointerControl.New();
+            Entry Коментар = Entry.New();
+                    CompositePointerControl Основа = CompositePointerControl.New();
             
     #endregion
 
@@ -54,7 +54,22 @@ class ЗакриттяРахункуФактури_Елемент : DocumentForm
             NotebookTablePart.InsertPage(Товари, Label.New("Товари"), 0);
             
             NotebookTablePart.SetCurrentPage(0);
-        
+        НомерДок.WidthRequest = 100;
+                        Контрагент.Caption = "Контрагент";
+                    Контрагент.WidthPresentation = 300;
+                Організація.Caption = "Організація";
+                    Організація.WidthPresentation = 300;
+                Валюта.Caption = "Валюта";
+                    Валюта.WidthPresentation = 300;
+                Склад.Caption = "Склад";
+                    Склад.WidthPresentation = 300;
+                Каса.Caption = "Каса";
+                    Каса.WidthPresentation = 300;
+                Договір.Caption = "Договір";
+                    Договір.WidthPresentation = 300;
+                Коментар.WidthRequest = 300;
+                        Основа.BoundConfType = "Документи.ЗакриттяРахункуФактури.Основа";
+                
     }
 
     protected override void CreateTopStart(Box vBox)
@@ -180,7 +195,7 @@ class ЗакриттяРахункуФактури_Елемент : DocumentForm
 
     protected override void ReportSpendTheDocument(UniqueID uniqueID)
     {
-        //СпільніФорми_РухДокументуПоРегістрах.СформуватиЗвіт(new ЗакриттяРахункуФактури_Pointer(uniqueID));
+        CommonForms_DocumentMovementThroughRegisters.Create(new ЗакриттяРахункуФактури_Pointer(uniqueID));
     }
 
     protected override async ValueTask InJournal(UniqueID uniqueID)

@@ -22,22 +22,22 @@ class РахунокФактура_Елемент : DocumentFormElement
     public РахунокФактура_Objest Елемент { get; init; } = new();
 
     #region Fields
-    Entry НомерДок = new() { WidthRequest = 100 };
-                    DateTimeControl ДатаДок = new();
-            Контрагенти_PointerControl Контрагент = new() { Caption = "Контрагент", WidthPresentation = 300 };
-            Організації_PointerControl Організація = new() { Caption = "Організація", WidthPresentation = 300 };
-            Валюти_PointerControl Валюта = new() { Caption = "Валюта", WidthPresentation = 300 };
-            Склади_PointerControl Склад = new() { Caption = "Склад", WidthPresentation = 300 };
-            ComboBoxText Статус = new ComboBoxText();
-            ComboBoxText ФормаОплати = new ComboBoxText();
-            БанківськіРахункиОрганізацій_PointerControl БанківськийРахунок = new() { Caption = "Банківський рахунок", WidthPresentation = 300 };
-            БанківськіРахункиКонтрагентів_PointerControl БанківськийРахунокКонтрагента = new() { Caption = "Банківський рахунок контрагента", WidthPresentation = 300 };
-            Каси_PointerControl Каса = new() { Caption = "Каса", WidthPresentation = 300 };
-            ComboBoxText ГосподарськаОперація = new ComboBoxText();
-            ДоговориКонтрагентів_PointerControl Договір = new() { Caption = "Договір", WidthPresentation = 300 };
-            СтруктураПідприємства_PointerControl Підрозділ = new() { Caption = "Підрозділ", WidthPresentation = 300 };
-            Entry Коментар = new() { WidthRequest = 300 };
-                    CompositePointerControl Основа = new() { BoundConfType = "Документи.РахунокФактура.Основа" };
+    Entry НомерДок = Entry.New();
+                    DateTimeControl ДатаДок = DateTimeControl.New();
+            Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
+            Організації_PointerControl Організація = Організації_PointerControl.New();
+            Валюти_PointerControl Валюта = Валюти_PointerControl.New();
+            Склади_PointerControl Склад = Склади_PointerControl.New();
+            ComboBoxText Статус = ComboBoxText.New();
+            ComboBoxText ФормаОплати = ComboBoxText.New();
+            БанківськіРахункиОрганізацій_PointerControl БанківськийРахунок = БанківськіРахункиОрганізацій_PointerControl.New();
+            БанківськіРахункиКонтрагентів_PointerControl БанківськийРахунокКонтрагента = БанківськіРахункиКонтрагентів_PointerControl.New();
+            Каси_PointerControl Каса = Каси_PointerControl.New();
+            ComboBoxText ГосподарськаОперація = ComboBoxText.New();
+            ДоговориКонтрагентів_PointerControl Договір = ДоговориКонтрагентів_PointerControl.New();
+            СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
+            Entry Коментар = Entry.New();
+                    CompositePointerControl Основа = CompositePointerControl.New();
             
     #endregion
 
@@ -60,40 +60,61 @@ class РахунокФактура_Елемент : DocumentFormElement
             NotebookTablePart.InsertPage(Товари, Label.New("Товари"), 0);
             
             NotebookTablePart.SetCurrentPage(0);
-        
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.СтатусиЗамовленьКлієнтів_List())
-                Статус.Append(field.Value.ToString(), field.Name);
+        НомерДок.WidthRequest = 100;
+                        Контрагент.Caption = "Контрагент";
+                    Контрагент.WidthPresentation = 300;
+                Організація.Caption = "Організація";
+                    Організація.WidthPresentation = 300;
+                Валюта.Caption = "Валюта";
+                    Валюта.WidthPresentation = 300;
+                Склад.Caption = "Склад";
+                    Склад.WidthPresentation = 300;
+                
+            {
+                //Заповнення списку
+                foreach (var field in ПсевдонімиПерелічення.СтатусиЗамовленьКлієнтів_List())
+                    Статус.Append(field.Value.ToString(), field.Name);
 
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            Статус.AddController(controller);
-            controller.OnScroll += (_, _) => true;
-        }
-        
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.ФормаОплати_List())
-                ФормаОплати.Append(field.Value.ToString(), field.Name);
+                //Заборона прокрутки списку
+                EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
+                Статус.AddController(controller);
+                controller.OnScroll += (_, _) => true;
+            }
+                
+            {
+                //Заповнення списку
+                foreach (var field in ПсевдонімиПерелічення.ФормаОплати_List())
+                    ФормаОплати.Append(field.Value.ToString(), field.Name);
 
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            ФормаОплати.AddController(controller);
-            controller.OnScroll += (_, _) => true;
-        }
-        
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.ГосподарськіОперації_List())
-                ГосподарськаОперація.Append(field.Value.ToString(), field.Name);
+                //Заборона прокрутки списку
+                EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
+                ФормаОплати.AddController(controller);
+                controller.OnScroll += (_, _) => true;
+            }
+                БанківськийРахунок.Caption = "Банківський рахунок";
+                    БанківськийРахунок.WidthPresentation = 300;
+                БанківськийРахунокКонтрагента.Caption = "Банківський рахунок контрагента";
+                    БанківськийРахунокКонтрагента.WidthPresentation = 300;
+                Каса.Caption = "Каса";
+                    Каса.WidthPresentation = 300;
+                
+            {
+                //Заповнення списку
+                foreach (var field in ПсевдонімиПерелічення.ГосподарськіОперації_List())
+                    ГосподарськаОперація.Append(field.Value.ToString(), field.Name);
 
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            ГосподарськаОперація.AddController(controller);
-            controller.OnScroll += (_, _) => true;
-        }
-        
+                //Заборона прокрутки списку
+                EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
+                ГосподарськаОперація.AddController(controller);
+                controller.OnScroll += (_, _) => true;
+            }
+                Договір.Caption = "Договір";
+                    Договір.WidthPresentation = 300;
+                Підрозділ.Caption = "Підрозділ";
+                    Підрозділ.WidthPresentation = 300;
+                Коментар.WidthRequest = 300;
+                        Основа.BoundConfType = "Документи.РахунокФактура.Основа";
+                
     }
 
     protected override void CreateTopStart(Box vBox)
@@ -249,7 +270,7 @@ class РахунокФактура_Елемент : DocumentFormElement
 
     protected override void ReportSpendTheDocument(UniqueID uniqueID)
     {
-        //СпільніФорми_РухДокументуПоРегістрах.СформуватиЗвіт(new РахунокФактура_Pointer(uniqueID));
+        CommonForms_DocumentMovementThroughRegisters.Create(new РахунокФактура_Pointer(uniqueID));
     }
 
     protected override async ValueTask InJournal(UniqueID uniqueID)

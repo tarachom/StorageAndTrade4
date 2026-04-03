@@ -15,15 +15,15 @@ namespace StorageAndTrade;
 
 class Контрагенти_Елемент : DirectoryFormElement
 {
-    public Контрагенти_Objest Елемент { get; init; } = new Контрагенти_Objest();
+    public Контрагенти_Objest Елемент { get; init; } = new();
     
     #region Fields
-    Entry Код = new() { WidthRequest = 100 };
-                    Entry Назва = new() { WidthRequest = 500 };
-                    Entry НазваПовна = new() { WidthRequest = 500 };
-                    Entry РеєстраційнийНомер = new() { WidthRequest = 500 };
-                    Контрагенти_Папки_PointerControl Папка = new() { Caption = "Папка", WidthPresentation = 500 };
-            Entry Опис = new() { WidthRequest = 500 };
+    Entry Код = Entry.New();
+                    Entry Назва = Entry.New();
+                    Entry НазваПовна = Entry.New();
+                    Entry РеєстраційнийНомер = Entry.New();
+                    Контрагенти_Папки_PointerControl Папка = Контрагенти_Папки_PointerControl.New();
+            Entry Опис = Entry.New();
                     CheckButton Постачальник = CheckButton.NewWithLabel("Постачальник");
             CheckButton Покупець = CheckButton.NewWithLabel("Покупець");
             
@@ -42,7 +42,15 @@ class Контрагенти_Елемент : DirectoryFormElement
     public Контрагенти_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
+
+        Код.WidthRequest = 100;
+                        Назва.WidthRequest = 300;
+                        НазваПовна.WidthRequest = 300;
+                        РеєстраційнийНомер.WidthRequest = 300;
+                        Папка.Caption = "Папка";
+                    Папка.WidthPresentation = 300;
+                Опис.WidthRequest = 300;
+                        
     }
 
     protected override void CreateStart(Box vBox)

@@ -10,19 +10,21 @@ using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
 
-public class КраїниСвіту_PointerControl : PointerControl
+[GObject.Subclass<PointerControl>("PointerControl_PkOFxtSI0axOKyFB6SiYg")]
+public partial class КраїниСвіту_PointerControl : PointerControl
 {
-    event EventHandler<КраїниСвіту_Pointer> PointerChanged;
+    event EventHandler<КраїниСвіту_Pointer>? PointerChanged;
 
-    public КраїниСвіту_PointerControl()
+    partial void Initialize()
     {
-        pointer = new КраїниСвіту_Pointer();
         WidthPresentation = 300;
         Caption = $"{КраїниСвіту_Const.FULLNAME}:";
         PointerChanged += async (_, pointer) => Presentation = pointer != null ? await pointer.GetPresentation() : "";
     }
 
-    КраїниСвіту_Pointer pointer;
+    public static КраїниСвіту_PointerControl New() => NewWithProperties([]);
+
+    КраїниСвіту_Pointer pointer = new();
     public КраїниСвіту_Pointer Pointer
     {
         get
@@ -49,6 +51,8 @@ public class КраїниСвіту_PointerControl : PointerControl
         {
             PopoverParent = popover,
             DirectoryPointerItem = Pointer.UniqueID,
+            OpenSelect = true,
+            OpenFolder = OpenFolder,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new КраїниСвіту_Pointer(selectPointer);

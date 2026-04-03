@@ -17,7 +17,7 @@ namespace StorageAndTrade;
 class СкладськіКомірки_Папки_ШвидкийВибір : DirectoryFormJournalSmallTree
 {
     
-    public СкладськіПриміщення_PointerControl Власник = new() { Caption = "Власник:" };
+    public СкладськіПриміщення_PointerControl Власник = СкладськіПриміщення_PointerControl.New();
     
     
     public СкладськіКомірки_Папки_ШвидкийВибір() : base(Program.BasicForm?.NotebookFunc)
@@ -30,6 +30,7 @@ class СкладськіКомірки_Папки_ШвидкийВибір : Dir
         
         //Власник
         {
+            Власник.Caption = "Власник:";
             HBoxTop.Append(Власник);
             OwnerWhereListFunc = () => Власник.Pointer.IsEmpty() ? [] : [new(СкладськіКомірки_Папки_Const.Власник, Comparison.EQ, Власник.Pointer.UniqueID.UGuid)];
             Власник.AfterSelectFunc = async () =>
@@ -63,12 +64,12 @@ class СкладськіКомірки_Папки_ШвидкийВибір : Dir
 
     protected override async ValueTask OpenPageList(UniqueID? uniqueID = null)
     {
-        await Функції.OpenPageList(uniqueID, CallBack_OnSelectPointer);
+        await Функції.OpenPageList(uniqueID, OpenSelect, OpenFolder, CallBack_OnSelectPointer, Власник.Pointer);
     }
 
     protected override async ValueTask OpenPageElement(bool IsNew, UniqueID? uniqueID = null)
     {
-        await Функції.OpenPageElement(IsNew, uniqueID, CallBack_LoadRecords, CallBack_OnSelectPointer);
+        await Функції.OpenPageElement(IsNew, uniqueID, CallBack_LoadRecords, CallBack_OnSelectPointer, Власник.Pointer);
     }
 
     protected override async ValueTask SetDeletionLabel(UniqueID uniqueID)

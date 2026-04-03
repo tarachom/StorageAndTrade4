@@ -23,6 +23,8 @@ class СтруктураПідприємства_Список : DirectoryFormJou
         TypeName = СтруктураПідприємства_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+
+        
     }
 
     public override async ValueTask LoadRecords()

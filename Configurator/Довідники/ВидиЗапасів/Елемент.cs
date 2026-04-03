@@ -15,16 +15,16 @@ namespace StorageAndTrade;
 
 class ВидиЗапасів_Елемент : DirectoryFormElement
 {
-    public ВидиЗапасів_Objest Елемент { get; init; } = new ВидиЗапасів_Objest();
+    public ВидиЗапасів_Objest Елемент { get; init; } = new();
     
     #region Fields
-    Entry Код = new() { WidthRequest = 100 };
-                    Entry Назва = new() { WidthRequest = 500 };
-                    Організації_PointerControl Організація = new() { Caption = "Організація", WidthPresentation = 500 };
-            ComboBoxText ТипЗапасів = new ComboBoxText();
-            Валюти_PointerControl Валюта = new() { Caption = "Валюта", WidthPresentation = 500 };
-            Контрагенти_PointerControl Контрагент = new() { Caption = "Контрагент", WidthPresentation = 500 };
-            ДоговориКонтрагентів_PointerControl Договір = new() { Caption = "Договір", WidthPresentation = 500 };
+    Entry Код = Entry.New();
+                    Entry Назва = Entry.New();
+                    Організації_PointerControl Організація = Організації_PointerControl.New();
+            ComboBoxText ТипЗапасів = ComboBoxText.New();
+            Валюти_PointerControl Валюта = Валюти_PointerControl.New();
+            Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
+            ДоговориКонтрагентів_PointerControl Договір = ДоговориКонтрагентів_PointerControl.New();
             
     #endregion
 
@@ -35,18 +35,29 @@ class ВидиЗапасів_Елемент : DirectoryFormElement
     public ВидиЗапасів_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.ТипЗапасів_List())
-                ТипЗапасів.Append(field.Value.ToString(), field.Name);
 
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            ТипЗапасів.AddController(controller);
-            controller.OnScroll += (_, _) => true;
-        }
-        
+        Код.WidthRequest = 100;
+                        Назва.WidthRequest = 300;
+                        Організація.Caption = "Організація";
+                    Організація.WidthPresentation = 300;
+                
+            {
+                //Заповнення списку
+                foreach (var field in ПсевдонімиПерелічення.ТипЗапасів_List())
+                    ТипЗапасів.Append(field.Value.ToString(), field.Name);
+
+                //Заборона прокрутки списку
+                EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
+                ТипЗапасів.AddController(controller);
+                controller.OnScroll += (_, _) => true;
+            }
+                Валюта.Caption = "Валюта";
+                    Валюта.WidthPresentation = 300;
+                Контрагент.Caption = "Контрагент";
+                    Контрагент.WidthPresentation = 300;
+                Договір.Caption = "Договір";
+                    Договір.WidthPresentation = 300;
+                
     }
 
     protected override void CreateStart(Box vBox)

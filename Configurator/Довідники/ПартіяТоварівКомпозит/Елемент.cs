@@ -15,14 +15,14 @@ namespace StorageAndTrade;
 
 class ПартіяТоварівКомпозит_Елемент : DirectoryFormElement
 {
-    public ПартіяТоварівКомпозит_Objest Елемент { get; init; } = new ПартіяТоварівКомпозит_Objest();
+    public ПартіяТоварівКомпозит_Objest Елемент { get; init; } = new();
     
     #region Fields
-    Entry Назва = new() { WidthRequest = 500 };
-                    DateTimeControl Дата = new();
-            ComboBoxText ТипДокументу = new ComboBoxText();
-            ПоступленняТоварівТаПослуг_PointerControl ПоступленняТоварівТаПослуг = new() { Caption = "Поступлення товарів та послуг", WidthPresentation = 500 };
-            ВведенняЗалишків_PointerControl ВведенняЗалишків = new() { Caption = "Введення залишків", WidthPresentation = 500 };
+    Entry Назва = Entry.New();
+                    DateTimeControl Дата = DateTimeControl.New();
+            ComboBoxText ТипДокументу = ComboBoxText.New();
+            ПоступленняТоварівТаПослуг_PointerControl ПоступленняТоварівТаПослуг = ПоступленняТоварівТаПослуг_PointerControl.New();
+            ВведенняЗалишків_PointerControl ВведенняЗалишків = ВведенняЗалишків_PointerControl.New();
             
     #endregion
 
@@ -33,18 +33,24 @@ class ПартіяТоварівКомпозит_Елемент : DirectoryFormE
     public ПартіяТоварівКомпозит_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.ТипДокументуПартіяТоварівКомпозит_List())
-                ТипДокументу.Append(field.Value.ToString(), field.Name);
 
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            ТипДокументу.AddController(controller);
-            controller.OnScroll += (_, _) => true;
-        }
-        
+        Назва.WidthRequest = 300;
+                        
+            {
+                //Заповнення списку
+                foreach (var field in ПсевдонімиПерелічення.ТипДокументуПартіяТоварівКомпозит_List())
+                    ТипДокументу.Append(field.Value.ToString(), field.Name);
+
+                //Заборона прокрутки списку
+                EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
+                ТипДокументу.AddController(controller);
+                controller.OnScroll += (_, _) => true;
+            }
+                ПоступленняТоварівТаПослуг.Caption = "Поступлення товарів та послуг";
+                    ПоступленняТоварівТаПослуг.WidthPresentation = 300;
+                ВведенняЗалишків.Caption = "Введення залишків";
+                    ВведенняЗалишків.WidthPresentation = 300;
+                
     }
 
     protected override void CreateStart(Box vBox)

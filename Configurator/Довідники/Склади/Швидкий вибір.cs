@@ -24,6 +24,8 @@ class Склади_ШвидкийВибір : DirectoryFormJournalSmall
         KeyForSetting = ".Small";
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+
+        
     }
 
     public override async ValueTask LoadRecords()
@@ -48,7 +50,7 @@ class Склади_ШвидкийВибір : DirectoryFormJournalSmall
 
     protected override async ValueTask OpenPageList(UniqueID? uniqueID = null)
     {
-        await Функції.OpenPageList(uniqueID, CallBack_OnSelectPointer);
+        await Функції.OpenPageList(uniqueID, OpenSelect, OpenFolder, CallBack_OnSelectPointer);
     }
 
     protected override async ValueTask OpenPageElement(bool IsNew, UniqueID? uniqueID = null)

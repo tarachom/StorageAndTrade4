@@ -77,7 +77,8 @@ public class РеалізаціяТоварівТаПослуг_Список : D
 
     protected override void ReportSpendTheDocument(UniqueID[] uniqueID)
     {
-
+        foreach (var uid in uniqueID)
+            CommonForms_DocumentMovementThroughRegisters.Create(new РеалізаціяТоварівТаПослуг_Pointer(uid));
     }
 
     protected override async ValueTask VersionsHistory(UniqueID[] uniqueID)

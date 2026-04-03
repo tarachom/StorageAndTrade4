@@ -15,16 +15,16 @@ namespace StorageAndTrade;
 
 class БанківськіРахункиОрганізацій_Елемент : DirectoryFormElement
 {
-    public БанківськіРахункиОрганізацій_Objest Елемент { get; init; } = new БанківськіРахункиОрганізацій_Objest();
+    public БанківськіРахункиОрганізацій_Objest Елемент { get; init; } = new();
     
     #region Fields
-    Entry Код = new() { WidthRequest = 100 };
-                    Entry Назва = new() { WidthRequest = 500 };
-                    Банки_PointerControl Банк = new() { Caption = "Банк", WidthPresentation = 500 };
-            Організації_PointerControl Організація = new() { Caption = "Організація", WidthPresentation = 500 };
-            Entry НомерРахунку = new() { WidthRequest = 500 };
-                    Валюти_PointerControl Валюта = new() { Caption = "Валюта", WidthPresentation = 300 };
-            СтруктураПідприємства_PointerControl Підрозділ = new() { Caption = "Підрозділ", WidthPresentation = 500 };
+    Entry Код = Entry.New();
+                    Entry Назва = Entry.New();
+                    Банки_PointerControl Банк = Банки_PointerControl.New();
+            Організації_PointerControl Організація = Організації_PointerControl.New();
+            Entry НомерРахунку = Entry.New();
+                    Валюти_PointerControl Валюта = Валюти_PointerControl.New();
+            СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
             
     #endregion
 
@@ -35,7 +35,19 @@ class БанківськіРахункиОрганізацій_Елемент : 
     public БанківськіРахункиОрганізацій_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
+
+        Код.WidthRequest = 100;
+                        Назва.WidthRequest = 300;
+                        Банк.Caption = "Банк";
+                    Банк.WidthPresentation = 300;
+                Організація.Caption = "Організація";
+                    Організація.WidthPresentation = 300;
+                НомерРахунку.WidthRequest = 300;
+                        Валюта.Caption = "Валюта";
+                    Валюта.WidthPresentation = 300;
+                Підрозділ.Caption = "Підрозділ";
+                    Підрозділ.WidthPresentation = 300;
+                
     }
 
     protected override void CreateStart(Box vBox)

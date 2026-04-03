@@ -11,8 +11,11 @@ using AccountingSoftware;
 
 namespace StorageAndTrade;
 
-public class ПереміщенняТоварів_PointerTablePartCell : PointerTablePartCell
+[GObject.Subclass<PointerTablePartCell>("PointerTablePartCell_gOwPm7dokutcgByY7rdog")]
+public partial class ПереміщенняТоварів_PointerTablePartCell : PointerTablePartCell
 {
+    public static ПереміщенняТоварів_PointerTablePartCell New() => NewWithProperties([]);
+
     ПереміщенняТоварів_Pointer pointer = new();
     public ПереміщенняТоварів_Pointer Pointer
     {

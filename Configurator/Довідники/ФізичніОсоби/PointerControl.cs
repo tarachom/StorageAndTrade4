@@ -10,19 +10,21 @@ using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
 
-public class ФізичніОсоби_PointerControl : PointerControl
+[GObject.Subclass<PointerControl>("PointerControl_nzSAcV0V3U67ufMTzOITFQ")]
+public partial class ФізичніОсоби_PointerControl : PointerControl
 {
-    event EventHandler<ФізичніОсоби_Pointer> PointerChanged;
+    event EventHandler<ФізичніОсоби_Pointer>? PointerChanged;
 
-    public ФізичніОсоби_PointerControl()
+    partial void Initialize()
     {
-        pointer = new ФізичніОсоби_Pointer();
         WidthPresentation = 300;
         Caption = $"{ФізичніОсоби_Const.FULLNAME}:";
         PointerChanged += async (_, pointer) => Presentation = pointer != null ? await pointer.GetPresentation() : "";
     }
 
-    ФізичніОсоби_Pointer pointer;
+    public static ФізичніОсоби_PointerControl New() => NewWithProperties([]);
+
+    ФізичніОсоби_Pointer pointer = new();
     public ФізичніОсоби_Pointer Pointer
     {
         get
@@ -49,6 +51,8 @@ public class ФізичніОсоби_PointerControl : PointerControl
         {
             PopoverParent = popover,
             DirectoryPointerItem = Pointer.UniqueID,
+            OpenSelect = true,
+            OpenFolder = OpenFolder,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new ФізичніОсоби_Pointer(selectPointer);

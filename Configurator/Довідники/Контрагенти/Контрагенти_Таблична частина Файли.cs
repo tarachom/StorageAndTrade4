@@ -13,20 +13,30 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-class Контрагенти_ТабличнаЧастина_Файли : DirectoryFormTablePart
+partial class Контрагенти_ТабличнаЧастина_Файли : DirectoryFormTablePart
 {
-    
-    public Контрагенти_Objest? ЕлементВласник { get; set; }
-        
-    
     #region Data
-
-    class ItemRow : RowTablePart
-    {
     
-        //
-        // НомерРядка
-        //
+    [GObject.Subclass<GObject.Object>("ItemRow_VwctdICoUOHVi4LsHwMDg")]
+    public partial class ItemRow : IRowTablePart
+    {
+        public static ItemRow New() => NewWithProperties([]);
+
+        // Унікальний ідентифікатор
+        public UniqueID UniqueID
+        {
+            get => UnigueID_;
+            set
+            {
+                UnigueID_ = value;
+                Сhanged_UnigueID?.Invoke();
+            }
+        }
+        UniqueID UnigueID_ = new();
+        public Action? Сhanged_UnigueID;
+
+    
+        /* НомерРядка */
         public int НомерРядка
         {
             get => НомерРядка_;
@@ -43,9 +53,7 @@ class Контрагенти_ТабличнаЧастина_Файли : Directo
         public Action? Сhanged_НомерРядка;
 
     
-        //
-        // Файл
-        //
+        /* Файл */
         public Файли_Pointer Файл
         {
             get => Файл_;
@@ -67,19 +75,22 @@ class Контрагенти_ТабличнаЧастина_Файли : Directo
         Функції
         */
         
-        public override ItemRow Copy()
+        public GObject.Object Copy()
         {
-            return new()
-            {
-                НомерРядка = НомерРядка,
-                Файл = Файл.Copy(),
-                
-            };
+            var itemRow = New();
+            itemRow.НомерРядка = НомерРядка;
+            itemRow.Файл = Файл.Copy();
+            
+            return itemRow;
         }
     }
 
     #endregion
 
+    
+    public Контрагенти_Objest? ЕлементВласник { get; set; }
+        
+    
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());
 
     public Контрагенти_ТабличнаЧастина_Файли() : base(Program.BasicForm?.NotebookFunc)
@@ -98,8 +109,8 @@ class Контрагенти_ТабличнаЧастина_Файли : Directo
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = LabelTablePartCell.New(null);
+                if (args.Object is not ListItem listItem) return;
+                var cell = LabelTablePartCell.New();
                 
                 cell.Halign = Align.End;
                     
@@ -107,15 +118,12 @@ class Контрагенти_ТабличнаЧастина_Файли : Directo
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (LabelTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not LabelTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke();
                     
-                    (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("№", factory);
             column.Resizable = true;
@@ -128,23 +136,20 @@ class Контрагенти_ТабличнаЧастина_Файли : Directo
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new Файли_PointerTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = Файли_PointerTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (Файли_PointerTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not Файли_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnSelect = () => row.Файл = cell.Pointer;
+                (row.Сhanged_Файл = () => cell.Pointer = row.Файл).Invoke();
                     
-                    cell.OnSelect = () => row.Файл = cell.Pointer;
-                    (row.Сhanged_Файл = () => cell.Pointer = row.Файл).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Файл", factory);
             column.Resizable = true;
@@ -175,13 +180,12 @@ class Контрагенти_ТабличнаЧастина_Файли : Directo
         
         foreach (var record in ЕлементВласник.Файли_TablePart.Records)
         {
-            Store.Append(new ItemRow()
-            {
-                UniqueID = new(record.UID),
-                НомерРядка = record.НомерРядка,
-                Файл = record.Файл,
-                
-            });
+            var row = ItemRow.New();
+            row.UniqueID = new(record.UID);
+            row.НомерРядка = record.НомерРядка;
+            row.Файл = record.Файл;
+            
+            Store.Append(row);
 
             if (SelectPosition > 0)
             {
@@ -219,13 +223,13 @@ class Контрагенти_ТабличнаЧастина_Файли : Directo
             foreach (var record in ЕлементВласник.Файли_TablePart.Records)
             {
                 bool sel = Grid.Model.IsSelected(position);
-                Store.Splice(position, 1, [new ItemRow()
-                {
-                    UniqueID = new(record.UID),
-                    НомерРядка = record.НомерРядка,
-                    Файл = record.Файл,
-                    
-                }], 1);
+
+                var row = ItemRow.New();
+                row.UniqueID = new(record.UID);
+                row.НомерРядка = record.НомерРядка;
+                row.Файл = record.Файл;
+                
+                Store.Splice(position, 1, [row], 1);
                 if (sel) Grid.Model.SelectItem(position, false);
                 position++;
             }
@@ -235,7 +239,7 @@ class Контрагенти_ТабличнаЧастина_Файли : Directo
 
     public override bool NewRecord()
     {
-        Store.Append(new ItemRow());
+        Store.Append(ItemRow.New());
         return true;
     }
 }

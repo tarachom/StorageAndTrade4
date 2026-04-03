@@ -10,19 +10,21 @@ using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
 
-public class ДоговориКонтрагентів_PointerControl : PointerControl
+[GObject.Subclass<PointerControl>("PointerControl_9eLO3SJfT0WtraOB0YixA")]
+public partial class ДоговориКонтрагентів_PointerControl : PointerControl
 {
-    event EventHandler<ДоговориКонтрагентів_Pointer> PointerChanged;
+    event EventHandler<ДоговориКонтрагентів_Pointer>? PointerChanged;
 
-    public ДоговориКонтрагентів_PointerControl()
+    partial void Initialize()
     {
-        pointer = new ДоговориКонтрагентів_Pointer();
         WidthPresentation = 300;
         Caption = $"{ДоговориКонтрагентів_Const.FULLNAME}:";
         PointerChanged += async (_, pointer) => Presentation = pointer != null ? await pointer.GetPresentation() : "";
     }
 
-    ДоговориКонтрагентів_Pointer pointer;
+    public static ДоговориКонтрагентів_PointerControl New() => NewWithProperties([]);
+
+    ДоговориКонтрагентів_Pointer pointer = new();
     public ДоговориКонтрагентів_Pointer Pointer
     {
         get
@@ -51,6 +53,8 @@ public class ДоговориКонтрагентів_PointerControl : PointerCo
         {
             PopoverParent = popover,
             DirectoryPointerItem = Pointer.UniqueID,
+            OpenSelect = true,
+            OpenFolder = OpenFolder,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new ДоговориКонтрагентів_Pointer(selectPointer);

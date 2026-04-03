@@ -11,8 +11,11 @@ using AccountingSoftware;
 
 namespace StorageAndTrade;
 
-public class СкладськіКомірки_PointerTablePartCell : PointerTablePartCell
+[GObject.Subclass<PointerTablePartCell>("PointerTablePartCell_DbsPGx1tL0fBHFjMW6GEQ")]
+public partial class СкладськіКомірки_PointerTablePartCell : PointerTablePartCell
 {
+    public static СкладськіКомірки_PointerTablePartCell New() => NewWithProperties([]);
+
     СкладськіКомірки_Pointer pointer = new();
     public СкладськіКомірки_Pointer Pointer
     {
@@ -43,12 +46,16 @@ public class СкладськіКомірки_PointerTablePartCell : PointerTabl
         popover.SetParent(button);
         popover.WidthRequest = 800;
         popover.HeightRequest = 400;
-
+        BeforeClickOpenFunc?.Invoke();
         СкладськіКомірки_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
             DirectoryPointerItem = pointer.UniqueID,
-            CallBack_OnSelectPointer = async p => await PointerChange(p)
+            CallBack_OnSelectPointer = async p => 
+            {
+                await PointerChange(p);
+                AfterSelectFunc?.Invoke();
+            }
         };
         
         page.Власник.Pointer = Власник;
@@ -63,6 +70,8 @@ public class СкладськіКомірки_PointerTablePartCell : PointerTabl
     protected override async void Clear()
     {
         await PointerChange(null);
+        AfterSelectFunc?.Invoke();
+        AfterClearFunc?.Invoke();
     }
 }
     

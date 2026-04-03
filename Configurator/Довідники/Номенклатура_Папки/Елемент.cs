@@ -20,9 +20,9 @@ class Номенклатура_Папки_Елемент : DirectoryFormElement
     public Номенклатура_Папки_Pointer РодичДляНового { get; set; } = new();
     
     #region Fields
-    Entry Код = new() { WidthRequest = 100 };
-                    Entry Назва = new() { WidthRequest = 300 };
-                    Номенклатура_Папки_PointerControl Родич = new() { Caption = "Папка", WidthPresentation = 300 };
+    Entry Код = Entry.New();
+                    Entry Назва = Entry.New();
+                    Номенклатура_Папки_PointerControl Родич = Номенклатура_Папки_PointerControl.New();
             
     #endregion
 
@@ -33,7 +33,12 @@ class Номенклатура_Папки_Елемент : DirectoryFormElement
     public Номенклатура_Папки_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
+
+        Код.WidthRequest = 100;
+                        Назва.WidthRequest = 300;
+                        Родич.Caption = "Папка";
+                    Родич.WidthPresentation = 300;
+                
     }
 
     protected override void CreateStart(Box vBox)

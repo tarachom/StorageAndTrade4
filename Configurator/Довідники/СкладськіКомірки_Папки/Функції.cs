@@ -54,14 +54,20 @@ static class СкладськіКомірки_Папки_Функції
         await page.SetValue();
     }
 
-    public static async ValueTask OpenPageList(UniqueID? uniqueID = null, Action<UniqueID>? сallBack_OnSelectPointer = null)
+    public static async ValueTask OpenPageList(UniqueID? uniqueID = null, bool openSelect = false, UniqueID? openFolder = null,
+        Action<UniqueID>? сallBack_OnSelectPointer = null,
+            СкладськіПриміщення_Pointer? Власник = null)
     {
         СкладськіКомірки_Папки_Список page = new()
         {
+            OpenSelect = openSelect,
+            OpenFolder = openFolder,
             DirectoryPointerItem = uniqueID,
             CallBack_OnSelectPointer = сallBack_OnSelectPointer
         };
-
+        
+            if (Власник != null) page.Власник.Pointer = Власник;
+        
         Program.BasicForm?.NotebookFunc.CreatePage(СкладськіКомірки_Папки_Const.FULLNAME, page);
         await page.SetValue();
     }

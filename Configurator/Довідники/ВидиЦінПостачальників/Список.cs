@@ -23,6 +23,8 @@ class ВидиЦінПостачальників_Список : DirectoryFormJou
         TypeName = ВидиЦінПостачальників_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+
+        
     }
 
     public override async ValueTask LoadRecords()

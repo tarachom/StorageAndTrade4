@@ -22,13 +22,13 @@ class ПересортицяТоварів_Елемент : DocumentFormElement
     public ПересортицяТоварів_Objest Елемент { get; init; } = new();
 
     #region Fields
-    Entry НомерДок = new() { WidthRequest = 100 };
-                    DateTimeControl ДатаДок = new();
-            Організації_PointerControl Організація = new() { Caption = "Організація", WidthPresentation = 300 };
-            СтруктураПідприємства_PointerControl Підрозділ = new() { Caption = "Підрозділ", WidthPresentation = 300 };
-            Склади_PointerControl Склад = new() { Caption = "Склад", WidthPresentation = 300 };
-            ВидиЦін_PointerControl ВидЦіни = new() { Caption = "Вид ціни", WidthPresentation = 300 };
-            Entry Коментар = new() { WidthRequest = 300 };
+    Entry НомерДок = Entry.New();
+                    DateTimeControl ДатаДок = DateTimeControl.New();
+            Організації_PointerControl Організація = Організації_PointerControl.New();
+            СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
+            Склади_PointerControl Склад = Склади_PointerControl.New();
+            ВидиЦін_PointerControl ВидЦіни = ВидиЦін_PointerControl.New();
+            Entry Коментар = Entry.New();
                     
     #endregion
 
@@ -51,7 +51,17 @@ class ПересортицяТоварів_Елемент : DocumentFormElement
             NotebookTablePart.InsertPage(Товари, Label.New("Товари"), 0);
             
             NotebookTablePart.SetCurrentPage(0);
-        
+        НомерДок.WidthRequest = 100;
+                        Організація.Caption = "Організація";
+                    Організація.WidthPresentation = 300;
+                Підрозділ.Caption = "Підрозділ";
+                    Підрозділ.WidthPresentation = 300;
+                Склад.Caption = "Склад";
+                    Склад.WidthPresentation = 300;
+                ВидЦіни.Caption = "Вид ціни";
+                    ВидЦіни.WidthPresentation = 300;
+                Коментар.WidthRequest = 300;
+                        
     }
 
     protected override void CreateTopStart(Box vBox)
@@ -162,7 +172,7 @@ class ПересортицяТоварів_Елемент : DocumentFormElement
 
     protected override void ReportSpendTheDocument(UniqueID uniqueID)
     {
-        //СпільніФорми_РухДокументуПоРегістрах.СформуватиЗвіт(new ПересортицяТоварів_Pointer(uniqueID));
+        CommonForms_DocumentMovementThroughRegisters.Create(new ПересортицяТоварів_Pointer(uniqueID));
     }
 
     protected override async ValueTask InJournal(UniqueID uniqueID)

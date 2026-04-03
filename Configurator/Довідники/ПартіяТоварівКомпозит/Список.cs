@@ -23,6 +23,8 @@ class ПартіяТоварівКомпозит_Список : DirectoryFormJou
         TypeName = ПартіяТоварівКомпозит_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+
+        
     }
 
     public override async ValueTask LoadRecords()

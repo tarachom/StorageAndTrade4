@@ -15,20 +15,20 @@ namespace StorageAndTrade;
 
 class СкладськіКомірки_Елемент : DirectoryFormElement
 {
-    public СкладськіКомірки_Objest Елемент { get; init; } = new СкладськіКомірки_Objest();
+    public СкладськіКомірки_Objest Елемент { get; init; } = new();
     
-    public СкладськіПриміщення_Pointer ВласникДляНового = new СкладськіПриміщення_Pointer();
+    public СкладськіПриміщення_Pointer ВласникДляНового = new();
     
     #region Fields
-    Entry Назва = new() { WidthRequest = 500 };
-                    СкладськіПриміщення_PointerControl Приміщення = new() { Caption = "Приміщення", WidthPresentation = 500 };
-            СкладськіКомірки_Папки_PointerControl Папка = new() { Caption = "Папка", WidthPresentation = 500 };
-            Entry Лінія = new() { WidthRequest = 500 };
-                    Entry Позиція = new() { WidthRequest = 500 };
-                    Entry Стелаж = new() { WidthRequest = 500 };
-                    Entry Ярус = new() { WidthRequest = 500 };
-                    ComboBoxText ТипСкладськоїКомірки = new ComboBoxText();
-            ТипорозміриКомірок_PointerControl Типорозмір = new() { Caption = "Типорозмір", WidthPresentation = 500 };
+    Entry Назва = Entry.New();
+                    СкладськіПриміщення_PointerControl Приміщення = СкладськіПриміщення_PointerControl.New();
+            СкладськіКомірки_Папки_PointerControl Папка = СкладськіКомірки_Папки_PointerControl.New();
+            Entry Лінія = Entry.New();
+                    Entry Позиція = Entry.New();
+                    Entry Стелаж = Entry.New();
+                    Entry Ярус = Entry.New();
+                    ComboBoxText ТипСкладськоїКомірки = ComboBoxText.New();
+            ТипорозміриКомірок_PointerControl Типорозмір = ТипорозміриКомірок_PointerControl.New();
             
     #endregion
 
@@ -39,18 +39,30 @@ class СкладськіКомірки_Елемент : DirectoryFormElement
     public СкладськіКомірки_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.ТипиСкладськихКомірок_List())
-                ТипСкладськоїКомірки.Append(field.Value.ToString(), field.Name);
 
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            ТипСкладськоїКомірки.AddController(controller);
-            controller.OnScroll += (_, _) => true;
-        }
-        
+        Назва.WidthRequest = 300;
+                        Приміщення.Caption = "Приміщення";
+                    Приміщення.WidthPresentation = 300;
+                Папка.Caption = "Папка";
+                    Папка.WidthPresentation = 300;
+                Лінія.WidthRequest = 300;
+                        Позиція.WidthRequest = 300;
+                        Стелаж.WidthRequest = 300;
+                        Ярус.WidthRequest = 300;
+                        
+            {
+                //Заповнення списку
+                foreach (var field in ПсевдонімиПерелічення.ТипиСкладськихКомірок_List())
+                    ТипСкладськоїКомірки.Append(field.Value.ToString(), field.Name);
+
+                //Заборона прокрутки списку
+                EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
+                ТипСкладськоїКомірки.AddController(controller);
+                controller.OnScroll += (_, _) => true;
+            }
+                Типорозмір.Caption = "Типорозмір";
+                    Типорозмір.WidthPresentation = 300;
+                
     }
 
     protected override void CreateStart(Box vBox)

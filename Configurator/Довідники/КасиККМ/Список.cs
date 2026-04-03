@@ -23,6 +23,8 @@ class КасиККМ_Список : DirectoryFormJournalFull
         TypeName = КасиККМ_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+
+        
     }
 
     public override async ValueTask LoadRecords()

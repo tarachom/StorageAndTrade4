@@ -15,13 +15,13 @@ namespace StorageAndTrade;
 
 class ПакуванняОдиниціВиміру_Елемент : DirectoryFormElement
 {
-    public ПакуванняОдиниціВиміру_Objest Елемент { get; init; } = new ПакуванняОдиниціВиміру_Objest();
+    public ПакуванняОдиниціВиміру_Objest Елемент { get; init; } = new();
     
     #region Fields
-    Entry Код = new() { WidthRequest = 100 };
-                    Entry Назва = new() { WidthRequest = 500 };
-                    Entry НазваПовна = new() { WidthRequest = 500 };
-                    IntegerControl КількістьУпаковок = new();
+    Entry Код = Entry.New();
+                    Entry Назва = Entry.New();
+                    Entry НазваПовна = Entry.New();
+                    IntegerControl КількістьУпаковок = IntegerControl.New();
             
     #endregion
 
@@ -32,7 +32,11 @@ class ПакуванняОдиниціВиміру_Елемент : DirectoryFor
     public ПакуванняОдиниціВиміру_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
+
+        Код.WidthRequest = 100;
+                        Назва.WidthRequest = 300;
+                        НазваПовна.WidthRequest = 300;
+                        
     }
 
     protected override void CreateStart(Box vBox)

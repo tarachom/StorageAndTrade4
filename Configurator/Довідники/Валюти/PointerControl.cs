@@ -10,19 +10,21 @@ using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
 
-public class Валюти_PointerControl : PointerControl
+[GObject.Subclass<PointerControl>("PointerControl_rr5HI8iOkCqOsjJvC6Mgg")]
+public partial class Валюти_PointerControl : PointerControl
 {
-    event EventHandler<Валюти_Pointer> PointerChanged;
+    event EventHandler<Валюти_Pointer>? PointerChanged;
 
-    public Валюти_PointerControl()
+    partial void Initialize()
     {
-        pointer = new Валюти_Pointer();
         WidthPresentation = 300;
         Caption = $"{Валюти_Const.FULLNAME}:";
         PointerChanged += async (_, pointer) => Presentation = pointer != null ? await pointer.GetPresentation() : "";
     }
 
-    Валюти_Pointer pointer;
+    public static Валюти_PointerControl New() => NewWithProperties([]);
+
+    Валюти_Pointer pointer = new();
     public Валюти_Pointer Pointer
     {
         get
@@ -49,6 +51,8 @@ public class Валюти_PointerControl : PointerControl
         {
             PopoverParent = popover,
             DirectoryPointerItem = Pointer.UniqueID,
+            OpenSelect = true,
+            OpenFolder = OpenFolder,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new Валюти_Pointer(selectPointer);

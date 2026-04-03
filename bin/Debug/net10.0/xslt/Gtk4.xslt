@@ -85,7 +85,7 @@ limitations under the License.
                     </xsl:when>
                     <xsl:when test="Type = 'pointer'">
                         <xsl:value-of select="substring-after(Pointer, '.')"/>_PointerControl <xsl:value-of select="Name"/> = new() { Caption = "", AfterSelectFunc = () =&gt; sw.Active = true };
-                        object get() =&gt; <xsl:value-of select="Name"/>.Pointer.UniqueID.UGuid;
+                        object get() =&gt; <xsl:value-of select="Name"/>.Pointer.UnigueID.UGuid;
                     </xsl:when>
                     <xsl:when test="Type = 'enum'">
                         ComboBoxText <xsl:value-of select="Name"/> = new();
@@ -332,21 +332,21 @@ namespace <xsl:value-of select="Configuration/NameSpaceGeneratedCode"/>.Дові
                 if (curr != null)
                 {
                     Dictionary&lt;string, object&gt; Fields = curr.Fields;
-                    DirectoryRowJournal row = new() { UniqueID = curr.UniqueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    DirectoryRowJournal row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
                     <xsl:for-each select="Fields/Field">
                         <xsl:text>row.Fields.Add("</xsl:text><xsl:value-of select="Name"/>", <xsl:call-template name="FieldValue"><xsl:with-param name="ConfTypeName"><xsl:value-of select="$DirectoryName"/></xsl:with-param></xsl:call-template>);
                     </xsl:for-each>
                     <xsl:for-each select="Fields/AdditionalField[Visible = 'True']">
                         <xsl:text>row.Fields.Add("</xsl:text><xsl:value-of select="Name"/>", Fields["<xsl:value-of select="Name"/>"].ToString() ?? "");
                     </xsl:for-each>
-                    ObjectChanged? objCh = records.Find(x =&gt; x.Uid.Equals(curr.UniqueID.UGuid));
+                    ObjectChanged? objCh = records.Find(x =&gt; x.Uid.Equals(curr.UnigueID.UGuid));
                     if (objCh != null)
                     {
                         bool exist = false;
                         for (uint i = 0; i &lt; form.Store.GetNItems(); i++)
                         {
                             RowJournal? item = (RowJournal?)form.Store.GetObject(i);
-                            if (item != null &amp;&amp; item.UniqueID.Equals(curr.UniqueID))
+                            if (item != null &amp;&amp; item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
@@ -365,7 +365,7 @@ namespace <xsl:value-of select="Configuration/NameSpaceGeneratedCode"/>.Дові
         public static async ValueTask LoadRecords(DirectoryFormJournalBase form)
         {
             form.BeforeLoadRecords();
-            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
+            UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
 
             /* Вибірка */
             <xsl:call-template name="Select">
@@ -390,7 +390,7 @@ namespace <xsl:value-of select="Configuration/NameSpaceGeneratedCode"/>.Дові
                 if (curr != null)
                 {
                     Dictionary&lt;string, object&gt; Fields = curr.Fields;
-                    DirectoryRowJournal row = new() { UniqueID = curr.UniqueID, DeletionLabel = (bool)Fields["deletion_label"] };
+                    DirectoryRowJournal row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"] };
                     <xsl:for-each select="Fields/Field">
                         <xsl:text>row.Fields.Add("</xsl:text><xsl:value-of select="Name"/>", <xsl:call-template name="FieldValue"><xsl:with-param name="ConfTypeName"><xsl:value-of select="$DirectoryName"/></xsl:with-param></xsl:call-template>);
                     </xsl:for-each>
@@ -398,7 +398,7 @@ namespace <xsl:value-of select="Configuration/NameSpaceGeneratedCode"/>.Дові
                         <xsl:text>row.Fields.Add("</xsl:text><xsl:value-of select="Name"/>", Fields["<xsl:value-of select="Name"/>"].ToString() ?? "");
                     </xsl:for-each>
                     form.Store.Append(row);
-                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterLoadRecords(selectPosition);
@@ -476,21 +476,21 @@ namespace <xsl:value-of select="Configuration/NameSpaceGeneratedCode"/>.Доку
                 if (curr != null)
                 {
                     Dictionary&lt;string, object&gt; Fields = curr.Fields;
-                    DocumentRowJournal row = new() { UniqueID = curr.UniqueID, DeletionLabel = (bool)Fields["deletion_label"], Spend = (bool)Fields["spend"] };
+                    DocumentRowJournal row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"], Spend = (bool)Fields["spend"] };
                     <xsl:for-each select="Fields/Field">
                         <xsl:text>row.Fields.Add("</xsl:text><xsl:value-of select="Name"/>", <xsl:call-template name="FieldValue"><xsl:with-param name="ConfTypeName"><xsl:value-of select="$DocumentName"/></xsl:with-param></xsl:call-template>);
                     </xsl:for-each>
                     <xsl:for-each select="Fields/AdditionalField[Visible = 'True']">
                         <xsl:text>row.Fields.Add("</xsl:text><xsl:value-of select="Name"/>", Fields["<xsl:value-of select="Name"/>"].ToString() ?? "");
                     </xsl:for-each>
-                    ObjectChanged? objCh = records.Find(x =&gt; x.Uid.Equals(curr.UniqueID.UGuid));
+                    ObjectChanged? objCh = records.Find(x =&gt; x.Uid.Equals(curr.UnigueID.UGuid));
                     if (objCh != null)
                     {
                         bool exist = false;
                         for (uint i = 0; i &lt; form.Store.GetNItems(); i++)
                         {
                             RowJournal? item = (RowJournal?)form.Store.GetObject(i);
-                            if (item != null &amp;&amp; item.UniqueID.Equals(curr.UniqueID))
+                            if (item != null &amp;&amp; item.UnigueID.Equals(curr.UnigueID))
                             {
                                 bool sel = form.Grid.Model.IsSelected(i);
                                 form.Store.Splice(i, 1, [row], 1);
@@ -509,7 +509,7 @@ namespace <xsl:value-of select="Configuration/NameSpaceGeneratedCode"/>.Доку
         public static async ValueTask LoadRecords(DocumentFormJournalBase form)
         {
             form.BeforeLoadRecords();
-            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+            UnigueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
 
             /* Вибірка */
             <xsl:call-template name="Select">
@@ -541,7 +541,7 @@ namespace <xsl:value-of select="Configuration/NameSpaceGeneratedCode"/>.Доку
                 if (curr != null)
                 {
                     Dictionary&lt;string, object&gt; Fields = curr.Fields;
-                    DocumentRowJournal row = new() { UniqueID = curr.UniqueID, DeletionLabel = (bool)Fields["deletion_label"], Spend = (bool)Fields["spend"] };
+                    DocumentRowJournal row = new() { UnigueID = curr.UnigueID, DeletionLabel = (bool)Fields["deletion_label"], Spend = (bool)Fields["spend"] };
                     <xsl:for-each select="Fields/Field">
                         <xsl:text>row.Fields.Add("</xsl:text><xsl:value-of select="Name"/>", <xsl:call-template name="FieldValue"><xsl:with-param name="ConfTypeName"><xsl:value-of select="$DocumentName"/></xsl:with-param></xsl:call-template>);
                     </xsl:for-each>
@@ -549,7 +549,7 @@ namespace <xsl:value-of select="Configuration/NameSpaceGeneratedCode"/>.Доку
                         <xsl:text>row.Fields.Add("</xsl:text><xsl:value-of select="Name"/>", Fields["<xsl:value-of select="Name"/>"].ToString() ?? "");
                     </xsl:for-each>
                     form.Store.Append(row);
-                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                    if (row.UnigueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
                 }
             }
             form.AfterLoadRecords(selectPosition);

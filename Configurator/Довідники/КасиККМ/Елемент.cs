@@ -15,13 +15,13 @@ namespace StorageAndTrade;
 
 class КасиККМ_Елемент : DirectoryFormElement
 {
-    public КасиККМ_Objest Елемент { get; init; } = new КасиККМ_Objest();
+    public КасиККМ_Objest Елемент { get; init; } = new();
     
     #region Fields
-    Entry Назва = new() { WidthRequest = 500 };
-                    Склади_PointerControl Склад = new() { Caption = "Склад", WidthPresentation = 500 };
-            ComboBoxText Тип = new ComboBoxText();
-            Валюти_PointerControl Валюта = new() { Caption = "Валюта", WidthPresentation = 500 };
+    Entry Назва = Entry.New();
+                    Склади_PointerControl Склад = Склади_PointerControl.New();
+            ComboBoxText Тип = ComboBoxText.New();
+            Валюти_PointerControl Валюта = Валюти_PointerControl.New();
             
     #endregion
 
@@ -32,18 +32,24 @@ class КасиККМ_Елемент : DirectoryFormElement
     public КасиККМ_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.ТипККМ_List())
-                Тип.Append(field.Value.ToString(), field.Name);
 
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            Тип.AddController(controller);
-            controller.OnScroll += (_, _) => true;
-        }
-        
+        Назва.WidthRequest = 300;
+                        Склад.Caption = "Склад";
+                    Склад.WidthPresentation = 300;
+                
+            {
+                //Заповнення списку
+                foreach (var field in ПсевдонімиПерелічення.ТипККМ_List())
+                    Тип.Append(field.Value.ToString(), field.Name);
+
+                //Заборона прокрутки списку
+                EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
+                Тип.AddController(controller);
+                controller.OnScroll += (_, _) => true;
+            }
+                Валюта.Caption = "Валюта";
+                    Валюта.WidthPresentation = 300;
+                
     }
 
     protected override void CreateStart(Box vBox)

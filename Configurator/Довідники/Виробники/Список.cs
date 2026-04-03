@@ -23,6 +23,8 @@ class Виробники_Список : DirectoryFormJournalFull
         TypeName = Виробники_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+
+        
     }
 
     public override async ValueTask LoadRecords()

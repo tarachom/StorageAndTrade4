@@ -15,14 +15,14 @@ namespace StorageAndTrade;
 
 class Блокнот_Елемент : DirectoryFormElement
 {
-    public Блокнот_Objest Елемент { get; init; } = new Блокнот_Objest();
+    public Блокнот_Objest Елемент { get; init; } = new();
     
     #region Fields
-    Entry Код = new() { WidthRequest = 100 };
-                    Entry Назва = new() { WidthRequest = 500 };
-                    DateTimeControl ДатаЗапису = new();
-            TextView Опис = new TextView() { WrapMode = WrapMode.Word };
-                    Entry Лінк = new() { WidthRequest = 500 };
+    Entry Код = Entry.New();
+                    Entry Назва = Entry.New();
+                    DateTimeControl ДатаЗапису = DateTimeControl.New();
+            TextView Опис = TextView.New();
+                    Entry Лінк = Entry.New();
                     
     #endregion
 
@@ -33,7 +33,12 @@ class Блокнот_Елемент : DirectoryFormElement
     public Блокнот_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
+
+        Код.WidthRequest = 100;
+                        Назва.WidthRequest = 300;
+                        Опис.WrapMode = WrapMode.Word;
+                        Лінк.WidthRequest = 300;
+                        
     }
 
     protected override void CreateStart(Box vBox)

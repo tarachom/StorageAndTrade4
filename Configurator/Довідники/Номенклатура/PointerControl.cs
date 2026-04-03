@@ -10,19 +10,21 @@ using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
 
-public class Номенклатура_PointerControl : PointerControl
+[GObject.Subclass<PointerControl>("PointerControl_TsQO4c0HUaC86waqu4rZA")]
+public partial class Номенклатура_PointerControl : PointerControl
 {
-    event EventHandler<Номенклатура_Pointer> PointerChanged;
+    event EventHandler<Номенклатура_Pointer>? PointerChanged;
 
-    public Номенклатура_PointerControl()
+    partial void Initialize()
     {
-        pointer = new Номенклатура_Pointer();
         WidthPresentation = 300;
         Caption = $"{Номенклатура_Const.FULLNAME}:";
         PointerChanged += async (_, pointer) => Presentation = pointer != null ? await pointer.GetPresentation() : "";
     }
 
-    Номенклатура_Pointer pointer;
+    public static Номенклатура_PointerControl New() => NewWithProperties([]);
+
+    Номенклатура_Pointer pointer = new();
     public Номенклатура_Pointer Pointer
     {
         get

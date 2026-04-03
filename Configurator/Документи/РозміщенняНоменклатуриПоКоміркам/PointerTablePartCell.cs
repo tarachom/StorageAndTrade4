@@ -11,8 +11,11 @@ using AccountingSoftware;
 
 namespace StorageAndTrade;
 
-public class РозміщенняНоменклатуриПоКоміркам_PointerTablePartCell : PointerTablePartCell
+[GObject.Subclass<PointerTablePartCell>("PointerTablePartCell_BK722EioakCqOZGx27WaTA")]
+public partial class РозміщенняНоменклатуриПоКоміркам_PointerTablePartCell : PointerTablePartCell
 {
+    public static РозміщенняНоменклатуриПоКоміркам_PointerTablePartCell New() => NewWithProperties([]);
+
     РозміщенняНоменклатуриПоКоміркам_Pointer pointer = new();
     public РозміщенняНоменклатуриПоКоміркам_Pointer Pointer
     {
@@ -39,12 +42,16 @@ public class РозміщенняНоменклатуриПоКоміркам_Po
         popover.SetParent(button);
         popover.WidthRequest = 800;
         popover.HeightRequest = 400;
-
+        BeforeClickOpenFunc?.Invoke();
         РозміщенняНоменклатуриПоКоміркам_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
             DocumentPointerItem = pointer.UniqueID,
-            CallBack_OnSelectPointer = async p => await PointerChange(p)
+            CallBack_OnSelectPointer = async p => 
+            {
+                await PointerChange(p);
+                AfterSelectFunc?.Invoke();
+            }
         };
 
         popover.SetChild(page);
@@ -56,6 +63,8 @@ public class РозміщенняНоменклатуриПоКоміркам_Po
     protected override async void Clear()
     {
         await PointerChange(null);
+        AfterSelectFunc?.Invoke();
+        AfterClearFunc?.Invoke();
     }
 }
     

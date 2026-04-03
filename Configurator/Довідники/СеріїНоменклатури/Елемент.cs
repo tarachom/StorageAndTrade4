@@ -15,12 +15,12 @@ namespace StorageAndTrade;
 
 class СеріїНоменклатури_Елемент : DirectoryFormElement
 {
-    public СеріїНоменклатури_Objest Елемент { get; init; } = new СеріїНоменклатури_Objest();
+    public СеріїНоменклатури_Objest Елемент { get; init; } = new();
     
     #region Fields
-    Entry Номер = new() { WidthRequest = 500 };
-                    Entry Коментар = new() { WidthRequest = 500 };
-                    DateTimeControl ДатаСтворення = new();
+    Entry Номер = Entry.New();
+                    Entry Коментар = Entry.New();
+                    DateTimeControl ДатаСтворення = DateTimeControl.New();
             
     #endregion
 
@@ -31,7 +31,10 @@ class СеріїНоменклатури_Елемент : DirectoryFormElement
     public СеріїНоменклатури_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
+
+        Номер.WidthRequest = 300;
+                        Коментар.WidthRequest = 300;
+                        
     }
 
     protected override void CreateStart(Box vBox)

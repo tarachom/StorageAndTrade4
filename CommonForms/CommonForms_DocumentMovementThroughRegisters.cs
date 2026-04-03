@@ -53,8 +53,17 @@ class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.CommonForms_D
     /// </summary>
     /// <param name="documentPointer">Документ вказівник</param>
     /// <returns>Widget</returns>
-    protected override Widget Document_PointerControl(DocumentPointer documentPointer) =>
-        new CompositePointerControl { Pointer = documentPointer.GetBasis(), Caption = "Документ:", TypeSelectSensetive = false, ClearSensetive = false, WidthPresentation = 500 };
+    protected override Widget Document_PointerControl(DocumentPointer documentPointer)
+    {
+        CompositePointerControl control = CompositePointerControl.New();
+        control.Caption = "Документ:";
+        control.Pointer = documentPointer.GetBasis();
+        control.ClearSensetive = false;
+        control.TypeSelectSensetive = false;
+        control.WidthPresentation = 500;
+
+        return control;
+    }
 
     /// <summary>
     /// Заповнення

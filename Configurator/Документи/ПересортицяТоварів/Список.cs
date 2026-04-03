@@ -77,7 +77,8 @@ public class ПересортицяТоварів_Список : DocumentFormJou
 
     protected override void ReportSpendTheDocument(UniqueID[] uniqueID)
     {
-
+        foreach (var uid in uniqueID)
+            CommonForms_DocumentMovementThroughRegisters.Create(new ПересортицяТоварів_Pointer(uid));
     }
 
     protected override async ValueTask VersionsHistory(UniqueID[] uniqueID)

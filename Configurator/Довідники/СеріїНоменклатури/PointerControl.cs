@@ -10,19 +10,21 @@ using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
 
-public class СеріїНоменклатури_PointerControl : PointerControl
+[GObject.Subclass<PointerControl>("PointerControl_so20MBQrUkaLLzVxBaxf6Q")]
+public partial class СеріїНоменклатури_PointerControl : PointerControl
 {
-    event EventHandler<СеріїНоменклатури_Pointer> PointerChanged;
+    event EventHandler<СеріїНоменклатури_Pointer>? PointerChanged;
 
-    public СеріїНоменклатури_PointerControl()
+    partial void Initialize()
     {
-        pointer = new СеріїНоменклатури_Pointer();
         WidthPresentation = 300;
         Caption = $"{СеріїНоменклатури_Const.FULLNAME}:";
         PointerChanged += async (_, pointer) => Presentation = pointer != null ? await pointer.GetPresentation() : "";
     }
 
-    СеріїНоменклатури_Pointer pointer;
+    public static СеріїНоменклатури_PointerControl New() => NewWithProperties([]);
+
+    СеріїНоменклатури_Pointer pointer = new();
     public СеріїНоменклатури_Pointer Pointer
     {
         get
@@ -49,6 +51,8 @@ public class СеріїНоменклатури_PointerControl : PointerControl
         {
             PopoverParent = popover,
             DirectoryPointerItem = Pointer.UniqueID,
+            OpenSelect = true,
+            OpenFolder = OpenFolder,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new СеріїНоменклатури_Pointer(selectPointer);

@@ -15,17 +15,17 @@ namespace StorageAndTrade;
 
 class СкладськіКомірки_Папки_Елемент : DirectoryFormElement
 {
-    public СкладськіКомірки_Папки_Objest Елемент { get; init; } = new СкладськіКомірки_Папки_Objest();
+    public СкладськіКомірки_Папки_Objest Елемент { get; init; } = new();
     
-    public СкладськіПриміщення_Pointer ВласникДляНового = new СкладськіПриміщення_Pointer();
+    public СкладськіПриміщення_Pointer ВласникДляНового = new();
     
-    public СкладськіКомірки_Папки_Pointer РодичДляНового { get; set; } = new СкладськіКомірки_Папки_Pointer();
+    public СкладськіКомірки_Папки_Pointer РодичДляНового { get; set; } = new();
     
     #region Fields
-    Entry Код = new() { WidthRequest = 100 };
-                    Entry Назва = new() { WidthRequest = 500 };
-                    СкладськіКомірки_Папки_PointerControl Родич = new() { Caption = "Папка", WidthPresentation = 500 };
-            СкладськіПриміщення_PointerControl Власник = new() { Caption = "Приміщення", WidthPresentation = 500 };
+    Entry Код = Entry.New();
+                    Entry Назва = Entry.New();
+                    СкладськіКомірки_Папки_PointerControl Родич = СкладськіКомірки_Папки_PointerControl.New();
+            СкладськіПриміщення_PointerControl Власник = СкладськіПриміщення_PointerControl.New();
             
     #endregion
 
@@ -36,7 +36,14 @@ class СкладськіКомірки_Папки_Елемент : DirectoryForm
     public СкладськіКомірки_Папки_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
+
+        Код.WidthRequest = 100;
+                        Назва.WidthRequest = 300;
+                        Родич.Caption = "Папка";
+                    Родич.WidthPresentation = 300;
+                Власник.Caption = "Приміщення";
+                    Власник.WidthPresentation = 300;
+                
     }
 
     protected override void CreateStart(Box vBox)

@@ -13,20 +13,30 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-class ВведенняЗалишків_ТабличнаЧастина_БанківськіРахунки : DocumentFormTablePart
+partial class ВведенняЗалишків_ТабличнаЧастина_БанківськіРахунки : DocumentFormTablePart
 {
-    
-    public ВведенняЗалишків_Objest? ЕлементВласник { get; set; }
-        
-    
     #region Data
-
-    class ItemRow : RowTablePart
-    {
     
-        //
-        // НомерРядка
-        //
+    [GObject.Subclass<GObject.Object>("ItemRow_i07VUMHIoEWVsReWVdQpLA")]
+    public partial class ItemRow : IRowTablePart
+    {
+        public static ItemRow New() => NewWithProperties([]);
+
+        // Унікальний ідентифікатор
+        public UniqueID UniqueID
+        {
+            get => UnigueID_;
+            set
+            {
+                UnigueID_ = value;
+                Сhanged_UnigueID?.Invoke();
+            }
+        }
+        UniqueID UnigueID_ = new();
+        public Action? Сhanged_UnigueID;
+
+    
+        /* НомерРядка */
         public int НомерРядка
         {
             get => НомерРядка_;
@@ -43,9 +53,7 @@ class ВведенняЗалишків_ТабличнаЧастина_Банкі
         public Action? Сhanged_НомерРядка;
 
     
-        //
-        // БанківськийРахунок
-        //
+        /* БанківськийРахунок */
         public БанківськіРахункиОрганізацій_Pointer БанківськийРахунок
         {
             get => БанківськийРахунок_;
@@ -62,9 +70,7 @@ class ВведенняЗалишків_ТабличнаЧастина_Банкі
         public Action? Сhanged_БанківськийРахунок;
 
     
-        //
-        // Сума
-        //
+        /* Сума */
         public decimal Сума
         {
             get => Сума_;
@@ -86,20 +92,23 @@ class ВведенняЗалишків_ТабличнаЧастина_Банкі
         Функції
         */
         
-        public override ItemRow Copy()
+        public GObject.Object Copy()
         {
-            return new()
-            {
-                НомерРядка = НомерРядка,
-                БанківськийРахунок = БанківськийРахунок.Copy(),
-                Сума = Сума,
-                
-            };
+            var itemRow = New();
+            itemRow.НомерРядка = НомерРядка;
+            itemRow.БанківськийРахунок = БанківськийРахунок.Copy();
+            itemRow.Сума = Сума;
+            
+            return itemRow;
         }
     }
 
     #endregion
 
+    
+    public ВведенняЗалишків_Objest? ЕлементВласник { get; set; }
+        
+    
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());
 
     public ВведенняЗалишків_ТабличнаЧастина_БанківськіРахунки() : base(Program.BasicForm?.NotebookFunc)
@@ -118,8 +127,8 @@ class ВведенняЗалишків_ТабличнаЧастина_Банкі
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = LabelTablePartCell.New(null);
+                if (args.Object is not ListItem listItem) return;
+                var cell = LabelTablePartCell.New();
                 
                 cell.Halign = Align.End;
                     
@@ -127,15 +136,12 @@ class ВведенняЗалишків_ТабличнаЧастина_Банкі
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (LabelTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not LabelTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke();
                     
-                    (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("№", factory);
             column.Resizable = true;
@@ -148,23 +154,20 @@ class ВведенняЗалишків_ТабличнаЧастина_Банкі
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new БанківськіРахункиОрганізацій_PointerTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = БанківськіРахункиОрганізацій_PointerTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (БанківськіРахункиОрганізацій_PointerTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not БанківськіРахункиОрганізацій_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnSelect = () => row.БанківськийРахунок = cell.Pointer;
+                (row.Сhanged_БанківськийРахунок = () => cell.Pointer = row.БанківськийРахунок).Invoke();
                     
-                    cell.OnSelect = () => row.БанківськийРахунок = cell.Pointer;
-                    (row.Сhanged_БанківськийРахунок = () => cell.Pointer = row.БанківськийРахунок).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Банківський рахунок", factory);
             column.Resizable = true;
@@ -179,23 +182,20 @@ class ВведенняЗалишків_ТабличнаЧастина_Банкі
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = new NumericTablePartCell();
+                if (args.Object is not ListItem listItem) return;
+                var cell = NumericTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
-                ListItem listItem = (ListItem)args.Object;
-                var cell = (NumericTablePartCell?)listItem.Child;
-                ItemRow? row = (ItemRow?)listItem.Item;
-                if (cell != null && row != null)
-                {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = () => row.Сума = cell.Value;
+                (row.Сhanged_Сума = () => cell.Value = row.Сума).Invoke();
                     
-                    cell.OnСhanged = () => row.Сума = cell.Value;
-                    (row.Сhanged_Сума = () => cell.Value = row.Сума).Invoke();
-                        
-                }
             };
             ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
             column.Resizable = true;
@@ -226,14 +226,13 @@ class ВведенняЗалишків_ТабличнаЧастина_Банкі
         
         foreach (var record in ЕлементВласник.БанківськіРахунки_TablePart.Records)
         {
-            Store.Append(new ItemRow()
-            {
-                UniqueID = new(record.UID),
-                НомерРядка = record.НомерРядка,
-                БанківськийРахунок = record.БанківськийРахунок,
-                Сума = record.Сума,
-                
-            });
+            var row = ItemRow.New();
+            row.UniqueID = new(record.UID);
+            row.НомерРядка = record.НомерРядка;
+            row.БанківськийРахунок = record.БанківськийРахунок;
+            row.Сума = record.Сума;
+            
+            Store.Append(row);
 
             if (SelectPosition > 0)
             {
@@ -272,14 +271,14 @@ class ВведенняЗалишків_ТабличнаЧастина_Банкі
             foreach (var record in ЕлементВласник.БанківськіРахунки_TablePart.Records)
             {
                 bool sel = Grid.Model.IsSelected(position);
-                Store.Splice(position, 1, [new ItemRow()
-                {
-                    UniqueID = new(record.UID),
-                    НомерРядка = record.НомерРядка,
-                    БанківськийРахунок = record.БанківськийРахунок,
-                    Сума = record.Сума,
-                    
-                }], 1);
+
+                var row = ItemRow.New();
+                row.UniqueID = new(record.UID);
+                row.НомерРядка = record.НомерРядка;
+                row.БанківськийРахунок = record.БанківськийРахунок;
+                row.Сума = record.Сума;
+                
+                Store.Splice(position, 1, [row], 1);
                 if (sel) Grid.Model.SelectItem(position, false);
                 position++;
             }
@@ -289,7 +288,7 @@ class ВведенняЗалишків_ТабличнаЧастина_Банкі
 
     public override bool NewRecord()
     {
-        Store.Append(new ItemRow());
+        Store.Append(ItemRow.New());
         return true;
     }
 }

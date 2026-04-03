@@ -77,7 +77,8 @@ public class РозхіднийКасовийОрдер_Список : DocumentF
 
     protected override void ReportSpendTheDocument(UniqueID[] uniqueID)
     {
-
+        foreach (var uid in uniqueID)
+            CommonForms_DocumentMovementThroughRegisters.Create(new РозхіднийКасовийОрдер_Pointer(uid));
     }
 
     protected override async ValueTask VersionsHistory(UniqueID[] uniqueID)

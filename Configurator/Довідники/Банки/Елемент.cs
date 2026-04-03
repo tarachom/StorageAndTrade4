@@ -15,37 +15,37 @@ namespace StorageAndTrade;
 
 class Банки_Елемент : DirectoryFormElement
 {
-    public Банки_Objest Елемент { get; init; } = new Банки_Objest();
+    public Банки_Objest Елемент { get; init; } = new();
     
     #region Fields
-    Entry Код = new() { WidthRequest = 100 };
-                    Entry Назва = new() { WidthRequest = 500 };
-                    Entry ПовнаНазва = new() { WidthRequest = 500 };
-                    Entry НазваГоловноїУстановиАнг = new() { WidthRequest = 500 };
-                    Entry ТипНаселеногоПункту = new() { WidthRequest = 100 };
-                    Entry КодМФО = new() { WidthRequest = 100 };
-                    Entry КодЄДРПОУ = new() { WidthRequest = 100 };
-                    Entry УнікальнийКодБанку = new() { WidthRequest = 100 };
-                    Entry КодОбластіОпераційноїДіяльності = new() { WidthRequest = 100 };
-                    Entry НазваОбластіОпераційноїДіяльності = new() { WidthRequest = 100 };
-                    Entry КодОбластіЗгідноСтатуту = new() { WidthRequest = 100 };
-                    Entry НазваОбластіЗгідноСтатуту = new() { WidthRequest = 100 };
-                    Entry ПоштовийІндекс = new() { WidthRequest = 100 };
-                    Entry НазваНаселеногоПункту = new() { WidthRequest = 100 };
-                    Entry Адреса = new() { WidthRequest = 300 };
-                    Entry КодТелефонногоЗвязку = new() { WidthRequest = 100 };
-                    Entry НомерТелефону = new() { WidthRequest = 100 };
-                    Entry ЧисловийКодСтануУстанови = new() { WidthRequest = 100 };
-                    Entry НазваСтануУстанови = new() { WidthRequest = 300 };
-                    Entry ДатаЗміниСтану = new() { WidthRequest = 100 };
-                    Entry ДатаВідкриттяУстанови = new() { WidthRequest = 100 };
-                    Entry ДатаЗакриттяУстанови = new() { WidthRequest = 100 };
-                    Entry КодНБУ = new() { WidthRequest = 100 };
-                    Entry НомерЛіцензії = new() { WidthRequest = 100 };
-                    Entry ДатаЛіцензії = new() { WidthRequest = 100 };
-                    Entry КодСтатусу = new() { WidthRequest = 100 };
-                    Entry Статус = new() { WidthRequest = 300 };
-                    Entry ДатаЗапису = new() { WidthRequest = 100 };
+    Entry Код = Entry.New();
+                    Entry Назва = Entry.New();
+                    Entry ПовнаНазва = Entry.New();
+                    Entry НазваГоловноїУстановиАнг = Entry.New();
+                    Entry ТипНаселеногоПункту = Entry.New();
+                    Entry КодМФО = Entry.New();
+                    Entry КодЄДРПОУ = Entry.New();
+                    Entry УнікальнийКодБанку = Entry.New();
+                    Entry КодОбластіОпераційноїДіяльності = Entry.New();
+                    Entry НазваОбластіОпераційноїДіяльності = Entry.New();
+                    Entry КодОбластіЗгідноСтатуту = Entry.New();
+                    Entry НазваОбластіЗгідноСтатуту = Entry.New();
+                    Entry ПоштовийІндекс = Entry.New();
+                    Entry НазваНаселеногоПункту = Entry.New();
+                    Entry Адреса = Entry.New();
+                    Entry КодТелефонногоЗвязку = Entry.New();
+                    Entry НомерТелефону = Entry.New();
+                    Entry ЧисловийКодСтануУстанови = Entry.New();
+                    Entry НазваСтануУстанови = Entry.New();
+                    Entry ДатаЗміниСтану = Entry.New();
+                    Entry ДатаВідкриттяУстанови = Entry.New();
+                    Entry ДатаЗакриттяУстанови = Entry.New();
+                    Entry КодНБУ = Entry.New();
+                    Entry НомерЛіцензії = Entry.New();
+                    Entry ДатаЛіцензії = Entry.New();
+                    Entry КодСтатусу = Entry.New();
+                    Entry Статус = Entry.New();
+                    Entry ДатаЗапису = Entry.New();
                     
     #endregion
 
@@ -56,7 +56,36 @@ class Банки_Елемент : DirectoryFormElement
     public Банки_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
+
+        Код.WidthRequest = 100;
+                        Назва.WidthRequest = 300;
+                        ПовнаНазва.WidthRequest = 300;
+                        НазваГоловноїУстановиАнг.WidthRequest = 300;
+                        ТипНаселеногоПункту.WidthRequest = 100;
+                        КодМФО.WidthRequest = 100;
+                        КодЄДРПОУ.WidthRequest = 100;
+                        УнікальнийКодБанку.WidthRequest = 100;
+                        КодОбластіОпераційноїДіяльності.WidthRequest = 100;
+                        НазваОбластіОпераційноїДіяльності.WidthRequest = 100;
+                        КодОбластіЗгідноСтатуту.WidthRequest = 100;
+                        НазваОбластіЗгідноСтатуту.WidthRequest = 100;
+                        ПоштовийІндекс.WidthRequest = 100;
+                        НазваНаселеногоПункту.WidthRequest = 100;
+                        Адреса.WidthRequest = 300;
+                        КодТелефонногоЗвязку.WidthRequest = 100;
+                        НомерТелефону.WidthRequest = 100;
+                        ЧисловийКодСтануУстанови.WidthRequest = 100;
+                        НазваСтануУстанови.WidthRequest = 300;
+                        ДатаЗміниСтану.WidthRequest = 100;
+                        ДатаВідкриттяУстанови.WidthRequest = 100;
+                        ДатаЗакриттяУстанови.WidthRequest = 100;
+                        КодНБУ.WidthRequest = 100;
+                        НомерЛіцензії.WidthRequest = 100;
+                        ДатаЛіцензії.WidthRequest = 100;
+                        КодСтатусу.WidthRequest = 100;
+                        Статус.WidthRequest = 300;
+                        ДатаЗапису.WidthRequest = 100;
+                        
     }
 
     protected override void CreateStart(Box vBox)

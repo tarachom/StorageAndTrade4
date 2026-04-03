@@ -1,31 +1,31 @@
 
+
 /*     
-        ПартіяТоварівКомпозит_PointerControl.cs
+        ЗакриттяЗамовленняКлієнта_PointerControl.cs
         PointerControl
 */
-
 using Gtk;
 using InterfaceGtk4;
-using GeneratedCode.Довідники;
+using GeneratedCode.Документи;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<PointerControl>("PointerControl_sKA0jLWXUqx2qlPj3x2Kw")]
-public partial class ПартіяТоварівКомпозит_PointerControl : PointerControl
+[GObject.Subclass<PointerControl>("PointerControl_tlse65upL0mtSCGq3gXuw")]
+public partial class ЗакриттяЗамовленняКлієнта_PointerControl : PointerControl
 {
-    event EventHandler<ПартіяТоварівКомпозит_Pointer>? PointerChanged;
+    event EventHandler<ЗакриттяЗамовленняКлієнта_Pointer>? PointerChanged;
 
     partial void Initialize()
     {
         WidthPresentation = 300;
-        Caption = $"{ПартіяТоварівКомпозит_Const.FULLNAME}:";
+        Caption = $"{ЗакриттяЗамовленняКлієнта_Const.FULLNAME}:";
         PointerChanged += async (_, pointer) => Presentation = pointer != null ? await pointer.GetPresentation() : "";
     }
 
-    public static ПартіяТоварівКомпозит_PointerControl New() => NewWithProperties([]);
+    public static ЗакриттяЗамовленняКлієнта_PointerControl New() => NewWithProperties([]);
 
-    ПартіяТоварівКомпозит_Pointer pointer = new();
-    public ПартіяТоварівКомпозит_Pointer Pointer
+    ЗакриттяЗамовленняКлієнта_Pointer pointer = new();
+    public ЗакриттяЗамовленняКлієнта_Pointer Pointer
     {
         get
         {
@@ -38,8 +38,6 @@ public partial class ПартіяТоварівКомпозит_PointerControl :
         }
     }
 
-    
-
     protected override async void OpenSelect(Button button, EventArgs args)
     {
         Popover popover = Popover.New();
@@ -47,19 +45,16 @@ public partial class ПартіяТоварівКомпозит_PointerControl :
         popover.WidthRequest = 800;
         popover.HeightRequest = 400;
         BeforeClickOpenFunc?.Invoke();
-        ПартіяТоварівКомпозит_ШвидкийВибір page = new()
+        ЗакриттяЗамовленняКлієнта_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
-            DirectoryPointerItem = Pointer.UniqueID,
-            OpenSelect = true,
-            OpenFolder = OpenFolder,
+            DocumentPointerItem = Pointer.UniqueID,
             CallBack_OnSelectPointer = selectPointer =>
             {
-                Pointer = new ПартіяТоварівКомпозит_Pointer(selectPointer);
+                Pointer = new ЗакриттяЗамовленняКлієнта_Pointer(selectPointer);
                 AfterSelectFunc?.Invoke();
             }
         };
-        
         popover.SetChild(page);
         popover.Show();
 
@@ -68,7 +63,7 @@ public partial class ПартіяТоварівКомпозит_PointerControl :
 
     protected override void OnClear(Button button, EventArgs args)
     {
-        Pointer = new ПартіяТоварівКомпозит_Pointer();
+        Pointer = new ЗакриттяЗамовленняКлієнта_Pointer();
         AfterSelectFunc?.Invoke();
         AfterClearFunc?.Invoke();
     }

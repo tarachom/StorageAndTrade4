@@ -16,11 +16,15 @@ namespace StorageAndTrade;
 
 class Валюти_Список : DirectoryFormJournalFull
 {
+    
+    
     public Валюти_Список() : base(Program.BasicForm?.NotebookFunc)
     {
         TypeName = Валюти_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+
+        
     }
 
     public override async ValueTask LoadRecords()

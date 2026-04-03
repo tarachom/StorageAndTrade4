@@ -22,14 +22,14 @@ class ЧекККМ_Елемент : DocumentFormElement
     public ЧекККМ_Objest Елемент { get; init; } = new();
 
     #region Fields
-    Entry НомерДок = new() { WidthRequest = 100 };
-                    DateTimeControl ДатаДок = new();
-            Entry Коментар = new() { WidthRequest = 300 };
-                    CompositePointerControl Основа = new() { BoundConfType = "Документи.ЧекККМ.Основа" };
-            Організації_PointerControl Організація = new() { Caption = "Організація", WidthPresentation = 300 };
-            Валюти_PointerControl Валюта = new() { Caption = "Валюта", WidthPresentation = 300 };
-            Склади_PointerControl Склад = new() { Caption = "Склад", WidthPresentation = 300 };
-            КасиККМ_PointerControl КасаККМ = new() { Caption = "Каса ККМ", WidthPresentation = 300 };
+    Entry НомерДок = Entry.New();
+                    DateTimeControl ДатаДок = DateTimeControl.New();
+            Entry Коментар = Entry.New();
+                    CompositePointerControl Основа = CompositePointerControl.New();
+            Організації_PointerControl Організація = Організації_PointerControl.New();
+            Валюти_PointerControl Валюта = Валюти_PointerControl.New();
+            Склади_PointerControl Склад = Склади_PointerControl.New();
+            КасиККМ_PointerControl КасаККМ = КасиККМ_PointerControl.New();
             
     #endregion
 
@@ -52,7 +52,18 @@ class ЧекККМ_Елемент : DocumentFormElement
             NotebookTablePart.InsertPage(Товари, Label.New("Товари"), 0);
             
             NotebookTablePart.SetCurrentPage(0);
-        
+        НомерДок.WidthRequest = 100;
+                        Коментар.WidthRequest = 300;
+                        Основа.BoundConfType = "Документи.ЧекККМ.Основа";
+                Організація.Caption = "Організація";
+                    Організація.WidthPresentation = 300;
+                Валюта.Caption = "Валюта";
+                    Валюта.WidthPresentation = 300;
+                Склад.Caption = "Склад";
+                    Склад.WidthPresentation = 300;
+                КасаККМ.Caption = "Каса ККМ";
+                    КасаККМ.WidthPresentation = 300;
+                
     }
 
     protected override void CreateTopStart(Box vBox)
@@ -168,7 +179,7 @@ class ЧекККМ_Елемент : DocumentFormElement
 
     protected override void ReportSpendTheDocument(UniqueID uniqueID)
     {
-        //СпільніФорми_РухДокументуПоРегістрах.СформуватиЗвіт(new ЧекККМ_Pointer(uniqueID));
+        CommonForms_DocumentMovementThroughRegisters.Create(new ЧекККМ_Pointer(uniqueID));
     }
 
     protected override async ValueTask InJournal(UniqueID uniqueID)

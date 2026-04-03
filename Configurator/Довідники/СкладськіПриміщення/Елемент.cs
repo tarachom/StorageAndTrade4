@@ -15,14 +15,14 @@ namespace StorageAndTrade;
 
 class СкладськіПриміщення_Елемент : DirectoryFormElement
 {
-    public СкладськіПриміщення_Objest Елемент { get; init; } = new СкладськіПриміщення_Objest();
+    public СкладськіПриміщення_Objest Елемент { get; init; } = new();
     
-    public Склади_Pointer ВласникДляНового = new Склади_Pointer();
+    public Склади_Pointer ВласникДляНового = new();
     
     #region Fields
-    Entry Назва = new() { WidthRequest = 500 };
-                    ComboBoxText НалаштуванняАдресногоЗберігання = new ComboBoxText();
-            Склади_PointerControl Склад = new() { Caption = "Склад", WidthPresentation = 500 };
+    Entry Назва = Entry.New();
+                    ComboBoxText НалаштуванняАдресногоЗберігання = ComboBoxText.New();
+            Склади_PointerControl Склад = Склади_PointerControl.New();
             
     #endregion
 
@@ -33,18 +33,22 @@ class СкладськіПриміщення_Елемент : DirectoryFormEleme
     public СкладськіПриміщення_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_List())
-                НалаштуванняАдресногоЗберігання.Append(field.Value.ToString(), field.Name);
 
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            НалаштуванняАдресногоЗберігання.AddController(controller);
-            controller.OnScroll += (_, _) => true;
-        }
-        
+        Назва.WidthRequest = 300;
+                        
+            {
+                //Заповнення списку
+                foreach (var field in ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_List())
+                    НалаштуванняАдресногоЗберігання.Append(field.Value.ToString(), field.Name);
+
+                //Заборона прокрутки списку
+                EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
+                НалаштуванняАдресногоЗберігання.AddController(controller);
+                controller.OnScroll += (_, _) => true;
+            }
+                Склад.Caption = "Склад";
+                    Склад.WidthPresentation = 300;
+                
     }
 
     protected override void CreateStart(Box vBox)

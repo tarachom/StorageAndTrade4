@@ -11,8 +11,11 @@ using AccountingSoftware;
 
 namespace StorageAndTrade;
 
-public class СтаттяРухуКоштів_PointerTablePartCell : PointerTablePartCell
+[GObject.Subclass<PointerTablePartCell>("PointerTablePartCell_a7SvJdLuiU2WCLJryb6ihA")]
+public partial class СтаттяРухуКоштів_PointerTablePartCell : PointerTablePartCell
 {
+    public static СтаттяРухуКоштів_PointerTablePartCell New() => NewWithProperties([]);
+
     СтаттяРухуКоштів_Pointer pointer = new();
     public СтаттяРухуКоштів_Pointer Pointer
     {
@@ -41,12 +44,16 @@ public class СтаттяРухуКоштів_PointerTablePartCell : PointerTabl
         popover.SetParent(button);
         popover.WidthRequest = 800;
         popover.HeightRequest = 400;
-
+        BeforeClickOpenFunc?.Invoke();
         СтаттяРухуКоштів_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
             DirectoryPointerItem = pointer.UniqueID,
-            CallBack_OnSelectPointer = async p => await PointerChange(p)
+            CallBack_OnSelectPointer = async p => 
+            {
+                await PointerChange(p);
+                AfterSelectFunc?.Invoke();
+            }
         };
         
 
@@ -59,6 +66,8 @@ public class СтаттяРухуКоштів_PointerTablePartCell : PointerTabl
     protected override async void Clear()
     {
         await PointerChange(null);
+        AfterSelectFunc?.Invoke();
+        AfterClearFunc?.Invoke();
     }
 }
     

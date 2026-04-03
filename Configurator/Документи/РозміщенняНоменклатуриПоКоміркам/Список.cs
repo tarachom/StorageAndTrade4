@@ -77,7 +77,8 @@ public class РозміщенняНоменклатуриПоКоміркам_С
 
     protected override void ReportSpendTheDocument(UniqueID[] uniqueID)
     {
-
+        foreach (var uid in uniqueID)
+            CommonForms_DocumentMovementThroughRegisters.Create(new РозміщенняНоменклатуриПоКоміркам_Pointer(uid));
     }
 
     protected override async ValueTask VersionsHistory(UniqueID[] uniqueID)

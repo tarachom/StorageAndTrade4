@@ -10,19 +10,21 @@ using GeneratedCode.Документи;
 
 namespace StorageAndTrade;
 
-public class РозміщенняНоменклатуриПоКоміркам_PointerControl : PointerControl
+[GObject.Subclass<PointerControl>("PointerControl_0BKQIuTRgU2xLWOypa9OA")]
+public partial class РозміщенняНоменклатуриПоКоміркам_PointerControl : PointerControl
 {
-    event EventHandler<РозміщенняНоменклатуриПоКоміркам_Pointer> PointerChanged;
+    event EventHandler<РозміщенняНоменклатуриПоКоміркам_Pointer>? PointerChanged;
 
-    public РозміщенняНоменклатуриПоКоміркам_PointerControl()
+    partial void Initialize()
     {
-        pointer = new РозміщенняНоменклатуриПоКоміркам_Pointer();
         WidthPresentation = 300;
         Caption = $"{РозміщенняНоменклатуриПоКоміркам_Const.FULLNAME}:";
         PointerChanged += async (_, pointer) => Presentation = pointer != null ? await pointer.GetPresentation() : "";
     }
 
-    РозміщенняНоменклатуриПоКоміркам_Pointer pointer;
+    public static РозміщенняНоменклатуриПоКоміркам_PointerControl New() => NewWithProperties([]);
+
+    РозміщенняНоменклатуриПоКоміркам_Pointer pointer = new();
     public РозміщенняНоменклатуриПоКоміркам_Pointer Pointer
     {
         get

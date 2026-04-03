@@ -10,19 +10,21 @@ using GeneratedCode.Документи;
 
 namespace StorageAndTrade;
 
-public class ПрихіднийКасовийОрдер_PointerControl : PointerControl
+[GObject.Subclass<PointerControl>("PointerControl_YRpncsmiRESkzixcdnz9uA")]
+public partial class ПрихіднийКасовийОрдер_PointerControl : PointerControl
 {
-    event EventHandler<ПрихіднийКасовийОрдер_Pointer> PointerChanged;
+    event EventHandler<ПрихіднийКасовийОрдер_Pointer>? PointerChanged;
 
-    public ПрихіднийКасовийОрдер_PointerControl()
+    partial void Initialize()
     {
-        pointer = new ПрихіднийКасовийОрдер_Pointer();
         WidthPresentation = 300;
         Caption = $"{ПрихіднийКасовийОрдер_Const.FULLNAME}:";
         PointerChanged += async (_, pointer) => Presentation = pointer != null ? await pointer.GetPresentation() : "";
     }
 
-    ПрихіднийКасовийОрдер_Pointer pointer;
+    public static ПрихіднийКасовийОрдер_PointerControl New() => NewWithProperties([]);
+
+    ПрихіднийКасовийОрдер_Pointer pointer = new();
     public ПрихіднийКасовийОрдер_Pointer Pointer
     {
         get

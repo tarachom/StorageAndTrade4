@@ -22,41 +22,41 @@ class РеалізаціяТоварівТаПослуг_Елемент : Docume
     public РеалізаціяТоварівТаПослуг_Objest Елемент { get; init; } = new();
 
     #region Fields
-    Entry НомерДок = new();
-    DateTimeControl ДатаДок = new();
-    Організації_PointerControl Організація = new() { Caption = "Організація", WidthPresentation = 300 };
-    Валюти_PointerControl Валюта = new() { Caption = "Валюта", WidthPresentation = 300 };
-    БанківськіРахункиОрганізацій_PointerControl БанківськийРахунокОрганізації = new() { Caption = "БанківськийРахунокОрганізації", WidthPresentation = 300 };
-    БанківськіРахункиКонтрагентів_PointerControl БанківськийРахунокКонтрагента = new() { Caption = "БанківськийРахунокКонтрагента", WidthPresentation = 300 };
-    DateTimeControl ДатаОплати = new() { OnlyDate = true };
-    ЗамовленняКлієнта_PointerControl ЗамовленняКлієнта = new() { Caption = "ЗамовленняКлієнта", WidthPresentation = 300 };
-    Контрагенти_PointerControl Контрагент = new() { Caption = "Контрагент", WidthPresentation = 300 };
-    СтруктураПідприємства_PointerControl Підрозділ = new() { Caption = "Підрозділ", WidthPresentation = 300 };
-    Склади_PointerControl Склад = new() { Caption = "Склад", WidthPresentation = 300 };
-    ComboBoxText ФормаОплати = new ComboBoxText();
-    ComboBoxText ГосподарськаОперація = new ComboBoxText();
-    Каси_PointerControl Каса = new() { Caption = "Каса", WidthPresentation = 300 };
-    ДоговориКонтрагентів_PointerControl Договір = new() { Caption = "Договір", WidthPresentation = 300 };
-    CompositePointerControl Основа = new() { BoundConfType = "Документи.РеалізаціяТоварівТаПослуг.Основа" };
-    ComboBoxText Статус = new ComboBoxText();
-    NumericControl СумаПередоплати = new();
-    NumericControl СумаПередоплатиЗаТару = new();
-    ComboBoxText СпосібДоставки = new ComboBoxText();
-    TimeControl ЧасДоставкиЗ = new();
-    TimeControl ЧасДоставкиДо = new();
-    CheckButton ПовернутиТару = CheckButton.NewWithLabel("ПовернутиТару");
-    DateTimeControl ДатаПоверненняТари = new() { OnlyDate = true };
-    NumericControl Курс = new();
-    IntegerControl Кратність = new();
-    Entry Коментар = new() { WidthRequest = 1200 };
-
+    Entry НомерДок = Entry.New();
+                    DateTimeControl ДатаДок = DateTimeControl.New();
+            Організації_PointerControl Організація = Організації_PointerControl.New();
+            Валюти_PointerControl Валюта = Валюти_PointerControl.New();
+            БанківськіРахункиОрганізацій_PointerControl БанківськийРахунокОрганізації = БанківськіРахункиОрганізацій_PointerControl.New();
+            БанківськіРахункиКонтрагентів_PointerControl БанківськийРахунокКонтрагента = БанківськіРахункиКонтрагентів_PointerControl.New();
+            DateTimeControl ДатаОплати = DateTimeControl.New();
+            ЗамовленняКлієнта_PointerControl ЗамовленняКлієнта = ЗамовленняКлієнта_PointerControl.New();
+            Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
+            СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
+            Склади_PointerControl Склад = Склади_PointerControl.New();
+            ComboBoxText ФормаОплати = ComboBoxText.New();
+            ComboBoxText ГосподарськаОперація = ComboBoxText.New();
+            Каси_PointerControl Каса = Каси_PointerControl.New();
+            ДоговориКонтрагентів_PointerControl Договір = ДоговориКонтрагентів_PointerControl.New();
+            CompositePointerControl Основа = CompositePointerControl.New();
+            ComboBoxText Статус = ComboBoxText.New();
+            NumericControl СумаПередоплати = NumericControl.New();
+            NumericControl СумаПередоплатиЗаТару = NumericControl.New();
+            ComboBoxText СпосібДоставки = ComboBoxText.New();
+            TimeControl ЧасДоставкиЗ = new();
+            TimeControl ЧасДоставкиДо = new();
+            CheckButton ПовернутиТару = CheckButton.NewWithLabel("ПовернутиТару");
+            DateTimeControl ДатаПоверненняТари = DateTimeControl.New();
+            NumericControl Курс = NumericControl.New();
+            IntegerControl Кратність = IntegerControl.New();
+            Entry Коментар = Entry.New();
+                    
     #endregion
 
     #region TabularParts
-
-    // Таблична частина "Товари" 
-    РеалізаціяТоварівТаПослуг_ТабличнаЧастина_Товари Товари = new() { WidthRequest = 500, HeightRequest = 300 };
-
+    
+        // Таблична частина "Товари" 
+        РеалізаціяТоварівТаПослуг_ТабличнаЧастина_Товари Товари = new() { WidthRequest = 500, HeightRequest = 300 };
+    
     #endregion
 
     public РеалізаціяТоварівТаПослуг_Елемент() : base(Program.BasicForm?.NotebookFunc)
@@ -64,143 +64,175 @@ class РеалізаціяТоварівТаПослуг_Елемент : Docume
         Element = Елемент;
 
         CreateDocName(РеалізаціяТоварівТаПослуг_Const.FULLNAME, НомерДок, ДатаДок);
-
+        
         CreateField(HBoxComment, "Коментар:", Коментар);
+        
+            // Таблична частина "Товари" 
+            NotebookTablePart.InsertPage(Товари, Label.New("Товари"), 0);
+            
+            NotebookTablePart.SetCurrentPage(0);
+        НомерДок.WidthRequest = 300;
+                        Організація.Caption = "Організація";
+                    Організація.WidthPresentation = 300;
+                Валюта.Caption = "Валюта";
+                    Валюта.WidthPresentation = 300;
+                БанківськийРахунокОрганізації.Caption = "БанківськийРахунокОрганізації";
+                    БанківськийРахунокОрганізації.WidthPresentation = 300;
+                БанківськийРахунокКонтрагента.Caption = "БанківськийРахунокКонтрагента";
+                    БанківськийРахунокКонтрагента.WidthPresentation = 300;
+                ДатаОплати.OnlyDate = true;
+                ЗамовленняКлієнта.Caption = "ЗамовленняКлієнта";
+                    ЗамовленняКлієнта.WidthPresentation = 300;
+                Контрагент.Caption = "Контрагент";
+                    Контрагент.WidthPresentation = 300;
+                Підрозділ.Caption = "Підрозділ";
+                    Підрозділ.WidthPresentation = 300;
+                Склад.Caption = "Склад";
+                    Склад.WidthPresentation = 300;
+                
+            {
+                //Заповнення списку
+                foreach (var field in ПсевдонімиПерелічення.ФормаОплати_List())
+                    ФормаОплати.Append(field.Value.ToString(), field.Name);
 
-        // Таблична частина "Товари" 
-        NotebookTablePart.InsertPage(Товари, Label.New("Товари"), 0);
+                //Заборона прокрутки списку
+                EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
+                ФормаОплати.AddController(controller);
+                controller.OnScroll += (_, _) => true;
+            }
+                
+            {
+                //Заповнення списку
+                foreach (var field in ПсевдонімиПерелічення.ГосподарськіОперації_List())
+                    ГосподарськаОперація.Append(field.Value.ToString(), field.Name);
 
-        NotebookTablePart.SetCurrentPage(0);
+                //Заборона прокрутки списку
+                EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
+                ГосподарськаОперація.AddController(controller);
+                controller.OnScroll += (_, _) => true;
+            }
+                Каса.Caption = "Каса";
+                    Каса.WidthPresentation = 300;
+                Договір.Caption = "Договір";
+                    Договір.WidthPresentation = 300;
+                Основа.BoundConfType = "Документи.РеалізаціяТоварівТаПослуг.Основа";
+                
+            {
+                //Заповнення списку
+                foreach (var field in ПсевдонімиПерелічення.СтатусиРеалізаціїТоварівТаПослуг_List())
+                    Статус.Append(field.Value.ToString(), field.Name);
 
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.ФормаОплати_List())
-                ФормаОплати.Append(field.Value.ToString(), field.Name);
+                //Заборона прокрутки списку
+                EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
+                Статус.AddController(controller);
+                controller.OnScroll += (_, _) => true;
+            }
+                
+            {
+                //Заповнення списку
+                foreach (var field in ПсевдонімиПерелічення.СпособиДоставки_List())
+                    СпосібДоставки.Append(field.Value.ToString(), field.Name);
 
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            ФормаОплати.AddController(controller);
-            controller.OnScroll += (_, _) => true;
-        }
-
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.ГосподарськіОперації_List())
-                ГосподарськаОперація.Append(field.Value.ToString(), field.Name);
-
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            ГосподарськаОперація.AddController(controller);
-            controller.OnScroll += (_, _) => true;
-        }
-
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.СтатусиРеалізаціїТоварівТаПослуг_List())
-                Статус.Append(field.Value.ToString(), field.Name);
-
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            Статус.AddController(controller);
-            controller.OnScroll += (_, _) => true;
-        }
-
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.СпособиДоставки_List())
-                СпосібДоставки.Append(field.Value.ToString(), field.Name);
-
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            СпосібДоставки.AddController(controller);
-            controller.OnScroll += (_, _) => true;
-        }
-
+                //Заборона прокрутки списку
+                EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
+                СпосібДоставки.AddController(controller);
+                controller.OnScroll += (_, _) => true;
+            }
+                ДатаПоверненняТари.OnlyDate = true;
+                Коментар.WidthRequest = 1200;
+                        
     }
 
     protected override void CreateTopStart(Box vBox)
     {
-        // Організація
-        CreateField(vBox, null, Організація);
-
-        // Контрагент
-        CreateField(vBox, null, Контрагент);
-
-        // Договір
-        CreateField(vBox, null, Договір);
+        
     }
 
     protected override void CreateTopEnd(Box vBox)
     {
-        // Склад
-        CreateField(vBox, null, Склад);
-
-        // Валюта
-        CreateField(vBox, null, Валюта);
-
-        // Каса
-        CreateField(vBox, null, Каса);
+        
     }
 
     protected override void CreateBottomStart(Box vBox)
     {
-        // БанківськийРахунокОрганізації
-        CreateField(vBox, null, БанківськийРахунокОрганізації);
-
-        // БанківськийРахунокКонтрагента
-        CreateField(vBox, null, БанківськийРахунокКонтрагента);
-
-        // ДатаОплати
-        CreateField(vBox, "ДатаОплати:", ДатаОплати);
-
-        // ЗамовленняКлієнта
-        CreateField(vBox, null, ЗамовленняКлієнта);
-
-        // Підрозділ
-        CreateField(vBox, null, Підрозділ);
-
-        // ФормаОплати
-        CreateField(vBox, "ФормаОплати:", ФормаОплати);
-
-        // ГосподарськаОперація
-        CreateField(vBox, "ГосподарськаОперація:", ГосподарськаОперація);
-
-        // Статус
-        CreateField(vBox, "Статус:", Статус);
-
-        // СумаПередоплати
-        CreateField(vBox, "СумаПередоплати:", СумаПередоплати);
-
-        // СумаПередоплатиЗаТару
-        CreateField(vBox, "СумаПередоплатиЗаТару:", СумаПередоплатиЗаТару);
-
-        // СпосібДоставки
-        CreateField(vBox, "СпосібДоставки:", СпосібДоставки);
-
-        // ЧасДоставкиЗ
-        CreateField(vBox, "ЧасДоставкиЗ:", ЧасДоставкиЗ);
-
-        // ЧасДоставкиДо
-        CreateField(vBox, "ЧасДоставкиДо:", ЧасДоставкиДо);
-
-        // ПовернутиТару
-        CreateField(vBox, null, ПовернутиТару);
-
-        // ДатаПоверненняТари
-        CreateField(vBox, "ДатаПоверненняТари:", ДатаПоверненняТари);
-
-        // Курс
-        CreateField(vBox, "Курс:", Курс);
-
-        // Кратність
-        CreateField(vBox, "Кратність:", Кратність);
-
+        
+            // Організація
+            CreateField(vBox, null, Організація);
+                
+            // Валюта
+            CreateField(vBox, null, Валюта);
+                
+            // БанківськийРахунокОрганізації
+            CreateField(vBox, null, БанківськийРахунокОрганізації);
+                
+            // БанківськийРахунокКонтрагента
+            CreateField(vBox, null, БанківськийРахунокКонтрагента);
+                
+            // ДатаОплати
+            CreateField(vBox, "ДатаОплати:", ДатаОплати);
+                        
+            // ЗамовленняКлієнта
+            CreateField(vBox, null, ЗамовленняКлієнта);
+                
+            // Контрагент
+            CreateField(vBox, null, Контрагент);
+                
+            // Підрозділ
+            CreateField(vBox, null, Підрозділ);
+                
+            // Склад
+            CreateField(vBox, null, Склад);
+                
+            // ФормаОплати
+            CreateField(vBox, "ФормаОплати:", ФормаОплати);
+                
+            // ГосподарськаОперація
+            CreateField(vBox, "ГосподарськаОперація:", ГосподарськаОперація);
+                
+            // Каса
+            CreateField(vBox, null, Каса);
+                
+            // Договір
+            CreateField(vBox, null, Договір);
+                
+            // Основа
+            CreateField(vBox, null, Основа);
+                
+            // Статус
+            CreateField(vBox, "Статус:", Статус);
+                
+            // СумаПередоплати
+            CreateField(vBox, "СумаПередоплати:", СумаПередоплати);
+                        
+            // СумаПередоплатиЗаТару
+            CreateField(vBox, "СумаПередоплатиЗаТару:", СумаПередоплатиЗаТару);
+                        
+            // СпосібДоставки
+            CreateField(vBox, "СпосібДоставки:", СпосібДоставки);
+                
+            // ЧасДоставкиЗ
+            CreateField(vBox, "ЧасДоставкиЗ:", ЧасДоставкиЗ);
+                        
+            // ЧасДоставкиДо
+            CreateField(vBox, "ЧасДоставкиДо:", ЧасДоставкиДо);
+                        
+            // ПовернутиТару
+            CreateField(vBox, null, ПовернутиТару);
+                
+            // ДатаПоверненняТари
+            CreateField(vBox, "ДатаПоверненняТари:", ДатаПоверненняТари);
+                        
+            // Курс
+            CreateField(vBox, "Курс:", Курс);
+                        
+            // Кратність
+            CreateField(vBox, "Кратність:", Кратність);
+                        
     }
 
     protected override void CreateBottomEnd(Box vBox)
     {
-        // Основа
-        CreateField(vBox, null, Основа);
+        
     }
 
     #region Присвоєння / зчитування значень
@@ -208,90 +240,90 @@ class РеалізаціяТоварівТаПослуг_Елемент : Docume
     public override async ValueTask AssignValue()
     {
         НомерДок.SetText(Елемент.НомерДок);
-        ДатаДок.Value = Елемент.ДатаДок;
-        Організація.Pointer = Елемент.Організація;
-        Валюта.Pointer = Елемент.Валюта;
-        БанківськийРахунокОрганізації.Pointer = Елемент.БанківськийРахунокОрганізації;
-        БанківськийРахунокКонтрагента.Pointer = Елемент.БанківськийРахунокКонтрагента;
-        ДатаОплати.Value = Елемент.ДатаОплати;
-        ЗамовленняКлієнта.Pointer = Елемент.ЗамовленняКлієнта;
-        Контрагент.Pointer = Елемент.Контрагент;
-        Підрозділ.Pointer = Елемент.Підрозділ;
-        Склад.Pointer = Елемент.Склад;
-        ФормаОплати.ActiveId = Елемент.ФормаОплати.ToString();
-        ГосподарськаОперація.ActiveId = Елемент.ГосподарськаОперація.ToString();
-        Каса.Pointer = Елемент.Каса;
-        Договір.Pointer = Елемент.Договір;
-        Основа.Pointer = Елемент.Основа;
-        Статус.ActiveId = Елемент.Статус.ToString();
-        СумаПередоплати.Value = Елемент.СумаПередоплати;
-        СумаПередоплатиЗаТару.Value = Елемент.СумаПередоплатиЗаТару;
-        СпосібДоставки.ActiveId = Елемент.СпосібДоставки.ToString();
-        ЧасДоставкиЗ.Value = Елемент.ЧасДоставкиЗ;
-        ЧасДоставкиДо.Value = Елемент.ЧасДоставкиДо;
-        ПовернутиТару.Active = Елемент.ПовернутиТару;
-        ДатаПоверненняТари.Value = Елемент.ДатаПоверненняТари;
-        Курс.Value = Елемент.Курс;
-        Кратність.Value = Елемент.Кратність;
-        Коментар.SetText(Елемент.Коментар);
-
-        // Таблична частина "Товари" 
-        Товари.ЕлементВласник = Елемент;
-        await Товари.LoadRecords();
-
+                        ДатаДок.Value = Елемент.ДатаДок;
+                Організація.Pointer = Елемент.Організація;
+                Валюта.Pointer = Елемент.Валюта;
+                БанківськийРахунокОрганізації.Pointer = Елемент.БанківськийРахунокОрганізації;
+                БанківськийРахунокКонтрагента.Pointer = Елемент.БанківськийРахунокКонтрагента;
+                ДатаОплати.Value = Елемент.ДатаОплати;
+                ЗамовленняКлієнта.Pointer = Елемент.ЗамовленняКлієнта;
+                Контрагент.Pointer = Елемент.Контрагент;
+                Підрозділ.Pointer = Елемент.Підрозділ;
+                Склад.Pointer = Елемент.Склад;
+                ФормаОплати.ActiveId = Елемент.ФормаОплати.ToString();
+                ГосподарськаОперація.ActiveId = Елемент.ГосподарськаОперація.ToString();
+                Каса.Pointer = Елемент.Каса;
+                Договір.Pointer = Елемент.Договір;
+                Основа.Pointer = Елемент.Основа;
+                Статус.ActiveId = Елемент.Статус.ToString();
+                СумаПередоплати.Value = Елемент.СумаПередоплати;
+                СумаПередоплатиЗаТару.Value = Елемент.СумаПередоплатиЗаТару;
+                СпосібДоставки.ActiveId = Елемент.СпосібДоставки.ToString();
+                ЧасДоставкиЗ.Value = Елемент.ЧасДоставкиЗ;
+                ЧасДоставкиДо.Value = Елемент.ЧасДоставкиДо;
+                ПовернутиТару.Active = Елемент.ПовернутиТару;
+                ДатаПоверненняТари.Value = Елемент.ДатаПоверненняТари;
+                Курс.Value = Елемент.Курс;
+                Кратність.Value = Елемент.Кратність;
+                Коментар.SetText(Елемент.Коментар);
+                        
+            // Таблична частина "Товари" 
+            Товари.ЕлементВласник = Елемент; 
+            await Товари.LoadRecords();
+        
     }
 
     protected override void GetValue()
     {
         Елемент.НомерДок = НомерДок.GetText();
-        Елемент.ДатаДок = ДатаДок.Value;
-        Елемент.Організація = Організація.Pointer;
-        Елемент.Валюта = Валюта.Pointer;
-        Елемент.БанківськийРахунокОрганізації = БанківськийРахунокОрганізації.Pointer;
-        Елемент.БанківськийРахунокКонтрагента = БанківськийРахунокКонтрагента.Pointer;
-        Елемент.ДатаОплати = ДатаОплати.Value;
-        Елемент.ЗамовленняКлієнта = ЗамовленняКлієнта.Pointer;
-        Елемент.Контрагент = Контрагент.Pointer;
-        Елемент.Підрозділ = Підрозділ.Pointer;
-        Елемент.Склад = Склад.Pointer;
-        Елемент.ФормаОплати = ПсевдонімиПерелічення.ФормаОплати_FindByName(ФормаОплати.ActiveId);
-        Елемент.ГосподарськаОперація = ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.ActiveId);
-        Елемент.Каса = Каса.Pointer;
-        Елемент.Договір = Договір.Pointer;
-        Елемент.Основа = Основа.Pointer;
-        Елемент.Статус = ПсевдонімиПерелічення.СтатусиРеалізаціїТоварівТаПослуг_FindByName(Статус.ActiveId);
-        Елемент.СумаПередоплати = СумаПередоплати.Value;
-        Елемент.СумаПередоплатиЗаТару = СумаПередоплатиЗаТару.Value;
-        Елемент.СпосібДоставки = ПсевдонімиПерелічення.СпособиДоставки_FindByName(СпосібДоставки.ActiveId);
-        Елемент.ЧасДоставкиЗ = ЧасДоставкиЗ.Value;
-        Елемент.ЧасДоставкиДо = ЧасДоставкиДо.Value;
-        Елемент.ПовернутиТару = ПовернутиТару.Active;
-        Елемент.ДатаПоверненняТари = ДатаПоверненняТари.Value;
-        Елемент.Курс = Курс.Value;
-        Елемент.Кратність = Кратність.Value;
-        Елемент.Коментар = Коментар.GetText();
-
+                        Елемент.ДатаДок = ДатаДок.Value;
+                Елемент.Організація = Організація.Pointer;
+                Елемент.Валюта = Валюта.Pointer;
+                Елемент.БанківськийРахунокОрганізації = БанківськийРахунокОрганізації.Pointer;
+                Елемент.БанківськийРахунокКонтрагента = БанківськийРахунокКонтрагента.Pointer;
+                Елемент.ДатаОплати = ДатаОплати.Value;
+                Елемент.ЗамовленняКлієнта = ЗамовленняКлієнта.Pointer;
+                Елемент.Контрагент = Контрагент.Pointer;
+                Елемент.Підрозділ = Підрозділ.Pointer;
+                Елемент.Склад = Склад.Pointer;
+                Елемент.ФормаОплати = ПсевдонімиПерелічення.ФормаОплати_FindByName(ФормаОплати.ActiveId);
+                Елемент.ГосподарськаОперація = ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.ActiveId);
+                Елемент.Каса = Каса.Pointer;
+                Елемент.Договір = Договір.Pointer;
+                Елемент.Основа = Основа.Pointer;
+                Елемент.Статус = ПсевдонімиПерелічення.СтатусиРеалізаціїТоварівТаПослуг_FindByName(Статус.ActiveId);
+                Елемент.СумаПередоплати = СумаПередоплати.Value;
+                Елемент.СумаПередоплатиЗаТару = СумаПередоплатиЗаТару.Value;
+                Елемент.СпосібДоставки = ПсевдонімиПерелічення.СпособиДоставки_FindByName(СпосібДоставки.ActiveId);
+                Елемент.ЧасДоставкиЗ = ЧасДоставкиЗ.Value;
+                Елемент.ЧасДоставкиДо = ЧасДоставкиДо.Value;
+                Елемент.ПовернутиТару = ПовернутиТару.Active;
+                Елемент.ДатаПоверненняТари = ДатаПоверненняТари.Value;
+                Елемент.Курс = Курс.Value;
+                Елемент.Кратність = Кратність.Value;
+                Елемент.Коментар = Коментар.GetText();
+                        
     }
 
-
+    
     /*string КлючовіСловаДляПошуку()
     {
         return $"\n {Організація.Pointer.Назва} {Валюта.Pointer.Назва} {БанківськийРахунокОрганізації.Pointer.Назва} {БанківськийРахунокКонтрагента.Pointer.Назва} {ЗамовленняКлієнта.Pointer.Назва} {Контрагент.Pointer.Назва} {Підрозділ.Pointer.Назва} {Склад.Pointer.Назва} {Каса.Pointer.Назва} {Договір.Pointer.Назва}"
          + Товари.КлючовіСловаДляПошуку();
     }*/
-
+    
 
     #endregion
-
+    
     protected override async ValueTask<bool> Save()
     {
         bool isSaved = false;
         try
         {
-            if (await Елемент.Save())
+            if(await Елемент.Save())
             {
                 await Товари.SaveRecords(); // Таблична частина "Товари"
-
+                
                 isSaved = true;
             }
         }
@@ -319,7 +351,7 @@ class РеалізаціяТоварівТаПослуг_Елемент : Docume
 
     protected override void ReportSpendTheDocument(UniqueID uniqueID)
     {
-        //СпільніФорми_РухДокументуПоРегістрах.СформуватиЗвіт(new РеалізаціяТоварівТаПослуг_Pointer(uniqueID));
+        CommonForms_DocumentMovementThroughRegisters.Create(new РеалізаціяТоварівТаПослуг_Pointer(uniqueID));
     }
 
     protected override async ValueTask InJournal(UniqueID uniqueID)
@@ -327,3 +359,4 @@ class РеалізаціяТоварівТаПослуг_Елемент : Docume
         await Функції.OpenPageList(uniqueID);
     }
 }
+    

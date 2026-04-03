@@ -23,6 +23,8 @@ class СтаттяРухуКоштів_Список : DirectoryFormJournalFull
         TypeName = СтаттяРухуКоштів_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+
+        
     }
 
     public override async ValueTask LoadRecords()

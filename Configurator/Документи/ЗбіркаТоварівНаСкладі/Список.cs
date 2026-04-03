@@ -77,7 +77,8 @@ public class ЗбіркаТоварівНаСкладі_Список : DocumentF
 
     protected override void ReportSpendTheDocument(UniqueID[] uniqueID)
     {
-
+        foreach (var uid in uniqueID)
+            CommonForms_DocumentMovementThroughRegisters.Create(new ЗбіркаТоварівНаСкладі_Pointer(uid));
     }
 
     protected override async ValueTask VersionsHistory(UniqueID[] uniqueID)

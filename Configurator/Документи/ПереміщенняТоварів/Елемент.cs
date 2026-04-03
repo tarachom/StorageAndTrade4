@@ -22,24 +22,24 @@ class ПереміщенняТоварів_Елемент : DocumentFormElement
     public ПереміщенняТоварів_Objest Елемент { get; init; } = new();
 
     #region Fields
-    Entry НомерДок = new() { WidthRequest = 100 };
-                    DateTimeControl ДатаДок = new();
-            Організації_PointerControl Організація = new() { Caption = "Організація", WidthPresentation = 300 };
-            БанківськіРахункиОрганізацій_PointerControl БанківськийРахунокОрганізації = new() { Caption = "Банківський рахунок організації", WidthPresentation = 300 };
-            ВидиЦін_PointerControl ВидЦіни = new() { Caption = "Вид ціни", WidthPresentation = 300 };
-            Організації_PointerControl ОрганізаціяОтримувач = new() { Caption = "Організація отримувач", WidthPresentation = 300 };
-            Користувачі_PointerControl Відповідальний = new() { Caption = "Відповідальний", WidthPresentation = 300 };
-            СтруктураПідприємства_PointerControl Підрозділ = new() { Caption = "Підрозділ", WidthPresentation = 300 };
-            Склади_PointerControl СкладВідправник = new() { Caption = "Склад відправник", WidthPresentation = 300 };
-            Склади_PointerControl СкладОтримувач = new() { Caption = "Склад отримувач", WidthPresentation = 300 };
-            ComboBoxText Статус = new ComboBoxText();
-            ComboBoxText ГосподарськаОперація = new ComboBoxText();
-            ComboBoxText СпосібДоставки = new ComboBoxText();
-            Entry АдресДоставки = new() { WidthRequest = 300 };
+    Entry НомерДок = Entry.New();
+                    DateTimeControl ДатаДок = DateTimeControl.New();
+            Організації_PointerControl Організація = Організації_PointerControl.New();
+            БанківськіРахункиОрганізацій_PointerControl БанківськийРахунокОрганізації = БанківськіРахункиОрганізацій_PointerControl.New();
+            ВидиЦін_PointerControl ВидЦіни = ВидиЦін_PointerControl.New();
+            Організації_PointerControl ОрганізаціяОтримувач = Організації_PointerControl.New();
+            Користувачі_PointerControl Відповідальний = Користувачі_PointerControl.New();
+            СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
+            Склади_PointerControl СкладВідправник = Склади_PointerControl.New();
+            Склади_PointerControl СкладОтримувач = Склади_PointerControl.New();
+            ComboBoxText Статус = ComboBoxText.New();
+            ComboBoxText ГосподарськаОперація = ComboBoxText.New();
+            ComboBoxText СпосібДоставки = ComboBoxText.New();
+            Entry АдресДоставки = Entry.New();
                     TimeControl ЧасДоставкиЗ = new();
             TimeControl ЧасДоставкиДо = new();
-            Entry Коментар = new() { WidthRequest = 300 };
-                    CompositePointerControl Основа = new() { BoundConfType = "Документи.ПереміщенняТоварів.Основа" };
+            Entry Коментар = Entry.New();
+                    CompositePointerControl Основа = CompositePointerControl.New();
             
     #endregion
 
@@ -62,40 +62,60 @@ class ПереміщенняТоварів_Елемент : DocumentFormElement
             NotebookTablePart.InsertPage(Товари, Label.New("Товари"), 0);
             
             NotebookTablePart.SetCurrentPage(0);
-        
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.СтатусиПереміщенняТоварів_List())
-                Статус.Append(field.Value.ToString(), field.Name);
+        НомерДок.WidthRequest = 100;
+                        Організація.Caption = "Організація";
+                    Організація.WidthPresentation = 300;
+                БанківськийРахунокОрганізації.Caption = "Банківський рахунок організації";
+                    БанківськийРахунокОрганізації.WidthPresentation = 300;
+                ВидЦіни.Caption = "Вид ціни";
+                    ВидЦіни.WidthPresentation = 300;
+                ОрганізаціяОтримувач.Caption = "Організація отримувач";
+                    ОрганізаціяОтримувач.WidthPresentation = 300;
+                Відповідальний.Caption = "Відповідальний";
+                    Відповідальний.WidthPresentation = 300;
+                Підрозділ.Caption = "Підрозділ";
+                    Підрозділ.WidthPresentation = 300;
+                СкладВідправник.Caption = "Склад відправник";
+                    СкладВідправник.WidthPresentation = 300;
+                СкладОтримувач.Caption = "Склад отримувач";
+                    СкладОтримувач.WidthPresentation = 300;
+                
+            {
+                //Заповнення списку
+                foreach (var field in ПсевдонімиПерелічення.СтатусиПереміщенняТоварів_List())
+                    Статус.Append(field.Value.ToString(), field.Name);
 
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            Статус.AddController(controller);
-            controller.OnScroll += (_, _) => true;
-        }
-        
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.ГосподарськіОперації_List())
-                ГосподарськаОперація.Append(field.Value.ToString(), field.Name);
+                //Заборона прокрутки списку
+                EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
+                Статус.AddController(controller);
+                controller.OnScroll += (_, _) => true;
+            }
+                
+            {
+                //Заповнення списку
+                foreach (var field in ПсевдонімиПерелічення.ГосподарськіОперації_List())
+                    ГосподарськаОперація.Append(field.Value.ToString(), field.Name);
 
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            ГосподарськаОперація.AddController(controller);
-            controller.OnScroll += (_, _) => true;
-        }
-        
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.СпособиДоставки_List())
-                СпосібДоставки.Append(field.Value.ToString(), field.Name);
+                //Заборона прокрутки списку
+                EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
+                ГосподарськаОперація.AddController(controller);
+                controller.OnScroll += (_, _) => true;
+            }
+                
+            {
+                //Заповнення списку
+                foreach (var field in ПсевдонімиПерелічення.СпособиДоставки_List())
+                    СпосібДоставки.Append(field.Value.ToString(), field.Name);
 
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            СпосібДоставки.AddController(controller);
-            controller.OnScroll += (_, _) => true;
-        }
-        
+                //Заборона прокрутки списку
+                EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
+                СпосібДоставки.AddController(controller);
+                controller.OnScroll += (_, _) => true;
+            }
+                АдресДоставки.WidthRequest = 300;
+                        Коментар.WidthRequest = 300;
+                        Основа.BoundConfType = "Документи.ПереміщенняТоварів.Основа";
+                
     }
 
     protected override void CreateTopStart(Box vBox)

@@ -15,14 +15,14 @@ namespace StorageAndTrade;
 
 class ВидиНоменклатури_Елемент : DirectoryFormElement
 {
-    public ВидиНоменклатури_Objest Елемент { get; init; } = new ВидиНоменклатури_Objest();
+    public ВидиНоменклатури_Objest Елемент { get; init; } = new();
     
     #region Fields
-    Entry Код = new() { WidthRequest = 100 };
-                    Entry Назва = new() { WidthRequest = 500 };
-                    TextView Опис = new TextView() { WrapMode = WrapMode.Word };
-                    ПакуванняОдиниціВиміру_PointerControl ОдиницяВиміру = new() { Caption = "Пакування:", WidthPresentation = 300 };
-            ComboBoxText ТипНоменклатури = new ComboBoxText();
+    Entry Код = Entry.New();
+                    Entry Назва = Entry.New();
+                    TextView Опис = TextView.New();
+                    ПакуванняОдиниціВиміру_PointerControl ОдиницяВиміру = ПакуванняОдиниціВиміру_PointerControl.New();
+            ComboBoxText ТипНоменклатури = ComboBoxText.New();
             
     #endregion
 
@@ -33,18 +33,24 @@ class ВидиНоменклатури_Елемент : DirectoryFormElement
     public ВидиНоменклатури_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.ТипиНоменклатури_List())
-                ТипНоменклатури.Append(field.Value.ToString(), field.Name);
 
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            ТипНоменклатури.AddController(controller);
-            controller.OnScroll += (_, _) => true;
-        }
-        
+        Код.WidthRequest = 100;
+                        Назва.WidthRequest = 300;
+                        Опис.WrapMode = WrapMode.Word;
+                        ОдиницяВиміру.Caption = "Пакування:";
+                    ОдиницяВиміру.WidthPresentation = 300;
+                
+            {
+                //Заповнення списку
+                foreach (var field in ПсевдонімиПерелічення.ТипиНоменклатури_List())
+                    ТипНоменклатури.Append(field.Value.ToString(), field.Name);
+
+                //Заборона прокрутки списку
+                EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
+                ТипНоменклатури.AddController(controller);
+                controller.OnScroll += (_, _) => true;
+            }
+                
     }
 
     protected override void CreateStart(Box vBox)

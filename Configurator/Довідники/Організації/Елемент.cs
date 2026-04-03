@@ -15,18 +15,18 @@ namespace StorageAndTrade;
 
 class Організації_Елемент : DirectoryFormElement
 {
-    public Організації_Objest Елемент { get; init; } = new Організації_Objest();
+    public Організації_Objest Елемент { get; init; } = new();
     
     #region Fields
-    Entry Код = new() { WidthRequest = 100 };
-                    Entry Назва = new() { WidthRequest = 500 };
-                    Entry НазваПовна = new() { WidthRequest = 500 };
-                    Entry НазваСкорочена = new() { WidthRequest = 500 };
-                    DateTimeControl ДатаРеєстрації = new(){ OnlyDate = true };
-            Entry КраїнаРеєстрації = new() { WidthRequest = 500 };
-                    Entry СвідоцтвоСеріяНомер = new() { WidthRequest = 200 };
-                    Entry СвідоцтвоДатаВидачі = new() { WidthRequest = 200 };
-                    Організації_PointerControl Холдинг = new() { Caption = "Холдинг", WidthPresentation = 500 };
+    Entry Код = Entry.New();
+                    Entry Назва = Entry.New();
+                    Entry НазваПовна = Entry.New();
+                    Entry НазваСкорочена = Entry.New();
+                    DateTimeControl ДатаРеєстрації = DateTimeControl.New();
+            Entry КраїнаРеєстрації = Entry.New();
+                    Entry СвідоцтвоСеріяНомер = Entry.New();
+                    Entry СвідоцтвоДатаВидачі = Entry.New();
+                    Організації_PointerControl Холдинг = Організації_PointerControl.New();
             
     #endregion
 
@@ -40,7 +40,18 @@ class Організації_Елемент : DirectoryFormElement
     public Організації_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
+
+        Код.WidthRequest = 100;
+                        Назва.WidthRequest = 300;
+                        НазваПовна.WidthRequest = 300;
+                        НазваСкорочена.WidthRequest = 300;
+                        ДатаРеєстрації.OnlyDate = true;
+                КраїнаРеєстрації.WidthRequest = 300;
+                        СвідоцтвоСеріяНомер.WidthRequest = 200;
+                        СвідоцтвоДатаВидачі.WidthRequest = 200;
+                        Холдинг.Caption = "Холдинг";
+                    Холдинг.WidthPresentation = 300;
+                
     }
 
     protected override void CreateStart(Box vBox)

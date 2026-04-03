@@ -10,19 +10,21 @@ using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
 
-public class ВидиЦін_PointerControl : PointerControl
+[GObject.Subclass<PointerControl>("PointerControl_ixsXYKuwm0WcI7BwsWf6Lw")]
+public partial class ВидиЦін_PointerControl : PointerControl
 {
-    event EventHandler<ВидиЦін_Pointer> PointerChanged;
+    event EventHandler<ВидиЦін_Pointer>? PointerChanged;
 
-    public ВидиЦін_PointerControl()
+    partial void Initialize()
     {
-        pointer = new ВидиЦін_Pointer();
         WidthPresentation = 300;
         Caption = $"{ВидиЦін_Const.FULLNAME}:";
         PointerChanged += async (_, pointer) => Presentation = pointer != null ? await pointer.GetPresentation() : "";
     }
 
-    ВидиЦін_Pointer pointer;
+    public static ВидиЦін_PointerControl New() => NewWithProperties([]);
+
+    ВидиЦін_Pointer pointer = new();
     public ВидиЦін_Pointer Pointer
     {
         get
@@ -49,6 +51,8 @@ public class ВидиЦін_PointerControl : PointerControl
         {
             PopoverParent = popover,
             DirectoryPointerItem = Pointer.UniqueID,
+            OpenSelect = true,
+            OpenFolder = OpenFolder,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new ВидиЦін_Pointer(selectPointer);

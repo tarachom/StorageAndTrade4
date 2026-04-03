@@ -15,17 +15,17 @@ namespace StorageAndTrade;
 
 class Склади_Елемент : DirectoryFormElement
 {
-    public Склади_Objest Елемент { get; init; } = new Склади_Objest();
+    public Склади_Objest Елемент { get; init; } = new();
     
     #region Fields
-    Entry Код = new() { WidthRequest = 100 };
-                    Entry Назва = new() { WidthRequest = 500 };
-                    Склади_Папки_PointerControl Папка = new() { Caption = "Папка", WidthPresentation = 500 };
-            ComboBoxText ТипСкладу = new ComboBoxText();
-            ФізичніОсоби_PointerControl Відповідальний = new() { Caption = "Відповідальний", WidthPresentation = 500 };
-            ВидиЦін_PointerControl ВидЦін = new() { Caption = "Вид цін", WidthPresentation = 500 };
-            СтруктураПідприємства_PointerControl Підрозділ = new() { Caption = "Підрозділ", WidthPresentation = 500 };
-            ComboBoxText НалаштуванняАдресногоЗберігання = new ComboBoxText();
+    Entry Код = Entry.New();
+                    Entry Назва = Entry.New();
+                    ComboBoxText ТипСкладу = ComboBoxText.New();
+            ФізичніОсоби_PointerControl Відповідальний = ФізичніОсоби_PointerControl.New();
+            ВидиЦін_PointerControl ВидЦін = ВидиЦін_PointerControl.New();
+            СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
+            Склади_Папки_PointerControl Папка = Склади_Папки_PointerControl.New();
+            ComboBoxText НалаштуванняАдресногоЗберігання = ComboBoxText.New();
             
     #endregion
 
@@ -39,29 +39,40 @@ class Склади_Елемент : DirectoryFormElement
     public Склади_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.ТипиСкладів_List())
-                ТипСкладу.Append(field.Value.ToString(), field.Name);
 
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            ТипСкладу.AddController(controller);
-            controller.OnScroll += (_, _) => true;
-        }
-        
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_List())
-                НалаштуванняАдресногоЗберігання.Append(field.Value.ToString(), field.Name);
+        Код.WidthRequest = 100;
+                        Назва.WidthRequest = 300;
+                        
+            {
+                //Заповнення списку
+                foreach (var field in ПсевдонімиПерелічення.ТипиСкладів_List())
+                    ТипСкладу.Append(field.Value.ToString(), field.Name);
 
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            НалаштуванняАдресногоЗберігання.AddController(controller);
-            controller.OnScroll += (_, _) => true;
-        }
-        
+                //Заборона прокрутки списку
+                EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
+                ТипСкладу.AddController(controller);
+                controller.OnScroll += (_, _) => true;
+            }
+                Відповідальний.Caption = "Відповідальний";
+                    Відповідальний.WidthPresentation = 300;
+                ВидЦін.Caption = "Вид цін";
+                    ВидЦін.WidthPresentation = 300;
+                Підрозділ.Caption = "Підрозділ";
+                    Підрозділ.WidthPresentation = 300;
+                Папка.Caption = "Папка";
+                    Папка.WidthPresentation = 300;
+                
+            {
+                //Заповнення списку
+                foreach (var field in ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_List())
+                    НалаштуванняАдресногоЗберігання.Append(field.Value.ToString(), field.Name);
+
+                //Заборона прокрутки списку
+                EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
+                НалаштуванняАдресногоЗберігання.AddController(controller);
+                controller.OnScroll += (_, _) => true;
+            }
+                
     }
 
     protected override void CreateStart(Box vBox)
@@ -73,9 +84,6 @@ class Склади_Елемент : DirectoryFormElement
             // Назва
             CreateField(vBox, "Назва:", Назва);
                         
-            // Папка
-            CreateField(vBox, null, Папка);
-                
             // ТипСкладу
             CreateField(vBox, "Тип складу:", ТипСкладу);
                 
@@ -87,6 +95,9 @@ class Склади_Елемент : DirectoryFormElement
                 
             // Підрозділ
             CreateField(vBox, null, Підрозділ);
+                
+            // Папка
+            CreateField(vBox, null, Папка);
                 
             // НалаштуванняАдресногоЗберігання
             CreateField(vBox, "Адресне зберігання:", НалаштуванняАдресногоЗберігання);
@@ -107,11 +118,11 @@ class Склади_Елемент : DirectoryFormElement
     {
         Код.SetText(Елемент.Код);
                         Назва.SetText(Елемент.Назва);
-                        Папка.Pointer = Елемент.Папка;
-                ТипСкладу.ActiveId = Елемент.ТипСкладу.ToString();
+                        ТипСкладу.ActiveId = Елемент.ТипСкладу.ToString();
                 Відповідальний.Pointer = Елемент.Відповідальний;
                 ВидЦін.Pointer = Елемент.ВидЦін;
                 Підрозділ.Pointer = Елемент.Підрозділ;
+                Папка.Pointer = Елемент.Папка;
                 НалаштуванняАдресногоЗберігання.ActiveId = Елемент.НалаштуванняАдресногоЗберігання.ToString();
                 
             // Таблична частина "Контакти"
@@ -124,11 +135,11 @@ class Склади_Елемент : DirectoryFormElement
     {
         Елемент.Код = Код.GetText();
                         Елемент.Назва = Назва.GetText();
-                        Елемент.Папка = Папка.Pointer;
-                Елемент.ТипСкладу = ПсевдонімиПерелічення.ТипиСкладів_FindByName(ТипСкладу.ActiveId);
+                        Елемент.ТипСкладу = ПсевдонімиПерелічення.ТипиСкладів_FindByName(ТипСкладу.ActiveId);
                 Елемент.Відповідальний = Відповідальний.Pointer;
                 Елемент.ВидЦін = ВидЦін.Pointer;
                 Елемент.Підрозділ = Підрозділ.Pointer;
+                Елемент.Папка = Папка.Pointer;
                 Елемент.НалаштуванняАдресногоЗберігання = ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_FindByName(НалаштуванняАдресногоЗберігання.ActiveId);
                 
     }

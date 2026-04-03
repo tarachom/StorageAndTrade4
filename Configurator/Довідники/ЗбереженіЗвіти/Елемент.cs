@@ -15,14 +15,14 @@ namespace StorageAndTrade;
 
 class ЗбереженіЗвіти_Елемент : DirectoryFormElement
 {
-    public ЗбереженіЗвіти_Objest Елемент { get; init; } = new ЗбереженіЗвіти_Objest();
+    public ЗбереженіЗвіти_Objest Елемент { get; init; } = new();
     
-    public Користувачі_Pointer ВласникДляНового = new Користувачі_Pointer();
+    public Користувачі_Pointer ВласникДляНового = new();
     
     #region Fields
-    DateTimeControl Додано = new();
-            Entry Назва = new() { WidthRequest = 500 };
-                    TextView Опис = new TextView() { WrapMode = WrapMode.Word };
+    DateTimeControl Додано = DateTimeControl.New();
+            Entry Назва = Entry.New();
+                    TextView Опис = TextView.New();
                     
     #endregion
 
@@ -36,7 +36,10 @@ class ЗбереженіЗвіти_Елемент : DirectoryFormElement
     public ЗбереженіЗвіти_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
+
+        Назва.WidthRequest = 300;
+                        Опис.WrapMode = WrapMode.Word;
+                        
     }
 
     protected override void CreateStart(Box vBox)

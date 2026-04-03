@@ -11,8 +11,11 @@ using AccountingSoftware;
 
 namespace StorageAndTrade;
 
-public class БанківськіРахункиОрганізацій_PointerTablePartCell : PointerTablePartCell
+[GObject.Subclass<PointerTablePartCell>("PointerTablePartCell_uLNthF7ALECZj0c1Ro938Q")]
+public partial class БанківськіРахункиОрганізацій_PointerTablePartCell : PointerTablePartCell
 {
+    public static БанківськіРахункиОрганізацій_PointerTablePartCell New() => NewWithProperties([]);
+
     БанківськіРахункиОрганізацій_Pointer pointer = new();
     public БанківськіРахункиОрганізацій_Pointer Pointer
     {
@@ -41,12 +44,16 @@ public class БанківськіРахункиОрганізацій_PointerTab
         popover.SetParent(button);
         popover.WidthRequest = 800;
         popover.HeightRequest = 400;
-
+        BeforeClickOpenFunc?.Invoke();
         БанківськіРахункиОрганізацій_ШвидкийВибір page = new()
         {
             PopoverParent = popover,
             DirectoryPointerItem = pointer.UniqueID,
-            CallBack_OnSelectPointer = async p => await PointerChange(p)
+            CallBack_OnSelectPointer = async p => 
+            {
+                await PointerChange(p);
+                AfterSelectFunc?.Invoke();
+            }
         };
         
 
@@ -59,6 +66,8 @@ public class БанківськіРахункиОрганізацій_PointerTab
     protected override async void Clear()
     {
         await PointerChange(null);
+        AfterSelectFunc?.Invoke();
+        AfterClearFunc?.Invoke();
     }
 }
     

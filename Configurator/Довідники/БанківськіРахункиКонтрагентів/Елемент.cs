@@ -15,15 +15,15 @@ namespace StorageAndTrade;
 
 class БанківськіРахункиКонтрагентів_Елемент : DirectoryFormElement
 {
-    public БанківськіРахункиКонтрагентів_Objest Елемент { get; init; } = new БанківськіРахункиКонтрагентів_Objest();
+    public БанківськіРахункиКонтрагентів_Objest Елемент { get; init; } = new();
     
     #region Fields
-    Entry Код = new() { WidthRequest = 100 };
-                    Entry Назва = new() { WidthRequest = 500 };
-                    Банки_PointerControl Банк = new() { Caption = "Банк", WidthPresentation = 500 };
-            Контрагенти_PointerControl Контрагент = new() { Caption = "Контрагент", WidthPresentation = 500 };
-            Entry НомерРахунку = new() { WidthRequest = 500 };
-                    Валюти_PointerControl Валюта = new() { Caption = "Валюта", WidthPresentation = 300 };
+    Entry Код = Entry.New();
+                    Entry Назва = Entry.New();
+                    Банки_PointerControl Банк = Банки_PointerControl.New();
+            Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
+            Entry НомерРахунку = Entry.New();
+                    Валюти_PointerControl Валюта = Валюти_PointerControl.New();
             
     #endregion
 
@@ -34,7 +34,17 @@ class БанківськіРахункиКонтрагентів_Елемент 
     public БанківськіРахункиКонтрагентів_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
+
+        Код.WidthRequest = 100;
+                        Назва.WidthRequest = 300;
+                        Банк.Caption = "Банк";
+                    Банк.WidthPresentation = 300;
+                Контрагент.Caption = "Контрагент";
+                    Контрагент.WidthPresentation = 300;
+                НомерРахунку.WidthRequest = 300;
+                        Валюта.Caption = "Валюта";
+                    Валюта.WidthPresentation = 300;
+                
     }
 
     protected override void CreateStart(Box vBox)

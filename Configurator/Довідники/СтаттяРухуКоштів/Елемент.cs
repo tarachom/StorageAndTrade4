@@ -15,14 +15,14 @@ namespace StorageAndTrade;
 
 class СтаттяРухуКоштів_Елемент : DirectoryFormElement
 {
-    public СтаттяРухуКоштів_Objest Елемент { get; init; } = new СтаттяРухуКоштів_Objest();
+    public СтаттяРухуКоштів_Objest Елемент { get; init; } = new();
     
     #region Fields
-    Entry Код = new() { WidthRequest = 100 };
-                    Entry Назва = new() { WidthRequest = 500 };
-                    Entry КореспондуючийРахунок = new() { WidthRequest = 500 };
-                    ComboBoxText ВидРухуКоштів = new ComboBoxText();
-            Entry Опис = new() { WidthRequest = 500 };
+    Entry Код = Entry.New();
+                    Entry Назва = Entry.New();
+                    Entry КореспондуючийРахунок = Entry.New();
+                    ComboBoxText ВидРухуКоштів = ComboBoxText.New();
+            Entry Опис = Entry.New();
                     
     #endregion
 
@@ -33,18 +33,23 @@ class СтаттяРухуКоштів_Елемент : DirectoryFormElement
     public СтаттяРухуКоштів_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.ВидиРухуКоштів_List())
-                ВидРухуКоштів.Append(field.Value.ToString(), field.Name);
 
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            ВидРухуКоштів.AddController(controller);
-            controller.OnScroll += (_, _) => true;
-        }
-        
+        Код.WidthRequest = 100;
+                        Назва.WidthRequest = 300;
+                        КореспондуючийРахунок.WidthRequest = 300;
+                        
+            {
+                //Заповнення списку
+                foreach (var field in ПсевдонімиПерелічення.ВидиРухуКоштів_List())
+                    ВидРухуКоштів.Append(field.Value.ToString(), field.Name);
+
+                //Заборона прокрутки списку
+                EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
+                ВидРухуКоштів.AddController(controller);
+                controller.OnScroll += (_, _) => true;
+            }
+                Опис.WidthRequest = 300;
+                        
     }
 
     protected override void CreateStart(Box vBox)

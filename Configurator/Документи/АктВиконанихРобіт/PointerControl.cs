@@ -10,19 +10,21 @@ using GeneratedCode.Документи;
 
 namespace StorageAndTrade;
 
-public class АктВиконанихРобіт_PointerControl : PointerControl
+[GObject.Subclass<PointerControl>("PointerControl_VgNqimHbE2kQPUzxlj74A")]
+public partial class АктВиконанихРобіт_PointerControl : PointerControl
 {
-    event EventHandler<АктВиконанихРобіт_Pointer> PointerChanged;
+    event EventHandler<АктВиконанихРобіт_Pointer>? PointerChanged;
 
-    public АктВиконанихРобіт_PointerControl()
+    partial void Initialize()
     {
-        pointer = new АктВиконанихРобіт_Pointer();
         WidthPresentation = 300;
         Caption = $"{АктВиконанихРобіт_Const.FULLNAME}:";
         PointerChanged += async (_, pointer) => Presentation = pointer != null ? await pointer.GetPresentation() : "";
     }
 
-    АктВиконанихРобіт_Pointer pointer;
+    public static АктВиконанихРобіт_PointerControl New() => NewWithProperties([]);
+
+    АктВиконанихРобіт_Pointer pointer = new();
     public АктВиконанихРобіт_Pointer Pointer
     {
         get

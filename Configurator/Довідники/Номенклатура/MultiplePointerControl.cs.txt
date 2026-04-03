@@ -1,0 +1,145 @@
+
+
+/*     
+        Номенклатура_MultiplePointerControl.cs
+        MultiplePointerControl
+*/
+
+using Gtk;
+using InterfaceGtk4;
+using AccountingSoftware;
+using GeneratedCode.Довідники;
+
+namespace StorageAndTrade;
+
+[GObject.Subclass<MultiplePointerControl>]
+public partial class Номенклатура_MultiplePointerControl : MultiplePointerControl
+{
+    event EventHandler<Номенклатура_Pointer>? PointerChanged;
+
+    public static Номенклатура_MultiplePointerControl New() => NewWithProperties([]);
+
+    partial void Initialize()
+    {
+        pointer = new Номенклатура_Pointer();
+        WidthPresentation = 300;
+        Caption = $"{Номенклатура_Const.FULLNAME}:";
+        PointerChanged += async (_, pointer) =>
+        {
+            Presentation = pointer != null ? await pointer.GetPresentation() : "";
+            if (pointers.Count > 1) Presentation += $" ... {pointers.Count}";
+        };
+    }
+
+    Номенклатура_Pointer pointer;
+    List<Номенклатура_Pointer> pointers = [];
+    public Номенклатура_Pointer Pointer
+    {
+        get
+        {
+            return pointer;
+        }
+        set
+        {
+            pointer = value;
+            PointerChanged?.Invoke(null, pointer);
+        }
+    }
+
+    public Номенклатура_Pointer[] GetPointers()
+    {
+        Номенклатура_Pointer[] copy = new Номенклатура_Pointer[pointers.Count];
+        pointers.CopyTo(copy);
+
+        return copy;
+    }
+
+    void Add(Номенклатура_Pointer item)
+    {
+        if (!pointers.Exists((Номенклатура_Pointer x) => x.UniqueID.ToString() == item.UniqueID.ToString()))
+            pointers.Add(item);
+
+        Pointer = item;
+        //AfterSelectFunc?.Invoke();
+    }
+
+    
+
+    protected override async void OpenSelect(Button button, EventArgs args)
+    {
+        Popover popover = Popover.New();
+        popover.SetParent(button);
+        popover.WidthRequest = 800;
+        popover.HeightRequest = 400;
+        BeforeClickOpenFunc?.Invoke();
+        Номенклатура_ШвидкийВибір page = new Номенклатура_ШвидкийВибір
+        {
+            PopoverParent = popover,
+            DirectoryPointerItem = pointer.UniqueID,
+            CallBack_OnSelectPointer = selectPointer =>
+            {
+                Add(new Номенклатура_Pointer(selectPointer));
+            },
+            CallBack_OnMultipleSelectPointer = selectPointers =>
+            {
+                foreach (var selectPointer in selectPointers)
+                    Add(new Номенклатура_Pointer(selectPointer));
+            }
+        };
+        
+         popover.SetChild(page);
+        popover.Show();
+
+        await page.SetValue();
+    }
+
+    protected override async ValueTask FillList(ListBox listBox)
+    {
+        foreach (Номенклатура_Pointer item in pointers)
+        {
+            Box hBox = Box.New(Orientation.Horizontal, 0);
+            ListBoxRow listBoxRow = [hBox];
+
+            string presentation = await item.GetPresentation();
+
+            
+
+            LinkButton linkName = LinkButton.New(SubstringName(presentation));
+             linkName. Halign = Align.Start, Image = new Image(InterfaceGtk3.Іконки.ДляКнопок.Doc), AlwaysShowImage = true, TooltipText = presentation };
+            linkName.Clicked += (sender, args) =>
+            {
+                if (Pointer.UniqueID.ToString() != item.UniqueID.ToString())
+                    Pointer = item;
+            };
+
+            hBox.PackStart(linkName, true, true, 0);
+
+            //Remove
+            LinkButton linkRemove = new LinkButton("") { Halign = Align.Start, Image = new Image(InterfaceGtk3.Іконки.ДляКнопок.Clean), AlwaysShowImage = true };
+            linkRemove.Clicked += (sender, args) =>
+            {
+                pointers.Remove(item);
+                listBox.Remove(listBoxRow);
+
+                if (Pointer.UniqueID.ToString() == item.UniqueID.ToString())
+                    Pointer = pointers.Count > 0 ? pointers[0] : new Номенклатура_Pointer();
+                else
+                    PointerChanged?.Invoke(null, pointer);
+            };
+
+            hBox.PackEnd(linkRemove, false, false, 0);
+
+            listBox.Add(listBoxRow);
+            listBox.ShowAll();
+        }
+    }
+
+    protected override void OnClear(object? sender, EventArgs args)
+    {
+        pointers = [];
+        Pointer = new Номенклатура_Pointer();
+        AfterSelectFunc?.Invoke();
+        AfterClearFunc?.Invoke();
+    }
+}
+    

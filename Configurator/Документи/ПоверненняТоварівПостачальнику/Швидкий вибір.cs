@@ -83,7 +83,8 @@ public class ПоверненняТоварівПостачальнику_Шви
 
     protected override void ReportSpendTheDocument(UniqueID[] uniqueID)
     {
-
+        foreach (var uid in uniqueID)
+            CommonForms_DocumentMovementThroughRegisters.Create(new ПоверненняТоварівПостачальнику_Pointer(uid));
     }
 
     #endregion

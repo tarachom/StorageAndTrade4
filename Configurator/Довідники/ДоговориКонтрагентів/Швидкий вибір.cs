@@ -17,7 +17,7 @@ namespace StorageAndTrade;
 class ДоговориКонтрагентів_ШвидкийВибір : DirectoryFormJournalSmall
 {
     
-    public Контрагенти_PointerControl Власник = new Контрагенти_PointerControl() { Caption = "Контрагент:" };
+    public Контрагенти_PointerControl Власник = Контрагенти_PointerControl.New();
     
     
     public ДоговориКонтрагентів_ШвидкийВибір() : base(Program.BasicForm?.NotebookFunc)
@@ -26,6 +26,20 @@ class ДоговориКонтрагентів_ШвидкийВибір : Direct
         KeyForSetting = ".Small";
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+
+        
+        //Власник
+        {
+            Власник.Caption = "Контрагент:";
+            HBoxTop.Append(Власник);
+            OwnerWhereListFunc = () => Власник.Pointer.IsEmpty() ? [] : [new(ДоговориКонтрагентів_Const.Контрагент, Comparison.EQ, Власник.Pointer.UniqueID.UGuid)];
+            Власник.AfterSelectFunc = async () =>
+            {
+                PagesClear();
+                await LoadRecords();
+            };
+        }
+        
     }
 
     public override async ValueTask LoadRecords()
@@ -50,12 +64,12 @@ class ДоговориКонтрагентів_ШвидкийВибір : Direct
 
     protected override async ValueTask OpenPageList(UniqueID? uniqueID = null)
     {
-        await Функції.OpenPageList(uniqueID, CallBack_OnSelectPointer);
+        await Функції.OpenPageList(uniqueID, OpenSelect, OpenFolder, CallBack_OnSelectPointer, Власник.Pointer);
     }
 
     protected override async ValueTask OpenPageElement(bool IsNew, UniqueID? uniqueID = null)
     {
-        await Функції.OpenPageElement(IsNew, uniqueID, CallBack_LoadRecords, CallBack_OnSelectPointer);
+        await Функції.OpenPageElement(IsNew, uniqueID, CallBack_LoadRecords, CallBack_OnSelectPointer, Власник.Pointer);
     }
 
     protected override async ValueTask SetDeletionLabel(UniqueID uniqueID)

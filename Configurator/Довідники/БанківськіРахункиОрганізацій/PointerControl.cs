@@ -10,19 +10,21 @@ using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
 
-public class БанківськіРахункиОрганізацій_PointerControl : PointerControl
+[GObject.Subclass<PointerControl>("PointerControl_ZrTufAp9d0W9Q7DVgdP1w")]
+public partial class БанківськіРахункиОрганізацій_PointerControl : PointerControl
 {
-    event EventHandler<БанківськіРахункиОрганізацій_Pointer> PointerChanged;
+    event EventHandler<БанківськіРахункиОрганізацій_Pointer>? PointerChanged;
 
-    public БанківськіРахункиОрганізацій_PointerControl()
+    partial void Initialize()
     {
-        pointer = new БанківськіРахункиОрганізацій_Pointer();
         WidthPresentation = 300;
         Caption = $"{БанківськіРахункиОрганізацій_Const.FULLNAME}:";
         PointerChanged += async (_, pointer) => Presentation = pointer != null ? await pointer.GetPresentation() : "";
     }
 
-    БанківськіРахункиОрганізацій_Pointer pointer;
+    public static БанківськіРахункиОрганізацій_PointerControl New() => NewWithProperties([]);
+
+    БанківськіРахункиОрганізацій_Pointer pointer = new();
     public БанківськіРахункиОрганізацій_Pointer Pointer
     {
         get
@@ -49,6 +51,8 @@ public class БанківськіРахункиОрганізацій_PointerCon
         {
             PopoverParent = popover,
             DirectoryPointerItem = Pointer.UniqueID,
+            OpenSelect = true,
+            OpenFolder = OpenFolder,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new БанківськіРахункиОрганізацій_Pointer(selectPointer);

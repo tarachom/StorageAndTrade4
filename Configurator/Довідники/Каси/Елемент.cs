@@ -15,13 +15,13 @@ namespace StorageAndTrade;
 
 class Каси_Елемент : DirectoryFormElement
 {
-    public Каси_Objest Елемент { get; init; } = new Каси_Objest();
+    public Каси_Objest Елемент { get; init; } = new();
     
     #region Fields
-    Entry Код = new() { WidthRequest = 100 };
-                    Entry Назва = new() { WidthRequest = 500 };
-                    Валюти_PointerControl Валюта = new() { Caption = "Валюта", WidthPresentation = 500 };
-            СтруктураПідприємства_PointerControl Підрозділ = new() { Caption = "Підрозділ", WidthPresentation = 500 };
+    Entry Код = Entry.New();
+                    Entry Назва = Entry.New();
+                    Валюти_PointerControl Валюта = Валюти_PointerControl.New();
+            СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
             
     #endregion
 
@@ -32,7 +32,14 @@ class Каси_Елемент : DirectoryFormElement
     public Каси_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
+
+        Код.WidthRequest = 100;
+                        Назва.WidthRequest = 300;
+                        Валюта.Caption = "Валюта";
+                    Валюта.WidthPresentation = 300;
+                Підрозділ.Caption = "Підрозділ";
+                    Підрозділ.WidthPresentation = 300;
+                
     }
 
     protected override void CreateStart(Box vBox)

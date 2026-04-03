@@ -10,19 +10,21 @@ using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
 
-public class Файли_PointerControl : PointerControl
+[GObject.Subclass<PointerControl>("PointerControl_vQSL7Q5OEWRQNeQEw0uNA")]
+public partial class Файли_PointerControl : PointerControl
 {
-    event EventHandler<Файли_Pointer> PointerChanged;
+    event EventHandler<Файли_Pointer>? PointerChanged;
 
-    public Файли_PointerControl()
+    partial void Initialize()
     {
-        pointer = new Файли_Pointer();
         WidthPresentation = 300;
         Caption = $"{Файли_Const.FULLNAME}:";
         PointerChanged += async (_, pointer) => Presentation = pointer != null ? await pointer.GetPresentation() : "";
     }
 
-    Файли_Pointer pointer;
+    public static Файли_PointerControl New() => NewWithProperties([]);
+
+    Файли_Pointer pointer = new();
     public Файли_Pointer Pointer
     {
         get
@@ -49,6 +51,8 @@ public class Файли_PointerControl : PointerControl
         {
             PopoverParent = popover,
             DirectoryPointerItem = Pointer.UniqueID,
+            OpenSelect = true,
+            OpenFolder = OpenFolder,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new Файли_Pointer(selectPointer);

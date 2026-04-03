@@ -23,6 +23,8 @@ class ВидиЗапасів_Список : DirectoryFormJournalFull
         TypeName = ВидиЗапасів_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+
+        
     }
 
     public override async ValueTask LoadRecords()

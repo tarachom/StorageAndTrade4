@@ -23,6 +23,8 @@ class Блокнот_Список : DirectoryFormJournalFull
         TypeName = Блокнот_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+
+        
     }
 
     public override async ValueTask LoadRecords()

@@ -14,8 +14,16 @@ class PageService : InterfaceGtk4.PageService
 {
     public PageService() : base(Config.Kernel, Config.NamespaceProgram, Config.NamespaceCodeGeneration, Program.BasicForm?.NotebookFunc) { }
 
-    protected override CompositePointerControl CreateCompositeControl(string caption, UuidAndText uuidAndText) =>
-        new() { Caption = caption, Pointer = uuidAndText, ClearSensetive = false, TypeSelectSensetive = false };
+    protected override CompositePointerControl CreateCompositeControl(string caption, UuidAndText uuidAndText)
+    {
+        CompositePointerControl control = CompositePointerControl.New();
+        control.Caption = caption;
+        control.Pointer = uuidAndText;
+        control.ClearSensetive = false;
+        control.TypeSelectSensetive = false;
+
+        return control;
+    }
 
     protected override async ValueTask BeforeSetValue() => await ФункціїНалаштуванняКористувача.ОтриматиПеріодДляЖурналу(KeyForSettings, Period);
 

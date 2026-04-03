@@ -88,3 +88,4 @@ public class ЗамовленняКлієнта_Список : DocumentFormJourn
 
     #endregion
 }
+    

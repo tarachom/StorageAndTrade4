@@ -10,19 +10,21 @@ using GeneratedCode.Документи;
 
 namespace StorageAndTrade;
 
-public class КорегуванняБоргу_PointerControl : PointerControl
+[GObject.Subclass<PointerControl>("PointerControl_eKZbUxSMi0KiUsn8fNNCXA")]
+public partial class КорегуванняБоргу_PointerControl : PointerControl
 {
-    event EventHandler<КорегуванняБоргу_Pointer> PointerChanged;
+    event EventHandler<КорегуванняБоргу_Pointer>? PointerChanged;
 
-    public КорегуванняБоргу_PointerControl()
+    partial void Initialize()
     {
-        pointer = new КорегуванняБоргу_Pointer();
         WidthPresentation = 300;
         Caption = $"{КорегуванняБоргу_Const.FULLNAME}:";
         PointerChanged += async (_, pointer) => Presentation = pointer != null ? await pointer.GetPresentation() : "";
     }
 
-    КорегуванняБоргу_Pointer pointer;
+    public static КорегуванняБоргу_PointerControl New() => NewWithProperties([]);
+
+    КорегуванняБоргу_Pointer pointer = new();
     public КорегуванняБоргу_Pointer Pointer
     {
         get

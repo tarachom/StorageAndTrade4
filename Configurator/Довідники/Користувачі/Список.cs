@@ -23,6 +23,8 @@ class Користувачі_Список : DirectoryFormJournalFull
         TypeName = Користувачі_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+
+        
     }
 
     public override async ValueTask LoadRecords()

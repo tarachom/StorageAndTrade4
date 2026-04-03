@@ -15,14 +15,14 @@ namespace StorageAndTrade;
 
 class Файли_Елемент : DirectoryFormElement
 {
-    public Файли_Objest Елемент { get; init; } = new Файли_Objest();
+    public Файли_Objest Елемент { get; init; } = new();
     
     #region Fields
-    Entry Код = new() { WidthRequest = 100 };
-                    Entry Назва = new() { WidthRequest = 500 };
-                    Entry НазваФайлу = new() { WidthRequest = 500 };
-                    Entry Розмір = new() { WidthRequest = 500 };
-                    DateTimeControl ДатаСтворення = new();
+    Entry Код = Entry.New();
+                    Entry Назва = Entry.New();
+                    Entry НазваФайлу = Entry.New();
+                    Entry Розмір = Entry.New();
+                    DateTimeControl ДатаСтворення = DateTimeControl.New();
             
     #endregion
 
@@ -33,7 +33,12 @@ class Файли_Елемент : DirectoryFormElement
     public Файли_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
+
+        Код.WidthRequest = 100;
+                        Назва.WidthRequest = 300;
+                        НазваФайлу.WidthRequest = 300;
+                        Розмір.WidthRequest = 300;
+                        
     }
 
     protected override void CreateStart(Box vBox)

@@ -15,13 +15,13 @@ namespace StorageAndTrade;
 
 class Користувачі_Елемент : DirectoryFormElement
 {
-    public Користувачі_Objest Елемент { get; init; } = new Користувачі_Objest();
+    public Користувачі_Objest Елемент { get; init; } = new();
     
     #region Fields
-    Entry Код = new() { WidthRequest = 100 };
-                    Entry Назва = new() { WidthRequest = 500 };
-                    ФізичніОсоби_PointerControl ФізичнаОсоба = new() { Caption = "Фізична особа", WidthPresentation = 500 };
-            Entry Коментар = new() { WidthRequest = 500 };
+    Entry Код = Entry.New();
+                    Entry Назва = Entry.New();
+                    ФізичніОсоби_PointerControl ФізичнаОсоба = ФізичніОсоби_PointerControl.New();
+            Entry Коментар = Entry.New();
                     
     #endregion
 
@@ -35,7 +35,13 @@ class Користувачі_Елемент : DirectoryFormElement
     public Користувачі_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
+
+        Код.WidthRequest = 100;
+                        Назва.WidthRequest = 300;
+                        ФізичнаОсоба.Caption = "Фізична особа";
+                    ФізичнаОсоба.WidthPresentation = 300;
+                Коментар.WidthRequest = 300;
+                        
     }
 
     protected override void CreateStart(Box vBox)

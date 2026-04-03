@@ -17,7 +17,7 @@ namespace StorageAndTrade;
 class ДоговориКонтрагентів_Список : DirectoryFormJournalFull
 {
     
-    public Контрагенти_PointerControl Власник = new Контрагенти_PointerControl() { Caption = "Контрагент:" };
+    public Контрагенти_PointerControl Власник = Контрагенти_PointerControl.New();
     
     
     public ДоговориКонтрагентів_Список() : base(Program.BasicForm?.NotebookFunc)
@@ -25,6 +25,20 @@ class ДоговориКонтрагентів_Список : DirectoryFormJourn
         TypeName = ДоговориКонтрагентів_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+
+        
+        //Власник
+        {
+            Власник.Caption = "Контрагент:";
+            HBoxTop.Append(Власник);
+            OwnerWhereListFunc = () => Власник.Pointer.IsEmpty() ? [] : [new(ДоговориКонтрагентів_Const.Контрагент, Comparison.EQ, Власник.Pointer.UniqueID.UGuid)];
+            Власник.AfterSelectFunc = async () =>
+            {
+                PagesClear();
+                await LoadRecords();
+            };
+        }
+        
     }
 
     public override async ValueTask LoadRecords()
@@ -49,7 +63,7 @@ class ДоговориКонтрагентів_Список : DirectoryFormJourn
 
     protected override async ValueTask OpenPageElement(bool IsNew, UniqueID? uniqueID = null)
     {
-        await Функції.OpenPageElement(IsNew, uniqueID, CallBack_LoadRecords, CallBack_OnSelectPointer);
+        await Функції.OpenPageElement(IsNew, uniqueID, CallBack_LoadRecords, CallBack_OnSelectPointer, Власник.Pointer);
     }
 
     protected override async ValueTask SetDeletionLabel(UniqueID uniqueID)

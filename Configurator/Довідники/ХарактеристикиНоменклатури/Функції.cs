@@ -57,12 +57,14 @@ static class ХарактеристикиНоменклатури_Функції
         await page.SetValue();
     }
 
-    public static async ValueTask OpenPageList(UniqueID? uniqueID = null, 
+    public static async ValueTask OpenPageList(UniqueID? uniqueID = null, bool openSelect = false, UniqueID? openFolder = null,
         Action<UniqueID>? сallBack_OnSelectPointer = null,
             Номенклатура_Pointer? Власник = null)
     {
         ХарактеристикиНоменклатури_Список page = new()
         {
+            OpenSelect = openSelect,
+            OpenFolder = openFolder,
             DirectoryPointerItem = uniqueID,
             CallBack_OnSelectPointer = сallBack_OnSelectPointer
         };

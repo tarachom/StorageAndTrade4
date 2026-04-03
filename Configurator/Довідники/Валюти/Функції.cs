@@ -51,14 +51,17 @@ static class Валюти_Функції
         await page.SetValue();
     }
 
-    public static async ValueTask OpenPageList(UniqueID? uniqueID = null, Action<UniqueID>? сallBack_OnSelectPointer = null)
+    public static async ValueTask OpenPageList(UniqueID? uniqueID = null, bool openSelect = false, UniqueID? openFolder = null,
+        Action<UniqueID>? сallBack_OnSelectPointer = null)
     {
         Валюти_Список page = new()
         {
+            OpenSelect = openSelect,
+            OpenFolder = openFolder,
             DirectoryPointerItem = uniqueID,
             CallBack_OnSelectPointer = сallBack_OnSelectPointer
         };
-
+        
         Program.BasicForm?.NotebookFunc.CreatePage(Валюти_Const.FULLNAME, page);
         await page.SetValue();
     }

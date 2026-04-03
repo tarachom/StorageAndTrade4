@@ -15,14 +15,14 @@ namespace StorageAndTrade;
 
 class ФізичніОсоби_Елемент : DirectoryFormElement
 {
-    public ФізичніОсоби_Objest Елемент { get; init; } = new ФізичніОсоби_Objest();
+    public ФізичніОсоби_Objest Елемент { get; init; } = new();
     
     #region Fields
-    Entry Код = new() { WidthRequest = 100 };
-                    Entry Назва = new() { WidthRequest = 500 };
-                    DateTimeControl ДатаНародження = new(){ OnlyDate = true };
-            ComboBoxText Стать = new ComboBoxText();
-            Entry ІПН = new() { WidthRequest = 200 };
+    Entry Код = Entry.New();
+                    Entry Назва = Entry.New();
+                    DateTimeControl ДатаНародження = DateTimeControl.New();
+            ComboBoxText Стать = ComboBoxText.New();
+            Entry ІПН = Entry.New();
                     
     #endregion
 
@@ -36,18 +36,23 @@ class ФізичніОсоби_Елемент : DirectoryFormElement
     public ФізичніОсоби_Елемент() : base(Program.BasicForm?.NotebookFunc)
     { 
         Element = Елемент;
-        
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.СтатьФізичноїОсоби_List())
-                Стать.Append(field.Value.ToString(), field.Name);
 
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            Стать.AddController(controller);
-            controller.OnScroll += (_, _) => true;
-        }
-        
+        Код.WidthRequest = 100;
+                        Назва.WidthRequest = 300;
+                        ДатаНародження.OnlyDate = true;
+                
+            {
+                //Заповнення списку
+                foreach (var field in ПсевдонімиПерелічення.СтатьФізичноїОсоби_List())
+                    Стать.Append(field.Value.ToString(), field.Name);
+
+                //Заборона прокрутки списку
+                EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
+                Стать.AddController(controller);
+                controller.OnScroll += (_, _) => true;
+            }
+                ІПН.WidthRequest = 200;
+                        
     }
 
     protected override void CreateStart(Box vBox)

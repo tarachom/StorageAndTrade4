@@ -10,19 +10,21 @@ using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
 
-public class Блокнот_PointerControl : PointerControl
+[GObject.Subclass<PointerControl>("PointerControl_N2ni6xYy0KtjMV7mryFsw")]
+public partial class Блокнот_PointerControl : PointerControl
 {
-    event EventHandler<Блокнот_Pointer> PointerChanged;
+    event EventHandler<Блокнот_Pointer>? PointerChanged;
 
-    public Блокнот_PointerControl()
+    partial void Initialize()
     {
-        pointer = new Блокнот_Pointer();
         WidthPresentation = 300;
         Caption = $"{Блокнот_Const.FULLNAME}:";
         PointerChanged += async (_, pointer) => Presentation = pointer != null ? await pointer.GetPresentation() : "";
     }
 
-    Блокнот_Pointer pointer;
+    public static Блокнот_PointerControl New() => NewWithProperties([]);
+
+    Блокнот_Pointer pointer = new();
     public Блокнот_Pointer Pointer
     {
         get
@@ -49,6 +51,8 @@ public class Блокнот_PointerControl : PointerControl
         {
             PopoverParent = popover,
             DirectoryPointerItem = Pointer.UniqueID,
+            OpenSelect = true,
+            OpenFolder = OpenFolder,
             CallBack_OnSelectPointer = selectPointer =>
             {
                 Pointer = new Блокнот_Pointer(selectPointer);

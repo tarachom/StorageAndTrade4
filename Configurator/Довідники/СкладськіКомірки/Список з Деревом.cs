@@ -18,7 +18,7 @@ class СкладськіКомірки_Список : DirectoryFormJournalFull
 {
     СкладськіКомірки_Папки_Список Папки = new() { InsertEmptyFirstRow = true };
     
-    public СкладськіПриміщення_PointerControl Власник = new() { Caption = "Приміщення:" };
+    public СкладськіПриміщення_PointerControl Власник = СкладськіПриміщення_PointerControl.New();
     
 
     public СкладськіКомірки_Список() : base(Program.BasicForm?.NotebookFunc)
@@ -54,6 +54,7 @@ class СкладськіКомірки_Список : DirectoryFormJournalFull
         
         //Власник
         {
+            Власник.Caption = "Приміщення:";
             HBoxTop.Append(Власник);
             OwnerWhereListFunc = () => Власник.Pointer.IsEmpty() ? [] : [new(СкладськіКомірки_Const.Приміщення, Comparison.EQ, Власник.Pointer.UniqueID.UGuid)];
             Власник.AfterSelectFunc = async () =>

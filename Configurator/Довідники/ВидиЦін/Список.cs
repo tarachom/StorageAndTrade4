@@ -23,6 +23,8 @@ class ВидиЦін_Список : DirectoryFormJournalFull
         TypeName = ВидиЦін_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+
+        
     }
 
     public override async ValueTask LoadRecords()
