@@ -18,7 +18,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
     #region Data
     
     [GObject.Subclass<GObject.Object>("ItemRow_4RKfvMdgE0upWfOqQmro7g")]
-    public partial class ItemRow : IRowTablePart
+    public partial class ItemRow : IRowSubclassTablePart
     {
         public static ItemRow New() => NewWithProperties([]);
 

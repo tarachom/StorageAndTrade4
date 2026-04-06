@@ -18,7 +18,7 @@ partial class КорегуванняБоргу_ТабличнаЧастина_Р
     #region Data
     
     [GObject.Subclass<GObject.Object>("ItemRow_fqOljr90ek2McBc5aSkKdw")]
-    public partial class ItemRow : IRowTablePart
+    public partial class ItemRow : IRowSubclassTablePart
     {
         public static ItemRow New() => NewWithProperties([]);
 

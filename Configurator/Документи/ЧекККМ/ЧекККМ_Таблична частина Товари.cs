@@ -18,7 +18,7 @@ partial class ЧекККМ_ТабличнаЧастина_Товари : Documen
     #region Data
     
     [GObject.Subclass<GObject.Object>("ItemRow_WFKuxXwDCEesOHQfR5cQew")]
-    public partial class ItemRow : IRowTablePart
+    public partial class ItemRow : IRowSubclassTablePart
     {
         public static ItemRow New() => NewWithProperties([]);
 

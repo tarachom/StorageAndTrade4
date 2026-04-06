@@ -18,7 +18,7 @@ partial class Склади_ТабличнаЧастина_Контакти : Dir
     #region Data
     
     [GObject.Subclass<GObject.Object>("ItemRow_trItU0JsNEe8HDWE0kIFg")]
-    public partial class ItemRow : IRowTablePart
+    public partial class ItemRow : IRowSubclassTablePart
     {
         public static ItemRow New() => NewWithProperties([]);
 

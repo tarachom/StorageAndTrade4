@@ -18,7 +18,7 @@ partial class Контрагенти_ТабличнаЧастина_Файли :
     #region Data
     
     [GObject.Subclass<GObject.Object>("ItemRow_VwctdICoUOHVi4LsHwMDg")]
-    public partial class ItemRow : IRowTablePart
+    public partial class ItemRow : IRowSubclassTablePart
     {
         public static ItemRow New() => NewWithProperties([]);
 
