@@ -6,11 +6,12 @@
 
 using Gtk;
 using InterfaceGtk4;
+using AccountingSoftware;
 using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<PointerControl>("PointerControl_h1jEWQhotk61zNNc18cLA")]
+[GObject.Subclass<PointerControl>("PointerControl_0PH0dUzEa0GenuVyMzFKcQ")]
 public partial class ВидиЗапасів_PointerControl : PointerControl
 {
     event EventHandler<ВидиЗапасів_Pointer>? PointerChanged;
@@ -40,6 +41,8 @@ public partial class ВидиЗапасів_PointerControl : PointerControl
 
     
 
+    public ConfigurationDirectories.HierarchicalContentType? AllowedContentSelection { get; set; }
+
     protected override async void OpenSelect(Button button, EventArgs args)
     {
         Popover popover = Popover.New();
@@ -47,18 +50,18 @@ public partial class ВидиЗапасів_PointerControl : PointerControl
         popover.WidthRequest = 800;
         popover.HeightRequest = 400;
         BeforeClickOpenFunc?.Invoke();
-        ВидиЗапасів_ШвидкийВибір page = new()
+
+        ВидиЗапасів_ШвидкийВибір page = ВидиЗапасів_ШвидкийВибір.New();
+        page.PopoverParent = popover;
+        page.DirectoryPointerItem = Pointer.UniqueID;
+        page.AllowedContentSelection = AllowedContentSelection;
+        page.OpenFolder = OpenFolder;
+        page.CallBack_OnSelectPointer = selectPointer =>
         {
-            PopoverParent = popover,
-            DirectoryPointerItem = Pointer.UniqueID,
-            OpenSelect = true,
-            OpenFolder = OpenFolder,
-            CallBack_OnSelectPointer = selectPointer =>
-            {
-                Pointer = new ВидиЗапасів_Pointer(selectPointer);
-                AfterSelectFunc?.Invoke();
-            }
+            Pointer = new ВидиЗапасів_Pointer(selectPointer);
+            AfterSelectFunc?.Invoke();
         };
+
         
         popover.SetChild(page);
         popover.Show();

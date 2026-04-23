@@ -6,6 +6,7 @@
 
 using Gtk;
 using InterfaceGtk4;
+using AccountingSoftware;
 
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
@@ -13,7 +14,8 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-class ПартіяТоварівКомпозит_Елемент : DirectoryFormElement
+[GObject.Subclass<DirectoryFormElement>("Element_tD9zKdrSUESFtGALCHPudw")]
+partial class ПартіяТоварівКомпозит_Елемент : DirectoryFormElement
 {
     public ПартіяТоварівКомпозит_Objest Елемент { get; init; } = new();
     
@@ -30,12 +32,17 @@ class ПартіяТоварівКомпозит_Елемент : DirectoryFormE
     
     #endregion
 
-    public ПартіяТоварівКомпозит_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     { 
         Element = Елемент;
 
-        Назва.WidthRequest = 300;
+        
+            // Назва:
+            Назва.WidthRequest = 300;
                         
+            // Дата:
+            
+            // ТипДокументу:
             {
                 //Заповнення списку
                 foreach (var field in ПсевдонімиПерелічення.ТипДокументуПартіяТоварівКомпозит_List())
@@ -46,11 +53,23 @@ class ПартіяТоварівКомпозит_Елемент : DirectoryFormE
                 ТипДокументу.AddController(controller);
                 controller.OnScroll += (_, _) => true;
             }
-                ПоступленняТоварівТаПослуг.Caption = "Поступлення товарів та послуг";
+                
+            // ПоступленняТоварівТаПослуг:
+            ПоступленняТоварівТаПослуг.Caption = "Поступлення товарів та послуг";
                     ПоступленняТоварівТаПослуг.WidthPresentation = 300;
-                ВведенняЗалишків.Caption = "Введення залишків";
+                
+            // ВведенняЗалишків:
+            ВведенняЗалишків.Caption = "Введення залишків";
                     ВведенняЗалишків.WidthPresentation = 300;
                 
+    }
+
+    public static ПартіяТоварівКомпозит_Елемент New()
+    {
+        ПартіяТоварівКомпозит_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateStart(Box vBox)

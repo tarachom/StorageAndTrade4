@@ -6,6 +6,7 @@
 
 using Gtk;
 using InterfaceGtk4;
+using AccountingSoftware;
 
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
@@ -13,7 +14,8 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-class ПакуванняОдиниціВиміру_Елемент : DirectoryFormElement
+[GObject.Subclass<DirectoryFormElement>("Element_SarB1K28a0uBgQ2lw3yVaQ")]
+partial class ПакуванняОдиниціВиміру_Елемент : DirectoryFormElement
 {
     public ПакуванняОдиниціВиміру_Objest Елемент { get; init; } = new();
     
@@ -29,14 +31,30 @@ class ПакуванняОдиниціВиміру_Елемент : DirectoryFor
     
     #endregion
 
-    public ПакуванняОдиниціВиміру_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     { 
         Element = Елемент;
 
-        Код.WidthRequest = 100;
-                        Назва.WidthRequest = 300;
-                        НазваПовна.WidthRequest = 300;
+        
+            // Код:
+            Код.WidthRequest = 100;
                         
+            // Назва:
+            Назва.WidthRequest = 300;
+                        
+            // НазваПовна:
+            НазваПовна.WidthRequest = 300;
+                        
+            // КількістьУпаковок:
+            
+    }
+
+    public static ПакуванняОдиниціВиміру_Елемент New()
+    {
+        ПакуванняОдиниціВиміру_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateStart(Box vBox)

@@ -1,5 +1,5 @@
 
-/*     
+/*      
         ЗбереженіЗвіти.cs
         Список
 */
@@ -14,13 +14,14 @@ using Функції = StorageAndTrade.ЗбереженіЗвіти_Функці
 
 namespace StorageAndTrade;
 
-class ЗбереженіЗвіти_Список : DirectoryFormJournalFull
+[GObject.Subclass<DirectoryFormJournalFull>("List_k7Xpxqoqmk2iTL3dkU0g")]
+partial class ЗбереженіЗвіти_Список : DirectoryFormJournalFull
 {
     
     public Користувачі_PointerControl Власник = Користувачі_PointerControl.New();
     
     
-    public ЗбереженіЗвіти_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = ЗбереженіЗвіти_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
@@ -41,11 +42,19 @@ class ЗбереженіЗвіти_Список : DirectoryFormJournalFull
         
     }
 
+    public static ЗбереженіЗвіти_Список New()
+    {
+        ЗбереженіЗвіти_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
+
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);

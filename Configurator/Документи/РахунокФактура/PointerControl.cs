@@ -10,7 +10,7 @@ using GeneratedCode.Документи;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<PointerControl>("PointerControl_nh8Apo61rEGZiKXh8Bcqw")]
+[GObject.Subclass<PointerControl>("PointerControl_swmpPcAOgESPwU2GbVIgIA")]
 public partial class РахунокФактура_PointerControl : PointerControl
 {
     event EventHandler<РахунокФактура_Pointer>? PointerChanged;
@@ -45,16 +45,16 @@ public partial class РахунокФактура_PointerControl : PointerContro
         popover.WidthRequest = 800;
         popover.HeightRequest = 400;
         BeforeClickOpenFunc?.Invoke();
-        РахунокФактура_ШвидкийВибір page = new()
+
+        РахунокФактура_ШвидкийВибір page = РахунокФактура_ШвидкийВибір.New();
+        page.PopoverParent = popover;
+        page.DocumentPointerItem = Pointer.UniqueID;
+        page.CallBack_OnSelectPointer = selectPointer =>
         {
-            PopoverParent = popover,
-            DocumentPointerItem = Pointer.UniqueID,
-            CallBack_OnSelectPointer = selectPointer =>
-            {
-                Pointer = new РахунокФактура_Pointer(selectPointer);
-                AfterSelectFunc?.Invoke();
-            }
+            Pointer = new РахунокФактура_Pointer(selectPointer);
+            AfterSelectFunc?.Invoke();
         };
+
         popover.SetChild(page);
         popover.Show();
 

@@ -14,14 +14,15 @@ using Функції = StorageAndTrade.СкладськіКомірки_Функ
 
 namespace StorageAndTrade;
 
-class СкладськіКомірки_Список : DirectoryFormJournalFull
+[GObject.Subclass<DirectoryFormJournalFull>("ListAndTreeHfyy7XuG0GK0Zba8nOeRw")]
+partial class СкладськіКомірки_Список : DirectoryFormJournalFull
 {
-    СкладськіКомірки_Папки_Список Папки = new() { InsertEmptyFirstRow = true };
+    СкладськіКомірки_Папки_Список Папки = СкладськіКомірки_Папки_Список.New();
     
     public СкладськіПриміщення_PointerControl Власник = СкладськіПриміщення_PointerControl.New();
     
 
-    public СкладськіКомірки_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = СкладськіКомірки_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
@@ -40,6 +41,7 @@ class СкладськіКомірки_Список : DirectoryFormJournalFull
             HPanedTable.Position = 1200;
             HPanedTable.StartChild?.MarginEnd = 5;
 
+            Папки.InsertEmptyFirstRow = true;
             Папки.CallBack_Activate = async uniqueID =>
             {
                 //Відбір по полю Папка
@@ -65,6 +67,14 @@ class СкладськіКомірки_Список : DirectoryFormJournalFull
         }
         
     }
+
+    public static СкладськіКомірки_Список New()
+    {
+        СкладськіКомірки_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
     
     protected override async ValueTask BeforeSetValue()
     {
@@ -81,7 +91,7 @@ class СкладськіКомірки_Список : DirectoryFormJournalFull
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);

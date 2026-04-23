@@ -14,13 +14,22 @@ using Функції = StorageAndTrade.ПереміщенняТоварів_Фу
 
 namespace StorageAndTrade;
 
-public class ПереміщенняТоварів_Список : DocumentFormJournalFull
+[GObject.Subclass<DocumentFormJournalFull>("List_p2QO1QPnr0SgVFts413YA")]
+public partial class ПереміщенняТоварів_Список : DocumentFormJournalFull
 {
-    public ПереміщенняТоварів_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = ПереміщенняТоварів_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50, Pages.StartingPosition.End);
+    }
+
+    public static ПереміщенняТоварів_Список New()
+    {
+        ПереміщенняТоварів_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
     }
 
     #region Override

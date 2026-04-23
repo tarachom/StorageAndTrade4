@@ -6,6 +6,7 @@
 
 using Gtk;
 using InterfaceGtk4;
+using AccountingSoftware;
 
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
@@ -13,7 +14,8 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-class СкладськіКомірки_Елемент : DirectoryFormElement
+[GObject.Subclass<DirectoryFormElement>("Element_j7hVtXgJ302GVXOIos4bIA")]
+partial class СкладськіКомірки_Елемент : DirectoryFormElement
 {
     public СкладськіКомірки_Objest Елемент { get; init; } = new();
     
@@ -36,20 +38,35 @@ class СкладськіКомірки_Елемент : DirectoryFormElement
     
     #endregion
 
-    public СкладськіКомірки_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     { 
         Element = Елемент;
 
-        Назва.WidthRequest = 300;
-                        Приміщення.Caption = "Приміщення";
-                    Приміщення.WidthPresentation = 300;
-                Папка.Caption = "Папка";
-                    Папка.WidthPresentation = 300;
-                Лінія.WidthRequest = 300;
-                        Позиція.WidthRequest = 300;
-                        Стелаж.WidthRequest = 300;
-                        Ярус.WidthRequest = 300;
+        
+            // Назва:
+            Назва.WidthRequest = 300;
                         
+            // Приміщення:
+            Приміщення.Caption = "Приміщення";
+                    Приміщення.WidthPresentation = 300;
+                
+            // Папка:
+            Папка.Caption = "Папка";
+                    Папка.WidthPresentation = 300;
+                
+            // Лінія:
+            Лінія.WidthRequest = 300;
+                        
+            // Позиція:
+            Позиція.WidthRequest = 300;
+                        
+            // Стелаж:
+            Стелаж.WidthRequest = 300;
+                        
+            // Ярус:
+            Ярус.WidthRequest = 300;
+                        
+            // ТипСкладськоїКомірки:
             {
                 //Заповнення списку
                 foreach (var field in ПсевдонімиПерелічення.ТипиСкладськихКомірок_List())
@@ -60,9 +77,19 @@ class СкладськіКомірки_Елемент : DirectoryFormElement
                 ТипСкладськоїКомірки.AddController(controller);
                 controller.OnScroll += (_, _) => true;
             }
-                Типорозмір.Caption = "Типорозмір";
+                
+            // Типорозмір:
+            Типорозмір.Caption = "Типорозмір";
                     Типорозмір.WidthPresentation = 300;
                 
+    }
+
+    public static СкладськіКомірки_Елемент New()
+    {
+        СкладськіКомірки_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateStart(Box vBox)

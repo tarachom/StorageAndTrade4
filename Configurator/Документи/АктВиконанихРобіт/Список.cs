@@ -14,13 +14,22 @@ using Функції = StorageAndTrade.АктВиконанихРобіт_Фун
 
 namespace StorageAndTrade;
 
-public class АктВиконанихРобіт_Список : DocumentFormJournalFull
+[GObject.Subclass<DocumentFormJournalFull>("List_mBzun0TuXEyIpNEMXtVyVA")]
+public partial class АктВиконанихРобіт_Список : DocumentFormJournalFull
 {
-    public АктВиконанихРобіт_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = АктВиконанихРобіт_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50, Pages.StartingPosition.End);
+    }
+
+    public static АктВиконанихРобіт_Список New()
+    {
+        АктВиконанихРобіт_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
     }
 
     #region Override

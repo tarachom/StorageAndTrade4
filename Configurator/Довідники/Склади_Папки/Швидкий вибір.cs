@@ -14,11 +14,12 @@ using Функції = StorageAndTrade.Склади_Папки_Функції;
 
 namespace StorageAndTrade;
 
-class Склади_Папки_ШвидкийВибір : DirectoryFormJournalSmallTree
+[GObject.Subclass<DirectoryFormJournalSmallTree>("SmallList_zhsqAnUt3EKtiKgXc7VcTw")]
+partial class Склади_Папки_ШвидкийВибір : DirectoryFormJournalSmallTree
 {
     
     
-    public Склади_Папки_ШвидкийВибір() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = Склади_Папки_Const.POINTER;
         KeyForSetting = ".Small";
@@ -28,11 +29,29 @@ class Склади_Папки_ШвидкийВибір : DirectoryFormJournalSma
         
     }
 
+    public static Склади_Папки_ШвидкийВибір New()
+    {
+        Склади_Папки_ШвидкийВибір list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
+
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-
+    
+    public override async ValueTask<List<DirectoryHierarchicalRow>> LoadChildren(UniqueID parent)
+    {
+        return await ТабличнийСписок.LoadChildren(this, parent);
+    }
+    
+    public override DirectoryHierarchicalRow LoadEmptyChildren()
+    {
+        return ТабличнийСписок.LoadEmptyChildren(this);
+    }
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);
@@ -50,7 +69,7 @@ class Склади_Папки_ШвидкийВибір : DirectoryFormJournalSma
 
     protected override async ValueTask OpenPageList(UniqueID? uniqueID = null)
     {
-        await Функції.OpenPageList(uniqueID, OpenSelect, OpenFolder, CallBack_OnSelectPointer);
+        await Функції.OpenPageList(uniqueID, AllowedContentSelection, OpenFolder, CallBack_OnSelectPointer);
     }
 
     protected override async ValueTask OpenPageElement(bool IsNew, UniqueID? uniqueID = null)

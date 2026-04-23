@@ -14,11 +14,12 @@ using Функції = StorageAndTrade.ВидиЗапасів_Функції;
 
 namespace StorageAndTrade;
 
-class ВидиЗапасів_ШвидкийВибір : DirectoryFormJournalSmall
+[GObject.Subclass<DirectoryFormJournalSmall>("SmallList_p9kGKYDos0GYM3N1tclvAQ")]
+partial class ВидиЗапасів_ШвидкийВибір : DirectoryFormJournalSmall
 {
     
     
-    public ВидиЗапасів_ШвидкийВибір() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = ВидиЗапасів_Const.POINTER;
         KeyForSetting = ".Small";
@@ -28,11 +29,19 @@ class ВидиЗапасів_ШвидкийВибір : DirectoryFormJournalSmal
         
     }
 
+    public static ВидиЗапасів_ШвидкийВибір New()
+    {
+        ВидиЗапасів_ШвидкийВибір list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
+
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);
@@ -50,7 +59,7 @@ class ВидиЗапасів_ШвидкийВибір : DirectoryFormJournalSmal
 
     protected override async ValueTask OpenPageList(UniqueID? uniqueID = null)
     {
-        await Функції.OpenPageList(uniqueID, OpenSelect, OpenFolder, CallBack_OnSelectPointer);
+        await Функції.OpenPageList(uniqueID, AllowedContentSelection, OpenFolder, CallBack_OnSelectPointer);
     }
 
     protected override async ValueTask OpenPageElement(bool IsNew, UniqueID? uniqueID = null)

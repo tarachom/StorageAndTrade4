@@ -1,11 +1,14 @@
 
 using Gtk;
+using InterfaceGtk4;
+
 using AccountingSoftware;
 using GeneratedCode;
 
 namespace StorageAndTrade;
 
-class Обробка : InterfaceGtk4.Processing
+[GObject.Subclass<Processing>("Processing_9fAhQS5xLkGxSrQ4MEw9w")]
+partial class Обробка : Processing
 {
     Button bRun = Button.NewWithLabel("Заповнити");
     Button bStop = Button.NewWithLabel("Зупинити");
@@ -13,7 +16,7 @@ class Обробка : InterfaceGtk4.Processing
     ProgressBar progress = ProgressBar.New();
     //CancellationTokenSource? cancellationToken = null;
 
-    public Обробка() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         bRun.MarginEnd = 10;
         bRun.OnClicked += (_, _) => Log.AppendLine("Text");
@@ -32,5 +35,13 @@ class Обробка : InterfaceGtk4.Processing
         bClear.MarginEnd = 10;
         bClear.OnClicked += (_, _) => Log.ClearMessage();
         HBoxTop.Append(bClear);
+    }
+
+    public static Обробка New()
+    {
+        Обробка page = NewWithProperties([]);
+        page.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return page;
     }
 }

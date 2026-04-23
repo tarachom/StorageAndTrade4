@@ -14,13 +14,22 @@ using Функції = StorageAndTrade.ПересортицяТоварів_Фу
 
 namespace StorageAndTrade;
 
-public class ПересортицяТоварів_Список : DocumentFormJournalFull
+[GObject.Subclass<DocumentFormJournalFull>("List_jP37RGIXpEaoBCMJlWNkzg")]
+public partial class ПересортицяТоварів_Список : DocumentFormJournalFull
 {
-    public ПересортицяТоварів_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = ПересортицяТоварів_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50, Pages.StartingPosition.End);
+    }
+
+    public static ПересортицяТоварів_Список New()
+    {
+        ПересортицяТоварів_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
     }
 
     #region Override

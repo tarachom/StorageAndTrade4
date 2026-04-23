@@ -1,5 +1,5 @@
 
-/*     
+/*      
         СеріїНоменклатури.cs
         Список
 */
@@ -14,11 +14,12 @@ using Функції = StorageAndTrade.СеріїНоменклатури_Фун
 
 namespace StorageAndTrade;
 
-class СеріїНоменклатури_Список : DirectoryFormJournalFull
+[GObject.Subclass<DirectoryFormJournalFull>("List_dtNJ9eJfkaTwpZQQOoA")]
+partial class СеріїНоменклатури_Список : DirectoryFormJournalFull
 {
     
     
-    public СеріїНоменклатури_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = СеріїНоменклатури_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
@@ -27,11 +28,19 @@ class СеріїНоменклатури_Список : DirectoryFormJournalFull
         
     }
 
+    public static СеріїНоменклатури_Список New()
+    {
+        СеріїНоменклатури_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
+
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);

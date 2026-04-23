@@ -13,11 +13,12 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
+[GObject.Subclass<DocumentFormTablePart>("TablePart_7OOiht2imEqkbjbZWTYPmQ")]
 partial class АктВиконанихРобіт_ТабличнаЧастина_Послуги : DocumentFormTablePart
 {
     #region Data
     
-    [GObject.Subclass<GObject.Object>("ItemRow_wrTVKjBkkUaps1UQJLPFiw")]
+    [GObject.Subclass<GObject.Object>("ItemRow_7OOiht2imEqkbjbZWTYPmQ")]
     public partial class ItemRow : IRowSubclassTablePart
     {
         public static ItemRow New() => NewWithProperties([]);
@@ -28,12 +29,15 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
             get => UnigueID_;
             set
             {
-                UnigueID_ = value;
-                Сhanged_UnigueID?.Invoke();
+                if (!UnigueID_.Equals(value))
+                {
+                    UnigueID_ = value;
+                    Сhanged_UnigueID?.Invoke();
+                }
             }
         }
         UniqueID UnigueID_ = new();
-        public Action? Сhanged_UnigueID;
+        public Action? Сhanged_UnigueID { get; set; } = null;
 
     
         /* НомерРядка */
@@ -50,7 +54,7 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
             }
         }
         int НомерРядка_ = 0;
-        public Action? Сhanged_НомерРядка;
+        public Action? Сhanged_НомерРядка { get; set; } = null;
 
     
         /* Номенклатура */
@@ -67,7 +71,7 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
             }
         }
         Номенклатура_Pointer Номенклатура_ = new();
-        public Action? Сhanged_Номенклатура;
+        public Action? Сhanged_Номенклатура { get; set; } = null;
 
     
         /* ХарактеристикаНоменклатури */
@@ -84,7 +88,7 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
             }
         }
         ХарактеристикиНоменклатури_Pointer ХарактеристикаНоменклатури_ = new();
-        public Action? Сhanged_ХарактеристикаНоменклатури;
+        public Action? Сhanged_ХарактеристикаНоменклатури { get; set; } = null;
 
     
         /* Кількість */
@@ -101,7 +105,7 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
             }
         }
         decimal Кількість_ = 0;
-        public Action? Сhanged_Кількість;
+        public Action? Сhanged_Кількість { get; set; } = null;
 
     
         /* Ціна */
@@ -118,7 +122,7 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
             }
         }
         decimal Ціна_ = 0;
-        public Action? Сhanged_Ціна;
+        public Action? Сhanged_Ціна { get; set; } = null;
 
     
         /* Сума */
@@ -135,7 +139,7 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
             }
         }
         decimal Сума_ = 0;
-        public Action? Сhanged_Сума;
+        public Action? Сhanged_Сума { get; set; } = null;
 
     
 
@@ -145,15 +149,15 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
         
         public GObject.Object Copy()
         {
-            var itemRow = New();
-            itemRow.НомерРядка = НомерРядка;
-            itemRow.Номенклатура = Номенклатура.Copy();
-            itemRow.ХарактеристикаНоменклатури = ХарактеристикаНоменклатури.Copy();
-            itemRow.Кількість = Кількість;
-            itemRow.Ціна = Ціна;
-            itemRow.Сума = Сума;
+            var row = New();
+            row.НомерРядка = НомерРядка;
+            row.Номенклатура = Номенклатура.Copy();
+            row.ХарактеристикаНоменклатури = ХарактеристикаНоменклатури.Copy();
+            row.Кількість = Кількість;
+            row.Ціна = Ціна;
+            row.Сума = Сума;
             
-            return itemRow;
+            return row;
         }
     }
 
@@ -165,12 +169,20 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
     
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());
 
-    public АктВиконанихРобіт_ТабличнаЧастина_Послуги() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         MultiSelection model = MultiSelection.New(Store);
         model.OnSelectionChanged += GridOnSelectionChanged;
 
         Grid.Model = model;
+    }
+
+    public static АктВиконанихРобіт_ТабличнаЧастина_Послуги New()
+    {
+        АктВиконанихРобіт_ТабличнаЧастина_Послуги tablePart = NewWithProperties([]);
+        tablePart.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return tablePart;
     }
 
     protected override void Columns()
@@ -356,64 +368,10 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
             ЕлементВласник.Послуги_TablePart.FillJoin([АктВиконанихРобіт_Послуги_TablePart.НомерРядка,]);
             await ЕлементВласник.Послуги_TablePart.Read();
             
-
-        Store.RemoveAll();
-
+            Store.RemoveAll();
         
-        foreach (var record in ЕлементВласник.Послуги_TablePart.Records)
-        {
-            var row = ItemRow.New();
-            row.UniqueID = new(record.UID);
-            row.НомерРядка = record.НомерРядка;
-            row.Номенклатура = record.Номенклатура;
-            row.ХарактеристикаНоменклатури = record.ХарактеристикаНоменклатури;
-            row.Кількість = record.Кількість;
-            row.Ціна = record.Ціна;
-            row.Сума = record.Сума;
-            
-            Store.Append(row);
-
-            if (SelectPosition > 0)
-            {
-                Grid.Model.SelectItem(SelectPosition, true);
-                ScrollTo(SelectPosition);
-            }
-        }
-        }
-    }
-
-    public override async ValueTask SaveRecords()
-    {
-        
-        if (ЕлементВласник != null)
-        {
-        ЕлементВласник.Послуги_TablePart.Records.Clear();
-        for (uint i = 0; i <= Store.GetNItems(); i++)
-        {
-            ItemRow? row = (ItemRow?)Store.GetObject(i);
-            if (row != null)
-            {
-                ЕлементВласник.Послуги_TablePart.Records.Add(new()
-                {
-                    UID = row.UniqueID.UGuid,
-                    НомерРядка = row.НомерРядка,
-                    Номенклатура = row.Номенклатура,
-                    ХарактеристикаНоменклатури = row.ХарактеристикаНоменклатури,
-                    Кількість = row.Кількість,
-                    Ціна = row.Ціна,
-                    Сума = row.Сума,
-                    
-                });
-            }
-        }
-        await ЕлементВласник.Послуги_TablePart.Save(true);
-        //Update
-        {
-            uint position = 0;
             foreach (var record in ЕлементВласник.Послуги_TablePart.Records)
             {
-                bool sel = Grid.Model.IsSelected(position);
-
                 var row = ItemRow.New();
                 row.UniqueID = new(record.UID);
                 row.НомерРядка = record.НомерРядка;
@@ -423,11 +381,74 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
                 row.Ціна = record.Ціна;
                 row.Сума = record.Сума;
                 
-                Store.Splice(position, 1, [row], 1);
-                if (sel) Grid.Model.SelectItem(position, false);
-                position++;
+                Store.Append(row);
+
+                if (SelectPosition > 0)
+                {
+                    Grid.Model.SelectItem(SelectPosition, true);
+                    ScrollTo(SelectPosition);
+                }
             }
         }
+    }
+
+    public override async ValueTask SaveRecords()
+    {
+        
+        if (ЕлементВласник != null)
+        {
+        ЕлементВласник.Послуги_TablePart.Records.Clear();
+            for (uint i = 0; i <= Store.GetNItems(); i++)
+            {
+                ItemRow? row = (ItemRow?)Store.GetObject(i);
+                if (row != null)
+                {
+                    ЕлементВласник.Послуги_TablePart.Records.Add(new()
+                    {
+                        UID = row.UniqueID.UGuid,
+                        НомерРядка = row.НомерРядка,
+                        Номенклатура = row.Номенклатура,
+                        ХарактеристикаНоменклатури = row.ХарактеристикаНоменклатури,
+                        Кількість = row.Кількість,
+                        Ціна = row.Ціна,
+                        Сума = row.Сума,
+                        
+                    });
+                }
+            }
+            await ЕлементВласник.Послуги_TablePart.Save(true);
+            //Оновлення табличної частини після збереження
+            {
+                //Пошук виділених рядків
+                Bitset bitset = Grid.Model.GetSelection();
+                List<uint> selection = [];
+                for (uint i = bitset.GetMinimum(); i <= bitset.GetMaximum(); i++)
+                    if (Grid.Model.IsSelected(i)) selection.Add(i);
+
+                var rows = ЕлементВласник.Послуги_TablePart.Records.Select(x =>
+                {
+                    var row = ItemRow.New();
+                    row.UniqueID = new(x.UID);
+                    row.НомерРядка = x.НомерРядка;
+                    row.Номенклатура = x.Номенклатура;
+                    row.ХарактеристикаНоменклатури = x.ХарактеристикаНоменклатури;
+                    row.Кількість = x.Кількість;
+                    row.Ціна = x.Ціна;
+                    row.Сума = x.Сума;
+                    
+                    return row;
+                });
+
+                uint count = (uint)rows.Count();
+
+                //Оновлення всіх рядків
+                Store.Splice(0, count, [.. rows], count);
+
+                //Виділення рядків після оновлення
+                foreach (var position in selection)
+                    Grid.Model.SelectItem(position, false);
+                
+            }
         }
     }
 

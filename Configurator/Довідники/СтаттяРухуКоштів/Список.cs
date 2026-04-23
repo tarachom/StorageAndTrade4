@@ -1,5 +1,5 @@
 
-/*     
+/*      
         СтаттяРухуКоштів.cs
         Список
 */
@@ -14,11 +14,12 @@ using Функції = StorageAndTrade.СтаттяРухуКоштів_Функ
 
 namespace StorageAndTrade;
 
-class СтаттяРухуКоштів_Список : DirectoryFormJournalFull
+[GObject.Subclass<DirectoryFormJournalFull>("List_jiUx6stgdUiBIRzniuqSCA")]
+partial class СтаттяРухуКоштів_Список : DirectoryFormJournalFull
 {
     
     
-    public СтаттяРухуКоштів_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = СтаттяРухуКоштів_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
@@ -27,11 +28,19 @@ class СтаттяРухуКоштів_Список : DirectoryFormJournalFull
         
     }
 
+    public static СтаттяРухуКоштів_Список New()
+    {
+        СтаттяРухуКоштів_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
+
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);

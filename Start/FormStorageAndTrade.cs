@@ -6,9 +6,17 @@ using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
 
-class FormStorageAndTrade : FormGeneral
+[GObject.Subclass<FormGeneral>]
+partial class FormStorageAndTrade : FormGeneral
 {
-    public FormStorageAndTrade() : base(Program.BasicApp, Config.Kernel) { }
+    public static new FormStorageAndTrade New()
+    {
+        FormStorageAndTrade window = NewWithProperties([]);
+        window.Application = Program.BasicApp;
+        window.Init(Config.Kernel);
+
+        return window;
+    }
 
     #region Override
 
@@ -54,24 +62,24 @@ class FormStorageAndTrade : FormGeneral
 
     protected override async void Service(LinkButton linkButton)
     {
-        PageService page = new();
+        PageService page = PageService.New();
         NotebookFunc.CreatePage("Сервіс", page);
         await page.SetValue();
     }
 
     protected override void Processing(LinkButton linkButton)
     {
-        NotebookFunc.CreatePage("Обробки", new PageProcessing());
+        NotebookFunc.CreatePage("Обробки", PageProcessing.New());
     }
 
     protected override void MenuDocuments(Box vBox)
     {
-        vBox.Append(new Menu_Document());
+        vBox.Append(Menu_Document.New());
     }
 
     protected override void MenuDirectory(Box vBox)
     {
-        vBox.Append(new Menu_Directory());
+        vBox.Append(Menu_Directory.New());
     }
 
     protected override void MenuJournals(Box vBox)
@@ -93,7 +101,7 @@ class FormStorageAndTrade : FormGeneral
 
     public async ValueTask OpenFirstPages()
     {
-        PageHome page = new();
+        PageHome page = PageHome.New();
         NotebookFunc?.CreatePage("Стартова", () => page, false, null, null, true);
         await page.SetValue();
     }

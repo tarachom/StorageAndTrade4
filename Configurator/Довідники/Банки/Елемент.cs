@@ -6,6 +6,7 @@
 
 using Gtk;
 using InterfaceGtk4;
+using AccountingSoftware;
 
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
@@ -13,7 +14,8 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-class Банки_Елемент : DirectoryFormElement
+[GObject.Subclass<DirectoryFormElement>("Element_dXg5UC4Abk2zyf24w4jkOw")]
+partial class Банки_Елемент : DirectoryFormElement
 {
     public Банки_Objest Елемент { get; init; } = new();
     
@@ -53,39 +55,103 @@ class Банки_Елемент : DirectoryFormElement
     
     #endregion
 
-    public Банки_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     { 
         Element = Елемент;
 
-        Код.WidthRequest = 100;
-                        Назва.WidthRequest = 300;
-                        ПовнаНазва.WidthRequest = 300;
-                        НазваГоловноїУстановиАнг.WidthRequest = 300;
-                        ТипНаселеногоПункту.WidthRequest = 100;
-                        КодМФО.WidthRequest = 100;
-                        КодЄДРПОУ.WidthRequest = 100;
-                        УнікальнийКодБанку.WidthRequest = 100;
-                        КодОбластіОпераційноїДіяльності.WidthRequest = 100;
-                        НазваОбластіОпераційноїДіяльності.WidthRequest = 100;
-                        КодОбластіЗгідноСтатуту.WidthRequest = 100;
-                        НазваОбластіЗгідноСтатуту.WidthRequest = 100;
-                        ПоштовийІндекс.WidthRequest = 100;
-                        НазваНаселеногоПункту.WidthRequest = 100;
-                        Адреса.WidthRequest = 300;
-                        КодТелефонногоЗвязку.WidthRequest = 100;
-                        НомерТелефону.WidthRequest = 100;
-                        ЧисловийКодСтануУстанови.WidthRequest = 100;
-                        НазваСтануУстанови.WidthRequest = 300;
-                        ДатаЗміниСтану.WidthRequest = 100;
-                        ДатаВідкриттяУстанови.WidthRequest = 100;
-                        ДатаЗакриттяУстанови.WidthRequest = 100;
-                        КодНБУ.WidthRequest = 100;
-                        НомерЛіцензії.WidthRequest = 100;
-                        ДатаЛіцензії.WidthRequest = 100;
-                        КодСтатусу.WidthRequest = 100;
-                        Статус.WidthRequest = 300;
-                        ДатаЗапису.WidthRequest = 100;
+        
+            // Код:
+            Код.WidthRequest = 100;
                         
+            // Назва:
+            Назва.WidthRequest = 300;
+                        
+            // ПовнаНазва:
+            ПовнаНазва.WidthRequest = 300;
+                        
+            // НазваГоловноїУстановиАнг:
+            НазваГоловноїУстановиАнг.WidthRequest = 300;
+                        
+            // ТипНаселеногоПункту:
+            ТипНаселеногоПункту.WidthRequest = 100;
+                        
+            // КодМФО:
+            КодМФО.WidthRequest = 100;
+                        
+            // КодЄДРПОУ:
+            КодЄДРПОУ.WidthRequest = 100;
+                        
+            // УнікальнийКодБанку:
+            УнікальнийКодБанку.WidthRequest = 100;
+                        
+            // КодОбластіОпераційноїДіяльності:
+            КодОбластіОпераційноїДіяльності.WidthRequest = 100;
+                        
+            // НазваОбластіОпераційноїДіяльності:
+            НазваОбластіОпераційноїДіяльності.WidthRequest = 100;
+                        
+            // КодОбластіЗгідноСтатуту:
+            КодОбластіЗгідноСтатуту.WidthRequest = 100;
+                        
+            // НазваОбластіЗгідноСтатуту:
+            НазваОбластіЗгідноСтатуту.WidthRequest = 100;
+                        
+            // ПоштовийІндекс:
+            ПоштовийІндекс.WidthRequest = 100;
+                        
+            // НазваНаселеногоПункту:
+            НазваНаселеногоПункту.WidthRequest = 100;
+                        
+            // Адреса:
+            Адреса.WidthRequest = 300;
+                        
+            // КодТелефонногоЗвязку:
+            КодТелефонногоЗвязку.WidthRequest = 100;
+                        
+            // НомерТелефону:
+            НомерТелефону.WidthRequest = 100;
+                        
+            // ЧисловийКодСтануУстанови:
+            ЧисловийКодСтануУстанови.WidthRequest = 100;
+                        
+            // НазваСтануУстанови:
+            НазваСтануУстанови.WidthRequest = 300;
+                        
+            // ДатаЗміниСтану:
+            ДатаЗміниСтану.WidthRequest = 100;
+                        
+            // ДатаВідкриттяУстанови:
+            ДатаВідкриттяУстанови.WidthRequest = 100;
+                        
+            // ДатаЗакриттяУстанови:
+            ДатаЗакриттяУстанови.WidthRequest = 100;
+                        
+            // КодНБУ:
+            КодНБУ.WidthRequest = 100;
+                        
+            // НомерЛіцензії:
+            НомерЛіцензії.WidthRequest = 100;
+                        
+            // ДатаЛіцензії:
+            ДатаЛіцензії.WidthRequest = 100;
+                        
+            // КодСтатусу:
+            КодСтатусу.WidthRequest = 100;
+                        
+            // Статус:
+            Статус.WidthRequest = 300;
+                        
+            // ДатаЗапису:
+            ДатаЗапису.WidthRequest = 100;
+                        
+    }
+
+    public static Банки_Елемент New()
+    {
+        Банки_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateStart(Box vBox)

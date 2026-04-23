@@ -1,5 +1,5 @@
 
-/*     
+/*      
         Виробники.cs
         Список
 */
@@ -14,11 +14,12 @@ using Функції = StorageAndTrade.Виробники_Функції;
 
 namespace StorageAndTrade;
 
-class Виробники_Список : DirectoryFormJournalFull
+[GObject.Subclass<DirectoryFormJournalFull>("List_3NZRO8ceZ0OCkqt5Vm2K0g")]
+partial class Виробники_Список : DirectoryFormJournalFull
 {
     
     
-    public Виробники_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = Виробники_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
@@ -27,11 +28,19 @@ class Виробники_Список : DirectoryFormJournalFull
         
     }
 
+    public static Виробники_Список New()
+    {
+        Виробники_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
+
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);

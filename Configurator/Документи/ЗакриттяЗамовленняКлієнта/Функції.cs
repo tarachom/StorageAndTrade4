@@ -37,11 +37,9 @@ static class ЗакриттяЗамовленняКлієнта_Функції
         Action<UniqueID?>? сallBack_LoadRecords = null,
         Action<UniqueID>? сallBack_OnSelectPointer = null)
     {
-        ЗакриттяЗамовленняКлієнта_Елемент page = new()
-        {
-            CallBack_LoadRecords = сallBack_LoadRecords,
-            CallBack_OnSelectPointer = сallBack_OnSelectPointer
-        };
+        ЗакриттяЗамовленняКлієнта_Елемент page = ЗакриттяЗамовленняКлієнта_Елемент.New();
+        page.CallBack_LoadRecords = сallBack_LoadRecords;
+        page.CallBack_OnSelectPointer = сallBack_OnSelectPointer;
 
         if (IsNew)
             await page.Елемент.New();
@@ -57,11 +55,9 @@ static class ЗакриттяЗамовленняКлієнта_Функції
 
     public static async ValueTask OpenPageList(UniqueID? uniqueID = null, Action<UniqueID>? сallBack_OnSelectPointer = null)
     {
-        ЗакриттяЗамовленняКлієнта_Список page = new()
-        {
-            DocumentPointerItem = uniqueID,
-            CallBack_OnSelectPointer = сallBack_OnSelectPointer
-        };
+        ЗакриттяЗамовленняКлієнта_Список page = ЗакриттяЗамовленняКлієнта_Список.New();
+        page.DocumentPointerItem = uniqueID;
+        page.CallBack_OnSelectPointer = сallBack_OnSelectPointer;
 
         Program.BasicForm?.NotebookFunc.CreatePage(ЗакриттяЗамовленняКлієнта_Const.FULLNAME, page);
         await page.SetValue();

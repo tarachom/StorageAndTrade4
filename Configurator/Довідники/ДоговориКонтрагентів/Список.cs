@@ -1,5 +1,5 @@
 
-/*     
+/*      
         ДоговориКонтрагентів.cs
         Список
 */
@@ -14,13 +14,14 @@ using Функції = StorageAndTrade.ДоговориКонтрагентів_
 
 namespace StorageAndTrade;
 
-class ДоговориКонтрагентів_Список : DirectoryFormJournalFull
+[GObject.Subclass<DirectoryFormJournalFull>("List_8GkNswNl028GT9gaUD2Yw")]
+partial class ДоговориКонтрагентів_Список : DirectoryFormJournalFull
 {
     
     public Контрагенти_PointerControl Власник = Контрагенти_PointerControl.New();
     
     
-    public ДоговориКонтрагентів_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = ДоговориКонтрагентів_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
@@ -41,11 +42,19 @@ class ДоговориКонтрагентів_Список : DirectoryFormJourn
         
     }
 
+    public static ДоговориКонтрагентів_Список New()
+    {
+        ДоговориКонтрагентів_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
+
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);

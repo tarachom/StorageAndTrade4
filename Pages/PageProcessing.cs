@@ -9,17 +9,26 @@ using InterfaceGtk4;
 
 namespace StorageAndTrade;
 
-class PageProcessing : Form
+[GObject.Subclass<Form>]
+partial class PageProcessing : Form
 {
-    public PageProcessing() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         Box vBox = New(Orientation.Vertical, 0);
         Append(vBox);
 
         CreateLink(vBox, "Обробка", () =>
         {
-            Обробка page = new();
+            Обробка page = Обробка.New();
             NotebookFunc?.CreatePage("Обробка", page);
         });
+    }
+
+    public static PageProcessing New()
+    {
+        PageProcessing page = NewWithProperties([]);
+        page.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return page;
     }
 }

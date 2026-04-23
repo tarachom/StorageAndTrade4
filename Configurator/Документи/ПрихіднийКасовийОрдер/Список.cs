@@ -14,13 +14,22 @@ using Функції = StorageAndTrade.ПрихіднийКасовийОрде�
 
 namespace StorageAndTrade;
 
-public class ПрихіднийКасовийОрдер_Список : DocumentFormJournalFull
+[GObject.Subclass<DocumentFormJournalFull>("List_TOyiZVwwUWh19osrTQeHA")]
+public partial class ПрихіднийКасовийОрдер_Список : DocumentFormJournalFull
 {
-    public ПрихіднийКасовийОрдер_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = ПрихіднийКасовийОрдер_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50, Pages.StartingPosition.End);
+    }
+
+    public static ПрихіднийКасовийОрдер_Список New()
+    {
+        ПрихіднийКасовийОрдер_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
     }
 
     #region Override

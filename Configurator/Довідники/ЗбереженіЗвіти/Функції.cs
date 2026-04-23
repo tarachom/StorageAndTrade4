@@ -31,11 +31,9 @@ static class ЗбереженіЗвіти_Функції
         Action<UniqueID>? сallBack_OnSelectPointer = null,
             Користувачі_Pointer? Власник = null)
     {
-        ЗбереженіЗвіти_Елемент page = new()
-        {
-            CallBack_LoadRecords = сallBack_LoadRecords,
-            CallBack_OnSelectPointer = сallBack_OnSelectPointer
-        };
+        ЗбереженіЗвіти_Елемент page = ЗбереженіЗвіти_Елемент.New();
+        page.CallBack_LoadRecords = сallBack_LoadRecords;
+        page.CallBack_OnSelectPointer = сallBack_OnSelectPointer;
 
         if (IsNew)
         {
@@ -54,17 +52,16 @@ static class ЗбереженіЗвіти_Функції
         await page.SetValue();
     }
 
-    public static async ValueTask OpenPageList(UniqueID? uniqueID = null, bool openSelect = false, UniqueID? openFolder = null,
+    public static async ValueTask OpenPageList(UniqueID? uniqueID = null, ConfigurationDirectories.HierarchicalContentType? allowedContentSelection = null, UniqueID? openFolder = null,
         Action<UniqueID>? сallBack_OnSelectPointer = null,
             Користувачі_Pointer? Власник = null)
     {
-        ЗбереженіЗвіти_Список page = new()
-        {
-            OpenSelect = openSelect,
-            OpenFolder = openFolder,
-            DirectoryPointerItem = uniqueID,
-            CallBack_OnSelectPointer = сallBack_OnSelectPointer
-        };
+        ЗбереженіЗвіти_Список page = ЗбереженіЗвіти_Список.New();
+        page.AllowedContentSelection  = allowedContentSelection;
+        page.OpenFolder = openFolder;
+        page.DirectoryPointerItem = uniqueID;
+        page.CallBack_OnSelectPointer = сallBack_OnSelectPointer;
+
         
             if (Власник != null) page.Власник.Pointer = Власник;
         

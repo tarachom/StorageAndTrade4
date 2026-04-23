@@ -14,11 +14,12 @@ using Функції = StorageAndTrade.Банки_Функції;
 
 namespace StorageAndTrade;
 
-class Банки_ШвидкийВибір : DirectoryFormJournalSmall
+[GObject.Subclass<DirectoryFormJournalSmall>("SmallList_n2tiMS7KYUGlIg9hsqkYA")]
+partial class Банки_ШвидкийВибір : DirectoryFormJournalSmall
 {
     
     
-    public Банки_ШвидкийВибір() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = Банки_Const.POINTER;
         KeyForSetting = ".Small";
@@ -28,11 +29,19 @@ class Банки_ШвидкийВибір : DirectoryFormJournalSmall
         
     }
 
+    public static Банки_ШвидкийВибір New()
+    {
+        Банки_ШвидкийВибір list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
+
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);
@@ -50,7 +59,7 @@ class Банки_ШвидкийВибір : DirectoryFormJournalSmall
 
     protected override async ValueTask OpenPageList(UniqueID? uniqueID = null)
     {
-        await Функції.OpenPageList(uniqueID, OpenSelect, OpenFolder, CallBack_OnSelectPointer);
+        await Функції.OpenPageList(uniqueID, AllowedContentSelection, OpenFolder, CallBack_OnSelectPointer);
     }
 
     protected override async ValueTask OpenPageElement(bool IsNew, UniqueID? uniqueID = null)

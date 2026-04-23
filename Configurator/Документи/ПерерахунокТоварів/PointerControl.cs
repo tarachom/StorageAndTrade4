@@ -10,7 +10,7 @@ using GeneratedCode.Документи;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<PointerControl>("PointerControl_Pp9gEC18UKhs9FkwCHc1A")]
+[GObject.Subclass<PointerControl>("PointerControl_xEx9uyoj2Umq8IE7kiGDg")]
 public partial class ПерерахунокТоварів_PointerControl : PointerControl
 {
     event EventHandler<ПерерахунокТоварів_Pointer>? PointerChanged;
@@ -45,16 +45,16 @@ public partial class ПерерахунокТоварів_PointerControl : Point
         popover.WidthRequest = 800;
         popover.HeightRequest = 400;
         BeforeClickOpenFunc?.Invoke();
-        ПерерахунокТоварів_ШвидкийВибір page = new()
+
+        ПерерахунокТоварів_ШвидкийВибір page = ПерерахунокТоварів_ШвидкийВибір.New();
+        page.PopoverParent = popover;
+        page.DocumentPointerItem = Pointer.UniqueID;
+        page.CallBack_OnSelectPointer = selectPointer =>
         {
-            PopoverParent = popover,
-            DocumentPointerItem = Pointer.UniqueID,
-            CallBack_OnSelectPointer = selectPointer =>
-            {
-                Pointer = new ПерерахунокТоварів_Pointer(selectPointer);
-                AfterSelectFunc?.Invoke();
-            }
+            Pointer = new ПерерахунокТоварів_Pointer(selectPointer);
+            AfterSelectFunc?.Invoke();
         };
+
         popover.SetChild(page);
         popover.Show();
 

@@ -14,11 +14,12 @@ using Функції = StorageAndTrade.Блокнот_Функції;
 
 namespace StorageAndTrade;
 
-class Блокнот_ШвидкийВибір : DirectoryFormJournalSmall
+[GObject.Subclass<DirectoryFormJournalSmall>("SmallList_a279idOmvEGJeIR2kDwKlg")]
+partial class Блокнот_ШвидкийВибір : DirectoryFormJournalSmall
 {
     
     
-    public Блокнот_ШвидкийВибір() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = Блокнот_Const.POINTER;
         KeyForSetting = ".Small";
@@ -28,11 +29,19 @@ class Блокнот_ШвидкийВибір : DirectoryFormJournalSmall
         
     }
 
+    public static Блокнот_ШвидкийВибір New()
+    {
+        Блокнот_ШвидкийВибір list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
+
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);
@@ -50,7 +59,7 @@ class Блокнот_ШвидкийВибір : DirectoryFormJournalSmall
 
     protected override async ValueTask OpenPageList(UniqueID? uniqueID = null)
     {
-        await Функції.OpenPageList(uniqueID, OpenSelect, OpenFolder, CallBack_OnSelectPointer);
+        await Функції.OpenPageList(uniqueID, AllowedContentSelection, OpenFolder, CallBack_OnSelectPointer);
     }
 
     protected override async ValueTask OpenPageElement(bool IsNew, UniqueID? uniqueID = null)

@@ -10,9 +10,17 @@ using GeneratedCode;
 
 namespace StorageAndTrade;
 
-class PageService : InterfaceGtk4.PageService
+[GObject.Subclass<InterfaceGtk4.PageService>]
+partial class PageService : InterfaceGtk4.PageService
 {
-    public PageService() : base(Config.Kernel, Config.NamespaceProgram, Config.NamespaceCodeGeneration, Program.BasicForm?.NotebookFunc) { }
+    public static PageService New()
+    {
+        PageService page = NewWithProperties([]);
+        page.Init(Config.Kernel, Config.NamespaceProgram, Config.NamespaceCodeGeneration);
+        page.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return page;
+    }
 
     protected override CompositePointerControl CreateCompositeControl(string caption, UuidAndText uuidAndText)
     {

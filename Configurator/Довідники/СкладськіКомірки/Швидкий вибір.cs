@@ -14,13 +14,14 @@ using Функції = StorageAndTrade.СкладськіКомірки_Функ
 
 namespace StorageAndTrade;
 
-class СкладськіКомірки_ШвидкийВибір : DirectoryFormJournalSmall
+[GObject.Subclass<DirectoryFormJournalSmall>("SmallList_qsgWA4PuNkCmeQuUyQseQ")]
+partial class СкладськіКомірки_ШвидкийВибір : DirectoryFormJournalSmall
 {
     
     public СкладськіПриміщення_PointerControl Власник = СкладськіПриміщення_PointerControl.New();
     
     
-    public СкладськіКомірки_ШвидкийВибір() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = СкладськіКомірки_Const.POINTER;
         KeyForSetting = ".Small";
@@ -42,11 +43,19 @@ class СкладськіКомірки_ШвидкийВибір : DirectoryFormJ
         
     }
 
+    public static СкладськіКомірки_ШвидкийВибір New()
+    {
+        СкладськіКомірки_ШвидкийВибір list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
+
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);
@@ -64,7 +73,7 @@ class СкладськіКомірки_ШвидкийВибір : DirectoryFormJ
 
     protected override async ValueTask OpenPageList(UniqueID? uniqueID = null)
     {
-        await Функції.OpenPageList(uniqueID, OpenSelect, OpenFolder, CallBack_OnSelectPointer, Власник.Pointer);
+        await Функції.OpenPageList(uniqueID, AllowedContentSelection, OpenFolder, CallBack_OnSelectPointer, Власник.Pointer);
     }
 
     protected override async ValueTask OpenPageElement(bool IsNew, UniqueID? uniqueID = null)

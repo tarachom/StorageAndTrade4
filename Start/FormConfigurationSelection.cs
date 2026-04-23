@@ -15,9 +15,17 @@ namespace StorageAndTrade;
 /// <summary>
 /// Переоприділення форми вибору бази
 /// </summary>
-class FormConfigurationSelection : InterfaceGtk4.FormConfigurationSelection
+[GObject.Subclass<InterfaceGtk4.FormConfigurationSelection>]
+partial class FormConfigurationSelection : InterfaceGtk4.FormConfigurationSelection
 {
-    public FormConfigurationSelection() : base(Program.BasicApp, Config.Kernel, Config.Kernel, TypeForm.WorkingProgram) { }
+    public static new FormConfigurationSelection New()
+    {
+        FormConfigurationSelection window = NewWithProperties([]);
+        window.Application = Program.BasicApp;
+        window.Init(Config.Kernel, Config.Kernel, TypeForm.WorkingProgram);
+
+        return window;
+    }
 
     public override async ValueTask<bool> OpenProgram(ConfigurationParam? openConfigurationParam)
     {
@@ -28,7 +36,8 @@ class FormConfigurationSelection : InterfaceGtk4.FormConfigurationSelection
         if (string.IsNullOrEmpty(ЖурналиДокументів.ОсновнийТипПеріоду_Const))
             ЖурналиДокументів.ОсновнийТипПеріоду_Const = PeriodForJournal.TypePeriod.AllPeriod.ToString();
 
-        FormStorageAndTrade form = new() { OpenConfigurationParam = openConfigurationParam };
+        FormStorageAndTrade form = FormStorageAndTrade.New();
+        form.OpenConfigurationParam = openConfigurationParam;
         form.SetStatusBar();
         form.Show();
 
@@ -45,7 +54,8 @@ class FormConfigurationSelection : InterfaceGtk4.FormConfigurationSelection
 
     public override async ValueTask<bool> OpenConfigurator(ConfigurationParam? openConfigurationParam)
     {
-        Configurator.FormConfigurator form = new(Program.BasicApp, Config.Kernel) { OpenConfigurationParam = openConfigurationParam };
+        Configurator.FormConfigurator form = Configurator.FormConfigurator.NewProgramStart(Program.BasicApp, Config.Kernel);
+        form.OpenConfigurationParam = openConfigurationParam;
         form.SetStatusBar();
         form.Show();
 

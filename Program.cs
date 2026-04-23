@@ -21,7 +21,11 @@ class Program
 
     static void Main()
     {
-        BasicApp.OnActivate += (app, args) => new FormConfigurationSelection().Show();
+        BasicApp.OnActivate += (app, _) =>
+        {
+            var window = FormConfigurationSelection.New();
+            window.Show();
+        };
         BasicApp.OnShutdown += (app, args) => { };
 
         Display? display = Display.GetDefault();

@@ -6,6 +6,7 @@
 
 using Gtk;
 using InterfaceGtk4;
+using AccountingSoftware;
 
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
@@ -13,7 +14,8 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-class ДоговориКонтрагентів_Елемент : DirectoryFormElement
+[GObject.Subclass<DirectoryFormElement>("Element_KJSgWXQS2EyhyfX7APw")]
+partial class ДоговориКонтрагентів_Елемент : DirectoryFormElement
 {
     public ДоговориКонтрагентів_Objest Елемент { get; init; } = new();
     
@@ -46,29 +48,56 @@ class ДоговориКонтрагентів_Елемент : DirectoryFormEle
     
     #endregion
 
-    public ДоговориКонтрагентів_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     { 
         Element = Елемент;
 
-        Код.WidthRequest = 100;
-                        Назва.WidthRequest = 300;
-                        БанківськийРахунок.Caption = "Банківський рахунок";
+        
+            // Код:
+            Код.WidthRequest = 100;
+                        
+            // Назва:
+            Назва.WidthRequest = 300;
+                        
+            // БанківськийРахунок:
+            БанківськийРахунок.Caption = "Банківський рахунок";
                     БанківськийРахунок.WidthPresentation = 300;
-                БанківськийРахунокКонтрагента.Caption = "Банківський рахунок контрагента";
+                
+            // БанківськийРахунокКонтрагента:
+            БанківськийРахунокКонтрагента.Caption = "Банківський рахунок контрагента";
                     БанківськийРахунокКонтрагента.WidthPresentation = 300;
-                ВалютаВзаєморозрахунків.Caption = "Валюта";
+                
+            // ВалютаВзаєморозрахунків:
+            ВалютаВзаєморозрахунків.Caption = "Валюта";
                     ВалютаВзаєморозрахунків.WidthPresentation = 300;
-                ДатаПочаткуДії.OnlyDate = true;
-                ДатаЗакінченняДії.OnlyDate = true;
-                Організація.Caption = "Організація";
+                
+            // ДатаПочаткуДії:
+            ДатаПочаткуДії.OnlyDate = true;
+                
+            // ДатаЗакінченняДії:
+            ДатаЗакінченняДії.OnlyDate = true;
+                
+            // Організація:
+            Організація.Caption = "Організація";
                     Організація.WidthPresentation = 300;
-                Контрагент.Caption = "Контрагент";
+                
+            // Контрагент:
+            Контрагент.Caption = "Контрагент";
                     Контрагент.WidthPresentation = 300;
-                Дата.OnlyDate = true;
-                Номер.WidthRequest = 300;
-                        Підрозділ.Caption = "Підрозділ";
+                
+            // Дата:
+            Дата.OnlyDate = true;
+                
+            // Номер:
+            Номер.WidthRequest = 300;
+                        
+            // Підрозділ:
+            Підрозділ.Caption = "Підрозділ";
                     Підрозділ.WidthPresentation = 300;
                 
+            // Узгоджений:
+            
+            // Статус:
             {
                 //Заповнення списку
                 foreach (var field in ПсевдонімиПерелічення.СтатусиДоговорівКонтрагентів_List())
@@ -80,6 +109,7 @@ class ДоговориКонтрагентів_Елемент : DirectoryFormEle
                 controller.OnScroll += (_, _) => true;
             }
                 
+            // ГосподарськаОперація:
             {
                 //Заповнення списку
                 foreach (var field in ПсевдонімиПерелічення.ГосподарськіОперації_List())
@@ -91,6 +121,7 @@ class ДоговориКонтрагентів_Елемент : DirectoryFormEle
                 controller.OnScroll += (_, _) => true;
             }
                 
+            // ТипДоговору:
             {
                 //Заповнення списку
                 foreach (var field in ПсевдонімиПерелічення.ТипДоговорів_List())
@@ -101,8 +132,22 @@ class ДоговориКонтрагентів_Елемент : DirectoryFormEle
                 ТипДоговору.AddController(controller);
                 controller.OnScroll += (_, _) => true;
             }
-                Коментар.WidthRequest = 300;
+                
+            // ДопустимаСумаЗаборгованості:
+            
+            // Сума:
+            
+            // Коментар:
+            Коментар.WidthRequest = 300;
                         
+    }
+
+    public static ДоговориКонтрагентів_Елемент New()
+    {
+        ДоговориКонтрагентів_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateStart(Box vBox)

@@ -6,6 +6,7 @@
 
 using Gtk;
 using InterfaceGtk4;
+using AccountingSoftware;
 
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
@@ -13,7 +14,8 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-class Організації_Елемент : DirectoryFormElement
+[GObject.Subclass<DirectoryFormElement>("Element_9mtifqQ5Z06qw0LUndwwXQ")]
+partial class Організації_Елемент : DirectoryFormElement
 {
     public Організації_Objest Елемент { get; init; } = new();
     
@@ -33,25 +35,51 @@ class Організації_Елемент : DirectoryFormElement
     #region TabularParts
     
         // Таблична частина "Контакти"
-        Організації_ТабличнаЧастина_Контакти Контакти = new() { WidthRequest = 500, HeightRequest = 300 };
+        Організації_ТабличнаЧастина_Контакти Контакти = Організації_ТабличнаЧастина_Контакти.New();
     
     #endregion
 
-    public Організації_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     { 
         Element = Елемент;
 
-        Код.WidthRequest = 100;
-                        Назва.WidthRequest = 300;
-                        НазваПовна.WidthRequest = 300;
-                        НазваСкорочена.WidthRequest = 300;
-                        ДатаРеєстрації.OnlyDate = true;
-                КраїнаРеєстрації.WidthRequest = 300;
-                        СвідоцтвоСеріяНомер.WidthRequest = 200;
-                        СвідоцтвоДатаВидачі.WidthRequest = 200;
-                        Холдинг.Caption = "Холдинг";
+        
+            // Код:
+            Код.WidthRequest = 100;
+                        
+            // Назва:
+            Назва.WidthRequest = 300;
+                        
+            // НазваПовна:
+            НазваПовна.WidthRequest = 300;
+                        
+            // НазваСкорочена:
+            НазваСкорочена.WidthRequest = 300;
+                        
+            // ДатаРеєстрації:
+            ДатаРеєстрації.OnlyDate = true;
+                
+            // КраїнаРеєстрації:
+            КраїнаРеєстрації.WidthRequest = 300;
+                        
+            // СвідоцтвоСеріяНомер:
+            СвідоцтвоСеріяНомер.WidthRequest = 200;
+                        
+            // СвідоцтвоДатаВидачі:
+            СвідоцтвоДатаВидачі.WidthRequest = 200;
+                        
+            // Холдинг:
+            Холдинг.Caption = "Холдинг";
                     Холдинг.WidthPresentation = 300;
                 
+    }
+
+    public static Організації_Елемент New()
+    {
+        Організації_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateStart(Box vBox)
@@ -89,8 +117,10 @@ class Організації_Елемент : DirectoryFormElement
     protected override void CreateEnd(Box vBox)
     {
         
-            // Таблична частина "Контакти" 
-            CreateTablePart(vBox, "Контакти:", Контакти);
+            // Таблична частина "Контакти"
+            Контакти.WidthRequest = 500;
+            Контакти.HeightRequest = 300;
+            CreateTablePart(vBox, "Контакти", Контакти);
         
     }
 

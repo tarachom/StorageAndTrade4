@@ -17,7 +17,8 @@ using Функції = StorageAndTrade.ПересортицяТоварів_Фу
 
 namespace StorageAndTrade;
 
-class ПересортицяТоварів_Елемент : DocumentFormElement
+[GObject.Subclass<DocumentFormElement>("Element_ePESTQlHNk2fEhrijn5aw")]
+partial class ПересортицяТоварів_Елемент : DocumentFormElement
 {
     public ПересортицяТоварів_Objest Елемент { get; init; } = new();
 
@@ -35,11 +36,11 @@ class ПересортицяТоварів_Елемент : DocumentFormElement
     #region TabularParts
     
         // Таблична частина "Товари" 
-        ПересортицяТоварів_ТабличнаЧастина_Товари Товари = new() { WidthRequest = 500, HeightRequest = 300 };
+        ПересортицяТоварів_ТабличнаЧастина_Товари Товари = ПересортицяТоварів_ТабличнаЧастина_Товари.New();
     
     #endregion
 
-    public ПересортицяТоварів_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         Element = Елемент;
 
@@ -47,21 +48,45 @@ class ПересортицяТоварів_Елемент : DocumentFormElement
         
         CreateField(HBoxComment, "Коментар:", Коментар);
         
-            // Таблична частина "Товари" 
+            // Таблична частина "Товари"
+            Товари.WidthRequest = 500;
+            Товари.HeightRequest = 300;
             NotebookTablePart.InsertPage(Товари, Label.New("Товари"), 0);
             
             NotebookTablePart.SetCurrentPage(0);
-        НомерДок.WidthRequest = 100;
-                        Організація.Caption = "Організація";
-                    Організація.WidthPresentation = 300;
-                Підрозділ.Caption = "Підрозділ";
-                    Підрозділ.WidthPresentation = 300;
-                Склад.Caption = "Склад";
-                    Склад.WidthPresentation = 300;
-                ВидЦіни.Caption = "Вид ціни";
-                    ВидЦіни.WidthPresentation = 300;
-                Коментар.WidthRequest = 300;
+        
+            //НомерДок:
+            НомерДок.WidthRequest = 100;
                         
+            //ДатаДок:
+            
+            //Організація:
+            Організація.Caption = "Організація";
+                    Організація.WidthPresentation = 300;
+                
+            //Підрозділ:
+            Підрозділ.Caption = "Підрозділ";
+                    Підрозділ.WidthPresentation = 300;
+                
+            //Склад:
+            Склад.Caption = "Склад";
+                    Склад.WidthPresentation = 300;
+                
+            //ВидЦіни:
+            ВидЦіни.Caption = "Вид ціни";
+                    ВидЦіни.WidthPresentation = 300;
+                
+            //Коментар:
+            Коментар.WidthRequest = 300;
+                        
+    }
+
+    public static ПересортицяТоварів_Елемент New()
+    {
+        ПересортицяТоварів_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateTopStart(Box vBox)

@@ -17,7 +17,8 @@ using Функції = StorageAndTrade.ЗамовленняКлієнта_Фун
 
 namespace StorageAndTrade;
 
-class ЗамовленняКлієнта_Елемент : DocumentFormElement
+[GObject.Subclass<DocumentFormElement>("Element_7C1OqgHkWQWocvs3qA6w")]
+partial class ЗамовленняКлієнта_Елемент : DocumentFormElement
 {
     public ЗамовленняКлієнта_Objest Елемент { get; init; } = new();
 
@@ -42,8 +43,8 @@ class ЗамовленняКлієнта_Елемент : DocumentFormElement
             ДоговориКонтрагентів_PointerControl Договір = ДоговориКонтрагентів_PointerControl.New();
             СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
             ComboBoxText СпосібДоставки = ComboBoxText.New();
-            TimeControl ЧасДоставкиЗ = new();
-            TimeControl ЧасДоставкиДо = new();
+            TimeControl ЧасДоставкиЗ = TimeControl.New();
+            TimeControl ЧасДоставкиДо = TimeControl.New();
             CheckButton ПовернутиТару = CheckButton.NewWithLabel("ПовернутиТару");
             DateTimeControl ДатаПоверненняТари = DateTimeControl.New();
             Entry Коментар = Entry.New();
@@ -54,11 +55,11 @@ class ЗамовленняКлієнта_Елемент : DocumentFormElement
     #region TabularParts
     
         // Таблична частина "Товари" 
-        ЗамовленняКлієнта_ТабличнаЧастина_Товари Товари = new() { WidthRequest = 500, HeightRequest = 300 };
+        ЗамовленняКлієнта_ТабличнаЧастина_Товари Товари = ЗамовленняКлієнта_ТабличнаЧастина_Товари.New();
     
     #endregion
 
-    public ЗамовленняКлієнта_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         Element = Елемент;
 
@@ -66,20 +67,35 @@ class ЗамовленняКлієнта_Елемент : DocumentFormElement
         
         CreateField(HBoxComment, "Коментар:", Коментар);
         
-            // Таблична частина "Товари" 
+            // Таблична частина "Товари"
+            Товари.WidthRequest = 500;
+            Товари.HeightRequest = 300;
             NotebookTablePart.InsertPage(Товари, Label.New("Товари"), 0);
             
             NotebookTablePart.SetCurrentPage(0);
-        НомерДок.WidthRequest = 300;
-                        Контрагент.Caption = "Контрагент";
+        
+            //НомерДок:
+            НомерДок.WidthRequest = 300;
+                        
+            //ДатаДок:
+            
+            //Контрагент:
+            Контрагент.Caption = "Контрагент";
                     Контрагент.WidthPresentation = 300;
-                Організація.Caption = "Організація";
+                
+            //Організація:
+            Організація.Caption = "Організація";
                     Організація.WidthPresentation = 300;
-                Валюта.Caption = "Валюта";
+                
+            //Валюта:
+            Валюта.Caption = "Валюта";
                     Валюта.WidthPresentation = 300;
-                Склад.Caption = "Склад";
+                
+            //Склад:
+            Склад.Caption = "Склад";
                     Склад.WidthPresentation = 300;
                 
+            //Статус:
             {
                 //Заповнення списку
                 foreach (var field in ПсевдонімиПерелічення.СтатусиЗамовленьКлієнтів_List())
@@ -91,6 +107,9 @@ class ЗамовленняКлієнта_Елемент : DocumentFormElement
                 controller.OnScroll += (_, _) => true;
             }
                 
+            //Узгоджений:
+            
+            //ФормаОплати:
             {
                 //Заповнення списку
                 foreach (var field in ПсевдонімиПерелічення.ФормаОплати_List())
@@ -101,15 +120,30 @@ class ЗамовленняКлієнта_Елемент : DocumentFormElement
                 ФормаОплати.AddController(controller);
                 controller.OnScroll += (_, _) => true;
             }
-                БанківськийРахунок.Caption = "БанківськийРахунок";
+                
+            //БанківськийРахунок:
+            БанківськийРахунок.Caption = "БанківськийРахунок";
                     БанківськийРахунок.WidthPresentation = 300;
-                БанківськийРахунокКонтрагента.Caption = "БанківськийРахунокКонтрагента";
+                
+            //БанківськийРахунокКонтрагента:
+            БанківськийРахунокКонтрагента.Caption = "БанківськийРахунокКонтрагента";
                     БанківськийРахунокКонтрагента.WidthPresentation = 300;
-                Каса.Caption = "Каса";
+                
+            //Каса:
+            Каса.Caption = "Каса";
                     Каса.WidthPresentation = 300;
-                ДатаВідгрузки.OnlyDate = true;
-                АдресаДоставки.WidthRequest = 300;
+                
+            //СумаАвансуДоЗабезпечення:
+            
+            //СумаПередоплатиДоВідгрузки:
+            
+            //ДатаВідгрузки:
+            ДатаВідгрузки.OnlyDate = true;
+                
+            //АдресаДоставки:
+            АдресаДоставки.WidthRequest = 300;
                         
+            //ГосподарськаОперація:
             {
                 //Заповнення списку
                 foreach (var field in ПсевдонімиПерелічення.ГосподарськіОперації_List())
@@ -120,11 +154,16 @@ class ЗамовленняКлієнта_Елемент : DocumentFormElement
                 ГосподарськаОперація.AddController(controller);
                 controller.OnScroll += (_, _) => true;
             }
-                Договір.Caption = "Договір";
+                
+            //Договір:
+            Договір.Caption = "Договір";
                     Договір.WidthPresentation = 300;
-                Підрозділ.Caption = "Підрозділ";
+                
+            //Підрозділ:
+            Підрозділ.Caption = "Підрозділ";
                     Підрозділ.WidthPresentation = 300;
                 
+            //СпосібДоставки:
             {
                 //Заповнення списку
                 foreach (var field in ПсевдонімиПерелічення.СпособиДоставки_List())
@@ -135,10 +174,30 @@ class ЗамовленняКлієнта_Елемент : DocumentFormElement
                 СпосібДоставки.AddController(controller);
                 controller.OnScroll += (_, _) => true;
             }
-                ДатаПоверненняТари.OnlyDate = true;
-                Коментар.WidthRequest = 1200;
-                        Основа.BoundConfType = "Документи.ЗамовленняКлієнта.Основа";
                 
+            //ЧасДоставкиЗ:
+            
+            //ЧасДоставкиДо:
+            
+            //ПовернутиТару:
+            
+            //ДатаПоверненняТари:
+            ДатаПоверненняТари.OnlyDate = true;
+                
+            //Коментар:
+            Коментар.WidthRequest = 1200;
+                        
+            //Основа:
+            Основа.BoundConfType = "Документи.ЗамовленняКлієнта.Основа";
+                
+    }
+
+    public static ЗамовленняКлієнта_Елемент New()
+    {
+        ЗамовленняКлієнта_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateTopStart(Box vBox)

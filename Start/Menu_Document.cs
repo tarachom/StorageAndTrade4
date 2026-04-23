@@ -10,9 +10,10 @@ using GeneratedCode.Документи;
 
 namespace StorageAndTrade;
 
-class Menu_Document : Form
+[GObject.Subclass<Form>]
+partial class Menu_Document : Form
 {
-    public Menu_Document() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         //Список
         Box hBoxList = New(Orientation.Horizontal, 0);
@@ -37,14 +38,14 @@ class Menu_Document : Form
 
                 CreateLink(hBox, ЗамовленняКлієнта_Const.FULLNAME, async () =>
                 {
-                    ЗамовленняКлієнта_Список page = new();
+                    ЗамовленняКлієнта_Список page = ЗамовленняКлієнта_Список.New();
                     NotebookFunc?.CreatePage(ЗамовленняКлієнта_Const.FULLNAME, page);
                     await page.SetValue();
                 });
 
                 CreateLink(hBox, "Закриття", async () =>
                 {
-                    ЗакриттяЗамовленняКлієнта_Список page = new();
+                    ЗакриттяЗамовленняКлієнта_Список page = ЗакриттяЗамовленняКлієнта_Список.New();
                     NotebookFunc?.CreatePage(ЗакриттяЗамовленняКлієнта_Const.FULLNAME, page);
                     await page.SetValue();
                 });
@@ -57,14 +58,14 @@ class Menu_Document : Form
 
                 CreateLink(hBox, РахунокФактура_Const.FULLNAME, async () =>
                 {
-                    РахунокФактура_Список page = new();
+                    РахунокФактура_Список page = РахунокФактура_Список.New();
                     NotebookFunc?.CreatePage(РахунокФактура_Const.FULLNAME, page);
                     await page.SetValue();
                 });
 
                 CreateLink(hBox, "Закриття", async () =>
                 {
-                    ЗакриттяРахункуФактури_Список page = new();
+                    ЗакриттяРахункуФактури_Список page = ЗакриттяРахункуФактури_Список.New();
                     NotebookFunc?.CreatePage(ЗакриттяРахункуФактури_Const.FULLNAME, page);
                     await page.SetValue();
                 });
@@ -72,21 +73,21 @@ class Menu_Document : Form
 
             CreateLink(vLeft, РеалізаціяТоварівТаПослуг_Const.FULLNAME, async () =>
             {
-                РеалізаціяТоварівТаПослуг_Список page = new();
+                РеалізаціяТоварівТаПослуг_Список page = РеалізаціяТоварівТаПослуг_Список.New();
                 NotebookFunc?.CreatePage(РеалізаціяТоварівТаПослуг_Const.FULLNAME, page);
                 await page.SetValue();
             });
 
             CreateLink(vLeft, АктВиконанихРобіт_Const.FULLNAME, async () =>
             {
-                АктВиконанихРобіт_Список page = new();
+                АктВиконанихРобіт_Список page = АктВиконанихРобіт_Список.New();
                 NotebookFunc?.CreatePage(АктВиконанихРобіт_Const.FULLNAME, page);
                 await page.SetValue();
             });
 
             CreateLink(vLeft, ПоверненняТоварівВідКлієнта_Const.FULLNAME, async () =>
             {
-                ПоверненняТоварівВідКлієнта_Список page = new();
+                ПоверненняТоварівВідКлієнта_Список page = ПоверненняТоварівВідКлієнта_Список.New();
                 NotebookFunc?.CreatePage(ПоверненняТоварівВідКлієнта_Const.FULLNAME, () => page);
                 await page.SetValue();
             });
@@ -107,14 +108,14 @@ class Menu_Document : Form
 
                 CreateLink(hBox, ЗамовленняПостачальнику_Const.FULLNAME, async () =>
                 {
-                    ЗамовленняПостачальнику_Список page = new();
+                    ЗамовленняПостачальнику_Список page = ЗамовленняПостачальнику_Список.New();
                     NotebookFunc?.CreatePage(ЗамовленняПостачальнику_Const.FULLNAME, page);
                     await page.SetValue();
                 });
 
                 CreateLink(hBox, "Закриття", async () =>
                 {
-                    ЗакриттяЗамовленняПостачальнику_Список page = new();
+                    ЗакриттяЗамовленняПостачальнику_Список page = ЗакриттяЗамовленняПостачальнику_Список.New();
                     NotebookFunc?.CreatePage(ЗакриттяЗамовленняПостачальнику_Const.FULLNAME, page);
                     await page.SetValue();
                 });
@@ -122,14 +123,14 @@ class Menu_Document : Form
 
             CreateLink(vLeft, ПоступленняТоварівТаПослуг_Const.FULLNAME, async () =>
             {
-                ПоступленняТоварівТаПослуг_Список page = new();
+                ПоступленняТоварівТаПослуг_Список page = ПоступленняТоварівТаПослуг_Список.New();
                 NotebookFunc?.CreatePage(ПоступленняТоварівТаПослуг_Const.FULLNAME, page);
                 await page.SetValue();
             });
 
             CreateLink(vLeft, ПоверненняТоварівПостачальнику_Const.FULLNAME, async () =>
             {
-                ПоверненняТоварівПостачальнику_Список page = new();
+                ПоверненняТоварівПостачальнику_Список page = ПоверненняТоварівПостачальнику_Список.New();
                 NotebookFunc?.CreatePage(ПоверненняТоварівПостачальнику_Const.FULLNAME, page);
                 await page.SetValue();
             });
@@ -140,7 +141,7 @@ class Menu_Document : Form
 
             CreateLink(vLeft, ВстановленняЦінНоменклатури_Const.FULLNAME, async () =>
             {
-                ВстановленняЦінНоменклатури_Список page = new();
+                ВстановленняЦінНоменклатури_Список page = ВстановленняЦінНоменклатури_Список.New();
                 NotebookFunc?.CreatePage(ВстановленняЦінНоменклатури_Const.FULLNAME, page);
                 await page.SetValue();
             });
@@ -156,7 +157,7 @@ class Menu_Document : Form
 
             CreateLink(vLeft, ЧекККМ_Const.FULLNAME, async () =>
             {
-                ЧекККМ_Список page = new();
+                ЧекККМ_Список page = ЧекККМ_Список.New();
                 NotebookFunc?.CreatePage(ЧекККМ_Const.FULLNAME, page);
                 await page.SetValue();
             });
@@ -177,22 +178,22 @@ class Menu_Document : Form
 
             CreateLink(vRight, ПрихіднийКасовийОрдер_Const.FULLNAME, async () =>
             {
-                ПрихіднийКасовийОрдер_Список page = new();
+                ПрихіднийКасовийОрдер_Список page = ПрихіднийКасовийОрдер_Список.New();
                 NotebookFunc?.CreatePage(ПрихіднийКасовийОрдер_Const.FULLNAME, page);
                 await page.SetValue();
             });
 
             CreateLink(vRight, РозхіднийКасовийОрдер_Const.FULLNAME, async () =>
             {
-                РозхіднийКасовийОрдер_Список page = new();
+                РозхіднийКасовийОрдер_Список page = РозхіднийКасовийОрдер_Список.New();
                 NotebookFunc?.CreatePage(РозхіднийКасовийОрдер_Const.FULLNAME, page);
                 await page.SetValue();
             });
 
             CreateLink(vRight, КорегуванняБоргу_Const.FULLNAME, async () =>
             {
-                КорегуванняБоргу_Список page = new();
-                NotebookFunc?.CreatePage(КорегуванняБоргу_Const.FULLNAME,  page);
+                КорегуванняБоргу_Список page = КорегуванняБоргу_Список.New();
+                NotebookFunc?.CreatePage(КорегуванняБоргу_Const.FULLNAME, page);
                 await page.SetValue();
             });
         }
@@ -207,35 +208,35 @@ class Menu_Document : Form
 
             CreateLink(vRight, ПереміщенняТоварів_Const.FULLNAME, async () =>
             {
-                ПереміщенняТоварів_Список page = new();
+                ПереміщенняТоварів_Список page = ПереміщенняТоварів_Список.New();
                 NotebookFunc?.CreatePage(ПереміщенняТоварів_Const.FULLNAME, page);
                 await page.SetValue();
             });
 
             CreateLink(vRight, ВведенняЗалишків_Const.FULLNAME, async () =>
             {
-                ВведенняЗалишків_Список page = new();
+                ВведенняЗалишків_Список page = ВведенняЗалишків_Список.New();
                 NotebookFunc?.CreatePage(ВведенняЗалишків_Const.FULLNAME, page);
                 await page.SetValue();
             });
 
             CreateLink(vRight, ВнутрішнєСпоживанняТоварів_Const.FULLNAME, async () =>
             {
-                ВнутрішнєСпоживанняТоварів_Список page = new();
+                ВнутрішнєСпоживанняТоварів_Список page = ВнутрішнєСпоживанняТоварів_Список.New();
                 NotebookFunc?.CreatePage(ВнутрішнєСпоживанняТоварів_Const.FULLNAME, page);
                 await page.SetValue();
             });
 
             CreateLink(vRight, ПсуванняТоварів_Const.FULLNAME, async () =>
             {
-                ПсуванняТоварів_Список page = new();
+                ПсуванняТоварів_Список page = ПсуванняТоварів_Список.New();
                 NotebookFunc?.CreatePage(ПсуванняТоварів_Const.FULLNAME, page);
                 await page.SetValue();
             });
 
             CreateLink(vRight, ПерерахунокТоварів_Const.FULLNAME, async () =>
             {
-                ПерерахунокТоварів_Список page = new();
+                ПерерахунокТоварів_Список page = ПерерахунокТоварів_Список.New();
                 NotebookFunc?.CreatePage(ПерерахунокТоварів_Const.FULLNAME, page);
                 await page.SetValue();
             });
@@ -251,24 +252,32 @@ class Menu_Document : Form
 
             CreateLink(vRight, РозміщенняТоварівНаСкладі_Const.FULLNAME, async () =>
             {
-                РозміщенняТоварівНаСкладі_Список page = new();
+                РозміщенняТоварівНаСкладі_Список page = РозміщенняТоварівНаСкладі_Список.New();
                 NotebookFunc?.CreatePage(РозміщенняТоварівНаСкладі_Const.FULLNAME, page);
                 await page.SetValue();
             });
 
             CreateLink(vRight, ЗбіркаТоварівНаСкладі_Const.FULLNAME, async () =>
             {
-                ЗбіркаТоварівНаСкладі_Список page = new();
+                ЗбіркаТоварівНаСкладі_Список page = ЗбіркаТоварівНаСкладі_Список.New();
                 NotebookFunc?.CreatePage(ЗбіркаТоварівНаСкладі_Const.FULLNAME, page);
                 await page.SetValue();
             });
 
             CreateLink(vRight, ПереміщенняТоварівНаСкладі_Const.FULLNAME, async () =>
             {
-                ПереміщенняТоварівНаСкладі_Список page = new();
+                ПереміщенняТоварівНаСкладі_Список page = ПереміщенняТоварівНаСкладі_Список.New();
                 NotebookFunc?.CreatePage(ПереміщенняТоварівНаСкладі_Const.FULLNAME, page);
                 await page.SetValue();
             });
         }
+    }
+
+    public static Menu_Document New()
+    {
+        Menu_Document page = NewWithProperties([]);
+        page.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return page;
     }
 }

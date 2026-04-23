@@ -1,5 +1,5 @@
 
-/*     
+/*      
         ВидиЦін.cs
         Список
 */
@@ -14,11 +14,12 @@ using Функції = StorageAndTrade.ВидиЦін_Функції;
 
 namespace StorageAndTrade;
 
-class ВидиЦін_Список : DirectoryFormJournalFull
+[GObject.Subclass<DirectoryFormJournalFull>("List_hwxmlT0rUSNKrTdw6eMmg")]
+partial class ВидиЦін_Список : DirectoryFormJournalFull
 {
     
     
-    public ВидиЦін_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = ВидиЦін_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
@@ -27,11 +28,19 @@ class ВидиЦін_Список : DirectoryFormJournalFull
         
     }
 
+    public static ВидиЦін_Список New()
+    {
+        ВидиЦін_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
+
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);

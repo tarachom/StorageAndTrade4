@@ -17,7 +17,8 @@ using Функції = StorageAndTrade.НадлишкиТоварів_Функц
 
 namespace StorageAndTrade;
 
-class НадлишкиТоварів_Елемент : DocumentFormElement
+[GObject.Subclass<DocumentFormElement>("Element_EwmxMZSTBUelrwaGUsww")]
+partial class НадлишкиТоварів_Елемент : DocumentFormElement
 {
     public НадлишкиТоварів_Objest Елемент { get; init; } = new();
 
@@ -35,11 +36,11 @@ class НадлишкиТоварів_Елемент : DocumentFormElement
     #region TabularParts
     
         // Таблична частина "Товари" 
-        НадлишкиТоварів_ТабличнаЧастина_Товари Товари = new() { WidthRequest = 500, HeightRequest = 300 };
+        НадлишкиТоварів_ТабличнаЧастина_Товари Товари = НадлишкиТоварів_ТабличнаЧастина_Товари.New();
     
     #endregion
 
-    public НадлишкиТоварів_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         Element = Елемент;
 
@@ -47,21 +48,45 @@ class НадлишкиТоварів_Елемент : DocumentFormElement
         
         CreateField(HBoxComment, "Коментар:", Коментар);
         
-            // Таблична частина "Товари" 
+            // Таблична частина "Товари"
+            Товари.WidthRequest = 500;
+            Товари.HeightRequest = 300;
             NotebookTablePart.InsertPage(Товари, Label.New("Товари"), 0);
             
             NotebookTablePart.SetCurrentPage(0);
-        Організація.Caption = "Організація";
+        
+            //Організація:
+            Організація.Caption = "Організація";
                     Організація.WidthPresentation = 300;
-                Підрозділ.Caption = "Підрозділ";
+                
+            //Підрозділ:
+            Підрозділ.Caption = "Підрозділ";
                     Підрозділ.WidthPresentation = 300;
-                Склад.Caption = "Склад";
+                
+            //Склад:
+            Склад.Caption = "Склад";
                     Склад.WidthPresentation = 300;
-                ВидЦіни.Caption = "Вид ціни";
+                
+            //ВидЦіни:
+            ВидЦіни.Caption = "Вид ціни";
                     ВидЦіни.WidthPresentation = 300;
-                Коментар.WidthRequest = 300;
-                        НомерДок.WidthRequest = 100;
+                
+            //Коментар:
+            Коментар.WidthRequest = 300;
                         
+            //НомерДок:
+            НомерДок.WidthRequest = 100;
+                        
+            //ДатаДок:
+            
+    }
+
+    public static НадлишкиТоварів_Елемент New()
+    {
+        НадлишкиТоварів_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateTopStart(Box vBox)

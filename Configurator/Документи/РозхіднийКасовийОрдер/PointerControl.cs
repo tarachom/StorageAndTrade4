@@ -10,7 +10,7 @@ using GeneratedCode.Документи;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<PointerControl>("PointerControl_0SdJvhhSxUiZ2mi6X5SnxQ")]
+[GObject.Subclass<PointerControl>("PointerControl_jnH44L96bkWTcKGuultGWg")]
 public partial class РозхіднийКасовийОрдер_PointerControl : PointerControl
 {
     event EventHandler<РозхіднийКасовийОрдер_Pointer>? PointerChanged;
@@ -45,16 +45,16 @@ public partial class РозхіднийКасовийОрдер_PointerControl :
         popover.WidthRequest = 800;
         popover.HeightRequest = 400;
         BeforeClickOpenFunc?.Invoke();
-        РозхіднийКасовийОрдер_ШвидкийВибір page = new()
+
+        РозхіднийКасовийОрдер_ШвидкийВибір page = РозхіднийКасовийОрдер_ШвидкийВибір.New();
+        page.PopoverParent = popover;
+        page.DocumentPointerItem = Pointer.UniqueID;
+        page.CallBack_OnSelectPointer = selectPointer =>
         {
-            PopoverParent = popover,
-            DocumentPointerItem = Pointer.UniqueID,
-            CallBack_OnSelectPointer = selectPointer =>
-            {
-                Pointer = new РозхіднийКасовийОрдер_Pointer(selectPointer);
-                AfterSelectFunc?.Invoke();
-            }
+            Pointer = new РозхіднийКасовийОрдер_Pointer(selectPointer);
+            AfterSelectFunc?.Invoke();
         };
+
         popover.SetChild(page);
         popover.Show();
 

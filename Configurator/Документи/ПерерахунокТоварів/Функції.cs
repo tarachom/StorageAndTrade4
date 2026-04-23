@@ -34,11 +34,9 @@ static class ПерерахунокТоварів_Функції
         Action<UniqueID?>? сallBack_LoadRecords = null,
         Action<UniqueID>? сallBack_OnSelectPointer = null)
     {
-        ПерерахунокТоварів_Елемент page = new()
-        {
-            CallBack_LoadRecords = сallBack_LoadRecords,
-            CallBack_OnSelectPointer = сallBack_OnSelectPointer
-        };
+        ПерерахунокТоварів_Елемент page = ПерерахунокТоварів_Елемент.New();
+        page.CallBack_LoadRecords = сallBack_LoadRecords;
+        page.CallBack_OnSelectPointer = сallBack_OnSelectPointer;
 
         if (IsNew)
             await page.Елемент.New();
@@ -54,11 +52,9 @@ static class ПерерахунокТоварів_Функції
 
     public static async ValueTask OpenPageList(UniqueID? uniqueID = null, Action<UniqueID>? сallBack_OnSelectPointer = null)
     {
-        ПерерахунокТоварів_Список page = new()
-        {
-            DocumentPointerItem = uniqueID,
-            CallBack_OnSelectPointer = сallBack_OnSelectPointer
-        };
+        ПерерахунокТоварів_Список page = ПерерахунокТоварів_Список.New();
+        page.DocumentPointerItem = uniqueID;
+        page.CallBack_OnSelectPointer = сallBack_OnSelectPointer;
 
         Program.BasicForm?.NotebookFunc.CreatePage(ПерерахунокТоварів_Const.FULLNAME, page);
         await page.SetValue();

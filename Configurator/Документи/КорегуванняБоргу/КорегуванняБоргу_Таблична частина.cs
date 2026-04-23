@@ -13,11 +13,12 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
+[GObject.Subclass<DocumentFormTablePart>("TablePart_I9Z33dxgJUqKSIYcTG0agg")]
 partial class КорегуванняБоргу_ТабличнаЧастина_РозрахункиЗКонтрагентами : DocumentFormTablePart
 {
     #region Data
     
-    [GObject.Subclass<GObject.Object>("ItemRow_fqOljr90ek2McBc5aSkKdw")]
+    [GObject.Subclass<GObject.Object>("ItemRow_I9Z33dxgJUqKSIYcTG0agg")]
     public partial class ItemRow : IRowSubclassTablePart
     {
         public static ItemRow New() => NewWithProperties([]);
@@ -28,12 +29,15 @@ partial class КорегуванняБоргу_ТабличнаЧастина_Р
             get => UnigueID_;
             set
             {
-                UnigueID_ = value;
-                Сhanged_UnigueID?.Invoke();
+                if (!UnigueID_.Equals(value))
+                {
+                    UnigueID_ = value;
+                    Сhanged_UnigueID?.Invoke();
+                }
             }
         }
         UniqueID UnigueID_ = new();
-        public Action? Сhanged_UnigueID;
+        public Action? Сhanged_UnigueID { get; set; } = null;
 
     
         /* НомерРядка */
@@ -50,7 +54,7 @@ partial class КорегуванняБоргу_ТабличнаЧастина_Р
             }
         }
         int НомерРядка_ = 0;
-        public Action? Сhanged_НомерРядка;
+        public Action? Сhanged_НомерРядка { get; set; } = null;
 
     
         /* ТипКонтрагента */
@@ -67,7 +71,7 @@ partial class КорегуванняБоргу_ТабличнаЧастина_Р
             }
         }
         ТипиКонтрагентів ТипКонтрагента_ = 0;
-        public Action? Сhanged_ТипКонтрагента;
+        public Action? Сhanged_ТипКонтрагента { get; set; } = null;
 
     
         /* Контрагент */
@@ -84,7 +88,7 @@ partial class КорегуванняБоргу_ТабличнаЧастина_Р
             }
         }
         Контрагенти_Pointer Контрагент_ = new();
-        public Action? Сhanged_Контрагент;
+        public Action? Сhanged_Контрагент { get; set; } = null;
 
     
         /* Валюта */
@@ -101,7 +105,7 @@ partial class КорегуванняБоргу_ТабличнаЧастина_Р
             }
         }
         Валюти_Pointer Валюта_ = new();
-        public Action? Сhanged_Валюта;
+        public Action? Сhanged_Валюта { get; set; } = null;
 
     
         /* Сума */
@@ -118,7 +122,7 @@ partial class КорегуванняБоргу_ТабличнаЧастина_Р
             }
         }
         decimal Сума_ = 0;
-        public Action? Сhanged_Сума;
+        public Action? Сhanged_Сума { get; set; } = null;
 
     
 
@@ -128,14 +132,14 @@ partial class КорегуванняБоргу_ТабличнаЧастина_Р
         
         public GObject.Object Copy()
         {
-            var itemRow = New();
-            itemRow.НомерРядка = НомерРядка;
-            itemRow.ТипКонтрагента = ТипКонтрагента;
-            itemRow.Контрагент = Контрагент.Copy();
-            itemRow.Валюта = Валюта.Copy();
-            itemRow.Сума = Сума;
+            var row = New();
+            row.НомерРядка = НомерРядка;
+            row.ТипКонтрагента = ТипКонтрагента;
+            row.Контрагент = Контрагент.Copy();
+            row.Валюта = Валюта.Copy();
+            row.Сума = Сума;
             
-            return itemRow;
+            return row;
         }
     }
 
@@ -147,12 +151,20 @@ partial class КорегуванняБоргу_ТабличнаЧастина_Р
     
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());
 
-    public КорегуванняБоргу_ТабличнаЧастина_РозрахункиЗКонтрагентами() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         MultiSelection model = MultiSelection.New(Store);
         model.OnSelectionChanged += GridOnSelectionChanged;
 
         Grid.Model = model;
+    }
+
+    public static КорегуванняБоргу_ТабличнаЧастина_РозрахункиЗКонтрагентами New()
+    {
+        КорегуванняБоргу_ТабличнаЧастина_РозрахункиЗКонтрагентами tablePart = NewWithProperties([]);
+        tablePart.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return tablePart;
     }
 
     protected override void Columns()
@@ -194,6 +206,10 @@ partial class КорегуванняБоргу_ТабличнаЧастина_Р
                 var cell = ComboTextTablePartCell.New();
                 foreach (var field in ПсевдонімиПерелічення.ТипиКонтрагентів_List())
                     cell.Combo.Append(field.Value.ToString(), field.Name);
+                //Заборона прокрутки списку
+                EventControllerScroll contr = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
+                cell.Combo.AddController(contr);
+                contr.OnScroll += (_, _) => true;
                 
                 listItem.Child = cell;
             };
@@ -312,28 +328,26 @@ partial class КорегуванняБоргу_ТабличнаЧастина_Р
             ЕлементВласник.РозрахункиЗКонтрагентами_TablePart.FillJoin([КорегуванняБоргу_РозрахункиЗКонтрагентами_TablePart.НомерРядка,]);
             await ЕлементВласник.РозрахункиЗКонтрагентами_TablePart.Read();
             
-
-        Store.RemoveAll();
-
+            Store.RemoveAll();
         
-        foreach (var record in ЕлементВласник.РозрахункиЗКонтрагентами_TablePart.Records)
-        {
-            var row = ItemRow.New();
-            row.UniqueID = new(record.UID);
-            row.НомерРядка = record.НомерРядка;
-            row.ТипКонтрагента = record.ТипКонтрагента;
-            row.Контрагент = record.Контрагент;
-            row.Валюта = record.Валюта;
-            row.Сума = record.Сума;
-            
-            Store.Append(row);
-
-            if (SelectPosition > 0)
+            foreach (var record in ЕлементВласник.РозрахункиЗКонтрагентами_TablePart.Records)
             {
-                Grid.Model.SelectItem(SelectPosition, true);
-                ScrollTo(SelectPosition);
+                var row = ItemRow.New();
+                row.UniqueID = new(record.UID);
+                row.НомерРядка = record.НомерРядка;
+                row.ТипКонтрагента = record.ТипКонтрагента;
+                row.Контрагент = record.Контрагент;
+                row.Валюта = record.Валюта;
+                row.Сума = record.Сума;
+                
+                Store.Append(row);
+
+                if (SelectPosition > 0)
+                {
+                    Grid.Model.SelectItem(SelectPosition, true);
+                    ScrollTo(SelectPosition);
+                }
             }
-        }
         }
     }
 
@@ -343,44 +357,55 @@ partial class КорегуванняБоргу_ТабличнаЧастина_Р
         if (ЕлементВласник != null)
         {
         ЕлементВласник.РозрахункиЗКонтрагентами_TablePart.Records.Clear();
-        for (uint i = 0; i <= Store.GetNItems(); i++)
-        {
-            ItemRow? row = (ItemRow?)Store.GetObject(i);
-            if (row != null)
+            for (uint i = 0; i <= Store.GetNItems(); i++)
             {
-                ЕлементВласник.РозрахункиЗКонтрагентами_TablePart.Records.Add(new()
+                ItemRow? row = (ItemRow?)Store.GetObject(i);
+                if (row != null)
                 {
-                    UID = row.UniqueID.UGuid,
-                    НомерРядка = row.НомерРядка,
-                    ТипКонтрагента = row.ТипКонтрагента,
-                    Контрагент = row.Контрагент,
-                    Валюта = row.Валюта,
-                    Сума = row.Сума,
-                    
-                });
+                    ЕлементВласник.РозрахункиЗКонтрагентами_TablePart.Records.Add(new()
+                    {
+                        UID = row.UniqueID.UGuid,
+                        НомерРядка = row.НомерРядка,
+                        ТипКонтрагента = row.ТипКонтрагента,
+                        Контрагент = row.Контрагент,
+                        Валюта = row.Валюта,
+                        Сума = row.Сума,
+                        
+                    });
+                }
             }
-        }
-        await ЕлементВласник.РозрахункиЗКонтрагентами_TablePart.Save(true);
-        //Update
-        {
-            uint position = 0;
-            foreach (var record in ЕлементВласник.РозрахункиЗКонтрагентами_TablePart.Records)
+            await ЕлементВласник.РозрахункиЗКонтрагентами_TablePart.Save(true);
+            //Оновлення табличної частини після збереження
             {
-                bool sel = Grid.Model.IsSelected(position);
+                //Пошук виділених рядків
+                Bitset bitset = Grid.Model.GetSelection();
+                List<uint> selection = [];
+                for (uint i = bitset.GetMinimum(); i <= bitset.GetMaximum(); i++)
+                    if (Grid.Model.IsSelected(i)) selection.Add(i);
 
-                var row = ItemRow.New();
-                row.UniqueID = new(record.UID);
-                row.НомерРядка = record.НомерРядка;
-                row.ТипКонтрагента = record.ТипКонтрагента;
-                row.Контрагент = record.Контрагент;
-                row.Валюта = record.Валюта;
-                row.Сума = record.Сума;
+                var rows = ЕлементВласник.РозрахункиЗКонтрагентами_TablePart.Records.Select(x =>
+                {
+                    var row = ItemRow.New();
+                    row.UniqueID = new(x.UID);
+                    row.НомерРядка = x.НомерРядка;
+                    row.ТипКонтрагента = x.ТипКонтрагента;
+                    row.Контрагент = x.Контрагент;
+                    row.Валюта = x.Валюта;
+                    row.Сума = x.Сума;
+                    
+                    return row;
+                });
+
+                uint count = (uint)rows.Count();
+
+                //Оновлення всіх рядків
+                Store.Splice(0, count, [.. rows], count);
+
+                //Виділення рядків після оновлення
+                foreach (var position in selection)
+                    Grid.Model.SelectItem(position, false);
                 
-                Store.Splice(position, 1, [row], 1);
-                if (sel) Grid.Model.SelectItem(position, false);
-                position++;
             }
-        }
         }
     }
 

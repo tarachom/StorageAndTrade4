@@ -34,11 +34,9 @@ static class РозміщенняНоменклатуриПоКоміркам_Ф
         Action<UniqueID?>? сallBack_LoadRecords = null,
         Action<UniqueID>? сallBack_OnSelectPointer = null)
     {
-        РозміщенняНоменклатуриПоКоміркам_Елемент page = new()
-        {
-            CallBack_LoadRecords = сallBack_LoadRecords,
-            CallBack_OnSelectPointer = сallBack_OnSelectPointer
-        };
+        РозміщенняНоменклатуриПоКоміркам_Елемент page = РозміщенняНоменклатуриПоКоміркам_Елемент.New();
+        page.CallBack_LoadRecords = сallBack_LoadRecords;
+        page.CallBack_OnSelectPointer = сallBack_OnSelectPointer;
 
         if (IsNew)
             await page.Елемент.New();
@@ -54,11 +52,9 @@ static class РозміщенняНоменклатуриПоКоміркам_Ф
 
     public static async ValueTask OpenPageList(UniqueID? uniqueID = null, Action<UniqueID>? сallBack_OnSelectPointer = null)
     {
-        РозміщенняНоменклатуриПоКоміркам_Список page = new()
-        {
-            DocumentPointerItem = uniqueID,
-            CallBack_OnSelectPointer = сallBack_OnSelectPointer
-        };
+        РозміщенняНоменклатуриПоКоміркам_Список page = РозміщенняНоменклатуриПоКоміркам_Список.New();
+        page.DocumentPointerItem = uniqueID;
+        page.CallBack_OnSelectPointer = сallBack_OnSelectPointer;
 
         Program.BasicForm?.NotebookFunc.CreatePage(РозміщенняНоменклатуриПоКоміркам_Const.FULLNAME, page);
         await page.SetValue();

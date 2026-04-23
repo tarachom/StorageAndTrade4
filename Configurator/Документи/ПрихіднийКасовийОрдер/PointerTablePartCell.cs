@@ -11,7 +11,7 @@ using AccountingSoftware;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<PointerTablePartCell>("PointerTablePartCell_IXloJiQGkuCXYvDDsfLg")]
+[GObject.Subclass<PointerTablePartCell>("PointerTablePartCell_zd9v6kb97UfViZI29ae4g")]
 public partial class ПрихіднийКасовийОрдер_PointerTablePartCell : PointerTablePartCell
 {
     public static ПрихіднийКасовийОрдер_PointerTablePartCell New() => NewWithProperties([]);
@@ -43,15 +43,14 @@ public partial class ПрихіднийКасовийОрдер_PointerTablePart
         popover.WidthRequest = 800;
         popover.HeightRequest = 400;
         BeforeClickOpenFunc?.Invoke();
-        ПрихіднийКасовийОрдер_ШвидкийВибір page = new()
+
+        ПрихіднийКасовийОрдер_ШвидкийВибір page = ПрихіднийКасовийОрдер_ШвидкийВибір.New();
+        page.PopoverParent = popover;
+        page.DocumentPointerItem = pointer.UniqueID;
+        page.CallBack_OnSelectPointer = async p => 
         {
-            PopoverParent = popover,
-            DocumentPointerItem = pointer.UniqueID,
-            CallBack_OnSelectPointer = async p => 
-            {
-                await PointerChange(p);
-                AfterSelectFunc?.Invoke();
-            }
+            await PointerChange(p);
+            AfterSelectFunc?.Invoke();
         };
 
         popover.SetChild(page);

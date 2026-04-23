@@ -14,14 +14,23 @@ using Функції = StorageAndTrade.КорегуванняБоргу_Функ
 
 namespace StorageAndTrade;
 
-public class КорегуванняБоргу_ШвидкийВибір : DocumentFormJournalSmall
+[GObject.Subclass<DocumentFormJournalSmall>("SmallList_XRcbRWPNAEaZ4qPn9WUGUw")]
+public partial class КорегуванняБоргу_ШвидкийВибір : DocumentFormJournalSmall
 {
-    public КорегуванняБоргу_ШвидкийВибір() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = КорегуванняБоргу_Const.POINTER;
         KeyForSetting = ".Small";
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+    }
+
+    public static КорегуванняБоргу_ШвидкийВибір New()
+    {
+        КорегуванняБоргу_ШвидкийВибір list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
     }
 
     #region Override
@@ -83,7 +92,8 @@ public class КорегуванняБоргу_ШвидкийВибір : Documen
 
     protected override void ReportSpendTheDocument(UniqueID[] uniqueID)
     {
-
+        foreach (var uid in uniqueID)
+            CommonForms_DocumentMovementThroughRegisters.Create(new КорегуванняБоргу_Pointer(uid));
     }
 
     #endregion

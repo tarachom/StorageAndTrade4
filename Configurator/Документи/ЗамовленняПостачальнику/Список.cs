@@ -14,13 +14,22 @@ using Функції = StorageAndTrade.ЗамовленняПостачальн�
 
 namespace StorageAndTrade;
 
-public class ЗамовленняПостачальнику_Список : DocumentFormJournalFull
+[GObject.Subclass<DocumentFormJournalFull>("List_At2VOdSxu0KUZP7TWRqRSA")]
+public partial class ЗамовленняПостачальнику_Список : DocumentFormJournalFull
 {
-    public ЗамовленняПостачальнику_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = ЗамовленняПостачальнику_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50, Pages.StartingPosition.End);
+    }
+
+    public static ЗамовленняПостачальнику_Список New()
+    {
+        ЗамовленняПостачальнику_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
     }
 
     #region Override

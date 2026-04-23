@@ -10,7 +10,7 @@ using GeneratedCode.Документи;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<PointerControl>("PointerControl_0BKQIuTRgU2xLWOypa9OA")]
+[GObject.Subclass<PointerControl>("PointerControl_xwtkTOvc5ESskDrUh8ipQ")]
 public partial class РозміщенняНоменклатуриПоКоміркам_PointerControl : PointerControl
 {
     event EventHandler<РозміщенняНоменклатуриПоКоміркам_Pointer>? PointerChanged;
@@ -45,16 +45,16 @@ public partial class РозміщенняНоменклатуриПоКомір�
         popover.WidthRequest = 800;
         popover.HeightRequest = 400;
         BeforeClickOpenFunc?.Invoke();
-        РозміщенняНоменклатуриПоКоміркам_ШвидкийВибір page = new()
+
+        РозміщенняНоменклатуриПоКоміркам_ШвидкийВибір page = РозміщенняНоменклатуриПоКоміркам_ШвидкийВибір.New();
+        page.PopoverParent = popover;
+        page.DocumentPointerItem = Pointer.UniqueID;
+        page.CallBack_OnSelectPointer = selectPointer =>
         {
-            PopoverParent = popover,
-            DocumentPointerItem = Pointer.UniqueID,
-            CallBack_OnSelectPointer = selectPointer =>
-            {
-                Pointer = new РозміщенняНоменклатуриПоКоміркам_Pointer(selectPointer);
-                AfterSelectFunc?.Invoke();
-            }
+            Pointer = new РозміщенняНоменклатуриПоКоміркам_Pointer(selectPointer);
+            AfterSelectFunc?.Invoke();
         };
+
         popover.SetChild(page);
         popover.Show();
 

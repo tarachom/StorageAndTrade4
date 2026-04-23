@@ -31,11 +31,9 @@ static class ДоговориКонтрагентів_Функції
         Action<UniqueID>? сallBack_OnSelectPointer = null,
             Контрагенти_Pointer? Власник = null)
     {
-        ДоговориКонтрагентів_Елемент page = new()
-        {
-            CallBack_LoadRecords = сallBack_LoadRecords,
-            CallBack_OnSelectPointer = сallBack_OnSelectPointer
-        };
+        ДоговориКонтрагентів_Елемент page = ДоговориКонтрагентів_Елемент.New();
+        page.CallBack_LoadRecords = сallBack_LoadRecords;
+        page.CallBack_OnSelectPointer = сallBack_OnSelectPointer;
 
         if (IsNew)
         {
@@ -54,17 +52,16 @@ static class ДоговориКонтрагентів_Функції
         await page.SetValue();
     }
 
-    public static async ValueTask OpenPageList(UniqueID? uniqueID = null, bool openSelect = false, UniqueID? openFolder = null,
+    public static async ValueTask OpenPageList(UniqueID? uniqueID = null, ConfigurationDirectories.HierarchicalContentType? allowedContentSelection = null, UniqueID? openFolder = null,
         Action<UniqueID>? сallBack_OnSelectPointer = null,
             Контрагенти_Pointer? Власник = null)
     {
-        ДоговориКонтрагентів_Список page = new()
-        {
-            OpenSelect = openSelect,
-            OpenFolder = openFolder,
-            DirectoryPointerItem = uniqueID,
-            CallBack_OnSelectPointer = сallBack_OnSelectPointer
-        };
+        ДоговориКонтрагентів_Список page = ДоговориКонтрагентів_Список.New();
+        page.AllowedContentSelection  = allowedContentSelection;
+        page.OpenFolder = openFolder;
+        page.DirectoryPointerItem = uniqueID;
+        page.CallBack_OnSelectPointer = сallBack_OnSelectPointer;
+
         
             if (Власник != null) page.Власник.Pointer = Власник;
         

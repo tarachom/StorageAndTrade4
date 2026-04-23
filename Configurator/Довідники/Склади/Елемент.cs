@@ -6,6 +6,7 @@
 
 using Gtk;
 using InterfaceGtk4;
+using AccountingSoftware;
 
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
@@ -13,7 +14,8 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-class Склади_Елемент : DirectoryFormElement
+[GObject.Subclass<DirectoryFormElement>("Element_gEw3jfd7vkGf0YWS2mhmw")]
+partial class Склади_Елемент : DirectoryFormElement
 {
     public Склади_Objest Елемент { get; init; } = new();
     
@@ -32,17 +34,22 @@ class Склади_Елемент : DirectoryFormElement
     #region TabularParts
     
         // Таблична частина "Контакти"
-        Склади_ТабличнаЧастина_Контакти Контакти = new() { WidthRequest = 500, HeightRequest = 300 };
+        Склади_ТабличнаЧастина_Контакти Контакти = Склади_ТабличнаЧастина_Контакти.New();
     
     #endregion
 
-    public Склади_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     { 
         Element = Елемент;
 
-        Код.WidthRequest = 100;
-                        Назва.WidthRequest = 300;
+        
+            // Код:
+            Код.WidthRequest = 100;
                         
+            // Назва:
+            Назва.WidthRequest = 300;
+                        
+            // ТипСкладу:
             {
                 //Заповнення списку
                 foreach (var field in ПсевдонімиПерелічення.ТипиСкладів_List())
@@ -53,15 +60,24 @@ class Склади_Елемент : DirectoryFormElement
                 ТипСкладу.AddController(controller);
                 controller.OnScroll += (_, _) => true;
             }
-                Відповідальний.Caption = "Відповідальний";
+                
+            // Відповідальний:
+            Відповідальний.Caption = "Відповідальний";
                     Відповідальний.WidthPresentation = 300;
-                ВидЦін.Caption = "Вид цін";
+                
+            // ВидЦін:
+            ВидЦін.Caption = "Вид цін";
                     ВидЦін.WidthPresentation = 300;
-                Підрозділ.Caption = "Підрозділ";
+                
+            // Підрозділ:
+            Підрозділ.Caption = "Підрозділ";
                     Підрозділ.WidthPresentation = 300;
-                Папка.Caption = "Папка";
+                
+            // Папка:
+            Папка.Caption = "Папка";
                     Папка.WidthPresentation = 300;
                 
+            // НалаштуванняАдресногоЗберігання:
             {
                 //Заповнення списку
                 foreach (var field in ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_List())
@@ -73,6 +89,14 @@ class Склади_Елемент : DirectoryFormElement
                 controller.OnScroll += (_, _) => true;
             }
                 
+    }
+
+    public static Склади_Елемент New()
+    {
+        Склади_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateStart(Box vBox)
@@ -107,8 +131,10 @@ class Склади_Елемент : DirectoryFormElement
     protected override void CreateEnd(Box vBox)
     {
         
-            // Таблична частина "Контакти" 
-            CreateTablePart(vBox, "Контакти:", Контакти);
+            // Таблична частина "Контакти"
+            Контакти.WidthRequest = 500;
+            Контакти.HeightRequest = 300;
+            CreateTablePart(vBox, "Контакти", Контакти);
         
     }
 

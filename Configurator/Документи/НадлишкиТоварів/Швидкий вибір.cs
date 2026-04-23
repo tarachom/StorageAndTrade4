@@ -14,14 +14,23 @@ using Функції = StorageAndTrade.НадлишкиТоварів_Функц
 
 namespace StorageAndTrade;
 
-public class НадлишкиТоварів_ШвидкийВибір : DocumentFormJournalSmall
+[GObject.Subclass<DocumentFormJournalSmall>("SmallList_zoomQQw5UWc0sNdRxbVw")]
+public partial class НадлишкиТоварів_ШвидкийВибір : DocumentFormJournalSmall
 {
-    public НадлишкиТоварів_ШвидкийВибір() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = НадлишкиТоварів_Const.POINTER;
         KeyForSetting = ".Small";
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+    }
+
+    public static НадлишкиТоварів_ШвидкийВибір New()
+    {
+        НадлишкиТоварів_ШвидкийВибір list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
     }
 
     #region Override
@@ -83,7 +92,8 @@ public class НадлишкиТоварів_ШвидкийВибір : DocumentF
 
     protected override void ReportSpendTheDocument(UniqueID[] uniqueID)
     {
-
+        foreach (var uid in uniqueID)
+            CommonForms_DocumentMovementThroughRegisters.Create(new НадлишкиТоварів_Pointer(uid));
     }
 
     #endregion

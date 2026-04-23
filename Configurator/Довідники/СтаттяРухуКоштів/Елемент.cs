@@ -6,6 +6,7 @@
 
 using Gtk;
 using InterfaceGtk4;
+using AccountingSoftware;
 
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
@@ -13,7 +14,8 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-class СтаттяРухуКоштів_Елемент : DirectoryFormElement
+[GObject.Subclass<DirectoryFormElement>("Element_Ywq4sdfH0qMFQkbNP6omQ")]
+partial class СтаттяРухуКоштів_Елемент : DirectoryFormElement
 {
     public СтаттяРухуКоштів_Objest Елемент { get; init; } = new();
     
@@ -30,14 +32,21 @@ class СтаттяРухуКоштів_Елемент : DirectoryFormElement
     
     #endregion
 
-    public СтаттяРухуКоштів_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     { 
         Element = Елемент;
 
-        Код.WidthRequest = 100;
-                        Назва.WidthRequest = 300;
-                        КореспондуючийРахунок.WidthRequest = 300;
+        
+            // Код:
+            Код.WidthRequest = 100;
                         
+            // Назва:
+            Назва.WidthRequest = 300;
+                        
+            // КореспондуючийРахунок:
+            КореспондуючийРахунок.WidthRequest = 300;
+                        
+            // ВидРухуКоштів:
             {
                 //Заповнення списку
                 foreach (var field in ПсевдонімиПерелічення.ВидиРухуКоштів_List())
@@ -48,8 +57,18 @@ class СтаттяРухуКоштів_Елемент : DirectoryFormElement
                 ВидРухуКоштів.AddController(controller);
                 controller.OnScroll += (_, _) => true;
             }
-                Опис.WidthRequest = 300;
+                
+            // Опис:
+            Опис.WidthRequest = 300;
                         
+    }
+
+    public static СтаттяРухуКоштів_Елемент New()
+    {
+        СтаттяРухуКоштів_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateStart(Box vBox)

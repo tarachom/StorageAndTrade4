@@ -6,6 +6,7 @@
 
 using Gtk;
 using InterfaceGtk4;
+using AccountingSoftware;
 
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
@@ -13,7 +14,8 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-class ФізичніОсоби_Елемент : DirectoryFormElement
+[GObject.Subclass<DirectoryFormElement>("Element_9nlSm2FadUCbjUqsAEDg")]
+partial class ФізичніОсоби_Елемент : DirectoryFormElement
 {
     public ФізичніОсоби_Objest Елемент { get; init; } = new();
     
@@ -29,18 +31,25 @@ class ФізичніОсоби_Елемент : DirectoryFormElement
     #region TabularParts
     
         // Таблична частина "Контакти"
-        ФізичніОсоби_ТабличнаЧастина_Контакти Контакти = new() { WidthRequest = 500, HeightRequest = 300 };
+        ФізичніОсоби_ТабличнаЧастина_Контакти Контакти = ФізичніОсоби_ТабличнаЧастина_Контакти.New();
     
     #endregion
 
-    public ФізичніОсоби_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     { 
         Element = Елемент;
 
-        Код.WidthRequest = 100;
-                        Назва.WidthRequest = 300;
-                        ДатаНародження.OnlyDate = true;
+        
+            // Код:
+            Код.WidthRequest = 100;
+                        
+            // Назва:
+            Назва.WidthRequest = 300;
+                        
+            // ДатаНародження:
+            ДатаНародження.OnlyDate = true;
                 
+            // Стать:
             {
                 //Заповнення списку
                 foreach (var field in ПсевдонімиПерелічення.СтатьФізичноїОсоби_List())
@@ -51,8 +60,18 @@ class ФізичніОсоби_Елемент : DirectoryFormElement
                 Стать.AddController(controller);
                 controller.OnScroll += (_, _) => true;
             }
-                ІПН.WidthRequest = 200;
+                
+            // ІПН:
+            ІПН.WidthRequest = 200;
                         
+    }
+
+    public static ФізичніОсоби_Елемент New()
+    {
+        ФізичніОсоби_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateStart(Box vBox)
@@ -78,8 +97,10 @@ class ФізичніОсоби_Елемент : DirectoryFormElement
     protected override void CreateEnd(Box vBox)
     {
         
-            // Таблична частина "Контакти" 
-            CreateTablePart(vBox, "Контакти:", Контакти);
+            // Таблична частина "Контакти"
+            Контакти.WidthRequest = 500;
+            Контакти.HeightRequest = 300;
+            CreateTablePart(vBox, "Контакти", Контакти);
         
     }
 

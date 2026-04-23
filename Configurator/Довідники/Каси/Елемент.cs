@@ -6,6 +6,7 @@
 
 using Gtk;
 using InterfaceGtk4;
+using AccountingSoftware;
 
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
@@ -13,7 +14,8 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-class Каси_Елемент : DirectoryFormElement
+[GObject.Subclass<DirectoryFormElement>("Element_iz53H2Q7VUuuhrN53koS5A")]
+partial class Каси_Елемент : DirectoryFormElement
 {
     public Каси_Objest Елемент { get; init; } = new();
     
@@ -29,17 +31,33 @@ class Каси_Елемент : DirectoryFormElement
     
     #endregion
 
-    public Каси_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     { 
         Element = Елемент;
 
-        Код.WidthRequest = 100;
-                        Назва.WidthRequest = 300;
-                        Валюта.Caption = "Валюта";
+        
+            // Код:
+            Код.WidthRequest = 100;
+                        
+            // Назва:
+            Назва.WidthRequest = 300;
+                        
+            // Валюта:
+            Валюта.Caption = "Валюта";
                     Валюта.WidthPresentation = 300;
-                Підрозділ.Caption = "Підрозділ";
+                
+            // Підрозділ:
+            Підрозділ.Caption = "Підрозділ";
                     Підрозділ.WidthPresentation = 300;
                 
+    }
+
+    public static Каси_Елемент New()
+    {
+        Каси_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateStart(Box vBox)

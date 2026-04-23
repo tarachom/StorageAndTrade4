@@ -10,7 +10,7 @@ using GeneratedCode.Документи;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<PointerControl>("PointerControl_XZnc8wr9UECoeIXuIGnq9A")]
+[GObject.Subclass<PointerControl>("PointerControl_xWG7lsWIU2Wa4k8rBnRDw")]
 public partial class ЗакриттяРахункуФактури_PointerControl : PointerControl
 {
     event EventHandler<ЗакриттяРахункуФактури_Pointer>? PointerChanged;
@@ -45,16 +45,16 @@ public partial class ЗакриттяРахункуФактури_PointerControl
         popover.WidthRequest = 800;
         popover.HeightRequest = 400;
         BeforeClickOpenFunc?.Invoke();
-        ЗакриттяРахункуФактури_ШвидкийВибір page = new()
+
+        ЗакриттяРахункуФактури_ШвидкийВибір page = ЗакриттяРахункуФактури_ШвидкийВибір.New();
+        page.PopoverParent = popover;
+        page.DocumentPointerItem = Pointer.UniqueID;
+        page.CallBack_OnSelectPointer = selectPointer =>
         {
-            PopoverParent = popover,
-            DocumentPointerItem = Pointer.UniqueID,
-            CallBack_OnSelectPointer = selectPointer =>
-            {
-                Pointer = new ЗакриттяРахункуФактури_Pointer(selectPointer);
-                AfterSelectFunc?.Invoke();
-            }
+            Pointer = new ЗакриттяРахункуФактури_Pointer(selectPointer);
+            AfterSelectFunc?.Invoke();
         };
+
         popover.SetChild(page);
         popover.Show();
 

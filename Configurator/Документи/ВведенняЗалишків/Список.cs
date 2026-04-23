@@ -14,13 +14,22 @@ using Функції = StorageAndTrade.ВведенняЗалишків_Функ
 
 namespace StorageAndTrade;
 
-public class ВведенняЗалишків_Список : DocumentFormJournalFull
+[GObject.Subclass<DocumentFormJournalFull>("List_NrG8bfXFSkOhInGtSyTBAQ")]
+public partial class ВведенняЗалишків_Список : DocumentFormJournalFull
 {
-    public ВведенняЗалишків_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = ВведенняЗалишків_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50, Pages.StartingPosition.End);
+    }
+
+    public static ВведенняЗалишків_Список New()
+    {
+        ВведенняЗалишків_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
     }
 
     #region Override

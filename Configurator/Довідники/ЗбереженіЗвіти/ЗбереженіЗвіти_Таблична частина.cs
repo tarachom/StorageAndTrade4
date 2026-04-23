@@ -13,11 +13,12 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
+[GObject.Subclass<DirectoryFormTablePart>("TablePart_5FpHXpSIEKJw9K59Tx0Hw")]
 partial class ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСторінка : DirectoryFormTablePart
 {
     #region Data
     
-    [GObject.Subclass<GObject.Object>("ItemRow_4RKfvMdgE0upWfOqQmro7g")]
+    [GObject.Subclass<GObject.Object>("ItemRow_5FpHXpSIEKJw9K59Tx0Hw")]
     public partial class ItemRow : IRowSubclassTablePart
     {
         public static ItemRow New() => NewWithProperties([]);
@@ -28,12 +29,15 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             get => UnigueID_;
             set
             {
-                UnigueID_ = value;
-                Сhanged_UnigueID?.Invoke();
+                if (!UnigueID_.Equals(value))
+                {
+                    UnigueID_ = value;
+                    Сhanged_UnigueID?.Invoke();
+                }
             }
         }
         UniqueID UnigueID_ = new();
-        public Action? Сhanged_UnigueID;
+        public Action? Сhanged_UnigueID { get; set; } = null;
 
     
         /* А */
@@ -50,7 +54,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string А_ = "";
-        public Action? Сhanged_А;
+        public Action? Сhanged_А { get; set; } = null;
 
     
         /* Б */
@@ -67,7 +71,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string Б_ = "";
-        public Action? Сhanged_Б;
+        public Action? Сhanged_Б { get; set; } = null;
 
     
         /* В */
@@ -84,7 +88,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string В_ = "";
-        public Action? Сhanged_В;
+        public Action? Сhanged_В { get; set; } = null;
 
     
         /* Г */
@@ -101,7 +105,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string Г_ = "";
-        public Action? Сhanged_Г;
+        public Action? Сhanged_Г { get; set; } = null;
 
     
         /* Ґ */
@@ -118,7 +122,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string Ґ_ = "";
-        public Action? Сhanged_Ґ;
+        public Action? Сhanged_Ґ { get; set; } = null;
 
     
         /* Д */
@@ -135,7 +139,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string Д_ = "";
-        public Action? Сhanged_Д;
+        public Action? Сhanged_Д { get; set; } = null;
 
     
         /* Е */
@@ -152,7 +156,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string Е_ = "";
-        public Action? Сhanged_Е;
+        public Action? Сhanged_Е { get; set; } = null;
 
     
         /* Є */
@@ -169,7 +173,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string Є_ = "";
-        public Action? Сhanged_Є;
+        public Action? Сhanged_Є { get; set; } = null;
 
     
         /* Ж */
@@ -186,7 +190,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string Ж_ = "";
-        public Action? Сhanged_Ж;
+        public Action? Сhanged_Ж { get; set; } = null;
 
     
         /* З */
@@ -203,7 +207,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string З_ = "";
-        public Action? Сhanged_З;
+        public Action? Сhanged_З { get; set; } = null;
 
     
         /* И */
@@ -220,7 +224,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string И_ = "";
-        public Action? Сhanged_И;
+        public Action? Сhanged_И { get; set; } = null;
 
     
         /* І */
@@ -237,7 +241,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string І_ = "";
-        public Action? Сhanged_І;
+        public Action? Сhanged_І { get; set; } = null;
 
     
         /* Ї */
@@ -254,7 +258,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string Ї_ = "";
-        public Action? Сhanged_Ї;
+        public Action? Сhanged_Ї { get; set; } = null;
 
     
         /* Й */
@@ -271,7 +275,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string Й_ = "";
-        public Action? Сhanged_Й;
+        public Action? Сhanged_Й { get; set; } = null;
 
     
         /* К */
@@ -288,7 +292,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string К_ = "";
-        public Action? Сhanged_К;
+        public Action? Сhanged_К { get; set; } = null;
 
     
         /* Л */
@@ -305,7 +309,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string Л_ = "";
-        public Action? Сhanged_Л;
+        public Action? Сhanged_Л { get; set; } = null;
 
     
         /* М */
@@ -322,7 +326,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string М_ = "";
-        public Action? Сhanged_М;
+        public Action? Сhanged_М { get; set; } = null;
 
     
         /* Н */
@@ -339,7 +343,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string Н_ = "";
-        public Action? Сhanged_Н;
+        public Action? Сhanged_Н { get; set; } = null;
 
     
         /* О */
@@ -356,7 +360,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string О_ = "";
-        public Action? Сhanged_О;
+        public Action? Сhanged_О { get; set; } = null;
 
     
         /* П */
@@ -373,7 +377,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string П_ = "";
-        public Action? Сhanged_П;
+        public Action? Сhanged_П { get; set; } = null;
 
     
         /* Р */
@@ -390,7 +394,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string Р_ = "";
-        public Action? Сhanged_Р;
+        public Action? Сhanged_Р { get; set; } = null;
 
     
         /* С */
@@ -407,7 +411,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string С_ = "";
-        public Action? Сhanged_С;
+        public Action? Сhanged_С { get; set; } = null;
 
     
         /* Т */
@@ -424,7 +428,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string Т_ = "";
-        public Action? Сhanged_Т;
+        public Action? Сhanged_Т { get; set; } = null;
 
     
         /* У */
@@ -441,7 +445,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string У_ = "";
-        public Action? Сhanged_У;
+        public Action? Сhanged_У { get; set; } = null;
 
     
         /* Ф */
@@ -458,7 +462,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string Ф_ = "";
-        public Action? Сhanged_Ф;
+        public Action? Сhanged_Ф { get; set; } = null;
 
     
         /* Х */
@@ -475,7 +479,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string Х_ = "";
-        public Action? Сhanged_Х;
+        public Action? Сhanged_Х { get; set; } = null;
 
     
         /* Ц */
@@ -492,7 +496,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string Ц_ = "";
-        public Action? Сhanged_Ц;
+        public Action? Сhanged_Ц { get; set; } = null;
 
     
         /* Ч */
@@ -509,7 +513,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string Ч_ = "";
-        public Action? Сhanged_Ч;
+        public Action? Сhanged_Ч { get; set; } = null;
 
     
         /* Ш */
@@ -526,7 +530,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string Ш_ = "";
-        public Action? Сhanged_Ш;
+        public Action? Сhanged_Ш { get; set; } = null;
 
     
         /* Щ */
@@ -543,7 +547,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string Щ_ = "";
-        public Action? Сhanged_Щ;
+        public Action? Сhanged_Щ { get; set; } = null;
 
     
         /* Ь */
@@ -560,7 +564,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string Ь_ = "";
-        public Action? Сhanged_Ь;
+        public Action? Сhanged_Ь { get; set; } = null;
 
     
         /* Ю */
@@ -577,7 +581,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string Ю_ = "";
-        public Action? Сhanged_Ю;
+        public Action? Сhanged_Ю { get; set; } = null;
 
     
         /* Я */
@@ -594,7 +598,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             }
         }
         string Я_ = "";
-        public Action? Сhanged_Я;
+        public Action? Сhanged_Я { get; set; } = null;
 
     
 
@@ -604,42 +608,42 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
         
         public GObject.Object Copy()
         {
-            var itemRow = New();
-            itemRow.А = А;
-            itemRow.Б = Б;
-            itemRow.В = В;
-            itemRow.Г = Г;
-            itemRow.Ґ = Ґ;
-            itemRow.Д = Д;
-            itemRow.Е = Е;
-            itemRow.Є = Є;
-            itemRow.Ж = Ж;
-            itemRow.З = З;
-            itemRow.И = И;
-            itemRow.І = І;
-            itemRow.Ї = Ї;
-            itemRow.Й = Й;
-            itemRow.К = К;
-            itemRow.Л = Л;
-            itemRow.М = М;
-            itemRow.Н = Н;
-            itemRow.О = О;
-            itemRow.П = П;
-            itemRow.Р = Р;
-            itemRow.С = С;
-            itemRow.Т = Т;
-            itemRow.У = У;
-            itemRow.Ф = Ф;
-            itemRow.Х = Х;
-            itemRow.Ц = Ц;
-            itemRow.Ч = Ч;
-            itemRow.Ш = Ш;
-            itemRow.Щ = Щ;
-            itemRow.Ь = Ь;
-            itemRow.Ю = Ю;
-            itemRow.Я = Я;
+            var row = New();
+            row.А = А;
+            row.Б = Б;
+            row.В = В;
+            row.Г = Г;
+            row.Ґ = Ґ;
+            row.Д = Д;
+            row.Е = Е;
+            row.Є = Є;
+            row.Ж = Ж;
+            row.З = З;
+            row.И = И;
+            row.І = І;
+            row.Ї = Ї;
+            row.Й = Й;
+            row.К = К;
+            row.Л = Л;
+            row.М = М;
+            row.Н = Н;
+            row.О = О;
+            row.П = П;
+            row.Р = Р;
+            row.С = С;
+            row.Т = Т;
+            row.У = У;
+            row.Ф = Ф;
+            row.Х = Х;
+            row.Ц = Ц;
+            row.Ч = Ч;
+            row.Ш = Ш;
+            row.Щ = Щ;
+            row.Ь = Ь;
+            row.Ю = Ю;
+            row.Я = Я;
             
-            return itemRow;
+            return row;
         }
     }
 
@@ -651,12 +655,20 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
     
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());
 
-    public ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСторінка() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         MultiSelection model = MultiSelection.New(Store);
         model.OnSelectionChanged += GridOnSelectionChanged;
 
         Grid.Model = model;
+    }
+
+    public static ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСторінка New()
+    {
+        ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСторінка tablePart = NewWithProperties([]);
+        tablePart.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return tablePart;
     }
 
     protected override void Columns()
@@ -1537,118 +1549,10 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
             ЕлементВласник.ЗвітСторінка_TablePart.FillJoin([]);
             await ЕлементВласник.ЗвітСторінка_TablePart.Read();
             
-
-        Store.RemoveAll();
-
+            Store.RemoveAll();
         
-        foreach (var record in ЕлементВласник.ЗвітСторінка_TablePart.Records)
-        {
-            var row = ItemRow.New();
-            row.UniqueID = new(record.UID);
-            row.А = record.А;
-            row.Б = record.Б;
-            row.В = record.В;
-            row.Г = record.Г;
-            row.Ґ = record.Ґ;
-            row.Д = record.Д;
-            row.Е = record.Е;
-            row.Є = record.Є;
-            row.Ж = record.Ж;
-            row.З = record.З;
-            row.И = record.И;
-            row.І = record.І;
-            row.Ї = record.Ї;
-            row.Й = record.Й;
-            row.К = record.К;
-            row.Л = record.Л;
-            row.М = record.М;
-            row.Н = record.Н;
-            row.О = record.О;
-            row.П = record.П;
-            row.Р = record.Р;
-            row.С = record.С;
-            row.Т = record.Т;
-            row.У = record.У;
-            row.Ф = record.Ф;
-            row.Х = record.Х;
-            row.Ц = record.Ц;
-            row.Ч = record.Ч;
-            row.Ш = record.Ш;
-            row.Щ = record.Щ;
-            row.Ь = record.Ь;
-            row.Ю = record.Ю;
-            row.Я = record.Я;
-            
-            Store.Append(row);
-
-            if (SelectPosition > 0)
-            {
-                Grid.Model.SelectItem(SelectPosition, true);
-                ScrollTo(SelectPosition);
-            }
-        }
-        }
-    }
-
-    public override async ValueTask SaveRecords()
-    {
-        
-        if (ЕлементВласник != null)
-        {
-        ЕлементВласник.ЗвітСторінка_TablePart.Records.Clear();
-        for (uint i = 0; i <= Store.GetNItems(); i++)
-        {
-            ItemRow? row = (ItemRow?)Store.GetObject(i);
-            if (row != null)
-            {
-                ЕлементВласник.ЗвітСторінка_TablePart.Records.Add(new()
-                {
-                    UID = row.UniqueID.UGuid,
-                    А = row.А,
-                    Б = row.Б,
-                    В = row.В,
-                    Г = row.Г,
-                    Ґ = row.Ґ,
-                    Д = row.Д,
-                    Е = row.Е,
-                    Є = row.Є,
-                    Ж = row.Ж,
-                    З = row.З,
-                    И = row.И,
-                    І = row.І,
-                    Ї = row.Ї,
-                    Й = row.Й,
-                    К = row.К,
-                    Л = row.Л,
-                    М = row.М,
-                    Н = row.Н,
-                    О = row.О,
-                    П = row.П,
-                    Р = row.Р,
-                    С = row.С,
-                    Т = row.Т,
-                    У = row.У,
-                    Ф = row.Ф,
-                    Х = row.Х,
-                    Ц = row.Ц,
-                    Ч = row.Ч,
-                    Ш = row.Ш,
-                    Щ = row.Щ,
-                    Ь = row.Ь,
-                    Ю = row.Ю,
-                    Я = row.Я,
-                    
-                });
-            }
-        }
-        await ЕлементВласник.ЗвітСторінка_TablePart.Save(true);
-        //Update
-        {
-            uint position = 0;
             foreach (var record in ЕлементВласник.ЗвітСторінка_TablePart.Records)
             {
-                bool sel = Grid.Model.IsSelected(position);
-
                 var row = ItemRow.New();
                 row.UniqueID = new(record.UID);
                 row.А = record.А;
@@ -1685,11 +1589,128 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
                 row.Ю = record.Ю;
                 row.Я = record.Я;
                 
-                Store.Splice(position, 1, [row], 1);
-                if (sel) Grid.Model.SelectItem(position, false);
-                position++;
+                Store.Append(row);
+
+                if (SelectPosition > 0)
+                {
+                    Grid.Model.SelectItem(SelectPosition, true);
+                    ScrollTo(SelectPosition);
+                }
             }
         }
+    }
+
+    public override async ValueTask SaveRecords()
+    {
+        
+        if (ЕлементВласник != null)
+        {
+        ЕлементВласник.ЗвітСторінка_TablePart.Records.Clear();
+            for (uint i = 0; i <= Store.GetNItems(); i++)
+            {
+                ItemRow? row = (ItemRow?)Store.GetObject(i);
+                if (row != null)
+                {
+                    ЕлементВласник.ЗвітСторінка_TablePart.Records.Add(new()
+                    {
+                        UID = row.UniqueID.UGuid,
+                        А = row.А,
+                        Б = row.Б,
+                        В = row.В,
+                        Г = row.Г,
+                        Ґ = row.Ґ,
+                        Д = row.Д,
+                        Е = row.Е,
+                        Є = row.Є,
+                        Ж = row.Ж,
+                        З = row.З,
+                        И = row.И,
+                        І = row.І,
+                        Ї = row.Ї,
+                        Й = row.Й,
+                        К = row.К,
+                        Л = row.Л,
+                        М = row.М,
+                        Н = row.Н,
+                        О = row.О,
+                        П = row.П,
+                        Р = row.Р,
+                        С = row.С,
+                        Т = row.Т,
+                        У = row.У,
+                        Ф = row.Ф,
+                        Х = row.Х,
+                        Ц = row.Ц,
+                        Ч = row.Ч,
+                        Ш = row.Ш,
+                        Щ = row.Щ,
+                        Ь = row.Ь,
+                        Ю = row.Ю,
+                        Я = row.Я,
+                        
+                    });
+                }
+            }
+            await ЕлементВласник.ЗвітСторінка_TablePart.Save(true);
+            //Оновлення табличної частини після збереження
+            {
+                //Пошук виділених рядків
+                Bitset bitset = Grid.Model.GetSelection();
+                List<uint> selection = [];
+                for (uint i = bitset.GetMinimum(); i <= bitset.GetMaximum(); i++)
+                    if (Grid.Model.IsSelected(i)) selection.Add(i);
+
+                var rows = ЕлементВласник.ЗвітСторінка_TablePart.Records.Select(x =>
+                {
+                    var row = ItemRow.New();
+                    row.UniqueID = new(x.UID);
+                    row.А = x.А;
+                    row.Б = x.Б;
+                    row.В = x.В;
+                    row.Г = x.Г;
+                    row.Ґ = x.Ґ;
+                    row.Д = x.Д;
+                    row.Е = x.Е;
+                    row.Є = x.Є;
+                    row.Ж = x.Ж;
+                    row.З = x.З;
+                    row.И = x.И;
+                    row.І = x.І;
+                    row.Ї = x.Ї;
+                    row.Й = x.Й;
+                    row.К = x.К;
+                    row.Л = x.Л;
+                    row.М = x.М;
+                    row.Н = x.Н;
+                    row.О = x.О;
+                    row.П = x.П;
+                    row.Р = x.Р;
+                    row.С = x.С;
+                    row.Т = x.Т;
+                    row.У = x.У;
+                    row.Ф = x.Ф;
+                    row.Х = x.Х;
+                    row.Ц = x.Ц;
+                    row.Ч = x.Ч;
+                    row.Ш = x.Ш;
+                    row.Щ = x.Щ;
+                    row.Ь = x.Ь;
+                    row.Ю = x.Ю;
+                    row.Я = x.Я;
+                    
+                    return row;
+                });
+
+                uint count = (uint)rows.Count();
+
+                //Оновлення всіх рядків
+                Store.Splice(0, count, [.. rows], count);
+
+                //Виділення рядків після оновлення
+                foreach (var position in selection)
+                    Grid.Model.SelectItem(position, false);
+                
+            }
         }
     }
 

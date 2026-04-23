@@ -6,6 +6,7 @@
 
 using Gtk;
 using InterfaceGtk4;
+using AccountingSoftware;
 
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
@@ -13,7 +14,8 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-class ЗбереженіЗвіти_Елемент : DirectoryFormElement
+[GObject.Subclass<DirectoryFormElement>("Element_Bv2feEDrfUOsrlN9ctqbg")]
+partial class ЗбереженіЗвіти_Елемент : DirectoryFormElement
 {
     public ЗбереженіЗвіти_Objest Елемент { get; init; } = new();
     
@@ -29,17 +31,31 @@ class ЗбереженіЗвіти_Елемент : DirectoryFormElement
     #region TabularParts
     
         // Таблична частина "ЗвітСторінка"
-        ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСторінка ЗвітСторінка = new() { WidthRequest = 1500, HeightRequest = 600 };
+        ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСторінка ЗвітСторінка = ЗбереженіЗвіти_ТабличнаЧастина_ЗвітСторінка.New();
     
     #endregion
 
-    public ЗбереженіЗвіти_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     { 
         Element = Елемент;
 
-        Назва.WidthRequest = 300;
-                        Опис.WrapMode = WrapMode.Word;
+        
+            // Додано:
+            
+            // Назва:
+            Назва.WidthRequest = 300;
                         
+            // Опис:
+            Опис.WrapMode = WrapMode.Word;
+                        
+    }
+
+    public static ЗбереженіЗвіти_Елемент New()
+    {
+        ЗбереженіЗвіти_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateStart(Box vBox)
@@ -59,8 +75,10 @@ class ЗбереженіЗвіти_Елемент : DirectoryFormElement
     protected override void CreateEnd(Box vBox)
     {
         
-            // Таблична частина "ЗвітСторінка" 
-            CreateTablePart(vBox, "Звіт:", ЗвітСторінка);
+            // Таблична частина "ЗвітСторінка"
+            ЗвітСторінка.WidthRequest = 500;
+            ЗвітСторінка.HeightRequest = 300;
+            CreateTablePart(vBox, "Звіт", ЗвітСторінка);
         
     }
 

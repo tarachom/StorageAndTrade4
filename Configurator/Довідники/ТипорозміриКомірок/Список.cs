@@ -1,5 +1,5 @@
 
-/*     
+/*      
         ТипорозміриКомірок.cs
         Список
 */
@@ -14,11 +14,12 @@ using Функції = StorageAndTrade.ТипорозміриКомірок_Фу
 
 namespace StorageAndTrade;
 
-class ТипорозміриКомірок_Список : DirectoryFormJournalFull
+[GObject.Subclass<DirectoryFormJournalFull>("List_VCSM5iGwEEmAQCERuIiHeQ")]
+partial class ТипорозміриКомірок_Список : DirectoryFormJournalFull
 {
     
     
-    public ТипорозміриКомірок_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = ТипорозміриКомірок_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
@@ -27,11 +28,19 @@ class ТипорозміриКомірок_Список : DirectoryFormJournalFu
         
     }
 
+    public static ТипорозміриКомірок_Список New()
+    {
+        ТипорозміриКомірок_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
+
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);

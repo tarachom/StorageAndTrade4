@@ -1,5 +1,5 @@
 
-/*     
+/*      
         ФізичніОсоби.cs
         Список
 */
@@ -14,11 +14,12 @@ using Функції = StorageAndTrade.ФізичніОсоби_Функції;
 
 namespace StorageAndTrade;
 
-class ФізичніОсоби_Список : DirectoryFormJournalFull
+[GObject.Subclass<DirectoryFormJournalFull>("List_d4RCjjfjp0C0l4hlapRvwQ")]
+partial class ФізичніОсоби_Список : DirectoryFormJournalFull
 {
     
     
-    public ФізичніОсоби_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = ФізичніОсоби_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
@@ -27,11 +28,19 @@ class ФізичніОсоби_Список : DirectoryFormJournalFull
         
     }
 
+    public static ФізичніОсоби_Список New()
+    {
+        ФізичніОсоби_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
+
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);

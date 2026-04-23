@@ -1,5 +1,5 @@
 
-/*     
+/*      
         Організації.cs
         Список
 */
@@ -14,11 +14,12 @@ using Функції = StorageAndTrade.Організації_Функції;
 
 namespace StorageAndTrade;
 
-class Організації_Список : DirectoryFormJournalFull
+[GObject.Subclass<DirectoryFormJournalFull>("List_30YDfeTdqUukVbyPZIdPtQ")]
+partial class Організації_Список : DirectoryFormJournalFull
 {
     
     
-    public Організації_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = Організації_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
@@ -27,11 +28,19 @@ class Організації_Список : DirectoryFormJournalFull
         
     }
 
+    public static Організації_Список New()
+    {
+        Організації_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
+
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);

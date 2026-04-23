@@ -14,11 +14,12 @@ using Функції = StorageAndTrade.ТипорозміриКомірок_Фу
 
 namespace StorageAndTrade;
 
-class ТипорозміриКомірок_ШвидкийВибір : DirectoryFormJournalSmall
+[GObject.Subclass<DirectoryFormJournalSmall>("SmallList_wAeoddPzFE2CUq6JgwVdFw")]
+partial class ТипорозміриКомірок_ШвидкийВибір : DirectoryFormJournalSmall
 {
     
     
-    public ТипорозміриКомірок_ШвидкийВибір() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = ТипорозміриКомірок_Const.POINTER;
         KeyForSetting = ".Small";
@@ -28,11 +29,19 @@ class ТипорозміриКомірок_ШвидкийВибір : DirectoryF
         
     }
 
+    public static ТипорозміриКомірок_ШвидкийВибір New()
+    {
+        ТипорозміриКомірок_ШвидкийВибір list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
+
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);
@@ -50,7 +59,7 @@ class ТипорозміриКомірок_ШвидкийВибір : DirectoryF
 
     protected override async ValueTask OpenPageList(UniqueID? uniqueID = null)
     {
-        await Функції.OpenPageList(uniqueID, OpenSelect, OpenFolder, CallBack_OnSelectPointer);
+        await Функції.OpenPageList(uniqueID, AllowedContentSelection, OpenFolder, CallBack_OnSelectPointer);
     }
 
     protected override async ValueTask OpenPageElement(bool IsNew, UniqueID? uniqueID = null)

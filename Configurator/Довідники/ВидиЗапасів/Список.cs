@@ -1,5 +1,5 @@
 
-/*     
+/*      
         ВидиЗапасів.cs
         Список
 */
@@ -14,11 +14,12 @@ using Функції = StorageAndTrade.ВидиЗапасів_Функції;
 
 namespace StorageAndTrade;
 
-class ВидиЗапасів_Список : DirectoryFormJournalFull
+[GObject.Subclass<DirectoryFormJournalFull>("List_M4kp4A9ZV0qrI3E08s4sug")]
+partial class ВидиЗапасів_Список : DirectoryFormJournalFull
 {
     
     
-    public ВидиЗапасів_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = ВидиЗапасів_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
@@ -27,11 +28,19 @@ class ВидиЗапасів_Список : DirectoryFormJournalFull
         
     }
 
+    public static ВидиЗапасів_Список New()
+    {
+        ВидиЗапасів_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
+
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);

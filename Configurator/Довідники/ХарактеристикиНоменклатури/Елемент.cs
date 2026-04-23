@@ -6,6 +6,7 @@
 
 using Gtk;
 using InterfaceGtk4;
+using AccountingSoftware;
 
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
@@ -13,7 +14,8 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-class ХарактеристикиНоменклатури_Елемент : DirectoryFormElement
+[GObject.Subclass<DirectoryFormElement>("Element_hzeVjfSgEegSvCLgm75VA")]
+partial class ХарактеристикиНоменклатури_Елемент : DirectoryFormElement
 {
     public ХарактеристикиНоменклатури_Objest Елемент { get; init; } = new();
     
@@ -31,16 +33,32 @@ class ХарактеристикиНоменклатури_Елемент : Dire
     
     #endregion
 
-    public ХарактеристикиНоменклатури_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     { 
         Element = Елемент;
 
-        Код.WidthRequest = 100;
-                        Назва.WidthRequest = 300;
-                        Номенклатура.Caption = "Номенклатура";
-                    Номенклатура.WidthPresentation = 300;
-                НазваПовна.WrapMode = WrapMode.Word;
+        
+            // Код:
+            Код.WidthRequest = 100;
                         
+            // Назва:
+            Назва.WidthRequest = 300;
+                        
+            // Номенклатура:
+            Номенклатура.Caption = "Номенклатура";
+                    Номенклатура.WidthPresentation = 300;
+                
+            // НазваПовна:
+            НазваПовна.WrapMode = WrapMode.Word;
+                        
+    }
+
+    public static ХарактеристикиНоменклатури_Елемент New()
+    {
+        ХарактеристикиНоменклатури_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateStart(Box vBox)

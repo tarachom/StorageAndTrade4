@@ -34,11 +34,9 @@ static class ХарактеристикиНоменклатури_Функції
         Action<UniqueID>? сallBack_OnSelectPointer = null,
             Номенклатура_Pointer? Власник = null)
     {
-        ХарактеристикиНоменклатури_Елемент page = new()
-        {
-            CallBack_LoadRecords = сallBack_LoadRecords,
-            CallBack_OnSelectPointer = сallBack_OnSelectPointer
-        };
+        ХарактеристикиНоменклатури_Елемент page = ХарактеристикиНоменклатури_Елемент.New();
+        page.CallBack_LoadRecords = сallBack_LoadRecords;
+        page.CallBack_OnSelectPointer = сallBack_OnSelectPointer;
 
         if (IsNew)
         {
@@ -57,17 +55,16 @@ static class ХарактеристикиНоменклатури_Функції
         await page.SetValue();
     }
 
-    public static async ValueTask OpenPageList(UniqueID? uniqueID = null, bool openSelect = false, UniqueID? openFolder = null,
+    public static async ValueTask OpenPageList(UniqueID? uniqueID = null, ConfigurationDirectories.HierarchicalContentType? allowedContentSelection = null, UniqueID? openFolder = null,
         Action<UniqueID>? сallBack_OnSelectPointer = null,
             Номенклатура_Pointer? Власник = null)
     {
-        ХарактеристикиНоменклатури_Список page = new()
-        {
-            OpenSelect = openSelect,
-            OpenFolder = openFolder,
-            DirectoryPointerItem = uniqueID,
-            CallBack_OnSelectPointer = сallBack_OnSelectPointer
-        };
+        ХарактеристикиНоменклатури_Список page = ХарактеристикиНоменклатури_Список.New();
+        page.AllowedContentSelection  = allowedContentSelection;
+        page.OpenFolder = openFolder;
+        page.DirectoryPointerItem = uniqueID;
+        page.CallBack_OnSelectPointer = сallBack_OnSelectPointer;
+
         
             if (Власник != null) page.Власник.Pointer = Власник;
         

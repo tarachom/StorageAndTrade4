@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 06.04.2026 18:51:45
+ * Дата конфігурації: 23.04.2026 16:15:32
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон GeneratedCode.xslt
@@ -77,13 +77,13 @@ namespace GeneratedCode
             (bool result, string pointerGroup, string pointerType) = Configuration.PointerParse(uuidAndText.Text, out Exception? _);
             if (result)
             {
-                record.pointer = pointerGroup;
-                record.type = pointerType;
+                record.Pointer = pointerGroup;
+                record.Type = pointerType;
 
                 if (!uuidAndText.IsEmpty())
-                    if (record.pointer == "Довідники") 
+                    if (record.Pointer == "Довідники")
                     {
-                        record.result = record.type switch
+                        record.Result = record.Type switch
                         {
                         "Організації" => await new Довідники.Організації_Pointer(uuidAndText.Uuid).GetPresentation(),
                         "Номенклатура" => await new Довідники.Номенклатура_Pointer(uuidAndText.Uuid).GetPresentation(),
@@ -124,9 +124,9 @@ namespace GeneratedCode
                         _ => ""
                         };
                     }
-                    else if (record.pointer == "Документи") 
+                    else if (record.Pointer == "Документи")
                     {
-                        record.result = record.type switch
+                        record.Result = record.Type switch
                         {
                         "ЗамовленняПостачальнику" => await new Документи.ЗамовленняПостачальнику_Pointer(uuidAndText.Uuid).GetPresentation(),
                         "ПоступленняТоварівТаПослуг" => await new Документи.ПоступленняТоварівТаПослуг_Pointer(uuidAndText.Uuid).GetPresentation(),

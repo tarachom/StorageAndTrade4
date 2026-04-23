@@ -14,13 +14,22 @@ using Функції = StorageAndTrade.ЗакриттяЗамовленняКл�
 
 namespace StorageAndTrade;
 
-public class ЗакриттяЗамовленняКлієнта_Список : DocumentFormJournalFull
+[GObject.Subclass<DocumentFormJournalFull>("List_CDfdeuwkSFi1Ycvktenw")]
+public partial class ЗакриттяЗамовленняКлієнта_Список : DocumentFormJournalFull
 {
-    public ЗакриттяЗамовленняКлієнта_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = ЗакриттяЗамовленняКлієнта_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50, Pages.StartingPosition.End);
+    }
+
+    public static ЗакриттяЗамовленняКлієнта_Список New()
+    {
+        ЗакриттяЗамовленняКлієнта_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
     }
 
     #region Override

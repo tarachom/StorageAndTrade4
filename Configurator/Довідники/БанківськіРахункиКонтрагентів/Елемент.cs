@@ -6,6 +6,7 @@
 
 using Gtk;
 using InterfaceGtk4;
+using AccountingSoftware;
 
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
@@ -13,7 +14,8 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-class БанківськіРахункиКонтрагентів_Елемент : DirectoryFormElement
+[GObject.Subclass<DirectoryFormElement>("Element_85hOfF7rSES5dgDILMwBLQ")]
+partial class БанківськіРахункиКонтрагентів_Елемент : DirectoryFormElement
 {
     public БанківськіРахункиКонтрагентів_Objest Елемент { get; init; } = new();
     
@@ -31,20 +33,40 @@ class БанківськіРахункиКонтрагентів_Елемент 
     
     #endregion
 
-    public БанківськіРахункиКонтрагентів_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     { 
         Element = Елемент;
 
-        Код.WidthRequest = 100;
-                        Назва.WidthRequest = 300;
-                        Банк.Caption = "Банк";
+        
+            // Код:
+            Код.WidthRequest = 100;
+                        
+            // Назва:
+            Назва.WidthRequest = 300;
+                        
+            // Банк:
+            Банк.Caption = "Банк";
                     Банк.WidthPresentation = 300;
-                Контрагент.Caption = "Контрагент";
+                
+            // Контрагент:
+            Контрагент.Caption = "Контрагент";
                     Контрагент.WidthPresentation = 300;
-                НомерРахунку.WidthRequest = 300;
-                        Валюта.Caption = "Валюта";
+                
+            // НомерРахунку:
+            НомерРахунку.WidthRequest = 300;
+                        
+            // Валюта:
+            Валюта.Caption = "Валюта";
                     Валюта.WidthPresentation = 300;
                 
+    }
+
+    public static БанківськіРахункиКонтрагентів_Елемент New()
+    {
+        БанківськіРахункиКонтрагентів_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateStart(Box vBox)

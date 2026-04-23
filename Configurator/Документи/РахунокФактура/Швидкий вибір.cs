@@ -14,14 +14,23 @@ using Функції = StorageAndTrade.РахунокФактура_Функці
 
 namespace StorageAndTrade;
 
-public class РахунокФактура_ШвидкийВибір : DocumentFormJournalSmall
+[GObject.Subclass<DocumentFormJournalSmall>("SmallList_N3P2BKR6BkGeySFq26S4g")]
+public partial class РахунокФактура_ШвидкийВибір : DocumentFormJournalSmall
 {
-    public РахунокФактура_ШвидкийВибір() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = РахунокФактура_Const.POINTER;
         KeyForSetting = ".Small";
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+    }
+
+    public static РахунокФактура_ШвидкийВибір New()
+    {
+        РахунокФактура_ШвидкийВибір list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
     }
 
     #region Override
@@ -83,7 +92,8 @@ public class РахунокФактура_ШвидкийВибір : DocumentFor
 
     protected override void ReportSpendTheDocument(UniqueID[] uniqueID)
     {
-
+        foreach (var uid in uniqueID)
+            CommonForms_DocumentMovementThroughRegisters.Create(new РахунокФактура_Pointer(uid));
     }
 
     #endregion

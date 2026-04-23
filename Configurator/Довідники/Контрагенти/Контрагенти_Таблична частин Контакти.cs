@@ -13,11 +13,12 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
+[GObject.Subclass<DirectoryFormTablePart>("TablePart_mcPbBIyGqEqqyyv8Cn7Dg")]
 partial class Контрагенти_ТабличнаЧастина_Контакти : DirectoryFormTablePart
 {
     #region Data
     
-    [GObject.Subclass<GObject.Object>("ItemRow_jZR9pPTf0UGJ0zNohHSwg")]
+    [GObject.Subclass<GObject.Object>("ItemRow_mcPbBIyGqEqqyyv8Cn7Dg")]
     public partial class ItemRow : IRowSubclassTablePart
     {
         public static ItemRow New() => NewWithProperties([]);
@@ -28,12 +29,15 @@ partial class Контрагенти_ТабличнаЧастина_Контак
             get => UnigueID_;
             set
             {
-                UnigueID_ = value;
-                Сhanged_UnigueID?.Invoke();
+                if (!UnigueID_.Equals(value))
+                {
+                    UnigueID_ = value;
+                    Сhanged_UnigueID?.Invoke();
+                }
             }
         }
         UniqueID UnigueID_ = new();
-        public Action? Сhanged_UnigueID;
+        public Action? Сhanged_UnigueID { get; set; } = null;
 
     
         /* НомерРядка */
@@ -50,7 +54,7 @@ partial class Контрагенти_ТабличнаЧастина_Контак
             }
         }
         int НомерРядка_ = 0;
-        public Action? Сhanged_НомерРядка;
+        public Action? Сhanged_НомерРядка { get; set; } = null;
 
     
         /* Тип */
@@ -67,7 +71,7 @@ partial class Контрагенти_ТабличнаЧастина_Контак
             }
         }
         ТипиКонтактноїІнформації Тип_ = 0;
-        public Action? Сhanged_Тип;
+        public Action? Сhanged_Тип { get; set; } = null;
 
     
         /* Значення */
@@ -84,7 +88,7 @@ partial class Контрагенти_ТабличнаЧастина_Контак
             }
         }
         string Значення_ = "";
-        public Action? Сhanged_Значення;
+        public Action? Сhanged_Значення { get; set; } = null;
 
     
         /* Телефон */
@@ -101,7 +105,7 @@ partial class Контрагенти_ТабличнаЧастина_Контак
             }
         }
         string Телефон_ = "";
-        public Action? Сhanged_Телефон;
+        public Action? Сhanged_Телефон { get; set; } = null;
 
     
         /* ЕлектроннаПошта */
@@ -118,7 +122,7 @@ partial class Контрагенти_ТабличнаЧастина_Контак
             }
         }
         string ЕлектроннаПошта_ = "";
-        public Action? Сhanged_ЕлектроннаПошта;
+        public Action? Сhanged_ЕлектроннаПошта { get; set; } = null;
 
     
         /* Країна */
@@ -135,7 +139,7 @@ partial class Контрагенти_ТабличнаЧастина_Контак
             }
         }
         string Країна_ = "";
-        public Action? Сhanged_Країна;
+        public Action? Сhanged_Країна { get; set; } = null;
 
     
         /* Область */
@@ -152,7 +156,7 @@ partial class Контрагенти_ТабличнаЧастина_Контак
             }
         }
         string Область_ = "";
-        public Action? Сhanged_Область;
+        public Action? Сhanged_Область { get; set; } = null;
 
     
         /* Район */
@@ -169,7 +173,7 @@ partial class Контрагенти_ТабличнаЧастина_Контак
             }
         }
         string Район_ = "";
-        public Action? Сhanged_Район;
+        public Action? Сhanged_Район { get; set; } = null;
 
     
         /* Місто */
@@ -186,7 +190,7 @@ partial class Контрагенти_ТабличнаЧастина_Контак
             }
         }
         string Місто_ = "";
-        public Action? Сhanged_Місто;
+        public Action? Сhanged_Місто { get; set; } = null;
 
     
         /* ДатаЧас */
@@ -203,7 +207,7 @@ partial class Контрагенти_ТабличнаЧастина_Контак
             }
         }
         DateTime ДатаЧас_ = DateTime.MinValue;
-        public Action? Сhanged_ДатаЧас;
+        public Action? Сhanged_ДатаЧас { get; set; } = null;
 
     
         /* Дата */
@@ -220,7 +224,7 @@ partial class Контрагенти_ТабличнаЧастина_Контак
             }
         }
         DateTime Дата_ = DateTime.MinValue;
-        public Action? Сhanged_Дата;
+        public Action? Сhanged_Дата { get; set; } = null;
 
     
         /* Час */
@@ -237,7 +241,7 @@ partial class Контрагенти_ТабличнаЧастина_Контак
             }
         }
         TimeSpan Час_ = DateTime.MinValue.TimeOfDay;
-        public Action? Сhanged_Час;
+        public Action? Сhanged_Час { get; set; } = null;
 
     
 
@@ -247,21 +251,21 @@ partial class Контрагенти_ТабличнаЧастина_Контак
         
         public GObject.Object Copy()
         {
-            var itemRow = New();
-            itemRow.НомерРядка = НомерРядка;
-            itemRow.Тип = Тип;
-            itemRow.Значення = Значення;
-            itemRow.Телефон = Телефон;
-            itemRow.ЕлектроннаПошта = ЕлектроннаПошта;
-            itemRow.Країна = Країна;
-            itemRow.Область = Область;
-            itemRow.Район = Район;
-            itemRow.Місто = Місто;
-            itemRow.ДатаЧас = ДатаЧас;
-            itemRow.Дата = Дата;
-            itemRow.Час = Час;
+            var row = New();
+            row.НомерРядка = НомерРядка;
+            row.Тип = Тип;
+            row.Значення = Значення;
+            row.Телефон = Телефон;
+            row.ЕлектроннаПошта = ЕлектроннаПошта;
+            row.Країна = Країна;
+            row.Область = Область;
+            row.Район = Район;
+            row.Місто = Місто;
+            row.ДатаЧас = ДатаЧас;
+            row.Дата = Дата;
+            row.Час = Час;
             
-            return itemRow;
+            return row;
         }
     }
 
@@ -273,12 +277,20 @@ partial class Контрагенти_ТабличнаЧастина_Контак
     
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());
 
-    public Контрагенти_ТабличнаЧастина_Контакти() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         MultiSelection model = MultiSelection.New(Store);
         model.OnSelectionChanged += GridOnSelectionChanged;
 
         Grid.Model = model;
+    }
+
+    public static Контрагенти_ТабличнаЧастина_Контакти New()
+    {
+        Контрагенти_ТабличнаЧастина_Контакти tablePart = NewWithProperties([]);
+        tablePart.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return tablePart;
     }
 
     protected override void Columns()
@@ -320,6 +332,10 @@ partial class Контрагенти_ТабличнаЧастина_Контак
                 var cell = ComboTextTablePartCell.New();
                 foreach (var field in ПсевдонімиПерелічення.ТипиКонтактноїІнформації_List())
                     cell.Combo.Append(field.Value.ToString(), field.Name);
+                //Заборона прокрутки списку
+                EventControllerScroll contr = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
+                cell.Combo.AddController(contr);
+                contr.OnScroll += (_, _) => true;
                 
                 listItem.Child = cell;
             };
@@ -624,76 +640,10 @@ partial class Контрагенти_ТабличнаЧастина_Контак
             ЕлементВласник.Контакти_TablePart.FillJoin([Контрагенти_Контакти_TablePart.НомерРядка,]);
             await ЕлементВласник.Контакти_TablePart.Read();
             
-
-        Store.RemoveAll();
-
+            Store.RemoveAll();
         
-        foreach (var record in ЕлементВласник.Контакти_TablePart.Records)
-        {
-            var row = ItemRow.New();
-            row.UniqueID = new(record.UID);
-            row.НомерРядка = record.НомерРядка;
-            row.Тип = record.Тип;
-            row.Значення = record.Значення;
-            row.Телефон = record.Телефон;
-            row.ЕлектроннаПошта = record.ЕлектроннаПошта;
-            row.Країна = record.Країна;
-            row.Область = record.Область;
-            row.Район = record.Район;
-            row.Місто = record.Місто;
-            row.ДатаЧас = record.ДатаЧас;
-            row.Дата = record.Дата;
-            row.Час = record.Час;
-            
-            Store.Append(row);
-
-            if (SelectPosition > 0)
-            {
-                Grid.Model.SelectItem(SelectPosition, true);
-                ScrollTo(SelectPosition);
-            }
-        }
-        }
-    }
-
-    public override async ValueTask SaveRecords()
-    {
-        
-        if (ЕлементВласник != null)
-        {
-        ЕлементВласник.Контакти_TablePart.Records.Clear();
-        for (uint i = 0; i <= Store.GetNItems(); i++)
-        {
-            ItemRow? row = (ItemRow?)Store.GetObject(i);
-            if (row != null)
-            {
-                ЕлементВласник.Контакти_TablePart.Records.Add(new()
-                {
-                    UID = row.UniqueID.UGuid,
-                    НомерРядка = row.НомерРядка,
-                    Тип = row.Тип,
-                    Значення = row.Значення,
-                    Телефон = row.Телефон,
-                    ЕлектроннаПошта = row.ЕлектроннаПошта,
-                    Країна = row.Країна,
-                    Область = row.Область,
-                    Район = row.Район,
-                    Місто = row.Місто,
-                    ДатаЧас = row.ДатаЧас,
-                    Дата = row.Дата,
-                    Час = row.Час,
-                    
-                });
-            }
-        }
-        await ЕлементВласник.Контакти_TablePart.Save(true);
-        //Update
-        {
-            uint position = 0;
             foreach (var record in ЕлементВласник.Контакти_TablePart.Records)
             {
-                bool sel = Grid.Model.IsSelected(position);
-
                 var row = ItemRow.New();
                 row.UniqueID = new(record.UID);
                 row.НомерРядка = record.НомерРядка;
@@ -709,11 +659,86 @@ partial class Контрагенти_ТабличнаЧастина_Контак
                 row.Дата = record.Дата;
                 row.Час = record.Час;
                 
-                Store.Splice(position, 1, [row], 1);
-                if (sel) Grid.Model.SelectItem(position, false);
-                position++;
+                Store.Append(row);
+
+                if (SelectPosition > 0)
+                {
+                    Grid.Model.SelectItem(SelectPosition, true);
+                    ScrollTo(SelectPosition);
+                }
             }
         }
+    }
+
+    public override async ValueTask SaveRecords()
+    {
+        
+        if (ЕлементВласник != null)
+        {
+        ЕлементВласник.Контакти_TablePart.Records.Clear();
+            for (uint i = 0; i <= Store.GetNItems(); i++)
+            {
+                ItemRow? row = (ItemRow?)Store.GetObject(i);
+                if (row != null)
+                {
+                    ЕлементВласник.Контакти_TablePart.Records.Add(new()
+                    {
+                        UID = row.UniqueID.UGuid,
+                        НомерРядка = row.НомерРядка,
+                        Тип = row.Тип,
+                        Значення = row.Значення,
+                        Телефон = row.Телефон,
+                        ЕлектроннаПошта = row.ЕлектроннаПошта,
+                        Країна = row.Країна,
+                        Область = row.Область,
+                        Район = row.Район,
+                        Місто = row.Місто,
+                        ДатаЧас = row.ДатаЧас,
+                        Дата = row.Дата,
+                        Час = row.Час,
+                        
+                    });
+                }
+            }
+            await ЕлементВласник.Контакти_TablePart.Save(true);
+            //Оновлення табличної частини після збереження
+            {
+                //Пошук виділених рядків
+                Bitset bitset = Grid.Model.GetSelection();
+                List<uint> selection = [];
+                for (uint i = bitset.GetMinimum(); i <= bitset.GetMaximum(); i++)
+                    if (Grid.Model.IsSelected(i)) selection.Add(i);
+
+                var rows = ЕлементВласник.Контакти_TablePart.Records.Select(x =>
+                {
+                    var row = ItemRow.New();
+                    row.UniqueID = new(x.UID);
+                    row.НомерРядка = x.НомерРядка;
+                    row.Тип = x.Тип;
+                    row.Значення = x.Значення;
+                    row.Телефон = x.Телефон;
+                    row.ЕлектроннаПошта = x.ЕлектроннаПошта;
+                    row.Країна = x.Країна;
+                    row.Область = x.Область;
+                    row.Район = x.Район;
+                    row.Місто = x.Місто;
+                    row.ДатаЧас = x.ДатаЧас;
+                    row.Дата = x.Дата;
+                    row.Час = x.Час;
+                    
+                    return row;
+                });
+
+                uint count = (uint)rows.Count();
+
+                //Оновлення всіх рядків
+                Store.Splice(0, count, [.. rows], count);
+
+                //Виділення рядків після оновлення
+                foreach (var position in selection)
+                    Grid.Model.SelectItem(position, false);
+                
+            }
         }
     }
 

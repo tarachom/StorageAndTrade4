@@ -6,6 +6,7 @@
 
 using Gtk;
 using InterfaceGtk4;
+using AccountingSoftware;
 
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
@@ -13,7 +14,8 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-class Валюти_Елемент : DirectoryFormElement
+[GObject.Subclass<DirectoryFormElement>("Element_3FY3TJMbG0y9WEVZR5UM0Q")]
+partial class Валюти_Елемент : DirectoryFormElement
 {
     public Валюти_Objest Елемент { get; init; } = new();
     
@@ -30,15 +32,33 @@ class Валюти_Елемент : DirectoryFormElement
     
     #endregion
 
-    public Валюти_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     { 
         Element = Елемент;
 
-        Код.WidthRequest = 100;
-                        Назва.WidthRequest = 300;
-                        КороткаНазва.WidthRequest = 300;
-                        Код_R030.WidthRequest = 300;
+        
+            // Код:
+            Код.WidthRequest = 100;
                         
+            // Назва:
+            Назва.WidthRequest = 300;
+                        
+            // КороткаНазва:
+            КороткаНазва.WidthRequest = 300;
+                        
+            // Код_R030:
+            Код_R030.WidthRequest = 300;
+                        
+            // ВиводитиКурсНаСтартову:
+            
+    }
+
+    public static Валюти_Елемент New()
+    {
+        Валюти_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateStart(Box vBox)

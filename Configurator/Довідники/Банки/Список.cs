@@ -1,5 +1,5 @@
 
-/*     
+/*      
         Банки.cs
         Список
 */
@@ -14,11 +14,12 @@ using Функції = StorageAndTrade.Банки_Функції;
 
 namespace StorageAndTrade;
 
-class Банки_Список : DirectoryFormJournalFull
+[GObject.Subclass<DirectoryFormJournalFull>("List_1lejS1OGjkK6Gigk111y5g")]
+partial class Банки_Список : DirectoryFormJournalFull
 {
     
     
-    public Банки_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = Банки_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
@@ -27,11 +28,19 @@ class Банки_Список : DirectoryFormJournalFull
         
     }
 
+    public static Банки_Список New()
+    {
+        Банки_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
+
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);

@@ -13,11 +13,12 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
+[GObject.Subclass<DocumentFormTablePart>("TablePart_03lg9OJznEi9L8iPPlUaxA")]
 partial class ВведенняЗалишків_ТабличнаЧастина_БанківськіРахунки : DocumentFormTablePart
 {
     #region Data
     
-    [GObject.Subclass<GObject.Object>("ItemRow_i07VUMHIoEWVsReWVdQpLA")]
+    [GObject.Subclass<GObject.Object>("ItemRow_03lg9OJznEi9L8iPPlUaxA")]
     public partial class ItemRow : IRowSubclassTablePart
     {
         public static ItemRow New() => NewWithProperties([]);
@@ -28,12 +29,15 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Б
             get => UnigueID_;
             set
             {
-                UnigueID_ = value;
-                Сhanged_UnigueID?.Invoke();
+                if (!UnigueID_.Equals(value))
+                {
+                    UnigueID_ = value;
+                    Сhanged_UnigueID?.Invoke();
+                }
             }
         }
         UniqueID UnigueID_ = new();
-        public Action? Сhanged_UnigueID;
+        public Action? Сhanged_UnigueID { get; set; } = null;
 
     
         /* НомерРядка */
@@ -50,7 +54,7 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Б
             }
         }
         int НомерРядка_ = 0;
-        public Action? Сhanged_НомерРядка;
+        public Action? Сhanged_НомерРядка { get; set; } = null;
 
     
         /* БанківськийРахунок */
@@ -67,7 +71,7 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Б
             }
         }
         БанківськіРахункиОрганізацій_Pointer БанківськийРахунок_ = new();
-        public Action? Сhanged_БанківськийРахунок;
+        public Action? Сhanged_БанківськийРахунок { get; set; } = null;
 
     
         /* Сума */
@@ -84,7 +88,7 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Б
             }
         }
         decimal Сума_ = 0;
-        public Action? Сhanged_Сума;
+        public Action? Сhanged_Сума { get; set; } = null;
 
     
 
@@ -94,12 +98,12 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Б
         
         public GObject.Object Copy()
         {
-            var itemRow = New();
-            itemRow.НомерРядка = НомерРядка;
-            itemRow.БанківськийРахунок = БанківськийРахунок.Copy();
-            itemRow.Сума = Сума;
+            var row = New();
+            row.НомерРядка = НомерРядка;
+            row.БанківськийРахунок = БанківськийРахунок.Copy();
+            row.Сума = Сума;
             
-            return itemRow;
+            return row;
         }
     }
 
@@ -111,12 +115,20 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Б
     
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());
 
-    public ВведенняЗалишків_ТабличнаЧастина_БанківськіРахунки() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         MultiSelection model = MultiSelection.New(Store);
         model.OnSelectionChanged += GridOnSelectionChanged;
 
         Grid.Model = model;
+    }
+
+    public static ВведенняЗалишків_ТабличнаЧастина_БанківськіРахунки New()
+    {
+        ВведенняЗалишків_ТабличнаЧастина_БанківськіРахунки tablePart = NewWithProperties([]);
+        tablePart.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return tablePart;
     }
 
     protected override void Columns()
@@ -220,26 +232,24 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Б
             ЕлементВласник.БанківськіРахунки_TablePart.FillJoin([ВведенняЗалишків_БанківськіРахунки_TablePart.НомерРядка,]);
             await ЕлементВласник.БанківськіРахунки_TablePart.Read();
             
-
-        Store.RemoveAll();
-
+            Store.RemoveAll();
         
-        foreach (var record in ЕлементВласник.БанківськіРахунки_TablePart.Records)
-        {
-            var row = ItemRow.New();
-            row.UniqueID = new(record.UID);
-            row.НомерРядка = record.НомерРядка;
-            row.БанківськийРахунок = record.БанківськийРахунок;
-            row.Сума = record.Сума;
-            
-            Store.Append(row);
-
-            if (SelectPosition > 0)
+            foreach (var record in ЕлементВласник.БанківськіРахунки_TablePart.Records)
             {
-                Grid.Model.SelectItem(SelectPosition, true);
-                ScrollTo(SelectPosition);
+                var row = ItemRow.New();
+                row.UniqueID = new(record.UID);
+                row.НомерРядка = record.НомерРядка;
+                row.БанківськийРахунок = record.БанківськийРахунок;
+                row.Сума = record.Сума;
+                
+                Store.Append(row);
+
+                if (SelectPosition > 0)
+                {
+                    Grid.Model.SelectItem(SelectPosition, true);
+                    ScrollTo(SelectPosition);
+                }
             }
-        }
         }
     }
 
@@ -249,40 +259,51 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Б
         if (ЕлементВласник != null)
         {
         ЕлементВласник.БанківськіРахунки_TablePart.Records.Clear();
-        for (uint i = 0; i <= Store.GetNItems(); i++)
-        {
-            ItemRow? row = (ItemRow?)Store.GetObject(i);
-            if (row != null)
+            for (uint i = 0; i <= Store.GetNItems(); i++)
             {
-                ЕлементВласник.БанківськіРахунки_TablePart.Records.Add(new()
+                ItemRow? row = (ItemRow?)Store.GetObject(i);
+                if (row != null)
                 {
-                    UID = row.UniqueID.UGuid,
-                    НомерРядка = row.НомерРядка,
-                    БанківськийРахунок = row.БанківськийРахунок,
-                    Сума = row.Сума,
-                    
-                });
+                    ЕлементВласник.БанківськіРахунки_TablePart.Records.Add(new()
+                    {
+                        UID = row.UniqueID.UGuid,
+                        НомерРядка = row.НомерРядка,
+                        БанківськийРахунок = row.БанківськийРахунок,
+                        Сума = row.Сума,
+                        
+                    });
+                }
             }
-        }
-        await ЕлементВласник.БанківськіРахунки_TablePart.Save(true);
-        //Update
-        {
-            uint position = 0;
-            foreach (var record in ЕлементВласник.БанківськіРахунки_TablePart.Records)
+            await ЕлементВласник.БанківськіРахунки_TablePart.Save(true);
+            //Оновлення табличної частини після збереження
             {
-                bool sel = Grid.Model.IsSelected(position);
+                //Пошук виділених рядків
+                Bitset bitset = Grid.Model.GetSelection();
+                List<uint> selection = [];
+                for (uint i = bitset.GetMinimum(); i <= bitset.GetMaximum(); i++)
+                    if (Grid.Model.IsSelected(i)) selection.Add(i);
 
-                var row = ItemRow.New();
-                row.UniqueID = new(record.UID);
-                row.НомерРядка = record.НомерРядка;
-                row.БанківськийРахунок = record.БанківськийРахунок;
-                row.Сума = record.Сума;
+                var rows = ЕлементВласник.БанківськіРахунки_TablePart.Records.Select(x =>
+                {
+                    var row = ItemRow.New();
+                    row.UniqueID = new(x.UID);
+                    row.НомерРядка = x.НомерРядка;
+                    row.БанківськийРахунок = x.БанківськийРахунок;
+                    row.Сума = x.Сума;
+                    
+                    return row;
+                });
+
+                uint count = (uint)rows.Count();
+
+                //Оновлення всіх рядків
+                Store.Splice(0, count, [.. rows], count);
+
+                //Виділення рядків після оновлення
+                foreach (var position in selection)
+                    Grid.Model.SelectItem(position, false);
                 
-                Store.Splice(position, 1, [row], 1);
-                if (sel) Grid.Model.SelectItem(position, false);
-                position++;
             }
-        }
         }
     }
 

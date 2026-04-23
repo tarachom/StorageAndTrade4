@@ -6,6 +6,7 @@
 
 using Gtk;
 using InterfaceGtk4;
+using AccountingSoftware;
 
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
@@ -13,7 +14,8 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-class Номенклатура_Елемент : DirectoryFormElement
+[GObject.Subclass<DirectoryFormElement>("Element_Qoth98oOUe3zLMJ2rWRfQ")]
+partial class Номенклатура_Елемент : DirectoryFormElement
 {
     public Номенклатура_Objest Елемент { get; init; } = new();
     
@@ -35,20 +37,31 @@ class Номенклатура_Елемент : DirectoryFormElement
     #region TabularParts
     
         // Таблична частина "Файли"
-        Номенклатура_ТабличнаЧастина_Файли Файли = new() { WidthRequest = 500, HeightRequest = 300 };
+        Номенклатура_ТабличнаЧастина_Файли Файли = Номенклатура_ТабличнаЧастина_Файли.New();
     
     #endregion
 
-    public Номенклатура_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     { 
         Element = Елемент;
 
-        Код.WidthRequest = 100;
-                        Назва.WidthRequest = 300;
-                        НазваПовна.WidthRequest = 300;
-                        Опис.WrapMode = WrapMode.Word;
-                        Артикул.WidthRequest = 300;
+        
+            // Код:
+            Код.WidthRequest = 100;
                         
+            // Назва:
+            Назва.WidthRequest = 300;
+                        
+            // НазваПовна:
+            НазваПовна.WidthRequest = 300;
+                        
+            // Опис:
+            Опис.WrapMode = WrapMode.Word;
+                        
+            // Артикул:
+            Артикул.WidthRequest = 300;
+                        
+            // ТипНоменклатури:
             {
                 //Заповнення списку
                 foreach (var field in ПсевдонімиПерелічення.ТипиНоменклатури_List())
@@ -59,17 +72,35 @@ class Номенклатура_Елемент : DirectoryFormElement
                 ТипНоменклатури.AddController(controller);
                 controller.OnScroll += (_, _) => true;
             }
-                Виробник.Caption = "Виробник";
+                
+            // Виробник:
+            Виробник.Caption = "Виробник";
                     Виробник.WidthPresentation = 300;
-                ВидНоменклатури.Caption = "ВидНоменклатури";
+                
+            // ВидНоменклатури:
+            ВидНоменклатури.Caption = "ВидНоменклатури";
                     ВидНоменклатури.WidthPresentation = 300;
-                ОдиницяВиміру.Caption = "ОдиницяВиміру";
+                
+            // ОдиницяВиміру:
+            ОдиницяВиміру.Caption = "ОдиницяВиміру";
                     ОдиницяВиміру.WidthPresentation = 300;
-                Папка.Caption = "Папка";
+                
+            // Папка:
+            Папка.Caption = "Папка";
                     Папка.WidthPresentation = 300;
-                ОсновнаКартинкаФайл.Caption = "ОсновнаКартинкаФайл";
+                
+            // ОсновнаКартинкаФайл:
+            ОсновнаКартинкаФайл.Caption = "ОсновнаКартинкаФайл";
                     ОсновнаКартинкаФайл.WidthPresentation = 300;
                 
+    }
+
+    public static Номенклатура_Елемент New()
+    {
+        Номенклатура_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateStart(Box vBox)
@@ -113,8 +144,10 @@ class Номенклатура_Елемент : DirectoryFormElement
     protected override void CreateEnd(Box vBox)
     {
         
-            // Таблична частина "Файли" 
-            CreateTablePart(vBox, "Файли:", Файли);
+            // Таблична частина "Файли"
+            Файли.WidthRequest = 500;
+            Файли.HeightRequest = 300;
+            CreateTablePart(vBox, "Файли", Файли);
         
     }
 

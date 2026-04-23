@@ -14,14 +14,23 @@ using Функції = StorageAndTrade.ПсуванняТоварів_Функц
 
 namespace StorageAndTrade;
 
-public class ПсуванняТоварів_ШвидкийВибір : DocumentFormJournalSmall
+[GObject.Subclass<DocumentFormJournalSmall>("SmallList_ndxSkX7EEd3KzV1VBJHA")]
+public partial class ПсуванняТоварів_ШвидкийВибір : DocumentFormJournalSmall
 {
-    public ПсуванняТоварів_ШвидкийВибір() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = ПсуванняТоварів_Const.POINTER;
         KeyForSetting = ".Small";
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+    }
+
+    public static ПсуванняТоварів_ШвидкийВибір New()
+    {
+        ПсуванняТоварів_ШвидкийВибір list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
     }
 
     #region Override
@@ -83,7 +92,8 @@ public class ПсуванняТоварів_ШвидкийВибір : DocumentF
 
     protected override void ReportSpendTheDocument(UniqueID[] uniqueID)
     {
-
+        foreach (var uid in uniqueID)
+            CommonForms_DocumentMovementThroughRegisters.Create(new ПсуванняТоварів_Pointer(uid));
     }
 
     #endregion

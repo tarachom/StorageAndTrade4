@@ -17,7 +17,8 @@ using Функції = StorageAndTrade.ПерерахунокТоварів_Фу
 
 namespace StorageAndTrade;
 
-class ПерерахунокТоварів_Елемент : DocumentFormElement
+[GObject.Subclass<DocumentFormElement>("Element_axI6hzClsEGbJbEPK7G2qw")]
+partial class ПерерахунокТоварів_Елемент : DocumentFormElement
 {
     public ПерерахунокТоварів_Objest Елемент { get; init; } = new();
 
@@ -36,11 +37,11 @@ class ПерерахунокТоварів_Елемент : DocumentFormElement
     #region TabularParts
     
         // Таблична частина "Товари" 
-        ПерерахунокТоварів_ТабличнаЧастина_Товари Товари = new() { WidthRequest = 500, HeightRequest = 300 };
+        ПерерахунокТоварів_ТабличнаЧастина_Товари Товари = ПерерахунокТоварів_ТабличнаЧастина_Товари.New();
     
     #endregion
 
-    public ПерерахунокТоварів_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         Element = Елемент;
 
@@ -48,22 +49,48 @@ class ПерерахунокТоварів_Елемент : DocumentFormElement
         
         CreateField(HBoxComment, "Коментар:", Коментар);
         
-            // Таблична частина "Товари" 
+            // Таблична частина "Товари"
+            Товари.WidthRequest = 500;
+            Товари.HeightRequest = 300;
             NotebookTablePart.InsertPage(Товари, Label.New("Товари"), 0);
             
             NotebookTablePart.SetCurrentPage(0);
-        НомерДок.WidthRequest = 100;
-                        Склад.Caption = "Склад";
+        
+            //НомерДок:
+            НомерДок.WidthRequest = 100;
+                        
+            //ДатаДок:
+            
+            //Склад:
+            Склад.Caption = "Склад";
                     Склад.WidthPresentation = 300;
-                Відповідальний.Caption = "Відповідальний";
-                    Відповідальний.WidthPresentation = 300;
-                Коментар.WidthRequest = 300;
-                        Організація.Caption = "Організація";
-                    Організація.WidthPresentation = 300;
-                Підрозділ.Caption = "Підрозділ";
-                    Підрозділ.WidthPresentation = 300;
-                Основа.BoundConfType = "Документи.ПерерахунокТоварів.Основа";
                 
+            //Відповідальний:
+            Відповідальний.Caption = "Відповідальний";
+                    Відповідальний.WidthPresentation = 300;
+                
+            //Коментар:
+            Коментар.WidthRequest = 300;
+                        
+            //Організація:
+            Організація.Caption = "Організація";
+                    Організація.WidthPresentation = 300;
+                
+            //Підрозділ:
+            Підрозділ.Caption = "Підрозділ";
+                    Підрозділ.WidthPresentation = 300;
+                
+            //Основа:
+            Основа.BoundConfType = "Документи.ПерерахунокТоварів.Основа";
+                
+    }
+
+    public static ПерерахунокТоварів_Елемент New()
+    {
+        ПерерахунокТоварів_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateTopStart(Box vBox)

@@ -1,5 +1,5 @@
 
-/*     
+/*      
         Каси.cs
         Список
 */
@@ -14,11 +14,12 @@ using Функції = StorageAndTrade.Каси_Функції;
 
 namespace StorageAndTrade;
 
-class Каси_Список : DirectoryFormJournalFull
+[GObject.Subclass<DirectoryFormJournalFull>("List_mn1Y4aWwJ0OCGf4ySCH7Zg")]
+partial class Каси_Список : DirectoryFormJournalFull
 {
     
     
-    public Каси_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = Каси_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
@@ -27,11 +28,19 @@ class Каси_Список : DirectoryFormJournalFull
         
     }
 
+    public static Каси_Список New()
+    {
+        Каси_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
+
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);

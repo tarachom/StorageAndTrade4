@@ -14,14 +14,23 @@ using Функції = StorageAndTrade.ЗамовленняКлієнта_Фун
 
 namespace StorageAndTrade;
 
-public class ЗамовленняКлієнта_ШвидкийВибір : DocumentFormJournalSmall
+[GObject.Subclass<DocumentFormJournalSmall>("SmallList_2dFyQdsyZUmtbmTvcXdA")]
+public partial class ЗамовленняКлієнта_ШвидкийВибір : DocumentFormJournalSmall
 {
-    public ЗамовленняКлієнта_ШвидкийВибір() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = ЗамовленняКлієнта_Const.POINTER;
         KeyForSetting = ".Small";
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+    }
+
+    public static ЗамовленняКлієнта_ШвидкийВибір New()
+    {
+        ЗамовленняКлієнта_ШвидкийВибір list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
     }
 
     #region Override
@@ -83,7 +92,8 @@ public class ЗамовленняКлієнта_ШвидкийВибір : Docum
 
     protected override void ReportSpendTheDocument(UniqueID[] uniqueID)
     {
-
+        foreach (var uid in uniqueID)
+            CommonForms_DocumentMovementThroughRegisters.Create(new ЗамовленняКлієнта_Pointer(uid));
     }
 
     #endregion

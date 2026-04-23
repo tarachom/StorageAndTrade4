@@ -14,14 +14,23 @@ using Функції = StorageAndTrade.ПереміщенняТоварів_Фу
 
 namespace StorageAndTrade;
 
-public class ПереміщенняТоварів_ШвидкийВибір : DocumentFormJournalSmall
+[GObject.Subclass<DocumentFormJournalSmall>("SmallList_zLCodcENPU2Tn8p053jwmg")]
+public partial class ПереміщенняТоварів_ШвидкийВибір : DocumentFormJournalSmall
 {
-    public ПереміщенняТоварів_ШвидкийВибір() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = ПереміщенняТоварів_Const.POINTER;
         KeyForSetting = ".Small";
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+    }
+
+    public static ПереміщенняТоварів_ШвидкийВибір New()
+    {
+        ПереміщенняТоварів_ШвидкийВибір list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
     }
 
     #region Override

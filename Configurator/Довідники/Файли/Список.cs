@@ -1,5 +1,5 @@
 
-/*     
+/*      
         Файли.cs
         Список
 */
@@ -14,11 +14,12 @@ using Функції = StorageAndTrade.Файли_Функції;
 
 namespace StorageAndTrade;
 
-class Файли_Список : DirectoryFormJournalFull
+[GObject.Subclass<DirectoryFormJournalFull>("List_8MNE7Uuk8kClDtgtTwWD0Q")]
+partial class Файли_Список : DirectoryFormJournalFull
 {
     
     
-    public Файли_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = Файли_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
@@ -27,11 +28,19 @@ class Файли_Список : DirectoryFormJournalFull
         
     }
 
+    public static Файли_Список New()
+    {
+        Файли_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
+
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);

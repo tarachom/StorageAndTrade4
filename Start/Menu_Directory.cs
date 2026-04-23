@@ -10,9 +10,10 @@ using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
 
-class Menu_Directory : Form
+[GObject.Subclass<Form>]
+partial class Menu_Directory : Form
 {
-    public Menu_Directory() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         //Список
         Box hBoxList = New(Orientation.Horizontal, 0);
@@ -23,65 +24,73 @@ class Menu_Directory : Form
 
         CreateLink(vLeft, Контрагенти_Const.FULLNAME, async () =>
         {
-            Контрагенти_Список page = new();
+            Контрагенти_Список page = Контрагенти_Список.New();
             NotebookFunc?.CreatePage(Контрагенти_Const.FULLNAME, page);
             await page.SetValue();
         });
 
         CreateLink(vLeft, Номенклатура_Const.FULLNAME, async () =>
         {
-            Номенклатура_Список page = new();
+            Номенклатура_Список page = Номенклатура_Список.New();
             NotebookFunc?.CreatePage(Номенклатура_Const.FULLNAME, page);
             await page.SetValue();
         });
 
         CreateLink(vLeft, Номенклатура_Папки_Const.FULLNAME, async () =>
         {
-            Номенклатура_Папки_Список page = new();
+            Номенклатура_Папки_Список page = Номенклатура_Папки_Список.New();
             NotebookFunc?.CreatePage(Номенклатура_Папки_Const.FULLNAME, page);
             await page.SetValue();
         });
 
         CreateLink(vLeft, Склади_Const.FULLNAME, async () =>
         {
-            Склади_Список page = new();
+            Склади_Список page = Склади_Список.New();
             NotebookFunc?.CreatePage(Склади_Const.FULLNAME, page);
             await page.SetValue();
         });
 
         CreateLink(vLeft, Валюти_Const.FULLNAME, async () =>
         {
-            Валюти_Список page = new();
+            Валюти_Список page = Валюти_Список.New();
             NotebookFunc?.CreatePage(Валюти_Const.FULLNAME, page);
             await page.SetValue();
         });
 
         CreateLink(vLeft, Каси_Const.FULLNAME, async () =>
         {
-            Каси_Список page = new();
+            Каси_Список page = Каси_Список.New();
             NotebookFunc?.CreatePage(Каси_Const.FULLNAME, page);
             await page.SetValue();
         });
 
         CreateLink(vLeft, Організації_Const.FULLNAME, async () =>
         {
-            Організації_Список page = new();
+            Організації_Список page = Організації_Список.New();
             NotebookFunc?.CreatePage(Організації_Const.FULLNAME, page);
             await page.SetValue();
         });
 
         CreateLink(vLeft, Блокнот_Const.FULLNAME, async () =>
         {
-            Блокнот_Список page = new();
+            Блокнот_Список page = Блокнот_Список.New();
             NotebookFunc?.CreatePage(Блокнот_Const.FULLNAME, page);
             await page.SetValue();
         });
 
         CreateLink(vLeft, ХарактеристикиНоменклатури_Const.FULLNAME, async () =>
         {
-            ХарактеристикиНоменклатури_Список page = new();
+            ХарактеристикиНоменклатури_Список page = ХарактеристикиНоменклатури_Список.New();
             NotebookFunc?.CreatePage(ХарактеристикиНоменклатури_Const.FULLNAME, page);
             await page.SetValue();
         });
+    }
+
+    public static Menu_Directory New()
+    {
+        Menu_Directory page = NewWithProperties([]);
+        page.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return page;
     }
 }

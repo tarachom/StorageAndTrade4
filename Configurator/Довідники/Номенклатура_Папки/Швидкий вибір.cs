@@ -14,11 +14,12 @@ using Функції = StorageAndTrade.Номенклатура_Папки_Фу�
 
 namespace StorageAndTrade;
 
-class Номенклатура_Папки_ШвидкийВибір : DirectoryFormJournalSmallTree
+[GObject.Subclass<DirectoryFormJournalSmallTree>("SmallList_vLhj6LY9uEeYHxJdXwzoUg")]
+partial class Номенклатура_Папки_ШвидкийВибір : DirectoryFormJournalSmallTree
 {
     
     
-    public Номенклатура_Папки_ШвидкийВибір() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = Номенклатура_Папки_Const.POINTER;
         KeyForSetting = ".Small";
@@ -28,11 +29,29 @@ class Номенклатура_Папки_ШвидкийВибір : DirectoryFo
         
     }
 
+    public static Номенклатура_Папки_ШвидкийВибір New()
+    {
+        Номенклатура_Папки_ШвидкийВибір list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
+
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-
+    
+    public override async ValueTask<List<DirectoryHierarchicalRow>> LoadChildren(UniqueID parent)
+    {
+        return await ТабличнийСписок.LoadChildren(this, parent);
+    }
+    
+    public override DirectoryHierarchicalRow LoadEmptyChildren()
+    {
+        return ТабличнийСписок.LoadEmptyChildren(this);
+    }
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);
@@ -50,7 +69,7 @@ class Номенклатура_Папки_ШвидкийВибір : DirectoryFo
 
     protected override async ValueTask OpenPageList(UniqueID? uniqueID = null)
     {
-        await Функції.OpenPageList(uniqueID, OpenSelect, OpenFolder, CallBack_OnSelectPointer);
+        await Функції.OpenPageList(uniqueID, AllowedContentSelection, OpenFolder, CallBack_OnSelectPointer);
     }
 
     protected override async ValueTask OpenPageElement(bool IsNew, UniqueID? uniqueID = null)

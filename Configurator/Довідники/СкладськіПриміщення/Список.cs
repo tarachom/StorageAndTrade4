@@ -1,5 +1,5 @@
 
-/*     
+/*      
         СкладськіПриміщення.cs
         Список
 */
@@ -14,13 +14,14 @@ using Функції = StorageAndTrade.СкладськіПриміщення_Ф
 
 namespace StorageAndTrade;
 
-class СкладськіПриміщення_Список : DirectoryFormJournalFull
+[GObject.Subclass<DirectoryFormJournalFull>("List_qag1Mkl8vkmlYxdQR4doAQ")]
+partial class СкладськіПриміщення_Список : DirectoryFormJournalFull
 {
     
     public Склади_PointerControl Власник = Склади_PointerControl.New();
     
     
-    public СкладськіПриміщення_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = СкладськіПриміщення_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
@@ -41,11 +42,19 @@ class СкладськіПриміщення_Список : DirectoryFormJournal
         
     }
 
+    public static СкладськіПриміщення_Список New()
+    {
+        СкладськіПриміщення_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
+
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);

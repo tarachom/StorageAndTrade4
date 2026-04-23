@@ -6,11 +6,12 @@
 
 using Gtk;
 using InterfaceGtk4;
+using AccountingSoftware;
 using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<PointerControl>("PointerControl_9eLO3SJfT0WtraOB0YixA")]
+[GObject.Subclass<PointerControl>("PointerControl_jqAHMNYvUe33jlZhRWw")]
 public partial class ДоговориКонтрагентів_PointerControl : PointerControl
 {
     event EventHandler<ДоговориКонтрагентів_Pointer>? PointerChanged;
@@ -42,6 +43,8 @@ public partial class ДоговориКонтрагентів_PointerControl : P
     public Контрагенти_Pointer Власник { get; set; } = new Контрагенти_Pointer();
     
 
+    public ConfigurationDirectories.HierarchicalContentType? AllowedContentSelection { get; set; }
+
     protected override async void OpenSelect(Button button, EventArgs args)
     {
         Popover popover = Popover.New();
@@ -49,18 +52,18 @@ public partial class ДоговориКонтрагентів_PointerControl : P
         popover.WidthRequest = 800;
         popover.HeightRequest = 400;
         BeforeClickOpenFunc?.Invoke();
-        ДоговориКонтрагентів_ШвидкийВибір page = new()
+
+        ДоговориКонтрагентів_ШвидкийВибір page = ДоговориКонтрагентів_ШвидкийВибір.New();
+        page.PopoverParent = popover;
+        page.DirectoryPointerItem = Pointer.UniqueID;
+        page.AllowedContentSelection = AllowedContentSelection;
+        page.OpenFolder = OpenFolder;
+        page.CallBack_OnSelectPointer = selectPointer =>
         {
-            PopoverParent = popover,
-            DirectoryPointerItem = Pointer.UniqueID,
-            OpenSelect = true,
-            OpenFolder = OpenFolder,
-            CallBack_OnSelectPointer = selectPointer =>
-            {
-                Pointer = new ДоговориКонтрагентів_Pointer(selectPointer);
-                AfterSelectFunc?.Invoke();
-            }
+            Pointer = new ДоговориКонтрагентів_Pointer(selectPointer);
+            AfterSelectFunc?.Invoke();
         };
+
         
         page.Власник.Pointer = Власник;
         

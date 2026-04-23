@@ -17,7 +17,8 @@ using Функції = StorageAndTrade.РахунокФактура_Функці
 
 namespace StorageAndTrade;
 
-class РахунокФактура_Елемент : DocumentFormElement
+[GObject.Subclass<DocumentFormElement>("Element_B0TNTXRbMEqI8fHHmqZ4cw")]
+partial class РахунокФактура_Елемент : DocumentFormElement
 {
     public РахунокФактура_Objest Елемент { get; init; } = new();
 
@@ -44,11 +45,11 @@ class РахунокФактура_Елемент : DocumentFormElement
     #region TabularParts
     
         // Таблична частина "Товари" 
-        РахунокФактура_ТабличнаЧастина_Товари Товари = new() { WidthRequest = 500, HeightRequest = 300 };
+        РахунокФактура_ТабличнаЧастина_Товари Товари = РахунокФактура_ТабличнаЧастина_Товари.New();
     
     #endregion
 
-    public РахунокФактура_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         Element = Елемент;
 
@@ -56,20 +57,35 @@ class РахунокФактура_Елемент : DocumentFormElement
         
         CreateField(HBoxComment, "Коментар:", Коментар);
         
-            // Таблична частина "Товари" 
+            // Таблична частина "Товари"
+            Товари.WidthRequest = 500;
+            Товари.HeightRequest = 300;
             NotebookTablePart.InsertPage(Товари, Label.New("Товари"), 0);
             
             NotebookTablePart.SetCurrentPage(0);
-        НомерДок.WidthRequest = 100;
-                        Контрагент.Caption = "Контрагент";
+        
+            //НомерДок:
+            НомерДок.WidthRequest = 100;
+                        
+            //ДатаДок:
+            
+            //Контрагент:
+            Контрагент.Caption = "Контрагент";
                     Контрагент.WidthPresentation = 300;
-                Організація.Caption = "Організація";
+                
+            //Організація:
+            Організація.Caption = "Організація";
                     Організація.WidthPresentation = 300;
-                Валюта.Caption = "Валюта";
+                
+            //Валюта:
+            Валюта.Caption = "Валюта";
                     Валюта.WidthPresentation = 300;
-                Склад.Caption = "Склад";
+                
+            //Склад:
+            Склад.Caption = "Склад";
                     Склад.WidthPresentation = 300;
                 
+            //Статус:
             {
                 //Заповнення списку
                 foreach (var field in ПсевдонімиПерелічення.СтатусиЗамовленьКлієнтів_List())
@@ -81,6 +97,7 @@ class РахунокФактура_Елемент : DocumentFormElement
                 controller.OnScroll += (_, _) => true;
             }
                 
+            //ФормаОплати:
             {
                 //Заповнення списку
                 foreach (var field in ПсевдонімиПерелічення.ФормаОплати_List())
@@ -91,13 +108,20 @@ class РахунокФактура_Елемент : DocumentFormElement
                 ФормаОплати.AddController(controller);
                 controller.OnScroll += (_, _) => true;
             }
-                БанківськийРахунок.Caption = "Банківський рахунок";
+                
+            //БанківськийРахунок:
+            БанківськийРахунок.Caption = "Банківський рахунок";
                     БанківськийРахунок.WidthPresentation = 300;
-                БанківськийРахунокКонтрагента.Caption = "Банківський рахунок контрагента";
+                
+            //БанківськийРахунокКонтрагента:
+            БанківськийРахунокКонтрагента.Caption = "Банківський рахунок контрагента";
                     БанківськийРахунокКонтрагента.WidthPresentation = 300;
-                Каса.Caption = "Каса";
+                
+            //Каса:
+            Каса.Caption = "Каса";
                     Каса.WidthPresentation = 300;
                 
+            //ГосподарськаОперація:
             {
                 //Заповнення списку
                 foreach (var field in ПсевдонімиПерелічення.ГосподарськіОперації_List())
@@ -108,13 +132,29 @@ class РахунокФактура_Елемент : DocumentFormElement
                 ГосподарськаОперація.AddController(controller);
                 controller.OnScroll += (_, _) => true;
             }
-                Договір.Caption = "Договір";
-                    Договір.WidthPresentation = 300;
-                Підрозділ.Caption = "Підрозділ";
-                    Підрозділ.WidthPresentation = 300;
-                Коментар.WidthRequest = 300;
-                        Основа.BoundConfType = "Документи.РахунокФактура.Основа";
                 
+            //Договір:
+            Договір.Caption = "Договір";
+                    Договір.WidthPresentation = 300;
+                
+            //Підрозділ:
+            Підрозділ.Caption = "Підрозділ";
+                    Підрозділ.WidthPresentation = 300;
+                
+            //Коментар:
+            Коментар.WidthRequest = 300;
+                        
+            //Основа:
+            Основа.BoundConfType = "Документи.РахунокФактура.Основа";
+                
+    }
+
+    public static РахунокФактура_Елемент New()
+    {
+        РахунокФактура_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateTopStart(Box vBox)

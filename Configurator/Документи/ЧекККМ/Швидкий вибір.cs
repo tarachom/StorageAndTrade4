@@ -14,14 +14,23 @@ using Функції = StorageAndTrade.ЧекККМ_Функції;
 
 namespace StorageAndTrade;
 
-public class ЧекККМ_ШвидкийВибір : DocumentFormJournalSmall
+[GObject.Subclass<DocumentFormJournalSmall>("SmallList_CK7A9aWb2UuY1Mhbotz58Q")]
+public partial class ЧекККМ_ШвидкийВибір : DocumentFormJournalSmall
 {
-    public ЧекККМ_ШвидкийВибір() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = ЧекККМ_Const.POINTER;
         KeyForSetting = ".Small";
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+    }
+
+    public static ЧекККМ_ШвидкийВибір New()
+    {
+        ЧекККМ_ШвидкийВибір list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
     }
 
     #region Override
@@ -83,7 +92,8 @@ public class ЧекККМ_ШвидкийВибір : DocumentFormJournalSmall
 
     protected override void ReportSpendTheDocument(UniqueID[] uniqueID)
     {
-
+        foreach (var uid in uniqueID)
+            CommonForms_DocumentMovementThroughRegisters.Create(new ЧекККМ_Pointer(uid));
     }
 
     #endregion

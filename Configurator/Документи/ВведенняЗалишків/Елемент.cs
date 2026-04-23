@@ -17,7 +17,8 @@ using Функції = StorageAndTrade.ВведенняЗалишків_Функ
 
 namespace StorageAndTrade;
 
-class ВведенняЗалишків_Елемент : DocumentFormElement
+[GObject.Subclass<DocumentFormElement>("Element_qbk8AhVT9Ua554dv6JarkA")]
+partial class ВведенняЗалишків_Елемент : DocumentFormElement
 {
     public ВведенняЗалишків_Objest Елемент { get; init; } = new();
 
@@ -39,20 +40,20 @@ class ВведенняЗалишків_Елемент : DocumentFormElement
     #region TabularParts
     
         // Таблична частина "Товари" 
-        ВведенняЗалишків_ТабличнаЧастина_Товари Товари = new() { WidthRequest = 500, HeightRequest = 300 };
+        ВведенняЗалишків_ТабличнаЧастина_Товари Товари = ВведенняЗалишків_ТабличнаЧастина_Товари.New();
     
         // Таблична частина "Каси" 
-        ВведенняЗалишків_ТабличнаЧастина_Каси Каси = new() { WidthRequest = 500, HeightRequest = 300 };
+        ВведенняЗалишків_ТабличнаЧастина_Каси Каси = ВведенняЗалишків_ТабличнаЧастина_Каси.New();
     
         // Таблична частина "БанківськіРахунки" 
-        ВведенняЗалишків_ТабличнаЧастина_БанківськіРахунки БанківськіРахунки = new() { WidthRequest = 500, HeightRequest = 300 };
+        ВведенняЗалишків_ТабличнаЧастина_БанківськіРахунки БанківськіРахунки = ВведенняЗалишків_ТабличнаЧастина_БанківськіРахунки.New();
     
         // Таблична частина "РозрахункиЗКонтрагентами" 
-        ВведенняЗалишків_ТабличнаЧастина_РозрахункиЗКонтрагентами РозрахункиЗКонтрагентами = new() { WidthRequest = 500, HeightRequest = 300 };
+        ВведенняЗалишків_ТабличнаЧастина_РозрахункиЗКонтрагентами РозрахункиЗКонтрагентами = ВведенняЗалишків_ТабличнаЧастина_РозрахункиЗКонтрагентами.New();
     
     #endregion
 
-    public ВведенняЗалишків_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         Element = Елемент;
 
@@ -60,33 +61,58 @@ class ВведенняЗалишків_Елемент : DocumentFormElement
         
         CreateField(HBoxComment, "Коментар:", Коментар);
         
-            // Таблична частина "Товари" 
+            // Таблична частина "Товари"
+            Товари.WidthRequest = 500;
+            Товари.HeightRequest = 300;
             NotebookTablePart.InsertPage(Товари, Label.New("Товари"), 0);
             
-            // Таблична частина "Каси" 
+            // Таблична частина "Каси"
+            Каси.WidthRequest = 500;
+            Каси.HeightRequest = 300;
             NotebookTablePart.InsertPage(Каси, Label.New("Каси"), 1);
             
-            // Таблична частина "БанківськіРахунки" 
+            // Таблична частина "БанківськіРахунки"
+            БанківськіРахунки.WidthRequest = 500;
+            БанківськіРахунки.HeightRequest = 300;
             NotebookTablePart.InsertPage(БанківськіРахунки, Label.New("Банківські рахунки"), 2);
             
-            // Таблична частина "РозрахункиЗКонтрагентами" 
+            // Таблична частина "РозрахункиЗКонтрагентами"
+            РозрахункиЗКонтрагентами.WidthRequest = 500;
+            РозрахункиЗКонтрагентами.HeightRequest = 300;
             NotebookTablePart.InsertPage(РозрахункиЗКонтрагентами, Label.New("Розрахунки з контрагентами"), 3);
             
             NotebookTablePart.SetCurrentPage(0);
-        НомерДок.WidthRequest = 100;
-                        Організація.Caption = "Організація";
+        
+            //НомерДок:
+            НомерДок.WidthRequest = 100;
+                        
+            //ДатаДок:
+            
+            //Організація:
+            Організація.Caption = "Організація";
                     Організація.WidthPresentation = 300;
-                Підрозділ.Caption = "Підрозділ";
+                
+            //Підрозділ:
+            Підрозділ.Caption = "Підрозділ";
                     Підрозділ.WidthPresentation = 300;
-                Склад.Caption = "Склад";
+                
+            //Склад:
+            Склад.Caption = "Склад";
                     Склад.WidthPresentation = 300;
-                Валюта.Caption = "Валюта";
+                
+            //Валюта:
+            Валюта.Caption = "Валюта";
                     Валюта.WidthPresentation = 300;
-                Контрагент.Caption = "Контрагент";
+                
+            //Контрагент:
+            Контрагент.Caption = "Контрагент";
                     Контрагент.WidthPresentation = 300;
-                Договір.Caption = "Договір";
+                
+            //Договір:
+            Договір.Caption = "Договір";
                     Договір.WidthPresentation = 300;
                 
+            //ГосподарськаОперація:
             {
                 //Заповнення списку
                 foreach (var field in ПсевдонімиПерелічення.ГосподарськіОперації_List())
@@ -97,9 +123,21 @@ class ВведенняЗалишків_Елемент : DocumentFormElement
                 ГосподарськаОперація.AddController(controller);
                 controller.OnScroll += (_, _) => true;
             }
-                Коментар.WidthRequest = 300;
-                        Основа.BoundConfType = "Документи.ВведенняЗалишків.Основа";
                 
+            //Коментар:
+            Коментар.WidthRequest = 300;
+                        
+            //Основа:
+            Основа.BoundConfType = "Документи.ВведенняЗалишків.Основа";
+                
+    }
+
+    public static ВведенняЗалишків_Елемент New()
+    {
+        ВведенняЗалишків_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateTopStart(Box vBox)

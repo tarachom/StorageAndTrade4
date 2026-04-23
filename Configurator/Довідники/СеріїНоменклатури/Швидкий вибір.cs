@@ -14,11 +14,12 @@ using Функції = StorageAndTrade.СеріїНоменклатури_Фун
 
 namespace StorageAndTrade;
 
-class СеріїНоменклатури_ШвидкийВибір : DirectoryFormJournalSmall
+[GObject.Subclass<DirectoryFormJournalSmall>("SmallList_QkTeFSoQn0auGJUjMfIj8g")]
+partial class СеріїНоменклатури_ШвидкийВибір : DirectoryFormJournalSmall
 {
     
     
-    public СеріїНоменклатури_ШвидкийВибір() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = СеріїНоменклатури_Const.POINTER;
         KeyForSetting = ".Small";
@@ -28,11 +29,19 @@ class СеріїНоменклатури_ШвидкийВибір : DirectoryFor
         
     }
 
+    public static СеріїНоменклатури_ШвидкийВибір New()
+    {
+        СеріїНоменклатури_ШвидкийВибір list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
+
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);
@@ -50,7 +59,7 @@ class СеріїНоменклатури_ШвидкийВибір : DirectoryFor
 
     protected override async ValueTask OpenPageList(UniqueID? uniqueID = null)
     {
-        await Функції.OpenPageList(uniqueID, OpenSelect, OpenFolder, CallBack_OnSelectPointer);
+        await Функції.OpenPageList(uniqueID, AllowedContentSelection, OpenFolder, CallBack_OnSelectPointer);
     }
 
     protected override async ValueTask OpenPageElement(bool IsNew, UniqueID? uniqueID = null)

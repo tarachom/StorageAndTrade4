@@ -10,7 +10,7 @@ using GeneratedCode.Документи;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<PointerControl>("PointerControl_tlse65upL0mtSCGq3gXuw")]
+[GObject.Subclass<PointerControl>("PointerControl_78X5AsEHQEmnEfLMGtxnA")]
 public partial class ЗакриттяЗамовленняКлієнта_PointerControl : PointerControl
 {
     event EventHandler<ЗакриттяЗамовленняКлієнта_Pointer>? PointerChanged;
@@ -45,16 +45,16 @@ public partial class ЗакриттяЗамовленняКлієнта_PointerC
         popover.WidthRequest = 800;
         popover.HeightRequest = 400;
         BeforeClickOpenFunc?.Invoke();
-        ЗакриттяЗамовленняКлієнта_ШвидкийВибір page = new()
+
+        ЗакриттяЗамовленняКлієнта_ШвидкийВибір page = ЗакриттяЗамовленняКлієнта_ШвидкийВибір.New();
+        page.PopoverParent = popover;
+        page.DocumentPointerItem = Pointer.UniqueID;
+        page.CallBack_OnSelectPointer = selectPointer =>
         {
-            PopoverParent = popover,
-            DocumentPointerItem = Pointer.UniqueID,
-            CallBack_OnSelectPointer = selectPointer =>
-            {
-                Pointer = new ЗакриттяЗамовленняКлієнта_Pointer(selectPointer);
-                AfterSelectFunc?.Invoke();
-            }
+            Pointer = new ЗакриттяЗамовленняКлієнта_Pointer(selectPointer);
+            AfterSelectFunc?.Invoke();
         };
+
         popover.SetChild(page);
         popover.Show();
 

@@ -6,11 +6,12 @@
 
 using Gtk;
 using InterfaceGtk4;
+using AccountingSoftware;
 using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<PointerControl>("PointerControl_ZrTufAp9d0W9Q7DVgdP1w")]
+[GObject.Subclass<PointerControl>("PointerControl_i7l0dGxeC0ORNZ8KvaP2Wg")]
 public partial class БанківськіРахункиОрганізацій_PointerControl : PointerControl
 {
     event EventHandler<БанківськіРахункиОрганізацій_Pointer>? PointerChanged;
@@ -40,6 +41,8 @@ public partial class БанківськіРахункиОрганізацій_Po
 
     
 
+    public ConfigurationDirectories.HierarchicalContentType? AllowedContentSelection { get; set; }
+
     protected override async void OpenSelect(Button button, EventArgs args)
     {
         Popover popover = Popover.New();
@@ -47,18 +50,18 @@ public partial class БанківськіРахункиОрганізацій_Po
         popover.WidthRequest = 800;
         popover.HeightRequest = 400;
         BeforeClickOpenFunc?.Invoke();
-        БанківськіРахункиОрганізацій_ШвидкийВибір page = new()
+
+        БанківськіРахункиОрганізацій_ШвидкийВибір page = БанківськіРахункиОрганізацій_ШвидкийВибір.New();
+        page.PopoverParent = popover;
+        page.DirectoryPointerItem = Pointer.UniqueID;
+        page.AllowedContentSelection = AllowedContentSelection;
+        page.OpenFolder = OpenFolder;
+        page.CallBack_OnSelectPointer = selectPointer =>
         {
-            PopoverParent = popover,
-            DirectoryPointerItem = Pointer.UniqueID,
-            OpenSelect = true,
-            OpenFolder = OpenFolder,
-            CallBack_OnSelectPointer = selectPointer =>
-            {
-                Pointer = new БанківськіРахункиОрганізацій_Pointer(selectPointer);
-                AfterSelectFunc?.Invoke();
-            }
+            Pointer = new БанківськіРахункиОрганізацій_Pointer(selectPointer);
+            AfterSelectFunc?.Invoke();
         };
+
         
         popover.SetChild(page);
         popover.Show();

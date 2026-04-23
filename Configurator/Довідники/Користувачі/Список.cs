@@ -1,5 +1,5 @@
 
-/*     
+/*      
         Користувачі.cs
         Список
 */
@@ -14,11 +14,12 @@ using Функції = StorageAndTrade.Користувачі_Функції;
 
 namespace StorageAndTrade;
 
-class Користувачі_Список : DirectoryFormJournalFull
+[GObject.Subclass<DirectoryFormJournalFull>("List_3LNq4rPWLEKm6CcSP8Z1OQ")]
+partial class Користувачі_Список : DirectoryFormJournalFull
 {
     
     
-    public Користувачі_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = Користувачі_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
@@ -27,11 +28,19 @@ class Користувачі_Список : DirectoryFormJournalFull
         
     }
 
+    public static Користувачі_Список New()
+    {
+        Користувачі_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
+
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);

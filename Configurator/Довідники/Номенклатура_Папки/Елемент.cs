@@ -6,6 +6,7 @@
 
 using Gtk;
 using InterfaceGtk4;
+using AccountingSoftware;
 
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
@@ -13,7 +14,8 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-class Номенклатура_Папки_Елемент : DirectoryFormElement
+[GObject.Subclass<DirectoryFormElement>("Element_ZbpESiTL2k2KKUuuppiA")]
+partial class Номенклатура_Папки_Елемент : DirectoryFormElement
 {
     public Номенклатура_Папки_Objest Елемент { get; init; } = new();
     
@@ -30,15 +32,29 @@ class Номенклатура_Папки_Елемент : DirectoryFormElement
     
     #endregion
 
-    public Номенклатура_Папки_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     { 
         Element = Елемент;
 
-        Код.WidthRequest = 100;
-                        Назва.WidthRequest = 300;
-                        Родич.Caption = "Папка";
+        
+            // Код:
+            Код.WidthRequest = 100;
+                        
+            // Назва:
+            Назва.WidthRequest = 300;
+                        
+            // Родич:
+            Родич.Caption = "Папка";
                     Родич.WidthPresentation = 300;
                 
+    }
+
+    public static Номенклатура_Папки_Елемент New()
+    {
+        Номенклатура_Папки_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateStart(Box vBox)

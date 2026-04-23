@@ -10,29 +10,46 @@ using GeneratedCode;
 
 namespace StorageAndTrade;
 
-class PageHome : Form
+/// <summary>
+/// Стартова сторінка
+/// </summary>
+[GObject.Subclass<Form>]
+partial class PageHome : Form
 {
-    public ActiveUsersView activeUsersView = new(Config.Kernel, 800, 300);
-    public LockObjectsView lockObjectsView = new(800, 300);
-
-    public PageHome() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         {
+            ActiveUsersView view = ActiveUsersView.New(Config.Kernel, 800, 300);
+
             Box hBox = New(Orientation.Horizontal, 0);
             hBox.MarginBottom = 10;
-            hBox.Append(activeUsersView);
+            hBox.Append(view);
             Append(hBox);
         }
 
         {
+            LockObjectsView view = LockObjectsView.New(800, 300);
+
             Box hBox = New(Orientation.Horizontal, 0);
-            hBox.Append(lockObjectsView);
+            hBox.Append(view);
             Append(hBox);
         }
     }
 
+    /// <summary>
+    /// Новий об'єкт
+    /// </summary>
+    /// <returns>PageHome</returns>
+    public static PageHome New()
+    {
+        PageHome page = NewWithProperties([]);
+        page.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return page;
+    }
+
     public async ValueTask SetValue()
     {
-        
+
     }
 }

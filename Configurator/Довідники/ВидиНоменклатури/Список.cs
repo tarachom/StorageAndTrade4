@@ -1,5 +1,5 @@
 
-/*     
+/*      
         ВидиНоменклатури.cs
         Список
 */
@@ -14,11 +14,12 @@ using Функції = StorageAndTrade.ВидиНоменклатури_Функ
 
 namespace StorageAndTrade;
 
-class ВидиНоменклатури_Список : DirectoryFormJournalFull
+[GObject.Subclass<DirectoryFormJournalFull>("List_Y5736N6CYEKXFOTzAXrxwQ")]
+partial class ВидиНоменклатури_Список : DirectoryFormJournalFull
 {
     
     
-    public ВидиНоменклатури_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = ВидиНоменклатури_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
@@ -27,11 +28,19 @@ class ВидиНоменклатури_Список : DirectoryFormJournalFull
         
     }
 
+    public static ВидиНоменклатури_Список New()
+    {
+        ВидиНоменклатури_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
+
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);

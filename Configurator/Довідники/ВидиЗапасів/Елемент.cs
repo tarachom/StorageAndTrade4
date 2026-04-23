@@ -6,6 +6,7 @@
 
 using Gtk;
 using InterfaceGtk4;
+using AccountingSoftware;
 
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
@@ -13,7 +14,8 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-class ВидиЗапасів_Елемент : DirectoryFormElement
+[GObject.Subclass<DirectoryFormElement>("Element_0AFwsCQSc0KNVZAAUqXanA")]
+partial class ВидиЗапасів_Елемент : DirectoryFormElement
 {
     public ВидиЗапасів_Objest Елемент { get; init; } = new();
     
@@ -32,15 +34,22 @@ class ВидиЗапасів_Елемент : DirectoryFormElement
     
     #endregion
 
-    public ВидиЗапасів_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     { 
         Element = Елемент;
 
-        Код.WidthRequest = 100;
-                        Назва.WidthRequest = 300;
-                        Організація.Caption = "Організація";
+        
+            // Код:
+            Код.WidthRequest = 100;
+                        
+            // Назва:
+            Назва.WidthRequest = 300;
+                        
+            // Організація:
+            Організація.Caption = "Організація";
                     Організація.WidthPresentation = 300;
                 
+            // ТипЗапасів:
             {
                 //Заповнення списку
                 foreach (var field in ПсевдонімиПерелічення.ТипЗапасів_List())
@@ -51,13 +60,27 @@ class ВидиЗапасів_Елемент : DirectoryFormElement
                 ТипЗапасів.AddController(controller);
                 controller.OnScroll += (_, _) => true;
             }
-                Валюта.Caption = "Валюта";
+                
+            // Валюта:
+            Валюта.Caption = "Валюта";
                     Валюта.WidthPresentation = 300;
-                Контрагент.Caption = "Контрагент";
+                
+            // Контрагент:
+            Контрагент.Caption = "Контрагент";
                     Контрагент.WidthPresentation = 300;
-                Договір.Caption = "Договір";
+                
+            // Договір:
+            Договір.Caption = "Договір";
                     Договір.WidthPresentation = 300;
                 
+    }
+
+    public static ВидиЗапасів_Елемент New()
+    {
+        ВидиЗапасів_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateStart(Box vBox)

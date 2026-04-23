@@ -6,6 +6,7 @@
 
 using Gtk;
 using InterfaceGtk4;
+using AccountingSoftware;
 
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
@@ -13,7 +14,8 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-class ВидиНоменклатури_Елемент : DirectoryFormElement
+[GObject.Subclass<DirectoryFormElement>("Element_oo2txpN6w0uG3neeA0RpQ")]
+partial class ВидиНоменклатури_Елемент : DirectoryFormElement
 {
     public ВидиНоменклатури_Objest Елемент { get; init; } = new();
     
@@ -30,16 +32,25 @@ class ВидиНоменклатури_Елемент : DirectoryFormElement
     
     #endregion
 
-    public ВидиНоменклатури_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     { 
         Element = Елемент;
 
-        Код.WidthRequest = 100;
-                        Назва.WidthRequest = 300;
-                        Опис.WrapMode = WrapMode.Word;
-                        ОдиницяВиміру.Caption = "Пакування:";
+        
+            // Код:
+            Код.WidthRequest = 100;
+                        
+            // Назва:
+            Назва.WidthRequest = 300;
+                        
+            // Опис:
+            Опис.WrapMode = WrapMode.Word;
+                        
+            // ОдиницяВиміру:
+            ОдиницяВиміру.Caption = "Пакування:";
                     ОдиницяВиміру.WidthPresentation = 300;
                 
+            // ТипНоменклатури:
             {
                 //Заповнення списку
                 foreach (var field in ПсевдонімиПерелічення.ТипиНоменклатури_List())
@@ -51,6 +62,14 @@ class ВидиНоменклатури_Елемент : DirectoryFormElement
                 controller.OnScroll += (_, _) => true;
             }
                 
+    }
+
+    public static ВидиНоменклатури_Елемент New()
+    {
+        ВидиНоменклатури_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateStart(Box vBox)

@@ -10,7 +10,7 @@ using GeneratedCode.Документи;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<PointerControl>("PointerControl_WDzjhNAJBEKHh2lo9rjyDw")]
+[GObject.Subclass<PointerControl>("PointerControl_razUh4gHk0eCzeHkAPO2Q")]
 public partial class РозміщенняТоварівНаСкладі_PointerControl : PointerControl
 {
     event EventHandler<РозміщенняТоварівНаСкладі_Pointer>? PointerChanged;
@@ -45,16 +45,16 @@ public partial class РозміщенняТоварівНаСкладі_PointerC
         popover.WidthRequest = 800;
         popover.HeightRequest = 400;
         BeforeClickOpenFunc?.Invoke();
-        РозміщенняТоварівНаСкладі_ШвидкийВибір page = new()
+
+        РозміщенняТоварівНаСкладі_ШвидкийВибір page = РозміщенняТоварівНаСкладі_ШвидкийВибір.New();
+        page.PopoverParent = popover;
+        page.DocumentPointerItem = Pointer.UniqueID;
+        page.CallBack_OnSelectPointer = selectPointer =>
         {
-            PopoverParent = popover,
-            DocumentPointerItem = Pointer.UniqueID,
-            CallBack_OnSelectPointer = selectPointer =>
-            {
-                Pointer = new РозміщенняТоварівНаСкладі_Pointer(selectPointer);
-                AfterSelectFunc?.Invoke();
-            }
+            Pointer = new РозміщенняТоварівНаСкладі_Pointer(selectPointer);
+            AfterSelectFunc?.Invoke();
         };
+
         popover.SetChild(page);
         popover.Show();
 

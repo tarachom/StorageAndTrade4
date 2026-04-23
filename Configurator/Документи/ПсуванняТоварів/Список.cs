@@ -14,13 +14,22 @@ using Функції = StorageAndTrade.ПсуванняТоварів_Функц
 
 namespace StorageAndTrade;
 
-public class ПсуванняТоварів_Список : DocumentFormJournalFull
+[GObject.Subclass<DocumentFormJournalFull>("List_J2SQ0FNpaUmn4z7v0M6xcQ")]
+public partial class ПсуванняТоварів_Список : DocumentFormJournalFull
 {
-    public ПсуванняТоварів_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = ПсуванняТоварів_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50, Pages.StartingPosition.End);
+    }
+
+    public static ПсуванняТоварів_Список New()
+    {
+        ПсуванняТоварів_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
     }
 
     #region Override

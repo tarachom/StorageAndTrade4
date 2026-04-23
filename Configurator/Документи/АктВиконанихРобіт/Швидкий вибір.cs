@@ -14,14 +14,23 @@ using Функції = StorageAndTrade.АктВиконанихРобіт_Фун
 
 namespace StorageAndTrade;
 
-public class АктВиконанихРобіт_ШвидкийВибір : DocumentFormJournalSmall
+[GObject.Subclass<DocumentFormJournalSmall>("SmallList_Re4mq47zNEipCSUiWiyJfQ")]
+public partial class АктВиконанихРобіт_ШвидкийВибір : DocumentFormJournalSmall
 {
-    public АктВиконанихРобіт_ШвидкийВибір() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = АктВиконанихРобіт_Const.POINTER;
         KeyForSetting = ".Small";
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+    }
+
+    public static АктВиконанихРобіт_ШвидкийВибір New()
+    {
+        АктВиконанихРобіт_ШвидкийВибір list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
     }
 
     #region Override

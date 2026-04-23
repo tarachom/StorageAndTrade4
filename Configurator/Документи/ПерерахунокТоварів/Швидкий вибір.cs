@@ -14,14 +14,23 @@ using Функції = StorageAndTrade.ПерерахунокТоварів_Фу
 
 namespace StorageAndTrade;
 
-public class ПерерахунокТоварів_ШвидкийВибір : DocumentFormJournalSmall
+[GObject.Subclass<DocumentFormJournalSmall>("SmallList_Dtppxc6SnkecXHkMcwsq6A")]
+public partial class ПерерахунокТоварів_ШвидкийВибір : DocumentFormJournalSmall
 {
-    public ПерерахунокТоварів_ШвидкийВибір() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = ПерерахунокТоварів_Const.POINTER;
         KeyForSetting = ".Small";
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+    }
+
+    public static ПерерахунокТоварів_ШвидкийВибір New()
+    {
+        ПерерахунокТоварів_ШвидкийВибір list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
     }
 
     #region Override
@@ -83,7 +92,8 @@ public class ПерерахунокТоварів_ШвидкийВибір : Doc
 
     protected override void ReportSpendTheDocument(UniqueID[] uniqueID)
     {
-
+        foreach (var uid in uniqueID)
+            CommonForms_DocumentMovementThroughRegisters.Create(new ПерерахунокТоварів_Pointer(uid));
     }
 
     #endregion

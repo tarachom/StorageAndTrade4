@@ -6,6 +6,7 @@
 
 using Gtk;
 using InterfaceGtk4;
+using AccountingSoftware;
 
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
@@ -13,7 +14,8 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-class Користувачі_Елемент : DirectoryFormElement
+[GObject.Subclass<DirectoryFormElement>("Element_gZTB3w12USgmRANCkYoA")]
+partial class Користувачі_Елемент : DirectoryFormElement
 {
     public Користувачі_Objest Елемент { get; init; } = new();
     
@@ -28,20 +30,36 @@ class Користувачі_Елемент : DirectoryFormElement
     #region TabularParts
     
         // Таблична частина "Контакти"
-        Користувачі_ТабличнаЧастина_Контакти Контакти = new() { WidthRequest = 500, HeightRequest = 300 };
+        Користувачі_ТабличнаЧастина_Контакти Контакти = Користувачі_ТабличнаЧастина_Контакти.New();
     
     #endregion
 
-    public Користувачі_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     { 
         Element = Елемент;
 
-        Код.WidthRequest = 100;
-                        Назва.WidthRequest = 300;
-                        ФізичнаОсоба.Caption = "Фізична особа";
-                    ФізичнаОсоба.WidthPresentation = 300;
-                Коментар.WidthRequest = 300;
+        
+            // Код:
+            Код.WidthRequest = 100;
                         
+            // Назва:
+            Назва.WidthRequest = 300;
+                        
+            // ФізичнаОсоба:
+            ФізичнаОсоба.Caption = "Фізична особа";
+                    ФізичнаОсоба.WidthPresentation = 300;
+                
+            // Коментар:
+            Коментар.WidthRequest = 300;
+                        
+    }
+
+    public static Користувачі_Елемент New()
+    {
+        Користувачі_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateStart(Box vBox)
@@ -64,8 +82,10 @@ class Користувачі_Елемент : DirectoryFormElement
     protected override void CreateEnd(Box vBox)
     {
         
-            // Таблична частина "Контакти" 
-            CreateTablePart(vBox, "Контакти:", Контакти);
+            // Таблична частина "Контакти"
+            Контакти.WidthRequest = 500;
+            Контакти.HeightRequest = 300;
+            CreateTablePart(vBox, "Контакти", Контакти);
         
     }
 

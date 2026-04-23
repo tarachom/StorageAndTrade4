@@ -31,11 +31,9 @@ static class ПоверненняТоварівВідКлієнта_Функці
         Action<UniqueID?>? сallBack_LoadRecords = null,
         Action<UniqueID>? сallBack_OnSelectPointer = null)
     {
-        ПоверненняТоварівВідКлієнта_Елемент page = new()
-        {
-            CallBack_LoadRecords = сallBack_LoadRecords,
-            CallBack_OnSelectPointer = сallBack_OnSelectPointer
-        };
+        ПоверненняТоварівВідКлієнта_Елемент page = ПоверненняТоварівВідКлієнта_Елемент.New();
+        page.CallBack_LoadRecords = сallBack_LoadRecords;
+        page.CallBack_OnSelectPointer = сallBack_OnSelectPointer;
 
         if (IsNew)
             await page.Елемент.New();
@@ -51,11 +49,9 @@ static class ПоверненняТоварівВідКлієнта_Функці
 
     public static async ValueTask OpenPageList(UniqueID? uniqueID = null, Action<UniqueID>? сallBack_OnSelectPointer = null)
     {
-        ПоверненняТоварівВідКлієнта_Список page = new()
-        {
-            DocumentPointerItem = uniqueID,
-            CallBack_OnSelectPointer = сallBack_OnSelectPointer
-        };
+        ПоверненняТоварівВідКлієнта_Список page = ПоверненняТоварівВідКлієнта_Список.New();
+        page.DocumentPointerItem = uniqueID;
+        page.CallBack_OnSelectPointer = сallBack_OnSelectPointer;
 
         Program.BasicForm?.NotebookFunc.CreatePage(ПоверненняТоварівВідКлієнта_Const.FULLNAME, page);
         await page.SetValue();

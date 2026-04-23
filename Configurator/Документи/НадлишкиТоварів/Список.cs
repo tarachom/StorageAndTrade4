@@ -14,13 +14,22 @@ using Функції = StorageAndTrade.НадлишкиТоварів_Функц
 
 namespace StorageAndTrade;
 
-public class НадлишкиТоварів_Список : DocumentFormJournalFull
+[GObject.Subclass<DocumentFormJournalFull>("List_TwUH8UJxC0aJQf6pMc6u0g")]
+public partial class НадлишкиТоварів_Список : DocumentFormJournalFull
 {
-    public НадлишкиТоварів_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = НадлишкиТоварів_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50, Pages.StartingPosition.End);
+    }
+
+    public static НадлишкиТоварів_Список New()
+    {
+        НадлишкиТоварів_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
     }
 
     #region Override

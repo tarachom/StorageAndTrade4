@@ -14,13 +14,22 @@ using Функції = StorageAndTrade.КорегуванняБоргу_Функ
 
 namespace StorageAndTrade;
 
-public class КорегуванняБоргу_Список : DocumentFormJournalFull
+[GObject.Subclass<DocumentFormJournalFull>("List_JQuBZlUpBkWeROl2R595Gg")]
+public partial class КорегуванняБоргу_Список : DocumentFormJournalFull
 {
-    public КорегуванняБоргу_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = КорегуванняБоргу_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50, Pages.StartingPosition.End);
+    }
+
+    public static КорегуванняБоргу_Список New()
+    {
+        КорегуванняБоргу_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
     }
 
     #region Override

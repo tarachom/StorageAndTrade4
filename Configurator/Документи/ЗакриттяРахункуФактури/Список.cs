@@ -14,13 +14,22 @@ using Функції = StorageAndTrade.ЗакриттяРахункуФакту�
 
 namespace StorageAndTrade;
 
-public class ЗакриттяРахункуФактури_Список : DocumentFormJournalFull
+[GObject.Subclass<DocumentFormJournalFull>("List_UIv326T2Bku2SPuziFO9bw")]
+public partial class ЗакриттяРахункуФактури_Список : DocumentFormJournalFull
 {
-    public ЗакриттяРахункуФактури_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = ЗакриттяРахункуФактури_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50, Pages.StartingPosition.End);
+    }
+
+    public static ЗакриттяРахункуФактури_Список New()
+    {
+        ЗакриттяРахункуФактури_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
     }
 
     #region Override

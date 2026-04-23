@@ -1,5 +1,5 @@
 
-/*     
+/*      
         Валюти.cs
         Список
 */
@@ -14,11 +14,12 @@ using Функції = StorageAndTrade.Валюти_Функції;
 
 namespace StorageAndTrade;
 
-class Валюти_Список : DirectoryFormJournalFull
+[GObject.Subclass<DirectoryFormJournalFull>("List_QkK2W4hP80WgkZB0Q2RG4Q")]
+partial class Валюти_Список : DirectoryFormJournalFull
 {
     
     
-    public Валюти_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = Валюти_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
@@ -27,11 +28,19 @@ class Валюти_Список : DirectoryFormJournalFull
         
     }
 
+    public static Валюти_Список New()
+    {
+        Валюти_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
+
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);

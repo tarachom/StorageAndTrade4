@@ -10,7 +10,7 @@ using GeneratedCode.Документи;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<PointerControl>("PointerControl_Lyv56jbImUuZR1cbfQAWmQ")]
+[GObject.Subclass<PointerControl>("PointerControl_jjHFCAiu70y3DI950jhoLg")]
 public partial class ВстановленняЦінНоменклатури_PointerControl : PointerControl
 {
     event EventHandler<ВстановленняЦінНоменклатури_Pointer>? PointerChanged;
@@ -45,16 +45,16 @@ public partial class ВстановленняЦінНоменклатури_Poin
         popover.WidthRequest = 800;
         popover.HeightRequest = 400;
         BeforeClickOpenFunc?.Invoke();
-        ВстановленняЦінНоменклатури_ШвидкийВибір page = new()
+
+        ВстановленняЦінНоменклатури_ШвидкийВибір page = ВстановленняЦінНоменклатури_ШвидкийВибір.New();
+        page.PopoverParent = popover;
+        page.DocumentPointerItem = Pointer.UniqueID;
+        page.CallBack_OnSelectPointer = selectPointer =>
         {
-            PopoverParent = popover,
-            DocumentPointerItem = Pointer.UniqueID,
-            CallBack_OnSelectPointer = selectPointer =>
-            {
-                Pointer = new ВстановленняЦінНоменклатури_Pointer(selectPointer);
-                AfterSelectFunc?.Invoke();
-            }
+            Pointer = new ВстановленняЦінНоменклатури_Pointer(selectPointer);
+            AfterSelectFunc?.Invoke();
         };
+
         popover.SetChild(page);
         popover.Show();
 

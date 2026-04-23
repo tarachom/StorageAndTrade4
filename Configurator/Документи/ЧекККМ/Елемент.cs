@@ -17,7 +17,8 @@ using Функції = StorageAndTrade.ЧекККМ_Функції;
 
 namespace StorageAndTrade;
 
-class ЧекККМ_Елемент : DocumentFormElement
+[GObject.Subclass<DocumentFormElement>("Element_H9RBEQC4zEuHTDeuo2dsSw")]
+partial class ЧекККМ_Елемент : DocumentFormElement
 {
     public ЧекККМ_Objest Елемент { get; init; } = new();
 
@@ -36,11 +37,11 @@ class ЧекККМ_Елемент : DocumentFormElement
     #region TabularParts
     
         // Таблична частина "Товари" 
-        ЧекККМ_ТабличнаЧастина_Товари Товари = new() { WidthRequest = 500, HeightRequest = 300 };
+        ЧекККМ_ТабличнаЧастина_Товари Товари = ЧекККМ_ТабличнаЧастина_Товари.New();
     
     #endregion
 
-    public ЧекККМ_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         Element = Елемент;
 
@@ -48,22 +49,48 @@ class ЧекККМ_Елемент : DocumentFormElement
         
         CreateField(HBoxComment, "Коментар:", Коментар);
         
-            // Таблична частина "Товари" 
+            // Таблична частина "Товари"
+            Товари.WidthRequest = 500;
+            Товари.HeightRequest = 300;
             NotebookTablePart.InsertPage(Товари, Label.New("Товари"), 0);
             
             NotebookTablePart.SetCurrentPage(0);
-        НомерДок.WidthRequest = 100;
-                        Коментар.WidthRequest = 300;
-                        Основа.BoundConfType = "Документи.ЧекККМ.Основа";
-                Організація.Caption = "Організація";
+        
+            //НомерДок:
+            НомерДок.WidthRequest = 100;
+                        
+            //ДатаДок:
+            
+            //Коментар:
+            Коментар.WidthRequest = 300;
+                        
+            //Основа:
+            Основа.BoundConfType = "Документи.ЧекККМ.Основа";
+                
+            //Організація:
+            Організація.Caption = "Організація";
                     Організація.WidthPresentation = 300;
-                Валюта.Caption = "Валюта";
+                
+            //Валюта:
+            Валюта.Caption = "Валюта";
                     Валюта.WidthPresentation = 300;
-                Склад.Caption = "Склад";
+                
+            //Склад:
+            Склад.Caption = "Склад";
                     Склад.WidthPresentation = 300;
-                КасаККМ.Caption = "Каса ККМ";
+                
+            //КасаККМ:
+            КасаККМ.Caption = "Каса ККМ";
                     КасаККМ.WidthPresentation = 300;
                 
+    }
+
+    public static ЧекККМ_Елемент New()
+    {
+        ЧекККМ_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateTopStart(Box vBox)

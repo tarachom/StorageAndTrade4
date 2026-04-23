@@ -10,7 +10,7 @@ using GeneratedCode.Документи;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<PointerControl>("PointerControl_YoxbpcmJ0ye0wewYySsTA")]
+[GObject.Subclass<PointerControl>("PointerControl_KxJa7TyxjEO5aKQ4LcMnw")]
 public partial class ЗбіркаТоварівНаСкладі_PointerControl : PointerControl
 {
     event EventHandler<ЗбіркаТоварівНаСкладі_Pointer>? PointerChanged;
@@ -45,16 +45,16 @@ public partial class ЗбіркаТоварівНаСкладі_PointerControl :
         popover.WidthRequest = 800;
         popover.HeightRequest = 400;
         BeforeClickOpenFunc?.Invoke();
-        ЗбіркаТоварівНаСкладі_ШвидкийВибір page = new()
+
+        ЗбіркаТоварівНаСкладі_ШвидкийВибір page = ЗбіркаТоварівНаСкладі_ШвидкийВибір.New();
+        page.PopoverParent = popover;
+        page.DocumentPointerItem = Pointer.UniqueID;
+        page.CallBack_OnSelectPointer = selectPointer =>
         {
-            PopoverParent = popover,
-            DocumentPointerItem = Pointer.UniqueID,
-            CallBack_OnSelectPointer = selectPointer =>
-            {
-                Pointer = new ЗбіркаТоварівНаСкладі_Pointer(selectPointer);
-                AfterSelectFunc?.Invoke();
-            }
+            Pointer = new ЗбіркаТоварівНаСкладі_Pointer(selectPointer);
+            AfterSelectFunc?.Invoke();
         };
+
         popover.SetChild(page);
         popover.Show();
 

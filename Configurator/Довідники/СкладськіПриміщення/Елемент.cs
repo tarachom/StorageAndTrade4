@@ -6,6 +6,7 @@
 
 using Gtk;
 using InterfaceGtk4;
+using AccountingSoftware;
 
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
@@ -13,7 +14,8 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-class СкладськіПриміщення_Елемент : DirectoryFormElement
+[GObject.Subclass<DirectoryFormElement>("Element_31dVji9NVku2b0mX4UhLkg")]
+partial class СкладськіПриміщення_Елемент : DirectoryFormElement
 {
     public СкладськіПриміщення_Objest Елемент { get; init; } = new();
     
@@ -30,12 +32,15 @@ class СкладськіПриміщення_Елемент : DirectoryFormEleme
     
     #endregion
 
-    public СкладськіПриміщення_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     { 
         Element = Елемент;
 
-        Назва.WidthRequest = 300;
+        
+            // Назва:
+            Назва.WidthRequest = 300;
                         
+            // НалаштуванняАдресногоЗберігання:
             {
                 //Заповнення списку
                 foreach (var field in ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_List())
@@ -46,9 +51,19 @@ class СкладськіПриміщення_Елемент : DirectoryFormEleme
                 НалаштуванняАдресногоЗберігання.AddController(controller);
                 controller.OnScroll += (_, _) => true;
             }
-                Склад.Caption = "Склад";
+                
+            // Склад:
+            Склад.Caption = "Склад";
                     Склад.WidthPresentation = 300;
                 
+    }
+
+    public static СкладськіПриміщення_Елемент New()
+    {
+        СкладськіПриміщення_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateStart(Box vBox)

@@ -6,6 +6,7 @@
 
 using Gtk;
 using InterfaceGtk4;
+using AccountingSoftware;
 
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
@@ -13,7 +14,8 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-class КасиККМ_Елемент : DirectoryFormElement
+[GObject.Subclass<DirectoryFormElement>("Element_DimL1t4YUCkCnrffPHRng")]
+partial class КасиККМ_Елемент : DirectoryFormElement
 {
     public КасиККМ_Objest Елемент { get; init; } = new();
     
@@ -29,14 +31,19 @@ class КасиККМ_Елемент : DirectoryFormElement
     
     #endregion
 
-    public КасиККМ_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     { 
         Element = Елемент;
 
-        Назва.WidthRequest = 300;
-                        Склад.Caption = "Склад";
+        
+            // Назва:
+            Назва.WidthRequest = 300;
+                        
+            // Склад:
+            Склад.Caption = "Склад";
                     Склад.WidthPresentation = 300;
                 
+            // Тип:
             {
                 //Заповнення списку
                 foreach (var field in ПсевдонімиПерелічення.ТипККМ_List())
@@ -47,9 +54,19 @@ class КасиККМ_Елемент : DirectoryFormElement
                 Тип.AddController(controller);
                 controller.OnScroll += (_, _) => true;
             }
-                Валюта.Caption = "Валюта";
+                
+            // Валюта:
+            Валюта.Caption = "Валюта";
                     Валюта.WidthPresentation = 300;
                 
+    }
+
+    public static КасиККМ_Елемент New()
+    {
+        КасиККМ_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateStart(Box vBox)

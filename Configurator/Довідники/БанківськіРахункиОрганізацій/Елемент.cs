@@ -6,6 +6,7 @@
 
 using Gtk;
 using InterfaceGtk4;
+using AccountingSoftware;
 
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
@@ -13,7 +14,8 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-class БанківськіРахункиОрганізацій_Елемент : DirectoryFormElement
+[GObject.Subclass<DirectoryFormElement>("Element_SHvnji4zE2UeoPOKVRw")]
+partial class БанківськіРахункиОрганізацій_Елемент : DirectoryFormElement
 {
     public БанківськіРахункиОрганізацій_Objest Елемент { get; init; } = new();
     
@@ -32,22 +34,44 @@ class БанківськіРахункиОрганізацій_Елемент : 
     
     #endregion
 
-    public БанківськіРахункиОрганізацій_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     { 
         Element = Елемент;
 
-        Код.WidthRequest = 100;
-                        Назва.WidthRequest = 300;
-                        Банк.Caption = "Банк";
+        
+            // Код:
+            Код.WidthRequest = 100;
+                        
+            // Назва:
+            Назва.WidthRequest = 300;
+                        
+            // Банк:
+            Банк.Caption = "Банк";
                     Банк.WidthPresentation = 300;
-                Організація.Caption = "Організація";
+                
+            // Організація:
+            Організація.Caption = "Організація";
                     Організація.WidthPresentation = 300;
-                НомерРахунку.WidthRequest = 300;
-                        Валюта.Caption = "Валюта";
+                
+            // НомерРахунку:
+            НомерРахунку.WidthRequest = 300;
+                        
+            // Валюта:
+            Валюта.Caption = "Валюта";
                     Валюта.WidthPresentation = 300;
-                Підрозділ.Caption = "Підрозділ";
+                
+            // Підрозділ:
+            Підрозділ.Caption = "Підрозділ";
                     Підрозділ.WidthPresentation = 300;
                 
+    }
+
+    public static БанківськіРахункиОрганізацій_Елемент New()
+    {
+        БанківськіРахункиОрганізацій_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateStart(Box vBox)

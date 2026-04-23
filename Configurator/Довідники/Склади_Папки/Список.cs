@@ -1,5 +1,5 @@
 
-/*     
+/*      
         Склади_Папки.cs
         Список
 */
@@ -14,11 +14,12 @@ using Функції = StorageAndTrade.Склади_Папки_Функції;
 
 namespace StorageAndTrade;
 
-class Склади_Папки_Список : DirectoryFormJournalFullTree
+[GObject.Subclass<DirectoryFormJournalFullTree>("List_wETm2Sn4DUWZ1gOkEiQQVg")]
+partial class Склади_Папки_Список : DirectoryFormJournalFullTree
 {
     
     
-    public Склади_Папки_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = Склади_Папки_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
@@ -27,11 +28,29 @@ class Склади_Папки_Список : DirectoryFormJournalFullTree
         
     }
 
+    public static Склади_Папки_Список New()
+    {
+        Склади_Папки_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
+
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
+    
+    public override async ValueTask<List<DirectoryHierarchicalRow>> LoadChildren(UniqueID parent)
+    {
+        return await ТабличнийСписок.LoadChildren(this, parent);
+    }
 
+    public override DirectoryHierarchicalRow LoadEmptyChildren()
+    {
+        return ТабличнийСписок.LoadEmptyChildren(this);
+    }
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);

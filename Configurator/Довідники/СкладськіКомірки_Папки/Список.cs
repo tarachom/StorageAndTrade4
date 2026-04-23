@@ -1,5 +1,5 @@
 
-/*     
+/*      
         СкладськіКомірки_Папки.cs
         Список
 */
@@ -14,13 +14,14 @@ using Функції = StorageAndTrade.СкладськіКомірки_Папк
 
 namespace StorageAndTrade;
 
-class СкладськіКомірки_Папки_Список : DirectoryFormJournalFullTree
+[GObject.Subclass<DirectoryFormJournalFullTree>("List_VSKLhnrc0EokbJ3SWAQ")]
+partial class СкладськіКомірки_Папки_Список : DirectoryFormJournalFullTree
 {
     
     public СкладськіПриміщення_PointerControl Власник = СкладськіПриміщення_PointerControl.New();
     
     
-    public СкладськіКомірки_Папки_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = СкладськіКомірки_Папки_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
@@ -41,11 +42,29 @@ class СкладськіКомірки_Папки_Список : DirectoryFormJo
         
     }
 
+    public static СкладськіКомірки_Папки_Список New()
+    {
+        СкладськіКомірки_Папки_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
+
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
+    
+    public override async ValueTask<List<DirectoryHierarchicalRow>> LoadChildren(UniqueID parent)
+    {
+        return await ТабличнийСписок.LoadChildren(this, parent);
+    }
 
+    public override DirectoryHierarchicalRow LoadEmptyChildren()
+    {
+        return ТабличнийСписок.LoadEmptyChildren(this);
+    }
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);

@@ -17,7 +17,8 @@ using Функції = StorageAndTrade.ПереміщенняТоварів_Фу
 
 namespace StorageAndTrade;
 
-class ПереміщенняТоварів_Елемент : DocumentFormElement
+[GObject.Subclass<DocumentFormElement>("Element_blHBNTRhf0G4bqBPRaDXg")]
+partial class ПереміщенняТоварів_Елемент : DocumentFormElement
 {
     public ПереміщенняТоварів_Objest Елемент { get; init; } = new();
 
@@ -36,8 +37,8 @@ class ПереміщенняТоварів_Елемент : DocumentFormElement
             ComboBoxText ГосподарськаОперація = ComboBoxText.New();
             ComboBoxText СпосібДоставки = ComboBoxText.New();
             Entry АдресДоставки = Entry.New();
-                    TimeControl ЧасДоставкиЗ = new();
-            TimeControl ЧасДоставкиДо = new();
+                    TimeControl ЧасДоставкиЗ = TimeControl.New();
+            TimeControl ЧасДоставкиДо = TimeControl.New();
             Entry Коментар = Entry.New();
                     CompositePointerControl Основа = CompositePointerControl.New();
             
@@ -46,11 +47,11 @@ class ПереміщенняТоварів_Елемент : DocumentFormElement
     #region TabularParts
     
         // Таблична частина "Товари" 
-        ПереміщенняТоварів_ТабличнаЧастина_Товари Товари = new() { WidthRequest = 500, HeightRequest = 300 };
+        ПереміщенняТоварів_ТабличнаЧастина_Товари Товари = ПереміщенняТоварів_ТабличнаЧастина_Товари.New();
     
     #endregion
 
-    public ПереміщенняТоварів_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         Element = Елемент;
 
@@ -58,28 +59,51 @@ class ПереміщенняТоварів_Елемент : DocumentFormElement
         
         CreateField(HBoxComment, "Коментар:", Коментар);
         
-            // Таблична частина "Товари" 
+            // Таблична частина "Товари"
+            Товари.WidthRequest = 500;
+            Товари.HeightRequest = 300;
             NotebookTablePart.InsertPage(Товари, Label.New("Товари"), 0);
             
             NotebookTablePart.SetCurrentPage(0);
-        НомерДок.WidthRequest = 100;
-                        Організація.Caption = "Організація";
+        
+            //НомерДок:
+            НомерДок.WidthRequest = 100;
+                        
+            //ДатаДок:
+            
+            //Організація:
+            Організація.Caption = "Організація";
                     Організація.WidthPresentation = 300;
-                БанківськийРахунокОрганізації.Caption = "Банківський рахунок організації";
+                
+            //БанківськийРахунокОрганізації:
+            БанківськийРахунокОрганізації.Caption = "Банківський рахунок організації";
                     БанківськийРахунокОрганізації.WidthPresentation = 300;
-                ВидЦіни.Caption = "Вид ціни";
+                
+            //ВидЦіни:
+            ВидЦіни.Caption = "Вид ціни";
                     ВидЦіни.WidthPresentation = 300;
-                ОрганізаціяОтримувач.Caption = "Організація отримувач";
+                
+            //ОрганізаціяОтримувач:
+            ОрганізаціяОтримувач.Caption = "Організація отримувач";
                     ОрганізаціяОтримувач.WidthPresentation = 300;
-                Відповідальний.Caption = "Відповідальний";
+                
+            //Відповідальний:
+            Відповідальний.Caption = "Відповідальний";
                     Відповідальний.WidthPresentation = 300;
-                Підрозділ.Caption = "Підрозділ";
+                
+            //Підрозділ:
+            Підрозділ.Caption = "Підрозділ";
                     Підрозділ.WidthPresentation = 300;
-                СкладВідправник.Caption = "Склад відправник";
+                
+            //СкладВідправник:
+            СкладВідправник.Caption = "Склад відправник";
                     СкладВідправник.WidthPresentation = 300;
-                СкладОтримувач.Caption = "Склад отримувач";
+                
+            //СкладОтримувач:
+            СкладОтримувач.Caption = "Склад отримувач";
                     СкладОтримувач.WidthPresentation = 300;
                 
+            //Статус:
             {
                 //Заповнення списку
                 foreach (var field in ПсевдонімиПерелічення.СтатусиПереміщенняТоварів_List())
@@ -91,6 +115,7 @@ class ПереміщенняТоварів_Елемент : DocumentFormElement
                 controller.OnScroll += (_, _) => true;
             }
                 
+            //ГосподарськаОперація:
             {
                 //Заповнення списку
                 foreach (var field in ПсевдонімиПерелічення.ГосподарськіОперації_List())
@@ -102,6 +127,7 @@ class ПереміщенняТоварів_Елемент : DocumentFormElement
                 controller.OnScroll += (_, _) => true;
             }
                 
+            //СпосібДоставки:
             {
                 //Заповнення списку
                 foreach (var field in ПсевдонімиПерелічення.СпособиДоставки_List())
@@ -112,10 +138,28 @@ class ПереміщенняТоварів_Елемент : DocumentFormElement
                 СпосібДоставки.AddController(controller);
                 controller.OnScroll += (_, _) => true;
             }
-                АдресДоставки.WidthRequest = 300;
-                        Коментар.WidthRequest = 300;
-                        Основа.BoundConfType = "Документи.ПереміщенняТоварів.Основа";
                 
+            //АдресДоставки:
+            АдресДоставки.WidthRequest = 300;
+                        
+            //ЧасДоставкиЗ:
+            
+            //ЧасДоставкиДо:
+            
+            //Коментар:
+            Коментар.WidthRequest = 300;
+                        
+            //Основа:
+            Основа.BoundConfType = "Документи.ПереміщенняТоварів.Основа";
+                
+    }
+
+    public static ПереміщенняТоварів_Елемент New()
+    {
+        ПереміщенняТоварів_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateTopStart(Box vBox)

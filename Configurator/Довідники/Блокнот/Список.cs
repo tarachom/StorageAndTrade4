@@ -1,5 +1,5 @@
 
-/*     
+/*      
         Блокнот.cs
         Список
 */
@@ -14,11 +14,12 @@ using Функції = StorageAndTrade.Блокнот_Функції;
 
 namespace StorageAndTrade;
 
-class Блокнот_Список : DirectoryFormJournalFull
+[GObject.Subclass<DirectoryFormJournalFull>("List_crtrnnyvo0yMYZpA5lgKSg")]
+partial class Блокнот_Список : DirectoryFormJournalFull
 {
     
     
-    public Блокнот_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = Блокнот_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
@@ -27,11 +28,19 @@ class Блокнот_Список : DirectoryFormJournalFull
         
     }
 
+    public static Блокнот_Список New()
+    {
+        Блокнот_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
+
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);

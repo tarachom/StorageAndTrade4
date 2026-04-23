@@ -30,11 +30,9 @@ static class СтаттяРухуКоштів_Функції
         Action<UniqueID?>? сallBack_LoadRecords = null, 
         Action<UniqueID>? сallBack_OnSelectPointer = null)
     {
-        СтаттяРухуКоштів_Елемент page = new()
-        {
-            CallBack_LoadRecords = сallBack_LoadRecords,
-            CallBack_OnSelectPointer = сallBack_OnSelectPointer
-        };
+        СтаттяРухуКоштів_Елемент page = СтаттяРухуКоштів_Елемент.New();
+        page.CallBack_LoadRecords = сallBack_LoadRecords;
+        page.CallBack_OnSelectPointer = сallBack_OnSelectPointer;
 
         if (IsNew)
         {
@@ -51,16 +49,15 @@ static class СтаттяРухуКоштів_Функції
         await page.SetValue();
     }
 
-    public static async ValueTask OpenPageList(UniqueID? uniqueID = null, bool openSelect = false, UniqueID? openFolder = null,
+    public static async ValueTask OpenPageList(UniqueID? uniqueID = null, ConfigurationDirectories.HierarchicalContentType? allowedContentSelection = null, UniqueID? openFolder = null,
         Action<UniqueID>? сallBack_OnSelectPointer = null)
     {
-        СтаттяРухуКоштів_Список page = new()
-        {
-            OpenSelect = openSelect,
-            OpenFolder = openFolder,
-            DirectoryPointerItem = uniqueID,
-            CallBack_OnSelectPointer = сallBack_OnSelectPointer
-        };
+        СтаттяРухуКоштів_Список page = СтаттяРухуКоштів_Список.New();
+        page.AllowedContentSelection  = allowedContentSelection;
+        page.OpenFolder = openFolder;
+        page.DirectoryPointerItem = uniqueID;
+        page.CallBack_OnSelectPointer = сallBack_OnSelectPointer;
+
         
         Program.BasicForm?.NotebookFunc.CreatePage(СтаттяРухуКоштів_Const.FULLNAME, page);
         await page.SetValue();

@@ -14,13 +14,22 @@ using Функції = StorageAndTrade.ЧекККМ_Функції;
 
 namespace StorageAndTrade;
 
-public class ЧекККМ_Список : DocumentFormJournalFull
+[GObject.Subclass<DocumentFormJournalFull>("List_RefeZaoRTkOE2up0KzfmfA")]
+public partial class ЧекККМ_Список : DocumentFormJournalFull
 {
-    public ЧекККМ_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = ЧекККМ_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50, Pages.StartingPosition.End);
+    }
+
+    public static ЧекККМ_Список New()
+    {
+        ЧекККМ_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
     }
 
     #region Override

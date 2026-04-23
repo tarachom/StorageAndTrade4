@@ -17,7 +17,8 @@ using Функції = StorageAndTrade.ПсуванняТоварів_Функц
 
 namespace StorageAndTrade;
 
-class ПсуванняТоварів_Елемент : DocumentFormElement
+[GObject.Subclass<DocumentFormElement>("Element_KJcHd1v4j0Gpl1JomTSewA")]
+partial class ПсуванняТоварів_Елемент : DocumentFormElement
 {
     public ПсуванняТоварів_Objest Елемент { get; init; } = new();
 
@@ -36,11 +37,11 @@ class ПсуванняТоварів_Елемент : DocumentFormElement
     #region TabularParts
     
         // Таблична частина "Товари" 
-        ПсуванняТоварів_ТабличнаЧастина_Товари Товари = new() { WidthRequest = 500, HeightRequest = 300 };
+        ПсуванняТоварів_ТабличнаЧастина_Товари Товари = ПсуванняТоварів_ТабличнаЧастина_Товари.New();
     
     #endregion
 
-    public ПсуванняТоварів_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         Element = Елемент;
 
@@ -48,21 +49,47 @@ class ПсуванняТоварів_Елемент : DocumentFormElement
         
         CreateField(HBoxComment, "Коментар:", Коментар);
         
-            // Таблична частина "Товари" 
+            // Таблична частина "Товари"
+            Товари.WidthRequest = 500;
+            Товари.HeightRequest = 300;
             NotebookTablePart.InsertPage(Товари, Label.New("Товари"), 0);
             
             NotebookTablePart.SetCurrentPage(0);
-        НомерДок.WidthRequest = 100;
-                        Організація.Caption = "Організація";
+        
+            //НомерДок:
+            НомерДок.WidthRequest = 100;
+                        
+            //ДатаДок:
+            
+            //Організація:
+            Організація.Caption = "Організація";
                     Організація.WidthPresentation = 300;
-                Підрозділ.Caption = "Підрозділ";
-                    Підрозділ.WidthPresentation = 300;
-                Склад.Caption = "Склад";
-                    Склад.WidthPresentation = 300;
-                Причина.WidthRequest = 300;
-                        Коментар.WidthRequest = 300;
-                        Основа.BoundConfType = "Документи.ПсуванняТоварів.Основа";
                 
+            //Підрозділ:
+            Підрозділ.Caption = "Підрозділ";
+                    Підрозділ.WidthPresentation = 300;
+                
+            //Склад:
+            Склад.Caption = "Склад";
+                    Склад.WidthPresentation = 300;
+                
+            //Причина:
+            Причина.WidthRequest = 300;
+                        
+            //Коментар:
+            Коментар.WidthRequest = 300;
+                        
+            //Основа:
+            Основа.BoundConfType = "Документи.ПсуванняТоварів.Основа";
+                
+    }
+
+    public static ПсуванняТоварів_Елемент New()
+    {
+        ПсуванняТоварів_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateTopStart(Box vBox)

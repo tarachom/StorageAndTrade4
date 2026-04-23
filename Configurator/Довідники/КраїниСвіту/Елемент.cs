@@ -6,6 +6,7 @@
 
 using Gtk;
 using InterfaceGtk4;
+using AccountingSoftware;
 
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
@@ -13,7 +14,8 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-class КраїниСвіту_Елемент : DirectoryFormElement
+[GObject.Subclass<DirectoryFormElement>("Element_UzWRpNCHwkuOwOdWCtMg")]
+partial class КраїниСвіту_Елемент : DirectoryFormElement
 {
     public КраїниСвіту_Objest Елемент { get; init; } = new();
     
@@ -27,13 +29,25 @@ class КраїниСвіту_Елемент : DirectoryFormElement
     
     #endregion
 
-    public КраїниСвіту_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     { 
         Element = Елемент;
 
-        Код.WidthRequest = 100;
-                        Назва.WidthRequest = 300;
+        
+            // Код:
+            Код.WidthRequest = 100;
                         
+            // Назва:
+            Назва.WidthRequest = 300;
+                        
+    }
+
+    public static КраїниСвіту_Елемент New()
+    {
+        КраїниСвіту_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateStart(Box vBox)

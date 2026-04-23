@@ -10,7 +10,7 @@ using GeneratedCode.Документи;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<PointerControl>("PointerControl_wMyNuRgLhk25tCpXOxpYwA")]
+[GObject.Subclass<PointerControl>("PointerControl_VDg5soECAEKQRXzjL5xiQ")]
 public partial class ВнутрішнєСпоживанняТоварів_PointerControl : PointerControl
 {
     event EventHandler<ВнутрішнєСпоживанняТоварів_Pointer>? PointerChanged;
@@ -45,16 +45,16 @@ public partial class ВнутрішнєСпоживанняТоварів_Pointe
         popover.WidthRequest = 800;
         popover.HeightRequest = 400;
         BeforeClickOpenFunc?.Invoke();
-        ВнутрішнєСпоживанняТоварів_ШвидкийВибір page = new()
+
+        ВнутрішнєСпоживанняТоварів_ШвидкийВибір page = ВнутрішнєСпоживанняТоварів_ШвидкийВибір.New();
+        page.PopoverParent = popover;
+        page.DocumentPointerItem = Pointer.UniqueID;
+        page.CallBack_OnSelectPointer = selectPointer =>
         {
-            PopoverParent = popover,
-            DocumentPointerItem = Pointer.UniqueID,
-            CallBack_OnSelectPointer = selectPointer =>
-            {
-                Pointer = new ВнутрішнєСпоживанняТоварів_Pointer(selectPointer);
-                AfterSelectFunc?.Invoke();
-            }
+            Pointer = new ВнутрішнєСпоживанняТоварів_Pointer(selectPointer);
+            AfterSelectFunc?.Invoke();
         };
+
         popover.SetChild(page);
         popover.Show();
 

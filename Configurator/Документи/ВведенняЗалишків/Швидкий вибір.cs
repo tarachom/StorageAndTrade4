@@ -14,14 +14,23 @@ using Функції = StorageAndTrade.ВведенняЗалишків_Функ
 
 namespace StorageAndTrade;
 
-public class ВведенняЗалишків_ШвидкийВибір : DocumentFormJournalSmall
+[GObject.Subclass<DocumentFormJournalSmall>("SmallList_iZ6IZgkkKkZ34fUudMJA")]
+public partial class ВведенняЗалишків_ШвидкийВибір : DocumentFormJournalSmall
 {
-    public ВведенняЗалишків_ШвидкийВибір() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = ВведенняЗалишків_Const.POINTER;
         KeyForSetting = ".Small";
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
+    }
+
+    public static ВведенняЗалишків_ШвидкийВибір New()
+    {
+        ВведенняЗалишків_ШвидкийВибір list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
     }
 
     #region Override
@@ -83,7 +92,8 @@ public class ВведенняЗалишків_ШвидкийВибір : Documen
 
     protected override void ReportSpendTheDocument(UniqueID[] uniqueID)
     {
-
+        foreach (var uid in uniqueID)
+            CommonForms_DocumentMovementThroughRegisters.Create(new ВведенняЗалишків_Pointer(uid));
     }
 
     #endregion

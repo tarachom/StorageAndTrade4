@@ -14,11 +14,12 @@ using Функції = StorageAndTrade.КраїниСвіту_Функції;
 
 namespace StorageAndTrade;
 
-class КраїниСвіту_ШвидкийВибір : DirectoryFormJournalSmall
+[GObject.Subclass<DirectoryFormJournalSmall>("SmallList_e0yAA3b5UOP0Rle92dRQ")]
+partial class КраїниСвіту_ШвидкийВибір : DirectoryFormJournalSmall
 {
     
     
-    public КраїниСвіту_ШвидкийВибір() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = КраїниСвіту_Const.POINTER;
         KeyForSetting = ".Small";
@@ -28,11 +29,19 @@ class КраїниСвіту_ШвидкийВибір : DirectoryFormJournalSmal
         
     }
 
+    public static КраїниСвіту_ШвидкийВибір New()
+    {
+        КраїниСвіту_ШвидкийВибір list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
+
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);
@@ -50,7 +59,7 @@ class КраїниСвіту_ШвидкийВибір : DirectoryFormJournalSmal
 
     protected override async ValueTask OpenPageList(UniqueID? uniqueID = null)
     {
-        await Функції.OpenPageList(uniqueID, OpenSelect, OpenFolder, CallBack_OnSelectPointer);
+        await Функції.OpenPageList(uniqueID, AllowedContentSelection, OpenFolder, CallBack_OnSelectPointer);
     }
 
     protected override async ValueTask OpenPageElement(bool IsNew, UniqueID? uniqueID = null)

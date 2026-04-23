@@ -17,7 +17,8 @@ using Функції = StorageAndTrade.АктВиконанихРобіт_Фун
 
 namespace StorageAndTrade;
 
-class АктВиконанихРобіт_Елемент : DocumentFormElement
+[GObject.Subclass<DocumentFormElement>("Element_Tl5wTKgHEWAKsfR2JUEg")]
+partial class АктВиконанихРобіт_Елемент : DocumentFormElement
 {
     public АктВиконанихРобіт_Objest Елемент { get; init; } = new();
 
@@ -42,11 +43,11 @@ class АктВиконанихРобіт_Елемент : DocumentFormElement
     #region TabularParts
     
         // Таблична частина "Послуги" 
-        АктВиконанихРобіт_ТабличнаЧастина_Послуги Послуги = new() { WidthRequest = 500, HeightRequest = 300 };
+        АктВиконанихРобіт_ТабличнаЧастина_Послуги Послуги = АктВиконанихРобіт_ТабличнаЧастина_Послуги.New();
     
     #endregion
 
-    public АктВиконанихРобіт_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         Element = Елемент;
 
@@ -54,24 +55,45 @@ class АктВиконанихРобіт_Елемент : DocumentFormElement
         
         CreateField(HBoxComment, "Коментар:", Коментар);
         
-            // Таблична частина "Послуги" 
+            // Таблична частина "Послуги"
+            Послуги.WidthRequest = 500;
+            Послуги.HeightRequest = 300;
             NotebookTablePart.InsertPage(Послуги, Label.New("Послуги"), 0);
             
             NotebookTablePart.SetCurrentPage(0);
-        НомерДок.WidthRequest = 100;
-                        Валюта.Caption = "Валюта";
+        
+            //НомерДок:
+            НомерДок.WidthRequest = 100;
+                        
+            //ДатаДок:
+            
+            //Валюта:
+            Валюта.Caption = "Валюта";
                     Валюта.WidthPresentation = 300;
-                ЗамовленняКлієнта.Caption = "Замовлення клієнта";
+                
+            //ЗамовленняКлієнта:
+            ЗамовленняКлієнта.Caption = "Замовлення клієнта";
                     ЗамовленняКлієнта.WidthPresentation = 300;
-                Каса.Caption = "Каса";
+                
+            //Каса:
+            Каса.Caption = "Каса";
                     Каса.WidthPresentation = 300;
-                Контрагент.Caption = "Контрагент";
+                
+            //Контрагент:
+            Контрагент.Caption = "Контрагент";
                     Контрагент.WidthPresentation = 300;
-                Організація.Caption = "Організація";
+                
+            //Організація:
+            Організація.Caption = "Організація";
                     Організація.WidthPresentation = 300;
-                Підрозділ.Caption = "Підрозділ";
+                
+            //Підрозділ:
+            Підрозділ.Caption = "Підрозділ";
                     Підрозділ.WidthPresentation = 300;
                 
+            //СумаДокументу:
+            
+            //ФормаОплати:
             {
                 //Заповнення списку
                 foreach (var field in ПсевдонімиПерелічення.ФормаОплати_List())
@@ -82,9 +104,12 @@ class АктВиконанихРобіт_Елемент : DocumentFormElement
                 ФормаОплати.AddController(controller);
                 controller.OnScroll += (_, _) => true;
             }
-                Договір.Caption = "Договір";
+                
+            //Договір:
+            Договір.Caption = "Договір";
                     Договір.WidthPresentation = 300;
                 
+            //ГосподарськаОперація:
             {
                 //Заповнення списку
                 foreach (var field in ПсевдонімиПерелічення.ГосподарськіОперації_List())
@@ -95,9 +120,21 @@ class АктВиконанихРобіт_Елемент : DocumentFormElement
                 ГосподарськаОперація.AddController(controller);
                 controller.OnScroll += (_, _) => true;
             }
-                Коментар.WidthRequest = 300;
-                        Основа.BoundConfType = "Документи.АктВиконанихРобіт.Основа";
                 
+            //Коментар:
+            Коментар.WidthRequest = 300;
+                        
+            //Основа:
+            Основа.BoundConfType = "Документи.АктВиконанихРобіт.Основа";
+                
+    }
+
+    public static АктВиконанихРобіт_Елемент New()
+    {
+        АктВиконанихРобіт_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateTopStart(Box vBox)

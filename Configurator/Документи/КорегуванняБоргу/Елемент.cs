@@ -17,7 +17,8 @@ using Функції = StorageAndTrade.КорегуванняБоргу_Функ
 
 namespace StorageAndTrade;
 
-class КорегуванняБоргу_Елемент : DocumentFormElement
+[GObject.Subclass<DocumentFormElement>("Element_c8MLa1rEsE2okWpywkhieQ")]
+partial class КорегуванняБоргу_Елемент : DocumentFormElement
 {
     public КорегуванняБоргу_Objest Елемент { get; init; } = new();
 
@@ -34,11 +35,11 @@ class КорегуванняБоргу_Елемент : DocumentFormElement
     #region TabularParts
     
         // Таблична частина "РозрахункиЗКонтрагентами" 
-        КорегуванняБоргу_ТабличнаЧастина_РозрахункиЗКонтрагентами РозрахункиЗКонтрагентами = new() { WidthRequest = 500, HeightRequest = 300 };
+        КорегуванняБоргу_ТабличнаЧастина_РозрахункиЗКонтрагентами РозрахункиЗКонтрагентами = КорегуванняБоргу_ТабличнаЧастина_РозрахункиЗКонтрагентами.New();
     
     #endregion
 
-    public КорегуванняБоргу_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         Element = Елемент;
 
@@ -46,18 +47,40 @@ class КорегуванняБоргу_Елемент : DocumentFormElement
         
         CreateField(HBoxComment, "Коментар:", Коментар);
         
-            // Таблична частина "РозрахункиЗКонтрагентами" 
+            // Таблична частина "РозрахункиЗКонтрагентами"
+            РозрахункиЗКонтрагентами.WidthRequest = 500;
+            РозрахункиЗКонтрагентами.HeightRequest = 300;
             NotebookTablePart.InsertPage(РозрахункиЗКонтрагентами, Label.New("Розрахунки з контрагентами"), 0);
             
             NotebookTablePart.SetCurrentPage(0);
-        НомерДок.WidthRequest = 100;
-                        Організація.Caption = "Організація";
+        
+            //НомерДок:
+            НомерДок.WidthRequest = 100;
+                        
+            //ДатаДок:
+            
+            //Організація:
+            Організація.Caption = "Організація";
                     Організація.WidthPresentation = 300;
-                Підрозділ.Caption = "Підрозділ";
-                    Підрозділ.WidthPresentation = 300;
-                Коментар.WidthRequest = 300;
-                        Основа.BoundConfType = "Документи.КорегуванняБоргу.Основа";
                 
+            //Підрозділ:
+            Підрозділ.Caption = "Підрозділ";
+                    Підрозділ.WidthPresentation = 300;
+                
+            //Коментар:
+            Коментар.WidthRequest = 300;
+                        
+            //Основа:
+            Основа.BoundConfType = "Документи.КорегуванняБоргу.Основа";
+                
+    }
+
+    public static КорегуванняБоргу_Елемент New()
+    {
+        КорегуванняБоргу_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateTopStart(Box vBox)

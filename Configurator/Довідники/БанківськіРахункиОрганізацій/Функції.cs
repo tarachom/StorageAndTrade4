@@ -30,11 +30,9 @@ static class БанківськіРахункиОрганізацій_Функц
         Action<UniqueID?>? сallBack_LoadRecords = null, 
         Action<UniqueID>? сallBack_OnSelectPointer = null)
     {
-        БанківськіРахункиОрганізацій_Елемент page = new()
-        {
-            CallBack_LoadRecords = сallBack_LoadRecords,
-            CallBack_OnSelectPointer = сallBack_OnSelectPointer
-        };
+        БанківськіРахункиОрганізацій_Елемент page = БанківськіРахункиОрганізацій_Елемент.New();
+        page.CallBack_LoadRecords = сallBack_LoadRecords;
+        page.CallBack_OnSelectPointer = сallBack_OnSelectPointer;
 
         if (IsNew)
         {
@@ -51,16 +49,15 @@ static class БанківськіРахункиОрганізацій_Функц
         await page.SetValue();
     }
 
-    public static async ValueTask OpenPageList(UniqueID? uniqueID = null, bool openSelect = false, UniqueID? openFolder = null,
+    public static async ValueTask OpenPageList(UniqueID? uniqueID = null, ConfigurationDirectories.HierarchicalContentType? allowedContentSelection = null, UniqueID? openFolder = null,
         Action<UniqueID>? сallBack_OnSelectPointer = null)
     {
-        БанківськіРахункиОрганізацій_Список page = new()
-        {
-            OpenSelect = openSelect,
-            OpenFolder = openFolder,
-            DirectoryPointerItem = uniqueID,
-            CallBack_OnSelectPointer = сallBack_OnSelectPointer
-        };
+        БанківськіРахункиОрганізацій_Список page = БанківськіРахункиОрганізацій_Список.New();
+        page.AllowedContentSelection  = allowedContentSelection;
+        page.OpenFolder = openFolder;
+        page.DirectoryPointerItem = uniqueID;
+        page.CallBack_OnSelectPointer = сallBack_OnSelectPointer;
+
         
         Program.BasicForm?.NotebookFunc.CreatePage(БанківськіРахункиОрганізацій_Const.FULLNAME, page);
         await page.SetValue();

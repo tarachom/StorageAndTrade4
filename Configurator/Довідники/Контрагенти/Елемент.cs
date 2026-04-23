@@ -6,6 +6,7 @@
 
 using Gtk;
 using InterfaceGtk4;
+using AccountingSoftware;
 
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
@@ -13,7 +14,8 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-class Контрагенти_Елемент : DirectoryFormElement
+[GObject.Subclass<DirectoryFormElement>("Element_jMqhqihMkKNPwAvNR6L7w")]
+partial class Контрагенти_Елемент : DirectoryFormElement
 {
     public Контрагенти_Objest Елемент { get; init; } = new();
     
@@ -32,25 +34,49 @@ class Контрагенти_Елемент : DirectoryFormElement
     #region TabularParts
     
         // Таблична частина "Контакти"
-        Контрагенти_ТабличнаЧастина_Контакти Контакти = new() { WidthRequest = 500, HeightRequest = 300 };
+        Контрагенти_ТабличнаЧастина_Контакти Контакти = Контрагенти_ТабличнаЧастина_Контакти.New();
     
         // Таблична частина "Файли"
-        Контрагенти_ТабличнаЧастина_Файли Файли = new() { WidthRequest = 500, HeightRequest = 300 };
+        Контрагенти_ТабличнаЧастина_Файли Файли = Контрагенти_ТабличнаЧастина_Файли.New();
     
     #endregion
 
-    public Контрагенти_Елемент() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     { 
         Element = Елемент;
 
-        Код.WidthRequest = 100;
-                        Назва.WidthRequest = 300;
-                        НазваПовна.WidthRequest = 300;
-                        РеєстраційнийНомер.WidthRequest = 300;
-                        Папка.Caption = "Папка";
-                    Папка.WidthPresentation = 300;
-                Опис.WidthRequest = 300;
+        
+            // Код:
+            Код.WidthRequest = 100;
                         
+            // Назва:
+            Назва.WidthRequest = 300;
+                        
+            // НазваПовна:
+            НазваПовна.WidthRequest = 300;
+                        
+            // РеєстраційнийНомер:
+            РеєстраційнийНомер.WidthRequest = 300;
+                        
+            // Папка:
+            Папка.Caption = "Папка";
+                    Папка.WidthPresentation = 300;
+                
+            // Опис:
+            Опис.WidthRequest = 300;
+                        
+            // Постачальник:
+            
+            // Покупець:
+            
+    }
+
+    public static Контрагенти_Елемент New()
+    {
+        Контрагенти_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
     }
 
     protected override void CreateStart(Box vBox)
@@ -85,11 +111,15 @@ class Контрагенти_Елемент : DirectoryFormElement
     protected override void CreateEnd(Box vBox)
     {
         
-            // Таблична частина "Контакти" 
-            CreateTablePart(vBox, "Контакти:", Контакти);
+            // Таблична частина "Контакти"
+            Контакти.WidthRequest = 500;
+            Контакти.HeightRequest = 300;
+            CreateTablePart(vBox, "Контакти", Контакти);
         
-            // Таблична частина "Файли" 
-            CreateTablePart(vBox, "Файли:", Файли);
+            // Таблична частина "Файли"
+            Файли.WidthRequest = 500;
+            Файли.HeightRequest = 300;
+            CreateTablePart(vBox, "Файли", Файли);
         
     }
 

@@ -14,12 +14,13 @@ using Функції = StorageAndTrade.Номенклатура_Функції;
 
 namespace StorageAndTrade;
 
-class Номенклатура_Список : DirectoryFormJournalFull
+[GObject.Subclass<DirectoryFormJournalFull>("ListAndTreexYglEYUuqUaHrApMzyzRiw")]
+partial class Номенклатура_Список : DirectoryFormJournalFull
 {
-    Номенклатура_Папки_Список Папки = new() { InsertEmptyFirstRow = true };
+    Номенклатура_Папки_Список Папки = Номенклатура_Папки_Список.New();
     
 
-    public Номенклатура_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = Номенклатура_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
@@ -38,6 +39,7 @@ class Номенклатура_Список : DirectoryFormJournalFull
             HPanedTable.Position = 1200;
             HPanedTable.StartChild?.MarginEnd = 5;
 
+            Папки.InsertEmptyFirstRow = true;
             Папки.CallBack_Activate = async uniqueID =>
             {
                 //Відбір по полю Папка
@@ -50,6 +52,14 @@ class Номенклатура_Список : DirectoryFormJournalFull
             };
         }
         
+    }
+
+    public static Номенклатура_Список New()
+    {
+        Номенклатура_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
     }
     
     protected override async ValueTask BeforeSetValue()
@@ -67,7 +77,7 @@ class Номенклатура_Список : DirectoryFormJournalFull
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);

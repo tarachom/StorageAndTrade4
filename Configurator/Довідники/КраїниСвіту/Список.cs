@@ -1,5 +1,5 @@
 
-/*     
+/*      
         КраїниСвіту.cs
         Список
 */
@@ -14,11 +14,12 @@ using Функції = StorageAndTrade.КраїниСвіту_Функції;
 
 namespace StorageAndTrade;
 
-class КраїниСвіту_Список : DirectoryFormJournalFull
+[GObject.Subclass<DirectoryFormJournalFull>("List_SW8rflZjWEaukqOG45Mw")]
+partial class КраїниСвіту_Список : DirectoryFormJournalFull
 {
     
     
-    public КраїниСвіту_Список() : base(Program.BasicForm?.NotebookFunc)
+    partial void Initialize()
     {
         TypeName = КраїниСвіту_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
@@ -27,11 +28,19 @@ class КраїниСвіту_Список : DirectoryFormJournalFull
         
     }
 
+    public static КраїниСвіту_Список New()
+    {
+        КраїниСвіту_Список list = NewWithProperties([]);
+        list.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return list;
+    }
+
     public override async ValueTask LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-
+    
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);
