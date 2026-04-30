@@ -5920,7 +5920,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.AllowedContent = AllowedContent;
                     
                     form.Store.Append(row);
-                        
+                    Console.WriteLine("append: " + row.UniqueID);    
                 }
             }
             

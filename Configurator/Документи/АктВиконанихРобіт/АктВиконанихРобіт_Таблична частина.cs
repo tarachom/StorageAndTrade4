@@ -141,8 +141,6 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
         decimal Сума_ = 0;
         public Action? Сhanged_Сума { get; set; } = null;
 
-    
-
         /*
         Функції
         */
