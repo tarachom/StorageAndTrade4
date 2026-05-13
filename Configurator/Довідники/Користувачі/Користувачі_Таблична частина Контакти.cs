@@ -13,12 +13,12 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<DirectoryFormTablePart>("TablePart_jO1Mliu6aU7htmGr85OmA")]
+[GObject.Subclass<DirectoryFormTablePart>("TablePart_HSBxVlI93k6u56MkeDY2eg")]
 partial class Користувачі_ТабличнаЧастина_Контакти : DirectoryFormTablePart
 {
     #region Data
     
-    [GObject.Subclass<GObject.Object>("ItemRow_jO1Mliu6aU7htmGr85OmA")]
+    [GObject.Subclass<GObject.Object>("ItemRow_HSBxVlI93k6u56MkeDY2eg")]
     public partial class ItemRow : IRowSubclassTablePart
     {
         public static ItemRow New() => NewWithProperties([]);
@@ -193,6 +193,23 @@ partial class Користувачі_ТабличнаЧастина_Контак
         public Action? Сhanged_Місто { get; set; } = null;
 
     
+        /* Основа */
+        public UuidAndText Основа
+        {
+            get => Основа_;
+            set
+            {
+                if (!Основа_.Equals(value))
+                {
+                    Основа_ = value;
+                    Сhanged_Основа?.Invoke();
+                }
+            }
+        }
+        UuidAndText Основа_ = new();
+        public Action? Сhanged_Основа { get; set; } = null;
+
+    
 
         /*
         Функції
@@ -210,6 +227,7 @@ partial class Користувачі_ТабличнаЧастина_Контак
             row.Область = Область;
             row.Район = Район;
             row.Місто = Місто;
+            row.Основа = Основа.Copy();
             
             return row;
         }
@@ -483,6 +501,34 @@ partial class Користувачі_ТабличнаЧастина_Контак
             Grid.AppendColumn(column);
         }
         
+        //Основа
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                var cell = CompositePointerControlTablePartCell.New();
+                
+                cell.BoundConfType = "Довідники.Користувачі.Контакти.Основа";
+                    
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not CompositePointerControlTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnSelect = () => row.Основа = cell.Pointer;
+                (row.Сhanged_Основа = () => cell.Pointer = row.Основа).Invoke();
+                    
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("Основа", factory);
+            column.Resizable = true;
+            
+            Grid.AppendColumn(column);
+        }
+        
         { /* Пуста колонка для заповнення вільного простору */
             ColumnViewColumn column = ColumnViewColumn.New(null, null);
             column.Resizable = true;
@@ -515,6 +561,7 @@ partial class Користувачі_ТабличнаЧастина_Контак
                 row.Область = record.Область;
                 row.Район = record.Район;
                 row.Місто = record.Місто;
+                row.Основа = record.Основа;
                 
                 Store.Append(row);
 
@@ -550,6 +597,7 @@ partial class Користувачі_ТабличнаЧастина_Контак
                         Область = row.Область,
                         Район = row.Район,
                         Місто = row.Місто,
+                        Основа = row.Основа,
                         
                     });
                 }
@@ -576,6 +624,7 @@ partial class Користувачі_ТабличнаЧастина_Контак
                     row.Область = x.Область;
                     row.Район = x.Район;
                     row.Місто = x.Місто;
+                    row.Основа = x.Основа;
                     
                     return row;
                 });

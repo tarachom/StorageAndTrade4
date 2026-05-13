@@ -27,6 +27,18 @@ static class ФункціїДляДокументів
     /// <returns>Обєднана дата</returns>
     public static DateTime ОбєднатиДатуТаЧас(DateTime дата, DateTime час) => new(дата.Year, дата.Month, дата.Day, час.Hour, час.Minute, час.Second);
 
+    /// <summary>
+    /// Перервати проведення документу
+    /// </summary>
+    /// <param name="ДокументОбєкт">Документ обєкт</param>
+    /// <param name="НазваДокументу">Назва документу</param>
+    /// <param name="СписокПомилок">Список помилок</param>
+    public static async ValueTask ДокументНеПроводиться(DocumentObject ДокументОбєкт, string НазваДокументу, string СписокПомилок)
+    {
+        await Config.Kernel.MessageErrorAdd("Проведення документу", ДокументОбєкт.UniqueID.UGuid, $"Документи.{ДокументОбєкт.TypeDocument}", НазваДокументу,
+              СписокПомилок + "\n\nДокумент [ " + НазваДокументу + " ] не проводиться!");
+    }
+
     #region ПартіяТоварівКомпозит
 
     /// <summary>

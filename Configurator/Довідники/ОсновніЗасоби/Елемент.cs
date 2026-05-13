@@ -1,0 +1,105 @@
+
+/*
+        ОсновніЗасоби_Елемент.cs
+        Елемент
+*/
+
+using Gtk;
+using InterfaceGtk4;
+using AccountingSoftware;
+
+using GeneratedCode.Довідники;
+using GeneratedCode.Документи;
+using GeneratedCode.Перелічення;
+
+namespace StorageAndTrade;
+
+[GObject.Subclass<DirectoryFormElement>("Element_Nc0zOq0lUKnFqQ8uPnCAg")]
+partial class ОсновніЗасоби_Елемент : DirectoryFormElement
+{
+    public ОсновніЗасоби_Objest Елемент { get; init; } = new();
+    
+    #region Fields
+    Entry Код = Entry.New();
+                    Entry Назва = Entry.New();
+                    
+    #endregion
+
+    #region TabularParts
+    
+    #endregion
+
+    partial void Initialize()
+    { 
+        Element = Елемент;
+
+        
+            // Код:
+            Код.WidthRequest = 300;
+                        
+            // Назва:
+            Назва.WidthRequest = 300;
+                        
+    }
+
+    public static ОсновніЗасоби_Елемент New()
+    {
+        ОсновніЗасоби_Елемент element = NewWithProperties([]);
+        element.NotebookFunc = Program.BasicForm?.NotebookFunc;
+
+        return element;
+    }
+
+    protected override void CreateStart(Box vBox)
+    {
+        
+            // Код
+            CreateField(vBox, "Код:", Код);
+                        
+            // Назва
+            CreateField(vBox, "Назва:", Назва);
+                        
+    }
+
+    protected override void CreateEnd(Box vBox)
+    {
+        
+    }
+
+    #region Присвоєння / зчитування значень
+
+    public override async ValueTask AssignValue()
+    {
+        Код.SetText(Елемент.Код);
+                        Назва.SetText(Елемент.Назва);
+                        
+    }
+
+    protected override void GetValue()
+    {
+        Елемент.Код = Код.GetText();
+                        Елемент.Назва = Назва.GetText();
+                        
+    }
+
+    #endregion
+
+    protected override async ValueTask<bool> Save()
+    {
+        bool isSaved = false;
+        try
+        {
+            if (await Елемент.Save())
+            {
+                
+                isSaved = true;
+            }
+        }
+        catch (Exception ex)
+        {
+            //ФункціїДляПовідомлень.ДодатиПовідомлення(Елемент.GetBasis(), Caption, ex);
+        }
+        return isSaved;
+    }
+}
+    

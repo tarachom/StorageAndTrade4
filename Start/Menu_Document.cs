@@ -163,6 +163,17 @@ partial class Menu_Document : Form
             });
         }
 
+        {
+            CreateCaptionLink(vLeft, "Бухгалтерія", null);
+
+            CreateLink(vLeft, БухгалтерськаОперація_Const.FULLNAME, async () =>
+            {
+                БухгалтерськаОперація_Список page = БухгалтерськаОперація_Список.New();
+                NotebookFunc?.CreatePage(БухгалтерськаОперація_Const.FULLNAME, page);
+                await page.SetValue();
+            });
+        }
+
         CreateSeparator(hBoxList);
 
         Box vRight = New(Orientation.Vertical, 0);

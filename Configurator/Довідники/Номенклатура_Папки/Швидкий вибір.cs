@@ -42,9 +42,9 @@ partial class Номенклатура_Папки_ШвидкийВибір : Dir
         await ТабличнийСписок.LoadRecords(this);
     }
     
-    public override async ValueTask<List<DirectoryHierarchicalRow>> LoadChildren(UniqueID parent)
+    public override async ValueTask<List<DirectoryHierarchicalRow>> LoadChildren(UniqueID[] parents)
     {
-        return await ТабличнийСписок.LoadChildren(this, parent);
+        return await ТабличнийСписок.LoadChildren(this, parents);
     }
     
     public override DirectoryHierarchicalRow LoadEmptyChildren()

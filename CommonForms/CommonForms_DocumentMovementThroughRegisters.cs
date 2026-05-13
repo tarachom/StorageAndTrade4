@@ -258,6 +258,20 @@ partial class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.Commo
                         await AddForm("Товари в комірках", getForm);
                         break;
                     }
+                case "БухгалтерськіОперації":
+                    {
+                        async ValueTask<Widget> getForm(bool small = true)
+                        {
+                            БухгалтерськіОперації_СписокМіні page = БухгалтерськіОперації_СписокМіні.New();
+                            page.WhereList = [new("owner", Comparison.EQ, documentPointer.UniqueID.UGuid)];
+                            if (small) page.SetHeight(300);
+                            await page.SetValue();
+                            return page;
+                        }
+
+                        await AddForm("Бухгалтерські операції", getForm);
+                        break;
+                    }
             }
         }
 

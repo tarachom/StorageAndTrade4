@@ -14,7 +14,7 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<DirectoryFormElement>("Element_gZTB3w12USgmRANCkYoA")]
+[GObject.Subclass<DirectoryFormElement>("Element_WT6EiQO5EE65QE4NYAmIew")]
 partial class Користувачі_Елемент : DirectoryFormElement
 {
     public Користувачі_Objest Елемент { get; init; } = new();
@@ -24,7 +24,8 @@ partial class Користувачі_Елемент : DirectoryFormElement
                     Entry Назва = Entry.New();
                     ФізичніОсоби_PointerControl ФізичнаОсоба = ФізичніОсоби_PointerControl.New();
             Entry Коментар = Entry.New();
-                    
+                    CompositePointerControl Основа = CompositePointerControl.New();
+            
     #endregion
 
     #region TabularParts
@@ -52,6 +53,9 @@ partial class Користувачі_Елемент : DirectoryFormElement
             // Коментар:
             Коментар.WidthRequest = 300;
                         
+            // Основа:
+            Основа.BoundConfType = "Довідники.Користувачі.Основа";
+                
     }
 
     public static Користувачі_Елемент New()
@@ -77,6 +81,9 @@ partial class Користувачі_Елемент : DirectoryFormElement
             // Коментар
             CreateField(vBox, "Коментар:", Коментар);
                         
+            // Основа
+            CreateField(vBox, null, Основа);
+                
     }
 
     protected override void CreateEnd(Box vBox)
@@ -97,7 +104,8 @@ partial class Користувачі_Елемент : DirectoryFormElement
                         Назва.SetText(Елемент.Назва);
                         ФізичнаОсоба.Pointer = Елемент.ФізичнаОсоба;
                 Коментар.SetText(Елемент.Коментар);
-                        
+                        Основа.Pointer = Елемент.Основа;
+                
             // Таблична частина "Контакти"
             Контакти.ЕлементВласник = Елемент;
             await Контакти.LoadRecords();
@@ -110,7 +118,8 @@ partial class Користувачі_Елемент : DirectoryFormElement
                         Елемент.Назва = Назва.GetText();
                         Елемент.ФізичнаОсоба = ФізичнаОсоба.Pointer;
                 Елемент.Коментар = Коментар.GetText();
-                        
+                        Елемент.Основа = Основа.Pointer;
+                
     }
 
     #endregion

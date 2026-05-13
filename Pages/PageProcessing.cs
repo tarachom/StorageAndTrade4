@@ -17,6 +17,12 @@ partial class PageProcessing : Form
         Box vBox = New(Orientation.Vertical, 0);
         Append(vBox);
 
+        CreateLink(vBox, "Завантаження плану рахунків", () =>
+        {
+            Обробка_Завантаження_ПлануРахунків page = Обробка_Завантаження_ПлануРахунків.New();
+            NotebookFunc?.CreatePage("Завантаження плану рахунків", page);
+        });
+
         CreateLink(vBox, "Обробка", () =>
         {
             Обробка page = Обробка.New();
