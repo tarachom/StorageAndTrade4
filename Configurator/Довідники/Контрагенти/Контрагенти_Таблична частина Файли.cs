@@ -258,7 +258,7 @@ partial class Контрагенти_ТабличнаЧастина_Файли :
         }
     }
 
-    public override bool NewRecord()
+    public override async ValueTask<bool> NewRecord()
     {
         Store.Append(ItemRow.New());
         return true;

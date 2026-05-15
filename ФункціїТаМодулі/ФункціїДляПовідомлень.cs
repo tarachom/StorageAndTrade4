@@ -35,18 +35,22 @@ namespace StorageAndTrade
 
         public static async void ПоказатиПовідомлення(UniqueID? ВідбірПоОбєкту = null, int? limit = null)
         {
-            CommonForms_ErrorMessageOutput page = CommonForms_ErrorMessageOutput.New();
+            Button? buttonMessage = Program.BasicForm?.ButtonMessage;
+            if (buttonMessage != null)
+            {
+                CommonForms_ErrorMessageOutput page = CommonForms_ErrorMessageOutput.New();
 
-            Popover popover = Popover.New();
-            popover.SetParent(Program.BasicForm?.ButtonMessage);
-            popover.Position = PositionType.Bottom;
-            popover.WidthRequest = 600;
-            popover.HeightRequest = 600;
+                Popover popover = Popover.New();
+                popover.SetParent(buttonMessage);
+                popover.Position = PositionType.Bottom;
+                popover.WidthRequest = 600;
+                popover.HeightRequest = 600;
 
-            popover.SetChild(page);
-            popover.Show();
+                popover.SetChild(page);
+                popover.Show();
 
-            await page.LoadRecords(ВідбірПоОбєкту, limit);
+                await page.LoadRecords(ВідбірПоОбєкту, limit);
+            }
         }
     }
 }

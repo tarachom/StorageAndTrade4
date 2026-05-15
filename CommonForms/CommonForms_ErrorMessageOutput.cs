@@ -1,6 +1,6 @@
 /*
 
-Заблоковані об'єкти
+Вивід повідомлень
 
 */
 
@@ -10,7 +10,7 @@ using GeneratedCode;
 namespace StorageAndTrade;
 
 /// <summary>
-/// 
+/// Вивід повідомлень
 /// </summary>
 [GObject.Subclass<InterfaceGtk4.CommonForms_ErrorMessageOutput>]
 partial class CommonForms_ErrorMessageOutput : InterfaceGtk4.CommonForms_ErrorMessageOutput

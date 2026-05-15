@@ -1714,7 +1714,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
         }
     }
 
-    public override bool NewRecord()
+    public override async ValueTask<bool> NewRecord()
     {
         Store.Append(ItemRow.New());
         return true;

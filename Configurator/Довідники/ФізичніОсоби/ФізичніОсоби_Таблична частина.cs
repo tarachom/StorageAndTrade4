@@ -595,7 +595,7 @@ partial class ФізичніОсоби_ТабличнаЧастина_Конта
         }
     }
 
-    public override bool NewRecord()
+    public override async ValueTask<bool> NewRecord()
     {
         Store.Append(ItemRow.New());
         return true;

@@ -8,6 +8,7 @@ using Gtk;
 using InterfaceGtk4;
 using AccountingSoftware;
 using GeneratedCode.Довідники;
+using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
@@ -38,8 +39,6 @@ public partial class Контрагенти_PointerControl : PointerControl
             PointerChanged?.Invoke(null, pointer);
         }
     }
-
-    
 
     public ConfigurationDirectories.HierarchicalContentType? AllowedContentSelection { get; set; }
 
@@ -75,5 +74,30 @@ public partial class Контрагенти_PointerControl : PointerControl
         AfterSelectFunc?.Invoke();
         AfterClearFunc?.Invoke();
     }
+
+    public async ValueTask ПривязкаДоДоговору(ДоговориКонтрагентів_PointerControl Договір)
+        {
+            if (Договір.Pointer.IsEmpty())
+            {
+                ДоговориКонтрагентів_Pointer? договірКонтрагента = await ФункціїДляДокументів.ОсновнийДоговірДляКонтрагента(Pointer, ТипДоговорів.ЗПостачальниками);
+                if (договірКонтрагента != null) Договір.Pointer = договірКонтрагента;
+            }
+            else
+            {
+                if (Pointer.IsEmpty())
+                    Договір.Pointer = new ДоговориКонтрагентів_Pointer();
+                else
+                {
+                    //Перевірити чи змінився контрагент
+                    ДоговориКонтрагентів_Objest? договориКонтрагентів_Objest = await Договір.Pointer.GetDirectoryObject();
+                    if (договориКонтрагентів_Objest != null)
+                        if (договориКонтрагентів_Objest.Контрагент != Pointer)
+                        {
+                            Договір.Pointer = new ДоговориКонтрагентів_Pointer();
+                            AfterSelectFunc?.Invoke();
+                        };
+                }
+            }
+        }
 }
     

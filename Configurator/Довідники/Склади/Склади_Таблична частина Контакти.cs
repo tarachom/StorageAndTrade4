@@ -593,7 +593,7 @@ partial class Склади_ТабличнаЧастина_Контакти : Dir
         }
     }
 
-    public override bool NewRecord()
+    public override async ValueTask<bool> NewRecord()
     {
         Store.Append(ItemRow.New());
         return true;

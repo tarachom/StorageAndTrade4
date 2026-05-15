@@ -36,8 +36,6 @@ public partial class ВидиЦін_PointerTablePartCell : PointerTablePartCell
         OnSelect?.Invoke();
     }
 
-    
-
     protected override async void Select(Button button, EventArgs args)
     {
         Popover popover = Popover.New();
@@ -56,7 +54,6 @@ public partial class ВидиЦін_PointerTablePartCell : PointerTablePartCell
             AfterSelectFunc?.Invoke();
         };
         
-
         popover.SetChild(page);
         popover.Show();
 
