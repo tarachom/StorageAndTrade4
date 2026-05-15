@@ -14,7 +14,7 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<DirectoryFormElement>("Element_Qoth98oOUe3zLMJ2rWRfQ")]
+[GObject.Subclass<DirectoryFormElement>("Element_S9bRrUmiOE6Oasw7xLAeIA")]
 partial class Номенклатура_Елемент : DirectoryFormElement
 {
     public Номенклатура_Objest Елемент { get; init; } = new();
@@ -31,6 +31,7 @@ partial class Номенклатура_Елемент : DirectoryFormElement
             ПакуванняОдиниціВиміру_PointerControl ОдиницяВиміру = ПакуванняОдиниціВиміру_PointerControl.New();
             Номенклатура_Папки_PointerControl Папка = Номенклатура_Папки_PointerControl.New();
             Файли_PointerControl ОсновнаКартинкаФайл = Файли_PointerControl.New();
+            Категорії_PointerControl Категорія = Категорії_PointerControl.New();
             
     #endregion
 
@@ -78,11 +79,11 @@ partial class Номенклатура_Елемент : DirectoryFormElement
                     Виробник.WidthPresentation = 300;
                 
             // ВидНоменклатури:
-            ВидНоменклатури.Caption = "ВидНоменклатури";
+            ВидНоменклатури.Caption = "Вид";
                     ВидНоменклатури.WidthPresentation = 300;
                 
             // ОдиницяВиміру:
-            ОдиницяВиміру.Caption = "ОдиницяВиміру";
+            ОдиницяВиміру.Caption = "Одиниця виміру";
                     ОдиницяВиміру.WidthPresentation = 300;
                 
             // Папка:
@@ -90,8 +91,12 @@ partial class Номенклатура_Елемент : DirectoryFormElement
                     Папка.WidthPresentation = 300;
                 
             // ОсновнаКартинкаФайл:
-            ОсновнаКартинкаФайл.Caption = "ОсновнаКартинкаФайл";
+            ОсновнаКартинкаФайл.Caption = "Основна картинка";
                     ОсновнаКартинкаФайл.WidthPresentation = 300;
+                
+            // Категорія:
+            Категорія.Caption = "Категорія";
+                    Категорія.WidthPresentation = 300;
                 
     }
 
@@ -113,7 +118,7 @@ partial class Номенклатура_Елемент : DirectoryFormElement
             CreateField(vBox, "Назва:", Назва);
                         
             // НазваПовна
-            CreateField(vBox, "НазваПовна:", НазваПовна);
+            CreateField(vBox, "Назва повна:", НазваПовна);
                         
             // Опис
             CreateFieldView(vBox, "Опис:", Опис, 500, 200);
@@ -122,7 +127,7 @@ partial class Номенклатура_Елемент : DirectoryFormElement
             CreateField(vBox, "Артикул:", Артикул);
                         
             // ТипНоменклатури
-            CreateField(vBox, "ТипНоменклатури:", ТипНоменклатури);
+            CreateField(vBox, "Тип:", ТипНоменклатури);
                 
             // Виробник
             CreateField(vBox, null, Виробник);
@@ -138,6 +143,9 @@ partial class Номенклатура_Елемент : DirectoryFormElement
                 
             // ОсновнаКартинкаФайл
             CreateField(vBox, null, ОсновнаКартинкаФайл);
+                
+            // Категорія
+            CreateField(vBox, null, Категорія);
                 
     }
 
@@ -166,6 +174,7 @@ partial class Номенклатура_Елемент : DirectoryFormElement
                 ОдиницяВиміру.Pointer = Елемент.ОдиницяВиміру;
                 Папка.Pointer = Елемент.Папка;
                 ОсновнаКартинкаФайл.Pointer = Елемент.ОсновнаКартинкаФайл;
+                Категорія.Pointer = Елемент.Категорія;
                 
             // Таблична частина "Файли"
             Файли.ЕлементВласник = Елемент;
@@ -186,6 +195,7 @@ partial class Номенклатура_Елемент : DirectoryFormElement
                 Елемент.ОдиницяВиміру = ОдиницяВиміру.Pointer;
                 Елемент.Папка = Папка.Pointer;
                 Елемент.ОсновнаКартинкаФайл = ОсновнаКартинкаФайл.Pointer;
+                Елемент.Категорія = Категорія.Pointer;
                 
     }
 
@@ -205,7 +215,7 @@ partial class Номенклатура_Елемент : DirectoryFormElement
         }
         catch (Exception ex)
         {
-            //ФункціїДляПовідомлень.ДодатиПовідомлення(Елемент.GetBasis(), Caption, ex);
+            ФункціїДляПовідомлень.ДодатиПовідомлення(Елемент.GetBasis(), Caption, ex);
         }
         return isSaved;
     }

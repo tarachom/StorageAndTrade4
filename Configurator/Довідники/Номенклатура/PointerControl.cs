@@ -11,7 +11,7 @@ using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<PointerControl>("PointerControl_fTdSLwj4fUG3tUNC4WwQ")]
+[GObject.Subclass<PointerControl>("PointerControl_tfxkoie7UOVwi9flBabAw")]
 public partial class Номенклатура_PointerControl : PointerControl
 {
     event EventHandler<Номенклатура_Pointer>? PointerChanged;
@@ -28,10 +28,7 @@ public partial class Номенклатура_PointerControl : PointerControl
     Номенклатура_Pointer pointer = new();
     public Номенклатура_Pointer Pointer
     {
-        get
-        {
-            return pointer;
-        }
+        get => pointer;
         set
         {
             pointer = value;

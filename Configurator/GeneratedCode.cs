@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 14.05.2026 17:02:31
+ * Дата конфігурації: 15.05.2026 11:12:28
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон GeneratedCode.xslt
@@ -1863,12 +1863,12 @@ namespace GeneratedCode.Константи
 	  #region CONSTANTS BLOCK "ПартіїТоварів"
     public static class ПартіїТоварів
     {       
-        public static Перелічення.МетодиСписанняПартій МетодСписанняПартій_Const
+        public static Перелічення.МетодиСписання МетодСписанняПартій_Const
         {
             get 
             {
                 var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_h4"); } ).Result;
-                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (Перелічення.МетодиСписанняПартій)recordResult.Value : 0) : 0;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (Перелічення.МетодиСписання)recordResult.Value : 0) : 0;
             }
             set
             {
@@ -2475,12 +2475,13 @@ namespace GeneratedCode.Довідники
         public const string ОдиницяВиміру = "col_a4";
         public const string Папка = "col_a5";
         public const string ОсновнаКартинкаФайл = "col_a7";
+        public const string Категорія = "col_a6";
     }
 
     public class Номенклатура_Objest : DirectoryObject
     {
         public Номенклатура_Objest() : base(Config.Kernel, "tab_a03", Номенклатура_Const.TYPE,
-             ["col_b1", "col_b2", "col_b4", "col_a1", "col_b3", "col_b5", "col_a2", "col_a3", "col_a4", "col_a5", "col_a7", ], true)
+             ["col_b1", "col_b2", "col_b4", "col_a1", "col_b3", "col_b5", "col_a2", "col_a3", "col_a4", "col_a5", "col_a7", "col_a6", ], true)
         {
             
                 //Табличні частини
@@ -2512,6 +2513,7 @@ namespace GeneratedCode.Довідники
                 ОдиницяВиміру = new Довідники.ПакуванняОдиниціВиміру_Pointer(base.FieldValue["col_a4"]);
                 Папка = new Довідники.Номенклатура_Папки_Pointer(base.FieldValue["col_a5"]);
                 ОсновнаКартинкаФайл = new Довідники.Файли_Pointer(base.FieldValue["col_a7"]);
+                Категорія = new Довідники.Категорії_Pointer(base.FieldValue["col_a6"]);
                 
                 BaseClear();
                 
@@ -2541,6 +2543,7 @@ namespace GeneratedCode.Довідники
             base.FieldValue["col_a4"] = ОдиницяВиміру.UniqueID.UGuid;
             base.FieldValue["col_a5"] = Папка.UniqueID.UGuid;
             base.FieldValue["col_a7"] = ОсновнаКартинкаФайл.UniqueID.UGuid;
+            base.FieldValue["col_a6"] = Категорія.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
@@ -2568,6 +2571,7 @@ namespace GeneratedCode.Довідники
                 ОдиницяВиміру = ОдиницяВиміру,
                 Папка = Папка,
                 ОсновнаКартинкаФайл = ОсновнаКартинкаФайл,
+                Категорія = Категорія,
                 
             };
             
@@ -2625,6 +2629,7 @@ namespace GeneratedCode.Довідники
         public Довідники.ПакуванняОдиниціВиміру_Pointer ОдиницяВиміру { get; set; } = new Довідники.ПакуванняОдиниціВиміру_Pointer();
         public Довідники.Номенклатура_Папки_Pointer Папка { get; set; } = new Довідники.Номенклатура_Папки_Pointer();
         public Довідники.Файли_Pointer ОсновнаКартинкаФайл { get; set; } = new Довідники.Файли_Pointer();
+        public Довідники.Категорії_Pointer Категорія { get; set; } = new Довідники.Категорії_Pointer();
         
         //Табличні частини
         public Номенклатура_Файли_TablePart Файли_TablePart { get; private set; }
@@ -11708,7 +11713,7 @@ namespace GeneratedCode.Довідники
                 Код = base.FieldValue["col_a1"].ToString() ?? "";
                 Назва = base.FieldValue["col_a2"].ToString() ?? "";
                 Родич = new Довідники.Категорії_Pointer(base.FieldValue["col_a3"]);
-                МетодСписання = (base.FieldValue["col_a4"] != DBNull.Value) ? (Перелічення.МетодиСписанняПартій)base.FieldValue["col_a4"] : 0;
+                МетодСписання = (base.FieldValue["col_a4"] != DBNull.Value) ? (Перелічення.МетодиСписання)base.FieldValue["col_a4"] : 0;
                 РахунокОбліку = new Довідники.ПланРахунків_Pointer(base.FieldValue["col_a5"]);
                 РахунокДоходів = new Довідники.ПланРахунків_Pointer(base.FieldValue["col_a6"]);
                 СтаттяДоходів = new Довідники.Статті_Pointer(base.FieldValue["col_a7"]);
@@ -11796,7 +11801,7 @@ namespace GeneratedCode.Довідники
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
         public Довідники.Категорії_Pointer Родич { get; set; } = new Довідники.Категорії_Pointer();
-        public Перелічення.МетодиСписанняПартій МетодСписання { get; set; } = 0;
+        public Перелічення.МетодиСписання МетодСписання { get; set; } = 0;
         public Довідники.ПланРахунків_Pointer РахунокОбліку { get; set; } = new Довідники.ПланРахунків_Pointer();
         public Довідники.ПланРахунків_Pointer РахунокДоходів { get; set; } = new Довідники.ПланРахунків_Pointer();
         public Довідники.Статті_Pointer СтаттяДоходів { get; set; } = new Довідники.Статті_Pointer();
@@ -14258,8 +14263,8 @@ namespace GeneratedCode.Перелічення
     }
     #endregion
     
-    #region ENUM "МетодиСписанняПартій"
-    public enum МетодиСписанняПартій
+    #region ENUM "МетодиСписання"
+    public enum МетодиСписання
     {
          FIFO = 1,
          LIFO = 2,
@@ -15002,41 +15007,41 @@ namespace GeneratedCode.Перелічення
         }
         #endregion
     
-        #region ENUM "МетодиСписанняПартій"
-        public static string МетодиСписанняПартій_Alias(МетодиСписанняПартій value)
+        #region ENUM "МетодиСписання"
+        public static string МетодиСписання_Alias(МетодиСписання value)
         {
             return value switch
             {
-                МетодиСписанняПартій.FIFO => "FIFO (спочатку списуються партії які прийшли першими)",
-                МетодиСписанняПартій.LIFO => "LIFO (спочатку списуються партії які прийшли останніми)",
-                МетодиСписанняПартій.FEFO => "FEFO",
-                МетодиСписанняПартій.СередняВартість => "Середня вартість",
+                МетодиСписання.FIFO => "FIFO (спочатку списуються партії які прийшли першими)",
+                МетодиСписання.LIFO => "LIFO (спочатку списуються партії які прийшли останніми)",
+                МетодиСписання.FEFO => "FEFO",
+                МетодиСписання.СередняВартість => "Середня вартість",
                 _ => ""
             };
         }
 
-        public static МетодиСписанняПартій МетодиСписанняПартій_FindByName(string? name)
+        public static МетодиСписання МетодиСписання_FindByName(string? name)
         {
             return name switch
             {
-                "FIFO" => МетодиСписанняПартій.FIFO,
-                  "FIFO (спочатку списуються партії які прийшли першими)" => МетодиСписанняПартій.FIFO,
-                  "LIFO" => МетодиСписанняПартій.LIFO,
-                  "LIFO (спочатку списуються партії які прийшли останніми)" => МетодиСписанняПартій.LIFO,
-                  "FEFO" => МетодиСписанняПартій.FEFO,
-                  "СередняВартість" => МетодиСписанняПартій.СередняВартість,
-                  "Середня вартість" => МетодиСписанняПартій.СередняВартість,
+                "FIFO" => МетодиСписання.FIFO,
+                  "FIFO (спочатку списуються партії які прийшли першими)" => МетодиСписання.FIFO,
+                  "LIFO" => МетодиСписання.LIFO,
+                  "LIFO (спочатку списуються партії які прийшли останніми)" => МетодиСписання.LIFO,
+                  "FEFO" => МетодиСписання.FEFO,
+                  "СередняВартість" => МетодиСписання.СередняВартість,
+                  "Середня вартість" => МетодиСписання.СередняВартість,
                   _ => 0
             };
         }
 
-        public static List<NameValue<МетодиСписанняПартій>> МетодиСписанняПартій_List()
+        public static List<NameValue<МетодиСписання>> МетодиСписання_List()
         {
             return [
-            new NameValue<МетодиСписанняПартій>("FIFO (спочатку списуються партії які прийшли першими)", МетодиСписанняПартій.FIFO),
-            new NameValue<МетодиСписанняПартій>("LIFO (спочатку списуються партії які прийшли останніми)", МетодиСписанняПартій.LIFO),
-            new NameValue<МетодиСписанняПартій>("FEFO", МетодиСписанняПартій.FEFO),
-            new NameValue<МетодиСписанняПартій>("Середня вартість", МетодиСписанняПартій.СередняВартість),
+            new NameValue<МетодиСписання>("FIFO (спочатку списуються партії які прийшли першими)", МетодиСписання.FIFO),
+            new NameValue<МетодиСписання>("LIFO (спочатку списуються партії які прийшли останніми)", МетодиСписання.LIFO),
+            new NameValue<МетодиСписання>("FEFO", МетодиСписання.FEFO),
+            new NameValue<МетодиСписання>("Середня вартість", МетодиСписання.СередняВартість),
             ];
         }
         #endregion

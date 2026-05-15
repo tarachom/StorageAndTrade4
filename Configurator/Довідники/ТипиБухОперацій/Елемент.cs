@@ -97,7 +97,7 @@ partial class ТипиБухОперацій_Елемент : DirectoryFormEleme
         }
         catch (Exception ex)
         {
-            //ФункціїДляПовідомлень.ДодатиПовідомлення(Елемент.GetBasis(), Caption, ex);
+            ФункціїДляПовідомлень.ДодатиПовідомлення(Елемент.GetBasis(), Caption, ex);
         }
         return isSaved;
     }

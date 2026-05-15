@@ -114,7 +114,7 @@ partial class Контрагенти_Папки_Елемент : DirectoryFormEl
         }
         catch (Exception ex)
         {
-            //ФункціїДляПовідомлень.ДодатиПовідомлення(Елемент.GetBasis(), Caption, ex);
+            ФункціїДляПовідомлень.ДодатиПовідомлення(Елемент.GetBasis(), Caption, ex);
         }
         return isSaved;
     }

@@ -14,7 +14,7 @@ using Функції = StorageAndTrade.АктВиконанихРобіт_Фун
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<DocumentFormJournalFull>("List_mBzun0TuXEyIpNEMXtVyVA")]
+[GObject.Subclass<DocumentFormJournalFull>("List_1GSNhFYYRUWNCtRlyOzyMw")]
 public partial class АктВиконанихРобіт_Список : DocumentFormJournalFull
 {
     partial void Initialize()
@@ -81,7 +81,8 @@ public partial class АктВиконанихРобіт_Список : DocumentF
 
     protected override async ValueTask SpendTheDocument(UniqueID[] uniqueID, bool spendDoc)
     {
-
+        foreach (var uid in uniqueID)
+            await Функції.SpendTheDocument(uid, spendDoc);
     }
 
     protected override void ReportSpendTheDocument(UniqueID[] uniqueID)

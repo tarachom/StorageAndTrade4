@@ -133,7 +133,7 @@ partial class СтаттяРухуКоштів_Елемент : DirectoryFormEle
         }
         catch (Exception ex)
         {
-            //ФункціїДляПовідомлень.ДодатиПовідомлення(Елемент.GetBasis(), Caption, ex);
+            ФункціїДляПовідомлень.ДодатиПовідомлення(Елемент.GetBasis(), Caption, ex);
         }
         return isSaved;
     }

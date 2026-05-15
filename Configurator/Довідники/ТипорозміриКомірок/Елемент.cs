@@ -133,7 +133,7 @@ partial class ТипорозміриКомірок_Елемент : DirectoryFor
         }
         catch (Exception ex)
         {
-            //ФункціїДляПовідомлень.ДодатиПовідомлення(Елемент.GetBasis(), Caption, ex);
+            ФункціїДляПовідомлень.ДодатиПовідомлення(Елемент.GetBasis(), Caption, ex);
         }
         return isSaved;
     }

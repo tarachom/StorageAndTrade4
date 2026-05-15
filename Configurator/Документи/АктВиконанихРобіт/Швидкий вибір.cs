@@ -14,7 +14,7 @@ using Функції = StorageAndTrade.АктВиконанихРобіт_Фун
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<DocumentFormJournalSmall>("SmallList_Re4mq47zNEipCSUiWiyJfQ")]
+[GObject.Subclass<DocumentFormJournalSmall>("SmallList_hAX4gkjSYEaWK1RZp6Uy2Q")]
 public partial class АктВиконанихРобіт_ШвидкийВибір : DocumentFormJournalSmall
 {
     partial void Initialize()
@@ -87,7 +87,8 @@ public partial class АктВиконанихРобіт_ШвидкийВибір
 
     protected override async ValueTask SpendTheDocument(UniqueID[] uniqueID, bool spendDoc)
     {
-
+        foreach (var uid in uniqueID)
+            await Функції.SpendTheDocument(uid, spendDoc);
     }
 
     protected override void ReportSpendTheDocument(UniqueID[] uniqueID)

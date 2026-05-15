@@ -14,7 +14,7 @@ using Функції = StorageAndTrade.Номенклатура_Функції;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<DirectoryFormJournalSmall>("SmallList_kucENai3tE2MGxdLqaPR5g")]
+[GObject.Subclass<DirectoryFormJournalSmall>("SmallList_s6FitpdsM0SqggYA9rt9mg")]
 partial class Номенклатура_ШвидкийВибір : DirectoryFormJournalSmall
 {
     

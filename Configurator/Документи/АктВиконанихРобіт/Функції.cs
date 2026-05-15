@@ -85,5 +85,19 @@ static class АктВиконанихРобіт_Функції
             return null;
         }
     }
+
+    public static async ValueTask SpendTheDocument(UniqueID uniqueID, bool spendDoc)
+    {
+        АктВиконанихРобіт_Objest? Обєкт = await new АктВиконанихРобіт_Pointer(uniqueID).GetDocumentObject(true);
+        if (Обєкт == null) return;
+
+        if (spendDoc)
+        {
+            if (!await Обєкт.SpendTheDocument(Обєкт.ДатаДок))
+                ФункціїДляПовідомлень.ПоказатиПовідомлення(Обєкт.UniqueID);
+        }
+        else
+            await Обєкт.ClearSpendTheDocument();
+    }
 }
     

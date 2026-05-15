@@ -22,7 +22,7 @@ partial class FormStorageAndTrade : FormGeneral
 
     protected override void ButtonMessageClicked()
     {
-
+        ФункціїДляПовідомлень.ВідкритиПовідомлення();
     }
 
     protected override void ButtonFindClicked(string text)

@@ -17,7 +17,7 @@ using Функції = StorageAndTrade.АктВиконанихРобіт_Фун
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<DocumentFormElement>("Element_Tl5wTKgHEWAKsfR2JUEg")]
+[GObject.Subclass<DocumentFormElement>("Element_zn6GqeUKrkyghG9wP5QktQ")]
 partial class АктВиконанихРобіт_Елемент : DocumentFormElement
 {
     public АктВиконанихРобіт_Objest Елемент { get; init; } = new();
@@ -258,7 +258,7 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
         }
         catch (Exception ex)
         {
-            //ФункціїДляПовідомлень.ДодатиПовідомлення(Елемент.GetBasis(), Caption, ex);
+            ФункціїДляПовідомлень.ДодатиПовідомлення(Елемент.GetBasis(), Caption, ex);
         }
         return isSaved;
     }
@@ -268,7 +268,7 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
         if (spendDoc)
         {
             bool isSpend = await Елемент.SpendTheDocument(Елемент.ДатаДок);
-            //if (!isSpend) ФункціїДляПовідомлень.ПоказатиПовідомлення(Елемент.UniqueID);
+            if (!isSpend) ФункціїДляПовідомлень.ПоказатиПовідомлення(Елемент.UniqueID);
             return isSpend;
         }
         else

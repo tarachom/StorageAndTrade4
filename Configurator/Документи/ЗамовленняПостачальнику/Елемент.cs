@@ -357,7 +357,7 @@ partial class ЗамовленняПостачальнику_Елемент : Do
         }
         catch (Exception ex)
         {
-            //ФункціїДляПовідомлень.ДодатиПовідомлення(Елемент.GetBasis(), Caption, ex);
+            ФункціїДляПовідомлень.ДодатиПовідомлення(Елемент.GetBasis(), Caption, ex);
         }
         return isSaved;
     }
@@ -367,7 +367,7 @@ partial class ЗамовленняПостачальнику_Елемент : Do
         if (spendDoc)
         {
             bool isSpend = await Елемент.SpendTheDocument(Елемент.ДатаДок);
-            //if (!isSpend) ФункціїДляПовідомлень.ПоказатиПовідомлення(Елемент.UniqueID);
+            if (!isSpend) ФункціїДляПовідомлень.ПоказатиПовідомлення(Елемент.UniqueID);
             return isSpend;
         }
         else

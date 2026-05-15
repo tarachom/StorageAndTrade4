@@ -10,7 +10,7 @@ using GeneratedCode.Документи;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<PointerControl>("PointerControl_dyORtB2vlUmbRCyOQL7wg")]
+[GObject.Subclass<PointerControl>("PointerControl_1V6O0SOmkGKlAUlHmv7Fg")]
 public partial class АктВиконанихРобіт_PointerControl : PointerControl
 {
     event EventHandler<АктВиконанихРобіт_Pointer>? PointerChanged;
@@ -27,10 +27,7 @@ public partial class АктВиконанихРобіт_PointerControl : Pointer
     АктВиконанихРобіт_Pointer pointer = new();
     public АктВиконанихРобіт_Pointer Pointer
     {
-        get
-        {
-            return pointer;
-        }
+        get => pointer;
         set
         {
             pointer = value;

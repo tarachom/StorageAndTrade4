@@ -11,7 +11,7 @@ using AccountingSoftware;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<PointerTablePartCell>("PointerTablePartCell_WLbHjH6UWjpBDXtFLilA")]
+[GObject.Subclass<PointerTablePartCell>("PointerTablePartCell_in5xBq5F0kaP0qHc2UfiHg")]
 public partial class Номенклатура_PointerTablePartCell : PointerTablePartCell
 {
     public static Номенклатура_PointerTablePartCell New() => NewWithProperties([]);

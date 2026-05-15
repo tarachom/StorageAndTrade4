@@ -14,7 +14,7 @@ using Функції = StorageAndTrade.Номенклатура_Функції;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<DirectoryFormJournalFull>("ListAndTreexYglEYUuqUaHrApMzyzRiw")]
+[GObject.Subclass<DirectoryFormJournalFull>("ListAndTree_tyBOMRWc4ETA938sW7EA")]
 partial class Номенклатура_Список : DirectoryFormJournalFull
 {
     Номенклатура_Папки_Список Папки = Номенклатура_Папки_Список.New();
