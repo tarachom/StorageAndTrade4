@@ -60,7 +60,18 @@ partial class Обробка_Завантаження_ПлануРахунків
             "Скасувати"                      // Текст кнопки скасування
         );
 
-        native.OnResponse += (sender, e) => 
+        FileFilter filter = FileFilter.New();
+        filter.Name = "Файли Excel (*.xls, *.xlsx)";
+        filter.AddPattern("*.xls");
+        filter.AddPattern("*.xlsx");
+        native.AddFilter(filter);
+
+        FileFilter allFilesFilter = FileFilter.New();
+        allFilesFilter.Name = "Усі файли";
+        allFilesFilter.AddPattern("*");
+        native.AddFilter(allFilesFilter);
+
+        native.OnResponse += (sender, e) =>
         {
             if (e.ResponseId == (int)Gtk.ResponseType.Accept)
             {
@@ -77,40 +88,40 @@ partial class Обробка_Завантаження_ПлануРахунків
 
         native.Show();
 
-/*
-        FileDialog dialog = FileDialog.New();
-        dialog.Title = "Оберіть файл Excel";
+        /*
+                FileDialog dialog = FileDialog.New();
+                dialog.Title = "Оберіть файл Excel";
 
-        FileFilter filter = FileFilter.New();
-        filter.Name = "Файли Excel (*.xls, *.xlsx)";
-        filter.AddPattern("*.xls");
-        filter.AddPattern("*.xlsx");
+                FileFilter filter = FileFilter.New();
+                filter.Name = "Файли Excel (*.xls, *.xlsx)";
+                filter.AddPattern("*.xls");
+                filter.AddPattern("*.xlsx");
 
-        Gio.ListStore filters = Gio.ListStore.New(FileFilter.GetGType());
-        filters.Append(filter);
+                Gio.ListStore filters = Gio.ListStore.New(FileFilter.GetGType());
+                filters.Append(filter);
 
-        dialog.Filters = filters;
+                dialog.Filters = filters;
 
-        try
-        {
-            var file = await dialog.OpenAsync(NotebookFunc?.BasicForm);
-            if (file != null)
-            {
-                string? path = file.GetPath();
-                if (!string.IsNullOrEmpty(path))
+                try
                 {
-                    Log.AppendMessage(hBox, path, LogMessage.TypeMessage.None);
+                    var file = await dialog.OpenAsync(NotebookFunc?.BasicForm);
+                    if (file != null)
+                    {
+                        string? path = file.GetPath();
+                        if (!string.IsNullOrEmpty(path))
+                        {
+                            Log.AppendMessage(hBox, path, LogMessage.TypeMessage.None);
 
-                    cancellationToken = new();
-                    await Upload(path);
+                            cancellationToken = new();
+                            await Upload(path);
+                        }
+                    }
                 }
-            }
-        }
-        catch (Exception ex)
-        {
-            Log.CreateMessage($"Помилка вибору файлу: {ex.Message}", LogMessage.TypeMessage.Error);
-        }
-        */
+                catch (Exception ex)
+                {
+                    Log.CreateMessage($"Помилка вибору файлу: {ex.Message}", LogMessage.TypeMessage.Error);
+                }
+                */
 
         ButtonSensitive(true);
     }
