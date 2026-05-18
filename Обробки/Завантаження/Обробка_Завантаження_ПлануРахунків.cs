@@ -76,7 +76,7 @@ partial class Обробка_Завантаження_ПлануРахунків
                 var file = fileChooser.GetFile();
                 if (file != null)
                 {
-                    string? path = file.GetPath() ?? "";
+                    string? path = file.GetPath();
                     if (!string.IsNullOrEmpty(path))
                     {
                         Log.AppendMessage(hBox, path, LogMessage.TypeMessage.None);
