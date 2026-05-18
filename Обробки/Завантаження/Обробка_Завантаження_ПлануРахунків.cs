@@ -52,6 +52,32 @@ partial class Обробка_Завантаження_ПлануРахунків
 
         var hBox = Log.CreateMessage($"Вибір файлу Excel", LogMessage.TypeMessage.Info);
 
+        var native = Gtk.FileChooserNative.New(
+            "Виберіть файл",                  // Заголовок
+            Program.BasicForm,                    // Батьківське вікно (можна null)
+            Gtk.FileChooserAction.Open,      // Дія (відкриття)
+            "Відкрити",                      // Текст кнопки підтвердження
+            "Скасувати"                      // Текст кнопки скасування
+        );
+
+        native.OnResponse += (sender, e) => 
+        {
+            if (e.ResponseId == (int)Gtk.ResponseType.Accept)
+            {
+                var file = native.GetFile(); // Отримуємо вибраний файл (Gio.File)
+                if (file != null)
+                {
+                    string path = file.GetPath() ?? "";
+                    Console.WriteLine($"Вибрано шлях: {path}");
+                    // Ваша логіка завантаження плану рахунків
+                }
+            }
+            native.Dispose(); // Звільняємо ресурси
+        };
+
+        native.Show();
+
+/*
         FileDialog dialog = FileDialog.New();
         dialog.Title = "Оберіть файл Excel";
 
@@ -84,6 +110,7 @@ partial class Обробка_Завантаження_ПлануРахунків
         {
             Log.CreateMessage($"Помилка вибору файлу: {ex.Message}", LogMessage.TypeMessage.Error);
         }
+        */
 
         ButtonSensitive(true);
     }
