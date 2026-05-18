@@ -52,76 +52,78 @@ partial class Обробка_Завантаження_ПлануРахунків
 
         var hBox = Log.CreateMessage($"Вибір файлу Excel", LogMessage.TypeMessage.Info);
 
-        var native = Gtk.FileChooserNative.New(
-            "Виберіть файл",                  // Заголовок
-            Program.BasicForm,                    // Батьківське вікно (можна null)
-            Gtk.FileChooserAction.Open,      // Дія (відкриття)
-            "Відкрити",                      // Текст кнопки підтвердження
-            "Скасувати"                      // Текст кнопки скасування
-        );
+        FileChooserNative fileChooser = FileChooserNative.New("Виберіть файл", Program.BasicForm, FileChooserAction.Open, "Відкрити", "Скасувати");
+
+        {
+            FileFilter filter = FileFilter.New();
+            filter.Name = "Файли Excel (*.xls, *.xlsx)";
+            filter.AddPattern("*.xls");
+            filter.AddPattern("*.xlsx");
+            fileChooser.AddFilter(filter);
+        }
+
+        {
+            FileFilter filter = FileFilter.New();
+            filter.Name = "Усі файли";
+            filter.AddPattern("*");
+            fileChooser.AddFilter(filter);
+        }
+
+        fileChooser.OnResponse += async (sender, e) =>
+        {
+            if (e.ResponseId == (int)ResponseType.Accept)
+            {
+                var file = fileChooser.GetFile();
+                if (file != null)
+                {
+                    string? path = file.GetPath() ?? "";
+                    if (!string.IsNullOrEmpty(path))
+                    {
+                        Log.AppendMessage(hBox, path, LogMessage.TypeMessage.None);
+
+                        cancellationToken = new();
+                        await Upload(path);
+                    }
+                }
+            }
+            fileChooser.Dispose();
+        };
+        fileChooser.Show();
+
+        /*
+        FileDialog dialog = FileDialog.New();
+        dialog.Title = "Оберіть файл Excel";
 
         FileFilter filter = FileFilter.New();
         filter.Name = "Файли Excel (*.xls, *.xlsx)";
         filter.AddPattern("*.xls");
         filter.AddPattern("*.xlsx");
-        native.AddFilter(filter);
 
-        FileFilter allFilesFilter = FileFilter.New();
-        allFilesFilter.Name = "Усі файли";
-        allFilesFilter.AddPattern("*");
-        native.AddFilter(allFilesFilter);
+        Gio.ListStore filters = Gio.ListStore.New(FileFilter.GetGType());
+        filters.Append(filter);
 
-        native.OnResponse += (sender, e) =>
+        dialog.Filters = filters;
+
+        try
         {
-            if (e.ResponseId == (int)Gtk.ResponseType.Accept)
+            var file = await dialog.OpenAsync(NotebookFunc?.BasicForm);
+            if (file != null)
             {
-                var file = native.GetFile(); // Отримуємо вибраний файл (Gio.File)
-                if (file != null)
+                string? path = file.GetPath();
+                if (!string.IsNullOrEmpty(path))
                 {
-                    string path = file.GetPath() ?? "";
-                    Console.WriteLine($"Вибрано шлях: {path}");
-                    // Ваша логіка завантаження плану рахунків
+                    Log.AppendMessage(hBox, path, LogMessage.TypeMessage.None);
+
+                    cancellationToken = new();
+                    await Upload(path);
                 }
             }
-            native.Dispose(); // Звільняємо ресурси
-        };
-
-        native.Show();
-
-        /*
-                FileDialog dialog = FileDialog.New();
-                dialog.Title = "Оберіть файл Excel";
-
-                FileFilter filter = FileFilter.New();
-                filter.Name = "Файли Excel (*.xls, *.xlsx)";
-                filter.AddPattern("*.xls");
-                filter.AddPattern("*.xlsx");
-
-                Gio.ListStore filters = Gio.ListStore.New(FileFilter.GetGType());
-                filters.Append(filter);
-
-                dialog.Filters = filters;
-
-                try
-                {
-                    var file = await dialog.OpenAsync(NotebookFunc?.BasicForm);
-                    if (file != null)
-                    {
-                        string? path = file.GetPath();
-                        if (!string.IsNullOrEmpty(path))
-                        {
-                            Log.AppendMessage(hBox, path, LogMessage.TypeMessage.None);
-
-                            cancellationToken = new();
-                            await Upload(path);
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Log.CreateMessage($"Помилка вибору файлу: {ex.Message}", LogMessage.TypeMessage.Error);
-                }
-                */
+        }
+        catch (Exception ex)
+        {
+            Log.CreateMessage($"Помилка вибору файлу: {ex.Message}", LogMessage.TypeMessage.Error);
+        }
+        */
 
         ButtonSensitive(true);
     }
