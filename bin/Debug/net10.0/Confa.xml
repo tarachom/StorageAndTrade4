@@ -7,7 +7,7 @@
   <Author>Тарахомин Юрій Іванович, accounting.org.ua</Author>
   <Desc>Конфігурація "Зберігання та Торгівля"
 https://accounting.org.ua/storage_and_trade.html</Desc>
-  <DateTimeSave>15.05.2026 14:23:44</DateTimeSave>
+  <DateTimeSave>18.05.2026 07:48:24</DateTimeSave>
   <DictTSearch>simple</DictTSearch>
   <GtkVersion>Gtk4</GtkVersion>
   <ConstantsBlocks>
@@ -41264,17 +41264,17 @@ FROM
         <Field>
           <Name>FIFO</Name>
           <Value>1</Value>
-          <Desc>FIFO (спочатку списуються партії які прийшли першими)</Desc>
+          <Desc>FIFO (перший прийшов - перший пішов)</Desc>
         </Field>
         <Field>
           <Name>LIFO</Name>
           <Value>2</Value>
-          <Desc>LIFO (спочатку списуються партії які прийшли останніми)</Desc>
+          <Desc>LIFO (останнім прийшов - першим пішов)</Desc>
         </Field>
         <Field>
           <Name>FEFO</Name>
           <Value>3</Value>
-          <Desc>FEFO</Desc>
+          <Desc>FEFO (перший закінчується, перший виходить)</Desc>
         </Field>
         <Field>
           <Name>СередняВартість</Name>

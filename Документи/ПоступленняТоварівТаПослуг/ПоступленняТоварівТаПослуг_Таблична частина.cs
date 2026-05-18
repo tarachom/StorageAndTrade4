@@ -557,7 +557,6 @@ LIMIT 1
                 };
 
                 (row.Сhanged_Серія = () => cell.Pointer = row.Серія).Invoke();
-
             };
             ColumnViewColumn column = ColumnViewColumn.New("Серія", factory);
             column.Resizable = true;
@@ -616,7 +615,6 @@ LIMIT 1
                 };
 
                 (row.Сhanged_Пакування = () => cell.Pointer = row.Пакування).Invoke();
-
             };
             ColumnViewColumn column = ColumnViewColumn.New("Пакування", factory);
             column.Resizable = true;
@@ -646,8 +644,8 @@ LIMIT 1
                     row.Кількість = cell.Value;
                     ПісляЗміни_КількістьАбоЦіна(row);
                 };
-                (row.Сhanged_Кількість = () => cell.Value = row.Кількість).Invoke();
 
+                (row.Сhanged_Кількість = () => cell.Value = row.Кількість).Invoke();
             };
             ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
             column.Resizable = true;
@@ -825,7 +823,7 @@ LIMIT 1
                 (row.Сhanged_ЗамовленняПостачальнику = () => cell.Pointer = row.ЗамовленняПостачальнику).Invoke();
 
             };
-            ColumnViewColumn column = ColumnViewColumn.New("ЗамовленняПостачальнику", factory);
+            ColumnViewColumn column = ColumnViewColumn.New("Замовлення постачальнику", factory);
             column.Resizable = true;
             column.FixedWidth = 300;
 
