@@ -69,6 +69,8 @@ columnview row:selected button.link>label {
 button.toolbar {
     padding-left: 10px;
     padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
 /* ------------------ Контроли для числа, дати і т.д. де потрібна валідація ------------------------ */
