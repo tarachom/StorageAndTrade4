@@ -7,7 +7,7 @@
   <Author>Тарахомин Юрій Іванович, accounting.org.ua</Author>
   <Desc>Конфігурація "Зберігання та Торгівля"
 https://accounting.org.ua/storage_and_trade.html</Desc>
-  <DateTimeSave>18.05.2026 12:03:36</DateTimeSave>
+  <DateTimeSave>19.05.2026 20:11:15</DateTimeSave>
   <DictTSearch>simple</DictTSearch>
   <GtkVersion>Gtk4</GtkVersion>
   <ConstantsBlocks>
@@ -7376,17 +7376,6 @@ FROM
               <Type>string</Type>
               <Multiline>0</Multiline>
             </Field>
-            <Field>
-              <Name>Родич</Name>
-              <Caption>Родич</Caption>
-              <Size>0</Size>
-              <SortNum>3</SortNum>
-              <SortField>False</SortField>
-              <SortDirection>False</SortDirection>
-              <FilterField>True</FilterField>
-              <Type>pointer</Type>
-              <Pointer>Довідники.Номенклатура_Папки</Pointer>
-            </Field>
           </Fields>
         </TabularList>
         <TabularList>
@@ -7413,17 +7402,6 @@ FROM
               <FilterField>False</FilterField>
               <Type>string</Type>
               <Multiline>0</Multiline>
-            </Field>
-            <Field>
-              <Name>Родич</Name>
-              <Caption>Родич</Caption>
-              <Size>0</Size>
-              <SortNum>3</SortNum>
-              <SortField>False</SortField>
-              <SortDirection>False</SortDirection>
-              <FilterField>True</FilterField>
-              <Type>pointer</Type>
-              <Pointer>Довідники.Номенклатура_Папки</Pointer>
             </Field>
           </Fields>
         </TabularList>
@@ -14460,17 +14438,6 @@ FROM
               <FilterField>False</FilterField>
               <Type>string</Type>
               <Multiline>0</Multiline>
-            </Field>
-            <Field>
-              <Name>Родич</Name>
-              <Caption>Група</Caption>
-              <Size>0</Size>
-              <SortNum>11</SortNum>
-              <SortField>False</SortField>
-              <SortDirection>False</SortDirection>
-              <FilterField>True</FilterField>
-              <Type>pointer</Type>
-              <Pointer>Довідники.ПланРахунків</Pointer>
             </Field>
           </Fields>
         </TabularList>

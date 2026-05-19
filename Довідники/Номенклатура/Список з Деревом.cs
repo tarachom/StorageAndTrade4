@@ -37,7 +37,7 @@ partial class Номенклатура_Список : DirectoryFormJournalFull
             Widget? vBoxStart = HPanedTable.GetStartChild();
             HPanedTable.SetStartChild(vBox);
             HPanedTable.SetEndChild(vBoxStart);
-            HPanedTable.Position = 500;
+            HPanedTable.Position = 300;
             HPanedTable.StartChild?.MarginEnd = 5;
             HPanedTable.EndChild?.MarginStart = 5;
 
@@ -53,7 +53,6 @@ partial class Номенклатура_Список : DirectoryFormJournalFull
                 }
             };
         }
-
     }
 
     public static Номенклатура_Список New()

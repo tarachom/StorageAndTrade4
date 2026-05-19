@@ -53,11 +53,11 @@ partial class Обробка_Завантаження_ПлануРахунків
         var hBox = Log.CreateMessage($"Вибір файлу Excel", LogMessage.TypeMessage.Info);
 
         List<FileFilter> filters = [
-            ФункціїДляДіалогуВиборуФайлів.Фільтр_ФайлиExcel(),
-            ФункціїДляДіалогуВиборуФайлів.Фільтр_УсіФайли()
+            FunctionForFileDialog.Filter_Excel(),
+            FunctionForFileDialog.Filter_All()
         ];
 
-        await ФункціїДляДіалогуВиборуФайлів.ВибратиФайл(filters, async filePath =>
+        await FunctionForFileDialog.SelectFile(filters, async filePath =>
         {
             if (filePath != null)
             {
@@ -66,7 +66,7 @@ partial class Обробка_Завантаження_ПлануРахунків
                 cancellationToken = new();
                 await Upload(filePath);
             }
-        });
+        }, Program.BasicForm);
 
         ButtonSensitive(true);
     }

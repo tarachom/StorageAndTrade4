@@ -1,6 +1,6 @@
 
 /*     
-        Контрагенти.cs 
+        Склади.cs 
         Список з Деревом
 */
 
@@ -9,20 +9,19 @@ using InterfaceGtk4;
 using AccountingSoftware;
 using GeneratedCode.Довідники;
 
-using ТабличнийСписок = GeneratedCode.Довідники.ТабличніСписки.Контрагенти_Записи;
-using Функції = StorageAndTrade.Контрагенти_Функції;
+using ТабличнийСписок = GeneratedCode.Довідники.ТабличніСписки.Склади_Записи;
+using Функції = StorageAndTrade.Склади_Функції;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<DirectoryFormJournalFull>("ListAndTreeCYIP7zWsOESuZEuR1aJg")]
-partial class Контрагенти_Список : DirectoryFormJournalFull
+[GObject.Subclass<DirectoryFormJournalFull>("ListAndTreeNtw7LnJ8BEWeO8v03tLig")]
+partial class Склади_Список : DirectoryFormJournalFull
 {
-    Контрагенти_Папки_Список Папки = Контрагенти_Папки_Список.New();
-    
+    Склади_Папки_Список Папки = Склади_Папки_Список.New();
 
     partial void Initialize()
     {
-        TypeName = Контрагенти_Const.POINTER;
+        TypeName = Склади_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
 
@@ -35,15 +34,18 @@ partial class Контрагенти_Список : DirectoryFormJournalFull
             vBox.MarginStart = 5;
             vBox.Append(Папки);
 
-            HPanedTable.SetEndChild(vBox);
-            HPanedTable.Position = 1200;
+            Widget? vBoxStart = HPanedTable.GetStartChild();
+            HPanedTable.SetStartChild(vBox);
+            HPanedTable.SetEndChild(vBoxStart);
+            HPanedTable.Position = 300;
             HPanedTable.StartChild?.MarginEnd = 5;
+            HPanedTable.EndChild?.MarginStart = 5;
 
             Папки.InsertEmptyFirstRow = true;
             Папки.CallBack_Activate = async uniqueID =>
             {
                 //Відбір по полю Папка
-                ParentWhereList = [new(Контрагенти_Const.Папка, Comparison.EQ, uniqueID.UGuid)];
+                ParentWhereList = [new(Склади_Const.Папка, Comparison.EQ, uniqueID.UGuid)];
                 if (!UseHierarchy.Active && TypeWhereState == TypeWhere.Standart)
                 {
                     PagesClear();
@@ -51,22 +53,21 @@ partial class Контрагенти_Список : DirectoryFormJournalFull
                 }
             };
         }
-        
     }
 
-    public static Контрагенти_Список New()
+    public static Склади_Список New()
     {
-        Контрагенти_Список list = NewWithProperties([]);
+        Склади_Список list = NewWithProperties([]);
         list.NotebookFunc = Program.BasicForm?.NotebookFunc;
 
         return list;
     }
-    
+
     protected override async ValueTask BeforeSetValue()
     {
         if (SelectPointerItem != null || DirectoryPointerItem != null)
         {
-            Контрагенти_Objest? Обєкт = await new Контрагенти_Pointer(SelectPointerItem ?? DirectoryPointerItem ?? new UniqueID()).GetDirectoryObject();
+            Склади_Objest? Обєкт = await new Склади_Pointer(SelectPointerItem ?? DirectoryPointerItem ?? new UniqueID()).GetDirectoryObject();
             if (Обєкт != null) Папки.SelectPointerItem = Обєкт.Папка.UniqueID;
         }
 
@@ -77,7 +78,7 @@ partial class Контрагенти_Список : DirectoryFormJournalFull
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-    
+
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);
@@ -108,4 +109,3 @@ partial class Контрагенти_Список : DirectoryFormJournalFull
         return await Функції.Copy(uniqueID);
     }
 }
-    

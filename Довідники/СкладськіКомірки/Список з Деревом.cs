@@ -1,6 +1,6 @@
 
 /*     
-        Склади.cs 
+        СкладськіКомірки.cs 
         Список з Деревом
 */
 
@@ -9,20 +9,21 @@ using InterfaceGtk4;
 using AccountingSoftware;
 using GeneratedCode.Довідники;
 
-using ТабличнийСписок = GeneratedCode.Довідники.ТабличніСписки.Склади_Записи;
-using Функції = StorageAndTrade.Склади_Функції;
+using ТабличнийСписок = GeneratedCode.Довідники.ТабличніСписки.СкладськіКомірки_Записи;
+using Функції = StorageAndTrade.СкладськіКомірки_Функції;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<DirectoryFormJournalFull>("ListAndTreeNtw7LnJ8BEWeO8v03tLig")]
-partial class Склади_Список : DirectoryFormJournalFull
+[GObject.Subclass<DirectoryFormJournalFull>("ListAndTreeHfyy7XuG0GK0Zba8nOeRw")]
+partial class СкладськіКомірки_Список : DirectoryFormJournalFull
 {
-    Склади_Папки_Список Папки = Склади_Папки_Список.New();
-    
+    СкладськіКомірки_Папки_Список Папки = СкладськіКомірки_Папки_Список.New();
+
+    public СкладськіПриміщення_PointerControl Власник = СкладськіПриміщення_PointerControl.New();
 
     partial void Initialize()
     {
-        TypeName = Склади_Const.POINTER;
+        TypeName = СкладськіКомірки_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
 
@@ -35,15 +36,18 @@ partial class Склади_Список : DirectoryFormJournalFull
             vBox.MarginStart = 5;
             vBox.Append(Папки);
 
-            HPanedTable.SetEndChild(vBox);
-            HPanedTable.Position = 1200;
+            Widget? vBoxStart = HPanedTable.GetStartChild();
+            HPanedTable.SetStartChild(vBox);
+            HPanedTable.SetEndChild(vBoxStart);
+            HPanedTable.Position = 300;
             HPanedTable.StartChild?.MarginEnd = 5;
+            HPanedTable.EndChild?.MarginStart = 5;
 
             Папки.InsertEmptyFirstRow = true;
             Папки.CallBack_Activate = async uniqueID =>
             {
                 //Відбір по полю Папка
-                ParentWhereList = [new(Склади_Const.Папка, Comparison.EQ, uniqueID.UGuid)];
+                ParentWhereList = [new(СкладськіКомірки_Const.Папка, Comparison.EQ, uniqueID.UGuid)];
                 if (!UseHierarchy.Active && TypeWhereState == TypeWhere.Standart)
                 {
                     PagesClear();
@@ -51,22 +55,33 @@ partial class Склади_Список : DirectoryFormJournalFull
                 }
             };
         }
-        
+
+        //Власник
+        {
+            Власник.Caption = "Приміщення:";
+            HBoxTop.Append(Власник);
+            OwnerWhereListFunc = () => Власник.Pointer.IsEmpty() ? [] : [new(СкладськіКомірки_Const.Приміщення, Comparison.EQ, Власник.Pointer.UniqueID.UGuid)];
+            Власник.AfterSelectFunc = async () =>
+            {
+                PagesClear();
+                await LoadRecords();
+            };
+        }
     }
 
-    public static Склади_Список New()
+    public static СкладськіКомірки_Список New()
     {
-        Склади_Список list = NewWithProperties([]);
+        СкладськіКомірки_Список list = NewWithProperties([]);
         list.NotebookFunc = Program.BasicForm?.NotebookFunc;
 
         return list;
     }
-    
+
     protected override async ValueTask BeforeSetValue()
     {
         if (SelectPointerItem != null || DirectoryPointerItem != null)
         {
-            Склади_Objest? Обєкт = await new Склади_Pointer(SelectPointerItem ?? DirectoryPointerItem ?? new UniqueID()).GetDirectoryObject();
+            СкладськіКомірки_Objest? Обєкт = await new СкладськіКомірки_Pointer(SelectPointerItem ?? DirectoryPointerItem ?? new UniqueID()).GetDirectoryObject();
             if (Обєкт != null) Папки.SelectPointerItem = Обєкт.Папка.UniqueID;
         }
 
@@ -77,7 +92,7 @@ partial class Склади_Список : DirectoryFormJournalFull
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-    
+
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);
@@ -108,4 +123,3 @@ partial class Склади_Список : DirectoryFormJournalFull
         return await Функції.Copy(uniqueID);
     }
 }
-    
