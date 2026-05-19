@@ -14,7 +14,7 @@
           "GirCore.Gtk-4.0": "0.8.0-preview.1",
           "InterfaceGtk4": "1.0.0",
           "NPOI": "2.8.0",
-          "QuestPDF": "2026.2.4",
+          "QuestPDF": "2026.5.0",
           "SkiaSharp": "3.119.2"
         },
         "runtime": {
@@ -390,11 +390,11 @@
           }
         }
       },
-      "QuestPDF/2026.2.4": {
+      "QuestPDF/2026.5.0": {
         "runtime": {
           "lib/net10.0/QuestPDF.dll": {
-            "assemblyVersion": "2026.2.4.0",
-            "fileVersion": "2026.2.4.0"
+            "assemblyVersion": "2026.5.0.0",
+            "fileVersion": "2026.5.0.0"
           }
         },
         "runtimeTargets": {
@@ -905,12 +905,12 @@
       "path": "npoi/2.8.0",
       "hashPath": "npoi.2.8.0.nupkg.sha512"
     },
-    "QuestPDF/2026.2.4": {
+    "QuestPDF/2026.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-fajBdRJFr3hu2Mr6mEVsXjvVKD9Q/Q6hfPEUMpV/xlwxWdFebmpGdi0FLQTApMvpapy72v9dvcGuk7e7NQmQyQ==",
-      "path": "questpdf/2026.2.4",
-      "hashPath": "questpdf.2026.2.4.nupkg.sha512"
+      "sha512": "sha512-QddELSgpJ7YFrNaqlqUik/OOhK2/yVDqdqGjtdH+V3nxml2cvjUorFp2yiK8xnTLLvR139SXpVt3G/0oVCynig==",
+      "path": "questpdf/2026.5.0",
+      "hashPath": "questpdf.2026.5.0.nupkg.sha512"
     },
     "SharpZipLib/1.4.2": {
       "type": "package",

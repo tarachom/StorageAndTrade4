@@ -33,11 +33,9 @@ static class ФункціїДляДокументів
     /// <param name="ДокументОбєкт">Документ обєкт</param>
     /// <param name="НазваДокументу">Назва документу</param>
     /// <param name="СписокПомилок">Список помилок</param>
-    public static async ValueTask ДокументНеПроводиться(DocumentObject ДокументОбєкт, string НазваДокументу, string СписокПомилок)
-    {
-        await Config.Kernel.MessageErrorAdd("Проведення документу", ДокументОбєкт.UniqueID.UGuid, $"Документи.{ДокументОбєкт.TypeDocument}", НазваДокументу,
-              СписокПомилок + "\n\nДокумент [ " + НазваДокументу + " ] не проводиться!");
-    }
+    public static async ValueTask ДокументНеПроводиться(DocumentObject ДокументОбєкт, string НазваДокументу, string СписокПомилок) =>
+         await Config.Kernel.MessageErrorAdd("Проведення документу", ДокументОбєкт.UniqueID.UGuid, $"Документи.{ДокументОбєкт.TypeDocument}", НазваДокументу,
+            СписокПомилок + "\n\nДокумент [ " + НазваДокументу + " ] не проводиться!");
 
     #region ПартіяТоварівКомпозит
 
@@ -96,8 +94,7 @@ static class ФункціїДляДокументів
     /// <param name="Контрагент">Контрагент</param>
     /// <param name="ТипДоговору">Тип договору</param>
     /// <returns></returns>
-    public static async ValueTask<ДоговориКонтрагентів_Pointer?> ОсновнийДоговірДляКонтрагента(
-        Контрагенти_Pointer Контрагент, ТипДоговорів ТипДоговору = 0)
+    public static async ValueTask<ДоговориКонтрагентів_Pointer?> ОсновнийДоговірДляКонтрагента(Контрагенти_Pointer Контрагент, ТипДоговорів ТипДоговору = 0)
     {
         if (Контрагент.IsEmpty())
             return null;

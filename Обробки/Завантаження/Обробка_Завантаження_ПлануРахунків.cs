@@ -52,6 +52,35 @@ partial class Обробка_Завантаження_ПлануРахунків
 
         var hBox = Log.CreateMessage($"Вибір файлу Excel", LogMessage.TypeMessage.Info);
 
+        List<FileFilter> filters = [];
+
+        {
+            FileFilter filter = FileFilter.New();
+            filter.Name = "Файли Excel (*.xls, *.xlsx)";
+            filter.AddPattern("*.xls");
+            filter.AddPattern("*.xlsx");
+            filters.Add(filter);
+        }
+
+        {
+            FileFilter filter = FileFilter.New();
+            filter.Name = "Усі файли";
+            filter.AddPattern("*");
+            filters.Add(filter);
+        }
+
+        await ФункціїДляДіалогуВиборуФайлів.ВибратиФайл([.. filters], async filePath =>
+        {
+            if (filePath != null)
+            {
+                Log.AppendMessage(hBox, filePath, LogMessage.TypeMessage.None);
+
+                cancellationToken = new();
+                //await Upload(filePath);
+            }
+        });
+
+        /*
         FileChooserNative fileChooser = FileChooserNative.New("Виберіть файл", Program.BasicForm, FileChooserAction.Open, "Відкрити", "Скасувати");
 
         {
@@ -90,7 +119,7 @@ partial class Обробка_Завантаження_ПлануРахунків
         };
         fileChooser.Show();
 
-        /*
+
         FileDialog dialog = FileDialog.New();
         dialog.Title = "Оберіть файл Excel";
 

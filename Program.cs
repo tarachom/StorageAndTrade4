@@ -22,7 +22,7 @@ class Program
     public static Користувачі_Pointer Користувач { get; set; } = new Користувачі_Pointer();
 
     static void Main()
-    {
+    {                
         //Для Windows реєструється шлях до бібліотек Gtk
         if (OperatingSystem.IsWindows())
         {
