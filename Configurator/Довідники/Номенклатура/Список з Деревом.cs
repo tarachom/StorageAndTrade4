@@ -18,7 +18,6 @@ namespace StorageAndTrade;
 partial class Номенклатура_Список : DirectoryFormJournalFull
 {
     Номенклатура_Папки_Список Папки = Номенклатура_Папки_Список.New();
-    
 
     partial void Initialize()
     {
@@ -35,9 +34,12 @@ partial class Номенклатура_Список : DirectoryFormJournalFull
             vBox.MarginStart = 5;
             vBox.Append(Папки);
 
-            HPanedTable.SetEndChild(vBox);
-            HPanedTable.Position = 1200;
+            Widget? vBoxStart = HPanedTable.GetStartChild();
+            HPanedTable.SetStartChild(vBox);
+            HPanedTable.SetEndChild(vBoxStart);
+            HPanedTable.Position = 500;
             HPanedTable.StartChild?.MarginEnd = 5;
+            HPanedTable.EndChild?.MarginStart = 5;
 
             Папки.InsertEmptyFirstRow = true;
             Папки.CallBack_Activate = async uniqueID =>
@@ -51,7 +53,7 @@ partial class Номенклатура_Список : DirectoryFormJournalFull
                 }
             };
         }
-        
+
     }
 
     public static Номенклатура_Список New()
@@ -61,7 +63,7 @@ partial class Номенклатура_Список : DirectoryFormJournalFull
 
         return list;
     }
-    
+
     protected override async ValueTask BeforeSetValue()
     {
         if (SelectPointerItem != null || DirectoryPointerItem != null)
@@ -77,7 +79,7 @@ partial class Номенклатура_Список : DirectoryFormJournalFull
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-    
+
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);
@@ -108,4 +110,3 @@ partial class Номенклатура_Список : DirectoryFormJournalFull
         return await Функції.Copy(uniqueID);
     }
 }
-    

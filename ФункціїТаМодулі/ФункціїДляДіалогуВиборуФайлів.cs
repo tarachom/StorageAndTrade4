@@ -7,15 +7,37 @@ using Gtk;
 
 namespace StorageAndTrade;
 
-class ФункціїДляДіалогуВиборуФайлів
+static class ФункціїДляДіалогуВиборуФайлів
 {
+    #region Фільтри
+
+    public static FileFilter Фільтр_УсіФайли()
+    {
+        FileFilter filter = FileFilter.New();
+        filter.Name = "Усі файли";
+        filter.AddPattern("*");
+
+        return filter;
+    }
+
+    public static FileFilter Фільтр_ФайлиExcel()
+    {
+        FileFilter filter = FileFilter.New();
+        filter.Name = "Файли Excel (*.xls, *.xlsx)";
+        filter.AddPattern("*.xls");
+        filter.AddPattern("*.xlsx");
+
+        return filter;
+    }
+
+    #endregion
+
     /// <summary>
-    /// 
+    /// Вибрати один файл
     /// </summary>
-    /// <param name="filters"></param>
-    /// <param name="callBackSelect"></param>
-    /// <returns></returns>
-    public static async ValueTask ВибратиФайл(FileFilter[] filters, Func<string?, ValueTask> callBackSelect)
+    /// <param name="filters">Фільтри</param>
+    /// <param name="callBackSelect">Функція обробки вибору</param>
+    public static async ValueTask ВибратиФайл(List<FileFilter> filters, Func<string?, ValueTask> callBackSelect)
     {
         if (Functions.CheckVersion(4, 10, 0) != null)
         {
@@ -72,12 +94,11 @@ class ФункціїДляДіалогуВиборуФайлів
     }
 
     /// <summary>
-    /// 
+    /// Вибрати файли
     /// </summary>
-    /// <param name="filters"></param>
-    /// <param name="callBackSelect"></param>
-    /// <returns></returns>
-    public static async ValueTask ВибратиФайли(FileFilter[] filters, Func<string[]?, ValueTask> callBackSelect)
+    /// <param name="filters">Фільтри</param>
+    /// <param name="callBackSelect">Функція обробки вибору</param>
+    public static async ValueTask ВибратиФайли(List<FileFilter> filters, Func<string[]?, ValueTask> callBackSelect)
     {
         if (Functions.CheckVersion(4, 10, 0) != null)
         {
@@ -150,3 +171,77 @@ class ФункціїДляДіалогуВиборуФайлів
         }
     }
 }
+
+/*
+FileChooserNative fileChooser = FileChooserNative.New("Виберіть файл", Program.BasicForm, FileChooserAction.Open, "Відкрити", "Скасувати");
+
+{
+    FileFilter filter = FileFilter.New();
+    filter.Name = "Файли Excel (*.xls, *.xlsx)";
+    filter.AddPattern("*.xls");
+    filter.AddPattern("*.xlsx");
+    fileChooser.AddFilter(filter);
+}
+
+{
+    FileFilter filter = FileFilter.New();
+    filter.Name = "Усі файли";
+    filter.AddPattern("*");
+    fileChooser.AddFilter(filter);
+}
+
+fileChooser.OnResponse += async (sender, e) =>
+{
+    if (e.ResponseId == (int)ResponseType.Accept)
+    {
+        var file = fileChooser.GetFile();
+        if (file != null)
+        {
+            string? path = file.GetPath();
+            if (!string.IsNullOrEmpty(path))
+            {
+                Log.AppendMessage(hBox, path, LogMessage.TypeMessage.None);
+
+                cancellationToken = new();
+                await Upload(path);
+            }
+        }
+    }
+    fileChooser.Dispose();
+};
+fileChooser.Show();
+
+
+FileDialog dialog = FileDialog.New();
+dialog.Title = "Оберіть файл Excel";
+
+FileFilter filter = FileFilter.New();
+filter.Name = "Файли Excel (*.xls, *.xlsx)";
+filter.AddPattern("*.xls");
+filter.AddPattern("*.xlsx");
+
+Gio.ListStore filters = Gio.ListStore.New(FileFilter.GetGType());
+filters.Append(filter);
+
+dialog.Filters = filters;
+
+try
+{
+    var file = await dialog.OpenAsync(NotebookFunc?.BasicForm);
+    if (file != null)
+    {
+        string? path = file.GetPath();
+        if (!string.IsNullOrEmpty(path))
+        {
+            Log.AppendMessage(hBox, path, LogMessage.TypeMessage.None);
+
+            cancellationToken = new();
+            await Upload(path);
+        }
+    }
+}
+catch (Exception ex)
+{
+    Log.CreateMessage($"Помилка вибору файлу: {ex.Message}", LogMessage.TypeMessage.Error);
+}
+*/

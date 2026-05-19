@@ -7,7 +7,7 @@ using NPOI.SS.UserModel;
 
 namespace StorageAndTrade;
 
-class ФункціїДляЕксель
+static class ФункціїДляЕксель
 {
     /// <summary>
     /// Обчислення максимального значення рядка в якому є значення без розриву і пропусків

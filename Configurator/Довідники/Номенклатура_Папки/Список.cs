@@ -17,15 +17,11 @@ namespace StorageAndTrade;
 [GObject.Subclass<DirectoryFormJournalFullTree>("List_BdmV27MQkkKc5Wetbrmf6g")]
 partial class Номенклатура_Папки_Список : DirectoryFormJournalFullTree
 {
-    
-    
     partial void Initialize()
     {
         TypeName = Номенклатура_Папки_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
-
-        
     }
 
     public static Номенклатура_Папки_Список New()

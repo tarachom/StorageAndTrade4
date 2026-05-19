@@ -65,6 +65,12 @@ columnview row:selected button.link>label {
     border-color: transparent;
 }
 
+/* Для кнопок Toolbar  */
+button.toolbar {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 /* ------------------ Контроли для числа, дати і т.д. де потрібна валідація ------------------------ */
 
 entry.error {

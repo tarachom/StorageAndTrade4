@@ -5771,7 +5771,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                             cell.SetText(row.Fields["Родич"]);
                     }
                 };
-                ColumnViewColumn column = ColumnViewColumn.New("Родич", factory);
+                ColumnViewColumn column = ColumnViewColumn.New("Папка", factory);
                 column.Resizable = true;
                 form.Grid.AppendColumn(column);
             }
@@ -5819,7 +5819,6 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             
         }
 
-        
         public static DirectoryHierarchicalRow LoadEmptyChildren(DirectoryFormJournalBase form)
         {
             DirectoryHierarchicalRow row = DirectoryHierarchicalRow.New();
@@ -5885,7 +5884,6 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             return list;
         }
         
-
         public static async ValueTask LoadRecords(DirectoryFormJournalBase form)
         {
             form.BeforeLoadRecords();
