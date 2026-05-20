@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 19.05.2026 19:01:48
+ * Дата конфігурації: 20.05.2026 18:46:47
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон Gtk4.xslt
@@ -4071,27 +4071,6 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 form.Grid.AppendColumn(column);
             }
         
-            //Назва: Основа, "Основа"
-            {
-                SignalListItemFactory factory = SignalListItemFactory.New();
-                factory.OnSetup += (_, args) =>
-                {
-                    ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartCell.NewFromType("composite_pointer");
-                };
-                factory.OnBind += (_, args) =>
-                {
-                    ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
-                    DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    if (cell != null && row != null)
-                        cell.SetText(row.Fields["Основа"]);
-                };
-                ColumnViewColumn column = ColumnViewColumn.New("Основа", factory);
-                column.Resizable = true;
-                form.Grid.AppendColumn(column);
-            }
-        
             { /* Пуста колонка для заповнення вільного простору */
                 ColumnViewColumn column = ColumnViewColumn.New(null, null);
                 column.Resizable = true;
@@ -4123,16 +4102,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     "deletion_label",
                     /*Код*/ Довідники.Користувачі_Const.Код,
                     /*Назва*/ Довідники.Користувачі_Const.Назва,
-                    /*Основа*/ Довідники.Користувачі_Const.Основа,
                     
                 ]);
             
                     /* Сортування */
                     Користувачі_Select.QuerySelect.Order.Add(Довідники.Користувачі_Const.Назва, SelectOrder.ASC);
                 
-                            /* Приєднання composite_pointer */
-                            Користувачі_Select.QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({Довідники.Користувачі_Const.Основа})", "Основа"));
-                        
 
             /* Відбори */
             Користувачі_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -4150,7 +4125,6 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.DeletionLabel = (bool)Fields["deletion_label"];
                     row.Fields.Add("Код", Fields[Користувачі_Const.Код].ToString() ?? "");
                     row.Fields.Add("Назва", Fields[Користувачі_Const.Назва].ToString() ?? "");
-                    row.Fields.Add("Основа", Fields["Основа"].ToString() ?? "");
                     
                     ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
                     if (objCh != null)
@@ -4192,16 +4166,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     "deletion_label",
                     /*Код*/ Довідники.Користувачі_Const.Код,
                     /*Назва*/ Довідники.Користувачі_Const.Назва,
-                    /*Основа*/ Довідники.Користувачі_Const.Основа,
                     
                 ]);
             
                     /* Сортування */
                     Користувачі_Select.QuerySelect.Order.Add(Довідники.Користувачі_Const.Назва, SelectOrder.ASC);
                 
-                            /* Приєднання composite_pointer */
-                            Користувачі_Select.QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({Довідники.Користувачі_Const.Основа})", "Основа"));
-                        
 
             /* Відбори */
             if (form.WhereList != null) Користувачі_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -4231,7 +4201,6 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.DeletionLabel = (bool)Fields["deletion_label"];
                     row.Fields.Add("Код", Fields[Довідники.Користувачі_Const.Код].ToString() ?? "");
                     row.Fields.Add("Назва", Fields[Довідники.Користувачі_Const.Назва].ToString() ?? "");
-                    row.Fields.Add("Основа", Fields["Основа"].ToString() ?? "");
                     
                     form.Store.Append(row);
                     if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();

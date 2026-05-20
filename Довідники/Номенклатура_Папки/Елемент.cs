@@ -6,11 +6,7 @@
 
 using Gtk;
 using InterfaceGtk4;
-using AccountingSoftware;
-
 using GeneratedCode.Довідники;
-using GeneratedCode.Документи;
-using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
@@ -36,7 +32,6 @@ partial class Номенклатура_Папки_Елемент : DirectoryForm
     {
         Element = Елемент;
 
-
         // Код:
         Код.WidthRequest = 100;
 
@@ -46,7 +41,6 @@ partial class Номенклатура_Папки_Елемент : DirectoryForm
         // Родич:
         Родич.Caption = "Папка";
         Родич.WidthPresentation = 300;
-
     }
 
     public static Номенклатура_Папки_Елемент New()
@@ -59,7 +53,6 @@ partial class Номенклатура_Папки_Елемент : DirectoryForm
 
     protected override void CreateStart(Box vBox)
     {
-
         // Код
         CreateField(vBox, "Код:", Код);
 
@@ -68,7 +61,6 @@ partial class Номенклатура_Папки_Елемент : DirectoryForm
 
         // Родич
         CreateField(vBox, null, Родич);
-
     }
 
     protected override void CreateEnd(Box vBox)
@@ -80,16 +72,14 @@ partial class Номенклатура_Папки_Елемент : DirectoryForm
 
     public override async ValueTask AssignValue()
     {
-
         if (IsNew)
             Елемент.Родич = РодичДляНового;
         else
             Родич.OpenFolder = Елемент.UniqueID;
-            
+
         Код.SetText(Елемент.Код);
         Назва.SetText(Елемент.Назва);
         Родич.Pointer = Елемент.Родич;
-
     }
 
     protected override void GetValue()
@@ -97,7 +87,6 @@ partial class Номенклатура_Папки_Елемент : DirectoryForm
         Елемент.Код = Код.GetText();
         Елемент.Назва = Назва.GetText();
         Елемент.Родич = Родич.Pointer;
-
     }
 
     #endregion
@@ -109,7 +98,6 @@ partial class Номенклатура_Папки_Елемент : DirectoryForm
         {
             if (await Елемент.Save())
             {
-
                 isSaved = true;
             }
         }

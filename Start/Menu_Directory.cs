@@ -79,6 +79,13 @@ partial class Menu_Directory : Form
                 NotebookFunc?.CreatePage(ХарактеристикиНоменклатури_Const.FULLNAME, page);
                 await page.SetValue();
             });
+
+            CreateLink(vLeft, СкладськіКомірки_Const.FULLNAME, async () =>
+            {
+                СкладськіКомірки_Список page = СкладськіКомірки_Список.New();
+                NotebookFunc?.CreatePage(СкладськіКомірки_Const.FULLNAME, page);
+                await page.SetValue();
+            });
         }
 
         CreateSeparator(hBoxList);

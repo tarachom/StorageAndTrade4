@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 19.05.2026 19:01:48
+ * Дата конфігурації: 20.05.2026 18:46:47
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон GeneratedCode.xslt
@@ -3943,7 +3943,7 @@ namespace GeneratedCode.Довідники
     public class Контрагенти_Контакти_TablePart : DirectoryTablePart
     {
         public Контрагенти_Контакти_TablePart(Контрагенти_Objest owner) : base(Config.Kernel, "tab_a09",
-             ["col_d2", "col_d8", "col_d7", "col_d3", "col_d5", "col_d4", "col_d6", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", ], true)
+             ["col_d2", "col_d8", "col_d7", "col_d3", "col_d5", "col_d4", "col_d6", "col_a1", "col_a2", ], true)
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
@@ -3963,9 +3963,6 @@ namespace GeneratedCode.Довідники
         public const string Місто = "col_d6";
         public const string Значення = "col_a1";
         public const string НомерРядка = "col_a2";
-        public const string ДатаЧас = "col_a3";
-        public const string Дата = "col_a4";
-        public const string Час = "col_a5";
 
         public Контрагенти_Objest Owner { get; private set; }
         
@@ -4010,9 +4007,6 @@ namespace GeneratedCode.Довідники
                     Місто = fieldValue["col_d6"].ToString() ?? "",
                     Значення = fieldValue["col_a1"].ToString() ?? "",
                     НомерРядка = (fieldValue["col_a2"] != DBNull.Value) ? (int)fieldValue["col_a2"] : 0,
-                    ДатаЧас = (fieldValue["col_a3"] != DBNull.Value) ? DateTime.Parse(fieldValue["col_a3"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue,
-                    Дата = (fieldValue["col_a4"] != DBNull.Value) ? DateTime.Parse(fieldValue["col_a4"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue,
-                    Час = (fieldValue["col_a5"] != DBNull.Value) ? TimeSpan.Parse(fieldValue["col_a5"]?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay,
                     
                 };
                 Records.Add(record);
@@ -4056,9 +4050,6 @@ namespace GeneratedCode.Довідники
                     {"col_d6", record.Місто},
                     {"col_a1", record.Значення},
                     {"col_a2", record.НомерРядка},
-                    {"col_a3", record.ДатаЧас},
-                    {"col_a4", record.Дата},
-                    {"col_a5", record.Час},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -4094,9 +4085,6 @@ namespace GeneratedCode.Довідники
             public string Місто { get; set; } = "";
             public string Значення { get; set; } = "";
             public int НомерРядка { get; set; } = 0;
-            public DateTime ДатаЧас { get; set; } = DateTime.MinValue;
-            public DateTime Дата { get; set; } = DateTime.MinValue;
-            public TimeSpan Час { get; set; } = DateTime.MinValue.TimeOfDay;
             
         }
     }
@@ -5046,13 +5034,12 @@ namespace GeneratedCode.Довідники
         public const string ФізичнаОсоба = "col_a1";
         public const string Коментар = "col_g6";
         public const string КодВСпеціальнійТаблиці = "col_a2";
-        public const string Основа = "col_a3";
     }
 
     public class Користувачі_Objest : DirectoryObject
     {
         public Користувачі_Objest() : base(Config.Kernel, "tab_a14", Користувачі_Const.TYPE,
-             ["col_f6", "col_f7", "col_a1", "col_g6", "col_a2", "col_a3", ], true)
+             ["col_f6", "col_f7", "col_a1", "col_g6", "col_a2", ], true)
         {
             
                 //Табличні частини
@@ -5078,7 +5065,6 @@ namespace GeneratedCode.Довідники
                 ФізичнаОсоба = new Довідники.ФізичніОсоби_Pointer(base.FieldValue["col_a1"]);
                 Коментар = base.FieldValue["col_g6"].ToString() ?? "";
                 КодВСпеціальнійТаблиці = (base.FieldValue["col_a2"] != DBNull.Value) ? (Guid)base.FieldValue["col_a2"] : Guid.Empty;
-                Основа = (base.FieldValue["col_a3"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a3"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -5102,7 +5088,6 @@ namespace GeneratedCode.Довідники
             base.FieldValue["col_a1"] = ФізичнаОсоба.UniqueID.UGuid;
             base.FieldValue["col_g6"] = Коментар;
             base.FieldValue["col_a2"] = КодВСпеціальнійТаблиці;
-            base.FieldValue["col_a3"] = Основа;
             
             bool result = await BaseSave();
             if (result)
@@ -5124,7 +5109,6 @@ namespace GeneratedCode.Довідники
                 ФізичнаОсоба = ФізичнаОсоба,
                 Коментар = Коментар,
                 КодВСпеціальнійТаблиці = КодВСпеціальнійТаблиці,
-                Основа = Основа,
                 
             };
             
@@ -5172,7 +5156,6 @@ namespace GeneratedCode.Довідники
         public Довідники.ФізичніОсоби_Pointer ФізичнаОсоба { get; set; } = new Довідники.ФізичніОсоби_Pointer();
         public string Коментар { get; set; } = "";
         public Guid КодВСпеціальнійТаблиці { get; set; } = new Guid();
-        public UuidAndText Основа { get; set; } = new UuidAndText();
         
         //Табличні частини
         public Користувачі_Контакти_TablePart Контакти_TablePart { get; private set; }
@@ -5266,7 +5249,7 @@ namespace GeneratedCode.Довідники
     public class Користувачі_Контакти_TablePart : DirectoryTablePart
     {
         public Користувачі_Контакти_TablePart(Користувачі_Objest owner) : base(Config.Kernel, "tab_a15",
-             ["col_f8", "col_g5", "col_g4", "col_f9", "col_g1", "col_g2", "col_g3", "col_a1", "col_a2", "col_a3", ])
+             ["col_f8", "col_g5", "col_g4", "col_f9", "col_g1", "col_g2", "col_g3", "col_a1", "col_a2", ])
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
@@ -5286,7 +5269,6 @@ namespace GeneratedCode.Довідники
         public const string Місто = "col_g3";
         public const string НомерРядка = "col_a1";
         public const string Значення = "col_a2";
-        public const string Основа = "col_a3";
 
         public Користувачі_Objest Owner { get; private set; }
         
@@ -5310,9 +5292,6 @@ namespace GeneratedCode.Довідники
               
             }
             
-                      /* composite_pointer */
-                      QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({TABLE}.{Основа})", "Основа"));
-                  
         }
 
         public async ValueTask Read()
@@ -5334,17 +5313,9 @@ namespace GeneratedCode.Довідники
                     Місто = fieldValue["col_g3"].ToString() ?? "",
                     НомерРядка = (fieldValue["col_a1"] != DBNull.Value) ? (int)fieldValue["col_a1"] : 0,
                     Значення = fieldValue["col_a2"].ToString() ?? "",
-                    Основа = (fieldValue["col_a3"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a3"] : new UuidAndText(),
                     
                 };
                 Records.Add(record);
-                
-                if (JoinValue.TryGetValue(record.UID.ToString(), out var ItemValue))
-                {
-                  record.JoinItemValue = ItemValue;
-                  record.Основа.Name = ItemValue["Основа"];
-                      
-                }
                 
             }
             
@@ -5381,7 +5352,6 @@ namespace GeneratedCode.Довідники
                     {"col_g3", record.Місто},
                     {"col_a1", record.НомерРядка},
                     {"col_a2", record.Значення},
-                    {"col_a3", record.Основа},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -5413,7 +5383,6 @@ namespace GeneratedCode.Довідники
             public string Місто { get; set; } = "";
             public int НомерРядка { get; set; } = 0;
             public string Значення { get; set; } = "";
-            public UuidAndText Основа { get; set; } = new UuidAndText();
             
         }
     }

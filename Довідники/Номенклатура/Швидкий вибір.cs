@@ -17,16 +17,12 @@ namespace StorageAndTrade;
 [GObject.Subclass<DirectoryFormJournalSmall>("SmallList_s6FitpdsM0SqggYA9rt9mg")]
 partial class Номенклатура_ШвидкийВибір : DirectoryFormJournalSmall
 {
-    
-    
     partial void Initialize()
     {
         TypeName = Номенклатура_Const.POINTER;
         KeyForSetting = ".Small";
         ТабличнийСписок.AddColumn(this);
-        SetPagesSettings(50);
-
-        
+        SetPagesSettings(50);        
     }
 
     public static Номенклатура_ШвидкийВибір New()

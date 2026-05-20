@@ -36,8 +36,6 @@ public partial class Номенклатура_PointerTablePartCell : PointerTabl
         OnSelect?.Invoke();
     }
 
-    
-
     protected override async void Select(Button button, EventArgs args)
     {
         Popover popover = Popover.New();
@@ -48,7 +46,6 @@ public partial class Номенклатура_PointerTablePartCell : PointerTabl
 
         Номенклатура_ШвидкийВибір page = Номенклатура_ШвидкийВибір.New();
         page.PopoverParent = popover;
-            
         page.DirectoryPointerItem = pointer.UniqueID;
         page.CallBack_OnSelectPointer = async p => 
         {
@@ -56,7 +53,6 @@ public partial class Номенклатура_PointerTablePartCell : PointerTabl
             AfterSelectFunc?.Invoke();
         };
         
-
         popover.SetChild(page);
         popover.Show();
 

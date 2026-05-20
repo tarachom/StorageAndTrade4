@@ -17,7 +17,7 @@ namespace StorageAndTrade;
 partial class Контрагенти_ТабличнаЧастина_Файли : DirectoryFormTablePart
 {
     #region Data
-    
+
     [GObject.Subclass<GObject.Object>("ItemRow_2Y6OZGE1qE2IeSGgukdZXQ")]
     public partial class ItemRow : IRowSubclassTablePart
     {
@@ -39,7 +39,7 @@ partial class Контрагенти_ТабличнаЧастина_Файли :
         UniqueID UnigueID_ = new();
         public Action? Сhanged_UnigueID { get; set; } = null;
 
-    
+
         /* НомерРядка */
         public int НомерРядка
         {
@@ -56,7 +56,7 @@ partial class Контрагенти_ТабличнаЧастина_Файли :
         int НомерРядка_ = 0;
         public Action? Сhanged_НомерРядка { get; set; } = null;
 
-    
+
         /* Файл */
         public Файли_Pointer Файл
         {
@@ -73,28 +73,26 @@ partial class Контрагенти_ТабличнаЧастина_Файли :
         Файли_Pointer Файл_ = new();
         public Action? Сhanged_Файл { get; set; } = null;
 
-    
-
         /*
         Функції
         */
-        
+
         public GObject.Object Copy()
         {
             var row = New();
             row.НомерРядка = НомерРядка;
             row.Файл = Файл.Copy();
-            
+
             return row;
         }
     }
 
     #endregion
 
-    
+
     public Контрагенти_Objest? ЕлементВласник { get; set; }
-        
-    
+
+
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());
 
     partial void Initialize()
@@ -115,7 +113,6 @@ partial class Контрагенти_ТабличнаЧастина_Файли :
 
     protected override void Columns()
     {
-        
         //НомерРядка
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
@@ -123,9 +120,9 @@ partial class Контрагенти_ТабличнаЧастина_Файли :
             {
                 if (args.Object is not ListItem listItem) return;
                 var cell = LabelTablePartCell.New();
-                
+
                 cell.Halign = Align.End;
-                    
+
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
@@ -133,16 +130,16 @@ partial class Контрагенти_ТабличнаЧастина_Файли :
                 if (args.Object is not ListItem listItem) return;
                 if (listItem.Child is not LabelTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
-                
+
                 (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke();
-                    
+
             };
             ColumnViewColumn column = ColumnViewColumn.New("№", factory);
             column.Resizable = true;
-            
+
             Grid.AppendColumn(column);
         }
-        
+
         //Файл
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
@@ -150,7 +147,7 @@ partial class Контрагенти_ТабличнаЧастина_Файли :
             {
                 if (args.Object is not ListItem listItem) return;
                 var cell = Файли_PointerTablePartCell.New();
-                
+
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
@@ -158,17 +155,18 @@ partial class Контрагенти_ТабличнаЧастина_Файли :
                 if (args.Object is not ListItem listItem) return;
                 if (listItem.Child is not Файли_PointerTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
-                
+
                 cell.OnSelect = () => row.Файл = cell.Pointer;
                 (row.Сhanged_Файл = () => cell.Pointer = row.Файл).Invoke();
-                    
+
             };
             ColumnViewColumn column = ColumnViewColumn.New("Файл", factory);
             column.Resizable = true;
-            
+            column.FixedWidth = 300;
+
             Grid.AppendColumn(column);
         }
-        
+
         { /* Пуста колонка для заповнення вільного простору */
             ColumnViewColumn column = ColumnViewColumn.New(null, null);
             column.Resizable = true;
@@ -179,22 +177,20 @@ partial class Контрагенти_ТабличнаЧастина_Файли :
 
     public override async ValueTask LoadRecords()
     {
-        
-        if (ЕлементВласник != null) 
+        if (ЕлементВласник != null)
         {
-            
             ЕлементВласник.Файли_TablePart.FillJoin([Контрагенти_Файли_TablePart.НомерРядка,]);
             await ЕлементВласник.Файли_TablePart.Read();
-            
+
             Store.RemoveAll();
-        
+
             foreach (var record in ЕлементВласник.Файли_TablePart.Records)
             {
                 var row = ItemRow.New();
                 row.UniqueID = new(record.UID);
                 row.НомерРядка = record.НомерРядка;
                 row.Файл = record.Файл;
-                
+
                 Store.Append(row);
 
                 if (SelectPosition > 0)
@@ -208,10 +204,9 @@ partial class Контрагенти_ТабличнаЧастина_Файли :
 
     public override async ValueTask SaveRecords()
     {
-        
         if (ЕлементВласник != null)
         {
-        ЕлементВласник.Файли_TablePart.Records.Clear();
+            ЕлементВласник.Файли_TablePart.Records.Clear();
             for (uint i = 0; i <= Store.GetNItems(); i++)
             {
                 ItemRow? row = (ItemRow?)Store.GetObject(i);
@@ -222,11 +217,12 @@ partial class Контрагенти_ТабличнаЧастина_Файли :
                         UID = row.UniqueID.UGuid,
                         НомерРядка = row.НомерРядка,
                         Файл = row.Файл,
-                        
+
                     });
                 }
             }
             await ЕлементВласник.Файли_TablePart.Save(true);
+
             //Оновлення табличної частини після збереження
             {
                 //Пошук виділених рядків
@@ -241,7 +237,7 @@ partial class Контрагенти_ТабличнаЧастина_Файли :
                     row.UniqueID = new(x.UID);
                     row.НомерРядка = x.НомерРядка;
                     row.Файл = x.Файл;
-                    
+
                     return row;
                 });
 
@@ -253,7 +249,6 @@ partial class Контрагенти_ТабличнаЧастина_Файли :
                 //Виділення рядків після оновлення
                 foreach (var position in selection)
                     Grid.Model.SelectItem(position, false);
-                
             }
         }
     }
@@ -264,4 +259,3 @@ partial class Контрагенти_ТабличнаЧастина_Файли :
         return true;
     }
 }
-    

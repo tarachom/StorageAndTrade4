@@ -36,8 +36,6 @@ public partial class Номенклатура_PointerControl : PointerControl
         }
     }
 
-    
-
     public ConfigurationDirectories.HierarchicalContentType? AllowedContentSelection { get; set; }
 
     protected override async void OpenSelect(Button button, EventArgs args)
@@ -59,7 +57,6 @@ public partial class Номенклатура_PointerControl : PointerControl
             AfterSelectFunc?.Invoke();
         };
 
-        
         popover.SetChild(page);
         popover.Show();
 

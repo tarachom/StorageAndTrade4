@@ -59,6 +59,7 @@ partial class СкладськіКомірки_Список : DirectoryFormJourn
         //Власник
         {
             Власник.Caption = "Приміщення:";
+            Власник.WidthPresentation = 200;
             HBoxTop.Append(Власник);
             OwnerWhereListFunc = () => Власник.Pointer.IsEmpty() ? [] : [new(СкладськіКомірки_Const.Приміщення, Comparison.EQ, Власник.Pointer.UniqueID.UGuid)];
             Власник.AfterSelectFunc = async () =>

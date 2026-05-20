@@ -6,11 +6,8 @@
 
 using Gtk;
 using InterfaceGtk4;
-using AccountingSoftware;
 
 using GeneratedCode.Довідники;
-using GeneratedCode.Документи;
-using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
@@ -18,33 +15,31 @@ namespace StorageAndTrade;
 partial class НоменклатураВнутрішня_Елемент : DirectoryFormElement
 {
     public НоменклатураВнутрішня_Objest Елемент { get; init; } = new();
-    
+
     #region Fields
     Entry Код = Entry.New();
-                    Entry Назва = Entry.New();
-                    НоменклатураВнутрішня_Папки_PointerControl Папка = НоменклатураВнутрішня_Папки_PointerControl.New();
-            
+    Entry Назва = Entry.New();
+    НоменклатураВнутрішня_Папки_PointerControl Папка = НоменклатураВнутрішня_Папки_PointerControl.New();
+
     #endregion
 
     #region TabularParts
-    
+
     #endregion
 
     partial void Initialize()
-    { 
+    {
         Element = Елемент;
 
-        
-            // Код:
-            Код.WidthRequest = 300;
-                        
-            // Назва:
-            Назва.WidthRequest = 300;
-                        
-            // Папка:
-            Папка.Caption = "Папка";
-                    Папка.WidthPresentation = 300;
-                
+        // Код:
+        Код.WidthRequest = 100;
+
+        // Назва:
+        Назва.WidthRequest = 500;
+
+        // Папка:
+        Папка.Caption = "Папка";
+        Папка.WidthPresentation = 300;
     }
 
     public static НоменклатураВнутрішня_Елемент New()
@@ -57,21 +52,19 @@ partial class НоменклатураВнутрішня_Елемент : Direct
 
     protected override void CreateStart(Box vBox)
     {
-        
-            // Код
-            CreateField(vBox, "Код:", Код);
-                        
-            // Назва
-            CreateField(vBox, "Назва:", Назва);
-                        
-            // Папка
-            CreateField(vBox, null, Папка);
-                
+        // Код
+        CreateField(vBox, "Код:", Код);
+
+        // Назва
+        CreateField(vBox, "Назва:", Назва);
+
+        // Папка
+        CreateField(vBox, null, Папка);
     }
 
     protected override void CreateEnd(Box vBox)
     {
-        
+
     }
 
     #region Присвоєння / зчитування значень
@@ -79,17 +72,15 @@ partial class НоменклатураВнутрішня_Елемент : Direct
     public override async ValueTask AssignValue()
     {
         Код.SetText(Елемент.Код);
-                        Назва.SetText(Елемент.Назва);
-                        Папка.Pointer = Елемент.Папка;
-                
+        Назва.SetText(Елемент.Назва);
+        Папка.Pointer = Елемент.Папка;
     }
 
     protected override void GetValue()
     {
         Елемент.Код = Код.GetText();
-                        Елемент.Назва = Назва.GetText();
-                        Елемент.Папка = Папка.Pointer;
-                
+        Елемент.Назва = Назва.GetText();
+        Елемент.Папка = Папка.Pointer;
     }
 
     #endregion
@@ -101,7 +92,6 @@ partial class НоменклатураВнутрішня_Елемент : Direct
         {
             if (await Елемент.Save())
             {
-                
                 isSaved = true;
             }
         }
@@ -112,4 +102,3 @@ partial class НоменклатураВнутрішня_Елемент : Direct
         return isSaved;
     }
 }
-    

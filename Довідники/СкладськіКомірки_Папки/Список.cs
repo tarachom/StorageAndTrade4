@@ -17,20 +17,18 @@ namespace StorageAndTrade;
 [GObject.Subclass<DirectoryFormJournalFullTree>("List_VSKLhnrc0EokbJ3SWAQ")]
 partial class СкладськіКомірки_Папки_Список : DirectoryFormJournalFullTree
 {
-    
     public СкладськіПриміщення_PointerControl Власник = СкладськіПриміщення_PointerControl.New();
-    
-    
+
     partial void Initialize()
     {
         TypeName = СкладськіКомірки_Папки_Const.POINTER;
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
 
-        
         //Власник
         {
-            Власник.Caption = "Власник:";
+            Власник.Caption = "Приміщення:";
+            Власник.WidthPresentation = 200;
             HBoxTop.Append(Власник);
             OwnerWhereListFunc = () => Власник.Pointer.IsEmpty() ? [] : [new(СкладськіКомірки_Папки_Const.Власник, Comparison.EQ, Власник.Pointer.UniqueID.UGuid)];
             Власник.AfterSelectFunc = async () =>
@@ -39,7 +37,6 @@ partial class СкладськіКомірки_Папки_Список : Directo
                 await LoadRecords();
             };
         }
-        
     }
 
     public static СкладськіКомірки_Папки_Список New()
@@ -54,7 +51,7 @@ partial class СкладськіКомірки_Папки_Список : Directo
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-    
+
     public override async ValueTask<List<DirectoryHierarchicalRow>> LoadChildren(UniqueID[] parents)
     {
         return await ТабличнийСписок.LoadChildren(this, parents);
@@ -64,7 +61,7 @@ partial class СкладськіКомірки_Папки_Список : Directo
     {
         return ТабличнийСписок.LoadEmptyChildren(this);
     }
-    
+
     public override async ValueTask UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);
@@ -95,4 +92,3 @@ partial class СкладськіКомірки_Папки_Список : Directo
         return await Функції.Copy(uniqueID);
     }
 }
-    
