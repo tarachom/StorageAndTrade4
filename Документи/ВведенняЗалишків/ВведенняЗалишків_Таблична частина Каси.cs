@@ -9,7 +9,6 @@ using InterfaceGtk4;
 using AccountingSoftware;
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
-using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
@@ -17,7 +16,7 @@ namespace StorageAndTrade;
 partial class ВведенняЗалишків_ТабличнаЧастина_Каси : DocumentFormTablePart
 {
     #region Data
-    
+
     [GObject.Subclass<GObject.Object>("ItemRow_5gTeaNxNUe8whrouitQg")]
     public partial class ItemRow : IRowSubclassTablePart
     {
@@ -39,7 +38,7 @@ partial class ВведенняЗалишків_ТабличнаЧастина_К
         UniqueID UnigueID_ = new();
         public Action? Сhanged_UnigueID { get; set; } = null;
 
-    
+
         /* НомерРядка */
         public int НомерРядка
         {
@@ -56,7 +55,7 @@ partial class ВведенняЗалишків_ТабличнаЧастина_К
         int НомерРядка_ = 0;
         public Action? Сhanged_НомерРядка { get; set; } = null;
 
-    
+
         /* Каса */
         public Каси_Pointer Каса
         {
@@ -73,7 +72,7 @@ partial class ВведенняЗалишків_ТабличнаЧастина_К
         Каси_Pointer Каса_ = new();
         public Action? Сhanged_Каса { get; set; } = null;
 
-    
+
         /* Сума */
         public decimal Сума
         {
@@ -90,30 +89,42 @@ partial class ВведенняЗалишків_ТабличнаЧастина_К
         decimal Сума_ = 0;
         public Action? Сhanged_Сума { get; set; } = null;
 
-    
+
 
         /*
         Функції
         */
-        
+
         public GObject.Object Copy()
         {
             var row = New();
             row.НомерРядка = НомерРядка;
             row.Каса = Каса.Copy();
             row.Сума = Сума;
-            
+
             return row;
         }
     }
 
     #endregion
 
-    
+    #region Функції
+
+    async ValueTask ПісляЗміни_Каса(ItemRow row)
+    {
+
+    }
+
+    void ПісляЗміни_Сума(ItemRow row)
+    {
+        Підсумок.Recount();
+    }
+
+    #endregion
+
     public ВведенняЗалишків_Objest? ЕлементВласник { get; set; }
-        
-    
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());
+    TotalControl Підсумок = TotalControl.New();
 
     partial void Initialize()
     {
@@ -121,6 +132,27 @@ partial class ВведенняЗалишків_ТабличнаЧастина_К
         model.OnSelectionChanged += GridOnSelectionChanged;
 
         Grid.Model = model;
+
+        //
+        // Підсумки
+        //
+
+        model.OnItemsChanged += (_, _) => Підсумок.Recount();
+        Підсумок.QuantifyFunc = () =>
+        {
+            decimal Сума = 0;
+
+            for (uint i = 0; i <= Store.GetNItems(); i++)
+            {
+                ItemRow? row = (ItemRow?)Store.GetObject(i);
+                if (row != null)
+                    Сума += row.Сума;
+            }
+
+            return $"Сума: <b>{Сума}</b>";
+        };
+
+        Append(Підсумок);
     }
 
     public static ВведенняЗалишків_ТабличнаЧастина_Каси New()
@@ -133,7 +165,6 @@ partial class ВведенняЗалишків_ТабличнаЧастина_К
 
     protected override void Columns()
     {
-        
         //НомерРядка
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
@@ -141,9 +172,9 @@ partial class ВведенняЗалишків_ТабличнаЧастина_К
             {
                 if (args.Object is not ListItem listItem) return;
                 var cell = LabelTablePartCell.New();
-                
+
                 cell.Halign = Align.End;
-                    
+
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
@@ -151,16 +182,16 @@ partial class ВведенняЗалишків_ТабличнаЧастина_К
                 if (args.Object is not ListItem listItem) return;
                 if (listItem.Child is not LabelTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
-                
+
                 (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke();
-                    
+
             };
             ColumnViewColumn column = ColumnViewColumn.New("№", factory);
             column.Resizable = true;
-            
+
             Grid.AppendColumn(column);
         }
-        
+
         //Каса
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
@@ -168,7 +199,7 @@ partial class ВведенняЗалишків_ТабличнаЧастина_К
             {
                 if (args.Object is not ListItem listItem) return;
                 var cell = Каси_PointerTablePartCell.New();
-                
+
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
@@ -176,19 +207,23 @@ partial class ВведенняЗалишків_ТабличнаЧастина_К
                 if (args.Object is not ListItem listItem) return;
                 if (listItem.Child is not Каси_PointerTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
-                
-                cell.OnSelect = () => row.Каса = cell.Pointer;
+
+                cell.OnSelect = async () =>
+                {
+                    row.Каса = cell.Pointer;
+                    await ПісляЗміни_Каса(row);
+                };
+
                 (row.Сhanged_Каса = () => cell.Pointer = row.Каса).Invoke();
-                    
+
             };
             ColumnViewColumn column = ColumnViewColumn.New("Каса", factory);
             column.Resizable = true;
-            
             column.FixedWidth = 300;
-            
+
             Grid.AppendColumn(column);
         }
-        
+
         //Сума
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
@@ -196,7 +231,7 @@ partial class ВведенняЗалишків_ТабличнаЧастина_К
             {
                 if (args.Object is not ListItem listItem) return;
                 var cell = NumericTablePartCell.New();
-                
+
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
@@ -204,17 +239,23 @@ partial class ВведенняЗалишків_ТабличнаЧастина_К
                 if (args.Object is not ListItem listItem) return;
                 if (listItem.Child is not NumericTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
-                
-                cell.OnСhanged = () => row.Сума = cell.Value;
+
+                cell.OnСhanged = () =>
+                {
+                    row.Сума = cell.Value;
+                    ПісляЗміни_Сума(row);
+                };
+
                 (row.Сhanged_Сума = () => cell.Value = row.Сума).Invoke();
-                    
+
             };
             ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
             column.Resizable = true;
-            
+            column.FixedWidth = 150;
+
             Grid.AppendColumn(column);
         }
-        
+
         { /* Пуста колонка для заповнення вільного простору */
             ColumnViewColumn column = ColumnViewColumn.New(null, null);
             column.Resizable = true;
@@ -225,15 +266,13 @@ partial class ВведенняЗалишків_ТабличнаЧастина_К
 
     public override async ValueTask LoadRecords()
     {
-        
-        if (ЕлементВласник != null) 
+        if (ЕлементВласник != null)
         {
-            
             ЕлементВласник.Каси_TablePart.FillJoin([ВведенняЗалишків_Каси_TablePart.НомерРядка,]);
             await ЕлементВласник.Каси_TablePart.Read();
-            
+
             Store.RemoveAll();
-        
+
             foreach (var record in ЕлементВласник.Каси_TablePart.Records)
             {
                 var row = ItemRow.New();
@@ -241,7 +280,7 @@ partial class ВведенняЗалишків_ТабличнаЧастина_К
                 row.НомерРядка = record.НомерРядка;
                 row.Каса = record.Каса;
                 row.Сума = record.Сума;
-                
+
                 Store.Append(row);
 
                 if (SelectPosition > 0)
@@ -255,10 +294,9 @@ partial class ВведенняЗалишків_ТабличнаЧастина_К
 
     public override async ValueTask SaveRecords()
     {
-        
         if (ЕлементВласник != null)
         {
-        ЕлементВласник.Каси_TablePart.Records.Clear();
+            ЕлементВласник.Каси_TablePart.Records.Clear();
             for (uint i = 0; i <= Store.GetNItems(); i++)
             {
                 ItemRow? row = (ItemRow?)Store.GetObject(i);
@@ -270,11 +308,12 @@ partial class ВведенняЗалишків_ТабличнаЧастина_К
                         НомерРядка = row.НомерРядка,
                         Каса = row.Каса,
                         Сума = row.Сума,
-                        
+
                     });
                 }
             }
             await ЕлементВласник.Каси_TablePart.Save(true);
+
             //Оновлення табличної частини після збереження
             {
                 //Пошук виділених рядків
@@ -290,7 +329,7 @@ partial class ВведенняЗалишків_ТабличнаЧастина_К
                     row.НомерРядка = x.НомерРядка;
                     row.Каса = x.Каса;
                     row.Сума = x.Сума;
-                    
+
                     return row;
                 });
 
@@ -302,7 +341,6 @@ partial class ВведенняЗалишків_ТабличнаЧастина_К
                 //Виділення рядків після оновлення
                 foreach (var position in selection)
                     Grid.Model.SelectItem(position, false);
-                
             }
         }
     }
@@ -313,4 +351,3 @@ partial class ВведенняЗалишків_ТабличнаЧастина_К
         return true;
     }
 }
-    

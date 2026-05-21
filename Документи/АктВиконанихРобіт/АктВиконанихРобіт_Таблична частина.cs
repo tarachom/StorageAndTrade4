@@ -160,9 +160,53 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
 
     #endregion
 
-    public АктВиконанихРобіт_Objest? ЕлементВласник { get; set; }
+    #region Функції
 
+    async ValueTask ПісляДодаванняНового(ItemRow row)
+    {
+        row.Кількість = 1;
+    }
+
+    async ValueTask ПісляЗміни_Номенклатура(ItemRow row)
+    {
+
+    }
+
+    async ValueTask ПісляЗміни_ХарактеристикаНоменклатури(ItemRow row)
+    {
+
+    }
+
+    void ПісляЗміни_КількістьАбоЦіна(ItemRow row)
+    {
+        row.Сума = row.Кількість * row.Ціна;
+        Підсумок.Recount();
+    }
+
+    void ПісляЗміни_Сума(ItemRow row)
+    {
+        Підсумок.Recount();
+    }
+
+    public decimal СумаДокументу()
+    {
+        decimal Сума = 0;
+
+        for (uint i = 0; i <= Store.GetNItems(); i++)
+        {
+            ItemRow? row = (ItemRow?)Store.GetObject(i);
+            if (row != null)
+                Сума += row.Сума;
+        }
+
+        return Math.Round(Сума, 2);
+    }
+
+    #endregion
+
+    public АктВиконанихРобіт_Objest? ЕлементВласник { get; set; }
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());
+    TotalControl Підсумок = TotalControl.New();
 
     partial void Initialize()
     {
@@ -170,6 +214,27 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
         model.OnSelectionChanged += GridOnSelectionChanged;
 
         Grid.Model = model;
+
+        //
+        // Підсумки
+        //
+
+        model.OnItemsChanged += (_, _) => Підсумок.Recount();
+        Підсумок.QuantifyFunc = () =>
+        {
+            decimal Сума = 0;
+
+            for (uint i = 0; i <= Store.GetNItems(); i++)
+            {
+                ItemRow? row = (ItemRow?)Store.GetObject(i);
+                if (row != null)
+                    Сума += row.Сума;
+            }
+
+            return $"Сума: <b>{Сума}</b>";
+        };
+
+        Append(Підсумок);
     }
 
     public static АктВиконанихРобіт_ТабличнаЧастина_Послуги New()
@@ -225,7 +290,12 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
                 if (listItem.Child is not Номенклатура_PointerTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
 
-                cell.OnSelect = () => row.Номенклатура = cell.Pointer;
+                cell.OnSelect = async () =>
+                {
+                    row.Номенклатура = cell.Pointer;
+                    await ПісляЗміни_Номенклатура(row);
+                };
+
                 (row.Сhanged_Номенклатура = () => cell.Pointer = row.Номенклатура).Invoke();
 
             };
@@ -255,7 +325,12 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
 
                 cell.BeforeClickOpenFunc = () => cell.Власник = row.Номенклатура;
 
-                cell.OnSelect = () => row.ХарактеристикаНоменклатури = cell.Pointer;
+                cell.OnSelect = async () =>
+                {
+                    row.ХарактеристикаНоменклатури = cell.Pointer;
+                    await ПісляЗміни_ХарактеристикаНоменклатури(row);
+                };
+
                 (row.Сhanged_ХарактеристикаНоменклатури = () => cell.Pointer = row.ХарактеристикаНоменклатури).Invoke();
 
             };
@@ -283,12 +358,19 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
                 if (listItem.Child is not NumericTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
 
-                cell.OnСhanged = () => row.Кількість = cell.Value;
+                cell.OnСhanged = () =>
+                {
+                    row.Кількість = cell.Value;
+                    ПісляЗміни_КількістьАбоЦіна(row);
+                };
+
                 (row.Сhanged_Кількість = () => cell.Value = row.Кількість).Invoke();
 
             };
             ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
             column.Resizable = true;
+
+            column.FixedWidth = 100;
 
             Grid.AppendColumn(column);
         }
@@ -309,12 +391,19 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
                 if (listItem.Child is not NumericTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
 
-                cell.OnСhanged = () => row.Ціна = cell.Value;
+                cell.OnСhanged = () =>
+                {
+                    row.Ціна = cell.Value;
+                    ПісляЗміни_КількістьАбоЦіна(row);
+                };
+
                 (row.Сhanged_Ціна = () => cell.Value = row.Ціна).Invoke();
 
             };
             ColumnViewColumn column = ColumnViewColumn.New("Ціна", factory);
             column.Resizable = true;
+
+            column.FixedWidth = 150;
 
             Grid.AppendColumn(column);
         }
@@ -335,12 +424,19 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
                 if (listItem.Child is not NumericTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
 
-                cell.OnСhanged = () => row.Сума = cell.Value;
+                cell.OnСhanged = () =>
+                {
+                    row.Сума = cell.Value;
+                    ПісляЗміни_Сума(row);
+                };
+
                 (row.Сhanged_Сума = () => cell.Value = row.Сума).Invoke();
 
             };
             ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
             column.Resizable = true;
+
+            column.FixedWidth = 150;
 
             Grid.AppendColumn(column);
         }
@@ -357,7 +453,6 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
     {
         if (ЕлементВласник != null)
         {
-
             ЕлементВласник.Послуги_TablePart.FillJoin([АктВиконанихРобіт_Послуги_TablePart.НомерРядка,]);
             await ЕлементВласник.Послуги_TablePart.Read();
 
@@ -439,28 +534,16 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
                 //Виділення рядків після оновлення
                 foreach (var position in selection)
                     Grid.Model.SelectItem(position, false);
-
             }
         }
     }
 
     public override async ValueTask<bool> NewRecord()
     {
-        Store.Append(ItemRow.New());
+        ItemRow row = ItemRow.New();
+        await ПісляДодаванняНового(row);
+
+        Store.Append(row);
         return true;
-    }
-
-    public decimal СумаДокументу()
-    {
-        decimal Сума = 0;
-
-        for (uint i = 0; i <= Store.GetNItems(); i++)
-        {
-            ItemRow? row = (ItemRow?)Store.GetObject(i);
-            if (row != null)
-                Сума += row.Сума;
-        }
-
-        return Math.Round(Сума, 2);
     }
 }

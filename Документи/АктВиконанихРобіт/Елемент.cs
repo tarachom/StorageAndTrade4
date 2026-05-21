@@ -53,7 +53,6 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
         CreateField(HBoxComment, "Коментар:", Коментар);
 
         // Таблична частина "Послуги"
-        Послуги.WidthRequest = 500;
         Послуги.HeightRequest = 300;
         NotebookTablePart.InsertPage(Послуги, Label.New("Послуги"), 0);
 
@@ -171,9 +170,6 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
 
         //Автор
         CreateField(vBox, null, Автор);
-
-        //Менеджер
-        CreateField(vBox, null, Менеджер);
     }
 
     protected override void CreateBottomEnd(Box vBox)
@@ -183,6 +179,9 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
 
         //Основа
         CreateField(vBox, null, Основа);
+
+        //Менеджер
+        CreateField(vBox, null, Менеджер);
     }
 
     #region Присвоєння / зчитування значень
@@ -208,6 +207,8 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
         ФормаОплати.ActiveId = Елемент.ФормаОплати.ToString();
         Договір.Pointer = Елемент.Договір;
         ГосподарськаОперація.ActiveId = Елемент.ГосподарськаОперація.ToString();
+        Автор.Pointer = Елемент.Автор;
+        Менеджер.Pointer = Елемент.Менеджер;
         Коментар.SetText(Елемент.Коментар);
         Основа.Pointer = Елемент.Основа;
 
@@ -234,6 +235,8 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
         Елемент.ФормаОплати = ПсевдонімиПерелічення.ФормаОплати_FindByName(ФормаОплати.ActiveId);
         Елемент.Договір = Договір.Pointer;
         Елемент.ГосподарськаОперація = ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.ActiveId);
+        Елемент.Автор = Автор.Pointer;
+        Елемент.Менеджер = Менеджер.Pointer;
         Елемент.Коментар = Коментар.GetText();
         Елемент.Основа = Основа.Pointer;
 

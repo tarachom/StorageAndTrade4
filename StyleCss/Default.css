@@ -86,34 +86,19 @@ columnview listview row cell box.base {
     padding: 3px 6px;
 }
 
-/* 
-Варіант відображення для типу даних numeric для LabelTablePartCell 
-Відображення числа як текст
+/*
+LabelTablePartCell, IntegerTablePartCell, NumericTablePartCell
+Відображення для типу даних numeric або integer
 */
+columnview listview row cell box.integer,
 columnview listview row cell box.numeric {
-    color: green;
     background-color: rgba(238, 238, 220, 0.2);
 }
 
-/* Кнопки для PointerTablePartCell */
-columnview listview row cell box.pointer .button {
-    padding-left: 3px;
-    padding-right: 3px;
-    margin: 0;
-    min-height: 0;
-    min-width: 0;
-    border-radius: 0;
-    border: 0;
-    background: transparent;
-}
-
-/* Текст для PointerTablePartCell */
-columnview listview row cell box.pointer .text {
-    padding-left: 3px;
-    padding-right: 3px;
-}
-
-/* IntegerTablePartCell */
+/*
+IntegerTablePartCell, NumericTablePartCell
+Поле вводу
+*/
 columnview listview row cell box.integer entry,
 columnview listview row cell box.numeric entry {
     padding-left: 3px;
@@ -126,13 +111,40 @@ columnview listview row cell box.numeric entry {
     background: transparent;
 }
 
-/* Для підсвітки помилки */
+/*
+IntegerTablePartCell, NumericTablePartCell
+Для підсвітки помилки поля вводу
+*/
 columnview listview row cell box.integer entry.error,
 columnview listview row cell box.numeric entry.error {
     border: 1px solid red;
 }
 
-/* Для ComboTextTablePartCell */
+/*
+PointerTablePartCell
+Кнопки 
+*/
+columnview listview row cell box.pointer .button {
+    padding-left: 3px;
+    padding-right: 3px;
+    margin: 0;
+    min-height: 0;
+    min-width: 0;
+    border-radius: 0;
+    border: 0;
+    background: transparent;
+}
+
+/*
+PointerTablePartCell
+Текст
+*/
+columnview listview row cell box.pointer .text {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+/* ComboTextTablePartCell */
 columnview listview row cell box.combotext combobox button.combo {
     padding: 0px 3px;
     margin: 0;
@@ -143,7 +155,10 @@ columnview listview row cell box.combotext combobox button.combo {
     background: transparent;
 }
 
-/* Для TextTablePartCell */
+/* 
+TextTablePartCell 
+Поле вводу
+*/
 columnview listview row cell box.text entry {
     padding: 0px 3px;
     margin: 0;
@@ -154,7 +169,10 @@ columnview listview row cell box.text entry {
     background: transparent;
 }
 
-/* Кнопки для TextTablePartCell */
+/* 
+TextTablePartCell
+Кнопки
+*/
 columnview listview row cell box.text .button {
     padding-left: 3px;
     padding-right: 3px;
@@ -166,7 +184,10 @@ columnview listview row cell box.text .button {
     background: transparent;
 }
 
-/* Для DateTimeTablePartCell */
+/* 
+DateTimeTablePartCell
+Поле вводу
+*/
 columnview listview row cell box.datetime entry {
     padding-left: 3px;
     padding-right: 3px;
@@ -178,7 +199,10 @@ columnview listview row cell box.datetime entry {
     background: transparent;
 }
 
-/* Кнопки для DateTimeTablePartCell */
+/* 
+DateTimeTablePartCell 
+Кнопки
+*/
 columnview listview row cell box.datetime .button {
     padding-left: 3px;
     padding-right: 3px;
@@ -190,7 +214,10 @@ columnview listview row cell box.datetime .button {
     background: transparent;
 }
 
-/* Для TimeTablePartCell */
+/*
+TimeTablePartCell
+Поле вводу
+*/
 columnview listview row cell box.time entry {
     padding-left: 3px;
     padding-right: 3px;
@@ -202,7 +229,10 @@ columnview listview row cell box.time entry {
     background: transparent;
 }
 
-/* Кнопки для TimeTablePartCell */
+/* 
+TimeTablePartCell 
+Кнопки
+*/
 columnview listview row cell box.time .button {
     padding-left: 3px;
     padding-right: 3px;
@@ -217,13 +247,12 @@ columnview listview row cell box.time .button {
 /* <<<--------------- Клітинки табличної частини ------------------ */
 
 
-
-/* Для Log */
+/* Log */
 textview.log_text_terminal {
     font: 11px Arial;
 }
 
-/* Для LinkButton */
+/* LinkButton */
 button.link {
     padding-top: 0;
     padding-bottom: 0;

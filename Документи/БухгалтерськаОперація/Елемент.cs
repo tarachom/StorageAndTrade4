@@ -8,12 +8,9 @@ using Gtk;
 using InterfaceGtk4;
 using AccountingSoftware;
 
-using GeneratedCode;
-using GeneratedCode.Константи;
-using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
-using GeneratedCode.Перелічення;
 using Функції = StorageAndTrade.БухгалтерськаОперація_Функції;
+using GeneratedCode.Константи;
 
 namespace StorageAndTrade;
 
@@ -42,7 +39,6 @@ partial class БухгалтерськаОперація_Елемент : Docume
     {
         Element = Елемент;
 
-        НомерДок.WidthRequest = 100;
         CreateDocName(БухгалтерськаОперація_Const.FULLNAME, НомерДок, ДатаДок);
         CreateField(HBoxComment, "Коментар:", Коментар);
 
@@ -52,15 +48,18 @@ partial class БухгалтерськаОперація_Елемент : Docume
         NotebookTablePart.InsertPage(Операції, Label.New("Операції"), 0);
         NotebookTablePart.SetCurrentPage(0);
 
-        //Коментар:
-        Коментар.WidthRequest = 1200;
-
-        //Основа:
-        Основа.BoundConfType = "Документи.БухгалтерськаОперація.Основа";
+        //НомерДок:
+        НомерДок.WidthRequest = 100;
 
         //Організація:
         Організація.Caption = "Організація";
         Організація.WidthPresentation = 300;
+
+        //Коментар:
+        Коментар.WidthRequest = 920;
+
+        //Основа:
+        Основа.BoundConfType = "Документи.БухгалтерськаОперація.Основа";
     }
 
     public static БухгалтерськаОперація_Елемент New()
@@ -97,6 +96,11 @@ partial class БухгалтерськаОперація_Елемент : Docume
 
     public override async ValueTask AssignValue()
     {
+        if (IsNew)
+        {
+            Елемент.Організація = ЗначенняТипові.ОсновнаОрганізація_Const;
+        }
+
         НомерДок.SetText(Елемент.НомерДок);
         ДатаДок.Value = Елемент.ДатаДок;
         Коментар.SetText(Елемент.Коментар);
@@ -127,7 +131,6 @@ partial class БухгалтерськаОперація_Елемент : Docume
             if (await Елемент.Save())
             {
                 await Операції.SaveRecords(); // Таблична частина "Проводки"
-
                 isSaved = true;
             }
         }

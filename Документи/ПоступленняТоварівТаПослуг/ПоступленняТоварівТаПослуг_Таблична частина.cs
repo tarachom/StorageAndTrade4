@@ -9,11 +9,9 @@ using InterfaceGtk4;
 using AccountingSoftware;
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
-using GeneratedCode.Перелічення;
 using GeneratedCode.Константи;
 using GeneratedCode.РегістриВідомостей;
 using GeneratedCode;
-using GLib;
 
 namespace StorageAndTrade;
 
@@ -276,6 +274,19 @@ partial class ПоступленняТоварівТаПослуг_Таблич�
         }
     }
 
+    #endregion
+
+    #region Функції
+
+    async ValueTask ПісляДодаванняНового(ItemRow row)
+    {
+        ВидиЦін_Pointer ВидЦіни = ЗначенняТипові.ОсновнийВидЦіниЗакупівлі_Const;
+        await ВидЦіни.GetPresentation();
+
+        row.ВидЦіни = ВидЦіни;
+        row.Кількість = 1;
+    }
+
     async ValueTask ПісляЗміни_Номенклатура(ItemRow row)
     {
         Номенклатура_Objest? обєкт = await row.Номенклатура.GetDirectoryObject();
@@ -297,7 +308,7 @@ partial class ПоступленняТоварівТаПослуг_Таблич�
 
     async ValueTask ПісляЗміни_Серія(ItemRow row)
     {
-        
+
     }
 
     async ValueTask ПісляЗміни_Пакування(ItemRow row)
@@ -317,18 +328,17 @@ partial class ПоступленняТоварівТаПослуг_Таблич�
     void ПісляЗміни_КількістьАбоЦіна(ItemRow row)
     {
         row.Сума = row.Кількість * row.Ціна;
-
-        ОбчислитиПідсумки();
+        Підсумок.Recount();
     }
 
     void ПісляЗміни_Скидка(ItemRow row)
     {
-        ОбчислитиПідсумки();
+        Підсумок.Recount();
     }
 
     void ПісляЗміни_Сума(ItemRow row)
     {
-        ОбчислитиПідсумки();
+        Підсумок.Recount();
     }
 
     async ValueTask ОтриматиЦіну(ItemRow row)
@@ -364,70 +374,57 @@ LIMIT 1
             }
     }
 
-    #endregion
-
-    public ПоступленняТоварівТаПослуг_Objest? ЕлементВласник { get; set; }
-
-    protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());
-
-    partial void Initialize()
-    {
-        MultiSelection model = MultiSelection.New(Store);
-        model.OnSelectionChanged += GridOnSelectionChanged;
-        model.OnItemsChanged += (_, _) => ОбчислитиПідсумки();
-
-        Grid.Model = model;
-
-        CreateBottomBlock();
-    }
-
-    #region Підсумки
-
-    Label ПідсумокСума = Label.New(null);
-    Label ПідсумокСкидка = Label.New(null);
-
-    void CreateBottomBlock()
-    {
-        Box hBox = Box.New(Orientation.Horizontal, 0);
-        hBox.Halign = Align.Start;
-
-        Label label = Label.New("<b>Підсумки</b> ");
-        label.UseMarkup = true;
-
-        hBox.Append(label);
-
-        ПідсумокСума.Selectable = true;
-        hBox.Append(ПідсумокСума);
-
-        ПідсумокСкидка.Selectable = true;
-        hBox.Append(ПідсумокСкидка);
-
-        Append(hBox);
-    }
-
-    void ОбчислитиПідсумки()
+    public decimal СумаДокументу()
     {
         decimal Сума = 0;
-        decimal Скидка = 0;
 
         for (uint i = 0; i <= Store.GetNItems(); i++)
         {
             ItemRow? row = (ItemRow?)Store.GetObject(i);
             if (row != null)
-            {
                 Сума += row.Сума;
-                Скидка += row.Скидка;
-            }
         }
 
-        ПідсумокСума.SetText($"Сума: <b>{Сума}</b>");
-        ПідсумокСума.UseMarkup = true;
-
-        ПідсумокСкидка.SetText($"Скидка: <b>{Скидка}</b>");
-        ПідсумокСкидка.UseMarkup = true;
+        return Math.Round(Сума, 2);
     }
 
     #endregion
+
+    public ПоступленняТоварівТаПослуг_Objest? ЕлементВласник { get; set; }
+    protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());
+    TotalControl Підсумок = TotalControl.New();
+
+    partial void Initialize()
+    {
+        MultiSelection model = MultiSelection.New(Store);
+        model.OnSelectionChanged += GridOnSelectionChanged;
+
+        Grid.Model = model;
+
+        //
+        // Підсумки
+        //
+
+        model.OnItemsChanged += (_, _) => Підсумок.Recount();
+        Підсумок.QuantifyFunc = () =>
+        {
+            decimal Сума = 0, Скидка = 0;
+
+            for (uint i = 0; i <= Store.GetNItems(); i++)
+            {
+                ItemRow? row = (ItemRow?)Store.GetObject(i);
+                if (row != null)
+                {
+                    Сума += row.Сума;
+                    Скидка += row.Скидка;
+                }
+            }
+
+            return $"Сума: <b>{Сума}</b> Скидка: <b>{Скидка}</b>";
+        };
+
+        Append(Підсумок);
+    }
 
     public static ПоступленняТоварівТаПослуг_ТабличнаЧастина_Товари New()
     {
@@ -493,7 +490,6 @@ LIMIT 1
             };
             ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
             column.Resizable = true;
-
             column.FixedWidth = 300;
 
             Grid.AppendColumn(column);
@@ -528,7 +524,6 @@ LIMIT 1
             };
             ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
             column.Resizable = true;
-
             column.FixedWidth = 300;
 
             Grid.AppendColumn(column);
@@ -560,7 +555,6 @@ LIMIT 1
             };
             ColumnViewColumn column = ColumnViewColumn.New("Серія", factory);
             column.Resizable = true;
-
             column.FixedWidth = 300;
 
             Grid.AppendColumn(column);
@@ -588,6 +582,7 @@ LIMIT 1
             };
             ColumnViewColumn column = ColumnViewColumn.New("Коєфіціент", factory);
             column.Resizable = true;
+            column.FixedWidth = 100;
 
             Grid.AppendColumn(column);
         }
@@ -618,7 +613,7 @@ LIMIT 1
             };
             ColumnViewColumn column = ColumnViewColumn.New("Пакування", factory);
             column.Resizable = true;
-            column.FixedWidth = 200;
+            column.FixedWidth = 100;
 
             Grid.AppendColumn(column);
         }
@@ -676,7 +671,7 @@ LIMIT 1
             };
             ColumnViewColumn column = ColumnViewColumn.New("Вид ціни", factory);
             column.Resizable = true;
-            column.FixedWidth = 300;
+            column.FixedWidth = 150;
 
             Grid.AppendColumn(column);
         }
@@ -708,34 +703,7 @@ LIMIT 1
             };
             ColumnViewColumn column = ColumnViewColumn.New("Ціна", factory);
             column.Resizable = true;
-            column.FixedWidth = 100;
-
-            Grid.AppendColumn(column);
-        }
-
-        //Склад
-        {
-            SignalListItemFactory factory = SignalListItemFactory.New();
-            factory.OnSetup += (_, args) =>
-            {
-                if (args.Object is not ListItem listItem) return;
-                var cell = Склади_PointerTablePartCell.New();
-
-                listItem.Child = cell;
-            };
-            factory.OnBind += (_, args) =>
-            {
-                if (args.Object is not ListItem listItem) return;
-                if (listItem.Child is not Склади_PointerTablePartCell cell) return;
-                if (listItem.Item is not ItemRow row) return;
-
-                cell.OnSelect = () => row.Склад = cell.Pointer;
-                (row.Сhanged_Склад = () => cell.Pointer = row.Склад).Invoke();
-
-            };
-            ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
-            column.Resizable = true;
-            column.FixedWidth = 300;
+            column.FixedWidth = 150;
 
             Grid.AppendColumn(column);
         }
@@ -766,7 +734,7 @@ LIMIT 1
             };
             ColumnViewColumn column = ColumnViewColumn.New("Скидка", factory);
             column.Resizable = true;
-            column.FixedWidth = 100;
+            column.FixedWidth = 150;
 
             Grid.AppendColumn(column);
         }
@@ -798,7 +766,34 @@ LIMIT 1
             };
             ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
             column.Resizable = true;
-            column.FixedWidth = 100;
+            column.FixedWidth = 150;
+
+            Grid.AppendColumn(column);
+        }
+
+        //Склад
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                var cell = Склади_PointerTablePartCell.New();
+
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not Склади_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnSelect = () => row.Склад = cell.Pointer;
+                (row.Сhanged_Склад = () => cell.Pointer = row.Склад).Invoke();
+
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
+            column.Resizable = true;
+            column.FixedWidth = 300;
 
             Grid.AppendColumn(column);
         }
@@ -951,29 +946,9 @@ LIMIT 1
     public override async ValueTask<bool> NewRecord()
     {
         ItemRow itemRow = ItemRow.New();
-
-        var ВидЦіни = ЗначенняТипові.ОсновнийВидЦіниЗакупівлі_Const;
-        await ВидЦіни.GetPresentation();
-
-        itemRow.ВидЦіни = ВидЦіни;
-        itemRow.Кількість = 1;
+        await ПісляДодаванняНового(itemRow);
 
         Store.Append(itemRow);
-
         return true;
-    }
-
-    public decimal СумаДокументу()
-    {
-        decimal Сума = 0;
-
-        for (uint i = 0; i <= Store.GetNItems(); i++)
-        {
-            ItemRow? row = (ItemRow?)Store.GetObject(i);
-            if (row != null)
-                Сума += row.Сума;
-        }
-
-        return Math.Round(Сума, 2);
     }
 }

@@ -7,7 +7,7 @@
   <Author>Тарахомин Юрій Іванович, accounting.org.ua</Author>
   <Desc>Конфігурація "Зберігання та Торгівля"
 https://accounting.org.ua/storage_and_trade.html</Desc>
-  <DateTimeSave>20.05.2026 18:46:47</DateTimeSave>
+  <DateTimeSave>21.05.2026 19:44:23</DateTimeSave>
   <DictTSearch>simple</DictTSearch>
   <GtkVersion>Gtk4</GtkVersion>
   <ConstantsBlocks>
@@ -2145,17 +2145,6 @@ https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange</Desc>
               <Type>enum</Type>
               <Pointer>Перелічення.ТипиНоменклатури</Pointer>
             </Field>
-            <Field>
-              <Name>Папка</Name>
-              <Caption>Папка</Caption>
-              <Size>0</Size>
-              <SortNum>6</SortNum>
-              <SortField>False</SortField>
-              <SortDirection>False</SortDirection>
-              <FilterField>True</FilterField>
-              <Type>pointer</Type>
-              <Pointer>Довідники.Номенклатура_Папки</Pointer>
-            </Field>
             <AdditionalField>
               <Visible>True</Visible>
               <Name>Залишок</Name>
@@ -2322,17 +2311,6 @@ END]]></Value>
               <FilterField>True</FilterField>
               <Type>enum</Type>
               <Pointer>Перелічення.ТипиНоменклатури</Pointer>
-            </Field>
-            <Field>
-              <Name>Папка</Name>
-              <Caption>Папка</Caption>
-              <Size>0</Size>
-              <SortNum>5</SortNum>
-              <SortField>False</SortField>
-              <SortDirection>False</SortDirection>
-              <FilterField>True</FilterField>
-              <Type>pointer</Type>
-              <Pointer>Довідники.Номенклатура_Папки</Pointer>
             </Field>
             <AdditionalField>
               <Visible>True</Visible>
@@ -5639,7 +5617,7 @@ END]]></Value>
             <Field>
               <Name>Назва</Name>
               <Caption>Назва</Caption>
-              <Size>300</Size>
+              <Size>500</Size>
               <SortNum>2</SortNum>
               <SortField>True</SortField>
               <SortDirection>False</SortDirection>
@@ -9946,6 +9924,30 @@ FROM
               <FilterField>False</FilterField>
               <Type>datetime</Type>
             </Field>
+            <AdditionalField>
+              <Visible>False</Visible>
+              <Name>Залишки</Name>
+              <Caption>Залишки</Caption>
+              <Size>0</Size>
+              <SortNum>100</SortNum>
+              <Type>string</Type>
+              <Value><![CDATA[WITH Залишки AS 
+(
+    SELECT
+        ПартіїТоварів.{РегістриНакопичення.ПартіїТоварів_Підсумки_TablePart.ПартіяТоварівКомпозит} AS ПартіяТоварівКомпозит,
+        SUM(ПартіїТоварів.{РегістриНакопичення.ПартіїТоварів_Підсумки_TablePart.Кількість} ) AS Кількість
+    FROM
+        {РегістриНакопичення.ПартіїТоварів_Підсумки_TablePart.TABLE} AS ПартіїТоварів
+    WHERE
+        ПартіїТоварів.{РегістриНакопичення.ПартіїТоварів_Підсумки_TablePart.ПартіяТоварівКомпозит} = 
+	    {Довідники.ПартіяТоварівКомпозит_Const.TABLE}.uid
+    GROUP BY ПартіяТоварівКомпозит
+)
+SELECT 
+    ROUND(Кількість, 1)
+FROM 
+    Залишки]]></Value>
+            </AdditionalField>
           </Fields>
         </TabularList>
       </TabularLists>

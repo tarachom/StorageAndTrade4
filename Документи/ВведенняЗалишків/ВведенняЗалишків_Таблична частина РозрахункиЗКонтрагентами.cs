@@ -17,7 +17,7 @@ namespace StorageAndTrade;
 partial class ВведенняЗалишків_ТабличнаЧастина_РозрахункиЗКонтрагентами : DocumentFormTablePart
 {
     #region Data
-    
+
     [GObject.Subclass<GObject.Object>("ItemRow_DMMKoUYPzkGgfoxFn561Rw")]
     public partial class ItemRow : IRowSubclassTablePart
     {
@@ -39,7 +39,7 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Р
         UniqueID UnigueID_ = new();
         public Action? Сhanged_UnigueID { get; set; } = null;
 
-    
+
         /* НомерРядка */
         public int НомерРядка
         {
@@ -56,7 +56,7 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Р
         int НомерРядка_ = 0;
         public Action? Сhanged_НомерРядка { get; set; } = null;
 
-    
+
         /* ТипКонтрагента */
         public ТипиКонтрагентів ТипКонтрагента
         {
@@ -73,7 +73,7 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Р
         ТипиКонтрагентів ТипКонтрагента_ = 0;
         public Action? Сhanged_ТипКонтрагента { get; set; } = null;
 
-    
+
         /* Контрагент */
         public Контрагенти_Pointer Контрагент
         {
@@ -90,7 +90,7 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Р
         Контрагенти_Pointer Контрагент_ = new();
         public Action? Сhanged_Контрагент { get; set; } = null;
 
-    
+
         /* Валюта */
         public Валюти_Pointer Валюта
         {
@@ -107,7 +107,7 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Р
         Валюти_Pointer Валюта_ = new();
         public Action? Сhanged_Валюта { get; set; } = null;
 
-    
+
         /* Сума */
         public decimal Сума
         {
@@ -124,12 +124,12 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Р
         decimal Сума_ = 0;
         public Action? Сhanged_Сума { get; set; } = null;
 
-    
+
 
         /*
         Функції
         */
-        
+
         public GObject.Object Copy()
         {
             var row = New();
@@ -138,18 +138,34 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Р
             row.Контрагент = Контрагент.Copy();
             row.Валюта = Валюта.Copy();
             row.Сума = Сума;
-            
+
             return row;
         }
     }
 
     #endregion
 
-    
+    #region Функції
+
+    async ValueTask ПісляЗміни_Контрагент(ItemRow row)
+    {
+
+    }
+    async ValueTask ПісляЗміни_Валюта(ItemRow row)
+    {
+
+    }
+
+    void ПісляЗміни_Сума(ItemRow row)
+    {
+        Підсумок.Recount();
+    }
+
+    #endregion
+
     public ВведенняЗалишків_Objest? ЕлементВласник { get; set; }
-        
-    
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());
+    TotalControl Підсумок = TotalControl.New();
 
     partial void Initialize()
     {
@@ -157,6 +173,27 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Р
         model.OnSelectionChanged += GridOnSelectionChanged;
 
         Grid.Model = model;
+
+        //
+        // Підсумки
+        //
+
+        model.OnItemsChanged += (_, _) => Підсумок.Recount();
+        Підсумок.QuantifyFunc = () =>
+        {
+            decimal Сума = 0;
+
+            for (uint i = 0; i <= Store.GetNItems(); i++)
+            {
+                ItemRow? row = (ItemRow?)Store.GetObject(i);
+                if (row != null)
+                    Сума += row.Сума;
+            }
+
+            return $"Сума: <b>{Сума}</b>";
+        };
+
+        Append(Підсумок);
     }
 
     public static ВведенняЗалишків_ТабличнаЧастина_РозрахункиЗКонтрагентами New()
@@ -169,7 +206,6 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Р
 
     protected override void Columns()
     {
-        
         //НомерРядка
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
@@ -177,9 +213,9 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Р
             {
                 if (args.Object is not ListItem listItem) return;
                 var cell = LabelTablePartCell.New();
-                
+
                 cell.Halign = Align.End;
-                    
+
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
@@ -187,16 +223,16 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Р
                 if (args.Object is not ListItem listItem) return;
                 if (listItem.Child is not LabelTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
-                
+
                 (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke();
-                    
+
             };
             ColumnViewColumn column = ColumnViewColumn.New("№", factory);
             column.Resizable = true;
-            
+
             Grid.AppendColumn(column);
         }
-        
+
         //ТипКонтрагента
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
@@ -210,7 +246,7 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Р
                 EventControllerScroll contr = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
                 cell.Combo.AddController(contr);
                 contr.OnScroll += (_, _) => true;
-                
+
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
@@ -218,17 +254,17 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Р
                 if (args.Object is not ListItem listItem) return;
                 if (listItem.Child is not ComboTextTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
-                
+
                 cell.OnСhanged = () => row.ТипКонтрагента = ПсевдонімиПерелічення.ТипиКонтрагентів_FindByName(cell.Combo.ActiveId);
                 (row.Сhanged_ТипКонтрагента = () => cell.Value = row.ТипКонтрагента.ToString()).Invoke();
-                    
+
             };
-            ColumnViewColumn column = ColumnViewColumn.New("ТипКонтрагента", factory);
+            ColumnViewColumn column = ColumnViewColumn.New("Тип контрагента", factory);
             column.Resizable = true;
-            
+
             Grid.AppendColumn(column);
         }
-        
+
         //Контрагент
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
@@ -236,7 +272,7 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Р
             {
                 if (args.Object is not ListItem listItem) return;
                 var cell = Контрагенти_PointerTablePartCell.New();
-                
+
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
@@ -244,19 +280,24 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Р
                 if (args.Object is not ListItem listItem) return;
                 if (listItem.Child is not Контрагенти_PointerTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
-                
-                cell.OnSelect = () => row.Контрагент = cell.Pointer;
+
+                cell.OnSelect = async () =>
+                {
+                    row.Контрагент = cell.Pointer;
+                    await ПісляЗміни_Контрагент(row);
+                };
+
                 (row.Сhanged_Контрагент = () => cell.Pointer = row.Контрагент).Invoke();
-                    
+
             };
             ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
             column.Resizable = true;
-            
+
             column.FixedWidth = 300;
-            
+
             Grid.AppendColumn(column);
         }
-        
+
         //Валюта
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
@@ -264,7 +305,7 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Р
             {
                 if (args.Object is not ListItem listItem) return;
                 var cell = Валюти_PointerTablePartCell.New();
-                
+
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
@@ -272,19 +313,24 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Р
                 if (args.Object is not ListItem listItem) return;
                 if (listItem.Child is not Валюти_PointerTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
-                
-                cell.OnSelect = () => row.Валюта = cell.Pointer;
+
+                cell.OnSelect = async () =>
+                {
+                    row.Валюта = cell.Pointer;
+                    await ПісляЗміни_Валюта(row);
+                };
+
                 (row.Сhanged_Валюта = () => cell.Pointer = row.Валюта).Invoke();
-                    
+
             };
             ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
             column.Resizable = true;
-            
+
             column.FixedWidth = 200;
-            
+
             Grid.AppendColumn(column);
         }
-        
+
         //Сума
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
@@ -292,7 +338,7 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Р
             {
                 if (args.Object is not ListItem listItem) return;
                 var cell = NumericTablePartCell.New();
-                
+
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
@@ -300,17 +346,22 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Р
                 if (args.Object is not ListItem listItem) return;
                 if (listItem.Child is not NumericTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
-                
-                cell.OnСhanged = () => row.Сума = cell.Value;
+
+                cell.OnСhanged = () =>
+                {
+                    row.Сума = cell.Value;
+                    ПісляЗміни_Сума(row);
+                };
+
                 (row.Сhanged_Сума = () => cell.Value = row.Сума).Invoke();
-                    
+
             };
             ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
             column.Resizable = true;
-            
+
             Grid.AppendColumn(column);
         }
-        
+
         { /* Пуста колонка для заповнення вільного простору */
             ColumnViewColumn column = ColumnViewColumn.New(null, null);
             column.Resizable = true;
@@ -318,18 +369,15 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Р
             Grid.AppendColumn(column);
         }
     }
-
     public override async ValueTask LoadRecords()
     {
-        
-        if (ЕлементВласник != null) 
+        if (ЕлементВласник != null)
         {
-            
             ЕлементВласник.РозрахункиЗКонтрагентами_TablePart.FillJoin([ВведенняЗалишків_РозрахункиЗКонтрагентами_TablePart.НомерРядка,]);
             await ЕлементВласник.РозрахункиЗКонтрагентами_TablePart.Read();
-            
+
             Store.RemoveAll();
-        
+
             foreach (var record in ЕлементВласник.РозрахункиЗКонтрагентами_TablePart.Records)
             {
                 var row = ItemRow.New();
@@ -339,7 +387,7 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Р
                 row.Контрагент = record.Контрагент;
                 row.Валюта = record.Валюта;
                 row.Сума = record.Сума;
-                
+
                 Store.Append(row);
 
                 if (SelectPosition > 0)
@@ -353,10 +401,9 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Р
 
     public override async ValueTask SaveRecords()
     {
-        
         if (ЕлементВласник != null)
         {
-        ЕлементВласник.РозрахункиЗКонтрагентами_TablePart.Records.Clear();
+            ЕлементВласник.РозрахункиЗКонтрагентами_TablePart.Records.Clear();
             for (uint i = 0; i <= Store.GetNItems(); i++)
             {
                 ItemRow? row = (ItemRow?)Store.GetObject(i);
@@ -370,11 +417,12 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Р
                         Контрагент = row.Контрагент,
                         Валюта = row.Валюта,
                         Сума = row.Сума,
-                        
+
                     });
                 }
             }
             await ЕлементВласник.РозрахункиЗКонтрагентами_TablePart.Save(true);
+
             //Оновлення табличної частини після збереження
             {
                 //Пошук виділених рядків
@@ -392,7 +440,7 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Р
                     row.Контрагент = x.Контрагент;
                     row.Валюта = x.Валюта;
                     row.Сума = x.Сума;
-                    
+
                     return row;
                 });
 
@@ -404,7 +452,6 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Р
                 //Виділення рядків після оновлення
                 foreach (var position in selection)
                     Grid.Model.SelectItem(position, false);
-                
             }
         }
     }
@@ -415,4 +462,3 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Р
         return true;
     }
 }
-    
