@@ -96,7 +96,7 @@ LabelTablePartCell, IntegerTablePartCell, NumericTablePartCell
 */
 columnview listview row cell box.integer,
 columnview listview row cell box.numeric {
-    background-color: rgba(245, 245, 226, 0.2);
+    background-color: rgba(241, 241, 233, 0.2);
 }
 
 /*
