@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 19.05.2026 20:11:15
+ * Дата конфігурації: 22.05.2026 13:28:45
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон Gtk4.xslt
@@ -332,27 +332,6 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 form.Grid.AppendColumn(column);
             }
         
-            //Назва: Папка, "Папка"
-            {
-                SignalListItemFactory factory = SignalListItemFactory.New();
-                factory.OnSetup += (_, args) =>
-                {
-                    ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
-                };
-                factory.OnBind += (_, args) =>
-                {
-                    ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
-                    DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    if (cell != null && row != null)
-                        cell.SetText(row.Fields["Папка"]);
-                };
-                ColumnViewColumn column = ColumnViewColumn.New("Папка", factory);
-                column.Resizable = true;
-                form.Grid.AppendColumn(column);
-            }
-        
             //Назва: Залишок, "Залишок"
             {
                 SignalListItemFactory factory = SignalListItemFactory.New();
@@ -476,17 +455,6 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 form.Filter.Append("Тип:", ТипНоменклатури, sw);
             }
             
-            { /* Папка, pointer */
-                Switch sw = Switch.New();
-                Номенклатура_Папки_PointerControl Папка = Номенклатура_Папки_PointerControl.New();
-                        Папка.Caption = "";
-                        Папка.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Папка.Pointer.UniqueID.UGuid;
-                    
-                filterList.Add(new(Номенклатура_Const.Папка, get, sw));
-                form.Filter.Append("Папка:", Папка, sw);
-            }
-            
             form.Filter.GetWhere = () =>
             {
                 List<Where> where = [];
@@ -528,10 +496,6 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                             Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
                             Номенклатура_Select.QuerySelect.Table, "join_tab_1", "ОдиницяВиміру");
                         
-                            /* Приєднання pointer */
-                            Довідники.Номенклатура_Папки_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.Папка,
-                            Номенклатура_Select.QuerySelect.Table, "join_tab_2", "Папка");
-                        
                 /* Додаткове поле: Залишок */
                 Номенклатура_Select.QuerySelect.FieldAndAlias.Add(new ValueName<string>(@$"(CASE WHEN {Довідники.Номенклатура_Const.TABLE}.{Довідники.Номенклатура_Const.ТипНоменклатури} = {(int)Перелічення.ТипиНоменклатури.Товар} THEN ( WITH Залишки AS ( SELECT ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} AS Номенклатура, SUM(ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.ВНаявності} ) AS ВНаявності FROM {РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.TABLE} AS ТовариНаСкладах WHERE ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} = {Довідники.Номенклатура_Const.TABLE}.uid GROUP BY Номенклатура ) SELECT ROUND(ВНаявності, 1) FROM Залишки ) END)", "Залишок"));
             
@@ -563,7 +527,6 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Назва", Fields[Номенклатура_Const.Назва].ToString() ?? "");
                     row.Fields.Add("ОдиницяВиміру", Fields["ОдиницяВиміру"].ToString() ?? "");
                     row.Fields.Add("ТипНоменклатури", Перелічення.ПсевдонімиПерелічення.ТипиНоменклатури_Alias((Перелічення.ТипиНоменклатури)(Fields[Номенклатура_Const.ТипНоменклатури] != DBNull.Value ? Fields[Номенклатура_Const.ТипНоменклатури] : 0) ));
-                    row.Fields.Add("Папка", Fields["Папка"].ToString() ?? "");
                     row.Fields.Add("Залишок", Fields["Залишок"].ToString() ?? "");
                     row.Fields.Add("ВРезерві", Fields["ВРезерві"].ToString() ?? "");
                     row.Fields.Add("ВРезервіПідЗамовлення", Fields["ВРезервіПідЗамовлення"].ToString() ?? "");
@@ -620,10 +583,6 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                             Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
                             Номенклатура_Select.QuerySelect.Table, "join_tab_1", "ОдиницяВиміру");
                         
-                            /* Приєднання pointer */
-                            Довідники.Номенклатура_Папки_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.Папка,
-                            Номенклатура_Select.QuerySelect.Table, "join_tab_2", "Папка");
-                        
                 /* Додаткове поле: Залишок */
                 Номенклатура_Select.QuerySelect.FieldAndAlias.Add(new ValueName<string>(@$"(CASE WHEN {Довідники.Номенклатура_Const.TABLE}.{Довідники.Номенклатура_Const.ТипНоменклатури} = {(int)Перелічення.ТипиНоменклатури.Товар} THEN ( WITH Залишки AS ( SELECT ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} AS Номенклатура, SUM(ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.ВНаявності} ) AS ВНаявності FROM {РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.TABLE} AS ТовариНаСкладах WHERE ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} = {Довідники.Номенклатура_Const.TABLE}.uid GROUP BY Номенклатура ) SELECT ROUND(ВНаявності, 1) FROM Залишки ) END)", "Залишок"));
             
@@ -667,7 +626,6 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Назва", Fields[Довідники.Номенклатура_Const.Назва].ToString() ?? "");
                     row.Fields.Add("ОдиницяВиміру", Fields["ОдиницяВиміру"].ToString() ?? "");
                     row.Fields.Add("ТипНоменклатури", Перелічення.ПсевдонімиПерелічення.ТипиНоменклатури_Alias((Перелічення.ТипиНоменклатури)(Fields[Довідники.Номенклатура_Const.ТипНоменклатури] != DBNull.Value ? Fields[Довідники.Номенклатура_Const.ТипНоменклатури] : 0) ));
-                    row.Fields.Add("Папка", Fields["Папка"].ToString() ?? "");
                     row.Fields.Add("Залишок", Fields["Залишок"].ToString() ?? "");
                     row.Fields.Add("ВРезерві", Fields["ВРезерві"].ToString() ?? "");
                     row.Fields.Add("ВРезервіПідЗамовлення", Fields["ВРезервіПідЗамовлення"].ToString() ?? "");
@@ -787,27 +745,6 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 form.Grid.AppendColumn(column);
             }
         
-            //Назва: Папка, "Папка"
-            {
-                SignalListItemFactory factory = SignalListItemFactory.New();
-                factory.OnSetup += (_, args) =>
-                {
-                    ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
-                };
-                factory.OnBind += (_, args) =>
-                {
-                    ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
-                    DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    if (cell != null && row != null)
-                        cell.SetText(row.Fields["Папка"]);
-                };
-                ColumnViewColumn column = ColumnViewColumn.New("Папка", factory);
-                column.Resizable = true;
-                form.Grid.AppendColumn(column);
-            }
-        
             //Назва: Залишок, "Залишок"
             {
                 SignalListItemFactory factory = SignalListItemFactory.New();
@@ -910,17 +847,6 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 form.Filter.Append("Тип:", ТипНоменклатури, sw);
             }
             
-            { /* Папка, pointer */
-                Switch sw = Switch.New();
-                Номенклатура_Папки_PointerControl Папка = Номенклатура_Папки_PointerControl.New();
-                        Папка.Caption = "";
-                        Папка.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Папка.Pointer.UniqueID.UGuid;
-                    
-                filterList.Add(new(Номенклатура_Const.Папка, get, sw));
-                form.Filter.Append("Папка:", Папка, sw);
-            }
-            
             form.Filter.GetWhere = () =>
             {
                 List<Where> where = [];
@@ -965,10 +891,6 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                             Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
                             Номенклатура_Select.QuerySelect.Table, "join_tab_1", "ОдиницяВиміру");
                         
-                            /* Приєднання pointer */
-                            Довідники.Номенклатура_Папки_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.Папка,
-                            Номенклатура_Select.QuerySelect.Table, "join_tab_2", "Папка");
-                        
                 /* Додаткове поле: Залишок */
                 Номенклатура_Select.QuerySelect.FieldAndAlias.Add(new ValueName<string>(@$"(CASE WHEN {Довідники.Номенклатура_Const.TABLE}.{Довідники.Номенклатура_Const.ТипНоменклатури} = {(int)Перелічення.ТипиНоменклатури.Товар} THEN ( WITH Залишки AS ( SELECT ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} AS Номенклатура, SUM(ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.ВНаявності} ) AS ВНаявності FROM {РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.TABLE} AS ТовариНаСкладах WHERE ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} = {Довідники.Номенклатура_Const.TABLE}.uid GROUP BY Номенклатура ) SELECT ROUND(ВНаявності, 1) FROM Залишки ) END)", "Залишок"));
             
@@ -997,7 +919,6 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Назва", Fields[Номенклатура_Const.Назва].ToString() ?? "");
                     row.Fields.Add("ОдиницяВиміру", Fields["ОдиницяВиміру"].ToString() ?? "");
                     row.Fields.Add("ТипНоменклатури", Перелічення.ПсевдонімиПерелічення.ТипиНоменклатури_Alias((Перелічення.ТипиНоменклатури)(Fields[Номенклатура_Const.ТипНоменклатури] != DBNull.Value ? Fields[Номенклатура_Const.ТипНоменклатури] : 0) ));
-                    row.Fields.Add("Папка", Fields["Папка"].ToString() ?? "");
                     row.Fields.Add("Залишок", Fields["Залишок"].ToString() ?? "");
                     row.Fields.Add("ВРезерві", Fields["ВРезерві"].ToString() ?? "");
                     row.Fields.Add("ВРезервіПідЗамовлення", Fields["ВРезервіПідЗамовлення"].ToString() ?? "");
@@ -1056,10 +977,6 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                             Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
                             Номенклатура_Select.QuerySelect.Table, "join_tab_1", "ОдиницяВиміру");
                         
-                            /* Приєднання pointer */
-                            Довідники.Номенклатура_Папки_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.Папка,
-                            Номенклатура_Select.QuerySelect.Table, "join_tab_2", "Папка");
-                        
                 /* Додаткове поле: Залишок */
                 Номенклатура_Select.QuerySelect.FieldAndAlias.Add(new ValueName<string>(@$"(CASE WHEN {Довідники.Номенклатура_Const.TABLE}.{Довідники.Номенклатура_Const.ТипНоменклатури} = {(int)Перелічення.ТипиНоменклатури.Товар} THEN ( WITH Залишки AS ( SELECT ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} AS Номенклатура, SUM(ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.ВНаявності} ) AS ВНаявності FROM {РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.TABLE} AS ТовариНаСкладах WHERE ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} = {Довідники.Номенклатура_Const.TABLE}.uid GROUP BY Номенклатура ) SELECT ROUND(ВНаявності, 1) FROM Залишки ) END)", "Залишок"));
             
@@ -1100,7 +1017,6 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Назва", Fields[Довідники.Номенклатура_Const.Назва].ToString() ?? "");
                     row.Fields.Add("ОдиницяВиміру", Fields["ОдиницяВиміру"].ToString() ?? "");
                     row.Fields.Add("ТипНоменклатури", Перелічення.ПсевдонімиПерелічення.ТипиНоменклатури_Alias((Перелічення.ТипиНоменклатури)(Fields[Довідники.Номенклатура_Const.ТипНоменклатури] != DBNull.Value ? Fields[Довідники.Номенклатура_Const.ТипНоменклатури] : 0) ));
-                    row.Fields.Add("Папка", Fields["Папка"].ToString() ?? "");
                     row.Fields.Add("Залишок", Fields["Залишок"].ToString() ?? "");
                     row.Fields.Add("ВРезерві", Fields["ВРезерві"].ToString() ?? "");
                     row.Fields.Add("ВРезервіПідЗамовлення", Fields["ВРезервіПідЗамовлення"].ToString() ?? "");
@@ -4071,27 +3987,6 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 form.Grid.AppendColumn(column);
             }
         
-            //Назва: Основа, "Основа"
-            {
-                SignalListItemFactory factory = SignalListItemFactory.New();
-                factory.OnSetup += (_, args) =>
-                {
-                    ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartCell.NewFromType("composite_pointer");
-                };
-                factory.OnBind += (_, args) =>
-                {
-                    ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
-                    DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
-                    if (cell != null && row != null)
-                        cell.SetText(row.Fields["Основа"]);
-                };
-                ColumnViewColumn column = ColumnViewColumn.New("Основа", factory);
-                column.Resizable = true;
-                form.Grid.AppendColumn(column);
-            }
-        
             { /* Пуста колонка для заповнення вільного простору */
                 ColumnViewColumn column = ColumnViewColumn.New(null, null);
                 column.Resizable = true;
@@ -4123,16 +4018,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     "deletion_label",
                     /*Код*/ Довідники.Користувачі_Const.Код,
                     /*Назва*/ Довідники.Користувачі_Const.Назва,
-                    /*Основа*/ Довідники.Користувачі_Const.Основа,
                     
                 ]);
             
                     /* Сортування */
                     Користувачі_Select.QuerySelect.Order.Add(Довідники.Користувачі_Const.Назва, SelectOrder.ASC);
                 
-                            /* Приєднання composite_pointer */
-                            Користувачі_Select.QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({Довідники.Користувачі_Const.Основа})", "Основа"));
-                        
 
             /* Відбори */
             Користувачі_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -4150,7 +4041,6 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.DeletionLabel = (bool)Fields["deletion_label"];
                     row.Fields.Add("Код", Fields[Користувачі_Const.Код].ToString() ?? "");
                     row.Fields.Add("Назва", Fields[Користувачі_Const.Назва].ToString() ?? "");
-                    row.Fields.Add("Основа", Fields["Основа"].ToString() ?? "");
                     
                     ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
                     if (objCh != null)
@@ -4192,16 +4082,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     "deletion_label",
                     /*Код*/ Довідники.Користувачі_Const.Код,
                     /*Назва*/ Довідники.Користувачі_Const.Назва,
-                    /*Основа*/ Довідники.Користувачі_Const.Основа,
                     
                 ]);
             
                     /* Сортування */
                     Користувачі_Select.QuerySelect.Order.Add(Довідники.Користувачі_Const.Назва, SelectOrder.ASC);
                 
-                            /* Приєднання composite_pointer */
-                            Користувачі_Select.QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({Довідники.Користувачі_Const.Основа})", "Основа"));
-                        
 
             /* Відбори */
             if (form.WhereList != null) Користувачі_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -4231,7 +4117,6 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.DeletionLabel = (bool)Fields["deletion_label"];
                     row.Fields.Add("Код", Fields[Довідники.Користувачі_Const.Код].ToString() ?? "");
                     row.Fields.Add("Назва", Fields[Довідники.Користувачі_Const.Назва].ToString() ?? "");
-                    row.Fields.Add("Основа", Fields["Основа"].ToString() ?? "");
                     
                     form.Store.Append(row);
                     if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
