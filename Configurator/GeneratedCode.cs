@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 21.05.2026 19:44:23
+ * Дата конфігурації: 26.05.2026 16:21:50
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон GeneratedCode.xslt
@@ -32715,7 +32715,7 @@ namespace GeneratedCode.РегістриВідомостей
     public static class ШтрихкодиНоменклатури_Const
     {
         public const string TYPENAME = "РегістриВідомостей.ШтрихкодиНоменклатури";
-        public const string FULLNAME = "Штрихкоди";
+        public const string FULLNAME = "Штрихкоди номенклатури";
         public const string TABLE = "tab_b17";
         
         public const string Штрихкод = "col_a1";
@@ -33091,7 +33091,7 @@ namespace GeneratedCode.РегістриВідомостей
     public static class РозміщенняНоменклатуриПоКоміркамНаСкладі_Const
     {
         public const string TYPENAME = "РегістриВідомостей.РозміщенняНоменклатуриПоКоміркамНаСкладі";
-        public const string FULLNAME = "Розміщення номенклатури";
+        public const string FULLNAME = "Розміщення номенклатури по комірках";
         public const string TABLE = "tab_a74";
         
         public const string Номенклатура = "col_a1";
@@ -34098,7 +34098,7 @@ namespace GeneratedCode.РегістриНакопичення
     public static class ЗамовленняКлієнтів_Const
     {
         public const string TYPENAME = "РегістриНакопичення.ЗамовленняКлієнтів";
-        public const string FULLNAME = "ЗамовленняКлієнтів";
+        public const string FULLNAME = "Замовлення клієнтів";
         public const string TABLE = "tab_a55";
 		    public static readonly string[] AllowDocumentSpendTable = ["tab_a34", "tab_a36", "tab_a96", ];
 		    public static readonly string[] AllowDocumentSpendType = ["ЗамовленняКлієнта", "РеалізаціяТоварівТаПослуг", "ЗакриттяЗамовленняКлієнта", ];
@@ -34346,7 +34346,7 @@ namespace GeneratedCode.РегістриНакопичення
     public static class РозрахункиЗКлієнтами_Const
     {
         public const string TYPENAME = "РегістриНакопичення.РозрахункиЗКлієнтами";
-        public const string FULLNAME = "РозрахункиЗКлієнтами";
+        public const string FULLNAME = "Розрахунки з клієнтами";
         public const string TABLE = "tab_a56";
 		    public static readonly string[] AllowDocumentSpendTable = ["tab_a36", "tab_a44", "tab_a48", "tab_a53", "tab_a81", "tab_a83", "tab_a65", ];
 		    public static readonly string[] AllowDocumentSpendType = ["РеалізаціяТоварівТаПослуг", "ПрихіднийКасовийОрдер", "РозхіднийКасовийОрдер", "ПоверненняТоварівВідКлієнта", "АктВиконанихРобіт", "ВведенняЗалишків", "КорегуванняБоргу", ];
@@ -34939,7 +34939,7 @@ namespace GeneratedCode.РегістриНакопичення
     public static class ВільніЗалишки_Const
     {
         public const string TYPENAME = "РегістриНакопичення.ВільніЗалишки";
-        public const string FULLNAME = "ВільніЗалишки";
+        public const string FULLNAME = "Вільні залишки";
         public const string TABLE = "tab_a58";
 		    public static readonly string[] AllowDocumentSpendTable = ["tab_a32", "tab_a34", "tab_a36", "tab_a31", "tab_a51", "tab_a53", "tab_a83", "tab_a94", "tab_b07", "tab_b10", "tab_a96", "tab_b41", "tab_b51", ];
 		    public static readonly string[] AllowDocumentSpendType = ["ПоступленняТоварівТаПослуг", "ЗамовленняКлієнта", "РеалізаціяТоварівТаПослуг", "ПереміщенняТоварів", "ПоверненняТоварівПостачальнику", "ПоверненняТоварівВідКлієнта", "ВведенняЗалишків", "ПсуванняТоварів", "ВнутрішнєСпоживанняТоварів", "РахунокФактура", "ЗакриттяЗамовленняКлієнта", "ЗакриттяРахункуФактури", "ЧекККМ", ];
@@ -35284,7 +35284,7 @@ namespace GeneratedCode.РегістриНакопичення
     public static class ЗамовленняПостачальникам_Const
     {
         public const string TYPENAME = "РегістриНакопичення.ЗамовленняПостачальникам";
-        public const string FULLNAME = "ЗамовленняПостачальникам";
+        public const string FULLNAME = "Замовлення постачальникам";
         public const string TABLE = "tab_a60";
 		    public static readonly string[] AllowDocumentSpendTable = ["tab_a25", "tab_a32", "tab_b44", ];
 		    public static readonly string[] AllowDocumentSpendType = ["ЗамовленняПостачальнику", "ПоступленняТоварівТаПослуг", "ЗакриттяЗамовленняПостачальнику", ];
@@ -35524,7 +35524,7 @@ namespace GeneratedCode.РегістриНакопичення
     public static class РозрахункиЗПостачальниками_Const
     {
         public const string TYPENAME = "РегістриНакопичення.РозрахункиЗПостачальниками";
-        public const string FULLNAME = "РозрахункиЗПостачальниками";
+        public const string FULLNAME = "Розрахунки з постачальниками";
         public const string TABLE = "tab_a61";
 		    public static readonly string[] AllowDocumentSpendTable = ["tab_a32", "tab_a44", "tab_a48", "tab_a51", "tab_a83", "tab_a65", ];
 		    public static readonly string[] AllowDocumentSpendType = ["ПоступленняТоварівТаПослуг", "ПрихіднийКасовийОрдер", "РозхіднийКасовийОрдер", "ПоверненняТоварівПостачальнику", "ВведенняЗалишків", "КорегуванняБоргу", ];
@@ -35837,7 +35837,7 @@ namespace GeneratedCode.РегістриНакопичення
     public static class РухКоштів_Const
     {
         public const string TYPENAME = "РегістриНакопичення.РухКоштів";
-        public const string FULLNAME = "РухКоштів";
+        public const string FULLNAME = "Рух коштів";
         public const string TABLE = "tab_a78";
 		    public static readonly string[] AllowDocumentSpendTable = ["tab_a44", "tab_a48", "tab_a83", ];
 		    public static readonly string[] AllowDocumentSpendType = ["ПрихіднийКасовийОрдер", "РозхіднийКасовийОрдер", "ВведенняЗалишків", ];
@@ -36255,7 +36255,7 @@ namespace GeneratedCode.РегістриНакопичення
     public static class ПартіїТоварів_Const
     {
         public const string TYPENAME = "РегістриНакопичення.ПартіїТоварів";
-        public const string FULLNAME = "ПартіїТоварів";
+        public const string FULLNAME = "Партії товарів";
         public const string TABLE = "tab_a79";
 		    public static readonly string[] AllowDocumentSpendTable = ["tab_a32", "tab_a36", "tab_a31", "tab_a51", "tab_a53", "tab_a83", "tab_a94", "tab_b07", ];
 		    public static readonly string[] AllowDocumentSpendType = ["ПоступленняТоварівТаПослуг", "РеалізаціяТоварівТаПослуг", "ПереміщенняТоварів", "ПоверненняТоварівПостачальнику", "ПоверненняТоварівВідКлієнта", "ВведенняЗалишків", "ПсуванняТоварів", "ВнутрішнєСпоживанняТоварів", ];
@@ -37057,7 +37057,7 @@ namespace GeneratedCode.РегістриНакопичення
     public static class ТовариВКомірках_Const
     {
         public const string TYPENAME = "РегістриНакопичення.ТовариВКомірках";
-        public const string FULLNAME = "ТовариВКомірках";
+        public const string FULLNAME = "Товари в комірках";
         public const string TABLE = "tab_b01";
 		    public static readonly string[] AllowDocumentSpendTable = ["tab_a64", "tab_b09", "tab_b27", ];
 		    public static readonly string[] AllowDocumentSpendType = ["РозміщенняТоварівНаСкладі", "ПереміщенняТоварівНаСкладі", "ЗбіркаТоварівНаСкладі", ];
@@ -37515,7 +37515,7 @@ namespace GeneratedCode.РегістриНакопичення
     public static class РухКоштівККМ_Const
     {
         public const string TYPENAME = "РегістриНакопичення.РухКоштівККМ";
-        public const string FULLNAME = "РухКоштів ККМ";
+        public const string FULLNAME = "Рух коштів ККМ";
         public const string TABLE = "tab_b53";
 		    public static readonly string[] AllowDocumentSpendTable = ["tab_b51", ];
 		    public static readonly string[] AllowDocumentSpendType = ["ЧекККМ", ];

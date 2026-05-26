@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 21.05.2026 19:44:23
+ * Дата конфігурації: 26.05.2026 16:21:50
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон Gtk4.xslt
@@ -490,7 +490,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 ]);
             
                     /* Сортування */
-                    Номенклатура_Select.QuerySelect.Order.Add(Довідники.Номенклатура_Const.Код, SelectOrder.ASC);
+                    Номенклатура_Select.QuerySelect.Order.Add(Довідники.Номенклатура_Const.Назва, SelectOrder.ASC);
                 
                             /* Приєднання pointer */
                             Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
@@ -577,7 +577,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 ]);
             
                     /* Сортування */
-                    Номенклатура_Select.QuerySelect.Order.Add(Довідники.Номенклатура_Const.Код, SelectOrder.ASC);
+                    Номенклатура_Select.QuerySelect.Order.Add(Довідники.Номенклатура_Const.Назва, SelectOrder.ASC);
                 
                             /* Приєднання pointer */
                             Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
@@ -882,10 +882,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 ]);
             
                     /* Сортування */
-                    Номенклатура_Select.QuerySelect.Order.Add(Довідники.Номенклатура_Const.Код, SelectOrder.ASC);
-                
-                    /* Сортування */
-                    Номенклатура_Select.QuerySelect.Order.Add(Довідники.Номенклатура_Const.ТипНоменклатури, SelectOrder.ASC);
+                    Номенклатура_Select.QuerySelect.Order.Add(Довідники.Номенклатура_Const.Назва, SelectOrder.ASC);
                 
                             /* Приєднання pointer */
                             Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
@@ -968,10 +965,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 ]);
             
                     /* Сортування */
-                    Номенклатура_Select.QuerySelect.Order.Add(Довідники.Номенклатура_Const.Код, SelectOrder.ASC);
-                
-                    /* Сортування */
-                    Номенклатура_Select.QuerySelect.Order.Add(Довідники.Номенклатура_Const.ТипНоменклатури, SelectOrder.ASC);
+                    Номенклатура_Select.QuerySelect.Order.Add(Довідники.Номенклатура_Const.Назва, SelectOrder.ASC);
                 
                             /* Приєднання pointer */
                             Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
