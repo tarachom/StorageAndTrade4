@@ -8,34 +8,34 @@ namespace GeneratedCode.Довідники;
 
 class ПартіяТоварівКомпозит_Triggers
 {
-    public static async ValueTask New(ПартіяТоварівКомпозит_Objest ДовідникОбєкт)
+    public static Task New(ПартіяТоварівКомпозит_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask Copying(ПартіяТоварівКомпозит_Objest ДовідникОбєкт, ПартіяТоварівКомпозит_Objest Основа)
+    public static Task Copying(ПартіяТоварівКомпозит_Objest ДовідникОбєкт, ПартіяТоварівКомпозит_Objest Основа)
     {
         ДовідникОбєкт.Назва += " - Копія";
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeSave(ПартіяТоварівКомпозит_Objest ДовідникОбєкт)
+    public static Task BeforeSave(ПартіяТоварівКомпозит_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask AfterSave(ПартіяТоварівКомпозит_Objest ДовідникОбєкт)
+    public static Task AfterSave(ПартіяТоварівКомпозит_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask SetDeletionLabel(ПартіяТоварівКомпозит_Objest ДовідникОбєкт, bool label)
+    public static Task SetDeletionLabel(ПартіяТоварівКомпозит_Objest ДовідникОбєкт, bool label)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeDelete(ПартіяТоварівКомпозит_Objest ДовідникОбєкт)
+    public static Task BeforeDelete(ПартіяТоварівКомпозит_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 }

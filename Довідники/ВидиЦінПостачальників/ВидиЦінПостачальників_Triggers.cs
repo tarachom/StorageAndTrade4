@@ -10,35 +10,35 @@ namespace GeneratedCode.Довідники;
 
 class ВидиЦінПостачальників_Triggers
 {
-    public static async ValueTask New(ВидиЦінПостачальників_Objest ДовідникОбєкт)
+    public static Task New(ВидиЦінПостачальників_Objest ДовідникОбєкт)
     {
         ДовідникОбєкт.Код = (++НумераціяДовідників.ВидиЦінПостачальників_Const).ToString("D6");
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask Copying(ВидиЦінПостачальників_Objest ДовідникОбєкт, ВидиЦінПостачальників_Objest Основа)
+    public static Task Copying(ВидиЦінПостачальників_Objest ДовідникОбєкт, ВидиЦінПостачальників_Objest Основа)
     {
         ДовідникОбєкт.Назва += " - Копія";
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeSave(ВидиЦінПостачальників_Objest ДовідникОбєкт)
+    public static Task BeforeSave(ВидиЦінПостачальників_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask AfterSave(ВидиЦінПостачальників_Objest ДовідникОбєкт)
+    public static Task AfterSave(ВидиЦінПостачальників_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask SetDeletionLabel(ВидиЦінПостачальників_Objest ДовідникОбєкт, bool label)
+    public static Task SetDeletionLabel(ВидиЦінПостачальників_Objest ДовідникОбєкт, bool label)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeDelete(ВидиЦінПостачальників_Objest ДовідникОбєкт)
+    public static Task BeforeDelete(ВидиЦінПостачальників_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 }

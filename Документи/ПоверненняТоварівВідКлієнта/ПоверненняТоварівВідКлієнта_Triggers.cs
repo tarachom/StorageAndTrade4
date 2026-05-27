@@ -11,40 +11,40 @@ namespace GeneratedCode.Документи;
 
 class ПоверненняТоварівВідКлієнта_Triggers
 {
-    public static async ValueTask New(ПоверненняТоварівВідКлієнта_Objest ДокументОбєкт)
+    public static Task New(ПоверненняТоварівВідКлієнта_Objest ДокументОбєкт)
     {
         ДокументОбєкт.НомерДок = (++НумераціяДокументів.ПоверненняТоварівВідКлієнта_Const).ToString("D8");
         ДокументОбєкт.ДатаДок = DateTime.Now;
         ДокументОбєкт.Автор = Program.Користувач;
         ДокументОбєкт.Менеджер = Program.Користувач;
 
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask Copying(ПоверненняТоварівВідКлієнта_Objest ДокументОбєкт, ПоверненняТоварівВідКлієнта_Objest Основа)
+    public static Task Copying(ПоверненняТоварівВідКлієнта_Objest ДокументОбєкт, ПоверненняТоварівВідКлієнта_Objest Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeSave(ПоверненняТоварівВідКлієнта_Objest ДокументОбєкт)
+    public static Task BeforeSave(ПоверненняТоварівВідКлієнта_Objest ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{ПоверненняТоварівВідКлієнта_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask AfterSave(ПоверненняТоварівВідКлієнта_Objest ДокументОбєкт)
+    public static Task AfterSave(ПоверненняТоварівВідКлієнта_Objest ДокументОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask SetDeletionLabel(ПоверненняТоварівВідКлієнта_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(ПоверненняТоварівВідКлієнта_Objest ДокументОбєкт, bool label)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeDelete(ПоверненняТоварівВідКлієнта_Objest ДокументОбєкт)
+    public static Task BeforeDelete(ПоверненняТоварівВідКлієнта_Objest ДокументОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 }

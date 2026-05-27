@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 26.05.2026 16:21:50
+ * Дата конфігурації: 27.05.2026 17:33:28
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон GeneratedCode.xslt
@@ -70,7 +70,7 @@ namespace GeneratedCode
           Функція для типу який задається користувачем.
           Повертає презентацію для uuidAndText
         */
-        public static async ValueTask<CompositePointerPresentation_Record> CompositePointerPresentation(UuidAndText uuidAndText)
+        public static async Task<CompositePointerPresentation_Record> CompositePointerPresentation(UuidAndText uuidAndText)
         {
             CompositePointerPresentation_Record record = new();
 
@@ -184,6 +184,8 @@ namespace GeneratedCode.Константи
 	  #region CONSTANTS BLOCK "ЗначенняТипові"
     public static class ЗначенняТипові
     {       
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static Довідники.Організації_Pointer ОсновнаОрганізація_Const
         {
             get 
@@ -196,6 +198,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_a1", value.UniqueID.UGuid);
             }
         }
+
+        public static async Task<Довідники.Організації_Pointer> ОсновнаОрганізація()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_a1");
+            return recordResult.Result ? (new Довідники.Організації_Pointer(recordResult.Value)) : new Довідники.Організації_Pointer();
+        }
+
+        public static async Task ОсновнаОрганізація(Довідники.Організації_Pointer value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_a1", value.UniqueID.UGuid);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static Довідники.Склади_Pointer ОсновнийСклад_Const
         {
             get 
@@ -208,6 +221,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_a2", value.UniqueID.UGuid);
             }
         }
+
+        public static async Task<Довідники.Склади_Pointer> ОсновнийСклад()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_a2");
+            return recordResult.Result ? (new Довідники.Склади_Pointer(recordResult.Value)) : new Довідники.Склади_Pointer();
+        }
+
+        public static async Task ОсновнийСклад(Довідники.Склади_Pointer value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_a2", value.UniqueID.UGuid);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static Довідники.Валюти_Pointer ОсновнаВалюта_Const
         {
             get 
@@ -220,6 +244,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_a3", value.UniqueID.UGuid);
             }
         }
+
+        public static async Task<Довідники.Валюти_Pointer> ОсновнаВалюта()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_a3");
+            return recordResult.Result ? (new Довідники.Валюти_Pointer(recordResult.Value)) : new Довідники.Валюти_Pointer();
+        }
+
+        public static async Task ОсновнаВалюта(Довідники.Валюти_Pointer value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_a3", value.UniqueID.UGuid);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static Довідники.Контрагенти_Pointer ОсновнийПостачальник_Const
         {
             get 
@@ -232,6 +267,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_a4", value.UniqueID.UGuid);
             }
         }
+
+        public static async Task<Довідники.Контрагенти_Pointer> ОсновнийПостачальник()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_a4");
+            return recordResult.Result ? (new Довідники.Контрагенти_Pointer(recordResult.Value)) : new Довідники.Контрагенти_Pointer();
+        }
+
+        public static async Task ОсновнийПостачальник(Довідники.Контрагенти_Pointer value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_a4", value.UniqueID.UGuid);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static Довідники.Контрагенти_Pointer ОсновнийПокупець_Const
         {
             get 
@@ -244,6 +290,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_a5", value.UniqueID.UGuid);
             }
         }
+
+        public static async Task<Довідники.Контрагенти_Pointer> ОсновнийПокупець()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_a5");
+            return recordResult.Result ? (new Довідники.Контрагенти_Pointer(recordResult.Value)) : new Довідники.Контрагенти_Pointer();
+        }
+
+        public static async Task ОсновнийПокупець(Довідники.Контрагенти_Pointer value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_a5", value.UniqueID.UGuid);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static Довідники.Каси_Pointer ОсновнаКаса_Const
         {
             get 
@@ -256,6 +313,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_a6", value.UniqueID.UGuid);
             }
         }
+
+        public static async Task<Довідники.Каси_Pointer> ОсновнаКаса()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_a6");
+            return recordResult.Result ? (new Довідники.Каси_Pointer(recordResult.Value)) : new Довідники.Каси_Pointer();
+        }
+
+        public static async Task ОсновнаКаса(Довідники.Каси_Pointer value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_a6", value.UniqueID.UGuid);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static Довідники.ПакуванняОдиниціВиміру_Pointer ОсновнаОдиницяПакування_Const
         {
             get 
@@ -268,6 +336,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_a7", value.UniqueID.UGuid);
             }
         }
+
+        public static async Task<Довідники.ПакуванняОдиниціВиміру_Pointer> ОсновнаОдиницяПакування()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_a7");
+            return recordResult.Result ? (new Довідники.ПакуванняОдиниціВиміру_Pointer(recordResult.Value)) : new Довідники.ПакуванняОдиниціВиміру_Pointer();
+        }
+
+        public static async Task ОсновнаОдиницяПакування(Довідники.ПакуванняОдиниціВиміру_Pointer value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_a7", value.UniqueID.UGuid);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static Довідники.СтруктураПідприємства_Pointer ОсновнийПідрозділ_Const
         {
             get 
@@ -280,6 +359,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_g4", value.UniqueID.UGuid);
             }
         }
+
+        public static async Task<Довідники.СтруктураПідприємства_Pointer> ОсновнийПідрозділ()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_g4");
+            return recordResult.Result ? (new Довідники.СтруктураПідприємства_Pointer(recordResult.Value)) : new Довідники.СтруктураПідприємства_Pointer();
+        }
+
+        public static async Task ОсновнийПідрозділ(Довідники.СтруктураПідприємства_Pointer value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_g4", value.UniqueID.UGuid);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static Довідники.БанківськіРахункиОрганізацій_Pointer ОсновнийБанківськийРахунок_Const
         {
             get 
@@ -292,6 +382,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_g5", value.UniqueID.UGuid);
             }
         }
+
+        public static async Task<Довідники.БанківськіРахункиОрганізацій_Pointer> ОсновнийБанківськийРахунок()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_g5");
+            return recordResult.Result ? (new Довідники.БанківськіРахункиОрганізацій_Pointer(recordResult.Value)) : new Довідники.БанківськіРахункиОрганізацій_Pointer();
+        }
+
+        public static async Task ОсновнийБанківськийРахунок(Довідники.БанківськіРахункиОрганізацій_Pointer value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_g5", value.UniqueID.UGuid);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static Довідники.ВидиЦін_Pointer ОсновнийВидЦіни_Const
         {
             get 
@@ -304,6 +405,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_g9", value.UniqueID.UGuid);
             }
         }
+
+        public static async Task<Довідники.ВидиЦін_Pointer> ОсновнийВидЦіни()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_g9");
+            return recordResult.Result ? (new Довідники.ВидиЦін_Pointer(recordResult.Value)) : new Довідники.ВидиЦін_Pointer();
+        }
+
+        public static async Task ОсновнийВидЦіни(Довідники.ВидиЦін_Pointer value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_g9", value.UniqueID.UGuid);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static Довідники.ВидиНоменклатури_Pointer ОсновнийВидНоменклатури_Const
         {
             get 
@@ -316,6 +428,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_i2", value.UniqueID.UGuid);
             }
         }
+
+        public static async Task<Довідники.ВидиНоменклатури_Pointer> ОсновнийВидНоменклатури()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_i2");
+            return recordResult.Result ? (new Довідники.ВидиНоменклатури_Pointer(recordResult.Value)) : new Довідники.ВидиНоменклатури_Pointer();
+        }
+
+        public static async Task ОсновнийВидНоменклатури(Довідники.ВидиНоменклатури_Pointer value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_i2", value.UniqueID.UGuid);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static Довідники.ВидиЦін_Pointer ОсновнийВидЦіниЗакупівлі_Const
         {
             get 
@@ -328,6 +451,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_c3", value.UniqueID.UGuid);
             }
         }
+
+        public static async Task<Довідники.ВидиЦін_Pointer> ОсновнийВидЦіниЗакупівлі()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_c3");
+            return recordResult.Result ? (new Довідники.ВидиЦін_Pointer(recordResult.Value)) : new Довідники.ВидиЦін_Pointer();
+        }
+
+        public static async Task ОсновнийВидЦіниЗакупівлі(Довідники.ВидиЦін_Pointer value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_c3", value.UniqueID.UGuid);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static Довідники.КасиККМ_Pointer ОсновнаКасаККМ_Const
         {
             get 
@@ -340,6 +474,15 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_j2", value.UniqueID.UGuid);
             }
         }
+
+        public static async Task<Довідники.КасиККМ_Pointer> ОсновнаКасаККМ()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_j2");
+            return recordResult.Result ? (new Довідники.КасиККМ_Pointer(recordResult.Value)) : new Довідники.КасиККМ_Pointer();
+        }
+
+        public static async Task ОсновнаКасаККМ(Довідники.КасиККМ_Pointer value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_j2", value.UniqueID.UGuid);
              
     }
     #endregion
@@ -347,6 +490,8 @@ namespace GeneratedCode.Константи
 	  #region CONSTANTS BLOCK "Системні"
     public static class Системні
     {       
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static string ЖурналРеєстрації_Const
         {
             get 
@@ -359,6 +504,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_a8", value);
             }
         }
+
+        public static async Task<string> ЖурналРеєстрації()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_a8");
+            return recordResult.Result ? (recordResult.Value.ToString() ?? "") : "";
+        }
+
+        public static async Task ЖурналРеєстрації(string value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_a8", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static string ФоновіЗадачі_Const
         {
             get 
@@ -371,6 +527,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_a9", value);
             }
         }
+
+        public static async Task<string> ФоновіЗадачі()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_a9");
+            return recordResult.Result ? (recordResult.Value.ToString() ?? "") : "";
+        }
+
+        public static async Task ФоновіЗадачі(string value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_a9", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static bool ЗупинитиФоновіЗадачі_Const
         {
             get 
@@ -383,6 +550,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_g6", value);
             }
         }
+
+        public static async Task<bool> ЗупинитиФоновіЗадачі()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_g6");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (bool)recordResult.Value : false) : false;
+        }
+
+        public static async Task ЗупинитиФоновіЗадачі(bool value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_g6", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static string ЗаблокованіОбєкти_Const
         {
             get 
@@ -395,6 +573,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_g7", value);
             }
         }
+
+        public static async Task<string> ЗаблокованіОбєкти()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_g7");
+            return recordResult.Result ? (recordResult.Value.ToString() ?? "") : "";
+        }
+
+        public static async Task ЗаблокованіОбєкти(string value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_g7", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static string ПовідомленняТаПомилки_Const
         {
             get 
@@ -407,6 +596,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_h8", value);
             }
         }
+
+        public static async Task<string> ПовідомленняТаПомилки()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_h8");
+            return recordResult.Result ? (recordResult.Value.ToString() ?? "") : "";
+        }
+
+        public static async Task ПовідомленняТаПомилки(string value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_h8", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static bool ВестиОблікПоСеріяхНоменклатури_Const
         {
             get 
@@ -419,6 +619,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_h9", value);
             }
         }
+
+        public static async Task<bool> ВестиОблікПоСеріяхНоменклатури()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_h9");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (bool)recordResult.Value : false) : false;
+        }
+
+        public static async Task ВестиОблікПоСеріяхНоменклатури(bool value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_h9", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static bool ВестиОблікПоХарактеристикахНоменклатури_Const
         {
             get 
@@ -431,6 +642,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_i1", value);
             }
         }
+
+        public static async Task<bool> ВестиОблікПоХарактеристикахНоменклатури()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_i1");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (bool)recordResult.Value : false) : false;
+        }
+
+        public static async Task ВестиОблікПоХарактеристикахНоменклатури(bool value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_i1", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static string НалаштуванняКористувача_Const
         {
             get 
@@ -443,6 +665,15 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_i6", value);
             }
         }
+
+        public static async Task<string> НалаштуванняКористувача()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_i6");
+            return recordResult.Result ? (recordResult.Value.ToString() ?? "") : "";
+        }
+
+        public static async Task НалаштуванняКористувача(string value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_i6", value);
         
         
         public class ЖурналРеєстрації_Журнал_TablePart : ConstantsTablePart
@@ -463,7 +694,7 @@ namespace GeneratedCode.Константи
 
             public event EventHandler? Saved;
         
-            public async ValueTask Read()
+            public async Task Read()
             {
                 Records.Clear();
                 await base.BaseRead();
@@ -485,7 +716,7 @@ namespace GeneratedCode.Константи
                 base.BaseClear();
             }
         
-            public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+            public async Task Save(bool clear_all_before_save /*= true*/) 
             {
                 await base.BaseBeginTransaction();
                 
@@ -512,13 +743,13 @@ namespace GeneratedCode.Константи
                 Saved?.Invoke(this, new EventArgs());
             }
 
-            public async ValueTask Remove(Record record)
+            public async Task Remove(Record record)
             {
                 await base.BaseRemove(record.UID);
                 Records.RemoveAll(item => record.UID == item.UID);
             }
 
-            public async ValueTask RemoveAll(List<Record> records)
+            public async Task RemoveAll(List<Record> records)
             {
                 List<Guid> removeList = [];
 
@@ -533,7 +764,7 @@ namespace GeneratedCode.Константи
                 Records.RemoveAll(item => removeList.Exists(uid => uid == item.UID));
             }
         
-            public async ValueTask Delete()
+            public async Task Delete()
             {
                 await base.BaseDelete();
             }
@@ -569,7 +800,7 @@ namespace GeneratedCode.Константи
 
             public event EventHandler? Saved;
         
-            public async ValueTask Read()
+            public async Task Read()
             {
                 Records.Clear();
                 await base.BaseRead();
@@ -593,7 +824,7 @@ namespace GeneratedCode.Константи
                 base.BaseClear();
             }
         
-            public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+            public async Task Save(bool clear_all_before_save /*= true*/) 
             {
                 await base.BaseBeginTransaction();
                 
@@ -622,13 +853,13 @@ namespace GeneratedCode.Константи
                 Saved?.Invoke(this, new EventArgs());
             }
 
-            public async ValueTask Remove(Record record)
+            public async Task Remove(Record record)
             {
                 await base.BaseRemove(record.UID);
                 Records.RemoveAll(item => record.UID == item.UID);
             }
 
-            public async ValueTask RemoveAll(List<Record> records)
+            public async Task RemoveAll(List<Record> records)
             {
                 List<Guid> removeList = [];
 
@@ -643,7 +874,7 @@ namespace GeneratedCode.Константи
                 Records.RemoveAll(item => removeList.Exists(uid => uid == item.UID));
             }
         
-            public async ValueTask Delete()
+            public async Task Delete()
             {
                 await base.BaseDelete();
             }
@@ -679,7 +910,7 @@ namespace GeneratedCode.Константи
 
             public event EventHandler? Saved;
         
-            public async ValueTask Read()
+            public async Task Read()
             {
                 Records.Clear();
                 await base.BaseRead();
@@ -701,7 +932,7 @@ namespace GeneratedCode.Константи
                 base.BaseClear();
             }
         
-            public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+            public async Task Save(bool clear_all_before_save /*= true*/) 
             {
                 await base.BaseBeginTransaction();
                 
@@ -728,13 +959,13 @@ namespace GeneratedCode.Константи
                 Saved?.Invoke(this, new EventArgs());
             }
 
-            public async ValueTask Remove(Record record)
+            public async Task Remove(Record record)
             {
                 await base.BaseRemove(record.UID);
                 Records.RemoveAll(item => record.UID == item.UID);
             }
 
-            public async ValueTask RemoveAll(List<Record> records)
+            public async Task RemoveAll(List<Record> records)
             {
                 List<Guid> removeList = [];
 
@@ -749,7 +980,7 @@ namespace GeneratedCode.Константи
                 Records.RemoveAll(item => removeList.Exists(uid => uid == item.UID));
             }
         
-            public async ValueTask Delete()
+            public async Task Delete()
             {
                 await base.BaseDelete();
             }
@@ -785,7 +1016,7 @@ namespace GeneratedCode.Константи
 
             public event EventHandler? Saved;
         
-            public async ValueTask Read()
+            public async Task Read()
             {
                 Records.Clear();
                 await base.BaseRead();
@@ -809,7 +1040,7 @@ namespace GeneratedCode.Константи
                 base.BaseClear();
             }
         
-            public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+            public async Task Save(bool clear_all_before_save /*= true*/) 
             {
                 await base.BaseBeginTransaction();
                 
@@ -838,13 +1069,13 @@ namespace GeneratedCode.Константи
                 Saved?.Invoke(this, new EventArgs());
             }
 
-            public async ValueTask Remove(Record record)
+            public async Task Remove(Record record)
             {
                 await base.BaseRemove(record.UID);
                 Records.RemoveAll(item => record.UID == item.UID);
             }
 
-            public async ValueTask RemoveAll(List<Record> records)
+            public async Task RemoveAll(List<Record> records)
             {
                 List<Guid> removeList = [];
 
@@ -859,7 +1090,7 @@ namespace GeneratedCode.Константи
                 Records.RemoveAll(item => removeList.Exists(uid => uid == item.UID));
             }
         
-            public async ValueTask Delete()
+            public async Task Delete()
             {
                 await base.BaseDelete();
             }
@@ -896,7 +1127,7 @@ namespace GeneratedCode.Константи
 
             public event EventHandler? Saved;
         
-            public async ValueTask Read()
+            public async Task Read()
             {
                 Records.Clear();
                 await base.BaseRead();
@@ -919,7 +1150,7 @@ namespace GeneratedCode.Константи
                 base.BaseClear();
             }
         
-            public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+            public async Task Save(bool clear_all_before_save /*= true*/) 
             {
                 await base.BaseBeginTransaction();
                 
@@ -947,13 +1178,13 @@ namespace GeneratedCode.Константи
                 Saved?.Invoke(this, new EventArgs());
             }
 
-            public async ValueTask Remove(Record record)
+            public async Task Remove(Record record)
             {
                 await base.BaseRemove(record.UID);
                 Records.RemoveAll(item => record.UID == item.UID);
             }
 
-            public async ValueTask RemoveAll(List<Record> records)
+            public async Task RemoveAll(List<Record> records)
             {
                 List<Guid> removeList = [];
 
@@ -968,7 +1199,7 @@ namespace GeneratedCode.Константи
                 Records.RemoveAll(item => removeList.Exists(uid => uid == item.UID));
             }
         
-            public async ValueTask Delete()
+            public async Task Delete()
             {
                 await base.BaseDelete();
             }
@@ -990,6 +1221,8 @@ namespace GeneratedCode.Константи
 	  #region CONSTANTS BLOCK "НумераціяДокументів"
     public static class НумераціяДокументів
     {       
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ПоступленняТоварівТаПослуг_Const
         {
             get 
@@ -1002,6 +1235,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_b7", value);
             }
         }
+
+        public static async Task<int> ПоступленняТоварівТаПослуг()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_b7");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ПоступленняТоварівТаПослуг(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_b7", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ЗамовленняПостачальнику_Const
         {
             get 
@@ -1014,6 +1258,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_b9", value);
             }
         }
+
+        public static async Task<int> ЗамовленняПостачальнику()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_b9");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ЗамовленняПостачальнику(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_b9", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ЗамовленняКлієнта_Const
         {
             get 
@@ -1026,6 +1281,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_c1", value);
             }
         }
+
+        public static async Task<int> ЗамовленняКлієнта()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_c1");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ЗамовленняКлієнта(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_c1", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int РеалізаціяТоварівТаПослуг_Const
         {
             get 
@@ -1038,6 +1304,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_c2", value);
             }
         }
+
+        public static async Task<int> РеалізаціяТоварівТаПослуг()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_c2");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task РеалізаціяТоварівТаПослуг(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_c2", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ВстановленняЦінНоменклатури_Const
         {
             get 
@@ -1050,6 +1327,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_c4", value);
             }
         }
+
+        public static async Task<int> ВстановленняЦінНоменклатури()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_c4");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ВстановленняЦінНоменклатури(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_c4", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ПрихіднийКасовийОрдер_Const
         {
             get 
@@ -1062,6 +1350,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_c5", value);
             }
         }
+
+        public static async Task<int> ПрихіднийКасовийОрдер()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_c5");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ПрихіднийКасовийОрдер(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_c5", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int РозхіднийКасовийОрдер_Const
         {
             get 
@@ -1074,6 +1373,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_c6", value);
             }
         }
+
+        public static async Task<int> РозхіднийКасовийОрдер()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_c6");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task РозхіднийКасовийОрдер(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_c6", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ПереміщенняТоварів_Const
         {
             get 
@@ -1086,6 +1396,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_c7", value);
             }
         }
+
+        public static async Task<int> ПереміщенняТоварів()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_c7");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ПереміщенняТоварів(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_c7", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ПоверненняТоварівПостачальнику_Const
         {
             get 
@@ -1098,6 +1419,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_c8", value);
             }
         }
+
+        public static async Task<int> ПоверненняТоварівПостачальнику()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_c8");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ПоверненняТоварівПостачальнику(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_c8", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ПоверненняТоварівВідКлієнта_Const
         {
             get 
@@ -1110,6 +1442,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_c9", value);
             }
         }
+
+        public static async Task<int> ПоверненняТоварівВідКлієнта()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_c9");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ПоверненняТоварівВідКлієнта(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_c9", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int АктВиконанихРобіт_Const
         {
             get 
@@ -1122,6 +1465,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_f6", value);
             }
         }
+
+        public static async Task<int> АктВиконанихРобіт()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_f6");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task АктВиконанихРобіт(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_f6", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ВведенняЗалишків_Const
         {
             get 
@@ -1134,6 +1488,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_f7", value);
             }
         }
+
+        public static async Task<int> ВведенняЗалишків()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_f7");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ВведенняЗалишків(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_f7", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int НадлишкиТоварів_Const
         {
             get 
@@ -1146,6 +1511,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_f8", value);
             }
         }
+
+        public static async Task<int> НадлишкиТоварів()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_f8");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task НадлишкиТоварів(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_f8", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ПересортицяТоварів_Const
         {
             get 
@@ -1158,6 +1534,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_f9", value);
             }
         }
+
+        public static async Task<int> ПересортицяТоварів()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_f9");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ПересортицяТоварів(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_f9", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ПерерахунокТоварів_Const
         {
             get 
@@ -1170,6 +1557,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_g1", value);
             }
         }
+
+        public static async Task<int> ПерерахунокТоварів()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_g1");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ПерерахунокТоварів(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_g1", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ПсуванняТоварів_Const
         {
             get 
@@ -1182,6 +1580,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_g2", value);
             }
         }
+
+        public static async Task<int> ПсуванняТоварів()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_g2");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ПсуванняТоварів(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_g2", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ВнутрішнєСпоживанняТоварів_Const
         {
             get 
@@ -1194,6 +1603,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_h1", value);
             }
         }
+
+        public static async Task<int> ВнутрішнєСпоживанняТоварів()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_h1");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ВнутрішнєСпоживанняТоварів(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_h1", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int РахунокФактура_Const
         {
             get 
@@ -1206,6 +1626,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_h2", value);
             }
         }
+
+        public static async Task<int> РахунокФактура()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_h2");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task РахунокФактура(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_h2", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int РозміщенняТоварівНаСкладі_Const
         {
             get 
@@ -1218,6 +1649,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_b2", value);
             }
         }
+
+        public static async Task<int> РозміщенняТоварівНаСкладі()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_b2");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task РозміщенняТоварівНаСкладі(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_b2", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ПереміщенняТоварівНаСкладі_Const
         {
             get 
@@ -1230,6 +1672,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_b3", value);
             }
         }
+
+        public static async Task<int> ПереміщенняТоварівНаСкладі()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_b3");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ПереміщенняТоварівНаСкладі(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_b3", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ЗбіркаТоварівНаСкладі_Const
         {
             get 
@@ -1242,6 +1695,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_b4", value);
             }
         }
+
+        public static async Task<int> ЗбіркаТоварівНаСкладі()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_b4");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ЗбіркаТоварівНаСкладі(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_b4", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int РозміщенняНоменклатуриПоКоміркам_Const
         {
             get 
@@ -1254,6 +1718,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_b5", value);
             }
         }
+
+        public static async Task<int> РозміщенняНоменклатуриПоКоміркам()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_b5");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task РозміщенняНоменклатуриПоКоміркам(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_b5", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int КорегуванняБоргу_Const
         {
             get 
@@ -1266,6 +1741,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_i5", value);
             }
         }
+
+        public static async Task<int> КорегуванняБоргу()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_i5");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task КорегуванняБоргу(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_i5", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ЗакриттяЗамовленняКлієнта_Const
         {
             get 
@@ -1278,6 +1764,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_i8", value);
             }
         }
+
+        public static async Task<int> ЗакриттяЗамовленняКлієнта()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_i8");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ЗакриттяЗамовленняКлієнта(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_i8", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ЗакриттяРахункуФактури_Const
         {
             get 
@@ -1290,6 +1787,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_i9", value);
             }
         }
+
+        public static async Task<int> ЗакриттяРахункуФактури()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_i9");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ЗакриттяРахункуФактури(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_i9", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ЗакриттяЗамовленняПостачальнику_Const
         {
             get 
@@ -1302,6 +1810,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_j1", value);
             }
         }
+
+        public static async Task<int> ЗакриттяЗамовленняПостачальнику()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_j1");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ЗакриттяЗамовленняПостачальнику(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_j1", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ЧекККМ_Const
         {
             get 
@@ -1314,6 +1833,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_h6", value);
             }
         }
+
+        public static async Task<int> ЧекККМ()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_h6");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ЧекККМ(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_h6", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int БухгалтерськаОперація_Const
         {
             get 
@@ -1326,6 +1856,15 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_j3", value);
             }
         }
+
+        public static async Task<int> БухгалтерськаОперація()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_j3");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task БухгалтерськаОперація(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_j3", value);
              
     }
     #endregion
@@ -1333,6 +1872,8 @@ namespace GeneratedCode.Константи
 	  #region CONSTANTS BLOCK "НумераціяДовідників"
     public static class НумераціяДовідників
     {       
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int Номенклатура_Const
         {
             get 
@@ -1345,6 +1886,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_b8", value);
             }
         }
+
+        public static async Task<int> Номенклатура()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_b8");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task Номенклатура(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_b8", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int Номенклатура_Папки_Const
         {
             get 
@@ -1357,6 +1909,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_d1", value);
             }
         }
+
+        public static async Task<int> Номенклатура_Папки()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_d1");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task Номенклатура_Папки(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_d1", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int Склади_Const
         {
             get 
@@ -1369,6 +1932,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_d2", value);
             }
         }
+
+        public static async Task<int> Склади()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_d2");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task Склади(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_d2", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int Склади_Папки_Const
         {
             get 
@@ -1381,6 +1955,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_d3", value);
             }
         }
+
+        public static async Task<int> Склади_Папки()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_d3");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task Склади_Папки(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_d3", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int Контрагенти_Const
         {
             get 
@@ -1393,6 +1978,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_d4", value);
             }
         }
+
+        public static async Task<int> Контрагенти()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_d4");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task Контрагенти(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_d4", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int Контрагенти_Папки_Const
         {
             get 
@@ -1405,6 +2001,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_d5", value);
             }
         }
+
+        public static async Task<int> Контрагенти_Папки()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_d5");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task Контрагенти_Папки(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_d5", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ХарактеристикиНоменклатури_Const
         {
             get 
@@ -1417,6 +2024,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_d6", value);
             }
         }
+
+        public static async Task<int> ХарактеристикиНоменклатури()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_d6");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ХарактеристикиНоменклатури(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_d6", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int Валюти_Const
         {
             get 
@@ -1429,6 +2047,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_d7", value);
             }
         }
+
+        public static async Task<int> Валюти()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_d7");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task Валюти(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_d7", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int Організації_Const
         {
             get 
@@ -1441,6 +2070,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_d8", value);
             }
         }
+
+        public static async Task<int> Організації()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_d8");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task Організації(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_d8", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int Виробники_Const
         {
             get 
@@ -1453,6 +2093,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_d9", value);
             }
         }
+
+        public static async Task<int> Виробники()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_d9");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task Виробники(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_d9", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ВидиНоменклатури_Const
         {
             get 
@@ -1465,6 +2116,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_e1", value);
             }
         }
+
+        public static async Task<int> ВидиНоменклатури()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_e1");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ВидиНоменклатури(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_e1", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ПакуванняОдиниціВиміру_Const
         {
             get 
@@ -1477,6 +2139,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_e2", value);
             }
         }
+
+        public static async Task<int> ПакуванняОдиниціВиміру()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_e2");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ПакуванняОдиниціВиміру(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_e2", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ВидиЦін_Const
         {
             get 
@@ -1489,6 +2162,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_e3", value);
             }
         }
+
+        public static async Task<int> ВидиЦін()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_e3");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ВидиЦін(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_e3", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ВидиЦінПостачальників_Const
         {
             get 
@@ -1501,6 +2185,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_e4", value);
             }
         }
+
+        public static async Task<int> ВидиЦінПостачальників()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_e4");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ВидиЦінПостачальників(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_e4", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int Користувачі_Const
         {
             get 
@@ -1513,6 +2208,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_e5", value);
             }
         }
+
+        public static async Task<int> Користувачі()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_e5");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task Користувачі(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_e5", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ФізичніОсоби_Const
         {
             get 
@@ -1525,6 +2231,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_e6", value);
             }
         }
+
+        public static async Task<int> ФізичніОсоби()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_e6");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ФізичніОсоби(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_e6", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int СтруктураПідприємства_Const
         {
             get 
@@ -1537,6 +2254,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_e7", value);
             }
         }
+
+        public static async Task<int> СтруктураПідприємства()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_e7");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task СтруктураПідприємства(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_e7", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int КраїниСвіту_Const
         {
             get 
@@ -1549,6 +2277,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_e8", value);
             }
         }
+
+        public static async Task<int> КраїниСвіту()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_e8");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task КраїниСвіту(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_e8", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int Файли_Const
         {
             get 
@@ -1561,6 +2300,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_e9", value);
             }
         }
+
+        public static async Task<int> Файли()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_e9");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task Файли(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_e9", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int Каси_Const
         {
             get 
@@ -1573,6 +2323,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_f1", value);
             }
         }
+
+        public static async Task<int> Каси()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_f1");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task Каси(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_f1", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int БанківськіРахункиОрганізацій_Const
         {
             get 
@@ -1585,6 +2346,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_f2", value);
             }
         }
+
+        public static async Task<int> БанківськіРахункиОрганізацій()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_f2");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task БанківськіРахункиОрганізацій(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_f2", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ДоговориКонтрагентів_Const
         {
             get 
@@ -1597,6 +2369,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_f3", value);
             }
         }
+
+        public static async Task<int> ДоговориКонтрагентів()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_f3");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ДоговориКонтрагентів(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_f3", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int БанківськіРахункиКонтрагентів_Const
         {
             get 
@@ -1609,6 +2392,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_f4", value);
             }
         }
+
+        public static async Task<int> БанківськіРахункиКонтрагентів()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_f4");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task БанківськіРахункиКонтрагентів(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_f4", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int СтаттяРухуКоштів_Const
         {
             get 
@@ -1621,6 +2415,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_f5", value);
             }
         }
+
+        public static async Task<int> СтаттяРухуКоштів()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_f5");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task СтаттяРухуКоштів(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_f5", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int СкладськіКомірки_Папки_Const
         {
             get 
@@ -1633,6 +2438,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_b1", value);
             }
         }
+
+        public static async Task<int> СкладськіКомірки_Папки()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_b1");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task СкладськіКомірки_Папки(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_b1", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int Банки_Const
         {
             get 
@@ -1645,6 +2461,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_g8", value);
             }
         }
+
+        public static async Task<int> Банки()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_g8");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task Банки(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_g8", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int Блокнот_Const
         {
             get 
@@ -1657,6 +2484,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_i3", value);
             }
         }
+
+        public static async Task<int> Блокнот()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_i3");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task Блокнот(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_i3", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ВидиЗапасів_Const
         {
             get 
@@ -1669,6 +2507,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_i4", value);
             }
         }
+
+        public static async Task<int> ВидиЗапасів()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_i4");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ВидиЗапасів(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_i4", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ЗбереженіЗвіти_Const
         {
             get 
@@ -1681,6 +2530,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_i7", value);
             }
         }
+
+        public static async Task<int> ЗбереженіЗвіти()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_i7");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ЗбереженіЗвіти(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_i7", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ТипиБухОперацій_Const
         {
             get 
@@ -1693,6 +2553,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_j5", value);
             }
         }
+
+        public static async Task<int> ТипиБухОперацій()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_j5");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ТипиБухОперацій(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_j5", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int Співробітники_Const
         {
             get 
@@ -1705,6 +2576,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_l4", value);
             }
         }
+
+        public static async Task<int> Співробітники()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_l4");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task Співробітники(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_l4", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int Бланки_Const
         {
             get 
@@ -1717,6 +2599,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_l8", value);
             }
         }
+
+        public static async Task<int> Бланки()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_l8");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task Бланки(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_l8", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int НоменклатураВнутрішня_Папки_Const
         {
             get 
@@ -1729,6 +2622,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_n2", value);
             }
         }
+
+        public static async Task<int> НоменклатураВнутрішня_Папки()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_n2");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task НоменклатураВнутрішня_Папки(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_n2", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int НоменклатураВнутрішня_Const
         {
             get 
@@ -1741,6 +2645,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_n4", value);
             }
         }
+
+        public static async Task<int> НоменклатураВнутрішня()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_n4");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task НоменклатураВнутрішня(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_n4", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ГрошовіРахункиВласні_Const
         {
             get 
@@ -1753,6 +2668,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_n7", value);
             }
         }
+
+        public static async Task<int> ГрошовіРахункиВласні()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_n7");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ГрошовіРахункиВласні(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_n7", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int МалоцінніПредмети_Const
         {
             get 
@@ -1765,6 +2691,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_n9", value);
             }
         }
+
+        public static async Task<int> МалоцінніПредмети()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_n9");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task МалоцінніПредмети(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_n9", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int Підрозділи_Const
         {
             get 
@@ -1777,6 +2714,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_m3", value);
             }
         }
+
+        public static async Task<int> Підрозділи()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_m3");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task Підрозділи(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_m3", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ОсновніЗасоби_Const
         {
             get 
@@ -1789,6 +2737,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_m6", value);
             }
         }
+
+        public static async Task<int> ОсновніЗасоби()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_m6");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ОсновніЗасоби(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_m6", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ВидиЖурналів_Const
         {
             get 
@@ -1801,6 +2760,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_m9", value);
             }
         }
+
+        public static async Task<int> ВидиЖурналів()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_m9");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ВидиЖурналів(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_m9", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int ВидиПодатків_Const
         {
             get 
@@ -1813,6 +2783,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_o2", value);
             }
         }
+
+        public static async Task<int> ВидиПодатків()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_o2");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task ВидиПодатків(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_o2", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int Статті_Const
         {
             get 
@@ -1825,6 +2806,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_o4", value);
             }
         }
+
+        public static async Task<int> Статті()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_o4");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task Статті(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_o4", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static int Категорії_Const
         {
             get 
@@ -1837,6 +2829,15 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_o7", value);
             }
         }
+
+        public static async Task<int> Категорії()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_o7");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task Категорії(int value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_o7", value);
              
     }
     #endregion
@@ -1844,6 +2845,8 @@ namespace GeneratedCode.Константи
 	  #region CONSTANTS BLOCK "ЖурналиДокументів"
     public static class ЖурналиДокументів
     {       
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static string ОсновнийТипПеріоду_Const
         {
             get 
@@ -1856,6 +2859,15 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_h3", value);
             }
         }
+
+        public static async Task<string> ОсновнийТипПеріоду()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_h3");
+            return recordResult.Result ? (recordResult.Value.ToString() ?? "") : "";
+        }
+
+        public static async Task ОсновнийТипПеріоду(string value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_h3", value);
              
     }
     #endregion
@@ -1863,6 +2875,8 @@ namespace GeneratedCode.Константи
 	  #region CONSTANTS BLOCK "ПартіїТоварів"
     public static class ПартіїТоварів
     {       
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static Перелічення.МетодиСписання МетодСписанняПартій_Const
         {
             get 
@@ -1875,6 +2889,15 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_h4", (int)value);
             }
         }
+
+        public static async Task<Перелічення.МетодиСписання> МетодСписанняПартій()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_h4");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (Перелічення.МетодиСписання)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task МетодСписанняПартій(Перелічення.МетодиСписання value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_h4", (int)value);
              
     }
     #endregion
@@ -1882,6 +2905,8 @@ namespace GeneratedCode.Константи
 	  #region CONSTANTS BLOCK "ЗавантаженняДанихІзСайтів"
     public static class ЗавантаженняДанихІзСайтів
     {       
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static string ЗавантаженняКурсівВалют_Const
         {
             get 
@@ -1894,6 +2919,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_h5", value);
             }
         }
+
+        public static async Task<string> ЗавантаженняКурсівВалют()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_h5");
+            return recordResult.Result ? (recordResult.Value.ToString() ?? "") : "";
+        }
+
+        public static async Task ЗавантаженняКурсівВалют(string value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_h5", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static bool АвтоматичноЗавантажуватиКурсиВалютПриЗапуску_Const
         {
             get 
@@ -1906,6 +2942,17 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_b6", value);
             }
         }
+
+        public static async Task<bool> АвтоматичноЗавантажуватиКурсиВалютПриЗапуску()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_b6");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (bool)recordResult.Value : false) : false;
+        }
+
+        public static async Task АвтоматичноЗавантажуватиКурсиВалютПриЗапуску(bool value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_b6", value);
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static string ЗавантаженняСпискуБанків_Const
         {
             get 
@@ -1918,6 +2965,15 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_g3", value);
             }
         }
+
+        public static async Task<string> ЗавантаженняСпискуБанків()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_g3");
+            return recordResult.Result ? (recordResult.Value.ToString() ?? "") : "";
+        }
+
+        public static async Task ЗавантаженняСпискуБанків(string value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_g3", value);
         
         
         public class ЗавантаженняКурсівВалют_Історія_TablePart : ConstantsTablePart
@@ -1938,7 +2994,7 @@ namespace GeneratedCode.Константи
 
             public event EventHandler? Saved;
         
-            public async ValueTask Read()
+            public async Task Read()
             {
                 Records.Clear();
                 await base.BaseRead();
@@ -1960,7 +3016,7 @@ namespace GeneratedCode.Константи
                 base.BaseClear();
             }
         
-            public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+            public async Task Save(bool clear_all_before_save /*= true*/) 
             {
                 await base.BaseBeginTransaction();
                 
@@ -1987,13 +3043,13 @@ namespace GeneratedCode.Константи
                 Saved?.Invoke(this, new EventArgs());
             }
 
-            public async ValueTask Remove(Record record)
+            public async Task Remove(Record record)
             {
                 await base.BaseRemove(record.UID);
                 Records.RemoveAll(item => record.UID == item.UID);
             }
 
-            public async ValueTask RemoveAll(List<Record> records)
+            public async Task RemoveAll(List<Record> records)
             {
                 List<Guid> removeList = [];
 
@@ -2008,7 +3064,7 @@ namespace GeneratedCode.Константи
                 Records.RemoveAll(item => removeList.Exists(uid => uid == item.UID));
             }
         
-            public async ValueTask Delete()
+            public async Task Delete()
             {
                 await base.BaseDelete();
             }
@@ -2029,6 +3085,8 @@ namespace GeneratedCode.Константи
 	  #region CONSTANTS BLOCK "ПриЗапускуПрограми"
     public static class ПриЗапускуПрограми
     {       
+        
+        //[Obsolete("Бажано не використовувати! Устарівний варіант звернення до константи.")]
         public static bool ПрограмаЗаповненаПочатковимиДаними_Const
         {
             get 
@@ -2041,6 +3099,15 @@ namespace GeneratedCode.Константи
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_h7", value);
             }
         }
+
+        public static async Task<bool> ПрограмаЗаповненаПочатковимиДаними()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_h7");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (bool)recordResult.Value : false) : false;
+        }
+
+        public static async Task ПрограмаЗаповненаПочатковимиДаними(bool value) =>
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_h7", value);
              
     }
     #endregion
@@ -2083,7 +3150,7 @@ namespace GeneratedCode.Довідники
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = Організації_Const.FULLNAME + " *";
@@ -2092,7 +3159,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -2122,7 +3189,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_a1"] = Назва;
             base.FieldValue["col_a2"] = Код;
@@ -2146,9 +3213,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<Організації_Objest> Copy(bool copyTableParts = false)
+        public async Task<Організації_Objest> Copy(bool copyTableParts = false)
         {
-            Організації_Objest copy = new Організації_Objest()
+            Організації_Objest copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -2180,13 +3247,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete(["tab_a02", ]);
@@ -2197,7 +3264,7 @@ namespace GeneratedCode.Довідники
             return new Організації_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(Організації_Const.PRESENTATION_FIELDS);
         }
@@ -2230,10 +3297,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<Організації_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Організації_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Організації_Objest obj = new Організації_Objest();
+            Організації_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -2247,7 +3314,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(Організації_Const.PRESENTATION_FIELDS);
         }
@@ -2260,12 +3327,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -2280,18 +3347,18 @@ namespace GeneratedCode.Довідники
     public class Організації_Select : DirectorySelect
     {
         public Організації_Select() : base(Config.Kernel, "tab_a01") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Організації_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Організації_Pointer? Current { get; private set; }
         
-        public async ValueTask<Організації_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<Організації_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new Організації_Pointer(pointer) : new Організації_Pointer();
         }
         
-        public async ValueTask<List<Організації_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<Організації_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<Організації_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -2350,14 +3417,14 @@ namespace GeneratedCode.Довідники
             
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     Тип = (fieldValue["col_a9"] != DBNull.Value) ? (Перелічення.ТипиКонтактноїІнформації)fieldValue["col_a9"] : 0,
@@ -2378,7 +3445,7 @@ namespace GeneratedCode.Довідники
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_a01"))
                 throw new Exception("Owner not exist");
@@ -2429,7 +3496,7 @@ namespace GeneratedCode.Довідники
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [..Records];
             foreach (Record copyRecordItem in Records)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -2489,7 +3556,7 @@ namespace GeneratedCode.Довідники
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = Номенклатура_Const.FULLNAME + " *";
@@ -2498,7 +3565,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -2530,7 +3597,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_b1"] = Назва;
             base.FieldValue["col_b2"] = Код;
@@ -2556,9 +3623,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<Номенклатура_Objest> Copy(bool copyTableParts = false)
+        public async Task<Номенклатура_Objest> Copy(bool copyTableParts = false)
         {
-            Номенклатура_Objest copy = new Номенклатура_Objest()
+            Номенклатура_Objest copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -2592,7 +3659,7 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
                 await Номенклатура_Triggers.SetDeletionLabel(this, label);      
@@ -2600,7 +3667,7 @@ namespace GeneratedCode.Довідники
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
                 await Номенклатура_Triggers.BeforeDelete(this);      
@@ -2613,7 +3680,7 @@ namespace GeneratedCode.Довідники
             return new Номенклатура_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(Номенклатура_Const.PRESENTATION_FIELDS);
         }
@@ -2648,10 +3715,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<Номенклатура_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Номенклатура_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Номенклатура_Objest obj = new Номенклатура_Objest();
+            Номенклатура_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -2665,7 +3732,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(Номенклатура_Const.PRESENTATION_FIELDS);
         }
@@ -2678,12 +3745,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             Номенклатура_Objest? obj = await GetDirectoryObject();
               if (obj != null) await Номенклатура_Triggers.SetDeletionLabel(obj, label);
@@ -2700,18 +3767,18 @@ namespace GeneratedCode.Довідники
     public class Номенклатура_Select : DirectorySelect
     {
         public Номенклатура_Select() : base(Config.Kernel, "tab_a03") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Номенклатура_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Номенклатура_Pointer? Current { get; private set; }
         
-        public async ValueTask<Номенклатура_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<Номенклатура_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new Номенклатура_Pointer(pointer) : new Номенклатура_Pointer();
         }
         
-        public async ValueTask<List<Номенклатура_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<Номенклатура_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<Номенклатура_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -2767,14 +3834,14 @@ namespace GeneratedCode.Довідники
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     Файл = new Довідники.Файли_Pointer(fieldValue["col_a1"]),
@@ -2796,7 +3863,7 @@ namespace GeneratedCode.Довідники
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_a03"))
                 throw new Exception("Owner not exist");
@@ -2841,7 +3908,7 @@ namespace GeneratedCode.Довідники
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [..Records];
             foreach (Record copyRecordItem in Records)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -2882,7 +3949,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = Виробники_Const.FULLNAME + " *";
@@ -2891,7 +3958,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -2907,7 +3974,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_b6"] = Назва;
             base.FieldValue["col_b7"] = Код;
@@ -2923,9 +3990,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<Виробники_Objest> Copy(bool copyTableParts = false)
+        public async Task<Виробники_Objest> Copy(bool copyTableParts = false)
         {
-            Виробники_Objest copy = new Виробники_Objest()
+            Виробники_Objest copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -2940,13 +4007,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -2957,7 +4024,7 @@ namespace GeneratedCode.Довідники
             return new Виробники_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(Виробники_Const.PRESENTATION_FIELDS);
         }
@@ -2979,10 +4046,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<Виробники_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Виробники_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Виробники_Objest obj = new Виробники_Objest();
+            Виробники_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -2996,7 +4063,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(Виробники_Const.PRESENTATION_FIELDS);
         }
@@ -3009,12 +4076,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -3029,18 +4096,18 @@ namespace GeneratedCode.Довідники
     public class Виробники_Select : DirectorySelect
     {
         public Виробники_Select() : base(Config.Kernel, "tab_a04") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Виробники_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Виробники_Pointer? Current { get; private set; }
         
-        public async ValueTask<Виробники_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<Виробники_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new Виробники_Pointer(pointer) : new Виробники_Pointer();
         }
         
-        public async ValueTask<List<Виробники_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<Виробники_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<Виробники_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -3078,7 +4145,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ВидиНоменклатури_Const.FULLNAME + " *";
@@ -3087,7 +4154,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -3106,7 +4173,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_b8"] = Назва;
             base.FieldValue["col_b9"] = Код;
@@ -3125,9 +4192,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<ВидиНоменклатури_Objest> Copy(bool copyTableParts = false)
+        public async Task<ВидиНоменклатури_Objest> Copy(bool copyTableParts = false)
         {
-            ВидиНоменклатури_Objest copy = new ВидиНоменклатури_Objest()
+            ВидиНоменклатури_Objest copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -3145,13 +4212,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -3162,7 +4229,7 @@ namespace GeneratedCode.Довідники
             return new ВидиНоменклатури_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ВидиНоменклатури_Const.PRESENTATION_FIELDS);
         }
@@ -3187,10 +4254,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<ВидиНоменклатури_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ВидиНоменклатури_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ВидиНоменклатури_Objest obj = new ВидиНоменклатури_Objest();
+            ВидиНоменклатури_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -3204,7 +4271,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ВидиНоменклатури_Const.PRESENTATION_FIELDS);
         }
@@ -3217,12 +4284,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -3237,18 +4304,18 @@ namespace GeneratedCode.Довідники
     public class ВидиНоменклатури_Select : DirectorySelect
     {
         public ВидиНоменклатури_Select() : base(Config.Kernel, "tab_a05") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВидиНоменклатури_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ВидиНоменклатури_Pointer? Current { get; private set; }
         
-        public async ValueTask<ВидиНоменклатури_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ВидиНоменклатури_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ВидиНоменклатури_Pointer(pointer) : new ВидиНоменклатури_Pointer();
         }
         
-        public async ValueTask<List<ВидиНоменклатури_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ВидиНоменклатури_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ВидиНоменклатури_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -3285,7 +4352,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ПакуванняОдиниціВиміру_Const.FULLNAME + " *";
@@ -3294,7 +4361,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -3312,7 +4379,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             
                 await ПакуванняОдиниціВиміру_Triggers.BeforeSave(this);
@@ -3332,9 +4399,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<ПакуванняОдиниціВиміру_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПакуванняОдиниціВиміру_Objest> Copy(bool copyTableParts = false)
         {
-            ПакуванняОдиниціВиміру_Objest copy = new ПакуванняОдиниціВиміру_Objest()
+            ПакуванняОдиниціВиміру_Objest copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -3351,13 +4418,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -3368,7 +4435,7 @@ namespace GeneratedCode.Довідники
             return new ПакуванняОдиниціВиміру_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ПакуванняОдиниціВиміру_Const.PRESENTATION_FIELDS);
         }
@@ -3392,10 +4459,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<ПакуванняОдиниціВиміру_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ПакуванняОдиниціВиміру_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПакуванняОдиниціВиміру_Objest obj = new ПакуванняОдиниціВиміру_Objest();
+            ПакуванняОдиниціВиміру_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -3409,7 +4476,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ПакуванняОдиниціВиміру_Const.PRESENTATION_FIELDS);
         }
@@ -3422,12 +4489,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -3442,18 +4509,18 @@ namespace GeneratedCode.Довідники
     public class ПакуванняОдиниціВиміру_Select : DirectorySelect
     {
         public ПакуванняОдиниціВиміру_Select() : base(Config.Kernel, "tab_a06") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПакуванняОдиниціВиміру_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПакуванняОдиниціВиміру_Pointer? Current { get; private set; }
         
-        public async ValueTask<ПакуванняОдиниціВиміру_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ПакуванняОдиниціВиміру_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ПакуванняОдиниціВиміру_Pointer(pointer) : new ПакуванняОдиниціВиміру_Pointer();
         }
         
-        public async ValueTask<List<ПакуванняОдиниціВиміру_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ПакуванняОдиниціВиміру_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ПакуванняОдиниціВиміру_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -3491,7 +4558,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = Валюти_Const.FULLNAME + " *";
@@ -3500,7 +4567,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -3519,7 +4586,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_c5"] = Назва;
             base.FieldValue["col_a2"] = КороткаНазва;
@@ -3538,9 +4605,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<Валюти_Objest> Copy(bool copyTableParts = false)
+        public async Task<Валюти_Objest> Copy(bool copyTableParts = false)
         {
-            Валюти_Objest copy = new Валюти_Objest()
+            Валюти_Objest copy = new()
             {
                 Назва = Назва,
                 КороткаНазва = КороткаНазва,
@@ -3558,7 +4625,7 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
                 await Валюти_Triggers.SetDeletionLabel(this, label);      
@@ -3566,7 +4633,7 @@ namespace GeneratedCode.Довідники
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
                 await Валюти_Triggers.BeforeDelete(this);      
@@ -3579,7 +4646,7 @@ namespace GeneratedCode.Довідники
             return new Валюти_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(Валюти_Const.PRESENTATION_FIELDS);
         }
@@ -3604,10 +4671,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<Валюти_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Валюти_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Валюти_Objest obj = new Валюти_Objest();
+            Валюти_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -3621,7 +4688,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(Валюти_Const.PRESENTATION_FIELDS);
         }
@@ -3634,12 +4701,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             Валюти_Objest? obj = await GetDirectoryObject();
               if (obj != null) await Валюти_Triggers.SetDeletionLabel(obj, label);
@@ -3656,18 +4723,18 @@ namespace GeneratedCode.Довідники
     public class Валюти_Select : DirectorySelect
     {
         public Валюти_Select() : base(Config.Kernel, "tab_a07") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Валюти_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Валюти_Pointer? Current { get; private set; }
         
-        public async ValueTask<Валюти_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<Валюти_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new Валюти_Pointer(pointer) : new Валюти_Pointer();
         }
         
-        public async ValueTask<List<Валюти_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<Валюти_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<Валюти_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -3713,7 +4780,7 @@ namespace GeneratedCode.Довідники
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = Контрагенти_Const.FULLNAME + " *";
@@ -3722,7 +4789,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -3752,7 +4819,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_c7"] = Назва;
             base.FieldValue["col_c8"] = Код;
@@ -3777,9 +4844,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<Контрагенти_Objest> Copy(bool copyTableParts = false)
+        public async Task<Контрагенти_Objest> Copy(bool copyTableParts = false)
         {
-            Контрагенти_Objest copy = new Контрагенти_Objest()
+            Контрагенти_Objest copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -3814,7 +4881,7 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
                 await Контрагенти_Triggers.SetDeletionLabel(this, label);      
@@ -3822,7 +4889,7 @@ namespace GeneratedCode.Довідники
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete(["tab_a09", "tab_b20", ]);
@@ -3833,7 +4900,7 @@ namespace GeneratedCode.Довідники
             return new Контрагенти_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(Контрагенти_Const.PRESENTATION_FIELDS);
         }
@@ -3866,10 +4933,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<Контрагенти_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Контрагенти_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Контрагенти_Objest obj = new Контрагенти_Objest();
+            Контрагенти_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -3883,7 +4950,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(Контрагенти_Const.PRESENTATION_FIELDS);
         }
@@ -3896,12 +4963,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             Контрагенти_Objest? obj = await GetDirectoryObject();
               if (obj != null) await Контрагенти_Triggers.SetDeletionLabel(obj, label);
@@ -3918,18 +4985,18 @@ namespace GeneratedCode.Довідники
     public class Контрагенти_Select : DirectorySelect
     {
         public Контрагенти_Select() : base(Config.Kernel, "tab_a08") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Контрагенти_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Контрагенти_Pointer? Current { get; private set; }
         
-        public async ValueTask<Контрагенти_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<Контрагенти_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new Контрагенти_Pointer(pointer) : new Контрагенти_Pointer();
         }
         
-        public async ValueTask<List<Контрагенти_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<Контрагенти_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<Контрагенти_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -3988,14 +5055,14 @@ namespace GeneratedCode.Довідники
             
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     Тип = (fieldValue["col_d2"] != DBNull.Value) ? (Перелічення.ТипиКонтактноїІнформації)fieldValue["col_d2"] : 0,
@@ -4016,7 +5083,7 @@ namespace GeneratedCode.Довідники
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_a08"))
                 throw new Exception("Owner not exist");
@@ -4067,7 +5134,7 @@ namespace GeneratedCode.Довідники
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [..Records];
             foreach (Record copyRecordItem in Records)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -4134,14 +5201,14 @@ namespace GeneratedCode.Довідники
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     Файл = new Довідники.Файли_Pointer(fieldValue["col_a1"]),
@@ -4162,7 +5229,7 @@ namespace GeneratedCode.Довідники
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_a08"))
                 throw new Exception("Owner not exist");
@@ -4206,7 +5273,7 @@ namespace GeneratedCode.Довідники
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [..Records];
             foreach (Record copyRecordItem in Records)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -4256,7 +5323,7 @@ namespace GeneratedCode.Довідники
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = Склади_Const.FULLNAME + " *";
@@ -4265,7 +5332,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -4294,7 +5361,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_d9"] = Назва;
             base.FieldValue["col_e1"] = Код;
@@ -4317,9 +5384,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<Склади_Objest> Copy(bool copyTableParts = false)
+        public async Task<Склади_Objest> Copy(bool copyTableParts = false)
         {
-            Склади_Objest copy = new Склади_Objest()
+            Склади_Objest copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -4350,13 +5417,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete(["tab_a11", ]);
@@ -4367,7 +5434,7 @@ namespace GeneratedCode.Довідники
             return new Склади_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(Склади_Const.PRESENTATION_FIELDS);
         }
@@ -4399,10 +5466,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<Склади_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Склади_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Склади_Objest obj = new Склади_Objest();
+            Склади_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -4416,7 +5483,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(Склади_Const.PRESENTATION_FIELDS);
         }
@@ -4429,12 +5496,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -4449,18 +5516,18 @@ namespace GeneratedCode.Довідники
     public class Склади_Select : DirectorySelect
     {
         public Склади_Select() : base(Config.Kernel, "tab_a10") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Склади_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Склади_Pointer? Current { get; private set; }
         
-        public async ValueTask<Склади_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<Склади_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new Склади_Pointer(pointer) : new Склади_Pointer();
         }
         
-        public async ValueTask<List<Склади_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<Склади_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<Склади_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -4519,14 +5586,14 @@ namespace GeneratedCode.Довідники
             
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     Тип = (fieldValue["col_e2"] != DBNull.Value) ? (Перелічення.ТипиКонтактноїІнформації)fieldValue["col_e2"] : 0,
@@ -4547,7 +5614,7 @@ namespace GeneratedCode.Довідники
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_a10"))
                 throw new Exception("Owner not exist");
@@ -4598,7 +5665,7 @@ namespace GeneratedCode.Довідники
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [..Records];
             foreach (Record copyRecordItem in Records)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -4646,7 +5713,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ВидиЦін_Const.FULLNAME + " *";
@@ -4655,7 +5722,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -4672,7 +5739,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_e9"] = Назва;
             base.FieldValue["col_f1"] = Код;
@@ -4689,9 +5756,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<ВидиЦін_Objest> Copy(bool copyTableParts = false)
+        public async Task<ВидиЦін_Objest> Copy(bool copyTableParts = false)
         {
-            ВидиЦін_Objest copy = new ВидиЦін_Objest()
+            ВидиЦін_Objest copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -4707,13 +5774,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -4724,7 +5791,7 @@ namespace GeneratedCode.Довідники
             return new ВидиЦін_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ВидиЦін_Const.PRESENTATION_FIELDS);
         }
@@ -4747,10 +5814,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<ВидиЦін_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ВидиЦін_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ВидиЦін_Objest obj = new ВидиЦін_Objest();
+            ВидиЦін_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -4764,7 +5831,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ВидиЦін_Const.PRESENTATION_FIELDS);
         }
@@ -4777,12 +5844,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -4797,18 +5864,18 @@ namespace GeneratedCode.Довідники
     public class ВидиЦін_Select : DirectorySelect
     {
         public ВидиЦін_Select() : base(Config.Kernel, "tab_a12") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВидиЦін_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ВидиЦін_Pointer? Current { get; private set; }
         
-        public async ValueTask<ВидиЦін_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ВидиЦін_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ВидиЦін_Pointer(pointer) : new ВидиЦін_Pointer();
         }
         
-        public async ValueTask<List<ВидиЦін_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ВидиЦін_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ВидиЦін_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -4844,7 +5911,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ВидиЦінПостачальників_Const.FULLNAME + " *";
@@ -4853,7 +5920,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -4870,7 +5937,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_f3"] = Назва;
             base.FieldValue["col_f4"] = Код;
@@ -4887,9 +5954,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<ВидиЦінПостачальників_Objest> Copy(bool copyTableParts = false)
+        public async Task<ВидиЦінПостачальників_Objest> Copy(bool copyTableParts = false)
         {
-            ВидиЦінПостачальників_Objest copy = new ВидиЦінПостачальників_Objest()
+            ВидиЦінПостачальників_Objest copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -4905,13 +5972,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -4922,7 +5989,7 @@ namespace GeneratedCode.Довідники
             return new ВидиЦінПостачальників_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ВидиЦінПостачальників_Const.PRESENTATION_FIELDS);
         }
@@ -4945,10 +6012,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<ВидиЦінПостачальників_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ВидиЦінПостачальників_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ВидиЦінПостачальників_Objest obj = new ВидиЦінПостачальників_Objest();
+            ВидиЦінПостачальників_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -4962,7 +6029,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ВидиЦінПостачальників_Const.PRESENTATION_FIELDS);
         }
@@ -4975,12 +6042,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -4995,18 +6062,18 @@ namespace GeneratedCode.Довідники
     public class ВидиЦінПостачальників_Select : DirectorySelect
     {
         public ВидиЦінПостачальників_Select() : base(Config.Kernel, "tab_a13") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВидиЦінПостачальників_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ВидиЦінПостачальників_Pointer? Current { get; private set; }
         
-        public async ValueTask<ВидиЦінПостачальників_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ВидиЦінПостачальників_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ВидиЦінПостачальників_Pointer(pointer) : new ВидиЦінПостачальників_Pointer();
         }
         
-        public async ValueTask<List<ВидиЦінПостачальників_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ВидиЦінПостачальників_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ВидиЦінПостачальників_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -5047,7 +6114,7 @@ namespace GeneratedCode.Довідники
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = Користувачі_Const.FULLNAME + " *";
@@ -5056,7 +6123,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -5081,7 +6148,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_f6"] = Назва;
             base.FieldValue["col_f7"] = Код;
@@ -5100,9 +6167,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<Користувачі_Objest> Copy(bool copyTableParts = false)
+        public async Task<Користувачі_Objest> Copy(bool copyTableParts = false)
         {
-            Користувачі_Objest copy = new Користувачі_Objest()
+            Користувачі_Objest copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -5129,13 +6196,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete(["tab_a15", ]);
@@ -5146,7 +6213,7 @@ namespace GeneratedCode.Довідники
             return new Користувачі_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(Користувачі_Const.PRESENTATION_FIELDS);
         }
@@ -5174,10 +6241,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<Користувачі_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Користувачі_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Користувачі_Objest obj = new Користувачі_Objest();
+            Користувачі_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -5191,7 +6258,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(Користувачі_Const.PRESENTATION_FIELDS);
         }
@@ -5204,12 +6271,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -5224,18 +6291,18 @@ namespace GeneratedCode.Довідники
     public class Користувачі_Select : DirectorySelect
     {
         public Користувачі_Select() : base(Config.Kernel, "tab_a14") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Користувачі_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Користувачі_Pointer? Current { get; private set; }
         
-        public async ValueTask<Користувачі_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<Користувачі_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new Користувачі_Pointer(pointer) : new Користувачі_Pointer();
         }
         
-        public async ValueTask<List<Користувачі_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<Користувачі_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<Користувачі_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -5294,14 +6361,14 @@ namespace GeneratedCode.Довідники
             
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     Тип = (fieldValue["col_f8"] != DBNull.Value) ? (Перелічення.ТипиКонтактноїІнформації)fieldValue["col_f8"] : 0,
@@ -5322,7 +6389,7 @@ namespace GeneratedCode.Довідники
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_a14"))
                 throw new Exception("Owner not exist");
@@ -5365,7 +6432,7 @@ namespace GeneratedCode.Довідники
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [..Records];
             foreach (Record copyRecordItem in Records)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -5418,7 +6485,7 @@ namespace GeneratedCode.Довідники
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ФізичніОсоби_Const.FULLNAME + " *";
@@ -5427,7 +6494,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -5452,7 +6519,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_g7"] = Назва;
             base.FieldValue["col_g8"] = Код;
@@ -5471,9 +6538,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<ФізичніОсоби_Objest> Copy(bool copyTableParts = false)
+        public async Task<ФізичніОсоби_Objest> Copy(bool copyTableParts = false)
         {
-            ФізичніОсоби_Objest copy = new ФізичніОсоби_Objest()
+            ФізичніОсоби_Objest copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -5500,13 +6567,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete(["tab_a17", ]);
@@ -5517,7 +6584,7 @@ namespace GeneratedCode.Довідники
             return new ФізичніОсоби_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ФізичніОсоби_Const.PRESENTATION_FIELDS);
         }
@@ -5545,10 +6612,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<ФізичніОсоби_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ФізичніОсоби_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ФізичніОсоби_Objest obj = new ФізичніОсоби_Objest();
+            ФізичніОсоби_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -5562,7 +6629,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ФізичніОсоби_Const.PRESENTATION_FIELDS);
         }
@@ -5575,12 +6642,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -5595,18 +6662,18 @@ namespace GeneratedCode.Довідники
     public class ФізичніОсоби_Select : DirectorySelect
     {
         public ФізичніОсоби_Select() : base(Config.Kernel, "tab_a16") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ФізичніОсоби_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ФізичніОсоби_Pointer? Current { get; private set; }
         
-        public async ValueTask<ФізичніОсоби_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ФізичніОсоби_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ФізичніОсоби_Pointer(pointer) : new ФізичніОсоби_Pointer();
         }
         
-        public async ValueTask<List<ФізичніОсоби_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ФізичніОсоби_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ФізичніОсоби_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -5665,14 +6732,14 @@ namespace GeneratedCode.Довідники
             
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     Тип = (fieldValue["col_h1"] != DBNull.Value) ? (Перелічення.ТипиКонтактноїІнформації)fieldValue["col_h1"] : 0,
@@ -5693,7 +6760,7 @@ namespace GeneratedCode.Довідники
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_a16"))
                 throw new Exception("Owner not exist");
@@ -5744,7 +6811,7 @@ namespace GeneratedCode.Довідники
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [..Records];
             foreach (Record copyRecordItem in Records)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -5792,7 +6859,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = СтруктураПідприємства_Const.FULLNAME + " *";
@@ -5801,7 +6868,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -5818,7 +6885,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_h8"] = Назва;
             base.FieldValue["col_h9"] = Код;
@@ -5835,9 +6902,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<СтруктураПідприємства_Objest> Copy(bool copyTableParts = false)
+        public async Task<СтруктураПідприємства_Objest> Copy(bool copyTableParts = false)
         {
-            СтруктураПідприємства_Objest copy = new СтруктураПідприємства_Objest()
+            СтруктураПідприємства_Objest copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -5853,13 +6920,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -5870,7 +6937,7 @@ namespace GeneratedCode.Довідники
             return new СтруктураПідприємства_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(СтруктураПідприємства_Const.PRESENTATION_FIELDS);
         }
@@ -5893,10 +6960,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<СтруктураПідприємства_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<СтруктураПідприємства_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            СтруктураПідприємства_Objest obj = new СтруктураПідприємства_Objest();
+            СтруктураПідприємства_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -5910,7 +6977,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(СтруктураПідприємства_Const.PRESENTATION_FIELDS);
         }
@@ -5923,12 +6990,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -5943,18 +7010,18 @@ namespace GeneratedCode.Довідники
     public class СтруктураПідприємства_Select : DirectorySelect
     {
         public СтруктураПідприємства_Select() : base(Config.Kernel, "tab_a18") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СтруктураПідприємства_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public СтруктураПідприємства_Pointer? Current { get; private set; }
         
-        public async ValueTask<СтруктураПідприємства_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<СтруктураПідприємства_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new СтруктураПідприємства_Pointer(pointer) : new СтруктураПідприємства_Pointer();
         }
         
-        public async ValueTask<List<СтруктураПідприємства_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<СтруктураПідприємства_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<СтруктураПідприємства_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -5989,7 +7056,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = КраїниСвіту_Const.FULLNAME + " *";
@@ -5998,7 +7065,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -6014,7 +7081,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_i2"] = Назва;
             base.FieldValue["col_i3"] = Код;
@@ -6030,9 +7097,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<КраїниСвіту_Objest> Copy(bool copyTableParts = false)
+        public async Task<КраїниСвіту_Objest> Copy(bool copyTableParts = false)
         {
-            КраїниСвіту_Objest copy = new КраїниСвіту_Objest()
+            КраїниСвіту_Objest copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -6047,13 +7114,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -6064,7 +7131,7 @@ namespace GeneratedCode.Довідники
             return new КраїниСвіту_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(КраїниСвіту_Const.PRESENTATION_FIELDS);
         }
@@ -6086,10 +7153,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<КраїниСвіту_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<КраїниСвіту_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            КраїниСвіту_Objest obj = new КраїниСвіту_Objest();
+            КраїниСвіту_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -6103,7 +7170,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(КраїниСвіту_Const.PRESENTATION_FIELDS);
         }
@@ -6116,12 +7183,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -6136,18 +7203,18 @@ namespace GeneratedCode.Довідники
     public class КраїниСвіту_Select : DirectorySelect
     {
         public КраїниСвіту_Select() : base(Config.Kernel, "tab_a19") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new КраїниСвіту_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public КраїниСвіту_Pointer? Current { get; private set; }
         
-        public async ValueTask<КраїниСвіту_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<КраїниСвіту_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new КраїниСвіту_Pointer(pointer) : new КраїниСвіту_Pointer();
         }
         
-        public async ValueTask<List<КраїниСвіту_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<КраїниСвіту_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<КраїниСвіту_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -6186,7 +7253,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = Файли_Const.FULLNAME + " *";
@@ -6195,7 +7262,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -6215,7 +7282,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_i6"] = Код;
             base.FieldValue["col_i5"] = Назва;
@@ -6235,9 +7302,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<Файли_Objest> Copy(bool copyTableParts = false)
+        public async Task<Файли_Objest> Copy(bool copyTableParts = false)
         {
-            Файли_Objest copy = new Файли_Objest()
+            Файли_Objest copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -6256,13 +7323,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -6273,7 +7340,7 @@ namespace GeneratedCode.Довідники
             return new Файли_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(Файли_Const.PRESENTATION_FIELDS);
         }
@@ -6299,10 +7366,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<Файли_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Файли_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Файли_Objest obj = new Файли_Objest();
+            Файли_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -6316,7 +7383,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(Файли_Const.PRESENTATION_FIELDS);
         }
@@ -6329,12 +7396,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -6349,18 +7416,18 @@ namespace GeneratedCode.Довідники
     public class Файли_Select : DirectorySelect
     {
         public Файли_Select() : base(Config.Kernel, "tab_a20") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Файли_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Файли_Pointer? Current { get; private set; }
         
-        public async ValueTask<Файли_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<Файли_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new Файли_Pointer(pointer) : new Файли_Pointer();
         }
         
-        public async ValueTask<List<Файли_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<Файли_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<Файли_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -6397,7 +7464,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ХарактеристикиНоменклатури_Const.FULLNAME + " *";
@@ -6406,7 +7473,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -6424,7 +7491,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_i7"] = Назва;
             base.FieldValue["col_i8"] = Код;
@@ -6442,9 +7509,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<ХарактеристикиНоменклатури_Objest> Copy(bool copyTableParts = false)
+        public async Task<ХарактеристикиНоменклатури_Objest> Copy(bool copyTableParts = false)
         {
-            ХарактеристикиНоменклатури_Objest copy = new ХарактеристикиНоменклатури_Objest()
+            ХарактеристикиНоменклатури_Objest copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -6461,13 +7528,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -6478,7 +7545,7 @@ namespace GeneratedCode.Довідники
             return new ХарактеристикиНоменклатури_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ХарактеристикиНоменклатури_Const.PRESENTATION_FIELDS);
         }
@@ -6502,10 +7569,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<ХарактеристикиНоменклатури_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ХарактеристикиНоменклатури_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ХарактеристикиНоменклатури_Objest obj = new ХарактеристикиНоменклатури_Objest();
+            ХарактеристикиНоменклатури_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -6519,7 +7586,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ХарактеристикиНоменклатури_Const.PRESENTATION_FIELDS);
         }
@@ -6532,12 +7599,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -6552,18 +7619,18 @@ namespace GeneratedCode.Довідники
     public class ХарактеристикиНоменклатури_Select : DirectorySelect
     {
         public ХарактеристикиНоменклатури_Select() : base(Config.Kernel, "tab_a21") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ХарактеристикиНоменклатури_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ХарактеристикиНоменклатури_Pointer? Current { get; private set; }
         
-        public async ValueTask<ХарактеристикиНоменклатури_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ХарактеристикиНоменклатури_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ХарактеристикиНоменклатури_Pointer(pointer) : new ХарактеристикиНоменклатури_Pointer();
         }
         
-        public async ValueTask<List<ХарактеристикиНоменклатури_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ХарактеристикиНоменклатури_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ХарактеристикиНоменклатури_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -6599,7 +7666,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = Номенклатура_Папки_Const.FULLNAME + " *";
@@ -6608,7 +7675,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -6625,7 +7692,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_j1"] = Назва;
             base.FieldValue["col_j2"] = Код;
@@ -6642,9 +7709,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<Номенклатура_Папки_Objest> Copy(bool copyTableParts = false)
+        public async Task<Номенклатура_Папки_Objest> Copy(bool copyTableParts = false)
         {
-            Номенклатура_Папки_Objest copy = new Номенклатура_Папки_Objest()
+            Номенклатура_Папки_Objest copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -6660,7 +7727,7 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
                 await Номенклатура_Папки_Triggers.SetDeletionLabel(this, label);      
@@ -6668,7 +7735,7 @@ namespace GeneratedCode.Довідники
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
                 await Номенклатура_Папки_Triggers.BeforeDelete(this);      
@@ -6681,7 +7748,7 @@ namespace GeneratedCode.Довідники
             return new Номенклатура_Папки_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(Номенклатура_Папки_Const.PRESENTATION_FIELDS);
         }
@@ -6704,10 +7771,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<Номенклатура_Папки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Номенклатура_Папки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Номенклатура_Папки_Objest obj = new Номенклатура_Папки_Objest();
+            Номенклатура_Папки_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -6721,7 +7788,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(Номенклатура_Папки_Const.PRESENTATION_FIELDS);
         }
@@ -6734,12 +7801,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             Номенклатура_Папки_Objest? obj = await GetDirectoryObject();
               if (obj != null) await Номенклатура_Папки_Triggers.SetDeletionLabel(obj, label);
@@ -6756,18 +7823,18 @@ namespace GeneratedCode.Довідники
     public class Номенклатура_Папки_Select : DirectorySelect
     {
         public Номенклатура_Папки_Select() : base(Config.Kernel, "tab_a22") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Номенклатура_Папки_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Номенклатура_Папки_Pointer? Current { get; private set; }
         
-        public async ValueTask<Номенклатура_Папки_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<Номенклатура_Папки_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new Номенклатура_Папки_Pointer(pointer) : new Номенклатура_Папки_Pointer();
         }
         
-        public async ValueTask<List<Номенклатура_Папки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<Номенклатура_Папки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<Номенклатура_Папки_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -6780,8 +7847,8 @@ namespace GeneratedCode.Довідники
     public class Номенклатура_Папки_SelectHierarchical : DirectorySelectHierarchical
     {
         public Номенклатура_Папки_SelectHierarchical() : base(Config.Kernel, "tab_a22", "col_j3", "") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPositionHierarchical.HasValue) { 
           Current = new Номенклатура_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.UniqueID, base.CurrentPointerPositionHierarchical.Value.Fields); 
           Parent = new Номенклатура_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.Parent); 
@@ -6819,7 +7886,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = Контрагенти_Папки_Const.FULLNAME + " *";
@@ -6828,7 +7895,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -6845,7 +7912,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_j4"] = Назва;
             base.FieldValue["col_j5"] = Код;
@@ -6862,9 +7929,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<Контрагенти_Папки_Objest> Copy(bool copyTableParts = false)
+        public async Task<Контрагенти_Папки_Objest> Copy(bool copyTableParts = false)
         {
-            Контрагенти_Папки_Objest copy = new Контрагенти_Папки_Objest()
+            Контрагенти_Папки_Objest copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -6880,7 +7947,7 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
                 await Контрагенти_Папки_Triggers.SetDeletionLabel(this, label);      
@@ -6888,7 +7955,7 @@ namespace GeneratedCode.Довідники
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
                 await Контрагенти_Папки_Triggers.BeforeDelete(this);      
@@ -6901,7 +7968,7 @@ namespace GeneratedCode.Довідники
             return new Контрагенти_Папки_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(Контрагенти_Папки_Const.PRESENTATION_FIELDS);
         }
@@ -6924,10 +7991,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<Контрагенти_Папки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Контрагенти_Папки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Контрагенти_Папки_Objest obj = new Контрагенти_Папки_Objest();
+            Контрагенти_Папки_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -6941,7 +8008,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(Контрагенти_Папки_Const.PRESENTATION_FIELDS);
         }
@@ -6954,12 +8021,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             Контрагенти_Папки_Objest? obj = await GetDirectoryObject();
               if (obj != null) await Контрагенти_Папки_Triggers.SetDeletionLabel(obj, label);
@@ -6976,18 +8043,18 @@ namespace GeneratedCode.Довідники
     public class Контрагенти_Папки_Select : DirectorySelect
     {
         public Контрагенти_Папки_Select() : base(Config.Kernel, "tab_a23") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Контрагенти_Папки_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Контрагенти_Папки_Pointer? Current { get; private set; }
         
-        public async ValueTask<Контрагенти_Папки_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<Контрагенти_Папки_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new Контрагенти_Папки_Pointer(pointer) : new Контрагенти_Папки_Pointer();
         }
         
-        public async ValueTask<List<Контрагенти_Папки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<Контрагенти_Папки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<Контрагенти_Папки_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -7000,8 +8067,8 @@ namespace GeneratedCode.Довідники
     public class Контрагенти_Папки_SelectHierarchical : DirectorySelectHierarchical
     {
         public Контрагенти_Папки_SelectHierarchical() : base(Config.Kernel, "tab_a23", "col_j6", "") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPositionHierarchical.HasValue) { 
           Current = new Контрагенти_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.UniqueID, base.CurrentPointerPositionHierarchical.Value.Fields); 
           Parent = new Контрагенти_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.Parent); 
@@ -7039,7 +8106,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = Склади_Папки_Const.FULLNAME + " *";
@@ -7048,7 +8115,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -7065,7 +8132,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_j7"] = Назва;
             base.FieldValue["col_j8"] = Код;
@@ -7082,9 +8149,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<Склади_Папки_Objest> Copy(bool copyTableParts = false)
+        public async Task<Склади_Папки_Objest> Copy(bool copyTableParts = false)
         {
-            Склади_Папки_Objest copy = new Склади_Папки_Objest()
+            Склади_Папки_Objest copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -7100,7 +8167,7 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
                 await Склади_Папки_Triggers.SetDeletionLabel(this, label);      
@@ -7108,7 +8175,7 @@ namespace GeneratedCode.Довідники
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
                 await Склади_Папки_Triggers.BeforeDelete(this);      
@@ -7121,7 +8188,7 @@ namespace GeneratedCode.Довідники
             return new Склади_Папки_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(Склади_Папки_Const.PRESENTATION_FIELDS);
         }
@@ -7144,10 +8211,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<Склади_Папки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Склади_Папки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Склади_Папки_Objest obj = new Склади_Папки_Objest();
+            Склади_Папки_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -7161,7 +8228,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(Склади_Папки_Const.PRESENTATION_FIELDS);
         }
@@ -7174,12 +8241,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             Склади_Папки_Objest? obj = await GetDirectoryObject();
               if (obj != null) await Склади_Папки_Triggers.SetDeletionLabel(obj, label);
@@ -7196,18 +8263,18 @@ namespace GeneratedCode.Довідники
     public class Склади_Папки_Select : DirectorySelect
     {
         public Склади_Папки_Select() : base(Config.Kernel, "tab_a24") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Склади_Папки_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Склади_Папки_Pointer? Current { get; private set; }
         
-        public async ValueTask<Склади_Папки_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<Склади_Папки_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new Склади_Папки_Pointer(pointer) : new Склади_Папки_Pointer();
         }
         
-        public async ValueTask<List<Склади_Папки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<Склади_Папки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<Склади_Папки_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -7220,8 +8287,8 @@ namespace GeneratedCode.Довідники
     public class Склади_Папки_SelectHierarchical : DirectorySelectHierarchical
     {
         public Склади_Папки_SelectHierarchical() : base(Config.Kernel, "tab_a24", "col_a1", "") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPositionHierarchical.HasValue) { 
           Current = new Склади_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.UniqueID, base.CurrentPointerPositionHierarchical.Value.Fields); 
           Parent = new Склади_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.Parent); 
@@ -7260,7 +8327,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = Каси_Const.FULLNAME + " *";
@@ -7269,7 +8336,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -7287,7 +8354,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_k8"] = Назва;
             base.FieldValue["col_k9"] = Код;
@@ -7305,9 +8372,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<Каси_Objest> Copy(bool copyTableParts = false)
+        public async Task<Каси_Objest> Copy(bool copyTableParts = false)
         {
-            Каси_Objest copy = new Каси_Objest()
+            Каси_Objest copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -7324,13 +8391,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -7341,7 +8408,7 @@ namespace GeneratedCode.Довідники
             return new Каси_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(Каси_Const.PRESENTATION_FIELDS);
         }
@@ -7365,10 +8432,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<Каси_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Каси_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Каси_Objest obj = new Каси_Objest();
+            Каси_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -7382,7 +8449,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(Каси_Const.PRESENTATION_FIELDS);
         }
@@ -7395,12 +8462,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -7415,18 +8482,18 @@ namespace GeneratedCode.Довідники
     public class Каси_Select : DirectorySelect
     {
         public Каси_Select() : base(Config.Kernel, "tab_a26") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Каси_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Каси_Pointer? Current { get; private set; }
         
-        public async ValueTask<Каси_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<Каси_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new Каси_Pointer(pointer) : new Каси_Pointer();
         }
         
-        public async ValueTask<List<Каси_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<Каси_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<Каси_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -7466,7 +8533,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = БанківськіРахункиОрганізацій_Const.FULLNAME + " *";
@@ -7475,7 +8542,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -7496,7 +8563,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_l1"] = Назва;
             base.FieldValue["col_l2"] = Код;
@@ -7517,9 +8584,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<БанківськіРахункиОрганізацій_Objest> Copy(bool copyTableParts = false)
+        public async Task<БанківськіРахункиОрганізацій_Objest> Copy(bool copyTableParts = false)
         {
-            БанківськіРахункиОрганізацій_Objest copy = new БанківськіРахункиОрганізацій_Objest()
+            БанківськіРахункиОрганізацій_Objest copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -7539,13 +8606,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -7556,7 +8623,7 @@ namespace GeneratedCode.Довідники
             return new БанківськіРахункиОрганізацій_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(БанківськіРахункиОрганізацій_Const.PRESENTATION_FIELDS);
         }
@@ -7583,10 +8650,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<БанківськіРахункиОрганізацій_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<БанківськіРахункиОрганізацій_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            БанківськіРахункиОрганізацій_Objest obj = new БанківськіРахункиОрганізацій_Objest();
+            БанківськіРахункиОрганізацій_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -7600,7 +8667,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(БанківськіРахункиОрганізацій_Const.PRESENTATION_FIELDS);
         }
@@ -7613,12 +8680,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -7633,18 +8700,18 @@ namespace GeneratedCode.Довідники
     public class БанківськіРахункиОрганізацій_Select : DirectorySelect
     {
         public БанківськіРахункиОрганізацій_Select() : base(Config.Kernel, "tab_a27") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new БанківськіРахункиОрганізацій_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public БанківськіРахункиОрганізацій_Pointer? Current { get; private set; }
         
-        public async ValueTask<БанківськіРахункиОрганізацій_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<БанківськіРахункиОрганізацій_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new БанківськіРахункиОрганізацій_Pointer(pointer) : new БанківськіРахункиОрганізацій_Pointer();
         }
         
-        public async ValueTask<List<БанківськіРахункиОрганізацій_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<БанківськіРахункиОрганізацій_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<БанківськіРахункиОрганізацій_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -7697,7 +8764,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ДоговориКонтрагентів_Const.FULLNAME + " *";
@@ -7706,7 +8773,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -7740,7 +8807,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             
                 await ДоговориКонтрагентів_Triggers.BeforeSave(this);
@@ -7776,9 +8843,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<ДоговориКонтрагентів_Objest> Copy(bool copyTableParts = false)
+        public async Task<ДоговориКонтрагентів_Objest> Copy(bool copyTableParts = false)
         {
-            ДоговориКонтрагентів_Objest copy = new ДоговориКонтрагентів_Objest()
+            ДоговориКонтрагентів_Objest copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -7811,13 +8878,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -7828,7 +8895,7 @@ namespace GeneratedCode.Довідники
             return new ДоговориКонтрагентів_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ДоговориКонтрагентів_Const.PRESENTATION_FIELDS);
         }
@@ -7868,10 +8935,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<ДоговориКонтрагентів_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ДоговориКонтрагентів_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ДоговориКонтрагентів_Objest obj = new ДоговориКонтрагентів_Objest();
+            ДоговориКонтрагентів_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -7885,7 +8952,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ДоговориКонтрагентів_Const.PRESENTATION_FIELDS);
         }
@@ -7898,12 +8965,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -7918,18 +8985,18 @@ namespace GeneratedCode.Довідники
     public class ДоговориКонтрагентів_Select : DirectorySelect
     {
         public ДоговориКонтрагентів_Select() : base(Config.Kernel, "tab_a28") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ДоговориКонтрагентів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ДоговориКонтрагентів_Pointer? Current { get; private set; }
         
-        public async ValueTask<ДоговориКонтрагентів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ДоговориКонтрагентів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ДоговориКонтрагентів_Pointer(pointer) : new ДоговориКонтрагентів_Pointer();
         }
         
-        public async ValueTask<List<ДоговориКонтрагентів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ДоговориКонтрагентів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ДоговориКонтрагентів_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -7968,7 +9035,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = БанківськіРахункиКонтрагентів_Const.FULLNAME + " *";
@@ -7977,7 +9044,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -7997,7 +9064,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_n7"] = Назва;
             base.FieldValue["col_n8"] = Код;
@@ -8017,9 +9084,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<БанківськіРахункиКонтрагентів_Objest> Copy(bool copyTableParts = false)
+        public async Task<БанківськіРахункиКонтрагентів_Objest> Copy(bool copyTableParts = false)
         {
-            БанківськіРахункиКонтрагентів_Objest copy = new БанківськіРахункиКонтрагентів_Objest()
+            БанківськіРахункиКонтрагентів_Objest copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -8038,13 +9105,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -8055,7 +9122,7 @@ namespace GeneratedCode.Довідники
             return new БанківськіРахункиКонтрагентів_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(БанківськіРахункиКонтрагентів_Const.PRESENTATION_FIELDS);
         }
@@ -8081,10 +9148,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<БанківськіРахункиКонтрагентів_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<БанківськіРахункиКонтрагентів_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            БанківськіРахункиКонтрагентів_Objest obj = new БанківськіРахункиКонтрагентів_Objest();
+            БанківськіРахункиКонтрагентів_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -8098,7 +9165,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(БанківськіРахункиКонтрагентів_Const.PRESENTATION_FIELDS);
         }
@@ -8111,12 +9178,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -8131,18 +9198,18 @@ namespace GeneratedCode.Довідники
     public class БанківськіРахункиКонтрагентів_Select : DirectorySelect
     {
         public БанківськіРахункиКонтрагентів_Select() : base(Config.Kernel, "tab_a29") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new БанківськіРахункиКонтрагентів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public БанківськіРахункиКонтрагентів_Pointer? Current { get; private set; }
         
-        public async ValueTask<БанківськіРахункиКонтрагентів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<БанківськіРахункиКонтрагентів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new БанківськіРахункиКонтрагентів_Pointer(pointer) : new БанківськіРахункиКонтрагентів_Pointer();
         }
         
-        public async ValueTask<List<БанківськіРахункиКонтрагентів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<БанківськіРахункиКонтрагентів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<БанківськіРахункиКонтрагентів_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -8183,7 +9250,7 @@ namespace GeneratedCode.Довідники
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = СтаттяРухуКоштів_Const.FULLNAME + " *";
@@ -8192,7 +9259,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -8217,7 +9284,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_i7"] = Назва;
             base.FieldValue["col_i8"] = Код;
@@ -8236,9 +9303,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<СтаттяРухуКоштів_Objest> Copy(bool copyTableParts = false)
+        public async Task<СтаттяРухуКоштів_Objest> Copy(bool copyTableParts = false)
         {
-            СтаттяРухуКоштів_Objest copy = new СтаттяРухуКоштів_Objest()
+            СтаттяРухуКоштів_Objest copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -8265,13 +9332,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete(["tab_a46", ]);
@@ -8282,7 +9349,7 @@ namespace GeneratedCode.Довідники
             return new СтаттяРухуКоштів_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(СтаттяРухуКоштів_Const.PRESENTATION_FIELDS);
         }
@@ -8310,10 +9377,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<СтаттяРухуКоштів_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<СтаттяРухуКоштів_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            СтаттяРухуКоштів_Objest obj = new СтаттяРухуКоштів_Objest();
+            СтаттяРухуКоштів_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -8327,7 +9394,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(СтаттяРухуКоштів_Const.PRESENTATION_FIELDS);
         }
@@ -8340,12 +9407,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -8360,18 +9427,18 @@ namespace GeneratedCode.Довідники
     public class СтаттяРухуКоштів_Select : DirectorySelect
     {
         public СтаттяРухуКоштів_Select() : base(Config.Kernel, "tab_a45") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СтаттяРухуКоштів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public СтаттяРухуКоштів_Pointer? Current { get; private set; }
         
-        public async ValueTask<СтаттяРухуКоштів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<СтаттяРухуКоштів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new СтаттяРухуКоштів_Pointer(pointer) : new СтаттяРухуКоштів_Pointer();
         }
         
-        public async ValueTask<List<СтаттяРухуКоштів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<СтаттяРухуКоштів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<СтаттяРухуКоштів_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -8414,14 +9481,14 @@ namespace GeneratedCode.Довідники
             
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     ГосподарськаОперація = (fieldValue["col_j3"] != DBNull.Value) ? (Перелічення.ГосподарськіОперації)fieldValue["col_j3"] : 0,
@@ -8434,7 +9501,7 @@ namespace GeneratedCode.Довідники
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_a45"))
                 throw new Exception("Owner not exist");
@@ -8465,7 +9532,7 @@ namespace GeneratedCode.Довідники
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [..Records];
             foreach (Record copyRecordItem in Records)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -8505,7 +9572,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = СеріїНоменклатури_Const.FULLNAME + " *";
@@ -8514,7 +9581,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -8531,7 +9598,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             
                 await СеріїНоменклатури_Triggers.BeforeSave(this);
@@ -8550,9 +9617,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<СеріїНоменклатури_Objest> Copy(bool copyTableParts = false)
+        public async Task<СеріїНоменклатури_Objest> Copy(bool copyTableParts = false)
         {
-            СеріїНоменклатури_Objest copy = new СеріїНоменклатури_Objest()
+            СеріїНоменклатури_Objest copy = new()
             {
                 Номер = Номер,
                 Коментар = Коментар,
@@ -8568,13 +9635,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -8585,7 +9652,7 @@ namespace GeneratedCode.Довідники
             return new СеріїНоменклатури_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(СеріїНоменклатури_Const.PRESENTATION_FIELDS);
         }
@@ -8608,10 +9675,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<СеріїНоменклатури_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<СеріїНоменклатури_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            СеріїНоменклатури_Objest obj = new СеріїНоменклатури_Objest();
+            СеріїНоменклатури_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -8625,7 +9692,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(СеріїНоменклатури_Const.PRESENTATION_FIELDS);
         }
@@ -8638,12 +9705,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -8658,18 +9725,18 @@ namespace GeneratedCode.Довідники
     public class СеріїНоменклатури_Select : DirectorySelect
     {
         public СеріїНоменклатури_Select() : base(Config.Kernel, "tab_b02") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СеріїНоменклатури_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public СеріїНоменклатури_Pointer? Current { get; private set; }
         
-        public async ValueTask<СеріїНоменклатури_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<СеріїНоменклатури_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new СеріїНоменклатури_Pointer(pointer) : new СеріїНоменклатури_Pointer();
         }
         
-        public async ValueTask<List<СеріїНоменклатури_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<СеріїНоменклатури_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<СеріїНоменклатури_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -8708,16 +9775,16 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ПартіяТоварівКомпозит_Const.FULLNAME + " *";
             
-                await ValueTask.FromResult(true);
+                await Task.CompletedTask;
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -8737,7 +9804,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_a1"] = Назва;
             base.FieldValue["col_a2"] = Дата;
@@ -8757,9 +9824,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<ПартіяТоварівКомпозит_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПартіяТоварівКомпозит_Objest> Copy(bool copyTableParts = false)
         {
-            ПартіяТоварівКомпозит_Objest copy = new ПартіяТоварівКомпозит_Objest()
+            ПартіяТоварівКомпозит_Objest copy = new()
             {
                 Назва = Назва,
                 Дата = Дата,
@@ -8776,13 +9843,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -8793,7 +9860,7 @@ namespace GeneratedCode.Довідники
             return new ПартіяТоварівКомпозит_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ПартіяТоварівКомпозит_Const.PRESENTATION_FIELDS);
         }
@@ -8819,10 +9886,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<ПартіяТоварівКомпозит_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ПартіяТоварівКомпозит_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПартіяТоварівКомпозит_Objest obj = new ПартіяТоварівКомпозит_Objest();
+            ПартіяТоварівКомпозит_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -8836,7 +9903,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ПартіяТоварівКомпозит_Const.PRESENTATION_FIELDS);
         }
@@ -8849,12 +9916,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -8869,18 +9936,18 @@ namespace GeneratedCode.Довідники
     public class ПартіяТоварівКомпозит_Select : DirectorySelect
     {
         public ПартіяТоварівКомпозит_Select() : base(Config.Kernel, "tab_b06") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПартіяТоварівКомпозит_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПартіяТоварівКомпозит_Pointer? Current { get; private set; }
         
-        public async ValueTask<ПартіяТоварівКомпозит_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ПартіяТоварівКомпозит_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ПартіяТоварівКомпозит_Pointer(pointer) : new ПартіяТоварівКомпозит_Pointer();
         }
         
-        public async ValueTask<List<ПартіяТоварівКомпозит_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ПартіяТоварівКомпозит_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ПартіяТоварівКомпозит_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -8920,7 +9987,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ВидиЗапасів_Const.FULLNAME + " *";
@@ -8929,7 +9996,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -8950,7 +10017,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_a5"] = Назва;
             base.FieldValue["col_b3"] = Організація.UniqueID.UGuid;
@@ -8971,9 +10038,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<ВидиЗапасів_Objest> Copy(bool copyTableParts = false)
+        public async Task<ВидиЗапасів_Objest> Copy(bool copyTableParts = false)
         {
-            ВидиЗапасів_Objest copy = new ВидиЗапасів_Objest()
+            ВидиЗапасів_Objest copy = new()
             {
                 Назва = Назва,
                 Організація = Організація,
@@ -8993,13 +10060,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -9010,7 +10077,7 @@ namespace GeneratedCode.Довідники
             return new ВидиЗапасів_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ВидиЗапасів_Const.PRESENTATION_FIELDS);
         }
@@ -9037,10 +10104,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<ВидиЗапасів_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ВидиЗапасів_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ВидиЗапасів_Objest obj = new ВидиЗапасів_Objest();
+            ВидиЗапасів_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -9054,7 +10121,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ВидиЗапасів_Const.PRESENTATION_FIELDS);
         }
@@ -9067,12 +10134,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -9087,18 +10154,18 @@ namespace GeneratedCode.Довідники
     public class ВидиЗапасів_Select : DirectorySelect
     {
         public ВидиЗапасів_Select() : base(Config.Kernel, "tab_b13") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВидиЗапасів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ВидиЗапасів_Pointer? Current { get; private set; }
         
-        public async ValueTask<ВидиЗапасів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ВидиЗапасів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ВидиЗапасів_Pointer(pointer) : new ВидиЗапасів_Pointer();
         }
         
-        public async ValueTask<List<ВидиЗапасів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ВидиЗапасів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ВидиЗапасів_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -9159,7 +10226,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = Банки_Const.FULLNAME + " *";
@@ -9168,7 +10235,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -9210,7 +10277,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_a1"] = Код;
             base.FieldValue["col_a2"] = Назва;
@@ -9252,9 +10319,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<Банки_Objest> Copy(bool copyTableParts = false)
+        public async Task<Банки_Objest> Copy(bool copyTableParts = false)
         {
-            Банки_Objest copy = new Банки_Objest()
+            Банки_Objest copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -9295,13 +10362,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -9312,7 +10379,7 @@ namespace GeneratedCode.Довідники
             return new Банки_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(Банки_Const.PRESENTATION_FIELDS);
         }
@@ -9360,10 +10427,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<Банки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Банки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Банки_Objest obj = new Банки_Objest();
+            Банки_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -9377,7 +10444,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(Банки_Const.PRESENTATION_FIELDS);
         }
@@ -9390,12 +10457,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -9410,18 +10477,18 @@ namespace GeneratedCode.Довідники
     public class Банки_Select : DirectorySelect
     {
         public Банки_Select() : base(Config.Kernel, "tab_a39") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Банки_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Банки_Pointer? Current { get; private set; }
         
-        public async ValueTask<Банки_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<Банки_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new Банки_Pointer(pointer) : new Банки_Pointer();
         }
         
-        public async ValueTask<List<Банки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<Банки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<Банки_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -9457,16 +10524,16 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = СкладськіПриміщення_Const.FULLNAME + " *";
             
-                await ValueTask.FromResult(true);
+                await Task.CompletedTask;
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -9483,7 +10550,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_a2"] = Назва;
             base.FieldValue["col_a3"] = (int)НалаштуванняАдресногоЗберігання;
@@ -9500,9 +10567,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<СкладськіПриміщення_Objest> Copy(bool copyTableParts = false)
+        public async Task<СкладськіПриміщення_Objest> Copy(bool copyTableParts = false)
         {
-            СкладськіПриміщення_Objest copy = new СкладськіПриміщення_Objest()
+            СкладськіПриміщення_Objest copy = new()
             {
                 Назва = Назва,
                 НалаштуванняАдресногоЗберігання = НалаштуванняАдресногоЗберігання,
@@ -9518,13 +10585,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -9535,7 +10602,7 @@ namespace GeneratedCode.Довідники
             return new СкладськіПриміщення_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(СкладськіПриміщення_Const.PRESENTATION_FIELDS);
         }
@@ -9558,10 +10625,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<СкладськіПриміщення_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<СкладськіПриміщення_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            СкладськіПриміщення_Objest obj = new СкладськіПриміщення_Objest();
+            СкладськіПриміщення_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -9575,7 +10642,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(СкладськіПриміщення_Const.PRESENTATION_FIELDS);
         }
@@ -9588,12 +10655,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -9608,18 +10675,18 @@ namespace GeneratedCode.Довідники
     public class СкладськіПриміщення_Select : DirectorySelect
     {
         public СкладськіПриміщення_Select() : base(Config.Kernel, "tab_a71") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СкладськіПриміщення_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public СкладськіПриміщення_Pointer? Current { get; private set; }
         
-        public async ValueTask<СкладськіПриміщення_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<СкладськіПриміщення_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new СкладськіПриміщення_Pointer(pointer) : new СкладськіПриміщення_Pointer();
         }
         
-        public async ValueTask<List<СкладськіПриміщення_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<СкладськіПриміщення_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<СкладськіПриміщення_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -9662,16 +10729,16 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = СкладськіКомірки_Const.FULLNAME + " *";
             
-                await ValueTask.FromResult(true);
+                await Task.CompletedTask;
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -9695,7 +10762,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_a1"] = Папка.UniqueID.UGuid;
             base.FieldValue["col_a2"] = Назва;
@@ -9719,9 +10786,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<СкладськіКомірки_Objest> Copy(bool copyTableParts = false)
+        public async Task<СкладськіКомірки_Objest> Copy(bool copyTableParts = false)
         {
-            СкладськіКомірки_Objest copy = new СкладськіКомірки_Objest()
+            СкладськіКомірки_Objest copy = new()
             {
                 Папка = Папка,
                 Назва = Назва,
@@ -9744,13 +10811,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -9761,7 +10828,7 @@ namespace GeneratedCode.Довідники
             return new СкладськіКомірки_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(СкладськіКомірки_Const.PRESENTATION_FIELDS);
         }
@@ -9791,10 +10858,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<СкладськіКомірки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<СкладськіКомірки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            СкладськіКомірки_Objest obj = new СкладськіКомірки_Objest();
+            СкладськіКомірки_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -9808,7 +10875,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(СкладськіКомірки_Const.PRESENTATION_FIELDS);
         }
@@ -9821,12 +10888,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -9841,18 +10908,18 @@ namespace GeneratedCode.Довідники
     public class СкладськіКомірки_Select : DirectorySelect
     {
         public СкладськіКомірки_Select() : base(Config.Kernel, "tab_a72") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СкладськіКомірки_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public СкладськіКомірки_Pointer? Current { get; private set; }
         
-        public async ValueTask<СкладськіКомірки_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<СкладськіКомірки_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new СкладськіКомірки_Pointer(pointer) : new СкладськіКомірки_Pointer();
         }
         
-        public async ValueTask<List<СкладськіКомірки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<СкладськіКомірки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<СкладськіКомірки_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -9888,16 +10955,16 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ОбластьЗберігання_Const.FULLNAME + " *";
             
-                await ValueTask.FromResult(true);
+                await Task.CompletedTask;
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -9914,7 +10981,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_a2"] = Назва;
             base.FieldValue["col_a3"] = Опис;
@@ -9931,9 +10998,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<ОбластьЗберігання_Objest> Copy(bool copyTableParts = false)
+        public async Task<ОбластьЗберігання_Objest> Copy(bool copyTableParts = false)
         {
-            ОбластьЗберігання_Objest copy = new ОбластьЗберігання_Objest()
+            ОбластьЗберігання_Objest copy = new()
             {
                 Назва = Назва,
                 Опис = Опис,
@@ -9947,13 +11014,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -9964,7 +11031,7 @@ namespace GeneratedCode.Довідники
             return new ОбластьЗберігання_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ОбластьЗберігання_Const.PRESENTATION_FIELDS);
         }
@@ -9987,10 +11054,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<ОбластьЗберігання_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ОбластьЗберігання_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ОбластьЗберігання_Objest obj = new ОбластьЗберігання_Objest();
+            ОбластьЗберігання_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -10004,7 +11071,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ОбластьЗберігання_Const.PRESENTATION_FIELDS);
         }
@@ -10017,12 +11084,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -10037,18 +11104,18 @@ namespace GeneratedCode.Довідники
     public class ОбластьЗберігання_Select : DirectorySelect
     {
         public ОбластьЗберігання_Select() : base(Config.Kernel, "tab_a73") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ОбластьЗберігання_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ОбластьЗберігання_Pointer? Current { get; private set; }
         
-        public async ValueTask<ОбластьЗберігання_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ОбластьЗберігання_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ОбластьЗберігання_Pointer(pointer) : new ОбластьЗберігання_Pointer();
         }
         
-        public async ValueTask<List<ОбластьЗберігання_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ОбластьЗберігання_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ОбластьЗберігання_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -10087,16 +11154,16 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ТипорозміриКомірок_Const.FULLNAME + " *";
             
-                await ValueTask.FromResult(true);
+                await Task.CompletedTask;
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -10116,7 +11183,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_a1"] = Висота;
             base.FieldValue["col_a2"] = Назва;
@@ -10136,9 +11203,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<ТипорозміриКомірок_Objest> Copy(bool copyTableParts = false)
+        public async Task<ТипорозміриКомірок_Objest> Copy(bool copyTableParts = false)
         {
-            ТипорозміриКомірок_Objest copy = new ТипорозміриКомірок_Objest()
+            ТипорозміриКомірок_Objest copy = new()
             {
                 Висота = Висота,
                 Назва = Назва,
@@ -10157,13 +11224,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -10174,7 +11241,7 @@ namespace GeneratedCode.Довідники
             return new ТипорозміриКомірок_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ТипорозміриКомірок_Const.PRESENTATION_FIELDS);
         }
@@ -10200,10 +11267,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<ТипорозміриКомірок_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ТипорозміриКомірок_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ТипорозміриКомірок_Objest obj = new ТипорозміриКомірок_Objest();
+            ТипорозміриКомірок_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -10217,7 +11284,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ТипорозміриКомірок_Const.PRESENTATION_FIELDS);
         }
@@ -10230,12 +11297,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -10250,18 +11317,18 @@ namespace GeneratedCode.Довідники
     public class ТипорозміриКомірок_Select : DirectorySelect
     {
         public ТипорозміриКомірок_Select() : base(Config.Kernel, "tab_a75") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ТипорозміриКомірок_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ТипорозміриКомірок_Pointer? Current { get; private set; }
         
-        public async ValueTask<ТипорозміриКомірок_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ТипорозміриКомірок_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ТипорозміриКомірок_Pointer(pointer) : new ТипорозміриКомірок_Pointer();
         }
         
-        public async ValueTask<List<ТипорозміриКомірок_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ТипорозміриКомірок_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ТипорозміриКомірок_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -10298,7 +11365,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = СкладськіКомірки_Папки_Const.FULLNAME + " *";
@@ -10307,7 +11374,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -10325,7 +11392,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_j1"] = Назва;
             base.FieldValue["col_j2"] = Код;
@@ -10343,9 +11410,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<СкладськіКомірки_Папки_Objest> Copy(bool copyTableParts = false)
+        public async Task<СкладськіКомірки_Папки_Objest> Copy(bool copyTableParts = false)
         {
-            СкладськіКомірки_Папки_Objest copy = new СкладськіКомірки_Папки_Objest()
+            СкладськіКомірки_Папки_Objest copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -10362,7 +11429,7 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
                 await СкладськіКомірки_Папки_Triggers.SetDeletionLabel(this, label);      
@@ -10370,7 +11437,7 @@ namespace GeneratedCode.Довідники
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
                 await СкладськіКомірки_Папки_Triggers.BeforeDelete(this);      
@@ -10383,7 +11450,7 @@ namespace GeneratedCode.Довідники
             return new СкладськіКомірки_Папки_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(СкладськіКомірки_Папки_Const.PRESENTATION_FIELDS);
         }
@@ -10407,10 +11474,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<СкладськіКомірки_Папки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<СкладськіКомірки_Папки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            СкладськіКомірки_Папки_Objest obj = new СкладськіКомірки_Папки_Objest();
+            СкладськіКомірки_Папки_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -10424,7 +11491,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(СкладськіКомірки_Папки_Const.PRESENTATION_FIELDS);
         }
@@ -10437,12 +11504,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             СкладськіКомірки_Папки_Objest? obj = await GetDirectoryObject();
               if (obj != null) await СкладськіКомірки_Папки_Triggers.SetDeletionLabel(obj, label);
@@ -10459,18 +11526,18 @@ namespace GeneratedCode.Довідники
     public class СкладськіКомірки_Папки_Select : DirectorySelect
     {
         public СкладськіКомірки_Папки_Select() : base(Config.Kernel, "tab_a76") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СкладськіКомірки_Папки_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public СкладськіКомірки_Папки_Pointer? Current { get; private set; }
         
-        public async ValueTask<СкладськіКомірки_Папки_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<СкладськіКомірки_Папки_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new СкладськіКомірки_Папки_Pointer(pointer) : new СкладськіКомірки_Папки_Pointer();
         }
         
-        public async ValueTask<List<СкладськіКомірки_Папки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<СкладськіКомірки_Папки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<СкладськіКомірки_Папки_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -10483,8 +11550,8 @@ namespace GeneratedCode.Довідники
     public class СкладськіКомірки_Папки_SelectHierarchical : DirectorySelectHierarchical
     {
         public СкладськіКомірки_Папки_SelectHierarchical() : base(Config.Kernel, "tab_a76", "col_j3", "") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPositionHierarchical.HasValue) { 
           Current = new СкладськіКомірки_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.UniqueID, base.CurrentPointerPositionHierarchical.Value.Fields); 
           Parent = new СкладськіКомірки_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.Parent); 
@@ -10524,7 +11591,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = Блокнот_Const.FULLNAME + " *";
@@ -10533,7 +11600,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -10552,7 +11619,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_a1"] = Код;
             base.FieldValue["col_a2"] = Назва;
@@ -10571,9 +11638,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<Блокнот_Objest> Copy(bool copyTableParts = false)
+        public async Task<Блокнот_Objest> Copy(bool copyTableParts = false)
         {
-            Блокнот_Objest copy = new Блокнот_Objest()
+            Блокнот_Objest copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -10591,13 +11658,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -10608,7 +11675,7 @@ namespace GeneratedCode.Довідники
             return new Блокнот_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(Блокнот_Const.PRESENTATION_FIELDS);
         }
@@ -10633,10 +11700,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<Блокнот_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Блокнот_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Блокнот_Objest obj = new Блокнот_Objest();
+            Блокнот_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -10650,7 +11717,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(Блокнот_Const.PRESENTATION_FIELDS);
         }
@@ -10663,12 +11730,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -10683,18 +11750,18 @@ namespace GeneratedCode.Довідники
     public class Блокнот_Select : DirectorySelect
     {
         public Блокнот_Select() : base(Config.Kernel, "tab_a41") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Блокнот_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Блокнот_Pointer? Current { get; private set; }
         
-        public async ValueTask<Блокнот_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<Блокнот_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new Блокнот_Pointer(pointer) : new Блокнот_Pointer();
         }
         
-        public async ValueTask<List<Блокнот_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<Блокнот_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<Блокнот_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -10736,7 +11803,7 @@ namespace GeneratedCode.Довідники
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ЗбереженіЗвіти_Const.FULLNAME + " *";
@@ -10745,7 +11812,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -10771,7 +11838,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_a1"] = Додано;
             base.FieldValue["col_a2"] = Назва;
@@ -10789,9 +11856,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<ЗбереженіЗвіти_Objest> Copy(bool copyTableParts = false)
+        public async Task<ЗбереженіЗвіти_Objest> Copy(bool copyTableParts = false)
         {
-            ЗбереженіЗвіти_Objest copy = new ЗбереженіЗвіти_Objest()
+            ЗбереженіЗвіти_Objest copy = new()
             {
                 Додано = Додано,
                 Назва = Назва,
@@ -10819,13 +11886,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete(["tab_b15", ]);
@@ -10836,7 +11903,7 @@ namespace GeneratedCode.Довідники
             return new ЗбереженіЗвіти_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ЗбереженіЗвіти_Const.PRESENTATION_FIELDS);
         }
@@ -10865,10 +11932,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<ЗбереженіЗвіти_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ЗбереженіЗвіти_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ЗбереженіЗвіти_Objest obj = new ЗбереженіЗвіти_Objest();
+            ЗбереженіЗвіти_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -10882,7 +11949,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ЗбереженіЗвіти_Const.PRESENTATION_FIELDS);
         }
@@ -10895,12 +11962,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -10915,18 +11982,18 @@ namespace GeneratedCode.Довідники
     public class ЗбереженіЗвіти_Select : DirectorySelect
     {
         public ЗбереженіЗвіти_Select() : base(Config.Kernel, "tab_b04") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗбереженіЗвіти_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ЗбереженіЗвіти_Pointer? Current { get; private set; }
         
-        public async ValueTask<ЗбереженіЗвіти_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ЗбереженіЗвіти_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ЗбереженіЗвіти_Pointer(pointer) : new ЗбереженіЗвіти_Pointer();
         }
         
-        public async ValueTask<List<ЗбереженіЗвіти_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ЗбереженіЗвіти_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ЗбереженіЗвіти_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -11001,14 +12068,14 @@ namespace GeneratedCode.Довідники
             
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     А = fieldValue["col_a2"].ToString() ?? "",
@@ -11053,7 +12120,7 @@ namespace GeneratedCode.Довідники
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_b04"))
                 throw new Exception("Owner not exist");
@@ -11124,7 +12191,7 @@ namespace GeneratedCode.Довідники
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [..Records];
             foreach (Record copyRecordItem in Records)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -11197,7 +12264,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = КасиККМ_Const.FULLNAME + " *";
@@ -11206,7 +12273,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -11224,7 +12291,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_a2"] = Назва;
             base.FieldValue["col_a3"] = Склад.UniqueID.UGuid;
@@ -11240,9 +12307,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<КасиККМ_Objest> Copy(bool copyTableParts = false)
+        public async Task<КасиККМ_Objest> Copy(bool copyTableParts = false)
         {
-            КасиККМ_Objest copy = new КасиККМ_Objest()
+            КасиККМ_Objest copy = new()
             {
                 Назва = Назва,
                 Склад = Склад,
@@ -11259,13 +12326,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -11276,7 +12343,7 @@ namespace GeneratedCode.Довідники
             return new КасиККМ_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(КасиККМ_Const.PRESENTATION_FIELDS);
         }
@@ -11300,10 +12367,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<КасиККМ_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<КасиККМ_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            КасиККМ_Objest obj = new КасиККМ_Objest();
+            КасиККМ_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -11317,7 +12384,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(КасиККМ_Const.PRESENTATION_FIELDS);
         }
@@ -11330,12 +12397,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -11350,18 +12417,18 @@ namespace GeneratedCode.Довідники
     public class КасиККМ_Select : DirectorySelect
     {
         public КасиККМ_Select() : base(Config.Kernel, "tab_b52") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new КасиККМ_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public КасиККМ_Pointer? Current { get; private set; }
         
-        public async ValueTask<КасиККМ_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<КасиККМ_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new КасиККМ_Pointer(pointer) : new КасиККМ_Pointer();
         }
         
-        public async ValueTask<List<КасиККМ_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<КасиККМ_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<КасиККМ_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -11406,7 +12473,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ПланРахунків_Const.FULLNAME + " *";
@@ -11415,7 +12482,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -11441,7 +12508,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_a1"] = Код;
             base.FieldValue["col_a2"] = Назва;
@@ -11465,9 +12532,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<ПланРахунків_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПланРахунків_Objest> Copy(bool copyTableParts = false)
         {
-            ПланРахунків_Objest copy = new ПланРахунків_Objest()
+            ПланРахунків_Objest copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -11492,7 +12559,7 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
                 await ПланРахунків_Triggers.SetDeletionLabel(this, label);      
@@ -11500,7 +12567,7 @@ namespace GeneratedCode.Довідники
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
                 await ПланРахунків_Triggers.BeforeDelete(this);      
@@ -11513,7 +12580,7 @@ namespace GeneratedCode.Довідники
             return new ПланРахунків_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ПланРахунків_Const.PRESENTATION_FIELDS);
         }
@@ -11545,10 +12612,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<ПланРахунків_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ПланРахунків_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПланРахунків_Objest obj = new ПланРахунків_Objest();
+            ПланРахунків_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -11562,7 +12629,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ПланРахунків_Const.PRESENTATION_FIELDS);
         }
@@ -11575,12 +12642,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             ПланРахунків_Objest? obj = await GetDirectoryObject();
               if (obj != null) await ПланРахунків_Triggers.SetDeletionLabel(obj, label);
@@ -11597,18 +12664,18 @@ namespace GeneratedCode.Довідники
     public class ПланРахунків_Select : DirectorySelect
     {
         public ПланРахунків_Select() : base(Config.Kernel, "tab_b57") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПланРахунків_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПланРахунків_Pointer? Current { get; private set; }
         
-        public async ValueTask<ПланРахунків_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ПланРахунків_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ПланРахунків_Pointer(pointer) : new ПланРахунків_Pointer();
         }
         
-        public async ValueTask<List<ПланРахунків_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ПланРахунків_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ПланРахунків_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -11621,8 +12688,8 @@ namespace GeneratedCode.Довідники
     public class ПланРахунків_SelectHierarchical : DirectorySelectHierarchical
     {
         public ПланРахунків_SelectHierarchical() : base(Config.Kernel, "tab_b57", "col_a3", "col_a4") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPositionHierarchical.HasValue) { 
           Current = new ПланРахунків_Pointer(base.CurrentPointerPositionHierarchical.Value.UniqueID, base.CurrentPointerPositionHierarchical.Value.Fields); 
           Parent = new ПланРахунків_Pointer(base.CurrentPointerPositionHierarchical.Value.Parent); 
@@ -11666,7 +12733,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = Категорії_Const.FULLNAME + " *";
@@ -11675,7 +12742,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -11698,7 +12765,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_a1"] = Код;
             base.FieldValue["col_a2"] = Назва;
@@ -11719,9 +12786,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<Категорії_Objest> Copy(bool copyTableParts = false)
+        public async Task<Категорії_Objest> Copy(bool copyTableParts = false)
         {
-            Категорії_Objest copy = new Категорії_Objest()
+            Категорії_Objest copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -11743,7 +12810,7 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
                 await Категорії_Triggers.SetDeletionLabel(this, label);      
@@ -11751,7 +12818,7 @@ namespace GeneratedCode.Довідники
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -11762,7 +12829,7 @@ namespace GeneratedCode.Довідники
             return new Категорії_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(Категорії_Const.PRESENTATION_FIELDS);
         }
@@ -11791,10 +12858,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<Категорії_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Категорії_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Категорії_Objest obj = new Категорії_Objest();
+            Категорії_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -11808,7 +12875,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(Категорії_Const.PRESENTATION_FIELDS);
         }
@@ -11821,12 +12888,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             Категорії_Objest? obj = await GetDirectoryObject();
               if (obj != null) await Категорії_Triggers.SetDeletionLabel(obj, label);
@@ -11843,18 +12910,18 @@ namespace GeneratedCode.Довідники
     public class Категорії_Select : DirectorySelect
     {
         public Категорії_Select() : base(Config.Kernel, "tab_b58") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Категорії_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Категорії_Pointer? Current { get; private set; }
         
-        public async ValueTask<Категорії_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<Категорії_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new Категорії_Pointer(pointer) : new Категорії_Pointer();
         }
         
-        public async ValueTask<List<Категорії_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<Категорії_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<Категорії_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -11867,8 +12934,8 @@ namespace GeneratedCode.Довідники
     public class Категорії_SelectHierarchical : DirectorySelectHierarchical
     {
         public Категорії_SelectHierarchical() : base(Config.Kernel, "tab_b58", "col_a3", "") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPositionHierarchical.HasValue) { 
           Current = new Категорії_Pointer(base.CurrentPointerPositionHierarchical.Value.UniqueID, base.CurrentPointerPositionHierarchical.Value.Fields); 
           Parent = new Категорії_Pointer(base.CurrentPointerPositionHierarchical.Value.Parent); 
@@ -11908,7 +12975,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = Статті_Const.FULLNAME + " *";
@@ -11917,7 +12984,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -11936,7 +13003,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_a1"] = Код;
             base.FieldValue["col_a2"] = Назва;
@@ -11953,9 +13020,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<Статті_Objest> Copy(bool copyTableParts = false)
+        public async Task<Статті_Objest> Copy(bool copyTableParts = false)
         {
-            Статті_Objest copy = new Статті_Objest()
+            Статті_Objest copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -11973,7 +13040,7 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
                 await Статті_Triggers.SetDeletionLabel(this, label);      
@@ -11981,7 +13048,7 @@ namespace GeneratedCode.Довідники
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -11992,7 +13059,7 @@ namespace GeneratedCode.Довідники
             return new Статті_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(Статті_Const.PRESENTATION_FIELDS);
         }
@@ -12017,10 +13084,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<Статті_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Статті_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Статті_Objest obj = new Статті_Objest();
+            Статті_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -12034,7 +13101,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(Статті_Const.PRESENTATION_FIELDS);
         }
@@ -12047,12 +13114,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             Статті_Objest? obj = await GetDirectoryObject();
               if (obj != null) await Статті_Triggers.SetDeletionLabel(obj, label);
@@ -12069,18 +13136,18 @@ namespace GeneratedCode.Довідники
     public class Статті_Select : DirectorySelect
     {
         public Статті_Select() : base(Config.Kernel, "tab_b59") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Статті_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Статті_Pointer? Current { get; private set; }
         
-        public async ValueTask<Статті_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<Статті_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new Статті_Pointer(pointer) : new Статті_Pointer();
         }
         
-        public async ValueTask<List<Статті_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<Статті_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<Статті_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -12093,8 +13160,8 @@ namespace GeneratedCode.Довідники
     public class Статті_SelectHierarchical : DirectorySelectHierarchical
     {
         public Статті_SelectHierarchical() : base(Config.Kernel, "tab_b59", "col_a3", "col_a4") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPositionHierarchical.HasValue) { 
           Current = new Статті_Pointer(base.CurrentPointerPositionHierarchical.Value.UniqueID, base.CurrentPointerPositionHierarchical.Value.Fields); 
           Parent = new Статті_Pointer(base.CurrentPointerPositionHierarchical.Value.Parent); 
@@ -12131,7 +13198,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ВидиПодатків_Const.FULLNAME + " *";
@@ -12140,7 +13207,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -12156,7 +13223,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_a1"] = Код;
             base.FieldValue["col_a2"] = Назва;
@@ -12170,9 +13237,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<ВидиПодатків_Objest> Copy(bool copyTableParts = false)
+        public async Task<ВидиПодатків_Objest> Copy(bool copyTableParts = false)
         {
-            ВидиПодатків_Objest copy = new ВидиПодатків_Objest()
+            ВидиПодатків_Objest copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -12187,13 +13254,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -12204,7 +13271,7 @@ namespace GeneratedCode.Довідники
             return new ВидиПодатків_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ВидиПодатків_Const.PRESENTATION_FIELDS);
         }
@@ -12226,10 +13293,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<ВидиПодатків_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ВидиПодатків_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ВидиПодатків_Objest obj = new ВидиПодатків_Objest();
+            ВидиПодатків_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -12243,7 +13310,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ВидиПодатків_Const.PRESENTATION_FIELDS);
         }
@@ -12256,12 +13323,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -12276,18 +13343,18 @@ namespace GeneratedCode.Довідники
     public class ВидиПодатків_Select : DirectorySelect
     {
         public ВидиПодатків_Select() : base(Config.Kernel, "tab_b60") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВидиПодатків_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ВидиПодатків_Pointer? Current { get; private set; }
         
-        public async ValueTask<ВидиПодатків_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ВидиПодатків_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ВидиПодатків_Pointer(pointer) : new ВидиПодатків_Pointer();
         }
         
-        public async ValueTask<List<ВидиПодатків_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ВидиПодатків_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ВидиПодатків_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -12322,7 +13389,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ВидиЖурналів_Const.FULLNAME + " *";
@@ -12331,7 +13398,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -12347,7 +13414,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_a1"] = Код;
             base.FieldValue["col_a2"] = Назва;
@@ -12361,9 +13428,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<ВидиЖурналів_Objest> Copy(bool copyTableParts = false)
+        public async Task<ВидиЖурналів_Objest> Copy(bool copyTableParts = false)
         {
-            ВидиЖурналів_Objest copy = new ВидиЖурналів_Objest()
+            ВидиЖурналів_Objest copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -12378,13 +13445,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -12395,7 +13462,7 @@ namespace GeneratedCode.Довідники
             return new ВидиЖурналів_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ВидиЖурналів_Const.PRESENTATION_FIELDS);
         }
@@ -12417,10 +13484,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<ВидиЖурналів_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ВидиЖурналів_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ВидиЖурналів_Objest obj = new ВидиЖурналів_Objest();
+            ВидиЖурналів_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -12434,7 +13501,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ВидиЖурналів_Const.PRESENTATION_FIELDS);
         }
@@ -12447,12 +13514,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -12467,18 +13534,18 @@ namespace GeneratedCode.Довідники
     public class ВидиЖурналів_Select : DirectorySelect
     {
         public ВидиЖурналів_Select() : base(Config.Kernel, "tab_b61") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВидиЖурналів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ВидиЖурналів_Pointer? Current { get; private set; }
         
-        public async ValueTask<ВидиЖурналів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ВидиЖурналів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ВидиЖурналів_Pointer(pointer) : new ВидиЖурналів_Pointer();
         }
         
-        public async ValueTask<List<ВидиЖурналів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ВидиЖурналів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ВидиЖурналів_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -12513,7 +13580,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ОсновніЗасоби_Const.FULLNAME + " *";
@@ -12522,7 +13589,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -12538,7 +13605,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_a1"] = Код;
             base.FieldValue["col_a2"] = Назва;
@@ -12552,9 +13619,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<ОсновніЗасоби_Objest> Copy(bool copyTableParts = false)
+        public async Task<ОсновніЗасоби_Objest> Copy(bool copyTableParts = false)
         {
-            ОсновніЗасоби_Objest copy = new ОсновніЗасоби_Objest()
+            ОсновніЗасоби_Objest copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -12569,13 +13636,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -12586,7 +13653,7 @@ namespace GeneratedCode.Довідники
             return new ОсновніЗасоби_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ОсновніЗасоби_Const.PRESENTATION_FIELDS);
         }
@@ -12608,10 +13675,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<ОсновніЗасоби_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ОсновніЗасоби_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ОсновніЗасоби_Objest obj = new ОсновніЗасоби_Objest();
+            ОсновніЗасоби_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -12625,7 +13692,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ОсновніЗасоби_Const.PRESENTATION_FIELDS);
         }
@@ -12638,12 +13705,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -12658,18 +13725,18 @@ namespace GeneratedCode.Довідники
     public class ОсновніЗасоби_Select : DirectorySelect
     {
         public ОсновніЗасоби_Select() : base(Config.Kernel, "tab_b62") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ОсновніЗасоби_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ОсновніЗасоби_Pointer? Current { get; private set; }
         
-        public async ValueTask<ОсновніЗасоби_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ОсновніЗасоби_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ОсновніЗасоби_Pointer(pointer) : new ОсновніЗасоби_Pointer();
         }
         
-        public async ValueTask<List<ОсновніЗасоби_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ОсновніЗасоби_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ОсновніЗасоби_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -12704,7 +13771,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = МалоцінніПредмети_Const.FULLNAME + " *";
@@ -12713,7 +13780,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -12729,7 +13796,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_a1"] = Код;
             base.FieldValue["col_a2"] = Назва;
@@ -12743,9 +13810,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<МалоцінніПредмети_Objest> Copy(bool copyTableParts = false)
+        public async Task<МалоцінніПредмети_Objest> Copy(bool copyTableParts = false)
         {
-            МалоцінніПредмети_Objest copy = new МалоцінніПредмети_Objest()
+            МалоцінніПредмети_Objest copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -12760,13 +13827,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -12777,7 +13844,7 @@ namespace GeneratedCode.Довідники
             return new МалоцінніПредмети_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(МалоцінніПредмети_Const.PRESENTATION_FIELDS);
         }
@@ -12799,10 +13866,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<МалоцінніПредмети_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<МалоцінніПредмети_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            МалоцінніПредмети_Objest obj = new МалоцінніПредмети_Objest();
+            МалоцінніПредмети_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -12816,7 +13883,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(МалоцінніПредмети_Const.PRESENTATION_FIELDS);
         }
@@ -12829,12 +13896,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -12849,18 +13916,18 @@ namespace GeneratedCode.Довідники
     public class МалоцінніПредмети_Select : DirectorySelect
     {
         public МалоцінніПредмети_Select() : base(Config.Kernel, "tab_b64") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new МалоцінніПредмети_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public МалоцінніПредмети_Pointer? Current { get; private set; }
         
-        public async ValueTask<МалоцінніПредмети_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<МалоцінніПредмети_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new МалоцінніПредмети_Pointer(pointer) : new МалоцінніПредмети_Pointer();
         }
         
-        public async ValueTask<List<МалоцінніПредмети_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<МалоцінніПредмети_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<МалоцінніПредмети_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -12895,7 +13962,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ГрошовіРахункиВласні_Const.FULLNAME + " *";
@@ -12904,7 +13971,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -12920,7 +13987,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_a1"] = Код;
             base.FieldValue["col_a2"] = Назва;
@@ -12934,9 +14001,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<ГрошовіРахункиВласні_Objest> Copy(bool copyTableParts = false)
+        public async Task<ГрошовіРахункиВласні_Objest> Copy(bool copyTableParts = false)
         {
-            ГрошовіРахункиВласні_Objest copy = new ГрошовіРахункиВласні_Objest()
+            ГрошовіРахункиВласні_Objest copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -12951,13 +14018,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -12968,7 +14035,7 @@ namespace GeneratedCode.Довідники
             return new ГрошовіРахункиВласні_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ГрошовіРахункиВласні_Const.PRESENTATION_FIELDS);
         }
@@ -12990,10 +14057,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<ГрошовіРахункиВласні_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ГрошовіРахункиВласні_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ГрошовіРахункиВласні_Objest obj = new ГрошовіРахункиВласні_Objest();
+            ГрошовіРахункиВласні_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -13007,7 +14074,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ГрошовіРахункиВласні_Const.PRESENTATION_FIELDS);
         }
@@ -13020,12 +14087,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -13040,18 +14107,18 @@ namespace GeneratedCode.Довідники
     public class ГрошовіРахункиВласні_Select : DirectorySelect
     {
         public ГрошовіРахункиВласні_Select() : base(Config.Kernel, "tab_b65") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ГрошовіРахункиВласні_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ГрошовіРахункиВласні_Pointer? Current { get; private set; }
         
-        public async ValueTask<ГрошовіРахункиВласні_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ГрошовіРахункиВласні_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ГрошовіРахункиВласні_Pointer(pointer) : new ГрошовіРахункиВласні_Pointer();
         }
         
-        public async ValueTask<List<ГрошовіРахункиВласні_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ГрошовіРахункиВласні_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ГрошовіРахункиВласні_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -13087,7 +14154,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = НоменклатураВнутрішня_Const.FULLNAME + " *";
@@ -13096,7 +14163,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -13113,7 +14180,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_a1"] = Код;
             base.FieldValue["col_a2"] = Назва;
@@ -13128,9 +14195,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<НоменклатураВнутрішня_Objest> Copy(bool copyTableParts = false)
+        public async Task<НоменклатураВнутрішня_Objest> Copy(bool copyTableParts = false)
         {
-            НоменклатураВнутрішня_Objest copy = new НоменклатураВнутрішня_Objest()
+            НоменклатураВнутрішня_Objest copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -13146,13 +14213,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -13163,7 +14230,7 @@ namespace GeneratedCode.Довідники
             return new НоменклатураВнутрішня_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(НоменклатураВнутрішня_Const.PRESENTATION_FIELDS);
         }
@@ -13186,10 +14253,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<НоменклатураВнутрішня_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<НоменклатураВнутрішня_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            НоменклатураВнутрішня_Objest obj = new НоменклатураВнутрішня_Objest();
+            НоменклатураВнутрішня_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -13203,7 +14270,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(НоменклатураВнутрішня_Const.PRESENTATION_FIELDS);
         }
@@ -13216,12 +14283,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -13236,18 +14303,18 @@ namespace GeneratedCode.Довідники
     public class НоменклатураВнутрішня_Select : DirectorySelect
     {
         public НоменклатураВнутрішня_Select() : base(Config.Kernel, "tab_b66") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new НоменклатураВнутрішня_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public НоменклатураВнутрішня_Pointer? Current { get; private set; }
         
-        public async ValueTask<НоменклатураВнутрішня_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<НоменклатураВнутрішня_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new НоменклатураВнутрішня_Pointer(pointer) : new НоменклатураВнутрішня_Pointer();
         }
         
-        public async ValueTask<List<НоменклатураВнутрішня_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<НоменклатураВнутрішня_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<НоменклатураВнутрішня_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -13283,7 +14350,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = НоменклатураВнутрішня_Папки_Const.FULLNAME + " *";
@@ -13292,7 +14359,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -13309,7 +14376,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_a1"] = Код;
             base.FieldValue["col_a2"] = Назва;
@@ -13324,9 +14391,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<НоменклатураВнутрішня_Папки_Objest> Copy(bool copyTableParts = false)
+        public async Task<НоменклатураВнутрішня_Папки_Objest> Copy(bool copyTableParts = false)
         {
-            НоменклатураВнутрішня_Папки_Objest copy = new НоменклатураВнутрішня_Папки_Objest()
+            НоменклатураВнутрішня_Папки_Objest copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -13342,7 +14409,7 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
                 await НоменклатураВнутрішня_Папки_Triggers.SetDeletionLabel(this, label);      
@@ -13350,8 +14417,10 @@ namespace GeneratedCode.Довідники
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
+            
+                await НоменклатураВнутрішня_Папки_Triggers.BeforeDelete(this);      
             
             await base.BaseDelete([]);
         }
@@ -13361,7 +14430,7 @@ namespace GeneratedCode.Довідники
             return new НоменклатураВнутрішня_Папки_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(НоменклатураВнутрішня_Папки_Const.PRESENTATION_FIELDS);
         }
@@ -13384,10 +14453,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<НоменклатураВнутрішня_Папки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<НоменклатураВнутрішня_Папки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            НоменклатураВнутрішня_Папки_Objest obj = new НоменклатураВнутрішня_Папки_Objest();
+            НоменклатураВнутрішня_Папки_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -13401,7 +14470,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(НоменклатураВнутрішня_Папки_Const.PRESENTATION_FIELDS);
         }
@@ -13414,12 +14483,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             НоменклатураВнутрішня_Папки_Objest? obj = await GetDirectoryObject();
               if (obj != null) await НоменклатураВнутрішня_Папки_Triggers.SetDeletionLabel(obj, label);
@@ -13436,18 +14505,18 @@ namespace GeneratedCode.Довідники
     public class НоменклатураВнутрішня_Папки_Select : DirectorySelect
     {
         public НоменклатураВнутрішня_Папки_Select() : base(Config.Kernel, "tab_b67") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new НоменклатураВнутрішня_Папки_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public НоменклатураВнутрішня_Папки_Pointer? Current { get; private set; }
         
-        public async ValueTask<НоменклатураВнутрішня_Папки_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<НоменклатураВнутрішня_Папки_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new НоменклатураВнутрішня_Папки_Pointer(pointer) : new НоменклатураВнутрішня_Папки_Pointer();
         }
         
-        public async ValueTask<List<НоменклатураВнутрішня_Папки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<НоменклатураВнутрішня_Папки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<НоменклатураВнутрішня_Папки_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -13460,8 +14529,8 @@ namespace GeneratedCode.Довідники
     public class НоменклатураВнутрішня_Папки_SelectHierarchical : DirectorySelectHierarchical
     {
         public НоменклатураВнутрішня_Папки_SelectHierarchical() : base(Config.Kernel, "tab_b67", "col_a3", "") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPositionHierarchical.HasValue) { 
           Current = new НоменклатураВнутрішня_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.UniqueID, base.CurrentPointerPositionHierarchical.Value.Fields); 
           Parent = new НоменклатураВнутрішня_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.Parent); 
@@ -13498,7 +14567,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = Бланки_Const.FULLNAME + " *";
@@ -13507,7 +14576,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -13523,7 +14592,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_a1"] = Код;
             base.FieldValue["col_a2"] = Назва;
@@ -13537,9 +14606,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<Бланки_Objest> Copy(bool copyTableParts = false)
+        public async Task<Бланки_Objest> Copy(bool copyTableParts = false)
         {
-            Бланки_Objest copy = new Бланки_Objest()
+            Бланки_Objest copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -13554,13 +14623,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -13571,7 +14640,7 @@ namespace GeneratedCode.Довідники
             return new Бланки_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(Бланки_Const.PRESENTATION_FIELDS);
         }
@@ -13593,10 +14662,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<Бланки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Бланки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Бланки_Objest obj = new Бланки_Objest();
+            Бланки_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -13610,7 +14679,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(Бланки_Const.PRESENTATION_FIELDS);
         }
@@ -13623,12 +14692,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -13643,18 +14712,18 @@ namespace GeneratedCode.Довідники
     public class Бланки_Select : DirectorySelect
     {
         public Бланки_Select() : base(Config.Kernel, "tab_b68") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Бланки_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Бланки_Pointer? Current { get; private set; }
         
-        public async ValueTask<Бланки_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<Бланки_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new Бланки_Pointer(pointer) : new Бланки_Pointer();
         }
         
-        public async ValueTask<List<Бланки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<Бланки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<Бланки_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -13689,7 +14758,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = Співробітники_Const.FULLNAME + " *";
@@ -13698,7 +14767,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -13714,7 +14783,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_a1"] = Код;
             base.FieldValue["col_a2"] = Назва;
@@ -13728,9 +14797,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<Співробітники_Objest> Copy(bool copyTableParts = false)
+        public async Task<Співробітники_Objest> Copy(bool copyTableParts = false)
         {
-            Співробітники_Objest copy = new Співробітники_Objest()
+            Співробітники_Objest copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -13745,13 +14814,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -13762,7 +14831,7 @@ namespace GeneratedCode.Довідники
             return new Співробітники_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(Співробітники_Const.PRESENTATION_FIELDS);
         }
@@ -13784,10 +14853,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<Співробітники_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Співробітники_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Співробітники_Objest obj = new Співробітники_Objest();
+            Співробітники_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -13801,7 +14870,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(Співробітники_Const.PRESENTATION_FIELDS);
         }
@@ -13814,12 +14883,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -13834,18 +14903,18 @@ namespace GeneratedCode.Довідники
     public class Співробітники_Select : DirectorySelect
     {
         public Співробітники_Select() : base(Config.Kernel, "tab_b69") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Співробітники_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Співробітники_Pointer? Current { get; private set; }
         
-        public async ValueTask<Співробітники_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<Співробітники_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new Співробітники_Pointer(pointer) : new Співробітники_Pointer();
         }
         
-        public async ValueTask<List<Співробітники_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<Співробітники_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<Співробітники_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -13880,7 +14949,7 @@ namespace GeneratedCode.Довідники
             
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ТипиБухОперацій_Const.FULLNAME + " *";
@@ -13889,7 +14958,7 @@ namespace GeneratedCode.Довідники
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -13905,7 +14974,7 @@ namespace GeneratedCode.Довідники
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_a1"] = Код;
             base.FieldValue["col_a2"] = Назва;
@@ -13919,9 +14988,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async ValueTask<ТипиБухОперацій_Objest> Copy(bool copyTableParts = false)
+        public async Task<ТипиБухОперацій_Objest> Copy(bool copyTableParts = false)
         {
-            ТипиБухОперацій_Objest copy = new ТипиБухОперацій_Objest()
+            ТипиБухОперацій_Objest copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -13936,13 +15005,13 @@ namespace GeneratedCode.Довідники
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await base.BaseDelete([]);
@@ -13953,7 +15022,7 @@ namespace GeneratedCode.Довідники
             return new ТипиБухОперацій_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ТипиБухОперацій_Const.PRESENTATION_FIELDS);
         }
@@ -13975,10 +15044,10 @@ namespace GeneratedCode.Довідники
             base.Init(uid, fields);
         }
         
-        public async ValueTask<ТипиБухОперацій_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ТипиБухОперацій_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ТипиБухОперацій_Objest obj = new ТипиБухОперацій_Objest();
+            ТипиБухОперацій_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
 
@@ -13992,7 +15061,7 @@ namespace GeneratedCode.Довідники
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ТипиБухОперацій_Const.PRESENTATION_FIELDS);
         }
@@ -14005,12 +15074,12 @@ namespace GeneratedCode.Довідники
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
@@ -14025,18 +15094,18 @@ namespace GeneratedCode.Довідники
     public class ТипиБухОперацій_Select : DirectorySelect
     {
         public ТипиБухОперацій_Select() : base(Config.Kernel, "tab_b70") { }        
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ТипиБухОперацій_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ТипиБухОперацій_Pointer? Current { get; private set; }
         
-        public async ValueTask<ТипиБухОперацій_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ТипиБухОперацій_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ТипиБухОперацій_Pointer(pointer) : new ТипиБухОперацій_Pointer();
         }
         
-        public async ValueTask<List<ТипиБухОперацій_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ТипиБухОперацій_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ТипиБухОперацій_Pointer> directoryPointerList = [];
             foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -15286,7 +16355,7 @@ namespace GeneratedCode.Документи
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ЗамовленняПостачальнику_Const.FULLNAME + " *";
@@ -15295,7 +16364,7 @@ namespace GeneratedCode.Документи
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -15342,7 +16411,7 @@ namespace GeneratedCode.Документи
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             
                 await ЗамовленняПостачальнику_Triggers.BeforeSave(this);
@@ -15385,12 +16454,12 @@ namespace GeneratedCode.Документи
             return result;
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             
             await BaseAddIgnoreDocumentList();
             bool spend = await ЗамовленняПостачальнику_SpendTheDocument.Spend(this);
-            if (!spend) ClearRegAccum();
+            if (!spend) await ClearRegAccum();
             await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
             await BaseRemoveIgnoreDocumentList();
             return spend;
@@ -15399,29 +16468,28 @@ namespace GeneratedCode.Документи
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
                 await new РегістриНакопичення.ЗамовленняПостачальникам_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
-            ClearRegAccum();
+            await ClearRegAccum();
             
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async ValueTask<ЗамовленняПостачальнику_Objest> Copy(bool copyTableParts = false)
+        public async Task<ЗамовленняПостачальнику_Objest> Copy(bool copyTableParts = false)
         {
-            ЗамовленняПостачальнику_Objest copy = new ЗамовленняПостачальнику_Objest()
+            ЗамовленняПостачальнику_Objest copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -15470,14 +16538,14 @@ namespace GeneratedCode.Документи
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await ClearSpendTheDocument();
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await ClearSpendTheDocument();
@@ -15489,7 +16557,7 @@ namespace GeneratedCode.Документи
             return new ЗамовленняПостачальнику_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ЗамовленняПостачальнику_Const.PRESENTATION_FIELDS);
         }
@@ -15544,7 +16612,7 @@ namespace GeneratedCode.Документи
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ЗамовленняПостачальнику_Const.PRESENTATION_FIELDS);
         }
@@ -15557,56 +16625,55 @@ namespace GeneratedCode.Документи
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> IsSpend()
+        public async Task<bool?> IsSpend()
         {
             return await base.BaseIsSpend();
         }
 
-        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
         {
             return await base.BaseGetSpend();
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ЗамовленняПостачальнику_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
             
-            ClearRegAccum();
+            await ClearRegAccum();
             await BaseSpend(false, DateTime.MinValue);
                 
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
                 await new РегістриНакопичення.ЗамовленняПостачальникам_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
           
             if (label)
             {
-                ClearRegAccum();
+                await ClearRegAccum();
                 await BaseSpend(false, DateTime.MinValue);
             }
             
@@ -15623,10 +16690,10 @@ namespace GeneratedCode.Документи
             return new ЗамовленняПостачальнику_Pointer();
         }
 
-        public async ValueTask<ЗамовленняПостачальнику_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ЗамовленняПостачальнику_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ЗамовленняПостачальнику_Objest obj = new ЗамовленняПостачальнику_Objest();
+            ЗамовленняПостачальнику_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -15634,18 +16701,18 @@ namespace GeneratedCode.Документи
     public class ЗамовленняПостачальнику_Select : DocumentSelect
     {		
         public ЗамовленняПостачальнику_Select() : base(Config.Kernel, "tab_a25") { }
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗамовленняПостачальнику_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ЗамовленняПостачальнику_Pointer? Current { get; private set; }
 
-        public async ValueTask<ЗамовленняПостачальнику_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ЗамовленняПостачальнику_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ЗамовленняПостачальнику_Pointer(pointer) : new ЗамовленняПостачальнику_Pointer();
         }
         
-        public async ValueTask<List<ЗамовленняПостачальнику_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ЗамовленняПостачальнику_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ЗамовленняПостачальнику_Pointer> documentPointerList = [];
             foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -15722,14 +16789,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_b2"] != DBNull.Value) ? (int)fieldValue["col_b2"] : 0,
@@ -15764,7 +16831,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_a25"))
                 throw new Exception("Owner not exist");
@@ -15818,7 +16885,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -15846,7 +16913,7 @@ namespace GeneratedCode.Документи
     
     public static class ЗамовленняПостачальнику_Export
     {
-        public static async ValueTask ToXmlFile(ЗамовленняПостачальнику_Pointer ЗамовленняПостачальнику, string pathToSave)
+        public static async Task ToXmlFile(ЗамовленняПостачальнику_Pointer ЗамовленняПостачальнику, string pathToSave)
         {
         ЗамовленняПостачальнику_Objest? obj = await ЗамовленняПостачальнику.GetDocumentObject(true);
             if (obj == null) return;
@@ -16061,7 +17128,7 @@ namespace GeneratedCode.Документи
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ПоступленняТоварівТаПослуг_Const.FULLNAME + " *";
@@ -16070,7 +17137,7 @@ namespace GeneratedCode.Документи
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -16123,7 +17190,7 @@ namespace GeneratedCode.Документи
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             
                 await ПоступленняТоварівТаПослуг_Triggers.BeforeSave(this);
@@ -16172,12 +17239,12 @@ namespace GeneratedCode.Документи
             return result;
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             
             await BaseAddIgnoreDocumentList();
             bool spend = await ПоступленняТоварівТаПослуг_SpendTheDocument.Spend(this);
-            if (!spend) ClearRegAccum();
+            if (!spend) await ClearRegAccum();
             await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
             await BaseRemoveIgnoreDocumentList();
             return spend;
@@ -16186,9 +17253,9 @@ namespace GeneratedCode.Документи
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
@@ -16205,20 +17272,19 @@ namespace GeneratedCode.Документи
                 await new РегістриНакопичення.ПартіїТоварів_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
-            ClearRegAccum();
+            await ClearRegAccum();
             
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async ValueTask<ПоступленняТоварівТаПослуг_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПоступленняТоварівТаПослуг_Objest> Copy(bool copyTableParts = false)
         {
-            ПоступленняТоварівТаПослуг_Objest copy = new ПоступленняТоварівТаПослуг_Objest()
+            ПоступленняТоварівТаПослуг_Objest copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -16273,7 +17339,7 @@ namespace GeneratedCode.Документи
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
                 await ПоступленняТоварівТаПослуг_Triggers.SetDeletionLabel(this, label);      
@@ -16282,7 +17348,7 @@ namespace GeneratedCode.Документи
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await ClearSpendTheDocument();
@@ -16294,7 +17360,7 @@ namespace GeneratedCode.Документи
             return new ПоступленняТоварівТаПослуг_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ПоступленняТоварівТаПослуг_Const.PRESENTATION_FIELDS);
         }
@@ -16355,7 +17421,7 @@ namespace GeneratedCode.Документи
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ПоступленняТоварівТаПослуг_Const.PRESENTATION_FIELDS);
         }
@@ -16368,40 +17434,40 @@ namespace GeneratedCode.Документи
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> IsSpend()
+        public async Task<bool?> IsSpend()
         {
             return await base.BaseIsSpend();
         }
 
-        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
         {
             return await base.BaseGetSpend();
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПоступленняТоварівТаПослуг_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
             
-            ClearRegAccum();
+            await ClearRegAccum();
             await BaseSpend(false, DateTime.MinValue);
                 
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
@@ -16418,11 +17484,10 @@ namespace GeneratedCode.Документи
                 await new РегістриНакопичення.ПартіїТоварів_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
           ПоступленняТоварівТаПослуг_Objest? obj = await GetDocumentObject();
             if (obj == null) return;
@@ -16444,10 +17509,10 @@ namespace GeneratedCode.Документи
             return new ПоступленняТоварівТаПослуг_Pointer();
         }
 
-        public async ValueTask<ПоступленняТоварівТаПослуг_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПоступленняТоварівТаПослуг_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПоступленняТоварівТаПослуг_Objest obj = new ПоступленняТоварівТаПослуг_Objest();
+            ПоступленняТоварівТаПослуг_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -16455,18 +17520,18 @@ namespace GeneratedCode.Документи
     public class ПоступленняТоварівТаПослуг_Select : DocumentSelect
     {		
         public ПоступленняТоварівТаПослуг_Select() : base(Config.Kernel, "tab_a32") { }
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПоступленняТоварівТаПослуг_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПоступленняТоварівТаПослуг_Pointer? Current { get; private set; }
 
-        public async ValueTask<ПоступленняТоварівТаПослуг_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ПоступленняТоварівТаПослуг_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ПоступленняТоварівТаПослуг_Pointer(pointer) : new ПоступленняТоварівТаПослуг_Pointer();
         }
         
-        public async ValueTask<List<ПоступленняТоварівТаПослуг_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ПоступленняТоварівТаПослуг_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ПоступленняТоварівТаПослуг_Pointer> documentPointerList = [];
             foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -16554,14 +17619,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_b3"] != DBNull.Value) ? (int)fieldValue["col_b3"] : 0,
@@ -16601,7 +17666,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_a32"))
                 throw new Exception("Owner not exist");
@@ -16657,7 +17722,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -16687,7 +17752,7 @@ namespace GeneratedCode.Документи
     
     public static class ПоступленняТоварівТаПослуг_Export
     {
-        public static async ValueTask ToXmlFile(ПоступленняТоварівТаПослуг_Pointer ПоступленняТоварівТаПослуг, string pathToSave)
+        public static async Task ToXmlFile(ПоступленняТоварівТаПослуг_Pointer ПоступленняТоварівТаПослуг, string pathToSave)
         {
         ПоступленняТоварівТаПослуг_Objest? obj = await ПоступленняТоварівТаПослуг.GetDocumentObject(true);
             if (obj == null) return;
@@ -16908,7 +17973,7 @@ namespace GeneratedCode.Документи
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ЗамовленняКлієнта_Const.FULLNAME + " *";
@@ -16917,7 +17982,7 @@ namespace GeneratedCode.Документи
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -16968,7 +18033,7 @@ namespace GeneratedCode.Документи
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             
                 await ЗамовленняКлієнта_Triggers.BeforeSave(this);
@@ -17015,12 +18080,12 @@ namespace GeneratedCode.Документи
             return result;
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             
             await BaseAddIgnoreDocumentList();
             bool spend = await ЗамовленняКлієнта_SpendTheDocument.Spend(this);
-            if (!spend) ClearRegAccum();
+            if (!spend) await ClearRegAccum();
             await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
             await BaseRemoveIgnoreDocumentList();
             return spend;
@@ -17029,9 +18094,9 @@ namespace GeneratedCode.Документи
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
@@ -17040,20 +18105,19 @@ namespace GeneratedCode.Документи
                 await new РегістриНакопичення.ВільніЗалишки_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
-            ClearRegAccum();
+            await ClearRegAccum();
             
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async ValueTask<ЗамовленняКлієнта_Objest> Copy(bool copyTableParts = false)
+        public async Task<ЗамовленняКлієнта_Objest> Copy(bool copyTableParts = false)
         {
-            ЗамовленняКлієнта_Objest copy = new ЗамовленняКлієнта_Objest()
+            ЗамовленняКлієнта_Objest copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -17106,14 +18170,14 @@ namespace GeneratedCode.Документи
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await ClearSpendTheDocument();
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await ClearSpendTheDocument();
@@ -17125,7 +18189,7 @@ namespace GeneratedCode.Документи
             return new ЗамовленняКлієнта_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ЗамовленняКлієнта_Const.PRESENTATION_FIELDS);
         }
@@ -17184,7 +18248,7 @@ namespace GeneratedCode.Документи
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ЗамовленняКлієнта_Const.PRESENTATION_FIELDS);
         }
@@ -17197,40 +18261,40 @@ namespace GeneratedCode.Документи
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> IsSpend()
+        public async Task<bool?> IsSpend()
         {
             return await base.BaseIsSpend();
         }
 
-        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
         {
             return await base.BaseGetSpend();
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ЗамовленняКлієнта_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
             
-            ClearRegAccum();
+            await ClearRegAccum();
             await BaseSpend(false, DateTime.MinValue);
                 
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
@@ -17239,16 +18303,15 @@ namespace GeneratedCode.Документи
                 await new РегістриНакопичення.ВільніЗалишки_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
           
             if (label)
             {
-                ClearRegAccum();
+                await ClearRegAccum();
                 await BaseSpend(false, DateTime.MinValue);
             }
             
@@ -17265,10 +18328,10 @@ namespace GeneratedCode.Документи
             return new ЗамовленняКлієнта_Pointer();
         }
 
-        public async ValueTask<ЗамовленняКлієнта_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ЗамовленняКлієнта_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ЗамовленняКлієнта_Objest obj = new ЗамовленняКлієнта_Objest();
+            ЗамовленняКлієнта_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -17276,18 +18339,18 @@ namespace GeneratedCode.Документи
     public class ЗамовленняКлієнта_Select : DocumentSelect
     {		
         public ЗамовленняКлієнта_Select() : base(Config.Kernel, "tab_a34") { }
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗамовленняКлієнта_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ЗамовленняКлієнта_Pointer? Current { get; private set; }
 
-        public async ValueTask<ЗамовленняКлієнта_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ЗамовленняКлієнта_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ЗамовленняКлієнта_Pointer(pointer) : new ЗамовленняКлієнта_Pointer();
         }
         
-        public async ValueTask<List<ЗамовленняКлієнта_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ЗамовленняКлієнта_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ЗамовленняКлієнта_Pointer> documentPointerList = [];
             foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -17363,14 +18426,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_a2"] != DBNull.Value) ? (int)fieldValue["col_a2"] : 0,
@@ -17404,7 +18467,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_a34"))
                 throw new Exception("Owner not exist");
@@ -17457,7 +18520,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -17484,7 +18547,7 @@ namespace GeneratedCode.Документи
     
     public static class ЗамовленняКлієнта_Export
     {
-        public static async ValueTask ToXmlFile(ЗамовленняКлієнта_Pointer ЗамовленняКлієнта, string pathToSave)
+        public static async Task ToXmlFile(ЗамовленняКлієнта_Pointer ЗамовленняКлієнта, string pathToSave)
         {
         ЗамовленняКлієнта_Objest? obj = await ЗамовленняКлієнта.GetDocumentObject(true);
             if (obj == null) return;
@@ -17698,7 +18761,7 @@ namespace GeneratedCode.Документи
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = РеалізаціяТоварівТаПослуг_Const.FULLNAME + " *";
@@ -17707,7 +18770,7 @@ namespace GeneratedCode.Документи
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -17759,7 +18822,7 @@ namespace GeneratedCode.Документи
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             
                 await РеалізаціяТоварівТаПослуг_Triggers.BeforeSave(this);
@@ -17807,12 +18870,12 @@ namespace GeneratedCode.Документи
             return result;
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             
             await BaseAddIgnoreDocumentList();
             bool spend = await РеалізаціяТоварівТаПослуг_SpendTheDocument.Spend(this);
-            if (!spend) ClearRegAccum();
+            if (!spend) await ClearRegAccum();
             await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
             await BaseRemoveIgnoreDocumentList();
             return spend;
@@ -17821,9 +18884,9 @@ namespace GeneratedCode.Документи
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
@@ -17840,20 +18903,19 @@ namespace GeneratedCode.Документи
                 await new РегістриНакопичення.Продажі_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
-            ClearRegAccum();
+            await ClearRegAccum();
             
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async ValueTask<РеалізаціяТоварівТаПослуг_Objest> Copy(bool copyTableParts = false)
+        public async Task<РеалізаціяТоварівТаПослуг_Objest> Copy(bool copyTableParts = false)
         {
-            РеалізаціяТоварівТаПослуг_Objest copy = new РеалізаціяТоварівТаПослуг_Objest()
+            РеалізаціяТоварівТаПослуг_Objest copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -17907,14 +18969,14 @@ namespace GeneratedCode.Документи
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await ClearSpendTheDocument();
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await ClearSpendTheDocument();
@@ -17926,7 +18988,7 @@ namespace GeneratedCode.Документи
             return new РеалізаціяТоварівТаПослуг_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(РеалізаціяТоварівТаПослуг_Const.PRESENTATION_FIELDS);
         }
@@ -17986,7 +19048,7 @@ namespace GeneratedCode.Документи
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(РеалізаціяТоварівТаПослуг_Const.PRESENTATION_FIELDS);
         }
@@ -17999,40 +19061,40 @@ namespace GeneratedCode.Документи
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> IsSpend()
+        public async Task<bool?> IsSpend()
         {
             return await base.BaseIsSpend();
         }
 
-        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
         {
             return await base.BaseGetSpend();
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             РеалізаціяТоварівТаПослуг_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
             
-            ClearRegAccum();
+            await ClearRegAccum();
             await BaseSpend(false, DateTime.MinValue);
                 
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
@@ -18049,16 +19111,15 @@ namespace GeneratedCode.Документи
                 await new РегістриНакопичення.Продажі_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
           
             if (label)
             {
-                ClearRegAccum();
+                await ClearRegAccum();
                 await BaseSpend(false, DateTime.MinValue);
             }
             
@@ -18075,10 +19136,10 @@ namespace GeneratedCode.Документи
             return new РеалізаціяТоварівТаПослуг_Pointer();
         }
 
-        public async ValueTask<РеалізаціяТоварівТаПослуг_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<РеалізаціяТоварівТаПослуг_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            РеалізаціяТоварівТаПослуг_Objest obj = new РеалізаціяТоварівТаПослуг_Objest();
+            РеалізаціяТоварівТаПослуг_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -18086,18 +19147,18 @@ namespace GeneratedCode.Документи
     public class РеалізаціяТоварівТаПослуг_Select : DocumentSelect
     {		
         public РеалізаціяТоварівТаПослуг_Select() : base(Config.Kernel, "tab_a36") { }
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new РеалізаціяТоварівТаПослуг_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public РеалізаціяТоварівТаПослуг_Pointer? Current { get; private set; }
 
-        public async ValueTask<РеалізаціяТоварівТаПослуг_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<РеалізаціяТоварівТаПослуг_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new РеалізаціяТоварівТаПослуг_Pointer(pointer) : new РеалізаціяТоварівТаПослуг_Pointer();
         }
         
-        public async ValueTask<List<РеалізаціяТоварівТаПослуг_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<РеалізаціяТоварівТаПослуг_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<РеалізаціяТоварівТаПослуг_Pointer> documentPointerList = [];
             foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -18189,14 +19250,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_a1"] != DBNull.Value) ? (int)fieldValue["col_a1"] : 0,
@@ -18238,7 +19299,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_a36"))
                 throw new Exception("Owner not exist");
@@ -18295,7 +19356,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -18326,7 +19387,7 @@ namespace GeneratedCode.Документи
     
     public static class РеалізаціяТоварівТаПослуг_Export
     {
-        public static async ValueTask ToXmlFile(РеалізаціяТоварівТаПослуг_Pointer РеалізаціяТоварівТаПослуг, string pathToSave)
+        public static async Task ToXmlFile(РеалізаціяТоварівТаПослуг_Pointer РеалізаціяТоварівТаПослуг, string pathToSave)
         {
         РеалізаціяТоварівТаПослуг_Objest? obj = await РеалізаціяТоварівТаПослуг.GetDocumentObject(true);
             if (obj == null) return;
@@ -18526,7 +19587,7 @@ namespace GeneratedCode.Документи
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ВстановленняЦінНоменклатури_Const.FULLNAME + " *";
@@ -18535,7 +19596,7 @@ namespace GeneratedCode.Документи
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -18565,7 +19626,7 @@ namespace GeneratedCode.Документи
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             
                 await ВстановленняЦінНоменклатури_Triggers.BeforeSave(this);
@@ -18591,12 +19652,12 @@ namespace GeneratedCode.Документи
             return result;
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             
             await BaseAddIgnoreDocumentList();
             bool spend = await ВстановленняЦінНоменклатури_SpendTheDocument.Spend(this);
-            if (!spend) ClearRegAccum();
+            if (!spend) await ClearRegAccum();
             await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
             await BaseRemoveIgnoreDocumentList();
             return spend;
@@ -18605,24 +19666,20 @@ namespace GeneratedCode.Документи
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
-        {
-          await ValueTask.FromResult(true);
-        }
-  
+        Task ClearRegAccum() => Task.CompletedTask;
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
-            ClearRegAccum();
+            await ClearRegAccum();
             
             await ВстановленняЦінНоменклатури_SpendTheDocument.ClearSpend(this);
             
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async ValueTask<ВстановленняЦінНоменклатури_Objest> Copy(bool copyTableParts = false)
+        public async Task<ВстановленняЦінНоменклатури_Objest> Copy(bool copyTableParts = false)
         {
-            ВстановленняЦінНоменклатури_Objest copy = new ВстановленняЦінНоменклатури_Objest()
+            ВстановленняЦінНоменклатури_Objest copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -18654,14 +19711,14 @@ namespace GeneratedCode.Документи
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await ClearSpendTheDocument();
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await ClearSpendTheDocument();
@@ -18673,7 +19730,7 @@ namespace GeneratedCode.Документи
             return new ВстановленняЦінНоменклатури_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ВстановленняЦінНоменклатури_Const.PRESENTATION_FIELDS);
         }
@@ -18711,7 +19768,7 @@ namespace GeneratedCode.Документи
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ВстановленняЦінНоменклатури_Const.PRESENTATION_FIELDS);
         }
@@ -18724,43 +19781,39 @@ namespace GeneratedCode.Документи
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> IsSpend()
+        public async Task<bool?> IsSpend()
         {
             return await base.BaseIsSpend();
         }
 
-        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
         {
             return await base.BaseGetSpend();
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ВстановленняЦінНоменклатури_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
             ВстановленняЦінНоменклатури_Objest? obj = await GetDocumentObject();
             if (obj != null) await obj.ClearSpendTheDocument();
                 
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
-        {
-          await ValueTask.FromResult(true);
-        }
-  
+        Task ClearRegAccum() => Task.CompletedTask;
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
           ВстановленняЦінНоменклатури_Objest? obj = await GetDocumentObject();
             if (obj == null) return;
@@ -18780,10 +19833,10 @@ namespace GeneratedCode.Документи
             return new ВстановленняЦінНоменклатури_Pointer();
         }
 
-        public async ValueTask<ВстановленняЦінНоменклатури_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ВстановленняЦінНоменклатури_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ВстановленняЦінНоменклатури_Objest obj = new ВстановленняЦінНоменклатури_Objest();
+            ВстановленняЦінНоменклатури_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -18791,18 +19844,18 @@ namespace GeneratedCode.Документи
     public class ВстановленняЦінНоменклатури_Select : DocumentSelect
     {		
         public ВстановленняЦінНоменклатури_Select() : base(Config.Kernel, "tab_a42") { }
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВстановленняЦінНоменклатури_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ВстановленняЦінНоменклатури_Pointer? Current { get; private set; }
 
-        public async ValueTask<ВстановленняЦінНоменклатури_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ВстановленняЦінНоменклатури_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ВстановленняЦінНоменклатури_Pointer(pointer) : new ВстановленняЦінНоменклатури_Pointer();
         }
         
-        public async ValueTask<List<ВстановленняЦінНоменклатури_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ВстановленняЦінНоменклатури_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ВстановленняЦінНоменклатури_Pointer> documentPointerList = [];
             foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -18870,14 +19923,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_a1"] != DBNull.Value) ? (int)fieldValue["col_a1"] : 0,
@@ -18905,7 +19958,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_a42"))
                 throw new Exception("Owner not exist");
@@ -18953,7 +20006,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -18975,9 +20028,9 @@ namespace GeneratedCode.Документи
     
     public static class ВстановленняЦінНоменклатури_Export
     {
-        public static async ValueTask ToXmlFile(ВстановленняЦінНоменклатури_Pointer ВстановленняЦінНоменклатури, string pathToSave)
+        public static async Task ToXmlFile(ВстановленняЦінНоменклатури_Pointer ВстановленняЦінНоменклатури, string pathToSave)
         {
-        await ValueTask.FromResult(true);
+        await Task.CompletedTask;
         }
     }
 
@@ -19027,7 +20080,7 @@ namespace GeneratedCode.Документи
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ПрихіднийКасовийОрдер_Const.FULLNAME + " *";
@@ -19036,7 +20089,7 @@ namespace GeneratedCode.Документи
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -19074,7 +20127,7 @@ namespace GeneratedCode.Документи
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             
                 await ПрихіднийКасовийОрдер_Triggers.BeforeSave(this);
@@ -19108,12 +20161,12 @@ namespace GeneratedCode.Документи
             return result;
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             
             await BaseAddIgnoreDocumentList();
             bool spend = await ПрихіднийКасовийОрдер_SpendTheDocument.Spend(this);
-            if (!spend) ClearRegAccum();
+            if (!spend) await ClearRegAccum();
             await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
             await BaseRemoveIgnoreDocumentList();
             return spend;
@@ -19122,9 +20175,9 @@ namespace GeneratedCode.Документи
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
@@ -19135,20 +20188,19 @@ namespace GeneratedCode.Документи
                 await new РегістриНакопичення.РухКоштів_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
-            ClearRegAccum();
+            await ClearRegAccum();
             
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async ValueTask<ПрихіднийКасовийОрдер_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПрихіднийКасовийОрдер_Objest> Copy(bool copyTableParts = false)
         {
-            ПрихіднийКасовийОрдер_Objest copy = new ПрихіднийКасовийОрдер_Objest()
+            ПрихіднийКасовийОрдер_Objest copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -19188,14 +20240,14 @@ namespace GeneratedCode.Документи
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await ClearSpendTheDocument();
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await ClearSpendTheDocument();
@@ -19207,7 +20259,7 @@ namespace GeneratedCode.Документи
             return new ПрихіднийКасовийОрдер_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ПрихіднийКасовийОрдер_Const.PRESENTATION_FIELDS);
         }
@@ -19253,7 +20305,7 @@ namespace GeneratedCode.Документи
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ПрихіднийКасовийОрдер_Const.PRESENTATION_FIELDS);
         }
@@ -19266,40 +20318,40 @@ namespace GeneratedCode.Документи
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> IsSpend()
+        public async Task<bool?> IsSpend()
         {
             return await base.BaseIsSpend();
         }
 
-        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
         {
             return await base.BaseGetSpend();
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПрихіднийКасовийОрдер_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
             
-            ClearRegAccum();
+            await ClearRegAccum();
             await BaseSpend(false, DateTime.MinValue);
                 
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
@@ -19310,16 +20362,15 @@ namespace GeneratedCode.Документи
                 await new РегістриНакопичення.РухКоштів_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
           
             if (label)
             {
-                ClearRegAccum();
+                await ClearRegAccum();
                 await BaseSpend(false, DateTime.MinValue);
             }
             
@@ -19336,10 +20387,10 @@ namespace GeneratedCode.Документи
             return new ПрихіднийКасовийОрдер_Pointer();
         }
 
-        public async ValueTask<ПрихіднийКасовийОрдер_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПрихіднийКасовийОрдер_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПрихіднийКасовийОрдер_Objest obj = new ПрихіднийКасовийОрдер_Objest();
+            ПрихіднийКасовийОрдер_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -19347,18 +20398,18 @@ namespace GeneratedCode.Документи
     public class ПрихіднийКасовийОрдер_Select : DocumentSelect
     {		
         public ПрихіднийКасовийОрдер_Select() : base(Config.Kernel, "tab_a44") { }
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПрихіднийКасовийОрдер_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПрихіднийКасовийОрдер_Pointer? Current { get; private set; }
 
-        public async ValueTask<ПрихіднийКасовийОрдер_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ПрихіднийКасовийОрдер_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ПрихіднийКасовийОрдер_Pointer(pointer) : new ПрихіднийКасовийОрдер_Pointer();
         }
         
-        public async ValueTask<List<ПрихіднийКасовийОрдер_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ПрихіднийКасовийОрдер_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ПрихіднийКасовийОрдер_Pointer> documentPointerList = [];
             foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -19423,14 +20474,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_a1"] != DBNull.Value) ? (int)fieldValue["col_a1"] : 0,
@@ -19457,7 +20508,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_a44"))
                 throw new Exception("Owner not exist");
@@ -19505,7 +20556,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -19527,9 +20578,9 @@ namespace GeneratedCode.Документи
     
     public static class ПрихіднийКасовийОрдер_Export
     {
-        public static async ValueTask ToXmlFile(ПрихіднийКасовийОрдер_Pointer ПрихіднийКасовийОрдер, string pathToSave)
+        public static async Task ToXmlFile(ПрихіднийКасовийОрдер_Pointer ПрихіднийКасовийОрдер, string pathToSave)
         {
-        await ValueTask.FromResult(true);
+        await Task.CompletedTask;
         }
     }
 
@@ -19581,7 +20632,7 @@ namespace GeneratedCode.Документи
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = РозхіднийКасовийОрдер_Const.FULLNAME + " *";
@@ -19590,7 +20641,7 @@ namespace GeneratedCode.Документи
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -19630,7 +20681,7 @@ namespace GeneratedCode.Документи
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             
                 await РозхіднийКасовийОрдер_Triggers.BeforeSave(this);
@@ -19666,12 +20717,12 @@ namespace GeneratedCode.Документи
             return result;
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             
             await BaseAddIgnoreDocumentList();
             bool spend = await РозхіднийКасовийОрдер_SpendTheDocument.Spend(this);
-            if (!spend) ClearRegAccum();
+            if (!spend) await ClearRegAccum();
             await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
             await BaseRemoveIgnoreDocumentList();
             return spend;
@@ -19680,9 +20731,9 @@ namespace GeneratedCode.Документи
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
@@ -19693,20 +20744,19 @@ namespace GeneratedCode.Документи
                 await new РегістриНакопичення.РухКоштів_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
-            ClearRegAccum();
+            await ClearRegAccum();
             
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async ValueTask<РозхіднийКасовийОрдер_Objest> Copy(bool copyTableParts = false)
+        public async Task<РозхіднийКасовийОрдер_Objest> Copy(bool copyTableParts = false)
         {
-            РозхіднийКасовийОрдер_Objest copy = new РозхіднийКасовийОрдер_Objest()
+            РозхіднийКасовийОрдер_Objest copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -19748,14 +20798,14 @@ namespace GeneratedCode.Документи
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await ClearSpendTheDocument();
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await ClearSpendTheDocument();
@@ -19767,7 +20817,7 @@ namespace GeneratedCode.Документи
             return new РозхіднийКасовийОрдер_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(РозхіднийКасовийОрдер_Const.PRESENTATION_FIELDS);
         }
@@ -19815,7 +20865,7 @@ namespace GeneratedCode.Документи
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(РозхіднийКасовийОрдер_Const.PRESENTATION_FIELDS);
         }
@@ -19828,40 +20878,40 @@ namespace GeneratedCode.Документи
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> IsSpend()
+        public async Task<bool?> IsSpend()
         {
             return await base.BaseIsSpend();
         }
 
-        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
         {
             return await base.BaseGetSpend();
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             РозхіднийКасовийОрдер_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
             
-            ClearRegAccum();
+            await ClearRegAccum();
             await BaseSpend(false, DateTime.MinValue);
                 
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
@@ -19872,16 +20922,15 @@ namespace GeneratedCode.Документи
                 await new РегістриНакопичення.РухКоштів_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
           
             if (label)
             {
-                ClearRegAccum();
+                await ClearRegAccum();
                 await BaseSpend(false, DateTime.MinValue);
             }
             
@@ -19898,10 +20947,10 @@ namespace GeneratedCode.Документи
             return new РозхіднийКасовийОрдер_Pointer();
         }
 
-        public async ValueTask<РозхіднийКасовийОрдер_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<РозхіднийКасовийОрдер_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            РозхіднийКасовийОрдер_Objest obj = new РозхіднийКасовийОрдер_Objest();
+            РозхіднийКасовийОрдер_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -19909,18 +20958,18 @@ namespace GeneratedCode.Документи
     public class РозхіднийКасовийОрдер_Select : DocumentSelect
     {		
         public РозхіднийКасовийОрдер_Select() : base(Config.Kernel, "tab_a48") { }
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new РозхіднийКасовийОрдер_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public РозхіднийКасовийОрдер_Pointer? Current { get; private set; }
 
-        public async ValueTask<РозхіднийКасовийОрдер_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<РозхіднийКасовийОрдер_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new РозхіднийКасовийОрдер_Pointer(pointer) : new РозхіднийКасовийОрдер_Pointer();
         }
         
-        public async ValueTask<List<РозхіднийКасовийОрдер_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<РозхіднийКасовийОрдер_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<РозхіднийКасовийОрдер_Pointer> documentPointerList = [];
             foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -19986,14 +21035,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_a1"] != DBNull.Value) ? (int)fieldValue["col_a1"] : 0,
@@ -20021,7 +21070,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_a48"))
                 throw new Exception("Owner not exist");
@@ -20070,7 +21119,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -20093,9 +21142,9 @@ namespace GeneratedCode.Документи
     
     public static class РозхіднийКасовийОрдер_Export
     {
-        public static async ValueTask ToXmlFile(РозхіднийКасовийОрдер_Pointer РозхіднийКасовийОрдер, string pathToSave)
+        public static async Task ToXmlFile(РозхіднийКасовийОрдер_Pointer РозхіднийКасовийОрдер, string pathToSave)
         {
-        await ValueTask.FromResult(true);
+        await Task.CompletedTask;
         }
     }
 
@@ -20148,7 +21197,7 @@ namespace GeneratedCode.Документи
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ПереміщенняТоварів_Const.FULLNAME + " *";
@@ -20157,7 +21206,7 @@ namespace GeneratedCode.Документи
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -20198,7 +21247,7 @@ namespace GeneratedCode.Документи
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             
                 await ПереміщенняТоварів_Triggers.BeforeSave(this);
@@ -20235,12 +21284,12 @@ namespace GeneratedCode.Документи
             return result;
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             
             await BaseAddIgnoreDocumentList();
             bool spend = await ПереміщенняТоварів_SpendTheDocument.Spend(this);
-            if (!spend) ClearRegAccum();
+            if (!spend) await ClearRegAccum();
             await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
             await BaseRemoveIgnoreDocumentList();
             return spend;
@@ -20249,9 +21298,9 @@ namespace GeneratedCode.Документи
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
@@ -20262,20 +21311,19 @@ namespace GeneratedCode.Документи
                 await new РегістриНакопичення.ПартіїТоварів_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
-            ClearRegAccum();
+            await ClearRegAccum();
             
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async ValueTask<ПереміщенняТоварів_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПереміщенняТоварів_Objest> Copy(bool copyTableParts = false)
         {
-            ПереміщенняТоварів_Objest copy = new ПереміщенняТоварів_Objest()
+            ПереміщенняТоварів_Objest copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -20318,14 +21366,14 @@ namespace GeneratedCode.Документи
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await ClearSpendTheDocument();
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await ClearSpendTheDocument();
@@ -20337,7 +21385,7 @@ namespace GeneratedCode.Документи
             return new ПереміщенняТоварів_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ПереміщенняТоварів_Const.PRESENTATION_FIELDS);
         }
@@ -20386,7 +21434,7 @@ namespace GeneratedCode.Документи
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ПереміщенняТоварів_Const.PRESENTATION_FIELDS);
         }
@@ -20399,40 +21447,40 @@ namespace GeneratedCode.Документи
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> IsSpend()
+        public async Task<bool?> IsSpend()
         {
             return await base.BaseIsSpend();
         }
 
-        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
         {
             return await base.BaseGetSpend();
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПереміщенняТоварів_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
             
-            ClearRegAccum();
+            await ClearRegAccum();
             await BaseSpend(false, DateTime.MinValue);
                 
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
@@ -20443,16 +21491,15 @@ namespace GeneratedCode.Документи
                 await new РегістриНакопичення.ПартіїТоварів_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
           
             if (label)
             {
-                ClearRegAccum();
+                await ClearRegAccum();
                 await BaseSpend(false, DateTime.MinValue);
             }
             
@@ -20469,10 +21516,10 @@ namespace GeneratedCode.Документи
             return new ПереміщенняТоварів_Pointer();
         }
 
-        public async ValueTask<ПереміщенняТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПереміщенняТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПереміщенняТоварів_Objest obj = new ПереміщенняТоварів_Objest();
+            ПереміщенняТоварів_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -20480,18 +21527,18 @@ namespace GeneratedCode.Документи
     public class ПереміщенняТоварів_Select : DocumentSelect
     {		
         public ПереміщенняТоварів_Select() : base(Config.Kernel, "tab_a31") { }
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПереміщенняТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПереміщенняТоварів_Pointer? Current { get; private set; }
 
-        public async ValueTask<ПереміщенняТоварів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ПереміщенняТоварів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ПереміщенняТоварів_Pointer(pointer) : new ПереміщенняТоварів_Pointer();
         }
         
-        public async ValueTask<List<ПереміщенняТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ПереміщенняТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ПереміщенняТоварів_Pointer> documentPointerList = [];
             foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -20564,14 +21611,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_b8"] != DBNull.Value) ? (int)fieldValue["col_b8"] : 0,
@@ -20602,7 +21649,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_a31"))
                 throw new Exception("Owner not exist");
@@ -20652,7 +21699,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -20676,9 +21723,9 @@ namespace GeneratedCode.Документи
     
     public static class ПереміщенняТоварів_Export
     {
-        public static async ValueTask ToXmlFile(ПереміщенняТоварів_Pointer ПереміщенняТоварів, string pathToSave)
+        public static async Task ToXmlFile(ПереміщенняТоварів_Pointer ПереміщенняТоварів, string pathToSave)
         {
-        await ValueTask.FromResult(true);
+        await Task.CompletedTask;
         }
     }
 
@@ -20733,7 +21780,7 @@ namespace GeneratedCode.Документи
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ПоверненняТоварівПостачальнику_Const.FULLNAME + " *";
@@ -20742,7 +21789,7 @@ namespace GeneratedCode.Документи
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -20785,7 +21832,7 @@ namespace GeneratedCode.Документи
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             
                 await ПоверненняТоварівПостачальнику_Triggers.BeforeSave(this);
@@ -20824,12 +21871,12 @@ namespace GeneratedCode.Документи
             return result;
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             
             await BaseAddIgnoreDocumentList();
             bool spend = await ПоверненняТоварівПостачальнику_SpendTheDocument.Spend(this);
-            if (!spend) ClearRegAccum();
+            if (!spend) await ClearRegAccum();
             await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
             await BaseRemoveIgnoreDocumentList();
             return spend;
@@ -20838,9 +21885,9 @@ namespace GeneratedCode.Документи
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
@@ -20855,20 +21902,19 @@ namespace GeneratedCode.Документи
                 await new РегістриНакопичення.ПартіїТоварів_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
-            ClearRegAccum();
+            await ClearRegAccum();
             
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async ValueTask<ПоверненняТоварівПостачальнику_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПоверненняТоварівПостачальнику_Objest> Copy(bool copyTableParts = false)
         {
-            ПоверненняТоварівПостачальнику_Objest copy = new ПоверненняТоварівПостачальнику_Objest()
+            ПоверненняТоварівПостачальнику_Objest copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -20913,14 +21959,14 @@ namespace GeneratedCode.Документи
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await ClearSpendTheDocument();
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await ClearSpendTheDocument();
@@ -20932,7 +21978,7 @@ namespace GeneratedCode.Документи
             return new ПоверненняТоварівПостачальнику_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ПоверненняТоварівПостачальнику_Const.PRESENTATION_FIELDS);
         }
@@ -20983,7 +22029,7 @@ namespace GeneratedCode.Документи
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ПоверненняТоварівПостачальнику_Const.PRESENTATION_FIELDS);
         }
@@ -20996,40 +22042,40 @@ namespace GeneratedCode.Документи
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> IsSpend()
+        public async Task<bool?> IsSpend()
         {
             return await base.BaseIsSpend();
         }
 
-        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
         {
             return await base.BaseGetSpend();
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПоверненняТоварівПостачальнику_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
             
-            ClearRegAccum();
+            await ClearRegAccum();
             await BaseSpend(false, DateTime.MinValue);
                 
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
@@ -21044,16 +22090,15 @@ namespace GeneratedCode.Документи
                 await new РегістриНакопичення.ПартіїТоварів_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
           
             if (label)
             {
-                ClearRegAccum();
+                await ClearRegAccum();
                 await BaseSpend(false, DateTime.MinValue);
             }
             
@@ -21070,10 +22115,10 @@ namespace GeneratedCode.Документи
             return new ПоверненняТоварівПостачальнику_Pointer();
         }
 
-        public async ValueTask<ПоверненняТоварівПостачальнику_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПоверненняТоварівПостачальнику_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПоверненняТоварівПостачальнику_Objest obj = new ПоверненняТоварівПостачальнику_Objest();
+            ПоверненняТоварівПостачальнику_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -21081,18 +22126,18 @@ namespace GeneratedCode.Документи
     public class ПоверненняТоварівПостачальнику_Select : DocumentSelect
     {		
         public ПоверненняТоварівПостачальнику_Select() : base(Config.Kernel, "tab_a51") { }
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПоверненняТоварівПостачальнику_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПоверненняТоварівПостачальнику_Pointer? Current { get; private set; }
 
-        public async ValueTask<ПоверненняТоварівПостачальнику_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ПоверненняТоварівПостачальнику_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ПоверненняТоварівПостачальнику_Pointer(pointer) : new ПоверненняТоварівПостачальнику_Pointer();
         }
         
-        public async ValueTask<List<ПоверненняТоварівПостачальнику_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ПоверненняТоварівПостачальнику_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ПоверненняТоварівПостачальнику_Pointer> documentPointerList = [];
             foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -21167,14 +22212,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_a1"] != DBNull.Value) ? (int)fieldValue["col_a1"] : 0,
@@ -21207,7 +22252,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_a51"))
                 throw new Exception("Owner not exist");
@@ -21259,7 +22304,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -21285,9 +22330,9 @@ namespace GeneratedCode.Документи
     
     public static class ПоверненняТоварівПостачальнику_Export
     {
-        public static async ValueTask ToXmlFile(ПоверненняТоварівПостачальнику_Pointer ПоверненняТоварівПостачальнику, string pathToSave)
+        public static async Task ToXmlFile(ПоверненняТоварівПостачальнику_Pointer ПоверненняТоварівПостачальнику, string pathToSave)
         {
-        await ValueTask.FromResult(true);
+        await Task.CompletedTask;
         }
     }
 
@@ -21338,7 +22383,7 @@ namespace GeneratedCode.Документи
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ПоверненняТоварівВідКлієнта_Const.FULLNAME + " *";
@@ -21347,7 +22392,7 @@ namespace GeneratedCode.Документи
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -21386,7 +22431,7 @@ namespace GeneratedCode.Документи
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             
                 await ПоверненняТоварівВідКлієнта_Triggers.BeforeSave(this);
@@ -21421,12 +22466,12 @@ namespace GeneratedCode.Документи
             return result;
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             
             await BaseAddIgnoreDocumentList();
             bool spend = await ПоверненняТоварівВідКлієнта_SpendTheDocument.Spend(this);
-            if (!spend) ClearRegAccum();
+            if (!spend) await ClearRegAccum();
             await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
             await BaseRemoveIgnoreDocumentList();
             return spend;
@@ -21435,9 +22480,9 @@ namespace GeneratedCode.Документи
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
@@ -21452,20 +22497,19 @@ namespace GeneratedCode.Документи
                 await new РегістриНакопичення.Продажі_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
-            ClearRegAccum();
+            await ClearRegAccum();
             
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async ValueTask<ПоверненняТоварівВідКлієнта_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПоверненняТоварівВідКлієнта_Objest> Copy(bool copyTableParts = false)
         {
-            ПоверненняТоварівВідКлієнта_Objest copy = new ПоверненняТоварівВідКлієнта_Objest()
+            ПоверненняТоварівВідКлієнта_Objest copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -21506,14 +22550,14 @@ namespace GeneratedCode.Документи
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await ClearSpendTheDocument();
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await ClearSpendTheDocument();
@@ -21525,7 +22569,7 @@ namespace GeneratedCode.Документи
             return new ПоверненняТоварівВідКлієнта_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ПоверненняТоварівВідКлієнта_Const.PRESENTATION_FIELDS);
         }
@@ -21572,7 +22616,7 @@ namespace GeneratedCode.Документи
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ПоверненняТоварівВідКлієнта_Const.PRESENTATION_FIELDS);
         }
@@ -21585,40 +22629,40 @@ namespace GeneratedCode.Документи
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> IsSpend()
+        public async Task<bool?> IsSpend()
         {
             return await base.BaseIsSpend();
         }
 
-        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
         {
             return await base.BaseGetSpend();
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПоверненняТоварівВідКлієнта_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
             
-            ClearRegAccum();
+            await ClearRegAccum();
             await BaseSpend(false, DateTime.MinValue);
                 
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
@@ -21633,16 +22677,15 @@ namespace GeneratedCode.Документи
                 await new РегістриНакопичення.Продажі_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
           
             if (label)
             {
-                ClearRegAccum();
+                await ClearRegAccum();
                 await BaseSpend(false, DateTime.MinValue);
             }
             
@@ -21659,10 +22702,10 @@ namespace GeneratedCode.Документи
             return new ПоверненняТоварівВідКлієнта_Pointer();
         }
 
-        public async ValueTask<ПоверненняТоварівВідКлієнта_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПоверненняТоварівВідКлієнта_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПоверненняТоварівВідКлієнта_Objest obj = new ПоверненняТоварівВідКлієнта_Objest();
+            ПоверненняТоварівВідКлієнта_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -21670,18 +22713,18 @@ namespace GeneratedCode.Документи
     public class ПоверненняТоварівВідКлієнта_Select : DocumentSelect
     {		
         public ПоверненняТоварівВідКлієнта_Select() : base(Config.Kernel, "tab_a53") { }
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПоверненняТоварівВідКлієнта_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПоверненняТоварівВідКлієнта_Pointer? Current { get; private set; }
 
-        public async ValueTask<ПоверненняТоварівВідКлієнта_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ПоверненняТоварівВідКлієнта_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ПоверненняТоварівВідКлієнта_Pointer(pointer) : new ПоверненняТоварівВідКлієнта_Pointer();
         }
         
-        public async ValueTask<List<ПоверненняТоварівВідКлієнта_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ПоверненняТоварівВідКлієнта_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ПоверненняТоварівВідКлієнта_Pointer> documentPointerList = [];
             foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -21757,14 +22800,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_h2"] != DBNull.Value) ? (int)fieldValue["col_h2"] : 0,
@@ -21798,7 +22841,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_a53"))
                 throw new Exception("Owner not exist");
@@ -21851,7 +22894,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -21878,9 +22921,9 @@ namespace GeneratedCode.Документи
     
     public static class ПоверненняТоварівВідКлієнта_Export
     {
-        public static async ValueTask ToXmlFile(ПоверненняТоварівВідКлієнта_Pointer ПоверненняТоварівВідКлієнта, string pathToSave)
+        public static async Task ToXmlFile(ПоверненняТоварівВідКлієнта_Pointer ПоверненняТоварівВідКлієнта, string pathToSave)
         {
-        await ValueTask.FromResult(true);
+        await Task.CompletedTask;
         }
     }
 
@@ -21930,7 +22973,7 @@ namespace GeneratedCode.Документи
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = АктВиконанихРобіт_Const.FULLNAME + " *";
@@ -21939,7 +22982,7 @@ namespace GeneratedCode.Документи
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -21977,7 +23020,7 @@ namespace GeneratedCode.Документи
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             
                 await АктВиконанихРобіт_Triggers.BeforeSave(this);
@@ -22011,12 +23054,12 @@ namespace GeneratedCode.Документи
             return result;
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             
             await BaseAddIgnoreDocumentList();
             bool spend = await АктВиконанихРобіт_SpendTheDocument.Spend(this);
-            if (!spend) ClearRegAccum();
+            if (!spend) await ClearRegAccum();
             await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
             await BaseRemoveIgnoreDocumentList();
             return spend;
@@ -22025,9 +23068,9 @@ namespace GeneratedCode.Документи
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
@@ -22036,20 +23079,19 @@ namespace GeneratedCode.Документи
                 await new РегістриНакопичення.Продажі_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
-            ClearRegAccum();
+            await ClearRegAccum();
             
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async ValueTask<АктВиконанихРобіт_Objest> Copy(bool copyTableParts = false)
+        public async Task<АктВиконанихРобіт_Objest> Copy(bool copyTableParts = false)
         {
-            АктВиконанихРобіт_Objest copy = new АктВиконанихРобіт_Objest()
+            АктВиконанихРобіт_Objest copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -22089,14 +23131,14 @@ namespace GeneratedCode.Документи
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await ClearSpendTheDocument();
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await ClearSpendTheDocument();
@@ -22108,7 +23150,7 @@ namespace GeneratedCode.Документи
             return new АктВиконанихРобіт_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(АктВиконанихРобіт_Const.PRESENTATION_FIELDS);
         }
@@ -22154,7 +23196,7 @@ namespace GeneratedCode.Документи
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(АктВиконанихРобіт_Const.PRESENTATION_FIELDS);
         }
@@ -22167,40 +23209,40 @@ namespace GeneratedCode.Документи
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> IsSpend()
+        public async Task<bool?> IsSpend()
         {
             return await base.BaseIsSpend();
         }
 
-        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
         {
             return await base.BaseGetSpend();
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             АктВиконанихРобіт_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
             
-            ClearRegAccum();
+            await ClearRegAccum();
             await BaseSpend(false, DateTime.MinValue);
                 
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
@@ -22209,16 +23251,15 @@ namespace GeneratedCode.Документи
                 await new РегістриНакопичення.Продажі_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
           
             if (label)
             {
-                ClearRegAccum();
+                await ClearRegAccum();
                 await BaseSpend(false, DateTime.MinValue);
             }
             
@@ -22235,10 +23276,10 @@ namespace GeneratedCode.Документи
             return new АктВиконанихРобіт_Pointer();
         }
 
-        public async ValueTask<АктВиконанихРобіт_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<АктВиконанихРобіт_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            АктВиконанихРобіт_Objest obj = new АктВиконанихРобіт_Objest();
+            АктВиконанихРобіт_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -22246,18 +23287,18 @@ namespace GeneratedCode.Документи
     public class АктВиконанихРобіт_Select : DocumentSelect
     {		
         public АктВиконанихРобіт_Select() : base(Config.Kernel, "tab_a81") { }
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new АктВиконанихРобіт_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public АктВиконанихРобіт_Pointer? Current { get; private set; }
 
-        public async ValueTask<АктВиконанихРобіт_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<АктВиконанихРобіт_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new АктВиконанихРобіт_Pointer(pointer) : new АктВиконанихРобіт_Pointer();
         }
         
-        public async ValueTask<List<АктВиконанихРобіт_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<АктВиконанихРобіт_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<АктВиконанихРобіт_Pointer> documentPointerList = [];
             foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -22319,14 +23360,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_c4"] != DBNull.Value) ? (int)fieldValue["col_c4"] : 0,
@@ -22352,7 +23393,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_a81"))
                 throw new Exception("Owner not exist");
@@ -22400,7 +23441,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -22422,7 +23463,7 @@ namespace GeneratedCode.Документи
     
     public static class АктВиконанихРобіт_Export
     {
-        public static async ValueTask ToXmlFile(АктВиконанихРобіт_Pointer АктВиконанихРобіт, string pathToSave)
+        public static async Task ToXmlFile(АктВиконанихРобіт_Pointer АктВиконанихРобіт, string pathToSave)
         {
         АктВиконанихРобіт_Objest? obj = await АктВиконанихРобіт.GetDocumentObject(true);
             if (obj == null) return;
@@ -22599,7 +23640,7 @@ namespace GeneratedCode.Документи
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ВведенняЗалишків_Const.FULLNAME + " *";
@@ -22608,7 +23649,7 @@ namespace GeneratedCode.Документи
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -22645,7 +23686,7 @@ namespace GeneratedCode.Документи
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             
                 await ВведенняЗалишків_Triggers.BeforeSave(this);
@@ -22675,12 +23716,12 @@ namespace GeneratedCode.Документи
             return result;
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             
             await BaseAddIgnoreDocumentList();
             bool spend = await ВведенняЗалишків_SpendTheDocument.Spend(this);
-            if (!spend) ClearRegAccum();
+            if (!spend) await ClearRegAccum();
             await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
             await BaseRemoveIgnoreDocumentList();
             return spend;
@@ -22689,9 +23730,9 @@ namespace GeneratedCode.Документи
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
@@ -22708,20 +23749,19 @@ namespace GeneratedCode.Документи
                 await new РегістриНакопичення.ПартіїТоварів_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
-            ClearRegAccum();
+            await ClearRegAccum();
             
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async ValueTask<ВведенняЗалишків_Objest> Copy(bool copyTableParts = false)
+        public async Task<ВведенняЗалишків_Objest> Copy(bool copyTableParts = false)
         {
-            ВведенняЗалишків_Objest copy = new ВведенняЗалишків_Objest()
+            ВведенняЗалишків_Objest copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -22769,7 +23809,7 @@ namespace GeneratedCode.Документи
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
                 await ВведенняЗалишків_Triggers.SetDeletionLabel(this, label);      
@@ -22778,7 +23818,7 @@ namespace GeneratedCode.Документи
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await ClearSpendTheDocument();
@@ -22790,7 +23830,7 @@ namespace GeneratedCode.Документи
             return new ВведенняЗалишків_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ВведенняЗалишків_Const.PRESENTATION_FIELDS);
         }
@@ -22835,7 +23875,7 @@ namespace GeneratedCode.Документи
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ВведенняЗалишків_Const.PRESENTATION_FIELDS);
         }
@@ -22848,40 +23888,40 @@ namespace GeneratedCode.Документи
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> IsSpend()
+        public async Task<bool?> IsSpend()
         {
             return await base.BaseIsSpend();
         }
 
-        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
         {
             return await base.BaseGetSpend();
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ВведенняЗалишків_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
             
-            ClearRegAccum();
+            await ClearRegAccum();
             await BaseSpend(false, DateTime.MinValue);
                 
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
@@ -22898,11 +23938,10 @@ namespace GeneratedCode.Документи
                 await new РегістриНакопичення.ПартіїТоварів_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
           ВведенняЗалишків_Objest? obj = await GetDocumentObject();
             if (obj == null) return;
@@ -22924,10 +23963,10 @@ namespace GeneratedCode.Документи
             return new ВведенняЗалишків_Pointer();
         }
 
-        public async ValueTask<ВведенняЗалишків_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ВведенняЗалишків_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ВведенняЗалишків_Objest obj = new ВведенняЗалишків_Objest();
+            ВведенняЗалишків_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -22935,18 +23974,18 @@ namespace GeneratedCode.Документи
     public class ВведенняЗалишків_Select : DocumentSelect
     {		
         public ВведенняЗалишків_Select() : base(Config.Kernel, "tab_a83") { }
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВведенняЗалишків_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ВведенняЗалишків_Pointer? Current { get; private set; }
 
-        public async ValueTask<ВведенняЗалишків_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ВведенняЗалишків_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ВведенняЗалишків_Pointer(pointer) : new ВведенняЗалишків_Pointer();
         }
         
-        public async ValueTask<List<ВведенняЗалишків_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ВведенняЗалишків_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ВведенняЗалишків_Pointer> documentPointerList = [];
             foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -23017,14 +24056,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_e4"] != DBNull.Value) ? (int)fieldValue["col_e4"] : 0,
@@ -23055,7 +24094,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_a83"))
                 throw new Exception("Owner not exist");
@@ -23106,7 +24145,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -23174,14 +24213,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_a1"] != DBNull.Value) ? (int)fieldValue["col_a1"] : 0,
@@ -23203,7 +24242,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_a83"))
                 throw new Exception("Owner not exist");
@@ -23248,7 +24287,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -23310,14 +24349,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_a1"] != DBNull.Value) ? (int)fieldValue["col_a1"] : 0,
@@ -23339,7 +24378,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_a83"))
                 throw new Exception("Owner not exist");
@@ -23384,7 +24423,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -23451,14 +24490,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_a1"] != DBNull.Value) ? (int)fieldValue["col_a1"] : 0,
@@ -23483,7 +24522,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_a83"))
                 throw new Exception("Owner not exist");
@@ -23530,7 +24569,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -23551,9 +24590,9 @@ namespace GeneratedCode.Документи
     
     public static class ВведенняЗалишків_Export
     {
-        public static async ValueTask ToXmlFile(ВведенняЗалишків_Pointer ВведенняЗалишків, string pathToSave)
+        public static async Task ToXmlFile(ВведенняЗалишків_Pointer ВведенняЗалишків, string pathToSave)
         {
-        await ValueTask.FromResult(true);
+        await Task.CompletedTask;
         }
     }
 
@@ -23595,16 +24634,16 @@ namespace GeneratedCode.Документи
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = НадлишкиТоварів_Const.FULLNAME + " *";
             
-                await ValueTask.FromResult(true);
+                await Task.CompletedTask;
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -23634,7 +24673,7 @@ namespace GeneratedCode.Документи
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_f6"] = Організація.UniqueID.UGuid;
             base.FieldValue["col_f7"] = Підрозділ.UniqueID.UGuid;
@@ -23658,7 +24697,7 @@ namespace GeneratedCode.Документи
             return result;
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             
             await BaseSpend(false, DateTime.MinValue);
@@ -23668,22 +24707,18 @@ namespace GeneratedCode.Документи
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
-        {
-          await ValueTask.FromResult(true);
-        }
-  
+        Task ClearRegAccum() => Task.CompletedTask;
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
-            ClearRegAccum();
+            await ClearRegAccum();
             
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async ValueTask<НадлишкиТоварів_Objest> Copy(bool copyTableParts = false)
+        public async Task<НадлишкиТоварів_Objest> Copy(bool copyTableParts = false)
         {
-            НадлишкиТоварів_Objest copy = new НадлишкиТоварів_Objest()
+            НадлишкиТоварів_Objest copy = new()
             {
                 Організація = Організація,
                 Підрозділ = Підрозділ,
@@ -23713,14 +24748,14 @@ namespace GeneratedCode.Документи
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await ClearSpendTheDocument();
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await ClearSpendTheDocument();
@@ -23732,7 +24767,7 @@ namespace GeneratedCode.Документи
             return new НадлишкиТоварів_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(НадлишкиТоварів_Const.PRESENTATION_FIELDS);
         }
@@ -23770,7 +24805,7 @@ namespace GeneratedCode.Документи
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(НадлишкиТоварів_Const.PRESENTATION_FIELDS);
         }
@@ -23783,49 +24818,45 @@ namespace GeneratedCode.Документи
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> IsSpend()
+        public async Task<bool?> IsSpend()
         {
             return await base.BaseIsSpend();
         }
 
-        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
         {
             return await base.BaseGetSpend();
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             НадлишкиТоварів_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
             
-            ClearRegAccum();
+            await ClearRegAccum();
             await BaseSpend(false, DateTime.MinValue);
                 
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
-        {
-          await ValueTask.FromResult(true);
-        }
-  
+        Task ClearRegAccum() => Task.CompletedTask;
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
           
             if (label)
             {
-                ClearRegAccum();
+                await ClearRegAccum();
                 await BaseSpend(false, DateTime.MinValue);
             }
             
@@ -23842,10 +24873,10 @@ namespace GeneratedCode.Документи
             return new НадлишкиТоварів_Pointer();
         }
 
-        public async ValueTask<НадлишкиТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<НадлишкиТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            НадлишкиТоварів_Objest obj = new НадлишкиТоварів_Objest();
+            НадлишкиТоварів_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -23853,18 +24884,18 @@ namespace GeneratedCode.Документи
     public class НадлишкиТоварів_Select : DocumentSelect
     {		
         public НадлишкиТоварів_Select() : base(Config.Kernel, "tab_a88") { }
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new НадлишкиТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public НадлишкиТоварів_Pointer? Current { get; private set; }
 
-        public async ValueTask<НадлишкиТоварів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<НадлишкиТоварів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new НадлишкиТоварів_Pointer(pointer) : new НадлишкиТоварів_Pointer();
         }
         
-        public async ValueTask<List<НадлишкиТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<НадлишкиТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<НадлишкиТоварів_Pointer> documentPointerList = [];
             foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -23926,14 +24957,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     Номенклатура = new Довідники.Номенклатура_Pointer(fieldValue["col_g2"]),
@@ -23959,7 +24990,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_a88"))
                 throw new Exception("Owner not exist");
@@ -24007,7 +25038,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -24029,9 +25060,9 @@ namespace GeneratedCode.Документи
     
     public static class НадлишкиТоварів_Export
     {
-        public static async ValueTask ToXmlFile(НадлишкиТоварів_Pointer НадлишкиТоварів, string pathToSave)
+        public static async Task ToXmlFile(НадлишкиТоварів_Pointer НадлишкиТоварів, string pathToSave)
         {
-        await ValueTask.FromResult(true);
+        await Task.CompletedTask;
         }
     }
 
@@ -24073,16 +25104,16 @@ namespace GeneratedCode.Документи
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ПересортицяТоварів_Const.FULLNAME + " *";
             
-                await ValueTask.FromResult(true);
+                await Task.CompletedTask;
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -24112,7 +25143,7 @@ namespace GeneratedCode.Документи
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["docname"] = Назва;
             base.FieldValue["docnomer"] = НомерДок;
@@ -24136,7 +25167,7 @@ namespace GeneratedCode.Документи
             return result;
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             
             await BaseSpend(false, DateTime.MinValue);
@@ -24146,22 +25177,18 @@ namespace GeneratedCode.Документи
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
-        {
-          await ValueTask.FromResult(true);
-        }
-  
+        Task ClearRegAccum() => Task.CompletedTask;
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
-            ClearRegAccum();
+            await ClearRegAccum();
             
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async ValueTask<ПересортицяТоварів_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПересортицяТоварів_Objest> Copy(bool copyTableParts = false)
         {
-            ПересортицяТоварів_Objest copy = new ПересортицяТоварів_Objest()
+            ПересортицяТоварів_Objest copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -24191,14 +25218,14 @@ namespace GeneratedCode.Документи
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await ClearSpendTheDocument();
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await ClearSpendTheDocument();
@@ -24210,7 +25237,7 @@ namespace GeneratedCode.Документи
             return new ПересортицяТоварів_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ПересортицяТоварів_Const.PRESENTATION_FIELDS);
         }
@@ -24248,7 +25275,7 @@ namespace GeneratedCode.Документи
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ПересортицяТоварів_Const.PRESENTATION_FIELDS);
         }
@@ -24261,49 +25288,45 @@ namespace GeneratedCode.Документи
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> IsSpend()
+        public async Task<bool?> IsSpend()
         {
             return await base.BaseIsSpend();
         }
 
-        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
         {
             return await base.BaseGetSpend();
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПересортицяТоварів_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
             
-            ClearRegAccum();
+            await ClearRegAccum();
             await BaseSpend(false, DateTime.MinValue);
                 
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
-        {
-          await ValueTask.FromResult(true);
-        }
-  
+        Task ClearRegAccum() => Task.CompletedTask;
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
           
             if (label)
             {
-                ClearRegAccum();
+                await ClearRegAccum();
                 await BaseSpend(false, DateTime.MinValue);
             }
             
@@ -24320,10 +25343,10 @@ namespace GeneratedCode.Документи
             return new ПересортицяТоварів_Pointer();
         }
 
-        public async ValueTask<ПересортицяТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПересортицяТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПересортицяТоварів_Objest obj = new ПересортицяТоварів_Objest();
+            ПересортицяТоварів_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -24331,18 +25354,18 @@ namespace GeneratedCode.Документи
     public class ПересортицяТоварів_Select : DocumentSelect
     {		
         public ПересортицяТоварів_Select() : base(Config.Kernel, "tab_a90") { }
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПересортицяТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПересортицяТоварів_Pointer? Current { get; private set; }
 
-        public async ValueTask<ПересортицяТоварів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ПересортицяТоварів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ПересортицяТоварів_Pointer(pointer) : new ПересортицяТоварів_Pointer();
         }
         
-        public async ValueTask<List<ПересортицяТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ПересортицяТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ПересортицяТоварів_Pointer> documentPointerList = [];
             foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -24403,14 +25426,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_a1"] != DBNull.Value) ? (int)fieldValue["col_a1"] : 0,
@@ -24435,7 +25458,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_a90"))
                 throw new Exception("Owner not exist");
@@ -24482,7 +25505,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -24503,9 +25526,9 @@ namespace GeneratedCode.Документи
     
     public static class ПересортицяТоварів_Export
     {
-        public static async ValueTask ToXmlFile(ПересортицяТоварів_Pointer ПересортицяТоварів, string pathToSave)
+        public static async Task ToXmlFile(ПересортицяТоварів_Pointer ПересортицяТоварів, string pathToSave)
         {
-        await ValueTask.FromResult(true);
+        await Task.CompletedTask;
         }
     }
 
@@ -24548,7 +25571,7 @@ namespace GeneratedCode.Документи
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ПерерахунокТоварів_Const.FULLNAME + " *";
@@ -24557,7 +25580,7 @@ namespace GeneratedCode.Документи
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -24588,7 +25611,7 @@ namespace GeneratedCode.Документи
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             
                 await ПерерахунокТоварів_Triggers.BeforeSave(this);
@@ -24615,12 +25638,12 @@ namespace GeneratedCode.Документи
             return result;
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             
             await BaseAddIgnoreDocumentList();
             bool spend = await ПерерахунокТоварів_SpendTheDocument.Spend(this);
-            if (!spend) ClearRegAccum();
+            if (!spend) await ClearRegAccum();
             await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
             await BaseRemoveIgnoreDocumentList();
             return spend;
@@ -24629,22 +25652,18 @@ namespace GeneratedCode.Документи
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
-        {
-          await ValueTask.FromResult(true);
-        }
-  
+        Task ClearRegAccum() => Task.CompletedTask;
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
-            ClearRegAccum();
+            await ClearRegAccum();
             
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async ValueTask<ПерерахунокТоварів_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПерерахунокТоварів_Objest> Copy(bool copyTableParts = false)
         {
-            ПерерахунокТоварів_Objest copy = new ПерерахунокТоварів_Objest()
+            ПерерахунокТоварів_Objest copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -24677,14 +25696,14 @@ namespace GeneratedCode.Документи
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await ClearSpendTheDocument();
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await ClearSpendTheDocument();
@@ -24696,7 +25715,7 @@ namespace GeneratedCode.Документи
             return new ПерерахунокТоварів_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ПерерахунокТоварів_Const.PRESENTATION_FIELDS);
         }
@@ -24735,7 +25754,7 @@ namespace GeneratedCode.Документи
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ПерерахунокТоварів_Const.PRESENTATION_FIELDS);
         }
@@ -24748,49 +25767,45 @@ namespace GeneratedCode.Документи
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> IsSpend()
+        public async Task<bool?> IsSpend()
         {
             return await base.BaseIsSpend();
         }
 
-        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
         {
             return await base.BaseGetSpend();
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПерерахунокТоварів_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
             
-            ClearRegAccum();
+            await ClearRegAccum();
             await BaseSpend(false, DateTime.MinValue);
                 
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
-        {
-          await ValueTask.FromResult(true);
-        }
-  
+        Task ClearRegAccum() => Task.CompletedTask;
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
           
             if (label)
             {
-                ClearRegAccum();
+                await ClearRegAccum();
                 await BaseSpend(false, DateTime.MinValue);
             }
             
@@ -24807,10 +25822,10 @@ namespace GeneratedCode.Документи
             return new ПерерахунокТоварів_Pointer();
         }
 
-        public async ValueTask<ПерерахунокТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПерерахунокТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПерерахунокТоварів_Objest obj = new ПерерахунокТоварів_Objest();
+            ПерерахунокТоварів_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -24818,18 +25833,18 @@ namespace GeneratedCode.Документи
     public class ПерерахунокТоварів_Select : DocumentSelect
     {		
         public ПерерахунокТоварів_Select() : base(Config.Kernel, "tab_a92") { }
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПерерахунокТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПерерахунокТоварів_Pointer? Current { get; private set; }
 
-        public async ValueTask<ПерерахунокТоварів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ПерерахунокТоварів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ПерерахунокТоварів_Pointer(pointer) : new ПерерахунокТоварів_Pointer();
         }
         
-        public async ValueTask<List<ПерерахунокТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ПерерахунокТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ПерерахунокТоварів_Pointer> documentPointerList = [];
             foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -24897,14 +25912,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     Кількість = (fieldValue["col_i8"] != DBNull.Value) ? (decimal)fieldValue["col_i8"] : 0,
@@ -24934,7 +25949,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_a92"))
                 throw new Exception("Owner not exist");
@@ -24985,7 +26000,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -25010,9 +26025,9 @@ namespace GeneratedCode.Документи
     
     public static class ПерерахунокТоварів_Export
     {
-        public static async ValueTask ToXmlFile(ПерерахунокТоварів_Pointer ПерерахунокТоварів, string pathToSave)
+        public static async Task ToXmlFile(ПерерахунокТоварів_Pointer ПерерахунокТоварів, string pathToSave)
         {
-        await ValueTask.FromResult(true);
+        await Task.CompletedTask;
         }
     }
 
@@ -25056,7 +26071,7 @@ namespace GeneratedCode.Документи
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ПсуванняТоварів_Const.FULLNAME + " *";
@@ -25065,7 +26080,7 @@ namespace GeneratedCode.Документи
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -25097,7 +26112,7 @@ namespace GeneratedCode.Документи
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             
                 await ПсуванняТоварів_Triggers.BeforeSave(this);
@@ -25125,12 +26140,12 @@ namespace GeneratedCode.Документи
             return result;
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             
             await BaseAddIgnoreDocumentList();
             bool spend = await ПсуванняТоварів_SpendTheDocument.Spend(this);
-            if (!spend) ClearRegAccum();
+            if (!spend) await ClearRegAccum();
             await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
             await BaseRemoveIgnoreDocumentList();
             return spend;
@@ -25139,9 +26154,9 @@ namespace GeneratedCode.Документи
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
@@ -25152,20 +26167,19 @@ namespace GeneratedCode.Документи
                 await new РегістриНакопичення.ПартіїТоварів_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
-            ClearRegAccum();
+            await ClearRegAccum();
             
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async ValueTask<ПсуванняТоварів_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПсуванняТоварів_Objest> Copy(bool copyTableParts = false)
         {
-            ПсуванняТоварів_Objest copy = new ПсуванняТоварів_Objest()
+            ПсуванняТоварів_Objest copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -25199,14 +26213,14 @@ namespace GeneratedCode.Документи
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await ClearSpendTheDocument();
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await ClearSpendTheDocument();
@@ -25218,7 +26232,7 @@ namespace GeneratedCode.Документи
             return new ПсуванняТоварів_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ПсуванняТоварів_Const.PRESENTATION_FIELDS);
         }
@@ -25258,7 +26272,7 @@ namespace GeneratedCode.Документи
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ПсуванняТоварів_Const.PRESENTATION_FIELDS);
         }
@@ -25271,40 +26285,40 @@ namespace GeneratedCode.Документи
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> IsSpend()
+        public async Task<bool?> IsSpend()
         {
             return await base.BaseIsSpend();
         }
 
-        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
         {
             return await base.BaseGetSpend();
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПсуванняТоварів_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
             
-            ClearRegAccum();
+            await ClearRegAccum();
             await BaseSpend(false, DateTime.MinValue);
                 
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
@@ -25315,16 +26329,15 @@ namespace GeneratedCode.Документи
                 await new РегістриНакопичення.ПартіїТоварів_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
           
             if (label)
             {
-                ClearRegAccum();
+                await ClearRegAccum();
                 await BaseSpend(false, DateTime.MinValue);
             }
             
@@ -25341,10 +26354,10 @@ namespace GeneratedCode.Документи
             return new ПсуванняТоварів_Pointer();
         }
 
-        public async ValueTask<ПсуванняТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПсуванняТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПсуванняТоварів_Objest obj = new ПсуванняТоварів_Objest();
+            ПсуванняТоварів_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -25352,18 +26365,18 @@ namespace GeneratedCode.Документи
     public class ПсуванняТоварів_Select : DocumentSelect
     {		
         public ПсуванняТоварів_Select() : base(Config.Kernel, "tab_a94") { }
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПсуванняТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПсуванняТоварів_Pointer? Current { get; private set; }
 
-        public async ValueTask<ПсуванняТоварів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ПсуванняТоварів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ПсуванняТоварів_Pointer(pointer) : new ПсуванняТоварів_Pointer();
         }
         
-        public async ValueTask<List<ПсуванняТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ПсуванняТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ПсуванняТоварів_Pointer> documentPointerList = [];
             foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -25438,14 +26451,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_a3"] != DBNull.Value) ? (int)fieldValue["col_a3"] : 0,
@@ -25478,7 +26491,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_a94"))
                 throw new Exception("Owner not exist");
@@ -25530,7 +26543,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -25556,9 +26569,9 @@ namespace GeneratedCode.Документи
     
     public static class ПсуванняТоварів_Export
     {
-        public static async ValueTask ToXmlFile(ПсуванняТоварів_Pointer ПсуванняТоварів, string pathToSave)
+        public static async Task ToXmlFile(ПсуванняТоварів_Pointer ПсуванняТоварів, string pathToSave)
         {
-        await ValueTask.FromResult(true);
+        await Task.CompletedTask;
         }
     }
 
@@ -25603,7 +26616,7 @@ namespace GeneratedCode.Документи
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ВнутрішнєСпоживанняТоварів_Const.FULLNAME + " *";
@@ -25612,7 +26625,7 @@ namespace GeneratedCode.Документи
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -25645,7 +26658,7 @@ namespace GeneratedCode.Документи
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             
                 await ВнутрішнєСпоживанняТоварів_Triggers.BeforeSave(this);
@@ -25674,12 +26687,12 @@ namespace GeneratedCode.Документи
             return result;
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             
             await BaseAddIgnoreDocumentList();
             bool spend = await ВнутрішнєСпоживанняТоварів_SpendTheDocument.Spend(this);
-            if (!spend) ClearRegAccum();
+            if (!spend) await ClearRegAccum();
             await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
             await BaseRemoveIgnoreDocumentList();
             return spend;
@@ -25688,9 +26701,9 @@ namespace GeneratedCode.Документи
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
@@ -25701,20 +26714,19 @@ namespace GeneratedCode.Документи
                 await new РегістриНакопичення.ПартіїТоварів_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
-            ClearRegAccum();
+            await ClearRegAccum();
             
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async ValueTask<ВнутрішнєСпоживанняТоварів_Objest> Copy(bool copyTableParts = false)
+        public async Task<ВнутрішнєСпоживанняТоварів_Objest> Copy(bool copyTableParts = false)
         {
-            ВнутрішнєСпоживанняТоварів_Objest copy = new ВнутрішнєСпоживанняТоварів_Objest()
+            ВнутрішнєСпоживанняТоварів_Objest copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -25749,14 +26761,14 @@ namespace GeneratedCode.Документи
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await ClearSpendTheDocument();
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await ClearSpendTheDocument();
@@ -25768,7 +26780,7 @@ namespace GeneratedCode.Документи
             return new ВнутрішнєСпоживанняТоварів_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ВнутрішнєСпоживанняТоварів_Const.PRESENTATION_FIELDS);
         }
@@ -25809,7 +26821,7 @@ namespace GeneratedCode.Документи
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ВнутрішнєСпоживанняТоварів_Const.PRESENTATION_FIELDS);
         }
@@ -25822,40 +26834,40 @@ namespace GeneratedCode.Документи
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> IsSpend()
+        public async Task<bool?> IsSpend()
         {
             return await base.BaseIsSpend();
         }
 
-        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
         {
             return await base.BaseGetSpend();
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ВнутрішнєСпоживанняТоварів_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
             
-            ClearRegAccum();
+            await ClearRegAccum();
             await BaseSpend(false, DateTime.MinValue);
                 
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
@@ -25866,16 +26878,15 @@ namespace GeneratedCode.Документи
                 await new РегістриНакопичення.ПартіїТоварів_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
           
             if (label)
             {
-                ClearRegAccum();
+                await ClearRegAccum();
                 await BaseSpend(false, DateTime.MinValue);
             }
             
@@ -25892,10 +26903,10 @@ namespace GeneratedCode.Документи
             return new ВнутрішнєСпоживанняТоварів_Pointer();
         }
 
-        public async ValueTask<ВнутрішнєСпоживанняТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ВнутрішнєСпоживанняТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ВнутрішнєСпоживанняТоварів_Objest obj = new ВнутрішнєСпоживанняТоварів_Objest();
+            ВнутрішнєСпоживанняТоварів_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -25903,18 +26914,18 @@ namespace GeneratedCode.Документи
     public class ВнутрішнєСпоживанняТоварів_Select : DocumentSelect
     {		
         public ВнутрішнєСпоживанняТоварів_Select() : base(Config.Kernel, "tab_b07") { }
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВнутрішнєСпоживанняТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ВнутрішнєСпоживанняТоварів_Pointer? Current { get; private set; }
 
-        public async ValueTask<ВнутрішнєСпоживанняТоварів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ВнутрішнєСпоживанняТоварів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ВнутрішнєСпоживанняТоварів_Pointer(pointer) : new ВнутрішнєСпоживанняТоварів_Pointer();
         }
         
-        public async ValueTask<List<ВнутрішнєСпоживанняТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ВнутрішнєСпоживанняТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ВнутрішнєСпоживанняТоварів_Pointer> documentPointerList = [];
             foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -25989,14 +27000,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_a1"] != DBNull.Value) ? (int)fieldValue["col_a1"] : 0,
@@ -26029,7 +27040,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_b07"))
                 throw new Exception("Owner not exist");
@@ -26081,7 +27092,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -26107,9 +27118,9 @@ namespace GeneratedCode.Документи
     
     public static class ВнутрішнєСпоживанняТоварів_Export
     {
-        public static async ValueTask ToXmlFile(ВнутрішнєСпоживанняТоварів_Pointer ВнутрішнєСпоживанняТоварів, string pathToSave)
+        public static async Task ToXmlFile(ВнутрішнєСпоживанняТоварів_Pointer ВнутрішнєСпоживанняТоварів, string pathToSave)
         {
-        await ValueTask.FromResult(true);
+        await Task.CompletedTask;
         }
     }
 
@@ -26162,7 +27173,7 @@ namespace GeneratedCode.Документи
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = РахунокФактура_Const.FULLNAME + " *";
@@ -26171,7 +27182,7 @@ namespace GeneratedCode.Документи
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -26212,7 +27223,7 @@ namespace GeneratedCode.Документи
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             
                 await РахунокФактура_Triggers.BeforeSave(this);
@@ -26249,12 +27260,12 @@ namespace GeneratedCode.Документи
             return result;
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             
             await BaseAddIgnoreDocumentList();
             bool spend = await РахунокФактура_SpendTheDocument.Spend(this);
-            if (!spend) ClearRegAccum();
+            if (!spend) await ClearRegAccum();
             await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
             await BaseRemoveIgnoreDocumentList();
             return spend;
@@ -26263,29 +27274,28 @@ namespace GeneratedCode.Документи
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
                 await new РегістриНакопичення.ВільніЗалишки_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
-            ClearRegAccum();
+            await ClearRegAccum();
             
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async ValueTask<РахунокФактура_Objest> Copy(bool copyTableParts = false)
+        public async Task<РахунокФактура_Objest> Copy(bool copyTableParts = false)
         {
-            РахунокФактура_Objest copy = new РахунокФактура_Objest()
+            РахунокФактура_Objest copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -26328,14 +27338,14 @@ namespace GeneratedCode.Документи
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await ClearSpendTheDocument();
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await ClearSpendTheDocument();
@@ -26347,7 +27357,7 @@ namespace GeneratedCode.Документи
             return new РахунокФактура_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(РахунокФактура_Const.PRESENTATION_FIELDS);
         }
@@ -26396,7 +27406,7 @@ namespace GeneratedCode.Документи
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(РахунокФактура_Const.PRESENTATION_FIELDS);
         }
@@ -26409,56 +27419,55 @@ namespace GeneratedCode.Документи
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> IsSpend()
+        public async Task<bool?> IsSpend()
         {
             return await base.BaseIsSpend();
         }
 
-        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
         {
             return await base.BaseGetSpend();
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             РахунокФактура_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
             
-            ClearRegAccum();
+            await ClearRegAccum();
             await BaseSpend(false, DateTime.MinValue);
                 
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
                 await new РегістриНакопичення.ВільніЗалишки_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
           
             if (label)
             {
-                ClearRegAccum();
+                await ClearRegAccum();
                 await BaseSpend(false, DateTime.MinValue);
             }
             
@@ -26475,10 +27484,10 @@ namespace GeneratedCode.Документи
             return new РахунокФактура_Pointer();
         }
 
-        public async ValueTask<РахунокФактура_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<РахунокФактура_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            РахунокФактура_Objest obj = new РахунокФактура_Objest();
+            РахунокФактура_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -26486,18 +27495,18 @@ namespace GeneratedCode.Документи
     public class РахунокФактура_Select : DocumentSelect
     {		
         public РахунокФактура_Select() : base(Config.Kernel, "tab_b10") { }
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new РахунокФактура_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public РахунокФактура_Pointer? Current { get; private set; }
 
-        public async ValueTask<РахунокФактура_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<РахунокФактура_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new РахунокФактура_Pointer(pointer) : new РахунокФактура_Pointer();
         }
         
-        public async ValueTask<List<РахунокФактура_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<РахунокФактура_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<РахунокФактура_Pointer> documentPointerList = [];
             foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -26573,14 +27582,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_a2"] != DBNull.Value) ? (int)fieldValue["col_a2"] : 0,
@@ -26614,7 +27623,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_b10"))
                 throw new Exception("Owner not exist");
@@ -26667,7 +27676,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -26694,7 +27703,7 @@ namespace GeneratedCode.Документи
     
     public static class РахунокФактура_Export
     {
-        public static async ValueTask ToXmlFile(РахунокФактура_Pointer РахунокФактура, string pathToSave)
+        public static async Task ToXmlFile(РахунокФактура_Pointer РахунокФактура, string pathToSave)
         {
         РахунокФактура_Objest? obj = await РахунокФактура.GetDocumentObject(true);
             if (obj == null) return;
@@ -26887,7 +27896,7 @@ namespace GeneratedCode.Документи
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = РозміщенняТоварівНаСкладі_Const.FULLNAME + " *";
@@ -26896,7 +27905,7 @@ namespace GeneratedCode.Документи
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -26927,7 +27936,7 @@ namespace GeneratedCode.Документи
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             
                 await РозміщенняТоварівНаСкладі_Triggers.BeforeSave(this);
@@ -26954,12 +27963,12 @@ namespace GeneratedCode.Документи
             return result;
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             
             await BaseAddIgnoreDocumentList();
             bool spend = await РозміщенняТоварівНаСкладі_SpendTheDocument.Spend(this);
-            if (!spend) ClearRegAccum();
+            if (!spend) await ClearRegAccum();
             await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
             await BaseRemoveIgnoreDocumentList();
             return spend;
@@ -26968,29 +27977,28 @@ namespace GeneratedCode.Документи
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
                 await new РегістриНакопичення.ТовариВКомірках_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
-            ClearRegAccum();
+            await ClearRegAccum();
             
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async ValueTask<РозміщенняТоварівНаСкладі_Objest> Copy(bool copyTableParts = false)
+        public async Task<РозміщенняТоварівНаСкладі_Objest> Copy(bool copyTableParts = false)
         {
-            РозміщенняТоварівНаСкладі_Objest copy = new РозміщенняТоварівНаСкладі_Objest()
+            РозміщенняТоварівНаСкладі_Objest copy = new()
             {
                 Назва = Назва,
                 ДатаДок = ДатаДок,
@@ -27023,14 +28031,14 @@ namespace GeneratedCode.Документи
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await ClearSpendTheDocument();
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await ClearSpendTheDocument();
@@ -27042,7 +28050,7 @@ namespace GeneratedCode.Документи
             return new РозміщенняТоварівНаСкладі_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(РозміщенняТоварівНаСкладі_Const.PRESENTATION_FIELDS);
         }
@@ -27081,7 +28089,7 @@ namespace GeneratedCode.Документи
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(РозміщенняТоварівНаСкладі_Const.PRESENTATION_FIELDS);
         }
@@ -27094,56 +28102,55 @@ namespace GeneratedCode.Документи
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> IsSpend()
+        public async Task<bool?> IsSpend()
         {
             return await base.BaseIsSpend();
         }
 
-        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
         {
             return await base.BaseGetSpend();
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             РозміщенняТоварівНаСкладі_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
             
-            ClearRegAccum();
+            await ClearRegAccum();
             await BaseSpend(false, DateTime.MinValue);
                 
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
                 await new РегістриНакопичення.ТовариВКомірках_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
           
             if (label)
             {
-                ClearRegAccum();
+                await ClearRegAccum();
                 await BaseSpend(false, DateTime.MinValue);
             }
             
@@ -27160,10 +28167,10 @@ namespace GeneratedCode.Документи
             return new РозміщенняТоварівНаСкладі_Pointer();
         }
 
-        public async ValueTask<РозміщенняТоварівНаСкладі_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<РозміщенняТоварівНаСкладі_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            РозміщенняТоварівНаСкладі_Objest obj = new РозміщенняТоварівНаСкладі_Objest();
+            РозміщенняТоварівНаСкладі_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -27171,18 +28178,18 @@ namespace GeneratedCode.Документи
     public class РозміщенняТоварівНаСкладі_Select : DocumentSelect
     {		
         public РозміщенняТоварівНаСкладі_Select() : base(Config.Kernel, "tab_a64") { }
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new РозміщенняТоварівНаСкладі_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public РозміщенняТоварівНаСкладі_Pointer? Current { get; private set; }
 
-        public async ValueTask<РозміщенняТоварівНаСкладі_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<РозміщенняТоварівНаСкладі_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new РозміщенняТоварівНаСкладі_Pointer(pointer) : new РозміщенняТоварівНаСкладі_Pointer();
         }
         
-        public async ValueTask<List<РозміщенняТоварівНаСкладі_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<РозміщенняТоварівНаСкладі_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<РозміщенняТоварівНаСкладі_Pointer> documentPointerList = [];
             foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -27255,14 +28262,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_a1"] != DBNull.Value) ? (int)fieldValue["col_a1"] : 0,
@@ -27293,7 +28300,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_a64"))
                 throw new Exception("Owner not exist");
@@ -27343,7 +28350,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -27367,9 +28374,9 @@ namespace GeneratedCode.Документи
     
     public static class РозміщенняТоварівНаСкладі_Export
     {
-        public static async ValueTask ToXmlFile(РозміщенняТоварівНаСкладі_Pointer РозміщенняТоварівНаСкладі, string pathToSave)
+        public static async Task ToXmlFile(РозміщенняТоварівНаСкладі_Pointer РозміщенняТоварівНаСкладі, string pathToSave)
         {
-        await ValueTask.FromResult(true);
+        await Task.CompletedTask;
         }
     }
 
@@ -27411,7 +28418,7 @@ namespace GeneratedCode.Документи
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ПереміщенняТоварівНаСкладі_Const.FULLNAME + " *";
@@ -27420,7 +28427,7 @@ namespace GeneratedCode.Документи
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -27450,7 +28457,7 @@ namespace GeneratedCode.Документи
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             
                 await ПереміщенняТоварівНаСкладі_Triggers.BeforeSave(this);
@@ -27476,12 +28483,12 @@ namespace GeneratedCode.Документи
             return result;
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             
             await BaseAddIgnoreDocumentList();
             bool spend = await ПереміщенняТоварівНаСкладі_SpendTheDocument.Spend(this);
-            if (!spend) ClearRegAccum();
+            if (!spend) await ClearRegAccum();
             await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
             await BaseRemoveIgnoreDocumentList();
             return spend;
@@ -27490,29 +28497,28 @@ namespace GeneratedCode.Документи
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
                 await new РегістриНакопичення.ТовариВКомірках_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
-            ClearRegAccum();
+            await ClearRegAccum();
             
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async ValueTask<ПереміщенняТоварівНаСкладі_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПереміщенняТоварівНаСкладі_Objest> Copy(bool copyTableParts = false)
         {
-            ПереміщенняТоварівНаСкладі_Objest copy = new ПереміщенняТоварівНаСкладі_Objest()
+            ПереміщенняТоварівНаСкладі_Objest copy = new()
             {
                 Назва = Назва,
                 ДатаДок = ДатаДок,
@@ -27544,14 +28550,14 @@ namespace GeneratedCode.Документи
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await ClearSpendTheDocument();
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await ClearSpendTheDocument();
@@ -27563,7 +28569,7 @@ namespace GeneratedCode.Документи
             return new ПереміщенняТоварівНаСкладі_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ПереміщенняТоварівНаСкладі_Const.PRESENTATION_FIELDS);
         }
@@ -27601,7 +28607,7 @@ namespace GeneratedCode.Документи
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ПереміщенняТоварівНаСкладі_Const.PRESENTATION_FIELDS);
         }
@@ -27614,56 +28620,55 @@ namespace GeneratedCode.Документи
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> IsSpend()
+        public async Task<bool?> IsSpend()
         {
             return await base.BaseIsSpend();
         }
 
-        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
         {
             return await base.BaseGetSpend();
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПереміщенняТоварівНаСкладі_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
             
-            ClearRegAccum();
+            await ClearRegAccum();
             await BaseSpend(false, DateTime.MinValue);
                 
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
                 await new РегістриНакопичення.ТовариВКомірках_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
           
             if (label)
             {
-                ClearRegAccum();
+                await ClearRegAccum();
                 await BaseSpend(false, DateTime.MinValue);
             }
             
@@ -27680,10 +28685,10 @@ namespace GeneratedCode.Документи
             return new ПереміщенняТоварівНаСкладі_Pointer();
         }
 
-        public async ValueTask<ПереміщенняТоварівНаСкладі_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПереміщенняТоварівНаСкладі_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПереміщенняТоварівНаСкладі_Objest obj = new ПереміщенняТоварівНаСкладі_Objest();
+            ПереміщенняТоварівНаСкладі_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -27691,18 +28696,18 @@ namespace GeneratedCode.Документи
     public class ПереміщенняТоварівНаСкладі_Select : DocumentSelect
     {		
         public ПереміщенняТоварівНаСкладі_Select() : base(Config.Kernel, "tab_b09") { }
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПереміщенняТоварівНаСкладі_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПереміщенняТоварівНаСкладі_Pointer? Current { get; private set; }
 
-        public async ValueTask<ПереміщенняТоварівНаСкладі_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ПереміщенняТоварівНаСкладі_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ПереміщенняТоварівНаСкладі_Pointer(pointer) : new ПереміщенняТоварівНаСкладі_Pointer();
         }
         
-        public async ValueTask<List<ПереміщенняТоварівНаСкладі_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ПереміщенняТоварівНаСкладі_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ПереміщенняТоварівНаСкладі_Pointer> documentPointerList = [];
             foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -27779,14 +28784,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_a1"] != DBNull.Value) ? (int)fieldValue["col_a1"] : 0,
@@ -27819,7 +28824,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_b09"))
                 throw new Exception("Owner not exist");
@@ -27870,7 +28875,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -27895,9 +28900,9 @@ namespace GeneratedCode.Документи
     
     public static class ПереміщенняТоварівНаСкладі_Export
     {
-        public static async ValueTask ToXmlFile(ПереміщенняТоварівНаСкладі_Pointer ПереміщенняТоварівНаСкладі, string pathToSave)
+        public static async Task ToXmlFile(ПереміщенняТоварівНаСкладі_Pointer ПереміщенняТоварівНаСкладі, string pathToSave)
         {
-        await ValueTask.FromResult(true);
+        await Task.CompletedTask;
         }
     }
 
@@ -27940,7 +28945,7 @@ namespace GeneratedCode.Документи
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ЗбіркаТоварівНаСкладі_Const.FULLNAME + " *";
@@ -27949,7 +28954,7 @@ namespace GeneratedCode.Документи
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -27980,7 +28985,7 @@ namespace GeneratedCode.Документи
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             
                 await ЗбіркаТоварівНаСкладі_Triggers.BeforeSave(this);
@@ -28007,12 +29012,12 @@ namespace GeneratedCode.Документи
             return result;
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             
             await BaseAddIgnoreDocumentList();
             bool spend = await ЗбіркаТоварівНаСкладі_SpendTheDocument.Spend(this);
-            if (!spend) ClearRegAccum();
+            if (!spend) await ClearRegAccum();
             await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
             await BaseRemoveIgnoreDocumentList();
             return spend;
@@ -28021,29 +29026,28 @@ namespace GeneratedCode.Документи
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
                 await new РегістриНакопичення.ТовариВКомірках_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
-            ClearRegAccum();
+            await ClearRegAccum();
             
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async ValueTask<ЗбіркаТоварівНаСкладі_Objest> Copy(bool copyTableParts = false)
+        public async Task<ЗбіркаТоварівНаСкладі_Objest> Copy(bool copyTableParts = false)
         {
-            ЗбіркаТоварівНаСкладі_Objest copy = new ЗбіркаТоварівНаСкладі_Objest()
+            ЗбіркаТоварівНаСкладі_Objest copy = new()
             {
                 Назва = Назва,
                 ДатаДок = ДатаДок,
@@ -28076,14 +29080,14 @@ namespace GeneratedCode.Документи
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await ClearSpendTheDocument();
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await ClearSpendTheDocument();
@@ -28095,7 +29099,7 @@ namespace GeneratedCode.Документи
             return new ЗбіркаТоварівНаСкладі_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ЗбіркаТоварівНаСкладі_Const.PRESENTATION_FIELDS);
         }
@@ -28134,7 +29138,7 @@ namespace GeneratedCode.Документи
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ЗбіркаТоварівНаСкладі_Const.PRESENTATION_FIELDS);
         }
@@ -28147,56 +29151,55 @@ namespace GeneratedCode.Документи
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> IsSpend()
+        public async Task<bool?> IsSpend()
         {
             return await base.BaseIsSpend();
         }
 
-        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
         {
             return await base.BaseGetSpend();
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ЗбіркаТоварівНаСкладі_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
             
-            ClearRegAccum();
+            await ClearRegAccum();
             await BaseSpend(false, DateTime.MinValue);
                 
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
                 await new РегістриНакопичення.ТовариВКомірках_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
           
             if (label)
             {
-                ClearRegAccum();
+                await ClearRegAccum();
                 await BaseSpend(false, DateTime.MinValue);
             }
             
@@ -28213,10 +29216,10 @@ namespace GeneratedCode.Документи
             return new ЗбіркаТоварівНаСкладі_Pointer();
         }
 
-        public async ValueTask<ЗбіркаТоварівНаСкладі_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ЗбіркаТоварівНаСкладі_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ЗбіркаТоварівНаСкладі_Objest obj = new ЗбіркаТоварівНаСкладі_Objest();
+            ЗбіркаТоварівНаСкладі_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -28224,18 +29227,18 @@ namespace GeneratedCode.Документи
     public class ЗбіркаТоварівНаСкладі_Select : DocumentSelect
     {		
         public ЗбіркаТоварівНаСкладі_Select() : base(Config.Kernel, "tab_b27") { }
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗбіркаТоварівНаСкладі_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ЗбіркаТоварівНаСкладі_Pointer? Current { get; private set; }
 
-        public async ValueTask<ЗбіркаТоварівНаСкладі_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ЗбіркаТоварівНаСкладі_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ЗбіркаТоварівНаСкладі_Pointer(pointer) : new ЗбіркаТоварівНаСкладі_Pointer();
         }
         
-        public async ValueTask<List<ЗбіркаТоварівНаСкладі_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ЗбіркаТоварівНаСкладі_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ЗбіркаТоварівНаСкладі_Pointer> documentPointerList = [];
             foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -28308,14 +29311,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_a1"] != DBNull.Value) ? (int)fieldValue["col_a1"] : 0,
@@ -28346,7 +29349,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_b27"))
                 throw new Exception("Owner not exist");
@@ -28396,7 +29399,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -28420,9 +29423,9 @@ namespace GeneratedCode.Документи
     
     public static class ЗбіркаТоварівНаСкладі_Export
     {
-        public static async ValueTask ToXmlFile(ЗбіркаТоварівНаСкладі_Pointer ЗбіркаТоварівНаСкладі, string pathToSave)
+        public static async Task ToXmlFile(ЗбіркаТоварівНаСкладі_Pointer ЗбіркаТоварівНаСкладі, string pathToSave)
         {
-        await ValueTask.FromResult(true);
+        await Task.CompletedTask;
         }
     }
 
@@ -28464,7 +29467,7 @@ namespace GeneratedCode.Документи
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = РозміщенняНоменклатуриПоКоміркам_Const.FULLNAME + " *";
@@ -28473,7 +29476,7 @@ namespace GeneratedCode.Документи
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -28503,7 +29506,7 @@ namespace GeneratedCode.Документи
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             
                 await РозміщенняНоменклатуриПоКоміркам_Triggers.BeforeSave(this);
@@ -28529,12 +29532,12 @@ namespace GeneratedCode.Документи
             return result;
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             
             await BaseAddIgnoreDocumentList();
             bool spend = await РозміщенняНоменклатуриПоКоміркам_SpendTheDocument.Spend(this);
-            if (!spend) ClearRegAccum();
+            if (!spend) await ClearRegAccum();
             await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
             await BaseRemoveIgnoreDocumentList();
             return spend;
@@ -28543,22 +29546,18 @@ namespace GeneratedCode.Документи
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
-        {
-          await ValueTask.FromResult(true);
-        }
-  
+        Task ClearRegAccum() => Task.CompletedTask;
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
-            ClearRegAccum();
+            await ClearRegAccum();
             
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async ValueTask<РозміщенняНоменклатуриПоКоміркам_Objest> Copy(bool copyTableParts = false)
+        public async Task<РозміщенняНоменклатуриПоКоміркам_Objest> Copy(bool copyTableParts = false)
         {
-            РозміщенняНоменклатуриПоКоміркам_Objest copy = new РозміщенняНоменклатуриПоКоміркам_Objest()
+            РозміщенняНоменклатуриПоКоміркам_Objest copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -28590,14 +29589,14 @@ namespace GeneratedCode.Документи
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await ClearSpendTheDocument();
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await ClearSpendTheDocument();
@@ -28609,7 +29608,7 @@ namespace GeneratedCode.Документи
             return new РозміщенняНоменклатуриПоКоміркам_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(РозміщенняНоменклатуриПоКоміркам_Const.PRESENTATION_FIELDS);
         }
@@ -28647,7 +29646,7 @@ namespace GeneratedCode.Документи
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(РозміщенняНоменклатуриПоКоміркам_Const.PRESENTATION_FIELDS);
         }
@@ -28660,49 +29659,45 @@ namespace GeneratedCode.Документи
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> IsSpend()
+        public async Task<bool?> IsSpend()
         {
             return await base.BaseIsSpend();
         }
 
-        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
         {
             return await base.BaseGetSpend();
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             РозміщенняНоменклатуриПоКоміркам_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
             
-            ClearRegAccum();
+            await ClearRegAccum();
             await BaseSpend(false, DateTime.MinValue);
                 
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
-        {
-          await ValueTask.FromResult(true);
-        }
-  
+        Task ClearRegAccum() => Task.CompletedTask;
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
           
             if (label)
             {
-                ClearRegAccum();
+                await ClearRegAccum();
                 await BaseSpend(false, DateTime.MinValue);
             }
             
@@ -28719,10 +29714,10 @@ namespace GeneratedCode.Документи
             return new РозміщенняНоменклатуриПоКоміркам_Pointer();
         }
 
-        public async ValueTask<РозміщенняНоменклатуриПоКоміркам_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<РозміщенняНоменклатуриПоКоміркам_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            РозміщенняНоменклатуриПоКоміркам_Objest obj = new РозміщенняНоменклатуриПоКоміркам_Objest();
+            РозміщенняНоменклатуриПоКоміркам_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -28730,18 +29725,18 @@ namespace GeneratedCode.Документи
     public class РозміщенняНоменклатуриПоКоміркам_Select : DocumentSelect
     {		
         public РозміщенняНоменклатуриПоКоміркам_Select() : base(Config.Kernel, "tab_b29") { }
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new РозміщенняНоменклатуриПоКоміркам_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public РозміщенняНоменклатуриПоКоміркам_Pointer? Current { get; private set; }
 
-        public async ValueTask<РозміщенняНоменклатуриПоКоміркам_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<РозміщенняНоменклатуриПоКоміркам_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new РозміщенняНоменклатуриПоКоміркам_Pointer(pointer) : new РозміщенняНоменклатуриПоКоміркам_Pointer();
         }
         
-        public async ValueTask<List<РозміщенняНоменклатуриПоКоміркам_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<РозміщенняНоменклатуриПоКоміркам_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<РозміщенняНоменклатуриПоКоміркам_Pointer> documentPointerList = [];
             foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -28804,14 +29799,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_a1"] != DBNull.Value) ? (int)fieldValue["col_a1"] : 0,
@@ -28836,7 +29831,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_b29"))
                 throw new Exception("Owner not exist");
@@ -28882,7 +29877,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -28902,9 +29897,9 @@ namespace GeneratedCode.Документи
     
     public static class РозміщенняНоменклатуриПоКоміркам_Export
     {
-        public static async ValueTask ToXmlFile(РозміщенняНоменклатуриПоКоміркам_Pointer РозміщенняНоменклатуриПоКоміркам, string pathToSave)
+        public static async Task ToXmlFile(РозміщенняНоменклатуриПоКоміркам_Pointer РозміщенняНоменклатуриПоКоміркам, string pathToSave)
         {
-        await ValueTask.FromResult(true);
+        await Task.CompletedTask;
         }
     }
 
@@ -28945,7 +29940,7 @@ namespace GeneratedCode.Документи
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = КорегуванняБоргу_Const.FULLNAME + " *";
@@ -28954,7 +29949,7 @@ namespace GeneratedCode.Документи
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -28983,7 +29978,7 @@ namespace GeneratedCode.Документи
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             
                 await КорегуванняБоргу_Triggers.BeforeSave(this);
@@ -29008,12 +30003,12 @@ namespace GeneratedCode.Документи
             return result;
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             
             await BaseAddIgnoreDocumentList();
             bool spend = await КорегуванняБоргу_SpendTheDocument.Spend(this);
-            if (!spend) ClearRegAccum();
+            if (!spend) await ClearRegAccum();
             await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
             await BaseRemoveIgnoreDocumentList();
             return spend;
@@ -29022,9 +30017,9 @@ namespace GeneratedCode.Документи
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
@@ -29033,20 +30028,19 @@ namespace GeneratedCode.Документи
                 await new РегістриНакопичення.РозрахункиЗПостачальниками_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
-            ClearRegAccum();
+            await ClearRegAccum();
             
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async ValueTask<КорегуванняБоргу_Objest> Copy(bool copyTableParts = false)
+        public async Task<КорегуванняБоргу_Objest> Copy(bool copyTableParts = false)
         {
-            КорегуванняБоргу_Objest copy = new КорегуванняБоргу_Objest()
+            КорегуванняБоргу_Objest copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -29077,14 +30071,14 @@ namespace GeneratedCode.Документи
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await ClearSpendTheDocument();
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await ClearSpendTheDocument();
@@ -29096,7 +30090,7 @@ namespace GeneratedCode.Документи
             return new КорегуванняБоргу_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(КорегуванняБоргу_Const.PRESENTATION_FIELDS);
         }
@@ -29133,7 +30127,7 @@ namespace GeneratedCode.Документи
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(КорегуванняБоргу_Const.PRESENTATION_FIELDS);
         }
@@ -29146,40 +30140,40 @@ namespace GeneratedCode.Документи
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> IsSpend()
+        public async Task<bool?> IsSpend()
         {
             return await base.BaseIsSpend();
         }
 
-        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
         {
             return await base.BaseGetSpend();
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             КорегуванняБоргу_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
             
-            ClearRegAccum();
+            await ClearRegAccum();
             await BaseSpend(false, DateTime.MinValue);
                 
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
@@ -29188,16 +30182,15 @@ namespace GeneratedCode.Документи
                 await new РегістриНакопичення.РозрахункиЗПостачальниками_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
           
             if (label)
             {
-                ClearRegAccum();
+                await ClearRegAccum();
                 await BaseSpend(false, DateTime.MinValue);
             }
             
@@ -29214,10 +30207,10 @@ namespace GeneratedCode.Документи
             return new КорегуванняБоргу_Pointer();
         }
 
-        public async ValueTask<КорегуванняБоргу_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<КорегуванняБоргу_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            КорегуванняБоргу_Objest obj = new КорегуванняБоргу_Objest();
+            КорегуванняБоргу_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -29225,18 +30218,18 @@ namespace GeneratedCode.Документи
     public class КорегуванняБоргу_Select : DocumentSelect
     {		
         public КорегуванняБоргу_Select() : base(Config.Kernel, "tab_a65") { }
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new КорегуванняБоргу_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public КорегуванняБоргу_Pointer? Current { get; private set; }
 
-        public async ValueTask<КорегуванняБоргу_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<КорегуванняБоргу_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new КорегуванняБоргу_Pointer(pointer) : new КорегуванняБоргу_Pointer();
         }
         
-        public async ValueTask<List<КорегуванняБоргу_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<КорегуванняБоргу_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<КорегуванняБоргу_Pointer> documentPointerList = [];
             foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -29297,14 +30290,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_a1"] != DBNull.Value) ? (int)fieldValue["col_a1"] : 0,
@@ -29329,7 +30322,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_a65"))
                 throw new Exception("Owner not exist");
@@ -29376,7 +30369,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -29397,9 +30390,9 @@ namespace GeneratedCode.Документи
     
     public static class КорегуванняБоргу_Export
     {
-        public static async ValueTask ToXmlFile(КорегуванняБоргу_Pointer КорегуванняБоргу, string pathToSave)
+        public static async Task ToXmlFile(КорегуванняБоргу_Pointer КорегуванняБоргу, string pathToSave)
         {
-        await ValueTask.FromResult(true);
+        await Task.CompletedTask;
         }
     }
 
@@ -29448,7 +30441,7 @@ namespace GeneratedCode.Документи
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ЗакриттяЗамовленняКлієнта_Const.FULLNAME + " *";
@@ -29457,7 +30450,7 @@ namespace GeneratedCode.Документи
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -29494,7 +30487,7 @@ namespace GeneratedCode.Документи
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             
                 await ЗакриттяЗамовленняКлієнта_Triggers.BeforeSave(this);
@@ -29527,12 +30520,12 @@ namespace GeneratedCode.Документи
             return result;
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             
             await BaseAddIgnoreDocumentList();
             bool spend = await ЗакриттяЗамовленняКлієнта_SpendTheDocument.Spend(this);
-            if (!spend) ClearRegAccum();
+            if (!spend) await ClearRegAccum();
             await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
             await BaseRemoveIgnoreDocumentList();
             return spend;
@@ -29541,9 +30534,9 @@ namespace GeneratedCode.Документи
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
@@ -29552,20 +30545,19 @@ namespace GeneratedCode.Документи
                 await new РегістриНакопичення.ВільніЗалишки_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
-            ClearRegAccum();
+            await ClearRegAccum();
             
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async ValueTask<ЗакриттяЗамовленняКлієнта_Objest> Copy(bool copyTableParts = false)
+        public async Task<ЗакриттяЗамовленняКлієнта_Objest> Copy(bool copyTableParts = false)
         {
-            ЗакриттяЗамовленняКлієнта_Objest copy = new ЗакриттяЗамовленняКлієнта_Objest()
+            ЗакриттяЗамовленняКлієнта_Objest copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -29604,14 +30596,14 @@ namespace GeneratedCode.Документи
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await ClearSpendTheDocument();
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await ClearSpendTheDocument();
@@ -29623,7 +30615,7 @@ namespace GeneratedCode.Документи
             return new ЗакриттяЗамовленняКлієнта_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ЗакриттяЗамовленняКлієнта_Const.PRESENTATION_FIELDS);
         }
@@ -29668,7 +30660,7 @@ namespace GeneratedCode.Документи
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ЗакриттяЗамовленняКлієнта_Const.PRESENTATION_FIELDS);
         }
@@ -29681,40 +30673,40 @@ namespace GeneratedCode.Документи
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> IsSpend()
+        public async Task<bool?> IsSpend()
         {
             return await base.BaseIsSpend();
         }
 
-        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
         {
             return await base.BaseGetSpend();
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ЗакриттяЗамовленняКлієнта_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
             
-            ClearRegAccum();
+            await ClearRegAccum();
             await BaseSpend(false, DateTime.MinValue);
                 
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
@@ -29723,16 +30715,15 @@ namespace GeneratedCode.Документи
                 await new РегістриНакопичення.ВільніЗалишки_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
           
             if (label)
             {
-                ClearRegAccum();
+                await ClearRegAccum();
                 await BaseSpend(false, DateTime.MinValue);
             }
             
@@ -29749,10 +30740,10 @@ namespace GeneratedCode.Документи
             return new ЗакриттяЗамовленняКлієнта_Pointer();
         }
 
-        public async ValueTask<ЗакриттяЗамовленняКлієнта_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ЗакриттяЗамовленняКлієнта_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ЗакриттяЗамовленняКлієнта_Objest obj = new ЗакриттяЗамовленняКлієнта_Objest();
+            ЗакриттяЗамовленняКлієнта_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -29760,18 +30751,18 @@ namespace GeneratedCode.Документи
     public class ЗакриттяЗамовленняКлієнта_Select : DocumentSelect
     {		
         public ЗакриттяЗамовленняКлієнта_Select() : base(Config.Kernel, "tab_a96") { }
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗакриттяЗамовленняКлієнта_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ЗакриттяЗамовленняКлієнта_Pointer? Current { get; private set; }
 
-        public async ValueTask<ЗакриттяЗамовленняКлієнта_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ЗакриттяЗамовленняКлієнта_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ЗакриттяЗамовленняКлієнта_Pointer(pointer) : new ЗакриттяЗамовленняКлієнта_Pointer();
         }
         
-        public async ValueTask<List<ЗакриттяЗамовленняКлієнта_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ЗакриттяЗамовленняКлієнта_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ЗакриттяЗамовленняКлієнта_Pointer> documentPointerList = [];
             foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -29842,14 +30833,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_a2"] != DBNull.Value) ? (int)fieldValue["col_a2"] : 0,
@@ -29880,7 +30871,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_a96"))
                 throw new Exception("Owner not exist");
@@ -29931,7 +30922,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -29956,9 +30947,9 @@ namespace GeneratedCode.Документи
     
     public static class ЗакриттяЗамовленняКлієнта_Export
     {
-        public static async ValueTask ToXmlFile(ЗакриттяЗамовленняКлієнта_Pointer ЗакриттяЗамовленняКлієнта, string pathToSave)
+        public static async Task ToXmlFile(ЗакриттяЗамовленняКлієнта_Pointer ЗакриттяЗамовленняКлієнта, string pathToSave)
         {
-        await ValueTask.FromResult(true);
+        await Task.CompletedTask;
         }
     }
 
@@ -30007,7 +30998,7 @@ namespace GeneratedCode.Документи
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ЗакриттяРахункуФактури_Const.FULLNAME + " *";
@@ -30016,7 +31007,7 @@ namespace GeneratedCode.Документи
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -30053,7 +31044,7 @@ namespace GeneratedCode.Документи
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             
                 await ЗакриттяРахункуФактури_Triggers.BeforeSave(this);
@@ -30086,12 +31077,12 @@ namespace GeneratedCode.Документи
             return result;
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             
             await BaseAddIgnoreDocumentList();
             bool spend = await ЗакриттяРахункуФактури_SpendTheDocument.Spend(this);
-            if (!spend) ClearRegAccum();
+            if (!spend) await ClearRegAccum();
             await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
             await BaseRemoveIgnoreDocumentList();
             return spend;
@@ -30100,29 +31091,28 @@ namespace GeneratedCode.Документи
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
                 await new РегістриНакопичення.ВільніЗалишки_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
-            ClearRegAccum();
+            await ClearRegAccum();
             
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async ValueTask<ЗакриттяРахункуФактури_Objest> Copy(bool copyTableParts = false)
+        public async Task<ЗакриттяРахункуФактури_Objest> Copy(bool copyTableParts = false)
         {
-            ЗакриттяРахункуФактури_Objest copy = new ЗакриттяРахункуФактури_Objest()
+            ЗакриттяРахункуФактури_Objest copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -30161,14 +31151,14 @@ namespace GeneratedCode.Документи
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await ClearSpendTheDocument();
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await ClearSpendTheDocument();
@@ -30180,7 +31170,7 @@ namespace GeneratedCode.Документи
             return new ЗакриттяРахункуФактури_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ЗакриттяРахункуФактури_Const.PRESENTATION_FIELDS);
         }
@@ -30225,7 +31215,7 @@ namespace GeneratedCode.Документи
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ЗакриттяРахункуФактури_Const.PRESENTATION_FIELDS);
         }
@@ -30238,56 +31228,55 @@ namespace GeneratedCode.Документи
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> IsSpend()
+        public async Task<bool?> IsSpend()
         {
             return await base.BaseIsSpend();
         }
 
-        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
         {
             return await base.BaseGetSpend();
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ЗакриттяРахункуФактури_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
             
-            ClearRegAccum();
+            await ClearRegAccum();
             await BaseSpend(false, DateTime.MinValue);
                 
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
                 await new РегістриНакопичення.ВільніЗалишки_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
           
             if (label)
             {
-                ClearRegAccum();
+                await ClearRegAccum();
                 await BaseSpend(false, DateTime.MinValue);
             }
             
@@ -30304,10 +31293,10 @@ namespace GeneratedCode.Документи
             return new ЗакриттяРахункуФактури_Pointer();
         }
 
-        public async ValueTask<ЗакриттяРахункуФактури_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ЗакриттяРахункуФактури_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ЗакриттяРахункуФактури_Objest obj = new ЗакриттяРахункуФактури_Objest();
+            ЗакриттяРахункуФактури_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -30315,18 +31304,18 @@ namespace GeneratedCode.Документи
     public class ЗакриттяРахункуФактури_Select : DocumentSelect
     {		
         public ЗакриттяРахункуФактури_Select() : base(Config.Kernel, "tab_b41") { }
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗакриттяРахункуФактури_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ЗакриттяРахункуФактури_Pointer? Current { get; private set; }
 
-        public async ValueTask<ЗакриттяРахункуФактури_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ЗакриттяРахункуФактури_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ЗакриттяРахункуФактури_Pointer(pointer) : new ЗакриттяРахункуФактури_Pointer();
         }
         
-        public async ValueTask<List<ЗакриттяРахункуФактури_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ЗакриттяРахункуФактури_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ЗакриттяРахункуФактури_Pointer> documentPointerList = [];
             foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -30397,14 +31386,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_a2"] != DBNull.Value) ? (int)fieldValue["col_a2"] : 0,
@@ -30435,7 +31424,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_b41"))
                 throw new Exception("Owner not exist");
@@ -30486,7 +31475,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -30511,9 +31500,9 @@ namespace GeneratedCode.Документи
     
     public static class ЗакриттяРахункуФактури_Export
     {
-        public static async ValueTask ToXmlFile(ЗакриттяРахункуФактури_Pointer ЗакриттяРахункуФактури, string pathToSave)
+        public static async Task ToXmlFile(ЗакриттяРахункуФактури_Pointer ЗакриттяРахункуФактури, string pathToSave)
         {
-        await ValueTask.FromResult(true);
+        await Task.CompletedTask;
         }
     }
 
@@ -30562,7 +31551,7 @@ namespace GeneratedCode.Документи
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ЗакриттяЗамовленняПостачальнику_Const.FULLNAME + " *";
@@ -30571,7 +31560,7 @@ namespace GeneratedCode.Документи
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -30608,7 +31597,7 @@ namespace GeneratedCode.Документи
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             
                 await ЗакриттяЗамовленняПостачальнику_Triggers.BeforeSave(this);
@@ -30641,12 +31630,12 @@ namespace GeneratedCode.Документи
             return result;
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             
             await BaseAddIgnoreDocumentList();
             bool spend = await ЗакриттяЗамовленняПостачальнику_SpendTheDocument.Spend(this);
-            if (!spend) ClearRegAccum();
+            if (!spend) await ClearRegAccum();
             await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
             await BaseRemoveIgnoreDocumentList();
             return spend;
@@ -30655,29 +31644,28 @@ namespace GeneratedCode.Документи
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
                 await new РегістриНакопичення.ЗамовленняПостачальникам_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
-            ClearRegAccum();
+            await ClearRegAccum();
             
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async ValueTask<ЗакриттяЗамовленняПостачальнику_Objest> Copy(bool copyTableParts = false)
+        public async Task<ЗакриттяЗамовленняПостачальнику_Objest> Copy(bool copyTableParts = false)
         {
-            ЗакриттяЗамовленняПостачальнику_Objest copy = new ЗакриттяЗамовленняПостачальнику_Objest()
+            ЗакриттяЗамовленняПостачальнику_Objest copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -30716,14 +31704,14 @@ namespace GeneratedCode.Документи
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await ClearSpendTheDocument();
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await ClearSpendTheDocument();
@@ -30735,7 +31723,7 @@ namespace GeneratedCode.Документи
             return new ЗакриттяЗамовленняПостачальнику_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ЗакриттяЗамовленняПостачальнику_Const.PRESENTATION_FIELDS);
         }
@@ -30780,7 +31768,7 @@ namespace GeneratedCode.Документи
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ЗакриттяЗамовленняПостачальнику_Const.PRESENTATION_FIELDS);
         }
@@ -30793,56 +31781,55 @@ namespace GeneratedCode.Документи
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> IsSpend()
+        public async Task<bool?> IsSpend()
         {
             return await base.BaseIsSpend();
         }
 
-        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
         {
             return await base.BaseGetSpend();
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ЗакриттяЗамовленняПостачальнику_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
             
-            ClearRegAccum();
+            await ClearRegAccum();
             await BaseSpend(false, DateTime.MinValue);
                 
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
                 await new РегістриНакопичення.ЗамовленняПостачальникам_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
           
             if (label)
             {
-                ClearRegAccum();
+                await ClearRegAccum();
                 await BaseSpend(false, DateTime.MinValue);
             }
             
@@ -30859,10 +31846,10 @@ namespace GeneratedCode.Документи
             return new ЗакриттяЗамовленняПостачальнику_Pointer();
         }
 
-        public async ValueTask<ЗакриттяЗамовленняПостачальнику_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ЗакриттяЗамовленняПостачальнику_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ЗакриттяЗамовленняПостачальнику_Objest obj = new ЗакриттяЗамовленняПостачальнику_Objest();
+            ЗакриттяЗамовленняПостачальнику_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -30870,18 +31857,18 @@ namespace GeneratedCode.Документи
     public class ЗакриттяЗамовленняПостачальнику_Select : DocumentSelect
     {		
         public ЗакриттяЗамовленняПостачальнику_Select() : base(Config.Kernel, "tab_b44") { }
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗакриттяЗамовленняПостачальнику_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ЗакриттяЗамовленняПостачальнику_Pointer? Current { get; private set; }
 
-        public async ValueTask<ЗакриттяЗамовленняПостачальнику_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ЗакриттяЗамовленняПостачальнику_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ЗакриттяЗамовленняПостачальнику_Pointer(pointer) : new ЗакриттяЗамовленняПостачальнику_Pointer();
         }
         
-        public async ValueTask<List<ЗакриттяЗамовленняПостачальнику_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ЗакриттяЗамовленняПостачальнику_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ЗакриттяЗамовленняПостачальнику_Pointer> documentPointerList = [];
             foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -30952,14 +31939,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_a2"] != DBNull.Value) ? (int)fieldValue["col_a2"] : 0,
@@ -30990,7 +31977,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_b44"))
                 throw new Exception("Owner not exist");
@@ -31041,7 +32028,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -31066,9 +32053,9 @@ namespace GeneratedCode.Документи
     
     public static class ЗакриттяЗамовленняПостачальнику_Export
     {
-        public static async ValueTask ToXmlFile(ЗакриттяЗамовленняПостачальнику_Pointer ЗакриттяЗамовленняПостачальнику, string pathToSave)
+        public static async Task ToXmlFile(ЗакриттяЗамовленняПостачальнику_Pointer ЗакриттяЗамовленняПостачальнику, string pathToSave)
         {
-        await ValueTask.FromResult(true);
+        await Task.CompletedTask;
         }
     }
 
@@ -31114,7 +32101,7 @@ namespace GeneratedCode.Документи
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = ЧекККМ_Const.FULLNAME + " *";
@@ -31123,7 +32110,7 @@ namespace GeneratedCode.Документи
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -31157,7 +32144,7 @@ namespace GeneratedCode.Документи
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             
                 await ЧекККМ_Triggers.BeforeSave(this);
@@ -31187,12 +32174,12 @@ namespace GeneratedCode.Документи
             return result;
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             
             await BaseAddIgnoreDocumentList();
             bool spend = await ЧекККМ_SpendTheDocument.Spend(this);
-            if (!spend) ClearRegAccum();
+            if (!spend) await ClearRegAccum();
             await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
             await BaseRemoveIgnoreDocumentList();
             return spend;
@@ -31201,9 +32188,9 @@ namespace GeneratedCode.Документи
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
@@ -31214,20 +32201,19 @@ namespace GeneratedCode.Документи
                 await new РегістриНакопичення.РухКоштівККМ_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
-            ClearRegAccum();
+            await ClearRegAccum();
             
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async ValueTask<ЧекККМ_Objest> Copy(bool copyTableParts = false)
+        public async Task<ЧекККМ_Objest> Copy(bool copyTableParts = false)
         {
-            ЧекККМ_Objest copy = new ЧекККМ_Objest()
+            ЧекККМ_Objest copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -31263,14 +32249,14 @@ namespace GeneratedCode.Документи
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await ClearSpendTheDocument();
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await ClearSpendTheDocument();
@@ -31282,7 +32268,7 @@ namespace GeneratedCode.Документи
             return new ЧекККМ_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(ЧекККМ_Const.PRESENTATION_FIELDS);
         }
@@ -31324,7 +32310,7 @@ namespace GeneratedCode.Документи
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(ЧекККМ_Const.PRESENTATION_FIELDS);
         }
@@ -31337,40 +32323,40 @@ namespace GeneratedCode.Документи
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> IsSpend()
+        public async Task<bool?> IsSpend()
         {
             return await base.BaseIsSpend();
         }
 
-        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
         {
             return await base.BaseGetSpend();
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ЧекККМ_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
             
-            ClearRegAccum();
+            await ClearRegAccum();
             await BaseSpend(false, DateTime.MinValue);
                 
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
@@ -31381,16 +32367,15 @@ namespace GeneratedCode.Документи
                 await new РегістриНакопичення.РухКоштівККМ_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
           
             if (label)
             {
-                ClearRegAccum();
+                await ClearRegAccum();
                 await BaseSpend(false, DateTime.MinValue);
             }
             
@@ -31407,10 +32392,10 @@ namespace GeneratedCode.Документи
             return new ЧекККМ_Pointer();
         }
 
-        public async ValueTask<ЧекККМ_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ЧекККМ_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ЧекККМ_Objest obj = new ЧекККМ_Objest();
+            ЧекККМ_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -31418,18 +32403,18 @@ namespace GeneratedCode.Документи
     public class ЧекККМ_Select : DocumentSelect
     {		
         public ЧекККМ_Select() : base(Config.Kernel, "tab_b51") { }
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЧекККМ_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ЧекККМ_Pointer? Current { get; private set; }
 
-        public async ValueTask<ЧекККМ_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<ЧекККМ_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new ЧекККМ_Pointer(pointer) : new ЧекККМ_Pointer();
         }
         
-        public async ValueTask<List<ЧекККМ_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<ЧекККМ_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<ЧекККМ_Pointer> documentPointerList = [];
             foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -31506,14 +32491,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_a1"] != DBNull.Value) ? (int)fieldValue["col_a1"] : 0,
@@ -31548,7 +32533,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "tab_b51"))
                 throw new Exception("Owner not exist");
@@ -31602,7 +32587,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -31630,9 +32615,9 @@ namespace GeneratedCode.Документи
     
     public static class ЧекККМ_Export
     {
-        public static async ValueTask ToXmlFile(ЧекККМ_Pointer ЧекККМ, string pathToSave)
+        public static async Task ToXmlFile(ЧекККМ_Pointer ЧекККМ, string pathToSave)
         {
-        await ValueTask.FromResult(true);
+        await Task.CompletedTask;
         }
     }
 
@@ -31671,7 +32656,7 @@ namespace GeneratedCode.Документи
                 
         }
         
-        public async ValueTask New()
+        public async Task New()
         {
             BaseNew();
             Caption = БухгалтерськаОперація_Const.FULLNAME + " *";
@@ -31680,7 +32665,7 @@ namespace GeneratedCode.Документи
               
         }
 
-        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
         {
             if (await BaseRead(uid))
             {
@@ -31707,7 +32692,7 @@ namespace GeneratedCode.Документи
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             
                 await БухгалтерськаОперація_Triggers.BeforeSave(this);
@@ -31728,12 +32713,12 @@ namespace GeneratedCode.Документи
             return result;
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             
             await BaseAddIgnoreDocumentList();
             bool spend = await БухгалтерськаОперація_SpendTheDocument.Spend(this);
-            if (!spend) ClearRegAccum();
+            if (!spend) await ClearRegAccum();
             await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
             await BaseRemoveIgnoreDocumentList();
             return spend;
@@ -31742,29 +32727,28 @@ namespace GeneratedCode.Документи
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
                 await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
-            ClearRegAccum();
+            await ClearRegAccum();
             
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async ValueTask<БухгалтерськаОперація_Objest> Copy(bool copyTableParts = false)
+        public async Task<БухгалтерськаОперація_Objest> Copy(bool copyTableParts = false)
         {
-            БухгалтерськаОперація_Objest copy = new БухгалтерськаОперація_Objest()
+            БухгалтерськаОперація_Objest copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -31793,14 +32777,14 @@ namespace GeneratedCode.Документи
             return copy;
         }
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
             
             await ClearSpendTheDocument();
             await base.BaseDeletionLabel(label);
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             
             await ClearSpendTheDocument();
@@ -31812,7 +32796,7 @@ namespace GeneratedCode.Документи
             return new БухгалтерськаОперація_Pointer(UniqueID.UGuid);
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return await base.BasePresentation(БухгалтерськаОперація_Const.PRESENTATION_FIELDS);
         }
@@ -31847,7 +32831,7 @@ namespace GeneratedCode.Документи
             get { return Name; } set { Name = value; }
         }
 
-        public async ValueTask<string> GetPresentation()
+        public async Task<string> GetPresentation()
         {
             return Name = await base.BasePresentation(БухгалтерськаОперація_Const.PRESENTATION_FIELDS);
         }
@@ -31860,56 +32844,55 @@ namespace GeneratedCode.Документи
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
 
-        public async ValueTask<bool?> IsSpend()
+        public async Task<bool?> IsSpend()
         {
             return await base.BaseIsSpend();
         }
 
-        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
         {
             return await base.BaseGetSpend();
         }
 
-        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             БухгалтерськаОперація_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
 
-        public async ValueTask ClearSpendTheDocument()
+        public async Task ClearSpendTheDocument()
         {
             
-            ClearRegAccum();
+            await ClearRegAccum();
             await BaseSpend(false, DateTime.MinValue);
                 
         }
 
-        public async ValueTask<bool?> GetDeletionLabel()
+        public async Task<bool?> GetDeletionLabel()
         {
             return await base.BaseGetDeletionLabel();
         }
 
         
         /* Очищення регістрів накопичення */
-        async void ClearRegAccum()
+        
+        async Task ClearRegAccum()
         {
-          
             if(!this.UniqueID.IsEmpty())
             {
               
                 await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
               
             }
-            
         }
-  
+          
 
-        public async ValueTask SetDeletionLabel(bool label = true)
+        public async Task SetDeletionLabel(bool label = true)
         {
           
             if (label)
             {
-                ClearRegAccum();
+                await ClearRegAccum();
                 await BaseSpend(false, DateTime.MinValue);
             }
             
@@ -31926,10 +32909,10 @@ namespace GeneratedCode.Документи
             return new БухгалтерськаОперація_Pointer();
         }
 
-        public async ValueTask<БухгалтерськаОперація_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<БухгалтерськаОперація_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            БухгалтерськаОперація_Objest obj = new БухгалтерськаОперація_Objest();
+            БухгалтерськаОперація_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -31937,18 +32920,18 @@ namespace GeneratedCode.Документи
     public class БухгалтерськаОперація_Select : DocumentSelect
     {		
         public БухгалтерськаОперація_Select() : base(Config.Kernel, "acc_operations") { }
-        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
-        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new БухгалтерськаОперація_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public БухгалтерськаОперація_Pointer? Current { get; private set; }
 
-        public async ValueTask<БухгалтерськаОперація_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<БухгалтерськаОперація_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
             UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
             return pointer != null ? new БухгалтерськаОперація_Pointer(pointer) : new БухгалтерськаОперація_Pointer();
         }
         
-        public async ValueTask<List<БухгалтерськаОперація_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        public async Task<List<БухгалтерськаОперація_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
             List<БухгалтерськаОперація_Pointer> documentPointerList = [];
             foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
@@ -32064,14 +33047,14 @@ namespace GeneratedCode.Документи
                   
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead(Owner.UniqueID);
 
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_a1"] != DBNull.Value) ? (int)fieldValue["col_a1"] : 0,
@@ -32129,7 +33112,7 @@ namespace GeneratedCode.Документи
             base.BaseClear();
         }
         
-        public async ValueTask Save(bool clear_all_before_save) 
+        public async Task Save(bool clear_all_before_save) 
         {
             if (!await base.IsExistOwner(Owner.UniqueID, "acc_operations"))
                 throw new Exception("Owner not exist");
@@ -32190,7 +33173,7 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = new(Records);
+            List<Record> copyRecords = [.. Records];
             foreach (Record copyRecordItem in copyRecords)
                 copyRecordItem.UID = Guid.Empty;
 
@@ -32233,9 +33216,9 @@ namespace GeneratedCode.Документи
     
     public static class БухгалтерськаОперація_Export
     {
-        public static async ValueTask ToXmlFile(БухгалтерськаОперація_Pointer БухгалтерськаОперація, string pathToSave)
+        public static async Task ToXmlFile(БухгалтерськаОперація_Pointer БухгалтерськаОперація, string pathToSave)
         {
-        await ValueTask.FromResult(true);
+        await Task.CompletedTask;
         }
     }
 
@@ -32252,7 +33235,7 @@ namespace GeneratedCode.Журнали
              ["tab_a25", "tab_a32", "tab_a34", "tab_a36", "tab_a42", "tab_a44", "tab_a48", "tab_a31", "tab_a51", "tab_a53", "tab_a81", "tab_a83", "tab_a88", "tab_a90", "tab_a92", "tab_a94", "tab_b07", "tab_b10", "tab_a64", "tab_b09", "tab_b27", "tab_b29", "tab_a65", "tab_a96", "tab_b41", "tab_b44", "tab_b51", "acc_operations", ],
              ["ЗамовленняПостачальнику", "ПоступленняТоварівТаПослуг", "ЗамовленняКлієнта", "РеалізаціяТоварівТаПослуг", "ВстановленняЦінНоменклатури", "ПрихіднийКасовийОрдер", "РозхіднийКасовийОрдер", "ПереміщенняТоварів", "ПоверненняТоварівПостачальнику", "ПоверненняТоварівВідКлієнта", "АктВиконанихРобіт", "ВведенняЗалишків", "НадлишкиТоварів", "ПересортицяТоварів", "ПерерахунокТоварів", "ПсуванняТоварів", "ВнутрішнєСпоживанняТоварів", "РахунокФактура", "РозміщенняТоварівНаСкладі", "ПереміщенняТоварівНаСкладі", "ЗбіркаТоварівНаСкладі", "РозміщенняНоменклатуриПоКоміркам", "КорегуванняБоргу", "ЗакриттяЗамовленняКлієнта", "ЗакриттяРахункуФактури", "ЗакриттяЗамовленняПостачальнику", "ЧекККМ", "БухгалтерськаОперація", ]) { }
 
-        public async ValueTask<DocumentObject?> GetDocumentObject(bool readAllTablePart = true)
+        public async Task<DocumentObject?> GetDocumentObject(bool readAllTablePart = true)
         {
             if (Current == null) return null;
             return Current.TypeDocument switch
@@ -32346,13 +33329,13 @@ namespace GeneratedCode.РегістриВідомостей
             QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({ЦіниНоменклатури_Const.TABLE}.owner, {ЦіниНоменклатури_Const.TABLE}.ownertype)", "OwnerName"));
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     Period = DateTime.Parse(fieldValue["period"]?.ToString() ?? DateTime.MinValue.ToString()),
@@ -32384,7 +33367,7 @@ namespace GeneratedCode.РегістриВідомостей
             base.BaseClear();
         }
         
-        public async ValueTask Save(DateTime period, UuidAndText owner)
+        public async Task Save(DateTime period, UuidAndText owner)
         {
             await base.BaseBeginTransaction();
             await base.BaseDelete(owner.Uuid);
@@ -32408,13 +33391,13 @@ namespace GeneratedCode.РегістриВідомостей
             await base.BaseCommitTransaction();
         }
 
-        public async ValueTask Remove(Record record)
+        public async Task Remove(Record record)
         {
             await base.BaseRemove(record.UID);
             Records.RemoveAll((Record item) => record.UID == item.UID);
         }
 
-        public async ValueTask RemoveAll(List<Record> records)
+        public async Task RemoveAll(List<Record> records)
         {
             List<Guid> removeList = [];
 
@@ -32429,7 +33412,7 @@ namespace GeneratedCode.РегістриВідомостей
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
         
-        public async ValueTask Delete(Guid owner)
+        public async Task Delete(Guid owner)
         {
             await base.BaseDelete(owner);
         }
@@ -32457,7 +33440,7 @@ namespace GeneratedCode.РегістриВідомостей
             Caption = ЦіниНоменклатури_Const.FULLNAME + " *";
         }
 
-        public async ValueTask<bool> Read(UniqueID uid)
+        public async Task<bool> Read(UniqueID uid)
         {
             if (await BaseRead(uid))
             {
@@ -32476,7 +33459,7 @@ namespace GeneratedCode.РегістриВідомостей
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_f5"] = Номенклатура.UniqueID.UGuid;
             base.FieldValue["col_f6"] = ХарактеристикаНоменклатури.UniqueID.UGuid;
@@ -32507,7 +33490,7 @@ namespace GeneratedCode.РегістриВідомостей
             return copy;
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
 			      await base.BaseDelete();
         }
@@ -32559,13 +33542,13 @@ namespace GeneratedCode.РегістриВідомостей
             QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({КурсиВалют_Const.TABLE}.owner, {КурсиВалют_Const.TABLE}.ownertype)", "OwnerName"));
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     Period = DateTime.Parse(fieldValue["period"]?.ToString() ?? DateTime.MinValue.ToString()),
@@ -32590,7 +33573,7 @@ namespace GeneratedCode.РегістриВідомостей
             base.BaseClear();
         }
         
-        public async ValueTask Save(DateTime period, UuidAndText owner)
+        public async Task Save(DateTime period, UuidAndText owner)
         {
             await base.BaseBeginTransaction();
             await base.BaseDelete(owner.Uuid);
@@ -32611,13 +33594,13 @@ namespace GeneratedCode.РегістриВідомостей
             await base.BaseCommitTransaction();
         }
 
-        public async ValueTask Remove(Record record)
+        public async Task Remove(Record record)
         {
             await base.BaseRemove(record.UID);
             Records.RemoveAll((Record item) => record.UID == item.UID);
         }
 
-        public async ValueTask RemoveAll(List<Record> records)
+        public async Task RemoveAll(List<Record> records)
         {
             List<Guid> removeList = [];
 
@@ -32632,7 +33615,7 @@ namespace GeneratedCode.РегістриВідомостей
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
         
-        public async ValueTask Delete(Guid owner)
+        public async Task Delete(Guid owner)
         {
             await base.BaseDelete(owner);
         }
@@ -32657,7 +33640,7 @@ namespace GeneratedCode.РегістриВідомостей
             Caption = КурсиВалют_Const.FULLNAME + " *";
         }
 
-        public async ValueTask<bool> Read(UniqueID uid)
+        public async Task<bool> Read(UniqueID uid)
         {
             if (await BaseRead(uid))
             {
@@ -32673,7 +33656,7 @@ namespace GeneratedCode.РегістриВідомостей
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_a1"] = Валюта.UniqueID.UGuid;
             base.FieldValue["col_a2"] = Курс;
@@ -32698,7 +33681,7 @@ namespace GeneratedCode.РегістриВідомостей
             return copy;
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
 			      await base.BaseDelete();
         }
@@ -32754,13 +33737,13 @@ namespace GeneratedCode.РегістриВідомостей
             QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({ШтрихкодиНоменклатури_Const.TABLE}.owner, {ШтрихкодиНоменклатури_Const.TABLE}.ownertype)", "OwnerName"));
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     Period = DateTime.Parse(fieldValue["period"]?.ToString() ?? DateTime.MinValue.ToString()),
@@ -32788,7 +33771,7 @@ namespace GeneratedCode.РегістриВідомостей
             base.BaseClear();
         }
         
-        public async ValueTask Save(DateTime period, UuidAndText owner)
+        public async Task Save(DateTime period, UuidAndText owner)
         {
             await base.BaseBeginTransaction();
             await base.BaseDelete(owner.Uuid);
@@ -32810,13 +33793,13 @@ namespace GeneratedCode.РегістриВідомостей
             await base.BaseCommitTransaction();
         }
 
-        public async ValueTask Remove(Record record)
+        public async Task Remove(Record record)
         {
             await base.BaseRemove(record.UID);
             Records.RemoveAll((Record item) => record.UID == item.UID);
         }
 
-        public async ValueTask RemoveAll(List<Record> records)
+        public async Task RemoveAll(List<Record> records)
         {
             List<Guid> removeList = [];
 
@@ -32831,7 +33814,7 @@ namespace GeneratedCode.РегістриВідомостей
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
         
-        public async ValueTask Delete(Guid owner)
+        public async Task Delete(Guid owner)
         {
             await base.BaseDelete(owner);
         }
@@ -32857,7 +33840,7 @@ namespace GeneratedCode.РегістриВідомостей
             Caption = ШтрихкодиНоменклатури_Const.FULLNAME + " *";
         }
 
-        public async ValueTask<bool> Read(UniqueID uid)
+        public async Task<bool> Read(UniqueID uid)
         {
             if (await BaseRead(uid))
             {
@@ -32874,7 +33857,7 @@ namespace GeneratedCode.РегістриВідомостей
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_a1"] = Штрихкод;
             base.FieldValue["col_a2"] = Номенклатура.UniqueID.UGuid;
@@ -32901,7 +33884,7 @@ namespace GeneratedCode.РегістриВідомостей
             return copy;
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
 			      await base.BaseDelete();
         }
@@ -32949,13 +33932,13 @@ namespace GeneratedCode.РегістриВідомостей
             QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({ФайлиДокументів_Const.TABLE}.owner, {ФайлиДокументів_Const.TABLE}.ownertype)", "OwnerName"));
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     Period = DateTime.Parse(fieldValue["period"]?.ToString() ?? DateTime.MinValue.ToString()),
@@ -32978,7 +33961,7 @@ namespace GeneratedCode.РегістриВідомостей
             base.BaseClear();
         }
         
-        public async ValueTask Save(DateTime period, UuidAndText owner)
+        public async Task Save(DateTime period, UuidAndText owner)
         {
             await base.BaseBeginTransaction();
             await base.BaseDelete(owner.Uuid);
@@ -32997,13 +33980,13 @@ namespace GeneratedCode.РегістриВідомостей
             await base.BaseCommitTransaction();
         }
 
-        public async ValueTask Remove(Record record)
+        public async Task Remove(Record record)
         {
             await base.BaseRemove(record.UID);
             Records.RemoveAll((Record item) => record.UID == item.UID);
         }
 
-        public async ValueTask RemoveAll(List<Record> records)
+        public async Task RemoveAll(List<Record> records)
         {
             List<Guid> removeList = [];
 
@@ -33018,7 +34001,7 @@ namespace GeneratedCode.РегістриВідомостей
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
         
-        public async ValueTask Delete(Guid owner)
+        public async Task Delete(Guid owner)
         {
             await base.BaseDelete(owner);
         }
@@ -33041,7 +34024,7 @@ namespace GeneratedCode.РегістриВідомостей
             Caption = ФайлиДокументів_Const.FULLNAME + " *";
         }
 
-        public async ValueTask<bool> Read(UniqueID uid)
+        public async Task<bool> Read(UniqueID uid)
         {
             if (await BaseRead(uid))
             {
@@ -33055,7 +34038,7 @@ namespace GeneratedCode.РегістриВідомостей
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_a1"] = Файл.UniqueID.UGuid;
             
@@ -33076,7 +34059,7 @@ namespace GeneratedCode.РегістриВідомостей
             return copy;
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
 			      await base.BaseDelete();
         }
@@ -33133,13 +34116,13 @@ namespace GeneratedCode.РегістриВідомостей
             QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({РозміщенняНоменклатуриПоКоміркамНаСкладі_Const.TABLE}.owner, {РозміщенняНоменклатуриПоКоміркамНаСкладі_Const.TABLE}.ownertype)", "OwnerName"));
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
             foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
             {
-                Record record = new Record()
+                Record record = new()
                 {
                     UID = (Guid)fieldValue["uid"],
                     Period = DateTime.Parse(fieldValue["period"]?.ToString() ?? DateTime.MinValue.ToString()),
@@ -33168,7 +34151,7 @@ namespace GeneratedCode.РегістриВідомостей
             base.BaseClear();
         }
         
-        public async ValueTask Save(DateTime period, UuidAndText owner)
+        public async Task Save(DateTime period, UuidAndText owner)
         {
             await base.BaseBeginTransaction();
             await base.BaseDelete(owner.Uuid);
@@ -33190,13 +34173,13 @@ namespace GeneratedCode.РегістриВідомостей
             await base.BaseCommitTransaction();
         }
 
-        public async ValueTask Remove(Record record)
+        public async Task Remove(Record record)
         {
             await base.BaseRemove(record.UID);
             Records.RemoveAll((Record item) => record.UID == item.UID);
         }
 
-        public async ValueTask RemoveAll(List<Record> records)
+        public async Task RemoveAll(List<Record> records)
         {
             List<Guid> removeList = [];
 
@@ -33211,7 +34194,7 @@ namespace GeneratedCode.РегістриВідомостей
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
         
-        public async ValueTask Delete(Guid owner)
+        public async Task Delete(Guid owner)
         {
             await base.BaseDelete(owner);
         }
@@ -33237,7 +34220,7 @@ namespace GeneratedCode.РегістриВідомостей
             Caption = РозміщенняНоменклатуриПоКоміркамНаСкладі_Const.FULLNAME + " *";
         }
 
-        public async ValueTask<bool> Read(UniqueID uid)
+        public async Task<bool> Read(UniqueID uid)
         {
             if (await BaseRead(uid))
             {
@@ -33254,7 +34237,7 @@ namespace GeneratedCode.РегістриВідомостей
                 return false;
         }
         
-        public async ValueTask<bool> Save()
+        public async Task<bool> Save()
         {
             base.FieldValue["col_a1"] = Номенклатура.UniqueID.UGuid;
             base.FieldValue["col_a2"] = Склад.UniqueID.UGuid;
@@ -33281,7 +34264,7 @@ namespace GeneratedCode.РегістриВідомостей
             return copy;
         }
 
-        public async ValueTask Delete()
+        public async Task Delete()
         {
 			      await base.BaseDelete();
         }
@@ -33308,7 +34291,7 @@ namespace GeneratedCode.РегістриНакопичення
         }
 
         /* Функція для обчислення віртуальних таблиць  */
-        public static async ValueTask Execute(DateTime period, string regAccumName)
+        public static async Task Execute(DateTime period, string regAccumName)
         {
             
             Dictionary<string, object> paramQuery = new Dictionary<string, object>{ { "ПеріодДеньВідбір", period } };
@@ -33533,7 +34516,7 @@ namespace GeneratedCode.РегістриНакопичення
         }
 
         /* Функція для обчислення підсумкових віртуальних таблиць */
-        public static async ValueTask ExecuteFinalCalculation(List<string> regAccumNameList)
+        public static async Task ExecuteFinalCalculation(List<string> regAccumNameList)
         {
             
             foreach (string regAccumName in regAccumNameList)
@@ -33693,7 +34676,7 @@ namespace GeneratedCode.РегістриНакопичення
             }*/
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -33732,7 +34715,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
         
-        public async ValueTask Save(DateTime period, UuidAndText owner) 
+        public async Task Save(DateTime period, UuidAndText owner) 
         {
             await base.BaseBeginTransaction();
             await base.BaseSelectPeriodForOwner(owner.Uuid, period);
@@ -33758,7 +34741,7 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
 
-        public async ValueTask Delete(Guid owner)
+        public async Task Delete(Guid owner)
         {
             await base.BaseSelectPeriodForOwner(owner);
             await base.BaseDelete(owner);
@@ -33794,7 +34777,7 @@ namespace GeneratedCode.РегістриНакопичення
         public const string ДоВідвантаження = "col_a7";
         public List<Record> Records { get; set; } = [];
     
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -33817,7 +34800,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
     
-        public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+        public async Task Save(bool clear_all_before_save /*= true*/) 
         {
             await base.BaseBeginTransaction();
             if (clear_all_before_save) await base.BaseDelete();
@@ -33839,13 +34822,13 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
         
-        public async ValueTask Remove(Record record)
+        public async Task Remove(Record record)
         {
             await base.BaseRemove(record.UID);
             Records.RemoveAll((Record item) => record.UID == item.UID);
         }
 
-        public async ValueTask RemoveAll(List<Record> records)
+        public async Task RemoveAll(List<Record> records)
         {
             List<Guid> removeList = [];
 
@@ -33860,7 +34843,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             await base.BaseDelete();
         }
@@ -33899,7 +34882,7 @@ namespace GeneratedCode.РегістриНакопичення
         public const string ДоВідвантаженняЗалишок = "col_b2";
         public List<Record> Records { get; set; } = [];
     
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -33926,7 +34909,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
     
-        public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+        public async Task Save(bool clear_all_before_save /*= true*/) 
         {
             await base.BaseBeginTransaction();
             if (clear_all_before_save) await base.BaseDelete();
@@ -33952,13 +34935,13 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
         
-        public async ValueTask Remove(Record record)
+        public async Task Remove(Record record)
         {
             await base.BaseRemove(record.UID);
             Records.RemoveAll((Record item) => record.UID == item.UID);
         }
 
-        public async ValueTask RemoveAll(List<Record> records)
+        public async Task RemoveAll(List<Record> records)
         {
             List<Guid> removeList = [];
 
@@ -33973,7 +34956,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             await base.BaseDelete();
         }
@@ -34011,7 +34994,7 @@ namespace GeneratedCode.РегістриНакопичення
         public const string ДоВідвантаження = "col_a6";
         public List<Record> Records { get; set; } = [];
     
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -34033,7 +35016,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
     
-        public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+        public async Task Save(bool clear_all_before_save /*= true*/) 
         {
             await base.BaseBeginTransaction();
             if (clear_all_before_save) await base.BaseDelete();
@@ -34054,13 +35037,13 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
         
-        public async ValueTask Remove(Record record)
+        public async Task Remove(Record record)
         {
             await base.BaseRemove(record.UID);
             Records.RemoveAll((Record item) => record.UID == item.UID);
         }
 
-        public async ValueTask RemoveAll(List<Record> records)
+        public async Task RemoveAll(List<Record> records)
         {
             List<Guid> removeList = [];
 
@@ -34075,7 +35058,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             await base.BaseDelete();
         }
@@ -34155,7 +35138,7 @@ namespace GeneratedCode.РегістриНакопичення
             }*/
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -34194,7 +35177,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
         
-        public async ValueTask Save(DateTime period, UuidAndText owner) 
+        public async Task Save(DateTime period, UuidAndText owner) 
         {
             await base.BaseBeginTransaction();
             await base.BaseSelectPeriodForOwner(owner.Uuid, period);
@@ -34220,7 +35203,7 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
 
-        public async ValueTask Delete(Guid owner)
+        public async Task Delete(Guid owner)
         {
             await base.BaseSelectPeriodForOwner(owner);
             await base.BaseDelete(owner);
@@ -34256,7 +35239,7 @@ namespace GeneratedCode.РегістриНакопичення
         public const string Сума = "col_a7";
         public List<Record> Records { get; set; } = [];
     
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -34279,7 +35262,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
     
-        public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+        public async Task Save(bool clear_all_before_save /*= true*/) 
         {
             await base.BaseBeginTransaction();
             if (clear_all_before_save) await base.BaseDelete();
@@ -34301,13 +35284,13 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
         
-        public async ValueTask Remove(Record record)
+        public async Task Remove(Record record)
         {
             await base.BaseRemove(record.UID);
             Records.RemoveAll((Record item) => record.UID == item.UID);
         }
 
-        public async ValueTask RemoveAll(List<Record> records)
+        public async Task RemoveAll(List<Record> records)
         {
             List<Guid> removeList = [];
 
@@ -34322,7 +35305,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             await base.BaseDelete();
         }
@@ -34394,7 +35377,7 @@ namespace GeneratedCode.РегістриНакопичення
             }*/
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -34428,7 +35411,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
         
-        public async ValueTask Save(DateTime period, UuidAndText owner) 
+        public async Task Save(DateTime period, UuidAndText owner) 
         {
             await base.BaseBeginTransaction();
             await base.BaseSelectPeriodForOwner(owner.Uuid, period);
@@ -34451,7 +35434,7 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
 
-        public async ValueTask Delete(Guid owner)
+        public async Task Delete(Guid owner)
         {
             await base.BaseSelectPeriodForOwner(owner);
             await base.BaseDelete(owner);
@@ -34481,7 +35464,7 @@ namespace GeneratedCode.РегістриНакопичення
         public const string Сума = "col_a4";
         public List<Record> Records { get; set; } = [];
     
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -34501,7 +35484,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
     
-        public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+        public async Task Save(bool clear_all_before_save /*= true*/) 
         {
             await base.BaseBeginTransaction();
             if (clear_all_before_save) await base.BaseDelete();
@@ -34520,13 +35503,13 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
         
-        public async ValueTask Remove(Record record)
+        public async Task Remove(Record record)
         {
             await base.BaseRemove(record.UID);
             Records.RemoveAll((Record item) => record.UID == item.UID);
         }
 
-        public async ValueTask RemoveAll(List<Record> records)
+        public async Task RemoveAll(List<Record> records)
         {
             List<Guid> removeList = [];
 
@@ -34541,7 +35524,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             await base.BaseDelete();
         }
@@ -34572,7 +35555,7 @@ namespace GeneratedCode.РегістриНакопичення
         public const string СумаЗалишок = "col_a6";
         public List<Record> Records { get; set; } = [];
     
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -34594,7 +35577,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
     
-        public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+        public async Task Save(bool clear_all_before_save /*= true*/) 
         {
             await base.BaseBeginTransaction();
             if (clear_all_before_save) await base.BaseDelete();
@@ -34615,13 +35598,13 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
         
-        public async ValueTask Remove(Record record)
+        public async Task Remove(Record record)
         {
             await base.BaseRemove(record.UID);
             Records.RemoveAll((Record item) => record.UID == item.UID);
         }
 
-        public async ValueTask RemoveAll(List<Record> records)
+        public async Task RemoveAll(List<Record> records)
         {
             List<Guid> removeList = [];
 
@@ -34636,7 +35619,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             await base.BaseDelete();
         }
@@ -34725,7 +35708,7 @@ namespace GeneratedCode.РегістриНакопичення
             }*/
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -34769,7 +35752,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
         
-        public async ValueTask Save(DateTime period, UuidAndText owner) 
+        public async Task Save(DateTime period, UuidAndText owner) 
         {
             await base.BaseBeginTransaction();
             await base.BaseSelectPeriodForOwner(owner.Uuid, period);
@@ -34798,7 +35781,7 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
 
-        public async ValueTask Delete(Guid owner)
+        public async Task Delete(Guid owner)
         {
             await base.BaseSelectPeriodForOwner(owner);
             await base.BaseDelete(owner);
@@ -34840,7 +35823,7 @@ namespace GeneratedCode.РегістриНакопичення
         public const string Собівартість = "col_b1";
         public List<Record> Records { get; set; } = [];
     
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -34866,7 +35849,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
     
-        public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+        public async Task Save(bool clear_all_before_save /*= true*/) 
         {
             await base.BaseBeginTransaction();
             if (clear_all_before_save) await base.BaseDelete();
@@ -34891,13 +35874,13 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
         
-        public async ValueTask Remove(Record record)
+        public async Task Remove(Record record)
         {
             await base.BaseRemove(record.UID);
             Records.RemoveAll((Record item) => record.UID == item.UID);
         }
 
-        public async ValueTask RemoveAll(List<Record> records)
+        public async Task RemoveAll(List<Record> records)
         {
             List<Guid> removeList = [];
 
@@ -34912,7 +35895,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             await base.BaseDelete();
         }
@@ -34994,7 +35977,7 @@ namespace GeneratedCode.РегістриНакопичення
             }*/
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -35033,7 +36016,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
         
-        public async ValueTask Save(DateTime period, UuidAndText owner) 
+        public async Task Save(DateTime period, UuidAndText owner) 
         {
             await base.BaseBeginTransaction();
             await base.BaseSelectPeriodForOwner(owner.Uuid, period);
@@ -35060,7 +36043,7 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
 
-        public async ValueTask Delete(Guid owner)
+        public async Task Delete(Guid owner)
         {
             await base.BaseSelectPeriodForOwner(owner);
             await base.BaseDelete(owner);
@@ -35097,7 +36080,7 @@ namespace GeneratedCode.РегістриНакопичення
         public const string ВРезервіПідЗамовлення = "col_a7";
         public List<Record> Records { get; set; } = [];
     
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -35120,7 +36103,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
     
-        public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+        public async Task Save(bool clear_all_before_save /*= true*/) 
         {
             await base.BaseBeginTransaction();
             if (clear_all_before_save) await base.BaseDelete();
@@ -35142,13 +36125,13 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
         
-        public async ValueTask Remove(Record record)
+        public async Task Remove(Record record)
         {
             await base.BaseRemove(record.UID);
             Records.RemoveAll((Record item) => record.UID == item.UID);
         }
 
-        public async ValueTask RemoveAll(List<Record> records)
+        public async Task RemoveAll(List<Record> records)
         {
             List<Guid> removeList = [];
 
@@ -35163,7 +36146,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             await base.BaseDelete();
         }
@@ -35197,7 +36180,7 @@ namespace GeneratedCode.РегістриНакопичення
         public const string ВРезервіПідЗамовлення = "col_a6";
         public List<Record> Records { get; set; } = [];
     
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -35219,7 +36202,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
     
-        public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+        public async Task Save(bool clear_all_before_save /*= true*/) 
         {
             await base.BaseBeginTransaction();
             if (clear_all_before_save) await base.BaseDelete();
@@ -35240,13 +36223,13 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
         
-        public async ValueTask Remove(Record record)
+        public async Task Remove(Record record)
         {
             await base.BaseRemove(record.UID);
             Records.RemoveAll((Record item) => record.UID == item.UID);
         }
 
-        public async ValueTask RemoveAll(List<Record> records)
+        public async Task RemoveAll(List<Record> records)
         {
             List<Guid> removeList = [];
 
@@ -35261,7 +36244,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             await base.BaseDelete();
         }
@@ -35340,7 +36323,7 @@ namespace GeneratedCode.РегістриНакопичення
             }*/
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -35378,7 +36361,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
         
-        public async ValueTask Save(DateTime period, UuidAndText owner) 
+        public async Task Save(DateTime period, UuidAndText owner) 
         {
             await base.BaseBeginTransaction();
             await base.BaseSelectPeriodForOwner(owner.Uuid, period);
@@ -35403,7 +36386,7 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
 
-        public async ValueTask Delete(Guid owner)
+        public async Task Delete(Guid owner)
         {
             await base.BaseSelectPeriodForOwner(owner);
             await base.BaseDelete(owner);
@@ -35437,7 +36420,7 @@ namespace GeneratedCode.РегістриНакопичення
         public const string Замовлено = "col_a6";
         public List<Record> Records { get; set; } = [];
     
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -35459,7 +36442,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
     
-        public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+        public async Task Save(bool clear_all_before_save /*= true*/) 
         {
             await base.BaseBeginTransaction();
             if (clear_all_before_save) await base.BaseDelete();
@@ -35480,13 +36463,13 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
         
-        public async ValueTask Remove(Record record)
+        public async Task Remove(Record record)
         {
             await base.BaseRemove(record.UID);
             Records.RemoveAll((Record item) => record.UID == item.UID);
         }
 
-        public async ValueTask RemoveAll(List<Record> records)
+        public async Task RemoveAll(List<Record> records)
         {
             List<Guid> removeList = [];
 
@@ -35501,7 +36484,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             await base.BaseDelete();
         }
@@ -35572,7 +36555,7 @@ namespace GeneratedCode.РегістриНакопичення
             }*/
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -35606,7 +36589,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
         
-        public async ValueTask Save(DateTime period, UuidAndText owner) 
+        public async Task Save(DateTime period, UuidAndText owner) 
         {
             await base.BaseBeginTransaction();
             await base.BaseSelectPeriodForOwner(owner.Uuid, period);
@@ -35629,7 +36612,7 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
 
-        public async ValueTask Delete(Guid owner)
+        public async Task Delete(Guid owner)
         {
             await base.BaseSelectPeriodForOwner(owner);
             await base.BaseDelete(owner);
@@ -35659,7 +36642,7 @@ namespace GeneratedCode.РегістриНакопичення
         public const string Сума = "col_a4";
         public List<Record> Records { get; set; } = [];
     
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -35679,7 +36662,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
     
-        public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+        public async Task Save(bool clear_all_before_save /*= true*/) 
         {
             await base.BaseBeginTransaction();
             if (clear_all_before_save) await base.BaseDelete();
@@ -35698,13 +36681,13 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
         
-        public async ValueTask Remove(Record record)
+        public async Task Remove(Record record)
         {
             await base.BaseRemove(record.UID);
             Records.RemoveAll((Record item) => record.UID == item.UID);
         }
 
-        public async ValueTask RemoveAll(List<Record> records)
+        public async Task RemoveAll(List<Record> records)
         {
             List<Guid> removeList = [];
 
@@ -35719,7 +36702,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             await base.BaseDelete();
         }
@@ -35750,7 +36733,7 @@ namespace GeneratedCode.РегістриНакопичення
         public const string СумаЗалишок = "col_a6";
         public List<Record> Records { get; set; } = [];
     
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -35772,7 +36755,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
     
-        public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+        public async Task Save(bool clear_all_before_save /*= true*/) 
         {
             await base.BaseBeginTransaction();
             if (clear_all_before_save) await base.BaseDelete();
@@ -35793,13 +36776,13 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
         
-        public async ValueTask Remove(Record record)
+        public async Task Remove(Record record)
         {
             await base.BaseRemove(record.UID);
             Records.RemoveAll((Record item) => record.UID == item.UID);
         }
 
-        public async ValueTask RemoveAll(List<Record> records)
+        public async Task RemoveAll(List<Record> records)
         {
             List<Guid> removeList = [];
 
@@ -35814,7 +36797,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             await base.BaseDelete();
         }
@@ -35889,7 +36872,7 @@ namespace GeneratedCode.РегістриНакопичення
             }*/
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -35925,7 +36908,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
         
-        public async ValueTask Save(DateTime period, UuidAndText owner) 
+        public async Task Save(DateTime period, UuidAndText owner) 
         {
             await base.BaseBeginTransaction();
             await base.BaseSelectPeriodForOwner(owner.Uuid, period);
@@ -35949,7 +36932,7 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
 
-        public async ValueTask Delete(Guid owner)
+        public async Task Delete(Guid owner)
         {
             await base.BaseSelectPeriodForOwner(owner);
             await base.BaseDelete(owner);
@@ -35981,7 +36964,7 @@ namespace GeneratedCode.РегістриНакопичення
         public const string Сума = "col_a5";
         public List<Record> Records { get; set; } = [];
     
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -36002,7 +36985,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
     
-        public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+        public async Task Save(bool clear_all_before_save /*= true*/) 
         {
             await base.BaseBeginTransaction();
             if (clear_all_before_save) await base.BaseDelete();
@@ -36022,13 +37005,13 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
         
-        public async ValueTask Remove(Record record)
+        public async Task Remove(Record record)
         {
             await base.BaseRemove(record.UID);
             Records.RemoveAll((Record item) => record.UID == item.UID);
         }
 
-        public async ValueTask RemoveAll(List<Record> records)
+        public async Task RemoveAll(List<Record> records)
         {
             List<Guid> removeList = [];
 
@@ -36043,7 +37026,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             await base.BaseDelete();
         }
@@ -36076,7 +37059,7 @@ namespace GeneratedCode.РегістриНакопичення
         public const string СумаЗалишок = "col_a7";
         public List<Record> Records { get; set; } = [];
     
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -36099,7 +37082,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
     
-        public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+        public async Task Save(bool clear_all_before_save /*= true*/) 
         {
             await base.BaseBeginTransaction();
             if (clear_all_before_save) await base.BaseDelete();
@@ -36121,13 +37104,13 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
         
-        public async ValueTask Remove(Record record)
+        public async Task Remove(Record record)
         {
             await base.BaseRemove(record.UID);
             Records.RemoveAll((Record item) => record.UID == item.UID);
         }
 
-        public async ValueTask RemoveAll(List<Record> records)
+        public async Task RemoveAll(List<Record> records)
         {
             List<Guid> removeList = [];
 
@@ -36142,7 +37125,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             await base.BaseDelete();
         }
@@ -36174,7 +37157,7 @@ namespace GeneratedCode.РегістриНакопичення
         public const string Сума = "col_a4";
         public List<Record> Records { get; set; } = [];
     
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -36194,7 +37177,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
     
-        public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+        public async Task Save(bool clear_all_before_save /*= true*/) 
         {
             await base.BaseBeginTransaction();
             if (clear_all_before_save) await base.BaseDelete();
@@ -36213,13 +37196,13 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
         
-        public async ValueTask Remove(Record record)
+        public async Task Remove(Record record)
         {
             await base.BaseRemove(record.UID);
             Records.RemoveAll((Record item) => record.UID == item.UID);
         }
 
-        public async ValueTask RemoveAll(List<Record> records)
+        public async Task RemoveAll(List<Record> records)
         {
             List<Guid> removeList = [];
 
@@ -36234,7 +37217,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             await base.BaseDelete();
         }
@@ -36322,7 +37305,7 @@ namespace GeneratedCode.РегістриНакопичення
             }*/
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -36367,7 +37350,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
         
-        public async ValueTask Save(DateTime period, UuidAndText owner) 
+        public async Task Save(DateTime period, UuidAndText owner) 
         {
             await base.BaseBeginTransaction();
             await base.BaseSelectPeriodForOwner(owner.Uuid, period);
@@ -36397,7 +37380,7 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
 
-        public async ValueTask Delete(Guid owner)
+        public async Task Delete(Guid owner)
         {
             await base.BaseSelectPeriodForOwner(owner);
             await base.BaseDelete(owner);
@@ -36440,7 +37423,7 @@ namespace GeneratedCode.РегістриНакопичення
         public const string Собівартість = "col_a9";
         public List<Record> Records { get; set; } = [];
     
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -36466,7 +37449,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
     
-        public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+        public async Task Save(bool clear_all_before_save /*= true*/) 
         {
             await base.BaseBeginTransaction();
             if (clear_all_before_save) await base.BaseDelete();
@@ -36491,13 +37474,13 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
         
-        public async ValueTask Remove(Record record)
+        public async Task Remove(Record record)
         {
             await base.BaseRemove(record.UID);
             Records.RemoveAll((Record item) => record.UID == item.UID);
         }
 
-        public async ValueTask RemoveAll(List<Record> records)
+        public async Task RemoveAll(List<Record> records)
         {
             List<Guid> removeList = [];
 
@@ -36512,7 +37495,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             await base.BaseDelete();
         }
@@ -36557,7 +37540,7 @@ namespace GeneratedCode.РегістриНакопичення
         public const string СобівартістьЗалишок = "col_b4";
         public List<Record> Records { get; set; } = [];
     
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -36587,7 +37570,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
     
-        public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+        public async Task Save(bool clear_all_before_save /*= true*/) 
         {
             await base.BaseBeginTransaction();
             if (clear_all_before_save) await base.BaseDelete();
@@ -36616,13 +37599,13 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
         
-        public async ValueTask Remove(Record record)
+        public async Task Remove(Record record)
         {
             await base.BaseRemove(record.UID);
             Records.RemoveAll((Record item) => record.UID == item.UID);
         }
 
-        public async ValueTask RemoveAll(List<Record> records)
+        public async Task RemoveAll(List<Record> records)
         {
             List<Guid> removeList = [];
 
@@ -36637,7 +37620,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             await base.BaseDelete();
         }
@@ -36679,7 +37662,7 @@ namespace GeneratedCode.РегістриНакопичення
         public const string Кількість = "col_a8";
         public List<Record> Records { get; set; } = [];
     
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -36702,7 +37685,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
     
-        public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+        public async Task Save(bool clear_all_before_save /*= true*/) 
         {
             await base.BaseBeginTransaction();
             if (clear_all_before_save) await base.BaseDelete();
@@ -36724,13 +37707,13 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
         
-        public async ValueTask Remove(Record record)
+        public async Task Remove(Record record)
         {
             await base.BaseRemove(record.UID);
             Records.RemoveAll((Record item) => record.UID == item.UID);
         }
 
-        public async ValueTask RemoveAll(List<Record> records)
+        public async Task RemoveAll(List<Record> records)
         {
             List<Guid> removeList = [];
 
@@ -36745,7 +37728,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             await base.BaseDelete();
         }
@@ -36836,7 +37819,7 @@ namespace GeneratedCode.РегістриНакопичення
             }*/
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -36881,7 +37864,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
         
-        public async ValueTask Save(DateTime period, UuidAndText owner) 
+        public async Task Save(DateTime period, UuidAndText owner) 
         {
             await base.BaseBeginTransaction();
             await base.BaseSelectPeriodForOwner(owner.Uuid, period);
@@ -36911,7 +37894,7 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
 
-        public async ValueTask Delete(Guid owner)
+        public async Task Delete(Guid owner)
         {
             await base.BaseSelectPeriodForOwner(owner);
             await base.BaseDelete(owner);
@@ -36955,7 +37938,7 @@ namespace GeneratedCode.РегістриНакопичення
         public const string Собівартість = "col_b2";
         public List<Record> Records { get; set; } = [];
     
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -36982,7 +37965,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
     
-        public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+        public async Task Save(bool clear_all_before_save /*= true*/) 
         {
             await base.BaseBeginTransaction();
             if (clear_all_before_save) await base.BaseDelete();
@@ -37008,13 +37991,13 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
         
-        public async ValueTask Remove(Record record)
+        public async Task Remove(Record record)
         {
             await base.BaseRemove(record.UID);
             Records.RemoveAll((Record item) => record.UID == item.UID);
         }
 
-        public async ValueTask RemoveAll(List<Record> records)
+        public async Task RemoveAll(List<Record> records)
         {
             List<Guid> removeList = [];
 
@@ -37029,7 +38012,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             await base.BaseDelete();
         }
@@ -37117,7 +38100,7 @@ namespace GeneratedCode.РегістриНакопичення
             }*/
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -37157,7 +38140,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
         
-        public async ValueTask Save(DateTime period, UuidAndText owner) 
+        public async Task Save(DateTime period, UuidAndText owner) 
         {
             await base.BaseBeginTransaction();
             await base.BaseSelectPeriodForOwner(owner.Uuid, period);
@@ -37183,7 +38166,7 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
 
-        public async ValueTask Delete(Guid owner)
+        public async Task Delete(Guid owner)
         {
             await base.BaseSelectPeriodForOwner(owner);
             await base.BaseDelete(owner);
@@ -37221,7 +38204,7 @@ namespace GeneratedCode.РегістриНакопичення
         public const string ВНаявностіЗалишок = "col_a9";
         public List<Record> Records { get; set; } = [];
     
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -37246,7 +38229,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
     
-        public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+        public async Task Save(bool clear_all_before_save /*= true*/) 
         {
             await base.BaseBeginTransaction();
             if (clear_all_before_save) await base.BaseDelete();
@@ -37270,13 +38253,13 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
         
-        public async ValueTask Remove(Record record)
+        public async Task Remove(Record record)
         {
             await base.BaseRemove(record.UID);
             Records.RemoveAll((Record item) => record.UID == item.UID);
         }
 
-        public async ValueTask RemoveAll(List<Record> records)
+        public async Task RemoveAll(List<Record> records)
         {
             List<Guid> removeList = [];
 
@@ -37291,7 +38274,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             await base.BaseDelete();
         }
@@ -37328,7 +38311,7 @@ namespace GeneratedCode.РегістриНакопичення
         public const string ВНаявності = "col_a7";
         public List<Record> Records { get; set; } = [];
     
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -37351,7 +38334,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
     
-        public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+        public async Task Save(bool clear_all_before_save /*= true*/) 
         {
             await base.BaseBeginTransaction();
             if (clear_all_before_save) await base.BaseDelete();
@@ -37373,13 +38356,13 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
         
-        public async ValueTask Remove(Record record)
+        public async Task Remove(Record record)
         {
             await base.BaseRemove(record.UID);
             Records.RemoveAll((Record item) => record.UID == item.UID);
         }
 
-        public async ValueTask RemoveAll(List<Record> records)
+        public async Task RemoveAll(List<Record> records)
         {
             List<Guid> removeList = [];
 
@@ -37394,7 +38377,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             await base.BaseDelete();
         }
@@ -37428,7 +38411,7 @@ namespace GeneratedCode.РегістриНакопичення
         public const string ВНаявності = "col_a6";
         public List<Record> Records { get; set; } = [];
     
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -37450,7 +38433,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
     
-        public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+        public async Task Save(bool clear_all_before_save /*= true*/) 
         {
             await base.BaseBeginTransaction();
             if (clear_all_before_save) await base.BaseDelete();
@@ -37471,13 +38454,13 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
         
-        public async ValueTask Remove(Record record)
+        public async Task Remove(Record record)
         {
             await base.BaseRemove(record.UID);
             Records.RemoveAll((Record item) => record.UID == item.UID);
         }
 
-        public async ValueTask RemoveAll(List<Record> records)
+        public async Task RemoveAll(List<Record> records)
         {
             List<Guid> removeList = [];
 
@@ -37492,7 +38475,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             await base.BaseDelete();
         }
@@ -37567,7 +38550,7 @@ namespace GeneratedCode.РегістриНакопичення
             }*/
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -37603,7 +38586,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
         
-        public async ValueTask Save(DateTime period, UuidAndText owner) 
+        public async Task Save(DateTime period, UuidAndText owner) 
         {
             await base.BaseBeginTransaction();
             await base.BaseSelectPeriodForOwner(owner.Uuid, period);
@@ -37627,7 +38610,7 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
 
-        public async ValueTask Delete(Guid owner)
+        public async Task Delete(Guid owner)
         {
             await base.BaseSelectPeriodForOwner(owner);
             await base.BaseDelete(owner);
@@ -37658,7 +38641,7 @@ namespace GeneratedCode.РегістриНакопичення
         public const string Сума = "col_a4";
         public List<Record> Records { get; set; } = [];
     
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -37678,7 +38661,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
     
-        public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+        public async Task Save(bool clear_all_before_save /*= true*/) 
         {
             await base.BaseBeginTransaction();
             if (clear_all_before_save) await base.BaseDelete();
@@ -37697,13 +38680,13 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
         
-        public async ValueTask Remove(Record record)
+        public async Task Remove(Record record)
         {
             await base.BaseRemove(record.UID);
             Records.RemoveAll((Record item) => record.UID == item.UID);
         }
 
-        public async ValueTask RemoveAll(List<Record> records)
+        public async Task RemoveAll(List<Record> records)
         {
             List<Guid> removeList = [];
 
@@ -37718,7 +38701,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             await base.BaseDelete();
         }
@@ -37750,7 +38733,7 @@ namespace GeneratedCode.РегістриНакопичення
         public const string СумаЗалишок = "col_a7";
         public List<Record> Records { get; set; } = [];
     
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -37773,7 +38756,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
     
-        public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+        public async Task Save(bool clear_all_before_save /*= true*/) 
         {
             await base.BaseBeginTransaction();
             if (clear_all_before_save) await base.BaseDelete();
@@ -37795,13 +38778,13 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
         
-        public async ValueTask Remove(Record record)
+        public async Task Remove(Record record)
         {
             await base.BaseRemove(record.UID);
             Records.RemoveAll((Record item) => record.UID == item.UID);
         }
 
-        public async ValueTask RemoveAll(List<Record> records)
+        public async Task RemoveAll(List<Record> records)
         {
             List<Guid> removeList = [];
 
@@ -37816,7 +38799,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             await base.BaseDelete();
         }
@@ -37849,7 +38832,7 @@ namespace GeneratedCode.РегістриНакопичення
         public const string Сума = "col_a5";
         public List<Record> Records { get; set; } = [];
     
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -37870,7 +38853,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
     
-        public async ValueTask Save(bool clear_all_before_save /*= true*/) 
+        public async Task Save(bool clear_all_before_save /*= true*/) 
         {
             await base.BaseBeginTransaction();
             if (clear_all_before_save) await base.BaseDelete();
@@ -37890,13 +38873,13 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
         
-        public async ValueTask Remove(Record record)
+        public async Task Remove(Record record)
         {
             await base.BaseRemove(record.UID);
             Records.RemoveAll((Record item) => record.UID == item.UID);
         }
 
-        public async ValueTask RemoveAll(List<Record> records)
+        public async Task RemoveAll(List<Record> records)
         {
             List<Guid> removeList = [];
 
@@ -37911,7 +38894,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async ValueTask Delete()
+        public async Task Delete()
         {
             await base.BaseDelete();
         }
@@ -38044,7 +39027,7 @@ namespace GeneratedCode.РегістриНакопичення
             }*/
         }
 
-        public async ValueTask Read()
+        public async Task Read()
         {
             Records.Clear();
             await base.BaseRead();
@@ -38115,7 +39098,7 @@ namespace GeneratedCode.РегістриНакопичення
             base.BaseClear();
         }
         
-        public async ValueTask Save(DateTime period, UuidAndText owner) 
+        public async Task Save(DateTime period, UuidAndText owner) 
         {
             await base.BaseBeginTransaction();
             await base.BaseSelectPeriodForOwner(owner.Uuid, period);
@@ -38162,7 +39145,7 @@ namespace GeneratedCode.РегістриНакопичення
             await base.BaseCommitTransaction();
         }
 
-        public async ValueTask Delete(Guid owner)
+        public async Task Delete(Guid owner)
         {
             await base.BaseSelectPeriodForOwner(owner);
             await base.BaseDelete(owner);

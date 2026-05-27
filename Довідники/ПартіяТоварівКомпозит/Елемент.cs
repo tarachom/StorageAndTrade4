@@ -91,7 +91,7 @@ partial class ПартіяТоварівКомпозит_Елемент : Direct
 
     #region Присвоєння / зчитування значень
 
-    public override async ValueTask AssignValue()
+    public override async Task AssignValue()
     {
         Назва.SetText(Елемент.Назва);
         Дата.Value = Елемент.Дата;
@@ -111,7 +111,7 @@ partial class ПартіяТоварівКомпозит_Елемент : Direct
 
     #endregion
 
-    protected override async ValueTask<bool> Save()
+    protected override async Task<bool> Save()
     {
         bool isSaved = false;
         try

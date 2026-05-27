@@ -26,7 +26,7 @@ static class ВидиЗапасів_Функції
         ];
     }
 
-    public static async ValueTask OpenPageElement(bool IsNew, UniqueID? uniqueID = null, 
+    public static async Task OpenPageElement(bool IsNew, UniqueID? uniqueID = null, 
         Action<UniqueID?>? сallBack_LoadRecords = null, 
         Action<UniqueID>? сallBack_OnSelectPointer = null)
     {
@@ -49,7 +49,7 @@ static class ВидиЗапасів_Функції
         await page.SetValue();
     }
 
-    public static async ValueTask OpenPageList(UniqueID? uniqueID = null, ConfigurationDirectories.HierarchicalContentType? allowedContentSelection = null, UniqueID? openFolder = null,
+    public static async Task OpenPageList(UniqueID? uniqueID = null, ConfigurationDirectories.HierarchicalContentType? allowedContentSelection = null, UniqueID? openFolder = null,
         Action<UniqueID>? сallBack_OnSelectPointer = null)
     {
         ВидиЗапасів_Список page = ВидиЗапасів_Список.New();
@@ -63,14 +63,14 @@ static class ВидиЗапасів_Функції
         await page.SetValue();
     }
 
-    public static async ValueTask SetDeletionLabel(UniqueID uniqueID)
+    public static async Task SetDeletionLabel(UniqueID uniqueID)
     {
         ВидиЗапасів_Pointer Вказівник = new(uniqueID);
         bool? label = await Вказівник.GetDeletionLabel();
         if (label.HasValue) await Вказівник.SetDeletionLabel(!label.Value);
     }
 
-    public static async ValueTask<UniqueID?> Copy(UniqueID uniqueID)
+    public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
         ВидиЗапасів_Objest Обєкт = new();
         if (await Обєкт.Read(uniqueID))

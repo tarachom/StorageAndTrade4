@@ -34,6 +34,6 @@ partial class LockObjectsView : InterfaceGtk4.LockObjectsView
     /// </summary>
     /// <param name="uuidAndText"></param>
     /// <returns></returns>
-    protected override async ValueTask<CompositePointerPresentation_Record> CompositePointerPresentation(UuidAndText uuidAndText) =>
+    protected override async Task<CompositePointerPresentation_Record> CompositePointerPresentation(UuidAndText uuidAndText) =>
         await Functions.CompositePointerPresentation(uuidAndText);
 }

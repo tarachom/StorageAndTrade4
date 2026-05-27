@@ -13,33 +13,33 @@ namespace GeneratedCode.Документи;
 
 class ВведенняЗалишків_Triggers
 {
-    public static async ValueTask New(ВведенняЗалишків_Objest ДокументОбєкт)
+    public static Task New(ВведенняЗалишків_Objest ДокументОбєкт)
     {
         ДокументОбєкт.НомерДок = (++НумераціяДокументів.ВведенняЗалишків_Const).ToString("D8");
         ДокументОбєкт.ДатаДок = DateTime.Now;
         ДокументОбєкт.Автор = Program.Користувач;
 
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask Copying(ВведенняЗалишків_Objest ДокументОбєкт, ВведенняЗалишків_Objest Основа)
+    public static Task Copying(ВведенняЗалишків_Objest ДокументОбєкт, ВведенняЗалишків_Objest Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeSave(ВведенняЗалишків_Objest ДокументОбєкт)
+    public static Task BeforeSave(ВведенняЗалишків_Objest ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{ВведенняЗалишків_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask AfterSave(ВведенняЗалишків_Objest ДокументОбєкт)
+    public static Task AfterSave(ВведенняЗалишків_Objest ДокументОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask SetDeletionLabel(ВведенняЗалишків_Objest ДокументОбєкт, bool label)
+    public static async Task SetDeletionLabel(ВведенняЗалишків_Objest ДокументОбєкт, bool label)
     {
         // Помітка на виделення всіх партій
         if (label)
@@ -56,8 +56,8 @@ class ВведенняЗалишків_Triggers
         }
     }
 
-    public static async ValueTask BeforeDelete(ВведенняЗалишків_Objest ДокументОбєкт)
+    public static Task BeforeDelete(ВведенняЗалишків_Objest ДокументОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 }

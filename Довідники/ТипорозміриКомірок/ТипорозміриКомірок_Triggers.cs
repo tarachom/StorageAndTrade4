@@ -8,35 +8,34 @@ namespace GeneratedCode.Довідники;
 
 class ТипорозміриКомірок_Triggers
 {
-    public static async ValueTask New(ТипорозміриКомірок_Objest ДовідникОбєкт)
+    public static Task New(ТипорозміриКомірок_Objest ДовідникОбєкт)
     {
-
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask Copying(ТипорозміриКомірок_Objest ДовідникОбєкт, ТипорозміриКомірок_Objest Основа)
+    public static Task Copying(ТипорозміриКомірок_Objest ДовідникОбєкт, ТипорозміриКомірок_Objest Основа)
     {
         ДовідникОбєкт.Назва += " - Копія";
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeSave(ТипорозміриКомірок_Objest ДовідникОбєкт)
+    public static Task BeforeSave(ТипорозміриКомірок_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask AfterSave(ТипорозміриКомірок_Objest ДовідникОбєкт)
+    public static Task AfterSave(ТипорозміриКомірок_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask SetDeletionLabel(ТипорозміриКомірок_Objest ДовідникОбєкт, bool label)
+    public static Task SetDeletionLabel(ТипорозміриКомірок_Objest ДовідникОбєкт, bool label)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeDelete(ТипорозміриКомірок_Objest ДовідникОбєкт)
+    public static Task BeforeDelete(ТипорозміриКомірок_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 }

@@ -11,29 +11,29 @@ namespace GeneratedCode.Довідники;
 
 class Номенклатура_Папки_Triggers
 {
-    public static async ValueTask New(Номенклатура_Папки_Objest ДовідникОбєкт)
+    public static  Task New(Номенклатура_Папки_Objest ДовідникОбєкт)
     {
         ДовідникОбєкт.Код = (++НумераціяДовідників.Номенклатура_Папки_Const).ToString("D6");
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask Copying(Номенклатура_Папки_Objest ДовідникОбєкт, Номенклатура_Папки_Objest Основа)
+    public static  Task Copying(Номенклатура_Папки_Objest ДовідникОбєкт, Номенклатура_Папки_Objest Основа)
     {
         ДовідникОбєкт.Назва += " - Копія";
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeSave(Номенклатура_Папки_Objest ДовідникОбєкт)
+    public static  Task BeforeSave(Номенклатура_Папки_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask AfterSave(Номенклатура_Папки_Objest ДовідникОбєкт)
+    public static  Task AfterSave(Номенклатура_Папки_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask SetDeletionLabel(Номенклатура_Папки_Objest ДовідникОбєкт, bool label)
+    public static async Task SetDeletionLabel(Номенклатура_Папки_Objest ДовідникОбєкт, bool label)
     {
         //Якщо встановлюється мітка на видалення
         if (label)
@@ -63,7 +63,7 @@ class Номенклатура_Папки_Triggers
         }
     }
 
-    public static async ValueTask BeforeDelete(Номенклатура_Папки_Objest ДовідникОбєкт)
+    public static async Task BeforeDelete(Номенклатура_Папки_Objest ДовідникОбєкт)
     {
         //Елементи переносяться на верхній рівень
         {

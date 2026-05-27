@@ -35,7 +35,7 @@ public partial class РозрахункиЗПостачальниками_Спи
 
     #region Override
 
-    public override async ValueTask LoadRecords()
+    public override async Task LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
@@ -45,7 +45,7 @@ public partial class РозрахункиЗПостачальниками_Спи
         ТабличнийСписок.CreateFilter(this);
     }
 
-    protected override async ValueTask BeforeSetValue()
+    protected override async Task BeforeSetValue()
     {
         await ФункціїНалаштуванняКористувача.ОтриматиПеріодДляЖурналу(FormKey, Period);
     }

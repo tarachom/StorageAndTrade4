@@ -27,16 +27,6 @@ static class ФункціїДляДокументів
     /// <returns>Обєднана дата</returns>
     public static DateTime ОбєднатиДатуТаЧас(DateTime дата, DateTime час) => new(дата.Year, дата.Month, дата.Day, час.Hour, час.Minute, час.Second);
 
-    /// <summary>
-    /// Перервати проведення документу
-    /// </summary>
-    /// <param name="ДокументОбєкт">Документ обєкт</param>
-    /// <param name="НазваДокументу">Назва документу</param>
-    /// <param name="СписокПомилок">Список помилок</param>
-    public static async ValueTask ДокументНеПроводиться(DocumentObject ДокументОбєкт, string НазваДокументу, string СписокПомилок) =>
-         await Config.Kernel.MessageErrorAdd("Проведення документу", ДокументОбєкт.UniqueID.UGuid, $"Документи.{ДокументОбєкт.TypeDocument}", НазваДокументу,
-            СписокПомилок + "\n\nДокумент [ " + НазваДокументу + " ] не проводиться!");
-
     #region ПартіяТоварівКомпозит
 
     /// <summary>
@@ -47,7 +37,7 @@ static class ФункціїДляДокументів
     /// <param name="ДокументПоступлення"></param>
     /// <param name="ДокументВведенняЗалишків"></param>
     /// <returns></returns>
-    public static async ValueTask<ПартіяТоварівКомпозит_Pointer> ОтриматиПартіюТоварівКомпозит(
+    public static async Task<ПартіяТоварівКомпозит_Pointer> ОтриматиПартіюТоварівКомпозит(
         Guid ДокументКлюч, ТипДокументуПартіяТоварівКомпозит ТипДокументу,
         ПоступленняТоварівТаПослуг_Objest? ДокументПоступлення,
         ВведенняЗалишків_Objest? ДокументВведенняЗалишків)
@@ -94,7 +84,7 @@ static class ФункціїДляДокументів
     /// <param name="Контрагент">Контрагент</param>
     /// <param name="ТипДоговору">Тип договору</param>
     /// <returns></returns>
-    public static async ValueTask<ДоговориКонтрагентів_Pointer?> ОсновнийДоговірДляКонтрагента(Контрагенти_Pointer Контрагент, ТипДоговорів ТипДоговору = 0)
+    public static async Task<ДоговориКонтрагентів_Pointer?> ОсновнийДоговірДляКонтрагента(Контрагенти_Pointer Контрагент, ТипДоговорів ТипДоговору = 0)
     {
         if (Контрагент.IsEmpty())
             return null;
@@ -117,7 +107,7 @@ static class ФункціїДляДокументів
     /// <param name="Валюта">Валюта</param>
     /// <param name="ДатаКурсу">Курс</param>
     /// <returns>Курс на дату (дата + час 23 59 59) або 0</returns>
-    public static async ValueTask<decimal> ПоточнийКурсВалюти(Валюти_Pointer Валюта, DateTime ДатаКурсу)
+    public static async Task<decimal> ПоточнийКурсВалюти(Валюти_Pointer Валюта, DateTime ДатаКурсу)
     {
         if (Валюта.IsEmpty())
             return 0;

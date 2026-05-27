@@ -10,35 +10,35 @@ namespace GeneratedCode.Довідники;
 
 class Валюти_Triggers
 {
-    public static async ValueTask New(Валюти_Objest ДовідникОбєкт)
+    public static Task New(Валюти_Objest ДовідникОбєкт)
     {
         ДовідникОбєкт.Код = (++НумераціяДовідників.Валюти_Const).ToString("D6");
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask Copying(Валюти_Objest ДовідникОбєкт, Валюти_Objest Основа)
+    public static Task Copying(Валюти_Objest ДовідникОбєкт, Валюти_Objest Основа)
     {
         ДовідникОбєкт.Назва += " - Копія";
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeSave(Валюти_Objest ДовідникОбєкт)
+    public static Task BeforeSave(Валюти_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask AfterSave(Валюти_Objest ДовідникОбєкт)
+    public static Task AfterSave(Валюти_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask SetDeletionLabel(Валюти_Objest ДовідникОбєкт, bool label)
+    public static async Task SetDeletionLabel(Валюти_Objest ДовідникОбєкт, bool label)
     {
         if (label)
             await BeforeDelete(ДовідникОбєкт);
     }
 
-    public static async ValueTask BeforeDelete(Валюти_Objest ДовідникОбєкт)
+    public static async Task BeforeDelete(Валюти_Objest ДовідникОбєкт)
     {
         //Очистити регістр КурсиВалют при видаленні валюти
         string query = $@"

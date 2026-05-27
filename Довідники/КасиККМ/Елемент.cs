@@ -89,7 +89,7 @@ partial class КасиККМ_Елемент : DirectoryFormElement
 
     #region Присвоєння / зчитування значень
 
-    public override async ValueTask AssignValue()
+    public override async Task AssignValue()
     {
         Назва.SetText(Елемент.Назва);
         Склад.Pointer = Елемент.Склад;
@@ -107,7 +107,7 @@ partial class КасиККМ_Елемент : DirectoryFormElement
 
     #endregion
 
-    protected override async ValueTask<bool> Save()
+    protected override async Task<bool> Save()
     {
         bool isSaved = false;
         try

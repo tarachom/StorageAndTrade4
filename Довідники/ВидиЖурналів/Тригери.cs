@@ -12,38 +12,35 @@ namespace GeneratedCode.Довідники;
 
 static class ВидиЖурналів_Triggers
 {
-    public static async ValueTask New(ВидиЖурналів_Objest ДовідникОбєкт)
+    public static Task New(ВидиЖурналів_Objest ДовідникОбєкт)
     {
         ДовідникОбєкт.Код = (++НумераціяДовідників.ВидиЖурналів_Const).ToString("D6");
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask Copying(ВидиЖурналів_Objest ДовідникОбєкт, ВидиЖурналів_Objest Основа)
+    public static Task Copying(ВидиЖурналів_Objest ДовідникОбєкт, ВидиЖурналів_Objest Основа)
     {
-        
         ДовідникОбєкт.Назва += " - Копія";
-        
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeSave(ВидиЖурналів_Objest ДовідникОбєкт)
+    public static Task BeforeSave(ВидиЖурналів_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask AfterSave(ВидиЖурналів_Objest ДовідникОбєкт)
+    public static Task AfterSave(ВидиЖурналів_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask SetDeletionLabel(ВидиЖурналів_Objest ДовідникОбєкт, bool label)
+    public static Task SetDeletionLabel(ВидиЖурналів_Objest ДовідникОбєкт, bool label)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeDelete(ВидиЖурналів_Objest ДовідникОбєкт)
+    public static Task BeforeDelete(ВидиЖурналів_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 }
-    

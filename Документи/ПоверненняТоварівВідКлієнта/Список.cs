@@ -34,12 +34,12 @@ public partial class ПоверненняТоварівВідКлієнта_Сп
 
     #region Override
 
-    public override async ValueTask LoadRecords()
+    public override async Task LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
 
-    public override async ValueTask UpdateRecords()
+    public override async Task UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);
     }
@@ -54,22 +54,22 @@ public partial class ПоверненняТоварівВідКлієнта_Сп
         ТабличнийСписок.CreateFilter(this);
     }
 
-    protected override async ValueTask OpenPageElement(bool IsNew, UniqueID? uniqueID = null)
+    protected override async Task OpenPageElement(bool IsNew, UniqueID? uniqueID = null)
     {
         await Функції.OpenPageElement(IsNew, uniqueID, CallBack_LoadRecords, CallBack_OnSelectPointer);
     }
 
-    protected override async ValueTask SetDeletionLabel(UniqueID uniqueID)
+    protected override async Task SetDeletionLabel(UniqueID uniqueID)
     {
         await Функції.SetDeletionLabel(uniqueID);
     }
 
-    protected override async ValueTask<UniqueID?> Copy(UniqueID uniqueID)
+    protected override async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
         return await Функції.Copy(uniqueID);
     }
 
-    protected override async ValueTask BeforeSetValue()
+    protected override async Task BeforeSetValue()
     {
         await ФункціїНалаштуванняКористувача.ОтриматиПеріодДляЖурналу(FormKey, Period);
     }
@@ -79,7 +79,7 @@ public partial class ПоверненняТоварівВідКлієнта_Сп
         ФункціїНалаштуванняКористувача.ЗаписатиПеріодДляЖурналу(FormKey, Period.Period.ToString(), Period.DateStart, Period.DateStop);
     }
 
-    protected override async ValueTask SpendTheDocument(UniqueID[] uniqueID, bool spendDoc)
+    protected override async Task SpendTheDocument(UniqueID[] uniqueID, bool spendDoc)
     {
         foreach (var uid in uniqueID)
             await Функції.SpendTheDocument(uid, spendDoc);
@@ -91,7 +91,7 @@ public partial class ПоверненняТоварівВідКлієнта_Сп
             CommonForms_DocumentMovementThroughRegisters.Create(new ПоверненняТоварівВідКлієнта_Pointer(uid));
     }
 
-    protected override async ValueTask VersionsHistory(UniqueID[] uniqueID)
+    protected override async Task VersionsHistory(UniqueID[] uniqueID)
     {
 
     }

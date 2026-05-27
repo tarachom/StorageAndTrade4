@@ -12,31 +12,29 @@ namespace GeneratedCode.Довідники;
 
 static class Категорії_Triggers
 {
-    public static async ValueTask New(Категорії_Objest ДовідникОбєкт)
+    public static Task New(Категорії_Objest ДовідникОбєкт)
     {
         ДовідникОбєкт.Код = (++НумераціяДовідників.Категорії_Const).ToString("D6");
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask Copying(Категорії_Objest ДовідникОбєкт, Категорії_Objest Основа)
+    public static Task Copying(Категорії_Objest ДовідникОбєкт, Категорії_Objest Основа)
     {
-
         ДовідникОбєкт.Назва += " - Копія";
-
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeSave(Категорії_Objest ДовідникОбєкт)
+    public static Task BeforeSave(Категорії_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask AfterSave(Категорії_Objest ДовідникОбєкт)
+    public static Task AfterSave(Категорії_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask SetDeletionLabel(Категорії_Objest ДовідникОбєкт, bool label)
+    public static async Task SetDeletionLabel(Категорії_Objest ДовідникОбєкт, bool label)
     {
         //Якщо встановлюється мітка на видалення
         if (label)
@@ -56,8 +54,8 @@ static class Категорії_Triggers
         }
     }
 
-    public static async ValueTask BeforeDelete(Категорії_Objest ДовідникОбєкт)
+    public static Task BeforeDelete(Категорії_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 }

@@ -65,7 +65,7 @@ partial class СеріїНоменклатури_Елемент : DirectoryFormE
 
     #region Присвоєння / зчитування значень
 
-    public override async ValueTask AssignValue()
+    public override async Task AssignValue()
     {
         Номер.SetText(Елемент.Номер);
         Коментар.SetText(Елемент.Коментар);
@@ -81,7 +81,7 @@ partial class СеріїНоменклатури_Елемент : DirectoryFormE
 
     #endregion
 
-    protected override async ValueTask<bool> Save()
+    protected override async Task<bool> Save()
     {
         bool isSaved = false;
         try

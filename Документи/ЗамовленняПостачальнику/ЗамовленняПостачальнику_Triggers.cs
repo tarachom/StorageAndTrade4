@@ -11,40 +11,40 @@ namespace GeneratedCode.Документи;
 
 class ЗамовленняПостачальнику_Triggers
 {
-    public static async ValueTask New(ЗамовленняПостачальнику_Objest ДокументОбєкт)
+    public static Task New(ЗамовленняПостачальнику_Objest ДокументОбєкт)
     {
         ДокументОбєкт.НомерДок = (++НумераціяДокументів.ЗамовленняПостачальнику_Const).ToString("D8");
         ДокументОбєкт.ДатаДок = DateTime.Now;
         ДокументОбєкт.Автор = Program.Користувач;
         ДокументОбєкт.Менеджер = Program.Користувач;
 
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask Copying(ЗамовленняПостачальнику_Objest ДокументОбєкт, ЗамовленняПостачальнику_Objest Основа)
+    public static Task Copying(ЗамовленняПостачальнику_Objest ДокументОбєкт, ЗамовленняПостачальнику_Objest Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeSave(ЗамовленняПостачальнику_Objest ДокументОбєкт)
+    public static Task BeforeSave(ЗамовленняПостачальнику_Objest ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{ЗамовленняПостачальнику_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask AfterSave(ЗамовленняПостачальнику_Objest ДокументОбєкт)
+    public static Task AfterSave(ЗамовленняПостачальнику_Objest ДокументОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask SetDeletionLabel(ЗамовленняПостачальнику_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(ЗамовленняПостачальнику_Objest ДокументОбєкт, bool label)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeDelete(ЗамовленняПостачальнику_Objest ДокументОбєкт)
+    public static Task BeforeDelete(ЗамовленняПостачальнику_Objest ДокументОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 }

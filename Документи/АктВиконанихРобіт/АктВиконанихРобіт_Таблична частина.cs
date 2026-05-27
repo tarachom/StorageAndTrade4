@@ -162,17 +162,17 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
 
     #region Функції
 
-    async ValueTask ПісляДодаванняНового(ItemRow row)
+    async Task ПісляДодаванняНового(ItemRow row)
     {
         row.Кількість = 1;
     }
 
-    async ValueTask ПісляЗміни_Номенклатура(ItemRow row)
+    async Task ПісляЗміни_Номенклатура(ItemRow row)
     {
 
     }
 
-    async ValueTask ПісляЗміни_ХарактеристикаНоменклатури(ItemRow row)
+    async Task ПісляЗміни_ХарактеристикаНоменклатури(ItemRow row)
     {
 
     }
@@ -449,7 +449,7 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
         }
     }
 
-    public override async ValueTask LoadRecords()
+    public override async Task LoadRecords()
     {
         if (ЕлементВласник != null)
         {
@@ -480,7 +480,7 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
         }
     }
 
-    public override async ValueTask SaveRecords()
+    public override async Task SaveRecords()
     {
         if (ЕлементВласник != null)
         {
@@ -538,7 +538,7 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
         }
     }
 
-    public override async ValueTask<bool> NewRecord()
+    public override async Task<bool> NewRecord()
     {
         ItemRow row = ItemRow.New();
         await ПісляДодаванняНового(row);

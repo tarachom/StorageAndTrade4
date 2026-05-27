@@ -11,29 +11,29 @@ namespace GeneratedCode.Довідники;
 
 class Склади_Папки_Triggers
 {
-    public static async ValueTask New(Склади_Папки_Objest ДовідникОбєкт)
+    public static  Task New(Склади_Папки_Objest ДовідникОбєкт)
     {
         ДовідникОбєкт.Код = (++НумераціяДовідників.Склади_Папки_Const).ToString("D6");
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask Copying(Склади_Папки_Objest ДовідникОбєкт, Склади_Папки_Objest Основа)
+    public static  Task Copying(Склади_Папки_Objest ДовідникОбєкт, Склади_Папки_Objest Основа)
     {
         ДовідникОбєкт.Назва += " - Копія";
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeSave(Склади_Папки_Objest ДовідникОбєкт)
+    public static  Task BeforeSave(Склади_Папки_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask AfterSave(Склади_Папки_Objest ДовідникОбєкт)
+    public static  Task AfterSave(Склади_Папки_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask SetDeletionLabel(Склади_Папки_Objest ДовідникОбєкт, bool label)
+    public static async Task SetDeletionLabel(Склади_Папки_Objest ДовідникОбєкт, bool label)
     {
         //Якщо встановлюється мітка на видалення
         if (label)
@@ -63,7 +63,7 @@ class Склади_Папки_Triggers
         }
     }
 
-    public static async ValueTask BeforeDelete(Склади_Папки_Objest ДовідникОбєкт)
+    public static async Task BeforeDelete(Склади_Папки_Objest ДовідникОбєкт)
     {
         //Елементи переносяться на верхній рівень
         {

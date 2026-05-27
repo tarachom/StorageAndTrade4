@@ -35,7 +35,7 @@ public partial class РухКоштівККМ_СписокМіні : RegisterAcc
 
     #region Override
 
-    public override async ValueTask LoadRecords()
+    public override async Task LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }

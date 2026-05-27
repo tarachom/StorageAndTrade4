@@ -27,9 +27,9 @@ public partial class Контрагенти_PointerTablePartCell : PointerTableP
         }
     }
 
-    public async ValueTask GetPresentation() => Presentation = await pointer.GetPresentation();
+    public async Task GetPresentation() => Presentation = await pointer.GetPresentation();
 
-    async ValueTask PointerChange(UniqueID? p)
+    async Task PointerChange(UniqueID? p)
     {
         Pointer = new Контрагенти_Pointer(p ?? new UniqueID());
         await GetPresentation();

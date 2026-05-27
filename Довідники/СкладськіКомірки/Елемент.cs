@@ -127,7 +127,7 @@ partial class СкладськіКомірки_Елемент : DirectoryFormEle
 
     #region Присвоєння / зчитування значень
 
-    public override async ValueTask AssignValue()
+    public override async Task AssignValue()
     {
         if (IsNew)
             Елемент.Приміщення = ВласникДляНового;
@@ -158,7 +158,7 @@ partial class СкладськіКомірки_Елемент : DirectoryFormEle
 
     #endregion
 
-    protected override async ValueTask<bool> Save()
+    protected override async Task<bool> Save()
     {
         bool isSaved = false;
         try

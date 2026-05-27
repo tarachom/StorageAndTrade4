@@ -163,14 +163,15 @@ partial class Номенклатура_Елемент : DirectoryFormElement
 
     #region Присвоєння / зчитування значень
 
-    public override async ValueTask AssignValue()
+    public override async Task AssignValue()
     {
         if (IsNew)
         {
             Елемент.Папка = РодичДляНового;
             Елемент.ТипНоменклатури = ТипиНоменклатури.Товар;
-            Елемент.ОдиницяВиміру = ЗначенняТипові.ОсновнаОдиницяПакування_Const;
-            Елемент.ВидНоменклатури = ЗначенняТипові.ОсновнийВидНоменклатури_Const;
+
+            Елемент.ОдиницяВиміру = await ЗначенняТипові.ОсновнаОдиницяПакування();
+            Елемент.ВидНоменклатури = await ЗначенняТипові.ОсновнийВидНоменклатури();
         }
 
         Код.SetText(Елемент.Код);
@@ -209,7 +210,7 @@ partial class Номенклатура_Елемент : DirectoryFormElement
 
     #endregion
 
-    protected override async ValueTask<bool> Save()
+    protected override async Task<bool> Save()
     {
         bool isSaved = false;
         try

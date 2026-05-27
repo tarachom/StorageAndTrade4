@@ -1,22 +1,17 @@
 
 
 /*
-        БухгалтерськаОперація_SpendTheDocument.cs
-        Модуль проведення документу
+    Модуль проведення документу
 */
 
-using AccountingSoftware;
 using StorageAndTrade;
-using GeneratedCode;
-
-using GeneratedCode.Довідники;
 using GeneratedCode.РегістриНакопичення;
 
 namespace GeneratedCode.Документи;
 
 static class БухгалтерськаОперація_SpendTheDocument
 {
-    public static async ValueTask<bool> Spend(БухгалтерськаОперація_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(БухгалтерськаОперація_Objest ДокументОбєкт)
     {
         try
         {
@@ -72,13 +67,13 @@ static class БухгалтерськаОперація_SpendTheDocument
         }
         catch (Exception ex)
         {
-            await ФункціїДляДокументів.ДокументНеПроводиться(ДокументОбєкт, ДокументОбєкт.Назва, ex.Message);
+            await ПроведенняДокументів.ДокументНеПроводиться(ДокументОбєкт, ДокументОбєкт.Назва, ex.Message);
             return false;
         }
     }
 
-    public static async ValueTask Clear(БухгалтерськаОперація_Objest ДокументОбєкт)
+    public static Task Clear(БухгалтерськаОперація_Objest ДокументОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 }

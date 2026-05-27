@@ -11,40 +11,40 @@ namespace GeneratedCode.Документи;
 
 class АктВиконанихРобіт_Triggers
 {
-    public static async ValueTask New(АктВиконанихРобіт_Objest ДокументОбєкт)
-    {
-        ДокументОбєкт.НомерДок = (++НумераціяДокументів.АктВиконанихРобіт_Const).ToString("D8");
-        ДокументОбєкт.ДатаДок = DateTime.Now;
-        ДокументОбєкт.Автор = Program.Користувач;
-        ДокументОбєкт.Менеджер = Program.Користувач;
+   public static Task New(АктВиконанихРобіт_Objest ДокументОбєкт)
+   {
+      ДокументОбєкт.НомерДок = (++НумераціяДокументів.АктВиконанихРобіт_Const).ToString("D8");
+      ДокументОбєкт.ДатаДок = DateTime.Now;
+      ДокументОбєкт.Автор = Program.Користувач;
+      ДокументОбєкт.Менеджер = Program.Користувач;
 
-        await ValueTask.FromResult(true);
-    }
+      return Task.CompletedTask;
+   }
 
-    public static async ValueTask Copying(АктВиконанихРобіт_Objest ДокументОбєкт, АктВиконанихРобіт_Objest Основа)
-    {
-        ДокументОбєкт.Назва += " - Копія";
-        await ValueTask.FromResult(true);
-    }
+   public static Task Copying(АктВиконанихРобіт_Objest ДокументОбєкт, АктВиконанихРобіт_Objest Основа)
+   {
+      ДокументОбєкт.Назва += " - Копія";
+      return Task.CompletedTask;
+   }
 
-    public static async ValueTask BeforeSave(АктВиконанихРобіт_Objest ДокументОбєкт)
-    {
-        ДокументОбєкт.Назва = $"{АктВиконанихРобіт_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
-        await ValueTask.FromResult(true);
-    }
+   public static Task BeforeSave(АктВиконанихРобіт_Objest ДокументОбєкт)
+   {
+      ДокументОбєкт.Назва = $"{АктВиконанихРобіт_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
+      return Task.CompletedTask;
+   }
 
-    public static async ValueTask AfterSave(АктВиконанихРобіт_Objest ДокументОбєкт)
-    {
-        await ValueTask.FromResult(true);
-    }
+   public static Task AfterSave(АктВиконанихРобіт_Objest ДокументОбєкт)
+   {
+      return Task.CompletedTask;
+   }
 
-    public static async ValueTask SetDeletionLabel(АктВиконанихРобіт_Objest ДокументОбєкт, bool label)
-    {
-        await ValueTask.FromResult(true);
-    }
+   public static Task SetDeletionLabel(АктВиконанихРобіт_Objest ДокументОбєкт, bool label)
+   {
+      return Task.CompletedTask;
+   }
 
-    public static async ValueTask BeforeDelete(АктВиконанихРобіт_Objest ДокументОбєкт)
-    {
-        await ValueTask.FromResult(true);
-    }
+   public static Task BeforeDelete(АктВиконанихРобіт_Objest ДокументОбєкт)
+   {
+      return Task.CompletedTask;
+   }
 }

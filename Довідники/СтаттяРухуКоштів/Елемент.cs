@@ -92,7 +92,7 @@ partial class СтаттяРухуКоштів_Елемент : DirectoryFormEle
 
     #region Присвоєння / зчитування значень
 
-    public override async ValueTask AssignValue()
+    public override async Task AssignValue()
     {
         Код.SetText(Елемент.Код);
         Назва.SetText(Елемент.Назва);
@@ -112,7 +112,7 @@ partial class СтаттяРухуКоштів_Елемент : DirectoryFormEle
 
     #endregion
 
-    protected override async ValueTask<bool> Save()
+    protected override async Task<bool> Save()
     {
         bool isSaved = false;
         try

@@ -111,7 +111,7 @@ partial class Обробка_Завантаження_ПлануРахунків
     /// Завантаження файлу
     /// </summary>
     /// <param name="currentFile">Файл Ексель</param>
-    async ValueTask Upload(string currentFile)
+    async Task Upload(string currentFile)
     {
         IWorkbook workbook = new XSSFWorkbook();
 

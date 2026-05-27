@@ -8,34 +8,34 @@ namespace GeneratedCode.Довідники;
 
 class СкладськіПриміщення_Triggers
 {
-    public static async ValueTask New(СкладськіПриміщення_Objest ДовідникОбєкт)
+    public static Task New(СкладськіПриміщення_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask Copying(СкладськіПриміщення_Objest ДовідникОбєкт, СкладськіПриміщення_Objest Основа)
+    public static Task Copying(СкладськіПриміщення_Objest ДовідникОбєкт, СкладськіПриміщення_Objest Основа)
     {
         ДовідникОбєкт.Назва += " - Копія";
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeSave(СкладськіПриміщення_Objest ДовідникОбєкт)
+    public static Task BeforeSave(СкладськіПриміщення_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask AfterSave(СкладськіПриміщення_Objest ДовідникОбєкт)
+    public static Task AfterSave(СкладськіПриміщення_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask SetDeletionLabel(СкладськіПриміщення_Objest ДовідникОбєкт, bool label)
+    public static Task SetDeletionLabel(СкладськіПриміщення_Objest ДовідникОбєкт, bool label)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeDelete(СкладськіПриміщення_Objest ДовідникОбєкт)
+    public static Task BeforeDelete(СкладськіПриміщення_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 }

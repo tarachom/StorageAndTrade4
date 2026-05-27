@@ -99,14 +99,14 @@ partial class FormStorageAndTrade : FormGeneral
 
     #endregion
 
-    public async ValueTask OpenFirstPages()
+    public async Task OpenFirstPages()
     {
         PageHome page = PageHome.New();
         NotebookFunc?.CreatePage("Стартова", () => page, false, null, null, true);
         await page.SetValue();
     }
 
-    public async ValueTask SetCurrentUser()
+    public async Task SetCurrentUser()
     {
         Користувачі_Pointer ЗнайденийКористувач = await new Користувачі_Select().FindByField(Користувачі_Const.КодВСпеціальнійТаблиці, Config.Kernel.User);
         if (ЗнайденийКористувач.IsEmpty())

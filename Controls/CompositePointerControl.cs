@@ -25,6 +25,6 @@ partial class CompositePointerControl : InterfaceGtk4.CompositePointerControl
         return control;
     }
 
-    protected override async ValueTask<CompositePointerPresentation_Record> CompositePointerPresentation(UuidAndText uuidAndText) =>
+    protected override async Task<CompositePointerPresentation_Record> CompositePointerPresentation(UuidAndText uuidAndText) =>
         await Functions.CompositePointerPresentation(uuidAndText);
 }

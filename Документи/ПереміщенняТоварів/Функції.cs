@@ -30,7 +30,7 @@ static class ПереміщенняТоварів_Функції
         ];
     }
 
-    public static async ValueTask OpenPageElement(bool IsNew, UniqueID? uniqueID = null, 
+    public static async Task OpenPageElement(bool IsNew, UniqueID? uniqueID = null, 
         Action<UniqueID?>? сallBack_LoadRecords = null,
         Action<UniqueID>? сallBack_OnSelectPointer = null)
     {
@@ -50,7 +50,7 @@ static class ПереміщенняТоварів_Функції
         await page.SetValue();
     }
 
-    public static async ValueTask OpenPageList(UniqueID? uniqueID = null, Action<UniqueID>? сallBack_OnSelectPointer = null)
+    public static async Task OpenPageList(UniqueID? uniqueID = null, Action<UniqueID>? сallBack_OnSelectPointer = null)
     {
         ПереміщенняТоварів_Список page = ПереміщенняТоварів_Список.New();
         page.DocumentPointerItem = uniqueID;
@@ -60,14 +60,14 @@ static class ПереміщенняТоварів_Функції
         await page.SetValue();
     }
 
-    public static async ValueTask SetDeletionLabel(UniqueID uniqueID)
+    public static async Task SetDeletionLabel(UniqueID uniqueID)
     {
         ПереміщенняТоварів_Pointer Вказівник = new(uniqueID);
         bool? label = await Вказівник.GetDeletionLabel();
         if (label.HasValue) await Вказівник.SetDeletionLabel(!label.Value);
     }
 
-    public static async ValueTask<UniqueID?> Copy(UniqueID uniqueID)
+    public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
         ПереміщенняТоварів_Objest Обєкт = new();
         if (await Обєкт.Read(uniqueID))
@@ -86,7 +86,7 @@ static class ПереміщенняТоварів_Функції
         }
     }
 
-    public static async ValueTask SpendTheDocument(UniqueID uniqueID, bool spendDoc)
+    public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
         ПереміщенняТоварів_Objest? Обєкт = await new ПереміщенняТоварів_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;

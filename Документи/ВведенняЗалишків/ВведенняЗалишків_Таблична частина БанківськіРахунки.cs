@@ -110,7 +110,7 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Б
 
     #region Функції
 
-    async ValueTask ПісляЗміни_БанківськийРахунок(ItemRow row)
+    async Task ПісляЗміни_БанківськийРахунок(ItemRow row)
     {
 
     }
@@ -264,7 +264,7 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Б
         }
     }
 
-    public override async ValueTask LoadRecords()
+    public override async Task LoadRecords()
     {
         if (ЕлементВласник != null)
         {
@@ -292,7 +292,7 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Б
         }
     }
 
-    public override async ValueTask SaveRecords()
+    public override async Task SaveRecords()
     {
         if (ЕлементВласник != null)
         {
@@ -345,7 +345,7 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Б
         }
     }
 
-    public override async ValueTask<bool> NewRecord()
+    public override async Task<bool> NewRecord()
     {
         Store.Append(ItemRow.New());
         return true;

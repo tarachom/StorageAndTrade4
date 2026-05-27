@@ -77,7 +77,7 @@ partial class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.Commo
     /// </summary>
     /// <param name="documentPointer">Відбір по документу</param>
     /// <returns></returns>
-    public async ValueTask Fill(DocumentPointer documentPointer)
+    public async Task Fill(DocumentPointer documentPointer)
     {
         NotebookFunc?.SpinnerOn(GetName());
 
@@ -91,7 +91,7 @@ partial class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.Commo
             {
                 case "ТовариНаСкладах":
                     {
-                        async ValueTask<Widget> getForm(bool small = true)
+                        async Task<Widget> getForm(bool small = true)
                         {
                             ТовариНаСкладах_СписокМіні page = ТовариНаСкладах_СписокМіні.New();
                             page.WhereList = [new("owner", Comparison.EQ, documentPointer.UniqueID.UGuid)];
@@ -105,7 +105,7 @@ partial class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.Commo
                     }
                 case "ПартіїТоварів":
                     {
-                        async ValueTask<Widget> getForm(bool small = true)
+                        async Task<Widget> getForm(bool small = true)
                         {
                             ПартіїТоварів_СписокМіні page = ПартіїТоварів_СписокМіні.New();
                             page.WhereList = [new("owner", Comparison.EQ, documentPointer.UniqueID.UGuid)];
@@ -119,7 +119,7 @@ partial class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.Commo
                     }
                 case "ЗамовленняКлієнтів":
                     {
-                        async ValueTask<Widget> getForm(bool small = true)
+                        async Task<Widget> getForm(bool small = true)
                         {
                             ЗамовленняКлієнтів_СписокМіні page = ЗамовленняКлієнтів_СписокМіні.New();
                             page.WhereList = [new("owner", Comparison.EQ, documentPointer.UniqueID.UGuid)];
@@ -133,7 +133,7 @@ partial class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.Commo
                     }
                 case "РозрахункиЗКлієнтами":
                     {
-                        async ValueTask<Widget> getForm(bool small = true)
+                        async Task<Widget> getForm(bool small = true)
                         {
                             РозрахункиЗКлієнтами_СписокМіні page = РозрахункиЗКлієнтами_СписокМіні.New();
                             page.WhereList = [new("owner", Comparison.EQ, documentPointer.UniqueID.UGuid)];
@@ -147,7 +147,7 @@ partial class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.Commo
                     }
                 case "ВільніЗалишки":
                     {
-                        async ValueTask<Widget> getForm(bool small = true)
+                        async Task<Widget> getForm(bool small = true)
                         {
                             ВільніЗалишки_СписокМіні page = ВільніЗалишки_СписокМіні.New();
                             page.WhereList = [new("owner", Comparison.EQ, documentPointer.UniqueID.UGuid)];
@@ -161,7 +161,7 @@ partial class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.Commo
                     }
                 case "ЗамовленняПостачальникам":
                     {
-                        async ValueTask<Widget> getForm(bool small = true)
+                        async Task<Widget> getForm(bool small = true)
                         {
                             ЗамовленняПостачальникам_СписокМіні page = ЗамовленняПостачальникам_СписокМіні.New();
                             page.WhereList = [new("owner", Comparison.EQ, documentPointer.UniqueID.UGuid)];
@@ -175,7 +175,7 @@ partial class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.Commo
                     }
                 case "РозрахункиЗПостачальниками":
                     {
-                        async ValueTask<Widget> getForm(bool small = true)
+                        async Task<Widget> getForm(bool small = true)
                         {
                             РозрахункиЗПостачальниками_СписокМіні page = РозрахункиЗПостачальниками_СписокМіні.New();
                             page.WhereList = [new("owner", Comparison.EQ, documentPointer.UniqueID.UGuid)];
@@ -189,7 +189,7 @@ partial class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.Commo
                     }
                 case "РухКоштів":
                     {
-                        async ValueTask<Widget> getForm(bool small = true)
+                        async Task<Widget> getForm(bool small = true)
                         {
                             РухКоштів_СписокМіні page = РухКоштів_СписокМіні.New();
                             page.WhereList = [new("owner", Comparison.EQ, documentPointer.UniqueID.UGuid)];
@@ -203,7 +203,7 @@ partial class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.Commo
                     }
                 case "РухКоштівККМ":
                     {
-                        async ValueTask<Widget> getForm(bool small = true)
+                        async Task<Widget> getForm(bool small = true)
                         {
                             РухКоштівККМ_СписокМіні page = РухКоштівККМ_СписокМіні.New();
                             page.WhereList = [new("owner", Comparison.EQ, documentPointer.UniqueID.UGuid)];
@@ -217,7 +217,7 @@ partial class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.Commo
                     }
                 case "Закупівлі":
                     {
-                        async ValueTask<Widget> getForm(bool small = true)
+                        async Task<Widget> getForm(bool small = true)
                         {
                             Закупівлі_СписокМіні page = Закупівлі_СписокМіні.New();
                             page.WhereList = [new("owner", Comparison.EQ, documentPointer.UniqueID.UGuid)];
@@ -231,7 +231,7 @@ partial class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.Commo
                     }
                 case "Продажі":
                     {
-                        async ValueTask<Widget> getForm(bool small = true)
+                        async Task<Widget> getForm(bool small = true)
                         {
                             Продажі_СписокМіні page = Продажі_СписокМіні.New();
                             page.WhereList = [new("owner", Comparison.EQ, documentPointer.UniqueID.UGuid)];
@@ -245,7 +245,7 @@ partial class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.Commo
                     }
                 case "ТовариВКомірках":
                     {
-                        async ValueTask<Widget> getForm(bool small = true)
+                        async Task<Widget> getForm(bool small = true)
                         {
                             ТовариВКомірках_СписокМіні page = ТовариВКомірках_СписокМіні.New();
                             page.WhereList = [new("owner", Comparison.EQ, documentPointer.UniqueID.UGuid)];
@@ -260,7 +260,7 @@ partial class CommonForms_DocumentMovementThroughRegisters : InterfaceGtk4.Commo
                     }
                 case "БухгалтерськіОперації":
                     {
-                        async ValueTask<Widget> getForm(bool small = true)
+                        async Task<Widget> getForm(bool small = true)
                         {
                             БухгалтерськіОперації_СписокМіні page = БухгалтерськіОперації_СписокМіні.New();
                             page.WhereList = [new("owner", Comparison.EQ, documentPointer.UniqueID.UGuid)];

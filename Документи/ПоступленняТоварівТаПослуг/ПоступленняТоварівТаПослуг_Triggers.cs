@@ -13,34 +13,34 @@ namespace GeneratedCode.Документи;
 
 class ПоступленняТоварівТаПослуг_Triggers
 {
-    public static async ValueTask New(ПоступленняТоварівТаПослуг_Objest ДокументОбєкт)
+    public static Task New(ПоступленняТоварівТаПослуг_Objest ДокументОбєкт)
     {
         ДокументОбєкт.НомерДок = (++НумераціяДокументів.ПоступленняТоварівТаПослуг_Const).ToString("D8");
         ДокументОбєкт.ДатаДок = DateTime.Now;
         ДокументОбєкт.Автор = Program.Користувач;
         ДокументОбєкт.Менеджер = Program.Користувач;
 
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask Copying(ПоступленняТоварівТаПослуг_Objest ДокументОбєкт, ПоступленняТоварівТаПослуг_Objest Основа)
+    public static Task Copying(ПоступленняТоварівТаПослуг_Objest ДокументОбєкт, ПоступленняТоварівТаПослуг_Objest Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeSave(ПоступленняТоварівТаПослуг_Objest ДокументОбєкт)
+    public static Task BeforeSave(ПоступленняТоварівТаПослуг_Objest ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{ПоступленняТоварівТаПослуг_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask AfterSave(ПоступленняТоварівТаПослуг_Objest ДокументОбєкт)
+    public static Task AfterSave(ПоступленняТоварівТаПослуг_Objest ДокументОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask SetDeletionLabel(ПоступленняТоварівТаПослуг_Objest ДокументОбєкт, bool label)
+    public static async Task SetDeletionLabel(ПоступленняТоварівТаПослуг_Objest ДокументОбєкт, bool label)
     {
         // Помітка на видалення всіх партій
         if (label)
@@ -57,8 +57,8 @@ class ПоступленняТоварівТаПослуг_Triggers
         }
     }
 
-    public static async ValueTask BeforeDelete(ПоступленняТоварівТаПослуг_Objest ДокументОбєкт)
+    public static Task BeforeDelete(ПоступленняТоварівТаПослуг_Objest ДокументОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 }

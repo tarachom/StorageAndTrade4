@@ -202,7 +202,7 @@ partial class РозхіднийКасовийОрдер_Елемент : Docume
 
     #region Присвоєння / зчитування значень
 
-    public override async ValueTask AssignValue()
+    public override async Task AssignValue()
     {
         НомерДок.SetText(Елемент.НомерДок);
                         ДатаДок.Value = Елемент.ДатаДок;
@@ -258,7 +258,7 @@ partial class РозхіднийКасовийОрдер_Елемент : Docume
 
     #endregion
     
-    protected override async ValueTask<bool> Save()
+    protected override async Task<bool> Save()
     {
         bool isSaved = false;
         try
@@ -276,7 +276,7 @@ partial class РозхіднийКасовийОрдер_Елемент : Docume
         return isSaved;
     }
 
-    protected override async ValueTask<bool> SpendTheDocument(bool spendDoc)
+    protected override async Task<bool> SpendTheDocument(bool spendDoc)
     {
         if (spendDoc)
         {
@@ -296,7 +296,7 @@ partial class РозхіднийКасовийОрдер_Елемент : Docume
         CommonForms_DocumentMovementThroughRegisters.Create(new РозхіднийКасовийОрдер_Pointer(uniqueID));
     }
 
-    protected override async ValueTask InJournal(UniqueID uniqueID)
+    protected override async Task InJournal(UniqueID uniqueID)
     {
         await Функції.OpenPageList(uniqueID);
     }

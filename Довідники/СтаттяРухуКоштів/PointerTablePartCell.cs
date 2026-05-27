@@ -27,9 +27,9 @@ public partial class СтаттяРухуКоштів_PointerTablePartCell : Poi
         }
     }
 
-    public async ValueTask GetPresentation() => Presentation = pointer != null ? await pointer.GetPresentation() : "";
+    public async Task GetPresentation() => Presentation = pointer != null ? await pointer.GetPresentation() : "";
 
-    async ValueTask PointerChange(UniqueID? p)
+    async Task PointerChange(UniqueID? p)
     {
         Pointer = new СтаттяРухуКоштів_Pointer(p ?? new UniqueID());
         await GetPresentation();

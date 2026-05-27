@@ -182,15 +182,15 @@ partial class ВведенняЗалишків_Елемент : DocumentFormElem
 
     #region Присвоєння / зчитування значень
 
-    public override async ValueTask AssignValue()
+    public override async Task AssignValue()
     {
         if (IsNew)
         {
-            Елемент.Організація = ЗначенняТипові.ОсновнаОрганізація_Const;
-            Елемент.Валюта = ЗначенняТипові.ОсновнаВалюта_Const;
-            Елемент.Склад = ЗначенняТипові.ОсновнийСклад_Const;
-            Елемент.Контрагент = ЗначенняТипові.ОсновнийПостачальник_Const;
-            Елемент.Підрозділ = ЗначенняТипові.ОсновнийПідрозділ_Const;
+            Елемент.Організація = await ЗначенняТипові.ОсновнаОрганізація();
+            Елемент.Валюта = await ЗначенняТипові.ОсновнаВалюта();
+            Елемент.Склад = await ЗначенняТипові.ОсновнийСклад();
+            Елемент.Контрагент = await ЗначенняТипові.ОсновнийПостачальник();
+            Елемент.Підрозділ = await ЗначенняТипові.ОсновнийПідрозділ();
         }
 
         НомерДок.SetText(Елемент.НомерДок);
@@ -241,7 +241,7 @@ partial class ВведенняЗалишків_Елемент : DocumentFormElem
 
     #endregion
 
-    protected override async ValueTask<bool> Save()
+    protected override async Task<bool> Save()
     {
         bool isSaved = false;
         try
@@ -263,7 +263,7 @@ partial class ВведенняЗалишків_Елемент : DocumentFormElem
         return isSaved;
     }
 
-    protected override async ValueTask<bool> SpendTheDocument(bool spendDoc)
+    protected override async Task<bool> SpendTheDocument(bool spendDoc)
     {
         if (spendDoc)
         {
@@ -283,7 +283,7 @@ partial class ВведенняЗалишків_Елемент : DocumentFormElem
         CommonForms_DocumentMovementThroughRegisters.Create(new ВведенняЗалишків_Pointer(uniqueID));
     }
 
-    protected override async ValueTask InJournal(UniqueID uniqueID)
+    protected override async Task InJournal(UniqueID uniqueID)
     {
         await Функції.OpenPageList(uniqueID);
     }

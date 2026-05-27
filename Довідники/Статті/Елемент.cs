@@ -103,7 +103,7 @@ partial class Статті_Елемент : DirectoryFormElement
         КодЗПодатковоїДекларації.Sensitive = !visible;
     }
 
-    public override async ValueTask AssignValue()
+    public override async Task AssignValue()
     {
         if (IsNew)
         {
@@ -133,7 +133,7 @@ partial class Статті_Елемент : DirectoryFormElement
 
     #endregion
 
-    protected override async ValueTask<bool> Save()
+    protected override async Task<bool> Save()
     {
         bool isSaved = false;
         try

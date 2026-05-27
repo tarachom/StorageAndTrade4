@@ -10,35 +10,35 @@ namespace GeneratedCode.Довідники;
 
 class Організації_Triggers
 {
-    public static async ValueTask New(Організації_Objest ДовідникОбєкт)
+    public static Task New(Організації_Objest ДовідникОбєкт)
     {
         ДовідникОбєкт.Код = (++НумераціяДовідників.Організації_Const).ToString("D6");
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask Copying(Організації_Objest ДовідникОбєкт, Організації_Objest Основа)
+    public static Task Copying(Організації_Objest ДовідникОбєкт, Організації_Objest Основа)
     {
         ДовідникОбєкт.Назва += " - Копія";
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeSave(Організації_Objest ДовідникОбєкт)
+    public static Task BeforeSave(Організації_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask AfterSave(Організації_Objest ДовідникОбєкт)
+    public static Task AfterSave(Організації_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask SetDeletionLabel(Організації_Objest ДовідникОбєкт, bool label)
+    public static Task SetDeletionLabel(Організації_Objest ДовідникОбєкт, bool label)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeDelete(Організації_Objest ДовідникОбєкт)
+    public static Task BeforeDelete(Організації_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 }

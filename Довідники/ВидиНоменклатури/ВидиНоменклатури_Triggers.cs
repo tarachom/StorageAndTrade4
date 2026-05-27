@@ -10,35 +10,35 @@ namespace GeneratedCode.Довідники;
 
 class ВидиНоменклатури_Triggers
 {
-    public static async ValueTask New(ВидиНоменклатури_Objest ДовідникОбєкт)
+    public static Task New(ВидиНоменклатури_Objest ДовідникОбєкт)
     {
         ДовідникОбєкт.Код = (++НумераціяДовідників.ВидиНоменклатури_Const).ToString("D6");
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask Copying(ВидиНоменклатури_Objest ДовідникОбєкт, ВидиНоменклатури_Objest Основа)
+    public static Task Copying(ВидиНоменклатури_Objest ДовідникОбєкт, ВидиНоменклатури_Objest Основа)
     {
         ДовідникОбєкт.Назва += " - Копія";
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeSave(ВидиНоменклатури_Objest ДовідникОбєкт)
+    public static Task BeforeSave(ВидиНоменклатури_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask AfterSave(ВидиНоменклатури_Objest ДовідникОбєкт)
+    public static Task AfterSave(ВидиНоменклатури_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask SetDeletionLabel(ВидиНоменклатури_Objest ДовідникОбєкт, bool label)
+    public static Task SetDeletionLabel(ВидиНоменклатури_Objest ДовідникОбєкт, bool label)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeDelete(ВидиНоменклатури_Objest ДовідникОбєкт)
+    public static Task BeforeDelete(ВидиНоменклатури_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 }

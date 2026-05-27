@@ -35,7 +35,7 @@ public partial class ЗамовленняКлієнтів_СписокМіні :
 
     #region Override
 
-    public override async ValueTask LoadRecords()
+    public override async Task LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }

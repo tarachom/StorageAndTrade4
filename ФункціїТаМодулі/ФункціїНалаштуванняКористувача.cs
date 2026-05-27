@@ -18,7 +18,7 @@ static class ФункціїНалаштуванняКористувача
     /// </summary>
     /// <param name="НазваЖурналу">Журнал</param>
     /// <param name="Період">PeriodControl</param>
-    public static async ValueTask ОтриматиПеріодДляЖурналу(string НазваЖурналу, PeriodControl Період)
+    public static async Task ОтриматиПеріодДляЖурналу(string НазваЖурналу, PeriodControl Період)
     {
         var періодДляЖурналу = await ОтриматиПеріодДляЖурналу(НазваЖурналу);
 
@@ -45,7 +45,7 @@ static class ФункціїНалаштуванняКористувача
     /// </summary>
     /// <param name="НазваЖурналу">Назва журналу</param>
     /// <returns>Повертає кортеж</returns>
-    public static async ValueTask<(string Період, DateTime? ДатаСтарт, DateTime? ДатаСтоп)> ОтриматиПеріодДляЖурналу(string НазваЖурналу)
+    public static async Task<(string Період, DateTime? ДатаСтарт, DateTime? ДатаСтоп)> ОтриматиПеріодДляЖурналу(string НазваЖурналу)
     {
         Системні.НалаштуванняКористувача_ПеріодиЖурналів_TablePart Налаштування_TablePart = new();
 

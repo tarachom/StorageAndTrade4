@@ -89,7 +89,7 @@ partial class ТипорозміриКомірок_Елемент : DirectoryFor
 
     #region Присвоєння / зчитування значень
 
-    public override async ValueTask AssignValue()
+    public override async Task AssignValue()
     {
         Назва.SetText(Елемент.Назва);
         Висота.SetText(Елемент.Висота);
@@ -111,7 +111,7 @@ partial class ТипорозміриКомірок_Елемент : DirectoryFor
 
     #endregion
 
-    protected override async ValueTask<bool> Save()
+    protected override async Task<bool> Save()
     {
         bool isSaved = false;
         try

@@ -7,7 +7,7 @@
   <Author>Тарахомин Юрій Іванович, accounting.org.ua</Author>
   <Desc>Конфігурація "Зберігання та Торгівля"
 https://accounting.org.ua/storage_and_trade.html</Desc>
-  <DateTimeSave>26.05.2026 16:21:50</DateTimeSave>
+  <DateTimeSave>27.05.2026 17:33:28</DateTimeSave>
   <DictTSearch>simple</DictTSearch>
   <GtkVersion>Gtk4</GtkVersion>
   <ConstantsBlocks>
@@ -16312,7 +16312,7 @@ FROM
         <BeforeSave Action="0">BeforeSave</BeforeSave>
         <AfterSave Action="0">AfterSave</AfterSave>
         <SetDeletionLabel Action="1">SetDeletionLabel</SetDeletionLabel>
-        <BeforeDelete Action="0">BeforeDelete</BeforeDelete>
+        <BeforeDelete Action="1">BeforeDelete</BeforeDelete>
       </TriggerFunctions>
       <Forms>
         <Form Modified="0">

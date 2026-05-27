@@ -9,37 +9,34 @@ namespace GeneratedCode.Довідники;
 
 static class КасиККМ_Triggers
 {
-    public static async ValueTask New(КасиККМ_Objest ДовідникОбєкт)
+    public static Task New(КасиККМ_Objest ДовідникОбєкт)
     {
-
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask Copying(КасиККМ_Objest ДовідникОбєкт, КасиККМ_Objest Основа)
+    public static Task Copying(КасиККМ_Objest ДовідникОбєкт, КасиККМ_Objest Основа)
     {
-
         ДовідникОбєкт.Назва += " - Копія";
-
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeSave(КасиККМ_Objest ДовідникОбєкт)
+    public static Task BeforeSave(КасиККМ_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask AfterSave(КасиККМ_Objest ДовідникОбєкт)
+    public static Task AfterSave(КасиККМ_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask SetDeletionLabel(КасиККМ_Objest ДовідникОбєкт, bool label)
+    public static Task SetDeletionLabel(КасиККМ_Objest ДовідникОбєкт, bool label)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeDelete(КасиККМ_Objest ДовідникОбєкт)
+    public static Task BeforeDelete(КасиККМ_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 }

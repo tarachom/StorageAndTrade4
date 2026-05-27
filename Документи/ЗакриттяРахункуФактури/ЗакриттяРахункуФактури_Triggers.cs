@@ -11,39 +11,39 @@ namespace GeneratedCode.Документи;
 
 class ЗакриттяРахункуФактури_Triggers
 {
-    public static async ValueTask New(ЗакриттяРахункуФактури_Objest ДокументОбєкт)
+    public static Task New(ЗакриттяРахункуФактури_Objest ДокументОбєкт)
     {
         ДокументОбєкт.НомерДок = (++НумераціяДокументів.ЗакриттяРахункуФактури_Const).ToString("D8");
         ДокументОбєкт.ДатаДок = DateTime.Now;
         ДокументОбєкт.Автор = Program.Користувач;
         ДокументОбєкт.Менеджер = Program.Користувач;
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask Copying(ЗакриттяРахункуФактури_Objest ДокументОбєкт, ЗакриттяРахункуФактури_Objest Основа)
+    public static Task Copying(ЗакриттяРахункуФактури_Objest ДокументОбєкт, ЗакриттяРахункуФактури_Objest Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeSave(ЗакриттяРахункуФактури_Objest ДокументОбєкт)
+    public static Task BeforeSave(ЗакриттяРахункуФактури_Objest ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{ЗакриттяРахункуФактури_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask AfterSave(ЗакриттяРахункуФактури_Objest ДокументОбєкт)
+    public static Task AfterSave(ЗакриттяРахункуФактури_Objest ДокументОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask SetDeletionLabel(ЗакриттяРахункуФактури_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(ЗакриттяРахункуФактури_Objest ДокументОбєкт, bool label)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeDelete(ЗакриттяРахункуФактури_Objest ДокументОбєкт)
+    public static Task BeforeDelete(ЗакриттяРахункуФактури_Objest ДокументОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 }

@@ -10,35 +10,35 @@ namespace GeneratedCode.Довідники;
 
 class Склади_Triggers
 {
-    public static async ValueTask New(Склади_Objest ДовідникОбєкт)
+    public static Task New(Склади_Objest ДовідникОбєкт)
     {
         ДовідникОбєкт.Код = (++НумераціяДовідників.Склади_Const).ToString("D6");
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask Copying(Склади_Objest ДовідникОбєкт, Склади_Objest Основа)
+    public static Task Copying(Склади_Objest ДовідникОбєкт, Склади_Objest Основа)
     {
         ДовідникОбєкт.Назва += " - Копія";
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeSave(Склади_Objest ДовідникОбєкт)
+    public static Task BeforeSave(Склади_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask AfterSave(Склади_Objest ДовідникОбєкт)
+    public static Task AfterSave(Склади_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask SetDeletionLabel(Склади_Objest ДовідникОбєкт, bool label)
+    public static Task SetDeletionLabel(Склади_Objest ДовідникОбєкт, bool label)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeDelete(Склади_Objest ДовідникОбєкт)
+    public static Task BeforeDelete(Склади_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 }

@@ -19,7 +19,7 @@ static class ФункціїДляДовідників
     /// Функція створює договори для контрагента
     /// </summary>
     /// <param name="Контрагент">Контрагент</param>
-    public static async ValueTask СтворитиДоговориКонтрагента(Контрагенти_Pointer контрагент)
+    public static async Task СтворитиДоговориКонтрагента(Контрагенти_Pointer контрагент)
     {
         if (контрагент.IsEmpty())
             return;
@@ -28,7 +28,7 @@ static class ФункціїДляДовідників
         await СтворитиДоговір(ТипДоговорів.ЗПостачальниками, ГосподарськіОперації.ОплатаПостачальнику);
 
         //Внутрішня функція
-        async ValueTask СтворитиДоговір(ТипДоговорів типДоговору, ГосподарськіОперації операція)
+        async Task СтворитиДоговір(ТипДоговорів типДоговору, ГосподарськіОперації операція)
         {
             ДоговориКонтрагентів_Select Вибірка = new();
 
@@ -59,7 +59,7 @@ static class ФункціїДляДовідників
     /// Функція повертає вказівник на серійний номер, або створює новий
     /// </summary>
     /// <returns>Вказівник на елемент довідника СеріїНоменклатури</returns>
-    public static async ValueTask<СеріїНоменклатури_Pointer?> ОтриматиВказівникНаСеріюНоменклатури(string номер)
+    public static async Task<СеріїНоменклатури_Pointer?> ОтриматиВказівникНаСеріюНоменклатури(string номер)
     {
         номер = номер.Trim();
 
@@ -81,7 +81,7 @@ static class ФункціїДляДовідників
     /// </summary>
     /// <param name="PathToFile">Шлях до файлу</param>
     /// <returns></returns>
-    public static async ValueTask<Файли_Pointer> ЗавантажитиФайл(string pathToFile)
+    public static async Task<Файли_Pointer> ЗавантажитиФайл(string pathToFile)
     {
         FileInfo fileInfo = new(pathToFile);
 

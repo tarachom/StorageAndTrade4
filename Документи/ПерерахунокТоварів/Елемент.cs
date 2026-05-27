@@ -130,7 +130,7 @@ partial class ПерерахунокТоварів_Елемент : DocumentForm
 
     #region Присвоєння / зчитування значень
 
-    public override async ValueTask AssignValue()
+    public override async Task AssignValue()
     {
         НомерДок.SetText(Елемент.НомерДок);
                         ДатаДок.Value = Елемент.ДатаДок;
@@ -170,7 +170,7 @@ partial class ПерерахунокТоварів_Елемент : DocumentForm
 
     #endregion
     
-    protected override async ValueTask<bool> Save()
+    protected override async Task<bool> Save()
     {
         bool isSaved = false;
         try
@@ -189,7 +189,7 @@ partial class ПерерахунокТоварів_Елемент : DocumentForm
         return isSaved;
     }
 
-    protected override async ValueTask<bool> SpendTheDocument(bool spendDoc)
+    protected override async Task<bool> SpendTheDocument(bool spendDoc)
     {
         if (spendDoc)
         {
@@ -209,7 +209,7 @@ partial class ПерерахунокТоварів_Елемент : DocumentForm
         CommonForms_DocumentMovementThroughRegisters.Create(new ПерерахунокТоварів_Pointer(uniqueID));
     }
 
-    protected override async ValueTask InJournal(UniqueID uniqueID)
+    protected override async Task InJournal(UniqueID uniqueID)
     {
         await Функції.OpenPageList(uniqueID);
     }

@@ -35,7 +35,7 @@ public partial class Продажі_СписокМіні : RegisterAccumulationF
 
     #region Override
 
-    public override async ValueTask LoadRecords()
+    public override async Task LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }

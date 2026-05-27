@@ -11,29 +11,29 @@ namespace GeneratedCode.Довідники;
 
 class СкладськіКомірки_Папки_Triggers
 {
-    public static async ValueTask New(СкладськіКомірки_Папки_Objest ДовідникОбєкт)
+    public static Task New(СкладськіКомірки_Папки_Objest ДовідникОбєкт)
     {
         ДовідникОбєкт.Код = (++НумераціяДовідників.СкладськіКомірки_Папки_Const).ToString("D6");
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask Copying(СкладськіКомірки_Папки_Objest ДовідникОбєкт, СкладськіКомірки_Папки_Objest Основа)
+    public static Task Copying(СкладськіКомірки_Папки_Objest ДовідникОбєкт, СкладськіКомірки_Папки_Objest Основа)
     {
         ДовідникОбєкт.Назва += " - Копія";
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeSave(СкладськіКомірки_Папки_Objest ДовідникОбєкт)
+    public static Task BeforeSave(СкладськіКомірки_Папки_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask AfterSave(СкладськіКомірки_Папки_Objest ДовідникОбєкт)
+    public static Task AfterSave(СкладськіКомірки_Папки_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask SetDeletionLabel(СкладськіКомірки_Папки_Objest ДовідникОбєкт, bool label)
+    public static async Task SetDeletionLabel(СкладськіКомірки_Папки_Objest ДовідникОбєкт, bool label)
     {
         //Якщо встановлюється мітка на видалення
         if (label)
@@ -63,7 +63,7 @@ class СкладськіКомірки_Папки_Triggers
         }
     }
 
-    public static async ValueTask BeforeDelete(СкладськіКомірки_Папки_Objest ДовідникОбєкт)
+    public static async Task BeforeDelete(СкладськіКомірки_Папки_Objest ДовідникОбєкт)
     {
         //Елементи помічаються на видалення
         {

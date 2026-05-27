@@ -147,7 +147,7 @@ partial class ПланРахунків_Елемент : DirectoryFormElement
         Субконто3.Sensitive = !visible;
     }
 
-    public override async ValueTask AssignValue()
+    public override async Task AssignValue()
     {
         if (IsNew)
         {
@@ -191,7 +191,7 @@ partial class ПланРахунків_Елемент : DirectoryFormElement
 
     #endregion
 
-    protected override async ValueTask<bool> Save()
+    protected override async Task<bool> Save()
     {
         bool isSaved = false;
         try

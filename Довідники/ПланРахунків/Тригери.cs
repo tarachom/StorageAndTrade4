@@ -12,30 +12,28 @@ namespace GeneratedCode.Довідники;
 
 static class ПланРахунків_Triggers
 {
-    public static async ValueTask New(ПланРахунків_Objest ДовідникОбєкт)
+    public static Task New(ПланРахунків_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask Copying(ПланРахунків_Objest ДовідникОбєкт, ПланРахунків_Objest Основа)
+    public static Task Copying(ПланРахунків_Objest ДовідникОбєкт, ПланРахунків_Objest Основа)
     {
-        
         ДовідникОбєкт.Назва += " - Копія";
-        
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeSave(ПланРахунків_Objest ДовідникОбєкт)
+    public static Task BeforeSave(ПланРахунків_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask AfterSave(ПланРахунків_Objest ДовідникОбєкт)
+    public static Task AfterSave(ПланРахунків_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask SetDeletionLabel(ПланРахунків_Objest ДовідникОбєкт, bool label)
+    public static async Task SetDeletionLabel(ПланРахунків_Objest ДовідникОбєкт, bool label)
     {
         //Якщо встановлюється мітка на видалення
         if (label)
@@ -55,9 +53,8 @@ static class ПланРахунків_Triggers
         }
     }
 
-    public static async ValueTask BeforeDelete(ПланРахунків_Objest ДовідникОбєкт)
+    public static Task BeforeDelete(ПланРахунків_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 }
-    

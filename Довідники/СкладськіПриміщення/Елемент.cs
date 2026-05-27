@@ -87,7 +87,7 @@ partial class СкладськіПриміщення_Елемент : DirectoryF
 
     #region Присвоєння / зчитування значень
 
-    public override async ValueTask AssignValue()
+    public override async Task AssignValue()
     {
         
         if (IsNew) 
@@ -108,7 +108,7 @@ partial class СкладськіПриміщення_Елемент : DirectoryF
 
     #endregion
 
-    protected override async ValueTask<bool> Save()
+    protected override async Task<bool> Save()
     {
         bool isSaved = false;
         try

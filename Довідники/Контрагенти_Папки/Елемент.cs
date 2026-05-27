@@ -74,7 +74,7 @@ partial class Контрагенти_Папки_Елемент : DirectoryFormEl
 
     #region Присвоєння / зчитування значень
 
-    public override async ValueTask AssignValue()
+    public override async Task AssignValue()
     {
         if (IsNew)
             Елемент.Родич = РодичДляНового;
@@ -95,7 +95,7 @@ partial class Контрагенти_Папки_Елемент : DirectoryFormEl
 
     #endregion
 
-    protected override async ValueTask<bool> Save()
+    protected override async Task<bool> Save()
     {
         bool isSaved = false;
         try

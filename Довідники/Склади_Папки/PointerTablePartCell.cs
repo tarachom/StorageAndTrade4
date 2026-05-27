@@ -27,9 +27,9 @@ public partial class Склади_Папки_PointerTablePartCell : PointerTable
         }
     }
 
-    public async ValueTask GetPresentation() => Presentation = pointer != null ? await pointer.GetPresentation() : "";
+    public async Task GetPresentation() => Presentation = pointer != null ? await pointer.GetPresentation() : "";
 
-    async ValueTask PointerChange(UniqueID? p)
+    async Task PointerChange(UniqueID? p)
     {
         Pointer = new Склади_Папки_Pointer(p ?? new UniqueID());
         await GetPresentation();

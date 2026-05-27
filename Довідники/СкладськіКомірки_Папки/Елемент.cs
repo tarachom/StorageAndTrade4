@@ -81,7 +81,7 @@ partial class СкладськіКомірки_Папки_Елемент : Direc
 
     #region Присвоєння / зчитування значень
 
-    public override async ValueTask AssignValue()
+    public override async Task AssignValue()
     {
         if (IsNew)
         {
@@ -107,7 +107,7 @@ partial class СкладськіКомірки_Папки_Елемент : Direc
 
     #endregion
 
-    protected override async ValueTask<bool> Save()
+    protected override async Task<bool> Save()
     {
         bool isSaved = false;
         try

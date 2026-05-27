@@ -27,7 +27,7 @@ partial class FormConfigurationSelection : InterfaceGtk4.FormConfigurationSelect
         return window;
     }
 
-    public override async ValueTask<bool> OpenProgram(ConfigurationParam? openConfigurationParam)
+    public override async Task<bool> OpenProgram(ConfigurationParam? openConfigurationParam)
     {
         //Запуск фонових задач
         Config.StartBackgroundTask();
@@ -52,7 +52,7 @@ partial class FormConfigurationSelection : InterfaceGtk4.FormConfigurationSelect
         return true;
     }
 
-    public override async ValueTask<bool> OpenConfigurator(ConfigurationParam? openConfigurationParam)
+    public override async Task<bool> OpenConfigurator(ConfigurationParam? openConfigurationParam)
     {
         Configurator.FormConfigurator form = Configurator.FormConfigurator.NewProgramStart(Program.BasicApp, Config.Kernel);
         form.OpenConfigurationParam = openConfigurationParam;

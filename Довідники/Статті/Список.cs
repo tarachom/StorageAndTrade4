@@ -32,12 +32,12 @@ partial class Статті_Список : DirectoryFormJournalFullTree
         return list;
     }
 
-    public override async ValueTask LoadRecords()
+    public override async Task LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }
     
-    public override async ValueTask<List<DirectoryHierarchicalRow>> LoadChildren(UniqueID[] parents)
+    public override async Task<List<DirectoryHierarchicalRow>> LoadChildren(UniqueID[] parents)
     {
         return await ТабличнийСписок.LoadChildren(this, parents);
     }
@@ -47,7 +47,7 @@ partial class Статті_Список : DirectoryFormJournalFullTree
         return ТабличнийСписок.LoadEmptyChildren(this);
     }
     
-    public override async ValueTask UpdateRecords()
+    public override async Task UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);
     }
@@ -62,17 +62,17 @@ partial class Статті_Список : DirectoryFormJournalFullTree
         ТабличнийСписок.CreateFilter(this);
     }
 
-    protected override async ValueTask OpenPageElement(bool IsNew, UniqueID? uniqueID = null)
+    protected override async Task OpenPageElement(bool IsNew, UniqueID? uniqueID = null)
     {
         await Функції.OpenPageElement(IsNew, uniqueID, CallBack_LoadRecords, CallBack_OnSelectPointer);
     }
 
-    protected override async ValueTask SetDeletionLabel(UniqueID uniqueID)
+    protected override async Task SetDeletionLabel(UniqueID uniqueID)
     {
         await Функції.SetDeletionLabel(uniqueID);
     }
 
-    protected override async ValueTask<UniqueID?> Copy(UniqueID uniqueID)
+    protected override async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
         return await Функції.Copy(uniqueID);
     }

@@ -152,7 +152,7 @@ partial class Категорії_Елемент : DirectoryFormElement
 
     #region Присвоєння / зчитування значень
 
-    public override async ValueTask AssignValue()
+    public override async Task AssignValue()
     {
         if (IsNew)
             Елемент.Родич = РодичДляНового;
@@ -185,7 +185,7 @@ partial class Категорії_Елемент : DirectoryFormElement
 
     #endregion
 
-    protected override async ValueTask<bool> Save()
+    protected override async Task<bool> Save()
     {
         bool isSaved = false;
         try

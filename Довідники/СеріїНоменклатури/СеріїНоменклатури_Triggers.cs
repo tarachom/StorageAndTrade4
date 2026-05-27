@@ -9,21 +9,21 @@ namespace GeneratedCode.Довідники;
 
 class СеріїНоменклатури_Triggers
 {
-    public static async ValueTask New(СеріїНоменклатури_Objest ДовідникОбєкт)
+    public static Task New(СеріїНоменклатури_Objest ДовідникОбєкт)
     {
         ДовідникОбєкт.ДатаСтворення = DateTime.Now;
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask Copying(СеріїНоменклатури_Objest ДовідникОбєкт, СеріїНоменклатури_Objest Основа)
+    public static Task Copying(СеріїНоменклатури_Objest ДовідникОбєкт, СеріїНоменклатури_Objest Основа)
     {
         ДовідникОбєкт.Номер = Guid.NewGuid().ToString();
         ДовідникОбєкт.Коментар = "Копія - " + Основа.Номер;
 
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeSave(СеріїНоменклатури_Objest ДовідникОбєкт)
+    public static async Task BeforeSave(СеріїНоменклатури_Objest ДовідникОбєкт)
     {
         СеріїНоменклатури_Select select = new();
         select.QuerySelect.Where.AddRange([
@@ -37,18 +37,18 @@ class СеріїНоменклатури_Triggers
         }
     }
 
-    public static async ValueTask AfterSave(СеріїНоменклатури_Objest ДовідникОбєкт)
+    public static Task AfterSave(СеріїНоменклатури_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask SetDeletionLabel(СеріїНоменклатури_Objest ДовідникОбєкт, bool label)
+    public static Task SetDeletionLabel(СеріїНоменклатури_Objest ДовідникОбєкт, bool label)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 
-    public static async ValueTask BeforeDelete(СеріїНоменклатури_Objest ДовідникОбєкт)
+    public static Task BeforeDelete(СеріїНоменклатури_Objest ДовідникОбєкт)
     {
-        await ValueTask.FromResult(true);
+        return Task.CompletedTask;
     }
 }

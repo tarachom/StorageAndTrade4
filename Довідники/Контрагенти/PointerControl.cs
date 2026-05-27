@@ -75,7 +75,7 @@ public partial class Контрагенти_PointerControl : PointerControl
         AfterClearFunc?.Invoke();
     }
 
-    public async ValueTask ПривязкаДоДоговору(ДоговориКонтрагентів_PointerControl Договір)
+    public async Task ПривязкаДоДоговору(ДоговориКонтрагентів_PointerControl Договір)
         {
             if (Договір.Pointer.IsEmpty())
             {

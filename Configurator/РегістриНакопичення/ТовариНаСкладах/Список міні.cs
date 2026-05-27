@@ -35,7 +35,7 @@ public partial class ТовариНаСкладах_СписокМіні : Regis
 
     #region Override
 
-    public override async ValueTask LoadRecords()
+    public override async Task LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
     }

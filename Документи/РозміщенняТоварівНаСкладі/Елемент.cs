@@ -138,7 +138,7 @@ partial class РозміщенняТоварівНаСкладі_Елемент 
 
     #region Присвоєння / зчитування значень
 
-    public override async ValueTask AssignValue()
+    public override async Task AssignValue()
     {
         ДатаДок.Value = Елемент.ДатаДок;
                 НомерДок.SetText(Елемент.НомерДок);
@@ -180,7 +180,7 @@ partial class РозміщенняТоварівНаСкладі_Елемент 
 
     #endregion
     
-    protected override async ValueTask<bool> Save()
+    protected override async Task<bool> Save()
     {
         bool isSaved = false;
         try
@@ -199,7 +199,7 @@ partial class РозміщенняТоварівНаСкладі_Елемент 
         return isSaved;
     }
 
-    protected override async ValueTask<bool> SpendTheDocument(bool spendDoc)
+    protected override async Task<bool> SpendTheDocument(bool spendDoc)
     {
         if (spendDoc)
         {
@@ -219,7 +219,7 @@ partial class РозміщенняТоварівНаСкладі_Елемент 
         CommonForms_DocumentMovementThroughRegisters.Create(new РозміщенняТоварівНаСкладі_Pointer(uniqueID));
     }
 
-    protected override async ValueTask InJournal(UniqueID uniqueID)
+    protected override async Task InJournal(UniqueID uniqueID)
     {
         await Функції.OpenPageList(uniqueID);
     }

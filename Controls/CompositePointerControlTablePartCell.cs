@@ -37,6 +37,6 @@ partial class CompositePointerControlTablePartCell : InterfaceGtk4.CompositePoin
     /// </summary>
     /// <param name="uuidAndText">Дані</param>
     /// <returns>Структура</returns>
-    protected override async ValueTask<CompositePointerPresentation_Record> CompositePointerPresentation(UuidAndText uuidAndText) =>
+    protected override async Task<CompositePointerPresentation_Record> CompositePointerPresentation(UuidAndText uuidAndText) =>
         await Functions.CompositePointerPresentation(uuidAndText);
 }
