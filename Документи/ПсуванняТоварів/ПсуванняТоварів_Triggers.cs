@@ -11,13 +11,13 @@ namespace GeneratedCode.Документи;
 
 class ПсуванняТоварів_Triggers
 {
-    public static Task New(ПсуванняТоварів_Objest ДокументОбєкт)
+    public static async Task New(ПсуванняТоварів_Objest ДокументОбєкт)
     {
-        ДокументОбєкт.НомерДок = (++НумераціяДокументів.ПсуванняТоварів_Const).ToString("D8");
+        int number = await НумераціяДокументів.ПсуванняТоварів();
+        ДокументОбєкт.НомерДок = (await НумераціяДокументів.ПсуванняТоварів(++number)).ToString("D8");
+
         ДокументОбєкт.ДатаДок = DateTime.Now;
         ДокументОбєкт.Автор = Program.Користувач;
-
-        return Task.CompletedTask;
     }
 
     public static Task Copying(ПсуванняТоварів_Objest ДокументОбєкт, ПсуванняТоварів_Objest Основа)

@@ -10,10 +10,10 @@ namespace GeneratedCode.Довідники;
 
 class КраїниСвіту_Triggers
 {
-    public static Task New(КраїниСвіту_Objest ДовідникОбєкт)
+    public static async Task New(КраїниСвіту_Objest ДовідникОбєкт)
     {
-        ДовідникОбєкт.Код = (++НумераціяДовідників.КраїниСвіту_Const).ToString("D6");
-        return Task.CompletedTask;
+        int number = await НумераціяДовідників.КраїниСвіту();
+        ДовідникОбєкт.Код = (await НумераціяДовідників.КраїниСвіту(++number)).ToString("D6");
     }
 
     public static Task Copying(КраїниСвіту_Objest ДовідникОбєкт, КраїниСвіту_Objest Основа)

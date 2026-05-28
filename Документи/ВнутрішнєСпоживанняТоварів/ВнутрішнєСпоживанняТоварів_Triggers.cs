@@ -11,13 +11,13 @@ namespace GeneratedCode.Документи;
 
 class ВнутрішнєСпоживанняТоварів_Triggers
 {
-    public static Task New(ВнутрішнєСпоживанняТоварів_Objest ДокументОбєкт)
+    public static async Task New(ВнутрішнєСпоживанняТоварів_Objest ДокументОбєкт)
     {
-        ДокументОбєкт.НомерДок = (++НумераціяДокументів.ВнутрішнєСпоживанняТоварів_Const).ToString("D8");
+        int number = await НумераціяДокументів.ВнутрішнєСпоживанняТоварів();
+        ДокументОбєкт.НомерДок = (await НумераціяДокументів.ВнутрішнєСпоживанняТоварів(++number)).ToString("D8");
+
         ДокументОбєкт.ДатаДок = DateTime.Now;
         ДокументОбєкт.Автор = Program.Користувач;
-
-        return Task.CompletedTask;
     }
 
     public static Task Copying(ВнутрішнєСпоживанняТоварів_Objest ДокументОбєкт, ВнутрішнєСпоживанняТоварів_Objest Основа)

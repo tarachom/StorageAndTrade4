@@ -5,16 +5,19 @@
 */
 
 using GeneratedCode.Константи;
+using StorageAndTrade;
 
 namespace GeneratedCode.Документи;
 
 class КорегуванняБоргу_Triggers
 {
-    public static Task New(КорегуванняБоргу_Objest ДокументОбєкт)
+    public static async Task New(КорегуванняБоргу_Objest ДокументОбєкт)
     {
-        ДокументОбєкт.НомерДок = (++НумераціяДокументів.КорегуванняБоргу_Const).ToString("D8");
+        int number = await НумераціяДокументів.КорегуванняБоргу();
+        ДокументОбєкт.НомерДок = (await НумераціяДокументів.КорегуванняБоргу(++number)).ToString("D8");
+
         ДокументОбєкт.ДатаДок = DateTime.Now;
-        return Task.CompletedTask;
+        ДокументОбєкт.Автор = Program.Користувач;
     }
 
     public static Task Copying(КорегуванняБоргу_Objest ДокументОбєкт, КорегуванняБоргу_Objest Основа)

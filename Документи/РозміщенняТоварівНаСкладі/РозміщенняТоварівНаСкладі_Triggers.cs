@@ -11,13 +11,12 @@ namespace GeneratedCode.Документи;
 
 class РозміщенняТоварівНаСкладі_Triggers
 {
-    public static Task New(РозміщенняТоварівНаСкладі_Objest ДокументОбєкт)
+    public static async Task New(РозміщенняТоварівНаСкладі_Objest ДокументОбєкт)
     {
-        ДокументОбєкт.НомерДок = (++НумераціяДокументів.РозміщенняТоварівНаСкладі_Const).ToString("D8");
+        int number = await НумераціяДокументів.РозміщенняТоварівНаСкладі();
+        ДокументОбєкт.НомерДок = (await НумераціяДокументів.РозміщенняТоварівНаСкладі(++number)).ToString("D8");
         ДокументОбєкт.ДатаДок = DateTime.Now;
         ДокументОбєкт.Автор = Program.Користувач;
-
-        return Task.CompletedTask;
     }
 
     public static Task Copying(РозміщенняТоварівНаСкладі_Objest ДокументОбєкт, РозміщенняТоварівНаСкладі_Objest Основа)

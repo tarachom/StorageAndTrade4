@@ -1,0 +1,41 @@
+
+
+/*
+        Додаток2ДоПодатковоїНакладної_SpendTheDocument.cs
+        Модуль проведення документу
+*/
+
+using AccountingSoftware;
+using StorageAndTrade;
+using GeneratedCode;
+
+using GeneratedCode.Довідники;
+using GeneratedCode.РегістриНакопичення;
+using GeneratedCode.РегістриВідомостей;
+
+namespace GeneratedCode.Документи;
+
+static class Додаток2ДоПодатковоїНакладної_SpendTheDocument
+{
+    public static async Task<bool> Spend(Додаток2ДоПодатковоїНакладної_Objest ДокументОбєкт)
+    {
+        try
+        {
+            // Проведення документу
+            // ...
+
+            return true;
+        }
+        catch (Exception ex)
+        {
+            await ПроведенняДокументів.ДокументНеПроводиться(ДокументОбєкт, ДокументОбєкт.Назва, ex.Message);
+            return false;
+        }
+    }
+
+    public static Task Clear(Додаток2ДоПодатковоїНакладної_Objest ДокументОбєкт)
+    {
+        return Task.CompletedTask;
+    }
+}
+    

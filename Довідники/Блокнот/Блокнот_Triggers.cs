@@ -10,11 +10,12 @@ namespace GeneratedCode.Довідники;
 
 class Блокнот_Triggers
 {
-    public static Task New(Блокнот_Objest ДовідникОбєкт)
+    public static async Task New(Блокнот_Objest ДовідникОбєкт)
     {
-        ДовідникОбєкт.Код = (++НумераціяДовідників.Блокнот_Const).ToString("D6");
+        int number = await НумераціяДовідників.Блокнот();
+        ДовідникОбєкт.Код = (await НумераціяДовідників.Блокнот(++number)).ToString("D6");
+
         ДовідникОбєкт.ДатаЗапису = DateTime.Now;
-        return Task.CompletedTask;
     }
 
     public static Task Copying(Блокнот_Objest ДовідникОбєкт, Блокнот_Objest Основа)

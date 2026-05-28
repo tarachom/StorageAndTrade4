@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 22.05.2026 13:28:45
+ * Дата конфігурації: 28.05.2026 17:54:18
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон GeneratedCode.xslt
@@ -169,6 +169,58 @@ namespace GeneratedCode
                         "ЗакриттяЗамовленняПостачальнику" => await new Документи.ЗакриттяЗамовленняПостачальнику_Pointer(uuidAndText.Uuid).GetPresentation(),
                         "ЧекККМ" => await new Документи.ЧекККМ_Pointer(uuidAndText.Uuid).GetPresentation(),
                         "БухгалтерськаОперація" => await new Документи.БухгалтерськаОперація_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "АвансовийЗвіт" => await new Документи.АвансовийЗвіт_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "Амортизація" => await new Документи.Амортизація_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "ВизначенняФінансовогоРезультату" => await new Документи.ВизначенняФінансовогоРезультату_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "ВиплатаЗаробітноїПлати" => await new Документи.ВиплатаЗаробітноїПлати_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "ВиготовленняПродукції" => await new Документи.ВиготовленняПродукції_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "Додаток1ДоПодатковоїНакладної" => await new Документи.Додаток1ДоПодатковоїНакладної_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "Додаток2ДоПодатковоїНакладної" => await new Документи.Додаток2ДоПодатковоїНакладної_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "ЗаписКнигиПридбання" => await new Документи.ЗаписКнигиПридбання_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "ЗмінаПараметрівОсновнихЗасобів" => await new Документи.ЗмінаПараметрівОсновнихЗасобів_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "ЗвітКомісіонераПроПродажТоварів" => await new Документи.ЗвітКомісіонераПроПродажТоварів_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "ЗвітКомітентуПроПродажТоварів" => await new Документи.ЗвітКомітентуПроПродажТоварів_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "КоригуванняНезавершеногоВиробництва" => await new Документи.КоригуванняНезавершеногоВиробництва_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "КоригуванняПДВ" => await new Документи.КоригуванняПДВ_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "КоригуванняІншихВитрат" => await new Документи.КоригуванняІншихВитрат_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "Модернізація" => await new Документи.Модернізація_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "Комплектація" => await new Документи.Комплектація_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "НакладнаВимога" => await new Документи.НакладнаВимога_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "Наряд" => await new Документи.Наряд_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "НарахуванняЗаробітньоїПлати" => await new Документи.НарахуванняЗаробітньоїПлати_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "ПередачаМатеріалівВЕксплуатацію" => await new Документи.ПередачаМатеріалівВЕксплуатацію_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "ПереміщенняМатеріалівВЕксплуатації" => await new Документи.ПереміщенняМатеріалівВЕксплуатації_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "ПередачаНематеріальнихАктивів" => await new Документи.ПередачаНематеріальнихАктивів_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "ПереміщенняНематеріальнихАктивів" => await new Документи.ПереміщенняНематеріальнихАктивів_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "ПередачаОбладнанняВМонтаж" => await new Документи.ПередачаОбладнанняВМонтаж_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "ПередачаОсновнихЗасобів" => await new Документи.ПередачаОсновнихЗасобів_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "ПереміщенняОсновнихЗасобів" => await new Документи.ПереміщенняОсновнихЗасобів_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "ПередачаТоварів" => await new Документи.ПередачаТоварів_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "ПереоцінкаВалюти" => await new Документи.ПереоцінкаВалюти_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "ПереоцінкаОсновнихЗасобів" => await new Документи.ПереоцінкаОсновнихЗасобів_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "ПереоцінкаТоварів" => await new Документи.ПереоцінкаТоварів_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "ПлатіжнеДорученняВхідне" => await new Документи.ПлатіжнеДорученняВхідне_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "ПлатіжнеДорученняВихідне" => await new Документи.ПлатіжнеДорученняВихідне_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "ПодатковаНакладна" => await new Документи.ПодатковаНакладна_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "ПокупкаАбоПродажВалюти" => await new Документи.ПокупкаАбоПродажВалюти_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "ПідготовкаДоПередачіОсновнихЗасобів" => await new Документи.ПідготовкаДоПередачіОсновнихЗасобів_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "ПослугиСторонньоїОрганізації" => await new Документи.ПослугиСторонньоїОрганізації_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "ПрибуткуванняМатеріалівЗВиробництва" => await new Документи.ПрибуткуванняМатеріалівЗВиробництва_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "ПрибуткуванняТоварівВПереробку" => await new Документи.ПрибуткуванняТоварівВПереробку_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "ПрибуткуванняТоварівЗПереробки" => await new Документи.ПрибуткуванняТоварівЗПереробки_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "ПрибуткуванняНезавершеногоВиробництва" => await new Документи.ПрибуткуванняНезавершеногоВиробництва_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "ПрийняттяДоОбліку" => await new Документи.ПрийняттяДоОбліку_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "ПоверненняПереданихТоварів" => await new Документи.ПоверненняПереданихТоварів_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "РемонтОсновнихЗасобів" => await new Документи.РемонтОсновнихЗасобів_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "РозподілІншихВитрат" => await new Документи.РозподілІншихВитрат_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "РозрахунокСобівартостіВипуску" => await new Документи.РозрахунокСобівартостіВипуску_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "СписанняМатеріалів" => await new Документи.СписанняМатеріалів_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "СписанняНезавершеногоВиробництва" => await new Документи.СписанняНезавершеногоВиробництва_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "СписанняНематеріальнихАктивів" => await new Документи.СписанняНематеріальнихАктивів_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "СписанняОсновнихЗасобів" => await new Документи.СписанняОсновнихЗасобів_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "СписанняВитратМайбутніхПеріодів" => await new Документи.СписанняВитратМайбутніхПеріодів_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "СписанняТоварів" => await new Документи.СписанняТоварів_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "Сторнування" => await new Документи.Сторнування_Pointer(uuidAndText.Uuid).GetPresentation(),
                         _ => ""
                         };
                     }
@@ -1324,6 +1376,618 @@ namespace GeneratedCode.Константи
             set
             {
                 Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_j3", value);
+            }
+        }
+        public static int АвансовийЗвіт_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_j4"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_j4", value);
+            }
+        }
+        public static int Амортизація_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_j6"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_j6", value);
+            }
+        }
+        public static int ВизначенняФінансовогоРезультату_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_j7"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_j7", value);
+            }
+        }
+        public static int ВиплатаЗаробітноїПлати_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_j8"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_j8", value);
+            }
+        }
+        public static int ВиготовленняПродукції_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_j9"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_j9", value);
+            }
+        }
+        public static int Додаток1ДоПодатковоїНакладної_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_k1"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_k1", value);
+            }
+        }
+        public static int ЗаписКнигиПридбання_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_k2"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_k2", value);
+            }
+        }
+        public static int ЗмінаПараметрівОсновнихЗасобів_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_k3"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_k3", value);
+            }
+        }
+        public static int ЗвітКомісіонераПроПродажТоварів_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_k4"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_k4", value);
+            }
+        }
+        public static int ЗвітКомітентуПроПродажТоварів_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_k5"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_k5", value);
+            }
+        }
+        public static int КоригуванняНезавершеногоВиробництва_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_k6"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_k6", value);
+            }
+        }
+        public static int КоригуванняПДВ_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_k7"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_k7", value);
+            }
+        }
+        public static int КоригуванняІншихВитрат_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_k8"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_k8", value);
+            }
+        }
+        public static int Модернізація_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_k9"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_k9", value);
+            }
+        }
+        public static int Комплектація_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_l1"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_l1", value);
+            }
+        }
+        public static int НакладнаВимога_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_l3"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_l3", value);
+            }
+        }
+        public static int Наряд_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_l5"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_l5", value);
+            }
+        }
+        public static int НарахуванняЗаробітньоїПлати_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_l6"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_l6", value);
+            }
+        }
+        public static int ПередачаМатеріалівВЕксплуатацію_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_l7"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_l7", value);
+            }
+        }
+        public static int ПереміщенняМатеріалівВЕксплуатації_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_l9"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_l9", value);
+            }
+        }
+        public static int ПередачаНематеріальнихАктивів_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_n1"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_n1", value);
+            }
+        }
+        public static int ПереміщенняНематеріальнихАктивів_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_n3"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_n3", value);
+            }
+        }
+        public static int ПередачаОбладнанняВМонтаж_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_l2"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_l2", value);
+            }
+        }
+        public static int ПередачаОсновнихЗасобів_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_n5"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_n5", value);
+            }
+        }
+        public static int ПереміщенняОсновнихЗасобів_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_n6"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_n6", value);
+            }
+        }
+        public static int ПередачаТоварів_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_n8"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_n8", value);
+            }
+        }
+        public static int ПереоцінкаВалюти_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_m1"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_m1", value);
+            }
+        }
+        public static int ПереоцінкаОсновнихЗасобів_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_m2"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_m2", value);
+            }
+        }
+        public static int ПереоцінкаТоварів_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_m5"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_m5", value);
+            }
+        }
+        public static int ПлатіжнеДорученняВхідне_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_m7"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_m7", value);
+            }
+        }
+        public static int ПлатіжнеДорученняВихідне_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_m8"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_m8", value);
+            }
+        }
+        public static int ПодатковаНакладна_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_o1"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_o1", value);
+            }
+        }
+        public static int ПокупкаАбоПродажВалюти_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_o3"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_o3", value);
+            }
+        }
+        public static int ПідготовкаДоПередачіОсновнихЗасобів_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_o5"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_o5", value);
+            }
+        }
+        public static int ПослугиСторонньоїОрганізації_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_o6"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_o6", value);
+            }
+        }
+        public static int ПрибуткуванняМатеріалівЗВиробництва_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_o8"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_o8", value);
+            }
+        }
+        public static int ПрибуткуванняТоварівВПереробку_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_p1"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_p1", value);
+            }
+        }
+        public static int ПрибуткуванняТоварівЗПереробки_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_p2"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_p2", value);
+            }
+        }
+        public static int ПрибуткуванняНезавершеногоВиробництва_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_p3"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_p3", value);
+            }
+        }
+        public static int ПрийняттяДоОбліку_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_p4"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_p4", value);
+            }
+        }
+        public static int ПоверненняПереданихТоварів_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_p5"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_p5", value);
+            }
+        }
+        public static int РемонтОсновнихЗасобів_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_p6"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_p6", value);
+            }
+        }
+        public static int РозподілІншихВитрат_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_p7"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_p7", value);
+            }
+        }
+        public static int РозрахунокСобівартостіВипуску_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_p8"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_p8", value);
+            }
+        }
+        public static int СписанняМатеріалів_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_p9"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_p9", value);
+            }
+        }
+        public static int СписанняНезавершеногоВиробництва_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_q1"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_q1", value);
+            }
+        }
+        public static int СписанняНематеріальнихАктивів_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_q2"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_q2", value);
+            }
+        }
+        public static int СписанняОсновнихЗасобів_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_q3"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_q3", value);
+            }
+        }
+        public static int СписанняВитратМайбутніхПеріодів_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_q4"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_q4", value);
+            }
+        }
+        public static int СписанняТоварів_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_q5"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_q5", value);
+            }
+        }
+        public static int Сторнування_Const
+        {
+            get 
+            {
+                var recordResult = Task.Run( async () => { return await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_q6"); } ).Result;
+                return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+            }
+            set
+            {
+                Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_q6", value);
             }
         }
              
@@ -13353,6 +14017,8 @@ namespace GeneratedCode.Довідники
         public async ValueTask Delete()
         {
             
+                await НоменклатураВнутрішня_Папки_Triggers.BeforeDelete(this);      
+            
             await base.BaseDelete([]);
         }
         
@@ -16058,6 +16724,7 @@ namespace GeneratedCode.Документи
             
                 //Табличні частини
                 Товари_TablePart = new ПоступленняТоварівТаПослуг_Товари_TablePart(this);
+                Операції_TablePart = new ПоступленняТоварівТаПослуг_Операції_TablePart(this);
                 
         }
         
@@ -16114,6 +16781,7 @@ namespace GeneratedCode.Документи
                 {
                     
                     await Товари_TablePart.Read();
+                    await Операції_TablePart.Read();
                 }
                 
                 Caption = string.Join(", ", [Назва, ]);
@@ -16263,6 +16931,10 @@ namespace GeneratedCode.Документи
                 await Товари_TablePart.Read();
                 copy.Товари_TablePart.Records = Товари_TablePart.Copy();
             
+                //Операції - Таблична частина
+                await Операції_TablePart.Read();
+                copy.Операції_TablePart.Records = Операції_TablePart.Copy();
+            
             }
             
 
@@ -16286,7 +16958,7 @@ namespace GeneratedCode.Документи
         {
             
             await ClearSpendTheDocument();
-            await base.BaseDelete(["tab_a33", ]);
+            await base.BaseDelete(["tab_a33", "tab_b71", ]);
         }
         
         public ПоступленняТоварівТаПослуг_Pointer GetDocumentPointer()
@@ -16335,6 +17007,7 @@ namespace GeneratedCode.Документи
         
         //Табличні частини
         public ПоступленняТоварівТаПослуг_Товари_TablePart Товари_TablePart { get; set; }
+        public ПоступленняТоварівТаПослуг_Операції_TablePart Операції_TablePart { get; set; }
         
     }
     
@@ -16685,6 +17358,130 @@ namespace GeneratedCode.Документи
     }
       
     
+    public class ПоступленняТоварівТаПослуг_Операції_TablePart : DocumentTablePart
+    {
+        public ПоступленняТоварівТаПослуг_Операції_TablePart(ПоступленняТоварівТаПослуг_Objest owner) : base(Config.Kernel, "tab_b71",
+             ["col_a1", "col_a2", ])
+        {
+            if (owner == null) throw new Exception("owner null");
+            Owner = owner;
+            
+            QuerySelect.Order.Add(НомерРядка, SelectOrder.ASC);
+            
+        }
+
+        public const string TABLE = "tab_b71";
+        
+        public const string НомерРядка = "col_a1";
+        public const string Рахунок = "col_a2";
+
+        public ПоступленняТоварівТаПослуг_Objest Owner { get; private set; }
+        
+        public List<Record> Records { get; set; } = [];
+
+        public event EventHandler? Saved;
+        
+        public void FillJoin(string[]? orderFields = null)
+        {
+            QuerySelect.Clear();
+
+            if (orderFields != null)
+            {
+              foreach(string field in orderFields)
+                QuerySelect.Order.Add(field, SelectOrder.ASC);
+            }
+            
+            else
+            { 
+              QuerySelect.Order.Add(НомерРядка, SelectOrder.ASC);
+              
+            }
+            
+                      /* pointer */
+                      Довідники.ПланРахунків_Pointer.GetJoin(QuerySelect, Рахунок, $"{TABLE}", "join_tab_2", "Рахунок");
+                  
+        }
+
+        public async ValueTask Read()
+        {
+            Records.Clear();
+            await base.BaseRead(Owner.UniqueID);
+
+            foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
+            {
+                Record record = new Record()
+                {
+                    UID = (Guid)fieldValue["uid"],
+                    НомерРядка = (fieldValue["col_a1"] != DBNull.Value) ? (int)fieldValue["col_a1"] : 0,
+                    Рахунок = new Довідники.ПланРахунків_Pointer(fieldValue["col_a2"]),
+                    
+                };
+                Records.Add(record);
+                
+                if (JoinValue.TryGetValue(record.UID.ToString(), out var ItemValue))
+                {
+                  record.JoinItemValue = ItemValue;
+                  record.Рахунок.Name = ItemValue["Рахунок"];
+                      
+                }
+                
+            }
+            
+            base.BaseClear();
+        }
+        
+        public async ValueTask Save(bool clear_all_before_save) 
+        {
+            if (!await base.IsExistOwner(Owner.UniqueID, "tab_a32"))
+                throw new Exception("Owner not exist");
+            
+
+            await base.BaseBeginTransaction();
+            
+            if (clear_all_before_save)
+                await base.BaseDelete(Owner.UniqueID);
+
+            
+            int sequenceNumber_НомерРядка = 0;
+            
+            foreach (Record record in Records)
+            {
+                
+                record.НомерРядка = ++sequenceNumber_НомерРядка;
+                
+                Dictionary<string, object> fieldValue = new()
+                {
+                    {"col_a1", record.НомерРядка},
+                    {"col_a2", record.Рахунок.UniqueID.UGuid},
+                    
+                };
+                record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
+                
+            }
+            
+            await base.BaseCommitTransaction();
+            
+            Saved?.Invoke(this, new EventArgs());
+        }
+
+        public List<Record> Copy()
+        {
+            List<Record> copyRecords = new(Records);
+            foreach (Record copyRecordItem in copyRecords)
+                copyRecordItem.UID = Guid.Empty;
+
+            return copyRecords;
+        }
+
+        public class Record : DocumentTablePartRecord
+        {
+            public int НомерРядка { get; set; } = 0;
+            public Довідники.ПланРахунків_Pointer Рахунок { get; set; } = new Довідники.ПланРахунків_Pointer();
+            
+        }
+    }
+      
+    
     public static class ПоступленняТоварівТаПослуг_Export
     {
         public static async ValueTask ToXmlFile(ПоступленняТоварівТаПослуг_Pointer ПоступленняТоварівТаПослуг, string pathToSave)
@@ -16834,6 +17631,19 @@ namespace GeneratedCode.Документи
                             xmlWriter.WriteValue(record.Сума);
                           
                         xmlWriter.WriteEndElement(); //Сума
+                        xmlWriter.WriteEndElement(); //row
+                    }
+
+                    xmlWriter.WriteEndElement(); //TablePart
+                
+                    xmlWriter.WriteStartElement("TablePart");
+                    xmlWriter.WriteAttributeString("name", "Операції");
+
+                    foreach(ПоступленняТоварівТаПослуг_Операції_TablePart.Record record in obj.Операції_TablePart.Records)
+                    {
+                        xmlWriter.WriteStartElement("row");
+                        xmlWriter.WriteAttributeString("uid", record.UID.ToString());
+                        
                         xmlWriter.WriteEndElement(); //row
                     }
 
@@ -18989,7 +19799,7 @@ namespace GeneratedCode.Документи
         public const string TABLE = "tab_a44";
         public const string TYPE = "ПрихіднийКасовийОрдер"; /* Назва вказівника */
         public const string POINTER = "Документи.ПрихіднийКасовийОрдер"; /* Повна назва вказівника */
-        public const string FULLNAME = "Прихідний касовий ордер"; /* Повна назва об'єкта */
+        public const string FULLNAME = "Прибутковий касовий ордер"; /* Повна назва об'єкта */
         public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
         public const string SPEND = "spend"; /* Проведений true|false */
         public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
@@ -19541,7 +20351,7 @@ namespace GeneratedCode.Документи
         public const string TABLE = "tab_a48";
         public const string TYPE = "РозхіднийКасовийОрдер"; /* Назва вказівника */
         public const string POINTER = "Документи.РозхіднийКасовийОрдер"; /* Повна назва вказівника */
-        public const string FULLNAME = "Розхідний касовий ордер"; /* Повна назва об'єкта */
+        public const string FULLNAME = "Видатковий касовий ордер"; /* Повна назва об'єкта */
         public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
         public const string SPEND = "spend"; /* Проведений true|false */
         public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
@@ -22562,7 +23372,7 @@ namespace GeneratedCode.Документи
         public const string TABLE = "tab_a83";
         public const string TYPE = "ВведенняЗалишків"; /* Назва вказівника */
         public const string POINTER = "Документи.ВведенняЗалишків"; /* Повна назва вказівника */
-        public const string FULLNAME = "Введення залишків"; /* Повна назва об'єкта */
+        public const string FULLNAME = "Введення початкових залишків"; /* Повна назва об'єкта */
         public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
         public const string SPEND = "spend"; /* Проведений true|false */
         public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
@@ -24517,7 +25327,7 @@ namespace GeneratedCode.Документи
         public const string TABLE = "tab_a92";
         public const string TYPE = "ПерерахунокТоварів"; /* Назва вказівника */
         public const string POINTER = "Документи.ПерерахунокТоварів"; /* Повна назва вказівника */
-        public const string FULLNAME = "Перерахунок товарів"; /* Повна назва об'єкта */
+        public const string FULLNAME = "Перерахунок товарів (Інвентаризація)"; /* Повна назва об'єкта */
         public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
         public const string SPEND = "spend"; /* Проведений true|false */
         public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
@@ -32241,6 +33051,15592 @@ namespace GeneratedCode.Документи
 
     #endregion
     
+    #region DOCUMENT "АвансовийЗвіт"
+    public static class АвансовийЗвіт_Const
+    {
+        public const string TABLE = "tab_b72";
+        public const string TYPE = "АвансовийЗвіт"; /* Назва вказівника */
+        public const string POINTER = "Документи.АвансовийЗвіт"; /* Повна назва вказівника */
+        public const string FULLNAME = "Авансовий звіт"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class АвансовийЗвіт_Objest : DocumentObject
+    {
+        public АвансовийЗвіт_Objest() : base(Config.Kernel, "tab_b72", АвансовийЗвіт_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = АвансовийЗвіт_Const.FULLNAME + " *";
+            
+                await АвансовийЗвіт_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await АвансовийЗвіт_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await АвансовийЗвіт_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<АвансовийЗвіт_Objest> Copy(bool copyTableParts = false)
+        {
+            АвансовийЗвіт_Objest copy = new АвансовийЗвіт_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await АвансовийЗвіт_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public АвансовийЗвіт_Pointer GetDocumentPointer()
+        {
+            return new АвансовийЗвіт_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(АвансовийЗвіт_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class АвансовийЗвіт_Pointer : DocumentPointer
+    {
+        public АвансовийЗвіт_Pointer(object? uid = null) : base(Config.Kernel, "tab_b72", АвансовийЗвіт_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public АвансовийЗвіт_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b72", "АвансовийЗвіт")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(АвансовийЗвіт_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [АвансовийЗвіт_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{АвансовийЗвіт_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(АвансовийЗвіт_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            АвансовийЗвіт_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public АвансовийЗвіт_Pointer Copy()
+        {
+            return new АвансовийЗвіт_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public АвансовийЗвіт_Pointer GetEmptyPointer()
+        {
+            return new АвансовийЗвіт_Pointer();
+        }
+
+        public async ValueTask<АвансовийЗвіт_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            АвансовийЗвіт_Objest obj = new АвансовийЗвіт_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class АвансовийЗвіт_Select : DocumentSelect
+    {		
+        public АвансовийЗвіт_Select() : base(Config.Kernel, "tab_b72") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new АвансовийЗвіт_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public АвансовийЗвіт_Pointer? Current { get; private set; }
+
+        public async ValueTask<АвансовийЗвіт_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new АвансовийЗвіт_Pointer(pointer) : new АвансовийЗвіт_Pointer();
+        }
+        
+        public async ValueTask<List<АвансовийЗвіт_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<АвансовийЗвіт_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new АвансовийЗвіт_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class АвансовийЗвіт_Export
+    {
+        public static async ValueTask ToXmlFile(АвансовийЗвіт_Pointer АвансовийЗвіт, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "Амортизація"
+    public static class Амортизація_Const
+    {
+        public const string TABLE = "tab_b73";
+        public const string TYPE = "Амортизація"; /* Назва вказівника */
+        public const string POINTER = "Документи.Амортизація"; /* Повна назва вказівника */
+        public const string FULLNAME = "Амортизація"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class Амортизація_Objest : DocumentObject
+    {
+        public Амортизація_Objest() : base(Config.Kernel, "tab_b73", Амортизація_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = Амортизація_Const.FULLNAME + " *";
+            
+                await Амортизація_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await Амортизація_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await Амортизація_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<Амортизація_Objest> Copy(bool copyTableParts = false)
+        {
+            Амортизація_Objest copy = new Амортизація_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await Амортизація_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public Амортизація_Pointer GetDocumentPointer()
+        {
+            return new Амортизація_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(Амортизація_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class Амортизація_Pointer : DocumentPointer
+    {
+        public Амортизація_Pointer(object? uid = null) : base(Config.Kernel, "tab_b73", Амортизація_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public Амортизація_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b73", "Амортизація")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(Амортизація_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [Амортизація_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{Амортизація_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(Амортизація_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            Амортизація_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public Амортизація_Pointer Copy()
+        {
+            return new Амортизація_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public Амортизація_Pointer GetEmptyPointer()
+        {
+            return new Амортизація_Pointer();
+        }
+
+        public async ValueTask<Амортизація_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            Амортизація_Objest obj = new Амортизація_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class Амортизація_Select : DocumentSelect
+    {		
+        public Амортизація_Select() : base(Config.Kernel, "tab_b73") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Амортизація_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public Амортизація_Pointer? Current { get; private set; }
+
+        public async ValueTask<Амортизація_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Амортизація_Pointer(pointer) : new Амортизація_Pointer();
+        }
+        
+        public async ValueTask<List<Амортизація_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<Амортизація_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new Амортизація_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class Амортизація_Export
+    {
+        public static async ValueTask ToXmlFile(Амортизація_Pointer Амортизація, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "ВизначенняФінансовогоРезультату"
+    public static class ВизначенняФінансовогоРезультату_Const
+    {
+        public const string TABLE = "tab_b74";
+        public const string TYPE = "ВизначенняФінансовогоРезультату"; /* Назва вказівника */
+        public const string POINTER = "Документи.ВизначенняФінансовогоРезультату"; /* Повна назва вказівника */
+        public const string FULLNAME = "Визначення фінансового результату"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class ВизначенняФінансовогоРезультату_Objest : DocumentObject
+    {
+        public ВизначенняФінансовогоРезультату_Objest() : base(Config.Kernel, "tab_b74", ВизначенняФінансовогоРезультату_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = ВизначенняФінансовогоРезультату_Const.FULLNAME + " *";
+            
+                await ВизначенняФінансовогоРезультату_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await ВизначенняФінансовогоРезультату_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await ВизначенняФінансовогоРезультату_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<ВизначенняФінансовогоРезультату_Objest> Copy(bool copyTableParts = false)
+        {
+            ВизначенняФінансовогоРезультату_Objest copy = new ВизначенняФінансовогоРезультату_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await ВизначенняФінансовогоРезультату_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public ВизначенняФінансовогоРезультату_Pointer GetDocumentPointer()
+        {
+            return new ВизначенняФінансовогоРезультату_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(ВизначенняФінансовогоРезультату_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class ВизначенняФінансовогоРезультату_Pointer : DocumentPointer
+    {
+        public ВизначенняФінансовогоРезультату_Pointer(object? uid = null) : base(Config.Kernel, "tab_b74", ВизначенняФінансовогоРезультату_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public ВизначенняФінансовогоРезультату_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b74", "ВизначенняФінансовогоРезультату")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(ВизначенняФінансовогоРезультату_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [ВизначенняФінансовогоРезультату_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{ВизначенняФінансовогоРезультату_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(ВизначенняФінансовогоРезультату_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            ВизначенняФінансовогоРезультату_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public ВизначенняФінансовогоРезультату_Pointer Copy()
+        {
+            return new ВизначенняФінансовогоРезультату_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public ВизначенняФінансовогоРезультату_Pointer GetEmptyPointer()
+        {
+            return new ВизначенняФінансовогоРезультату_Pointer();
+        }
+
+        public async ValueTask<ВизначенняФінансовогоРезультату_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            ВизначенняФінансовогоРезультату_Objest obj = new ВизначенняФінансовогоРезультату_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class ВизначенняФінансовогоРезультату_Select : DocumentSelect
+    {		
+        public ВизначенняФінансовогоРезультату_Select() : base(Config.Kernel, "tab_b74") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВизначенняФінансовогоРезультату_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public ВизначенняФінансовогоРезультату_Pointer? Current { get; private set; }
+
+        public async ValueTask<ВизначенняФінансовогоРезультату_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ВизначенняФінансовогоРезультату_Pointer(pointer) : new ВизначенняФінансовогоРезультату_Pointer();
+        }
+        
+        public async ValueTask<List<ВизначенняФінансовогоРезультату_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<ВизначенняФінансовогоРезультату_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ВизначенняФінансовогоРезультату_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class ВизначенняФінансовогоРезультату_Export
+    {
+        public static async ValueTask ToXmlFile(ВизначенняФінансовогоРезультату_Pointer ВизначенняФінансовогоРезультату, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "ВиплатаЗаробітноїПлати"
+    public static class ВиплатаЗаробітноїПлати_Const
+    {
+        public const string TABLE = "tab_b75";
+        public const string TYPE = "ВиплатаЗаробітноїПлати"; /* Назва вказівника */
+        public const string POINTER = "Документи.ВиплатаЗаробітноїПлати"; /* Повна назва вказівника */
+        public const string FULLNAME = "Виплата заробітної плати"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class ВиплатаЗаробітноїПлати_Objest : DocumentObject
+    {
+        public ВиплатаЗаробітноїПлати_Objest() : base(Config.Kernel, "tab_b75", ВиплатаЗаробітноїПлати_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = ВиплатаЗаробітноїПлати_Const.FULLNAME + " *";
+            
+                await ВиплатаЗаробітноїПлати_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await ВиплатаЗаробітноїПлати_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await ВиплатаЗаробітноїПлати_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<ВиплатаЗаробітноїПлати_Objest> Copy(bool copyTableParts = false)
+        {
+            ВиплатаЗаробітноїПлати_Objest copy = new ВиплатаЗаробітноїПлати_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await ВиплатаЗаробітноїПлати_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public ВиплатаЗаробітноїПлати_Pointer GetDocumentPointer()
+        {
+            return new ВиплатаЗаробітноїПлати_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(ВиплатаЗаробітноїПлати_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class ВиплатаЗаробітноїПлати_Pointer : DocumentPointer
+    {
+        public ВиплатаЗаробітноїПлати_Pointer(object? uid = null) : base(Config.Kernel, "tab_b75", ВиплатаЗаробітноїПлати_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public ВиплатаЗаробітноїПлати_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b75", "ВиплатаЗаробітноїПлати")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(ВиплатаЗаробітноїПлати_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [ВиплатаЗаробітноїПлати_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{ВиплатаЗаробітноїПлати_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(ВиплатаЗаробітноїПлати_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            ВиплатаЗаробітноїПлати_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public ВиплатаЗаробітноїПлати_Pointer Copy()
+        {
+            return new ВиплатаЗаробітноїПлати_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public ВиплатаЗаробітноїПлати_Pointer GetEmptyPointer()
+        {
+            return new ВиплатаЗаробітноїПлати_Pointer();
+        }
+
+        public async ValueTask<ВиплатаЗаробітноїПлати_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            ВиплатаЗаробітноїПлати_Objest obj = new ВиплатаЗаробітноїПлати_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class ВиплатаЗаробітноїПлати_Select : DocumentSelect
+    {		
+        public ВиплатаЗаробітноїПлати_Select() : base(Config.Kernel, "tab_b75") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВиплатаЗаробітноїПлати_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public ВиплатаЗаробітноїПлати_Pointer? Current { get; private set; }
+
+        public async ValueTask<ВиплатаЗаробітноїПлати_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ВиплатаЗаробітноїПлати_Pointer(pointer) : new ВиплатаЗаробітноїПлати_Pointer();
+        }
+        
+        public async ValueTask<List<ВиплатаЗаробітноїПлати_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<ВиплатаЗаробітноїПлати_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ВиплатаЗаробітноїПлати_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class ВиплатаЗаробітноїПлати_Export
+    {
+        public static async ValueTask ToXmlFile(ВиплатаЗаробітноїПлати_Pointer ВиплатаЗаробітноїПлати, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "ВиготовленняПродукції"
+    public static class ВиготовленняПродукції_Const
+    {
+        public const string TABLE = "tab_b76";
+        public const string TYPE = "ВиготовленняПродукції"; /* Назва вказівника */
+        public const string POINTER = "Документи.ВиготовленняПродукції"; /* Повна назва вказівника */
+        public const string FULLNAME = "Виготовлення продукції"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class ВиготовленняПродукції_Objest : DocumentObject
+    {
+        public ВиготовленняПродукції_Objest() : base(Config.Kernel, "tab_b76", ВиготовленняПродукції_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = ВиготовленняПродукції_Const.FULLNAME + " *";
+            
+                await ВиготовленняПродукції_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await ВиготовленняПродукції_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await ВиготовленняПродукції_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<ВиготовленняПродукції_Objest> Copy(bool copyTableParts = false)
+        {
+            ВиготовленняПродукції_Objest copy = new ВиготовленняПродукції_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await ВиготовленняПродукції_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public ВиготовленняПродукції_Pointer GetDocumentPointer()
+        {
+            return new ВиготовленняПродукції_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(ВиготовленняПродукції_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class ВиготовленняПродукції_Pointer : DocumentPointer
+    {
+        public ВиготовленняПродукції_Pointer(object? uid = null) : base(Config.Kernel, "tab_b76", ВиготовленняПродукції_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public ВиготовленняПродукції_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b76", "ВиготовленняПродукції")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(ВиготовленняПродукції_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [ВиготовленняПродукції_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{ВиготовленняПродукції_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(ВиготовленняПродукції_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            ВиготовленняПродукції_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public ВиготовленняПродукції_Pointer Copy()
+        {
+            return new ВиготовленняПродукції_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public ВиготовленняПродукції_Pointer GetEmptyPointer()
+        {
+            return new ВиготовленняПродукції_Pointer();
+        }
+
+        public async ValueTask<ВиготовленняПродукції_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            ВиготовленняПродукції_Objest obj = new ВиготовленняПродукції_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class ВиготовленняПродукції_Select : DocumentSelect
+    {		
+        public ВиготовленняПродукції_Select() : base(Config.Kernel, "tab_b76") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВиготовленняПродукції_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public ВиготовленняПродукції_Pointer? Current { get; private set; }
+
+        public async ValueTask<ВиготовленняПродукції_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ВиготовленняПродукції_Pointer(pointer) : new ВиготовленняПродукції_Pointer();
+        }
+        
+        public async ValueTask<List<ВиготовленняПродукції_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<ВиготовленняПродукції_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ВиготовленняПродукції_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class ВиготовленняПродукції_Export
+    {
+        public static async ValueTask ToXmlFile(ВиготовленняПродукції_Pointer ВиготовленняПродукції, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "Додаток1ДоПодатковоїНакладної"
+    public static class Додаток1ДоПодатковоїНакладної_Const
+    {
+        public const string TABLE = "tab_b77";
+        public const string TYPE = "Додаток1ДоПодатковоїНакладної"; /* Назва вказівника */
+        public const string POINTER = "Документи.Додаток1ДоПодатковоїНакладної"; /* Повна назва вказівника */
+        public const string FULLNAME = "Додаток 1 до податкової накладної"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class Додаток1ДоПодатковоїНакладної_Objest : DocumentObject
+    {
+        public Додаток1ДоПодатковоїНакладної_Objest() : base(Config.Kernel, "tab_b77", Додаток1ДоПодатковоїНакладної_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = Додаток1ДоПодатковоїНакладної_Const.FULLNAME + " *";
+            
+                await Додаток1ДоПодатковоїНакладної_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await Додаток1ДоПодатковоїНакладної_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await Додаток1ДоПодатковоїНакладної_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<Додаток1ДоПодатковоїНакладної_Objest> Copy(bool copyTableParts = false)
+        {
+            Додаток1ДоПодатковоїНакладної_Objest copy = new Додаток1ДоПодатковоїНакладної_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await Додаток1ДоПодатковоїНакладної_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public Додаток1ДоПодатковоїНакладної_Pointer GetDocumentPointer()
+        {
+            return new Додаток1ДоПодатковоїНакладної_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(Додаток1ДоПодатковоїНакладної_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class Додаток1ДоПодатковоїНакладної_Pointer : DocumentPointer
+    {
+        public Додаток1ДоПодатковоїНакладної_Pointer(object? uid = null) : base(Config.Kernel, "tab_b77", Додаток1ДоПодатковоїНакладної_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public Додаток1ДоПодатковоїНакладної_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b77", "Додаток1ДоПодатковоїНакладної")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(Додаток1ДоПодатковоїНакладної_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [Додаток1ДоПодатковоїНакладної_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{Додаток1ДоПодатковоїНакладної_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(Додаток1ДоПодатковоїНакладної_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            Додаток1ДоПодатковоїНакладної_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public Додаток1ДоПодатковоїНакладної_Pointer Copy()
+        {
+            return new Додаток1ДоПодатковоїНакладної_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public Додаток1ДоПодатковоїНакладної_Pointer GetEmptyPointer()
+        {
+            return new Додаток1ДоПодатковоїНакладної_Pointer();
+        }
+
+        public async ValueTask<Додаток1ДоПодатковоїНакладної_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            Додаток1ДоПодатковоїНакладної_Objest obj = new Додаток1ДоПодатковоїНакладної_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class Додаток1ДоПодатковоїНакладної_Select : DocumentSelect
+    {		
+        public Додаток1ДоПодатковоїНакладної_Select() : base(Config.Kernel, "tab_b77") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Додаток1ДоПодатковоїНакладної_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public Додаток1ДоПодатковоїНакладної_Pointer? Current { get; private set; }
+
+        public async ValueTask<Додаток1ДоПодатковоїНакладної_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Додаток1ДоПодатковоїНакладної_Pointer(pointer) : new Додаток1ДоПодатковоїНакладної_Pointer();
+        }
+        
+        public async ValueTask<List<Додаток1ДоПодатковоїНакладної_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<Додаток1ДоПодатковоїНакладної_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new Додаток1ДоПодатковоїНакладної_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class Додаток1ДоПодатковоїНакладної_Export
+    {
+        public static async ValueTask ToXmlFile(Додаток1ДоПодатковоїНакладної_Pointer Додаток1ДоПодатковоїНакладної, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "Додаток2ДоПодатковоїНакладної"
+    public static class Додаток2ДоПодатковоїНакладної_Const
+    {
+        public const string TABLE = "tab_b78";
+        public const string TYPE = "Додаток2ДоПодатковоїНакладної"; /* Назва вказівника */
+        public const string POINTER = "Документи.Додаток2ДоПодатковоїНакладної"; /* Повна назва вказівника */
+        public const string FULLNAME = "Додаток 2 до податкової накладної"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class Додаток2ДоПодатковоїНакладної_Objest : DocumentObject
+    {
+        public Додаток2ДоПодатковоїНакладної_Objest() : base(Config.Kernel, "tab_b78", Додаток2ДоПодатковоїНакладної_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = Додаток2ДоПодатковоїНакладної_Const.FULLNAME + " *";
+            
+                await Додаток2ДоПодатковоїНакладної_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await Додаток2ДоПодатковоїНакладної_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await Додаток2ДоПодатковоїНакладної_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          await ValueTask.FromResult(true);
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<Додаток2ДоПодатковоїНакладної_Objest> Copy(bool copyTableParts = false)
+        {
+            Додаток2ДоПодатковоїНакладної_Objest copy = new Додаток2ДоПодатковоїНакладної_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await Додаток2ДоПодатковоїНакладної_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public Додаток2ДоПодатковоїНакладної_Pointer GetDocumentPointer()
+        {
+            return new Додаток2ДоПодатковоїНакладної_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(Додаток2ДоПодатковоїНакладної_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class Додаток2ДоПодатковоїНакладної_Pointer : DocumentPointer
+    {
+        public Додаток2ДоПодатковоїНакладної_Pointer(object? uid = null) : base(Config.Kernel, "tab_b78", Додаток2ДоПодатковоїНакладної_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public Додаток2ДоПодатковоїНакладної_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b78", "Додаток2ДоПодатковоїНакладної")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(Додаток2ДоПодатковоїНакладної_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [Додаток2ДоПодатковоїНакладної_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{Додаток2ДоПодатковоїНакладної_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(Додаток2ДоПодатковоїНакладної_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            Додаток2ДоПодатковоїНакладної_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          await ValueTask.FromResult(true);
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public Додаток2ДоПодатковоїНакладної_Pointer Copy()
+        {
+            return new Додаток2ДоПодатковоїНакладної_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public Додаток2ДоПодатковоїНакладної_Pointer GetEmptyPointer()
+        {
+            return new Додаток2ДоПодатковоїНакладної_Pointer();
+        }
+
+        public async ValueTask<Додаток2ДоПодатковоїНакладної_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            Додаток2ДоПодатковоїНакладної_Objest obj = new Додаток2ДоПодатковоїНакладної_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class Додаток2ДоПодатковоїНакладної_Select : DocumentSelect
+    {		
+        public Додаток2ДоПодатковоїНакладної_Select() : base(Config.Kernel, "tab_b78") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Додаток2ДоПодатковоїНакладної_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public Додаток2ДоПодатковоїНакладної_Pointer? Current { get; private set; }
+
+        public async ValueTask<Додаток2ДоПодатковоїНакладної_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Додаток2ДоПодатковоїНакладної_Pointer(pointer) : new Додаток2ДоПодатковоїНакладної_Pointer();
+        }
+        
+        public async ValueTask<List<Додаток2ДоПодатковоїНакладної_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<Додаток2ДоПодатковоїНакладної_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new Додаток2ДоПодатковоїНакладної_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class Додаток2ДоПодатковоїНакладної_Export
+    {
+        public static async ValueTask ToXmlFile(Додаток2ДоПодатковоїНакладної_Pointer Додаток2ДоПодатковоїНакладної, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "ЗаписКнигиПридбання"
+    public static class ЗаписКнигиПридбання_Const
+    {
+        public const string TABLE = "tab_b79";
+        public const string TYPE = "ЗаписКнигиПридбання"; /* Назва вказівника */
+        public const string POINTER = "Документи.ЗаписКнигиПридбання"; /* Повна назва вказівника */
+        public const string FULLNAME = "Запис книги придбання"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class ЗаписКнигиПридбання_Objest : DocumentObject
+    {
+        public ЗаписКнигиПридбання_Objest() : base(Config.Kernel, "tab_b79", ЗаписКнигиПридбання_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = ЗаписКнигиПридбання_Const.FULLNAME + " *";
+            
+                await ЗаписКнигиПридбання_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await ЗаписКнигиПридбання_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await ЗаписКнигиПридбання_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<ЗаписКнигиПридбання_Objest> Copy(bool copyTableParts = false)
+        {
+            ЗаписКнигиПридбання_Objest copy = new ЗаписКнигиПридбання_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await ЗаписКнигиПридбання_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public ЗаписКнигиПридбання_Pointer GetDocumentPointer()
+        {
+            return new ЗаписКнигиПридбання_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(ЗаписКнигиПридбання_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class ЗаписКнигиПридбання_Pointer : DocumentPointer
+    {
+        public ЗаписКнигиПридбання_Pointer(object? uid = null) : base(Config.Kernel, "tab_b79", ЗаписКнигиПридбання_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public ЗаписКнигиПридбання_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b79", "ЗаписКнигиПридбання")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(ЗаписКнигиПридбання_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [ЗаписКнигиПридбання_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{ЗаписКнигиПридбання_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(ЗаписКнигиПридбання_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            ЗаписКнигиПридбання_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public ЗаписКнигиПридбання_Pointer Copy()
+        {
+            return new ЗаписКнигиПридбання_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public ЗаписКнигиПридбання_Pointer GetEmptyPointer()
+        {
+            return new ЗаписКнигиПридбання_Pointer();
+        }
+
+        public async ValueTask<ЗаписКнигиПридбання_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            ЗаписКнигиПридбання_Objest obj = new ЗаписКнигиПридбання_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class ЗаписКнигиПридбання_Select : DocumentSelect
+    {		
+        public ЗаписКнигиПридбання_Select() : base(Config.Kernel, "tab_b79") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗаписКнигиПридбання_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public ЗаписКнигиПридбання_Pointer? Current { get; private set; }
+
+        public async ValueTask<ЗаписКнигиПридбання_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ЗаписКнигиПридбання_Pointer(pointer) : new ЗаписКнигиПридбання_Pointer();
+        }
+        
+        public async ValueTask<List<ЗаписКнигиПридбання_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<ЗаписКнигиПридбання_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ЗаписКнигиПридбання_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class ЗаписКнигиПридбання_Export
+    {
+        public static async ValueTask ToXmlFile(ЗаписКнигиПридбання_Pointer ЗаписКнигиПридбання, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "ЗмінаПараметрівОсновнихЗасобів"
+    public static class ЗмінаПараметрівОсновнихЗасобів_Const
+    {
+        public const string TABLE = "tab_b80";
+        public const string TYPE = "ЗмінаПараметрівОсновнихЗасобів"; /* Назва вказівника */
+        public const string POINTER = "Документи.ЗмінаПараметрівОсновнихЗасобів"; /* Повна назва вказівника */
+        public const string FULLNAME = "Зміна параметрів основних засобів"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class ЗмінаПараметрівОсновнихЗасобів_Objest : DocumentObject
+    {
+        public ЗмінаПараметрівОсновнихЗасобів_Objest() : base(Config.Kernel, "tab_b80", ЗмінаПараметрівОсновнихЗасобів_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = ЗмінаПараметрівОсновнихЗасобів_Const.FULLNAME + " *";
+            
+                await ЗмінаПараметрівОсновнихЗасобів_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await ЗмінаПараметрівОсновнихЗасобів_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await ЗмінаПараметрівОсновнихЗасобів_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<ЗмінаПараметрівОсновнихЗасобів_Objest> Copy(bool copyTableParts = false)
+        {
+            ЗмінаПараметрівОсновнихЗасобів_Objest copy = new ЗмінаПараметрівОсновнихЗасобів_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await ЗмінаПараметрівОсновнихЗасобів_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public ЗмінаПараметрівОсновнихЗасобів_Pointer GetDocumentPointer()
+        {
+            return new ЗмінаПараметрівОсновнихЗасобів_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(ЗмінаПараметрівОсновнихЗасобів_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class ЗмінаПараметрівОсновнихЗасобів_Pointer : DocumentPointer
+    {
+        public ЗмінаПараметрівОсновнихЗасобів_Pointer(object? uid = null) : base(Config.Kernel, "tab_b80", ЗмінаПараметрівОсновнихЗасобів_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public ЗмінаПараметрівОсновнихЗасобів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b80", "ЗмінаПараметрівОсновнихЗасобів")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(ЗмінаПараметрівОсновнихЗасобів_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [ЗмінаПараметрівОсновнихЗасобів_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{ЗмінаПараметрівОсновнихЗасобів_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(ЗмінаПараметрівОсновнихЗасобів_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            ЗмінаПараметрівОсновнихЗасобів_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public ЗмінаПараметрівОсновнихЗасобів_Pointer Copy()
+        {
+            return new ЗмінаПараметрівОсновнихЗасобів_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public ЗмінаПараметрівОсновнихЗасобів_Pointer GetEmptyPointer()
+        {
+            return new ЗмінаПараметрівОсновнихЗасобів_Pointer();
+        }
+
+        public async ValueTask<ЗмінаПараметрівОсновнихЗасобів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            ЗмінаПараметрівОсновнихЗасобів_Objest obj = new ЗмінаПараметрівОсновнихЗасобів_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class ЗмінаПараметрівОсновнихЗасобів_Select : DocumentSelect
+    {		
+        public ЗмінаПараметрівОсновнихЗасобів_Select() : base(Config.Kernel, "tab_b80") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗмінаПараметрівОсновнихЗасобів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public ЗмінаПараметрівОсновнихЗасобів_Pointer? Current { get; private set; }
+
+        public async ValueTask<ЗмінаПараметрівОсновнихЗасобів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ЗмінаПараметрівОсновнихЗасобів_Pointer(pointer) : new ЗмінаПараметрівОсновнихЗасобів_Pointer();
+        }
+        
+        public async ValueTask<List<ЗмінаПараметрівОсновнихЗасобів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<ЗмінаПараметрівОсновнихЗасобів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ЗмінаПараметрівОсновнихЗасобів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class ЗмінаПараметрівОсновнихЗасобів_Export
+    {
+        public static async ValueTask ToXmlFile(ЗмінаПараметрівОсновнихЗасобів_Pointer ЗмінаПараметрівОсновнихЗасобів, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "ЗвітКомісіонераПроПродажТоварів"
+    public static class ЗвітКомісіонераПроПродажТоварів_Const
+    {
+        public const string TABLE = "tab_b81";
+        public const string TYPE = "ЗвітКомісіонераПроПродажТоварів"; /* Назва вказівника */
+        public const string POINTER = "Документи.ЗвітКомісіонераПроПродажТоварів"; /* Повна назва вказівника */
+        public const string FULLNAME = "Звіт комісіонера про продаж товарів"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class ЗвітКомісіонераПроПродажТоварів_Objest : DocumentObject
+    {
+        public ЗвітКомісіонераПроПродажТоварів_Objest() : base(Config.Kernel, "tab_b81", ЗвітКомісіонераПроПродажТоварів_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = ЗвітКомісіонераПроПродажТоварів_Const.FULLNAME + " *";
+            
+                await ЗвітКомісіонераПроПродажТоварів_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await ЗвітКомісіонераПроПродажТоварів_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await ЗвітКомісіонераПроПродажТоварів_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<ЗвітКомісіонераПроПродажТоварів_Objest> Copy(bool copyTableParts = false)
+        {
+            ЗвітКомісіонераПроПродажТоварів_Objest copy = new ЗвітКомісіонераПроПродажТоварів_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await ЗвітКомісіонераПроПродажТоварів_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public ЗвітКомісіонераПроПродажТоварів_Pointer GetDocumentPointer()
+        {
+            return new ЗвітКомісіонераПроПродажТоварів_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(ЗвітКомісіонераПроПродажТоварів_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class ЗвітКомісіонераПроПродажТоварів_Pointer : DocumentPointer
+    {
+        public ЗвітКомісіонераПроПродажТоварів_Pointer(object? uid = null) : base(Config.Kernel, "tab_b81", ЗвітКомісіонераПроПродажТоварів_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public ЗвітКомісіонераПроПродажТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b81", "ЗвітКомісіонераПроПродажТоварів")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(ЗвітКомісіонераПроПродажТоварів_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [ЗвітКомісіонераПроПродажТоварів_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{ЗвітКомісіонераПроПродажТоварів_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(ЗвітКомісіонераПроПродажТоварів_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            ЗвітКомісіонераПроПродажТоварів_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public ЗвітКомісіонераПроПродажТоварів_Pointer Copy()
+        {
+            return new ЗвітКомісіонераПроПродажТоварів_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public ЗвітКомісіонераПроПродажТоварів_Pointer GetEmptyPointer()
+        {
+            return new ЗвітКомісіонераПроПродажТоварів_Pointer();
+        }
+
+        public async ValueTask<ЗвітКомісіонераПроПродажТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            ЗвітКомісіонераПроПродажТоварів_Objest obj = new ЗвітКомісіонераПроПродажТоварів_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class ЗвітКомісіонераПроПродажТоварів_Select : DocumentSelect
+    {		
+        public ЗвітКомісіонераПроПродажТоварів_Select() : base(Config.Kernel, "tab_b81") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗвітКомісіонераПроПродажТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public ЗвітКомісіонераПроПродажТоварів_Pointer? Current { get; private set; }
+
+        public async ValueTask<ЗвітКомісіонераПроПродажТоварів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ЗвітКомісіонераПроПродажТоварів_Pointer(pointer) : new ЗвітКомісіонераПроПродажТоварів_Pointer();
+        }
+        
+        public async ValueTask<List<ЗвітКомісіонераПроПродажТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<ЗвітКомісіонераПроПродажТоварів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ЗвітКомісіонераПроПродажТоварів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class ЗвітКомісіонераПроПродажТоварів_Export
+    {
+        public static async ValueTask ToXmlFile(ЗвітКомісіонераПроПродажТоварів_Pointer ЗвітКомісіонераПроПродажТоварів, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "ЗвітКомітентуПроПродажТоварів"
+    public static class ЗвітКомітентуПроПродажТоварів_Const
+    {
+        public const string TABLE = "tab_b82";
+        public const string TYPE = "ЗвітКомітентуПроПродажТоварів"; /* Назва вказівника */
+        public const string POINTER = "Документи.ЗвітКомітентуПроПродажТоварів"; /* Повна назва вказівника */
+        public const string FULLNAME = "Звіт комітенту про продаж товарів"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class ЗвітКомітентуПроПродажТоварів_Objest : DocumentObject
+    {
+        public ЗвітКомітентуПроПродажТоварів_Objest() : base(Config.Kernel, "tab_b82", ЗвітКомітентуПроПродажТоварів_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = ЗвітКомітентуПроПродажТоварів_Const.FULLNAME + " *";
+            
+                await ЗвітКомітентуПроПродажТоварів_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await ЗвітКомітентуПроПродажТоварів_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await ЗвітКомітентуПроПродажТоварів_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<ЗвітКомітентуПроПродажТоварів_Objest> Copy(bool copyTableParts = false)
+        {
+            ЗвітКомітентуПроПродажТоварів_Objest copy = new ЗвітКомітентуПроПродажТоварів_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await ЗвітКомітентуПроПродажТоварів_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public ЗвітКомітентуПроПродажТоварів_Pointer GetDocumentPointer()
+        {
+            return new ЗвітКомітентуПроПродажТоварів_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(ЗвітКомітентуПроПродажТоварів_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class ЗвітКомітентуПроПродажТоварів_Pointer : DocumentPointer
+    {
+        public ЗвітКомітентуПроПродажТоварів_Pointer(object? uid = null) : base(Config.Kernel, "tab_b82", ЗвітКомітентуПроПродажТоварів_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public ЗвітКомітентуПроПродажТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b82", "ЗвітКомітентуПроПродажТоварів")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(ЗвітКомітентуПроПродажТоварів_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [ЗвітКомітентуПроПродажТоварів_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{ЗвітКомітентуПроПродажТоварів_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(ЗвітКомітентуПроПродажТоварів_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            ЗвітКомітентуПроПродажТоварів_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public ЗвітКомітентуПроПродажТоварів_Pointer Copy()
+        {
+            return new ЗвітКомітентуПроПродажТоварів_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public ЗвітКомітентуПроПродажТоварів_Pointer GetEmptyPointer()
+        {
+            return new ЗвітКомітентуПроПродажТоварів_Pointer();
+        }
+
+        public async ValueTask<ЗвітКомітентуПроПродажТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            ЗвітКомітентуПроПродажТоварів_Objest obj = new ЗвітКомітентуПроПродажТоварів_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class ЗвітКомітентуПроПродажТоварів_Select : DocumentSelect
+    {		
+        public ЗвітКомітентуПроПродажТоварів_Select() : base(Config.Kernel, "tab_b82") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗвітКомітентуПроПродажТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public ЗвітКомітентуПроПродажТоварів_Pointer? Current { get; private set; }
+
+        public async ValueTask<ЗвітКомітентуПроПродажТоварів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ЗвітКомітентуПроПродажТоварів_Pointer(pointer) : new ЗвітКомітентуПроПродажТоварів_Pointer();
+        }
+        
+        public async ValueTask<List<ЗвітКомітентуПроПродажТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<ЗвітКомітентуПроПродажТоварів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ЗвітКомітентуПроПродажТоварів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class ЗвітКомітентуПроПродажТоварів_Export
+    {
+        public static async ValueTask ToXmlFile(ЗвітКомітентуПроПродажТоварів_Pointer ЗвітКомітентуПроПродажТоварів, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "КоригуванняНезавершеногоВиробництва"
+    public static class КоригуванняНезавершеногоВиробництва_Const
+    {
+        public const string TABLE = "tab_b83";
+        public const string TYPE = "КоригуванняНезавершеногоВиробництва"; /* Назва вказівника */
+        public const string POINTER = "Документи.КоригуванняНезавершеногоВиробництва"; /* Повна назва вказівника */
+        public const string FULLNAME = "Коригування незавершеного виробництва"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class КоригуванняНезавершеногоВиробництва_Objest : DocumentObject
+    {
+        public КоригуванняНезавершеногоВиробництва_Objest() : base(Config.Kernel, "tab_b83", КоригуванняНезавершеногоВиробництва_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = КоригуванняНезавершеногоВиробництва_Const.FULLNAME + " *";
+            
+                await КоригуванняНезавершеногоВиробництва_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await КоригуванняНезавершеногоВиробництва_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await КоригуванняНезавершеногоВиробництва_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<КоригуванняНезавершеногоВиробництва_Objest> Copy(bool copyTableParts = false)
+        {
+            КоригуванняНезавершеногоВиробництва_Objest copy = new КоригуванняНезавершеногоВиробництва_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await КоригуванняНезавершеногоВиробництва_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public КоригуванняНезавершеногоВиробництва_Pointer GetDocumentPointer()
+        {
+            return new КоригуванняНезавершеногоВиробництва_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(КоригуванняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class КоригуванняНезавершеногоВиробництва_Pointer : DocumentPointer
+    {
+        public КоригуванняНезавершеногоВиробництва_Pointer(object? uid = null) : base(Config.Kernel, "tab_b83", КоригуванняНезавершеногоВиробництва_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public КоригуванняНезавершеногоВиробництва_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b83", "КоригуванняНезавершеногоВиробництва")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(КоригуванняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [КоригуванняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{КоригуванняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(КоригуванняНезавершеногоВиробництва_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            КоригуванняНезавершеногоВиробництва_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public КоригуванняНезавершеногоВиробництва_Pointer Copy()
+        {
+            return new КоригуванняНезавершеногоВиробництва_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public КоригуванняНезавершеногоВиробництва_Pointer GetEmptyPointer()
+        {
+            return new КоригуванняНезавершеногоВиробництва_Pointer();
+        }
+
+        public async ValueTask<КоригуванняНезавершеногоВиробництва_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            КоригуванняНезавершеногоВиробництва_Objest obj = new КоригуванняНезавершеногоВиробництва_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class КоригуванняНезавершеногоВиробництва_Select : DocumentSelect
+    {		
+        public КоригуванняНезавершеногоВиробництва_Select() : base(Config.Kernel, "tab_b83") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new КоригуванняНезавершеногоВиробництва_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public КоригуванняНезавершеногоВиробництва_Pointer? Current { get; private set; }
+
+        public async ValueTask<КоригуванняНезавершеногоВиробництва_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new КоригуванняНезавершеногоВиробництва_Pointer(pointer) : new КоригуванняНезавершеногоВиробництва_Pointer();
+        }
+        
+        public async ValueTask<List<КоригуванняНезавершеногоВиробництва_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<КоригуванняНезавершеногоВиробництва_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new КоригуванняНезавершеногоВиробництва_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class КоригуванняНезавершеногоВиробництва_Export
+    {
+        public static async ValueTask ToXmlFile(КоригуванняНезавершеногоВиробництва_Pointer КоригуванняНезавершеногоВиробництва, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "КоригуванняПДВ"
+    public static class КоригуванняПДВ_Const
+    {
+        public const string TABLE = "tab_b84";
+        public const string TYPE = "КоригуванняПДВ"; /* Назва вказівника */
+        public const string POINTER = "Документи.КоригуванняПДВ"; /* Повна назва вказівника */
+        public const string FULLNAME = "Коригування ПДВ"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class КоригуванняПДВ_Objest : DocumentObject
+    {
+        public КоригуванняПДВ_Objest() : base(Config.Kernel, "tab_b84", КоригуванняПДВ_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = КоригуванняПДВ_Const.FULLNAME + " *";
+            
+                await КоригуванняПДВ_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await КоригуванняПДВ_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await КоригуванняПДВ_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<КоригуванняПДВ_Objest> Copy(bool copyTableParts = false)
+        {
+            КоригуванняПДВ_Objest copy = new КоригуванняПДВ_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await КоригуванняПДВ_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public КоригуванняПДВ_Pointer GetDocumentPointer()
+        {
+            return new КоригуванняПДВ_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(КоригуванняПДВ_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class КоригуванняПДВ_Pointer : DocumentPointer
+    {
+        public КоригуванняПДВ_Pointer(object? uid = null) : base(Config.Kernel, "tab_b84", КоригуванняПДВ_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public КоригуванняПДВ_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b84", "КоригуванняПДВ")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(КоригуванняПДВ_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [КоригуванняПДВ_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{КоригуванняПДВ_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(КоригуванняПДВ_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            КоригуванняПДВ_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public КоригуванняПДВ_Pointer Copy()
+        {
+            return new КоригуванняПДВ_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public КоригуванняПДВ_Pointer GetEmptyPointer()
+        {
+            return new КоригуванняПДВ_Pointer();
+        }
+
+        public async ValueTask<КоригуванняПДВ_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            КоригуванняПДВ_Objest obj = new КоригуванняПДВ_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class КоригуванняПДВ_Select : DocumentSelect
+    {		
+        public КоригуванняПДВ_Select() : base(Config.Kernel, "tab_b84") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new КоригуванняПДВ_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public КоригуванняПДВ_Pointer? Current { get; private set; }
+
+        public async ValueTask<КоригуванняПДВ_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new КоригуванняПДВ_Pointer(pointer) : new КоригуванняПДВ_Pointer();
+        }
+        
+        public async ValueTask<List<КоригуванняПДВ_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<КоригуванняПДВ_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new КоригуванняПДВ_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class КоригуванняПДВ_Export
+    {
+        public static async ValueTask ToXmlFile(КоригуванняПДВ_Pointer КоригуванняПДВ, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "КоригуванняІншихВитрат"
+    public static class КоригуванняІншихВитрат_Const
+    {
+        public const string TABLE = "tab_b85";
+        public const string TYPE = "КоригуванняІншихВитрат"; /* Назва вказівника */
+        public const string POINTER = "Документи.КоригуванняІншихВитрат"; /* Повна назва вказівника */
+        public const string FULLNAME = "Коригування інших витрат"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class КоригуванняІншихВитрат_Objest : DocumentObject
+    {
+        public КоригуванняІншихВитрат_Objest() : base(Config.Kernel, "tab_b85", КоригуванняІншихВитрат_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = КоригуванняІншихВитрат_Const.FULLNAME + " *";
+            
+                await КоригуванняІншихВитрат_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await КоригуванняІншихВитрат_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await КоригуванняІншихВитрат_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<КоригуванняІншихВитрат_Objest> Copy(bool copyTableParts = false)
+        {
+            КоригуванняІншихВитрат_Objest copy = new КоригуванняІншихВитрат_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await КоригуванняІншихВитрат_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public КоригуванняІншихВитрат_Pointer GetDocumentPointer()
+        {
+            return new КоригуванняІншихВитрат_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(КоригуванняІншихВитрат_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class КоригуванняІншихВитрат_Pointer : DocumentPointer
+    {
+        public КоригуванняІншихВитрат_Pointer(object? uid = null) : base(Config.Kernel, "tab_b85", КоригуванняІншихВитрат_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public КоригуванняІншихВитрат_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b85", "КоригуванняІншихВитрат")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(КоригуванняІншихВитрат_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [КоригуванняІншихВитрат_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{КоригуванняІншихВитрат_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(КоригуванняІншихВитрат_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            КоригуванняІншихВитрат_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public КоригуванняІншихВитрат_Pointer Copy()
+        {
+            return new КоригуванняІншихВитрат_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public КоригуванняІншихВитрат_Pointer GetEmptyPointer()
+        {
+            return new КоригуванняІншихВитрат_Pointer();
+        }
+
+        public async ValueTask<КоригуванняІншихВитрат_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            КоригуванняІншихВитрат_Objest obj = new КоригуванняІншихВитрат_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class КоригуванняІншихВитрат_Select : DocumentSelect
+    {		
+        public КоригуванняІншихВитрат_Select() : base(Config.Kernel, "tab_b85") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new КоригуванняІншихВитрат_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public КоригуванняІншихВитрат_Pointer? Current { get; private set; }
+
+        public async ValueTask<КоригуванняІншихВитрат_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new КоригуванняІншихВитрат_Pointer(pointer) : new КоригуванняІншихВитрат_Pointer();
+        }
+        
+        public async ValueTask<List<КоригуванняІншихВитрат_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<КоригуванняІншихВитрат_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new КоригуванняІншихВитрат_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class КоригуванняІншихВитрат_Export
+    {
+        public static async ValueTask ToXmlFile(КоригуванняІншихВитрат_Pointer КоригуванняІншихВитрат, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "Модернізація"
+    public static class Модернізація_Const
+    {
+        public const string TABLE = "tab_b86";
+        public const string TYPE = "Модернізація"; /* Назва вказівника */
+        public const string POINTER = "Документи.Модернізація"; /* Повна назва вказівника */
+        public const string FULLNAME = "Модернізація"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class Модернізація_Objest : DocumentObject
+    {
+        public Модернізація_Objest() : base(Config.Kernel, "tab_b86", Модернізація_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = Модернізація_Const.FULLNAME + " *";
+            
+                await Модернізація_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await Модернізація_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await Модернізація_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<Модернізація_Objest> Copy(bool copyTableParts = false)
+        {
+            Модернізація_Objest copy = new Модернізація_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await Модернізація_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public Модернізація_Pointer GetDocumentPointer()
+        {
+            return new Модернізація_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(Модернізація_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class Модернізація_Pointer : DocumentPointer
+    {
+        public Модернізація_Pointer(object? uid = null) : base(Config.Kernel, "tab_b86", Модернізація_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public Модернізація_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b86", "Модернізація")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(Модернізація_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [Модернізація_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{Модернізація_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(Модернізація_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            Модернізація_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public Модернізація_Pointer Copy()
+        {
+            return new Модернізація_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public Модернізація_Pointer GetEmptyPointer()
+        {
+            return new Модернізація_Pointer();
+        }
+
+        public async ValueTask<Модернізація_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            Модернізація_Objest obj = new Модернізація_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class Модернізація_Select : DocumentSelect
+    {		
+        public Модернізація_Select() : base(Config.Kernel, "tab_b86") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Модернізація_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public Модернізація_Pointer? Current { get; private set; }
+
+        public async ValueTask<Модернізація_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Модернізація_Pointer(pointer) : new Модернізація_Pointer();
+        }
+        
+        public async ValueTask<List<Модернізація_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<Модернізація_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new Модернізація_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class Модернізація_Export
+    {
+        public static async ValueTask ToXmlFile(Модернізація_Pointer Модернізація, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "Комплектація"
+    public static class Комплектація_Const
+    {
+        public const string TABLE = "tab_b87";
+        public const string TYPE = "Комплектація"; /* Назва вказівника */
+        public const string POINTER = "Документи.Комплектація"; /* Повна назва вказівника */
+        public const string FULLNAME = "Комплектація"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class Комплектація_Objest : DocumentObject
+    {
+        public Комплектація_Objest() : base(Config.Kernel, "tab_b87", Комплектація_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = Комплектація_Const.FULLNAME + " *";
+            
+                await Комплектація_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await Комплектація_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await Комплектація_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<Комплектація_Objest> Copy(bool copyTableParts = false)
+        {
+            Комплектація_Objest copy = new Комплектація_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await Комплектація_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public Комплектація_Pointer GetDocumentPointer()
+        {
+            return new Комплектація_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(Комплектація_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class Комплектація_Pointer : DocumentPointer
+    {
+        public Комплектація_Pointer(object? uid = null) : base(Config.Kernel, "tab_b87", Комплектація_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public Комплектація_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b87", "Комплектація")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(Комплектація_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [Комплектація_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{Комплектація_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(Комплектація_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            Комплектація_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public Комплектація_Pointer Copy()
+        {
+            return new Комплектація_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public Комплектація_Pointer GetEmptyPointer()
+        {
+            return new Комплектація_Pointer();
+        }
+
+        public async ValueTask<Комплектація_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            Комплектація_Objest obj = new Комплектація_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class Комплектація_Select : DocumentSelect
+    {		
+        public Комплектація_Select() : base(Config.Kernel, "tab_b87") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Комплектація_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public Комплектація_Pointer? Current { get; private set; }
+
+        public async ValueTask<Комплектація_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Комплектація_Pointer(pointer) : new Комплектація_Pointer();
+        }
+        
+        public async ValueTask<List<Комплектація_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<Комплектація_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new Комплектація_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class Комплектація_Export
+    {
+        public static async ValueTask ToXmlFile(Комплектація_Pointer Комплектація, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "НакладнаВимога"
+    public static class НакладнаВимога_Const
+    {
+        public const string TABLE = "tab_b88";
+        public const string TYPE = "НакладнаВимога"; /* Назва вказівника */
+        public const string POINTER = "Документи.НакладнаВимога"; /* Повна назва вказівника */
+        public const string FULLNAME = "Накладна-вимога"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class НакладнаВимога_Objest : DocumentObject
+    {
+        public НакладнаВимога_Objest() : base(Config.Kernel, "tab_b88", НакладнаВимога_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = НакладнаВимога_Const.FULLNAME + " *";
+            
+                await НакладнаВимога_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await НакладнаВимога_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await НакладнаВимога_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<НакладнаВимога_Objest> Copy(bool copyTableParts = false)
+        {
+            НакладнаВимога_Objest copy = new НакладнаВимога_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await НакладнаВимога_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public НакладнаВимога_Pointer GetDocumentPointer()
+        {
+            return new НакладнаВимога_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(НакладнаВимога_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class НакладнаВимога_Pointer : DocumentPointer
+    {
+        public НакладнаВимога_Pointer(object? uid = null) : base(Config.Kernel, "tab_b88", НакладнаВимога_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public НакладнаВимога_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b88", "НакладнаВимога")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(НакладнаВимога_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [НакладнаВимога_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{НакладнаВимога_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(НакладнаВимога_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            НакладнаВимога_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public НакладнаВимога_Pointer Copy()
+        {
+            return new НакладнаВимога_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public НакладнаВимога_Pointer GetEmptyPointer()
+        {
+            return new НакладнаВимога_Pointer();
+        }
+
+        public async ValueTask<НакладнаВимога_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            НакладнаВимога_Objest obj = new НакладнаВимога_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class НакладнаВимога_Select : DocumentSelect
+    {		
+        public НакладнаВимога_Select() : base(Config.Kernel, "tab_b88") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new НакладнаВимога_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public НакладнаВимога_Pointer? Current { get; private set; }
+
+        public async ValueTask<НакладнаВимога_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new НакладнаВимога_Pointer(pointer) : new НакладнаВимога_Pointer();
+        }
+        
+        public async ValueTask<List<НакладнаВимога_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<НакладнаВимога_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new НакладнаВимога_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class НакладнаВимога_Export
+    {
+        public static async ValueTask ToXmlFile(НакладнаВимога_Pointer НакладнаВимога, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "Наряд"
+    public static class Наряд_Const
+    {
+        public const string TABLE = "tab_b89";
+        public const string TYPE = "Наряд"; /* Назва вказівника */
+        public const string POINTER = "Документи.Наряд"; /* Повна назва вказівника */
+        public const string FULLNAME = "Наряд"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class Наряд_Objest : DocumentObject
+    {
+        public Наряд_Objest() : base(Config.Kernel, "tab_b89", Наряд_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = Наряд_Const.FULLNAME + " *";
+            
+                await Наряд_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await Наряд_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await Наряд_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<Наряд_Objest> Copy(bool copyTableParts = false)
+        {
+            Наряд_Objest copy = new Наряд_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await Наряд_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public Наряд_Pointer GetDocumentPointer()
+        {
+            return new Наряд_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(Наряд_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class Наряд_Pointer : DocumentPointer
+    {
+        public Наряд_Pointer(object? uid = null) : base(Config.Kernel, "tab_b89", Наряд_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public Наряд_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b89", "Наряд")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(Наряд_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [Наряд_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{Наряд_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(Наряд_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            Наряд_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public Наряд_Pointer Copy()
+        {
+            return new Наряд_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public Наряд_Pointer GetEmptyPointer()
+        {
+            return new Наряд_Pointer();
+        }
+
+        public async ValueTask<Наряд_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            Наряд_Objest obj = new Наряд_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class Наряд_Select : DocumentSelect
+    {		
+        public Наряд_Select() : base(Config.Kernel, "tab_b89") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Наряд_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public Наряд_Pointer? Current { get; private set; }
+
+        public async ValueTask<Наряд_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Наряд_Pointer(pointer) : new Наряд_Pointer();
+        }
+        
+        public async ValueTask<List<Наряд_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<Наряд_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new Наряд_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class Наряд_Export
+    {
+        public static async ValueTask ToXmlFile(Наряд_Pointer Наряд, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "НарахуванняЗаробітньоїПлати"
+    public static class НарахуванняЗаробітньоїПлати_Const
+    {
+        public const string TABLE = "tab_b90";
+        public const string TYPE = "НарахуванняЗаробітньоїПлати"; /* Назва вказівника */
+        public const string POINTER = "Документи.НарахуванняЗаробітньоїПлати"; /* Повна назва вказівника */
+        public const string FULLNAME = "Нарахування заробітньої плати"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class НарахуванняЗаробітньоїПлати_Objest : DocumentObject
+    {
+        public НарахуванняЗаробітньоїПлати_Objest() : base(Config.Kernel, "tab_b90", НарахуванняЗаробітньоїПлати_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = НарахуванняЗаробітньоїПлати_Const.FULLNAME + " *";
+            
+                await НарахуванняЗаробітньоїПлати_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await НарахуванняЗаробітньоїПлати_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await НарахуванняЗаробітньоїПлати_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<НарахуванняЗаробітньоїПлати_Objest> Copy(bool copyTableParts = false)
+        {
+            НарахуванняЗаробітньоїПлати_Objest copy = new НарахуванняЗаробітньоїПлати_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await НарахуванняЗаробітньоїПлати_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public НарахуванняЗаробітньоїПлати_Pointer GetDocumentPointer()
+        {
+            return new НарахуванняЗаробітньоїПлати_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(НарахуванняЗаробітньоїПлати_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class НарахуванняЗаробітньоїПлати_Pointer : DocumentPointer
+    {
+        public НарахуванняЗаробітньоїПлати_Pointer(object? uid = null) : base(Config.Kernel, "tab_b90", НарахуванняЗаробітньоїПлати_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public НарахуванняЗаробітньоїПлати_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b90", "НарахуванняЗаробітньоїПлати")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(НарахуванняЗаробітньоїПлати_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [НарахуванняЗаробітньоїПлати_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{НарахуванняЗаробітньоїПлати_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(НарахуванняЗаробітньоїПлати_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            НарахуванняЗаробітньоїПлати_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public НарахуванняЗаробітньоїПлати_Pointer Copy()
+        {
+            return new НарахуванняЗаробітньоїПлати_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public НарахуванняЗаробітньоїПлати_Pointer GetEmptyPointer()
+        {
+            return new НарахуванняЗаробітньоїПлати_Pointer();
+        }
+
+        public async ValueTask<НарахуванняЗаробітньоїПлати_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            НарахуванняЗаробітньоїПлати_Objest obj = new НарахуванняЗаробітньоїПлати_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class НарахуванняЗаробітньоїПлати_Select : DocumentSelect
+    {		
+        public НарахуванняЗаробітньоїПлати_Select() : base(Config.Kernel, "tab_b90") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new НарахуванняЗаробітньоїПлати_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public НарахуванняЗаробітньоїПлати_Pointer? Current { get; private set; }
+
+        public async ValueTask<НарахуванняЗаробітньоїПлати_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new НарахуванняЗаробітньоїПлати_Pointer(pointer) : new НарахуванняЗаробітньоїПлати_Pointer();
+        }
+        
+        public async ValueTask<List<НарахуванняЗаробітньоїПлати_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<НарахуванняЗаробітньоїПлати_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new НарахуванняЗаробітньоїПлати_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class НарахуванняЗаробітньоїПлати_Export
+    {
+        public static async ValueTask ToXmlFile(НарахуванняЗаробітньоїПлати_Pointer НарахуванняЗаробітньоїПлати, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "ПередачаМатеріалівВЕксплуатацію"
+    public static class ПередачаМатеріалівВЕксплуатацію_Const
+    {
+        public const string TABLE = "tab_b91";
+        public const string TYPE = "ПередачаМатеріалівВЕксплуатацію"; /* Назва вказівника */
+        public const string POINTER = "Документи.ПередачаМатеріалівВЕксплуатацію"; /* Повна назва вказівника */
+        public const string FULLNAME = "Передача матеріалів в експлуатацію"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class ПередачаМатеріалівВЕксплуатацію_Objest : DocumentObject
+    {
+        public ПередачаМатеріалівВЕксплуатацію_Objest() : base(Config.Kernel, "tab_b91", ПередачаМатеріалівВЕксплуатацію_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = ПередачаМатеріалівВЕксплуатацію_Const.FULLNAME + " *";
+            
+                await ПередачаМатеріалівВЕксплуатацію_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await ПередачаМатеріалівВЕксплуатацію_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await ПередачаМатеріалівВЕксплуатацію_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<ПередачаМатеріалівВЕксплуатацію_Objest> Copy(bool copyTableParts = false)
+        {
+            ПередачаМатеріалівВЕксплуатацію_Objest copy = new ПередачаМатеріалівВЕксплуатацію_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await ПередачаМатеріалівВЕксплуатацію_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public ПередачаМатеріалівВЕксплуатацію_Pointer GetDocumentPointer()
+        {
+            return new ПередачаМатеріалівВЕксплуатацію_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(ПередачаМатеріалівВЕксплуатацію_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class ПередачаМатеріалівВЕксплуатацію_Pointer : DocumentPointer
+    {
+        public ПередачаМатеріалівВЕксплуатацію_Pointer(object? uid = null) : base(Config.Kernel, "tab_b91", ПередачаМатеріалівВЕксплуатацію_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public ПередачаМатеріалівВЕксплуатацію_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b91", "ПередачаМатеріалівВЕксплуатацію")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(ПередачаМатеріалівВЕксплуатацію_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [ПередачаМатеріалівВЕксплуатацію_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{ПередачаМатеріалівВЕксплуатацію_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(ПередачаМатеріалівВЕксплуатацію_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            ПередачаМатеріалівВЕксплуатацію_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public ПередачаМатеріалівВЕксплуатацію_Pointer Copy()
+        {
+            return new ПередачаМатеріалівВЕксплуатацію_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public ПередачаМатеріалівВЕксплуатацію_Pointer GetEmptyPointer()
+        {
+            return new ПередачаМатеріалівВЕксплуатацію_Pointer();
+        }
+
+        public async ValueTask<ПередачаМатеріалівВЕксплуатацію_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            ПередачаМатеріалівВЕксплуатацію_Objest obj = new ПередачаМатеріалівВЕксплуатацію_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class ПередачаМатеріалівВЕксплуатацію_Select : DocumentSelect
+    {		
+        public ПередачаМатеріалівВЕксплуатацію_Select() : base(Config.Kernel, "tab_b91") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПередачаМатеріалівВЕксплуатацію_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public ПередачаМатеріалівВЕксплуатацію_Pointer? Current { get; private set; }
+
+        public async ValueTask<ПередачаМатеріалівВЕксплуатацію_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПередачаМатеріалівВЕксплуатацію_Pointer(pointer) : new ПередачаМатеріалівВЕксплуатацію_Pointer();
+        }
+        
+        public async ValueTask<List<ПередачаМатеріалівВЕксплуатацію_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<ПередачаМатеріалівВЕксплуатацію_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПередачаМатеріалівВЕксплуатацію_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class ПередачаМатеріалівВЕксплуатацію_Export
+    {
+        public static async ValueTask ToXmlFile(ПередачаМатеріалівВЕксплуатацію_Pointer ПередачаМатеріалівВЕксплуатацію, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "ПереміщенняМатеріалівВЕксплуатації"
+    public static class ПереміщенняМатеріалівВЕксплуатації_Const
+    {
+        public const string TABLE = "tab_b92";
+        public const string TYPE = "ПереміщенняМатеріалівВЕксплуатації"; /* Назва вказівника */
+        public const string POINTER = "Документи.ПереміщенняМатеріалівВЕксплуатації"; /* Повна назва вказівника */
+        public const string FULLNAME = "Переміщення матеріалів в експлуатації"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class ПереміщенняМатеріалівВЕксплуатації_Objest : DocumentObject
+    {
+        public ПереміщенняМатеріалівВЕксплуатації_Objest() : base(Config.Kernel, "tab_b92", ПереміщенняМатеріалівВЕксплуатації_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = ПереміщенняМатеріалівВЕксплуатації_Const.FULLNAME + " *";
+            
+                await ПереміщенняМатеріалівВЕксплуатації_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await ПереміщенняМатеріалівВЕксплуатації_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await ПереміщенняМатеріалівВЕксплуатації_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<ПереміщенняМатеріалівВЕксплуатації_Objest> Copy(bool copyTableParts = false)
+        {
+            ПереміщенняМатеріалівВЕксплуатації_Objest copy = new ПереміщенняМатеріалівВЕксплуатації_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await ПереміщенняМатеріалівВЕксплуатації_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public ПереміщенняМатеріалівВЕксплуатації_Pointer GetDocumentPointer()
+        {
+            return new ПереміщенняМатеріалівВЕксплуатації_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(ПереміщенняМатеріалівВЕксплуатації_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class ПереміщенняМатеріалівВЕксплуатації_Pointer : DocumentPointer
+    {
+        public ПереміщенняМатеріалівВЕксплуатації_Pointer(object? uid = null) : base(Config.Kernel, "tab_b92", ПереміщенняМатеріалівВЕксплуатації_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public ПереміщенняМатеріалівВЕксплуатації_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b92", "ПереміщенняМатеріалівВЕксплуатації")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(ПереміщенняМатеріалівВЕксплуатації_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [ПереміщенняМатеріалівВЕксплуатації_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{ПереміщенняМатеріалівВЕксплуатації_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(ПереміщенняМатеріалівВЕксплуатації_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            ПереміщенняМатеріалівВЕксплуатації_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public ПереміщенняМатеріалівВЕксплуатації_Pointer Copy()
+        {
+            return new ПереміщенняМатеріалівВЕксплуатації_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public ПереміщенняМатеріалівВЕксплуатації_Pointer GetEmptyPointer()
+        {
+            return new ПереміщенняМатеріалівВЕксплуатації_Pointer();
+        }
+
+        public async ValueTask<ПереміщенняМатеріалівВЕксплуатації_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            ПереміщенняМатеріалівВЕксплуатації_Objest obj = new ПереміщенняМатеріалівВЕксплуатації_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class ПереміщенняМатеріалівВЕксплуатації_Select : DocumentSelect
+    {		
+        public ПереміщенняМатеріалівВЕксплуатації_Select() : base(Config.Kernel, "tab_b92") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПереміщенняМатеріалівВЕксплуатації_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public ПереміщенняМатеріалівВЕксплуатації_Pointer? Current { get; private set; }
+
+        public async ValueTask<ПереміщенняМатеріалівВЕксплуатації_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПереміщенняМатеріалівВЕксплуатації_Pointer(pointer) : new ПереміщенняМатеріалівВЕксплуатації_Pointer();
+        }
+        
+        public async ValueTask<List<ПереміщенняМатеріалівВЕксплуатації_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<ПереміщенняМатеріалівВЕксплуатації_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПереміщенняМатеріалівВЕксплуатації_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class ПереміщенняМатеріалівВЕксплуатації_Export
+    {
+        public static async ValueTask ToXmlFile(ПереміщенняМатеріалівВЕксплуатації_Pointer ПереміщенняМатеріалівВЕксплуатації, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "ПередачаНематеріальнихАктивів"
+    public static class ПередачаНематеріальнихАктивів_Const
+    {
+        public const string TABLE = "tab_b93";
+        public const string TYPE = "ПередачаНематеріальнихАктивів"; /* Назва вказівника */
+        public const string POINTER = "Документи.ПередачаНематеріальнихАктивів"; /* Повна назва вказівника */
+        public const string FULLNAME = "Передача нематеріальних активів"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class ПередачаНематеріальнихАктивів_Objest : DocumentObject
+    {
+        public ПередачаНематеріальнихАктивів_Objest() : base(Config.Kernel, "tab_b93", ПередачаНематеріальнихАктивів_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = ПередачаНематеріальнихАктивів_Const.FULLNAME + " *";
+            
+                await ПередачаНематеріальнихАктивів_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await ПередачаНематеріальнихАктивів_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await ПередачаНематеріальнихАктивів_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<ПередачаНематеріальнихАктивів_Objest> Copy(bool copyTableParts = false)
+        {
+            ПередачаНематеріальнихАктивів_Objest copy = new ПередачаНематеріальнихАктивів_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await ПередачаНематеріальнихАктивів_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public ПередачаНематеріальнихАктивів_Pointer GetDocumentPointer()
+        {
+            return new ПередачаНематеріальнихАктивів_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(ПередачаНематеріальнихАктивів_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class ПередачаНематеріальнихАктивів_Pointer : DocumentPointer
+    {
+        public ПередачаНематеріальнихАктивів_Pointer(object? uid = null) : base(Config.Kernel, "tab_b93", ПередачаНематеріальнихАктивів_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public ПередачаНематеріальнихАктивів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b93", "ПередачаНематеріальнихАктивів")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(ПередачаНематеріальнихАктивів_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [ПередачаНематеріальнихАктивів_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{ПередачаНематеріальнихАктивів_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(ПередачаНематеріальнихАктивів_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            ПередачаНематеріальнихАктивів_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public ПередачаНематеріальнихАктивів_Pointer Copy()
+        {
+            return new ПередачаНематеріальнихАктивів_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public ПередачаНематеріальнихАктивів_Pointer GetEmptyPointer()
+        {
+            return new ПередачаНематеріальнихАктивів_Pointer();
+        }
+
+        public async ValueTask<ПередачаНематеріальнихАктивів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            ПередачаНематеріальнихАктивів_Objest obj = new ПередачаНематеріальнихАктивів_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class ПередачаНематеріальнихАктивів_Select : DocumentSelect
+    {		
+        public ПередачаНематеріальнихАктивів_Select() : base(Config.Kernel, "tab_b93") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПередачаНематеріальнихАктивів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public ПередачаНематеріальнихАктивів_Pointer? Current { get; private set; }
+
+        public async ValueTask<ПередачаНематеріальнихАктивів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПередачаНематеріальнихАктивів_Pointer(pointer) : new ПередачаНематеріальнихАктивів_Pointer();
+        }
+        
+        public async ValueTask<List<ПередачаНематеріальнихАктивів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<ПередачаНематеріальнихАктивів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПередачаНематеріальнихАктивів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class ПередачаНематеріальнихАктивів_Export
+    {
+        public static async ValueTask ToXmlFile(ПередачаНематеріальнихАктивів_Pointer ПередачаНематеріальнихАктивів, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "ПереміщенняНематеріальнихАктивів"
+    public static class ПереміщенняНематеріальнихАктивів_Const
+    {
+        public const string TABLE = "tab_b94";
+        public const string TYPE = "ПереміщенняНематеріальнихАктивів"; /* Назва вказівника */
+        public const string POINTER = "Документи.ПереміщенняНематеріальнихАктивів"; /* Повна назва вказівника */
+        public const string FULLNAME = "Переміщення нематеріальних активів"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class ПереміщенняНематеріальнихАктивів_Objest : DocumentObject
+    {
+        public ПереміщенняНематеріальнихАктивів_Objest() : base(Config.Kernel, "tab_b94", ПереміщенняНематеріальнихАктивів_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = ПереміщенняНематеріальнихАктивів_Const.FULLNAME + " *";
+            
+                await ПереміщенняНематеріальнихАктивів_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await ПереміщенняНематеріальнихАктивів_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await ПереміщенняНематеріальнихАктивів_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<ПереміщенняНематеріальнихАктивів_Objest> Copy(bool copyTableParts = false)
+        {
+            ПереміщенняНематеріальнихАктивів_Objest copy = new ПереміщенняНематеріальнихАктивів_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await ПереміщенняНематеріальнихАктивів_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public ПереміщенняНематеріальнихАктивів_Pointer GetDocumentPointer()
+        {
+            return new ПереміщенняНематеріальнихАктивів_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(ПереміщенняНематеріальнихАктивів_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class ПереміщенняНематеріальнихАктивів_Pointer : DocumentPointer
+    {
+        public ПереміщенняНематеріальнихАктивів_Pointer(object? uid = null) : base(Config.Kernel, "tab_b94", ПереміщенняНематеріальнихАктивів_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public ПереміщенняНематеріальнихАктивів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b94", "ПереміщенняНематеріальнихАктивів")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(ПереміщенняНематеріальнихАктивів_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [ПереміщенняНематеріальнихАктивів_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{ПереміщенняНематеріальнихАктивів_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(ПереміщенняНематеріальнихАктивів_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            ПереміщенняНематеріальнихАктивів_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public ПереміщенняНематеріальнихАктивів_Pointer Copy()
+        {
+            return new ПереміщенняНематеріальнихАктивів_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public ПереміщенняНематеріальнихАктивів_Pointer GetEmptyPointer()
+        {
+            return new ПереміщенняНематеріальнихАктивів_Pointer();
+        }
+
+        public async ValueTask<ПереміщенняНематеріальнихАктивів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            ПереміщенняНематеріальнихАктивів_Objest obj = new ПереміщенняНематеріальнихАктивів_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class ПереміщенняНематеріальнихАктивів_Select : DocumentSelect
+    {		
+        public ПереміщенняНематеріальнихАктивів_Select() : base(Config.Kernel, "tab_b94") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПереміщенняНематеріальнихАктивів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public ПереміщенняНематеріальнихАктивів_Pointer? Current { get; private set; }
+
+        public async ValueTask<ПереміщенняНематеріальнихАктивів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПереміщенняНематеріальнихАктивів_Pointer(pointer) : new ПереміщенняНематеріальнихАктивів_Pointer();
+        }
+        
+        public async ValueTask<List<ПереміщенняНематеріальнихАктивів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<ПереміщенняНематеріальнихАктивів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПереміщенняНематеріальнихАктивів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class ПереміщенняНематеріальнихАктивів_Export
+    {
+        public static async ValueTask ToXmlFile(ПереміщенняНематеріальнихАктивів_Pointer ПереміщенняНематеріальнихАктивів, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "ПередачаОбладнанняВМонтаж"
+    public static class ПередачаОбладнанняВМонтаж_Const
+    {
+        public const string TABLE = "tab_b95";
+        public const string TYPE = "ПередачаОбладнанняВМонтаж"; /* Назва вказівника */
+        public const string POINTER = "Документи.ПередачаОбладнанняВМонтаж"; /* Повна назва вказівника */
+        public const string FULLNAME = "Передача обладнання в монтаж"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class ПередачаОбладнанняВМонтаж_Objest : DocumentObject
+    {
+        public ПередачаОбладнанняВМонтаж_Objest() : base(Config.Kernel, "tab_b95", ПередачаОбладнанняВМонтаж_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = ПередачаОбладнанняВМонтаж_Const.FULLNAME + " *";
+            
+                await ПередачаОбладнанняВМонтаж_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await ПередачаОбладнанняВМонтаж_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await ПередачаОбладнанняВМонтаж_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<ПередачаОбладнанняВМонтаж_Objest> Copy(bool copyTableParts = false)
+        {
+            ПередачаОбладнанняВМонтаж_Objest copy = new ПередачаОбладнанняВМонтаж_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await ПередачаОбладнанняВМонтаж_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public ПередачаОбладнанняВМонтаж_Pointer GetDocumentPointer()
+        {
+            return new ПередачаОбладнанняВМонтаж_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(ПередачаОбладнанняВМонтаж_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class ПередачаОбладнанняВМонтаж_Pointer : DocumentPointer
+    {
+        public ПередачаОбладнанняВМонтаж_Pointer(object? uid = null) : base(Config.Kernel, "tab_b95", ПередачаОбладнанняВМонтаж_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public ПередачаОбладнанняВМонтаж_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b95", "ПередачаОбладнанняВМонтаж")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(ПередачаОбладнанняВМонтаж_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [ПередачаОбладнанняВМонтаж_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{ПередачаОбладнанняВМонтаж_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(ПередачаОбладнанняВМонтаж_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            ПередачаОбладнанняВМонтаж_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public ПередачаОбладнанняВМонтаж_Pointer Copy()
+        {
+            return new ПередачаОбладнанняВМонтаж_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public ПередачаОбладнанняВМонтаж_Pointer GetEmptyPointer()
+        {
+            return new ПередачаОбладнанняВМонтаж_Pointer();
+        }
+
+        public async ValueTask<ПередачаОбладнанняВМонтаж_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            ПередачаОбладнанняВМонтаж_Objest obj = new ПередачаОбладнанняВМонтаж_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class ПередачаОбладнанняВМонтаж_Select : DocumentSelect
+    {		
+        public ПередачаОбладнанняВМонтаж_Select() : base(Config.Kernel, "tab_b95") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПередачаОбладнанняВМонтаж_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public ПередачаОбладнанняВМонтаж_Pointer? Current { get; private set; }
+
+        public async ValueTask<ПередачаОбладнанняВМонтаж_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПередачаОбладнанняВМонтаж_Pointer(pointer) : new ПередачаОбладнанняВМонтаж_Pointer();
+        }
+        
+        public async ValueTask<List<ПередачаОбладнанняВМонтаж_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<ПередачаОбладнанняВМонтаж_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПередачаОбладнанняВМонтаж_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class ПередачаОбладнанняВМонтаж_Export
+    {
+        public static async ValueTask ToXmlFile(ПередачаОбладнанняВМонтаж_Pointer ПередачаОбладнанняВМонтаж, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "ПередачаОсновнихЗасобів"
+    public static class ПередачаОсновнихЗасобів_Const
+    {
+        public const string TABLE = "tab_b96";
+        public const string TYPE = "ПередачаОсновнихЗасобів"; /* Назва вказівника */
+        public const string POINTER = "Документи.ПередачаОсновнихЗасобів"; /* Повна назва вказівника */
+        public const string FULLNAME = "Передача основних засобів"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class ПередачаОсновнихЗасобів_Objest : DocumentObject
+    {
+        public ПередачаОсновнихЗасобів_Objest() : base(Config.Kernel, "tab_b96", ПередачаОсновнихЗасобів_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = ПередачаОсновнихЗасобів_Const.FULLNAME + " *";
+            
+                await ПередачаОсновнихЗасобів_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await ПередачаОсновнихЗасобів_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await ПередачаОсновнихЗасобів_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<ПередачаОсновнихЗасобів_Objest> Copy(bool copyTableParts = false)
+        {
+            ПередачаОсновнихЗасобів_Objest copy = new ПередачаОсновнихЗасобів_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await ПередачаОсновнихЗасобів_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public ПередачаОсновнихЗасобів_Pointer GetDocumentPointer()
+        {
+            return new ПередачаОсновнихЗасобів_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(ПередачаОсновнихЗасобів_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class ПередачаОсновнихЗасобів_Pointer : DocumentPointer
+    {
+        public ПередачаОсновнихЗасобів_Pointer(object? uid = null) : base(Config.Kernel, "tab_b96", ПередачаОсновнихЗасобів_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public ПередачаОсновнихЗасобів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b96", "ПередачаОсновнихЗасобів")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(ПередачаОсновнихЗасобів_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [ПередачаОсновнихЗасобів_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{ПередачаОсновнихЗасобів_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(ПередачаОсновнихЗасобів_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            ПередачаОсновнихЗасобів_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public ПередачаОсновнихЗасобів_Pointer Copy()
+        {
+            return new ПередачаОсновнихЗасобів_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public ПередачаОсновнихЗасобів_Pointer GetEmptyPointer()
+        {
+            return new ПередачаОсновнихЗасобів_Pointer();
+        }
+
+        public async ValueTask<ПередачаОсновнихЗасобів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            ПередачаОсновнихЗасобів_Objest obj = new ПередачаОсновнихЗасобів_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class ПередачаОсновнихЗасобів_Select : DocumentSelect
+    {		
+        public ПередачаОсновнихЗасобів_Select() : base(Config.Kernel, "tab_b96") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПередачаОсновнихЗасобів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public ПередачаОсновнихЗасобів_Pointer? Current { get; private set; }
+
+        public async ValueTask<ПередачаОсновнихЗасобів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПередачаОсновнихЗасобів_Pointer(pointer) : new ПередачаОсновнихЗасобів_Pointer();
+        }
+        
+        public async ValueTask<List<ПередачаОсновнихЗасобів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<ПередачаОсновнихЗасобів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПередачаОсновнихЗасобів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class ПередачаОсновнихЗасобів_Export
+    {
+        public static async ValueTask ToXmlFile(ПередачаОсновнихЗасобів_Pointer ПередачаОсновнихЗасобів, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "ПереміщенняОсновнихЗасобів"
+    public static class ПереміщенняОсновнихЗасобів_Const
+    {
+        public const string TABLE = "tab_b97";
+        public const string TYPE = "ПереміщенняОсновнихЗасобів"; /* Назва вказівника */
+        public const string POINTER = "Документи.ПереміщенняОсновнихЗасобів"; /* Повна назва вказівника */
+        public const string FULLNAME = "Переміщення основних засобів"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class ПереміщенняОсновнихЗасобів_Objest : DocumentObject
+    {
+        public ПереміщенняОсновнихЗасобів_Objest() : base(Config.Kernel, "tab_b97", ПереміщенняОсновнихЗасобів_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = ПереміщенняОсновнихЗасобів_Const.FULLNAME + " *";
+            
+                await ПереміщенняОсновнихЗасобів_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await ПереміщенняОсновнихЗасобів_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await ПереміщенняОсновнихЗасобів_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<ПереміщенняОсновнихЗасобів_Objest> Copy(bool copyTableParts = false)
+        {
+            ПереміщенняОсновнихЗасобів_Objest copy = new ПереміщенняОсновнихЗасобів_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await ПереміщенняОсновнихЗасобів_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public ПереміщенняОсновнихЗасобів_Pointer GetDocumentPointer()
+        {
+            return new ПереміщенняОсновнихЗасобів_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(ПереміщенняОсновнихЗасобів_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class ПереміщенняОсновнихЗасобів_Pointer : DocumentPointer
+    {
+        public ПереміщенняОсновнихЗасобів_Pointer(object? uid = null) : base(Config.Kernel, "tab_b97", ПереміщенняОсновнихЗасобів_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public ПереміщенняОсновнихЗасобів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b97", "ПереміщенняОсновнихЗасобів")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(ПереміщенняОсновнихЗасобів_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [ПереміщенняОсновнихЗасобів_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{ПереміщенняОсновнихЗасобів_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(ПереміщенняОсновнихЗасобів_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            ПереміщенняОсновнихЗасобів_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public ПереміщенняОсновнихЗасобів_Pointer Copy()
+        {
+            return new ПереміщенняОсновнихЗасобів_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public ПереміщенняОсновнихЗасобів_Pointer GetEmptyPointer()
+        {
+            return new ПереміщенняОсновнихЗасобів_Pointer();
+        }
+
+        public async ValueTask<ПереміщенняОсновнихЗасобів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            ПереміщенняОсновнихЗасобів_Objest obj = new ПереміщенняОсновнихЗасобів_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class ПереміщенняОсновнихЗасобів_Select : DocumentSelect
+    {		
+        public ПереміщенняОсновнихЗасобів_Select() : base(Config.Kernel, "tab_b97") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПереміщенняОсновнихЗасобів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public ПереміщенняОсновнихЗасобів_Pointer? Current { get; private set; }
+
+        public async ValueTask<ПереміщенняОсновнихЗасобів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПереміщенняОсновнихЗасобів_Pointer(pointer) : new ПереміщенняОсновнихЗасобів_Pointer();
+        }
+        
+        public async ValueTask<List<ПереміщенняОсновнихЗасобів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<ПереміщенняОсновнихЗасобів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПереміщенняОсновнихЗасобів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class ПереміщенняОсновнихЗасобів_Export
+    {
+        public static async ValueTask ToXmlFile(ПереміщенняОсновнихЗасобів_Pointer ПереміщенняОсновнихЗасобів, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "ПередачаТоварів"
+    public static class ПередачаТоварів_Const
+    {
+        public const string TABLE = "tab_b98";
+        public const string TYPE = "ПередачаТоварів"; /* Назва вказівника */
+        public const string POINTER = "Документи.ПередачаТоварів"; /* Повна назва вказівника */
+        public const string FULLNAME = "Передача товарів"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class ПередачаТоварів_Objest : DocumentObject
+    {
+        public ПередачаТоварів_Objest() : base(Config.Kernel, "tab_b98", ПередачаТоварів_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = ПередачаТоварів_Const.FULLNAME + " *";
+            
+                await ПередачаТоварів_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await ПередачаТоварів_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await ПередачаТоварів_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<ПередачаТоварів_Objest> Copy(bool copyTableParts = false)
+        {
+            ПередачаТоварів_Objest copy = new ПередачаТоварів_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await ПередачаТоварів_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public ПередачаТоварів_Pointer GetDocumentPointer()
+        {
+            return new ПередачаТоварів_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(ПередачаТоварів_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class ПередачаТоварів_Pointer : DocumentPointer
+    {
+        public ПередачаТоварів_Pointer(object? uid = null) : base(Config.Kernel, "tab_b98", ПередачаТоварів_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public ПередачаТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b98", "ПередачаТоварів")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(ПередачаТоварів_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [ПередачаТоварів_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{ПередачаТоварів_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(ПередачаТоварів_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            ПередачаТоварів_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public ПередачаТоварів_Pointer Copy()
+        {
+            return new ПередачаТоварів_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public ПередачаТоварів_Pointer GetEmptyPointer()
+        {
+            return new ПередачаТоварів_Pointer();
+        }
+
+        public async ValueTask<ПередачаТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            ПередачаТоварів_Objest obj = new ПередачаТоварів_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class ПередачаТоварів_Select : DocumentSelect
+    {		
+        public ПередачаТоварів_Select() : base(Config.Kernel, "tab_b98") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПередачаТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public ПередачаТоварів_Pointer? Current { get; private set; }
+
+        public async ValueTask<ПередачаТоварів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПередачаТоварів_Pointer(pointer) : new ПередачаТоварів_Pointer();
+        }
+        
+        public async ValueTask<List<ПередачаТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<ПередачаТоварів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПередачаТоварів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class ПередачаТоварів_Export
+    {
+        public static async ValueTask ToXmlFile(ПередачаТоварів_Pointer ПередачаТоварів, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "ПереоцінкаВалюти"
+    public static class ПереоцінкаВалюти_Const
+    {
+        public const string TABLE = "tab_b99";
+        public const string TYPE = "ПереоцінкаВалюти"; /* Назва вказівника */
+        public const string POINTER = "Документи.ПереоцінкаВалюти"; /* Повна назва вказівника */
+        public const string FULLNAME = "Переоцінка валюти"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class ПереоцінкаВалюти_Objest : DocumentObject
+    {
+        public ПереоцінкаВалюти_Objest() : base(Config.Kernel, "tab_b99", ПереоцінкаВалюти_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = ПереоцінкаВалюти_Const.FULLNAME + " *";
+            
+                await ПереоцінкаВалюти_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await ПереоцінкаВалюти_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await ПереоцінкаВалюти_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<ПереоцінкаВалюти_Objest> Copy(bool copyTableParts = false)
+        {
+            ПереоцінкаВалюти_Objest copy = new ПереоцінкаВалюти_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await ПереоцінкаВалюти_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public ПереоцінкаВалюти_Pointer GetDocumentPointer()
+        {
+            return new ПереоцінкаВалюти_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(ПереоцінкаВалюти_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class ПереоцінкаВалюти_Pointer : DocumentPointer
+    {
+        public ПереоцінкаВалюти_Pointer(object? uid = null) : base(Config.Kernel, "tab_b99", ПереоцінкаВалюти_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public ПереоцінкаВалюти_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b99", "ПереоцінкаВалюти")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(ПереоцінкаВалюти_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [ПереоцінкаВалюти_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{ПереоцінкаВалюти_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(ПереоцінкаВалюти_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            ПереоцінкаВалюти_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public ПереоцінкаВалюти_Pointer Copy()
+        {
+            return new ПереоцінкаВалюти_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public ПереоцінкаВалюти_Pointer GetEmptyPointer()
+        {
+            return new ПереоцінкаВалюти_Pointer();
+        }
+
+        public async ValueTask<ПереоцінкаВалюти_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            ПереоцінкаВалюти_Objest obj = new ПереоцінкаВалюти_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class ПереоцінкаВалюти_Select : DocumentSelect
+    {		
+        public ПереоцінкаВалюти_Select() : base(Config.Kernel, "tab_b99") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПереоцінкаВалюти_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public ПереоцінкаВалюти_Pointer? Current { get; private set; }
+
+        public async ValueTask<ПереоцінкаВалюти_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПереоцінкаВалюти_Pointer(pointer) : new ПереоцінкаВалюти_Pointer();
+        }
+        
+        public async ValueTask<List<ПереоцінкаВалюти_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<ПереоцінкаВалюти_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПереоцінкаВалюти_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class ПереоцінкаВалюти_Export
+    {
+        public static async ValueTask ToXmlFile(ПереоцінкаВалюти_Pointer ПереоцінкаВалюти, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "ПереоцінкаОсновнихЗасобів"
+    public static class ПереоцінкаОсновнихЗасобів_Const
+    {
+        public const string TABLE = "tab_c01";
+        public const string TYPE = "ПереоцінкаОсновнихЗасобів"; /* Назва вказівника */
+        public const string POINTER = "Документи.ПереоцінкаОсновнихЗасобів"; /* Повна назва вказівника */
+        public const string FULLNAME = "Переоцінка основних засобів"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class ПереоцінкаОсновнихЗасобів_Objest : DocumentObject
+    {
+        public ПереоцінкаОсновнихЗасобів_Objest() : base(Config.Kernel, "tab_c01", ПереоцінкаОсновнихЗасобів_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = ПереоцінкаОсновнихЗасобів_Const.FULLNAME + " *";
+            
+                await ПереоцінкаОсновнихЗасобів_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await ПереоцінкаОсновнихЗасобів_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await ПереоцінкаОсновнихЗасобів_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<ПереоцінкаОсновнихЗасобів_Objest> Copy(bool copyTableParts = false)
+        {
+            ПереоцінкаОсновнихЗасобів_Objest copy = new ПереоцінкаОсновнихЗасобів_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await ПереоцінкаОсновнихЗасобів_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public ПереоцінкаОсновнихЗасобів_Pointer GetDocumentPointer()
+        {
+            return new ПереоцінкаОсновнихЗасобів_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(ПереоцінкаОсновнихЗасобів_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class ПереоцінкаОсновнихЗасобів_Pointer : DocumentPointer
+    {
+        public ПереоцінкаОсновнихЗасобів_Pointer(object? uid = null) : base(Config.Kernel, "tab_c01", ПереоцінкаОсновнихЗасобів_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public ПереоцінкаОсновнихЗасобів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c01", "ПереоцінкаОсновнихЗасобів")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(ПереоцінкаОсновнихЗасобів_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [ПереоцінкаОсновнихЗасобів_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{ПереоцінкаОсновнихЗасобів_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(ПереоцінкаОсновнихЗасобів_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            ПереоцінкаОсновнихЗасобів_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public ПереоцінкаОсновнихЗасобів_Pointer Copy()
+        {
+            return new ПереоцінкаОсновнихЗасобів_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public ПереоцінкаОсновнихЗасобів_Pointer GetEmptyPointer()
+        {
+            return new ПереоцінкаОсновнихЗасобів_Pointer();
+        }
+
+        public async ValueTask<ПереоцінкаОсновнихЗасобів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            ПереоцінкаОсновнихЗасобів_Objest obj = new ПереоцінкаОсновнихЗасобів_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class ПереоцінкаОсновнихЗасобів_Select : DocumentSelect
+    {		
+        public ПереоцінкаОсновнихЗасобів_Select() : base(Config.Kernel, "tab_c01") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПереоцінкаОсновнихЗасобів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public ПереоцінкаОсновнихЗасобів_Pointer? Current { get; private set; }
+
+        public async ValueTask<ПереоцінкаОсновнихЗасобів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПереоцінкаОсновнихЗасобів_Pointer(pointer) : new ПереоцінкаОсновнихЗасобів_Pointer();
+        }
+        
+        public async ValueTask<List<ПереоцінкаОсновнихЗасобів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<ПереоцінкаОсновнихЗасобів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПереоцінкаОсновнихЗасобів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class ПереоцінкаОсновнихЗасобів_Export
+    {
+        public static async ValueTask ToXmlFile(ПереоцінкаОсновнихЗасобів_Pointer ПереоцінкаОсновнихЗасобів, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "ПереоцінкаТоварів"
+    public static class ПереоцінкаТоварів_Const
+    {
+        public const string TABLE = "tab_c02";
+        public const string TYPE = "ПереоцінкаТоварів"; /* Назва вказівника */
+        public const string POINTER = "Документи.ПереоцінкаТоварів"; /* Повна назва вказівника */
+        public const string FULLNAME = "Переоцінка товарів"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class ПереоцінкаТоварів_Objest : DocumentObject
+    {
+        public ПереоцінкаТоварів_Objest() : base(Config.Kernel, "tab_c02", ПереоцінкаТоварів_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = ПереоцінкаТоварів_Const.FULLNAME + " *";
+            
+                await ПереоцінкаТоварів_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await ПереоцінкаТоварів_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await ПереоцінкаТоварів_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<ПереоцінкаТоварів_Objest> Copy(bool copyTableParts = false)
+        {
+            ПереоцінкаТоварів_Objest copy = new ПереоцінкаТоварів_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await ПереоцінкаТоварів_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public ПереоцінкаТоварів_Pointer GetDocumentPointer()
+        {
+            return new ПереоцінкаТоварів_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(ПереоцінкаТоварів_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class ПереоцінкаТоварів_Pointer : DocumentPointer
+    {
+        public ПереоцінкаТоварів_Pointer(object? uid = null) : base(Config.Kernel, "tab_c02", ПереоцінкаТоварів_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public ПереоцінкаТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c02", "ПереоцінкаТоварів")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(ПереоцінкаТоварів_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [ПереоцінкаТоварів_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{ПереоцінкаТоварів_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(ПереоцінкаТоварів_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            ПереоцінкаТоварів_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public ПереоцінкаТоварів_Pointer Copy()
+        {
+            return new ПереоцінкаТоварів_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public ПереоцінкаТоварів_Pointer GetEmptyPointer()
+        {
+            return new ПереоцінкаТоварів_Pointer();
+        }
+
+        public async ValueTask<ПереоцінкаТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            ПереоцінкаТоварів_Objest obj = new ПереоцінкаТоварів_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class ПереоцінкаТоварів_Select : DocumentSelect
+    {		
+        public ПереоцінкаТоварів_Select() : base(Config.Kernel, "tab_c02") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПереоцінкаТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public ПереоцінкаТоварів_Pointer? Current { get; private set; }
+
+        public async ValueTask<ПереоцінкаТоварів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПереоцінкаТоварів_Pointer(pointer) : new ПереоцінкаТоварів_Pointer();
+        }
+        
+        public async ValueTask<List<ПереоцінкаТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<ПереоцінкаТоварів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПереоцінкаТоварів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class ПереоцінкаТоварів_Export
+    {
+        public static async ValueTask ToXmlFile(ПереоцінкаТоварів_Pointer ПереоцінкаТоварів, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "ПлатіжнеДорученняВхідне"
+    public static class ПлатіжнеДорученняВхідне_Const
+    {
+        public const string TABLE = "tab_c03";
+        public const string TYPE = "ПлатіжнеДорученняВхідне"; /* Назва вказівника */
+        public const string POINTER = "Документи.ПлатіжнеДорученняВхідне"; /* Повна назва вказівника */
+        public const string FULLNAME = "Платіжне доручення вхідне"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class ПлатіжнеДорученняВхідне_Objest : DocumentObject
+    {
+        public ПлатіжнеДорученняВхідне_Objest() : base(Config.Kernel, "tab_c03", ПлатіжнеДорученняВхідне_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = ПлатіжнеДорученняВхідне_Const.FULLNAME + " *";
+            
+                await ПлатіжнеДорученняВхідне_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await ПлатіжнеДорученняВхідне_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await ПлатіжнеДорученняВхідне_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<ПлатіжнеДорученняВхідне_Objest> Copy(bool copyTableParts = false)
+        {
+            ПлатіжнеДорученняВхідне_Objest copy = new ПлатіжнеДорученняВхідне_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await ПлатіжнеДорученняВхідне_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public ПлатіжнеДорученняВхідне_Pointer GetDocumentPointer()
+        {
+            return new ПлатіжнеДорученняВхідне_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(ПлатіжнеДорученняВхідне_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class ПлатіжнеДорученняВхідне_Pointer : DocumentPointer
+    {
+        public ПлатіжнеДорученняВхідне_Pointer(object? uid = null) : base(Config.Kernel, "tab_c03", ПлатіжнеДорученняВхідне_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public ПлатіжнеДорученняВхідне_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c03", "ПлатіжнеДорученняВхідне")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(ПлатіжнеДорученняВхідне_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [ПлатіжнеДорученняВхідне_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{ПлатіжнеДорученняВхідне_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(ПлатіжнеДорученняВхідне_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            ПлатіжнеДорученняВхідне_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public ПлатіжнеДорученняВхідне_Pointer Copy()
+        {
+            return new ПлатіжнеДорученняВхідне_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public ПлатіжнеДорученняВхідне_Pointer GetEmptyPointer()
+        {
+            return new ПлатіжнеДорученняВхідне_Pointer();
+        }
+
+        public async ValueTask<ПлатіжнеДорученняВхідне_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            ПлатіжнеДорученняВхідне_Objest obj = new ПлатіжнеДорученняВхідне_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class ПлатіжнеДорученняВхідне_Select : DocumentSelect
+    {		
+        public ПлатіжнеДорученняВхідне_Select() : base(Config.Kernel, "tab_c03") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПлатіжнеДорученняВхідне_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public ПлатіжнеДорученняВхідне_Pointer? Current { get; private set; }
+
+        public async ValueTask<ПлатіжнеДорученняВхідне_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПлатіжнеДорученняВхідне_Pointer(pointer) : new ПлатіжнеДорученняВхідне_Pointer();
+        }
+        
+        public async ValueTask<List<ПлатіжнеДорученняВхідне_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<ПлатіжнеДорученняВхідне_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПлатіжнеДорученняВхідне_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class ПлатіжнеДорученняВхідне_Export
+    {
+        public static async ValueTask ToXmlFile(ПлатіжнеДорученняВхідне_Pointer ПлатіжнеДорученняВхідне, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "ПлатіжнеДорученняВихідне"
+    public static class ПлатіжнеДорученняВихідне_Const
+    {
+        public const string TABLE = "tab_c04";
+        public const string TYPE = "ПлатіжнеДорученняВихідне"; /* Назва вказівника */
+        public const string POINTER = "Документи.ПлатіжнеДорученняВихідне"; /* Повна назва вказівника */
+        public const string FULLNAME = "Платіжне доручення вихідне"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class ПлатіжнеДорученняВихідне_Objest : DocumentObject
+    {
+        public ПлатіжнеДорученняВихідне_Objest() : base(Config.Kernel, "tab_c04", ПлатіжнеДорученняВихідне_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = ПлатіжнеДорученняВихідне_Const.FULLNAME + " *";
+            
+                await ПлатіжнеДорученняВихідне_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await ПлатіжнеДорученняВихідне_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await ПлатіжнеДорученняВихідне_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<ПлатіжнеДорученняВихідне_Objest> Copy(bool copyTableParts = false)
+        {
+            ПлатіжнеДорученняВихідне_Objest copy = new ПлатіжнеДорученняВихідне_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await ПлатіжнеДорученняВихідне_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public ПлатіжнеДорученняВихідне_Pointer GetDocumentPointer()
+        {
+            return new ПлатіжнеДорученняВихідне_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(ПлатіжнеДорученняВихідне_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class ПлатіжнеДорученняВихідне_Pointer : DocumentPointer
+    {
+        public ПлатіжнеДорученняВихідне_Pointer(object? uid = null) : base(Config.Kernel, "tab_c04", ПлатіжнеДорученняВихідне_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public ПлатіжнеДорученняВихідне_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c04", "ПлатіжнеДорученняВихідне")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(ПлатіжнеДорученняВихідне_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [ПлатіжнеДорученняВихідне_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{ПлатіжнеДорученняВихідне_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(ПлатіжнеДорученняВихідне_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            ПлатіжнеДорученняВихідне_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public ПлатіжнеДорученняВихідне_Pointer Copy()
+        {
+            return new ПлатіжнеДорученняВихідне_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public ПлатіжнеДорученняВихідне_Pointer GetEmptyPointer()
+        {
+            return new ПлатіжнеДорученняВихідне_Pointer();
+        }
+
+        public async ValueTask<ПлатіжнеДорученняВихідне_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            ПлатіжнеДорученняВихідне_Objest obj = new ПлатіжнеДорученняВихідне_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class ПлатіжнеДорученняВихідне_Select : DocumentSelect
+    {		
+        public ПлатіжнеДорученняВихідне_Select() : base(Config.Kernel, "tab_c04") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПлатіжнеДорученняВихідне_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public ПлатіжнеДорученняВихідне_Pointer? Current { get; private set; }
+
+        public async ValueTask<ПлатіжнеДорученняВихідне_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПлатіжнеДорученняВихідне_Pointer(pointer) : new ПлатіжнеДорученняВихідне_Pointer();
+        }
+        
+        public async ValueTask<List<ПлатіжнеДорученняВихідне_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<ПлатіжнеДорученняВихідне_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПлатіжнеДорученняВихідне_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class ПлатіжнеДорученняВихідне_Export
+    {
+        public static async ValueTask ToXmlFile(ПлатіжнеДорученняВихідне_Pointer ПлатіжнеДорученняВихідне, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "ПодатковаНакладна"
+    public static class ПодатковаНакладна_Const
+    {
+        public const string TABLE = "tab_c05";
+        public const string TYPE = "ПодатковаНакладна"; /* Назва вказівника */
+        public const string POINTER = "Документи.ПодатковаНакладна"; /* Повна назва вказівника */
+        public const string FULLNAME = "Податкова накладна"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class ПодатковаНакладна_Objest : DocumentObject
+    {
+        public ПодатковаНакладна_Objest() : base(Config.Kernel, "tab_c05", ПодатковаНакладна_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = ПодатковаНакладна_Const.FULLNAME + " *";
+            
+                await ПодатковаНакладна_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await ПодатковаНакладна_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await ПодатковаНакладна_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<ПодатковаНакладна_Objest> Copy(bool copyTableParts = false)
+        {
+            ПодатковаНакладна_Objest copy = new ПодатковаНакладна_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await ПодатковаНакладна_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public ПодатковаНакладна_Pointer GetDocumentPointer()
+        {
+            return new ПодатковаНакладна_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(ПодатковаНакладна_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class ПодатковаНакладна_Pointer : DocumentPointer
+    {
+        public ПодатковаНакладна_Pointer(object? uid = null) : base(Config.Kernel, "tab_c05", ПодатковаНакладна_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public ПодатковаНакладна_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c05", "ПодатковаНакладна")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(ПодатковаНакладна_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [ПодатковаНакладна_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{ПодатковаНакладна_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(ПодатковаНакладна_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            ПодатковаНакладна_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public ПодатковаНакладна_Pointer Copy()
+        {
+            return new ПодатковаНакладна_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public ПодатковаНакладна_Pointer GetEmptyPointer()
+        {
+            return new ПодатковаНакладна_Pointer();
+        }
+
+        public async ValueTask<ПодатковаНакладна_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            ПодатковаНакладна_Objest obj = new ПодатковаНакладна_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class ПодатковаНакладна_Select : DocumentSelect
+    {		
+        public ПодатковаНакладна_Select() : base(Config.Kernel, "tab_c05") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПодатковаНакладна_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public ПодатковаНакладна_Pointer? Current { get; private set; }
+
+        public async ValueTask<ПодатковаНакладна_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПодатковаНакладна_Pointer(pointer) : new ПодатковаНакладна_Pointer();
+        }
+        
+        public async ValueTask<List<ПодатковаНакладна_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<ПодатковаНакладна_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПодатковаНакладна_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class ПодатковаНакладна_Export
+    {
+        public static async ValueTask ToXmlFile(ПодатковаНакладна_Pointer ПодатковаНакладна, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "ПокупкаАбоПродажВалюти"
+    public static class ПокупкаАбоПродажВалюти_Const
+    {
+        public const string TABLE = "tab_c06";
+        public const string TYPE = "ПокупкаАбоПродажВалюти"; /* Назва вказівника */
+        public const string POINTER = "Документи.ПокупкаАбоПродажВалюти"; /* Повна назва вказівника */
+        public const string FULLNAME = "Покупка або продаж валюти"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class ПокупкаАбоПродажВалюти_Objest : DocumentObject
+    {
+        public ПокупкаАбоПродажВалюти_Objest() : base(Config.Kernel, "tab_c06", ПокупкаАбоПродажВалюти_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = ПокупкаАбоПродажВалюти_Const.FULLNAME + " *";
+            
+                await ПокупкаАбоПродажВалюти_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await ПокупкаАбоПродажВалюти_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await ПокупкаАбоПродажВалюти_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<ПокупкаАбоПродажВалюти_Objest> Copy(bool copyTableParts = false)
+        {
+            ПокупкаАбоПродажВалюти_Objest copy = new ПокупкаАбоПродажВалюти_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await ПокупкаАбоПродажВалюти_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public ПокупкаАбоПродажВалюти_Pointer GetDocumentPointer()
+        {
+            return new ПокупкаАбоПродажВалюти_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(ПокупкаАбоПродажВалюти_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class ПокупкаАбоПродажВалюти_Pointer : DocumentPointer
+    {
+        public ПокупкаАбоПродажВалюти_Pointer(object? uid = null) : base(Config.Kernel, "tab_c06", ПокупкаАбоПродажВалюти_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public ПокупкаАбоПродажВалюти_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c06", "ПокупкаАбоПродажВалюти")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(ПокупкаАбоПродажВалюти_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [ПокупкаАбоПродажВалюти_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{ПокупкаАбоПродажВалюти_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(ПокупкаАбоПродажВалюти_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            ПокупкаАбоПродажВалюти_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public ПокупкаАбоПродажВалюти_Pointer Copy()
+        {
+            return new ПокупкаАбоПродажВалюти_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public ПокупкаАбоПродажВалюти_Pointer GetEmptyPointer()
+        {
+            return new ПокупкаАбоПродажВалюти_Pointer();
+        }
+
+        public async ValueTask<ПокупкаАбоПродажВалюти_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            ПокупкаАбоПродажВалюти_Objest obj = new ПокупкаАбоПродажВалюти_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class ПокупкаАбоПродажВалюти_Select : DocumentSelect
+    {		
+        public ПокупкаАбоПродажВалюти_Select() : base(Config.Kernel, "tab_c06") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПокупкаАбоПродажВалюти_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public ПокупкаАбоПродажВалюти_Pointer? Current { get; private set; }
+
+        public async ValueTask<ПокупкаАбоПродажВалюти_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПокупкаАбоПродажВалюти_Pointer(pointer) : new ПокупкаАбоПродажВалюти_Pointer();
+        }
+        
+        public async ValueTask<List<ПокупкаАбоПродажВалюти_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<ПокупкаАбоПродажВалюти_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПокупкаАбоПродажВалюти_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class ПокупкаАбоПродажВалюти_Export
+    {
+        public static async ValueTask ToXmlFile(ПокупкаАбоПродажВалюти_Pointer ПокупкаАбоПродажВалюти, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "ПідготовкаДоПередачіОсновнихЗасобів"
+    public static class ПідготовкаДоПередачіОсновнихЗасобів_Const
+    {
+        public const string TABLE = "tab_c07";
+        public const string TYPE = "ПідготовкаДоПередачіОсновнихЗасобів"; /* Назва вказівника */
+        public const string POINTER = "Документи.ПідготовкаДоПередачіОсновнихЗасобів"; /* Повна назва вказівника */
+        public const string FULLNAME = "Підготовка до передачі основних засобів"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class ПідготовкаДоПередачіОсновнихЗасобів_Objest : DocumentObject
+    {
+        public ПідготовкаДоПередачіОсновнихЗасобів_Objest() : base(Config.Kernel, "tab_c07", ПідготовкаДоПередачіОсновнихЗасобів_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = ПідготовкаДоПередачіОсновнихЗасобів_Const.FULLNAME + " *";
+            
+                await ПідготовкаДоПередачіОсновнихЗасобів_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await ПідготовкаДоПередачіОсновнихЗасобів_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await ПідготовкаДоПередачіОсновнихЗасобів_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<ПідготовкаДоПередачіОсновнихЗасобів_Objest> Copy(bool copyTableParts = false)
+        {
+            ПідготовкаДоПередачіОсновнихЗасобів_Objest copy = new ПідготовкаДоПередачіОсновнихЗасобів_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await ПідготовкаДоПередачіОсновнихЗасобів_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public ПідготовкаДоПередачіОсновнихЗасобів_Pointer GetDocumentPointer()
+        {
+            return new ПідготовкаДоПередачіОсновнихЗасобів_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(ПідготовкаДоПередачіОсновнихЗасобів_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class ПідготовкаДоПередачіОсновнихЗасобів_Pointer : DocumentPointer
+    {
+        public ПідготовкаДоПередачіОсновнихЗасобів_Pointer(object? uid = null) : base(Config.Kernel, "tab_c07", ПідготовкаДоПередачіОсновнихЗасобів_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public ПідготовкаДоПередачіОсновнихЗасобів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c07", "ПідготовкаДоПередачіОсновнихЗасобів")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(ПідготовкаДоПередачіОсновнихЗасобів_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [ПідготовкаДоПередачіОсновнихЗасобів_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{ПідготовкаДоПередачіОсновнихЗасобів_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(ПідготовкаДоПередачіОсновнихЗасобів_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            ПідготовкаДоПередачіОсновнихЗасобів_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public ПідготовкаДоПередачіОсновнихЗасобів_Pointer Copy()
+        {
+            return new ПідготовкаДоПередачіОсновнихЗасобів_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public ПідготовкаДоПередачіОсновнихЗасобів_Pointer GetEmptyPointer()
+        {
+            return new ПідготовкаДоПередачіОсновнихЗасобів_Pointer();
+        }
+
+        public async ValueTask<ПідготовкаДоПередачіОсновнихЗасобів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            ПідготовкаДоПередачіОсновнихЗасобів_Objest obj = new ПідготовкаДоПередачіОсновнихЗасобів_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class ПідготовкаДоПередачіОсновнихЗасобів_Select : DocumentSelect
+    {		
+        public ПідготовкаДоПередачіОсновнихЗасобів_Select() : base(Config.Kernel, "tab_c07") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПідготовкаДоПередачіОсновнихЗасобів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public ПідготовкаДоПередачіОсновнихЗасобів_Pointer? Current { get; private set; }
+
+        public async ValueTask<ПідготовкаДоПередачіОсновнихЗасобів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПідготовкаДоПередачіОсновнихЗасобів_Pointer(pointer) : new ПідготовкаДоПередачіОсновнихЗасобів_Pointer();
+        }
+        
+        public async ValueTask<List<ПідготовкаДоПередачіОсновнихЗасобів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<ПідготовкаДоПередачіОсновнихЗасобів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПідготовкаДоПередачіОсновнихЗасобів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class ПідготовкаДоПередачіОсновнихЗасобів_Export
+    {
+        public static async ValueTask ToXmlFile(ПідготовкаДоПередачіОсновнихЗасобів_Pointer ПідготовкаДоПередачіОсновнихЗасобів, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "ПослугиСторонньоїОрганізації"
+    public static class ПослугиСторонньоїОрганізації_Const
+    {
+        public const string TABLE = "tab_c08";
+        public const string TYPE = "ПослугиСторонньоїОрганізації"; /* Назва вказівника */
+        public const string POINTER = "Документи.ПослугиСторонньоїОрганізації"; /* Повна назва вказівника */
+        public const string FULLNAME = "Послуги сторонньої організації"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class ПослугиСторонньоїОрганізації_Objest : DocumentObject
+    {
+        public ПослугиСторонньоїОрганізації_Objest() : base(Config.Kernel, "tab_c08", ПослугиСторонньоїОрганізації_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = ПослугиСторонньоїОрганізації_Const.FULLNAME + " *";
+            
+                await ПослугиСторонньоїОрганізації_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await ПослугиСторонньоїОрганізації_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await ПослугиСторонньоїОрганізації_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<ПослугиСторонньоїОрганізації_Objest> Copy(bool copyTableParts = false)
+        {
+            ПослугиСторонньоїОрганізації_Objest copy = new ПослугиСторонньоїОрганізації_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await ПослугиСторонньоїОрганізації_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public ПослугиСторонньоїОрганізації_Pointer GetDocumentPointer()
+        {
+            return new ПослугиСторонньоїОрганізації_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(ПослугиСторонньоїОрганізації_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class ПослугиСторонньоїОрганізації_Pointer : DocumentPointer
+    {
+        public ПослугиСторонньоїОрганізації_Pointer(object? uid = null) : base(Config.Kernel, "tab_c08", ПослугиСторонньоїОрганізації_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public ПослугиСторонньоїОрганізації_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c08", "ПослугиСторонньоїОрганізації")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(ПослугиСторонньоїОрганізації_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [ПослугиСторонньоїОрганізації_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{ПослугиСторонньоїОрганізації_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(ПослугиСторонньоїОрганізації_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            ПослугиСторонньоїОрганізації_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public ПослугиСторонньоїОрганізації_Pointer Copy()
+        {
+            return new ПослугиСторонньоїОрганізації_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public ПослугиСторонньоїОрганізації_Pointer GetEmptyPointer()
+        {
+            return new ПослугиСторонньоїОрганізації_Pointer();
+        }
+
+        public async ValueTask<ПослугиСторонньоїОрганізації_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            ПослугиСторонньоїОрганізації_Objest obj = new ПослугиСторонньоїОрганізації_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class ПослугиСторонньоїОрганізації_Select : DocumentSelect
+    {		
+        public ПослугиСторонньоїОрганізації_Select() : base(Config.Kernel, "tab_c08") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПослугиСторонньоїОрганізації_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public ПослугиСторонньоїОрганізації_Pointer? Current { get; private set; }
+
+        public async ValueTask<ПослугиСторонньоїОрганізації_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПослугиСторонньоїОрганізації_Pointer(pointer) : new ПослугиСторонньоїОрганізації_Pointer();
+        }
+        
+        public async ValueTask<List<ПослугиСторонньоїОрганізації_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<ПослугиСторонньоїОрганізації_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПослугиСторонньоїОрганізації_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class ПослугиСторонньоїОрганізації_Export
+    {
+        public static async ValueTask ToXmlFile(ПослугиСторонньоїОрганізації_Pointer ПослугиСторонньоїОрганізації, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "ПрибуткуванняМатеріалівЗВиробництва"
+    public static class ПрибуткуванняМатеріалівЗВиробництва_Const
+    {
+        public const string TABLE = "tab_c09";
+        public const string TYPE = "ПрибуткуванняМатеріалівЗВиробництва"; /* Назва вказівника */
+        public const string POINTER = "Документи.ПрибуткуванняМатеріалівЗВиробництва"; /* Повна назва вказівника */
+        public const string FULLNAME = "Прибуткування матеріалів з виробництва"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class ПрибуткуванняМатеріалівЗВиробництва_Objest : DocumentObject
+    {
+        public ПрибуткуванняМатеріалівЗВиробництва_Objest() : base(Config.Kernel, "tab_c09", ПрибуткуванняМатеріалівЗВиробництва_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = ПрибуткуванняМатеріалівЗВиробництва_Const.FULLNAME + " *";
+            
+                await ПрибуткуванняМатеріалівЗВиробництва_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await ПрибуткуванняМатеріалівЗВиробництва_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await ПрибуткуванняМатеріалівЗВиробництва_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<ПрибуткуванняМатеріалівЗВиробництва_Objest> Copy(bool copyTableParts = false)
+        {
+            ПрибуткуванняМатеріалівЗВиробництва_Objest copy = new ПрибуткуванняМатеріалівЗВиробництва_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await ПрибуткуванняМатеріалівЗВиробництва_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public ПрибуткуванняМатеріалівЗВиробництва_Pointer GetDocumentPointer()
+        {
+            return new ПрибуткуванняМатеріалівЗВиробництва_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(ПрибуткуванняМатеріалівЗВиробництва_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class ПрибуткуванняМатеріалівЗВиробництва_Pointer : DocumentPointer
+    {
+        public ПрибуткуванняМатеріалівЗВиробництва_Pointer(object? uid = null) : base(Config.Kernel, "tab_c09", ПрибуткуванняМатеріалівЗВиробництва_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public ПрибуткуванняМатеріалівЗВиробництва_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c09", "ПрибуткуванняМатеріалівЗВиробництва")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(ПрибуткуванняМатеріалівЗВиробництва_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [ПрибуткуванняМатеріалівЗВиробництва_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{ПрибуткуванняМатеріалівЗВиробництва_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(ПрибуткуванняМатеріалівЗВиробництва_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            ПрибуткуванняМатеріалівЗВиробництва_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public ПрибуткуванняМатеріалівЗВиробництва_Pointer Copy()
+        {
+            return new ПрибуткуванняМатеріалівЗВиробництва_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public ПрибуткуванняМатеріалівЗВиробництва_Pointer GetEmptyPointer()
+        {
+            return new ПрибуткуванняМатеріалівЗВиробництва_Pointer();
+        }
+
+        public async ValueTask<ПрибуткуванняМатеріалівЗВиробництва_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            ПрибуткуванняМатеріалівЗВиробництва_Objest obj = new ПрибуткуванняМатеріалівЗВиробництва_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class ПрибуткуванняМатеріалівЗВиробництва_Select : DocumentSelect
+    {		
+        public ПрибуткуванняМатеріалівЗВиробництва_Select() : base(Config.Kernel, "tab_c09") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПрибуткуванняМатеріалівЗВиробництва_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public ПрибуткуванняМатеріалівЗВиробництва_Pointer? Current { get; private set; }
+
+        public async ValueTask<ПрибуткуванняМатеріалівЗВиробництва_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПрибуткуванняМатеріалівЗВиробництва_Pointer(pointer) : new ПрибуткуванняМатеріалівЗВиробництва_Pointer();
+        }
+        
+        public async ValueTask<List<ПрибуткуванняМатеріалівЗВиробництва_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<ПрибуткуванняМатеріалівЗВиробництва_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПрибуткуванняМатеріалівЗВиробництва_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class ПрибуткуванняМатеріалівЗВиробництва_Export
+    {
+        public static async ValueTask ToXmlFile(ПрибуткуванняМатеріалівЗВиробництва_Pointer ПрибуткуванняМатеріалівЗВиробництва, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "ПрибуткуванняТоварівВПереробку"
+    public static class ПрибуткуванняТоварівВПереробку_Const
+    {
+        public const string TABLE = "tab_c10";
+        public const string TYPE = "ПрибуткуванняТоварівВПереробку"; /* Назва вказівника */
+        public const string POINTER = "Документи.ПрибуткуванняТоварівВПереробку"; /* Повна назва вказівника */
+        public const string FULLNAME = "Прибуткування товарів в переробку"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class ПрибуткуванняТоварівВПереробку_Objest : DocumentObject
+    {
+        public ПрибуткуванняТоварівВПереробку_Objest() : base(Config.Kernel, "tab_c10", ПрибуткуванняТоварівВПереробку_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = ПрибуткуванняТоварівВПереробку_Const.FULLNAME + " *";
+            
+                await ПрибуткуванняТоварівВПереробку_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await ПрибуткуванняТоварівВПереробку_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await ПрибуткуванняТоварівВПереробку_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<ПрибуткуванняТоварівВПереробку_Objest> Copy(bool copyTableParts = false)
+        {
+            ПрибуткуванняТоварівВПереробку_Objest copy = new ПрибуткуванняТоварівВПереробку_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await ПрибуткуванняТоварівВПереробку_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public ПрибуткуванняТоварівВПереробку_Pointer GetDocumentPointer()
+        {
+            return new ПрибуткуванняТоварівВПереробку_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(ПрибуткуванняТоварівВПереробку_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class ПрибуткуванняТоварівВПереробку_Pointer : DocumentPointer
+    {
+        public ПрибуткуванняТоварівВПереробку_Pointer(object? uid = null) : base(Config.Kernel, "tab_c10", ПрибуткуванняТоварівВПереробку_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public ПрибуткуванняТоварівВПереробку_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c10", "ПрибуткуванняТоварівВПереробку")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(ПрибуткуванняТоварівВПереробку_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [ПрибуткуванняТоварівВПереробку_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{ПрибуткуванняТоварівВПереробку_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(ПрибуткуванняТоварівВПереробку_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            ПрибуткуванняТоварівВПереробку_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public ПрибуткуванняТоварівВПереробку_Pointer Copy()
+        {
+            return new ПрибуткуванняТоварівВПереробку_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public ПрибуткуванняТоварівВПереробку_Pointer GetEmptyPointer()
+        {
+            return new ПрибуткуванняТоварівВПереробку_Pointer();
+        }
+
+        public async ValueTask<ПрибуткуванняТоварівВПереробку_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            ПрибуткуванняТоварівВПереробку_Objest obj = new ПрибуткуванняТоварівВПереробку_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class ПрибуткуванняТоварівВПереробку_Select : DocumentSelect
+    {		
+        public ПрибуткуванняТоварівВПереробку_Select() : base(Config.Kernel, "tab_c10") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПрибуткуванняТоварівВПереробку_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public ПрибуткуванняТоварівВПереробку_Pointer? Current { get; private set; }
+
+        public async ValueTask<ПрибуткуванняТоварівВПереробку_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПрибуткуванняТоварівВПереробку_Pointer(pointer) : new ПрибуткуванняТоварівВПереробку_Pointer();
+        }
+        
+        public async ValueTask<List<ПрибуткуванняТоварівВПереробку_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<ПрибуткуванняТоварівВПереробку_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПрибуткуванняТоварівВПереробку_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class ПрибуткуванняТоварівВПереробку_Export
+    {
+        public static async ValueTask ToXmlFile(ПрибуткуванняТоварівВПереробку_Pointer ПрибуткуванняТоварівВПереробку, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "ПрибуткуванняТоварівЗПереробки"
+    public static class ПрибуткуванняТоварівЗПереробки_Const
+    {
+        public const string TABLE = "tab_c11";
+        public const string TYPE = "ПрибуткуванняТоварівЗПереробки"; /* Назва вказівника */
+        public const string POINTER = "Документи.ПрибуткуванняТоварівЗПереробки"; /* Повна назва вказівника */
+        public const string FULLNAME = "Прибуткування товарів з переробки"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class ПрибуткуванняТоварівЗПереробки_Objest : DocumentObject
+    {
+        public ПрибуткуванняТоварівЗПереробки_Objest() : base(Config.Kernel, "tab_c11", ПрибуткуванняТоварівЗПереробки_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = ПрибуткуванняТоварівЗПереробки_Const.FULLNAME + " *";
+            
+                await ПрибуткуванняТоварівЗПереробки_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await ПрибуткуванняТоварівЗПереробки_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await ПрибуткуванняТоварівЗПереробки_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<ПрибуткуванняТоварівЗПереробки_Objest> Copy(bool copyTableParts = false)
+        {
+            ПрибуткуванняТоварівЗПереробки_Objest copy = new ПрибуткуванняТоварівЗПереробки_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await ПрибуткуванняТоварівЗПереробки_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public ПрибуткуванняТоварівЗПереробки_Pointer GetDocumentPointer()
+        {
+            return new ПрибуткуванняТоварівЗПереробки_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(ПрибуткуванняТоварівЗПереробки_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class ПрибуткуванняТоварівЗПереробки_Pointer : DocumentPointer
+    {
+        public ПрибуткуванняТоварівЗПереробки_Pointer(object? uid = null) : base(Config.Kernel, "tab_c11", ПрибуткуванняТоварівЗПереробки_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public ПрибуткуванняТоварівЗПереробки_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c11", "ПрибуткуванняТоварівЗПереробки")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(ПрибуткуванняТоварівЗПереробки_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [ПрибуткуванняТоварівЗПереробки_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{ПрибуткуванняТоварівЗПереробки_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(ПрибуткуванняТоварівЗПереробки_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            ПрибуткуванняТоварівЗПереробки_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public ПрибуткуванняТоварівЗПереробки_Pointer Copy()
+        {
+            return new ПрибуткуванняТоварівЗПереробки_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public ПрибуткуванняТоварівЗПереробки_Pointer GetEmptyPointer()
+        {
+            return new ПрибуткуванняТоварівЗПереробки_Pointer();
+        }
+
+        public async ValueTask<ПрибуткуванняТоварівЗПереробки_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            ПрибуткуванняТоварівЗПереробки_Objest obj = new ПрибуткуванняТоварівЗПереробки_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class ПрибуткуванняТоварівЗПереробки_Select : DocumentSelect
+    {		
+        public ПрибуткуванняТоварівЗПереробки_Select() : base(Config.Kernel, "tab_c11") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПрибуткуванняТоварівЗПереробки_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public ПрибуткуванняТоварівЗПереробки_Pointer? Current { get; private set; }
+
+        public async ValueTask<ПрибуткуванняТоварівЗПереробки_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПрибуткуванняТоварівЗПереробки_Pointer(pointer) : new ПрибуткуванняТоварівЗПереробки_Pointer();
+        }
+        
+        public async ValueTask<List<ПрибуткуванняТоварівЗПереробки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<ПрибуткуванняТоварівЗПереробки_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПрибуткуванняТоварівЗПереробки_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class ПрибуткуванняТоварівЗПереробки_Export
+    {
+        public static async ValueTask ToXmlFile(ПрибуткуванняТоварівЗПереробки_Pointer ПрибуткуванняТоварівЗПереробки, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "ПрибуткуванняНезавершеногоВиробництва"
+    public static class ПрибуткуванняНезавершеногоВиробництва_Const
+    {
+        public const string TABLE = "tab_c12";
+        public const string TYPE = "ПрибуткуванняНезавершеногоВиробництва"; /* Назва вказівника */
+        public const string POINTER = "Документи.ПрибуткуванняНезавершеногоВиробництва"; /* Повна назва вказівника */
+        public const string FULLNAME = "Прибуткування незавершеного виробництва"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class ПрибуткуванняНезавершеногоВиробництва_Objest : DocumentObject
+    {
+        public ПрибуткуванняНезавершеногоВиробництва_Objest() : base(Config.Kernel, "tab_c12", ПрибуткуванняНезавершеногоВиробництва_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = ПрибуткуванняНезавершеногоВиробництва_Const.FULLNAME + " *";
+            
+                await ПрибуткуванняНезавершеногоВиробництва_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await ПрибуткуванняНезавершеногоВиробництва_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await ПрибуткуванняНезавершеногоВиробництва_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<ПрибуткуванняНезавершеногоВиробництва_Objest> Copy(bool copyTableParts = false)
+        {
+            ПрибуткуванняНезавершеногоВиробництва_Objest copy = new ПрибуткуванняНезавершеногоВиробництва_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await ПрибуткуванняНезавершеногоВиробництва_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public ПрибуткуванняНезавершеногоВиробництва_Pointer GetDocumentPointer()
+        {
+            return new ПрибуткуванняНезавершеногоВиробництва_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(ПрибуткуванняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class ПрибуткуванняНезавершеногоВиробництва_Pointer : DocumentPointer
+    {
+        public ПрибуткуванняНезавершеногоВиробництва_Pointer(object? uid = null) : base(Config.Kernel, "tab_c12", ПрибуткуванняНезавершеногоВиробництва_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public ПрибуткуванняНезавершеногоВиробництва_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c12", "ПрибуткуванняНезавершеногоВиробництва")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(ПрибуткуванняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [ПрибуткуванняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{ПрибуткуванняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(ПрибуткуванняНезавершеногоВиробництва_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            ПрибуткуванняНезавершеногоВиробництва_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public ПрибуткуванняНезавершеногоВиробництва_Pointer Copy()
+        {
+            return new ПрибуткуванняНезавершеногоВиробництва_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public ПрибуткуванняНезавершеногоВиробництва_Pointer GetEmptyPointer()
+        {
+            return new ПрибуткуванняНезавершеногоВиробництва_Pointer();
+        }
+
+        public async ValueTask<ПрибуткуванняНезавершеногоВиробництва_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            ПрибуткуванняНезавершеногоВиробництва_Objest obj = new ПрибуткуванняНезавершеногоВиробництва_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class ПрибуткуванняНезавершеногоВиробництва_Select : DocumentSelect
+    {		
+        public ПрибуткуванняНезавершеногоВиробництва_Select() : base(Config.Kernel, "tab_c12") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПрибуткуванняНезавершеногоВиробництва_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public ПрибуткуванняНезавершеногоВиробництва_Pointer? Current { get; private set; }
+
+        public async ValueTask<ПрибуткуванняНезавершеногоВиробництва_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПрибуткуванняНезавершеногоВиробництва_Pointer(pointer) : new ПрибуткуванняНезавершеногоВиробництва_Pointer();
+        }
+        
+        public async ValueTask<List<ПрибуткуванняНезавершеногоВиробництва_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<ПрибуткуванняНезавершеногоВиробництва_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПрибуткуванняНезавершеногоВиробництва_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class ПрибуткуванняНезавершеногоВиробництва_Export
+    {
+        public static async ValueTask ToXmlFile(ПрибуткуванняНезавершеногоВиробництва_Pointer ПрибуткуванняНезавершеногоВиробництва, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "ПрийняттяДоОбліку"
+    public static class ПрийняттяДоОбліку_Const
+    {
+        public const string TABLE = "tab_c13";
+        public const string TYPE = "ПрийняттяДоОбліку"; /* Назва вказівника */
+        public const string POINTER = "Документи.ПрийняттяДоОбліку"; /* Повна назва вказівника */
+        public const string FULLNAME = "Прийняття до обліку"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class ПрийняттяДоОбліку_Objest : DocumentObject
+    {
+        public ПрийняттяДоОбліку_Objest() : base(Config.Kernel, "tab_c13", ПрийняттяДоОбліку_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = ПрийняттяДоОбліку_Const.FULLNAME + " *";
+            
+                await ПрийняттяДоОбліку_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await ПрийняттяДоОбліку_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await ПрийняттяДоОбліку_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<ПрийняттяДоОбліку_Objest> Copy(bool copyTableParts = false)
+        {
+            ПрийняттяДоОбліку_Objest copy = new ПрийняттяДоОбліку_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await ПрийняттяДоОбліку_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public ПрийняттяДоОбліку_Pointer GetDocumentPointer()
+        {
+            return new ПрийняттяДоОбліку_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(ПрийняттяДоОбліку_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class ПрийняттяДоОбліку_Pointer : DocumentPointer
+    {
+        public ПрийняттяДоОбліку_Pointer(object? uid = null) : base(Config.Kernel, "tab_c13", ПрийняттяДоОбліку_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public ПрийняттяДоОбліку_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c13", "ПрийняттяДоОбліку")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(ПрийняттяДоОбліку_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [ПрийняттяДоОбліку_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{ПрийняттяДоОбліку_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(ПрийняттяДоОбліку_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            ПрийняттяДоОбліку_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public ПрийняттяДоОбліку_Pointer Copy()
+        {
+            return new ПрийняттяДоОбліку_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public ПрийняттяДоОбліку_Pointer GetEmptyPointer()
+        {
+            return new ПрийняттяДоОбліку_Pointer();
+        }
+
+        public async ValueTask<ПрийняттяДоОбліку_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            ПрийняттяДоОбліку_Objest obj = new ПрийняттяДоОбліку_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class ПрийняттяДоОбліку_Select : DocumentSelect
+    {		
+        public ПрийняттяДоОбліку_Select() : base(Config.Kernel, "tab_c13") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПрийняттяДоОбліку_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public ПрийняттяДоОбліку_Pointer? Current { get; private set; }
+
+        public async ValueTask<ПрийняттяДоОбліку_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПрийняттяДоОбліку_Pointer(pointer) : new ПрийняттяДоОбліку_Pointer();
+        }
+        
+        public async ValueTask<List<ПрийняттяДоОбліку_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<ПрийняттяДоОбліку_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПрийняттяДоОбліку_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class ПрийняттяДоОбліку_Export
+    {
+        public static async ValueTask ToXmlFile(ПрийняттяДоОбліку_Pointer ПрийняттяДоОбліку, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "ПоверненняПереданихТоварів"
+    public static class ПоверненняПереданихТоварів_Const
+    {
+        public const string TABLE = "tab_c14";
+        public const string TYPE = "ПоверненняПереданихТоварів"; /* Назва вказівника */
+        public const string POINTER = "Документи.ПоверненняПереданихТоварів"; /* Повна назва вказівника */
+        public const string FULLNAME = "Повернення переданих товарів"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class ПоверненняПереданихТоварів_Objest : DocumentObject
+    {
+        public ПоверненняПереданихТоварів_Objest() : base(Config.Kernel, "tab_c14", ПоверненняПереданихТоварів_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = ПоверненняПереданихТоварів_Const.FULLNAME + " *";
+            
+                await ПоверненняПереданихТоварів_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await ПоверненняПереданихТоварів_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await ПоверненняПереданихТоварів_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<ПоверненняПереданихТоварів_Objest> Copy(bool copyTableParts = false)
+        {
+            ПоверненняПереданихТоварів_Objest copy = new ПоверненняПереданихТоварів_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await ПоверненняПереданихТоварів_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public ПоверненняПереданихТоварів_Pointer GetDocumentPointer()
+        {
+            return new ПоверненняПереданихТоварів_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(ПоверненняПереданихТоварів_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class ПоверненняПереданихТоварів_Pointer : DocumentPointer
+    {
+        public ПоверненняПереданихТоварів_Pointer(object? uid = null) : base(Config.Kernel, "tab_c14", ПоверненняПереданихТоварів_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public ПоверненняПереданихТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c14", "ПоверненняПереданихТоварів")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(ПоверненняПереданихТоварів_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [ПоверненняПереданихТоварів_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{ПоверненняПереданихТоварів_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(ПоверненняПереданихТоварів_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            ПоверненняПереданихТоварів_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public ПоверненняПереданихТоварів_Pointer Copy()
+        {
+            return new ПоверненняПереданихТоварів_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public ПоверненняПереданихТоварів_Pointer GetEmptyPointer()
+        {
+            return new ПоверненняПереданихТоварів_Pointer();
+        }
+
+        public async ValueTask<ПоверненняПереданихТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            ПоверненняПереданихТоварів_Objest obj = new ПоверненняПереданихТоварів_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class ПоверненняПереданихТоварів_Select : DocumentSelect
+    {		
+        public ПоверненняПереданихТоварів_Select() : base(Config.Kernel, "tab_c14") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПоверненняПереданихТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public ПоверненняПереданихТоварів_Pointer? Current { get; private set; }
+
+        public async ValueTask<ПоверненняПереданихТоварів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПоверненняПереданихТоварів_Pointer(pointer) : new ПоверненняПереданихТоварів_Pointer();
+        }
+        
+        public async ValueTask<List<ПоверненняПереданихТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<ПоверненняПереданихТоварів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПоверненняПереданихТоварів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class ПоверненняПереданихТоварів_Export
+    {
+        public static async ValueTask ToXmlFile(ПоверненняПереданихТоварів_Pointer ПоверненняПереданихТоварів, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "РемонтОсновнихЗасобів"
+    public static class РемонтОсновнихЗасобів_Const
+    {
+        public const string TABLE = "tab_c15";
+        public const string TYPE = "РемонтОсновнихЗасобів"; /* Назва вказівника */
+        public const string POINTER = "Документи.РемонтОсновнихЗасобів"; /* Повна назва вказівника */
+        public const string FULLNAME = "Ремонт основних засобів"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class РемонтОсновнихЗасобів_Objest : DocumentObject
+    {
+        public РемонтОсновнихЗасобів_Objest() : base(Config.Kernel, "tab_c15", РемонтОсновнихЗасобів_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = РемонтОсновнихЗасобів_Const.FULLNAME + " *";
+            
+                await РемонтОсновнихЗасобів_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await РемонтОсновнихЗасобів_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await РемонтОсновнихЗасобів_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<РемонтОсновнихЗасобів_Objest> Copy(bool copyTableParts = false)
+        {
+            РемонтОсновнихЗасобів_Objest copy = new РемонтОсновнихЗасобів_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await РемонтОсновнихЗасобів_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public РемонтОсновнихЗасобів_Pointer GetDocumentPointer()
+        {
+            return new РемонтОсновнихЗасобів_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(РемонтОсновнихЗасобів_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class РемонтОсновнихЗасобів_Pointer : DocumentPointer
+    {
+        public РемонтОсновнихЗасобів_Pointer(object? uid = null) : base(Config.Kernel, "tab_c15", РемонтОсновнихЗасобів_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public РемонтОсновнихЗасобів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c15", "РемонтОсновнихЗасобів")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(РемонтОсновнихЗасобів_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [РемонтОсновнихЗасобів_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{РемонтОсновнихЗасобів_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(РемонтОсновнихЗасобів_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            РемонтОсновнихЗасобів_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public РемонтОсновнихЗасобів_Pointer Copy()
+        {
+            return new РемонтОсновнихЗасобів_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public РемонтОсновнихЗасобів_Pointer GetEmptyPointer()
+        {
+            return new РемонтОсновнихЗасобів_Pointer();
+        }
+
+        public async ValueTask<РемонтОсновнихЗасобів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            РемонтОсновнихЗасобів_Objest obj = new РемонтОсновнихЗасобів_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class РемонтОсновнихЗасобів_Select : DocumentSelect
+    {		
+        public РемонтОсновнихЗасобів_Select() : base(Config.Kernel, "tab_c15") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new РемонтОсновнихЗасобів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public РемонтОсновнихЗасобів_Pointer? Current { get; private set; }
+
+        public async ValueTask<РемонтОсновнихЗасобів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new РемонтОсновнихЗасобів_Pointer(pointer) : new РемонтОсновнихЗасобів_Pointer();
+        }
+        
+        public async ValueTask<List<РемонтОсновнихЗасобів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<РемонтОсновнихЗасобів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new РемонтОсновнихЗасобів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class РемонтОсновнихЗасобів_Export
+    {
+        public static async ValueTask ToXmlFile(РемонтОсновнихЗасобів_Pointer РемонтОсновнихЗасобів, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "РозподілІншихВитрат"
+    public static class РозподілІншихВитрат_Const
+    {
+        public const string TABLE = "tab_c16";
+        public const string TYPE = "РозподілІншихВитрат"; /* Назва вказівника */
+        public const string POINTER = "Документи.РозподілІншихВитрат"; /* Повна назва вказівника */
+        public const string FULLNAME = "Розподіл інших витрат"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class РозподілІншихВитрат_Objest : DocumentObject
+    {
+        public РозподілІншихВитрат_Objest() : base(Config.Kernel, "tab_c16", РозподілІншихВитрат_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = РозподілІншихВитрат_Const.FULLNAME + " *";
+            
+                await РозподілІншихВитрат_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await РозподілІншихВитрат_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await РозподілІншихВитрат_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<РозподілІншихВитрат_Objest> Copy(bool copyTableParts = false)
+        {
+            РозподілІншихВитрат_Objest copy = new РозподілІншихВитрат_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await РозподілІншихВитрат_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public РозподілІншихВитрат_Pointer GetDocumentPointer()
+        {
+            return new РозподілІншихВитрат_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(РозподілІншихВитрат_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class РозподілІншихВитрат_Pointer : DocumentPointer
+    {
+        public РозподілІншихВитрат_Pointer(object? uid = null) : base(Config.Kernel, "tab_c16", РозподілІншихВитрат_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public РозподілІншихВитрат_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c16", "РозподілІншихВитрат")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(РозподілІншихВитрат_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [РозподілІншихВитрат_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{РозподілІншихВитрат_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(РозподілІншихВитрат_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            РозподілІншихВитрат_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public РозподілІншихВитрат_Pointer Copy()
+        {
+            return new РозподілІншихВитрат_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public РозподілІншихВитрат_Pointer GetEmptyPointer()
+        {
+            return new РозподілІншихВитрат_Pointer();
+        }
+
+        public async ValueTask<РозподілІншихВитрат_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            РозподілІншихВитрат_Objest obj = new РозподілІншихВитрат_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class РозподілІншихВитрат_Select : DocumentSelect
+    {		
+        public РозподілІншихВитрат_Select() : base(Config.Kernel, "tab_c16") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new РозподілІншихВитрат_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public РозподілІншихВитрат_Pointer? Current { get; private set; }
+
+        public async ValueTask<РозподілІншихВитрат_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new РозподілІншихВитрат_Pointer(pointer) : new РозподілІншихВитрат_Pointer();
+        }
+        
+        public async ValueTask<List<РозподілІншихВитрат_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<РозподілІншихВитрат_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new РозподілІншихВитрат_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class РозподілІншихВитрат_Export
+    {
+        public static async ValueTask ToXmlFile(РозподілІншихВитрат_Pointer РозподілІншихВитрат, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "РозрахунокСобівартостіВипуску"
+    public static class РозрахунокСобівартостіВипуску_Const
+    {
+        public const string TABLE = "tab_c17";
+        public const string TYPE = "РозрахунокСобівартостіВипуску"; /* Назва вказівника */
+        public const string POINTER = "Документи.РозрахунокСобівартостіВипуску"; /* Повна назва вказівника */
+        public const string FULLNAME = "Розрахунок собівартості випуску"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class РозрахунокСобівартостіВипуску_Objest : DocumentObject
+    {
+        public РозрахунокСобівартостіВипуску_Objest() : base(Config.Kernel, "tab_c17", РозрахунокСобівартостіВипуску_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = РозрахунокСобівартостіВипуску_Const.FULLNAME + " *";
+            
+                await РозрахунокСобівартостіВипуску_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await РозрахунокСобівартостіВипуску_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await РозрахунокСобівартостіВипуску_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<РозрахунокСобівартостіВипуску_Objest> Copy(bool copyTableParts = false)
+        {
+            РозрахунокСобівартостіВипуску_Objest copy = new РозрахунокСобівартостіВипуску_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await РозрахунокСобівартостіВипуску_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public РозрахунокСобівартостіВипуску_Pointer GetDocumentPointer()
+        {
+            return new РозрахунокСобівартостіВипуску_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(РозрахунокСобівартостіВипуску_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class РозрахунокСобівартостіВипуску_Pointer : DocumentPointer
+    {
+        public РозрахунокСобівартостіВипуску_Pointer(object? uid = null) : base(Config.Kernel, "tab_c17", РозрахунокСобівартостіВипуску_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public РозрахунокСобівартостіВипуску_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c17", "РозрахунокСобівартостіВипуску")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(РозрахунокСобівартостіВипуску_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [РозрахунокСобівартостіВипуску_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{РозрахунокСобівартостіВипуску_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(РозрахунокСобівартостіВипуску_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            РозрахунокСобівартостіВипуску_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public РозрахунокСобівартостіВипуску_Pointer Copy()
+        {
+            return new РозрахунокСобівартостіВипуску_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public РозрахунокСобівартостіВипуску_Pointer GetEmptyPointer()
+        {
+            return new РозрахунокСобівартостіВипуску_Pointer();
+        }
+
+        public async ValueTask<РозрахунокСобівартостіВипуску_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            РозрахунокСобівартостіВипуску_Objest obj = new РозрахунокСобівартостіВипуску_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class РозрахунокСобівартостіВипуску_Select : DocumentSelect
+    {		
+        public РозрахунокСобівартостіВипуску_Select() : base(Config.Kernel, "tab_c17") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new РозрахунокСобівартостіВипуску_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public РозрахунокСобівартостіВипуску_Pointer? Current { get; private set; }
+
+        public async ValueTask<РозрахунокСобівартостіВипуску_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new РозрахунокСобівартостіВипуску_Pointer(pointer) : new РозрахунокСобівартостіВипуску_Pointer();
+        }
+        
+        public async ValueTask<List<РозрахунокСобівартостіВипуску_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<РозрахунокСобівартостіВипуску_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new РозрахунокСобівартостіВипуску_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class РозрахунокСобівартостіВипуску_Export
+    {
+        public static async ValueTask ToXmlFile(РозрахунокСобівартостіВипуску_Pointer РозрахунокСобівартостіВипуску, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "СписанняМатеріалів"
+    public static class СписанняМатеріалів_Const
+    {
+        public const string TABLE = "tab_c18";
+        public const string TYPE = "СписанняМатеріалів"; /* Назва вказівника */
+        public const string POINTER = "Документи.СписанняМатеріалів"; /* Повна назва вказівника */
+        public const string FULLNAME = "Списання матеріалів"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class СписанняМатеріалів_Objest : DocumentObject
+    {
+        public СписанняМатеріалів_Objest() : base(Config.Kernel, "tab_c18", СписанняМатеріалів_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = СписанняМатеріалів_Const.FULLNAME + " *";
+            
+                await СписанняМатеріалів_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await СписанняМатеріалів_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await СписанняМатеріалів_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<СписанняМатеріалів_Objest> Copy(bool copyTableParts = false)
+        {
+            СписанняМатеріалів_Objest copy = new СписанняМатеріалів_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await СписанняМатеріалів_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public СписанняМатеріалів_Pointer GetDocumentPointer()
+        {
+            return new СписанняМатеріалів_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(СписанняМатеріалів_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class СписанняМатеріалів_Pointer : DocumentPointer
+    {
+        public СписанняМатеріалів_Pointer(object? uid = null) : base(Config.Kernel, "tab_c18", СписанняМатеріалів_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public СписанняМатеріалів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c18", "СписанняМатеріалів")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(СписанняМатеріалів_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [СписанняМатеріалів_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{СписанняМатеріалів_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(СписанняМатеріалів_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            СписанняМатеріалів_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public СписанняМатеріалів_Pointer Copy()
+        {
+            return new СписанняМатеріалів_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public СписанняМатеріалів_Pointer GetEmptyPointer()
+        {
+            return new СписанняМатеріалів_Pointer();
+        }
+
+        public async ValueTask<СписанняМатеріалів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            СписанняМатеріалів_Objest obj = new СписанняМатеріалів_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class СписанняМатеріалів_Select : DocumentSelect
+    {		
+        public СписанняМатеріалів_Select() : base(Config.Kernel, "tab_c18") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СписанняМатеріалів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public СписанняМатеріалів_Pointer? Current { get; private set; }
+
+        public async ValueTask<СписанняМатеріалів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new СписанняМатеріалів_Pointer(pointer) : new СписанняМатеріалів_Pointer();
+        }
+        
+        public async ValueTask<List<СписанняМатеріалів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<СписанняМатеріалів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new СписанняМатеріалів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class СписанняМатеріалів_Export
+    {
+        public static async ValueTask ToXmlFile(СписанняМатеріалів_Pointer СписанняМатеріалів, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "СписанняНезавершеногоВиробництва"
+    public static class СписанняНезавершеногоВиробництва_Const
+    {
+        public const string TABLE = "tab_c19";
+        public const string TYPE = "СписанняНезавершеногоВиробництва"; /* Назва вказівника */
+        public const string POINTER = "Документи.СписанняНезавершеногоВиробництва"; /* Повна назва вказівника */
+        public const string FULLNAME = "Списання незавершеного виробництва"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class СписанняНезавершеногоВиробництва_Objest : DocumentObject
+    {
+        public СписанняНезавершеногоВиробництва_Objest() : base(Config.Kernel, "tab_c19", СписанняНезавершеногоВиробництва_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = СписанняНезавершеногоВиробництва_Const.FULLNAME + " *";
+            
+                await СписанняНезавершеногоВиробництва_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await СписанняНезавершеногоВиробництва_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await СписанняНезавершеногоВиробництва_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<СписанняНезавершеногоВиробництва_Objest> Copy(bool copyTableParts = false)
+        {
+            СписанняНезавершеногоВиробництва_Objest copy = new СписанняНезавершеногоВиробництва_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await СписанняНезавершеногоВиробництва_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public СписанняНезавершеногоВиробництва_Pointer GetDocumentPointer()
+        {
+            return new СписанняНезавершеногоВиробництва_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(СписанняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class СписанняНезавершеногоВиробництва_Pointer : DocumentPointer
+    {
+        public СписанняНезавершеногоВиробництва_Pointer(object? uid = null) : base(Config.Kernel, "tab_c19", СписанняНезавершеногоВиробництва_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public СписанняНезавершеногоВиробництва_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c19", "СписанняНезавершеногоВиробництва")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(СписанняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [СписанняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{СписанняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(СписанняНезавершеногоВиробництва_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            СписанняНезавершеногоВиробництва_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public СписанняНезавершеногоВиробництва_Pointer Copy()
+        {
+            return new СписанняНезавершеногоВиробництва_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public СписанняНезавершеногоВиробництва_Pointer GetEmptyPointer()
+        {
+            return new СписанняНезавершеногоВиробництва_Pointer();
+        }
+
+        public async ValueTask<СписанняНезавершеногоВиробництва_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            СписанняНезавершеногоВиробництва_Objest obj = new СписанняНезавершеногоВиробництва_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class СписанняНезавершеногоВиробництва_Select : DocumentSelect
+    {		
+        public СписанняНезавершеногоВиробництва_Select() : base(Config.Kernel, "tab_c19") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СписанняНезавершеногоВиробництва_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public СписанняНезавершеногоВиробництва_Pointer? Current { get; private set; }
+
+        public async ValueTask<СписанняНезавершеногоВиробництва_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new СписанняНезавершеногоВиробництва_Pointer(pointer) : new СписанняНезавершеногоВиробництва_Pointer();
+        }
+        
+        public async ValueTask<List<СписанняНезавершеногоВиробництва_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<СписанняНезавершеногоВиробництва_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new СписанняНезавершеногоВиробництва_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class СписанняНезавершеногоВиробництва_Export
+    {
+        public static async ValueTask ToXmlFile(СписанняНезавершеногоВиробництва_Pointer СписанняНезавершеногоВиробництва, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "СписанняНематеріальнихАктивів"
+    public static class СписанняНематеріальнихАктивів_Const
+    {
+        public const string TABLE = "tab_c20";
+        public const string TYPE = "СписанняНематеріальнихАктивів"; /* Назва вказівника */
+        public const string POINTER = "Документи.СписанняНематеріальнихАктивів"; /* Повна назва вказівника */
+        public const string FULLNAME = "Списання нематеріальних активів"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class СписанняНематеріальнихАктивів_Objest : DocumentObject
+    {
+        public СписанняНематеріальнихАктивів_Objest() : base(Config.Kernel, "tab_c20", СписанняНематеріальнихАктивів_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = СписанняНематеріальнихАктивів_Const.FULLNAME + " *";
+            
+                await СписанняНематеріальнихАктивів_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await СписанняНематеріальнихАктивів_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await СписанняНематеріальнихАктивів_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<СписанняНематеріальнихАктивів_Objest> Copy(bool copyTableParts = false)
+        {
+            СписанняНематеріальнихАктивів_Objest copy = new СписанняНематеріальнихАктивів_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await СписанняНематеріальнихАктивів_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public СписанняНематеріальнихАктивів_Pointer GetDocumentPointer()
+        {
+            return new СписанняНематеріальнихАктивів_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(СписанняНематеріальнихАктивів_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class СписанняНематеріальнихАктивів_Pointer : DocumentPointer
+    {
+        public СписанняНематеріальнихАктивів_Pointer(object? uid = null) : base(Config.Kernel, "tab_c20", СписанняНематеріальнихАктивів_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public СписанняНематеріальнихАктивів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c20", "СписанняНематеріальнихАктивів")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(СписанняНематеріальнихАктивів_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [СписанняНематеріальнихАктивів_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{СписанняНематеріальнихАктивів_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(СписанняНематеріальнихАктивів_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            СписанняНематеріальнихАктивів_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public СписанняНематеріальнихАктивів_Pointer Copy()
+        {
+            return new СписанняНематеріальнихАктивів_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public СписанняНематеріальнихАктивів_Pointer GetEmptyPointer()
+        {
+            return new СписанняНематеріальнихАктивів_Pointer();
+        }
+
+        public async ValueTask<СписанняНематеріальнихАктивів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            СписанняНематеріальнихАктивів_Objest obj = new СписанняНематеріальнихАктивів_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class СписанняНематеріальнихАктивів_Select : DocumentSelect
+    {		
+        public СписанняНематеріальнихАктивів_Select() : base(Config.Kernel, "tab_c20") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СписанняНематеріальнихАктивів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public СписанняНематеріальнихАктивів_Pointer? Current { get; private set; }
+
+        public async ValueTask<СписанняНематеріальнихАктивів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new СписанняНематеріальнихАктивів_Pointer(pointer) : new СписанняНематеріальнихАктивів_Pointer();
+        }
+        
+        public async ValueTask<List<СписанняНематеріальнихАктивів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<СписанняНематеріальнихАктивів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new СписанняНематеріальнихАктивів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class СписанняНематеріальнихАктивів_Export
+    {
+        public static async ValueTask ToXmlFile(СписанняНематеріальнихАктивів_Pointer СписанняНематеріальнихАктивів, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "СписанняОсновнихЗасобів"
+    public static class СписанняОсновнихЗасобів_Const
+    {
+        public const string TABLE = "tab_c21";
+        public const string TYPE = "СписанняОсновнихЗасобів"; /* Назва вказівника */
+        public const string POINTER = "Документи.СписанняОсновнихЗасобів"; /* Повна назва вказівника */
+        public const string FULLNAME = "Списання основних засобів"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class СписанняОсновнихЗасобів_Objest : DocumentObject
+    {
+        public СписанняОсновнихЗасобів_Objest() : base(Config.Kernel, "tab_c21", СписанняОсновнихЗасобів_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = СписанняОсновнихЗасобів_Const.FULLNAME + " *";
+            
+                await СписанняОсновнихЗасобів_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await СписанняОсновнихЗасобів_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await СписанняОсновнихЗасобів_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<СписанняОсновнихЗасобів_Objest> Copy(bool copyTableParts = false)
+        {
+            СписанняОсновнихЗасобів_Objest copy = new СписанняОсновнихЗасобів_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await СписанняОсновнихЗасобів_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public СписанняОсновнихЗасобів_Pointer GetDocumentPointer()
+        {
+            return new СписанняОсновнихЗасобів_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(СписанняОсновнихЗасобів_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class СписанняОсновнихЗасобів_Pointer : DocumentPointer
+    {
+        public СписанняОсновнихЗасобів_Pointer(object? uid = null) : base(Config.Kernel, "tab_c21", СписанняОсновнихЗасобів_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public СписанняОсновнихЗасобів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c21", "СписанняОсновнихЗасобів")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(СписанняОсновнихЗасобів_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [СписанняОсновнихЗасобів_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{СписанняОсновнихЗасобів_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(СписанняОсновнихЗасобів_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            СписанняОсновнихЗасобів_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public СписанняОсновнихЗасобів_Pointer Copy()
+        {
+            return new СписанняОсновнихЗасобів_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public СписанняОсновнихЗасобів_Pointer GetEmptyPointer()
+        {
+            return new СписанняОсновнихЗасобів_Pointer();
+        }
+
+        public async ValueTask<СписанняОсновнихЗасобів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            СписанняОсновнихЗасобів_Objest obj = new СписанняОсновнихЗасобів_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class СписанняОсновнихЗасобів_Select : DocumentSelect
+    {		
+        public СписанняОсновнихЗасобів_Select() : base(Config.Kernel, "tab_c21") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СписанняОсновнихЗасобів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public СписанняОсновнихЗасобів_Pointer? Current { get; private set; }
+
+        public async ValueTask<СписанняОсновнихЗасобів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new СписанняОсновнихЗасобів_Pointer(pointer) : new СписанняОсновнихЗасобів_Pointer();
+        }
+        
+        public async ValueTask<List<СписанняОсновнихЗасобів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<СписанняОсновнихЗасобів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new СписанняОсновнихЗасобів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class СписанняОсновнихЗасобів_Export
+    {
+        public static async ValueTask ToXmlFile(СписанняОсновнихЗасобів_Pointer СписанняОсновнихЗасобів, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "СписанняВитратМайбутніхПеріодів"
+    public static class СписанняВитратМайбутніхПеріодів_Const
+    {
+        public const string TABLE = "tab_c22";
+        public const string TYPE = "СписанняВитратМайбутніхПеріодів"; /* Назва вказівника */
+        public const string POINTER = "Документи.СписанняВитратМайбутніхПеріодів"; /* Повна назва вказівника */
+        public const string FULLNAME = "Списання витрат майбутніх періодів"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class СписанняВитратМайбутніхПеріодів_Objest : DocumentObject
+    {
+        public СписанняВитратМайбутніхПеріодів_Objest() : base(Config.Kernel, "tab_c22", СписанняВитратМайбутніхПеріодів_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = СписанняВитратМайбутніхПеріодів_Const.FULLNAME + " *";
+            
+                await СписанняВитратМайбутніхПеріодів_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await СписанняВитратМайбутніхПеріодів_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await СписанняВитратМайбутніхПеріодів_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<СписанняВитратМайбутніхПеріодів_Objest> Copy(bool copyTableParts = false)
+        {
+            СписанняВитратМайбутніхПеріодів_Objest copy = new СписанняВитратМайбутніхПеріодів_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await СписанняВитратМайбутніхПеріодів_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public СписанняВитратМайбутніхПеріодів_Pointer GetDocumentPointer()
+        {
+            return new СписанняВитратМайбутніхПеріодів_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(СписанняВитратМайбутніхПеріодів_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class СписанняВитратМайбутніхПеріодів_Pointer : DocumentPointer
+    {
+        public СписанняВитратМайбутніхПеріодів_Pointer(object? uid = null) : base(Config.Kernel, "tab_c22", СписанняВитратМайбутніхПеріодів_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public СписанняВитратМайбутніхПеріодів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c22", "СписанняВитратМайбутніхПеріодів")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(СписанняВитратМайбутніхПеріодів_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [СписанняВитратМайбутніхПеріодів_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{СписанняВитратМайбутніхПеріодів_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(СписанняВитратМайбутніхПеріодів_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            СписанняВитратМайбутніхПеріодів_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public СписанняВитратМайбутніхПеріодів_Pointer Copy()
+        {
+            return new СписанняВитратМайбутніхПеріодів_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public СписанняВитратМайбутніхПеріодів_Pointer GetEmptyPointer()
+        {
+            return new СписанняВитратМайбутніхПеріодів_Pointer();
+        }
+
+        public async ValueTask<СписанняВитратМайбутніхПеріодів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            СписанняВитратМайбутніхПеріодів_Objest obj = new СписанняВитратМайбутніхПеріодів_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class СписанняВитратМайбутніхПеріодів_Select : DocumentSelect
+    {		
+        public СписанняВитратМайбутніхПеріодів_Select() : base(Config.Kernel, "tab_c22") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СписанняВитратМайбутніхПеріодів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public СписанняВитратМайбутніхПеріодів_Pointer? Current { get; private set; }
+
+        public async ValueTask<СписанняВитратМайбутніхПеріодів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new СписанняВитратМайбутніхПеріодів_Pointer(pointer) : new СписанняВитратМайбутніхПеріодів_Pointer();
+        }
+        
+        public async ValueTask<List<СписанняВитратМайбутніхПеріодів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<СписанняВитратМайбутніхПеріодів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new СписанняВитратМайбутніхПеріодів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class СписанняВитратМайбутніхПеріодів_Export
+    {
+        public static async ValueTask ToXmlFile(СписанняВитратМайбутніхПеріодів_Pointer СписанняВитратМайбутніхПеріодів, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "СписанняТоварів"
+    public static class СписанняТоварів_Const
+    {
+        public const string TABLE = "tab_c23";
+        public const string TYPE = "СписанняТоварів"; /* Назва вказівника */
+        public const string POINTER = "Документи.СписанняТоварів"; /* Повна назва вказівника */
+        public const string FULLNAME = "Списання товарів"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class СписанняТоварів_Objest : DocumentObject
+    {
+        public СписанняТоварів_Objest() : base(Config.Kernel, "tab_c23", СписанняТоварів_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = СписанняТоварів_Const.FULLNAME + " *";
+            
+                await СписанняТоварів_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await СписанняТоварів_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await СписанняТоварів_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<СписанняТоварів_Objest> Copy(bool copyTableParts = false)
+        {
+            СписанняТоварів_Objest copy = new СписанняТоварів_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await СписанняТоварів_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public СписанняТоварів_Pointer GetDocumentPointer()
+        {
+            return new СписанняТоварів_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(СписанняТоварів_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class СписанняТоварів_Pointer : DocumentPointer
+    {
+        public СписанняТоварів_Pointer(object? uid = null) : base(Config.Kernel, "tab_c23", СписанняТоварів_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public СписанняТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c23", "СписанняТоварів")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(СписанняТоварів_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [СписанняТоварів_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{СписанняТоварів_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(СписанняТоварів_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            СписанняТоварів_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public СписанняТоварів_Pointer Copy()
+        {
+            return new СписанняТоварів_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public СписанняТоварів_Pointer GetEmptyPointer()
+        {
+            return new СписанняТоварів_Pointer();
+        }
+
+        public async ValueTask<СписанняТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            СписанняТоварів_Objest obj = new СписанняТоварів_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class СписанняТоварів_Select : DocumentSelect
+    {		
+        public СписанняТоварів_Select() : base(Config.Kernel, "tab_c23") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СписанняТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public СписанняТоварів_Pointer? Current { get; private set; }
+
+        public async ValueTask<СписанняТоварів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new СписанняТоварів_Pointer(pointer) : new СписанняТоварів_Pointer();
+        }
+        
+        public async ValueTask<List<СписанняТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<СписанняТоварів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new СписанняТоварів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class СписанняТоварів_Export
+    {
+        public static async ValueTask ToXmlFile(СписанняТоварів_Pointer СписанняТоварів, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
+    #region DOCUMENT "Сторнування"
+    public static class Сторнування_Const
+    {
+        public const string TABLE = "tab_c24";
+        public const string TYPE = "Сторнування"; /* Назва вказівника */
+        public const string POINTER = "Документи.Сторнування"; /* Повна назва вказівника */
+        public const string FULLNAME = "Сторнування"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Основа = "col_a2";
+    }
+
+    public class Сторнування_Objest : DocumentObject
+    {
+        public Сторнування_Objest() : base(Config.Kernel, "tab_c24", Сторнування_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async ValueTask New()
+        {
+            BaseNew();
+            Caption = Сторнування_Const.FULLNAME + " *";
+            
+                await Сторнування_Triggers.New(this);
+              
+        }
+
+        public async ValueTask<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async ValueTask<bool> Save()
+        {
+            
+                await Сторнування_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Основа;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseAddIgnoreDocumentList();
+            bool spend = await Сторнування_SpendTheDocument.Spend(this);
+            if (!spend) ClearRegAccum();
+            await BaseSpend(spend, spend ? spendDate : DateTime.MinValue);
+            await BaseRemoveIgnoreDocumentList();
+            return spend;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async ValueTask<Сторнування_Objest> Copy(bool copyTableParts = false)
+        {
+            Сторнування_Objest copy = new Сторнування_Objest()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Основа = Основа,
+                
+            };
+            
+
+            await copy.New();
+            
+                await Сторнування_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async ValueTask Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete([]);
+        }
+        
+        public Сторнування_Pointer GetDocumentPointer()
+        {
+            return new Сторнування_Pointer(UniqueID.UGuid);
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return await base.BasePresentation(Сторнування_Const.PRESENTATION_FIELDS);
+        }
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Основа { get; set; } = new UuidAndText();
+        
+    }
+    
+    public class Сторнування_Pointer : DocumentPointer
+    {
+        public Сторнування_Pointer(object? uid = null) : base(Config.Kernel, "tab_c24", Сторнування_Const.TYPE)
+        {
+            base.Init(new UniqueID(uid));
+        }
+        
+        public Сторнування_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c24", "Сторнування")
+        {
+            base.Init(uid, fields);
+        }
+
+        public string Назва
+        {
+            get { return Name; } set { Name = value; }
+        }
+
+        public async ValueTask<string> GetPresentation()
+        {
+            return Name = await base.BasePresentation(Сторнування_Const.PRESENTATION_FIELDS);
+        }
+
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [Сторнування_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{Сторнування_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(Сторнування_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+
+        public async ValueTask<bool?> IsSpend()
+        {
+            return await base.BaseIsSpend();
+        }
+
+        public async ValueTask<(bool? Spend, DateTime SpendDate)> GetSpend()
+        {
+            return await base.BaseGetSpend();
+        }
+
+        public async ValueTask<bool> SpendTheDocument(DateTime spendDate)
+        {
+            Сторнування_Objest? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+
+        public async ValueTask ClearSpendTheDocument()
+        {
+            
+            ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+
+        public async ValueTask<bool?> GetDeletionLabel()
+        {
+            return await base.BaseGetDeletionLabel();
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        async void ClearRegAccum()
+        {
+          
+            if(!this.UniqueID.IsEmpty())
+            {
+              
+                await new РегістриНакопичення.БухгалтерськіОперації_RecordsSet().Delete(this.UniqueID.UGuid);
+              
+            }
+            
+        }
+  
+
+        public async ValueTask SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+
+        public Сторнування_Pointer Copy()
+        {
+            return new Сторнування_Pointer(base.UniqueID, base.Fields) { Name = Name };
+        }
+
+        public Сторнування_Pointer GetEmptyPointer()
+        {
+            return new Сторнування_Pointer();
+        }
+
+        public async ValueTask<Сторнування_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            Сторнування_Objest obj = new Сторнування_Objest();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class Сторнування_Select : DocumentSelect
+    {		
+        public Сторнування_Select() : base(Config.Kernel, "tab_c24") { }
+        public async ValueTask<bool> Select() { return await base.BaseSelect(); }
+        public async ValueTask<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Сторнування_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
+        public Сторнування_Pointer? Current { get; private set; }
+
+        public async ValueTask<Сторнування_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Сторнування_Pointer(pointer) : new Сторнування_Pointer();
+        }
+        
+        public async ValueTask<List<Сторнування_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
+        {
+            List<Сторнування_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new Сторнування_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
+        }
+    }
+
+      
+    
+    public static class Сторнування_Export
+    {
+        public static async ValueTask ToXmlFile(Сторнування_Pointer Сторнування, string pathToSave)
+        {
+        await ValueTask.FromResult(true);
+        }
+    }
+
+    #endregion
+    
 }
 
 namespace GeneratedCode.Журнали
@@ -32249,8 +48645,8 @@ namespace GeneratedCode.Журнали
     public class JournalSelect: AccountingSoftware.JournalSelect
     {
         public JournalSelect() : base(Config.Kernel,
-             ["tab_a25", "tab_a32", "tab_a34", "tab_a36", "tab_a42", "tab_a44", "tab_a48", "tab_a31", "tab_a51", "tab_a53", "tab_a81", "tab_a83", "tab_a88", "tab_a90", "tab_a92", "tab_a94", "tab_b07", "tab_b10", "tab_a64", "tab_b09", "tab_b27", "tab_b29", "tab_a65", "tab_a96", "tab_b41", "tab_b44", "tab_b51", "acc_operations", ],
-             ["ЗамовленняПостачальнику", "ПоступленняТоварівТаПослуг", "ЗамовленняКлієнта", "РеалізаціяТоварівТаПослуг", "ВстановленняЦінНоменклатури", "ПрихіднийКасовийОрдер", "РозхіднийКасовийОрдер", "ПереміщенняТоварів", "ПоверненняТоварівПостачальнику", "ПоверненняТоварівВідКлієнта", "АктВиконанихРобіт", "ВведенняЗалишків", "НадлишкиТоварів", "ПересортицяТоварів", "ПерерахунокТоварів", "ПсуванняТоварів", "ВнутрішнєСпоживанняТоварів", "РахунокФактура", "РозміщенняТоварівНаСкладі", "ПереміщенняТоварівНаСкладі", "ЗбіркаТоварівНаСкладі", "РозміщенняНоменклатуриПоКоміркам", "КорегуванняБоргу", "ЗакриттяЗамовленняКлієнта", "ЗакриттяРахункуФактури", "ЗакриттяЗамовленняПостачальнику", "ЧекККМ", "БухгалтерськаОперація", ]) { }
+             ["tab_a25", "tab_a32", "tab_a34", "tab_a36", "tab_a42", "tab_a44", "tab_a48", "tab_a31", "tab_a51", "tab_a53", "tab_a81", "tab_a83", "tab_a88", "tab_a90", "tab_a92", "tab_a94", "tab_b07", "tab_b10", "tab_a64", "tab_b09", "tab_b27", "tab_b29", "tab_a65", "tab_a96", "tab_b41", "tab_b44", "tab_b51", "acc_operations", "tab_b72", "tab_b73", "tab_b74", "tab_b75", "tab_b76", "tab_b77", "tab_b78", "tab_b79", "tab_b80", "tab_b81", "tab_b82", "tab_b83", "tab_b84", "tab_b85", "tab_b86", "tab_b87", "tab_b88", "tab_b89", "tab_b90", "tab_b91", "tab_b92", "tab_b93", "tab_b94", "tab_b95", "tab_b96", "tab_b97", "tab_b98", "tab_b99", "tab_c01", "tab_c02", "tab_c03", "tab_c04", "tab_c05", "tab_c06", "tab_c07", "tab_c08", "tab_c09", "tab_c10", "tab_c11", "tab_c12", "tab_c13", "tab_c14", "tab_c15", "tab_c16", "tab_c17", "tab_c18", "tab_c19", "tab_c20", "tab_c21", "tab_c22", "tab_c23", "tab_c24", ],
+             ["ЗамовленняПостачальнику", "ПоступленняТоварівТаПослуг", "ЗамовленняКлієнта", "РеалізаціяТоварівТаПослуг", "ВстановленняЦінНоменклатури", "ПрихіднийКасовийОрдер", "РозхіднийКасовийОрдер", "ПереміщенняТоварів", "ПоверненняТоварівПостачальнику", "ПоверненняТоварівВідКлієнта", "АктВиконанихРобіт", "ВведенняЗалишків", "НадлишкиТоварів", "ПересортицяТоварів", "ПерерахунокТоварів", "ПсуванняТоварів", "ВнутрішнєСпоживанняТоварів", "РахунокФактура", "РозміщенняТоварівНаСкладі", "ПереміщенняТоварівНаСкладі", "ЗбіркаТоварівНаСкладі", "РозміщенняНоменклатуриПоКоміркам", "КорегуванняБоргу", "ЗакриттяЗамовленняКлієнта", "ЗакриттяРахункуФактури", "ЗакриттяЗамовленняПостачальнику", "ЧекККМ", "БухгалтерськаОперація", "АвансовийЗвіт", "Амортизація", "ВизначенняФінансовогоРезультату", "ВиплатаЗаробітноїПлати", "ВиготовленняПродукції", "Додаток1ДоПодатковоїНакладної", "Додаток2ДоПодатковоїНакладної", "ЗаписКнигиПридбання", "ЗмінаПараметрівОсновнихЗасобів", "ЗвітКомісіонераПроПродажТоварів", "ЗвітКомітентуПроПродажТоварів", "КоригуванняНезавершеногоВиробництва", "КоригуванняПДВ", "КоригуванняІншихВитрат", "Модернізація", "Комплектація", "НакладнаВимога", "Наряд", "НарахуванняЗаробітньоїПлати", "ПередачаМатеріалівВЕксплуатацію", "ПереміщенняМатеріалівВЕксплуатації", "ПередачаНематеріальнихАктивів", "ПереміщенняНематеріальнихАктивів", "ПередачаОбладнанняВМонтаж", "ПередачаОсновнихЗасобів", "ПереміщенняОсновнихЗасобів", "ПередачаТоварів", "ПереоцінкаВалюти", "ПереоцінкаОсновнихЗасобів", "ПереоцінкаТоварів", "ПлатіжнеДорученняВхідне", "ПлатіжнеДорученняВихідне", "ПодатковаНакладна", "ПокупкаАбоПродажВалюти", "ПідготовкаДоПередачіОсновнихЗасобів", "ПослугиСторонньоїОрганізації", "ПрибуткуванняМатеріалівЗВиробництва", "ПрибуткуванняТоварівВПереробку", "ПрибуткуванняТоварівЗПереробки", "ПрибуткуванняНезавершеногоВиробництва", "ПрийняттяДоОбліку", "ПоверненняПереданихТоварів", "РемонтОсновнихЗасобів", "РозподілІншихВитрат", "РозрахунокСобівартостіВипуску", "СписанняМатеріалів", "СписанняНезавершеногоВиробництва", "СписанняНематеріальнихАктивів", "СписанняОсновнихЗасобів", "СписанняВитратМайбутніхПеріодів", "СписанняТоварів", "Сторнування", ]) { }
 
         public async ValueTask<DocumentObject?> GetDocumentObject(bool readAllTablePart = true)
         {
@@ -32285,6 +48681,58 @@ namespace GeneratedCode.Журнали
                 "ЗакриттяЗамовленняПостачальнику" => await new Документи.ЗакриттяЗамовленняПостачальнику_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
                 "ЧекККМ" => await new Документи.ЧекККМ_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
                 "БухгалтерськаОперація" => await new Документи.БухгалтерськаОперація_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "АвансовийЗвіт" => await new Документи.АвансовийЗвіт_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "Амортизація" => await new Документи.Амортизація_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "ВизначенняФінансовогоРезультату" => await new Документи.ВизначенняФінансовогоРезультату_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "ВиплатаЗаробітноїПлати" => await new Документи.ВиплатаЗаробітноїПлати_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "ВиготовленняПродукції" => await new Документи.ВиготовленняПродукції_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "Додаток1ДоПодатковоїНакладної" => await new Документи.Додаток1ДоПодатковоїНакладної_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "Додаток2ДоПодатковоїНакладної" => await new Документи.Додаток2ДоПодатковоїНакладної_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "ЗаписКнигиПридбання" => await new Документи.ЗаписКнигиПридбання_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "ЗмінаПараметрівОсновнихЗасобів" => await new Документи.ЗмінаПараметрівОсновнихЗасобів_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "ЗвітКомісіонераПроПродажТоварів" => await new Документи.ЗвітКомісіонераПроПродажТоварів_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "ЗвітКомітентуПроПродажТоварів" => await new Документи.ЗвітКомітентуПроПродажТоварів_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "КоригуванняНезавершеногоВиробництва" => await new Документи.КоригуванняНезавершеногоВиробництва_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "КоригуванняПДВ" => await new Документи.КоригуванняПДВ_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "КоригуванняІншихВитрат" => await new Документи.КоригуванняІншихВитрат_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "Модернізація" => await new Документи.Модернізація_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "Комплектація" => await new Документи.Комплектація_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "НакладнаВимога" => await new Документи.НакладнаВимога_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "Наряд" => await new Документи.Наряд_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "НарахуванняЗаробітньоїПлати" => await new Документи.НарахуванняЗаробітньоїПлати_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "ПередачаМатеріалівВЕксплуатацію" => await new Документи.ПередачаМатеріалівВЕксплуатацію_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "ПереміщенняМатеріалівВЕксплуатації" => await new Документи.ПереміщенняМатеріалівВЕксплуатації_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "ПередачаНематеріальнихАктивів" => await new Документи.ПередачаНематеріальнихАктивів_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "ПереміщенняНематеріальнихАктивів" => await new Документи.ПереміщенняНематеріальнихАктивів_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "ПередачаОбладнанняВМонтаж" => await new Документи.ПередачаОбладнанняВМонтаж_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "ПередачаОсновнихЗасобів" => await new Документи.ПередачаОсновнихЗасобів_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "ПереміщенняОсновнихЗасобів" => await new Документи.ПереміщенняОсновнихЗасобів_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "ПередачаТоварів" => await new Документи.ПередачаТоварів_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "ПереоцінкаВалюти" => await new Документи.ПереоцінкаВалюти_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "ПереоцінкаОсновнихЗасобів" => await new Документи.ПереоцінкаОсновнихЗасобів_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "ПереоцінкаТоварів" => await new Документи.ПереоцінкаТоварів_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "ПлатіжнеДорученняВхідне" => await new Документи.ПлатіжнеДорученняВхідне_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "ПлатіжнеДорученняВихідне" => await new Документи.ПлатіжнеДорученняВихідне_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "ПодатковаНакладна" => await new Документи.ПодатковаНакладна_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "ПокупкаАбоПродажВалюти" => await new Документи.ПокупкаАбоПродажВалюти_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "ПідготовкаДоПередачіОсновнихЗасобів" => await new Документи.ПідготовкаДоПередачіОсновнихЗасобів_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "ПослугиСторонньоїОрганізації" => await new Документи.ПослугиСторонньоїОрганізації_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "ПрибуткуванняМатеріалівЗВиробництва" => await new Документи.ПрибуткуванняМатеріалівЗВиробництва_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "ПрибуткуванняТоварівВПереробку" => await new Документи.ПрибуткуванняТоварівВПереробку_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "ПрибуткуванняТоварівЗПереробки" => await new Документи.ПрибуткуванняТоварівЗПереробки_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "ПрибуткуванняНезавершеногоВиробництва" => await new Документи.ПрибуткуванняНезавершеногоВиробництва_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "ПрийняттяДоОбліку" => await new Документи.ПрийняттяДоОбліку_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "ПоверненняПереданихТоварів" => await new Документи.ПоверненняПереданихТоварів_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "РемонтОсновнихЗасобів" => await new Документи.РемонтОсновнихЗасобів_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "РозподілІншихВитрат" => await new Документи.РозподілІншихВитрат_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "РозрахунокСобівартостіВипуску" => await new Документи.РозрахунокСобівартостіВипуску_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "СписанняМатеріалів" => await new Документи.СписанняМатеріалів_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "СписанняНезавершеногоВиробництва" => await new Документи.СписанняНезавершеногоВиробництва_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "СписанняНематеріальнихАктивів" => await new Документи.СписанняНематеріальнихАктивів_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "СписанняОсновнихЗасобів" => await new Документи.СписанняОсновнихЗасобів_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "СписанняВитратМайбутніхПеріодів" => await new Документи.СписанняВитратМайбутніхПеріодів_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "СписанняТоварів" => await new Документи.СписанняТоварів_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "Сторнування" => await new Документи.Сторнування_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
                 _ => null
             };
         }
@@ -32715,7 +49163,7 @@ namespace GeneratedCode.РегістриВідомостей
     public static class ШтрихкодиНоменклатури_Const
     {
         public const string TYPENAME = "РегістриВідомостей.ШтрихкодиНоменклатури";
-        public const string FULLNAME = "Штрихкоди";
+        public const string FULLNAME = "Штрихкоди номенклатури";
         public const string TABLE = "tab_b17";
         
         public const string Штрихкод = "col_a1";
@@ -33091,7 +49539,7 @@ namespace GeneratedCode.РегістриВідомостей
     public static class РозміщенняНоменклатуриПоКоміркамНаСкладі_Const
     {
         public const string TYPENAME = "РегістриВідомостей.РозміщенняНоменклатуриПоКоміркамНаСкладі";
-        public const string FULLNAME = "Розміщення номенклатури";
+        public const string FULLNAME = "Розміщення номенклатури по комірках";
         public const string TABLE = "tab_a74";
         
         public const string Номенклатура = "col_a1";
@@ -33324,13 +49772,13 @@ namespace GeneratedCode.РегістриНакопичення
                         
                     await Config.Kernel.DataBase.ExecuteSQL($@"DELETE FROM {ТовариНаСкладах_Залишки_TablePart.TABLE} WHERE {ТовариНаСкладах_Залишки_TablePart.TABLE}.{ТовариНаСкладах_Залишки_TablePart.Період} = @ПеріодДеньВідбір", paramQuery, transactionID);
                         
-                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {ТовариНаСкладах_Залишки_TablePart.TABLE} ( uid, {ТовариНаСкладах_Залишки_TablePart.Період}, {ТовариНаСкладах_Залишки_TablePart.Номенклатура}, {ТовариНаСкладах_Залишки_TablePart.ХарактеристикаНоменклатури}, {ТовариНаСкладах_Залишки_TablePart.Склад}, {ТовариНаСкладах_Залишки_TablePart.Серія}, {ТовариНаСкладах_Залишки_TablePart.ВНаявності}, {ТовариНаСкладах_Залишки_TablePart.ДоВідвантаження} ) SELECT uuid_generate_v4(), date_trunc('day', ТовариНаСкладах.period::timestamp) AS Період, ТовариНаСкладах.{ТовариНаСкладах_Const.Номенклатура} AS Номенклатура, ТовариНаСкладах.{ТовариНаСкладах_Const.ХарактеристикаНоменклатури} AS ХарактеристикаНоменклатури, ТовариНаСкладах.{ТовариНаСкладах_Const.Склад} AS Склад, ТовариНаСкладах.{ТовариНаСкладах_Const.Серія} AS Серія, /* ВНаявності */ SUM(CASE WHEN ТовариНаСкладах.income = true THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ВНаявності} ELSE -ТовариНаСкладах.{ТовариНаСкладах_Const.ВНаявності} END) AS ВНаявності, /* ДоВідвантаження */ SUM(CASE WHEN ТовариНаСкладах.income = true THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ДоВідвантаження} ELSE -ТовариНаСкладах.{ТовариНаСкладах_Const.ДоВідвантаження} END) AS ДоВідвантаження FROM {ТовариНаСкладах_Const.TABLE} AS ТовариНаСкладах WHERE date_trunc('day', ТовариНаСкладах.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Номенклатура, ХарактеристикаНоменклатури, Склад, Серія HAVING /* ВНаявності */ SUM(CASE WHEN ТовариНаСкладах.income = true THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ВНаявності} ELSE -ТовариНаСкладах.{ТовариНаСкладах_Const.ВНаявності} END) != 0 OR /* ДоВідвантаження */ SUM(CASE WHEN ТовариНаСкладах.income = true THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ДоВідвантаження} ELSE -ТовариНаСкладах.{ТовариНаСкладах_Const.ДоВідвантаження} END) != 0", paramQuery, transactionID);
+                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {ТовариНаСкладах_Залишки_TablePart.TABLE} ( uid, {ТовариНаСкладах_Залишки_TablePart.Період}, {ТовариНаСкладах_Залишки_TablePart.Номенклатура}, {ТовариНаСкладах_Залишки_TablePart.ХарактеристикаНоменклатури}, {ТовариНаСкладах_Залишки_TablePart.Склад}, {ТовариНаСкладах_Залишки_TablePart.Серія}, {ТовариНаСкладах_Залишки_TablePart.ВНаявності}, {ТовариНаСкладах_Залишки_TablePart.ДоВідвантаження} ) SELECT uuidv7(), date_trunc('day', ТовариНаСкладах.period::timestamp) AS Період, ТовариНаСкладах.{ТовариНаСкладах_Const.Номенклатура} AS Номенклатура, ТовариНаСкладах.{ТовариНаСкладах_Const.ХарактеристикаНоменклатури} AS ХарактеристикаНоменклатури, ТовариНаСкладах.{ТовариНаСкладах_Const.Склад} AS Склад, ТовариНаСкладах.{ТовариНаСкладах_Const.Серія} AS Серія, /* ВНаявності */ SUM(CASE WHEN ТовариНаСкладах.income = true THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ВНаявності} ELSE -ТовариНаСкладах.{ТовариНаСкладах_Const.ВНаявності} END) AS ВНаявності, /* ДоВідвантаження */ SUM(CASE WHEN ТовариНаСкладах.income = true THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ДоВідвантаження} ELSE -ТовариНаСкладах.{ТовариНаСкладах_Const.ДоВідвантаження} END) AS ДоВідвантаження FROM {ТовариНаСкладах_Const.TABLE} AS ТовариНаСкладах WHERE date_trunc('day', ТовариНаСкладах.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Номенклатура, ХарактеристикаНоменклатури, Склад, Серія HAVING /* ВНаявності */ SUM(CASE WHEN ТовариНаСкладах.income = true THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ВНаявності} ELSE -ТовариНаСкладах.{ТовариНаСкладах_Const.ВНаявності} END) != 0 OR /* ДоВідвантаження */ SUM(CASE WHEN ТовариНаСкладах.income = true THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ДоВідвантаження} ELSE -ТовариНаСкладах.{ТовариНаСкладах_Const.ДоВідвантаження} END) != 0", paramQuery, transactionID);
                         
                     /* QueryBlock: ЗалишкиТаОбороти */
                         
                     await Config.Kernel.DataBase.ExecuteSQL($@"DELETE FROM {ТовариНаСкладах_ЗалишкиТаОбороти_TablePart.TABLE} WHERE {ТовариНаСкладах_ЗалишкиТаОбороти_TablePart.TABLE}.{ТовариНаСкладах_ЗалишкиТаОбороти_TablePart.Період} = @ПеріодДеньВідбір", paramQuery, transactionID);
                         
-                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {ТовариНаСкладах_ЗалишкиТаОбороти_TablePart.TABLE} ( uid, {ТовариНаСкладах_ЗалишкиТаОбороти_TablePart.Період}, {ТовариНаСкладах_ЗалишкиТаОбороти_TablePart.Номенклатура}, {ТовариНаСкладах_ЗалишкиТаОбороти_TablePart.ХарактеристикаНоменклатури}, {ТовариНаСкладах_ЗалишкиТаОбороти_TablePart.Склад}, {ТовариНаСкладах_ЗалишкиТаОбороти_TablePart.Серія}, {ТовариНаСкладах_ЗалишкиТаОбороти_TablePart.ВНаявностіПрихід}, {ТовариНаСкладах_ЗалишкиТаОбороти_TablePart.ВНаявностіРозхід}, {ТовариНаСкладах_ЗалишкиТаОбороти_TablePart.ВНаявностіЗалишок}, {ТовариНаСкладах_ЗалишкиТаОбороти_TablePart.ДоВідвантаженняПрихід}, {ТовариНаСкладах_ЗалишкиТаОбороти_TablePart.ДоВідвантаженняРозхід}, {ТовариНаСкладах_ЗалишкиТаОбороти_TablePart.ДоВідвантаженняЗалишок} ) SELECT uuid_generate_v4(), date_trunc('day', ТовариНаСкладах.period::timestamp) AS Період, ТовариНаСкладах.{ТовариНаСкладах_Const.Номенклатура} AS Номенклатура, ТовариНаСкладах.{ТовариНаСкладах_Const.ХарактеристикаНоменклатури} AS ХарактеристикаНоменклатури, ТовариНаСкладах.{ТовариНаСкладах_Const.Склад} AS Склад, ТовариНаСкладах.{ТовариНаСкладах_Const.Серія} AS Серія, /* ВНаявності */ SUM(CASE WHEN ТовариНаСкладах.income = true THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ВНаявності} ELSE 0 END) AS ВНаявностіПрихід, SUM(CASE WHEN ТовариНаСкладах.income = false THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ВНаявності} ELSE 0 END) AS ВНаявностіРозхід, SUM(CASE WHEN ТовариНаСкладах.income = true THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ВНаявності} ELSE -ТовариНаСкладах.{ТовариНаСкладах_Const.ВНаявності} END) AS ВНаявностіЗалишок, /* ДоВідвантаження */ SUM(CASE WHEN ТовариНаСкладах.income = true THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ДоВідвантаження} ELSE 0 END) AS ДоВідвантаженняПрихід, SUM(CASE WHEN ТовариНаСкладах.income = false THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ДоВідвантаження} ELSE 0 END) AS ДоВідвантаженняРозхід, SUM(CASE WHEN ТовариНаСкладах.income = true THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ДоВідвантаження} ELSE -ТовариНаСкладах.{ТовариНаСкладах_Const.ДоВідвантаження} END) AS ДоВідвантаженняЗалишок FROM {ТовариНаСкладах_Const.TABLE} AS ТовариНаСкладах WHERE date_trunc('day', ТовариНаСкладах.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Номенклатура, ХарактеристикаНоменклатури, Склад, Серія HAVING /* ВНаявності */ SUM(CASE WHEN ТовариНаСкладах.income = true THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ВНаявності} ELSE 0 END) != 0 OR SUM(CASE WHEN ТовариНаСкладах.income = false THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ВНаявності} ELSE 0 END) != 0 OR SUM(CASE WHEN ТовариНаСкладах.income = true THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ВНаявності} ELSE -ТовариНаСкладах.{ТовариНаСкладах_Const.ВНаявності} END) != 0 OR /* ДоВідвантаження */ SUM(CASE WHEN ТовариНаСкладах.income = true THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ДоВідвантаження} ELSE 0 END) != 0 OR SUM(CASE WHEN ТовариНаСкладах.income = false THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ДоВідвантаження} ELSE 0 END) != 0 OR SUM(CASE WHEN ТовариНаСкладах.income = true THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ДоВідвантаження} ELSE -ТовариНаСкладах.{ТовариНаСкладах_Const.ДоВідвантаження} END) != 0", paramQuery, transactionID);
+                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {ТовариНаСкладах_ЗалишкиТаОбороти_TablePart.TABLE} ( uid, {ТовариНаСкладах_ЗалишкиТаОбороти_TablePart.Період}, {ТовариНаСкладах_ЗалишкиТаОбороти_TablePart.Номенклатура}, {ТовариНаСкладах_ЗалишкиТаОбороти_TablePart.ХарактеристикаНоменклатури}, {ТовариНаСкладах_ЗалишкиТаОбороти_TablePart.Склад}, {ТовариНаСкладах_ЗалишкиТаОбороти_TablePart.Серія}, {ТовариНаСкладах_ЗалишкиТаОбороти_TablePart.ВНаявностіПрихід}, {ТовариНаСкладах_ЗалишкиТаОбороти_TablePart.ВНаявностіРозхід}, {ТовариНаСкладах_ЗалишкиТаОбороти_TablePart.ВНаявностіЗалишок}, {ТовариНаСкладах_ЗалишкиТаОбороти_TablePart.ДоВідвантаженняПрихід}, {ТовариНаСкладах_ЗалишкиТаОбороти_TablePart.ДоВідвантаженняРозхід}, {ТовариНаСкладах_ЗалишкиТаОбороти_TablePart.ДоВідвантаженняЗалишок} ) SELECT uuidv7(), date_trunc('day', ТовариНаСкладах.period::timestamp) AS Період, ТовариНаСкладах.{ТовариНаСкладах_Const.Номенклатура} AS Номенклатура, ТовариНаСкладах.{ТовариНаСкладах_Const.ХарактеристикаНоменклатури} AS ХарактеристикаНоменклатури, ТовариНаСкладах.{ТовариНаСкладах_Const.Склад} AS Склад, ТовариНаСкладах.{ТовариНаСкладах_Const.Серія} AS Серія, /* ВНаявності */ SUM(CASE WHEN ТовариНаСкладах.income = true THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ВНаявності} ELSE 0 END) AS ВНаявностіПрихід, SUM(CASE WHEN ТовариНаСкладах.income = false THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ВНаявності} ELSE 0 END) AS ВНаявностіРозхід, SUM(CASE WHEN ТовариНаСкладах.income = true THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ВНаявності} ELSE -ТовариНаСкладах.{ТовариНаСкладах_Const.ВНаявності} END) AS ВНаявностіЗалишок, /* ДоВідвантаження */ SUM(CASE WHEN ТовариНаСкладах.income = true THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ДоВідвантаження} ELSE 0 END) AS ДоВідвантаженняПрихід, SUM(CASE WHEN ТовариНаСкладах.income = false THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ДоВідвантаження} ELSE 0 END) AS ДоВідвантаженняРозхід, SUM(CASE WHEN ТовариНаСкладах.income = true THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ДоВідвантаження} ELSE -ТовариНаСкладах.{ТовариНаСкладах_Const.ДоВідвантаження} END) AS ДоВідвантаженняЗалишок FROM {ТовариНаСкладах_Const.TABLE} AS ТовариНаСкладах WHERE date_trunc('day', ТовариНаСкладах.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Номенклатура, ХарактеристикаНоменклатури, Склад, Серія HAVING /* ВНаявності */ SUM(CASE WHEN ТовариНаСкладах.income = true THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ВНаявності} ELSE 0 END) != 0 OR SUM(CASE WHEN ТовариНаСкладах.income = false THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ВНаявності} ELSE 0 END) != 0 OR SUM(CASE WHEN ТовариНаСкладах.income = true THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ВНаявності} ELSE -ТовариНаСкладах.{ТовариНаСкладах_Const.ВНаявності} END) != 0 OR /* ДоВідвантаження */ SUM(CASE WHEN ТовариНаСкладах.income = true THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ДоВідвантаження} ELSE 0 END) != 0 OR SUM(CASE WHEN ТовариНаСкладах.income = false THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ДоВідвантаження} ELSE 0 END) != 0 OR SUM(CASE WHEN ТовариНаСкладах.income = true THEN ТовариНаСкладах.{ТовариНаСкладах_Const.ДоВідвантаження} ELSE -ТовариНаСкладах.{ТовариНаСкладах_Const.ДоВідвантаження} END) != 0", paramQuery, transactionID);
                         
                     await Config.Kernel.DataBase.CommitTransaction(transactionID);
                     break;
@@ -33344,7 +49792,7 @@ namespace GeneratedCode.РегістриНакопичення
                         
                     await Config.Kernel.DataBase.ExecuteSQL($@"DELETE FROM {ЗамовленняКлієнтів_Залишки_TablePart.TABLE} WHERE {ЗамовленняКлієнтів_Залишки_TablePart.TABLE}.{ЗамовленняКлієнтів_Залишки_TablePart.Період} = @ПеріодДеньВідбір", paramQuery, transactionID);
                         
-                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {ЗамовленняКлієнтів_Залишки_TablePart.TABLE} ( uid, {ЗамовленняКлієнтів_Залишки_TablePart.Період}, {ЗамовленняКлієнтів_Залишки_TablePart.ЗамовленняКлієнта}, {ЗамовленняКлієнтів_Залишки_TablePart.Номенклатура}, {ЗамовленняКлієнтів_Залишки_TablePart.ХарактеристикаНоменклатури}, {ЗамовленняКлієнтів_Залишки_TablePart.Склад}, {ЗамовленняКлієнтів_Залишки_TablePart.Замовлено}, {ЗамовленняКлієнтів_Залишки_TablePart.Сума} ) SELECT uuid_generate_v4(), date_trunc('day', ЗамовленняКлієнтів.period::timestamp) AS Період, ЗамовленняКлієнтів.{ЗамовленняКлієнтів_Const.ЗамовленняКлієнта} AS ЗамовленняКлієнта, ЗамовленняКлієнтів.{ЗамовленняКлієнтів_Const.Номенклатура} AS Номенклатура, ЗамовленняКлієнтів.{ЗамовленняКлієнтів_Const.ХарактеристикаНоменклатури} AS ХарактеристикаНоменклатури, ЗамовленняКлієнтів.{ЗамовленняКлієнтів_Const.Склад} AS Склад, /* Замовлено */ SUM(CASE WHEN ЗамовленняКлієнтів.income = true THEN ЗамовленняКлієнтів.{ЗамовленняКлієнтів_Const.Замовлено} ELSE -ЗамовленняКлієнтів.{ЗамовленняКлієнтів_Const.Замовлено} END) AS Замовлено, /* Сума */ SUM(CASE WHEN ЗамовленняКлієнтів.income = true THEN ЗамовленняКлієнтів.{ЗамовленняКлієнтів_Const.Сума} ELSE -ЗамовленняКлієнтів.{ЗамовленняКлієнтів_Const.Сума} END) AS Сума FROM {ЗамовленняКлієнтів_Const.TABLE} AS ЗамовленняКлієнтів WHERE date_trunc('day', ЗамовленняКлієнтів.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, ЗамовленняКлієнта, Номенклатура, ХарактеристикаНоменклатури, Склад HAVING /* Замовлено */ SUM(CASE WHEN ЗамовленняКлієнтів.income = true THEN ЗамовленняКлієнтів.{ЗамовленняКлієнтів_Const.Замовлено} ELSE -ЗамовленняКлієнтів.{ЗамовленняКлієнтів_Const.Замовлено} END) != 0 OR /* Сума */ SUM(CASE WHEN ЗамовленняКлієнтів.income = true THEN ЗамовленняКлієнтів.{ЗамовленняКлієнтів_Const.Сума} ELSE -ЗамовленняКлієнтів.{ЗамовленняКлієнтів_Const.Сума} END) != 0", paramQuery, transactionID);
+                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {ЗамовленняКлієнтів_Залишки_TablePart.TABLE} ( uid, {ЗамовленняКлієнтів_Залишки_TablePart.Період}, {ЗамовленняКлієнтів_Залишки_TablePart.ЗамовленняКлієнта}, {ЗамовленняКлієнтів_Залишки_TablePart.Номенклатура}, {ЗамовленняКлієнтів_Залишки_TablePart.ХарактеристикаНоменклатури}, {ЗамовленняКлієнтів_Залишки_TablePart.Склад}, {ЗамовленняКлієнтів_Залишки_TablePart.Замовлено}, {ЗамовленняКлієнтів_Залишки_TablePart.Сума} ) SELECT uuidv7(), date_trunc('day', ЗамовленняКлієнтів.period::timestamp) AS Період, ЗамовленняКлієнтів.{ЗамовленняКлієнтів_Const.ЗамовленняКлієнта} AS ЗамовленняКлієнта, ЗамовленняКлієнтів.{ЗамовленняКлієнтів_Const.Номенклатура} AS Номенклатура, ЗамовленняКлієнтів.{ЗамовленняКлієнтів_Const.ХарактеристикаНоменклатури} AS ХарактеристикаНоменклатури, ЗамовленняКлієнтів.{ЗамовленняКлієнтів_Const.Склад} AS Склад, /* Замовлено */ SUM(CASE WHEN ЗамовленняКлієнтів.income = true THEN ЗамовленняКлієнтів.{ЗамовленняКлієнтів_Const.Замовлено} ELSE -ЗамовленняКлієнтів.{ЗамовленняКлієнтів_Const.Замовлено} END) AS Замовлено, /* Сума */ SUM(CASE WHEN ЗамовленняКлієнтів.income = true THEN ЗамовленняКлієнтів.{ЗамовленняКлієнтів_Const.Сума} ELSE -ЗамовленняКлієнтів.{ЗамовленняКлієнтів_Const.Сума} END) AS Сума FROM {ЗамовленняКлієнтів_Const.TABLE} AS ЗамовленняКлієнтів WHERE date_trunc('day', ЗамовленняКлієнтів.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, ЗамовленняКлієнта, Номенклатура, ХарактеристикаНоменклатури, Склад HAVING /* Замовлено */ SUM(CASE WHEN ЗамовленняКлієнтів.income = true THEN ЗамовленняКлієнтів.{ЗамовленняКлієнтів_Const.Замовлено} ELSE -ЗамовленняКлієнтів.{ЗамовленняКлієнтів_Const.Замовлено} END) != 0 OR /* Сума */ SUM(CASE WHEN ЗамовленняКлієнтів.income = true THEN ЗамовленняКлієнтів.{ЗамовленняКлієнтів_Const.Сума} ELSE -ЗамовленняКлієнтів.{ЗамовленняКлієнтів_Const.Сума} END) != 0", paramQuery, transactionID);
                         
                     await Config.Kernel.DataBase.CommitTransaction(transactionID);
                     break;
@@ -33358,13 +49806,13 @@ namespace GeneratedCode.РегістриНакопичення
                         
                     await Config.Kernel.DataBase.ExecuteSQL($@"DELETE FROM {РозрахункиЗКлієнтами_Залишки_TablePart.TABLE} WHERE {РозрахункиЗКлієнтами_Залишки_TablePart.TABLE}.{РозрахункиЗКлієнтами_Залишки_TablePart.Період} = @ПеріодДеньВідбір", paramQuery, transactionID);
                         
-                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {РозрахункиЗКлієнтами_Залишки_TablePart.TABLE} ( uid, {РозрахункиЗКлієнтами_Залишки_TablePart.Період}, {РозрахункиЗКлієнтами_Залишки_TablePart.Валюта}, {РозрахункиЗКлієнтами_Залишки_TablePart.Контрагент}, {РозрахункиЗКлієнтами_Залишки_TablePart.Сума} ) SELECT uuid_generate_v4(), date_trunc('day', РозрахункиЗКлієнтами.period::timestamp) AS Період, РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Валюта} AS Валюта, РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Контрагент} AS Контрагент, /* Сума */ SUM(CASE WHEN РозрахункиЗКлієнтами.income = true THEN РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Сума} ELSE -РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Сума} END) AS Сума FROM {РозрахункиЗКлієнтами_Const.TABLE} AS РозрахункиЗКлієнтами WHERE date_trunc('day', РозрахункиЗКлієнтами.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Валюта, Контрагент HAVING /* Сума */ SUM(CASE WHEN РозрахункиЗКлієнтами.income = true THEN РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Сума} ELSE -РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Сума} END) != 0", paramQuery, transactionID);
+                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {РозрахункиЗКлієнтами_Залишки_TablePart.TABLE} ( uid, {РозрахункиЗКлієнтами_Залишки_TablePart.Період}, {РозрахункиЗКлієнтами_Залишки_TablePart.Валюта}, {РозрахункиЗКлієнтами_Залишки_TablePart.Контрагент}, {РозрахункиЗКлієнтами_Залишки_TablePart.Сума} ) SELECT uuidv7(), date_trunc('day', РозрахункиЗКлієнтами.period::timestamp) AS Період, РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Валюта} AS Валюта, РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Контрагент} AS Контрагент, /* Сума */ SUM(CASE WHEN РозрахункиЗКлієнтами.income = true THEN РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Сума} ELSE -РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Сума} END) AS Сума FROM {РозрахункиЗКлієнтами_Const.TABLE} AS РозрахункиЗКлієнтами WHERE date_trunc('day', РозрахункиЗКлієнтами.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Валюта, Контрагент HAVING /* Сума */ SUM(CASE WHEN РозрахункиЗКлієнтами.income = true THEN РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Сума} ELSE -РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Сума} END) != 0", paramQuery, transactionID);
                         
                     /* QueryBlock: ЗалишкиТаОбороти */
                         
                     await Config.Kernel.DataBase.ExecuteSQL($@"DELETE FROM {РозрахункиЗКлієнтами_ЗалишкиТаОбороти_TablePart.TABLE} WHERE {РозрахункиЗКлієнтами_ЗалишкиТаОбороти_TablePart.TABLE}.{РозрахункиЗКлієнтами_ЗалишкиТаОбороти_TablePart.Період} = @ПеріодДеньВідбір", paramQuery, transactionID);
                         
-                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {РозрахункиЗКлієнтами_ЗалишкиТаОбороти_TablePart.TABLE} ( uid, {РозрахункиЗКлієнтами_ЗалишкиТаОбороти_TablePart.Період}, {РозрахункиЗКлієнтами_ЗалишкиТаОбороти_TablePart.Валюта}, {РозрахункиЗКлієнтами_ЗалишкиТаОбороти_TablePart.Контрагент}, {РозрахункиЗКлієнтами_ЗалишкиТаОбороти_TablePart.СумаПрихід}, {РозрахункиЗКлієнтами_ЗалишкиТаОбороти_TablePart.СумаРозхід}, {РозрахункиЗКлієнтами_ЗалишкиТаОбороти_TablePart.СумаЗалишок} ) SELECT uuid_generate_v4(), date_trunc('day', РозрахункиЗКлієнтами.period::timestamp) AS Період, РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Валюта} AS Валюта, РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Контрагент} AS Контрагент, /* Сума */ SUM(CASE WHEN РозрахункиЗКлієнтами.income = true THEN РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Сума} ELSE 0 END) AS СумаПрихід, SUM(CASE WHEN РозрахункиЗКлієнтами.income = false THEN РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Сума} ELSE 0 END) AS СумаРозхід, SUM(CASE WHEN РозрахункиЗКлієнтами.income = true THEN РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Сума} ELSE -РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Сума} END) AS СумаЗалишок FROM {РозрахункиЗКлієнтами_Const.TABLE} AS РозрахункиЗКлієнтами WHERE date_trunc('day', РозрахункиЗКлієнтами.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Валюта, Контрагент HAVING /* Сума */ SUM(CASE WHEN РозрахункиЗКлієнтами.income = true THEN РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Сума} ELSE 0 END) != 0 OR SUM(CASE WHEN РозрахункиЗКлієнтами.income = false THEN РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Сума} ELSE 0 END) != 0 OR SUM(CASE WHEN РозрахункиЗКлієнтами.income = true THEN РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Сума} ELSE -РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Сума} END) != 0", paramQuery, transactionID);
+                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {РозрахункиЗКлієнтами_ЗалишкиТаОбороти_TablePart.TABLE} ( uid, {РозрахункиЗКлієнтами_ЗалишкиТаОбороти_TablePart.Період}, {РозрахункиЗКлієнтами_ЗалишкиТаОбороти_TablePart.Валюта}, {РозрахункиЗКлієнтами_ЗалишкиТаОбороти_TablePart.Контрагент}, {РозрахункиЗКлієнтами_ЗалишкиТаОбороти_TablePart.СумаПрихід}, {РозрахункиЗКлієнтами_ЗалишкиТаОбороти_TablePart.СумаРозхід}, {РозрахункиЗКлієнтами_ЗалишкиТаОбороти_TablePart.СумаЗалишок} ) SELECT uuidv7(), date_trunc('day', РозрахункиЗКлієнтами.period::timestamp) AS Період, РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Валюта} AS Валюта, РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Контрагент} AS Контрагент, /* Сума */ SUM(CASE WHEN РозрахункиЗКлієнтами.income = true THEN РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Сума} ELSE 0 END) AS СумаПрихід, SUM(CASE WHEN РозрахункиЗКлієнтами.income = false THEN РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Сума} ELSE 0 END) AS СумаРозхід, SUM(CASE WHEN РозрахункиЗКлієнтами.income = true THEN РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Сума} ELSE -РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Сума} END) AS СумаЗалишок FROM {РозрахункиЗКлієнтами_Const.TABLE} AS РозрахункиЗКлієнтами WHERE date_trunc('day', РозрахункиЗКлієнтами.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Валюта, Контрагент HAVING /* Сума */ SUM(CASE WHEN РозрахункиЗКлієнтами.income = true THEN РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Сума} ELSE 0 END) != 0 OR SUM(CASE WHEN РозрахункиЗКлієнтами.income = false THEN РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Сума} ELSE 0 END) != 0 OR SUM(CASE WHEN РозрахункиЗКлієнтами.income = true THEN РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Сума} ELSE -РозрахункиЗКлієнтами.{РозрахункиЗКлієнтами_Const.Сума} END) != 0", paramQuery, transactionID);
                         
                     await Config.Kernel.DataBase.CommitTransaction(transactionID);
                     break;
@@ -33378,7 +49826,7 @@ namespace GeneratedCode.РегістриНакопичення
                         
                     await Config.Kernel.DataBase.ExecuteSQL($@"DELETE FROM {Закупівлі_Обороти_TablePart.TABLE} WHERE {Закупівлі_Обороти_TablePart.TABLE}.{Закупівлі_Обороти_TablePart.Період} = @ПеріодДеньВідбір", paramQuery, transactionID);
                         
-                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {Закупівлі_Обороти_TablePart.TABLE} ( uid, {Закупівлі_Обороти_TablePart.Період}, {Закупівлі_Обороти_TablePart.Організація}, {Закупівлі_Обороти_TablePart.Склад}, {Закупівлі_Обороти_TablePart.Контрагент}, {Закупівлі_Обороти_TablePart.Договір}, {Закупівлі_Обороти_TablePart.Номенклатура}, {Закупівлі_Обороти_TablePart.ХарактеристикаНоменклатури}, {Закупівлі_Обороти_TablePart.Кількість}, {Закупівлі_Обороти_TablePart.Сума}, {Закупівлі_Обороти_TablePart.Собівартість} ) SELECT uuid_generate_v4(), date_trunc('day', Закупівлі.period::timestamp) AS Період, Закупівлі.{Закупівлі_Const.Організація} AS Організація, Закупівлі.{Закупівлі_Const.Склад} AS Склад, Закупівлі.{Закупівлі_Const.Контрагент} AS Контрагент, Закупівлі.{Закупівлі_Const.Договір} AS Договір, Закупівлі.{Закупівлі_Const.Номенклатура} AS Номенклатура, Закупівлі.{Закупівлі_Const.ХарактеристикаНоменклатури} AS ХарактеристикаНоменклатури, SUM(Закупівлі.{Закупівлі_Const.Кількість}) AS Кількість, SUM(Закупівлі.{Закупівлі_Const.Сума}) AS Сума, Закупівлі.{Закупівлі_Const.Собівартість} AS Собівартість FROM {Закупівлі_Const.TABLE} AS Закупівлі WHERE date_trunc('day', Закупівлі.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Організація, Склад, Контрагент, Договір, Номенклатура, ХарактеристикаНоменклатури, Собівартість HAVING SUM(Закупівлі.{Закупівлі_Const.Кількість}) != 0 OR SUM(Закупівлі.{Закупівлі_Const.Сума}) != 0", paramQuery, transactionID);
+                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {Закупівлі_Обороти_TablePart.TABLE} ( uid, {Закупівлі_Обороти_TablePart.Період}, {Закупівлі_Обороти_TablePart.Організація}, {Закупівлі_Обороти_TablePart.Склад}, {Закупівлі_Обороти_TablePart.Контрагент}, {Закупівлі_Обороти_TablePart.Договір}, {Закупівлі_Обороти_TablePart.Номенклатура}, {Закупівлі_Обороти_TablePart.ХарактеристикаНоменклатури}, {Закупівлі_Обороти_TablePart.Кількість}, {Закупівлі_Обороти_TablePart.Сума}, {Закупівлі_Обороти_TablePart.Собівартість} ) SELECT uuidv7(), date_trunc('day', Закупівлі.period::timestamp) AS Період, Закупівлі.{Закупівлі_Const.Організація} AS Організація, Закупівлі.{Закупівлі_Const.Склад} AS Склад, Закупівлі.{Закупівлі_Const.Контрагент} AS Контрагент, Закупівлі.{Закупівлі_Const.Договір} AS Договір, Закупівлі.{Закупівлі_Const.Номенклатура} AS Номенклатура, Закупівлі.{Закупівлі_Const.ХарактеристикаНоменклатури} AS ХарактеристикаНоменклатури, SUM(Закупівлі.{Закупівлі_Const.Кількість}) AS Кількість, SUM(Закупівлі.{Закупівлі_Const.Сума}) AS Сума, Закупівлі.{Закупівлі_Const.Собівартість} AS Собівартість FROM {Закупівлі_Const.TABLE} AS Закупівлі WHERE date_trunc('day', Закупівлі.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Організація, Склад, Контрагент, Договір, Номенклатура, ХарактеристикаНоменклатури, Собівартість HAVING SUM(Закупівлі.{Закупівлі_Const.Кількість}) != 0 OR SUM(Закупівлі.{Закупівлі_Const.Сума}) != 0", paramQuery, transactionID);
                         
                     await Config.Kernel.DataBase.CommitTransaction(transactionID);
                     break;
@@ -33392,7 +49840,7 @@ namespace GeneratedCode.РегістриНакопичення
                         
                     await Config.Kernel.DataBase.ExecuteSQL($@"DELETE FROM {ВільніЗалишки_Залишки_TablePart.TABLE} WHERE {ВільніЗалишки_Залишки_TablePart.TABLE}.{ВільніЗалишки_Залишки_TablePart.Період} = @ПеріодДеньВідбір", paramQuery, transactionID);
                         
-                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {ВільніЗалишки_Залишки_TablePart.TABLE} ( uid, {ВільніЗалишки_Залишки_TablePart.Період}, {ВільніЗалишки_Залишки_TablePart.Номенклатура}, {ВільніЗалишки_Залишки_TablePart.ХарактеристикаНоменклатури}, {ВільніЗалишки_Залишки_TablePart.Склад}, {ВільніЗалишки_Залишки_TablePart.ВНаявності}, {ВільніЗалишки_Залишки_TablePart.ВРезервіЗіСкладу}, {ВільніЗалишки_Залишки_TablePart.ВРезервіПідЗамовлення} ) SELECT uuid_generate_v4(), date_trunc('day', ВільніЗалишки.period::timestamp) AS Період, ВільніЗалишки.{ВільніЗалишки_Const.Номенклатура} AS Номенклатура, ВільніЗалишки.{ВільніЗалишки_Const.ХарактеристикаНоменклатури} AS ХарактеристикаНоменклатури, ВільніЗалишки.{ВільніЗалишки_Const.Склад} AS Склад, /* ВНаявності */ SUM(CASE WHEN ВільніЗалишки.income = true THEN ВільніЗалишки.{ВільніЗалишки_Const.ВНаявності} ELSE -ВільніЗалишки.{ВільніЗалишки_Const.ВНаявності} END) AS ВНаявності, /* ВРезервіЗіСкладу */ SUM(CASE WHEN ВільніЗалишки.income = true THEN ВільніЗалишки.{ВільніЗалишки_Const.ВРезервіЗіСкладу} ELSE -ВільніЗалишки.{ВільніЗалишки_Const.ВРезервіЗіСкладу} END) AS ВРезервіЗіСкладу, /* ВРезервіПідЗамовлення */ SUM(CASE WHEN ВільніЗалишки.income = true THEN ВільніЗалишки.{ВільніЗалишки_Const.ВРезервіПідЗамовлення} ELSE -ВільніЗалишки.{ВільніЗалишки_Const.ВРезервіПідЗамовлення} END) AS ВРезервіПідЗамовлення FROM {ВільніЗалишки_Const.TABLE} AS ВільніЗалишки WHERE date_trunc('day', ВільніЗалишки.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Номенклатура, ХарактеристикаНоменклатури, Склад HAVING /* ВНаявності */ SUM(CASE WHEN ВільніЗалишки.income = true THEN ВільніЗалишки.{ВільніЗалишки_Const.ВНаявності} ELSE -ВільніЗалишки.{ВільніЗалишки_Const.ВНаявності} END) != 0 OR /* ВРезервіЗіСкладу */ SUM(CASE WHEN ВільніЗалишки.income = true THEN ВільніЗалишки.{ВільніЗалишки_Const.ВРезервіЗіСкладу} ELSE -ВільніЗалишки.{ВільніЗалишки_Const.ВРезервіЗіСкладу} END) != 0 OR /* ВРезервіПідЗамовлення */ SUM(CASE WHEN ВільніЗалишки.income = true THEN ВільніЗалишки.{ВільніЗалишки_Const.ВРезервіПідЗамовлення} ELSE -ВільніЗалишки.{ВільніЗалишки_Const.ВРезервіПідЗамовлення} END) != 0", paramQuery, transactionID);
+                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {ВільніЗалишки_Залишки_TablePart.TABLE} ( uid, {ВільніЗалишки_Залишки_TablePart.Період}, {ВільніЗалишки_Залишки_TablePart.Номенклатура}, {ВільніЗалишки_Залишки_TablePart.ХарактеристикаНоменклатури}, {ВільніЗалишки_Залишки_TablePart.Склад}, {ВільніЗалишки_Залишки_TablePart.ВНаявності}, {ВільніЗалишки_Залишки_TablePart.ВРезервіЗіСкладу}, {ВільніЗалишки_Залишки_TablePart.ВРезервіПідЗамовлення} ) SELECT uuidv7(), date_trunc('day', ВільніЗалишки.period::timestamp) AS Період, ВільніЗалишки.{ВільніЗалишки_Const.Номенклатура} AS Номенклатура, ВільніЗалишки.{ВільніЗалишки_Const.ХарактеристикаНоменклатури} AS ХарактеристикаНоменклатури, ВільніЗалишки.{ВільніЗалишки_Const.Склад} AS Склад, /* ВНаявності */ SUM(CASE WHEN ВільніЗалишки.income = true THEN ВільніЗалишки.{ВільніЗалишки_Const.ВНаявності} ELSE -ВільніЗалишки.{ВільніЗалишки_Const.ВНаявності} END) AS ВНаявності, /* ВРезервіЗіСкладу */ SUM(CASE WHEN ВільніЗалишки.income = true THEN ВільніЗалишки.{ВільніЗалишки_Const.ВРезервіЗіСкладу} ELSE -ВільніЗалишки.{ВільніЗалишки_Const.ВРезервіЗіСкладу} END) AS ВРезервіЗіСкладу, /* ВРезервіПідЗамовлення */ SUM(CASE WHEN ВільніЗалишки.income = true THEN ВільніЗалишки.{ВільніЗалишки_Const.ВРезервіПідЗамовлення} ELSE -ВільніЗалишки.{ВільніЗалишки_Const.ВРезервіПідЗамовлення} END) AS ВРезервіПідЗамовлення FROM {ВільніЗалишки_Const.TABLE} AS ВільніЗалишки WHERE date_trunc('day', ВільніЗалишки.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Номенклатура, ХарактеристикаНоменклатури, Склад HAVING /* ВНаявності */ SUM(CASE WHEN ВільніЗалишки.income = true THEN ВільніЗалишки.{ВільніЗалишки_Const.ВНаявності} ELSE -ВільніЗалишки.{ВільніЗалишки_Const.ВНаявності} END) != 0 OR /* ВРезервіЗіСкладу */ SUM(CASE WHEN ВільніЗалишки.income = true THEN ВільніЗалишки.{ВільніЗалишки_Const.ВРезервіЗіСкладу} ELSE -ВільніЗалишки.{ВільніЗалишки_Const.ВРезервіЗіСкладу} END) != 0 OR /* ВРезервіПідЗамовлення */ SUM(CASE WHEN ВільніЗалишки.income = true THEN ВільніЗалишки.{ВільніЗалишки_Const.ВРезервіПідЗамовлення} ELSE -ВільніЗалишки.{ВільніЗалишки_Const.ВРезервіПідЗамовлення} END) != 0", paramQuery, transactionID);
                         
                     await Config.Kernel.DataBase.CommitTransaction(transactionID);
                     break;
@@ -33406,7 +49854,7 @@ namespace GeneratedCode.РегістриНакопичення
                         
                     await Config.Kernel.DataBase.ExecuteSQL($@"DELETE FROM {ЗамовленняПостачальникам_Залишки_TablePart.TABLE} WHERE {ЗамовленняПостачальникам_Залишки_TablePart.TABLE}.{ЗамовленняПостачальникам_Залишки_TablePart.Період} = @ПеріодДеньВідбір", paramQuery, transactionID);
                         
-                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {ЗамовленняПостачальникам_Залишки_TablePart.TABLE} ( uid, {ЗамовленняПостачальникам_Залишки_TablePart.Період}, {ЗамовленняПостачальникам_Залишки_TablePart.ЗамовленняПостачальнику}, {ЗамовленняПостачальникам_Залишки_TablePart.Номенклатура}, {ЗамовленняПостачальникам_Залишки_TablePart.ХарактеристикаНоменклатури}, {ЗамовленняПостачальникам_Залишки_TablePart.Склад}, {ЗамовленняПостачальникам_Залишки_TablePart.Замовлено} ) SELECT uuid_generate_v4(), date_trunc('day', ЗамовленняПостачальникам.period::timestamp) AS Період, ЗамовленняПостачальникам.{ЗамовленняПостачальникам_Const.ЗамовленняПостачальнику} AS ЗамовленняПостачальнику, ЗамовленняПостачальникам.{ЗамовленняПостачальникам_Const.Номенклатура} AS Номенклатура, ЗамовленняПостачальникам.{ЗамовленняПостачальникам_Const.ХарактеристикаНоменклатури} AS ХарактеристикаНоменклатури, ЗамовленняПостачальникам.{ЗамовленняПостачальникам_Const.Склад} AS Склад, /* Замовлено */ SUM(CASE WHEN ЗамовленняПостачальникам.income = true THEN ЗамовленняПостачальникам.{ЗамовленняПостачальникам_Const.Замовлено} ELSE -ЗамовленняПостачальникам.{ЗамовленняПостачальникам_Const.Замовлено} END) AS Замовлено FROM {ЗамовленняПостачальникам_Const.TABLE} AS ЗамовленняПостачальникам WHERE date_trunc('day', ЗамовленняПостачальникам.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, ЗамовленняПостачальнику, Номенклатура, ХарактеристикаНоменклатури, Склад HAVING /* Замовлено */ SUM(CASE WHEN ЗамовленняПостачальникам.income = true THEN ЗамовленняПостачальникам.{ЗамовленняПостачальникам_Const.Замовлено} ELSE -ЗамовленняПостачальникам.{ЗамовленняПостачальникам_Const.Замовлено} END) != 0", paramQuery, transactionID);
+                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {ЗамовленняПостачальникам_Залишки_TablePart.TABLE} ( uid, {ЗамовленняПостачальникам_Залишки_TablePart.Період}, {ЗамовленняПостачальникам_Залишки_TablePart.ЗамовленняПостачальнику}, {ЗамовленняПостачальникам_Залишки_TablePart.Номенклатура}, {ЗамовленняПостачальникам_Залишки_TablePart.ХарактеристикаНоменклатури}, {ЗамовленняПостачальникам_Залишки_TablePart.Склад}, {ЗамовленняПостачальникам_Залишки_TablePart.Замовлено} ) SELECT uuidv7(), date_trunc('day', ЗамовленняПостачальникам.period::timestamp) AS Період, ЗамовленняПостачальникам.{ЗамовленняПостачальникам_Const.ЗамовленняПостачальнику} AS ЗамовленняПостачальнику, ЗамовленняПостачальникам.{ЗамовленняПостачальникам_Const.Номенклатура} AS Номенклатура, ЗамовленняПостачальникам.{ЗамовленняПостачальникам_Const.ХарактеристикаНоменклатури} AS ХарактеристикаНоменклатури, ЗамовленняПостачальникам.{ЗамовленняПостачальникам_Const.Склад} AS Склад, /* Замовлено */ SUM(CASE WHEN ЗамовленняПостачальникам.income = true THEN ЗамовленняПостачальникам.{ЗамовленняПостачальникам_Const.Замовлено} ELSE -ЗамовленняПостачальникам.{ЗамовленняПостачальникам_Const.Замовлено} END) AS Замовлено FROM {ЗамовленняПостачальникам_Const.TABLE} AS ЗамовленняПостачальникам WHERE date_trunc('day', ЗамовленняПостачальникам.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, ЗамовленняПостачальнику, Номенклатура, ХарактеристикаНоменклатури, Склад HAVING /* Замовлено */ SUM(CASE WHEN ЗамовленняПостачальникам.income = true THEN ЗамовленняПостачальникам.{ЗамовленняПостачальникам_Const.Замовлено} ELSE -ЗамовленняПостачальникам.{ЗамовленняПостачальникам_Const.Замовлено} END) != 0", paramQuery, transactionID);
                         
                     await Config.Kernel.DataBase.CommitTransaction(transactionID);
                     break;
@@ -33420,13 +49868,13 @@ namespace GeneratedCode.РегістриНакопичення
                         
                     await Config.Kernel.DataBase.ExecuteSQL($@"DELETE FROM {РозрахункиЗПостачальниками_Залишки_TablePart.TABLE} WHERE {РозрахункиЗПостачальниками_Залишки_TablePart.TABLE}.{РозрахункиЗПостачальниками_Залишки_TablePart.Період} = @ПеріодДеньВідбір", paramQuery, transactionID);
                         
-                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {РозрахункиЗПостачальниками_Залишки_TablePart.TABLE} ( uid, {РозрахункиЗПостачальниками_Залишки_TablePart.Період}, {РозрахункиЗПостачальниками_Залишки_TablePart.Контрагент}, {РозрахункиЗПостачальниками_Залишки_TablePart.Валюта}, {РозрахункиЗПостачальниками_Залишки_TablePart.Сума} ) SELECT uuid_generate_v4(), date_trunc('day', РозрахункиЗПостачальниками.period::timestamp) AS Період, РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Контрагент} AS Контрагент, РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Валюта} AS Валюта, /* Сума */ SUM(CASE WHEN РозрахункиЗПостачальниками.income = true THEN РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Сума} ELSE -РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Сума} END) AS Сума FROM {РозрахункиЗПостачальниками_Const.TABLE} AS РозрахункиЗПостачальниками WHERE date_trunc('day', РозрахункиЗПостачальниками.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Контрагент, Валюта HAVING /* Сума */ SUM(CASE WHEN РозрахункиЗПостачальниками.income = true THEN РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Сума} ELSE -РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Сума} END) != 0", paramQuery, transactionID);
+                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {РозрахункиЗПостачальниками_Залишки_TablePart.TABLE} ( uid, {РозрахункиЗПостачальниками_Залишки_TablePart.Період}, {РозрахункиЗПостачальниками_Залишки_TablePart.Контрагент}, {РозрахункиЗПостачальниками_Залишки_TablePart.Валюта}, {РозрахункиЗПостачальниками_Залишки_TablePart.Сума} ) SELECT uuidv7(), date_trunc('day', РозрахункиЗПостачальниками.period::timestamp) AS Період, РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Контрагент} AS Контрагент, РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Валюта} AS Валюта, /* Сума */ SUM(CASE WHEN РозрахункиЗПостачальниками.income = true THEN РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Сума} ELSE -РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Сума} END) AS Сума FROM {РозрахункиЗПостачальниками_Const.TABLE} AS РозрахункиЗПостачальниками WHERE date_trunc('day', РозрахункиЗПостачальниками.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Контрагент, Валюта HAVING /* Сума */ SUM(CASE WHEN РозрахункиЗПостачальниками.income = true THEN РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Сума} ELSE -РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Сума} END) != 0", paramQuery, transactionID);
                         
                     /* QueryBlock: ЗалишкиТаОбороти */
                         
                     await Config.Kernel.DataBase.ExecuteSQL($@"DELETE FROM {РозрахункиЗПостачальниками_ЗалишкиТаОбороти_TablePart.TABLE} WHERE {РозрахункиЗПостачальниками_ЗалишкиТаОбороти_TablePart.TABLE}.{РозрахункиЗПостачальниками_ЗалишкиТаОбороти_TablePart.Період} = @ПеріодДеньВідбір", paramQuery, transactionID);
                         
-                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {РозрахункиЗПостачальниками_ЗалишкиТаОбороти_TablePart.TABLE} ( uid, {РозрахункиЗПостачальниками_ЗалишкиТаОбороти_TablePart.Період}, {РозрахункиЗПостачальниками_ЗалишкиТаОбороти_TablePart.Контрагент}, {РозрахункиЗПостачальниками_ЗалишкиТаОбороти_TablePart.Валюта}, {РозрахункиЗПостачальниками_ЗалишкиТаОбороти_TablePart.СумаПрихід}, {РозрахункиЗПостачальниками_ЗалишкиТаОбороти_TablePart.СумаРозхід}, {РозрахункиЗПостачальниками_ЗалишкиТаОбороти_TablePart.СумаЗалишок} ) SELECT uuid_generate_v4(), date_trunc('day', РозрахункиЗПостачальниками.period::timestamp) AS Період, РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Контрагент} AS Контрагент, РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Валюта} AS Валюта, /* Сума */ SUM(CASE WHEN РозрахункиЗПостачальниками.income = true THEN РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Сума} ELSE 0 END) AS СумаПрихід, SUM(CASE WHEN РозрахункиЗПостачальниками.income = false THEN РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Сума} ELSE 0 END) AS СумаРозхід, SUM(CASE WHEN РозрахункиЗПостачальниками.income = true THEN РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Сума} ELSE -РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Сума} END) AS СумаЗалишок FROM {РозрахункиЗПостачальниками_Const.TABLE} AS РозрахункиЗПостачальниками WHERE date_trunc('day', РозрахункиЗПостачальниками.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Контрагент, Валюта HAVING /* Сума */ SUM(CASE WHEN РозрахункиЗПостачальниками.income = true THEN РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Сума} ELSE 0 END) != 0 OR SUM(CASE WHEN РозрахункиЗПостачальниками.income = false THEN РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Сума} ELSE 0 END) != 0 OR SUM(CASE WHEN РозрахункиЗПостачальниками.income = true THEN РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Сума} ELSE -РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Сума} END) != 0", paramQuery, transactionID);
+                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {РозрахункиЗПостачальниками_ЗалишкиТаОбороти_TablePart.TABLE} ( uid, {РозрахункиЗПостачальниками_ЗалишкиТаОбороти_TablePart.Період}, {РозрахункиЗПостачальниками_ЗалишкиТаОбороти_TablePart.Контрагент}, {РозрахункиЗПостачальниками_ЗалишкиТаОбороти_TablePart.Валюта}, {РозрахункиЗПостачальниками_ЗалишкиТаОбороти_TablePart.СумаПрихід}, {РозрахункиЗПостачальниками_ЗалишкиТаОбороти_TablePart.СумаРозхід}, {РозрахункиЗПостачальниками_ЗалишкиТаОбороти_TablePart.СумаЗалишок} ) SELECT uuidv7(), date_trunc('day', РозрахункиЗПостачальниками.period::timestamp) AS Період, РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Контрагент} AS Контрагент, РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Валюта} AS Валюта, /* Сума */ SUM(CASE WHEN РозрахункиЗПостачальниками.income = true THEN РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Сума} ELSE 0 END) AS СумаПрихід, SUM(CASE WHEN РозрахункиЗПостачальниками.income = false THEN РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Сума} ELSE 0 END) AS СумаРозхід, SUM(CASE WHEN РозрахункиЗПостачальниками.income = true THEN РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Сума} ELSE -РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Сума} END) AS СумаЗалишок FROM {РозрахункиЗПостачальниками_Const.TABLE} AS РозрахункиЗПостачальниками WHERE date_trunc('day', РозрахункиЗПостачальниками.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Контрагент, Валюта HAVING /* Сума */ SUM(CASE WHEN РозрахункиЗПостачальниками.income = true THEN РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Сума} ELSE 0 END) != 0 OR SUM(CASE WHEN РозрахункиЗПостачальниками.income = false THEN РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Сума} ELSE 0 END) != 0 OR SUM(CASE WHEN РозрахункиЗПостачальниками.income = true THEN РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Сума} ELSE -РозрахункиЗПостачальниками.{РозрахункиЗПостачальниками_Const.Сума} END) != 0", paramQuery, transactionID);
                         
                     await Config.Kernel.DataBase.CommitTransaction(transactionID);
                     break;
@@ -33440,13 +49888,13 @@ namespace GeneratedCode.РегістриНакопичення
                         
                     await Config.Kernel.DataBase.ExecuteSQL($@"DELETE FROM {РухКоштів_Залишки_TablePart.TABLE} WHERE {РухКоштів_Залишки_TablePart.TABLE}.{РухКоштів_Залишки_TablePart.Період} = @ПеріодДеньВідбір", paramQuery, transactionID);
                         
-                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {РухКоштів_Залишки_TablePart.TABLE} ( uid, {РухКоштів_Залишки_TablePart.Період}, {РухКоштів_Залишки_TablePart.Організація}, {РухКоштів_Залишки_TablePart.Каса}, {РухКоштів_Залишки_TablePart.Валюта}, {РухКоштів_Залишки_TablePart.Сума} ) SELECT uuid_generate_v4(), date_trunc('day', РухКоштів.period::timestamp) AS Період, РухКоштів.{РухКоштів_Const.Організація} AS Організація, РухКоштів.{РухКоштів_Const.Каса} AS Каса, РухКоштів.{РухКоштів_Const.Валюта} AS Валюта, /* Сума */ SUM(CASE WHEN РухКоштів.income = true THEN РухКоштів.{РухКоштів_Const.Сума} ELSE -РухКоштів.{РухКоштів_Const.Сума} END) AS Сума FROM {РухКоштів_Const.TABLE} AS РухКоштів WHERE date_trunc('day', РухКоштів.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Організація, Каса, Валюта HAVING /* Сума */ SUM(CASE WHEN РухКоштів.income = true THEN РухКоштів.{РухКоштів_Const.Сума} ELSE -РухКоштів.{РухКоштів_Const.Сума} END) != 0", paramQuery, transactionID);
+                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {РухКоштів_Залишки_TablePart.TABLE} ( uid, {РухКоштів_Залишки_TablePart.Період}, {РухКоштів_Залишки_TablePart.Організація}, {РухКоштів_Залишки_TablePart.Каса}, {РухКоштів_Залишки_TablePart.Валюта}, {РухКоштів_Залишки_TablePart.Сума} ) SELECT uuidv7(), date_trunc('day', РухКоштів.period::timestamp) AS Період, РухКоштів.{РухКоштів_Const.Організація} AS Організація, РухКоштів.{РухКоштів_Const.Каса} AS Каса, РухКоштів.{РухКоштів_Const.Валюта} AS Валюта, /* Сума */ SUM(CASE WHEN РухКоштів.income = true THEN РухКоштів.{РухКоштів_Const.Сума} ELSE -РухКоштів.{РухКоштів_Const.Сума} END) AS Сума FROM {РухКоштів_Const.TABLE} AS РухКоштів WHERE date_trunc('day', РухКоштів.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Організація, Каса, Валюта HAVING /* Сума */ SUM(CASE WHEN РухКоштів.income = true THEN РухКоштів.{РухКоштів_Const.Сума} ELSE -РухКоштів.{РухКоштів_Const.Сума} END) != 0", paramQuery, transactionID);
                         
                     /* QueryBlock: ЗалишкиТаОбороти */
                         
                     await Config.Kernel.DataBase.ExecuteSQL($@"DELETE FROM {РухКоштів_ЗалишкиТаОбороти_TablePart.TABLE} WHERE {РухКоштів_ЗалишкиТаОбороти_TablePart.TABLE}.{РухКоштів_ЗалишкиТаОбороти_TablePart.Період} = @ПеріодДеньВідбір", paramQuery, transactionID);
                         
-                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {РухКоштів_ЗалишкиТаОбороти_TablePart.TABLE} ( uid, {РухКоштів_ЗалишкиТаОбороти_TablePart.Період}, {РухКоштів_ЗалишкиТаОбороти_TablePart.Організація}, {РухКоштів_ЗалишкиТаОбороти_TablePart.Каса}, {РухКоштів_ЗалишкиТаОбороти_TablePart.Валюта}, {РухКоштів_ЗалишкиТаОбороти_TablePart.СумаПрихід}, {РухКоштів_ЗалишкиТаОбороти_TablePart.СумаРозхід}, {РухКоштів_ЗалишкиТаОбороти_TablePart.СумаЗалишок} ) SELECT uuid_generate_v4(), date_trunc('day', РухКоштів.period::timestamp) AS Період, РухКоштів.{РухКоштів_Const.Організація} AS Організація, РухКоштів.{РухКоштів_Const.Каса} AS Каса, РухКоштів.{РухКоштів_Const.Валюта} AS Валюта, /* Сума */ SUM(CASE WHEN РухКоштів.income = true THEN РухКоштів.{РухКоштів_Const.Сума} ELSE 0 END) AS СумаПрихід, SUM(CASE WHEN РухКоштів.income = false THEN РухКоштів.{РухКоштів_Const.Сума} ELSE 0 END) AS СумаРозхід, SUM(CASE WHEN РухКоштів.income = true THEN РухКоштів.{РухКоштів_Const.Сума} ELSE -РухКоштів.{РухКоштів_Const.Сума} END) AS СумаЗалишок FROM {РухКоштів_Const.TABLE} AS РухКоштів WHERE date_trunc('day', РухКоштів.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Організація, Каса, Валюта HAVING /* Сума */ SUM(CASE WHEN РухКоштів.income = true THEN РухКоштів.{РухКоштів_Const.Сума} ELSE 0 END) != 0 OR SUM(CASE WHEN РухКоштів.income = false THEN РухКоштів.{РухКоштів_Const.Сума} ELSE 0 END) != 0 OR SUM(CASE WHEN РухКоштів.income = true THEN РухКоштів.{РухКоштів_Const.Сума} ELSE -РухКоштів.{РухКоштів_Const.Сума} END) != 0", paramQuery, transactionID);
+                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {РухКоштів_ЗалишкиТаОбороти_TablePart.TABLE} ( uid, {РухКоштів_ЗалишкиТаОбороти_TablePart.Період}, {РухКоштів_ЗалишкиТаОбороти_TablePart.Організація}, {РухКоштів_ЗалишкиТаОбороти_TablePart.Каса}, {РухКоштів_ЗалишкиТаОбороти_TablePart.Валюта}, {РухКоштів_ЗалишкиТаОбороти_TablePart.СумаПрихід}, {РухКоштів_ЗалишкиТаОбороти_TablePart.СумаРозхід}, {РухКоштів_ЗалишкиТаОбороти_TablePart.СумаЗалишок} ) SELECT uuidv7(), date_trunc('day', РухКоштів.period::timestamp) AS Період, РухКоштів.{РухКоштів_Const.Організація} AS Організація, РухКоштів.{РухКоштів_Const.Каса} AS Каса, РухКоштів.{РухКоштів_Const.Валюта} AS Валюта, /* Сума */ SUM(CASE WHEN РухКоштів.income = true THEN РухКоштів.{РухКоштів_Const.Сума} ELSE 0 END) AS СумаПрихід, SUM(CASE WHEN РухКоштів.income = false THEN РухКоштів.{РухКоштів_Const.Сума} ELSE 0 END) AS СумаРозхід, SUM(CASE WHEN РухКоштів.income = true THEN РухКоштів.{РухКоштів_Const.Сума} ELSE -РухКоштів.{РухКоштів_Const.Сума} END) AS СумаЗалишок FROM {РухКоштів_Const.TABLE} AS РухКоштів WHERE date_trunc('day', РухКоштів.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Організація, Каса, Валюта HAVING /* Сума */ SUM(CASE WHEN РухКоштів.income = true THEN РухКоштів.{РухКоштів_Const.Сума} ELSE 0 END) != 0 OR SUM(CASE WHEN РухКоштів.income = false THEN РухКоштів.{РухКоштів_Const.Сума} ELSE 0 END) != 0 OR SUM(CASE WHEN РухКоштів.income = true THEN РухКоштів.{РухКоштів_Const.Сума} ELSE -РухКоштів.{РухКоштів_Const.Сума} END) != 0", paramQuery, transactionID);
                         
                     await Config.Kernel.DataBase.CommitTransaction(transactionID);
                     break;
@@ -33460,13 +49908,13 @@ namespace GeneratedCode.РегістриНакопичення
                         
                     await Config.Kernel.DataBase.ExecuteSQL($@"DELETE FROM {ПартіїТоварів_Залишки_TablePart.TABLE} WHERE {ПартіїТоварів_Залишки_TablePart.TABLE}.{ПартіїТоварів_Залишки_TablePart.Період} = @ПеріодДеньВідбір", paramQuery, transactionID);
                         
-                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {ПартіїТоварів_Залишки_TablePart.TABLE} ( uid, {ПартіїТоварів_Залишки_TablePart.Період}, {ПартіїТоварів_Залишки_TablePart.Організація}, {ПартіїТоварів_Залишки_TablePart.ПартіяТоварівКомпозит}, {ПартіїТоварів_Залишки_TablePart.Номенклатура}, {ПартіїТоварів_Залишки_TablePart.ХарактеристикаНоменклатури}, {ПартіїТоварів_Залишки_TablePart.Серія}, {ПартіїТоварів_Залишки_TablePart.Склад}, {ПартіїТоварів_Залишки_TablePart.Рядок}, {ПартіїТоварів_Залишки_TablePart.Кількість}, {ПартіїТоварів_Залишки_TablePart.Собівартість} ) SELECT uuid_generate_v4(), date_trunc('day', ПартіїТоварів.period::timestamp) AS Період, ПартіїТоварів.{ПартіїТоварів_Const.Організація} AS Організація, ПартіїТоварів.{ПартіїТоварів_Const.ПартіяТоварівКомпозит} AS ПартіяТоварівКомпозит, ПартіїТоварів.{ПартіїТоварів_Const.Номенклатура} AS Номенклатура, ПартіїТоварів.{ПартіїТоварів_Const.ХарактеристикаНоменклатури} AS ХарактеристикаНоменклатури, ПартіїТоварів.{ПартіїТоварів_Const.Серія} AS Серія, ПартіїТоварів.{ПартіїТоварів_Const.Склад} AS Склад, ПартіїТоварів.{ПартіїТоварів_Const.Рядок} AS Рядок, /* Кількість */ SUM(CASE WHEN ПартіїТоварів.income = true THEN ПартіїТоварів.{ПартіїТоварів_Const.Кількість} ELSE -ПартіїТоварів.{ПартіїТоварів_Const.Кількість} END) AS Кількість, /* Собівартість */ SUM(CASE WHEN ПартіїТоварів.income = true THEN ПартіїТоварів.{ПартіїТоварів_Const.Собівартість} ELSE -ПартіїТоварів.{ПартіїТоварів_Const.Собівартість} END) AS Собівартість FROM {ПартіїТоварів_Const.TABLE} AS ПартіїТоварів WHERE date_trunc('day', ПартіїТоварів.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Організація, ПартіяТоварівКомпозит, Номенклатура, ХарактеристикаНоменклатури, Серія, Склад, Рядок HAVING /* Кількість */ SUM(CASE WHEN ПартіїТоварів.income = true THEN ПартіїТоварів.{ПартіїТоварів_Const.Кількість} ELSE -ПартіїТоварів.{ПартіїТоварів_Const.Кількість} END) != 0 OR /* Собівартість */ SUM(CASE WHEN ПартіїТоварів.income = true THEN ПартіїТоварів.{ПартіїТоварів_Const.Собівартість} ELSE -ПартіїТоварів.{ПартіїТоварів_Const.Собівартість} END) != 0", paramQuery, transactionID);
+                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {ПартіїТоварів_Залишки_TablePart.TABLE} ( uid, {ПартіїТоварів_Залишки_TablePart.Період}, {ПартіїТоварів_Залишки_TablePart.Організація}, {ПартіїТоварів_Залишки_TablePart.ПартіяТоварівКомпозит}, {ПартіїТоварів_Залишки_TablePart.Номенклатура}, {ПартіїТоварів_Залишки_TablePart.ХарактеристикаНоменклатури}, {ПартіїТоварів_Залишки_TablePart.Серія}, {ПартіїТоварів_Залишки_TablePart.Склад}, {ПартіїТоварів_Залишки_TablePart.Рядок}, {ПартіїТоварів_Залишки_TablePart.Кількість}, {ПартіїТоварів_Залишки_TablePart.Собівартість} ) SELECT uuidv7(), date_trunc('day', ПартіїТоварів.period::timestamp) AS Період, ПартіїТоварів.{ПартіїТоварів_Const.Організація} AS Організація, ПартіїТоварів.{ПартіїТоварів_Const.ПартіяТоварівКомпозит} AS ПартіяТоварівКомпозит, ПартіїТоварів.{ПартіїТоварів_Const.Номенклатура} AS Номенклатура, ПартіїТоварів.{ПартіїТоварів_Const.ХарактеристикаНоменклатури} AS ХарактеристикаНоменклатури, ПартіїТоварів.{ПартіїТоварів_Const.Серія} AS Серія, ПартіїТоварів.{ПартіїТоварів_Const.Склад} AS Склад, ПартіїТоварів.{ПартіїТоварів_Const.Рядок} AS Рядок, /* Кількість */ SUM(CASE WHEN ПартіїТоварів.income = true THEN ПартіїТоварів.{ПартіїТоварів_Const.Кількість} ELSE -ПартіїТоварів.{ПартіїТоварів_Const.Кількість} END) AS Кількість, /* Собівартість */ SUM(CASE WHEN ПартіїТоварів.income = true THEN ПартіїТоварів.{ПартіїТоварів_Const.Собівартість} ELSE -ПартіїТоварів.{ПартіїТоварів_Const.Собівартість} END) AS Собівартість FROM {ПартіїТоварів_Const.TABLE} AS ПартіїТоварів WHERE date_trunc('day', ПартіїТоварів.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Організація, ПартіяТоварівКомпозит, Номенклатура, ХарактеристикаНоменклатури, Серія, Склад, Рядок HAVING /* Кількість */ SUM(CASE WHEN ПартіїТоварів.income = true THEN ПартіїТоварів.{ПартіїТоварів_Const.Кількість} ELSE -ПартіїТоварів.{ПартіїТоварів_Const.Кількість} END) != 0 OR /* Собівартість */ SUM(CASE WHEN ПартіїТоварів.income = true THEN ПартіїТоварів.{ПартіїТоварів_Const.Собівартість} ELSE -ПартіїТоварів.{ПартіїТоварів_Const.Собівартість} END) != 0", paramQuery, transactionID);
                         
                     /* QueryBlock: ЗалишкиТаОбороти */
                         
                     await Config.Kernel.DataBase.ExecuteSQL($@"DELETE FROM {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.TABLE} WHERE {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.TABLE}.{ПартіїТоварів_ЗалишкиТаОбороти_TablePart.Період} = @ПеріодДеньВідбір", paramQuery, transactionID);
                         
-                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.TABLE} ( uid, {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.Період}, {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.Організація}, {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.ПартіяТоварівКомпозит}, {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.Номенклатура}, {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.ХарактеристикаНоменклатури}, {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.Серія}, {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.Склад}, {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.Рядок}, {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.КількістьПрихід}, {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.КількістьРозхід}, {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.КількістьЗалишок}, {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.СобівартістьПрихід}, {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.СобівартістьРозхід}, {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.СобівартістьЗалишок} ) SELECT uuid_generate_v4(), date_trunc('day', ПартіїТоварів.period::timestamp) AS Період, ПартіїТоварів.{ПартіїТоварів_Const.Організація} AS Організація, ПартіїТоварів.{ПартіїТоварів_Const.ПартіяТоварівКомпозит} AS ПартіяТоварівКомпозит, ПартіїТоварів.{ПартіїТоварів_Const.Номенклатура} AS Номенклатура, ПартіїТоварів.{ПартіїТоварів_Const.ХарактеристикаНоменклатури} AS ХарактеристикаНоменклатури, ПартіїТоварів.{ПартіїТоварів_Const.Серія} AS Серія, ПартіїТоварів.{ПартіїТоварів_Const.Склад} AS Склад, ПартіїТоварів.{ПартіїТоварів_Const.Рядок} AS Рядок, /* Кількість */ SUM(CASE WHEN ПартіїТоварів.income = true THEN ПартіїТоварів.{ПартіїТоварів_Const.Кількість} ELSE 0 END) AS КількістьПрихід, SUM(CASE WHEN ПартіїТоварів.income = false THEN ПартіїТоварів.{ПартіїТоварів_Const.Кількість} ELSE 0 END) AS КількістьРозхід, SUM(CASE WHEN ПартіїТоварів.income = true THEN ПартіїТоварів.{ПартіїТоварів_Const.Кількість} ELSE -ПартіїТоварів.{ПартіїТоварів_Const.Кількість} END) AS КількістьЗалишок, /* Собівартість */ SUM(CASE WHEN ПартіїТоварів.income = true THEN ПартіїТоварів.{ПартіїТоварів_Const.Собівартість} ELSE 0 END) AS СобівартістьПрихід, SUM(CASE WHEN ПартіїТоварів.income = false THEN ПартіїТоварів.{ПартіїТоварів_Const.Собівартість} ELSE 0 END) AS СобівартістьРозхід, SUM(CASE WHEN ПартіїТоварів.income = true THEN ПартіїТоварів.{ПартіїТоварів_Const.Собівартість} ELSE -ПартіїТоварів.{ПартіїТоварів_Const.Собівартість} END) AS СобівартістьЗалишок FROM {ПартіїТоварів_Const.TABLE} AS ПартіїТоварів WHERE date_trunc('day', ПартіїТоварів.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Організація, ПартіяТоварівКомпозит, Номенклатура, ХарактеристикаНоменклатури, Серія, Склад, Рядок HAVING /* Кількість */ SUM(CASE WHEN ПартіїТоварів.income = true THEN ПартіїТоварів.{ПартіїТоварів_Const.Кількість} ELSE 0 END) != 0 OR SUM(CASE WHEN ПартіїТоварів.income = false THEN ПартіїТоварів.{ПартіїТоварів_Const.Кількість} ELSE 0 END) != 0 OR SUM(CASE WHEN ПартіїТоварів.income = true THEN ПартіїТоварів.{ПартіїТоварів_Const.Кількість} ELSE -ПартіїТоварів.{ПартіїТоварів_Const.Кількість} END) != 0 OR /* Собівартість */ SUM(CASE WHEN ПартіїТоварів.income = true THEN ПартіїТоварів.{ПартіїТоварів_Const.Собівартість} ELSE 0 END) != 0 OR SUM(CASE WHEN ПартіїТоварів.income = false THEN ПартіїТоварів.{ПартіїТоварів_Const.Собівартість} ELSE 0 END) != 0 OR SUM(CASE WHEN ПартіїТоварів.income = true THEN ПартіїТоварів.{ПартіїТоварів_Const.Собівартість} ELSE -ПартіїТоварів.{ПартіїТоварів_Const.Собівартість} END) != 0", paramQuery, transactionID);
+                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.TABLE} ( uid, {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.Період}, {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.Організація}, {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.ПартіяТоварівКомпозит}, {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.Номенклатура}, {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.ХарактеристикаНоменклатури}, {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.Серія}, {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.Склад}, {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.Рядок}, {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.КількістьПрихід}, {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.КількістьРозхід}, {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.КількістьЗалишок}, {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.СобівартістьПрихід}, {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.СобівартістьРозхід}, {ПартіїТоварів_ЗалишкиТаОбороти_TablePart.СобівартістьЗалишок} ) SELECT uuidv7(), date_trunc('day', ПартіїТоварів.period::timestamp) AS Період, ПартіїТоварів.{ПартіїТоварів_Const.Організація} AS Організація, ПартіїТоварів.{ПартіїТоварів_Const.ПартіяТоварівКомпозит} AS ПартіяТоварівКомпозит, ПартіїТоварів.{ПартіїТоварів_Const.Номенклатура} AS Номенклатура, ПартіїТоварів.{ПартіїТоварів_Const.ХарактеристикаНоменклатури} AS ХарактеристикаНоменклатури, ПартіїТоварів.{ПартіїТоварів_Const.Серія} AS Серія, ПартіїТоварів.{ПартіїТоварів_Const.Склад} AS Склад, ПартіїТоварів.{ПартіїТоварів_Const.Рядок} AS Рядок, /* Кількість */ SUM(CASE WHEN ПартіїТоварів.income = true THEN ПартіїТоварів.{ПартіїТоварів_Const.Кількість} ELSE 0 END) AS КількістьПрихід, SUM(CASE WHEN ПартіїТоварів.income = false THEN ПартіїТоварів.{ПартіїТоварів_Const.Кількість} ELSE 0 END) AS КількістьРозхід, SUM(CASE WHEN ПартіїТоварів.income = true THEN ПартіїТоварів.{ПартіїТоварів_Const.Кількість} ELSE -ПартіїТоварів.{ПартіїТоварів_Const.Кількість} END) AS КількістьЗалишок, /* Собівартість */ SUM(CASE WHEN ПартіїТоварів.income = true THEN ПартіїТоварів.{ПартіїТоварів_Const.Собівартість} ELSE 0 END) AS СобівартістьПрихід, SUM(CASE WHEN ПартіїТоварів.income = false THEN ПартіїТоварів.{ПартіїТоварів_Const.Собівартість} ELSE 0 END) AS СобівартістьРозхід, SUM(CASE WHEN ПартіїТоварів.income = true THEN ПартіїТоварів.{ПартіїТоварів_Const.Собівартість} ELSE -ПартіїТоварів.{ПартіїТоварів_Const.Собівартість} END) AS СобівартістьЗалишок FROM {ПартіїТоварів_Const.TABLE} AS ПартіїТоварів WHERE date_trunc('day', ПартіїТоварів.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Організація, ПартіяТоварівКомпозит, Номенклатура, ХарактеристикаНоменклатури, Серія, Склад, Рядок HAVING /* Кількість */ SUM(CASE WHEN ПартіїТоварів.income = true THEN ПартіїТоварів.{ПартіїТоварів_Const.Кількість} ELSE 0 END) != 0 OR SUM(CASE WHEN ПартіїТоварів.income = false THEN ПартіїТоварів.{ПартіїТоварів_Const.Кількість} ELSE 0 END) != 0 OR SUM(CASE WHEN ПартіїТоварів.income = true THEN ПартіїТоварів.{ПартіїТоварів_Const.Кількість} ELSE -ПартіїТоварів.{ПартіїТоварів_Const.Кількість} END) != 0 OR /* Собівартість */ SUM(CASE WHEN ПартіїТоварів.income = true THEN ПартіїТоварів.{ПартіїТоварів_Const.Собівартість} ELSE 0 END) != 0 OR SUM(CASE WHEN ПартіїТоварів.income = false THEN ПартіїТоварів.{ПартіїТоварів_Const.Собівартість} ELSE 0 END) != 0 OR SUM(CASE WHEN ПартіїТоварів.income = true THEN ПартіїТоварів.{ПартіїТоварів_Const.Собівартість} ELSE -ПартіїТоварів.{ПартіїТоварів_Const.Собівартість} END) != 0", paramQuery, transactionID);
                         
                     await Config.Kernel.DataBase.CommitTransaction(transactionID);
                     break;
@@ -33480,7 +49928,7 @@ namespace GeneratedCode.РегістриНакопичення
                         
                     await Config.Kernel.DataBase.ExecuteSQL($@"DELETE FROM {Продажі_Обороти_TablePart.TABLE} WHERE {Продажі_Обороти_TablePart.TABLE}.{Продажі_Обороти_TablePart.Період} = @ПеріодДеньВідбір", paramQuery, transactionID);
                         
-                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {Продажі_Обороти_TablePart.TABLE} ( uid, {Продажі_Обороти_TablePart.Період}, {Продажі_Обороти_TablePart.Організація}, {Продажі_Обороти_TablePart.Склад}, {Продажі_Обороти_TablePart.Контрагент}, {Продажі_Обороти_TablePart.Договір}, {Продажі_Обороти_TablePart.Номенклатура}, {Продажі_Обороти_TablePart.ХарактеристикаНоменклатури}, {Продажі_Обороти_TablePart.Кількість}, {Продажі_Обороти_TablePart.Сума}, {Продажі_Обороти_TablePart.Дохід}, {Продажі_Обороти_TablePart.Собівартість} ) SELECT uuid_generate_v4(), date_trunc('day', Продажі.period::timestamp) AS Період, Продажі.{Продажі_Const.Організація} AS Організація, Продажі.{Продажі_Const.Склад} AS Склад, Продажі.{Продажі_Const.Контрагент} AS Контрагент, Продажі.{Продажі_Const.Договір} AS Договір, Продажі.{Продажі_Const.Номенклатура} AS Номенклатура, Продажі.{Продажі_Const.ХарактеристикаНоменклатури} AS ХарактеристикаНоменклатури, SUM(Продажі.{Продажі_Const.Кількість}) AS Кількість, SUM(Продажі.{Продажі_Const.Сума}) AS Сума, SUM(Продажі.{Продажі_Const.Дохід}) AS Дохід, Продажі.{Продажі_Const.Собівартість} AS Собівартість FROM {Продажі_Const.TABLE} AS Продажі WHERE date_trunc('day', Продажі.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Організація, Склад, Контрагент, Договір, Номенклатура, ХарактеристикаНоменклатури, Собівартість HAVING SUM(Продажі.{Продажі_Const.Кількість}) != 0 OR SUM(Продажі.{Продажі_Const.Сума}) != 0 OR SUM(Продажі.{Продажі_Const.Дохід}) != 0", paramQuery, transactionID);
+                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {Продажі_Обороти_TablePart.TABLE} ( uid, {Продажі_Обороти_TablePart.Період}, {Продажі_Обороти_TablePart.Організація}, {Продажі_Обороти_TablePart.Склад}, {Продажі_Обороти_TablePart.Контрагент}, {Продажі_Обороти_TablePart.Договір}, {Продажі_Обороти_TablePart.Номенклатура}, {Продажі_Обороти_TablePart.ХарактеристикаНоменклатури}, {Продажі_Обороти_TablePart.Кількість}, {Продажі_Обороти_TablePart.Сума}, {Продажі_Обороти_TablePart.Дохід}, {Продажі_Обороти_TablePart.Собівартість} ) SELECT uuidv7(), date_trunc('day', Продажі.period::timestamp) AS Період, Продажі.{Продажі_Const.Організація} AS Організація, Продажі.{Продажі_Const.Склад} AS Склад, Продажі.{Продажі_Const.Контрагент} AS Контрагент, Продажі.{Продажі_Const.Договір} AS Договір, Продажі.{Продажі_Const.Номенклатура} AS Номенклатура, Продажі.{Продажі_Const.ХарактеристикаНоменклатури} AS ХарактеристикаНоменклатури, SUM(Продажі.{Продажі_Const.Кількість}) AS Кількість, SUM(Продажі.{Продажі_Const.Сума}) AS Сума, SUM(Продажі.{Продажі_Const.Дохід}) AS Дохід, Продажі.{Продажі_Const.Собівартість} AS Собівартість FROM {Продажі_Const.TABLE} AS Продажі WHERE date_trunc('day', Продажі.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Організація, Склад, Контрагент, Договір, Номенклатура, ХарактеристикаНоменклатури, Собівартість HAVING SUM(Продажі.{Продажі_Const.Кількість}) != 0 OR SUM(Продажі.{Продажі_Const.Сума}) != 0 OR SUM(Продажі.{Продажі_Const.Дохід}) != 0", paramQuery, transactionID);
                         
                     await Config.Kernel.DataBase.CommitTransaction(transactionID);
                     break;
@@ -33494,13 +49942,13 @@ namespace GeneratedCode.РегістриНакопичення
                         
                     await Config.Kernel.DataBase.ExecuteSQL($@"DELETE FROM {ТовариВКомірках_ЗалишкиТаОбороти_TablePart.TABLE} WHERE {ТовариВКомірках_ЗалишкиТаОбороти_TablePart.TABLE}.{ТовариВКомірках_ЗалишкиТаОбороти_TablePart.Період} = @ПеріодДеньВідбір", paramQuery, transactionID);
                         
-                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {ТовариВКомірках_ЗалишкиТаОбороти_TablePart.TABLE} ( uid, {ТовариВКомірках_ЗалишкиТаОбороти_TablePart.Період}, {ТовариВКомірках_ЗалишкиТаОбороти_TablePart.Номенклатура}, {ТовариВКомірках_ЗалишкиТаОбороти_TablePart.ХарактеристикаНоменклатури}, {ТовариВКомірках_ЗалишкиТаОбороти_TablePart.Пакування}, {ТовариВКомірках_ЗалишкиТаОбороти_TablePart.Комірка}, {ТовариВКомірках_ЗалишкиТаОбороти_TablePart.Серія}, {ТовариВКомірках_ЗалишкиТаОбороти_TablePart.ВНаявностіПрихід}, {ТовариВКомірках_ЗалишкиТаОбороти_TablePart.ВНаявностіРозхід}, {ТовариВКомірках_ЗалишкиТаОбороти_TablePart.ВНаявностіЗалишок} ) SELECT uuid_generate_v4(), date_trunc('day', ТовариВКомірках.period::timestamp) AS Період, ТовариВКомірках.{ТовариВКомірках_Const.Номенклатура} AS Номенклатура, ТовариВКомірках.{ТовариВКомірках_Const.ХарактеристикаНоменклатури} AS ХарактеристикаНоменклатури, ТовариВКомірках.{ТовариВКомірках_Const.Пакування} AS Пакування, ТовариВКомірках.{ТовариВКомірках_Const.Комірка} AS Комірка, ТовариВКомірках.{ТовариВКомірках_Const.Серія} AS Серія, /* ВНаявності */ SUM(CASE WHEN ТовариВКомірках.income = true THEN ТовариВКомірках.{ТовариВКомірках_Const.ВНаявності} ELSE 0 END) AS ВНаявностіПрихід, SUM(CASE WHEN ТовариВКомірках.income = false THEN ТовариВКомірках.{ТовариВКомірках_Const.ВНаявності} ELSE 0 END) AS ВНаявностіРозхід, SUM(CASE WHEN ТовариВКомірках.income = true THEN ТовариВКомірках.{ТовариВКомірках_Const.ВНаявності} ELSE -ТовариВКомірках.{ТовариВКомірках_Const.ВНаявності} END) AS ВНаявностіЗалишок FROM {ТовариВКомірках_Const.TABLE} AS ТовариВКомірках WHERE date_trunc('day', ТовариВКомірках.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Номенклатура, ХарактеристикаНоменклатури, Пакування, Комірка, Серія HAVING /* ВНаявності */ SUM(CASE WHEN ТовариВКомірках.income = true THEN ТовариВКомірках.{ТовариВКомірках_Const.ВНаявності} ELSE 0 END) != 0 OR SUM(CASE WHEN ТовариВКомірках.income = false THEN ТовариВКомірках.{ТовариВКомірках_Const.ВНаявності} ELSE 0 END) != 0 OR SUM(CASE WHEN ТовариВКомірках.income = true THEN ТовариВКомірках.{ТовариВКомірках_Const.ВНаявності} ELSE -ТовариВКомірках.{ТовариВКомірках_Const.ВНаявності} END) != 0", paramQuery, transactionID);
+                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {ТовариВКомірках_ЗалишкиТаОбороти_TablePart.TABLE} ( uid, {ТовариВКомірках_ЗалишкиТаОбороти_TablePart.Період}, {ТовариВКомірках_ЗалишкиТаОбороти_TablePart.Номенклатура}, {ТовариВКомірках_ЗалишкиТаОбороти_TablePart.ХарактеристикаНоменклатури}, {ТовариВКомірках_ЗалишкиТаОбороти_TablePart.Пакування}, {ТовариВКомірках_ЗалишкиТаОбороти_TablePart.Комірка}, {ТовариВКомірках_ЗалишкиТаОбороти_TablePart.Серія}, {ТовариВКомірках_ЗалишкиТаОбороти_TablePart.ВНаявностіПрихід}, {ТовариВКомірках_ЗалишкиТаОбороти_TablePart.ВНаявностіРозхід}, {ТовариВКомірках_ЗалишкиТаОбороти_TablePart.ВНаявностіЗалишок} ) SELECT uuidv7(), date_trunc('day', ТовариВКомірках.period::timestamp) AS Період, ТовариВКомірках.{ТовариВКомірках_Const.Номенклатура} AS Номенклатура, ТовариВКомірках.{ТовариВКомірках_Const.ХарактеристикаНоменклатури} AS ХарактеристикаНоменклатури, ТовариВКомірках.{ТовариВКомірках_Const.Пакування} AS Пакування, ТовариВКомірках.{ТовариВКомірках_Const.Комірка} AS Комірка, ТовариВКомірках.{ТовариВКомірках_Const.Серія} AS Серія, /* ВНаявності */ SUM(CASE WHEN ТовариВКомірках.income = true THEN ТовариВКомірках.{ТовариВКомірках_Const.ВНаявності} ELSE 0 END) AS ВНаявностіПрихід, SUM(CASE WHEN ТовариВКомірках.income = false THEN ТовариВКомірках.{ТовариВКомірках_Const.ВНаявності} ELSE 0 END) AS ВНаявностіРозхід, SUM(CASE WHEN ТовариВКомірках.income = true THEN ТовариВКомірках.{ТовариВКомірках_Const.ВНаявності} ELSE -ТовариВКомірках.{ТовариВКомірках_Const.ВНаявності} END) AS ВНаявностіЗалишок FROM {ТовариВКомірках_Const.TABLE} AS ТовариВКомірках WHERE date_trunc('day', ТовариВКомірках.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Номенклатура, ХарактеристикаНоменклатури, Пакування, Комірка, Серія HAVING /* ВНаявності */ SUM(CASE WHEN ТовариВКомірках.income = true THEN ТовариВКомірках.{ТовариВКомірках_Const.ВНаявності} ELSE 0 END) != 0 OR SUM(CASE WHEN ТовариВКомірках.income = false THEN ТовариВКомірках.{ТовариВКомірках_Const.ВНаявності} ELSE 0 END) != 0 OR SUM(CASE WHEN ТовариВКомірках.income = true THEN ТовариВКомірках.{ТовариВКомірках_Const.ВНаявності} ELSE -ТовариВКомірках.{ТовариВКомірках_Const.ВНаявності} END) != 0", paramQuery, transactionID);
                         
                     /* QueryBlock: Залишки */
                         
                     await Config.Kernel.DataBase.ExecuteSQL($@"DELETE FROM {ТовариВКомірках_Залишки_TablePart.TABLE} WHERE {ТовариВКомірках_Залишки_TablePart.TABLE}.{ТовариВКомірках_Залишки_TablePart.Період} = @ПеріодДеньВідбір", paramQuery, transactionID);
                         
-                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {ТовариВКомірках_Залишки_TablePart.TABLE} ( uid, {ТовариВКомірках_Залишки_TablePart.Період}, {ТовариВКомірках_Залишки_TablePart.Номенклатура}, {ТовариВКомірках_Залишки_TablePart.ХарактеристикаНоменклатури}, {ТовариВКомірках_Залишки_TablePart.Пакування}, {ТовариВКомірках_Залишки_TablePart.Комірка}, {ТовариВКомірках_Залишки_TablePart.Серія}, {ТовариВКомірках_Залишки_TablePart.ВНаявності} ) SELECT uuid_generate_v4(), date_trunc('day', ТовариВКомірках.period::timestamp) AS Період, ТовариВКомірках.{ТовариВКомірках_Const.Номенклатура} AS Номенклатура, ТовариВКомірках.{ТовариВКомірках_Const.ХарактеристикаНоменклатури} AS ХарактеристикаНоменклатури, ТовариВКомірках.{ТовариВКомірках_Const.Пакування} AS Пакування, ТовариВКомірках.{ТовариВКомірках_Const.Комірка} AS Комірка, ТовариВКомірках.{ТовариВКомірках_Const.Серія} AS Серія, /* ВНаявності */ SUM(CASE WHEN ТовариВКомірках.income = true THEN ТовариВКомірках.{ТовариВКомірках_Const.ВНаявності} ELSE -ТовариВКомірках.{ТовариВКомірках_Const.ВНаявності} END) AS ВНаявності FROM {ТовариВКомірках_Const.TABLE} AS ТовариВКомірках WHERE date_trunc('day', ТовариВКомірках.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Номенклатура, ХарактеристикаНоменклатури, Пакування, Комірка, Серія HAVING /* ВНаявності */ SUM(CASE WHEN ТовариВКомірках.income = true THEN ТовариВКомірках.{ТовариВКомірках_Const.ВНаявності} ELSE -ТовариВКомірках.{ТовариВКомірках_Const.ВНаявності} END) != 0", paramQuery, transactionID);
+                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {ТовариВКомірках_Залишки_TablePart.TABLE} ( uid, {ТовариВКомірках_Залишки_TablePart.Період}, {ТовариВКомірках_Залишки_TablePart.Номенклатура}, {ТовариВКомірках_Залишки_TablePart.ХарактеристикаНоменклатури}, {ТовариВКомірках_Залишки_TablePart.Пакування}, {ТовариВКомірках_Залишки_TablePart.Комірка}, {ТовариВКомірках_Залишки_TablePart.Серія}, {ТовариВКомірках_Залишки_TablePart.ВНаявності} ) SELECT uuidv7(), date_trunc('day', ТовариВКомірках.period::timestamp) AS Період, ТовариВКомірках.{ТовариВКомірках_Const.Номенклатура} AS Номенклатура, ТовариВКомірках.{ТовариВКомірках_Const.ХарактеристикаНоменклатури} AS ХарактеристикаНоменклатури, ТовариВКомірках.{ТовариВКомірках_Const.Пакування} AS Пакування, ТовариВКомірках.{ТовариВКомірках_Const.Комірка} AS Комірка, ТовариВКомірках.{ТовариВКомірках_Const.Серія} AS Серія, /* ВНаявності */ SUM(CASE WHEN ТовариВКомірках.income = true THEN ТовариВКомірках.{ТовариВКомірках_Const.ВНаявності} ELSE -ТовариВКомірках.{ТовариВКомірках_Const.ВНаявності} END) AS ВНаявності FROM {ТовариВКомірках_Const.TABLE} AS ТовариВКомірках WHERE date_trunc('day', ТовариВКомірках.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Номенклатура, ХарактеристикаНоменклатури, Пакування, Комірка, Серія HAVING /* ВНаявності */ SUM(CASE WHEN ТовариВКомірках.income = true THEN ТовариВКомірках.{ТовариВКомірках_Const.ВНаявності} ELSE -ТовариВКомірках.{ТовариВКомірках_Const.ВНаявності} END) != 0", paramQuery, transactionID);
                         
                     await Config.Kernel.DataBase.CommitTransaction(transactionID);
                     break;
@@ -33514,13 +49962,13 @@ namespace GeneratedCode.РегістриНакопичення
                         
                     await Config.Kernel.DataBase.ExecuteSQL($@"DELETE FROM {РухКоштівККМ_ЗалишкиТаОбороти_TablePart.TABLE} WHERE {РухКоштівККМ_ЗалишкиТаОбороти_TablePart.TABLE}.{РухКоштівККМ_ЗалишкиТаОбороти_TablePart.Період} = @ПеріодДеньВідбір", paramQuery, transactionID);
                         
-                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {РухКоштівККМ_ЗалишкиТаОбороти_TablePart.TABLE} ( uid, {РухКоштівККМ_ЗалишкиТаОбороти_TablePart.Період}, {РухКоштівККМ_ЗалишкиТаОбороти_TablePart.Організація}, {РухКоштівККМ_ЗалишкиТаОбороти_TablePart.КасаККМ}, {РухКоштівККМ_ЗалишкиТаОбороти_TablePart.Валюта}, {РухКоштівККМ_ЗалишкиТаОбороти_TablePart.СумаПрихід}, {РухКоштівККМ_ЗалишкиТаОбороти_TablePart.СумаРозхід}, {РухКоштівККМ_ЗалишкиТаОбороти_TablePart.СумаЗалишок} ) SELECT uuid_generate_v4(), date_trunc('day', РухКоштівККМ.period::timestamp) AS Період, РухКоштівККМ.{РухКоштівККМ_Const.Організація} AS Організація, РухКоштівККМ.{РухКоштівККМ_Const.КасаККМ} AS КасаККМ, РухКоштівККМ.{РухКоштівККМ_Const.Валюта} AS Валюта, /* Сума */ SUM(CASE WHEN РухКоштівККМ.income = true THEN РухКоштівККМ.{РухКоштівККМ_Const.Сума} ELSE 0 END) AS СумаПрихід, SUM(CASE WHEN РухКоштівККМ.income = false THEN РухКоштівККМ.{РухКоштівККМ_Const.Сума} ELSE 0 END) AS СумаРозхід, SUM(CASE WHEN РухКоштівККМ.income = true THEN РухКоштівККМ.{РухКоштівККМ_Const.Сума} ELSE -РухКоштівККМ.{РухКоштівККМ_Const.Сума} END) AS СумаЗалишок FROM {РухКоштівККМ_Const.TABLE} AS РухКоштівККМ WHERE date_trunc('day', РухКоштівККМ.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Організація, КасаККМ, Валюта HAVING /* Сума */ SUM(CASE WHEN РухКоштівККМ.income = true THEN РухКоштівККМ.{РухКоштівККМ_Const.Сума} ELSE 0 END) != 0 OR SUM(CASE WHEN РухКоштівККМ.income = false THEN РухКоштівККМ.{РухКоштівККМ_Const.Сума} ELSE 0 END) != 0 OR SUM(CASE WHEN РухКоштівККМ.income = true THEN РухКоштівККМ.{РухКоштівККМ_Const.Сума} ELSE -РухКоштівККМ.{РухКоштівККМ_Const.Сума} END) != 0", paramQuery, transactionID);
+                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {РухКоштівККМ_ЗалишкиТаОбороти_TablePart.TABLE} ( uid, {РухКоштівККМ_ЗалишкиТаОбороти_TablePart.Період}, {РухКоштівККМ_ЗалишкиТаОбороти_TablePart.Організація}, {РухКоштівККМ_ЗалишкиТаОбороти_TablePart.КасаККМ}, {РухКоштівККМ_ЗалишкиТаОбороти_TablePart.Валюта}, {РухКоштівККМ_ЗалишкиТаОбороти_TablePart.СумаПрихід}, {РухКоштівККМ_ЗалишкиТаОбороти_TablePart.СумаРозхід}, {РухКоштівККМ_ЗалишкиТаОбороти_TablePart.СумаЗалишок} ) SELECT uuidv7(), date_trunc('day', РухКоштівККМ.period::timestamp) AS Період, РухКоштівККМ.{РухКоштівККМ_Const.Організація} AS Організація, РухКоштівККМ.{РухКоштівККМ_Const.КасаККМ} AS КасаККМ, РухКоштівККМ.{РухКоштівККМ_Const.Валюта} AS Валюта, /* Сума */ SUM(CASE WHEN РухКоштівККМ.income = true THEN РухКоштівККМ.{РухКоштівККМ_Const.Сума} ELSE 0 END) AS СумаПрихід, SUM(CASE WHEN РухКоштівККМ.income = false THEN РухКоштівККМ.{РухКоштівККМ_Const.Сума} ELSE 0 END) AS СумаРозхід, SUM(CASE WHEN РухКоштівККМ.income = true THEN РухКоштівККМ.{РухКоштівККМ_Const.Сума} ELSE -РухКоштівККМ.{РухКоштівККМ_Const.Сума} END) AS СумаЗалишок FROM {РухКоштівККМ_Const.TABLE} AS РухКоштівККМ WHERE date_trunc('day', РухКоштівККМ.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Організація, КасаККМ, Валюта HAVING /* Сума */ SUM(CASE WHEN РухКоштівККМ.income = true THEN РухКоштівККМ.{РухКоштівККМ_Const.Сума} ELSE 0 END) != 0 OR SUM(CASE WHEN РухКоштівККМ.income = false THEN РухКоштівККМ.{РухКоштівККМ_Const.Сума} ELSE 0 END) != 0 OR SUM(CASE WHEN РухКоштівККМ.income = true THEN РухКоштівККМ.{РухКоштівККМ_Const.Сума} ELSE -РухКоштівККМ.{РухКоштівККМ_Const.Сума} END) != 0", paramQuery, transactionID);
                         
                     /* QueryBlock: Залишки */
                         
                     await Config.Kernel.DataBase.ExecuteSQL($@"DELETE FROM {РухКоштівККМ_Залишки_TablePart.TABLE} WHERE {РухКоштівККМ_Залишки_TablePart.TABLE}.{РухКоштівККМ_Залишки_TablePart.Період} = @ПеріодДеньВідбір", paramQuery, transactionID);
                         
-                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {РухКоштівККМ_Залишки_TablePart.TABLE} ( uid, {РухКоштівККМ_Залишки_TablePart.Період}, {РухКоштівККМ_Залишки_TablePart.Організація}, {РухКоштівККМ_Залишки_TablePart.КасаККМ}, {РухКоштівККМ_Залишки_TablePart.Валюта}, {РухКоштівККМ_Залишки_TablePart.Сума} ) SELECT uuid_generate_v4(), date_trunc('day', РухКоштівККМ.period::timestamp) AS Період, РухКоштівККМ.{РухКоштівККМ_Const.Організація} AS Організація, РухКоштівККМ.{РухКоштівККМ_Const.КасаККМ} AS КасаККМ, РухКоштівККМ.{РухКоштівККМ_Const.Валюта} AS Валюта, /* Сума */ SUM(CASE WHEN РухКоштівККМ.income = true THEN РухКоштівККМ.{РухКоштівККМ_Const.Сума} ELSE -РухКоштівККМ.{РухКоштівККМ_Const.Сума} END) AS Сума FROM {РухКоштівККМ_Const.TABLE} AS РухКоштівККМ WHERE date_trunc('day', РухКоштівККМ.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Організація, КасаККМ, Валюта HAVING /* Сума */ SUM(CASE WHEN РухКоштівККМ.income = true THEN РухКоштівККМ.{РухКоштівККМ_Const.Сума} ELSE -РухКоштівККМ.{РухКоштівККМ_Const.Сума} END) != 0", paramQuery, transactionID);
+                    await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {РухКоштівККМ_Залишки_TablePart.TABLE} ( uid, {РухКоштівККМ_Залишки_TablePart.Період}, {РухКоштівККМ_Залишки_TablePart.Організація}, {РухКоштівККМ_Залишки_TablePart.КасаККМ}, {РухКоштівККМ_Залишки_TablePart.Валюта}, {РухКоштівККМ_Залишки_TablePart.Сума} ) SELECT uuidv7(), date_trunc('day', РухКоштівККМ.period::timestamp) AS Період, РухКоштівККМ.{РухКоштівККМ_Const.Організація} AS Організація, РухКоштівККМ.{РухКоштівККМ_Const.КасаККМ} AS КасаККМ, РухКоштівККМ.{РухКоштівККМ_Const.Валюта} AS Валюта, /* Сума */ SUM(CASE WHEN РухКоштівККМ.income = true THEN РухКоштівККМ.{РухКоштівККМ_Const.Сума} ELSE -РухКоштівККМ.{РухКоштівККМ_Const.Сума} END) AS Сума FROM {РухКоштівККМ_Const.TABLE} AS РухКоштівККМ WHERE date_trunc('day', РухКоштівККМ.period::timestamp) = @ПеріодДеньВідбір GROUP BY Період, Організація, КасаККМ, Валюта HAVING /* Сума */ SUM(CASE WHEN РухКоштівККМ.income = true THEN РухКоштівККМ.{РухКоштівККМ_Const.Сума} ELSE -РухКоштівККМ.{РухКоштівККМ_Const.Сума} END) != 0", paramQuery, transactionID);
                         
                     await Config.Kernel.DataBase.CommitTransaction(transactionID);
                     break;
@@ -33548,7 +49996,7 @@ namespace GeneratedCode.РегістриНакопичення
                             
                         await Config.Kernel.DataBase.ExecuteSQL($@"DELETE FROM {ТовариНаСкладах_Підсумки_TablePart.TABLE}", null, transactionID);
                             
-                        await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {ТовариНаСкладах_Підсумки_TablePart.TABLE} ( uid, {ТовариНаСкладах_Підсумки_TablePart.Номенклатура}, {ТовариНаСкладах_Підсумки_TablePart.ХарактеристикаНоменклатури}, {ТовариНаСкладах_Підсумки_TablePart.Склад}, {ТовариНаСкладах_Підсумки_TablePart.Серія}, {ТовариНаСкладах_Підсумки_TablePart.ВНаявності}, {ТовариНаСкладах_Підсумки_TablePart.ДоВідвантаження} ) SELECT uuid_generate_v4(), ТовариНаСкладах.{ТовариНаСкладах_Залишки_TablePart.Номенклатура} AS Номенклатура, ТовариНаСкладах.{ТовариНаСкладах_Залишки_TablePart.ХарактеристикаНоменклатури} AS ХарактеристикаНоменклатури, ТовариНаСкладах.{ТовариНаСкладах_Залишки_TablePart.Склад} AS Склад, ТовариНаСкладах.{ТовариНаСкладах_Залишки_TablePart.Серія} AS Серія, /* ВНаявності */ SUM(ТовариНаСкладах.{ТовариНаСкладах_Залишки_TablePart.ВНаявності}) AS ВНаявності, /* ДоВідвантаження */ SUM(ТовариНаСкладах.{ТовариНаСкладах_Залишки_TablePart.ДоВідвантаження}) AS ДоВідвантаження FROM {ТовариНаСкладах_Залишки_TablePart.TABLE} AS ТовариНаСкладах GROUP BY Номенклатура, ХарактеристикаНоменклатури, Склад, Серія HAVING /* ВНаявності */ SUM(ТовариНаСкладах.{ТовариНаСкладах_Залишки_TablePart.ВНаявності}) != 0 OR /* ДоВідвантаження */ SUM(ТовариНаСкладах.{ТовариНаСкладах_Залишки_TablePart.ДоВідвантаження}) != 0", null, transactionID);
+                        await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {ТовариНаСкладах_Підсумки_TablePart.TABLE} ( uid, {ТовариНаСкладах_Підсумки_TablePart.Номенклатура}, {ТовариНаСкладах_Підсумки_TablePart.ХарактеристикаНоменклатури}, {ТовариНаСкладах_Підсумки_TablePart.Склад}, {ТовариНаСкладах_Підсумки_TablePart.Серія}, {ТовариНаСкладах_Підсумки_TablePart.ВНаявності}, {ТовариНаСкладах_Підсумки_TablePart.ДоВідвантаження} ) SELECT uuidv7(), ТовариНаСкладах.{ТовариНаСкладах_Залишки_TablePart.Номенклатура} AS Номенклатура, ТовариНаСкладах.{ТовариНаСкладах_Залишки_TablePart.ХарактеристикаНоменклатури} AS ХарактеристикаНоменклатури, ТовариНаСкладах.{ТовариНаСкладах_Залишки_TablePart.Склад} AS Склад, ТовариНаСкладах.{ТовариНаСкладах_Залишки_TablePart.Серія} AS Серія, /* ВНаявності */ SUM(ТовариНаСкладах.{ТовариНаСкладах_Залишки_TablePart.ВНаявності}) AS ВНаявності, /* ДоВідвантаження */ SUM(ТовариНаСкладах.{ТовариНаСкладах_Залишки_TablePart.ДоВідвантаження}) AS ДоВідвантаження FROM {ТовариНаСкладах_Залишки_TablePart.TABLE} AS ТовариНаСкладах GROUP BY Номенклатура, ХарактеристикаНоменклатури, Склад, Серія HAVING /* ВНаявності */ SUM(ТовариНаСкладах.{ТовариНаСкладах_Залишки_TablePart.ВНаявності}) != 0 OR /* ДоВідвантаження */ SUM(ТовариНаСкладах.{ТовариНаСкладах_Залишки_TablePart.ДоВідвантаження}) != 0", null, transactionID);
                             
                         await Config.Kernel.DataBase.CommitTransaction(transactionID);
                         break;
@@ -33562,7 +50010,7 @@ namespace GeneratedCode.РегістриНакопичення
                             
                         await Config.Kernel.DataBase.ExecuteSQL($@"DELETE FROM {ВільніЗалишки_Підсумки_TablePart.TABLE}", null, transactionID);
                             
-                        await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {ВільніЗалишки_Підсумки_TablePart.TABLE} ( uid, {ВільніЗалишки_Підсумки_TablePart.Номенклатура}, {ВільніЗалишки_Підсумки_TablePart.ХарактеристикаНоменклатури}, {ВільніЗалишки_Підсумки_TablePart.Склад}, {ВільніЗалишки_Підсумки_TablePart.ВНаявності}, {ВільніЗалишки_Підсумки_TablePart.ВРезервіЗіСкладу}, {ВільніЗалишки_Підсумки_TablePart.ВРезервіПідЗамовлення} ) SELECT uuid_generate_v4(), ВільніЗалишки.{ВільніЗалишки_Залишки_TablePart.Номенклатура} AS Номенклатура, ВільніЗалишки.{ВільніЗалишки_Залишки_TablePart.ХарактеристикаНоменклатури} AS ХарактеристикаНоменклатури, ВільніЗалишки.{ВільніЗалишки_Залишки_TablePart.Склад} AS Склад, /* ВНаявності */ SUM(ВільніЗалишки.{ВільніЗалишки_Залишки_TablePart.ВНаявності}) AS ВНаявності, /* ВРезервіЗіСкладу */ SUM(ВільніЗалишки.{ВільніЗалишки_Залишки_TablePart.ВРезервіЗіСкладу}) AS ВРезервіЗіСкладу, /* ВРезервіПідЗамовлення */ SUM(ВільніЗалишки.{ВільніЗалишки_Залишки_TablePart.ВРезервіПідЗамовлення}) AS ВРезервіПідЗамовлення FROM {ВільніЗалишки_Залишки_TablePart.TABLE} AS ВільніЗалишки GROUP BY Номенклатура, ХарактеристикаНоменклатури, Склад HAVING /* ВНаявності */ SUM(ВільніЗалишки.{ВільніЗалишки_Залишки_TablePart.ВНаявності}) != 0 OR /* ВРезервіЗіСкладу */ SUM(ВільніЗалишки.{ВільніЗалишки_Залишки_TablePart.ВРезервіЗіСкладу}) != 0 OR /* ВРезервіПідЗамовлення */ SUM(ВільніЗалишки.{ВільніЗалишки_Залишки_TablePart.ВРезервіПідЗамовлення}) != 0", null, transactionID);
+                        await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {ВільніЗалишки_Підсумки_TablePart.TABLE} ( uid, {ВільніЗалишки_Підсумки_TablePart.Номенклатура}, {ВільніЗалишки_Підсумки_TablePart.ХарактеристикаНоменклатури}, {ВільніЗалишки_Підсумки_TablePart.Склад}, {ВільніЗалишки_Підсумки_TablePart.ВНаявності}, {ВільніЗалишки_Підсумки_TablePart.ВРезервіЗіСкладу}, {ВільніЗалишки_Підсумки_TablePart.ВРезервіПідЗамовлення} ) SELECT uuidv7(), ВільніЗалишки.{ВільніЗалишки_Залишки_TablePart.Номенклатура} AS Номенклатура, ВільніЗалишки.{ВільніЗалишки_Залишки_TablePart.ХарактеристикаНоменклатури} AS ХарактеристикаНоменклатури, ВільніЗалишки.{ВільніЗалишки_Залишки_TablePart.Склад} AS Склад, /* ВНаявності */ SUM(ВільніЗалишки.{ВільніЗалишки_Залишки_TablePart.ВНаявності}) AS ВНаявності, /* ВРезервіЗіСкладу */ SUM(ВільніЗалишки.{ВільніЗалишки_Залишки_TablePart.ВРезервіЗіСкладу}) AS ВРезервіЗіСкладу, /* ВРезервіПідЗамовлення */ SUM(ВільніЗалишки.{ВільніЗалишки_Залишки_TablePart.ВРезервіПідЗамовлення}) AS ВРезервіПідЗамовлення FROM {ВільніЗалишки_Залишки_TablePart.TABLE} AS ВільніЗалишки GROUP BY Номенклатура, ХарактеристикаНоменклатури, Склад HAVING /* ВНаявності */ SUM(ВільніЗалишки.{ВільніЗалишки_Залишки_TablePart.ВНаявності}) != 0 OR /* ВРезервіЗіСкладу */ SUM(ВільніЗалишки.{ВільніЗалишки_Залишки_TablePart.ВРезервіЗіСкладу}) != 0 OR /* ВРезервіПідЗамовлення */ SUM(ВільніЗалишки.{ВільніЗалишки_Залишки_TablePart.ВРезервіПідЗамовлення}) != 0", null, transactionID);
                             
                         await Config.Kernel.DataBase.CommitTransaction(transactionID);
                         break;
@@ -33576,7 +50024,7 @@ namespace GeneratedCode.РегістриНакопичення
                             
                         await Config.Kernel.DataBase.ExecuteSQL($@"DELETE FROM {РухКоштів_Підсумки_TablePart.TABLE}", null, transactionID);
                             
-                        await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {РухКоштів_Підсумки_TablePart.TABLE} ( uid, {РухКоштів_Підсумки_TablePart.Організація}, {РухКоштів_Підсумки_TablePart.Каса}, {РухКоштів_Підсумки_TablePart.Валюта}, {РухКоштів_Підсумки_TablePart.Сума} ) SELECT uuid_generate_v4(), РухКоштів.{РухКоштів_Залишки_TablePart.Організація} AS Організація, РухКоштів.{РухКоштів_Залишки_TablePart.Каса} AS Каса, РухКоштів.{РухКоштів_Залишки_TablePart.Валюта} AS Валюта, /* Сума */ SUM(РухКоштів.{РухКоштів_Залишки_TablePart.Сума}) AS Сума FROM {РухКоштів_Залишки_TablePart.TABLE} AS РухКоштів GROUP BY Організація, Каса, Валюта HAVING /* Сума */ SUM(РухКоштів.{РухКоштів_Залишки_TablePart.Сума}) != 0", null, transactionID);
+                        await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {РухКоштів_Підсумки_TablePart.TABLE} ( uid, {РухКоштів_Підсумки_TablePart.Організація}, {РухКоштів_Підсумки_TablePart.Каса}, {РухКоштів_Підсумки_TablePart.Валюта}, {РухКоштів_Підсумки_TablePart.Сума} ) SELECT uuidv7(), РухКоштів.{РухКоштів_Залишки_TablePart.Організація} AS Організація, РухКоштів.{РухКоштів_Залишки_TablePart.Каса} AS Каса, РухКоштів.{РухКоштів_Залишки_TablePart.Валюта} AS Валюта, /* Сума */ SUM(РухКоштів.{РухКоштів_Залишки_TablePart.Сума}) AS Сума FROM {РухКоштів_Залишки_TablePart.TABLE} AS РухКоштів GROUP BY Організація, Каса, Валюта HAVING /* Сума */ SUM(РухКоштів.{РухКоштів_Залишки_TablePart.Сума}) != 0", null, transactionID);
                             
                         await Config.Kernel.DataBase.CommitTransaction(transactionID);
                         break;
@@ -33590,7 +50038,7 @@ namespace GeneratedCode.РегістриНакопичення
                             
                         await Config.Kernel.DataBase.ExecuteSQL($@"DELETE FROM {ПартіїТоварів_Підсумки_TablePart.TABLE}", null, transactionID);
                             
-                        await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {ПартіїТоварів_Підсумки_TablePart.TABLE} ( uid, {ПартіїТоварів_Підсумки_TablePart.Організація}, {ПартіїТоварів_Підсумки_TablePart.ПартіяТоварівКомпозит}, {ПартіїТоварів_Підсумки_TablePart.Номенклатура}, {ПартіїТоварів_Підсумки_TablePart.ХарактеристикаНоменклатури}, {ПартіїТоварів_Підсумки_TablePart.Серія}, {ПартіїТоварів_Підсумки_TablePart.Склад}, {ПартіїТоварів_Підсумки_TablePart.Кількість} ) SELECT uuid_generate_v4(), ПартіїТоварів.{ПартіїТоварів_Залишки_TablePart.Організація} AS Організація, ПартіїТоварів.{ПартіїТоварів_Залишки_TablePart.ПартіяТоварівКомпозит} AS ПартіяТоварівКомпозит, ПартіїТоварів.{ПартіїТоварів_Залишки_TablePart.Номенклатура} AS Номенклатура, ПартіїТоварів.{ПартіїТоварів_Залишки_TablePart.ХарактеристикаНоменклатури} AS ХарактеристикаНоменклатури, ПартіїТоварів.{ПартіїТоварів_Залишки_TablePart.Серія} AS Серія, ПартіїТоварів.{ПартіїТоварів_Залишки_TablePart.Склад} AS Склад, /* Кількість */ SUM(ПартіїТоварів.{ПартіїТоварів_Залишки_TablePart.Кількість}) AS Кількість FROM {ПартіїТоварів_Залишки_TablePart.TABLE} AS ПартіїТоварів GROUP BY Організація, ПартіяТоварівКомпозит, Номенклатура, ХарактеристикаНоменклатури, Серія, Склад HAVING /* Кількість */ SUM(ПартіїТоварів.{ПартіїТоварів_Залишки_TablePart.Кількість}) != 0", null, transactionID);
+                        await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {ПартіїТоварів_Підсумки_TablePart.TABLE} ( uid, {ПартіїТоварів_Підсумки_TablePart.Організація}, {ПартіїТоварів_Підсумки_TablePart.ПартіяТоварівКомпозит}, {ПартіїТоварів_Підсумки_TablePart.Номенклатура}, {ПартіїТоварів_Підсумки_TablePart.ХарактеристикаНоменклатури}, {ПартіїТоварів_Підсумки_TablePart.Серія}, {ПартіїТоварів_Підсумки_TablePart.Склад}, {ПартіїТоварів_Підсумки_TablePart.Кількість} ) SELECT uuidv7(), ПартіїТоварів.{ПартіїТоварів_Залишки_TablePart.Організація} AS Організація, ПартіїТоварів.{ПартіїТоварів_Залишки_TablePart.ПартіяТоварівКомпозит} AS ПартіяТоварівКомпозит, ПартіїТоварів.{ПартіїТоварів_Залишки_TablePart.Номенклатура} AS Номенклатура, ПартіїТоварів.{ПартіїТоварів_Залишки_TablePart.ХарактеристикаНоменклатури} AS ХарактеристикаНоменклатури, ПартіїТоварів.{ПартіїТоварів_Залишки_TablePart.Серія} AS Серія, ПартіїТоварів.{ПартіїТоварів_Залишки_TablePart.Склад} AS Склад, /* Кількість */ SUM(ПартіїТоварів.{ПартіїТоварів_Залишки_TablePart.Кількість}) AS Кількість FROM {ПартіїТоварів_Залишки_TablePart.TABLE} AS ПартіїТоварів GROUP BY Організація, ПартіяТоварівКомпозит, Номенклатура, ХарактеристикаНоменклатури, Серія, Склад HAVING /* Кількість */ SUM(ПартіїТоварів.{ПартіїТоварів_Залишки_TablePart.Кількість}) != 0", null, transactionID);
                             
                         await Config.Kernel.DataBase.CommitTransaction(transactionID);
                         break;
@@ -33604,7 +50052,7 @@ namespace GeneratedCode.РегістриНакопичення
                             
                         await Config.Kernel.DataBase.ExecuteSQL($@"DELETE FROM {ТовариВКомірках_Підсумки_TablePart.TABLE}", null, transactionID);
                             
-                        await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {ТовариВКомірках_Підсумки_TablePart.TABLE} ( uid, {ТовариВКомірках_Підсумки_TablePart.Номенклатура}, {ТовариВКомірках_Підсумки_TablePart.ХарактеристикаНоменклатури}, {ТовариВКомірках_Підсумки_TablePart.Пакування}, {ТовариВКомірках_Підсумки_TablePart.Комірка}, {ТовариВКомірках_Підсумки_TablePart.Серія}, {ТовариВКомірках_Підсумки_TablePart.ВНаявності} ) SELECT uuid_generate_v4(), ТовариВКомірках.{ТовариВКомірках_Залишки_TablePart.Номенклатура} AS Номенклатура, ТовариВКомірках.{ТовариВКомірках_Залишки_TablePart.ХарактеристикаНоменклатури} AS ХарактеристикаНоменклатури, ТовариВКомірках.{ТовариВКомірках_Залишки_TablePart.Пакування} AS Пакування, ТовариВКомірках.{ТовариВКомірках_Залишки_TablePart.Комірка} AS Комірка, ТовариВКомірках.{ТовариВКомірках_Залишки_TablePart.Серія} AS Серія, /* ВНаявності */ SUM(ТовариВКомірках.{ТовариВКомірках_Залишки_TablePart.ВНаявності}) AS ВНаявності FROM {ТовариВКомірках_Залишки_TablePart.TABLE} AS ТовариВКомірках GROUP BY Номенклатура, ХарактеристикаНоменклатури, Пакування, Комірка, Серія HAVING /* ВНаявності */ SUM(ТовариВКомірках.{ТовариВКомірках_Залишки_TablePart.ВНаявності}) != 0", null, transactionID);
+                        await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {ТовариВКомірках_Підсумки_TablePart.TABLE} ( uid, {ТовариВКомірках_Підсумки_TablePart.Номенклатура}, {ТовариВКомірках_Підсумки_TablePart.ХарактеристикаНоменклатури}, {ТовариВКомірках_Підсумки_TablePart.Пакування}, {ТовариВКомірках_Підсумки_TablePart.Комірка}, {ТовариВКомірках_Підсумки_TablePart.Серія}, {ТовариВКомірках_Підсумки_TablePart.ВНаявності} ) SELECT uuidv7(), ТовариВКомірках.{ТовариВКомірках_Залишки_TablePart.Номенклатура} AS Номенклатура, ТовариВКомірках.{ТовариВКомірках_Залишки_TablePart.ХарактеристикаНоменклатури} AS ХарактеристикаНоменклатури, ТовариВКомірках.{ТовариВКомірках_Залишки_TablePart.Пакування} AS Пакування, ТовариВКомірках.{ТовариВКомірках_Залишки_TablePart.Комірка} AS Комірка, ТовариВКомірках.{ТовариВКомірках_Залишки_TablePart.Серія} AS Серія, /* ВНаявності */ SUM(ТовариВКомірках.{ТовариВКомірках_Залишки_TablePart.ВНаявності}) AS ВНаявності FROM {ТовариВКомірках_Залишки_TablePart.TABLE} AS ТовариВКомірках GROUP BY Номенклатура, ХарактеристикаНоменклатури, Пакування, Комірка, Серія HAVING /* ВНаявності */ SUM(ТовариВКомірках.{ТовариВКомірках_Залишки_TablePart.ВНаявності}) != 0", null, transactionID);
                             
                         await Config.Kernel.DataBase.CommitTransaction(transactionID);
                         break;
@@ -33618,7 +50066,7 @@ namespace GeneratedCode.РегістриНакопичення
                             
                         await Config.Kernel.DataBase.ExecuteSQL($@"DELETE FROM {РухКоштівККМ_Підсумки_TablePart.TABLE}", null, transactionID);
                             
-                        await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {РухКоштівККМ_Підсумки_TablePart.TABLE} ( uid, {РухКоштівККМ_Підсумки_TablePart.Організація}, {РухКоштівККМ_Підсумки_TablePart.КасаККМ}, {РухКоштівККМ_Підсумки_TablePart.Валюта}, {РухКоштівККМ_Підсумки_TablePart.Сума} ) SELECT uuid_generate_v4(), РухКоштівККМ.{РухКоштівККМ_Залишки_TablePart.Організація} AS Організація, РухКоштівККМ.{РухКоштівККМ_Залишки_TablePart.КасаККМ} AS КасаККМ, РухКоштівККМ.{РухКоштівККМ_Залишки_TablePart.Валюта} AS Валюта, /* Сума */ SUM(РухКоштівККМ.{РухКоштівККМ_Залишки_TablePart.Сума}) AS Сума FROM {РухКоштівККМ_Залишки_TablePart.TABLE} AS РухКоштівККМ GROUP BY Організація, КасаККМ, Валюта HAVING /* Сума */ SUM(РухКоштівККМ.{РухКоштівККМ_Залишки_TablePart.Сума}) != 0", null, transactionID);
+                        await Config.Kernel.DataBase.ExecuteSQL($@"INSERT INTO {РухКоштівККМ_Підсумки_TablePart.TABLE} ( uid, {РухКоштівККМ_Підсумки_TablePart.Організація}, {РухКоштівККМ_Підсумки_TablePart.КасаККМ}, {РухКоштівККМ_Підсумки_TablePart.Валюта}, {РухКоштівККМ_Підсумки_TablePart.Сума} ) SELECT uuidv7(), РухКоштівККМ.{РухКоштівККМ_Залишки_TablePart.Організація} AS Організація, РухКоштівККМ.{РухКоштівККМ_Залишки_TablePart.КасаККМ} AS КасаККМ, РухКоштівККМ.{РухКоштівККМ_Залишки_TablePart.Валюта} AS Валюта, /* Сума */ SUM(РухКоштівККМ.{РухКоштівККМ_Залишки_TablePart.Сума}) AS Сума FROM {РухКоштівККМ_Залишки_TablePart.TABLE} AS РухКоштівККМ GROUP BY Організація, КасаККМ, Валюта HAVING /* Сума */ SUM(РухКоштівККМ.{РухКоштівККМ_Залишки_TablePart.Сума}) != 0", null, transactionID);
                             
                         await Config.Kernel.DataBase.CommitTransaction(transactionID);
                         break;
@@ -34098,7 +50546,7 @@ namespace GeneratedCode.РегістриНакопичення
     public static class ЗамовленняКлієнтів_Const
     {
         public const string TYPENAME = "РегістриНакопичення.ЗамовленняКлієнтів";
-        public const string FULLNAME = "ЗамовленняКлієнтів";
+        public const string FULLNAME = "Замовлення клієнтів";
         public const string TABLE = "tab_a55";
 		    public static readonly string[] AllowDocumentSpendTable = ["tab_a34", "tab_a36", "tab_a96", ];
 		    public static readonly string[] AllowDocumentSpendType = ["ЗамовленняКлієнта", "РеалізаціяТоварівТаПослуг", "ЗакриттяЗамовленняКлієнта", ];
@@ -34346,7 +50794,7 @@ namespace GeneratedCode.РегістриНакопичення
     public static class РозрахункиЗКлієнтами_Const
     {
         public const string TYPENAME = "РегістриНакопичення.РозрахункиЗКлієнтами";
-        public const string FULLNAME = "РозрахункиЗКлієнтами";
+        public const string FULLNAME = "Розрахунки з клієнтами";
         public const string TABLE = "tab_a56";
 		    public static readonly string[] AllowDocumentSpendTable = ["tab_a36", "tab_a44", "tab_a48", "tab_a53", "tab_a81", "tab_a83", "tab_a65", ];
 		    public static readonly string[] AllowDocumentSpendType = ["РеалізаціяТоварівТаПослуг", "ПрихіднийКасовийОрдер", "РозхіднийКасовийОрдер", "ПоверненняТоварівВідКлієнта", "АктВиконанихРобіт", "ВведенняЗалишків", "КорегуванняБоргу", ];
@@ -34939,7 +51387,7 @@ namespace GeneratedCode.РегістриНакопичення
     public static class ВільніЗалишки_Const
     {
         public const string TYPENAME = "РегістриНакопичення.ВільніЗалишки";
-        public const string FULLNAME = "ВільніЗалишки";
+        public const string FULLNAME = "Вільні залишки";
         public const string TABLE = "tab_a58";
 		    public static readonly string[] AllowDocumentSpendTable = ["tab_a32", "tab_a34", "tab_a36", "tab_a31", "tab_a51", "tab_a53", "tab_a83", "tab_a94", "tab_b07", "tab_b10", "tab_a96", "tab_b41", "tab_b51", ];
 		    public static readonly string[] AllowDocumentSpendType = ["ПоступленняТоварівТаПослуг", "ЗамовленняКлієнта", "РеалізаціяТоварівТаПослуг", "ПереміщенняТоварів", "ПоверненняТоварівПостачальнику", "ПоверненняТоварівВідКлієнта", "ВведенняЗалишків", "ПсуванняТоварів", "ВнутрішнєСпоживанняТоварів", "РахунокФактура", "ЗакриттяЗамовленняКлієнта", "ЗакриттяРахункуФактури", "ЧекККМ", ];
@@ -35284,7 +51732,7 @@ namespace GeneratedCode.РегістриНакопичення
     public static class ЗамовленняПостачальникам_Const
     {
         public const string TYPENAME = "РегістриНакопичення.ЗамовленняПостачальникам";
-        public const string FULLNAME = "ЗамовленняПостачальникам";
+        public const string FULLNAME = "Замовлення постачальникам";
         public const string TABLE = "tab_a60";
 		    public static readonly string[] AllowDocumentSpendTable = ["tab_a25", "tab_a32", "tab_b44", ];
 		    public static readonly string[] AllowDocumentSpendType = ["ЗамовленняПостачальнику", "ПоступленняТоварівТаПослуг", "ЗакриттяЗамовленняПостачальнику", ];
@@ -35524,7 +51972,7 @@ namespace GeneratedCode.РегістриНакопичення
     public static class РозрахункиЗПостачальниками_Const
     {
         public const string TYPENAME = "РегістриНакопичення.РозрахункиЗПостачальниками";
-        public const string FULLNAME = "РозрахункиЗПостачальниками";
+        public const string FULLNAME = "Розрахунки з постачальниками";
         public const string TABLE = "tab_a61";
 		    public static readonly string[] AllowDocumentSpendTable = ["tab_a32", "tab_a44", "tab_a48", "tab_a51", "tab_a83", "tab_a65", ];
 		    public static readonly string[] AllowDocumentSpendType = ["ПоступленняТоварівТаПослуг", "ПрихіднийКасовийОрдер", "РозхіднийКасовийОрдер", "ПоверненняТоварівПостачальнику", "ВведенняЗалишків", "КорегуванняБоргу", ];
@@ -35837,7 +52285,7 @@ namespace GeneratedCode.РегістриНакопичення
     public static class РухКоштів_Const
     {
         public const string TYPENAME = "РегістриНакопичення.РухКоштів";
-        public const string FULLNAME = "РухКоштів";
+        public const string FULLNAME = "Рух коштів";
         public const string TABLE = "tab_a78";
 		    public static readonly string[] AllowDocumentSpendTable = ["tab_a44", "tab_a48", "tab_a83", ];
 		    public static readonly string[] AllowDocumentSpendType = ["ПрихіднийКасовийОрдер", "РозхіднийКасовийОрдер", "ВведенняЗалишків", ];
@@ -36255,7 +52703,7 @@ namespace GeneratedCode.РегістриНакопичення
     public static class ПартіїТоварів_Const
     {
         public const string TYPENAME = "РегістриНакопичення.ПартіїТоварів";
-        public const string FULLNAME = "ПартіїТоварів";
+        public const string FULLNAME = "Партії товарів";
         public const string TABLE = "tab_a79";
 		    public static readonly string[] AllowDocumentSpendTable = ["tab_a32", "tab_a36", "tab_a31", "tab_a51", "tab_a53", "tab_a83", "tab_a94", "tab_b07", ];
 		    public static readonly string[] AllowDocumentSpendType = ["ПоступленняТоварівТаПослуг", "РеалізаціяТоварівТаПослуг", "ПереміщенняТоварів", "ПоверненняТоварівПостачальнику", "ПоверненняТоварівВідКлієнта", "ВведенняЗалишків", "ПсуванняТоварів", "ВнутрішнєСпоживанняТоварів", ];
@@ -37057,7 +53505,7 @@ namespace GeneratedCode.РегістриНакопичення
     public static class ТовариВКомірках_Const
     {
         public const string TYPENAME = "РегістриНакопичення.ТовариВКомірках";
-        public const string FULLNAME = "ТовариВКомірках";
+        public const string FULLNAME = "Товари в комірках";
         public const string TABLE = "tab_b01";
 		    public static readonly string[] AllowDocumentSpendTable = ["tab_a64", "tab_b09", "tab_b27", ];
 		    public static readonly string[] AllowDocumentSpendType = ["РозміщенняТоварівНаСкладі", "ПереміщенняТоварівНаСкладі", "ЗбіркаТоварівНаСкладі", ];
@@ -37515,7 +53963,7 @@ namespace GeneratedCode.РегістриНакопичення
     public static class РухКоштівККМ_Const
     {
         public const string TYPENAME = "РегістриНакопичення.РухКоштівККМ";
-        public const string FULLNAME = "РухКоштів ККМ";
+        public const string FULLNAME = "Рух коштів ККМ";
         public const string TABLE = "tab_b53";
 		    public static readonly string[] AllowDocumentSpendTable = ["tab_b51", ];
 		    public static readonly string[] AllowDocumentSpendType = ["ЧекККМ", ];
@@ -37935,8 +54383,8 @@ namespace GeneratedCode.РегістриНакопичення
         public const string TYPENAME = "РегістриНакопичення.БухгалтерськіОперації";
         public const string FULLNAME = "Бухгалтерські операції";
         public const string TABLE = "general_ledger_entries";
-		    public static readonly string[] AllowDocumentSpendTable = ["acc_operations", ];
-		    public static readonly string[] AllowDocumentSpendType = ["БухгалтерськаОперація", ];
+		    public static readonly string[] AllowDocumentSpendTable = ["acc_operations", "tab_b72", "tab_b73", "tab_b74", "tab_b75", "tab_b76", "tab_b77", "tab_b79", "tab_b80", "tab_b81", "tab_b82", "tab_b83", "tab_b84", "tab_b85", "tab_b86", "tab_b87", "tab_b88", "tab_b89", "tab_b90", "tab_b91", "tab_b92", "tab_b93", "tab_b94", "tab_b95", "tab_b96", "tab_b97", "tab_b98", "tab_b99", "tab_c01", "tab_c02", "tab_c03", "tab_c04", "tab_c05", "tab_c06", "tab_c07", "tab_c08", "tab_c09", "tab_c10", "tab_c11", "tab_c12", "tab_c13", "tab_c14", "tab_c15", "tab_c16", "tab_c17", "tab_c18", "tab_c19", "tab_c20", "tab_c21", "tab_c22", "tab_c23", "tab_c24", ];
+		    public static readonly string[] AllowDocumentSpendType = ["БухгалтерськаОперація", "АвансовийЗвіт", "Амортизація", "ВизначенняФінансовогоРезультату", "ВиплатаЗаробітноїПлати", "ВиготовленняПродукції", "Додаток1ДоПодатковоїНакладної", "ЗаписКнигиПридбання", "ЗмінаПараметрівОсновнихЗасобів", "ЗвітКомісіонераПроПродажТоварів", "ЗвітКомітентуПроПродажТоварів", "КоригуванняНезавершеногоВиробництва", "КоригуванняПДВ", "КоригуванняІншихВитрат", "Модернізація", "Комплектація", "НакладнаВимога", "Наряд", "НарахуванняЗаробітньоїПлати", "ПередачаМатеріалівВЕксплуатацію", "ПереміщенняМатеріалівВЕксплуатації", "ПередачаНематеріальнихАктивів", "ПереміщенняНематеріальнихАктивів", "ПередачаОбладнанняВМонтаж", "ПередачаОсновнихЗасобів", "ПереміщенняОсновнихЗасобів", "ПередачаТоварів", "ПереоцінкаВалюти", "ПереоцінкаОсновнихЗасобів", "ПереоцінкаТоварів", "ПлатіжнеДорученняВхідне", "ПлатіжнеДорученняВихідне", "ПодатковаНакладна", "ПокупкаАбоПродажВалюти", "ПідготовкаДоПередачіОсновнихЗасобів", "ПослугиСторонньоїОрганізації", "ПрибуткуванняМатеріалівЗВиробництва", "ПрибуткуванняТоварівВПереробку", "ПрибуткуванняТоварівЗПереробки", "ПрибуткуванняНезавершеногоВиробництва", "ПрийняттяДоОбліку", "ПоверненняПереданихТоварів", "РемонтОсновнихЗасобів", "РозподілІншихВитрат", "РозрахунокСобівартостіВипуску", "СписанняМатеріалів", "СписанняНезавершеногоВиробництва", "СписанняНематеріальнихАктивів", "СписанняОсновнихЗасобів", "СписанняВитратМайбутніхПеріодів", "СписанняТоварів", "Сторнування", ];
         
         public const string Рахунок = "account";
         public const string Аналітика1 = "analysis_1";
@@ -38035,7 +54483,7 @@ namespace GeneratedCode.РегістриНакопичення
             //Назва документу
             /*if (docname_required)
             {
-              string query_case = $"CASE WHEN join_doc_1.uid IS NOT NULL THEN join_doc_1.{Документи.БухгалтерськаОперація_Const.Назва} END";
+              string query_case = $"CASE WHEN join_doc_1.uid IS NOT NULL THEN join_doc_1.{Документи.БухгалтерськаОперація_Const.Назва} WHEN join_doc_2.uid IS NOT NULL THEN join_doc_2.{Документи.АвансовийЗвіт_Const.Назва} WHEN join_doc_3.uid IS NOT NULL THEN join_doc_3.{Документи.Амортизація_Const.Назва} WHEN join_doc_4.uid IS NOT NULL THEN join_doc_4.{Документи.ВизначенняФінансовогоРезультату_Const.Назва} WHEN join_doc_5.uid IS NOT NULL THEN join_doc_5.{Документи.ВиплатаЗаробітноїПлати_Const.Назва} WHEN join_doc_6.uid IS NOT NULL THEN join_doc_6.{Документи.ВиготовленняПродукції_Const.Назва} WHEN join_doc_7.uid IS NOT NULL THEN join_doc_7.{Документи.Додаток1ДоПодатковоїНакладної_Const.Назва} WHEN join_doc_8.uid IS NOT NULL THEN join_doc_8.{Документи.ЗаписКнигиПридбання_Const.Назва} WHEN join_doc_9.uid IS NOT NULL THEN join_doc_9.{Документи.ЗмінаПараметрівОсновнихЗасобів_Const.Назва} WHEN join_doc_10.uid IS NOT NULL THEN join_doc_10.{Документи.ЗвітКомісіонераПроПродажТоварів_Const.Назва} WHEN join_doc_11.uid IS NOT NULL THEN join_doc_11.{Документи.ЗвітКомітентуПроПродажТоварів_Const.Назва} WHEN join_doc_12.uid IS NOT NULL THEN join_doc_12.{Документи.КоригуванняНезавершеногоВиробництва_Const.Назва} WHEN join_doc_13.uid IS NOT NULL THEN join_doc_13.{Документи.КоригуванняПДВ_Const.Назва} WHEN join_doc_14.uid IS NOT NULL THEN join_doc_14.{Документи.КоригуванняІншихВитрат_Const.Назва} WHEN join_doc_15.uid IS NOT NULL THEN join_doc_15.{Документи.Модернізація_Const.Назва} WHEN join_doc_16.uid IS NOT NULL THEN join_doc_16.{Документи.Комплектація_Const.Назва} WHEN join_doc_17.uid IS NOT NULL THEN join_doc_17.{Документи.НакладнаВимога_Const.Назва} WHEN join_doc_18.uid IS NOT NULL THEN join_doc_18.{Документи.Наряд_Const.Назва} WHEN join_doc_19.uid IS NOT NULL THEN join_doc_19.{Документи.НарахуванняЗаробітньоїПлати_Const.Назва} WHEN join_doc_20.uid IS NOT NULL THEN join_doc_20.{Документи.ПередачаМатеріалівВЕксплуатацію_Const.Назва} WHEN join_doc_21.uid IS NOT NULL THEN join_doc_21.{Документи.ПереміщенняМатеріалівВЕксплуатації_Const.Назва} WHEN join_doc_22.uid IS NOT NULL THEN join_doc_22.{Документи.ПередачаНематеріальнихАктивів_Const.Назва} WHEN join_doc_23.uid IS NOT NULL THEN join_doc_23.{Документи.ПереміщенняНематеріальнихАктивів_Const.Назва} WHEN join_doc_24.uid IS NOT NULL THEN join_doc_24.{Документи.ПередачаОбладнанняВМонтаж_Const.Назва} WHEN join_doc_25.uid IS NOT NULL THEN join_doc_25.{Документи.ПередачаОсновнихЗасобів_Const.Назва} WHEN join_doc_26.uid IS NOT NULL THEN join_doc_26.{Документи.ПереміщенняОсновнихЗасобів_Const.Назва} WHEN join_doc_27.uid IS NOT NULL THEN join_doc_27.{Документи.ПередачаТоварів_Const.Назва} WHEN join_doc_28.uid IS NOT NULL THEN join_doc_28.{Документи.ПереоцінкаВалюти_Const.Назва} WHEN join_doc_29.uid IS NOT NULL THEN join_doc_29.{Документи.ПереоцінкаОсновнихЗасобів_Const.Назва} WHEN join_doc_30.uid IS NOT NULL THEN join_doc_30.{Документи.ПереоцінкаТоварів_Const.Назва} WHEN join_doc_31.uid IS NOT NULL THEN join_doc_31.{Документи.ПлатіжнеДорученняВхідне_Const.Назва} WHEN join_doc_32.uid IS NOT NULL THEN join_doc_32.{Документи.ПлатіжнеДорученняВихідне_Const.Назва} WHEN join_doc_33.uid IS NOT NULL THEN join_doc_33.{Документи.ПодатковаНакладна_Const.Назва} WHEN join_doc_34.uid IS NOT NULL THEN join_doc_34.{Документи.ПокупкаАбоПродажВалюти_Const.Назва} WHEN join_doc_35.uid IS NOT NULL THEN join_doc_35.{Документи.ПідготовкаДоПередачіОсновнихЗасобів_Const.Назва} WHEN join_doc_36.uid IS NOT NULL THEN join_doc_36.{Документи.ПослугиСторонньоїОрганізації_Const.Назва} WHEN join_doc_37.uid IS NOT NULL THEN join_doc_37.{Документи.ПрибуткуванняМатеріалівЗВиробництва_Const.Назва} WHEN join_doc_38.uid IS NOT NULL THEN join_doc_38.{Документи.ПрибуткуванняТоварівВПереробку_Const.Назва} WHEN join_doc_39.uid IS NOT NULL THEN join_doc_39.{Документи.ПрибуткуванняТоварівЗПереробки_Const.Назва} WHEN join_doc_40.uid IS NOT NULL THEN join_doc_40.{Документи.ПрибуткуванняНезавершеногоВиробництва_Const.Назва} WHEN join_doc_41.uid IS NOT NULL THEN join_doc_41.{Документи.ПрийняттяДоОбліку_Const.Назва} WHEN join_doc_42.uid IS NOT NULL THEN join_doc_42.{Документи.ПоверненняПереданихТоварів_Const.Назва} WHEN join_doc_43.uid IS NOT NULL THEN join_doc_43.{Документи.РемонтОсновнихЗасобів_Const.Назва} WHEN join_doc_44.uid IS NOT NULL THEN join_doc_44.{Документи.РозподілІншихВитрат_Const.Назва} WHEN join_doc_45.uid IS NOT NULL THEN join_doc_45.{Документи.РозрахунокСобівартостіВипуску_Const.Назва} WHEN join_doc_46.uid IS NOT NULL THEN join_doc_46.{Документи.СписанняМатеріалів_Const.Назва} WHEN join_doc_47.uid IS NOT NULL THEN join_doc_47.{Документи.СписанняНезавершеногоВиробництва_Const.Назва} WHEN join_doc_48.uid IS NOT NULL THEN join_doc_48.{Документи.СписанняНематеріальнихАктивів_Const.Назва} WHEN join_doc_49.uid IS NOT NULL THEN join_doc_49.{Документи.СписанняОсновнихЗасобів_Const.Назва} WHEN join_doc_50.uid IS NOT NULL THEN join_doc_50.{Документи.СписанняВитратМайбутніхПеріодів_Const.Назва} WHEN join_doc_51.uid IS NOT NULL THEN join_doc_51.{Документи.СписанняТоварів_Const.Назва} WHEN join_doc_52.uid IS NOT NULL THEN join_doc_52.{Документи.Сторнування_Const.Назва} END";
               QuerySelect.FieldAndAlias.Add(new ValueName<string>(query_case, "docname"));
 
               int i = 0;

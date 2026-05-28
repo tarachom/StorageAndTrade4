@@ -11,14 +11,14 @@ namespace GeneratedCode.Документи;
 
 class ЗамовленняПостачальнику_Triggers
 {
-    public static Task New(ЗамовленняПостачальнику_Objest ДокументОбєкт)
+    public static async Task New(ЗамовленняПостачальнику_Objest ДокументОбєкт)
     {
-        ДокументОбєкт.НомерДок = (++НумераціяДокументів.ЗамовленняПостачальнику_Const).ToString("D8");
+        int number = await НумераціяДокументів.ЗамовленняПостачальнику();
+        ДокументОбєкт.НомерДок = (await НумераціяДокументів.ЗамовленняПостачальнику(++number)).ToString("D8");
+
         ДокументОбєкт.ДатаДок = DateTime.Now;
         ДокументОбєкт.Автор = Program.Користувач;
         ДокументОбєкт.Менеджер = Program.Користувач;
-
-        return Task.CompletedTask;
     }
 
     public static Task Copying(ЗамовленняПостачальнику_Objest ДокументОбєкт, ЗамовленняПостачальнику_Objest Основа)

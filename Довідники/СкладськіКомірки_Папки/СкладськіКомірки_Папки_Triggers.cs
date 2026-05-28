@@ -11,10 +11,10 @@ namespace GeneratedCode.Довідники;
 
 class СкладськіКомірки_Папки_Triggers
 {
-    public static Task New(СкладськіКомірки_Папки_Objest ДовідникОбєкт)
+    public static async Task New(СкладськіКомірки_Папки_Objest ДовідникОбєкт)
     {
-        ДовідникОбєкт.Код = (++НумераціяДовідників.СкладськіКомірки_Папки_Const).ToString("D6");
-        return Task.CompletedTask;
+        int number = await НумераціяДовідників.СкладськіКомірки_Папки();
+        ДовідникОбєкт.Код = (await НумераціяДовідників.СкладськіКомірки_Папки(++number)).ToString("D6");
     }
 
     public static Task Copying(СкладськіКомірки_Папки_Objest ДовідникОбєкт, СкладськіКомірки_Папки_Objest Основа)

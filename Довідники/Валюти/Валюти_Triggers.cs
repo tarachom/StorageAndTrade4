@@ -10,10 +10,10 @@ namespace GeneratedCode.Довідники;
 
 class Валюти_Triggers
 {
-    public static Task New(Валюти_Objest ДовідникОбєкт)
+    public static async Task New(Валюти_Objest ДовідникОбєкт)
     {
-        ДовідникОбєкт.Код = (++НумераціяДовідників.Валюти_Const).ToString("D6");
-        return Task.CompletedTask;
+        int number = await НумераціяДовідників.Валюти();
+        ДовідникОбєкт.Код = (await НумераціяДовідників.Валюти(++number)).ToString("D6");
     }
 
     public static Task Copying(Валюти_Objest ДовідникОбєкт, Валюти_Objest Основа)

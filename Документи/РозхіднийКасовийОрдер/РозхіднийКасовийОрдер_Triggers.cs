@@ -11,13 +11,12 @@ namespace GeneratedCode.Документи;
 
 class РозхіднийКасовийОрдер_Triggers
 {
-    public static Task New(РозхіднийКасовийОрдер_Objest ДокументОбєкт)
+    public static async Task New(РозхіднийКасовийОрдер_Objest ДокументОбєкт)
     {
-        ДокументОбєкт.НомерДок = (++НумераціяДокументів.РозхіднийКасовийОрдер_Const).ToString("D8");
+        int number = await НумераціяДокументів.РозхіднийКасовийОрдер();
+        ДокументОбєкт.НомерДок = (await НумераціяДокументів.РозхіднийКасовийОрдер(++number)).ToString("D8");
         ДокументОбєкт.ДатаДок = DateTime.Now;
         ДокументОбєкт.Автор = Program.Користувач;
-
-        return Task.CompletedTask;
     }
 
     public static Task Copying(РозхіднийКасовийОрдер_Objest ДокументОбєкт, РозхіднийКасовийОрдер_Objest Основа)

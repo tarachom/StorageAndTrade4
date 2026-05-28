@@ -10,10 +10,10 @@ namespace GeneratedCode.Довідники;
 
 class Файли_Triggers
 {
-    public static Task New(Файли_Objest ДовідникОбєкт)
+    public static async Task New(Файли_Objest ДовідникОбєкт)
     {
-        ДовідникОбєкт.Код = (++НумераціяДовідників.Файли_Const).ToString("D6");
-        return Task.CompletedTask;
+        int number = await НумераціяДовідників.Файли();
+        ДовідникОбєкт.Код = (await НумераціяДовідників.Файли(++number)).ToString("D6");
     }
 
     public static Task Copying(Файли_Objest ДовідникОбєкт, Файли_Objest Основа)

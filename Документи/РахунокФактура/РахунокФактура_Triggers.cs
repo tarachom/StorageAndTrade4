@@ -11,14 +11,14 @@ namespace GeneratedCode.Документи;
 
 class РахунокФактура_Triggers
 {
-    public static Task New(РахунокФактура_Objest ДокументОбєкт)
+    public static async Task New(РахунокФактура_Objest ДокументОбєкт)
     {
-        ДокументОбєкт.НомерДок = (++НумераціяДокументів.РахунокФактура_Const).ToString("D8");
+        int number = await НумераціяДокументів.РахунокФактура();
+        ДокументОбєкт.НомерДок = (await НумераціяДокументів.РахунокФактура(++number)).ToString("D8");
+
         ДокументОбєкт.ДатаДок = DateTime.Now;
         ДокументОбєкт.Автор = Program.Користувач;
         ДокументОбєкт.Менеджер = Program.Користувач;
-
-        return Task.CompletedTask;
     }
 
     public static Task Copying(РахунокФактура_Objest ДокументОбєкт, РахунокФактура_Objest Основа)

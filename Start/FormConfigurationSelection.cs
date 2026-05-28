@@ -33,8 +33,8 @@ partial class FormConfigurationSelection : InterfaceGtk4.FormConfigurationSelect
         Config.StartBackgroundTask();
 
         //Значення констант за замовчуванням
-        if (string.IsNullOrEmpty(ЖурналиДокументів.ОсновнийТипПеріоду_Const))
-            ЖурналиДокументів.ОсновнийТипПеріоду_Const = PeriodForJournal.TypePeriod.AllPeriod.ToString();
+        if (string.IsNullOrEmpty(await ЖурналиДокументів.ОсновнийТипПеріоду()))
+            await ЖурналиДокументів.ОсновнийТипПеріоду(PeriodForJournal.TypePeriod.AllPeriod.ToString());
 
         FormStorageAndTrade form = FormStorageAndTrade.New();
         form.OpenConfigurationParam = openConfigurationParam;

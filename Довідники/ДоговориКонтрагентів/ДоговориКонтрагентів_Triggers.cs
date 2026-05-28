@@ -11,10 +11,10 @@ namespace GeneratedCode.Довідники;
 
 class ДоговориКонтрагентів_Triggers
 {
-    public static Task New(ДоговориКонтрагентів_Objest ДовідникОбєкт)
+    public static async Task New(ДоговориКонтрагентів_Objest ДовідникОбєкт)
     {
-        ДовідникОбєкт.Код = (++НумераціяДовідників.ДоговориКонтрагентів_Const).ToString("D6");
-        return Task.CompletedTask;
+        int number = await НумераціяДовідників.ДоговориКонтрагентів();
+        ДовідникОбєкт.Код = (await НумераціяДовідників.ДоговориКонтрагентів(++number)).ToString("D6");
     }
 
     public static Task Copying(ДоговориКонтрагентів_Objest ДовідникОбєкт, ДоговориКонтрагентів_Objest Основа)

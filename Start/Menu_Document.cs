@@ -13,6 +13,8 @@ namespace StorageAndTrade;
 [GObject.Subclass<Form>]
 partial class Menu_Document : Form
 {
+    public Popover? Popover { get; set; } = null;
+
     partial void Initialize()
     {
         //Список
@@ -41,6 +43,8 @@ partial class Menu_Document : Form
                     ЗамовленняКлієнта_Список page = ЗамовленняКлієнта_Список.New();
                     NotebookFunc?.CreatePage(ЗамовленняКлієнта_Const.FULLNAME, page);
                     await page.SetValue();
+
+                    Popover?.Hide();
                 });
 
                 CreateLink(hBox, "Закриття", async () =>
@@ -48,6 +52,8 @@ partial class Menu_Document : Form
                     ЗакриттяЗамовленняКлієнта_Список page = ЗакриттяЗамовленняКлієнта_Список.New();
                     NotebookFunc?.CreatePage(ЗакриттяЗамовленняКлієнта_Const.FULLNAME, page);
                     await page.SetValue();
+
+                    Popover?.Hide();
                 });
             }
 
@@ -61,6 +67,8 @@ partial class Menu_Document : Form
                     РахунокФактура_Список page = РахунокФактура_Список.New();
                     NotebookFunc?.CreatePage(РахунокФактура_Const.FULLNAME, page);
                     await page.SetValue();
+
+                    Popover?.Hide();
                 });
 
                 CreateLink(hBox, "Закриття", async () =>
@@ -68,6 +76,8 @@ partial class Menu_Document : Form
                     ЗакриттяРахункуФактури_Список page = ЗакриттяРахункуФактури_Список.New();
                     NotebookFunc?.CreatePage(ЗакриттяРахункуФактури_Const.FULLNAME, page);
                     await page.SetValue();
+
+                    Popover?.Hide();
                 });
             }
 
@@ -76,6 +86,8 @@ partial class Menu_Document : Form
                 РеалізаціяТоварівТаПослуг_Список page = РеалізаціяТоварівТаПослуг_Список.New();
                 NotebookFunc?.CreatePage(РеалізаціяТоварівТаПослуг_Const.FULLNAME, page);
                 await page.SetValue();
+
+                Popover?.Hide();
             });
 
             CreateLink(vLeft, АктВиконанихРобіт_Const.FULLNAME, async () =>
@@ -83,6 +95,8 @@ partial class Menu_Document : Form
                 АктВиконанихРобіт_Список page = АктВиконанихРобіт_Список.New();
                 NotebookFunc?.CreatePage(АктВиконанихРобіт_Const.FULLNAME, page);
                 await page.SetValue();
+
+                Popover?.Hide();
             });
 
             CreateLink(vLeft, ПоверненняТоварівВідКлієнта_Const.FULLNAME, async () =>
@@ -90,6 +104,8 @@ partial class Menu_Document : Form
                 ПоверненняТоварівВідКлієнта_Список page = ПоверненняТоварівВідКлієнта_Список.New();
                 NotebookFunc?.CreatePage(ПоверненняТоварівВідКлієнта_Const.FULLNAME, () => page);
                 await page.SetValue();
+
+                Popover?.Hide();
             });
         }
 
@@ -111,6 +127,8 @@ partial class Menu_Document : Form
                     ЗамовленняПостачальнику_Список page = ЗамовленняПостачальнику_Список.New();
                     NotebookFunc?.CreatePage(ЗамовленняПостачальнику_Const.FULLNAME, page);
                     await page.SetValue();
+
+                    Popover?.Hide();
                 });
 
                 CreateLink(hBox, "Закриття", async () =>
@@ -118,6 +136,8 @@ partial class Menu_Document : Form
                     ЗакриттяЗамовленняПостачальнику_Список page = ЗакриттяЗамовленняПостачальнику_Список.New();
                     NotebookFunc?.CreatePage(ЗакриттяЗамовленняПостачальнику_Const.FULLNAME, page);
                     await page.SetValue();
+
+                    Popover?.Hide();
                 });
             }
 
@@ -126,6 +146,8 @@ partial class Menu_Document : Form
                 ПоступленняТоварівТаПослуг_Список page = ПоступленняТоварівТаПослуг_Список.New();
                 NotebookFunc?.CreatePage(ПоступленняТоварівТаПослуг_Const.FULLNAME, page);
                 await page.SetValue();
+
+                Popover?.Hide();
             });
 
             CreateLink(vLeft, ПоверненняТоварівПостачальнику_Const.FULLNAME, async () =>
@@ -133,6 +155,8 @@ partial class Menu_Document : Form
                 ПоверненняТоварівПостачальнику_Список page = ПоверненняТоварівПостачальнику_Список.New();
                 NotebookFunc?.CreatePage(ПоверненняТоварівПостачальнику_Const.FULLNAME, page);
                 await page.SetValue();
+
+                Popover?.Hide();
             });
         }
 
@@ -144,6 +168,8 @@ partial class Menu_Document : Form
                 ВстановленняЦінНоменклатури_Список page = ВстановленняЦінНоменклатури_Список.New();
                 NotebookFunc?.CreatePage(ВстановленняЦінНоменклатури_Const.FULLNAME, page);
                 await page.SetValue();
+
+                Popover?.Hide();
             });
         }
 
@@ -160,6 +186,8 @@ partial class Menu_Document : Form
                 ЧекККМ_Список page = ЧекККМ_Список.New();
                 NotebookFunc?.CreatePage(ЧекККМ_Const.FULLNAME, page);
                 await page.SetValue();
+
+                Popover?.Hide();
             });
         }
 
@@ -171,6 +199,8 @@ partial class Menu_Document : Form
                 БухгалтерськаОперація_Список page = БухгалтерськаОперація_Список.New();
                 NotebookFunc?.CreatePage(БухгалтерськаОперація_Const.FULLNAME, page);
                 await page.SetValue();
+
+                Popover?.Hide();
             });
         }
 
@@ -192,6 +222,8 @@ partial class Menu_Document : Form
                 ПрихіднийКасовийОрдер_Список page = ПрихіднийКасовийОрдер_Список.New();
                 NotebookFunc?.CreatePage(ПрихіднийКасовийОрдер_Const.FULLNAME, page);
                 await page.SetValue();
+
+                Popover?.Hide();
             });
 
             CreateLink(vRight, РозхіднийКасовийОрдер_Const.FULLNAME, async () =>
@@ -199,6 +231,8 @@ partial class Menu_Document : Form
                 РозхіднийКасовийОрдер_Список page = РозхіднийКасовийОрдер_Список.New();
                 NotebookFunc?.CreatePage(РозхіднийКасовийОрдер_Const.FULLNAME, page);
                 await page.SetValue();
+
+                Popover?.Hide();
             });
 
             CreateLink(vRight, КорегуванняБоргу_Const.FULLNAME, async () =>
@@ -206,6 +240,8 @@ partial class Menu_Document : Form
                 КорегуванняБоргу_Список page = КорегуванняБоргу_Список.New();
                 NotebookFunc?.CreatePage(КорегуванняБоргу_Const.FULLNAME, page);
                 await page.SetValue();
+
+                Popover?.Hide();
             });
         }
 
@@ -222,6 +258,8 @@ partial class Menu_Document : Form
                 ПереміщенняТоварів_Список page = ПереміщенняТоварів_Список.New();
                 NotebookFunc?.CreatePage(ПереміщенняТоварів_Const.FULLNAME, page);
                 await page.SetValue();
+
+                Popover?.Hide();
             });
 
             CreateLink(vRight, ВведенняЗалишків_Const.FULLNAME, async () =>
@@ -229,6 +267,8 @@ partial class Menu_Document : Form
                 ВведенняЗалишків_Список page = ВведенняЗалишків_Список.New();
                 NotebookFunc?.CreatePage(ВведенняЗалишків_Const.FULLNAME, page);
                 await page.SetValue();
+
+                Popover?.Hide();
             });
 
             CreateLink(vRight, ВнутрішнєСпоживанняТоварів_Const.FULLNAME, async () =>
@@ -236,6 +276,8 @@ partial class Menu_Document : Form
                 ВнутрішнєСпоживанняТоварів_Список page = ВнутрішнєСпоживанняТоварів_Список.New();
                 NotebookFunc?.CreatePage(ВнутрішнєСпоживанняТоварів_Const.FULLNAME, page);
                 await page.SetValue();
+
+                Popover?.Hide();
             });
 
             CreateLink(vRight, ПсуванняТоварів_Const.FULLNAME, async () =>
@@ -243,6 +285,8 @@ partial class Menu_Document : Form
                 ПсуванняТоварів_Список page = ПсуванняТоварів_Список.New();
                 NotebookFunc?.CreatePage(ПсуванняТоварів_Const.FULLNAME, page);
                 await page.SetValue();
+
+                Popover?.Hide();
             });
 
             CreateLink(vRight, ПерерахунокТоварів_Const.FULLNAME, async () =>
@@ -250,6 +294,8 @@ partial class Menu_Document : Form
                 ПерерахунокТоварів_Список page = ПерерахунокТоварів_Список.New();
                 NotebookFunc?.CreatePage(ПерерахунокТоварів_Const.FULLNAME, page);
                 await page.SetValue();
+
+                Popover?.Hide();
             });
         }
 
@@ -266,6 +312,8 @@ partial class Menu_Document : Form
                 РозміщенняТоварівНаСкладі_Список page = РозміщенняТоварівНаСкладі_Список.New();
                 NotebookFunc?.CreatePage(РозміщенняТоварівНаСкладі_Const.FULLNAME, page);
                 await page.SetValue();
+
+                Popover?.Hide();
             });
 
             CreateLink(vRight, ЗбіркаТоварівНаСкладі_Const.FULLNAME, async () =>
@@ -273,6 +321,8 @@ partial class Menu_Document : Form
                 ЗбіркаТоварівНаСкладі_Список page = ЗбіркаТоварівНаСкладі_Список.New();
                 NotebookFunc?.CreatePage(ЗбіркаТоварівНаСкладі_Const.FULLNAME, page);
                 await page.SetValue();
+
+                Popover?.Hide();
             });
 
             CreateLink(vRight, ПереміщенняТоварівНаСкладі_Const.FULLNAME, async () =>
@@ -280,13 +330,16 @@ partial class Menu_Document : Form
                 ПереміщенняТоварівНаСкладі_Список page = ПереміщенняТоварівНаСкладі_Список.New();
                 NotebookFunc?.CreatePage(ПереміщенняТоварівНаСкладі_Const.FULLNAME, page);
                 await page.SetValue();
+
+                Popover?.Hide();
             });
         }
     }
 
-    public static Menu_Document New()
+    public static Menu_Document New(Popover? popover = null)
     {
         Menu_Document page = NewWithProperties([]);
+        page.Popover = popover;
         page.NotebookFunc = Program.BasicForm?.NotebookFunc;
 
         return page;

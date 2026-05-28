@@ -11,24 +11,24 @@ namespace GeneratedCode.Довідники;
 
 class Номенклатура_Папки_Triggers
 {
-    public static  Task New(Номенклатура_Папки_Objest ДовідникОбєкт)
+    public static async Task New(Номенклатура_Папки_Objest ДовідникОбєкт)
     {
-        ДовідникОбєкт.Код = (++НумераціяДовідників.Номенклатура_Папки_Const).ToString("D6");
-        return Task.CompletedTask;
+        int number = await НумераціяДовідників.Номенклатура_Папки();
+        ДовідникОбєкт.Код = (await НумераціяДовідників.Номенклатура_Папки(++number)).ToString("D6");
     }
 
-    public static  Task Copying(Номенклатура_Папки_Objest ДовідникОбєкт, Номенклатура_Папки_Objest Основа)
+    public static Task Copying(Номенклатура_Папки_Objest ДовідникОбєкт, Номенклатура_Папки_Objest Основа)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static  Task BeforeSave(Номенклатура_Папки_Objest ДовідникОбєкт)
+    public static Task BeforeSave(Номенклатура_Папки_Objest ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static  Task AfterSave(Номенклатура_Папки_Objest ДовідникОбєкт)
+    public static Task AfterSave(Номенклатура_Папки_Objest ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }

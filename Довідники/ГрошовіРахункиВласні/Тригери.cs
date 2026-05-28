@@ -12,10 +12,10 @@ namespace GeneratedCode.Довідники;
 
 static class ГрошовіРахункиВласні_Triggers
 {
-    public static Task New(ГрошовіРахункиВласні_Objest ДовідникОбєкт)
+    public static async Task New(ГрошовіРахункиВласні_Objest ДовідникОбєкт)
     {
-        ДовідникОбєкт.Код = (++НумераціяДовідників.ГрошовіРахункиВласні_Const).ToString("D6");
-        return Task.CompletedTask;
+        int number = await НумераціяДовідників.ГрошовіРахункиВласні();
+        ДовідникОбєкт.Код = (await НумераціяДовідників.ГрошовіРахункиВласні(++number)).ToString("D6");
     }
 
     public static Task Copying(ГрошовіРахункиВласні_Objest ДовідникОбєкт, ГрошовіРахункиВласні_Objest Основа)

@@ -12,10 +12,10 @@ namespace GeneratedCode.Довідники;
 
 static class ТипиБухОперацій_Triggers
 {
-    public static Task New(ТипиБухОперацій_Objest ДовідникОбєкт)
+    public static async Task New(ТипиБухОперацій_Objest ДовідникОбєкт)
     {
-        ДовідникОбєкт.Код = (++НумераціяДовідників.ТипиБухОперацій_Const).ToString("D6");
-        return Task.CompletedTask;
+        int number = await НумераціяДовідників.ТипиБухОперацій();
+        ДовідникОбєкт.Код = (await НумераціяДовідників.ТипиБухОперацій(++number)).ToString("D6");
     }
 
     public static Task Copying(ТипиБухОперацій_Objest ДовідникОбєкт, ТипиБухОперацій_Objest Основа)

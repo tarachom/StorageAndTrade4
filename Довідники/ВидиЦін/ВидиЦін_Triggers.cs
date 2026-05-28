@@ -10,10 +10,10 @@ namespace GeneratedCode.Довідники;
 
 class ВидиЦін_Triggers
 {
-    public static Task New(ВидиЦін_Objest ДовідникОбєкт)
+    public static async Task New(ВидиЦін_Objest ДовідникОбєкт)
     {
-        ДовідникОбєкт.Код = (++НумераціяДовідників.ВидиЦін_Const).ToString("D6");
-        return Task.CompletedTask;
+        int number = await НумераціяДовідників.ВидиЦін();
+        ДовідникОбєкт.Код = (await НумераціяДовідників.ВидиЦін(++number)).ToString("D6");
     }
 
     public static Task Copying(ВидиЦін_Objest ДовідникОбєкт, ВидиЦін_Objest Основа)

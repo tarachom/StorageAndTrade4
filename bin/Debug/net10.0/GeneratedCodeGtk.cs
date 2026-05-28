@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 22.05.2026 13:28:45
+ * Дата конфігурації: 28.05.2026 17:54:18
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон Gtk4.xslt
@@ -490,7 +490,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 ]);
             
                     /* Сортування */
-                    Номенклатура_Select.QuerySelect.Order.Add(Довідники.Номенклатура_Const.Код, SelectOrder.ASC);
+                    Номенклатура_Select.QuerySelect.Order.Add(Довідники.Номенклатура_Const.Назва, SelectOrder.ASC);
                 
                             /* Приєднання pointer */
                             Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
@@ -577,7 +577,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 ]);
             
                     /* Сортування */
-                    Номенклатура_Select.QuerySelect.Order.Add(Довідники.Номенклатура_Const.Код, SelectOrder.ASC);
+                    Номенклатура_Select.QuerySelect.Order.Add(Довідники.Номенклатура_Const.Назва, SelectOrder.ASC);
                 
                             /* Приєднання pointer */
                             Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
@@ -882,10 +882,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 ]);
             
                     /* Сортування */
-                    Номенклатура_Select.QuerySelect.Order.Add(Довідники.Номенклатура_Const.Код, SelectOrder.ASC);
-                
-                    /* Сортування */
-                    Номенклатура_Select.QuerySelect.Order.Add(Довідники.Номенклатура_Const.ТипНоменклатури, SelectOrder.ASC);
+                    Номенклатура_Select.QuerySelect.Order.Add(Довідники.Номенклатура_Const.Назва, SelectOrder.ASC);
                 
                             /* Приєднання pointer */
                             Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
@@ -968,10 +965,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 ]);
             
                     /* Сортування */
-                    Номенклатура_Select.QuerySelect.Order.Add(Довідники.Номенклатура_Const.Код, SelectOrder.ASC);
-                
-                    /* Сортування */
-                    Номенклатура_Select.QuerySelect.Order.Add(Довідники.Номенклатура_Const.ТипНоменклатури, SelectOrder.ASC);
+                    Номенклатура_Select.QuerySelect.Order.Add(Довідники.Номенклатура_Const.Назва, SelectOrder.ASC);
                 
                             /* Приєднання pointer */
                             Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
@@ -30361,6 +30355,13734 @@ namespace GeneratedCode.Документи.ТабличніСписки
                     row.Fields.Add("Автор", Fields["Автор"].ToString() ?? "");
                     row.Fields.Add("Коментар", Fields[БухгалтерськаОперація_Const.Коментар].ToString() ?? "");
                     row.Fields.Add("Основа", Fields["Основа"].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "АвансовийЗвіт"
+        
+    public static class АвансовийЗвіт_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.АвансовийЗвіт_Select АвансовийЗвіт_Select = new();
+            АвансовийЗвіт_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.АвансовийЗвіт_Const.Назва,
+                    /*НомерДок*/ Документи.АвансовийЗвіт_Const.НомерДок,
+                    /*ДатаДок*/ Документи.АвансовийЗвіт_Const.ДатаДок,
+                    /*Коментар*/ Документи.АвансовийЗвіт_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    АвансовийЗвіт_Select.QuerySelect.Order.Add(Документи.АвансовийЗвіт_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            АвансовийЗвіт_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await АвансовийЗвіт_Select.Select();
+            while (АвансовийЗвіт_Select.MoveNext())
+            {
+                Документи.АвансовийЗвіт_Pointer? curr = АвансовийЗвіт_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[АвансовийЗвіт_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[АвансовийЗвіт_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[АвансовийЗвіт_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[АвансовийЗвіт_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.АвансовийЗвіт_Select АвансовийЗвіт_Select = new();
+            АвансовийЗвіт_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.АвансовийЗвіт_Const.Назва,
+                    /*НомерДок*/ Документи.АвансовийЗвіт_Const.НомерДок,
+                    /*ДатаДок*/ Документи.АвансовийЗвіт_Const.ДатаДок,
+                    /*Коментар*/ Документи.АвансовийЗвіт_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    АвансовийЗвіт_Select.QuerySelect.Order.Add(Документи.АвансовийЗвіт_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) АвансовийЗвіт_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.АвансовийЗвіт_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) АвансовийЗвіт_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(АвансовийЗвіт_Select.SplitSelectToPages, АвансовийЗвіт_Select.QuerySelect, unigueIDSelect);
+
+            
+            await АвансовийЗвіт_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (АвансовийЗвіт_Select.MoveNext())
+            {
+                Документи.АвансовийЗвіт_Pointer? curr = АвансовийЗвіт_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[АвансовийЗвіт_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[АвансовийЗвіт_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[АвансовийЗвіт_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[АвансовийЗвіт_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "Амортизація"
+        
+    public static class Амортизація_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.Амортизація_Select Амортизація_Select = new();
+            Амортизація_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.Амортизація_Const.Назва,
+                    /*НомерДок*/ Документи.Амортизація_Const.НомерДок,
+                    /*ДатаДок*/ Документи.Амортизація_Const.ДатаДок,
+                    /*Коментар*/ Документи.Амортизація_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Амортизація_Select.QuerySelect.Order.Add(Документи.Амортизація_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            Амортизація_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await Амортизація_Select.Select();
+            while (Амортизація_Select.MoveNext())
+            {
+                Документи.Амортизація_Pointer? curr = Амортизація_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[Амортизація_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[Амортизація_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[Амортизація_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[Амортизація_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.Амортизація_Select Амортизація_Select = new();
+            Амортизація_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.Амортизація_Const.Назва,
+                    /*НомерДок*/ Документи.Амортизація_Const.НомерДок,
+                    /*ДатаДок*/ Документи.Амортизація_Const.ДатаДок,
+                    /*Коментар*/ Документи.Амортизація_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Амортизація_Select.QuerySelect.Order.Add(Документи.Амортизація_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) Амортизація_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.Амортизація_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) Амортизація_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(Амортизація_Select.SplitSelectToPages, Амортизація_Select.QuerySelect, unigueIDSelect);
+
+            
+            await Амортизація_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (Амортизація_Select.MoveNext())
+            {
+                Документи.Амортизація_Pointer? curr = Амортизація_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[Амортизація_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[Амортизація_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[Амортизація_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[Амортизація_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "ВизначенняФінансовогоРезультату"
+        
+    public static class ВизначенняФінансовогоРезультату_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ВизначенняФінансовогоРезультату_Select ВизначенняФінансовогоРезультату_Select = new();
+            ВизначенняФінансовогоРезультату_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ВизначенняФінансовогоРезультату_Const.Назва,
+                    /*НомерДок*/ Документи.ВизначенняФінансовогоРезультату_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ВизначенняФінансовогоРезультату_Const.ДатаДок,
+                    /*Коментар*/ Документи.ВизначенняФінансовогоРезультату_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ВизначенняФінансовогоРезультату_Select.QuerySelect.Order.Add(Документи.ВизначенняФінансовогоРезультату_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            ВизначенняФінансовогоРезультату_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ВизначенняФінансовогоРезультату_Select.Select();
+            while (ВизначенняФінансовогоРезультату_Select.MoveNext())
+            {
+                Документи.ВизначенняФінансовогоРезультату_Pointer? curr = ВизначенняФінансовогоРезультату_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ВизначенняФінансовогоРезультату_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ВизначенняФінансовогоРезультату_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ВизначенняФінансовогоРезультату_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ВизначенняФінансовогоРезультату_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ВизначенняФінансовогоРезультату_Select ВизначенняФінансовогоРезультату_Select = new();
+            ВизначенняФінансовогоРезультату_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ВизначенняФінансовогоРезультату_Const.Назва,
+                    /*НомерДок*/ Документи.ВизначенняФінансовогоРезультату_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ВизначенняФінансовогоРезультату_Const.ДатаДок,
+                    /*Коментар*/ Документи.ВизначенняФінансовогоРезультату_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ВизначенняФінансовогоРезультату_Select.QuerySelect.Order.Add(Документи.ВизначенняФінансовогоРезультату_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) ВизначенняФінансовогоРезультату_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.ВизначенняФінансовогоРезультату_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ВизначенняФінансовогоРезультату_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ВизначенняФінансовогоРезультату_Select.SplitSelectToPages, ВизначенняФінансовогоРезультату_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ВизначенняФінансовогоРезультату_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ВизначенняФінансовогоРезультату_Select.MoveNext())
+            {
+                Документи.ВизначенняФінансовогоРезультату_Pointer? curr = ВизначенняФінансовогоРезультату_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ВизначенняФінансовогоРезультату_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ВизначенняФінансовогоРезультату_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ВизначенняФінансовогоРезультату_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ВизначенняФінансовогоРезультату_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "ВиплатаЗаробітноїПлати"
+        
+    public static class ВиплатаЗаробітноїПлати_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ВиплатаЗаробітноїПлати_Select ВиплатаЗаробітноїПлати_Select = new();
+            ВиплатаЗаробітноїПлати_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ВиплатаЗаробітноїПлати_Const.Назва,
+                    /*НомерДок*/ Документи.ВиплатаЗаробітноїПлати_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ВиплатаЗаробітноїПлати_Const.ДатаДок,
+                    /*Коментар*/ Документи.ВиплатаЗаробітноїПлати_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ВиплатаЗаробітноїПлати_Select.QuerySelect.Order.Add(Документи.ВиплатаЗаробітноїПлати_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            ВиплатаЗаробітноїПлати_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ВиплатаЗаробітноїПлати_Select.Select();
+            while (ВиплатаЗаробітноїПлати_Select.MoveNext())
+            {
+                Документи.ВиплатаЗаробітноїПлати_Pointer? curr = ВиплатаЗаробітноїПлати_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ВиплатаЗаробітноїПлати_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ВиплатаЗаробітноїПлати_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ВиплатаЗаробітноїПлати_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ВиплатаЗаробітноїПлати_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ВиплатаЗаробітноїПлати_Select ВиплатаЗаробітноїПлати_Select = new();
+            ВиплатаЗаробітноїПлати_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ВиплатаЗаробітноїПлати_Const.Назва,
+                    /*НомерДок*/ Документи.ВиплатаЗаробітноїПлати_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ВиплатаЗаробітноїПлати_Const.ДатаДок,
+                    /*Коментар*/ Документи.ВиплатаЗаробітноїПлати_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ВиплатаЗаробітноїПлати_Select.QuerySelect.Order.Add(Документи.ВиплатаЗаробітноїПлати_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) ВиплатаЗаробітноїПлати_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.ВиплатаЗаробітноїПлати_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ВиплатаЗаробітноїПлати_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ВиплатаЗаробітноїПлати_Select.SplitSelectToPages, ВиплатаЗаробітноїПлати_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ВиплатаЗаробітноїПлати_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ВиплатаЗаробітноїПлати_Select.MoveNext())
+            {
+                Документи.ВиплатаЗаробітноїПлати_Pointer? curr = ВиплатаЗаробітноїПлати_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ВиплатаЗаробітноїПлати_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ВиплатаЗаробітноїПлати_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ВиплатаЗаробітноїПлати_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ВиплатаЗаробітноїПлати_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "ВиготовленняПродукції"
+        
+    public static class ВиготовленняПродукції_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ВиготовленняПродукції_Select ВиготовленняПродукції_Select = new();
+            ВиготовленняПродукції_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ВиготовленняПродукції_Const.Назва,
+                    /*НомерДок*/ Документи.ВиготовленняПродукції_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ВиготовленняПродукції_Const.ДатаДок,
+                    /*Коментар*/ Документи.ВиготовленняПродукції_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ВиготовленняПродукції_Select.QuerySelect.Order.Add(Документи.ВиготовленняПродукції_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            ВиготовленняПродукції_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ВиготовленняПродукції_Select.Select();
+            while (ВиготовленняПродукції_Select.MoveNext())
+            {
+                Документи.ВиготовленняПродукції_Pointer? curr = ВиготовленняПродукції_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ВиготовленняПродукції_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ВиготовленняПродукції_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ВиготовленняПродукції_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ВиготовленняПродукції_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ВиготовленняПродукції_Select ВиготовленняПродукції_Select = new();
+            ВиготовленняПродукції_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ВиготовленняПродукції_Const.Назва,
+                    /*НомерДок*/ Документи.ВиготовленняПродукції_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ВиготовленняПродукції_Const.ДатаДок,
+                    /*Коментар*/ Документи.ВиготовленняПродукції_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ВиготовленняПродукції_Select.QuerySelect.Order.Add(Документи.ВиготовленняПродукції_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) ВиготовленняПродукції_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.ВиготовленняПродукції_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ВиготовленняПродукції_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ВиготовленняПродукції_Select.SplitSelectToPages, ВиготовленняПродукції_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ВиготовленняПродукції_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ВиготовленняПродукції_Select.MoveNext())
+            {
+                Документи.ВиготовленняПродукції_Pointer? curr = ВиготовленняПродукції_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ВиготовленняПродукції_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ВиготовленняПродукції_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ВиготовленняПродукції_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ВиготовленняПродукції_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "Додаток1ДоПодатковоїНакладної"
+        
+    public static class Додаток1ДоПодатковоїНакладної_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.Додаток1ДоПодатковоїНакладної_Select Додаток1ДоПодатковоїНакладної_Select = new();
+            Додаток1ДоПодатковоїНакладної_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.Додаток1ДоПодатковоїНакладної_Const.Назва,
+                    /*НомерДок*/ Документи.Додаток1ДоПодатковоїНакладної_Const.НомерДок,
+                    /*ДатаДок*/ Документи.Додаток1ДоПодатковоїНакладної_Const.ДатаДок,
+                    /*Коментар*/ Документи.Додаток1ДоПодатковоїНакладної_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Додаток1ДоПодатковоїНакладної_Select.QuerySelect.Order.Add(Документи.Додаток1ДоПодатковоїНакладної_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            Додаток1ДоПодатковоїНакладної_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await Додаток1ДоПодатковоїНакладної_Select.Select();
+            while (Додаток1ДоПодатковоїНакладної_Select.MoveNext())
+            {
+                Документи.Додаток1ДоПодатковоїНакладної_Pointer? curr = Додаток1ДоПодатковоїНакладної_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[Додаток1ДоПодатковоїНакладної_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[Додаток1ДоПодатковоїНакладної_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[Додаток1ДоПодатковоїНакладної_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[Додаток1ДоПодатковоїНакладної_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.Додаток1ДоПодатковоїНакладної_Select Додаток1ДоПодатковоїНакладної_Select = new();
+            Додаток1ДоПодатковоїНакладної_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.Додаток1ДоПодатковоїНакладної_Const.Назва,
+                    /*НомерДок*/ Документи.Додаток1ДоПодатковоїНакладної_Const.НомерДок,
+                    /*ДатаДок*/ Документи.Додаток1ДоПодатковоїНакладної_Const.ДатаДок,
+                    /*Коментар*/ Документи.Додаток1ДоПодатковоїНакладної_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Додаток1ДоПодатковоїНакладної_Select.QuerySelect.Order.Add(Документи.Додаток1ДоПодатковоїНакладної_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) Додаток1ДоПодатковоїНакладної_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.Додаток1ДоПодатковоїНакладної_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) Додаток1ДоПодатковоїНакладної_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(Додаток1ДоПодатковоїНакладної_Select.SplitSelectToPages, Додаток1ДоПодатковоїНакладної_Select.QuerySelect, unigueIDSelect);
+
+            
+            await Додаток1ДоПодатковоїНакладної_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (Додаток1ДоПодатковоїНакладної_Select.MoveNext())
+            {
+                Документи.Додаток1ДоПодатковоїНакладної_Pointer? curr = Додаток1ДоПодатковоїНакладної_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[Додаток1ДоПодатковоїНакладної_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[Додаток1ДоПодатковоїНакладної_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[Додаток1ДоПодатковоїНакладної_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[Додаток1ДоПодатковоїНакладної_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "Додаток2ДоПодатковоїНакладної"
+        
+    public static class Додаток2ДоПодатковоїНакладної_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.Додаток2ДоПодатковоїНакладної_Select Додаток2ДоПодатковоїНакладної_Select = new();
+            Додаток2ДоПодатковоїНакладної_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.Додаток2ДоПодатковоїНакладної_Const.Назва,
+                    /*НомерДок*/ Документи.Додаток2ДоПодатковоїНакладної_Const.НомерДок,
+                    /*ДатаДок*/ Документи.Додаток2ДоПодатковоїНакладної_Const.ДатаДок,
+                    /*Коментар*/ Документи.Додаток2ДоПодатковоїНакладної_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Додаток2ДоПодатковоїНакладної_Select.QuerySelect.Order.Add(Документи.Додаток2ДоПодатковоїНакладної_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            Додаток2ДоПодатковоїНакладної_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await Додаток2ДоПодатковоїНакладної_Select.Select();
+            while (Додаток2ДоПодатковоїНакладної_Select.MoveNext())
+            {
+                Документи.Додаток2ДоПодатковоїНакладної_Pointer? curr = Додаток2ДоПодатковоїНакладної_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[Додаток2ДоПодатковоїНакладної_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[Додаток2ДоПодатковоїНакладної_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[Додаток2ДоПодатковоїНакладної_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[Додаток2ДоПодатковоїНакладної_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.Додаток2ДоПодатковоїНакладної_Select Додаток2ДоПодатковоїНакладної_Select = new();
+            Додаток2ДоПодатковоїНакладної_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.Додаток2ДоПодатковоїНакладної_Const.Назва,
+                    /*НомерДок*/ Документи.Додаток2ДоПодатковоїНакладної_Const.НомерДок,
+                    /*ДатаДок*/ Документи.Додаток2ДоПодатковоїНакладної_Const.ДатаДок,
+                    /*Коментар*/ Документи.Додаток2ДоПодатковоїНакладної_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Додаток2ДоПодатковоїНакладної_Select.QuerySelect.Order.Add(Документи.Додаток2ДоПодатковоїНакладної_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) Додаток2ДоПодатковоїНакладної_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.Додаток2ДоПодатковоїНакладної_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) Додаток2ДоПодатковоїНакладної_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(Додаток2ДоПодатковоїНакладної_Select.SplitSelectToPages, Додаток2ДоПодатковоїНакладної_Select.QuerySelect, unigueIDSelect);
+
+            
+            await Додаток2ДоПодатковоїНакладної_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (Додаток2ДоПодатковоїНакладної_Select.MoveNext())
+            {
+                Документи.Додаток2ДоПодатковоїНакладної_Pointer? curr = Додаток2ДоПодатковоїНакладної_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[Додаток2ДоПодатковоїНакладної_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[Додаток2ДоПодатковоїНакладної_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[Додаток2ДоПодатковоїНакладної_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[Додаток2ДоПодатковоїНакладної_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "ЗаписКнигиПридбання"
+        
+    public static class ЗаписКнигиПридбання_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ЗаписКнигиПридбання_Select ЗаписКнигиПридбання_Select = new();
+            ЗаписКнигиПридбання_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ЗаписКнигиПридбання_Const.Назва,
+                    /*НомерДок*/ Документи.ЗаписКнигиПридбання_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ЗаписКнигиПридбання_Const.ДатаДок,
+                    /*Коментар*/ Документи.ЗаписКнигиПридбання_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ЗаписКнигиПридбання_Select.QuerySelect.Order.Add(Документи.ЗаписКнигиПридбання_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            ЗаписКнигиПридбання_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ЗаписКнигиПридбання_Select.Select();
+            while (ЗаписКнигиПридбання_Select.MoveNext())
+            {
+                Документи.ЗаписКнигиПридбання_Pointer? curr = ЗаписКнигиПридбання_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ЗаписКнигиПридбання_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ЗаписКнигиПридбання_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ЗаписКнигиПридбання_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ЗаписКнигиПридбання_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ЗаписКнигиПридбання_Select ЗаписКнигиПридбання_Select = new();
+            ЗаписКнигиПридбання_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ЗаписКнигиПридбання_Const.Назва,
+                    /*НомерДок*/ Документи.ЗаписКнигиПридбання_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ЗаписКнигиПридбання_Const.ДатаДок,
+                    /*Коментар*/ Документи.ЗаписКнигиПридбання_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ЗаписКнигиПридбання_Select.QuerySelect.Order.Add(Документи.ЗаписКнигиПридбання_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) ЗаписКнигиПридбання_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.ЗаписКнигиПридбання_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ЗаписКнигиПридбання_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ЗаписКнигиПридбання_Select.SplitSelectToPages, ЗаписКнигиПридбання_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ЗаписКнигиПридбання_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ЗаписКнигиПридбання_Select.MoveNext())
+            {
+                Документи.ЗаписКнигиПридбання_Pointer? curr = ЗаписКнигиПридбання_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ЗаписКнигиПридбання_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ЗаписКнигиПридбання_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ЗаписКнигиПридбання_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ЗаписКнигиПридбання_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "ЗмінаПараметрівОсновнихЗасобів"
+        
+    public static class ЗмінаПараметрівОсновнихЗасобів_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ЗмінаПараметрівОсновнихЗасобів_Select ЗмінаПараметрівОсновнихЗасобів_Select = new();
+            ЗмінаПараметрівОсновнихЗасобів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ЗмінаПараметрівОсновнихЗасобів_Const.Назва,
+                    /*НомерДок*/ Документи.ЗмінаПараметрівОсновнихЗасобів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ЗмінаПараметрівОсновнихЗасобів_Const.ДатаДок,
+                    /*Коментар*/ Документи.ЗмінаПараметрівОсновнихЗасобів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ЗмінаПараметрівОсновнихЗасобів_Select.QuerySelect.Order.Add(Документи.ЗмінаПараметрівОсновнихЗасобів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            ЗмінаПараметрівОсновнихЗасобів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ЗмінаПараметрівОсновнихЗасобів_Select.Select();
+            while (ЗмінаПараметрівОсновнихЗасобів_Select.MoveNext())
+            {
+                Документи.ЗмінаПараметрівОсновнихЗасобів_Pointer? curr = ЗмінаПараметрівОсновнихЗасобів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ЗмінаПараметрівОсновнихЗасобів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ЗмінаПараметрівОсновнихЗасобів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ЗмінаПараметрівОсновнихЗасобів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ЗмінаПараметрівОсновнихЗасобів_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ЗмінаПараметрівОсновнихЗасобів_Select ЗмінаПараметрівОсновнихЗасобів_Select = new();
+            ЗмінаПараметрівОсновнихЗасобів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ЗмінаПараметрівОсновнихЗасобів_Const.Назва,
+                    /*НомерДок*/ Документи.ЗмінаПараметрівОсновнихЗасобів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ЗмінаПараметрівОсновнихЗасобів_Const.ДатаДок,
+                    /*Коментар*/ Документи.ЗмінаПараметрівОсновнихЗасобів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ЗмінаПараметрівОсновнихЗасобів_Select.QuerySelect.Order.Add(Документи.ЗмінаПараметрівОсновнихЗасобів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) ЗмінаПараметрівОсновнихЗасобів_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.ЗмінаПараметрівОсновнихЗасобів_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ЗмінаПараметрівОсновнихЗасобів_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ЗмінаПараметрівОсновнихЗасобів_Select.SplitSelectToPages, ЗмінаПараметрівОсновнихЗасобів_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ЗмінаПараметрівОсновнихЗасобів_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ЗмінаПараметрівОсновнихЗасобів_Select.MoveNext())
+            {
+                Документи.ЗмінаПараметрівОсновнихЗасобів_Pointer? curr = ЗмінаПараметрівОсновнихЗасобів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ЗмінаПараметрівОсновнихЗасобів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ЗмінаПараметрівОсновнихЗасобів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ЗмінаПараметрівОсновнихЗасобів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ЗмінаПараметрівОсновнихЗасобів_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "ЗвітКомісіонераПроПродажТоварів"
+        
+    public static class ЗвітКомісіонераПроПродажТоварів_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ЗвітКомісіонераПроПродажТоварів_Select ЗвітКомісіонераПроПродажТоварів_Select = new();
+            ЗвітКомісіонераПроПродажТоварів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ЗвітКомісіонераПроПродажТоварів_Const.Назва,
+                    /*НомерДок*/ Документи.ЗвітКомісіонераПроПродажТоварів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ЗвітКомісіонераПроПродажТоварів_Const.ДатаДок,
+                    /*Коментар*/ Документи.ЗвітКомісіонераПроПродажТоварів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ЗвітКомісіонераПроПродажТоварів_Select.QuerySelect.Order.Add(Документи.ЗвітКомісіонераПроПродажТоварів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            ЗвітКомісіонераПроПродажТоварів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ЗвітКомісіонераПроПродажТоварів_Select.Select();
+            while (ЗвітКомісіонераПроПродажТоварів_Select.MoveNext())
+            {
+                Документи.ЗвітКомісіонераПроПродажТоварів_Pointer? curr = ЗвітКомісіонераПроПродажТоварів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ЗвітКомісіонераПроПродажТоварів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ЗвітКомісіонераПроПродажТоварів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ЗвітКомісіонераПроПродажТоварів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ЗвітКомісіонераПроПродажТоварів_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ЗвітКомісіонераПроПродажТоварів_Select ЗвітКомісіонераПроПродажТоварів_Select = new();
+            ЗвітКомісіонераПроПродажТоварів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ЗвітКомісіонераПроПродажТоварів_Const.Назва,
+                    /*НомерДок*/ Документи.ЗвітКомісіонераПроПродажТоварів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ЗвітКомісіонераПроПродажТоварів_Const.ДатаДок,
+                    /*Коментар*/ Документи.ЗвітКомісіонераПроПродажТоварів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ЗвітКомісіонераПроПродажТоварів_Select.QuerySelect.Order.Add(Документи.ЗвітКомісіонераПроПродажТоварів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) ЗвітКомісіонераПроПродажТоварів_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.ЗвітКомісіонераПроПродажТоварів_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ЗвітКомісіонераПроПродажТоварів_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ЗвітКомісіонераПроПродажТоварів_Select.SplitSelectToPages, ЗвітКомісіонераПроПродажТоварів_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ЗвітКомісіонераПроПродажТоварів_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ЗвітКомісіонераПроПродажТоварів_Select.MoveNext())
+            {
+                Документи.ЗвітКомісіонераПроПродажТоварів_Pointer? curr = ЗвітКомісіонераПроПродажТоварів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ЗвітКомісіонераПроПродажТоварів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ЗвітКомісіонераПроПродажТоварів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ЗвітКомісіонераПроПродажТоварів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ЗвітКомісіонераПроПродажТоварів_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "ЗвітКомітентуПроПродажТоварів"
+        
+    public static class ЗвітКомітентуПроПродажТоварів_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ЗвітКомітентуПроПродажТоварів_Select ЗвітКомітентуПроПродажТоварів_Select = new();
+            ЗвітКомітентуПроПродажТоварів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ЗвітКомітентуПроПродажТоварів_Const.Назва,
+                    /*НомерДок*/ Документи.ЗвітКомітентуПроПродажТоварів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ЗвітКомітентуПроПродажТоварів_Const.ДатаДок,
+                    /*Коментар*/ Документи.ЗвітКомітентуПроПродажТоварів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ЗвітКомітентуПроПродажТоварів_Select.QuerySelect.Order.Add(Документи.ЗвітКомітентуПроПродажТоварів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            ЗвітКомітентуПроПродажТоварів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ЗвітКомітентуПроПродажТоварів_Select.Select();
+            while (ЗвітКомітентуПроПродажТоварів_Select.MoveNext())
+            {
+                Документи.ЗвітКомітентуПроПродажТоварів_Pointer? curr = ЗвітКомітентуПроПродажТоварів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ЗвітКомітентуПроПродажТоварів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ЗвітКомітентуПроПродажТоварів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ЗвітКомітентуПроПродажТоварів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ЗвітКомітентуПроПродажТоварів_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ЗвітКомітентуПроПродажТоварів_Select ЗвітКомітентуПроПродажТоварів_Select = new();
+            ЗвітКомітентуПроПродажТоварів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ЗвітКомітентуПроПродажТоварів_Const.Назва,
+                    /*НомерДок*/ Документи.ЗвітКомітентуПроПродажТоварів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ЗвітКомітентуПроПродажТоварів_Const.ДатаДок,
+                    /*Коментар*/ Документи.ЗвітКомітентуПроПродажТоварів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ЗвітКомітентуПроПродажТоварів_Select.QuerySelect.Order.Add(Документи.ЗвітКомітентуПроПродажТоварів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) ЗвітКомітентуПроПродажТоварів_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.ЗвітКомітентуПроПродажТоварів_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ЗвітКомітентуПроПродажТоварів_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ЗвітКомітентуПроПродажТоварів_Select.SplitSelectToPages, ЗвітКомітентуПроПродажТоварів_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ЗвітКомітентуПроПродажТоварів_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ЗвітКомітентуПроПродажТоварів_Select.MoveNext())
+            {
+                Документи.ЗвітКомітентуПроПродажТоварів_Pointer? curr = ЗвітКомітентуПроПродажТоварів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ЗвітКомітентуПроПродажТоварів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ЗвітКомітентуПроПродажТоварів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ЗвітКомітентуПроПродажТоварів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ЗвітКомітентуПроПродажТоварів_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "КоригуванняНезавершеногоВиробництва"
+        
+    public static class КоригуванняНезавершеногоВиробництва_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.КоригуванняНезавершеногоВиробництва_Select КоригуванняНезавершеногоВиробництва_Select = new();
+            КоригуванняНезавершеногоВиробництва_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.КоригуванняНезавершеногоВиробництва_Const.Назва,
+                    /*НомерДок*/ Документи.КоригуванняНезавершеногоВиробництва_Const.НомерДок,
+                    /*ДатаДок*/ Документи.КоригуванняНезавершеногоВиробництва_Const.ДатаДок,
+                    /*Коментар*/ Документи.КоригуванняНезавершеногоВиробництва_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    КоригуванняНезавершеногоВиробництва_Select.QuerySelect.Order.Add(Документи.КоригуванняНезавершеногоВиробництва_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            КоригуванняНезавершеногоВиробництва_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await КоригуванняНезавершеногоВиробництва_Select.Select();
+            while (КоригуванняНезавершеногоВиробництва_Select.MoveNext())
+            {
+                Документи.КоригуванняНезавершеногоВиробництва_Pointer? curr = КоригуванняНезавершеногоВиробництва_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[КоригуванняНезавершеногоВиробництва_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[КоригуванняНезавершеногоВиробництва_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[КоригуванняНезавершеногоВиробництва_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[КоригуванняНезавершеногоВиробництва_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.КоригуванняНезавершеногоВиробництва_Select КоригуванняНезавершеногоВиробництва_Select = new();
+            КоригуванняНезавершеногоВиробництва_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.КоригуванняНезавершеногоВиробництва_Const.Назва,
+                    /*НомерДок*/ Документи.КоригуванняНезавершеногоВиробництва_Const.НомерДок,
+                    /*ДатаДок*/ Документи.КоригуванняНезавершеногоВиробництва_Const.ДатаДок,
+                    /*Коментар*/ Документи.КоригуванняНезавершеногоВиробництва_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    КоригуванняНезавершеногоВиробництва_Select.QuerySelect.Order.Add(Документи.КоригуванняНезавершеногоВиробництва_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) КоригуванняНезавершеногоВиробництва_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.КоригуванняНезавершеногоВиробництва_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) КоригуванняНезавершеногоВиробництва_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(КоригуванняНезавершеногоВиробництва_Select.SplitSelectToPages, КоригуванняНезавершеногоВиробництва_Select.QuerySelect, unigueIDSelect);
+
+            
+            await КоригуванняНезавершеногоВиробництва_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (КоригуванняНезавершеногоВиробництва_Select.MoveNext())
+            {
+                Документи.КоригуванняНезавершеногоВиробництва_Pointer? curr = КоригуванняНезавершеногоВиробництва_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[КоригуванняНезавершеногоВиробництва_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[КоригуванняНезавершеногоВиробництва_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[КоригуванняНезавершеногоВиробництва_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[КоригуванняНезавершеногоВиробництва_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "КоригуванняПДВ"
+        
+    public static class КоригуванняПДВ_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.КоригуванняПДВ_Select КоригуванняПДВ_Select = new();
+            КоригуванняПДВ_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.КоригуванняПДВ_Const.Назва,
+                    /*НомерДок*/ Документи.КоригуванняПДВ_Const.НомерДок,
+                    /*ДатаДок*/ Документи.КоригуванняПДВ_Const.ДатаДок,
+                    /*Коментар*/ Документи.КоригуванняПДВ_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    КоригуванняПДВ_Select.QuerySelect.Order.Add(Документи.КоригуванняПДВ_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            КоригуванняПДВ_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await КоригуванняПДВ_Select.Select();
+            while (КоригуванняПДВ_Select.MoveNext())
+            {
+                Документи.КоригуванняПДВ_Pointer? curr = КоригуванняПДВ_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[КоригуванняПДВ_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[КоригуванняПДВ_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[КоригуванняПДВ_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[КоригуванняПДВ_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.КоригуванняПДВ_Select КоригуванняПДВ_Select = new();
+            КоригуванняПДВ_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.КоригуванняПДВ_Const.Назва,
+                    /*НомерДок*/ Документи.КоригуванняПДВ_Const.НомерДок,
+                    /*ДатаДок*/ Документи.КоригуванняПДВ_Const.ДатаДок,
+                    /*Коментар*/ Документи.КоригуванняПДВ_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    КоригуванняПДВ_Select.QuerySelect.Order.Add(Документи.КоригуванняПДВ_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) КоригуванняПДВ_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.КоригуванняПДВ_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) КоригуванняПДВ_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(КоригуванняПДВ_Select.SplitSelectToPages, КоригуванняПДВ_Select.QuerySelect, unigueIDSelect);
+
+            
+            await КоригуванняПДВ_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (КоригуванняПДВ_Select.MoveNext())
+            {
+                Документи.КоригуванняПДВ_Pointer? curr = КоригуванняПДВ_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[КоригуванняПДВ_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[КоригуванняПДВ_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[КоригуванняПДВ_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[КоригуванняПДВ_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "КоригуванняІншихВитрат"
+        
+    public static class КоригуванняІншихВитрат_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.КоригуванняІншихВитрат_Select КоригуванняІншихВитрат_Select = new();
+            КоригуванняІншихВитрат_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.КоригуванняІншихВитрат_Const.Назва,
+                    /*НомерДок*/ Документи.КоригуванняІншихВитрат_Const.НомерДок,
+                    /*ДатаДок*/ Документи.КоригуванняІншихВитрат_Const.ДатаДок,
+                    /*Коментар*/ Документи.КоригуванняІншихВитрат_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    КоригуванняІншихВитрат_Select.QuerySelect.Order.Add(Документи.КоригуванняІншихВитрат_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            КоригуванняІншихВитрат_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await КоригуванняІншихВитрат_Select.Select();
+            while (КоригуванняІншихВитрат_Select.MoveNext())
+            {
+                Документи.КоригуванняІншихВитрат_Pointer? curr = КоригуванняІншихВитрат_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[КоригуванняІншихВитрат_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[КоригуванняІншихВитрат_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[КоригуванняІншихВитрат_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[КоригуванняІншихВитрат_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.КоригуванняІншихВитрат_Select КоригуванняІншихВитрат_Select = new();
+            КоригуванняІншихВитрат_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.КоригуванняІншихВитрат_Const.Назва,
+                    /*НомерДок*/ Документи.КоригуванняІншихВитрат_Const.НомерДок,
+                    /*ДатаДок*/ Документи.КоригуванняІншихВитрат_Const.ДатаДок,
+                    /*Коментар*/ Документи.КоригуванняІншихВитрат_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    КоригуванняІншихВитрат_Select.QuerySelect.Order.Add(Документи.КоригуванняІншихВитрат_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) КоригуванняІншихВитрат_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.КоригуванняІншихВитрат_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) КоригуванняІншихВитрат_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(КоригуванняІншихВитрат_Select.SplitSelectToPages, КоригуванняІншихВитрат_Select.QuerySelect, unigueIDSelect);
+
+            
+            await КоригуванняІншихВитрат_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (КоригуванняІншихВитрат_Select.MoveNext())
+            {
+                Документи.КоригуванняІншихВитрат_Pointer? curr = КоригуванняІншихВитрат_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[КоригуванняІншихВитрат_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[КоригуванняІншихВитрат_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[КоригуванняІншихВитрат_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[КоригуванняІншихВитрат_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "Модернізація"
+        
+    public static class Модернізація_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.Модернізація_Select Модернізація_Select = new();
+            Модернізація_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.Модернізація_Const.Назва,
+                    /*НомерДок*/ Документи.Модернізація_Const.НомерДок,
+                    /*ДатаДок*/ Документи.Модернізація_Const.ДатаДок,
+                    /*Коментар*/ Документи.Модернізація_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Модернізація_Select.QuerySelect.Order.Add(Документи.Модернізація_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            Модернізація_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await Модернізація_Select.Select();
+            while (Модернізація_Select.MoveNext())
+            {
+                Документи.Модернізація_Pointer? curr = Модернізація_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[Модернізація_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[Модернізація_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[Модернізація_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[Модернізація_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.Модернізація_Select Модернізація_Select = new();
+            Модернізація_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.Модернізація_Const.Назва,
+                    /*НомерДок*/ Документи.Модернізація_Const.НомерДок,
+                    /*ДатаДок*/ Документи.Модернізація_Const.ДатаДок,
+                    /*Коментар*/ Документи.Модернізація_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Модернізація_Select.QuerySelect.Order.Add(Документи.Модернізація_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) Модернізація_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.Модернізація_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) Модернізація_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(Модернізація_Select.SplitSelectToPages, Модернізація_Select.QuerySelect, unigueIDSelect);
+
+            
+            await Модернізація_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (Модернізація_Select.MoveNext())
+            {
+                Документи.Модернізація_Pointer? curr = Модернізація_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[Модернізація_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[Модернізація_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[Модернізація_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[Модернізація_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "Комплектація"
+        
+    public static class Комплектація_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.Комплектація_Select Комплектація_Select = new();
+            Комплектація_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.Комплектація_Const.Назва,
+                    /*НомерДок*/ Документи.Комплектація_Const.НомерДок,
+                    /*ДатаДок*/ Документи.Комплектація_Const.ДатаДок,
+                    /*Коментар*/ Документи.Комплектація_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Комплектація_Select.QuerySelect.Order.Add(Документи.Комплектація_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            Комплектація_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await Комплектація_Select.Select();
+            while (Комплектація_Select.MoveNext())
+            {
+                Документи.Комплектація_Pointer? curr = Комплектація_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[Комплектація_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[Комплектація_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[Комплектація_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[Комплектація_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.Комплектація_Select Комплектація_Select = new();
+            Комплектація_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.Комплектація_Const.Назва,
+                    /*НомерДок*/ Документи.Комплектація_Const.НомерДок,
+                    /*ДатаДок*/ Документи.Комплектація_Const.ДатаДок,
+                    /*Коментар*/ Документи.Комплектація_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Комплектація_Select.QuerySelect.Order.Add(Документи.Комплектація_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) Комплектація_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.Комплектація_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) Комплектація_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(Комплектація_Select.SplitSelectToPages, Комплектація_Select.QuerySelect, unigueIDSelect);
+
+            
+            await Комплектація_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (Комплектація_Select.MoveNext())
+            {
+                Документи.Комплектація_Pointer? curr = Комплектація_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[Комплектація_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[Комплектація_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[Комплектація_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[Комплектація_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "НакладнаВимога"
+        
+    public static class НакладнаВимога_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.НакладнаВимога_Select НакладнаВимога_Select = new();
+            НакладнаВимога_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.НакладнаВимога_Const.Назва,
+                    /*НомерДок*/ Документи.НакладнаВимога_Const.НомерДок,
+                    /*ДатаДок*/ Документи.НакладнаВимога_Const.ДатаДок,
+                    /*Коментар*/ Документи.НакладнаВимога_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    НакладнаВимога_Select.QuerySelect.Order.Add(Документи.НакладнаВимога_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            НакладнаВимога_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await НакладнаВимога_Select.Select();
+            while (НакладнаВимога_Select.MoveNext())
+            {
+                Документи.НакладнаВимога_Pointer? curr = НакладнаВимога_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[НакладнаВимога_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[НакладнаВимога_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[НакладнаВимога_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[НакладнаВимога_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.НакладнаВимога_Select НакладнаВимога_Select = new();
+            НакладнаВимога_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.НакладнаВимога_Const.Назва,
+                    /*НомерДок*/ Документи.НакладнаВимога_Const.НомерДок,
+                    /*ДатаДок*/ Документи.НакладнаВимога_Const.ДатаДок,
+                    /*Коментар*/ Документи.НакладнаВимога_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    НакладнаВимога_Select.QuerySelect.Order.Add(Документи.НакладнаВимога_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) НакладнаВимога_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.НакладнаВимога_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) НакладнаВимога_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(НакладнаВимога_Select.SplitSelectToPages, НакладнаВимога_Select.QuerySelect, unigueIDSelect);
+
+            
+            await НакладнаВимога_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (НакладнаВимога_Select.MoveNext())
+            {
+                Документи.НакладнаВимога_Pointer? curr = НакладнаВимога_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[НакладнаВимога_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[НакладнаВимога_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[НакладнаВимога_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[НакладнаВимога_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "Наряд"
+        
+    public static class Наряд_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.Наряд_Select Наряд_Select = new();
+            Наряд_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.Наряд_Const.Назва,
+                    /*НомерДок*/ Документи.Наряд_Const.НомерДок,
+                    /*ДатаДок*/ Документи.Наряд_Const.ДатаДок,
+                    /*Коментар*/ Документи.Наряд_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Наряд_Select.QuerySelect.Order.Add(Документи.Наряд_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            Наряд_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await Наряд_Select.Select();
+            while (Наряд_Select.MoveNext())
+            {
+                Документи.Наряд_Pointer? curr = Наряд_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[Наряд_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[Наряд_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[Наряд_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[Наряд_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.Наряд_Select Наряд_Select = new();
+            Наряд_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.Наряд_Const.Назва,
+                    /*НомерДок*/ Документи.Наряд_Const.НомерДок,
+                    /*ДатаДок*/ Документи.Наряд_Const.ДатаДок,
+                    /*Коментар*/ Документи.Наряд_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Наряд_Select.QuerySelect.Order.Add(Документи.Наряд_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) Наряд_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.Наряд_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) Наряд_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(Наряд_Select.SplitSelectToPages, Наряд_Select.QuerySelect, unigueIDSelect);
+
+            
+            await Наряд_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (Наряд_Select.MoveNext())
+            {
+                Документи.Наряд_Pointer? curr = Наряд_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[Наряд_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[Наряд_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[Наряд_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[Наряд_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "НарахуванняЗаробітньоїПлати"
+        
+    public static class НарахуванняЗаробітньоїПлати_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.НарахуванняЗаробітньоїПлати_Select НарахуванняЗаробітньоїПлати_Select = new();
+            НарахуванняЗаробітньоїПлати_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.НарахуванняЗаробітньоїПлати_Const.Назва,
+                    /*НомерДок*/ Документи.НарахуванняЗаробітньоїПлати_Const.НомерДок,
+                    /*ДатаДок*/ Документи.НарахуванняЗаробітньоїПлати_Const.ДатаДок,
+                    /*Коментар*/ Документи.НарахуванняЗаробітньоїПлати_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    НарахуванняЗаробітньоїПлати_Select.QuerySelect.Order.Add(Документи.НарахуванняЗаробітньоїПлати_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            НарахуванняЗаробітньоїПлати_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await НарахуванняЗаробітньоїПлати_Select.Select();
+            while (НарахуванняЗаробітньоїПлати_Select.MoveNext())
+            {
+                Документи.НарахуванняЗаробітньоїПлати_Pointer? curr = НарахуванняЗаробітньоїПлати_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[НарахуванняЗаробітньоїПлати_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[НарахуванняЗаробітньоїПлати_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[НарахуванняЗаробітньоїПлати_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[НарахуванняЗаробітньоїПлати_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.НарахуванняЗаробітньоїПлати_Select НарахуванняЗаробітньоїПлати_Select = new();
+            НарахуванняЗаробітньоїПлати_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.НарахуванняЗаробітньоїПлати_Const.Назва,
+                    /*НомерДок*/ Документи.НарахуванняЗаробітньоїПлати_Const.НомерДок,
+                    /*ДатаДок*/ Документи.НарахуванняЗаробітньоїПлати_Const.ДатаДок,
+                    /*Коментар*/ Документи.НарахуванняЗаробітньоїПлати_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    НарахуванняЗаробітньоїПлати_Select.QuerySelect.Order.Add(Документи.НарахуванняЗаробітньоїПлати_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) НарахуванняЗаробітньоїПлати_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.НарахуванняЗаробітньоїПлати_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) НарахуванняЗаробітньоїПлати_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(НарахуванняЗаробітньоїПлати_Select.SplitSelectToPages, НарахуванняЗаробітньоїПлати_Select.QuerySelect, unigueIDSelect);
+
+            
+            await НарахуванняЗаробітньоїПлати_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (НарахуванняЗаробітньоїПлати_Select.MoveNext())
+            {
+                Документи.НарахуванняЗаробітньоїПлати_Pointer? curr = НарахуванняЗаробітньоїПлати_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[НарахуванняЗаробітньоїПлати_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[НарахуванняЗаробітньоїПлати_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[НарахуванняЗаробітньоїПлати_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[НарахуванняЗаробітньоїПлати_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "ПередачаМатеріалівВЕксплуатацію"
+        
+    public static class ПередачаМатеріалівВЕксплуатацію_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ПередачаМатеріалівВЕксплуатацію_Select ПередачаМатеріалівВЕксплуатацію_Select = new();
+            ПередачаМатеріалівВЕксплуатацію_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПередачаМатеріалівВЕксплуатацію_Const.Назва,
+                    /*НомерДок*/ Документи.ПередачаМатеріалівВЕксплуатацію_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПередачаМатеріалівВЕксплуатацію_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПередачаМатеріалівВЕксплуатацію_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПередачаМатеріалівВЕксплуатацію_Select.QuerySelect.Order.Add(Документи.ПередачаМатеріалівВЕксплуатацію_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            ПередачаМатеріалівВЕксплуатацію_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ПередачаМатеріалівВЕксплуатацію_Select.Select();
+            while (ПередачаМатеріалівВЕксплуатацію_Select.MoveNext())
+            {
+                Документи.ПередачаМатеріалівВЕксплуатацію_Pointer? curr = ПередачаМатеріалівВЕксплуатацію_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПередачаМатеріалівВЕксплуатацію_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПередачаМатеріалівВЕксплуатацію_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПередачаМатеріалівВЕксплуатацію_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПередачаМатеріалівВЕксплуатацію_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ПередачаМатеріалівВЕксплуатацію_Select ПередачаМатеріалівВЕксплуатацію_Select = new();
+            ПередачаМатеріалівВЕксплуатацію_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПередачаМатеріалівВЕксплуатацію_Const.Назва,
+                    /*НомерДок*/ Документи.ПередачаМатеріалівВЕксплуатацію_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПередачаМатеріалівВЕксплуатацію_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПередачаМатеріалівВЕксплуатацію_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПередачаМатеріалівВЕксплуатацію_Select.QuerySelect.Order.Add(Документи.ПередачаМатеріалівВЕксплуатацію_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) ПередачаМатеріалівВЕксплуатацію_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.ПередачаМатеріалівВЕксплуатацію_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПередачаМатеріалівВЕксплуатацію_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ПередачаМатеріалівВЕксплуатацію_Select.SplitSelectToPages, ПередачаМатеріалівВЕксплуатацію_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ПередачаМатеріалівВЕксплуатацію_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ПередачаМатеріалівВЕксплуатацію_Select.MoveNext())
+            {
+                Документи.ПередачаМатеріалівВЕксплуатацію_Pointer? curr = ПередачаМатеріалівВЕксплуатацію_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПередачаМатеріалівВЕксплуатацію_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПередачаМатеріалівВЕксплуатацію_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПередачаМатеріалівВЕксплуатацію_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПередачаМатеріалівВЕксплуатацію_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "ПереміщенняМатеріалівВЕксплуатації"
+        
+    public static class ПереміщенняМатеріалівВЕксплуатації_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ПереміщенняМатеріалівВЕксплуатації_Select ПереміщенняМатеріалівВЕксплуатації_Select = new();
+            ПереміщенняМатеріалівВЕксплуатації_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПереміщенняМатеріалівВЕксплуатації_Const.Назва,
+                    /*НомерДок*/ Документи.ПереміщенняМатеріалівВЕксплуатації_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПереміщенняМатеріалівВЕксплуатації_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПереміщенняМатеріалівВЕксплуатації_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПереміщенняМатеріалівВЕксплуатації_Select.QuerySelect.Order.Add(Документи.ПереміщенняМатеріалівВЕксплуатації_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            ПереміщенняМатеріалівВЕксплуатації_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ПереміщенняМатеріалівВЕксплуатації_Select.Select();
+            while (ПереміщенняМатеріалівВЕксплуатації_Select.MoveNext())
+            {
+                Документи.ПереміщенняМатеріалівВЕксплуатації_Pointer? curr = ПереміщенняМатеріалівВЕксплуатації_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПереміщенняМатеріалівВЕксплуатації_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПереміщенняМатеріалівВЕксплуатації_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПереміщенняМатеріалівВЕксплуатації_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПереміщенняМатеріалівВЕксплуатації_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ПереміщенняМатеріалівВЕксплуатації_Select ПереміщенняМатеріалівВЕксплуатації_Select = new();
+            ПереміщенняМатеріалівВЕксплуатації_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПереміщенняМатеріалівВЕксплуатації_Const.Назва,
+                    /*НомерДок*/ Документи.ПереміщенняМатеріалівВЕксплуатації_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПереміщенняМатеріалівВЕксплуатації_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПереміщенняМатеріалівВЕксплуатації_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПереміщенняМатеріалівВЕксплуатації_Select.QuerySelect.Order.Add(Документи.ПереміщенняМатеріалівВЕксплуатації_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) ПереміщенняМатеріалівВЕксплуатації_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.ПереміщенняМатеріалівВЕксплуатації_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПереміщенняМатеріалівВЕксплуатації_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ПереміщенняМатеріалівВЕксплуатації_Select.SplitSelectToPages, ПереміщенняМатеріалівВЕксплуатації_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ПереміщенняМатеріалівВЕксплуатації_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ПереміщенняМатеріалівВЕксплуатації_Select.MoveNext())
+            {
+                Документи.ПереміщенняМатеріалівВЕксплуатації_Pointer? curr = ПереміщенняМатеріалівВЕксплуатації_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПереміщенняМатеріалівВЕксплуатації_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПереміщенняМатеріалівВЕксплуатації_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПереміщенняМатеріалівВЕксплуатації_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПереміщенняМатеріалівВЕксплуатації_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "ПередачаНематеріальнихАктивів"
+        
+    public static class ПередачаНематеріальнихАктивів_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ПередачаНематеріальнихАктивів_Select ПередачаНематеріальнихАктивів_Select = new();
+            ПередачаНематеріальнихАктивів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПередачаНематеріальнихАктивів_Const.Назва,
+                    /*НомерДок*/ Документи.ПередачаНематеріальнихАктивів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПередачаНематеріальнихАктивів_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПередачаНематеріальнихАктивів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПередачаНематеріальнихАктивів_Select.QuerySelect.Order.Add(Документи.ПередачаНематеріальнихАктивів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            ПередачаНематеріальнихАктивів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ПередачаНематеріальнихАктивів_Select.Select();
+            while (ПередачаНематеріальнихАктивів_Select.MoveNext())
+            {
+                Документи.ПередачаНематеріальнихАктивів_Pointer? curr = ПередачаНематеріальнихАктивів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПередачаНематеріальнихАктивів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПередачаНематеріальнихАктивів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПередачаНематеріальнихАктивів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПередачаНематеріальнихАктивів_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ПередачаНематеріальнихАктивів_Select ПередачаНематеріальнихАктивів_Select = new();
+            ПередачаНематеріальнихАктивів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПередачаНематеріальнихАктивів_Const.Назва,
+                    /*НомерДок*/ Документи.ПередачаНематеріальнихАктивів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПередачаНематеріальнихАктивів_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПередачаНематеріальнихАктивів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПередачаНематеріальнихАктивів_Select.QuerySelect.Order.Add(Документи.ПередачаНематеріальнихАктивів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) ПередачаНематеріальнихАктивів_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.ПередачаНематеріальнихАктивів_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПередачаНематеріальнихАктивів_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ПередачаНематеріальнихАктивів_Select.SplitSelectToPages, ПередачаНематеріальнихАктивів_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ПередачаНематеріальнихАктивів_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ПередачаНематеріальнихАктивів_Select.MoveNext())
+            {
+                Документи.ПередачаНематеріальнихАктивів_Pointer? curr = ПередачаНематеріальнихАктивів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПередачаНематеріальнихАктивів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПередачаНематеріальнихАктивів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПередачаНематеріальнихАктивів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПередачаНематеріальнихАктивів_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "ПереміщенняНематеріальнихАктивів"
+        
+    public static class ПереміщенняНематеріальнихАктивів_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ПереміщенняНематеріальнихАктивів_Select ПереміщенняНематеріальнихАктивів_Select = new();
+            ПереміщенняНематеріальнихАктивів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПереміщенняНематеріальнихАктивів_Const.Назва,
+                    /*НомерДок*/ Документи.ПереміщенняНематеріальнихАктивів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПереміщенняНематеріальнихАктивів_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПереміщенняНематеріальнихАктивів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПереміщенняНематеріальнихАктивів_Select.QuerySelect.Order.Add(Документи.ПереміщенняНематеріальнихАктивів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            ПереміщенняНематеріальнихАктивів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ПереміщенняНематеріальнихАктивів_Select.Select();
+            while (ПереміщенняНематеріальнихАктивів_Select.MoveNext())
+            {
+                Документи.ПереміщенняНематеріальнихАктивів_Pointer? curr = ПереміщенняНематеріальнихАктивів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПереміщенняНематеріальнихАктивів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПереміщенняНематеріальнихАктивів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПереміщенняНематеріальнихАктивів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПереміщенняНематеріальнихАктивів_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ПереміщенняНематеріальнихАктивів_Select ПереміщенняНематеріальнихАктивів_Select = new();
+            ПереміщенняНематеріальнихАктивів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПереміщенняНематеріальнихАктивів_Const.Назва,
+                    /*НомерДок*/ Документи.ПереміщенняНематеріальнихАктивів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПереміщенняНематеріальнихАктивів_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПереміщенняНематеріальнихАктивів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПереміщенняНематеріальнихАктивів_Select.QuerySelect.Order.Add(Документи.ПереміщенняНематеріальнихАктивів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) ПереміщенняНематеріальнихАктивів_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.ПереміщенняНематеріальнихАктивів_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПереміщенняНематеріальнихАктивів_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ПереміщенняНематеріальнихАктивів_Select.SplitSelectToPages, ПереміщенняНематеріальнихАктивів_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ПереміщенняНематеріальнихАктивів_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ПереміщенняНематеріальнихАктивів_Select.MoveNext())
+            {
+                Документи.ПереміщенняНематеріальнихАктивів_Pointer? curr = ПереміщенняНематеріальнихАктивів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПереміщенняНематеріальнихАктивів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПереміщенняНематеріальнихАктивів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПереміщенняНематеріальнихАктивів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПереміщенняНематеріальнихАктивів_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "ПередачаОбладнанняВМонтаж"
+        
+    public static class ПередачаОбладнанняВМонтаж_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ПередачаОбладнанняВМонтаж_Select ПередачаОбладнанняВМонтаж_Select = new();
+            ПередачаОбладнанняВМонтаж_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПередачаОбладнанняВМонтаж_Const.Назва,
+                    /*НомерДок*/ Документи.ПередачаОбладнанняВМонтаж_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПередачаОбладнанняВМонтаж_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПередачаОбладнанняВМонтаж_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПередачаОбладнанняВМонтаж_Select.QuerySelect.Order.Add(Документи.ПередачаОбладнанняВМонтаж_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            ПередачаОбладнанняВМонтаж_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ПередачаОбладнанняВМонтаж_Select.Select();
+            while (ПередачаОбладнанняВМонтаж_Select.MoveNext())
+            {
+                Документи.ПередачаОбладнанняВМонтаж_Pointer? curr = ПередачаОбладнанняВМонтаж_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПередачаОбладнанняВМонтаж_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПередачаОбладнанняВМонтаж_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПередачаОбладнанняВМонтаж_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПередачаОбладнанняВМонтаж_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ПередачаОбладнанняВМонтаж_Select ПередачаОбладнанняВМонтаж_Select = new();
+            ПередачаОбладнанняВМонтаж_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПередачаОбладнанняВМонтаж_Const.Назва,
+                    /*НомерДок*/ Документи.ПередачаОбладнанняВМонтаж_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПередачаОбладнанняВМонтаж_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПередачаОбладнанняВМонтаж_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПередачаОбладнанняВМонтаж_Select.QuerySelect.Order.Add(Документи.ПередачаОбладнанняВМонтаж_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) ПередачаОбладнанняВМонтаж_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.ПередачаОбладнанняВМонтаж_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПередачаОбладнанняВМонтаж_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ПередачаОбладнанняВМонтаж_Select.SplitSelectToPages, ПередачаОбладнанняВМонтаж_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ПередачаОбладнанняВМонтаж_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ПередачаОбладнанняВМонтаж_Select.MoveNext())
+            {
+                Документи.ПередачаОбладнанняВМонтаж_Pointer? curr = ПередачаОбладнанняВМонтаж_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПередачаОбладнанняВМонтаж_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПередачаОбладнанняВМонтаж_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПередачаОбладнанняВМонтаж_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПередачаОбладнанняВМонтаж_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "ПередачаОсновнихЗасобів"
+        
+    public static class ПередачаОсновнихЗасобів_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ПередачаОсновнихЗасобів_Select ПередачаОсновнихЗасобів_Select = new();
+            ПередачаОсновнихЗасобів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПередачаОсновнихЗасобів_Const.Назва,
+                    /*НомерДок*/ Документи.ПередачаОсновнихЗасобів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПередачаОсновнихЗасобів_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПередачаОсновнихЗасобів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПередачаОсновнихЗасобів_Select.QuerySelect.Order.Add(Документи.ПередачаОсновнихЗасобів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            ПередачаОсновнихЗасобів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ПередачаОсновнихЗасобів_Select.Select();
+            while (ПередачаОсновнихЗасобів_Select.MoveNext())
+            {
+                Документи.ПередачаОсновнихЗасобів_Pointer? curr = ПередачаОсновнихЗасобів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПередачаОсновнихЗасобів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПередачаОсновнихЗасобів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПередачаОсновнихЗасобів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПередачаОсновнихЗасобів_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ПередачаОсновнихЗасобів_Select ПередачаОсновнихЗасобів_Select = new();
+            ПередачаОсновнихЗасобів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПередачаОсновнихЗасобів_Const.Назва,
+                    /*НомерДок*/ Документи.ПередачаОсновнихЗасобів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПередачаОсновнихЗасобів_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПередачаОсновнихЗасобів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПередачаОсновнихЗасобів_Select.QuerySelect.Order.Add(Документи.ПередачаОсновнихЗасобів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) ПередачаОсновнихЗасобів_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.ПередачаОсновнихЗасобів_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПередачаОсновнихЗасобів_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ПередачаОсновнихЗасобів_Select.SplitSelectToPages, ПередачаОсновнихЗасобів_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ПередачаОсновнихЗасобів_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ПередачаОсновнихЗасобів_Select.MoveNext())
+            {
+                Документи.ПередачаОсновнихЗасобів_Pointer? curr = ПередачаОсновнихЗасобів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПередачаОсновнихЗасобів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПередачаОсновнихЗасобів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПередачаОсновнихЗасобів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПередачаОсновнихЗасобів_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "ПереміщенняОсновнихЗасобів"
+        
+    public static class ПереміщенняОсновнихЗасобів_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ПереміщенняОсновнихЗасобів_Select ПереміщенняОсновнихЗасобів_Select = new();
+            ПереміщенняОсновнихЗасобів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПереміщенняОсновнихЗасобів_Const.Назва,
+                    /*НомерДок*/ Документи.ПереміщенняОсновнихЗасобів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПереміщенняОсновнихЗасобів_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПереміщенняОсновнихЗасобів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПереміщенняОсновнихЗасобів_Select.QuerySelect.Order.Add(Документи.ПереміщенняОсновнихЗасобів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            ПереміщенняОсновнихЗасобів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ПереміщенняОсновнихЗасобів_Select.Select();
+            while (ПереміщенняОсновнихЗасобів_Select.MoveNext())
+            {
+                Документи.ПереміщенняОсновнихЗасобів_Pointer? curr = ПереміщенняОсновнихЗасобів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПереміщенняОсновнихЗасобів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПереміщенняОсновнихЗасобів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПереміщенняОсновнихЗасобів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПереміщенняОсновнихЗасобів_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ПереміщенняОсновнихЗасобів_Select ПереміщенняОсновнихЗасобів_Select = new();
+            ПереміщенняОсновнихЗасобів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПереміщенняОсновнихЗасобів_Const.Назва,
+                    /*НомерДок*/ Документи.ПереміщенняОсновнихЗасобів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПереміщенняОсновнихЗасобів_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПереміщенняОсновнихЗасобів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПереміщенняОсновнихЗасобів_Select.QuerySelect.Order.Add(Документи.ПереміщенняОсновнихЗасобів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) ПереміщенняОсновнихЗасобів_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.ПереміщенняОсновнихЗасобів_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПереміщенняОсновнихЗасобів_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ПереміщенняОсновнихЗасобів_Select.SplitSelectToPages, ПереміщенняОсновнихЗасобів_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ПереміщенняОсновнихЗасобів_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ПереміщенняОсновнихЗасобів_Select.MoveNext())
+            {
+                Документи.ПереміщенняОсновнихЗасобів_Pointer? curr = ПереміщенняОсновнихЗасобів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПереміщенняОсновнихЗасобів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПереміщенняОсновнихЗасобів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПереміщенняОсновнихЗасобів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПереміщенняОсновнихЗасобів_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "ПередачаТоварів"
+        
+    public static class ПередачаТоварів_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ПередачаТоварів_Select ПередачаТоварів_Select = new();
+            ПередачаТоварів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПередачаТоварів_Const.Назва,
+                    /*НомерДок*/ Документи.ПередачаТоварів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПередачаТоварів_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПередачаТоварів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПередачаТоварів_Select.QuerySelect.Order.Add(Документи.ПередачаТоварів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            ПередачаТоварів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ПередачаТоварів_Select.Select();
+            while (ПередачаТоварів_Select.MoveNext())
+            {
+                Документи.ПередачаТоварів_Pointer? curr = ПередачаТоварів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПередачаТоварів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПередачаТоварів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПередачаТоварів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПередачаТоварів_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ПередачаТоварів_Select ПередачаТоварів_Select = new();
+            ПередачаТоварів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПередачаТоварів_Const.Назва,
+                    /*НомерДок*/ Документи.ПередачаТоварів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПередачаТоварів_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПередачаТоварів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПередачаТоварів_Select.QuerySelect.Order.Add(Документи.ПередачаТоварів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) ПередачаТоварів_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.ПередачаТоварів_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПередачаТоварів_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ПередачаТоварів_Select.SplitSelectToPages, ПередачаТоварів_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ПередачаТоварів_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ПередачаТоварів_Select.MoveNext())
+            {
+                Документи.ПередачаТоварів_Pointer? curr = ПередачаТоварів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПередачаТоварів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПередачаТоварів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПередачаТоварів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПередачаТоварів_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "ПереоцінкаВалюти"
+        
+    public static class ПереоцінкаВалюти_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ПереоцінкаВалюти_Select ПереоцінкаВалюти_Select = new();
+            ПереоцінкаВалюти_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПереоцінкаВалюти_Const.Назва,
+                    /*НомерДок*/ Документи.ПереоцінкаВалюти_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПереоцінкаВалюти_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПереоцінкаВалюти_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПереоцінкаВалюти_Select.QuerySelect.Order.Add(Документи.ПереоцінкаВалюти_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            ПереоцінкаВалюти_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ПереоцінкаВалюти_Select.Select();
+            while (ПереоцінкаВалюти_Select.MoveNext())
+            {
+                Документи.ПереоцінкаВалюти_Pointer? curr = ПереоцінкаВалюти_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПереоцінкаВалюти_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПереоцінкаВалюти_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПереоцінкаВалюти_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПереоцінкаВалюти_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ПереоцінкаВалюти_Select ПереоцінкаВалюти_Select = new();
+            ПереоцінкаВалюти_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПереоцінкаВалюти_Const.Назва,
+                    /*НомерДок*/ Документи.ПереоцінкаВалюти_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПереоцінкаВалюти_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПереоцінкаВалюти_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПереоцінкаВалюти_Select.QuerySelect.Order.Add(Документи.ПереоцінкаВалюти_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) ПереоцінкаВалюти_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.ПереоцінкаВалюти_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПереоцінкаВалюти_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ПереоцінкаВалюти_Select.SplitSelectToPages, ПереоцінкаВалюти_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ПереоцінкаВалюти_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ПереоцінкаВалюти_Select.MoveNext())
+            {
+                Документи.ПереоцінкаВалюти_Pointer? curr = ПереоцінкаВалюти_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПереоцінкаВалюти_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПереоцінкаВалюти_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПереоцінкаВалюти_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПереоцінкаВалюти_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "ПереоцінкаОсновнихЗасобів"
+        
+    public static class ПереоцінкаОсновнихЗасобів_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ПереоцінкаОсновнихЗасобів_Select ПереоцінкаОсновнихЗасобів_Select = new();
+            ПереоцінкаОсновнихЗасобів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПереоцінкаОсновнихЗасобів_Const.Назва,
+                    /*НомерДок*/ Документи.ПереоцінкаОсновнихЗасобів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПереоцінкаОсновнихЗасобів_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПереоцінкаОсновнихЗасобів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПереоцінкаОсновнихЗасобів_Select.QuerySelect.Order.Add(Документи.ПереоцінкаОсновнихЗасобів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            ПереоцінкаОсновнихЗасобів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ПереоцінкаОсновнихЗасобів_Select.Select();
+            while (ПереоцінкаОсновнихЗасобів_Select.MoveNext())
+            {
+                Документи.ПереоцінкаОсновнихЗасобів_Pointer? curr = ПереоцінкаОсновнихЗасобів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПереоцінкаОсновнихЗасобів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПереоцінкаОсновнихЗасобів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПереоцінкаОсновнихЗасобів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПереоцінкаОсновнихЗасобів_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ПереоцінкаОсновнихЗасобів_Select ПереоцінкаОсновнихЗасобів_Select = new();
+            ПереоцінкаОсновнихЗасобів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПереоцінкаОсновнихЗасобів_Const.Назва,
+                    /*НомерДок*/ Документи.ПереоцінкаОсновнихЗасобів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПереоцінкаОсновнихЗасобів_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПереоцінкаОсновнихЗасобів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПереоцінкаОсновнихЗасобів_Select.QuerySelect.Order.Add(Документи.ПереоцінкаОсновнихЗасобів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) ПереоцінкаОсновнихЗасобів_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.ПереоцінкаОсновнихЗасобів_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПереоцінкаОсновнихЗасобів_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ПереоцінкаОсновнихЗасобів_Select.SplitSelectToPages, ПереоцінкаОсновнихЗасобів_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ПереоцінкаОсновнихЗасобів_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ПереоцінкаОсновнихЗасобів_Select.MoveNext())
+            {
+                Документи.ПереоцінкаОсновнихЗасобів_Pointer? curr = ПереоцінкаОсновнихЗасобів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПереоцінкаОсновнихЗасобів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПереоцінкаОсновнихЗасобів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПереоцінкаОсновнихЗасобів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПереоцінкаОсновнихЗасобів_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "ПереоцінкаТоварів"
+        
+    public static class ПереоцінкаТоварів_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ПереоцінкаТоварів_Select ПереоцінкаТоварів_Select = new();
+            ПереоцінкаТоварів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПереоцінкаТоварів_Const.Назва,
+                    /*НомерДок*/ Документи.ПереоцінкаТоварів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПереоцінкаТоварів_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПереоцінкаТоварів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПереоцінкаТоварів_Select.QuerySelect.Order.Add(Документи.ПереоцінкаТоварів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            ПереоцінкаТоварів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ПереоцінкаТоварів_Select.Select();
+            while (ПереоцінкаТоварів_Select.MoveNext())
+            {
+                Документи.ПереоцінкаТоварів_Pointer? curr = ПереоцінкаТоварів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПереоцінкаТоварів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПереоцінкаТоварів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПереоцінкаТоварів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПереоцінкаТоварів_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ПереоцінкаТоварів_Select ПереоцінкаТоварів_Select = new();
+            ПереоцінкаТоварів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПереоцінкаТоварів_Const.Назва,
+                    /*НомерДок*/ Документи.ПереоцінкаТоварів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПереоцінкаТоварів_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПереоцінкаТоварів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПереоцінкаТоварів_Select.QuerySelect.Order.Add(Документи.ПереоцінкаТоварів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) ПереоцінкаТоварів_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.ПереоцінкаТоварів_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПереоцінкаТоварів_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ПереоцінкаТоварів_Select.SplitSelectToPages, ПереоцінкаТоварів_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ПереоцінкаТоварів_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ПереоцінкаТоварів_Select.MoveNext())
+            {
+                Документи.ПереоцінкаТоварів_Pointer? curr = ПереоцінкаТоварів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПереоцінкаТоварів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПереоцінкаТоварів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПереоцінкаТоварів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПереоцінкаТоварів_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "ПлатіжнеДорученняВхідне"
+        
+    public static class ПлатіжнеДорученняВхідне_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ПлатіжнеДорученняВхідне_Select ПлатіжнеДорученняВхідне_Select = new();
+            ПлатіжнеДорученняВхідне_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПлатіжнеДорученняВхідне_Const.Назва,
+                    /*НомерДок*/ Документи.ПлатіжнеДорученняВхідне_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПлатіжнеДорученняВхідне_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПлатіжнеДорученняВхідне_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПлатіжнеДорученняВхідне_Select.QuerySelect.Order.Add(Документи.ПлатіжнеДорученняВхідне_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            ПлатіжнеДорученняВхідне_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ПлатіжнеДорученняВхідне_Select.Select();
+            while (ПлатіжнеДорученняВхідне_Select.MoveNext())
+            {
+                Документи.ПлатіжнеДорученняВхідне_Pointer? curr = ПлатіжнеДорученняВхідне_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПлатіжнеДорученняВхідне_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПлатіжнеДорученняВхідне_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПлатіжнеДорученняВхідне_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПлатіжнеДорученняВхідне_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ПлатіжнеДорученняВхідне_Select ПлатіжнеДорученняВхідне_Select = new();
+            ПлатіжнеДорученняВхідне_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПлатіжнеДорученняВхідне_Const.Назва,
+                    /*НомерДок*/ Документи.ПлатіжнеДорученняВхідне_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПлатіжнеДорученняВхідне_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПлатіжнеДорученняВхідне_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПлатіжнеДорученняВхідне_Select.QuerySelect.Order.Add(Документи.ПлатіжнеДорученняВхідне_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) ПлатіжнеДорученняВхідне_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.ПлатіжнеДорученняВхідне_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПлатіжнеДорученняВхідне_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ПлатіжнеДорученняВхідне_Select.SplitSelectToPages, ПлатіжнеДорученняВхідне_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ПлатіжнеДорученняВхідне_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ПлатіжнеДорученняВхідне_Select.MoveNext())
+            {
+                Документи.ПлатіжнеДорученняВхідне_Pointer? curr = ПлатіжнеДорученняВхідне_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПлатіжнеДорученняВхідне_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПлатіжнеДорученняВхідне_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПлатіжнеДорученняВхідне_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПлатіжнеДорученняВхідне_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "ПлатіжнеДорученняВихідне"
+        
+    public static class ПлатіжнеДорученняВихідне_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ПлатіжнеДорученняВихідне_Select ПлатіжнеДорученняВихідне_Select = new();
+            ПлатіжнеДорученняВихідне_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПлатіжнеДорученняВихідне_Const.Назва,
+                    /*НомерДок*/ Документи.ПлатіжнеДорученняВихідне_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПлатіжнеДорученняВихідне_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПлатіжнеДорученняВихідне_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПлатіжнеДорученняВихідне_Select.QuerySelect.Order.Add(Документи.ПлатіжнеДорученняВихідне_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            ПлатіжнеДорученняВихідне_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ПлатіжнеДорученняВихідне_Select.Select();
+            while (ПлатіжнеДорученняВихідне_Select.MoveNext())
+            {
+                Документи.ПлатіжнеДорученняВихідне_Pointer? curr = ПлатіжнеДорученняВихідне_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПлатіжнеДорученняВихідне_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПлатіжнеДорученняВихідне_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПлатіжнеДорученняВихідне_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПлатіжнеДорученняВихідне_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ПлатіжнеДорученняВихідне_Select ПлатіжнеДорученняВихідне_Select = new();
+            ПлатіжнеДорученняВихідне_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПлатіжнеДорученняВихідне_Const.Назва,
+                    /*НомерДок*/ Документи.ПлатіжнеДорученняВихідне_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПлатіжнеДорученняВихідне_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПлатіжнеДорученняВихідне_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПлатіжнеДорученняВихідне_Select.QuerySelect.Order.Add(Документи.ПлатіжнеДорученняВихідне_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) ПлатіжнеДорученняВихідне_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.ПлатіжнеДорученняВихідне_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПлатіжнеДорученняВихідне_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ПлатіжнеДорученняВихідне_Select.SplitSelectToPages, ПлатіжнеДорученняВихідне_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ПлатіжнеДорученняВихідне_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ПлатіжнеДорученняВихідне_Select.MoveNext())
+            {
+                Документи.ПлатіжнеДорученняВихідне_Pointer? curr = ПлатіжнеДорученняВихідне_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПлатіжнеДорученняВихідне_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПлатіжнеДорученняВихідне_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПлатіжнеДорученняВихідне_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПлатіжнеДорученняВихідне_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "ПодатковаНакладна"
+        
+    public static class ПодатковаНакладна_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ПодатковаНакладна_Select ПодатковаНакладна_Select = new();
+            ПодатковаНакладна_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПодатковаНакладна_Const.Назва,
+                    /*НомерДок*/ Документи.ПодатковаНакладна_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПодатковаНакладна_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПодатковаНакладна_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПодатковаНакладна_Select.QuerySelect.Order.Add(Документи.ПодатковаНакладна_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            ПодатковаНакладна_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ПодатковаНакладна_Select.Select();
+            while (ПодатковаНакладна_Select.MoveNext())
+            {
+                Документи.ПодатковаНакладна_Pointer? curr = ПодатковаНакладна_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПодатковаНакладна_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПодатковаНакладна_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПодатковаНакладна_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПодатковаНакладна_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ПодатковаНакладна_Select ПодатковаНакладна_Select = new();
+            ПодатковаНакладна_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПодатковаНакладна_Const.Назва,
+                    /*НомерДок*/ Документи.ПодатковаНакладна_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПодатковаНакладна_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПодатковаНакладна_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПодатковаНакладна_Select.QuerySelect.Order.Add(Документи.ПодатковаНакладна_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) ПодатковаНакладна_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.ПодатковаНакладна_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПодатковаНакладна_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ПодатковаНакладна_Select.SplitSelectToPages, ПодатковаНакладна_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ПодатковаНакладна_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ПодатковаНакладна_Select.MoveNext())
+            {
+                Документи.ПодатковаНакладна_Pointer? curr = ПодатковаНакладна_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПодатковаНакладна_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПодатковаНакладна_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПодатковаНакладна_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПодатковаНакладна_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "ПокупкаАбоПродажВалюти"
+        
+    public static class ПокупкаАбоПродажВалюти_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ПокупкаАбоПродажВалюти_Select ПокупкаАбоПродажВалюти_Select = new();
+            ПокупкаАбоПродажВалюти_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПокупкаАбоПродажВалюти_Const.Назва,
+                    /*НомерДок*/ Документи.ПокупкаАбоПродажВалюти_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПокупкаАбоПродажВалюти_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПокупкаАбоПродажВалюти_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПокупкаАбоПродажВалюти_Select.QuerySelect.Order.Add(Документи.ПокупкаАбоПродажВалюти_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            ПокупкаАбоПродажВалюти_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ПокупкаАбоПродажВалюти_Select.Select();
+            while (ПокупкаАбоПродажВалюти_Select.MoveNext())
+            {
+                Документи.ПокупкаАбоПродажВалюти_Pointer? curr = ПокупкаАбоПродажВалюти_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПокупкаАбоПродажВалюти_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПокупкаАбоПродажВалюти_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПокупкаАбоПродажВалюти_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПокупкаАбоПродажВалюти_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ПокупкаАбоПродажВалюти_Select ПокупкаАбоПродажВалюти_Select = new();
+            ПокупкаАбоПродажВалюти_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПокупкаАбоПродажВалюти_Const.Назва,
+                    /*НомерДок*/ Документи.ПокупкаАбоПродажВалюти_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПокупкаАбоПродажВалюти_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПокупкаАбоПродажВалюти_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПокупкаАбоПродажВалюти_Select.QuerySelect.Order.Add(Документи.ПокупкаАбоПродажВалюти_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) ПокупкаАбоПродажВалюти_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.ПокупкаАбоПродажВалюти_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПокупкаАбоПродажВалюти_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ПокупкаАбоПродажВалюти_Select.SplitSelectToPages, ПокупкаАбоПродажВалюти_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ПокупкаАбоПродажВалюти_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ПокупкаАбоПродажВалюти_Select.MoveNext())
+            {
+                Документи.ПокупкаАбоПродажВалюти_Pointer? curr = ПокупкаАбоПродажВалюти_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПокупкаАбоПродажВалюти_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПокупкаАбоПродажВалюти_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПокупкаАбоПродажВалюти_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПокупкаАбоПродажВалюти_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "ПідготовкаДоПередачіОсновнихЗасобів"
+        
+    public static class ПідготовкаДоПередачіОсновнихЗасобів_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ПідготовкаДоПередачіОсновнихЗасобів_Select ПідготовкаДоПередачіОсновнихЗасобів_Select = new();
+            ПідготовкаДоПередачіОсновнихЗасобів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПідготовкаДоПередачіОсновнихЗасобів_Const.Назва,
+                    /*НомерДок*/ Документи.ПідготовкаДоПередачіОсновнихЗасобів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПідготовкаДоПередачіОсновнихЗасобів_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПідготовкаДоПередачіОсновнихЗасобів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПідготовкаДоПередачіОсновнихЗасобів_Select.QuerySelect.Order.Add(Документи.ПідготовкаДоПередачіОсновнихЗасобів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            ПідготовкаДоПередачіОсновнихЗасобів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ПідготовкаДоПередачіОсновнихЗасобів_Select.Select();
+            while (ПідготовкаДоПередачіОсновнихЗасобів_Select.MoveNext())
+            {
+                Документи.ПідготовкаДоПередачіОсновнихЗасобів_Pointer? curr = ПідготовкаДоПередачіОсновнихЗасобів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПідготовкаДоПередачіОсновнихЗасобів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПідготовкаДоПередачіОсновнихЗасобів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПідготовкаДоПередачіОсновнихЗасобів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПідготовкаДоПередачіОсновнихЗасобів_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ПідготовкаДоПередачіОсновнихЗасобів_Select ПідготовкаДоПередачіОсновнихЗасобів_Select = new();
+            ПідготовкаДоПередачіОсновнихЗасобів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПідготовкаДоПередачіОсновнихЗасобів_Const.Назва,
+                    /*НомерДок*/ Документи.ПідготовкаДоПередачіОсновнихЗасобів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПідготовкаДоПередачіОсновнихЗасобів_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПідготовкаДоПередачіОсновнихЗасобів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПідготовкаДоПередачіОсновнихЗасобів_Select.QuerySelect.Order.Add(Документи.ПідготовкаДоПередачіОсновнихЗасобів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) ПідготовкаДоПередачіОсновнихЗасобів_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.ПідготовкаДоПередачіОсновнихЗасобів_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПідготовкаДоПередачіОсновнихЗасобів_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ПідготовкаДоПередачіОсновнихЗасобів_Select.SplitSelectToPages, ПідготовкаДоПередачіОсновнихЗасобів_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ПідготовкаДоПередачіОсновнихЗасобів_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ПідготовкаДоПередачіОсновнихЗасобів_Select.MoveNext())
+            {
+                Документи.ПідготовкаДоПередачіОсновнихЗасобів_Pointer? curr = ПідготовкаДоПередачіОсновнихЗасобів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПідготовкаДоПередачіОсновнихЗасобів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПідготовкаДоПередачіОсновнихЗасобів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПідготовкаДоПередачіОсновнихЗасобів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПідготовкаДоПередачіОсновнихЗасобів_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "ПослугиСторонньоїОрганізації"
+        
+    public static class ПослугиСторонньоїОрганізації_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ПослугиСторонньоїОрганізації_Select ПослугиСторонньоїОрганізації_Select = new();
+            ПослугиСторонньоїОрганізації_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПослугиСторонньоїОрганізації_Const.Назва,
+                    /*НомерДок*/ Документи.ПослугиСторонньоїОрганізації_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПослугиСторонньоїОрганізації_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПослугиСторонньоїОрганізації_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПослугиСторонньоїОрганізації_Select.QuerySelect.Order.Add(Документи.ПослугиСторонньоїОрганізації_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            ПослугиСторонньоїОрганізації_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ПослугиСторонньоїОрганізації_Select.Select();
+            while (ПослугиСторонньоїОрганізації_Select.MoveNext())
+            {
+                Документи.ПослугиСторонньоїОрганізації_Pointer? curr = ПослугиСторонньоїОрганізації_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПослугиСторонньоїОрганізації_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПослугиСторонньоїОрганізації_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПослугиСторонньоїОрганізації_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПослугиСторонньоїОрганізації_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ПослугиСторонньоїОрганізації_Select ПослугиСторонньоїОрганізації_Select = new();
+            ПослугиСторонньоїОрганізації_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПослугиСторонньоїОрганізації_Const.Назва,
+                    /*НомерДок*/ Документи.ПослугиСторонньоїОрганізації_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПослугиСторонньоїОрганізації_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПослугиСторонньоїОрганізації_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПослугиСторонньоїОрганізації_Select.QuerySelect.Order.Add(Документи.ПослугиСторонньоїОрганізації_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) ПослугиСторонньоїОрганізації_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.ПослугиСторонньоїОрганізації_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПослугиСторонньоїОрганізації_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ПослугиСторонньоїОрганізації_Select.SplitSelectToPages, ПослугиСторонньоїОрганізації_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ПослугиСторонньоїОрганізації_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ПослугиСторонньоїОрганізації_Select.MoveNext())
+            {
+                Документи.ПослугиСторонньоїОрганізації_Pointer? curr = ПослугиСторонньоїОрганізації_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПослугиСторонньоїОрганізації_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПослугиСторонньоїОрганізації_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПослугиСторонньоїОрганізації_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПослугиСторонньоїОрганізації_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "ПрибуткуванняМатеріалівЗВиробництва"
+        
+    public static class ПрибуткуванняМатеріалівЗВиробництва_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ПрибуткуванняМатеріалівЗВиробництва_Select ПрибуткуванняМатеріалівЗВиробництва_Select = new();
+            ПрибуткуванняМатеріалівЗВиробництва_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПрибуткуванняМатеріалівЗВиробництва_Const.Назва,
+                    /*НомерДок*/ Документи.ПрибуткуванняМатеріалівЗВиробництва_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПрибуткуванняМатеріалівЗВиробництва_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПрибуткуванняМатеріалівЗВиробництва_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПрибуткуванняМатеріалівЗВиробництва_Select.QuerySelect.Order.Add(Документи.ПрибуткуванняМатеріалівЗВиробництва_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            ПрибуткуванняМатеріалівЗВиробництва_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ПрибуткуванняМатеріалівЗВиробництва_Select.Select();
+            while (ПрибуткуванняМатеріалівЗВиробництва_Select.MoveNext())
+            {
+                Документи.ПрибуткуванняМатеріалівЗВиробництва_Pointer? curr = ПрибуткуванняМатеріалівЗВиробництва_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПрибуткуванняМатеріалівЗВиробництва_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПрибуткуванняМатеріалівЗВиробництва_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПрибуткуванняМатеріалівЗВиробництва_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПрибуткуванняМатеріалівЗВиробництва_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ПрибуткуванняМатеріалівЗВиробництва_Select ПрибуткуванняМатеріалівЗВиробництва_Select = new();
+            ПрибуткуванняМатеріалівЗВиробництва_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПрибуткуванняМатеріалівЗВиробництва_Const.Назва,
+                    /*НомерДок*/ Документи.ПрибуткуванняМатеріалівЗВиробництва_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПрибуткуванняМатеріалівЗВиробництва_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПрибуткуванняМатеріалівЗВиробництва_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПрибуткуванняМатеріалівЗВиробництва_Select.QuerySelect.Order.Add(Документи.ПрибуткуванняМатеріалівЗВиробництва_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) ПрибуткуванняМатеріалівЗВиробництва_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.ПрибуткуванняМатеріалівЗВиробництва_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПрибуткуванняМатеріалівЗВиробництва_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ПрибуткуванняМатеріалівЗВиробництва_Select.SplitSelectToPages, ПрибуткуванняМатеріалівЗВиробництва_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ПрибуткуванняМатеріалівЗВиробництва_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ПрибуткуванняМатеріалівЗВиробництва_Select.MoveNext())
+            {
+                Документи.ПрибуткуванняМатеріалівЗВиробництва_Pointer? curr = ПрибуткуванняМатеріалівЗВиробництва_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПрибуткуванняМатеріалівЗВиробництва_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПрибуткуванняМатеріалівЗВиробництва_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПрибуткуванняМатеріалівЗВиробництва_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПрибуткуванняМатеріалівЗВиробництва_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "ПрибуткуванняТоварівВПереробку"
+        
+    public static class ПрибуткуванняТоварівВПереробку_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ПрибуткуванняТоварівВПереробку_Select ПрибуткуванняТоварівВПереробку_Select = new();
+            ПрибуткуванняТоварівВПереробку_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПрибуткуванняТоварівВПереробку_Const.Назва,
+                    /*НомерДок*/ Документи.ПрибуткуванняТоварівВПереробку_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПрибуткуванняТоварівВПереробку_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПрибуткуванняТоварівВПереробку_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПрибуткуванняТоварівВПереробку_Select.QuerySelect.Order.Add(Документи.ПрибуткуванняТоварівВПереробку_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            ПрибуткуванняТоварівВПереробку_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ПрибуткуванняТоварівВПереробку_Select.Select();
+            while (ПрибуткуванняТоварівВПереробку_Select.MoveNext())
+            {
+                Документи.ПрибуткуванняТоварівВПереробку_Pointer? curr = ПрибуткуванняТоварівВПереробку_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПрибуткуванняТоварівВПереробку_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПрибуткуванняТоварівВПереробку_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПрибуткуванняТоварівВПереробку_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПрибуткуванняТоварівВПереробку_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ПрибуткуванняТоварівВПереробку_Select ПрибуткуванняТоварівВПереробку_Select = new();
+            ПрибуткуванняТоварівВПереробку_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПрибуткуванняТоварівВПереробку_Const.Назва,
+                    /*НомерДок*/ Документи.ПрибуткуванняТоварівВПереробку_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПрибуткуванняТоварівВПереробку_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПрибуткуванняТоварівВПереробку_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПрибуткуванняТоварівВПереробку_Select.QuerySelect.Order.Add(Документи.ПрибуткуванняТоварівВПереробку_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) ПрибуткуванняТоварівВПереробку_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.ПрибуткуванняТоварівВПереробку_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПрибуткуванняТоварівВПереробку_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ПрибуткуванняТоварівВПереробку_Select.SplitSelectToPages, ПрибуткуванняТоварівВПереробку_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ПрибуткуванняТоварівВПереробку_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ПрибуткуванняТоварівВПереробку_Select.MoveNext())
+            {
+                Документи.ПрибуткуванняТоварівВПереробку_Pointer? curr = ПрибуткуванняТоварівВПереробку_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПрибуткуванняТоварівВПереробку_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПрибуткуванняТоварівВПереробку_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПрибуткуванняТоварівВПереробку_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПрибуткуванняТоварівВПереробку_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "ПрибуткуванняТоварівЗПереробки"
+        
+    public static class ПрибуткуванняТоварівЗПереробки_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ПрибуткуванняТоварівЗПереробки_Select ПрибуткуванняТоварівЗПереробки_Select = new();
+            ПрибуткуванняТоварівЗПереробки_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПрибуткуванняТоварівЗПереробки_Const.Назва,
+                    /*НомерДок*/ Документи.ПрибуткуванняТоварівЗПереробки_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПрибуткуванняТоварівЗПереробки_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПрибуткуванняТоварівЗПереробки_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПрибуткуванняТоварівЗПереробки_Select.QuerySelect.Order.Add(Документи.ПрибуткуванняТоварівЗПереробки_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            ПрибуткуванняТоварівЗПереробки_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ПрибуткуванняТоварівЗПереробки_Select.Select();
+            while (ПрибуткуванняТоварівЗПереробки_Select.MoveNext())
+            {
+                Документи.ПрибуткуванняТоварівЗПереробки_Pointer? curr = ПрибуткуванняТоварівЗПереробки_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПрибуткуванняТоварівЗПереробки_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПрибуткуванняТоварівЗПереробки_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПрибуткуванняТоварівЗПереробки_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПрибуткуванняТоварівЗПереробки_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ПрибуткуванняТоварівЗПереробки_Select ПрибуткуванняТоварівЗПереробки_Select = new();
+            ПрибуткуванняТоварівЗПереробки_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПрибуткуванняТоварівЗПереробки_Const.Назва,
+                    /*НомерДок*/ Документи.ПрибуткуванняТоварівЗПереробки_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПрибуткуванняТоварівЗПереробки_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПрибуткуванняТоварівЗПереробки_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПрибуткуванняТоварівЗПереробки_Select.QuerySelect.Order.Add(Документи.ПрибуткуванняТоварівЗПереробки_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) ПрибуткуванняТоварівЗПереробки_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.ПрибуткуванняТоварівЗПереробки_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПрибуткуванняТоварівЗПереробки_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ПрибуткуванняТоварівЗПереробки_Select.SplitSelectToPages, ПрибуткуванняТоварівЗПереробки_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ПрибуткуванняТоварівЗПереробки_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ПрибуткуванняТоварівЗПереробки_Select.MoveNext())
+            {
+                Документи.ПрибуткуванняТоварівЗПереробки_Pointer? curr = ПрибуткуванняТоварівЗПереробки_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПрибуткуванняТоварівЗПереробки_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПрибуткуванняТоварівЗПереробки_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПрибуткуванняТоварівЗПереробки_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПрибуткуванняТоварівЗПереробки_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "ПрибуткуванняНезавершеногоВиробництва"
+        
+    public static class ПрибуткуванняНезавершеногоВиробництва_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ПрибуткуванняНезавершеногоВиробництва_Select ПрибуткуванняНезавершеногоВиробництва_Select = new();
+            ПрибуткуванняНезавершеногоВиробництва_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПрибуткуванняНезавершеногоВиробництва_Const.Назва,
+                    /*НомерДок*/ Документи.ПрибуткуванняНезавершеногоВиробництва_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПрибуткуванняНезавершеногоВиробництва_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПрибуткуванняНезавершеногоВиробництва_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПрибуткуванняНезавершеногоВиробництва_Select.QuerySelect.Order.Add(Документи.ПрибуткуванняНезавершеногоВиробництва_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            ПрибуткуванняНезавершеногоВиробництва_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ПрибуткуванняНезавершеногоВиробництва_Select.Select();
+            while (ПрибуткуванняНезавершеногоВиробництва_Select.MoveNext())
+            {
+                Документи.ПрибуткуванняНезавершеногоВиробництва_Pointer? curr = ПрибуткуванняНезавершеногоВиробництва_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПрибуткуванняНезавершеногоВиробництва_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПрибуткуванняНезавершеногоВиробництва_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПрибуткуванняНезавершеногоВиробництва_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПрибуткуванняНезавершеногоВиробництва_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ПрибуткуванняНезавершеногоВиробництва_Select ПрибуткуванняНезавершеногоВиробництва_Select = new();
+            ПрибуткуванняНезавершеногоВиробництва_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПрибуткуванняНезавершеногоВиробництва_Const.Назва,
+                    /*НомерДок*/ Документи.ПрибуткуванняНезавершеногоВиробництва_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПрибуткуванняНезавершеногоВиробництва_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПрибуткуванняНезавершеногоВиробництва_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПрибуткуванняНезавершеногоВиробництва_Select.QuerySelect.Order.Add(Документи.ПрибуткуванняНезавершеногоВиробництва_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) ПрибуткуванняНезавершеногоВиробництва_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.ПрибуткуванняНезавершеногоВиробництва_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПрибуткуванняНезавершеногоВиробництва_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ПрибуткуванняНезавершеногоВиробництва_Select.SplitSelectToPages, ПрибуткуванняНезавершеногоВиробництва_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ПрибуткуванняНезавершеногоВиробництва_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ПрибуткуванняНезавершеногоВиробництва_Select.MoveNext())
+            {
+                Документи.ПрибуткуванняНезавершеногоВиробництва_Pointer? curr = ПрибуткуванняНезавершеногоВиробництва_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПрибуткуванняНезавершеногоВиробництва_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПрибуткуванняНезавершеногоВиробництва_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПрибуткуванняНезавершеногоВиробництва_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПрибуткуванняНезавершеногоВиробництва_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "ПрийняттяДоОбліку"
+        
+    public static class ПрийняттяДоОбліку_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ПрийняттяДоОбліку_Select ПрийняттяДоОбліку_Select = new();
+            ПрийняттяДоОбліку_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПрийняттяДоОбліку_Const.Назва,
+                    /*НомерДок*/ Документи.ПрийняттяДоОбліку_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПрийняттяДоОбліку_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПрийняттяДоОбліку_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПрийняттяДоОбліку_Select.QuerySelect.Order.Add(Документи.ПрийняттяДоОбліку_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            ПрийняттяДоОбліку_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ПрийняттяДоОбліку_Select.Select();
+            while (ПрийняттяДоОбліку_Select.MoveNext())
+            {
+                Документи.ПрийняттяДоОбліку_Pointer? curr = ПрийняттяДоОбліку_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПрийняттяДоОбліку_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПрийняттяДоОбліку_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПрийняттяДоОбліку_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПрийняттяДоОбліку_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ПрийняттяДоОбліку_Select ПрийняттяДоОбліку_Select = new();
+            ПрийняттяДоОбліку_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПрийняттяДоОбліку_Const.Назва,
+                    /*НомерДок*/ Документи.ПрийняттяДоОбліку_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПрийняттяДоОбліку_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПрийняттяДоОбліку_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПрийняттяДоОбліку_Select.QuerySelect.Order.Add(Документи.ПрийняттяДоОбліку_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) ПрийняттяДоОбліку_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.ПрийняттяДоОбліку_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПрийняттяДоОбліку_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ПрийняттяДоОбліку_Select.SplitSelectToPages, ПрийняттяДоОбліку_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ПрийняттяДоОбліку_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ПрийняттяДоОбліку_Select.MoveNext())
+            {
+                Документи.ПрийняттяДоОбліку_Pointer? curr = ПрийняттяДоОбліку_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПрийняттяДоОбліку_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПрийняттяДоОбліку_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПрийняттяДоОбліку_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПрийняттяДоОбліку_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "ПоверненняПереданихТоварів"
+        
+    public static class ПоверненняПереданихТоварів_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.ПоверненняПереданихТоварів_Select ПоверненняПереданихТоварів_Select = new();
+            ПоверненняПереданихТоварів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПоверненняПереданихТоварів_Const.Назва,
+                    /*НомерДок*/ Документи.ПоверненняПереданихТоварів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПоверненняПереданихТоварів_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПоверненняПереданихТоварів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПоверненняПереданихТоварів_Select.QuerySelect.Order.Add(Документи.ПоверненняПереданихТоварів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            ПоверненняПереданихТоварів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await ПоверненняПереданихТоварів_Select.Select();
+            while (ПоверненняПереданихТоварів_Select.MoveNext())
+            {
+                Документи.ПоверненняПереданихТоварів_Pointer? curr = ПоверненняПереданихТоварів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПоверненняПереданихТоварів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПоверненняПереданихТоварів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПоверненняПереданихТоварів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПоверненняПереданихТоварів_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.ПоверненняПереданихТоварів_Select ПоверненняПереданихТоварів_Select = new();
+            ПоверненняПереданихТоварів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.ПоверненняПереданихТоварів_Const.Назва,
+                    /*НомерДок*/ Документи.ПоверненняПереданихТоварів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.ПоверненняПереданихТоварів_Const.ДатаДок,
+                    /*Коментар*/ Документи.ПоверненняПереданихТоварів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    ПоверненняПереданихТоварів_Select.QuerySelect.Order.Add(Документи.ПоверненняПереданихТоварів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) ПоверненняПереданихТоварів_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.ПоверненняПереданихТоварів_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) ПоверненняПереданихТоварів_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(ПоверненняПереданихТоварів_Select.SplitSelectToPages, ПоверненняПереданихТоварів_Select.QuerySelect, unigueIDSelect);
+
+            
+            await ПоверненняПереданихТоварів_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (ПоверненняПереданихТоварів_Select.MoveNext())
+            {
+                Документи.ПоверненняПереданихТоварів_Pointer? curr = ПоверненняПереданихТоварів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[ПоверненняПереданихТоварів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[ПоверненняПереданихТоварів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[ПоверненняПереданихТоварів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[ПоверненняПереданихТоварів_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "РемонтОсновнихЗасобів"
+        
+    public static class РемонтОсновнихЗасобів_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.РемонтОсновнихЗасобів_Select РемонтОсновнихЗасобів_Select = new();
+            РемонтОсновнихЗасобів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.РемонтОсновнихЗасобів_Const.Назва,
+                    /*НомерДок*/ Документи.РемонтОсновнихЗасобів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.РемонтОсновнихЗасобів_Const.ДатаДок,
+                    /*Коментар*/ Документи.РемонтОсновнихЗасобів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    РемонтОсновнихЗасобів_Select.QuerySelect.Order.Add(Документи.РемонтОсновнихЗасобів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            РемонтОсновнихЗасобів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await РемонтОсновнихЗасобів_Select.Select();
+            while (РемонтОсновнихЗасобів_Select.MoveNext())
+            {
+                Документи.РемонтОсновнихЗасобів_Pointer? curr = РемонтОсновнихЗасобів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[РемонтОсновнихЗасобів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[РемонтОсновнихЗасобів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[РемонтОсновнихЗасобів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[РемонтОсновнихЗасобів_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.РемонтОсновнихЗасобів_Select РемонтОсновнихЗасобів_Select = new();
+            РемонтОсновнихЗасобів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.РемонтОсновнихЗасобів_Const.Назва,
+                    /*НомерДок*/ Документи.РемонтОсновнихЗасобів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.РемонтОсновнихЗасобів_Const.ДатаДок,
+                    /*Коментар*/ Документи.РемонтОсновнихЗасобів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    РемонтОсновнихЗасобів_Select.QuerySelect.Order.Add(Документи.РемонтОсновнихЗасобів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) РемонтОсновнихЗасобів_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.РемонтОсновнихЗасобів_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) РемонтОсновнихЗасобів_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(РемонтОсновнихЗасобів_Select.SplitSelectToPages, РемонтОсновнихЗасобів_Select.QuerySelect, unigueIDSelect);
+
+            
+            await РемонтОсновнихЗасобів_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (РемонтОсновнихЗасобів_Select.MoveNext())
+            {
+                Документи.РемонтОсновнихЗасобів_Pointer? curr = РемонтОсновнихЗасобів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[РемонтОсновнихЗасобів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[РемонтОсновнихЗасобів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[РемонтОсновнихЗасобів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[РемонтОсновнихЗасобів_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "РозподілІншихВитрат"
+        
+    public static class РозподілІншихВитрат_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.РозподілІншихВитрат_Select РозподілІншихВитрат_Select = new();
+            РозподілІншихВитрат_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.РозподілІншихВитрат_Const.Назва,
+                    /*НомерДок*/ Документи.РозподілІншихВитрат_Const.НомерДок,
+                    /*ДатаДок*/ Документи.РозподілІншихВитрат_Const.ДатаДок,
+                    /*Коментар*/ Документи.РозподілІншихВитрат_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    РозподілІншихВитрат_Select.QuerySelect.Order.Add(Документи.РозподілІншихВитрат_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            РозподілІншихВитрат_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await РозподілІншихВитрат_Select.Select();
+            while (РозподілІншихВитрат_Select.MoveNext())
+            {
+                Документи.РозподілІншихВитрат_Pointer? curr = РозподілІншихВитрат_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[РозподілІншихВитрат_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[РозподілІншихВитрат_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[РозподілІншихВитрат_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[РозподілІншихВитрат_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.РозподілІншихВитрат_Select РозподілІншихВитрат_Select = new();
+            РозподілІншихВитрат_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.РозподілІншихВитрат_Const.Назва,
+                    /*НомерДок*/ Документи.РозподілІншихВитрат_Const.НомерДок,
+                    /*ДатаДок*/ Документи.РозподілІншихВитрат_Const.ДатаДок,
+                    /*Коментар*/ Документи.РозподілІншихВитрат_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    РозподілІншихВитрат_Select.QuerySelect.Order.Add(Документи.РозподілІншихВитрат_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) РозподілІншихВитрат_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.РозподілІншихВитрат_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) РозподілІншихВитрат_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(РозподілІншихВитрат_Select.SplitSelectToPages, РозподілІншихВитрат_Select.QuerySelect, unigueIDSelect);
+
+            
+            await РозподілІншихВитрат_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (РозподілІншихВитрат_Select.MoveNext())
+            {
+                Документи.РозподілІншихВитрат_Pointer? curr = РозподілІншихВитрат_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[РозподілІншихВитрат_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[РозподілІншихВитрат_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[РозподілІншихВитрат_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[РозподілІншихВитрат_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "РозрахунокСобівартостіВипуску"
+        
+    public static class РозрахунокСобівартостіВипуску_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.РозрахунокСобівартостіВипуску_Select РозрахунокСобівартостіВипуску_Select = new();
+            РозрахунокСобівартостіВипуску_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.РозрахунокСобівартостіВипуску_Const.Назва,
+                    /*НомерДок*/ Документи.РозрахунокСобівартостіВипуску_Const.НомерДок,
+                    /*ДатаДок*/ Документи.РозрахунокСобівартостіВипуску_Const.ДатаДок,
+                    /*Коментар*/ Документи.РозрахунокСобівартостіВипуску_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    РозрахунокСобівартостіВипуску_Select.QuerySelect.Order.Add(Документи.РозрахунокСобівартостіВипуску_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            РозрахунокСобівартостіВипуску_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await РозрахунокСобівартостіВипуску_Select.Select();
+            while (РозрахунокСобівартостіВипуску_Select.MoveNext())
+            {
+                Документи.РозрахунокСобівартостіВипуску_Pointer? curr = РозрахунокСобівартостіВипуску_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[РозрахунокСобівартостіВипуску_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[РозрахунокСобівартостіВипуску_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[РозрахунокСобівартостіВипуску_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[РозрахунокСобівартостіВипуску_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.РозрахунокСобівартостіВипуску_Select РозрахунокСобівартостіВипуску_Select = new();
+            РозрахунокСобівартостіВипуску_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.РозрахунокСобівартостіВипуску_Const.Назва,
+                    /*НомерДок*/ Документи.РозрахунокСобівартостіВипуску_Const.НомерДок,
+                    /*ДатаДок*/ Документи.РозрахунокСобівартостіВипуску_Const.ДатаДок,
+                    /*Коментар*/ Документи.РозрахунокСобівартостіВипуску_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    РозрахунокСобівартостіВипуску_Select.QuerySelect.Order.Add(Документи.РозрахунокСобівартостіВипуску_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) РозрахунокСобівартостіВипуску_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.РозрахунокСобівартостіВипуску_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) РозрахунокСобівартостіВипуску_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(РозрахунокСобівартостіВипуску_Select.SplitSelectToPages, РозрахунокСобівартостіВипуску_Select.QuerySelect, unigueIDSelect);
+
+            
+            await РозрахунокСобівартостіВипуску_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (РозрахунокСобівартостіВипуску_Select.MoveNext())
+            {
+                Документи.РозрахунокСобівартостіВипуску_Pointer? curr = РозрахунокСобівартостіВипуску_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[РозрахунокСобівартостіВипуску_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[РозрахунокСобівартостіВипуску_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[РозрахунокСобівартостіВипуску_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[РозрахунокСобівартостіВипуску_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "СписанняМатеріалів"
+        
+    public static class СписанняМатеріалів_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.СписанняМатеріалів_Select СписанняМатеріалів_Select = new();
+            СписанняМатеріалів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.СписанняМатеріалів_Const.Назва,
+                    /*НомерДок*/ Документи.СписанняМатеріалів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.СписанняМатеріалів_Const.ДатаДок,
+                    /*Коментар*/ Документи.СписанняМатеріалів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    СписанняМатеріалів_Select.QuerySelect.Order.Add(Документи.СписанняМатеріалів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            СписанняМатеріалів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await СписанняМатеріалів_Select.Select();
+            while (СписанняМатеріалів_Select.MoveNext())
+            {
+                Документи.СписанняМатеріалів_Pointer? curr = СписанняМатеріалів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[СписанняМатеріалів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[СписанняМатеріалів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[СписанняМатеріалів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[СписанняМатеріалів_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.СписанняМатеріалів_Select СписанняМатеріалів_Select = new();
+            СписанняМатеріалів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.СписанняМатеріалів_Const.Назва,
+                    /*НомерДок*/ Документи.СписанняМатеріалів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.СписанняМатеріалів_Const.ДатаДок,
+                    /*Коментар*/ Документи.СписанняМатеріалів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    СписанняМатеріалів_Select.QuerySelect.Order.Add(Документи.СписанняМатеріалів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) СписанняМатеріалів_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.СписанняМатеріалів_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) СписанняМатеріалів_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(СписанняМатеріалів_Select.SplitSelectToPages, СписанняМатеріалів_Select.QuerySelect, unigueIDSelect);
+
+            
+            await СписанняМатеріалів_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (СписанняМатеріалів_Select.MoveNext())
+            {
+                Документи.СписанняМатеріалів_Pointer? curr = СписанняМатеріалів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[СписанняМатеріалів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[СписанняМатеріалів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[СписанняМатеріалів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[СписанняМатеріалів_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "СписанняНезавершеногоВиробництва"
+        
+    public static class СписанняНезавершеногоВиробництва_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.СписанняНезавершеногоВиробництва_Select СписанняНезавершеногоВиробництва_Select = new();
+            СписанняНезавершеногоВиробництва_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.СписанняНезавершеногоВиробництва_Const.Назва,
+                    /*НомерДок*/ Документи.СписанняНезавершеногоВиробництва_Const.НомерДок,
+                    /*ДатаДок*/ Документи.СписанняНезавершеногоВиробництва_Const.ДатаДок,
+                    /*Коментар*/ Документи.СписанняНезавершеногоВиробництва_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    СписанняНезавершеногоВиробництва_Select.QuerySelect.Order.Add(Документи.СписанняНезавершеногоВиробництва_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            СписанняНезавершеногоВиробництва_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await СписанняНезавершеногоВиробництва_Select.Select();
+            while (СписанняНезавершеногоВиробництва_Select.MoveNext())
+            {
+                Документи.СписанняНезавершеногоВиробництва_Pointer? curr = СписанняНезавершеногоВиробництва_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[СписанняНезавершеногоВиробництва_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[СписанняНезавершеногоВиробництва_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[СписанняНезавершеногоВиробництва_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[СписанняНезавершеногоВиробництва_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.СписанняНезавершеногоВиробництва_Select СписанняНезавершеногоВиробництва_Select = new();
+            СписанняНезавершеногоВиробництва_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.СписанняНезавершеногоВиробництва_Const.Назва,
+                    /*НомерДок*/ Документи.СписанняНезавершеногоВиробництва_Const.НомерДок,
+                    /*ДатаДок*/ Документи.СписанняНезавершеногоВиробництва_Const.ДатаДок,
+                    /*Коментар*/ Документи.СписанняНезавершеногоВиробництва_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    СписанняНезавершеногоВиробництва_Select.QuerySelect.Order.Add(Документи.СписанняНезавершеногоВиробництва_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) СписанняНезавершеногоВиробництва_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.СписанняНезавершеногоВиробництва_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) СписанняНезавершеногоВиробництва_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(СписанняНезавершеногоВиробництва_Select.SplitSelectToPages, СписанняНезавершеногоВиробництва_Select.QuerySelect, unigueIDSelect);
+
+            
+            await СписанняНезавершеногоВиробництва_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (СписанняНезавершеногоВиробництва_Select.MoveNext())
+            {
+                Документи.СписанняНезавершеногоВиробництва_Pointer? curr = СписанняНезавершеногоВиробництва_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[СписанняНезавершеногоВиробництва_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[СписанняНезавершеногоВиробництва_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[СписанняНезавершеногоВиробництва_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[СписанняНезавершеногоВиробництва_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "СписанняНематеріальнихАктивів"
+        
+    public static class СписанняНематеріальнихАктивів_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.СписанняНематеріальнихАктивів_Select СписанняНематеріальнихАктивів_Select = new();
+            СписанняНематеріальнихАктивів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.СписанняНематеріальнихАктивів_Const.Назва,
+                    /*НомерДок*/ Документи.СписанняНематеріальнихАктивів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.СписанняНематеріальнихАктивів_Const.ДатаДок,
+                    /*Коментар*/ Документи.СписанняНематеріальнихАктивів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    СписанняНематеріальнихАктивів_Select.QuerySelect.Order.Add(Документи.СписанняНематеріальнихАктивів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            СписанняНематеріальнихАктивів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await СписанняНематеріальнихАктивів_Select.Select();
+            while (СписанняНематеріальнихАктивів_Select.MoveNext())
+            {
+                Документи.СписанняНематеріальнихАктивів_Pointer? curr = СписанняНематеріальнихАктивів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[СписанняНематеріальнихАктивів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[СписанняНематеріальнихАктивів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[СписанняНематеріальнихАктивів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[СписанняНематеріальнихАктивів_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.СписанняНематеріальнихАктивів_Select СписанняНематеріальнихАктивів_Select = new();
+            СписанняНематеріальнихАктивів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.СписанняНематеріальнихАктивів_Const.Назва,
+                    /*НомерДок*/ Документи.СписанняНематеріальнихАктивів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.СписанняНематеріальнихАктивів_Const.ДатаДок,
+                    /*Коментар*/ Документи.СписанняНематеріальнихАктивів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    СписанняНематеріальнихАктивів_Select.QuerySelect.Order.Add(Документи.СписанняНематеріальнихАктивів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) СписанняНематеріальнихАктивів_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.СписанняНематеріальнихАктивів_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) СписанняНематеріальнихАктивів_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(СписанняНематеріальнихАктивів_Select.SplitSelectToPages, СписанняНематеріальнихАктивів_Select.QuerySelect, unigueIDSelect);
+
+            
+            await СписанняНематеріальнихАктивів_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (СписанняНематеріальнихАктивів_Select.MoveNext())
+            {
+                Документи.СписанняНематеріальнихАктивів_Pointer? curr = СписанняНематеріальнихАктивів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[СписанняНематеріальнихАктивів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[СписанняНематеріальнихАктивів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[СписанняНематеріальнихАктивів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[СписанняНематеріальнихАктивів_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "СписанняОсновнихЗасобів"
+        
+    public static class СписанняОсновнихЗасобів_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.СписанняОсновнихЗасобів_Select СписанняОсновнихЗасобів_Select = new();
+            СписанняОсновнихЗасобів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.СписанняОсновнихЗасобів_Const.Назва,
+                    /*НомерДок*/ Документи.СписанняОсновнихЗасобів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.СписанняОсновнихЗасобів_Const.ДатаДок,
+                    /*Коментар*/ Документи.СписанняОсновнихЗасобів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    СписанняОсновнихЗасобів_Select.QuerySelect.Order.Add(Документи.СписанняОсновнихЗасобів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            СписанняОсновнихЗасобів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await СписанняОсновнихЗасобів_Select.Select();
+            while (СписанняОсновнихЗасобів_Select.MoveNext())
+            {
+                Документи.СписанняОсновнихЗасобів_Pointer? curr = СписанняОсновнихЗасобів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[СписанняОсновнихЗасобів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[СписанняОсновнихЗасобів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[СписанняОсновнихЗасобів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[СписанняОсновнихЗасобів_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.СписанняОсновнихЗасобів_Select СписанняОсновнихЗасобів_Select = new();
+            СписанняОсновнихЗасобів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.СписанняОсновнихЗасобів_Const.Назва,
+                    /*НомерДок*/ Документи.СписанняОсновнихЗасобів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.СписанняОсновнихЗасобів_Const.ДатаДок,
+                    /*Коментар*/ Документи.СписанняОсновнихЗасобів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    СписанняОсновнихЗасобів_Select.QuerySelect.Order.Add(Документи.СписанняОсновнихЗасобів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) СписанняОсновнихЗасобів_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.СписанняОсновнихЗасобів_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) СписанняОсновнихЗасобів_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(СписанняОсновнихЗасобів_Select.SplitSelectToPages, СписанняОсновнихЗасобів_Select.QuerySelect, unigueIDSelect);
+
+            
+            await СписанняОсновнихЗасобів_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (СписанняОсновнихЗасобів_Select.MoveNext())
+            {
+                Документи.СписанняОсновнихЗасобів_Pointer? curr = СписанняОсновнихЗасобів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[СписанняОсновнихЗасобів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[СписанняОсновнихЗасобів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[СписанняОсновнихЗасобів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[СписанняОсновнихЗасобів_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "СписанняВитратМайбутніхПеріодів"
+        
+    public static class СписанняВитратМайбутніхПеріодів_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.СписанняВитратМайбутніхПеріодів_Select СписанняВитратМайбутніхПеріодів_Select = new();
+            СписанняВитратМайбутніхПеріодів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.СписанняВитратМайбутніхПеріодів_Const.Назва,
+                    /*НомерДок*/ Документи.СписанняВитратМайбутніхПеріодів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.СписанняВитратМайбутніхПеріодів_Const.ДатаДок,
+                    /*Коментар*/ Документи.СписанняВитратМайбутніхПеріодів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    СписанняВитратМайбутніхПеріодів_Select.QuerySelect.Order.Add(Документи.СписанняВитратМайбутніхПеріодів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            СписанняВитратМайбутніхПеріодів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await СписанняВитратМайбутніхПеріодів_Select.Select();
+            while (СписанняВитратМайбутніхПеріодів_Select.MoveNext())
+            {
+                Документи.СписанняВитратМайбутніхПеріодів_Pointer? curr = СписанняВитратМайбутніхПеріодів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[СписанняВитратМайбутніхПеріодів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[СписанняВитратМайбутніхПеріодів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[СписанняВитратМайбутніхПеріодів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[СписанняВитратМайбутніхПеріодів_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.СписанняВитратМайбутніхПеріодів_Select СписанняВитратМайбутніхПеріодів_Select = new();
+            СписанняВитратМайбутніхПеріодів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.СписанняВитратМайбутніхПеріодів_Const.Назва,
+                    /*НомерДок*/ Документи.СписанняВитратМайбутніхПеріодів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.СписанняВитратМайбутніхПеріодів_Const.ДатаДок,
+                    /*Коментар*/ Документи.СписанняВитратМайбутніхПеріодів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    СписанняВитратМайбутніхПеріодів_Select.QuerySelect.Order.Add(Документи.СписанняВитратМайбутніхПеріодів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) СписанняВитратМайбутніхПеріодів_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.СписанняВитратМайбутніхПеріодів_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) СписанняВитратМайбутніхПеріодів_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(СписанняВитратМайбутніхПеріодів_Select.SplitSelectToPages, СписанняВитратМайбутніхПеріодів_Select.QuerySelect, unigueIDSelect);
+
+            
+            await СписанняВитратМайбутніхПеріодів_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (СписанняВитратМайбутніхПеріодів_Select.MoveNext())
+            {
+                Документи.СписанняВитратМайбутніхПеріодів_Pointer? curr = СписанняВитратМайбутніхПеріодів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[СписанняВитратМайбутніхПеріодів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[СписанняВитратМайбутніхПеріодів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[СписанняВитратМайбутніхПеріодів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[СписанняВитратМайбутніхПеріодів_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "СписанняТоварів"
+        
+    public static class СписанняТоварів_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.СписанняТоварів_Select СписанняТоварів_Select = new();
+            СписанняТоварів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.СписанняТоварів_Const.Назва,
+                    /*НомерДок*/ Документи.СписанняТоварів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.СписанняТоварів_Const.ДатаДок,
+                    /*Коментар*/ Документи.СписанняТоварів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    СписанняТоварів_Select.QuerySelect.Order.Add(Документи.СписанняТоварів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            СписанняТоварів_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await СписанняТоварів_Select.Select();
+            while (СписанняТоварів_Select.MoveNext())
+            {
+                Документи.СписанняТоварів_Pointer? curr = СписанняТоварів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[СписанняТоварів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[СписанняТоварів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[СписанняТоварів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[СписанняТоварів_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.СписанняТоварів_Select СписанняТоварів_Select = new();
+            СписанняТоварів_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.СписанняТоварів_Const.Назва,
+                    /*НомерДок*/ Документи.СписанняТоварів_Const.НомерДок,
+                    /*ДатаДок*/ Документи.СписанняТоварів_Const.ДатаДок,
+                    /*Коментар*/ Документи.СписанняТоварів_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    СписанняТоварів_Select.QuerySelect.Order.Add(Документи.СписанняТоварів_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) СписанняТоварів_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.СписанняТоварів_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) СписанняТоварів_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(СписанняТоварів_Select.SplitSelectToPages, СписанняТоварів_Select.QuerySelect, unigueIDSelect);
+
+            
+            await СписанняТоварів_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (СписанняТоварів_Select.MoveNext())
+            {
+                Документи.СписанняТоварів_Pointer? curr = СписанняТоварів_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[СписанняТоварів_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[СписанняТоварів_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[СписанняТоварів_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[СписанняТоварів_Const.Коментар].ToString() ?? "");
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                }
+            }
+            form.AfterLoadRecords(selectPosition);
+        }
+    }
+        
+    #endregion
+    
+    #region DOCUMENT "Сторнування"
+        
+    public static class Сторнування_Записи
+    {
+        public static void AddColumn(DocumentFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Spend
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: НомерДок, "Номер"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["НомерДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ДатаДок, "Дата"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("datetime");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ДатаДок"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DocumentFormJournalBase form)
+        {
+            
+        }
+
+        public static async ValueTask UpdateRecords(DocumentFormJournalBase form)
+        {
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0)
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+            
+            /* Вибірка */
+            Документи.Сторнування_Select Сторнування_Select = new();
+            Сторнування_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.Сторнування_Const.Назва,
+                    /*НомерДок*/ Документи.Сторнування_Const.НомерДок,
+                    /*ДатаДок*/ Документи.Сторнування_Const.ДатаДок,
+                    /*Коментар*/ Документи.Сторнування_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Сторнування_Select.QuerySelect.Order.Add(Документи.Сторнування_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            Сторнування_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await Сторнування_Select.Select();
+            while (Сторнування_Select.MoveNext())
+            {
+                Документи.Сторнування_Pointer? curr = Сторнування_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[Сторнування_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[Сторнування_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[Сторнування_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[Сторнування_Const.Коментар].ToString() ?? "");
+                    
+                    ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
+                    if (objCh != null)
+                    {
+                        bool exist = false;
+                        for (uint i = 0; i < form.Store.GetNItems(); i++)
+                        {
+                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
+                            if (item != null && item.UniqueID.Equals(curr.UniqueID))
+                            {
+                                bool sel = form.Grid.Model.IsSelected(i);
+                                form.Store.Splice(i, 1, [row], 1);
+                                if (sel) form.Grid.Model.SelectItem(i, false);
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist && objCh.Type == TypeObjectChanged.Add)
+                            form.Store.Append(row);
+                    }
+                }
+            }
+        }
+
+        public static async ValueTask LoadRecords(DocumentFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DocumentPointerItem;
+
+            /* Вибірка */
+            Документи.Сторнування_Select Сторнування_Select = new();
+            Сторнування_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /* + spend */ "spend",
+                    /*Назва*/ Документи.Сторнування_Const.Назва,
+                    /*НомерДок*/ Документи.Сторнування_Const.НомерДок,
+                    /*ДатаДок*/ Документи.Сторнування_Const.ДатаДок,
+                    /*Коментар*/ Документи.Сторнування_Const.Коментар,
+                    
+                ]);
+            
+                    /* Сортування */
+                    Сторнування_Select.QuerySelect.Order.Add(Документи.Сторнування_Const.ДатаДок, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) Сторнування_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Відбір за період */
+             if (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart || (form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Filter && form.Filter.IsUsePeriod))
+            {
+                Where? where = InterfaceGtk4.PeriodForJournal.SelectionByPeriod(Документи.Сторнування_Const.ДатаДок, form.Period.Period, form.Period.DateStart, form.Period.DateStop);
+                if (where != null) Сторнування_Select.QuerySelect.Where.Add(where);
+            }
+
+            /* Cторінки */
+            await form.SplitPages(Сторнування_Select.SplitSelectToPages, Сторнування_Select.QuerySelect, unigueIDSelect);
+
+            
+            await Сторнування_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+            uint selectPosition = 0;
+            while (Сторнування_Select.MoveNext())
+            {
+                Документи.Сторнування_Pointer? curr = Сторнування_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DocumentRowJournal row = DocumentRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Spend = (bool)Fields["spend"];
+                    row.Fields.Add("Назва", Fields[Сторнування_Const.Назва].ToString() ?? "");
+                    row.Fields.Add("НомерДок", Fields[Сторнування_Const.НомерДок].ToString() ?? "");
+                    row.Fields.Add("ДатаДок", Fields[Сторнування_Const.ДатаДок].ToString() ?? "");
+                    row.Fields.Add("Коментар", Fields[Сторнування_Const.Коментар].ToString() ?? "");
                     
                     form.Store.Append(row);
                     if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();

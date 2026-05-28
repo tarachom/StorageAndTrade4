@@ -10,10 +10,10 @@ namespace GeneratedCode.Довідники;
 
 class Банки_Triggers
 {
-    public static Task New(Банки_Objest ДовідникОбєкт)
+    public static async Task New(Банки_Objest ДовідникОбєкт)
     {
-        ДовідникОбєкт.Код = (++НумераціяДовідників.Банки_Const).ToString("D6");
-        return Task.CompletedTask;
+        int number = await НумераціяДовідників.Банки();
+        ДовідникОбєкт.Код = (await НумераціяДовідників.Банки(++number)).ToString("D6");
     }
 
     public static Task Copying(Банки_Objest ДовідникОбєкт, Банки_Objest Основа)

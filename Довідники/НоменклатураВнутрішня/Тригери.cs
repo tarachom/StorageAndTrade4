@@ -12,10 +12,10 @@ namespace GeneratedCode.Довідники;
 
 static class НоменклатураВнутрішня_Triggers
 {
-    public static Task New(НоменклатураВнутрішня_Objest ДовідникОбєкт)
+    public static async Task New(НоменклатураВнутрішня_Objest ДовідникОбєкт)
     {
-        ДовідникОбєкт.Код = (++НумераціяДовідників.НоменклатураВнутрішня_Const).ToString("D6");
-        return Task.CompletedTask;
+        int number = await НумераціяДовідників.НоменклатураВнутрішня();
+        ДовідникОбєкт.Код = (await НумераціяДовідників.НоменклатураВнутрішня(++number)).ToString("D6");
     }
 
     public static Task Copying(НоменклатураВнутрішня_Objest ДовідникОбєкт, НоменклатураВнутрішня_Objest Основа)

@@ -11,10 +11,10 @@ namespace GeneratedCode.Довідники;
 
 static class ВидиПодатків_Triggers
 {
-    public static Task New(ВидиПодатків_Objest ДовідникОбєкт)
+    public static async Task New(ВидиПодатків_Objest ДовідникОбєкт)
     {
-        ДовідникОбєкт.Код = (++НумераціяДовідників.ВидиПодатків_Const).ToString("D6");
-        return Task.CompletedTask;
+        int number = await НумераціяДовідників.ВидиПодатків();
+        ДовідникОбєкт.Код = (await НумераціяДовідників.ВидиПодатків(++number)).ToString("D6");
     }
 
     public static Task Copying(ВидиПодатків_Objest ДовідникОбєкт, ВидиПодатків_Objest Основа)

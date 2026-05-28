@@ -72,27 +72,27 @@ partial class FormStorageAndTrade : FormGeneral
         NotebookFunc.CreatePage("Обробки", PageProcessing.New());
     }
 
-    protected override void MenuDocuments(Box vBox)
+    protected override void MenuDocuments(Box vBox, Popover? popover = null)
     {
-        vBox.Append(Menu_Document.New());
+        vBox.Append(Menu_Document.New(popover));
     }
 
-    protected override void MenuDirectory(Box vBox)
+    protected override void MenuDirectory(Box vBox, Popover? popover = null)
     {
-        vBox.Append(Menu_Directory.New());
+        vBox.Append(Menu_Directory.New(popover));
     }
 
-    protected override void MenuJournals(Box vBox)
-    {
-
-    }
-
-    protected override void MenuReports(Box vBox)
+    protected override void MenuJournals(Box vBox, Popover? popover = null)
     {
 
     }
 
-    protected override void MenuRegisters(Box vBox)
+    protected override void MenuReports(Box vBox, Popover? popover = null)
+    {
+
+    }
+
+    protected override void MenuRegisters(Box vBox, Popover? popover = null)
     {
 
     }

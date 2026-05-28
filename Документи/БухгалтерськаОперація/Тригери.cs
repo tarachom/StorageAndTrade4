@@ -13,12 +13,13 @@ namespace GeneratedCode.Документи;
 
 static class БухгалтерськаОперація_Triggers
 {
-    public static Task New(БухгалтерськаОперація_Objest ДокументОбєкт)
+    public static async Task New(БухгалтерськаОперація_Objest ДокументОбєкт)
     {
-        ДокументОбєкт.НомерДок = (++НумераціяДокументів.БухгалтерськаОперація_Const).ToString("D8");
+        int number = await НумераціяДокументів.БухгалтерськаОперація();
+        ДокументОбєкт.НомерДок = (await НумераціяДокументів.БухгалтерськаОперація(++number)).ToString("D8");
+
         ДокументОбєкт.ДатаДок = DateTime.Now;
         ДокументОбєкт.Автор = Program.Користувач;
-        return Task.CompletedTask;
     }
 
     public static Task Copying(БухгалтерськаОперація_Objest ДокументОбєкт, БухгалтерськаОперація_Objest Основа)

@@ -35,7 +35,7 @@ static class ФункціїНалаштуванняКористувача
         if (!string.IsNullOrEmpty(періодДляЖурналу.Період) && Enum.TryParse(періодДляЖурналу.Період, out PeriodForJournal.TypePeriod result))
             Період.Period = result;
         else
-            Період.Period = Enum.TryParse(ЖурналиДокументів.ОсновнийТипПеріоду_Const, out PeriodForJournal.TypePeriod МожливийПеріод) ?
+            Період.Period = Enum.TryParse(await ЖурналиДокументів.ОсновнийТипПеріоду(), out PeriodForJournal.TypePeriod МожливийПеріод) ?
                 МожливийПеріод : PeriodForJournal.TypePeriod.AllPeriod;
     }
 

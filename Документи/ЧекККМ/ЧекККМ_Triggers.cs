@@ -12,12 +12,12 @@ namespace GeneratedCode.Документи;
 
 static class ЧекККМ_Triggers
 {
-    public static Task New(ЧекККМ_Objest ДокументОбєкт)
+    public static async Task New(ЧекККМ_Objest ДокументОбєкт)
     {
-        ДокументОбєкт.НомерДок = (++НумераціяДокументів.ЧекККМ_Const).ToString("D8");
+        int number = await НумераціяДокументів.ЧекККМ();
+        ДокументОбєкт.НомерДок = (await НумераціяДокументів.ЧекККМ(++number)).ToString("D8");
         ДокументОбєкт.ДатаДок = DateTime.Now;
         ДокументОбєкт.Автор = Program.Користувач;
-        return Task.CompletedTask;
     }
 
     public static Task Copying(ЧекККМ_Objest ДокументОбєкт, ЧекККМ_Objest Основа)

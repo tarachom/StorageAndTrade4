@@ -11,12 +11,12 @@ namespace GeneratedCode.Довідники;
 
 class ЗбереженіЗвіти_Triggers
 {
-    public static Task New(ЗбереженіЗвіти_Objest ДовідникОбєкт)
+    public static async Task New(ЗбереженіЗвіти_Objest ДовідникОбєкт)
     {
-        ДовідникОбєкт.Код = (++НумераціяДовідників.ЗбереженіЗвіти_Const).ToString("D6");
+        int number = await НумераціяДовідників.ЗбереженіЗвіти();
+        ДовідникОбєкт.Код = (await НумераціяДовідників.ЗбереженіЗвіти(++number)).ToString("D6");
         ДовідникОбєкт.Додано = DateTime.Now;
         ДовідникОбєкт.Користувач = Program.Користувач;
-        return Task.CompletedTask;
     }
 
     public static Task Copying(ЗбереженіЗвіти_Objest ДовідникОбєкт, ЗбереженіЗвіти_Objest Основа)

@@ -10,10 +10,10 @@ namespace GeneratedCode.Довідники;
 
 class БанківськіРахункиОрганізацій_Triggers
 {
-    public static Task New(БанківськіРахункиОрганізацій_Objest ДовідникОбєкт)
+    public static async Task New(БанківськіРахункиОрганізацій_Objest ДовідникОбєкт)
     {
-        ДовідникОбєкт.Код = (++НумераціяДовідників.БанківськіРахункиОрганізацій_Const).ToString("D6");
-        return Task.CompletedTask;
+        int number = await НумераціяДовідників.БанківськіРахункиОрганізацій();
+        ДовідникОбєкт.Код = (await НумераціяДовідників.БанківськіРахункиОрганізацій(++number)).ToString("D6");
     }
 
     public static Task Copying(БанківськіРахункиОрганізацій_Objest ДовідникОбєкт, БанківськіРахункиОрганізацій_Objest Основа)

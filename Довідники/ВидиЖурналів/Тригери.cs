@@ -12,10 +12,10 @@ namespace GeneratedCode.Довідники;
 
 static class ВидиЖурналів_Triggers
 {
-    public static Task New(ВидиЖурналів_Objest ДовідникОбєкт)
+    public static async Task New(ВидиЖурналів_Objest ДовідникОбєкт)
     {
-        ДовідникОбєкт.Код = (++НумераціяДовідників.ВидиЖурналів_Const).ToString("D6");
-        return Task.CompletedTask;
+        int number = await НумераціяДовідників.ВидиЖурналів();
+        ДовідникОбєкт.Код = (await НумераціяДовідників.ВидиЖурналів(++number)).ToString("D6");
     }
 
     public static Task Copying(ВидиЖурналів_Objest ДовідникОбєкт, ВидиЖурналів_Objest Основа)

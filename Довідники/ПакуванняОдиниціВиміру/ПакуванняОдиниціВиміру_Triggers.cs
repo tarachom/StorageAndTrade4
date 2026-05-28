@@ -10,10 +10,10 @@ namespace GeneratedCode.Довідники;
 
 class ПакуванняОдиниціВиміру_Triggers
 {
-    public static Task New(ПакуванняОдиниціВиміру_Objest ДовідникОбєкт)
+    public static async Task New(ПакуванняОдиниціВиміру_Objest ДовідникОбєкт)
     {
-        ДовідникОбєкт.Код = (++НумераціяДовідників.ПакуванняОдиниціВиміру_Const).ToString("D6");
-        return Task.CompletedTask;
+        int number = await НумераціяДовідників.ПакуванняОдиниціВиміру();
+        ДовідникОбєкт.Код = (await НумераціяДовідників.ПакуванняОдиниціВиміру(++number)).ToString("D6");
     }
 
     public static Task Copying(ПакуванняОдиниціВиміру_Objest ДовідникОбєкт, ПакуванняОдиниціВиміру_Objest Основа)

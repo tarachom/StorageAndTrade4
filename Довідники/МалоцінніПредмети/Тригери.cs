@@ -12,10 +12,10 @@ namespace GeneratedCode.Довідники;
 
 static class МалоцінніПредмети_Triggers
 {
-    public static Task New(МалоцінніПредмети_Objest ДовідникОбєкт)
+    public static async Task New(МалоцінніПредмети_Objest ДовідникОбєкт)
     {
-        ДовідникОбєкт.Код = (++НумераціяДовідників.МалоцінніПредмети_Const).ToString("D6");
-        return Task.CompletedTask;
+        int number = await НумераціяДовідників.МалоцінніПредмети();
+        ДовідникОбєкт.Код = (await НумераціяДовідників.МалоцінніПредмети(++number)).ToString("D6");
     }
 
     public static Task Copying(МалоцінніПредмети_Objest ДовідникОбєкт, МалоцінніПредмети_Objest Основа)

@@ -13,13 +13,13 @@ namespace GeneratedCode.Документи;
 
 class ВведенняЗалишків_Triggers
 {
-    public static Task New(ВведенняЗалишків_Objest ДокументОбєкт)
+    public static async Task New(ВведенняЗалишків_Objest ДокументОбєкт)
     {
-        ДокументОбєкт.НомерДок = (++НумераціяДокументів.ВведенняЗалишків_Const).ToString("D8");
+        int number = await НумераціяДокументів.ВведенняЗалишків();
+        ДокументОбєкт.НомерДок = (await НумераціяДокументів.ВведенняЗалишків(++number)).ToString("D8");
+
         ДокументОбєкт.ДатаДок = DateTime.Now;
         ДокументОбєкт.Автор = Program.Користувач;
-
-        return Task.CompletedTask;
     }
 
     public static Task Copying(ВведенняЗалишків_Objest ДокументОбєкт, ВведенняЗалишків_Objest Основа)
