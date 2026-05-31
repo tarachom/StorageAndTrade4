@@ -61,7 +61,6 @@ public partial class Контрагенти_PointerControl : PointerControl
             AfterSelectFunc?.Invoke();
         };
 
-        
         popover.SetChild(page);
         popover.Show();
 
@@ -76,28 +75,27 @@ public partial class Контрагенти_PointerControl : PointerControl
     }
 
     public async Task ПривязкаДоДоговору(ДоговориКонтрагентів_PointerControl Договір)
+    {
+        if (Договір.Pointer.IsEmpty())
         {
-            if (Договір.Pointer.IsEmpty())
-            {
-                ДоговориКонтрагентів_Pointer? договірКонтрагента = await ФункціїДляДокументів.ОсновнийДоговірДляКонтрагента(Pointer, ТипДоговорів.ЗПостачальниками);
-                if (договірКонтрагента != null) Договір.Pointer = договірКонтрагента;
-            }
+            ДоговориКонтрагентів_Pointer? договірКонтрагента = await ФункціїДляДокументів.ОсновнийДоговірДляКонтрагента(Pointer, ТипДоговорів.ЗПостачальниками);
+            if (договірКонтрагента != null) Договір.Pointer = договірКонтрагента;
+        }
+        else
+        {
+            if (Pointer.IsEmpty())
+                Договір.Pointer = new ДоговориКонтрагентів_Pointer();
             else
             {
-                if (Pointer.IsEmpty())
-                    Договір.Pointer = new ДоговориКонтрагентів_Pointer();
-                else
-                {
-                    //Перевірити чи змінився контрагент
-                    ДоговориКонтрагентів_Objest? договориКонтрагентів_Objest = await Договір.Pointer.GetDirectoryObject();
-                    if (договориКонтрагентів_Objest != null)
-                        if (договориКонтрагентів_Objest.Контрагент != Pointer)
-                        {
-                            Договір.Pointer = new ДоговориКонтрагентів_Pointer();
-                            AfterSelectFunc?.Invoke();
-                        };
-                }
+                //Перевірити чи змінився контрагент
+                ДоговориКонтрагентів_Objest? обєкт = await Договір.Pointer.GetDirectoryObject();
+                if (обєкт != null)
+                    if (обєкт.Контрагент != Pointer)
+                    {
+                        Договір.Pointer = new ДоговориКонтрагентів_Pointer();
+                        AfterSelectFunc?.Invoke();
+                    }
             }
         }
+    }
 }
-    
