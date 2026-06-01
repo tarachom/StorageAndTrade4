@@ -420,7 +420,7 @@ LIMIT 1
                 }
             }
 
-            return new("Сума: <b>{0}</b> Скидка: <b>{1}</b>", Сума, Скидка);
+            return new("Сума: <b>{0}</b> Знижка: <b>{1}</b>", Сума, Скидка);
         };
 
         Append(Підсумок);
@@ -732,7 +732,7 @@ LIMIT 1
                 (row.Сhanged_Скидка = () => cell.Value = row.Скидка).Invoke();
 
             };
-            ColumnViewColumn column = ColumnViewColumn.New("Скидка", factory);
+            ColumnViewColumn column = ColumnViewColumn.New("Знижка", factory);
             column.Resizable = true;
             column.FixedWidth = 150;
 

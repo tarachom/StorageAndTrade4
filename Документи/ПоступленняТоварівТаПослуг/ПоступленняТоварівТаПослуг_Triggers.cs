@@ -6,6 +6,7 @@
 
 using GeneratedCode.Константи;
 using GeneratedCode.Довідники;
+using GeneratedCode.Документи;
 using AccountingSoftware;
 using StorageAndTrade;
 
@@ -29,10 +30,23 @@ class ПоступленняТоварівТаПослуг_Triggers
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(ПоступленняТоварівТаПослуг_Objest ДокументОбєкт)
+    public static async Task BeforeSave(ПоступленняТоварівТаПослуг_Objest ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{ПоступленняТоварівТаПослуг_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
-        return Task.CompletedTask;
+
+        if (ДокументОбєкт.ВідобразитиВБухгалтерськомуОбліку)
+            ДокументОбєкт.ДокументБухгалтерськаОперація =
+                await ФункціїДляДокументів.СтворитиДокументБухгалтерськаОперація(ДокументОбєкт.ДокументБухгалтерськаОперація, new()
+                {
+                    ДатаДок = ДокументОбєкт.ДатаДок,
+                    Організація = ДокументОбєкт.Організація,
+                    Основа = ДокументОбєкт.GetBasis()
+                });
+        else if (!ДокументОбєкт.ДокументБухгалтерськаОперація.IsEmpty())
+        {
+            await ДокументОбєкт.ДокументБухгалтерськаОперація.SetDeletionLabel(true);
+            ДокументОбєкт.ДокументБухгалтерськаОперація = new();
+        }
     }
 
     public static Task AfterSave(ПоступленняТоварівТаПослуг_Objest ДокументОбєкт)
