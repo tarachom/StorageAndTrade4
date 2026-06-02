@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 01.06.2026 20:06:33
+ * Дата конфігурації: 02.06.2026 12:48:04
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон GeneratedCode.xslt
@@ -16738,7 +16738,7 @@ namespace GeneratedCode.Документи
         {
             await ClearRegAccum();
             
-            await ПоступленняТоварівТаПослуг_SpendTheDocument.ClearSpend(this);
+            await ПоступленняТоварівТаПослуг_SpendTheDocument.Clear(this);
             
             await BaseSpend(false, DateTime.MinValue);
         }
@@ -18396,16 +18396,19 @@ namespace GeneratedCode.Документи
         public const string Коментар = "col_b2";
         public const string Менеджер = "col_c9";
         public const string КлючовіСловаДляПошуку = "col_d1";
+        public const string ДокументБухгалтерськаОперація = "col_d3";
+        public const string ВідобразитиВБухгалтерськомуОбліку = "col_d4";
     }
 
     public class РеалізаціяТоварівТаПослуг_Objest : DocumentObject
     {
         public РеалізаціяТоварівТаПослуг_Objest() : base(Config.Kernel, "tab_a36", РеалізаціяТоварівТаПослуг_Const.TYPE,
-             ["docname", "docnomer", "docdate", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", "col_b1", "col_b3", "col_b4", "col_b5", "col_b6", "col_b7", "col_b8", "col_b9", "col_c1", "col_c2", "col_c3", "col_c4", "col_c5", "col_c6", "col_c7", "col_c8", "col_d2", "col_b2", "col_c9", "col_d1", ], true)
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", "col_b1", "col_b3", "col_b4", "col_b5", "col_b6", "col_b7", "col_b8", "col_b9", "col_c1", "col_c2", "col_c3", "col_c4", "col_c5", "col_c6", "col_c7", "col_c8", "col_d2", "col_b2", "col_c9", "col_d1", "col_d3", "col_d4", ], true)
         {
             
                 //Табличні частини
                 Товари_TablePart = new РеалізаціяТоварівТаПослуг_Товари_TablePart(this);
+                Проводки_TablePart = new РеалізаціяТоварівТаПослуг_Проводки_TablePart(this);
                 
         }
         
@@ -18454,6 +18457,8 @@ namespace GeneratedCode.Документи
                 Коментар = base.FieldValue["col_b2"].ToString() ?? "";
                 Менеджер = new Довідники.Користувачі_Pointer(base.FieldValue["col_c9"]);
                 КлючовіСловаДляПошуку = base.FieldValue["col_d1"].ToString() ?? "";
+                ДокументБухгалтерськаОперація = new Документи.БухгалтерськаОперація_Pointer(base.FieldValue["col_d3"]);
+                ВідобразитиВБухгалтерськомуОбліку = (base.FieldValue["col_d4"] != DBNull.Value) ? (bool)base.FieldValue["col_d4"] : false;
                 
                 BaseClear();
                 
@@ -18461,6 +18466,7 @@ namespace GeneratedCode.Документи
                 {
                     
                     await Товари_TablePart.Read();
+                    await Проводки_TablePart.Read();
                 }
                 
                 Caption = string.Join(", ", [Назва, ]);
@@ -18506,6 +18512,8 @@ namespace GeneratedCode.Документи
             base.FieldValue["col_b2"] = Коментар;
             base.FieldValue["col_c9"] = Менеджер.UniqueID.UGuid;
             base.FieldValue["col_d1"] = КлючовіСловаДляПошуку;
+            base.FieldValue["col_d3"] = ДокументБухгалтерськаОперація.UniqueID.UGuid;
+            base.FieldValue["col_d4"] = ВідобразитиВБухгалтерськомуОбліку;
             
             bool result = await BaseSave();
             if (result)
@@ -18597,6 +18605,8 @@ namespace GeneratedCode.Документи
                 Коментар = Коментар,
                 Менеджер = Менеджер,
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
+                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація,
+                ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку,
                 
             };
             
@@ -18606,6 +18616,10 @@ namespace GeneratedCode.Документи
                 //Товари - Таблична частина
                 await Товари_TablePart.Read();
                 copy.Товари_TablePart.Records = Товари_TablePart.Copy();
+            
+                //Проводки - Таблична частина
+                await Проводки_TablePart.Read();
+                copy.Проводки_TablePart.Records = Проводки_TablePart.Copy();
             
             }
             
@@ -18628,7 +18642,7 @@ namespace GeneratedCode.Документи
         {
             
             await ClearSpendTheDocument();
-            await base.BaseDelete(["tab_a37", ]);
+            await base.BaseDelete(["tab_a37", "tab_c25", ]);
         }
         
         public РеалізаціяТоварівТаПослуг_Pointer GetDocumentPointer()
@@ -18673,9 +18687,12 @@ namespace GeneratedCode.Документи
         public string Коментар { get; set; } = "";
         public Довідники.Користувачі_Pointer Менеджер { get; set; } = new Довідники.Користувачі_Pointer();
         public string КлючовіСловаДляПошуку { get; set; } = "";
+        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get; set; } = new Документи.БухгалтерськаОперація_Pointer();
+        public bool ВідобразитиВБухгалтерськомуОбліку { get; set; } = false;
         
         //Табличні частини
         public РеалізаціяТоварівТаПослуг_Товари_TablePart Товари_TablePart { get; set; }
+        public РеалізаціяТоварівТаПослуг_Проводки_TablePart Проводки_TablePart { get; set; }
         
     }
     
@@ -19033,6 +19050,172 @@ namespace GeneratedCode.Документи
     }
       
     
+    public class РеалізаціяТоварівТаПослуг_Проводки_TablePart : DocumentTablePart
+    {
+        public РеалізаціяТоварівТаПослуг_Проводки_TablePart(РеалізаціяТоварівТаПослуг_Objest owner) : base(Config.Kernel, "tab_c25",
+             ["col_a1", "col_a2", "col_a3", "col_a7", "col_a8", "col_a9", "col_b1", "col_b2", ])
+        {
+            if (owner == null) throw new Exception("owner null");
+            Owner = owner;
+            
+            QuerySelect.Order.Add(НомерРядка, SelectOrder.ASC);
+            
+        }
+
+        public const string TABLE = "tab_c25";
+        
+        public const string НомерРядка = "col_a1";
+        public const string Рахунок = "col_a2";
+        public const string Аналітика1 = "col_a3";
+        public const string Аналітика2 = "col_a7";
+        public const string Аналітика3 = "col_a8";
+        public const string Податки = "col_a9";
+        public const string Дебет = "col_b1";
+        public const string Кредит = "col_b2";
+
+        public РеалізаціяТоварівТаПослуг_Objest Owner { get; private set; }
+        
+        public List<Record> Records { get; set; } = [];
+
+        public event EventHandler? Saved;
+        
+        public void FillJoin(string[]? orderFields = null)
+        {
+            QuerySelect.Clear();
+
+            if (orderFields != null)
+            {
+              foreach(string field in orderFields)
+                QuerySelect.Order.Add(field, SelectOrder.ASC);
+            }
+            
+            else
+            { 
+              QuerySelect.Order.Add(НомерРядка, SelectOrder.ASC);
+              
+            }
+            
+                      /* pointer */
+                      Довідники.ПланРахунків_Pointer.GetJoin(QuerySelect, Рахунок, $"{TABLE}", "join_tab_2", "Рахунок");
+                  
+                      /* composite_pointer */
+                      QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({TABLE}.{Аналітика1})", "Аналітика1"));
+                  
+                      /* composite_pointer */
+                      QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({TABLE}.{Аналітика2})", "Аналітика2"));
+                  
+                      /* composite_pointer */
+                      QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({TABLE}.{Аналітика3})", "Аналітика3"));
+                  
+                      /* pointer */
+                      Довідники.ВидиПодатків_Pointer.GetJoin(QuerySelect, Податки, $"{TABLE}", "join_tab_6", "Податки");
+                  
+        }
+
+        public async Task Read()
+        {
+            Records.Clear();
+            await base.BaseRead(Owner.UniqueID);
+
+            foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
+            {
+                Record record = new()
+                {
+                    UID = (Guid)fieldValue["uid"],
+                    НомерРядка = (fieldValue["col_a1"] != DBNull.Value) ? (int)fieldValue["col_a1"] : 0,
+                    Рахунок = new Довідники.ПланРахунків_Pointer(fieldValue["col_a2"]),
+                    Аналітика1 = (fieldValue["col_a3"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a3"] : new UuidAndText(),
+                    Аналітика2 = (fieldValue["col_a7"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a7"] : new UuidAndText(),
+                    Аналітика3 = (fieldValue["col_a8"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a8"] : new UuidAndText(),
+                    Податки = new Довідники.ВидиПодатків_Pointer(fieldValue["col_a9"]),
+                    Дебет = (fieldValue["col_b1"] != DBNull.Value) ? (decimal)fieldValue["col_b1"] : 0,
+                    Кредит = (fieldValue["col_b2"] != DBNull.Value) ? (decimal)fieldValue["col_b2"] : 0,
+                    
+                };
+                Records.Add(record);
+                
+                if (JoinValue.TryGetValue(record.UID.ToString(), out var ItemValue))
+                {
+                  record.JoinItemValue = ItemValue;
+                  record.Рахунок.Name = ItemValue["Рахунок"];
+                      record.Аналітика1.Name = ItemValue["Аналітика1"];
+                      record.Аналітика2.Name = ItemValue["Аналітика2"];
+                      record.Аналітика3.Name = ItemValue["Аналітика3"];
+                      record.Податки.Name = ItemValue["Податки"];
+                      
+                }
+                
+            }
+            
+            base.BaseClear();
+        }
+        
+        public async Task Save(bool clear_all_before_save) 
+        {
+            if (!await base.IsExistOwner(Owner.UniqueID, "tab_a36"))
+                throw new Exception("Owner not exist");
+            
+
+            await base.BaseBeginTransaction();
+            
+            if (clear_all_before_save)
+                await base.BaseDelete(Owner.UniqueID);
+
+            
+            int sequenceNumber_НомерРядка = 0;
+            
+            foreach (Record record in Records)
+            {
+                
+                record.НомерРядка = ++sequenceNumber_НомерРядка;
+                
+                Dictionary<string, object> fieldValue = new()
+                {
+                    {"col_a1", record.НомерРядка},
+                    {"col_a2", record.Рахунок.UniqueID.UGuid},
+                    {"col_a3", record.Аналітика1},
+                    {"col_a7", record.Аналітика2},
+                    {"col_a8", record.Аналітика3},
+                    {"col_a9", record.Податки.UniqueID.UGuid},
+                    {"col_b1", record.Дебет},
+                    {"col_b2", record.Кредит},
+                    
+                };
+                record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
+                
+            }
+            
+            await base.BaseCommitTransaction();
+            
+            await РеалізаціяТоварівТаПослуг_Проводки_Triggers.AfterSave(Owner, this);
+            
+            Saved?.Invoke(this, new EventArgs());
+        }
+
+        public List<Record> Copy()
+        {
+            List<Record> copyRecords = [.. Records];
+            foreach (Record copyRecordItem in copyRecords)
+                copyRecordItem.UID = Guid.Empty;
+
+            return copyRecords;
+        }
+
+        public class Record : DocumentTablePartRecord
+        {
+            public int НомерРядка { get; set; } = 0;
+            public Довідники.ПланРахунків_Pointer Рахунок { get; set; } = new Довідники.ПланРахунків_Pointer();
+            public UuidAndText Аналітика1 { get; set; } = new UuidAndText();
+            public UuidAndText Аналітика2 { get; set; } = new UuidAndText();
+            public UuidAndText Аналітика3 { get; set; } = new UuidAndText();
+            public Довідники.ВидиПодатків_Pointer Податки { get; set; } = new Довідники.ВидиПодатків_Pointer();
+            public decimal Дебет { get; set; } = 0;
+            public decimal Кредит { get; set; } = 0;
+            
+        }
+    }
+      
+    
     public static class РеалізаціяТоварівТаПослуг_Export
     {
         public static async Task ToXmlFile(РеалізаціяТоварівТаПослуг_Pointer РеалізаціяТоварівТаПослуг, string pathToSave)
@@ -19182,6 +19365,19 @@ namespace GeneratedCode.Документи
                             xmlWriter.WriteValue(record.Сума);
                           
                         xmlWriter.WriteEndElement(); //Сума
+                        xmlWriter.WriteEndElement(); //row
+                    }
+
+                    xmlWriter.WriteEndElement(); //TablePart
+                
+                    xmlWriter.WriteStartElement("TablePart");
+                    xmlWriter.WriteAttributeString("name", "Проводки");
+
+                    foreach(РеалізаціяТоварівТаПослуг_Проводки_TablePart.Record record in obj.Проводки_TablePart.Records)
+                    {
+                        xmlWriter.WriteStartElement("row");
+                        xmlWriter.WriteAttributeString("uid", record.UID.ToString());
+                        
                         xmlWriter.WriteEndElement(); //row
                     }
 
@@ -22608,16 +22804,19 @@ namespace GeneratedCode.Документи
         public const string Менеджер = "col_a8";
         public const string КлючовіСловаДляПошуку = "col_a9";
         public const string Основа = "col_b1";
+        public const string ДокументБухгалтерськаОперація = "col_b7";
+        public const string ВідобразитиВБухгалтерськомуОбліку = "col_b8";
     }
 
     public class АктВиконанихРобіт_Objest : DocumentObject
     {
         public АктВиконанихРобіт_Objest() : base(Config.Kernel, "tab_a81", АктВиконанихРобіт_Const.TYPE,
-             ["docname", "docnomer", "docdate", "col_b2", "col_b3", "col_b4", "col_b5", "col_b6", "col_a5", "col_a2", "col_a3", "col_a4", "col_a6", "col_a1", "col_a7", "col_a8", "col_a9", "col_b1", ], true)
+             ["docname", "docnomer", "docdate", "col_b2", "col_b3", "col_b4", "col_b5", "col_b6", "col_a5", "col_a2", "col_a3", "col_a4", "col_a6", "col_a1", "col_a7", "col_a8", "col_a9", "col_b1", "col_b7", "col_b8", ], true)
         {
             
                 //Табличні частини
                 Послуги_TablePart = new АктВиконанихРобіт_Послуги_TablePart(this);
+                Проводки_TablePart = new АктВиконанихРобіт_Проводки_TablePart(this);
                 
         }
         
@@ -22652,6 +22851,8 @@ namespace GeneratedCode.Документи
                 Менеджер = new Довідники.Користувачі_Pointer(base.FieldValue["col_a8"]);
                 КлючовіСловаДляПошуку = base.FieldValue["col_a9"].ToString() ?? "";
                 Основа = (base.FieldValue["col_b1"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_b1"] : new UuidAndText();
+                ДокументБухгалтерськаОперація = new Документи.БухгалтерськаОперація_Pointer(base.FieldValue["col_b7"]);
+                ВідобразитиВБухгалтерськомуОбліку = (base.FieldValue["col_b8"] != DBNull.Value) ? (bool)base.FieldValue["col_b8"] : false;
                 
                 BaseClear();
                 
@@ -22659,6 +22860,7 @@ namespace GeneratedCode.Документи
                 {
                     
                     await Послуги_TablePart.Read();
+                    await Проводки_TablePart.Read();
                 }
                 
                 Caption = string.Join(", ", [Назва, ]);
@@ -22690,6 +22892,8 @@ namespace GeneratedCode.Документи
             base.FieldValue["col_a8"] = Менеджер.UniqueID.UGuid;
             base.FieldValue["col_a9"] = КлючовіСловаДляПошуку;
             base.FieldValue["col_b1"] = Основа;
+            base.FieldValue["col_b7"] = ДокументБухгалтерськаОперація.UniqueID.UGuid;
+            base.FieldValue["col_b8"] = ВідобразитиВБухгалтерськомуОбліку;
             
             bool result = await BaseSave();
             if (result)
@@ -22734,6 +22938,8 @@ namespace GeneratedCode.Документи
         {
             await ClearRegAccum();
             
+            await АктВиконанихРобіт_SpendTheDocument.Clear(this);
+            
             await BaseSpend(false, DateTime.MinValue);
         }
 
@@ -22759,6 +22965,8 @@ namespace GeneratedCode.Документи
                 Менеджер = Менеджер,
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
                 Основа = Основа,
+                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація,
+                ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку,
                 
             };
             
@@ -22768,6 +22976,10 @@ namespace GeneratedCode.Документи
                 //Послуги - Таблична частина
                 await Послуги_TablePart.Read();
                 copy.Послуги_TablePart.Records = Послуги_TablePart.Copy();
+            
+                //Проводки - Таблична частина
+                await Проводки_TablePart.Read();
+                copy.Проводки_TablePart.Records = Проводки_TablePart.Copy();
             
             }
             
@@ -22790,7 +23002,7 @@ namespace GeneratedCode.Документи
         {
             
             await ClearSpendTheDocument();
-            await base.BaseDelete(["tab_a82", ]);
+            await base.BaseDelete(["tab_a82", "tab_c26", ]);
         }
         
         public АктВиконанихРобіт_Pointer GetDocumentPointer()
@@ -22821,9 +23033,12 @@ namespace GeneratedCode.Документи
         public Довідники.Користувачі_Pointer Менеджер { get; set; } = new Довідники.Користувачі_Pointer();
         public string КлючовіСловаДляПошуку { get; set; } = "";
         public UuidAndText Основа { get; set; } = new UuidAndText();
+        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get; set; } = new Документи.БухгалтерськаОперація_Pointer();
+        public bool ВідобразитиВБухгалтерськомуОбліку { get; set; } = false;
         
         //Табличні частини
         public АктВиконанихРобіт_Послуги_TablePart Послуги_TablePart { get; set; }
+        public АктВиконанихРобіт_Проводки_TablePart Проводки_TablePart { get; set; }
         
     }
     
@@ -22875,9 +23090,8 @@ namespace GeneratedCode.Документи
 
         public async Task ClearSpendTheDocument()
         {
-            
-            await ClearRegAccum();
-            await BaseSpend(false, DateTime.MinValue);
+            АктВиконанихРобіт_Objest? obj = await GetDocumentObject();
+            if (obj != null) await obj.ClearSpendTheDocument();
                 
         }
 
@@ -22904,12 +23118,10 @@ namespace GeneratedCode.Документи
 
         public async Task SetDeletionLabel(bool label = true)
         {
-          
-            if (label)
-            {
-                await ClearRegAccum();
-                await BaseSpend(false, DateTime.MinValue);
-            }
+          АктВиконанихРобіт_Objest? obj = await GetDocumentObject();
+            if (obj == null) return;
+            
+            if (label) await obj.ClearSpendTheDocument();
             
           await base.BaseDeletionLabel(label);
         }
@@ -23109,6 +23321,172 @@ namespace GeneratedCode.Документи
     }
       
     
+    public class АктВиконанихРобіт_Проводки_TablePart : DocumentTablePart
+    {
+        public АктВиконанихРобіт_Проводки_TablePart(АктВиконанихРобіт_Objest owner) : base(Config.Kernel, "tab_c26",
+             ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", ])
+        {
+            if (owner == null) throw new Exception("owner null");
+            Owner = owner;
+            
+            QuerySelect.Order.Add(НомерРядка, SelectOrder.ASC);
+            
+        }
+
+        public const string TABLE = "tab_c26";
+        
+        public const string НомерРядка = "col_a1";
+        public const string Рахунок = "col_a2";
+        public const string Аналітика1 = "col_a3";
+        public const string Аналітика2 = "col_a4";
+        public const string Аналітика3 = "col_a5";
+        public const string Податки = "col_a6";
+        public const string Дебет = "col_a7";
+        public const string Кредит = "col_a8";
+
+        public АктВиконанихРобіт_Objest Owner { get; private set; }
+        
+        public List<Record> Records { get; set; } = [];
+
+        public event EventHandler? Saved;
+        
+        public void FillJoin(string[]? orderFields = null)
+        {
+            QuerySelect.Clear();
+
+            if (orderFields != null)
+            {
+              foreach(string field in orderFields)
+                QuerySelect.Order.Add(field, SelectOrder.ASC);
+            }
+            
+            else
+            { 
+              QuerySelect.Order.Add(НомерРядка, SelectOrder.ASC);
+              
+            }
+            
+                      /* pointer */
+                      Довідники.ПланРахунків_Pointer.GetJoin(QuerySelect, Рахунок, $"{TABLE}", "join_tab_2", "Рахунок");
+                  
+                      /* composite_pointer */
+                      QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({TABLE}.{Аналітика1})", "Аналітика1"));
+                  
+                      /* composite_pointer */
+                      QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({TABLE}.{Аналітика2})", "Аналітика2"));
+                  
+                      /* composite_pointer */
+                      QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({TABLE}.{Аналітика3})", "Аналітика3"));
+                  
+                      /* pointer */
+                      Довідники.ВидиПодатків_Pointer.GetJoin(QuerySelect, Податки, $"{TABLE}", "join_tab_6", "Податки");
+                  
+        }
+
+        public async Task Read()
+        {
+            Records.Clear();
+            await base.BaseRead(Owner.UniqueID);
+
+            foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
+            {
+                Record record = new()
+                {
+                    UID = (Guid)fieldValue["uid"],
+                    НомерРядка = (fieldValue["col_a1"] != DBNull.Value) ? (int)fieldValue["col_a1"] : 0,
+                    Рахунок = new Довідники.ПланРахунків_Pointer(fieldValue["col_a2"]),
+                    Аналітика1 = (fieldValue["col_a3"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a3"] : new UuidAndText(),
+                    Аналітика2 = (fieldValue["col_a4"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a4"] : new UuidAndText(),
+                    Аналітика3 = (fieldValue["col_a5"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a5"] : new UuidAndText(),
+                    Податки = new Довідники.ВидиПодатків_Pointer(fieldValue["col_a6"]),
+                    Дебет = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
+                    Кредит = (fieldValue["col_a8"] != DBNull.Value) ? (decimal)fieldValue["col_a8"] : 0,
+                    
+                };
+                Records.Add(record);
+                
+                if (JoinValue.TryGetValue(record.UID.ToString(), out var ItemValue))
+                {
+                  record.JoinItemValue = ItemValue;
+                  record.Рахунок.Name = ItemValue["Рахунок"];
+                      record.Аналітика1.Name = ItemValue["Аналітика1"];
+                      record.Аналітика2.Name = ItemValue["Аналітика2"];
+                      record.Аналітика3.Name = ItemValue["Аналітика3"];
+                      record.Податки.Name = ItemValue["Податки"];
+                      
+                }
+                
+            }
+            
+            base.BaseClear();
+        }
+        
+        public async Task Save(bool clear_all_before_save) 
+        {
+            if (!await base.IsExistOwner(Owner.UniqueID, "tab_a81"))
+                throw new Exception("Owner not exist");
+            
+
+            await base.BaseBeginTransaction();
+            
+            if (clear_all_before_save)
+                await base.BaseDelete(Owner.UniqueID);
+
+            
+            int sequenceNumber_НомерРядка = 0;
+            
+            foreach (Record record in Records)
+            {
+                
+                record.НомерРядка = ++sequenceNumber_НомерРядка;
+                
+                Dictionary<string, object> fieldValue = new()
+                {
+                    {"col_a1", record.НомерРядка},
+                    {"col_a2", record.Рахунок.UniqueID.UGuid},
+                    {"col_a3", record.Аналітика1},
+                    {"col_a4", record.Аналітика2},
+                    {"col_a5", record.Аналітика3},
+                    {"col_a6", record.Податки.UniqueID.UGuid},
+                    {"col_a7", record.Дебет},
+                    {"col_a8", record.Кредит},
+                    
+                };
+                record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
+                
+            }
+            
+            await base.BaseCommitTransaction();
+            
+            await АктВиконанихРобіт_Проводки_Triggers.AfterSave(Owner, this);
+            
+            Saved?.Invoke(this, new EventArgs());
+        }
+
+        public List<Record> Copy()
+        {
+            List<Record> copyRecords = [.. Records];
+            foreach (Record copyRecordItem in copyRecords)
+                copyRecordItem.UID = Guid.Empty;
+
+            return copyRecords;
+        }
+
+        public class Record : DocumentTablePartRecord
+        {
+            public int НомерРядка { get; set; } = 0;
+            public Довідники.ПланРахунків_Pointer Рахунок { get; set; } = new Довідники.ПланРахунків_Pointer();
+            public UuidAndText Аналітика1 { get; set; } = new UuidAndText();
+            public UuidAndText Аналітика2 { get; set; } = new UuidAndText();
+            public UuidAndText Аналітика3 { get; set; } = new UuidAndText();
+            public Довідники.ВидиПодатків_Pointer Податки { get; set; } = new Довідники.ВидиПодатків_Pointer();
+            public decimal Дебет { get; set; } = 0;
+            public decimal Кредит { get; set; } = 0;
+            
+        }
+    }
+      
+    
     public static class АктВиконанихРобіт_Export
     {
         public static async Task ToXmlFile(АктВиконанихРобіт_Pointer АктВиконанихРобіт, string pathToSave)
@@ -23228,6 +23606,19 @@ namespace GeneratedCode.Документи
                             xmlWriter.WriteValue(record.Сума);
                           
                         xmlWriter.WriteEndElement(); //Сума
+                        xmlWriter.WriteEndElement(); //row
+                    }
+
+                    xmlWriter.WriteEndElement(); //TablePart
+                
+                    xmlWriter.WriteStartElement("TablePart");
+                    xmlWriter.WriteAttributeString("name", "Проводки");
+
+                    foreach(АктВиконанихРобіт_Проводки_TablePart.Record record in obj.Проводки_TablePart.Records)
+                    {
+                        xmlWriter.WriteStartElement("row");
+                        xmlWriter.WriteAttributeString("uid", record.UID.ToString());
+                        
                         xmlWriter.WriteEndElement(); //row
                     }
 

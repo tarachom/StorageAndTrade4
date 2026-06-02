@@ -729,6 +729,7 @@ LIMIT 1
                     row.Скидка = cell.Value;
                     ПісляЗміни_Скидка(row);
                 };
+
                 (row.Сhanged_Скидка = () => cell.Value = row.Скидка).Invoke();
 
             };

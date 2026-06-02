@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 01.06.2026 20:06:33
+ * Дата конфігурації: 02.06.2026 12:48:04
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон Gtk4.xslt
@@ -332,6 +332,27 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 form.Grid.AppendColumn(column);
             }
         
+            //Назва: Категорія, "Категорія"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Категорія"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Категорія", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
             //Назва: Залишок, "Залишок"
             {
                 SignalListItemFactory factory = SignalListItemFactory.New();
@@ -455,6 +476,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 form.Filter.Append("Тип:", ТипНоменклатури, sw);
             }
             
+            { /* Категорія, pointer */
+                Switch sw = Switch.New();
+                Категорії_PointerControl Категорія = Категорії_PointerControl.New();
+                        Категорія.Caption = "";
+                        Категорія.AfterSelectFunc = () => sw.Active = true;
+                        object get() => Категорія.Pointer.UniqueID.UGuid;
+                    
+                filterList.Add(new(Номенклатура_Const.Категорія, get, sw));
+                form.Filter.Append("Категорія:", Категорія, sw);
+            }
+            
             form.Filter.GetWhere = () =>
             {
                 List<Where> where = [];
@@ -496,6 +528,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                             Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
                             Номенклатура_Select.QuerySelect.Table, "join_tab_1", "ОдиницяВиміру");
                         
+                            /* Приєднання pointer */
+                            Довідники.Категорії_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.Категорія,
+                            Номенклатура_Select.QuerySelect.Table, "join_tab_2", "Категорія");
+                        
                 /* Додаткове поле: Залишок */
                 Номенклатура_Select.QuerySelect.FieldAndAlias.Add(new ValueName<string>(@$"(CASE WHEN {Довідники.Номенклатура_Const.TABLE}.{Довідники.Номенклатура_Const.ТипНоменклатури} = {(int)Перелічення.ТипиНоменклатури.Товар} THEN ( WITH Залишки AS ( SELECT ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} AS Номенклатура, SUM(ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.ВНаявності} ) AS ВНаявності FROM {РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.TABLE} AS ТовариНаСкладах WHERE ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} = {Довідники.Номенклатура_Const.TABLE}.uid GROUP BY Номенклатура ) SELECT ROUND(ВНаявності, 1) FROM Залишки ) END)", "Залишок"));
             
@@ -527,6 +563,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Назва", Fields[Номенклатура_Const.Назва].ToString() ?? "");
                     row.Fields.Add("ОдиницяВиміру", Fields["ОдиницяВиміру"].ToString() ?? "");
                     row.Fields.Add("ТипНоменклатури", Перелічення.ПсевдонімиПерелічення.ТипиНоменклатури_Alias((Перелічення.ТипиНоменклатури)(Fields[Номенклатура_Const.ТипНоменклатури] != DBNull.Value ? Fields[Номенклатура_Const.ТипНоменклатури] : 0) ));
+                    row.Fields.Add("Категорія", Fields["Категорія"].ToString() ?? "");
                     row.Fields.Add("Залишок", Fields["Залишок"].ToString() ?? "");
                     row.Fields.Add("ВРезерві", Fields["ВРезерві"].ToString() ?? "");
                     row.Fields.Add("ВРезервіПідЗамовлення", Fields["ВРезервіПідЗамовлення"].ToString() ?? "");
@@ -583,6 +620,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                             Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.ОдиницяВиміру,
                             Номенклатура_Select.QuerySelect.Table, "join_tab_1", "ОдиницяВиміру");
                         
+                            /* Приєднання pointer */
+                            Довідники.Категорії_Pointer.GetJoin(Номенклатура_Select.QuerySelect, Довідники.Номенклатура_Const.Категорія,
+                            Номенклатура_Select.QuerySelect.Table, "join_tab_2", "Категорія");
+                        
                 /* Додаткове поле: Залишок */
                 Номенклатура_Select.QuerySelect.FieldAndAlias.Add(new ValueName<string>(@$"(CASE WHEN {Довідники.Номенклатура_Const.TABLE}.{Довідники.Номенклатура_Const.ТипНоменклатури} = {(int)Перелічення.ТипиНоменклатури.Товар} THEN ( WITH Залишки AS ( SELECT ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} AS Номенклатура, SUM(ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.ВНаявності} ) AS ВНаявності FROM {РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.TABLE} AS ТовариНаСкладах WHERE ТовариНаСкладах.{РегістриНакопичення.ТовариНаСкладах_Підсумки_TablePart.Номенклатура} = {Довідники.Номенклатура_Const.TABLE}.uid GROUP BY Номенклатура ) SELECT ROUND(ВНаявності, 1) FROM Залишки ) END)", "Залишок"));
             
@@ -626,6 +667,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("Назва", Fields[Довідники.Номенклатура_Const.Назва].ToString() ?? "");
                     row.Fields.Add("ОдиницяВиміру", Fields["ОдиницяВиміру"].ToString() ?? "");
                     row.Fields.Add("ТипНоменклатури", Перелічення.ПсевдонімиПерелічення.ТипиНоменклатури_Alias((Перелічення.ТипиНоменклатури)(Fields[Довідники.Номенклатура_Const.ТипНоменклатури] != DBNull.Value ? Fields[Довідники.Номенклатура_Const.ТипНоменклатури] : 0) ));
+                    row.Fields.Add("Категорія", Fields["Категорія"].ToString() ?? "");
                     row.Fields.Add("Залишок", Fields["Залишок"].ToString() ?? "");
                     row.Fields.Add("ВРезерві", Fields["ВРезерві"].ToString() ?? "");
                     row.Fields.Add("ВРезервіПідЗамовлення", Fields["ВРезервіПідЗамовлення"].ToString() ?? "");
@@ -13099,6 +13141,39 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     
                 filterList.Add(new(ПланРахунків_Const.Забалансовий, get, sw));
                 form.Filter.Append("Забалансовий:", Забалансовий, sw);
+            }
+            
+            { /* Субконто1, string */
+                Switch sw = Switch.New();
+                
+                        Entry Субконто1 = Entry.New();
+                        Субконто1.WidthRequest = 300;
+                        object get() => Субконто1.GetText();
+                    
+                filterList.Add(new(ПланРахунків_Const.Субконто1, get, sw));
+                form.Filter.Append("Субконто 1:", Субконто1, sw);
+            }
+            
+            { /* Субконто2, string */
+                Switch sw = Switch.New();
+                
+                        Entry Субконто2 = Entry.New();
+                        Субконто2.WidthRequest = 300;
+                        object get() => Субконто2.GetText();
+                    
+                filterList.Add(new(ПланРахунків_Const.Субконто2, get, sw));
+                form.Filter.Append("Субконто 2:", Субконто2, sw);
+            }
+            
+            { /* Субконто3, string */
+                Switch sw = Switch.New();
+                
+                        Entry Субконто3 = Entry.New();
+                        Субконто3.WidthRequest = 300;
+                        object get() => Субконто3.GetText();
+                    
+                filterList.Add(new(ПланРахунків_Const.Субконто3, get, sw));
+                form.Filter.Append("Субконто 3:", Субконто3, sw);
             }
             
             form.Filter.GetWhere = () =>

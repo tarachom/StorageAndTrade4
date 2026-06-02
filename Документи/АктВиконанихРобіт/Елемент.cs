@@ -35,6 +35,7 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
     Користувачі_PointerControl Менеджер = Користувачі_PointerControl.New();
     Entry Коментар = Entry.New();
     CompositePointerControl Основа = CompositePointerControl.New();
+    CheckButton ВідобразитиВБухгалтерськомуОбліку = CheckButton.NewWithLabel("Відобразити в бух обліку");
 
     #endregion
 
@@ -43,6 +44,9 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
     // Таблична частина "Послуги" 
     АктВиконанихРобіт_ТабличнаЧастина_Послуги Послуги = АктВиконанихРобіт_ТабличнаЧастина_Послуги.New();
 
+    // Таблична частина "Проводки" 
+    АктВиконанихРобіт_ТабличнаЧастина_Проводки Проводки = АктВиконанихРобіт_ТабличнаЧастина_Проводки.New();
+
     #endregion
 
     partial void Initialize()
@@ -50,11 +54,16 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
         Element = Елемент;
 
         CreateDocName(АктВиконанихРобіт_Const.FULLNAME, НомерДок, ДатаДок);
+        CreateField(HBoxTop, null, ВідобразитиВБухгалтерськомуОбліку);
         CreateField(HBoxComment, "Коментар:", Коментар);
 
         // Таблична частина "Послуги"
         Послуги.HeightRequest = 300;
         NotebookTablePart.InsertPage(Послуги, Label.New("Послуги"), 0);
+
+        // Таблична частина "Проводки"
+        Проводки.HeightRequest = 300;
+        NotebookTablePart.InsertPage(Проводки, Label.New("Проводки"), 1);
 
         NotebookTablePart.SetCurrentPage(0);
 
@@ -211,10 +220,15 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
         Менеджер.Pointer = Елемент.Менеджер;
         Коментар.SetText(Елемент.Коментар);
         Основа.Pointer = Елемент.Основа;
+        ВідобразитиВБухгалтерськомуОбліку.Active = Елемент.ВідобразитиВБухгалтерськомуОбліку;
 
         // Таблична частина "Послуги" 
         Послуги.ЕлементВласник = Елемент;
         await Послуги.LoadRecords();
+
+        // Таблична частина "Проводки" 
+        Проводки.ЕлементВласник = Елемент;
+        await Проводки.LoadRecords();
 
         if (IsNew)
         {
@@ -239,6 +253,7 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
         Елемент.Менеджер = Менеджер.Pointer;
         Елемент.Коментар = Коментар.GetText();
         Елемент.Основа = Основа.Pointer;
+        Елемент.ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку.Active;
 
         Елемент.СумаДокументу = Послуги.СумаДокументу();
     }
@@ -253,6 +268,7 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
             if (await Елемент.Save())
             {
                 await Послуги.SaveRecords(); // Таблична частина "Послуги"
+                await Проводки.SaveRecords(); // Таблична частина "Проводки"
 
                 isSaved = true;
             }

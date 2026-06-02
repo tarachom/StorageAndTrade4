@@ -77,6 +77,8 @@ static class АктВиконанихРобіт_Функції
             
                 await Новий.Послуги_TablePart.Save(false); // Таблична частина "Послуги"
             
+                await Новий.Проводки_TablePart.Save(false); // Таблична частина "Проводки"
+            
             return Новий.UniqueID;
         }
         else

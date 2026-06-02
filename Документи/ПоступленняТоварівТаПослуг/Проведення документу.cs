@@ -271,7 +271,7 @@ class ПоступленняТоварівТаПослуг_SpendTheDocument
         }
     }
 
-    public static async Task ClearSpend(ПоступленняТоварівТаПослуг_Objest ДокументОбєкт)
+    public static async Task Clear(ПоступленняТоварівТаПослуг_Objest ДокументОбєкт)
     {
         if (!ДокументОбєкт.ДокументБухгалтерськаОперація.IsEmpty())
             await ДокументОбєкт.ДокументБухгалтерськаОперація.ClearSpendTheDocument();

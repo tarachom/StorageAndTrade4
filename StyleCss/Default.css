@@ -128,7 +128,7 @@ columnview listview row cell box.numeric entry.error {
 PointerTablePartCell
 Кнопки 
 */
-columnview listview row cell box.pointer .button {
+columnview row cell box.pointer .button {
     padding-left: 3px;
     padding-right: 3px;
     margin: 0;
@@ -137,6 +137,7 @@ columnview listview row cell box.pointer .button {
     border-radius: 0;
     border: 0;
     background: transparent;
+    box-shadow: none;
 }
 
 /*
@@ -186,6 +187,7 @@ columnview listview row cell box.text .button {
     border-radius: 0;
     border: 0;
     background: transparent;
+    box-shadow: none;
 }
 
 /* 
@@ -216,6 +218,7 @@ columnview listview row cell box.datetime .button {
     border-radius: 0;
     border: 0;
     background: transparent;
+    box-shadow: none;
 }
 
 /*
@@ -246,7 +249,34 @@ columnview listview row cell box.time .button {
     border-radius: 0;
     border: 0;
     background: transparent;
+    box-shadow: none;
 }
+
+/* Робимо картинку всередині кнопки невидимою */
+columnview row cell box.pointer .button image,
+columnview row cell box.datetime .button image,
+columnview row cell box.time .button image,
+columnview row cell box.text .button image {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out; /* Плавність появи */
+}
+
+/* Показуємо картинку */
+columnview row:hover cell box.pointer .button image,
+columnview row:hover cell box.datetime .button image,
+columnview row:hover cell box.time .button image,
+columnview row:hover cell box.text .button image  {
+    opacity: 1;
+}
+
+/* Коли рядок виділено (selected) */
+columnview row:selected cell box.pointer .button image,
+columnview row:selected cell box.datetime .button image,
+columnview row:selected cell box.time .button image,
+columnview row:selected cell box.text .button image  {
+    opacity: 1;
+}
+
 
 /* <<<--------------- Клітинки табличної частини ------------------ */
 
