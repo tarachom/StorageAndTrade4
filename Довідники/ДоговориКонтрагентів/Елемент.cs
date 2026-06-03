@@ -99,11 +99,7 @@ partial class ДоговориКонтрагентів_Елемент : Director
                 Статус.Append(field.Value.ToString(), field.Name);
 
             Статус.ActiveId = СтатусиДоговорівКонтрагентів.Діє.ToString();
-
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            Статус.AddController(controller);
-            controller.OnScroll += (_, _) => true;
+            Статус.AddController(FunctionForComboBox.DisableScrolling());
         }
 
         // ГосподарськаОперація:
@@ -113,11 +109,7 @@ partial class ДоговориКонтрагентів_Елемент : Director
                 ГосподарськаОперація.Append(field.Value.ToString(), field.Name);
 
             ГосподарськаОперація.ActiveId = ГосподарськіОперації.РеалізаціяКлієнту.ToString();
-
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            ГосподарськаОперація.AddController(controller);
-            controller.OnScroll += (_, _) => true;
+            ГосподарськаОперація.AddController(FunctionForComboBox.DisableScrolling());
         }
 
         // ТипДоговору:
@@ -127,11 +119,7 @@ partial class ДоговориКонтрагентів_Елемент : Director
                 ТипДоговору.Append(field.Value.ToString(), field.Name);
 
             ТипДоговору.ActiveId = ТипДоговорів.ЗПокупцями.ToString();
-
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            ТипДоговору.AddController(controller);
-            controller.OnScroll += (_, _) => true;
+            ТипДоговору.AddController(FunctionForComboBox.DisableScrolling());
         }
 
         // Коментар:

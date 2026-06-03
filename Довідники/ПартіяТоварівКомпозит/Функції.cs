@@ -18,13 +18,13 @@ static class ПартіяТоварівКомпозит_Функції
         [
             
             //Назва
-            new Where(ПартіяТоварівКомпозит_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "TO_CHAR", FuncToField_Param1 = "''" },
-                    
+            new Where(ПартіяТоварівКомпозит_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
+
         ];
     }
 
-    public static async Task OpenPageElement(bool IsNew, UniqueID? uniqueID = null, 
-        Action<UniqueID?>? сallBack_LoadRecords = null, 
+    public static async Task OpenPageElement(bool IsNew, UniqueID? uniqueID = null,
+        Action<UniqueID?>? сallBack_LoadRecords = null,
         Action<UniqueID>? сallBack_OnSelectPointer = null)
     {
         ПартіяТоварівКомпозит_Елемент page = ПартіяТоварівКомпозит_Елемент.New();
@@ -34,7 +34,7 @@ static class ПартіяТоварівКомпозит_Функції
         if (IsNew)
         {
             await page.Елемент.New();
-            
+
         }
         else if (uniqueID == null || !await page.Елемент.Read(uniqueID))
         {
@@ -50,12 +50,12 @@ static class ПартіяТоварівКомпозит_Функції
         Action<UniqueID>? сallBack_OnSelectPointer = null)
     {
         ПартіяТоварівКомпозит_Список page = ПартіяТоварівКомпозит_Список.New();
-        page.AllowedContentSelection  = allowedContentSelection;
+        page.AllowedContentSelection = allowedContentSelection;
         page.OpenFolder = openFolder;
         page.DirectoryPointerItem = uniqueID;
         page.CallBack_OnSelectPointer = сallBack_OnSelectPointer;
 
-        
+
         Program.BasicForm?.NotebookFunc.CreatePage(ПартіяТоварівКомпозит_Const.FULLNAME, page);
         await page.SetValue();
     }
@@ -74,7 +74,7 @@ static class ПартіяТоварівКомпозит_Функції
         {
             ПартіяТоварівКомпозит_Objest Новий = await Обєкт.Copy(true);
             await Новий.Save();
-            
+
             return Новий.UniqueID;
         }
         else
@@ -84,4 +84,3 @@ static class ПартіяТоварівКомпозит_Функції
         }
     }
 }
-    

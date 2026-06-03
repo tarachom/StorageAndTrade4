@@ -671,7 +671,7 @@ LIMIT 1
             };
             ColumnViewColumn column = ColumnViewColumn.New("Вид ціни", factory);
             column.Resizable = true;
-            column.FixedWidth = 150;
+            column.FixedWidth = 100;
 
             Grid.AppendColumn(column);
         }
@@ -703,7 +703,7 @@ LIMIT 1
             };
             ColumnViewColumn column = ColumnViewColumn.New("Ціна", factory);
             column.Resizable = true;
-            column.FixedWidth = 150;
+            column.FixedWidth = 100;
 
             Grid.AppendColumn(column);
         }
@@ -735,7 +735,7 @@ LIMIT 1
             };
             ColumnViewColumn column = ColumnViewColumn.New("Знижка", factory);
             column.Resizable = true;
-            column.FixedWidth = 150;
+            column.FixedWidth = 100;
 
             Grid.AppendColumn(column);
         }
@@ -767,7 +767,7 @@ LIMIT 1
             };
             ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
             column.Resizable = true;
-            column.FixedWidth = 150;
+            column.FixedWidth = 100;
 
             Grid.AppendColumn(column);
         }

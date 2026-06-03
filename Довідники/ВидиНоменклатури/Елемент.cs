@@ -54,11 +54,7 @@ partial class ВидиНоменклатури_Елемент : DirectoryFormEle
                 ТипНоменклатури.Append(field.Value.ToString(), field.Name);
 
             ТипНоменклатури.Active = 0;
-
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            ТипНоменклатури.AddController(controller);
-            controller.OnScroll += (_, _) => true;
+            ТипНоменклатури.AddController(FunctionForComboBox.DisableScrolling());
         }
     }
 

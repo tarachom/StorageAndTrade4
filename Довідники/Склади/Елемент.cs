@@ -53,11 +53,7 @@ partial class Склади_Елемент : DirectoryFormElement
                 ТипСкладу.Append(field.Value.ToString(), field.Name);
 
             ТипСкладу.Active = 0;
-
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            ТипСкладу.AddController(controller);
-            controller.OnScroll += (_, _) => true;
+            ТипСкладу.AddController(FunctionForComboBox.DisableScrolling());
         }
 
         // Відповідальний:
@@ -83,11 +79,7 @@ partial class Склади_Елемент : DirectoryFormElement
                 НалаштуванняАдресногоЗберігання.Append(field.Value.ToString(), field.Name);
 
             НалаштуванняАдресногоЗберігання.Active = 0;
-
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            НалаштуванняАдресногоЗберігання.AddController(controller);
-            controller.OnScroll += (_, _) => true;
+            НалаштуванняАдресногоЗберігання.AddController(FunctionForComboBox.DisableScrolling());
         }
     }
 

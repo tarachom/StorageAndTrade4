@@ -26,11 +26,11 @@ static class ЗамовленняПостачальнику_Функції
                     
             //КлючовіСловаДляПошуку
             new Where(Comparison.OR, ЗамовленняПостачальнику_Const.КлючовіСловаДляПошуку, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
-                    
+
         ];
     }
 
-    public static async Task OpenPageElement(bool IsNew, UniqueID? uniqueID = null, 
+    public static async Task OpenPageElement(bool IsNew, UniqueID? uniqueID = null,
         Action<UniqueID?>? сallBack_LoadRecords = null,
         Action<UniqueID>? сallBack_OnSelectPointer = null)
     {
@@ -74,9 +74,9 @@ static class ЗамовленняПостачальнику_Функції
         {
             ЗамовленняПостачальнику_Objest Новий = await Обєкт.Copy(true);
             await Новий.Save();
-            
-                await Новий.Товари_TablePart.Save(false); // Таблична частина "Товари"
-            
+
+            await Новий.Товари_TablePart.Save(false); // Таблична частина "Товари"
+
             return Новий.UniqueID;
         }
         else
@@ -100,4 +100,3 @@ static class ЗамовленняПостачальнику_Функції
             await Обєкт.ClearSpendTheDocument();
     }
 }
-    

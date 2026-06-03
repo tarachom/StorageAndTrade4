@@ -57,10 +57,7 @@ partial class Категорії_Елемент : DirectoryFormElement
             foreach (var field in ПсевдонімиПерелічення.МетодиСписання_List())
                 МетодСписання.Append(field.Value.ToString(), field.Name);
 
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            МетодСписання.AddController(controller);
-            controller.OnScroll += (_, _) => true;
+            МетодСписання.AddController(FunctionForComboBox.DisableScrolling());
         }
 
         // РахунокОбліку:

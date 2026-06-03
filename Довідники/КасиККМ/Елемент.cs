@@ -47,11 +47,7 @@ partial class КасиККМ_Елемент : DirectoryFormElement
                 Тип.Append(field.Value.ToString(), field.Name);
 
             Тип.Active = 0;
-
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            Тип.AddController(controller);
-            controller.OnScroll += (_, _) => true;
+            Тип.AddController(FunctionForComboBox.DisableScrolling());
         }
 
         // Валюта:

@@ -33,6 +33,7 @@ partial class ВведенняЗалишків_Елемент : DocumentFormElem
     Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
     Entry Коментар = Entry.New();
     CompositePointerControl Основа = CompositePointerControl.New();
+    CheckButton ВідобразитиВБухгалтерськомуОбліку = CheckButton.NewWithLabel("Відобразити в бух обліку");
 
     #endregion
 
@@ -50,6 +51,9 @@ partial class ВведенняЗалишків_Елемент : DocumentFormElem
     // Таблична частина "РозрахункиЗКонтрагентами" 
     ВведенняЗалишків_ТабличнаЧастина_РозрахункиЗКонтрагентами РозрахункиЗКонтрагентами = ВведенняЗалишків_ТабличнаЧастина_РозрахункиЗКонтрагентами.New();
 
+    // Таблична частина "Проводки" 
+    ВведенняЗалишків_ТабличнаЧастина_Проводки Проводки = ВведенняЗалишків_ТабличнаЧастина_Проводки.New();
+
     #endregion
 
     partial void Initialize()
@@ -57,6 +61,7 @@ partial class ВведенняЗалишків_Елемент : DocumentFormElem
         Element = Елемент;
 
         CreateDocName(ВведенняЗалишків_Const.FULLNAME, НомерДок, ДатаДок);
+        CreateField(HBoxTop, null, ВідобразитиВБухгалтерськомуОбліку);
         CreateField(HBoxComment, "Коментар:", Коментар);
 
         // Таблична частина "Товари"
@@ -74,6 +79,10 @@ partial class ВведенняЗалишків_Елемент : DocumentFormElem
         // Таблична частина "РозрахункиЗКонтрагентами"
         РозрахункиЗКонтрагентами.HeightRequest = 300;
         NotebookTablePart.InsertPage(РозрахункиЗКонтрагентами, Label.New("Розрахунки з контрагентами"), 3);
+
+        // Таблична частина "Проводки"
+        Проводки.HeightRequest = 300;
+        NotebookTablePart.InsertPage(Проводки, Label.New("Проводки"), 4);
 
         NotebookTablePart.SetCurrentPage(0);
 
@@ -112,11 +121,7 @@ partial class ВведенняЗалишків_Елемент : DocumentFormElem
                 ГосподарськаОперація.Append(field.Value.ToString(), field.Name);
 
             ГосподарськаОперація.Active = 0;
-
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            ГосподарськаОперація.AddController(controller);
-            controller.OnScroll += (_, _) => true;
+            ГосподарськаОперація.AddController(FunctionForComboBox.DisableScrolling());
         }
 
         //Автор:
@@ -177,7 +182,6 @@ partial class ВведенняЗалишків_Елемент : DocumentFormElem
 
         //Автор
         CreateField(vBox, null, Автор);
-
     }
 
     #region Присвоєння / зчитування значень
@@ -205,6 +209,7 @@ partial class ВведенняЗалишків_Елемент : DocumentFormElem
         Автор.Pointer = Елемент.Автор;
         Коментар.SetText(Елемент.Коментар);
         Основа.Pointer = Елемент.Основа;
+        ВідобразитиВБухгалтерськомуОбліку.Active = Елемент.ВідобразитиВБухгалтерськомуОбліку;
 
         // Таблична частина "Товари" 
         Товари.ЕлементВласник = Елемент;
@@ -221,6 +226,10 @@ partial class ВведенняЗалишків_Елемент : DocumentFormElem
         // Таблична частина "РозрахункиЗКонтрагентами" 
         РозрахункиЗКонтрагентами.ЕлементВласник = Елемент;
         await РозрахункиЗКонтрагентами.LoadRecords();
+
+        // Таблична частина "Проводки" 
+        Проводки.ЕлементВласник = Елемент;
+        await Проводки.LoadRecords();
     }
 
     protected override void GetValue()
@@ -237,6 +246,7 @@ partial class ВведенняЗалишків_Елемент : DocumentFormElem
         Елемент.Автор = Автор.Pointer;
         Елемент.Коментар = Коментар.GetText();
         Елемент.Основа = Основа.Pointer;
+        Елемент.ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку.Active;
     }
 
     #endregion
@@ -252,6 +262,7 @@ partial class ВведенняЗалишків_Елемент : DocumentFormElem
                 await Каси.SaveRecords(); // Таблична частина "Каси"
                 await БанківськіРахунки.SaveRecords(); // Таблична частина "БанківськіРахунки"
                 await РозрахункиЗКонтрагентами.SaveRecords(); // Таблична частина "РозрахункиЗКонтрагентами"
+                await Проводки.SaveRecords(); // Таблична частина "Проводки"
 
                 isSaved = true;
             }

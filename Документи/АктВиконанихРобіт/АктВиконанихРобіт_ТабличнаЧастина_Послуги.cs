@@ -301,7 +301,6 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
             };
             ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
             column.Resizable = true;
-
             column.FixedWidth = 300;
 
             Grid.AppendColumn(column);
@@ -336,7 +335,6 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
             };
             ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
             column.Resizable = true;
-
             column.FixedWidth = 300;
 
             Grid.AppendColumn(column);
@@ -369,7 +367,6 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
             };
             ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
             column.Resizable = true;
-
             column.FixedWidth = 100;
 
             Grid.AppendColumn(column);
@@ -402,8 +399,7 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
             };
             ColumnViewColumn column = ColumnViewColumn.New("Ціна", factory);
             column.Resizable = true;
-
-            column.FixedWidth = 150;
+            column.FixedWidth = 100;
 
             Grid.AppendColumn(column);
         }
@@ -435,8 +431,7 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
             };
             ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
             column.Resizable = true;
-
-            column.FixedWidth = 150;
+            column.FixedWidth = 100;
 
             Grid.AppendColumn(column);
         }

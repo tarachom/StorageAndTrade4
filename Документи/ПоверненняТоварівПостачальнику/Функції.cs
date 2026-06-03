@@ -77,6 +77,8 @@ static class ПоверненняТоварівПостачальнику_Фун
             
                 await Новий.Товари_TablePart.Save(false); // Таблична частина "Товари"
             
+                await Новий.Проводки_TablePart.Save(false); // Таблична частина "Проводки"
+            
             return Новий.UniqueID;
         }
         else

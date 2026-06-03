@@ -43,10 +43,7 @@ partial class ПартіяТоварівКомпозит_Елемент : Direct
             foreach (var field in ПсевдонімиПерелічення.ТипДокументуПартіяТоварівКомпозит_List())
                 ТипДокументу.Append(field.Value.ToString(), field.Name);
 
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            ТипДокументу.AddController(controller);
-            controller.OnScroll += (_, _) => true;
+            ТипДокументу.AddController(FunctionForComboBox.DisableScrolling());
         }
 
         // ПоступленняТоварівТаПослуг:

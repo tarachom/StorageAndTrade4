@@ -70,11 +70,7 @@ partial class СкладськіКомірки_Елемент : DirectoryFormEle
                 ТипСкладськоїКомірки.Append(field.Value.ToString(), field.Name);
 
             ТипСкладськоїКомірки.Active = 0;
-
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            ТипСкладськоїКомірки.AddController(controller);
-            controller.OnScroll += (_, _) => true;
+            ТипСкладськоїКомірки.AddController(FunctionForComboBox.DisableScrolling());
         }
 
         // Типорозмір:

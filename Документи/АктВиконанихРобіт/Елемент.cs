@@ -97,11 +97,7 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
                 ФормаОплати.Append(field.Value.ToString(), field.Name);
 
             ФормаОплати.Active = 0;
-
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            ФормаОплати.AddController(controller);
-            controller.OnScroll += (_, _) => true;
+            ФормаОплати.AddController(FunctionForComboBox.DisableScrolling());
         }
 
         //Договір:
@@ -116,11 +112,7 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
                 ГосподарськаОперація.Append(field.Value.ToString(), field.Name);
 
             ГосподарськаОперація.Active = 0;
-
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            ГосподарськаОперація.AddController(controller);
-            controller.OnScroll += (_, _) => true;
+            ГосподарськаОперація.AddController(FunctionForComboBox.DisableScrolling());
         }
 
         //Автор:

@@ -72,10 +72,7 @@ partial class ПрихіднийКасовийОрдер_Елемент : Docume
                 foreach (var field in ПсевдонімиПерелічення.ГосподарськіОперації_List())
                     ГосподарськаОперація.Append(field.Value.ToString(), field.Name);
 
-                //Заборона прокрутки списку
-                EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-                ГосподарськаОперація.AddController(controller);
-                controller.OnScroll += (_, _) => true;
+                ГосподарськаОперація.AddController(FunctionForComboBox.DisableScrolling());
             }
                 
             //Основа:

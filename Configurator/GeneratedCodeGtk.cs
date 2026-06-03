@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 02.06.2026 12:48:04
+ * Дата конфігурації: 03.06.2026 19:48:03
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон Gtk4.xslt
@@ -8746,7 +8746,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 form.Grid.AppendColumn(column);
             }
         
-            //Назва: ТипДокументу, "ТипДокументу"
+            //Назва: ТипДокументу, "Тип документу"
             {
                 SignalListItemFactory factory = SignalListItemFactory.New();
                 factory.OnSetup += (_, args) =>
@@ -8762,12 +8762,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     if (cell != null && row != null)
                         cell.SetText(row.Fields["ТипДокументу"]);
                 };
-                ColumnViewColumn column = ColumnViewColumn.New("ТипДокументу", factory);
+                ColumnViewColumn column = ColumnViewColumn.New("Тип документу", factory);
                 column.Resizable = true;
                 form.Grid.AppendColumn(column);
             }
         
-            //Назва: ПоступленняТоварівТаПослуг, "ПоступленняТоварівТаПослуг"
+            //Назва: ПоступленняТоварівТаПослуг, "Прибуткова накладна"
             {
                 SignalListItemFactory factory = SignalListItemFactory.New();
                 factory.OnSetup += (_, args) =>
@@ -8783,12 +8783,12 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     if (cell != null && row != null)
                         cell.SetText(row.Fields["ПоступленняТоварівТаПослуг"]);
                 };
-                ColumnViewColumn column = ColumnViewColumn.New("ПоступленняТоварівТаПослуг", factory);
+                ColumnViewColumn column = ColumnViewColumn.New("Прибуткова накладна", factory);
                 column.Resizable = true;
                 form.Grid.AppendColumn(column);
             }
         
-            //Назва: ВведенняЗалишків, "ВведенняЗалишків"
+            //Назва: ВведенняЗалишків, "Введення залишків"
             {
                 SignalListItemFactory factory = SignalListItemFactory.New();
                 factory.OnSetup += (_, args) =>
@@ -8804,7 +8804,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     if (cell != null && row != null)
                         cell.SetText(row.Fields["ВведенняЗалишків"]);
                 };
-                ColumnViewColumn column = ColumnViewColumn.New("ВведенняЗалишків", factory);
+                ColumnViewColumn column = ColumnViewColumn.New("Введення залишків", factory);
                 column.Resizable = true;
                 form.Grid.AppendColumn(column);
             }
@@ -8855,7 +8855,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                         object get() => Enum.TryParse(ТипДокументу.ActiveId, out ТипДокументуПартіяТоварівКомпозит value) ? (int)value: 0;
                     
                 filterList.Add(new(ПартіяТоварівКомпозит_Const.ТипДокументу, get, sw));
-                form.Filter.Append("ТипДокументу:", ТипДокументу, sw);
+                form.Filter.Append("Тип документу:", ТипДокументу, sw);
             }
             
             form.Filter.GetWhere = () =>

@@ -46,10 +46,7 @@ partial class СкладськіПриміщення_Елемент : DirectoryF
                 foreach (var field in ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_List())
                     НалаштуванняАдресногоЗберігання.Append(field.Value.ToString(), field.Name);
 
-                //Заборона прокрутки списку
-                EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-                НалаштуванняАдресногоЗберігання.AddController(controller);
-                controller.OnScroll += (_, _) => true;
+                НалаштуванняАдресногоЗберігання.AddController(FunctionForComboBox.DisableScrolling());
             }
                 
             // Склад:

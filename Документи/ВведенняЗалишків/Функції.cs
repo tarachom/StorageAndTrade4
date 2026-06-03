@@ -83,6 +83,8 @@ static class ВведенняЗалишків_Функції
             
                 await Новий.РозрахункиЗКонтрагентами_TablePart.Save(false); // Таблична частина "РозрахункиЗКонтрагентами"
             
+                await Новий.Проводки_TablePart.Save(false); // Таблична частина "Проводки"
+            
             return Новий.UniqueID;
         }
         else

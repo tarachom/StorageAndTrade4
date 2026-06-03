@@ -726,7 +726,7 @@ LIMIT 1
             };
             ColumnViewColumn column = ColumnViewColumn.New("Вид ціни", factory);
             column.Resizable = true;
-            column.FixedWidth = 150;
+            column.FixedWidth = 100;
 
             Grid.AppendColumn(column);
         }
@@ -758,7 +758,7 @@ LIMIT 1
             };
             ColumnViewColumn column = ColumnViewColumn.New("Ціна", factory);
             column.Resizable = true;
-            column.FixedWidth = 150;
+            column.FixedWidth = 100;
 
             Grid.AppendColumn(column);
         }
@@ -790,7 +790,7 @@ LIMIT 1
             };
             ColumnViewColumn column = ColumnViewColumn.New("Знижка", factory);
             column.Resizable = true;
-            column.FixedWidth = 150;
+            column.FixedWidth = 100;
 
             Grid.AppendColumn(column);
         }
@@ -822,7 +822,7 @@ LIMIT 1
             };
             ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
             column.Resizable = true;
-            column.FixedWidth = 150;
+            column.FixedWidth = 100;
 
             Grid.AppendColumn(column);
         }
@@ -903,7 +903,6 @@ LIMIT 1
             };
             ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
             column.Resizable = true;
-
             column.FixedWidth = 300;
 
             Grid.AppendColumn(column);
@@ -931,7 +930,6 @@ LIMIT 1
             };
             ColumnViewColumn column = ColumnViewColumn.New("Партія", factory);
             column.Resizable = true;
-
             column.FixedWidth = 300;
 
             Grid.AppendColumn(column);
@@ -947,10 +945,8 @@ LIMIT 1
 
     public override async Task LoadRecords()
     {
-
         if (ЕлементВласник != null)
         {
-
             ЕлементВласник.Товари_TablePart.FillJoin([РеалізаціяТоварівТаПослуг_Товари_TablePart.НомерРядка,]);
             await ЕлементВласник.Товари_TablePart.Read();
 
@@ -989,7 +985,6 @@ LIMIT 1
 
     public override async Task SaveRecords()
     {
-
         if (ЕлементВласник != null)
         {
             ЕлементВласник.Товари_TablePart.Records.Clear();
@@ -1021,6 +1016,7 @@ LIMIT 1
                 }
             }
             await ЕлементВласник.Товари_TablePart.Save(true);
+
             //Оновлення табличної частини після збереження
             {
                 //Пошук виділених рядків
@@ -1060,7 +1056,6 @@ LIMIT 1
                 //Виділення рядків після оновлення
                 foreach (var position in selection)
                     Grid.Model.SelectItem(position, false);
-
             }
         }
     }

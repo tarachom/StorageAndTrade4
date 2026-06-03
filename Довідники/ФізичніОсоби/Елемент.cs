@@ -51,11 +51,8 @@ partial class ФізичніОсоби_Елемент : DirectoryFormElement
             //Заповнення списку
             foreach (var field in ПсевдонімиПерелічення.СтатьФізичноїОсоби_List())
                 Стать.Append(field.Value.ToString(), field.Name);
-
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            Стать.AddController(controller);
-            controller.OnScroll += (_, _) => true;
+                
+            Стать.AddController(FunctionForComboBox.DisableScrolling());
         }
 
         // ІПН:

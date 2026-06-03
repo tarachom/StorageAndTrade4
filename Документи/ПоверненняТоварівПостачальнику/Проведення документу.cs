@@ -232,6 +232,22 @@ ORDER BY ПартіяТоварівКомпозит_Дата ASC
 
             #endregion
 
+            #region Бух
+
+            if (!ДокументОбєкт.ДокументБухгалтерськаОперація.IsEmpty())
+            {
+                var БухОперація = await ДокументОбєкт.ДокументБухгалтерськаОперація.GetDocumentObject(true);
+                if (БухОперація != null)
+                {
+                    if (!await БухОперація.SpendTheDocument(БухОперація.ДатаДок))
+                        throw new Exception($"Не вдалось провести бухгалтерський документ {БухОперація.Назва}");
+                }
+                else
+                    throw new Exception($"Не вдалось прочитати бухгалтерський документ {ДокументОбєкт.ДокументБухгалтерськаОперація}");
+            }
+
+            #endregion
+
             return true;
         }
         catch (Exception ex)
@@ -241,8 +257,9 @@ ORDER BY ПартіяТоварівКомпозит_Дата ASC
         }
     }
 
-    public static Task ClearSpend(ПоверненняТоварівПостачальнику_Objest ДокументОбєкт)
+    public static async Task Clear(ПоверненняТоварівПостачальнику_Objest ДокументОбєкт)
     {
-        return Task.CompletedTask;
+        if (!ДокументОбєкт.ДокументБухгалтерськаОперація.IsEmpty())
+            await ДокументОбєкт.ДокументБухгалтерськаОперація.ClearSpendTheDocument();
     }
 }

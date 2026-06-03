@@ -49,10 +49,7 @@ partial class СтаттяРухуКоштів_Елемент : DirectoryFormEle
             foreach (var field in ПсевдонімиПерелічення.ВидиРухуКоштів_List())
                 ВидРухуКоштів.Append(field.Value.ToString(), field.Name);
 
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            ВидРухуКоштів.AddController(controller);
-            controller.OnScroll += (_, _) => true;
+            ВидРухуКоштів.AddController(FunctionForComboBox.DisableScrolling());
         }
 
         // Опис:

@@ -125,11 +125,8 @@ partial class РеалізаціяТоварівТаПослуг_Елемент 
             //Заповнення списку
             foreach (var field in ПсевдонімиПерелічення.ФормаОплати_List())
                 ФормаОплати.Append(field.Value.ToString(), field.Name);
-
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            ФормаОплати.AddController(controller);
-            controller.OnScroll += (_, _) => true;
+;
+            ФормаОплати.AddController(FunctionForComboBox.DisableScrolling());
         }
 
         //ГосподарськаОперація:
@@ -138,10 +135,7 @@ partial class РеалізаціяТоварівТаПослуг_Елемент 
             foreach (var field in ПсевдонімиПерелічення.ГосподарськіОперації_List())
                 ГосподарськаОперація.Append(field.Value.ToString(), field.Name);
 
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            ГосподарськаОперація.AddController(controller);
-            controller.OnScroll += (_, _) => true;
+            ГосподарськаОперація.AddController(FunctionForComboBox.DisableScrolling());
         }
 
         //Каса:
@@ -161,10 +155,7 @@ partial class РеалізаціяТоварівТаПослуг_Елемент 
             foreach (var field in ПсевдонімиПерелічення.СтатусиРеалізаціїТоварівТаПослуг_List())
                 Статус.Append(field.Value.ToString(), field.Name);
 
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            Статус.AddController(controller);
-            controller.OnScroll += (_, _) => true;
+            Статус.AddController(FunctionForComboBox.DisableScrolling());
         }
 
         //СпосібДоставки:
@@ -173,10 +164,7 @@ partial class РеалізаціяТоварівТаПослуг_Елемент 
             foreach (var field in ПсевдонімиПерелічення.СпособиДоставки_List())
                 СпосібДоставки.Append(field.Value.ToString(), field.Name);
 
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            СпосібДоставки.AddController(controller);
-            controller.OnScroll += (_, _) => true;
+            СпосібДоставки.AddController(FunctionForComboBox.DisableScrolling());
         }
 
         //ДатаПоверненняТари:

@@ -53,11 +53,7 @@ partial class ВидиЗапасів_Елемент : DirectoryFormElement
                 ТипЗапасів.Append(field.Value.ToString(), field.Name);
 
             ТипЗапасів.Active = 0;
-
-            //Заборона прокрутки списку
-            EventControllerScroll controller = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-            ТипЗапасів.AddController(controller);
-            controller.OnScroll += (_, _) => true;
+            ТипЗапасів.AddController(FunctionForComboBox.DisableScrolling());
         }
 
         // Валюта:
