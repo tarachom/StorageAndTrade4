@@ -218,9 +218,10 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Т
 
     #region Функції
 
-    async Task ПісляДодаванняНового(ItemRow row)
+    Task ПісляДодаванняНового(ItemRow row)
     {
         row.Кількість = 1;
+        return Task.CompletedTask;
     }
 
     async Task ПісляЗміни_Номенклатура(ItemRow row)
@@ -235,14 +236,14 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Т
         }
     }
 
-    async Task ПісляЗміни_ХарактеристикаНоменклатури(ItemRow row)
+    Task ПісляЗміни_ХарактеристикаНоменклатури(ItemRow row)
     {
-
+        return Task.CompletedTask;
     }
 
-    async Task ПісляЗміни_Серія(ItemRow row)
+    Task ПісляЗміни_Серія(ItemRow row)
     {
-
+        return Task.CompletedTask;
     }
 
     async Task ПісляЗміни_Пакування(ItemRow row)

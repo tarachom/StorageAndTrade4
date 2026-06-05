@@ -77,6 +77,8 @@ static class ПрихіднийКасовийОрдер_Функції
             
                 await Новий.РозшифруванняПлатежу_TablePart.Save(false); // Таблична частина "РозшифруванняПлатежу"
             
+                await Новий.Проводки_TablePart.Save(false); // Таблична частина "Проводки"
+            
             return Новий.UniqueID;
         }
         else

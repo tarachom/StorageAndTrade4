@@ -162,19 +162,20 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
 
     #region Функції
 
-    async Task ПісляДодаванняНового(ItemRow row)
+    Task ПісляДодаванняНового(ItemRow row)
     {
         row.Кількість = 1;
+        return Task.CompletedTask;
     }
 
-    async Task ПісляЗміни_Номенклатура(ItemRow row)
+    Task ПісляЗміни_Номенклатура(ItemRow row)
     {
-
+        return Task.CompletedTask;
     }
 
-    async Task ПісляЗміни_ХарактеристикаНоменклатури(ItemRow row)
+    Task ПісляЗміни_ХарактеристикаНоменклатури(ItemRow row)
     {
-
+        return Task.CompletedTask;
     }
 
     void ПісляЗміни_КількістьАбоЦіна(ItemRow row)

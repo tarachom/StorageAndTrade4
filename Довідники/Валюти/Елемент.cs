@@ -21,7 +21,7 @@ partial class Валюти_Елемент : DirectoryFormElement
     Entry Назва = Entry.New();
     Entry КороткаНазва = Entry.New();
     Entry Код_R030 = Entry.New();
-    CheckButton ВиводитиКурсНаСтартову = CheckButton.NewWithLabel("ВиводитиКурсНаСтартову");
+    CheckButton ВиводитиКурсНаСтартову = CheckButton.NewWithLabel("На початкову сторінку");
 
     #endregion
 

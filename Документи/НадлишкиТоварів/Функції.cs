@@ -19,7 +19,7 @@ static class НадлишкиТоварів_Функції
         [
             
             //Назва
-            new Where(НадлишкиТоварів_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "TO_CHAR", FuncToField_Param1 = "''" },
+            new Where(НадлишкиТоварів_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
                     
         ];
     }

@@ -18,10 +18,10 @@ static class ВидиЦінПостачальників_Функції
         [
             
             //Код
-            new Where(ВидиЦінПостачальників_Const.Код, Comparison.LIKE, searchText) { FuncToField = "TO_CHAR", FuncToField_Param1 = "''" },
+            new Where(ВидиЦінПостачальників_Const.Код, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
                     
             //Назва
-            new Where(Comparison.OR, ВидиЦінПостачальників_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "TO_CHAR", FuncToField_Param1 = "''" },
+            new Where(Comparison.OR, ВидиЦінПостачальників_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
                     
         ];
     }

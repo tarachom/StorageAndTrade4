@@ -18,7 +18,7 @@ static class ТипорозміриКомірок_Функції
         [
             
             //Назва
-            new Where(ТипорозміриКомірок_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "TO_CHAR", FuncToField_Param1 = "''" },
+            new Where(ТипорозміриКомірок_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
                     
         ];
     }

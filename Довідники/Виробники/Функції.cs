@@ -18,10 +18,10 @@ static class Виробники_Функції
         [
             
             //Код
-            new Where(Виробники_Const.Код, Comparison.LIKE, searchText) { FuncToField = "TO_CHAR", FuncToField_Param1 = "''" },
+            new Where(Виробники_Const.Код, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
                     
             //Назва
-            new Where(Comparison.OR, Виробники_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "TO_CHAR", FuncToField_Param1 = "''" },
+            new Where(Comparison.OR, Виробники_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
                     
         ];
     }

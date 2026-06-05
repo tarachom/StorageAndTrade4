@@ -18,10 +18,10 @@ static class ВидиЗапасів_Функції
         [
             
             //Код
-            new Where(ВидиЗапасів_Const.Код, Comparison.LIKE, searchText) { FuncToField = "TO_CHAR", FuncToField_Param1 = "''" },
+            new Where(ВидиЗапасів_Const.Код, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
                     
             //Назва
-            new Where(Comparison.OR, ВидиЗапасів_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "TO_CHAR", FuncToField_Param1 = "''" },
+            new Where(Comparison.OR, ВидиЗапасів_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
                     
         ];
     }

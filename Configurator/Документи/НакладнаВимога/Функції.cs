@@ -19,7 +19,7 @@ static class НакладнаВимога_Функції
         [
             
             //Назва
-            new Where(НакладнаВимога_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "TO_CHAR", FuncToField_Param1 = "''" },
+            new Where(НакладнаВимога_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
                     
         ];
     }

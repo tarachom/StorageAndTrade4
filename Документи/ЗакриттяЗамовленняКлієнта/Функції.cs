@@ -24,16 +24,13 @@ static class ЗакриттяЗамовленняКлієнта_Функції
             //НомерДок
             new Where(Comparison.OR, ЗакриттяЗамовленняКлієнта_Const.НомерДок, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
                     
-            //ДатаДок
-            new Where(Comparison.OR, ЗакриттяЗамовленняКлієнта_Const.ДатаДок, Comparison.LIKE, searchText) { FuncToField = "TO_CHAR", FuncToField_Param1 = "''" },
-                    
             //Коментар
             new Where(Comparison.OR, ЗакриттяЗамовленняКлієнта_Const.Коментар, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
-                    
+
         ];
     }
 
-    public static async Task OpenPageElement(bool IsNew, UniqueID? uniqueID = null, 
+    public static async Task OpenPageElement(bool IsNew, UniqueID? uniqueID = null,
         Action<UniqueID?>? сallBack_LoadRecords = null,
         Action<UniqueID>? сallBack_OnSelectPointer = null)
     {
@@ -77,9 +74,9 @@ static class ЗакриттяЗамовленняКлієнта_Функції
         {
             ЗакриттяЗамовленняКлієнта_Objest Новий = await Обєкт.Copy(true);
             await Новий.Save();
-            
-                await Новий.Товари_TablePart.Save(false); // Таблична частина "Товари"
-            
+
+            await Новий.Товари_TablePart.Save(false); // Таблична частина "Товари"
+
             return Новий.UniqueID;
         }
         else
@@ -103,4 +100,3 @@ static class ЗакриттяЗамовленняКлієнта_Функції
             await Обєкт.ClearSpendTheDocument();
     }
 }
-    

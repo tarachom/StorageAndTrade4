@@ -147,13 +147,14 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Р
 
     #region Функції
 
-    async Task ПісляЗміни_Контрагент(ItemRow row)
+    Task ПісляЗміни_Контрагент(ItemRow row)
     {
-
+        return Task.CompletedTask;
     }
-    async Task ПісляЗміни_Валюта(ItemRow row)
-    {
 
+    Task ПісляЗміни_Валюта(ItemRow row)
+    {
+        return Task.CompletedTask;
     }
 
     void ПісляЗміни_Сума(ItemRow row)

@@ -25,6 +25,7 @@ class ВведенняЗалишків_Triggers
     public static Task Copying(ВведенняЗалишків_Objest ДокументОбєкт, ВведенняЗалишків_Objest Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
+        ДокументОбєкт.ДокументБухгалтерськаОперація = new();
         return Task.CompletedTask;
     }
 

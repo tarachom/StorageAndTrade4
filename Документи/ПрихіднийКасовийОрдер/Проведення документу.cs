@@ -4,7 +4,6 @@
     Модуль проведення документу
 */
 
-using StorageAndTrade;
 using GeneratedCode.РегістриНакопичення;
 
 namespace GeneratedCode.Документи;
@@ -105,6 +104,22 @@ class ПрихіднийКасовийОрдер_SpendTheDocument
 
             #endregion
 
+            #region Бух
+
+            if (!ДокументОбєкт.ДокументБухгалтерськаОперація.IsEmpty())
+            {
+                var БухОперація = await ДокументОбєкт.ДокументБухгалтерськаОперація.GetDocumentObject(true);
+                if (БухОперація != null)
+                {
+                    if (!await БухОперація.SpendTheDocument(БухОперація.ДатаДок))
+                        throw new Exception($"Не вдалось провести бухгалтерський документ {БухОперація.Назва}");
+                }
+                else
+                    throw new Exception($"Не вдалось прочитати бухгалтерський документ {ДокументОбєкт.ДокументБухгалтерськаОперація}");
+            }
+
+            #endregion
+
             return true;
         }
         catch (Exception ex)
@@ -114,8 +129,9 @@ class ПрихіднийКасовийОрдер_SpendTheDocument
         }
     }
 
-    public static Task ClearSpend(ПрихіднийКасовийОрдер_Objest ДокументОбєкт)
+    public static async Task Clear(ПрихіднийКасовийОрдер_Objest ДокументОбєкт)
     {
-        return Task.CompletedTask;
+        if (!ДокументОбєкт.ДокументБухгалтерськаОперація.IsEmpty())
+            await ДокументОбєкт.ДокументБухгалтерськаОперація.ClearSpendTheDocument();
     }
 }

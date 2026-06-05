@@ -110,9 +110,9 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Б
 
     #region Функції
 
-    async Task ПісляЗміни_БанківськийРахунок(ItemRow row)
+    Task ПісляЗміни_БанківськийРахунок(ItemRow row)
     {
-
+        return Task.CompletedTask;
     }
 
     void ПісляЗміни_Сума(ItemRow row)

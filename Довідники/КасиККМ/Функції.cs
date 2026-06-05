@@ -18,7 +18,7 @@ static class КасиККМ_Функції
         [
             
             //Назва
-            new Where(КасиККМ_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "TO_CHAR", FuncToField_Param1 = "''" },
+            new Where(КасиККМ_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
                     
         ];
     }

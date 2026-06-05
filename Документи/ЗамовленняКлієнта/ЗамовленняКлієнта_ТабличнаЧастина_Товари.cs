@@ -286,9 +286,9 @@ partial class ЗамовленняКлієнта_ТабличнаЧастина_
         await ОтриматиЦіну(row);
     }
 
-    async Task ПісляЗміни_Серія(ItemRow row)
+    Task ПісляЗміни_Серія(ItemRow row)
     {
-
+        return Task.CompletedTask;
     }
 
     async Task ПісляЗміни_Пакування(ItemRow row)

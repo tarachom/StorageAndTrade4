@@ -19,7 +19,7 @@ static class ЧекККМ_Функції
         [
             
             //Назва
-            new Where(ЧекККМ_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "TO_CHAR", FuncToField_Param1 = "''" },
+            new Where(ЧекККМ_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
                     
         ];
     }

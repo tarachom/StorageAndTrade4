@@ -17,26 +17,31 @@ using Функції = StorageAndTrade.КорегуванняБоргу_Функ
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<DocumentFormElement>("Element_13IBRWfE2p2wsHbtpR5Q")]
+[GObject.Subclass<DocumentFormElement>("Element_z5GeARuLzXWSUwIWeHuvQ")]
 partial class КорегуванняБоргу_Елемент : DocumentFormElement
 {
     public КорегуванняБоргу_Objest Елемент { get; init; } = new();
 
     #region Fields
     Entry НомерДок = Entry.New();
-                    DateTimeControl ДатаДок = DateTimeControl.New();
-            Організації_PointerControl Організація = Організації_PointerControl.New();
-            СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
-            Entry Коментар = Entry.New();
-                    CompositePointerControl Основа = CompositePointerControl.New();
-            
+    DateTimeControl ДатаДок = DateTimeControl.New();
+    Організації_PointerControl Організація = Організації_PointerControl.New();
+    СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
+    Entry Коментар = Entry.New();
+    CompositePointerControl Основа = CompositePointerControl.New();
+    Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
+    CheckButton ВідобразитиВБухгалтерськомуОбліку = CheckButton.NewWithLabel("Відобразити в бух обліку");
+
     #endregion
 
     #region TabularParts
-    
-        // Таблична частина "РозрахункиЗКонтрагентами" 
-        КорегуванняБоргу_ТабличнаЧастина_РозрахункиЗКонтрагентами РозрахункиЗКонтрагентами = КорегуванняБоргу_ТабличнаЧастина_РозрахункиЗКонтрагентами.New();
-    
+
+    // Таблична частина "РозрахункиЗКонтрагентами" 
+    КорегуванняБоргу_ТабличнаЧастина_РозрахункиЗКонтрагентами РозрахункиЗКонтрагентами = КорегуванняБоргу_ТабличнаЧастина_РозрахункиЗКонтрагентами.New();
+
+    // Таблична частина "Проводки" 
+    КорегуванняБоргу_ТабличнаЧастина_Проводки Проводки = КорегуванняБоргу_ТабличнаЧастина_Проводки.New();
+
     #endregion
 
     partial void Initialize()
@@ -44,35 +49,39 @@ partial class КорегуванняБоргу_Елемент : DocumentFormElem
         Element = Елемент;
 
         CreateDocName(КорегуванняБоргу_Const.FULLNAME, НомерДок, ДатаДок);
-        
+        CreateField(HBoxTop, null, ВідобразитиВБухгалтерськомуОбліку);
         CreateField(HBoxComment, "Коментар:", Коментар);
-        
-            // Таблична частина "РозрахункиЗКонтрагентами"
-            РозрахункиЗКонтрагентами.WidthRequest = 500;
-            РозрахункиЗКонтрагентами.HeightRequest = 300;
-            NotebookTablePart.InsertPage(РозрахункиЗКонтрагентами, Label.New("Розрахунки з контрагентами"), 0);
-            
-            NotebookTablePart.SetCurrentPage(0);
-        
-            //НомерДок:
-            НомерДок.WidthRequest = 100;
-                        
-            //ДатаДок:
-            
-            //Організація:
-            Організація.Caption = "Організація";
-                    Організація.WidthPresentation = 300;
-                
-            //Підрозділ:
-            Підрозділ.Caption = "Підрозділ";
-                    Підрозділ.WidthPresentation = 300;
-                
-            //Коментар:
-            Коментар.WidthRequest = 300;
-                        
-            //Основа:
-            Основа.BoundConfType = "Документи.КорегуванняБоргу.Основа";
-                
+
+        // Таблична частина "РозрахункиЗКонтрагентами"
+        РозрахункиЗКонтрагентами.HeightRequest = 300;
+        NotebookTablePart.InsertPage(РозрахункиЗКонтрагентами, Label.New("Розрахунки з контрагентами"), 0);
+
+        // Таблична частина "Проводки"
+        Проводки.HeightRequest = 300;
+        NotebookTablePart.InsertPage(Проводки, Label.New("Проводки"), 1);
+
+        NotebookTablePart.SetCurrentPage(0);
+
+        //НомерДок:
+        НомерДок.WidthRequest = 100;
+
+        //Організація:
+        Організація.Caption = "Організація";
+        Організація.WidthPresentation = 300;
+
+        //Підрозділ:
+        Підрозділ.Caption = "Підрозділ";
+        Підрозділ.WidthPresentation = 300;
+
+        //Коментар:
+        Коментар.WidthRequest = 920;
+
+        //Основа:
+        Основа.BoundConfType = "Документи.КорегуванняБоргу.Основа";
+
+        //Автор:
+        Автор.Caption = "Автор";
+        Автор.WidthPresentation = 300;
     }
 
     public static КорегуванняБоргу_Елемент New()
@@ -85,80 +94,83 @@ partial class КорегуванняБоргу_Елемент : DocumentFormElem
 
     protected override void CreateTopStart(Box vBox)
     {
-        
+        //Організація
+        CreateField(vBox, null, Організація);
     }
 
     protected override void CreateTopEnd(Box vBox)
     {
-        
+
     }
 
     protected override void CreateBottomStart(Box vBox)
     {
-        
-            // Організація
-            CreateField(vBox, null, Організація);
-                
-            // Підрозділ
-            CreateField(vBox, null, Підрозділ);
-                
-            // Основа
-            CreateField(vBox, null, Основа);
-                
+        //Підрозділ
+        CreateField(vBox, null, Підрозділ);
+
+        //Автор
+        CreateField(vBox, null, Автор);
     }
 
     protected override void CreateBottomEnd(Box vBox)
     {
-        
+        //Основа
+        CreateField(vBox, null, Основа);
     }
 
     #region Присвоєння / зчитування значень
 
     public override async Task AssignValue()
     {
+        if (IsNew)
+        {
+            Елемент.Організація = await ЗначенняТипові.ОсновнаОрганізація();
+            Елемент.Підрозділ = await ЗначенняТипові.ОсновнийПідрозділ();
+        }
+
         НомерДок.SetText(Елемент.НомерДок);
-                        ДатаДок.Value = Елемент.ДатаДок;
-                Організація.Pointer = Елемент.Організація;
-                Підрозділ.Pointer = Елемент.Підрозділ;
-                Коментар.SetText(Елемент.Коментар);
-                        Основа.Pointer = Елемент.Основа;
-                
-            // Таблична частина "РозрахункиЗКонтрагентами" 
-            РозрахункиЗКонтрагентами.ЕлементВласник = Елемент; 
-            await РозрахункиЗКонтрагентами.LoadRecords();
-        
+        ДатаДок.Value = Елемент.ДатаДок;
+        Організація.Pointer = Елемент.Організація;
+        Підрозділ.Pointer = Елемент.Підрозділ;
+        Коментар.SetText(Елемент.Коментар);
+        Основа.Pointer = Елемент.Основа;
+        Автор.Pointer = Елемент.Автор;
+        ВідобразитиВБухгалтерськомуОбліку.Active = Елемент.ВідобразитиВБухгалтерськомуОбліку;
+
+        // Таблична частина "РозрахункиЗКонтрагентами" 
+        РозрахункиЗКонтрагентами.ЕлементВласник = Елемент;
+        await РозрахункиЗКонтрагентами.LoadRecords();
+
+        // Таблична частина "Проводки" 
+        Проводки.ЕлементВласник = Елемент;
+        await Проводки.LoadRecords();
     }
 
     protected override void GetValue()
     {
         Елемент.НомерДок = НомерДок.GetText();
-                        Елемент.ДатаДок = ДатаДок.Value;
-                Елемент.Організація = Організація.Pointer;
-                Елемент.Підрозділ = Підрозділ.Pointer;
-                Елемент.Коментар = Коментар.GetText();
-                        Елемент.Основа = Основа.Pointer;
-                
+        Елемент.ДатаДок = ДатаДок.Value;
+        Елемент.Організація = Організація.Pointer;
+        Елемент.Підрозділ = Підрозділ.Pointer;
+        Елемент.Коментар = Коментар.GetText();
+        Елемент.Основа = Основа.Pointer;
+        Елемент.Автор = Автор.Pointer;
+        Елемент.ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку.Active;
+
     }
 
-    
-    /*string КлючовіСловаДляПошуку()
-    {
-        return $"\n {Організація.Pointer.Назва} {Підрозділ.Pointer.Назва}"
-         + РозрахункиЗКонтрагентами.КлючовіСловаДляПошуку();
-    }*/
-    
-
     #endregion
-    
+
     protected override async Task<bool> Save()
     {
         bool isSaved = false;
         try
         {
-            if(await Елемент.Save())
+            if (await Елемент.Save())
             {
                 await РозрахункиЗКонтрагентами.SaveRecords(); // Таблична частина "РозрахункиЗКонтрагентами"
-                
+                await Проводки.SaveRecords(); // Таблична частина "Проводки"
+
                 isSaved = true;
             }
         }
@@ -194,4 +206,3 @@ partial class КорегуванняБоргу_Елемент : DocumentFormElem
         await Функції.OpenPageList(uniqueID);
     }
 }
-    

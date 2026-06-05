@@ -17,11 +17,17 @@ static class Валюти_Функції
         return
         [
             
-            //Код
-            new Where(Валюти_Const.Код, Comparison.LIKE, searchText) { FuncToField = "TO_CHAR", FuncToField_Param1 = "''" },
-                    
             //Назва
-            new Where(Comparison.OR, Валюти_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "TO_CHAR", FuncToField_Param1 = "''" },
+            new Where(Валюти_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
+                    
+            //КороткаНазва
+            new Where(Comparison.OR, Валюти_Const.КороткаНазва, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
+                    
+            //Код
+            new Where(Comparison.OR, Валюти_Const.Код, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
+                    
+            //Код_R030
+            new Where(Comparison.OR, Валюти_Const.Код_R030, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
                     
         ];
     }
