@@ -12,6 +12,7 @@ using GeneratedCode.Документи;
 using GeneratedCode.Перелічення;
 using GeneratedCode.РегістриВідомостей;
 using GeneratedCode;
+using System.Text;
 
 namespace StorageAndTrade;
 
@@ -234,21 +235,18 @@ ORDER BY
 
             Dictionary<string, object> paramQuery = new()
             {
-                { "Валюта", ЕлементВласникФорма.Валюта.Pointer.UniqueID.UGuid },
-                { "ВидЦін", ЕлементВласникФорма.ВидЦіни.Pointer.UniqueID.UGuid }
+                { "Валюта", ЕлементВласникФорма.Валюта_Значення.UniqueID.UGuid },
+                { "ВидЦін", ЕлементВласникФорма.ВидЦіни_Значення.UniqueID.UGuid }
             };
-
-            int counter = 0;
 
             var recordResult = await Config.Kernel.DataBase.SelectRequest(query, paramQuery);
             foreach (Dictionary<string, object> itemListRow in recordResult.ListRow)
             {
                 var row = ItemRow.New();
-                row.НомерРядка = ++counter;
-                row.Номенклатура = new Номенклатура_Pointer(itemListRow["Номенклатура"]) { Назва = itemListRow["Номенклатура_Назва"]?.ToString() ?? "" };
-                row.ХарактеристикаНоменклатури = new();
-                row.Пакування = new ПакуванняОдиниціВиміру_Pointer(itemListRow["Пакування"]) { Назва = itemListRow["Пакування_Назва"]?.ToString() ?? "" };
-                row.ВидЦіни = ЕлементВласникФорма.ВидЦіни.Pointer.Copy();
+                row.НомерРядка = (int)Store.GetNItems() + 1;
+                row.Номенклатура = new Номенклатура_Pointer(itemListRow["Номенклатура"], itemListRow["Номенклатура_Назва"]);
+                row.Пакування = new ПакуванняОдиниціВиміру_Pointer(itemListRow["Пакування"], itemListRow["Пакування_Назва"]);
+                row.ВидЦіни = ЕлементВласникФорма.ВидЦіни_Значення.Copy();
                 row.Ціна = itemListRow["Ціна"] != DBNull.Value ? (decimal)itemListRow["Ціна"] : 0;
 
                 Store.Append(row);
@@ -256,7 +254,7 @@ ORDER BY
         }
     }
 
-    async Task ЗаповнитиЗРЕгістру()
+    async Task ЗаповнитиЗРегістру()
     {
         if (ЕлементВласник != null && ЕлементВласникФорма != null)
         {
@@ -274,7 +272,7 @@ WITH register AS
 
             #region WHERE
 
-            if (!ЕлементВласникФорма.ВидЦіни.Pointer.IsEmpty())
+            if (!ЕлементВласникФорма.ВидЦіни_Значення.IsEmpty())
             {
                 query += $@"
 AND {ЦіниНоменклатури_Const.ВидЦіни} = @ВидЦін
@@ -327,21 +325,18 @@ ORDER BY
 
             Dictionary<string, object> paramQuery = new()
             {
-                { "Валюта", ЕлементВласникФорма.Валюта.Pointer.UniqueID.UGuid },
-                { "ВидЦін", ЕлементВласникФорма.ВидЦіни.Pointer.UniqueID.UGuid }
+                { "Валюта", ЕлементВласникФорма.Валюта_Значення.UniqueID.UGuid },
+                { "ВидЦін", ЕлементВласникФорма.ВидЦіни_Значення.UniqueID.UGuid }
             };
-
-            int counter = 0;
 
             var recordResult = await Config.Kernel.DataBase.SelectRequest(query, paramQuery);
             foreach (Dictionary<string, object> itemListRow in recordResult.ListRow)
             {
                 var row = ItemRow.New();
-                row.НомерРядка = ++counter;
-                row.Номенклатура = new Номенклатура_Pointer(itemListRow["Номенклатура"]) { Назва = itemListRow["Номенклатура_Назва"]?.ToString() ?? "" };
-                row.ХарактеристикаНоменклатури = new();
-                row.Пакування = new ПакуванняОдиниціВиміру_Pointer(itemListRow["Пакування"]) { Назва = itemListRow["Пакування_Назва"]?.ToString() ?? "" };
-                row.ВидЦіни = new ВидиЦін_Pointer(itemListRow["ВидЦіни"]) { Назва = itemListRow["ВидЦіни_Назва"]?.ToString() ?? "" };
+                row.НомерРядка = (int)Store.GetNItems() + 1;
+                row.Номенклатура = new Номенклатура_Pointer(itemListRow["Номенклатура"], itemListRow["Номенклатура_Назва"]);
+                row.Пакування = new ПакуванняОдиниціВиміру_Pointer(itemListRow["Пакування"], itemListRow["Пакування_Назва"]);
+                row.ВидЦіни = new ВидиЦін_Pointer(itemListRow["ВидЦіни"], itemListRow["ВидЦіни_Назва"]);
                 row.Ціна = (decimal)itemListRow["Ціна"];
 
                 Store.Append(row);
@@ -373,22 +368,80 @@ ORDER BY
             HBoxToolbarTop.Append(separator);
         }
 
+        static string ШаблонКнопки(string caption) => 
+$"""
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <object class="GtkButton" id="button">
+        <property name="tooltip-text">{caption}</property>
+        <property name="margin-end">5</property>
+        <child>
+            <object class="GtkBox">
+                <child>
+                    <object class="GtkImage">
+                        <property name="margin-end">5</property>
+                        <property name="icon-name">new</property>
+                    </object>
+                </child>
+                <child>
+                    <object class="GtkLabel">
+                        <property name="label">{caption}</property>
+                    </object>
+                </child>
+            </object>
+        </child>
+    </object>
+</interface>
+""";
+
         {
-            Button button = Button.NewFromIconName("document-new");
-            button.AddCssClass("toolbar");
-            button.MarginEnd = 5;
-            button.TooltipText = "Заповнити з довідника";
-            button.OnClicked += async (_, _) => await ЗаповнитиЗДовідника();
-            HBoxToolbarTop.Append(button);
+
+            string xml = ШаблонКнопки("Заповнити з довідника");
+            Builder builder = Builder.NewFromString(xml, Encoding.UTF8.GetBytes(xml).Length);
+            Button? button = (Button?)builder.GetObject("button");
+            if (button != null)
+            {
+                button.AddCssClass("toolbar");
+                button.OnClicked += async (_, _) =>
+                {
+                    button.Sensitive = false;
+                    await ЗаповнитиЗДовідника();
+                    button.Sensitive = true;
+                };
+                HBoxToolbarTop.Append(button);
+            }
+
+            /* Button button = Button.NewFromIconName("document-new");
+             button.AddCssClass("toolbar");
+             button.MarginEnd = 5;
+             button.TooltipText = "Заповнити з довідника";
+             button.OnClicked += async (_, _) => await ЗаповнитиЗДовідника();
+             HBoxToolbarTop.Append(button);*/
         }
 
         {
+            string xml = ШаблонКнопки("Заповнити з регістру");
+            Builder builder = Builder.NewFromString(xml, Encoding.UTF8.GetBytes(xml).Length);
+            Button? button = (Button?)builder.GetObject("button");
+            if (button != null)
+            {
+                button.AddCssClass("toolbar");
+                button.OnClicked += async (_, _) =>
+                {
+                    button.Sensitive = false;
+                    await ЗаповнитиЗРегістру();
+                    button.Sensitive = true;
+                };
+                HBoxToolbarTop.Append(button);
+            }
+
+            /*
             Button button = Button.NewFromIconName("document-new");
             button.AddCssClass("toolbar");
             button.MarginEnd = 5;
-            button.TooltipText = "Заповнити з решістру";
-            button.OnClicked += async (_, _) => await ЗаповнитиЗРЕгістру();
-            HBoxToolbarTop.Append(button);
+            button.TooltipText = "Заповнити з регістру";
+            button.OnClicked += async (_, _) => await ЗаповнитиЗРегістру();
+            HBoxToolbarTop.Append(button);*/
         }
     }
 

@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 05.06.2026 12:14:27
+ * Дата конфігурації: 07.06.2026 12:11:02
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон GeneratedCode.xslt
@@ -2708,15 +2708,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete(["tab_a02", ]);
         }
         
-        public Організації_Pointer GetDirectoryPointer()
-        {
-            return new Організації_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(Організації_Const.PRESENTATION_FIELDS);
-        }
+        public Організації_Pointer GetDirectoryPointer() => new Організації_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(Організації_Const.PRESENTATION_FIELDS);
                 
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
@@ -2736,38 +2729,21 @@ namespace GeneratedCode.Довідники
 
     public class Організації_Pointer : DirectoryPointer
     {
-        public Організації_Pointer(object? uid = null) : base(Config.Kernel, "tab_a01", Організації_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public Організації_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a01", Організації_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public Організації_Pointer() : base(Config.Kernel, "tab_a01", Організації_Const.TYPE) => base.Init(new UniqueID());
+        public Організації_Pointer(object? uid) : base(Config.Kernel, "tab_a01", Організації_Const.TYPE) => base.Init(new UniqueID(uid));
+        public Організації_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a01", Організації_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public Організації_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a01", Організації_Const.TYPE) => base.Init(uid);
+        public Організації_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a01", Організації_Const.TYPE) => base.Init(uid, fields);
+        public Організації_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a01", Організації_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<Організації_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             Організації_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public Організації_Pointer Copy()
-        {
-            return new Організації_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(Організації_Const.PRESENTATION_FIELDS);
-        }
-
+        public Організації_Pointer Copy() => new Організації_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(Організації_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [Організації_Const.PRESENTATION_FIELDS.Length];
@@ -2775,28 +2751,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(Організації_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public Організації_Pointer GetEmptyPointer()
-        {
-            return new Організації_Pointer();
-        }
+        public Організації_Pointer GetEmptyPointer() => new Організації_Pointer();
     }
     
     public class Організації_Select : DirectorySelect
     {
         public Організації_Select() : base(Config.Kernel, "tab_a01") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Організації_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Організації_Pointer? Current { get; private set; }
@@ -3124,15 +3091,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete(["tab_b19", ]);
         }
         
-        public Номенклатура_Pointer GetDirectoryPointer()
-        {
-            return new Номенклатура_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(Номенклатура_Const.PRESENTATION_FIELDS);
-        }
+        public Номенклатура_Pointer GetDirectoryPointer() => new Номенклатура_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(Номенклатура_Const.PRESENTATION_FIELDS);
                 
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
@@ -3154,38 +3114,21 @@ namespace GeneratedCode.Довідники
 
     public class Номенклатура_Pointer : DirectoryPointer
     {
-        public Номенклатура_Pointer(object? uid = null) : base(Config.Kernel, "tab_a03", Номенклатура_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public Номенклатура_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a03", Номенклатура_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public Номенклатура_Pointer() : base(Config.Kernel, "tab_a03", Номенклатура_Const.TYPE) => base.Init(new UniqueID());
+        public Номенклатура_Pointer(object? uid) : base(Config.Kernel, "tab_a03", Номенклатура_Const.TYPE) => base.Init(new UniqueID(uid));
+        public Номенклатура_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a03", Номенклатура_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public Номенклатура_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a03", Номенклатура_Const.TYPE) => base.Init(uid);
+        public Номенклатура_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a03", Номенклатура_Const.TYPE) => base.Init(uid, fields);
+        public Номенклатура_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a03", Номенклатура_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<Номенклатура_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             Номенклатура_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public Номенклатура_Pointer Copy()
-        {
-            return new Номенклатура_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(Номенклатура_Const.PRESENTATION_FIELDS);
-        }
-
+        public Номенклатура_Pointer Copy() => new Номенклатура_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(Номенклатура_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [Номенклатура_Const.PRESENTATION_FIELDS.Length];
@@ -3193,12 +3136,7 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(Номенклатура_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             Номенклатура_Objest? obj = await GetDirectoryObject();
@@ -3206,17 +3144,13 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public Номенклатура_Pointer GetEmptyPointer()
-        {
-            return new Номенклатура_Pointer();
-        }
+        public Номенклатура_Pointer GetEmptyPointer() => new Номенклатура_Pointer();
     }
     
     public class Номенклатура_Select : DirectorySelect
     {
         public Номенклатура_Select() : base(Config.Kernel, "tab_a03") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Номенклатура_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Номенклатура_Pointer? Current { get; private set; }
@@ -3468,15 +3402,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public Виробники_Pointer GetDirectoryPointer()
-        {
-            return new Виробники_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(Виробники_Const.PRESENTATION_FIELDS);
-        }
+        public Виробники_Pointer GetDirectoryPointer() => new Виробники_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(Виробники_Const.PRESENTATION_FIELDS);
                 
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
@@ -3485,38 +3412,21 @@ namespace GeneratedCode.Довідники
 
     public class Виробники_Pointer : DirectoryPointer
     {
-        public Виробники_Pointer(object? uid = null) : base(Config.Kernel, "tab_a04", Виробники_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public Виробники_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a04", Виробники_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public Виробники_Pointer() : base(Config.Kernel, "tab_a04", Виробники_Const.TYPE) => base.Init(new UniqueID());
+        public Виробники_Pointer(object? uid) : base(Config.Kernel, "tab_a04", Виробники_Const.TYPE) => base.Init(new UniqueID(uid));
+        public Виробники_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a04", Виробники_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public Виробники_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a04", Виробники_Const.TYPE) => base.Init(uid);
+        public Виробники_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a04", Виробники_Const.TYPE) => base.Init(uid, fields);
+        public Виробники_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a04", Виробники_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<Виробники_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             Виробники_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public Виробники_Pointer Copy()
-        {
-            return new Виробники_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(Виробники_Const.PRESENTATION_FIELDS);
-        }
-
+        public Виробники_Pointer Copy() => new Виробники_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(Виробники_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [Виробники_Const.PRESENTATION_FIELDS.Length];
@@ -3524,28 +3434,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(Виробники_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public Виробники_Pointer GetEmptyPointer()
-        {
-            return new Виробники_Pointer();
-        }
+        public Виробники_Pointer GetEmptyPointer() => new Виробники_Pointer();
     }
     
     public class Виробники_Select : DirectorySelect
     {
         public Виробники_Select() : base(Config.Kernel, "tab_a04") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Виробники_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Виробники_Pointer? Current { get; private set; }
@@ -3673,15 +3574,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ВидиНоменклатури_Pointer GetDirectoryPointer()
-        {
-            return new ВидиНоменклатури_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ВидиНоменклатури_Const.PRESENTATION_FIELDS);
-        }
+        public ВидиНоменклатури_Pointer GetDirectoryPointer() => new ВидиНоменклатури_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ВидиНоменклатури_Const.PRESENTATION_FIELDS);
                 
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
@@ -3693,38 +3587,21 @@ namespace GeneratedCode.Довідники
 
     public class ВидиНоменклатури_Pointer : DirectoryPointer
     {
-        public ВидиНоменклатури_Pointer(object? uid = null) : base(Config.Kernel, "tab_a05", ВидиНоменклатури_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ВидиНоменклатури_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a05", ВидиНоменклатури_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public ВидиНоменклатури_Pointer() : base(Config.Kernel, "tab_a05", ВидиНоменклатури_Const.TYPE) => base.Init(new UniqueID());
+        public ВидиНоменклатури_Pointer(object? uid) : base(Config.Kernel, "tab_a05", ВидиНоменклатури_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ВидиНоменклатури_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a05", ВидиНоменклатури_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ВидиНоменклатури_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a05", ВидиНоменклатури_Const.TYPE) => base.Init(uid);
+        public ВидиНоменклатури_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a05", ВидиНоменклатури_Const.TYPE) => base.Init(uid, fields);
+        public ВидиНоменклатури_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a05", ВидиНоменклатури_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<ВидиНоменклатури_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             ВидиНоменклатури_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public ВидиНоменклатури_Pointer Copy()
-        {
-            return new ВидиНоменклатури_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ВидиНоменклатури_Const.PRESENTATION_FIELDS);
-        }
-
+        public ВидиНоменклатури_Pointer Copy() => new ВидиНоменклатури_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ВидиНоменклатури_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ВидиНоменклатури_Const.PRESENTATION_FIELDS.Length];
@@ -3732,28 +3609,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(ВидиНоменклатури_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public ВидиНоменклатури_Pointer GetEmptyPointer()
-        {
-            return new ВидиНоменклатури_Pointer();
-        }
+        public ВидиНоменклатури_Pointer GetEmptyPointer() => new ВидиНоменклатури_Pointer();
     }
     
     public class ВидиНоменклатури_Select : DirectorySelect
     {
         public ВидиНоменклатури_Select() : base(Config.Kernel, "tab_a05") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВидиНоменклатури_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ВидиНоменклатури_Pointer? Current { get; private set; }
@@ -3879,15 +3747,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ПакуванняОдиниціВиміру_Pointer GetDirectoryPointer()
-        {
-            return new ПакуванняОдиниціВиміру_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПакуванняОдиниціВиміру_Const.PRESENTATION_FIELDS);
-        }
+        public ПакуванняОдиниціВиміру_Pointer GetDirectoryPointer() => new ПакуванняОдиниціВиміру_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПакуванняОдиниціВиміру_Const.PRESENTATION_FIELDS);
                 
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
@@ -3898,38 +3759,21 @@ namespace GeneratedCode.Довідники
 
     public class ПакуванняОдиниціВиміру_Pointer : DirectoryPointer
     {
-        public ПакуванняОдиниціВиміру_Pointer(object? uid = null) : base(Config.Kernel, "tab_a06", ПакуванняОдиниціВиміру_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПакуванняОдиниціВиміру_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a06", ПакуванняОдиниціВиміру_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public ПакуванняОдиниціВиміру_Pointer() : base(Config.Kernel, "tab_a06", ПакуванняОдиниціВиміру_Const.TYPE) => base.Init(new UniqueID());
+        public ПакуванняОдиниціВиміру_Pointer(object? uid) : base(Config.Kernel, "tab_a06", ПакуванняОдиниціВиміру_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПакуванняОдиниціВиміру_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a06", ПакуванняОдиниціВиміру_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПакуванняОдиниціВиміру_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a06", ПакуванняОдиниціВиміру_Const.TYPE) => base.Init(uid);
+        public ПакуванняОдиниціВиміру_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a06", ПакуванняОдиниціВиміру_Const.TYPE) => base.Init(uid, fields);
+        public ПакуванняОдиниціВиміру_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a06", ПакуванняОдиниціВиміру_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<ПакуванняОдиниціВиміру_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             ПакуванняОдиниціВиміру_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public ПакуванняОдиниціВиміру_Pointer Copy()
-        {
-            return new ПакуванняОдиниціВиміру_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПакуванняОдиниціВиміру_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПакуванняОдиниціВиміру_Pointer Copy() => new ПакуванняОдиниціВиміру_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПакуванняОдиниціВиміру_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПакуванняОдиниціВиміру_Const.PRESENTATION_FIELDS.Length];
@@ -3937,28 +3781,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(ПакуванняОдиниціВиміру_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public ПакуванняОдиниціВиміру_Pointer GetEmptyPointer()
-        {
-            return new ПакуванняОдиниціВиміру_Pointer();
-        }
+        public ПакуванняОдиниціВиміру_Pointer GetEmptyPointer() => new ПакуванняОдиниціВиміру_Pointer();
     }
     
     public class ПакуванняОдиниціВиміру_Select : DirectorySelect
     {
         public ПакуванняОдиниціВиміру_Select() : base(Config.Kernel, "tab_a06") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПакуванняОдиниціВиміру_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПакуванняОдиниціВиміру_Pointer? Current { get; private set; }
@@ -4090,15 +3925,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public Валюти_Pointer GetDirectoryPointer()
-        {
-            return new Валюти_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(Валюти_Const.PRESENTATION_FIELDS);
-        }
+        public Валюти_Pointer GetDirectoryPointer() => new Валюти_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(Валюти_Const.PRESENTATION_FIELDS);
                 
         public string Назва { get; set; } = "";
         public string КороткаНазва { get; set; } = "";
@@ -4110,38 +3938,21 @@ namespace GeneratedCode.Довідники
 
     public class Валюти_Pointer : DirectoryPointer
     {
-        public Валюти_Pointer(object? uid = null) : base(Config.Kernel, "tab_a07", Валюти_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public Валюти_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a07", Валюти_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public Валюти_Pointer() : base(Config.Kernel, "tab_a07", Валюти_Const.TYPE) => base.Init(new UniqueID());
+        public Валюти_Pointer(object? uid) : base(Config.Kernel, "tab_a07", Валюти_Const.TYPE) => base.Init(new UniqueID(uid));
+        public Валюти_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a07", Валюти_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public Валюти_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a07", Валюти_Const.TYPE) => base.Init(uid);
+        public Валюти_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a07", Валюти_Const.TYPE) => base.Init(uid, fields);
+        public Валюти_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a07", Валюти_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<Валюти_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             Валюти_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public Валюти_Pointer Copy()
-        {
-            return new Валюти_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(Валюти_Const.PRESENTATION_FIELDS);
-        }
-
+        public Валюти_Pointer Copy() => new Валюти_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(Валюти_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [Валюти_Const.PRESENTATION_FIELDS.Length];
@@ -4149,12 +3960,7 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(Валюти_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             Валюти_Objest? obj = await GetDirectoryObject();
@@ -4162,17 +3968,13 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public Валюти_Pointer GetEmptyPointer()
-        {
-            return new Валюти_Pointer();
-        }
+        public Валюти_Pointer GetEmptyPointer() => new Валюти_Pointer();
     }
     
     public class Валюти_Select : DirectorySelect
     {
         public Валюти_Select() : base(Config.Kernel, "tab_a07") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Валюти_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Валюти_Pointer? Current { get; private set; }
@@ -4344,15 +4146,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete(["tab_a09", "tab_b20", ]);
         }
         
-        public Контрагенти_Pointer GetDirectoryPointer()
-        {
-            return new Контрагенти_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(Контрагенти_Const.PRESENTATION_FIELDS);
-        }
+        public Контрагенти_Pointer GetDirectoryPointer() => new Контрагенти_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(Контрагенти_Const.PRESENTATION_FIELDS);
                 
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
@@ -4372,38 +4167,21 @@ namespace GeneratedCode.Довідники
 
     public class Контрагенти_Pointer : DirectoryPointer
     {
-        public Контрагенти_Pointer(object? uid = null) : base(Config.Kernel, "tab_a08", Контрагенти_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public Контрагенти_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a08", Контрагенти_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public Контрагенти_Pointer() : base(Config.Kernel, "tab_a08", Контрагенти_Const.TYPE) => base.Init(new UniqueID());
+        public Контрагенти_Pointer(object? uid) : base(Config.Kernel, "tab_a08", Контрагенти_Const.TYPE) => base.Init(new UniqueID(uid));
+        public Контрагенти_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a08", Контрагенти_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public Контрагенти_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a08", Контрагенти_Const.TYPE) => base.Init(uid);
+        public Контрагенти_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a08", Контрагенти_Const.TYPE) => base.Init(uid, fields);
+        public Контрагенти_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a08", Контрагенти_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<Контрагенти_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             Контрагенти_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public Контрагенти_Pointer Copy()
-        {
-            return new Контрагенти_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(Контрагенти_Const.PRESENTATION_FIELDS);
-        }
-
+        public Контрагенти_Pointer Copy() => new Контрагенти_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(Контрагенти_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [Контрагенти_Const.PRESENTATION_FIELDS.Length];
@@ -4411,12 +4189,7 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(Контрагенти_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             Контрагенти_Objest? obj = await GetDirectoryObject();
@@ -4424,17 +4197,13 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public Контрагенти_Pointer GetEmptyPointer()
-        {
-            return new Контрагенти_Pointer();
-        }
+        public Контрагенти_Pointer GetEmptyPointer() => new Контрагенти_Pointer();
     }
     
     public class Контрагенти_Select : DirectorySelect
     {
         public Контрагенти_Select() : base(Config.Kernel, "tab_a08") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Контрагенти_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Контрагенти_Pointer? Current { get; private set; }
@@ -4878,15 +4647,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete(["tab_a11", ]);
         }
         
-        public Склади_Pointer GetDirectoryPointer()
-        {
-            return new Склади_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(Склади_Const.PRESENTATION_FIELDS);
-        }
+        public Склади_Pointer GetDirectoryPointer() => new Склади_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(Склади_Const.PRESENTATION_FIELDS);
                 
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
@@ -4905,38 +4667,21 @@ namespace GeneratedCode.Довідники
 
     public class Склади_Pointer : DirectoryPointer
     {
-        public Склади_Pointer(object? uid = null) : base(Config.Kernel, "tab_a10", Склади_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public Склади_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a10", Склади_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public Склади_Pointer() : base(Config.Kernel, "tab_a10", Склади_Const.TYPE) => base.Init(new UniqueID());
+        public Склади_Pointer(object? uid) : base(Config.Kernel, "tab_a10", Склади_Const.TYPE) => base.Init(new UniqueID(uid));
+        public Склади_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a10", Склади_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public Склади_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a10", Склади_Const.TYPE) => base.Init(uid);
+        public Склади_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a10", Склади_Const.TYPE) => base.Init(uid, fields);
+        public Склади_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a10", Склади_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<Склади_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             Склади_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public Склади_Pointer Copy()
-        {
-            return new Склади_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(Склади_Const.PRESENTATION_FIELDS);
-        }
-
+        public Склади_Pointer Copy() => new Склади_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(Склади_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [Склади_Const.PRESENTATION_FIELDS.Length];
@@ -4944,28 +4689,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(Склади_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public Склади_Pointer GetEmptyPointer()
-        {
-            return new Склади_Pointer();
-        }
+        public Склади_Pointer GetEmptyPointer() => new Склади_Pointer();
     }
     
     public class Склади_Select : DirectorySelect
     {
         public Склади_Select() : base(Config.Kernel, "tab_a10") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Склади_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Склади_Pointer? Current { get; private set; }
@@ -5235,15 +4971,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ВидиЦін_Pointer GetDirectoryPointer()
-        {
-            return new ВидиЦін_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ВидиЦін_Const.PRESENTATION_FIELDS);
-        }
+        public ВидиЦін_Pointer GetDirectoryPointer() => new ВидиЦін_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ВидиЦін_Const.PRESENTATION_FIELDS);
                 
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
@@ -5253,38 +4982,21 @@ namespace GeneratedCode.Довідники
 
     public class ВидиЦін_Pointer : DirectoryPointer
     {
-        public ВидиЦін_Pointer(object? uid = null) : base(Config.Kernel, "tab_a12", ВидиЦін_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ВидиЦін_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a12", ВидиЦін_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public ВидиЦін_Pointer() : base(Config.Kernel, "tab_a12", ВидиЦін_Const.TYPE) => base.Init(new UniqueID());
+        public ВидиЦін_Pointer(object? uid) : base(Config.Kernel, "tab_a12", ВидиЦін_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ВидиЦін_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a12", ВидиЦін_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ВидиЦін_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a12", ВидиЦін_Const.TYPE) => base.Init(uid);
+        public ВидиЦін_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a12", ВидиЦін_Const.TYPE) => base.Init(uid, fields);
+        public ВидиЦін_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a12", ВидиЦін_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<ВидиЦін_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             ВидиЦін_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public ВидиЦін_Pointer Copy()
-        {
-            return new ВидиЦін_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ВидиЦін_Const.PRESENTATION_FIELDS);
-        }
-
+        public ВидиЦін_Pointer Copy() => new ВидиЦін_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ВидиЦін_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ВидиЦін_Const.PRESENTATION_FIELDS.Length];
@@ -5292,28 +5004,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(ВидиЦін_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public ВидиЦін_Pointer GetEmptyPointer()
-        {
-            return new ВидиЦін_Pointer();
-        }
+        public ВидиЦін_Pointer GetEmptyPointer() => new ВидиЦін_Pointer();
     }
     
     public class ВидиЦін_Select : DirectorySelect
     {
         public ВидиЦін_Select() : base(Config.Kernel, "tab_a12") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВидиЦін_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ВидиЦін_Pointer? Current { get; private set; }
@@ -5433,15 +5136,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ВидиЦінПостачальників_Pointer GetDirectoryPointer()
-        {
-            return new ВидиЦінПостачальників_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ВидиЦінПостачальників_Const.PRESENTATION_FIELDS);
-        }
+        public ВидиЦінПостачальників_Pointer GetDirectoryPointer() => new ВидиЦінПостачальників_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ВидиЦінПостачальників_Const.PRESENTATION_FIELDS);
                 
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
@@ -5451,38 +5147,21 @@ namespace GeneratedCode.Довідники
 
     public class ВидиЦінПостачальників_Pointer : DirectoryPointer
     {
-        public ВидиЦінПостачальників_Pointer(object? uid = null) : base(Config.Kernel, "tab_a13", ВидиЦінПостачальників_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ВидиЦінПостачальників_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a13", ВидиЦінПостачальників_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public ВидиЦінПостачальників_Pointer() : base(Config.Kernel, "tab_a13", ВидиЦінПостачальників_Const.TYPE) => base.Init(new UniqueID());
+        public ВидиЦінПостачальників_Pointer(object? uid) : base(Config.Kernel, "tab_a13", ВидиЦінПостачальників_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ВидиЦінПостачальників_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a13", ВидиЦінПостачальників_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ВидиЦінПостачальників_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a13", ВидиЦінПостачальників_Const.TYPE) => base.Init(uid);
+        public ВидиЦінПостачальників_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a13", ВидиЦінПостачальників_Const.TYPE) => base.Init(uid, fields);
+        public ВидиЦінПостачальників_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a13", ВидиЦінПостачальників_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<ВидиЦінПостачальників_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             ВидиЦінПостачальників_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public ВидиЦінПостачальників_Pointer Copy()
-        {
-            return new ВидиЦінПостачальників_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ВидиЦінПостачальників_Const.PRESENTATION_FIELDS);
-        }
-
+        public ВидиЦінПостачальників_Pointer Copy() => new ВидиЦінПостачальників_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ВидиЦінПостачальників_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ВидиЦінПостачальників_Const.PRESENTATION_FIELDS.Length];
@@ -5490,28 +5169,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(ВидиЦінПостачальників_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public ВидиЦінПостачальників_Pointer GetEmptyPointer()
-        {
-            return new ВидиЦінПостачальників_Pointer();
-        }
+        public ВидиЦінПостачальників_Pointer GetEmptyPointer() => new ВидиЦінПостачальників_Pointer();
     }
     
     public class ВидиЦінПостачальників_Select : DirectorySelect
     {
         public ВидиЦінПостачальників_Select() : base(Config.Kernel, "tab_a13") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВидиЦінПостачальників_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ВидиЦінПостачальників_Pointer? Current { get; private set; }
@@ -5657,15 +5327,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete(["tab_a15", ]);
         }
         
-        public Користувачі_Pointer GetDirectoryPointer()
-        {
-            return new Користувачі_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(Користувачі_Const.PRESENTATION_FIELDS);
-        }
+        public Користувачі_Pointer GetDirectoryPointer() => new Користувачі_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(Користувачі_Const.PRESENTATION_FIELDS);
                 
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
@@ -5680,38 +5343,21 @@ namespace GeneratedCode.Довідники
 
     public class Користувачі_Pointer : DirectoryPointer
     {
-        public Користувачі_Pointer(object? uid = null) : base(Config.Kernel, "tab_a14", Користувачі_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public Користувачі_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a14", Користувачі_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public Користувачі_Pointer() : base(Config.Kernel, "tab_a14", Користувачі_Const.TYPE) => base.Init(new UniqueID());
+        public Користувачі_Pointer(object? uid) : base(Config.Kernel, "tab_a14", Користувачі_Const.TYPE) => base.Init(new UniqueID(uid));
+        public Користувачі_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a14", Користувачі_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public Користувачі_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a14", Користувачі_Const.TYPE) => base.Init(uid);
+        public Користувачі_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a14", Користувачі_Const.TYPE) => base.Init(uid, fields);
+        public Користувачі_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a14", Користувачі_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<Користувачі_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             Користувачі_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public Користувачі_Pointer Copy()
-        {
-            return new Користувачі_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(Користувачі_Const.PRESENTATION_FIELDS);
-        }
-
+        public Користувачі_Pointer Copy() => new Користувачі_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(Користувачі_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [Користувачі_Const.PRESENTATION_FIELDS.Length];
@@ -5719,28 +5365,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(Користувачі_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public Користувачі_Pointer GetEmptyPointer()
-        {
-            return new Користувачі_Pointer();
-        }
+        public Користувачі_Pointer GetEmptyPointer() => new Користувачі_Pointer();
     }
     
     public class Користувачі_Select : DirectorySelect
     {
         public Користувачі_Select() : base(Config.Kernel, "tab_a14") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Користувачі_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Користувачі_Pointer? Current { get; private set; }
@@ -6028,15 +5665,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete(["tab_a17", ]);
         }
         
-        public ФізичніОсоби_Pointer GetDirectoryPointer()
-        {
-            return new ФізичніОсоби_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ФізичніОсоби_Const.PRESENTATION_FIELDS);
-        }
+        public ФізичніОсоби_Pointer GetDirectoryPointer() => new ФізичніОсоби_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ФізичніОсоби_Const.PRESENTATION_FIELDS);
                 
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
@@ -6051,38 +5681,21 @@ namespace GeneratedCode.Довідники
 
     public class ФізичніОсоби_Pointer : DirectoryPointer
     {
-        public ФізичніОсоби_Pointer(object? uid = null) : base(Config.Kernel, "tab_a16", ФізичніОсоби_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ФізичніОсоби_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a16", ФізичніОсоби_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public ФізичніОсоби_Pointer() : base(Config.Kernel, "tab_a16", ФізичніОсоби_Const.TYPE) => base.Init(new UniqueID());
+        public ФізичніОсоби_Pointer(object? uid) : base(Config.Kernel, "tab_a16", ФізичніОсоби_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ФізичніОсоби_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a16", ФізичніОсоби_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ФізичніОсоби_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a16", ФізичніОсоби_Const.TYPE) => base.Init(uid);
+        public ФізичніОсоби_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a16", ФізичніОсоби_Const.TYPE) => base.Init(uid, fields);
+        public ФізичніОсоби_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a16", ФізичніОсоби_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<ФізичніОсоби_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             ФізичніОсоби_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public ФізичніОсоби_Pointer Copy()
-        {
-            return new ФізичніОсоби_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ФізичніОсоби_Const.PRESENTATION_FIELDS);
-        }
-
+        public ФізичніОсоби_Pointer Copy() => new ФізичніОсоби_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ФізичніОсоби_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ФізичніОсоби_Const.PRESENTATION_FIELDS.Length];
@@ -6090,28 +5703,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(ФізичніОсоби_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public ФізичніОсоби_Pointer GetEmptyPointer()
-        {
-            return new ФізичніОсоби_Pointer();
-        }
+        public ФізичніОсоби_Pointer GetEmptyPointer() => new ФізичніОсоби_Pointer();
     }
     
     public class ФізичніОсоби_Select : DirectorySelect
     {
         public ФізичніОсоби_Select() : base(Config.Kernel, "tab_a16") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ФізичніОсоби_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ФізичніОсоби_Pointer? Current { get; private set; }
@@ -6381,15 +5985,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public СтруктураПідприємства_Pointer GetDirectoryPointer()
-        {
-            return new СтруктураПідприємства_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(СтруктураПідприємства_Const.PRESENTATION_FIELDS);
-        }
+        public СтруктураПідприємства_Pointer GetDirectoryPointer() => new СтруктураПідприємства_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(СтруктураПідприємства_Const.PRESENTATION_FIELDS);
                 
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
@@ -6399,38 +5996,21 @@ namespace GeneratedCode.Довідники
 
     public class СтруктураПідприємства_Pointer : DirectoryPointer
     {
-        public СтруктураПідприємства_Pointer(object? uid = null) : base(Config.Kernel, "tab_a18", СтруктураПідприємства_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public СтруктураПідприємства_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a18", СтруктураПідприємства_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public СтруктураПідприємства_Pointer() : base(Config.Kernel, "tab_a18", СтруктураПідприємства_Const.TYPE) => base.Init(new UniqueID());
+        public СтруктураПідприємства_Pointer(object? uid) : base(Config.Kernel, "tab_a18", СтруктураПідприємства_Const.TYPE) => base.Init(new UniqueID(uid));
+        public СтруктураПідприємства_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a18", СтруктураПідприємства_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public СтруктураПідприємства_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a18", СтруктураПідприємства_Const.TYPE) => base.Init(uid);
+        public СтруктураПідприємства_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a18", СтруктураПідприємства_Const.TYPE) => base.Init(uid, fields);
+        public СтруктураПідприємства_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a18", СтруктураПідприємства_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<СтруктураПідприємства_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             СтруктураПідприємства_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public СтруктураПідприємства_Pointer Copy()
-        {
-            return new СтруктураПідприємства_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(СтруктураПідприємства_Const.PRESENTATION_FIELDS);
-        }
-
+        public СтруктураПідприємства_Pointer Copy() => new СтруктураПідприємства_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(СтруктураПідприємства_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [СтруктураПідприємства_Const.PRESENTATION_FIELDS.Length];
@@ -6438,28 +6018,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(СтруктураПідприємства_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public СтруктураПідприємства_Pointer GetEmptyPointer()
-        {
-            return new СтруктураПідприємства_Pointer();
-        }
+        public СтруктураПідприємства_Pointer GetEmptyPointer() => new СтруктураПідприємства_Pointer();
     }
     
     public class СтруктураПідприємства_Select : DirectorySelect
     {
         public СтруктураПідприємства_Select() : base(Config.Kernel, "tab_a18") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СтруктураПідприємства_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public СтруктураПідприємства_Pointer? Current { get; private set; }
@@ -6575,15 +6146,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public КраїниСвіту_Pointer GetDirectoryPointer()
-        {
-            return new КраїниСвіту_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(КраїниСвіту_Const.PRESENTATION_FIELDS);
-        }
+        public КраїниСвіту_Pointer GetDirectoryPointer() => new КраїниСвіту_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(КраїниСвіту_Const.PRESENTATION_FIELDS);
                 
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
@@ -6592,38 +6156,21 @@ namespace GeneratedCode.Довідники
 
     public class КраїниСвіту_Pointer : DirectoryPointer
     {
-        public КраїниСвіту_Pointer(object? uid = null) : base(Config.Kernel, "tab_a19", КраїниСвіту_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public КраїниСвіту_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a19", КраїниСвіту_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public КраїниСвіту_Pointer() : base(Config.Kernel, "tab_a19", КраїниСвіту_Const.TYPE) => base.Init(new UniqueID());
+        public КраїниСвіту_Pointer(object? uid) : base(Config.Kernel, "tab_a19", КраїниСвіту_Const.TYPE) => base.Init(new UniqueID(uid));
+        public КраїниСвіту_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a19", КраїниСвіту_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public КраїниСвіту_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a19", КраїниСвіту_Const.TYPE) => base.Init(uid);
+        public КраїниСвіту_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a19", КраїниСвіту_Const.TYPE) => base.Init(uid, fields);
+        public КраїниСвіту_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a19", КраїниСвіту_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<КраїниСвіту_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             КраїниСвіту_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public КраїниСвіту_Pointer Copy()
-        {
-            return new КраїниСвіту_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(КраїниСвіту_Const.PRESENTATION_FIELDS);
-        }
-
+        public КраїниСвіту_Pointer Copy() => new КраїниСвіту_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(КраїниСвіту_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [КраїниСвіту_Const.PRESENTATION_FIELDS.Length];
@@ -6631,28 +6178,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(КраїниСвіту_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public КраїниСвіту_Pointer GetEmptyPointer()
-        {
-            return new КраїниСвіту_Pointer();
-        }
+        public КраїниСвіту_Pointer GetEmptyPointer() => new КраїниСвіту_Pointer();
     }
     
     public class КраїниСвіту_Select : DirectorySelect
     {
         public КраїниСвіту_Select() : base(Config.Kernel, "tab_a19") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new КраїниСвіту_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public КраїниСвіту_Pointer? Current { get; private set; }
@@ -6784,15 +6322,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public Файли_Pointer GetDirectoryPointer()
-        {
-            return new Файли_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(Файли_Const.PRESENTATION_FIELDS);
-        }
+        public Файли_Pointer GetDirectoryPointer() => new Файли_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(Файли_Const.PRESENTATION_FIELDS);
                 
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
@@ -6805,38 +6336,21 @@ namespace GeneratedCode.Довідники
 
     public class Файли_Pointer : DirectoryPointer
     {
-        public Файли_Pointer(object? uid = null) : base(Config.Kernel, "tab_a20", Файли_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public Файли_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a20", Файли_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public Файли_Pointer() : base(Config.Kernel, "tab_a20", Файли_Const.TYPE) => base.Init(new UniqueID());
+        public Файли_Pointer(object? uid) : base(Config.Kernel, "tab_a20", Файли_Const.TYPE) => base.Init(new UniqueID(uid));
+        public Файли_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a20", Файли_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public Файли_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a20", Файли_Const.TYPE) => base.Init(uid);
+        public Файли_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a20", Файли_Const.TYPE) => base.Init(uid, fields);
+        public Файли_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a20", Файли_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<Файли_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             Файли_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public Файли_Pointer Copy()
-        {
-            return new Файли_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(Файли_Const.PRESENTATION_FIELDS);
-        }
-
+        public Файли_Pointer Copy() => new Файли_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(Файли_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [Файли_Const.PRESENTATION_FIELDS.Length];
@@ -6844,28 +6358,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(Файли_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public Файли_Pointer GetEmptyPointer()
-        {
-            return new Файли_Pointer();
-        }
+        public Файли_Pointer GetEmptyPointer() => new Файли_Pointer();
     }
     
     public class Файли_Select : DirectorySelect
     {
         public Файли_Select() : base(Config.Kernel, "tab_a20") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Файли_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Файли_Pointer? Current { get; private set; }
@@ -6989,15 +6494,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ХарактеристикиНоменклатури_Pointer GetDirectoryPointer()
-        {
-            return new ХарактеристикиНоменклатури_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ХарактеристикиНоменклатури_Const.PRESENTATION_FIELDS);
-        }
+        public ХарактеристикиНоменклатури_Pointer GetDirectoryPointer() => new ХарактеристикиНоменклатури_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ХарактеристикиНоменклатури_Const.PRESENTATION_FIELDS);
                 
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
@@ -7008,38 +6506,21 @@ namespace GeneratedCode.Довідники
 
     public class ХарактеристикиНоменклатури_Pointer : DirectoryPointer
     {
-        public ХарактеристикиНоменклатури_Pointer(object? uid = null) : base(Config.Kernel, "tab_a21", ХарактеристикиНоменклатури_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ХарактеристикиНоменклатури_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a21", ХарактеристикиНоменклатури_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public ХарактеристикиНоменклатури_Pointer() : base(Config.Kernel, "tab_a21", ХарактеристикиНоменклатури_Const.TYPE) => base.Init(new UniqueID());
+        public ХарактеристикиНоменклатури_Pointer(object? uid) : base(Config.Kernel, "tab_a21", ХарактеристикиНоменклатури_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ХарактеристикиНоменклатури_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a21", ХарактеристикиНоменклатури_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ХарактеристикиНоменклатури_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a21", ХарактеристикиНоменклатури_Const.TYPE) => base.Init(uid);
+        public ХарактеристикиНоменклатури_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a21", ХарактеристикиНоменклатури_Const.TYPE) => base.Init(uid, fields);
+        public ХарактеристикиНоменклатури_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a21", ХарактеристикиНоменклатури_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<ХарактеристикиНоменклатури_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             ХарактеристикиНоменклатури_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public ХарактеристикиНоменклатури_Pointer Copy()
-        {
-            return new ХарактеристикиНоменклатури_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ХарактеристикиНоменклатури_Const.PRESENTATION_FIELDS);
-        }
-
+        public ХарактеристикиНоменклатури_Pointer Copy() => new ХарактеристикиНоменклатури_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ХарактеристикиНоменклатури_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ХарактеристикиНоменклатури_Const.PRESENTATION_FIELDS.Length];
@@ -7047,28 +6528,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(ХарактеристикиНоменклатури_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public ХарактеристикиНоменклатури_Pointer GetEmptyPointer()
-        {
-            return new ХарактеристикиНоменклатури_Pointer();
-        }
+        public ХарактеристикиНоменклатури_Pointer GetEmptyPointer() => new ХарактеристикиНоменклатури_Pointer();
     }
     
     public class ХарактеристикиНоменклатури_Select : DirectorySelect
     {
         public ХарактеристикиНоменклатури_Select() : base(Config.Kernel, "tab_a21") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ХарактеристикиНоменклатури_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ХарактеристикиНоменклатури_Pointer? Current { get; private set; }
@@ -7192,15 +6664,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public Номенклатура_Папки_Pointer GetDirectoryPointer()
-        {
-            return new Номенклатура_Папки_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(Номенклатура_Папки_Const.PRESENTATION_FIELDS);
-        }
+        public Номенклатура_Папки_Pointer GetDirectoryPointer() => new Номенклатура_Папки_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(Номенклатура_Папки_Const.PRESENTATION_FIELDS);
                 
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
@@ -7210,38 +6675,21 @@ namespace GeneratedCode.Довідники
 
     public class Номенклатура_Папки_Pointer : DirectoryPointer
     {
-        public Номенклатура_Папки_Pointer(object? uid = null) : base(Config.Kernel, "tab_a22", Номенклатура_Папки_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public Номенклатура_Папки_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a22", Номенклатура_Папки_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public Номенклатура_Папки_Pointer() : base(Config.Kernel, "tab_a22", Номенклатура_Папки_Const.TYPE) => base.Init(new UniqueID());
+        public Номенклатура_Папки_Pointer(object? uid) : base(Config.Kernel, "tab_a22", Номенклатура_Папки_Const.TYPE) => base.Init(new UniqueID(uid));
+        public Номенклатура_Папки_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a22", Номенклатура_Папки_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public Номенклатура_Папки_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a22", Номенклатура_Папки_Const.TYPE) => base.Init(uid);
+        public Номенклатура_Папки_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a22", Номенклатура_Папки_Const.TYPE) => base.Init(uid, fields);
+        public Номенклатура_Папки_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a22", Номенклатура_Папки_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<Номенклатура_Папки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             Номенклатура_Папки_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public Номенклатура_Папки_Pointer Copy()
-        {
-            return new Номенклатура_Папки_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(Номенклатура_Папки_Const.PRESENTATION_FIELDS);
-        }
-
+        public Номенклатура_Папки_Pointer Copy() => new Номенклатура_Папки_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(Номенклатура_Папки_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [Номенклатура_Папки_Const.PRESENTATION_FIELDS.Length];
@@ -7249,12 +6697,7 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(Номенклатура_Папки_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             Номенклатура_Папки_Objest? obj = await GetDirectoryObject();
@@ -7262,17 +6705,13 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public Номенклатура_Папки_Pointer GetEmptyPointer()
-        {
-            return new Номенклатура_Папки_Pointer();
-        }
+        public Номенклатура_Папки_Pointer GetEmptyPointer() => new Номенклатура_Папки_Pointer();
     }
     
     public class Номенклатура_Папки_Select : DirectorySelect
     {
         public Номенклатура_Папки_Select() : base(Config.Kernel, "tab_a22") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Номенклатура_Папки_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Номенклатура_Папки_Pointer? Current { get; private set; }
@@ -7412,15 +6851,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public Контрагенти_Папки_Pointer GetDirectoryPointer()
-        {
-            return new Контрагенти_Папки_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(Контрагенти_Папки_Const.PRESENTATION_FIELDS);
-        }
+        public Контрагенти_Папки_Pointer GetDirectoryPointer() => new Контрагенти_Папки_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(Контрагенти_Папки_Const.PRESENTATION_FIELDS);
                 
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
@@ -7430,38 +6862,21 @@ namespace GeneratedCode.Довідники
 
     public class Контрагенти_Папки_Pointer : DirectoryPointer
     {
-        public Контрагенти_Папки_Pointer(object? uid = null) : base(Config.Kernel, "tab_a23", Контрагенти_Папки_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public Контрагенти_Папки_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a23", Контрагенти_Папки_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public Контрагенти_Папки_Pointer() : base(Config.Kernel, "tab_a23", Контрагенти_Папки_Const.TYPE) => base.Init(new UniqueID());
+        public Контрагенти_Папки_Pointer(object? uid) : base(Config.Kernel, "tab_a23", Контрагенти_Папки_Const.TYPE) => base.Init(new UniqueID(uid));
+        public Контрагенти_Папки_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a23", Контрагенти_Папки_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public Контрагенти_Папки_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a23", Контрагенти_Папки_Const.TYPE) => base.Init(uid);
+        public Контрагенти_Папки_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a23", Контрагенти_Папки_Const.TYPE) => base.Init(uid, fields);
+        public Контрагенти_Папки_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a23", Контрагенти_Папки_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<Контрагенти_Папки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             Контрагенти_Папки_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public Контрагенти_Папки_Pointer Copy()
-        {
-            return new Контрагенти_Папки_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(Контрагенти_Папки_Const.PRESENTATION_FIELDS);
-        }
-
+        public Контрагенти_Папки_Pointer Copy() => new Контрагенти_Папки_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(Контрагенти_Папки_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [Контрагенти_Папки_Const.PRESENTATION_FIELDS.Length];
@@ -7469,12 +6884,7 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(Контрагенти_Папки_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             Контрагенти_Папки_Objest? obj = await GetDirectoryObject();
@@ -7482,17 +6892,13 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public Контрагенти_Папки_Pointer GetEmptyPointer()
-        {
-            return new Контрагенти_Папки_Pointer();
-        }
+        public Контрагенти_Папки_Pointer GetEmptyPointer() => new Контрагенти_Папки_Pointer();
     }
     
     public class Контрагенти_Папки_Select : DirectorySelect
     {
         public Контрагенти_Папки_Select() : base(Config.Kernel, "tab_a23") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Контрагенти_Папки_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Контрагенти_Папки_Pointer? Current { get; private set; }
@@ -7632,15 +7038,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public Склади_Папки_Pointer GetDirectoryPointer()
-        {
-            return new Склади_Папки_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(Склади_Папки_Const.PRESENTATION_FIELDS);
-        }
+        public Склади_Папки_Pointer GetDirectoryPointer() => new Склади_Папки_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(Склади_Папки_Const.PRESENTATION_FIELDS);
                 
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
@@ -7650,38 +7049,21 @@ namespace GeneratedCode.Довідники
 
     public class Склади_Папки_Pointer : DirectoryPointer
     {
-        public Склади_Папки_Pointer(object? uid = null) : base(Config.Kernel, "tab_a24", Склади_Папки_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public Склади_Папки_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a24", Склади_Папки_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public Склади_Папки_Pointer() : base(Config.Kernel, "tab_a24", Склади_Папки_Const.TYPE) => base.Init(new UniqueID());
+        public Склади_Папки_Pointer(object? uid) : base(Config.Kernel, "tab_a24", Склади_Папки_Const.TYPE) => base.Init(new UniqueID(uid));
+        public Склади_Папки_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a24", Склади_Папки_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public Склади_Папки_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a24", Склади_Папки_Const.TYPE) => base.Init(uid);
+        public Склади_Папки_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a24", Склади_Папки_Const.TYPE) => base.Init(uid, fields);
+        public Склади_Папки_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a24", Склади_Папки_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<Склади_Папки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             Склади_Папки_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public Склади_Папки_Pointer Copy()
-        {
-            return new Склади_Папки_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(Склади_Папки_Const.PRESENTATION_FIELDS);
-        }
-
+        public Склади_Папки_Pointer Copy() => new Склади_Папки_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(Склади_Папки_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [Склади_Папки_Const.PRESENTATION_FIELDS.Length];
@@ -7689,12 +7071,7 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(Склади_Папки_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             Склади_Папки_Objest? obj = await GetDirectoryObject();
@@ -7702,17 +7079,13 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public Склади_Папки_Pointer GetEmptyPointer()
-        {
-            return new Склади_Папки_Pointer();
-        }
+        public Склади_Папки_Pointer GetEmptyPointer() => new Склади_Папки_Pointer();
     }
     
     public class Склади_Папки_Select : DirectorySelect
     {
         public Склади_Папки_Select() : base(Config.Kernel, "tab_a24") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Склади_Папки_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Склади_Папки_Pointer? Current { get; private set; }
@@ -7852,15 +7225,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public Каси_Pointer GetDirectoryPointer()
-        {
-            return new Каси_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(Каси_Const.PRESENTATION_FIELDS);
-        }
+        public Каси_Pointer GetDirectoryPointer() => new Каси_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(Каси_Const.PRESENTATION_FIELDS);
                 
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
@@ -7871,38 +7237,21 @@ namespace GeneratedCode.Довідники
 
     public class Каси_Pointer : DirectoryPointer
     {
-        public Каси_Pointer(object? uid = null) : base(Config.Kernel, "tab_a26", Каси_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public Каси_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a26", Каси_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public Каси_Pointer() : base(Config.Kernel, "tab_a26", Каси_Const.TYPE) => base.Init(new UniqueID());
+        public Каси_Pointer(object? uid) : base(Config.Kernel, "tab_a26", Каси_Const.TYPE) => base.Init(new UniqueID(uid));
+        public Каси_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a26", Каси_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public Каси_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a26", Каси_Const.TYPE) => base.Init(uid);
+        public Каси_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a26", Каси_Const.TYPE) => base.Init(uid, fields);
+        public Каси_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a26", Каси_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<Каси_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             Каси_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public Каси_Pointer Copy()
-        {
-            return new Каси_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(Каси_Const.PRESENTATION_FIELDS);
-        }
-
+        public Каси_Pointer Copy() => new Каси_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(Каси_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [Каси_Const.PRESENTATION_FIELDS.Length];
@@ -7910,28 +7259,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(Каси_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public Каси_Pointer GetEmptyPointer()
-        {
-            return new Каси_Pointer();
-        }
+        public Каси_Pointer GetEmptyPointer() => new Каси_Pointer();
     }
     
     public class Каси_Select : DirectorySelect
     {
         public Каси_Select() : base(Config.Kernel, "tab_a26") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Каси_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Каси_Pointer? Current { get; private set; }
@@ -8067,15 +7407,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public БанківськіРахункиОрганізацій_Pointer GetDirectoryPointer()
-        {
-            return new БанківськіРахункиОрганізацій_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(БанківськіРахункиОрганізацій_Const.PRESENTATION_FIELDS);
-        }
+        public БанківськіРахункиОрганізацій_Pointer GetDirectoryPointer() => new БанківськіРахункиОрганізацій_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(БанківськіРахункиОрганізацій_Const.PRESENTATION_FIELDS);
                 
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
@@ -8089,38 +7422,21 @@ namespace GeneratedCode.Довідники
 
     public class БанківськіРахункиОрганізацій_Pointer : DirectoryPointer
     {
-        public БанківськіРахункиОрганізацій_Pointer(object? uid = null) : base(Config.Kernel, "tab_a27", БанківськіРахункиОрганізацій_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public БанківськіРахункиОрганізацій_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a27", БанківськіРахункиОрганізацій_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public БанківськіРахункиОрганізацій_Pointer() : base(Config.Kernel, "tab_a27", БанківськіРахункиОрганізацій_Const.TYPE) => base.Init(new UniqueID());
+        public БанківськіРахункиОрганізацій_Pointer(object? uid) : base(Config.Kernel, "tab_a27", БанківськіРахункиОрганізацій_Const.TYPE) => base.Init(new UniqueID(uid));
+        public БанківськіРахункиОрганізацій_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a27", БанківськіРахункиОрганізацій_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public БанківськіРахункиОрганізацій_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a27", БанківськіРахункиОрганізацій_Const.TYPE) => base.Init(uid);
+        public БанківськіРахункиОрганізацій_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a27", БанківськіРахункиОрганізацій_Const.TYPE) => base.Init(uid, fields);
+        public БанківськіРахункиОрганізацій_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a27", БанківськіРахункиОрганізацій_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<БанківськіРахункиОрганізацій_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             БанківськіРахункиОрганізацій_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public БанківськіРахункиОрганізацій_Pointer Copy()
-        {
-            return new БанківськіРахункиОрганізацій_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(БанківськіРахункиОрганізацій_Const.PRESENTATION_FIELDS);
-        }
-
+        public БанківськіРахункиОрганізацій_Pointer Copy() => new БанківськіРахункиОрганізацій_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(БанківськіРахункиОрганізацій_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [БанківськіРахункиОрганізацій_Const.PRESENTATION_FIELDS.Length];
@@ -8128,28 +7444,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(БанківськіРахункиОрганізацій_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public БанківськіРахункиОрганізацій_Pointer GetEmptyPointer()
-        {
-            return new БанківськіРахункиОрганізацій_Pointer();
-        }
+        public БанківськіРахункиОрганізацій_Pointer GetEmptyPointer() => new БанківськіРахункиОрганізацій_Pointer();
     }
     
     public class БанківськіРахункиОрганізацій_Select : DirectorySelect
     {
         public БанківськіРахункиОрганізацій_Select() : base(Config.Kernel, "tab_a27") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new БанківськіРахункиОрганізацій_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public БанківськіРахункиОрганізацій_Pointer? Current { get; private set; }
@@ -8339,15 +7646,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ДоговориКонтрагентів_Pointer GetDirectoryPointer()
-        {
-            return new ДоговориКонтрагентів_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ДоговориКонтрагентів_Const.PRESENTATION_FIELDS);
-        }
+        public ДоговориКонтрагентів_Pointer GetDirectoryPointer() => new ДоговориКонтрагентів_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ДоговориКонтрагентів_Const.PRESENTATION_FIELDS);
                 
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
@@ -8374,38 +7674,21 @@ namespace GeneratedCode.Довідники
 
     public class ДоговориКонтрагентів_Pointer : DirectoryPointer
     {
-        public ДоговориКонтрагентів_Pointer(object? uid = null) : base(Config.Kernel, "tab_a28", ДоговориКонтрагентів_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ДоговориКонтрагентів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a28", ДоговориКонтрагентів_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public ДоговориКонтрагентів_Pointer() : base(Config.Kernel, "tab_a28", ДоговориКонтрагентів_Const.TYPE) => base.Init(new UniqueID());
+        public ДоговориКонтрагентів_Pointer(object? uid) : base(Config.Kernel, "tab_a28", ДоговориКонтрагентів_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ДоговориКонтрагентів_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a28", ДоговориКонтрагентів_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ДоговориКонтрагентів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a28", ДоговориКонтрагентів_Const.TYPE) => base.Init(uid);
+        public ДоговориКонтрагентів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a28", ДоговориКонтрагентів_Const.TYPE) => base.Init(uid, fields);
+        public ДоговориКонтрагентів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a28", ДоговориКонтрагентів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<ДоговориКонтрагентів_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             ДоговориКонтрагентів_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public ДоговориКонтрагентів_Pointer Copy()
-        {
-            return new ДоговориКонтрагентів_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ДоговориКонтрагентів_Const.PRESENTATION_FIELDS);
-        }
-
+        public ДоговориКонтрагентів_Pointer Copy() => new ДоговориКонтрагентів_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ДоговориКонтрагентів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ДоговориКонтрагентів_Const.PRESENTATION_FIELDS.Length];
@@ -8413,28 +7696,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(ДоговориКонтрагентів_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public ДоговориКонтрагентів_Pointer GetEmptyPointer()
-        {
-            return new ДоговориКонтрагентів_Pointer();
-        }
+        public ДоговориКонтрагентів_Pointer GetEmptyPointer() => new ДоговориКонтрагентів_Pointer();
     }
     
     public class ДоговориКонтрагентів_Select : DirectorySelect
     {
         public ДоговориКонтрагентів_Select() : base(Config.Kernel, "tab_a28") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ДоговориКонтрагентів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ДоговориКонтрагентів_Pointer? Current { get; private set; }
@@ -8566,15 +7840,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public БанківськіРахункиКонтрагентів_Pointer GetDirectoryPointer()
-        {
-            return new БанківськіРахункиКонтрагентів_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(БанківськіРахункиКонтрагентів_Const.PRESENTATION_FIELDS);
-        }
+        public БанківськіРахункиКонтрагентів_Pointer GetDirectoryPointer() => new БанківськіРахункиКонтрагентів_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(БанківськіРахункиКонтрагентів_Const.PRESENTATION_FIELDS);
                 
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
@@ -8587,38 +7854,21 @@ namespace GeneratedCode.Довідники
 
     public class БанківськіРахункиКонтрагентів_Pointer : DirectoryPointer
     {
-        public БанківськіРахункиКонтрагентів_Pointer(object? uid = null) : base(Config.Kernel, "tab_a29", БанківськіРахункиКонтрагентів_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public БанківськіРахункиКонтрагентів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a29", БанківськіРахункиКонтрагентів_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public БанківськіРахункиКонтрагентів_Pointer() : base(Config.Kernel, "tab_a29", БанківськіРахункиКонтрагентів_Const.TYPE) => base.Init(new UniqueID());
+        public БанківськіРахункиКонтрагентів_Pointer(object? uid) : base(Config.Kernel, "tab_a29", БанківськіРахункиКонтрагентів_Const.TYPE) => base.Init(new UniqueID(uid));
+        public БанківськіРахункиКонтрагентів_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a29", БанківськіРахункиКонтрагентів_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public БанківськіРахункиКонтрагентів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a29", БанківськіРахункиКонтрагентів_Const.TYPE) => base.Init(uid);
+        public БанківськіРахункиКонтрагентів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a29", БанківськіРахункиКонтрагентів_Const.TYPE) => base.Init(uid, fields);
+        public БанківськіРахункиКонтрагентів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a29", БанківськіРахункиКонтрагентів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<БанківськіРахункиКонтрагентів_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             БанківськіРахункиКонтрагентів_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public БанківськіРахункиКонтрагентів_Pointer Copy()
-        {
-            return new БанківськіРахункиКонтрагентів_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(БанківськіРахункиКонтрагентів_Const.PRESENTATION_FIELDS);
-        }
-
+        public БанківськіРахункиКонтрагентів_Pointer Copy() => new БанківськіРахункиКонтрагентів_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(БанківськіРахункиКонтрагентів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [БанківськіРахункиКонтрагентів_Const.PRESENTATION_FIELDS.Length];
@@ -8626,28 +7876,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(БанківськіРахункиКонтрагентів_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public БанківськіРахункиКонтрагентів_Pointer GetEmptyPointer()
-        {
-            return new БанківськіРахункиКонтрагентів_Pointer();
-        }
+        public БанківськіРахункиКонтрагентів_Pointer GetEmptyPointer() => new БанківськіРахункиКонтрагентів_Pointer();
     }
     
     public class БанківськіРахункиКонтрагентів_Select : DirectorySelect
     {
         public БанківськіРахункиКонтрагентів_Select() : base(Config.Kernel, "tab_a29") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new БанківськіРахункиКонтрагентів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public БанківськіРахункиКонтрагентів_Pointer? Current { get; private set; }
@@ -8793,15 +8034,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete(["tab_a46", ]);
         }
         
-        public СтаттяРухуКоштів_Pointer GetDirectoryPointer()
-        {
-            return new СтаттяРухуКоштів_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(СтаттяРухуКоштів_Const.PRESENTATION_FIELDS);
-        }
+        public СтаттяРухуКоштів_Pointer GetDirectoryPointer() => new СтаттяРухуКоштів_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(СтаттяРухуКоштів_Const.PRESENTATION_FIELDS);
                 
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
@@ -8816,38 +8050,21 @@ namespace GeneratedCode.Довідники
 
     public class СтаттяРухуКоштів_Pointer : DirectoryPointer
     {
-        public СтаттяРухуКоштів_Pointer(object? uid = null) : base(Config.Kernel, "tab_a45", СтаттяРухуКоштів_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public СтаттяРухуКоштів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a45", СтаттяРухуКоштів_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public СтаттяРухуКоштів_Pointer() : base(Config.Kernel, "tab_a45", СтаттяРухуКоштів_Const.TYPE) => base.Init(new UniqueID());
+        public СтаттяРухуКоштів_Pointer(object? uid) : base(Config.Kernel, "tab_a45", СтаттяРухуКоштів_Const.TYPE) => base.Init(new UniqueID(uid));
+        public СтаттяРухуКоштів_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a45", СтаттяРухуКоштів_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public СтаттяРухуКоштів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a45", СтаттяРухуКоштів_Const.TYPE) => base.Init(uid);
+        public СтаттяРухуКоштів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a45", СтаттяРухуКоштів_Const.TYPE) => base.Init(uid, fields);
+        public СтаттяРухуКоштів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a45", СтаттяРухуКоштів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<СтаттяРухуКоштів_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             СтаттяРухуКоштів_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public СтаттяРухуКоштів_Pointer Copy()
-        {
-            return new СтаттяРухуКоштів_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(СтаттяРухуКоштів_Const.PRESENTATION_FIELDS);
-        }
-
+        public СтаттяРухуКоштів_Pointer Copy() => new СтаттяРухуКоштів_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(СтаттяРухуКоштів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [СтаттяРухуКоштів_Const.PRESENTATION_FIELDS.Length];
@@ -8855,28 +8072,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(СтаттяРухуКоштів_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public СтаттяРухуКоштів_Pointer GetEmptyPointer()
-        {
-            return new СтаттяРухуКоштів_Pointer();
-        }
+        public СтаттяРухуКоштів_Pointer GetEmptyPointer() => new СтаттяРухуКоштів_Pointer();
     }
     
     public class СтаттяРухуКоштів_Select : DirectorySelect
     {
         public СтаттяРухуКоштів_Select() : base(Config.Kernel, "tab_a45") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СтаттяРухуКоштів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public СтаттяРухуКоштів_Pointer? Current { get; private set; }
@@ -9096,15 +8304,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public СеріїНоменклатури_Pointer GetDirectoryPointer()
-        {
-            return new СеріїНоменклатури_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(СеріїНоменклатури_Const.PRESENTATION_FIELDS);
-        }
+        public СеріїНоменклатури_Pointer GetDirectoryPointer() => new СеріїНоменклатури_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(СеріїНоменклатури_Const.PRESENTATION_FIELDS);
                 
         public string Номер { get; set; } = "";
         public string Коментар { get; set; } = "";
@@ -9114,38 +8315,21 @@ namespace GeneratedCode.Довідники
 
     public class СеріїНоменклатури_Pointer : DirectoryPointer
     {
-        public СеріїНоменклатури_Pointer(object? uid = null) : base(Config.Kernel, "tab_b02", СеріїНоменклатури_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public СеріїНоменклатури_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b02", СеріїНоменклатури_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public СеріїНоменклатури_Pointer() : base(Config.Kernel, "tab_b02", СеріїНоменклатури_Const.TYPE) => base.Init(new UniqueID());
+        public СеріїНоменклатури_Pointer(object? uid) : base(Config.Kernel, "tab_b02", СеріїНоменклатури_Const.TYPE) => base.Init(new UniqueID(uid));
+        public СеріїНоменклатури_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b02", СеріїНоменклатури_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public СеріїНоменклатури_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b02", СеріїНоменклатури_Const.TYPE) => base.Init(uid);
+        public СеріїНоменклатури_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b02", СеріїНоменклатури_Const.TYPE) => base.Init(uid, fields);
+        public СеріїНоменклатури_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b02", СеріїНоменклатури_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<СеріїНоменклатури_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             СеріїНоменклатури_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public СеріїНоменклатури_Pointer Copy()
-        {
-            return new СеріїНоменклатури_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(СеріїНоменклатури_Const.PRESENTATION_FIELDS);
-        }
-
+        public СеріїНоменклатури_Pointer Copy() => new СеріїНоменклатури_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(СеріїНоменклатури_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [СеріїНоменклатури_Const.PRESENTATION_FIELDS.Length];
@@ -9153,28 +8337,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(СеріїНоменклатури_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public СеріїНоменклатури_Pointer GetEmptyPointer()
-        {
-            return new СеріїНоменклатури_Pointer();
-        }
+        public СеріїНоменклатури_Pointer GetEmptyPointer() => new СеріїНоменклатури_Pointer();
     }
     
     public class СеріїНоменклатури_Select : DirectorySelect
     {
         public СеріїНоменклатури_Select() : base(Config.Kernel, "tab_b02") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СеріїНоменклатури_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public СеріїНоменклатури_Pointer? Current { get; private set; }
@@ -9304,15 +8479,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ПартіяТоварівКомпозит_Pointer GetDirectoryPointer()
-        {
-            return new ПартіяТоварівКомпозит_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПартіяТоварівКомпозит_Const.PRESENTATION_FIELDS);
-        }
+        public ПартіяТоварівКомпозит_Pointer GetDirectoryPointer() => new ПартіяТоварівКомпозит_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПартіяТоварівКомпозит_Const.PRESENTATION_FIELDS);
                 
         public string Назва { get; set; } = "";
         public DateTime Дата { get; set; } = DateTime.MinValue;
@@ -9325,38 +8493,21 @@ namespace GeneratedCode.Довідники
 
     public class ПартіяТоварівКомпозит_Pointer : DirectoryPointer
     {
-        public ПартіяТоварівКомпозит_Pointer(object? uid = null) : base(Config.Kernel, "tab_b06", ПартіяТоварівКомпозит_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПартіяТоварівКомпозит_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b06", ПартіяТоварівКомпозит_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public ПартіяТоварівКомпозит_Pointer() : base(Config.Kernel, "tab_b06", ПартіяТоварівКомпозит_Const.TYPE) => base.Init(new UniqueID());
+        public ПартіяТоварівКомпозит_Pointer(object? uid) : base(Config.Kernel, "tab_b06", ПартіяТоварівКомпозит_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПартіяТоварівКомпозит_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b06", ПартіяТоварівКомпозит_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПартіяТоварівКомпозит_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b06", ПартіяТоварівКомпозит_Const.TYPE) => base.Init(uid);
+        public ПартіяТоварівКомпозит_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b06", ПартіяТоварівКомпозит_Const.TYPE) => base.Init(uid, fields);
+        public ПартіяТоварівКомпозит_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b06", ПартіяТоварівКомпозит_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<ПартіяТоварівКомпозит_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             ПартіяТоварівКомпозит_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public ПартіяТоварівКомпозит_Pointer Copy()
-        {
-            return new ПартіяТоварівКомпозит_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПартіяТоварівКомпозит_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПартіяТоварівКомпозит_Pointer Copy() => new ПартіяТоварівКомпозит_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПартіяТоварівКомпозит_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПартіяТоварівКомпозит_Const.PRESENTATION_FIELDS.Length];
@@ -9364,28 +8515,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(ПартіяТоварівКомпозит_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public ПартіяТоварівКомпозит_Pointer GetEmptyPointer()
-        {
-            return new ПартіяТоварівКомпозит_Pointer();
-        }
+        public ПартіяТоварівКомпозит_Pointer GetEmptyPointer() => new ПартіяТоварівКомпозит_Pointer();
     }
     
     public class ПартіяТоварівКомпозит_Select : DirectorySelect
     {
         public ПартіяТоварівКомпозит_Select() : base(Config.Kernel, "tab_b06") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПартіяТоварівКомпозит_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПартіяТоварівКомпозит_Pointer? Current { get; private set; }
@@ -9521,15 +8663,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ВидиЗапасів_Pointer GetDirectoryPointer()
-        {
-            return new ВидиЗапасів_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ВидиЗапасів_Const.PRESENTATION_FIELDS);
-        }
+        public ВидиЗапасів_Pointer GetDirectoryPointer() => new ВидиЗапасів_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ВидиЗапасів_Const.PRESENTATION_FIELDS);
                 
         public string Назва { get; set; } = "";
         public Довідники.Організації_Pointer Організація { get; set; } = new Довідники.Організації_Pointer();
@@ -9543,38 +8678,21 @@ namespace GeneratedCode.Довідники
 
     public class ВидиЗапасів_Pointer : DirectoryPointer
     {
-        public ВидиЗапасів_Pointer(object? uid = null) : base(Config.Kernel, "tab_b13", ВидиЗапасів_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ВидиЗапасів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b13", ВидиЗапасів_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public ВидиЗапасів_Pointer() : base(Config.Kernel, "tab_b13", ВидиЗапасів_Const.TYPE) => base.Init(new UniqueID());
+        public ВидиЗапасів_Pointer(object? uid) : base(Config.Kernel, "tab_b13", ВидиЗапасів_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ВидиЗапасів_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b13", ВидиЗапасів_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ВидиЗапасів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b13", ВидиЗапасів_Const.TYPE) => base.Init(uid);
+        public ВидиЗапасів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b13", ВидиЗапасів_Const.TYPE) => base.Init(uid, fields);
+        public ВидиЗапасів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b13", ВидиЗапасів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<ВидиЗапасів_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             ВидиЗапасів_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public ВидиЗапасів_Pointer Copy()
-        {
-            return new ВидиЗапасів_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ВидиЗапасів_Const.PRESENTATION_FIELDS);
-        }
-
+        public ВидиЗапасів_Pointer Copy() => new ВидиЗапасів_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ВидиЗапасів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ВидиЗапасів_Const.PRESENTATION_FIELDS.Length];
@@ -9582,28 +8700,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(ВидиЗапасів_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public ВидиЗапасів_Pointer GetEmptyPointer()
-        {
-            return new ВидиЗапасів_Pointer();
-        }
+        public ВидиЗапасів_Pointer GetEmptyPointer() => new ВидиЗапасів_Pointer();
     }
     
     public class ВидиЗапасів_Select : DirectorySelect
     {
         public ВидиЗапасів_Select() : base(Config.Kernel, "tab_b13") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВидиЗапасів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ВидиЗапасів_Pointer? Current { get; private set; }
@@ -9823,15 +8932,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public Банки_Pointer GetDirectoryPointer()
-        {
-            return new Банки_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(Банки_Const.PRESENTATION_FIELDS);
-        }
+        public Банки_Pointer GetDirectoryPointer() => new Банки_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(Банки_Const.PRESENTATION_FIELDS);
                 
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
@@ -9866,38 +8968,21 @@ namespace GeneratedCode.Довідники
 
     public class Банки_Pointer : DirectoryPointer
     {
-        public Банки_Pointer(object? uid = null) : base(Config.Kernel, "tab_a39", Банки_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public Банки_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a39", Банки_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public Банки_Pointer() : base(Config.Kernel, "tab_a39", Банки_Const.TYPE) => base.Init(new UniqueID());
+        public Банки_Pointer(object? uid) : base(Config.Kernel, "tab_a39", Банки_Const.TYPE) => base.Init(new UniqueID(uid));
+        public Банки_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a39", Банки_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public Банки_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a39", Банки_Const.TYPE) => base.Init(uid);
+        public Банки_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a39", Банки_Const.TYPE) => base.Init(uid, fields);
+        public Банки_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a39", Банки_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<Банки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             Банки_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public Банки_Pointer Copy()
-        {
-            return new Банки_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(Банки_Const.PRESENTATION_FIELDS);
-        }
-
+        public Банки_Pointer Copy() => new Банки_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(Банки_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [Банки_Const.PRESENTATION_FIELDS.Length];
@@ -9905,28 +8990,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(Банки_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public Банки_Pointer GetEmptyPointer()
-        {
-            return new Банки_Pointer();
-        }
+        public Банки_Pointer GetEmptyPointer() => new Банки_Pointer();
     }
     
     public class Банки_Select : DirectorySelect
     {
         public Банки_Select() : base(Config.Kernel, "tab_a39") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Банки_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Банки_Pointer? Current { get; private set; }
@@ -10046,15 +9122,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public СкладськіПриміщення_Pointer GetDirectoryPointer()
-        {
-            return new СкладськіПриміщення_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(СкладськіПриміщення_Const.PRESENTATION_FIELDS);
-        }
+        public СкладськіПриміщення_Pointer GetDirectoryPointer() => new СкладськіПриміщення_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(СкладськіПриміщення_Const.PRESENTATION_FIELDS);
                 
         public string Назва { get; set; } = "";
         public Перелічення.НалаштуванняАдресногоЗберігання НалаштуванняАдресногоЗберігання { get; set; } = 0;
@@ -10064,38 +9133,21 @@ namespace GeneratedCode.Довідники
 
     public class СкладськіПриміщення_Pointer : DirectoryPointer
     {
-        public СкладськіПриміщення_Pointer(object? uid = null) : base(Config.Kernel, "tab_a71", СкладськіПриміщення_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public СкладськіПриміщення_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a71", СкладськіПриміщення_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public СкладськіПриміщення_Pointer() : base(Config.Kernel, "tab_a71", СкладськіПриміщення_Const.TYPE) => base.Init(new UniqueID());
+        public СкладськіПриміщення_Pointer(object? uid) : base(Config.Kernel, "tab_a71", СкладськіПриміщення_Const.TYPE) => base.Init(new UniqueID(uid));
+        public СкладськіПриміщення_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a71", СкладськіПриміщення_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public СкладськіПриміщення_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a71", СкладськіПриміщення_Const.TYPE) => base.Init(uid);
+        public СкладськіПриміщення_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a71", СкладськіПриміщення_Const.TYPE) => base.Init(uid, fields);
+        public СкладськіПриміщення_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a71", СкладськіПриміщення_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<СкладськіПриміщення_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             СкладськіПриміщення_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public СкладськіПриміщення_Pointer Copy()
-        {
-            return new СкладськіПриміщення_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(СкладськіПриміщення_Const.PRESENTATION_FIELDS);
-        }
-
+        public СкладськіПриміщення_Pointer Copy() => new СкладськіПриміщення_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(СкладськіПриміщення_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [СкладськіПриміщення_Const.PRESENTATION_FIELDS.Length];
@@ -10103,28 +9155,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(СкладськіПриміщення_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public СкладськіПриміщення_Pointer GetEmptyPointer()
-        {
-            return new СкладськіПриміщення_Pointer();
-        }
+        public СкладськіПриміщення_Pointer GetEmptyPointer() => new СкладськіПриміщення_Pointer();
     }
     
     public class СкладськіПриміщення_Select : DirectorySelect
     {
         public СкладськіПриміщення_Select() : base(Config.Kernel, "tab_a71") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СкладськіПриміщення_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public СкладськіПриміщення_Pointer? Current { get; private set; }
@@ -10272,15 +9315,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public СкладськіКомірки_Pointer GetDirectoryPointer()
-        {
-            return new СкладськіКомірки_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(СкладськіКомірки_Const.PRESENTATION_FIELDS);
-        }
+        public СкладськіКомірки_Pointer GetDirectoryPointer() => new СкладськіКомірки_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(СкладськіКомірки_Const.PRESENTATION_FIELDS);
                 
         public Довідники.СкладськіКомірки_Папки_Pointer Папка { get; set; } = new Довідники.СкладськіКомірки_Папки_Pointer();
         public string Назва { get; set; } = "";
@@ -10297,38 +9333,21 @@ namespace GeneratedCode.Довідники
 
     public class СкладськіКомірки_Pointer : DirectoryPointer
     {
-        public СкладськіКомірки_Pointer(object? uid = null) : base(Config.Kernel, "tab_a72", СкладськіКомірки_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public СкладськіКомірки_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a72", СкладськіКомірки_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public СкладськіКомірки_Pointer() : base(Config.Kernel, "tab_a72", СкладськіКомірки_Const.TYPE) => base.Init(new UniqueID());
+        public СкладськіКомірки_Pointer(object? uid) : base(Config.Kernel, "tab_a72", СкладськіКомірки_Const.TYPE) => base.Init(new UniqueID(uid));
+        public СкладськіКомірки_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a72", СкладськіКомірки_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public СкладськіКомірки_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a72", СкладськіКомірки_Const.TYPE) => base.Init(uid);
+        public СкладськіКомірки_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a72", СкладськіКомірки_Const.TYPE) => base.Init(uid, fields);
+        public СкладськіКомірки_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a72", СкладськіКомірки_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<СкладськіКомірки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             СкладськіКомірки_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public СкладськіКомірки_Pointer Copy()
-        {
-            return new СкладськіКомірки_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(СкладськіКомірки_Const.PRESENTATION_FIELDS);
-        }
-
+        public СкладськіКомірки_Pointer Copy() => new СкладськіКомірки_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(СкладськіКомірки_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [СкладськіКомірки_Const.PRESENTATION_FIELDS.Length];
@@ -10336,28 +9355,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(СкладськіКомірки_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public СкладськіКомірки_Pointer GetEmptyPointer()
-        {
-            return new СкладськіКомірки_Pointer();
-        }
+        public СкладськіКомірки_Pointer GetEmptyPointer() => new СкладськіКомірки_Pointer();
     }
     
     public class СкладськіКомірки_Select : DirectorySelect
     {
         public СкладськіКомірки_Select() : base(Config.Kernel, "tab_a72") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СкладськіКомірки_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public СкладськіКомірки_Pointer? Current { get; private set; }
@@ -10475,15 +9485,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ОбластьЗберігання_Pointer GetDirectoryPointer()
-        {
-            return new ОбластьЗберігання_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ОбластьЗберігання_Const.PRESENTATION_FIELDS);
-        }
+        public ОбластьЗберігання_Pointer GetDirectoryPointer() => new ОбластьЗберігання_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ОбластьЗберігання_Const.PRESENTATION_FIELDS);
                 
         public string Назва { get; set; } = "";
         public string Опис { get; set; } = "";
@@ -10493,38 +9496,21 @@ namespace GeneratedCode.Довідники
 
     public class ОбластьЗберігання_Pointer : DirectoryPointer
     {
-        public ОбластьЗберігання_Pointer(object? uid = null) : base(Config.Kernel, "tab_a73", ОбластьЗберігання_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ОбластьЗберігання_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a73", ОбластьЗберігання_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public ОбластьЗберігання_Pointer() : base(Config.Kernel, "tab_a73", ОбластьЗберігання_Const.TYPE) => base.Init(new UniqueID());
+        public ОбластьЗберігання_Pointer(object? uid) : base(Config.Kernel, "tab_a73", ОбластьЗберігання_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ОбластьЗберігання_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a73", ОбластьЗберігання_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ОбластьЗберігання_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a73", ОбластьЗберігання_Const.TYPE) => base.Init(uid);
+        public ОбластьЗберігання_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a73", ОбластьЗберігання_Const.TYPE) => base.Init(uid, fields);
+        public ОбластьЗберігання_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a73", ОбластьЗберігання_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<ОбластьЗберігання_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             ОбластьЗберігання_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public ОбластьЗберігання_Pointer Copy()
-        {
-            return new ОбластьЗберігання_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ОбластьЗберігання_Const.PRESENTATION_FIELDS);
-        }
-
+        public ОбластьЗберігання_Pointer Copy() => new ОбластьЗберігання_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ОбластьЗберігання_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ОбластьЗберігання_Const.PRESENTATION_FIELDS.Length];
@@ -10532,28 +9518,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(ОбластьЗберігання_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public ОбластьЗберігання_Pointer GetEmptyPointer()
-        {
-            return new ОбластьЗберігання_Pointer();
-        }
+        public ОбластьЗберігання_Pointer GetEmptyPointer() => new ОбластьЗберігання_Pointer();
     }
     
     public class ОбластьЗберігання_Select : DirectorySelect
     {
         public ОбластьЗберігання_Select() : base(Config.Kernel, "tab_a73") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ОбластьЗберігання_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ОбластьЗберігання_Pointer? Current { get; private set; }
@@ -10685,15 +9662,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ТипорозміриКомірок_Pointer GetDirectoryPointer()
-        {
-            return new ТипорозміриКомірок_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ТипорозміриКомірок_Const.PRESENTATION_FIELDS);
-        }
+        public ТипорозміриКомірок_Pointer GetDirectoryPointer() => new ТипорозміриКомірок_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ТипорозміриКомірок_Const.PRESENTATION_FIELDS);
                 
         public string Висота { get; set; } = "";
         public string Назва { get; set; } = "";
@@ -10706,38 +9676,21 @@ namespace GeneratedCode.Довідники
 
     public class ТипорозміриКомірок_Pointer : DirectoryPointer
     {
-        public ТипорозміриКомірок_Pointer(object? uid = null) : base(Config.Kernel, "tab_a75", ТипорозміриКомірок_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ТипорозміриКомірок_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a75", ТипорозміриКомірок_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public ТипорозміриКомірок_Pointer() : base(Config.Kernel, "tab_a75", ТипорозміриКомірок_Const.TYPE) => base.Init(new UniqueID());
+        public ТипорозміриКомірок_Pointer(object? uid) : base(Config.Kernel, "tab_a75", ТипорозміриКомірок_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ТипорозміриКомірок_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a75", ТипорозміриКомірок_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ТипорозміриКомірок_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a75", ТипорозміриКомірок_Const.TYPE) => base.Init(uid);
+        public ТипорозміриКомірок_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a75", ТипорозміриКомірок_Const.TYPE) => base.Init(uid, fields);
+        public ТипорозміриКомірок_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a75", ТипорозміриКомірок_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<ТипорозміриКомірок_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             ТипорозміриКомірок_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public ТипорозміриКомірок_Pointer Copy()
-        {
-            return new ТипорозміриКомірок_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ТипорозміриКомірок_Const.PRESENTATION_FIELDS);
-        }
-
+        public ТипорозміриКомірок_Pointer Copy() => new ТипорозміриКомірок_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ТипорозміриКомірок_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ТипорозміриКомірок_Const.PRESENTATION_FIELDS.Length];
@@ -10745,28 +9698,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(ТипорозміриКомірок_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public ТипорозміриКомірок_Pointer GetEmptyPointer()
-        {
-            return new ТипорозміриКомірок_Pointer();
-        }
+        public ТипорозміриКомірок_Pointer GetEmptyPointer() => new ТипорозміриКомірок_Pointer();
     }
     
     public class ТипорозміриКомірок_Select : DirectorySelect
     {
         public ТипорозміриКомірок_Select() : base(Config.Kernel, "tab_a75") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ТипорозміриКомірок_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ТипорозміриКомірок_Pointer? Current { get; private set; }
@@ -10894,15 +9838,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public СкладськіКомірки_Папки_Pointer GetDirectoryPointer()
-        {
-            return new СкладськіКомірки_Папки_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(СкладськіКомірки_Папки_Const.PRESENTATION_FIELDS);
-        }
+        public СкладськіКомірки_Папки_Pointer GetDirectoryPointer() => new СкладськіКомірки_Папки_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(СкладськіКомірки_Папки_Const.PRESENTATION_FIELDS);
                 
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
@@ -10913,38 +9850,21 @@ namespace GeneratedCode.Довідники
 
     public class СкладськіКомірки_Папки_Pointer : DirectoryPointer
     {
-        public СкладськіКомірки_Папки_Pointer(object? uid = null) : base(Config.Kernel, "tab_a76", СкладськіКомірки_Папки_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public СкладськіКомірки_Папки_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a76", СкладськіКомірки_Папки_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public СкладськіКомірки_Папки_Pointer() : base(Config.Kernel, "tab_a76", СкладськіКомірки_Папки_Const.TYPE) => base.Init(new UniqueID());
+        public СкладськіКомірки_Папки_Pointer(object? uid) : base(Config.Kernel, "tab_a76", СкладськіКомірки_Папки_Const.TYPE) => base.Init(new UniqueID(uid));
+        public СкладськіКомірки_Папки_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a76", СкладськіКомірки_Папки_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public СкладськіКомірки_Папки_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a76", СкладськіКомірки_Папки_Const.TYPE) => base.Init(uid);
+        public СкладськіКомірки_Папки_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a76", СкладськіКомірки_Папки_Const.TYPE) => base.Init(uid, fields);
+        public СкладськіКомірки_Папки_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a76", СкладськіКомірки_Папки_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<СкладськіКомірки_Папки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             СкладськіКомірки_Папки_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public СкладськіКомірки_Папки_Pointer Copy()
-        {
-            return new СкладськіКомірки_Папки_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(СкладськіКомірки_Папки_Const.PRESENTATION_FIELDS);
-        }
-
+        public СкладськіКомірки_Папки_Pointer Copy() => new СкладськіКомірки_Папки_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(СкладськіКомірки_Папки_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [СкладськіКомірки_Папки_Const.PRESENTATION_FIELDS.Length];
@@ -10952,12 +9872,7 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(СкладськіКомірки_Папки_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             СкладськіКомірки_Папки_Objest? obj = await GetDirectoryObject();
@@ -10965,17 +9880,13 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public СкладськіКомірки_Папки_Pointer GetEmptyPointer()
-        {
-            return new СкладськіКомірки_Папки_Pointer();
-        }
+        public СкладськіКомірки_Папки_Pointer GetEmptyPointer() => new СкладськіКомірки_Папки_Pointer();
     }
     
     public class СкладськіКомірки_Папки_Select : DirectorySelect
     {
         public СкладськіКомірки_Папки_Select() : base(Config.Kernel, "tab_a76") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СкладськіКомірки_Папки_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public СкладськіКомірки_Папки_Pointer? Current { get; private set; }
@@ -11119,15 +10030,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public Блокнот_Pointer GetDirectoryPointer()
-        {
-            return new Блокнот_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(Блокнот_Const.PRESENTATION_FIELDS);
-        }
+        public Блокнот_Pointer GetDirectoryPointer() => new Блокнот_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(Блокнот_Const.PRESENTATION_FIELDS);
                 
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
@@ -11139,38 +10043,21 @@ namespace GeneratedCode.Довідники
 
     public class Блокнот_Pointer : DirectoryPointer
     {
-        public Блокнот_Pointer(object? uid = null) : base(Config.Kernel, "tab_a41", Блокнот_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public Блокнот_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a41", Блокнот_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public Блокнот_Pointer() : base(Config.Kernel, "tab_a41", Блокнот_Const.TYPE) => base.Init(new UniqueID());
+        public Блокнот_Pointer(object? uid) : base(Config.Kernel, "tab_a41", Блокнот_Const.TYPE) => base.Init(new UniqueID(uid));
+        public Блокнот_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a41", Блокнот_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public Блокнот_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a41", Блокнот_Const.TYPE) => base.Init(uid);
+        public Блокнот_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a41", Блокнот_Const.TYPE) => base.Init(uid, fields);
+        public Блокнот_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a41", Блокнот_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<Блокнот_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             Блокнот_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public Блокнот_Pointer Copy()
-        {
-            return new Блокнот_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(Блокнот_Const.PRESENTATION_FIELDS);
-        }
-
+        public Блокнот_Pointer Copy() => new Блокнот_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(Блокнот_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [Блокнот_Const.PRESENTATION_FIELDS.Length];
@@ -11178,28 +10065,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(Блокнот_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public Блокнот_Pointer GetEmptyPointer()
-        {
-            return new Блокнот_Pointer();
-        }
+        public Блокнот_Pointer GetEmptyPointer() => new Блокнот_Pointer();
     }
     
     public class Блокнот_Select : DirectorySelect
     {
         public Блокнот_Select() : base(Config.Kernel, "tab_a41") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Блокнот_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Блокнот_Pointer? Current { get; private set; }
@@ -11347,15 +10225,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete(["tab_b15", ]);
         }
         
-        public ЗбереженіЗвіти_Pointer GetDirectoryPointer()
-        {
-            return new ЗбереженіЗвіти_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ЗбереженіЗвіти_Const.PRESENTATION_FIELDS);
-        }
+        public ЗбереженіЗвіти_Pointer GetDirectoryPointer() => new ЗбереженіЗвіти_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ЗбереженіЗвіти_Const.PRESENTATION_FIELDS);
                 
         public DateTime Додано { get; set; } = DateTime.MinValue;
         public string Назва { get; set; } = "";
@@ -11371,38 +10242,21 @@ namespace GeneratedCode.Довідники
 
     public class ЗбереженіЗвіти_Pointer : DirectoryPointer
     {
-        public ЗбереженіЗвіти_Pointer(object? uid = null) : base(Config.Kernel, "tab_b04", ЗбереженіЗвіти_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ЗбереженіЗвіти_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b04", ЗбереженіЗвіти_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public ЗбереженіЗвіти_Pointer() : base(Config.Kernel, "tab_b04", ЗбереженіЗвіти_Const.TYPE) => base.Init(new UniqueID());
+        public ЗбереженіЗвіти_Pointer(object? uid) : base(Config.Kernel, "tab_b04", ЗбереженіЗвіти_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ЗбереженіЗвіти_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b04", ЗбереженіЗвіти_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ЗбереженіЗвіти_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b04", ЗбереженіЗвіти_Const.TYPE) => base.Init(uid);
+        public ЗбереженіЗвіти_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b04", ЗбереженіЗвіти_Const.TYPE) => base.Init(uid, fields);
+        public ЗбереженіЗвіти_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b04", ЗбереженіЗвіти_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<ЗбереженіЗвіти_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             ЗбереженіЗвіти_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public ЗбереженіЗвіти_Pointer Copy()
-        {
-            return new ЗбереженіЗвіти_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ЗбереженіЗвіти_Const.PRESENTATION_FIELDS);
-        }
-
+        public ЗбереженіЗвіти_Pointer Copy() => new ЗбереженіЗвіти_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ЗбереженіЗвіти_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ЗбереженіЗвіти_Const.PRESENTATION_FIELDS.Length];
@@ -11410,28 +10264,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(ЗбереженіЗвіти_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public ЗбереженіЗвіти_Pointer GetEmptyPointer()
-        {
-            return new ЗбереженіЗвіти_Pointer();
-        }
+        public ЗбереженіЗвіти_Pointer GetEmptyPointer() => new ЗбереженіЗвіти_Pointer();
     }
     
     public class ЗбереженіЗвіти_Select : DirectorySelect
     {
         public ЗбереженіЗвіти_Select() : base(Config.Kernel, "tab_b04") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗбереженіЗвіти_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ЗбереженіЗвіти_Pointer? Current { get; private set; }
@@ -11787,15 +10632,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public КасиККМ_Pointer GetDirectoryPointer()
-        {
-            return new КасиККМ_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(КасиККМ_Const.PRESENTATION_FIELDS);
-        }
+        public КасиККМ_Pointer GetDirectoryPointer() => new КасиККМ_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(КасиККМ_Const.PRESENTATION_FIELDS);
                 
         public string Назва { get; set; } = "";
         public Довідники.Склади_Pointer Склад { get; set; } = new Довідники.Склади_Pointer();
@@ -11806,38 +10644,21 @@ namespace GeneratedCode.Довідники
 
     public class КасиККМ_Pointer : DirectoryPointer
     {
-        public КасиККМ_Pointer(object? uid = null) : base(Config.Kernel, "tab_b52", КасиККМ_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public КасиККМ_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b52", КасиККМ_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public КасиККМ_Pointer() : base(Config.Kernel, "tab_b52", КасиККМ_Const.TYPE) => base.Init(new UniqueID());
+        public КасиККМ_Pointer(object? uid) : base(Config.Kernel, "tab_b52", КасиККМ_Const.TYPE) => base.Init(new UniqueID(uid));
+        public КасиККМ_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b52", КасиККМ_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public КасиККМ_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b52", КасиККМ_Const.TYPE) => base.Init(uid);
+        public КасиККМ_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b52", КасиККМ_Const.TYPE) => base.Init(uid, fields);
+        public КасиККМ_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b52", КасиККМ_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<КасиККМ_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             КасиККМ_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public КасиККМ_Pointer Copy()
-        {
-            return new КасиККМ_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(КасиККМ_Const.PRESENTATION_FIELDS);
-        }
-
+        public КасиККМ_Pointer Copy() => new КасиККМ_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(КасиККМ_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [КасиККМ_Const.PRESENTATION_FIELDS.Length];
@@ -11845,28 +10666,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(КасиККМ_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public КасиККМ_Pointer GetEmptyPointer()
-        {
-            return new КасиККМ_Pointer();
-        }
+        public КасиККМ_Pointer GetEmptyPointer() => new КасиККМ_Pointer();
     }
     
     public class КасиККМ_Select : DirectorySelect
     {
         public КасиККМ_Select() : base(Config.Kernel, "tab_b52") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new КасиККМ_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public КасиККМ_Pointer? Current { get; private set; }
@@ -12024,15 +10836,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ПланРахунків_Pointer GetDirectoryPointer()
-        {
-            return new ПланРахунків_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПланРахунків_Const.PRESENTATION_FIELDS);
-        }
+        public ПланРахунків_Pointer GetDirectoryPointer() => new ПланРахунків_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПланРахунків_Const.PRESENTATION_FIELDS);
                 
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
@@ -12051,38 +10856,21 @@ namespace GeneratedCode.Довідники
 
     public class ПланРахунків_Pointer : DirectoryPointer
     {
-        public ПланРахунків_Pointer(object? uid = null) : base(Config.Kernel, "tab_b57", ПланРахунків_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПланРахунків_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b57", ПланРахунків_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public ПланРахунків_Pointer() : base(Config.Kernel, "tab_b57", ПланРахунків_Const.TYPE) => base.Init(new UniqueID());
+        public ПланРахунків_Pointer(object? uid) : base(Config.Kernel, "tab_b57", ПланРахунків_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПланРахунків_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b57", ПланРахунків_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПланРахунків_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b57", ПланРахунків_Const.TYPE) => base.Init(uid);
+        public ПланРахунків_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b57", ПланРахунків_Const.TYPE) => base.Init(uid, fields);
+        public ПланРахунків_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b57", ПланРахунків_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<ПланРахунків_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             ПланРахунків_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public ПланРахунків_Pointer Copy()
-        {
-            return new ПланРахунків_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПланРахунків_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПланРахунків_Pointer Copy() => new ПланРахунків_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПланРахунків_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПланРахунків_Const.PRESENTATION_FIELDS.Length];
@@ -12090,12 +10878,7 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(ПланРахунків_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             ПланРахунків_Objest? obj = await GetDirectoryObject();
@@ -12103,17 +10886,13 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public ПланРахунків_Pointer GetEmptyPointer()
-        {
-            return new ПланРахунків_Pointer();
-        }
+        public ПланРахунків_Pointer GetEmptyPointer() => new ПланРахунків_Pointer();
     }
     
     public class ПланРахунків_Select : DirectorySelect
     {
         public ПланРахунків_Select() : base(Config.Kernel, "tab_b57") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПланРахунків_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПланРахунків_Pointer? Current { get; private set; }
@@ -12273,15 +11052,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public Категорії_Pointer GetDirectoryPointer()
-        {
-            return new Категорії_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(Категорії_Const.PRESENTATION_FIELDS);
-        }
+        public Категорії_Pointer GetDirectoryPointer() => new Категорії_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(Категорії_Const.PRESENTATION_FIELDS);
                 
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
@@ -12297,38 +11069,21 @@ namespace GeneratedCode.Довідники
 
     public class Категорії_Pointer : DirectoryPointer
     {
-        public Категорії_Pointer(object? uid = null) : base(Config.Kernel, "tab_b58", Категорії_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public Категорії_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b58", Категорії_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public Категорії_Pointer() : base(Config.Kernel, "tab_b58", Категорії_Const.TYPE) => base.Init(new UniqueID());
+        public Категорії_Pointer(object? uid) : base(Config.Kernel, "tab_b58", Категорії_Const.TYPE) => base.Init(new UniqueID(uid));
+        public Категорії_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b58", Категорії_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public Категорії_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b58", Категорії_Const.TYPE) => base.Init(uid);
+        public Категорії_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b58", Категорії_Const.TYPE) => base.Init(uid, fields);
+        public Категорії_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b58", Категорії_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<Категорії_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             Категорії_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public Категорії_Pointer Copy()
-        {
-            return new Категорії_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(Категорії_Const.PRESENTATION_FIELDS);
-        }
-
+        public Категорії_Pointer Copy() => new Категорії_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(Категорії_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [Категорії_Const.PRESENTATION_FIELDS.Length];
@@ -12336,12 +11091,7 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(Категорії_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             Категорії_Objest? obj = await GetDirectoryObject();
@@ -12349,17 +11099,13 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public Категорії_Pointer GetEmptyPointer()
-        {
-            return new Категорії_Pointer();
-        }
+        public Категорії_Pointer GetEmptyPointer() => new Категорії_Pointer();
     }
     
     public class Категорії_Select : DirectorySelect
     {
         public Категорії_Select() : base(Config.Kernel, "tab_b58") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Категорії_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Категорії_Pointer? Current { get; private set; }
@@ -12503,15 +11249,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public Статті_Pointer GetDirectoryPointer()
-        {
-            return new Статті_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(Статті_Const.PRESENTATION_FIELDS);
-        }
+        public Статті_Pointer GetDirectoryPointer() => new Статті_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(Статті_Const.PRESENTATION_FIELDS);
                 
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
@@ -12523,38 +11262,21 @@ namespace GeneratedCode.Довідники
 
     public class Статті_Pointer : DirectoryPointer
     {
-        public Статті_Pointer(object? uid = null) : base(Config.Kernel, "tab_b59", Статті_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public Статті_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b59", Статті_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public Статті_Pointer() : base(Config.Kernel, "tab_b59", Статті_Const.TYPE) => base.Init(new UniqueID());
+        public Статті_Pointer(object? uid) : base(Config.Kernel, "tab_b59", Статті_Const.TYPE) => base.Init(new UniqueID(uid));
+        public Статті_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b59", Статті_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public Статті_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b59", Статті_Const.TYPE) => base.Init(uid);
+        public Статті_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b59", Статті_Const.TYPE) => base.Init(uid, fields);
+        public Статті_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b59", Статті_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<Статті_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             Статті_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public Статті_Pointer Copy()
-        {
-            return new Статті_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(Статті_Const.PRESENTATION_FIELDS);
-        }
-
+        public Статті_Pointer Copy() => new Статті_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(Статті_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [Статті_Const.PRESENTATION_FIELDS.Length];
@@ -12562,12 +11284,7 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(Статті_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             Статті_Objest? obj = await GetDirectoryObject();
@@ -12575,17 +11292,13 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public Статті_Pointer GetEmptyPointer()
-        {
-            return new Статті_Pointer();
-        }
+        public Статті_Pointer GetEmptyPointer() => new Статті_Pointer();
     }
     
     public class Статті_Select : DirectorySelect
     {
         public Статті_Select() : base(Config.Kernel, "tab_b59") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Статті_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Статті_Pointer? Current { get; private set; }
@@ -12715,15 +11428,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ВидиПодатків_Pointer GetDirectoryPointer()
-        {
-            return new ВидиПодатків_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ВидиПодатків_Const.PRESENTATION_FIELDS);
-        }
+        public ВидиПодатків_Pointer GetDirectoryPointer() => new ВидиПодатків_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ВидиПодатків_Const.PRESENTATION_FIELDS);
                 
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
@@ -12732,38 +11438,21 @@ namespace GeneratedCode.Довідники
 
     public class ВидиПодатків_Pointer : DirectoryPointer
     {
-        public ВидиПодатків_Pointer(object? uid = null) : base(Config.Kernel, "tab_b60", ВидиПодатків_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ВидиПодатків_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b60", ВидиПодатків_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public ВидиПодатків_Pointer() : base(Config.Kernel, "tab_b60", ВидиПодатків_Const.TYPE) => base.Init(new UniqueID());
+        public ВидиПодатків_Pointer(object? uid) : base(Config.Kernel, "tab_b60", ВидиПодатків_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ВидиПодатків_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b60", ВидиПодатків_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ВидиПодатків_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b60", ВидиПодатків_Const.TYPE) => base.Init(uid);
+        public ВидиПодатків_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b60", ВидиПодатків_Const.TYPE) => base.Init(uid, fields);
+        public ВидиПодатків_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b60", ВидиПодатків_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<ВидиПодатків_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             ВидиПодатків_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public ВидиПодатків_Pointer Copy()
-        {
-            return new ВидиПодатків_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ВидиПодатків_Const.PRESENTATION_FIELDS);
-        }
-
+        public ВидиПодатків_Pointer Copy() => new ВидиПодатків_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ВидиПодатків_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ВидиПодатків_Const.PRESENTATION_FIELDS.Length];
@@ -12771,28 +11460,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(ВидиПодатків_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public ВидиПодатків_Pointer GetEmptyPointer()
-        {
-            return new ВидиПодатків_Pointer();
-        }
+        public ВидиПодатків_Pointer GetEmptyPointer() => new ВидиПодатків_Pointer();
     }
     
     public class ВидиПодатків_Select : DirectorySelect
     {
         public ВидиПодатків_Select() : base(Config.Kernel, "tab_b60") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВидиПодатків_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ВидиПодатків_Pointer? Current { get; private set; }
@@ -12906,15 +11586,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ВидиЖурналів_Pointer GetDirectoryPointer()
-        {
-            return new ВидиЖурналів_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ВидиЖурналів_Const.PRESENTATION_FIELDS);
-        }
+        public ВидиЖурналів_Pointer GetDirectoryPointer() => new ВидиЖурналів_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ВидиЖурналів_Const.PRESENTATION_FIELDS);
                 
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
@@ -12923,38 +11596,21 @@ namespace GeneratedCode.Довідники
 
     public class ВидиЖурналів_Pointer : DirectoryPointer
     {
-        public ВидиЖурналів_Pointer(object? uid = null) : base(Config.Kernel, "tab_b61", ВидиЖурналів_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ВидиЖурналів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b61", ВидиЖурналів_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public ВидиЖурналів_Pointer() : base(Config.Kernel, "tab_b61", ВидиЖурналів_Const.TYPE) => base.Init(new UniqueID());
+        public ВидиЖурналів_Pointer(object? uid) : base(Config.Kernel, "tab_b61", ВидиЖурналів_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ВидиЖурналів_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b61", ВидиЖурналів_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ВидиЖурналів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b61", ВидиЖурналів_Const.TYPE) => base.Init(uid);
+        public ВидиЖурналів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b61", ВидиЖурналів_Const.TYPE) => base.Init(uid, fields);
+        public ВидиЖурналів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b61", ВидиЖурналів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<ВидиЖурналів_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             ВидиЖурналів_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public ВидиЖурналів_Pointer Copy()
-        {
-            return new ВидиЖурналів_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ВидиЖурналів_Const.PRESENTATION_FIELDS);
-        }
-
+        public ВидиЖурналів_Pointer Copy() => new ВидиЖурналів_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ВидиЖурналів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ВидиЖурналів_Const.PRESENTATION_FIELDS.Length];
@@ -12962,28 +11618,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(ВидиЖурналів_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public ВидиЖурналів_Pointer GetEmptyPointer()
-        {
-            return new ВидиЖурналів_Pointer();
-        }
+        public ВидиЖурналів_Pointer GetEmptyPointer() => new ВидиЖурналів_Pointer();
     }
     
     public class ВидиЖурналів_Select : DirectorySelect
     {
         public ВидиЖурналів_Select() : base(Config.Kernel, "tab_b61") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВидиЖурналів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ВидиЖурналів_Pointer? Current { get; private set; }
@@ -13097,15 +11744,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ОсновніЗасоби_Pointer GetDirectoryPointer()
-        {
-            return new ОсновніЗасоби_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ОсновніЗасоби_Const.PRESENTATION_FIELDS);
-        }
+        public ОсновніЗасоби_Pointer GetDirectoryPointer() => new ОсновніЗасоби_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ОсновніЗасоби_Const.PRESENTATION_FIELDS);
                 
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
@@ -13114,38 +11754,21 @@ namespace GeneratedCode.Довідники
 
     public class ОсновніЗасоби_Pointer : DirectoryPointer
     {
-        public ОсновніЗасоби_Pointer(object? uid = null) : base(Config.Kernel, "tab_b62", ОсновніЗасоби_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ОсновніЗасоби_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b62", ОсновніЗасоби_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public ОсновніЗасоби_Pointer() : base(Config.Kernel, "tab_b62", ОсновніЗасоби_Const.TYPE) => base.Init(new UniqueID());
+        public ОсновніЗасоби_Pointer(object? uid) : base(Config.Kernel, "tab_b62", ОсновніЗасоби_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ОсновніЗасоби_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b62", ОсновніЗасоби_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ОсновніЗасоби_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b62", ОсновніЗасоби_Const.TYPE) => base.Init(uid);
+        public ОсновніЗасоби_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b62", ОсновніЗасоби_Const.TYPE) => base.Init(uid, fields);
+        public ОсновніЗасоби_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b62", ОсновніЗасоби_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<ОсновніЗасоби_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             ОсновніЗасоби_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public ОсновніЗасоби_Pointer Copy()
-        {
-            return new ОсновніЗасоби_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ОсновніЗасоби_Const.PRESENTATION_FIELDS);
-        }
-
+        public ОсновніЗасоби_Pointer Copy() => new ОсновніЗасоби_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ОсновніЗасоби_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ОсновніЗасоби_Const.PRESENTATION_FIELDS.Length];
@@ -13153,28 +11776,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(ОсновніЗасоби_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public ОсновніЗасоби_Pointer GetEmptyPointer()
-        {
-            return new ОсновніЗасоби_Pointer();
-        }
+        public ОсновніЗасоби_Pointer GetEmptyPointer() => new ОсновніЗасоби_Pointer();
     }
     
     public class ОсновніЗасоби_Select : DirectorySelect
     {
         public ОсновніЗасоби_Select() : base(Config.Kernel, "tab_b62") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ОсновніЗасоби_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ОсновніЗасоби_Pointer? Current { get; private set; }
@@ -13288,15 +11902,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public МалоцінніПредмети_Pointer GetDirectoryPointer()
-        {
-            return new МалоцінніПредмети_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(МалоцінніПредмети_Const.PRESENTATION_FIELDS);
-        }
+        public МалоцінніПредмети_Pointer GetDirectoryPointer() => new МалоцінніПредмети_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(МалоцінніПредмети_Const.PRESENTATION_FIELDS);
                 
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
@@ -13305,38 +11912,21 @@ namespace GeneratedCode.Довідники
 
     public class МалоцінніПредмети_Pointer : DirectoryPointer
     {
-        public МалоцінніПредмети_Pointer(object? uid = null) : base(Config.Kernel, "tab_b64", МалоцінніПредмети_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public МалоцінніПредмети_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b64", МалоцінніПредмети_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public МалоцінніПредмети_Pointer() : base(Config.Kernel, "tab_b64", МалоцінніПредмети_Const.TYPE) => base.Init(new UniqueID());
+        public МалоцінніПредмети_Pointer(object? uid) : base(Config.Kernel, "tab_b64", МалоцінніПредмети_Const.TYPE) => base.Init(new UniqueID(uid));
+        public МалоцінніПредмети_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b64", МалоцінніПредмети_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public МалоцінніПредмети_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b64", МалоцінніПредмети_Const.TYPE) => base.Init(uid);
+        public МалоцінніПредмети_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b64", МалоцінніПредмети_Const.TYPE) => base.Init(uid, fields);
+        public МалоцінніПредмети_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b64", МалоцінніПредмети_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<МалоцінніПредмети_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             МалоцінніПредмети_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public МалоцінніПредмети_Pointer Copy()
-        {
-            return new МалоцінніПредмети_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(МалоцінніПредмети_Const.PRESENTATION_FIELDS);
-        }
-
+        public МалоцінніПредмети_Pointer Copy() => new МалоцінніПредмети_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(МалоцінніПредмети_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [МалоцінніПредмети_Const.PRESENTATION_FIELDS.Length];
@@ -13344,28 +11934,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(МалоцінніПредмети_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public МалоцінніПредмети_Pointer GetEmptyPointer()
-        {
-            return new МалоцінніПредмети_Pointer();
-        }
+        public МалоцінніПредмети_Pointer GetEmptyPointer() => new МалоцінніПредмети_Pointer();
     }
     
     public class МалоцінніПредмети_Select : DirectorySelect
     {
         public МалоцінніПредмети_Select() : base(Config.Kernel, "tab_b64") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new МалоцінніПредмети_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public МалоцінніПредмети_Pointer? Current { get; private set; }
@@ -13479,15 +12060,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ГрошовіРахункиВласні_Pointer GetDirectoryPointer()
-        {
-            return new ГрошовіРахункиВласні_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ГрошовіРахункиВласні_Const.PRESENTATION_FIELDS);
-        }
+        public ГрошовіРахункиВласні_Pointer GetDirectoryPointer() => new ГрошовіРахункиВласні_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ГрошовіРахункиВласні_Const.PRESENTATION_FIELDS);
                 
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
@@ -13496,38 +12070,21 @@ namespace GeneratedCode.Довідники
 
     public class ГрошовіРахункиВласні_Pointer : DirectoryPointer
     {
-        public ГрошовіРахункиВласні_Pointer(object? uid = null) : base(Config.Kernel, "tab_b65", ГрошовіРахункиВласні_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ГрошовіРахункиВласні_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b65", ГрошовіРахункиВласні_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public ГрошовіРахункиВласні_Pointer() : base(Config.Kernel, "tab_b65", ГрошовіРахункиВласні_Const.TYPE) => base.Init(new UniqueID());
+        public ГрошовіРахункиВласні_Pointer(object? uid) : base(Config.Kernel, "tab_b65", ГрошовіРахункиВласні_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ГрошовіРахункиВласні_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b65", ГрошовіРахункиВласні_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ГрошовіРахункиВласні_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b65", ГрошовіРахункиВласні_Const.TYPE) => base.Init(uid);
+        public ГрошовіРахункиВласні_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b65", ГрошовіРахункиВласні_Const.TYPE) => base.Init(uid, fields);
+        public ГрошовіРахункиВласні_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b65", ГрошовіРахункиВласні_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<ГрошовіРахункиВласні_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             ГрошовіРахункиВласні_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public ГрошовіРахункиВласні_Pointer Copy()
-        {
-            return new ГрошовіРахункиВласні_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ГрошовіРахункиВласні_Const.PRESENTATION_FIELDS);
-        }
-
+        public ГрошовіРахункиВласні_Pointer Copy() => new ГрошовіРахункиВласні_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ГрошовіРахункиВласні_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ГрошовіРахункиВласні_Const.PRESENTATION_FIELDS.Length];
@@ -13535,28 +12092,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(ГрошовіРахункиВласні_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public ГрошовіРахункиВласні_Pointer GetEmptyPointer()
-        {
-            return new ГрошовіРахункиВласні_Pointer();
-        }
+        public ГрошовіРахункиВласні_Pointer GetEmptyPointer() => new ГрошовіРахункиВласні_Pointer();
     }
     
     public class ГрошовіРахункиВласні_Select : DirectorySelect
     {
         public ГрошовіРахункиВласні_Select() : base(Config.Kernel, "tab_b65") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ГрошовіРахункиВласні_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ГрошовіРахункиВласні_Pointer? Current { get; private set; }
@@ -13674,15 +12222,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public НоменклатураВнутрішня_Pointer GetDirectoryPointer()
-        {
-            return new НоменклатураВнутрішня_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(НоменклатураВнутрішня_Const.PRESENTATION_FIELDS);
-        }
+        public НоменклатураВнутрішня_Pointer GetDirectoryPointer() => new НоменклатураВнутрішня_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(НоменклатураВнутрішня_Const.PRESENTATION_FIELDS);
                 
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
@@ -13692,38 +12233,21 @@ namespace GeneratedCode.Довідники
 
     public class НоменклатураВнутрішня_Pointer : DirectoryPointer
     {
-        public НоменклатураВнутрішня_Pointer(object? uid = null) : base(Config.Kernel, "tab_b66", НоменклатураВнутрішня_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public НоменклатураВнутрішня_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b66", НоменклатураВнутрішня_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public НоменклатураВнутрішня_Pointer() : base(Config.Kernel, "tab_b66", НоменклатураВнутрішня_Const.TYPE) => base.Init(new UniqueID());
+        public НоменклатураВнутрішня_Pointer(object? uid) : base(Config.Kernel, "tab_b66", НоменклатураВнутрішня_Const.TYPE) => base.Init(new UniqueID(uid));
+        public НоменклатураВнутрішня_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b66", НоменклатураВнутрішня_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public НоменклатураВнутрішня_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b66", НоменклатураВнутрішня_Const.TYPE) => base.Init(uid);
+        public НоменклатураВнутрішня_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b66", НоменклатураВнутрішня_Const.TYPE) => base.Init(uid, fields);
+        public НоменклатураВнутрішня_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b66", НоменклатураВнутрішня_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<НоменклатураВнутрішня_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             НоменклатураВнутрішня_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public НоменклатураВнутрішня_Pointer Copy()
-        {
-            return new НоменклатураВнутрішня_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(НоменклатураВнутрішня_Const.PRESENTATION_FIELDS);
-        }
-
+        public НоменклатураВнутрішня_Pointer Copy() => new НоменклатураВнутрішня_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(НоменклатураВнутрішня_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [НоменклатураВнутрішня_Const.PRESENTATION_FIELDS.Length];
@@ -13731,28 +12255,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(НоменклатураВнутрішня_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public НоменклатураВнутрішня_Pointer GetEmptyPointer()
-        {
-            return new НоменклатураВнутрішня_Pointer();
-        }
+        public НоменклатураВнутрішня_Pointer GetEmptyPointer() => new НоменклатураВнутрішня_Pointer();
     }
     
     public class НоменклатураВнутрішня_Select : DirectorySelect
     {
         public НоменклатураВнутрішня_Select() : base(Config.Kernel, "tab_b66") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new НоменклатураВнутрішня_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public НоменклатураВнутрішня_Pointer? Current { get; private set; }
@@ -13874,15 +12389,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public НоменклатураВнутрішня_Папки_Pointer GetDirectoryPointer()
-        {
-            return new НоменклатураВнутрішня_Папки_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(НоменклатураВнутрішня_Папки_Const.PRESENTATION_FIELDS);
-        }
+        public НоменклатураВнутрішня_Папки_Pointer GetDirectoryPointer() => new НоменклатураВнутрішня_Папки_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(НоменклатураВнутрішня_Папки_Const.PRESENTATION_FIELDS);
                 
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
@@ -13892,38 +12400,21 @@ namespace GeneratedCode.Довідники
 
     public class НоменклатураВнутрішня_Папки_Pointer : DirectoryPointer
     {
-        public НоменклатураВнутрішня_Папки_Pointer(object? uid = null) : base(Config.Kernel, "tab_b67", НоменклатураВнутрішня_Папки_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public НоменклатураВнутрішня_Папки_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b67", НоменклатураВнутрішня_Папки_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public НоменклатураВнутрішня_Папки_Pointer() : base(Config.Kernel, "tab_b67", НоменклатураВнутрішня_Папки_Const.TYPE) => base.Init(new UniqueID());
+        public НоменклатураВнутрішня_Папки_Pointer(object? uid) : base(Config.Kernel, "tab_b67", НоменклатураВнутрішня_Папки_Const.TYPE) => base.Init(new UniqueID(uid));
+        public НоменклатураВнутрішня_Папки_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b67", НоменклатураВнутрішня_Папки_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public НоменклатураВнутрішня_Папки_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b67", НоменклатураВнутрішня_Папки_Const.TYPE) => base.Init(uid);
+        public НоменклатураВнутрішня_Папки_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b67", НоменклатураВнутрішня_Папки_Const.TYPE) => base.Init(uid, fields);
+        public НоменклатураВнутрішня_Папки_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b67", НоменклатураВнутрішня_Папки_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<НоменклатураВнутрішня_Папки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             НоменклатураВнутрішня_Папки_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public НоменклатураВнутрішня_Папки_Pointer Copy()
-        {
-            return new НоменклатураВнутрішня_Папки_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(НоменклатураВнутрішня_Папки_Const.PRESENTATION_FIELDS);
-        }
-
+        public НоменклатураВнутрішня_Папки_Pointer Copy() => new НоменклатураВнутрішня_Папки_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(НоменклатураВнутрішня_Папки_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [НоменклатураВнутрішня_Папки_Const.PRESENTATION_FIELDS.Length];
@@ -13931,12 +12422,7 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(НоменклатураВнутрішня_Папки_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             НоменклатураВнутрішня_Папки_Objest? obj = await GetDirectoryObject();
@@ -13944,17 +12430,13 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public НоменклатураВнутрішня_Папки_Pointer GetEmptyPointer()
-        {
-            return new НоменклатураВнутрішня_Папки_Pointer();
-        }
+        public НоменклатураВнутрішня_Папки_Pointer GetEmptyPointer() => new НоменклатураВнутрішня_Папки_Pointer();
     }
     
     public class НоменклатураВнутрішня_Папки_Select : DirectorySelect
     {
         public НоменклатураВнутрішня_Папки_Select() : base(Config.Kernel, "tab_b67") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new НоменклатураВнутрішня_Папки_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public НоменклатураВнутрішня_Папки_Pointer? Current { get; private set; }
@@ -14084,15 +12566,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public Бланки_Pointer GetDirectoryPointer()
-        {
-            return new Бланки_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(Бланки_Const.PRESENTATION_FIELDS);
-        }
+        public Бланки_Pointer GetDirectoryPointer() => new Бланки_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(Бланки_Const.PRESENTATION_FIELDS);
                 
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
@@ -14101,38 +12576,21 @@ namespace GeneratedCode.Довідники
 
     public class Бланки_Pointer : DirectoryPointer
     {
-        public Бланки_Pointer(object? uid = null) : base(Config.Kernel, "tab_b68", Бланки_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public Бланки_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b68", Бланки_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public Бланки_Pointer() : base(Config.Kernel, "tab_b68", Бланки_Const.TYPE) => base.Init(new UniqueID());
+        public Бланки_Pointer(object? uid) : base(Config.Kernel, "tab_b68", Бланки_Const.TYPE) => base.Init(new UniqueID(uid));
+        public Бланки_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b68", Бланки_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public Бланки_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b68", Бланки_Const.TYPE) => base.Init(uid);
+        public Бланки_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b68", Бланки_Const.TYPE) => base.Init(uid, fields);
+        public Бланки_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b68", Бланки_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<Бланки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             Бланки_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public Бланки_Pointer Copy()
-        {
-            return new Бланки_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(Бланки_Const.PRESENTATION_FIELDS);
-        }
-
+        public Бланки_Pointer Copy() => new Бланки_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(Бланки_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [Бланки_Const.PRESENTATION_FIELDS.Length];
@@ -14140,28 +12598,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(Бланки_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public Бланки_Pointer GetEmptyPointer()
-        {
-            return new Бланки_Pointer();
-        }
+        public Бланки_Pointer GetEmptyPointer() => new Бланки_Pointer();
     }
     
     public class Бланки_Select : DirectorySelect
     {
         public Бланки_Select() : base(Config.Kernel, "tab_b68") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Бланки_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Бланки_Pointer? Current { get; private set; }
@@ -14275,15 +12724,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public Співробітники_Pointer GetDirectoryPointer()
-        {
-            return new Співробітники_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(Співробітники_Const.PRESENTATION_FIELDS);
-        }
+        public Співробітники_Pointer GetDirectoryPointer() => new Співробітники_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(Співробітники_Const.PRESENTATION_FIELDS);
                 
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
@@ -14292,38 +12734,21 @@ namespace GeneratedCode.Довідники
 
     public class Співробітники_Pointer : DirectoryPointer
     {
-        public Співробітники_Pointer(object? uid = null) : base(Config.Kernel, "tab_b69", Співробітники_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public Співробітники_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b69", Співробітники_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public Співробітники_Pointer() : base(Config.Kernel, "tab_b69", Співробітники_Const.TYPE) => base.Init(new UniqueID());
+        public Співробітники_Pointer(object? uid) : base(Config.Kernel, "tab_b69", Співробітники_Const.TYPE) => base.Init(new UniqueID(uid));
+        public Співробітники_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b69", Співробітники_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public Співробітники_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b69", Співробітники_Const.TYPE) => base.Init(uid);
+        public Співробітники_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b69", Співробітники_Const.TYPE) => base.Init(uid, fields);
+        public Співробітники_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b69", Співробітники_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<Співробітники_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             Співробітники_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public Співробітники_Pointer Copy()
-        {
-            return new Співробітники_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(Співробітники_Const.PRESENTATION_FIELDS);
-        }
-
+        public Співробітники_Pointer Copy() => new Співробітники_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(Співробітники_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [Співробітники_Const.PRESENTATION_FIELDS.Length];
@@ -14331,28 +12756,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(Співробітники_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public Співробітники_Pointer GetEmptyPointer()
-        {
-            return new Співробітники_Pointer();
-        }
+        public Співробітники_Pointer GetEmptyPointer() => new Співробітники_Pointer();
     }
     
     public class Співробітники_Select : DirectorySelect
     {
         public Співробітники_Select() : base(Config.Kernel, "tab_b69") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Співробітники_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Співробітники_Pointer? Current { get; private set; }
@@ -14466,15 +12882,8 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ТипиБухОперацій_Pointer GetDirectoryPointer()
-        {
-            return new ТипиБухОперацій_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ТипиБухОперацій_Const.PRESENTATION_FIELDS);
-        }
+        public ТипиБухОперацій_Pointer GetDirectoryPointer() => new ТипиБухОперацій_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ТипиБухОперацій_Const.PRESENTATION_FIELDS);
                 
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
@@ -14483,38 +12892,21 @@ namespace GeneratedCode.Довідники
 
     public class ТипиБухОперацій_Pointer : DirectoryPointer
     {
-        public ТипиБухОперацій_Pointer(object? uid = null) : base(Config.Kernel, "tab_b70", ТипиБухОперацій_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ТипиБухОперацій_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b70", ТипиБухОперацій_Const.TYPE)
-        {
-            base.Init(uid, fields);
-        }
-        
+        public ТипиБухОперацій_Pointer() : base(Config.Kernel, "tab_b70", ТипиБухОперацій_Const.TYPE) => base.Init(new UniqueID());
+        public ТипиБухОперацій_Pointer(object? uid) : base(Config.Kernel, "tab_b70", ТипиБухОперацій_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ТипиБухОперацій_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b70", ТипиБухОперацій_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ТипиБухОперацій_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b70", ТипиБухОперацій_Const.TYPE) => base.Init(uid);
+        public ТипиБухОперацій_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b70", ТипиБухОперацій_Const.TYPE) => base.Init(uid, fields);
+        public ТипиБухОперацій_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b70", ТипиБухОперацій_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<ТипиБухОперацій_Objest?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
             ТипиБухОперацій_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-
-        public ТипиБухОперацій_Pointer Copy()
-        {
-            return new ТипиБухОперацій_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ТипиБухОперацій_Const.PRESENTATION_FIELDS);
-        }
-
+        public ТипиБухОперацій_Pointer Copy() => new ТипиБухОперацій_Pointer(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ТипиБухОперацій_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ТипиБухОперацій_Const.PRESENTATION_FIELDS.Length];
@@ -14522,28 +12914,19 @@ namespace GeneratedCode.Довідники
             querySelect.Joins.Add(new Join(ТипиБухОперацій_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
             
             await base.BaseDeletionLabel(label);
         }
-		
-        public ТипиБухОперацій_Pointer GetEmptyPointer()
-        {
-            return new ТипиБухОперацій_Pointer();
-        }
+        public ТипиБухОперацій_Pointer GetEmptyPointer() => new ТипиБухОперацій_Pointer();
     }
     
     public class ТипиБухОперацій_Select : DirectorySelect
     {
         public ТипиБухОперацій_Select() : base(Config.Kernel, "tab_b70") { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ТипиБухОперацій_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ТипиБухОперацій_Pointer? Current { get; private set; }
@@ -16001,15 +14384,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a30", ]);
         }
         
-        public ЗамовленняПостачальнику_Pointer GetDocumentPointer()
-        {
-            return new ЗамовленняПостачальнику_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ЗамовленняПостачальнику_Const.PRESENTATION_FIELDS);
-        }
+        public ЗамовленняПостачальнику_Pointer GetDocumentPointer() => new ЗамовленняПостачальнику_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ЗамовленняПостачальнику_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -16046,26 +14422,14 @@ namespace GeneratedCode.Документи
     
     public class ЗамовленняПостачальнику_Pointer : DocumentPointer
     {
-        public ЗамовленняПостачальнику_Pointer(object? uid = null) : base(Config.Kernel, "tab_a25", ЗамовленняПостачальнику_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ЗамовленняПостачальнику_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a25", "ЗамовленняПостачальнику")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ЗамовленняПостачальнику_Const.PRESENTATION_FIELDS);
-        }
-
+        public ЗамовленняПостачальнику_Pointer() : base(Config.Kernel, "tab_a25", ЗамовленняПостачальнику_Const.TYPE) => base.Init(new UniqueID());
+        public ЗамовленняПостачальнику_Pointer(object? uid) : base(Config.Kernel, "tab_a25", ЗамовленняПостачальнику_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ЗамовленняПостачальнику_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a25", ЗамовленняПостачальнику_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ЗамовленняПостачальнику_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a25", ЗамовленняПостачальнику_Const.TYPE) => base.Init(uid);
+        public ЗамовленняПостачальнику_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a25", ЗамовленняПостачальнику_Const.TYPE) => base.Init(uid, fields);
+        public ЗамовленняПостачальнику_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a25", ЗамовленняПостачальнику_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ЗамовленняПостачальнику_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ЗамовленняПостачальнику_Const.PRESENTATION_FIELDS.Length];
@@ -16073,23 +14437,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ЗамовленняПостачальнику_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ЗамовленняПостачальнику_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -16097,12 +14451,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -16116,7 +14465,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -16128,17 +14476,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ЗамовленняПостачальнику_Pointer Copy()
-        {
-            return new ЗамовленняПостачальнику_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ЗамовленняПостачальнику_Pointer GetEmptyPointer()
-        {
-            return new ЗамовленняПостачальнику_Pointer();
-        }
-
+        public ЗамовленняПостачальнику_Pointer Copy() => new ЗамовленняПостачальнику_Pointer(base.UniqueID, base.Fields, Name);
+        public ЗамовленняПостачальнику_Pointer GetEmptyPointer() => new ЗамовленняПостачальнику_Pointer();
         public async Task<ЗамовленняПостачальнику_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -16150,7 +14489,7 @@ namespace GeneratedCode.Документи
     public class ЗамовленняПостачальнику_Select : DocumentSelect
     {		
         public ЗамовленняПостачальнику_Select() : base(Config.Kernel, "tab_a25") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗамовленняПостачальнику_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ЗамовленняПостачальнику_Pointer? Current { get; private set; }
@@ -16822,15 +15161,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a33", "tab_b71", ]);
         }
         
-        public ПоступленняТоварівТаПослуг_Pointer GetDocumentPointer()
-        {
-            return new ПоступленняТоварівТаПослуг_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПоступленняТоварівТаПослуг_Const.PRESENTATION_FIELDS);
-        }
+        public ПоступленняТоварівТаПослуг_Pointer GetDocumentPointer() => new ПоступленняТоварівТаПослуг_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПоступленняТоварівТаПослуг_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -16876,26 +15208,14 @@ namespace GeneratedCode.Документи
     
     public class ПоступленняТоварівТаПослуг_Pointer : DocumentPointer
     {
-        public ПоступленняТоварівТаПослуг_Pointer(object? uid = null) : base(Config.Kernel, "tab_a32", ПоступленняТоварівТаПослуг_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПоступленняТоварівТаПослуг_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a32", "ПоступленняТоварівТаПослуг")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПоступленняТоварівТаПослуг_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПоступленняТоварівТаПослуг_Pointer() : base(Config.Kernel, "tab_a32", ПоступленняТоварівТаПослуг_Const.TYPE) => base.Init(new UniqueID());
+        public ПоступленняТоварівТаПослуг_Pointer(object? uid) : base(Config.Kernel, "tab_a32", ПоступленняТоварівТаПослуг_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПоступленняТоварівТаПослуг_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a32", ПоступленняТоварівТаПослуг_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПоступленняТоварівТаПослуг_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a32", ПоступленняТоварівТаПослуг_Const.TYPE) => base.Init(uid);
+        public ПоступленняТоварівТаПослуг_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a32", ПоступленняТоварівТаПослуг_Const.TYPE) => base.Init(uid, fields);
+        public ПоступленняТоварівТаПослуг_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a32", ПоступленняТоварівТаПослуг_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПоступленняТоварівТаПослуг_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПоступленняТоварівТаПослуг_Const.PRESENTATION_FIELDS.Length];
@@ -16903,35 +15223,20 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПоступленняТоварівТаПослуг_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПоступленняТоварівТаПослуг_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             ПоступленняТоварівТаПослуг_Objest? obj = await GetDocumentObject();
             if (obj != null) await obj.ClearSpendTheDocument();
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -16955,7 +15260,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           ПоступленняТоварівТаПослуг_Objest? obj = await GetDocumentObject();
@@ -16967,17 +15271,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПоступленняТоварівТаПослуг_Pointer Copy()
-        {
-            return new ПоступленняТоварівТаПослуг_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПоступленняТоварівТаПослуг_Pointer GetEmptyPointer()
-        {
-            return new ПоступленняТоварівТаПослуг_Pointer();
-        }
-
+        public ПоступленняТоварівТаПослуг_Pointer Copy() => new ПоступленняТоварівТаПослуг_Pointer(base.UniqueID, base.Fields, Name);
+        public ПоступленняТоварівТаПослуг_Pointer GetEmptyPointer() => new ПоступленняТоварівТаПослуг_Pointer();
         public async Task<ПоступленняТоварівТаПослуг_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -16989,7 +15284,7 @@ namespace GeneratedCode.Документи
     public class ПоступленняТоварівТаПослуг_Select : DocumentSelect
     {		
         public ПоступленняТоварівТаПослуг_Select() : base(Config.Kernel, "tab_a32") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПоступленняТоварівТаПослуг_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПоступленняТоварівТаПослуг_Pointer? Current { get; private set; }
@@ -17832,15 +16127,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a35", ]);
         }
         
-        public ЗамовленняКлієнта_Pointer GetDocumentPointer()
-        {
-            return new ЗамовленняКлієнта_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ЗамовленняКлієнта_Const.PRESENTATION_FIELDS);
-        }
+        public ЗамовленняКлієнта_Pointer GetDocumentPointer() => new ЗамовленняКлієнта_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ЗамовленняКлієнта_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -17881,26 +16169,14 @@ namespace GeneratedCode.Документи
     
     public class ЗамовленняКлієнта_Pointer : DocumentPointer
     {
-        public ЗамовленняКлієнта_Pointer(object? uid = null) : base(Config.Kernel, "tab_a34", ЗамовленняКлієнта_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ЗамовленняКлієнта_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a34", "ЗамовленняКлієнта")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ЗамовленняКлієнта_Const.PRESENTATION_FIELDS);
-        }
-
+        public ЗамовленняКлієнта_Pointer() : base(Config.Kernel, "tab_a34", ЗамовленняКлієнта_Const.TYPE) => base.Init(new UniqueID());
+        public ЗамовленняКлієнта_Pointer(object? uid) : base(Config.Kernel, "tab_a34", ЗамовленняКлієнта_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ЗамовленняКлієнта_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a34", ЗамовленняКлієнта_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ЗамовленняКлієнта_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a34", ЗамовленняКлієнта_Const.TYPE) => base.Init(uid);
+        public ЗамовленняКлієнта_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a34", ЗамовленняКлієнта_Const.TYPE) => base.Init(uid, fields);
+        public ЗамовленняКлієнта_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a34", ЗамовленняКлієнта_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ЗамовленняКлієнта_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ЗамовленняКлієнта_Const.PRESENTATION_FIELDS.Length];
@@ -17908,23 +16184,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ЗамовленняКлієнта_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ЗамовленняКлієнта_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -17932,12 +16198,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -17953,7 +16214,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -17965,17 +16225,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ЗамовленняКлієнта_Pointer Copy()
-        {
-            return new ЗамовленняКлієнта_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ЗамовленняКлієнта_Pointer GetEmptyPointer()
-        {
-            return new ЗамовленняКлієнта_Pointer();
-        }
-
+        public ЗамовленняКлієнта_Pointer Copy() => new ЗамовленняКлієнта_Pointer(base.UniqueID, base.Fields, Name);
+        public ЗамовленняКлієнта_Pointer GetEmptyPointer() => new ЗамовленняКлієнта_Pointer();
         public async Task<ЗамовленняКлієнта_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -17987,7 +16238,7 @@ namespace GeneratedCode.Документи
     public class ЗамовленняКлієнта_Select : DocumentSelect
     {		
         public ЗамовленняКлієнта_Select() : base(Config.Kernel, "tab_a34") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗамовленняКлієнта_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ЗамовленняКлієнта_Pointer? Current { get; private set; }
@@ -18645,15 +16896,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a37", "tab_c25", ]);
         }
         
-        public РеалізаціяТоварівТаПослуг_Pointer GetDocumentPointer()
-        {
-            return new РеалізаціяТоварівТаПослуг_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(РеалізаціяТоварівТаПослуг_Const.PRESENTATION_FIELDS);
-        }
+        public РеалізаціяТоварівТаПослуг_Pointer GetDocumentPointer() => new РеалізаціяТоварівТаПослуг_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(РеалізаціяТоварівТаПослуг_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -18698,26 +16942,14 @@ namespace GeneratedCode.Документи
     
     public class РеалізаціяТоварівТаПослуг_Pointer : DocumentPointer
     {
-        public РеалізаціяТоварівТаПослуг_Pointer(object? uid = null) : base(Config.Kernel, "tab_a36", РеалізаціяТоварівТаПослуг_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public РеалізаціяТоварівТаПослуг_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a36", "РеалізаціяТоварівТаПослуг")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(РеалізаціяТоварівТаПослуг_Const.PRESENTATION_FIELDS);
-        }
-
+        public РеалізаціяТоварівТаПослуг_Pointer() : base(Config.Kernel, "tab_a36", РеалізаціяТоварівТаПослуг_Const.TYPE) => base.Init(new UniqueID());
+        public РеалізаціяТоварівТаПослуг_Pointer(object? uid) : base(Config.Kernel, "tab_a36", РеалізаціяТоварівТаПослуг_Const.TYPE) => base.Init(new UniqueID(uid));
+        public РеалізаціяТоварівТаПослуг_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a36", РеалізаціяТоварівТаПослуг_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public РеалізаціяТоварівТаПослуг_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a36", РеалізаціяТоварівТаПослуг_Const.TYPE) => base.Init(uid);
+        public РеалізаціяТоварівТаПослуг_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a36", РеалізаціяТоварівТаПослуг_Const.TYPE) => base.Init(uid, fields);
+        public РеалізаціяТоварівТаПослуг_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a36", РеалізаціяТоварівТаПослуг_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(РеалізаціяТоварівТаПослуг_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [РеалізаціяТоварівТаПослуг_Const.PRESENTATION_FIELDS.Length];
@@ -18725,23 +16957,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(РеалізаціяТоварівТаПослуг_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             РеалізаціяТоварівТаПослуг_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -18749,12 +16971,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -18778,7 +16995,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -18790,17 +17006,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public РеалізаціяТоварівТаПослуг_Pointer Copy()
-        {
-            return new РеалізаціяТоварівТаПослуг_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public РеалізаціяТоварівТаПослуг_Pointer GetEmptyPointer()
-        {
-            return new РеалізаціяТоварівТаПослуг_Pointer();
-        }
-
+        public РеалізаціяТоварівТаПослуг_Pointer Copy() => new РеалізаціяТоварівТаПослуг_Pointer(base.UniqueID, base.Fields, Name);
+        public РеалізаціяТоварівТаПослуг_Pointer GetEmptyPointer() => new РеалізаціяТоварівТаПослуг_Pointer();
         public async Task<РеалізаціяТоварівТаПослуг_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -18812,7 +17019,7 @@ namespace GeneratedCode.Документи
     public class РеалізаціяТоварівТаПослуг_Select : DocumentSelect
     {		
         public РеалізаціяТоварівТаПослуг_Select() : base(Config.Kernel, "tab_a36") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new РеалізаціяТоварівТаПослуг_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public РеалізаціяТоварівТаПослуг_Pointer? Current { get; private set; }
@@ -19569,15 +17776,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a43", ]);
         }
         
-        public ВстановленняЦінНоменклатури_Pointer GetDocumentPointer()
-        {
-            return new ВстановленняЦінНоменклатури_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ВстановленняЦінНоменклатури_Const.PRESENTATION_FIELDS);
-        }
+        public ВстановленняЦінНоменклатури_Pointer GetDocumentPointer() => new ВстановленняЦінНоменклатури_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ВстановленняЦінНоменклатури_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -19597,26 +17797,14 @@ namespace GeneratedCode.Документи
     
     public class ВстановленняЦінНоменклатури_Pointer : DocumentPointer
     {
-        public ВстановленняЦінНоменклатури_Pointer(object? uid = null) : base(Config.Kernel, "tab_a42", ВстановленняЦінНоменклатури_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ВстановленняЦінНоменклатури_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a42", "ВстановленняЦінНоменклатури")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ВстановленняЦінНоменклатури_Const.PRESENTATION_FIELDS);
-        }
-
+        public ВстановленняЦінНоменклатури_Pointer() : base(Config.Kernel, "tab_a42", ВстановленняЦінНоменклатури_Const.TYPE) => base.Init(new UniqueID());
+        public ВстановленняЦінНоменклатури_Pointer(object? uid) : base(Config.Kernel, "tab_a42", ВстановленняЦінНоменклатури_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ВстановленняЦінНоменклатури_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a42", ВстановленняЦінНоменклатури_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ВстановленняЦінНоменклатури_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a42", ВстановленняЦінНоменклатури_Const.TYPE) => base.Init(uid);
+        public ВстановленняЦінНоменклатури_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a42", ВстановленняЦінНоменклатури_Const.TYPE) => base.Init(uid, fields);
+        public ВстановленняЦінНоменклатури_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a42", ВстановленняЦінНоменклатури_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ВстановленняЦінНоменклатури_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ВстановленняЦінНоменклатури_Const.PRESENTATION_FIELDS.Length];
@@ -19624,39 +17812,23 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ВстановленняЦінНоменклатури_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ВстановленняЦінНоменклатури_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             ВстановленняЦінНоменклатури_Objest? obj = await GetDocumentObject();
             if (obj != null) await obj.ClearSpendTheDocument();
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         Task ClearRegAccum() => Task.CompletedTask;
-
         public async Task SetDeletionLabel(bool label = true)
         {
           ВстановленняЦінНоменклатури_Objest? obj = await GetDocumentObject();
@@ -19666,17 +17838,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ВстановленняЦінНоменклатури_Pointer Copy()
-        {
-            return new ВстановленняЦінНоменклатури_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ВстановленняЦінНоменклатури_Pointer GetEmptyPointer()
-        {
-            return new ВстановленняЦінНоменклатури_Pointer();
-        }
-
+        public ВстановленняЦінНоменклатури_Pointer Copy() => new ВстановленняЦінНоменклатури_Pointer(base.UniqueID, base.Fields, Name);
+        public ВстановленняЦінНоменклатури_Pointer GetEmptyPointer() => new ВстановленняЦінНоменклатури_Pointer();
         public async Task<ВстановленняЦінНоменклатури_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -19688,7 +17851,7 @@ namespace GeneratedCode.Документи
     public class ВстановленняЦінНоменклатури_Select : DocumentSelect
     {		
         public ВстановленняЦінНоменклатури_Select() : base(Config.Kernel, "tab_a42") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВстановленняЦінНоменклатури_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ВстановленняЦінНоменклатури_Pointer? Current { get; private set; }
@@ -20114,15 +18277,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a47", "tab_c32", ]);
         }
         
-        public ПрихіднийКасовийОрдер_Pointer GetDocumentPointer()
-        {
-            return new ПрихіднийКасовийОрдер_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПрихіднийКасовийОрдер_Const.PRESENTATION_FIELDS);
-        }
+        public ПрихіднийКасовийОрдер_Pointer GetDocumentPointer() => new ПрихіднийКасовийОрдер_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПрихіднийКасовийОрдер_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -20153,26 +18309,14 @@ namespace GeneratedCode.Документи
     
     public class ПрихіднийКасовийОрдер_Pointer : DocumentPointer
     {
-        public ПрихіднийКасовийОрдер_Pointer(object? uid = null) : base(Config.Kernel, "tab_a44", ПрихіднийКасовийОрдер_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПрихіднийКасовийОрдер_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a44", "ПрихіднийКасовийОрдер")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПрихіднийКасовийОрдер_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПрихіднийКасовийОрдер_Pointer() : base(Config.Kernel, "tab_a44", ПрихіднийКасовийОрдер_Const.TYPE) => base.Init(new UniqueID());
+        public ПрихіднийКасовийОрдер_Pointer(object? uid) : base(Config.Kernel, "tab_a44", ПрихіднийКасовийОрдер_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПрихіднийКасовийОрдер_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a44", ПрихіднийКасовийОрдер_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПрихіднийКасовийОрдер_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a44", ПрихіднийКасовийОрдер_Const.TYPE) => base.Init(uid);
+        public ПрихіднийКасовийОрдер_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a44", ПрихіднийКасовийОрдер_Const.TYPE) => base.Init(uid, fields);
+        public ПрихіднийКасовийОрдер_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a44", ПрихіднийКасовийОрдер_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПрихіднийКасовийОрдер_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПрихіднийКасовийОрдер_Const.PRESENTATION_FIELDS.Length];
@@ -20180,35 +18324,20 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПрихіднийКасовийОрдер_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПрихіднийКасовийОрдер_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             ПрихіднийКасовийОрдер_Objest? obj = await GetDocumentObject();
             if (obj != null) await obj.ClearSpendTheDocument();
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -20226,7 +18355,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           ПрихіднийКасовийОрдер_Objest? obj = await GetDocumentObject();
@@ -20236,17 +18364,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПрихіднийКасовийОрдер_Pointer Copy()
-        {
-            return new ПрихіднийКасовийОрдер_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПрихіднийКасовийОрдер_Pointer GetEmptyPointer()
-        {
-            return new ПрихіднийКасовийОрдер_Pointer();
-        }
-
+        public ПрихіднийКасовийОрдер_Pointer Copy() => new ПрихіднийКасовийОрдер_Pointer(base.UniqueID, base.Fields, Name);
+        public ПрихіднийКасовийОрдер_Pointer GetEmptyPointer() => new ПрихіднийКасовийОрдер_Pointer();
         public async Task<ПрихіднийКасовийОрдер_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -20258,7 +18377,7 @@ namespace GeneratedCode.Документи
     public class ПрихіднийКасовийОрдер_Select : DocumentSelect
     {		
         public ПрихіднийКасовийОрдер_Select() : base(Config.Kernel, "tab_a44") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПрихіднийКасовийОрдер_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПрихіднийКасовийОрдер_Pointer? Current { get; private set; }
@@ -20854,15 +18973,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a49", "tab_c33", ]);
         }
         
-        public РозхіднийКасовийОрдер_Pointer GetDocumentPointer()
-        {
-            return new РозхіднийКасовийОрдер_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(РозхіднийКасовийОрдер_Const.PRESENTATION_FIELDS);
-        }
+        public РозхіднийКасовийОрдер_Pointer GetDocumentPointer() => new РозхіднийКасовийОрдер_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(РозхіднийКасовийОрдер_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -20895,26 +19007,14 @@ namespace GeneratedCode.Документи
     
     public class РозхіднийКасовийОрдер_Pointer : DocumentPointer
     {
-        public РозхіднийКасовийОрдер_Pointer(object? uid = null) : base(Config.Kernel, "tab_a48", РозхіднийКасовийОрдер_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public РозхіднийКасовийОрдер_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a48", "РозхіднийКасовийОрдер")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(РозхіднийКасовийОрдер_Const.PRESENTATION_FIELDS);
-        }
-
+        public РозхіднийКасовийОрдер_Pointer() : base(Config.Kernel, "tab_a48", РозхіднийКасовийОрдер_Const.TYPE) => base.Init(new UniqueID());
+        public РозхіднийКасовийОрдер_Pointer(object? uid) : base(Config.Kernel, "tab_a48", РозхіднийКасовийОрдер_Const.TYPE) => base.Init(new UniqueID(uid));
+        public РозхіднийКасовийОрдер_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a48", РозхіднийКасовийОрдер_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public РозхіднийКасовийОрдер_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a48", РозхіднийКасовийОрдер_Const.TYPE) => base.Init(uid);
+        public РозхіднийКасовийОрдер_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a48", РозхіднийКасовийОрдер_Const.TYPE) => base.Init(uid, fields);
+        public РозхіднийКасовийОрдер_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a48", РозхіднийКасовийОрдер_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(РозхіднийКасовийОрдер_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [РозхіднийКасовийОрдер_Const.PRESENTATION_FIELDS.Length];
@@ -20922,35 +19022,20 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(РозхіднийКасовийОрдер_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             РозхіднийКасовийОрдер_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             РозхіднийКасовийОрдер_Objest? obj = await GetDocumentObject();
             if (obj != null) await obj.ClearSpendTheDocument();
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -20968,7 +19053,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           РозхіднийКасовийОрдер_Objest? obj = await GetDocumentObject();
@@ -20978,17 +19062,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public РозхіднийКасовийОрдер_Pointer Copy()
-        {
-            return new РозхіднийКасовийОрдер_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public РозхіднийКасовийОрдер_Pointer GetEmptyPointer()
-        {
-            return new РозхіднийКасовийОрдер_Pointer();
-        }
-
+        public РозхіднийКасовийОрдер_Pointer Copy() => new РозхіднийКасовийОрдер_Pointer(base.UniqueID, base.Fields, Name);
+        public РозхіднийКасовийОрдер_Pointer GetEmptyPointer() => new РозхіднийКасовийОрдер_Pointer();
         public async Task<РозхіднийКасовийОрдер_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -21000,7 +19075,7 @@ namespace GeneratedCode.Документи
     public class РозхіднийКасовийОрдер_Select : DocumentSelect
     {		
         public РозхіднийКасовийОрдер_Select() : base(Config.Kernel, "tab_a48") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new РозхіднийКасовийОрдер_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public РозхіднийКасовийОрдер_Pointer? Current { get; private set; }
@@ -21604,15 +19679,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a50", "tab_c30", ]);
         }
         
-        public ПереміщенняТоварів_Pointer GetDocumentPointer()
-        {
-            return new ПереміщенняТоварів_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПереміщенняТоварів_Const.PRESENTATION_FIELDS);
-        }
+        public ПереміщенняТоварів_Pointer GetDocumentPointer() => new ПереміщенняТоварів_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПереміщенняТоварів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -21646,26 +19714,14 @@ namespace GeneratedCode.Документи
     
     public class ПереміщенняТоварів_Pointer : DocumentPointer
     {
-        public ПереміщенняТоварів_Pointer(object? uid = null) : base(Config.Kernel, "tab_a31", ПереміщенняТоварів_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПереміщенняТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a31", "ПереміщенняТоварів")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПереміщенняТоварів_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПереміщенняТоварів_Pointer() : base(Config.Kernel, "tab_a31", ПереміщенняТоварів_Const.TYPE) => base.Init(new UniqueID());
+        public ПереміщенняТоварів_Pointer(object? uid) : base(Config.Kernel, "tab_a31", ПереміщенняТоварів_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПереміщенняТоварів_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a31", ПереміщенняТоварів_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПереміщенняТоварів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a31", ПереміщенняТоварів_Const.TYPE) => base.Init(uid);
+        public ПереміщенняТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a31", ПереміщенняТоварів_Const.TYPE) => base.Init(uid, fields);
+        public ПереміщенняТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a31", ПереміщенняТоварів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПереміщенняТоварів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПереміщенняТоварів_Const.PRESENTATION_FIELDS.Length];
@@ -21673,35 +19729,20 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПереміщенняТоварів_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПереміщенняТоварів_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             ПереміщенняТоварів_Objest? obj = await GetDocumentObject();
             if (obj != null) await obj.ClearSpendTheDocument();
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -21719,7 +19760,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           ПереміщенняТоварів_Objest? obj = await GetDocumentObject();
@@ -21729,17 +19769,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПереміщенняТоварів_Pointer Copy()
-        {
-            return new ПереміщенняТоварів_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПереміщенняТоварів_Pointer GetEmptyPointer()
-        {
-            return new ПереміщенняТоварів_Pointer();
-        }
-
+        public ПереміщенняТоварів_Pointer Copy() => new ПереміщенняТоварів_Pointer(base.UniqueID, base.Fields, Name);
+        public ПереміщенняТоварів_Pointer GetEmptyPointer() => new ПереміщенняТоварів_Pointer();
         public async Task<ПереміщенняТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -21751,7 +19782,7 @@ namespace GeneratedCode.Документи
     public class ПереміщенняТоварів_Select : DocumentSelect
     {		
         public ПереміщенняТоварів_Select() : base(Config.Kernel, "tab_a31") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПереміщенняТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПереміщенняТоварів_Pointer? Current { get; private set; }
@@ -22379,15 +20410,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a52", "tab_c28", ]);
         }
         
-        public ПоверненняТоварівПостачальнику_Pointer GetDocumentPointer()
-        {
-            return new ПоверненняТоварівПостачальнику_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПоверненняТоварівПостачальнику_Const.PRESENTATION_FIELDS);
-        }
+        public ПоверненняТоварівПостачальнику_Pointer GetDocumentPointer() => new ПоверненняТоварівПостачальнику_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПоверненняТоварівПостачальнику_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -22423,26 +20447,14 @@ namespace GeneratedCode.Документи
     
     public class ПоверненняТоварівПостачальнику_Pointer : DocumentPointer
     {
-        public ПоверненняТоварівПостачальнику_Pointer(object? uid = null) : base(Config.Kernel, "tab_a51", ПоверненняТоварівПостачальнику_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПоверненняТоварівПостачальнику_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a51", "ПоверненняТоварівПостачальнику")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПоверненняТоварівПостачальнику_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПоверненняТоварівПостачальнику_Pointer() : base(Config.Kernel, "tab_a51", ПоверненняТоварівПостачальнику_Const.TYPE) => base.Init(new UniqueID());
+        public ПоверненняТоварівПостачальнику_Pointer(object? uid) : base(Config.Kernel, "tab_a51", ПоверненняТоварівПостачальнику_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПоверненняТоварівПостачальнику_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a51", ПоверненняТоварівПостачальнику_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПоверненняТоварівПостачальнику_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a51", ПоверненняТоварівПостачальнику_Const.TYPE) => base.Init(uid);
+        public ПоверненняТоварівПостачальнику_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a51", ПоверненняТоварівПостачальнику_Const.TYPE) => base.Init(uid, fields);
+        public ПоверненняТоварівПостачальнику_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a51", ПоверненняТоварівПостачальнику_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПоверненняТоварівПостачальнику_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПоверненняТоварівПостачальнику_Const.PRESENTATION_FIELDS.Length];
@@ -22450,35 +20462,20 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПоверненняТоварівПостачальнику_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПоверненняТоварівПостачальнику_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             ПоверненняТоварівПостачальнику_Objest? obj = await GetDocumentObject();
             if (obj != null) await obj.ClearSpendTheDocument();
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -22500,7 +20497,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           ПоверненняТоварівПостачальнику_Objest? obj = await GetDocumentObject();
@@ -22510,17 +20506,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПоверненняТоварівПостачальнику_Pointer Copy()
-        {
-            return new ПоверненняТоварівПостачальнику_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПоверненняТоварівПостачальнику_Pointer GetEmptyPointer()
-        {
-            return new ПоверненняТоварівПостачальнику_Pointer();
-        }
-
+        public ПоверненняТоварівПостачальнику_Pointer Copy() => new ПоверненняТоварівПостачальнику_Pointer(base.UniqueID, base.Fields, Name);
+        public ПоверненняТоварівПостачальнику_Pointer GetEmptyPointer() => new ПоверненняТоварівПостачальнику_Pointer();
         public async Task<ПоверненняТоварівПостачальнику_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -22532,7 +20519,7 @@ namespace GeneratedCode.Документи
     public class ПоверненняТоварівПостачальнику_Select : DocumentSelect
     {		
         public ПоверненняТоварівПостачальнику_Select() : base(Config.Kernel, "tab_a51") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПоверненняТоварівПостачальнику_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПоверненняТоварівПостачальнику_Pointer? Current { get; private set; }
@@ -23152,15 +21139,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a54", "tab_c29", ]);
         }
         
-        public ПоверненняТоварівВідКлієнта_Pointer GetDocumentPointer()
-        {
-            return new ПоверненняТоварівВідКлієнта_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПоверненняТоварівВідКлієнта_Const.PRESENTATION_FIELDS);
-        }
+        public ПоверненняТоварівВідКлієнта_Pointer GetDocumentPointer() => new ПоверненняТоварівВідКлієнта_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПоверненняТоварівВідКлієнта_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -23192,26 +21172,14 @@ namespace GeneratedCode.Документи
     
     public class ПоверненняТоварівВідКлієнта_Pointer : DocumentPointer
     {
-        public ПоверненняТоварівВідКлієнта_Pointer(object? uid = null) : base(Config.Kernel, "tab_a53", ПоверненняТоварівВідКлієнта_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПоверненняТоварівВідКлієнта_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a53", "ПоверненняТоварівВідКлієнта")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПоверненняТоварівВідКлієнта_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПоверненняТоварівВідКлієнта_Pointer() : base(Config.Kernel, "tab_a53", ПоверненняТоварівВідКлієнта_Const.TYPE) => base.Init(new UniqueID());
+        public ПоверненняТоварівВідКлієнта_Pointer(object? uid) : base(Config.Kernel, "tab_a53", ПоверненняТоварівВідКлієнта_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПоверненняТоварівВідКлієнта_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a53", ПоверненняТоварівВідКлієнта_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПоверненняТоварівВідКлієнта_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a53", ПоверненняТоварівВідКлієнта_Const.TYPE) => base.Init(uid);
+        public ПоверненняТоварівВідКлієнта_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a53", ПоверненняТоварівВідКлієнта_Const.TYPE) => base.Init(uid, fields);
+        public ПоверненняТоварівВідКлієнта_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a53", ПоверненняТоварівВідКлієнта_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПоверненняТоварівВідКлієнта_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПоверненняТоварівВідКлієнта_Const.PRESENTATION_FIELDS.Length];
@@ -23219,35 +21187,20 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПоверненняТоварівВідКлієнта_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПоверненняТоварівВідКлієнта_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             ПоверненняТоварівВідКлієнта_Objest? obj = await GetDocumentObject();
             if (obj != null) await obj.ClearSpendTheDocument();
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -23269,7 +21222,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           ПоверненняТоварівВідКлієнта_Objest? obj = await GetDocumentObject();
@@ -23279,17 +21231,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПоверненняТоварівВідКлієнта_Pointer Copy()
-        {
-            return new ПоверненняТоварівВідКлієнта_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПоверненняТоварівВідКлієнта_Pointer GetEmptyPointer()
-        {
-            return new ПоверненняТоварівВідКлієнта_Pointer();
-        }
-
+        public ПоверненняТоварівВідКлієнта_Pointer Copy() => new ПоверненняТоварівВідКлієнта_Pointer(base.UniqueID, base.Fields, Name);
+        public ПоверненняТоварівВідКлієнта_Pointer GetEmptyPointer() => new ПоверненняТоварівВідКлієнта_Pointer();
         public async Task<ПоверненняТоварівВідКлієнта_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -23301,7 +21244,7 @@ namespace GeneratedCode.Документи
     public class ПоверненняТоварівВідКлієнта_Select : DocumentSelect
     {		
         public ПоверненняТоварівВідКлієнта_Select() : base(Config.Kernel, "tab_a53") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПоверненняТоварівВідКлієнта_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПоверненняТоварівВідКлієнта_Pointer? Current { get; private set; }
@@ -23915,15 +21858,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a82", "tab_c26", ]);
         }
         
-        public АктВиконанихРобіт_Pointer GetDocumentPointer()
-        {
-            return new АктВиконанихРобіт_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(АктВиконанихРобіт_Const.PRESENTATION_FIELDS);
-        }
+        public АктВиконанихРобіт_Pointer GetDocumentPointer() => new АктВиконанихРобіт_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(АктВиконанихРобіт_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -23954,26 +21890,14 @@ namespace GeneratedCode.Документи
     
     public class АктВиконанихРобіт_Pointer : DocumentPointer
     {
-        public АктВиконанихРобіт_Pointer(object? uid = null) : base(Config.Kernel, "tab_a81", АктВиконанихРобіт_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public АктВиконанихРобіт_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a81", "АктВиконанихРобіт")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(АктВиконанихРобіт_Const.PRESENTATION_FIELDS);
-        }
-
+        public АктВиконанихРобіт_Pointer() : base(Config.Kernel, "tab_a81", АктВиконанихРобіт_Const.TYPE) => base.Init(new UniqueID());
+        public АктВиконанихРобіт_Pointer(object? uid) : base(Config.Kernel, "tab_a81", АктВиконанихРобіт_Const.TYPE) => base.Init(new UniqueID(uid));
+        public АктВиконанихРобіт_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a81", АктВиконанихРобіт_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public АктВиконанихРобіт_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a81", АктВиконанихРобіт_Const.TYPE) => base.Init(uid);
+        public АктВиконанихРобіт_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a81", АктВиконанихРобіт_Const.TYPE) => base.Init(uid, fields);
+        public АктВиконанихРобіт_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a81", АктВиконанихРобіт_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(АктВиконанихРобіт_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [АктВиконанихРобіт_Const.PRESENTATION_FIELDS.Length];
@@ -23981,35 +21905,20 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(АктВиконанихРобіт_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             АктВиконанихРобіт_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             АктВиконанихРобіт_Objest? obj = await GetDocumentObject();
             if (obj != null) await obj.ClearSpendTheDocument();
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -24025,7 +21934,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           АктВиконанихРобіт_Objest? obj = await GetDocumentObject();
@@ -24035,17 +21943,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public АктВиконанихРобіт_Pointer Copy()
-        {
-            return new АктВиконанихРобіт_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public АктВиконанихРобіт_Pointer GetEmptyPointer()
-        {
-            return new АктВиконанихРобіт_Pointer();
-        }
-
+        public АктВиконанихРобіт_Pointer Copy() => new АктВиконанихРобіт_Pointer(base.UniqueID, base.Fields, Name);
+        public АктВиконанихРобіт_Pointer GetEmptyPointer() => new АктВиконанихРобіт_Pointer();
         public async Task<АктВиконанихРобіт_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -24057,7 +21956,7 @@ namespace GeneratedCode.Документи
     public class АктВиконанихРобіт_Select : DocumentSelect
     {		
         public АктВиконанихРобіт_Select() : base(Config.Kernel, "tab_a81") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new АктВиконанихРобіт_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public АктВиконанихРобіт_Pointer? Current { get; private set; }
@@ -24790,15 +22689,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a84", "tab_a85", "tab_a86", "tab_a87", "tab_c31", ]);
         }
         
-        public ВведенняЗалишків_Pointer GetDocumentPointer()
-        {
-            return new ВведенняЗалишків_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ВведенняЗалишків_Const.PRESENTATION_FIELDS);
-        }
+        public ВведенняЗалишків_Pointer GetDocumentPointer() => new ВведенняЗалишків_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ВведенняЗалишків_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -24828,26 +22720,14 @@ namespace GeneratedCode.Документи
     
     public class ВведенняЗалишків_Pointer : DocumentPointer
     {
-        public ВведенняЗалишків_Pointer(object? uid = null) : base(Config.Kernel, "tab_a83", ВведенняЗалишків_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ВведенняЗалишків_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a83", "ВведенняЗалишків")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ВведенняЗалишків_Const.PRESENTATION_FIELDS);
-        }
-
+        public ВведенняЗалишків_Pointer() : base(Config.Kernel, "tab_a83", ВведенняЗалишків_Const.TYPE) => base.Init(new UniqueID());
+        public ВведенняЗалишків_Pointer(object? uid) : base(Config.Kernel, "tab_a83", ВведенняЗалишків_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ВведенняЗалишків_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a83", ВведенняЗалишків_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ВведенняЗалишків_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a83", ВведенняЗалишків_Const.TYPE) => base.Init(uid);
+        public ВведенняЗалишків_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a83", ВведенняЗалишків_Const.TYPE) => base.Init(uid, fields);
+        public ВведенняЗалишків_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a83", ВведенняЗалишків_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ВведенняЗалишків_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ВведенняЗалишків_Const.PRESENTATION_FIELDS.Length];
@@ -24855,35 +22735,20 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ВведенняЗалишків_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ВведенняЗалишків_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             ВведенняЗалишків_Objest? obj = await GetDocumentObject();
             if (obj != null) await obj.ClearSpendTheDocument();
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -24907,7 +22772,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           ВведенняЗалишків_Objest? obj = await GetDocumentObject();
@@ -24919,17 +22783,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ВведенняЗалишків_Pointer Copy()
-        {
-            return new ВведенняЗалишків_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ВведенняЗалишків_Pointer GetEmptyPointer()
-        {
-            return new ВведенняЗалишків_Pointer();
-        }
-
+        public ВведенняЗалишків_Pointer Copy() => new ВведенняЗалишків_Pointer(base.UniqueID, base.Fields, Name);
+        public ВведенняЗалишків_Pointer GetEmptyPointer() => new ВведенняЗалишків_Pointer();
         public async Task<ВведенняЗалишків_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -24941,7 +22796,7 @@ namespace GeneratedCode.Документи
     public class ВведенняЗалишків_Select : DocumentSelect
     {		
         public ВведенняЗалишків_Select() : base(Config.Kernel, "tab_a83") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВведенняЗалишків_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ВведенняЗалишків_Pointer? Current { get; private set; }
@@ -25895,15 +23750,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a89", ]);
         }
         
-        public НадлишкиТоварів_Pointer GetDocumentPointer()
-        {
-            return new НадлишкиТоварів_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(НадлишкиТоварів_Const.PRESENTATION_FIELDS);
-        }
+        public НадлишкиТоварів_Pointer GetDocumentPointer() => new НадлишкиТоварів_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(НадлишкиТоварів_Const.PRESENTATION_FIELDS);
         
         public Довідники.Організації_Pointer Організація { get; set; } = new Довідники.Організації_Pointer();
         public Довідники.СтруктураПідприємства_Pointer Підрозділ { get; set; } = new Довідники.СтруктураПідприємства_Pointer();
@@ -25923,26 +23771,14 @@ namespace GeneratedCode.Документи
     
     public class НадлишкиТоварів_Pointer : DocumentPointer
     {
-        public НадлишкиТоварів_Pointer(object? uid = null) : base(Config.Kernel, "tab_a88", НадлишкиТоварів_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public НадлишкиТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a88", "НадлишкиТоварів")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(НадлишкиТоварів_Const.PRESENTATION_FIELDS);
-        }
-
+        public НадлишкиТоварів_Pointer() : base(Config.Kernel, "tab_a88", НадлишкиТоварів_Const.TYPE) => base.Init(new UniqueID());
+        public НадлишкиТоварів_Pointer(object? uid) : base(Config.Kernel, "tab_a88", НадлишкиТоварів_Const.TYPE) => base.Init(new UniqueID(uid));
+        public НадлишкиТоварів_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a88", НадлишкиТоварів_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public НадлишкиТоварів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a88", НадлишкиТоварів_Const.TYPE) => base.Init(uid);
+        public НадлишкиТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a88", НадлишкиТоварів_Const.TYPE) => base.Init(uid, fields);
+        public НадлишкиТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a88", НадлишкиТоварів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(НадлишкиТоварів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [НадлишкиТоварів_Const.PRESENTATION_FIELDS.Length];
@@ -25950,23 +23786,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(НадлишкиТоварів_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             НадлишкиТоварів_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -25974,16 +23800,10 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         Task ClearRegAccum() => Task.CompletedTask;
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -25995,17 +23815,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public НадлишкиТоварів_Pointer Copy()
-        {
-            return new НадлишкиТоварів_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public НадлишкиТоварів_Pointer GetEmptyPointer()
-        {
-            return new НадлишкиТоварів_Pointer();
-        }
-
+        public НадлишкиТоварів_Pointer Copy() => new НадлишкиТоварів_Pointer(base.UniqueID, base.Fields, Name);
+        public НадлишкиТоварів_Pointer GetEmptyPointer() => new НадлишкиТоварів_Pointer();
         public async Task<НадлишкиТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -26017,7 +23828,7 @@ namespace GeneratedCode.Документи
     public class НадлишкиТоварів_Select : DocumentSelect
     {		
         public НадлишкиТоварів_Select() : base(Config.Kernel, "tab_a88") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new НадлишкиТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public НадлишкиТоварів_Pointer? Current { get; private set; }
@@ -26365,15 +24176,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a91", ]);
         }
         
-        public ПересортицяТоварів_Pointer GetDocumentPointer()
-        {
-            return new ПересортицяТоварів_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПересортицяТоварів_Const.PRESENTATION_FIELDS);
-        }
+        public ПересортицяТоварів_Pointer GetDocumentPointer() => new ПересортицяТоварів_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПересортицяТоварів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -26393,26 +24197,14 @@ namespace GeneratedCode.Документи
     
     public class ПересортицяТоварів_Pointer : DocumentPointer
     {
-        public ПересортицяТоварів_Pointer(object? uid = null) : base(Config.Kernel, "tab_a90", ПересортицяТоварів_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПересортицяТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a90", "ПересортицяТоварів")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПересортицяТоварів_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПересортицяТоварів_Pointer() : base(Config.Kernel, "tab_a90", ПересортицяТоварів_Const.TYPE) => base.Init(new UniqueID());
+        public ПересортицяТоварів_Pointer(object? uid) : base(Config.Kernel, "tab_a90", ПересортицяТоварів_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПересортицяТоварів_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a90", ПересортицяТоварів_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПересортицяТоварів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a90", ПересортицяТоварів_Const.TYPE) => base.Init(uid);
+        public ПересортицяТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a90", ПересортицяТоварів_Const.TYPE) => base.Init(uid, fields);
+        public ПересортицяТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a90", ПересортицяТоварів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПересортицяТоварів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПересортицяТоварів_Const.PRESENTATION_FIELDS.Length];
@@ -26420,23 +24212,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПересортицяТоварів_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПересортицяТоварів_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -26444,16 +24226,10 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         Task ClearRegAccum() => Task.CompletedTask;
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -26465,17 +24241,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПересортицяТоварів_Pointer Copy()
-        {
-            return new ПересортицяТоварів_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПересортицяТоварів_Pointer GetEmptyPointer()
-        {
-            return new ПересортицяТоварів_Pointer();
-        }
-
+        public ПересортицяТоварів_Pointer Copy() => new ПересортицяТоварів_Pointer(base.UniqueID, base.Fields, Name);
+        public ПересортицяТоварів_Pointer GetEmptyPointer() => new ПересортицяТоварів_Pointer();
         public async Task<ПересортицяТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -26487,7 +24254,7 @@ namespace GeneratedCode.Документи
     public class ПересортицяТоварів_Select : DocumentSelect
     {		
         public ПересортицяТоварів_Select() : base(Config.Kernel, "tab_a90") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПересортицяТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПересортицяТоварів_Pointer? Current { get; private set; }
@@ -26843,15 +24610,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a93", ]);
         }
         
-        public ПерерахунокТоварів_Pointer GetDocumentPointer()
-        {
-            return new ПерерахунокТоварів_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПерерахунокТоварів_Const.PRESENTATION_FIELDS);
-        }
+        public ПерерахунокТоварів_Pointer GetDocumentPointer() => new ПерерахунокТоварів_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПерерахунокТоварів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -26872,26 +24632,14 @@ namespace GeneratedCode.Документи
     
     public class ПерерахунокТоварів_Pointer : DocumentPointer
     {
-        public ПерерахунокТоварів_Pointer(object? uid = null) : base(Config.Kernel, "tab_a92", ПерерахунокТоварів_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПерерахунокТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a92", "ПерерахунокТоварів")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПерерахунокТоварів_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПерерахунокТоварів_Pointer() : base(Config.Kernel, "tab_a92", ПерерахунокТоварів_Const.TYPE) => base.Init(new UniqueID());
+        public ПерерахунокТоварів_Pointer(object? uid) : base(Config.Kernel, "tab_a92", ПерерахунокТоварів_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПерерахунокТоварів_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a92", ПерерахунокТоварів_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПерерахунокТоварів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a92", ПерерахунокТоварів_Const.TYPE) => base.Init(uid);
+        public ПерерахунокТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a92", ПерерахунокТоварів_Const.TYPE) => base.Init(uid, fields);
+        public ПерерахунокТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a92", ПерерахунокТоварів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПерерахунокТоварів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПерерахунокТоварів_Const.PRESENTATION_FIELDS.Length];
@@ -26899,23 +24647,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПерерахунокТоварів_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПерерахунокТоварів_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -26923,16 +24661,10 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         Task ClearRegAccum() => Task.CompletedTask;
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -26944,17 +24676,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПерерахунокТоварів_Pointer Copy()
-        {
-            return new ПерерахунокТоварів_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПерерахунокТоварів_Pointer GetEmptyPointer()
-        {
-            return new ПерерахунокТоварів_Pointer();
-        }
-
+        public ПерерахунокТоварів_Pointer Copy() => new ПерерахунокТоварів_Pointer(base.UniqueID, base.Fields, Name);
+        public ПерерахунокТоварів_Pointer GetEmptyPointer() => new ПерерахунокТоварів_Pointer();
         public async Task<ПерерахунокТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -26966,7 +24689,7 @@ namespace GeneratedCode.Документи
     public class ПерерахунокТоварів_Select : DocumentSelect
     {		
         public ПерерахунокТоварів_Select() : base(Config.Kernel, "tab_a92") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПерерахунокТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПерерахунокТоварів_Pointer? Current { get; private set; }
@@ -27360,15 +25083,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a95", ]);
         }
         
-        public ПсуванняТоварів_Pointer GetDocumentPointer()
-        {
-            return new ПсуванняТоварів_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПсуванняТоварів_Const.PRESENTATION_FIELDS);
-        }
+        public ПсуванняТоварів_Pointer GetDocumentPointer() => new ПсуванняТоварів_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПсуванняТоварів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -27390,26 +25106,14 @@ namespace GeneratedCode.Документи
     
     public class ПсуванняТоварів_Pointer : DocumentPointer
     {
-        public ПсуванняТоварів_Pointer(object? uid = null) : base(Config.Kernel, "tab_a94", ПсуванняТоварів_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПсуванняТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a94", "ПсуванняТоварів")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПсуванняТоварів_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПсуванняТоварів_Pointer() : base(Config.Kernel, "tab_a94", ПсуванняТоварів_Const.TYPE) => base.Init(new UniqueID());
+        public ПсуванняТоварів_Pointer(object? uid) : base(Config.Kernel, "tab_a94", ПсуванняТоварів_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПсуванняТоварів_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a94", ПсуванняТоварів_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПсуванняТоварів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a94", ПсуванняТоварів_Const.TYPE) => base.Init(uid);
+        public ПсуванняТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a94", ПсуванняТоварів_Const.TYPE) => base.Init(uid, fields);
+        public ПсуванняТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a94", ПсуванняТоварів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПсуванняТоварів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПсуванняТоварів_Const.PRESENTATION_FIELDS.Length];
@@ -27417,23 +25121,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПсуванняТоварів_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПсуванняТоварів_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -27441,12 +25135,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -27464,7 +25153,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -27476,17 +25164,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПсуванняТоварів_Pointer Copy()
-        {
-            return new ПсуванняТоварів_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПсуванняТоварів_Pointer GetEmptyPointer()
-        {
-            return new ПсуванняТоварів_Pointer();
-        }
-
+        public ПсуванняТоварів_Pointer Copy() => new ПсуванняТоварів_Pointer(base.UniqueID, base.Fields, Name);
+        public ПсуванняТоварів_Pointer GetEmptyPointer() => new ПсуванняТоварів_Pointer();
         public async Task<ПсуванняТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -27498,7 +25177,7 @@ namespace GeneratedCode.Документи
     public class ПсуванняТоварів_Select : DocumentSelect
     {		
         public ПсуванняТоварів_Select() : base(Config.Kernel, "tab_a94") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПсуванняТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПсуванняТоварів_Pointer? Current { get; private set; }
@@ -27924,15 +25603,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_b08", "tab_c37", ]);
         }
         
-        public ВнутрішнєСпоживанняТоварів_Pointer GetDocumentPointer()
-        {
-            return new ВнутрішнєСпоживанняТоварів_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ВнутрішнєСпоживанняТоварів_Const.PRESENTATION_FIELDS);
-        }
+        public ВнутрішнєСпоживанняТоварів_Pointer GetDocumentPointer() => new ВнутрішнєСпоживанняТоварів_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ВнутрішнєСпоживанняТоварів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -27958,26 +25630,14 @@ namespace GeneratedCode.Документи
     
     public class ВнутрішнєСпоживанняТоварів_Pointer : DocumentPointer
     {
-        public ВнутрішнєСпоживанняТоварів_Pointer(object? uid = null) : base(Config.Kernel, "tab_b07", ВнутрішнєСпоживанняТоварів_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ВнутрішнєСпоживанняТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b07", "ВнутрішнєСпоживанняТоварів")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ВнутрішнєСпоживанняТоварів_Const.PRESENTATION_FIELDS);
-        }
-
+        public ВнутрішнєСпоживанняТоварів_Pointer() : base(Config.Kernel, "tab_b07", ВнутрішнєСпоживанняТоварів_Const.TYPE) => base.Init(new UniqueID());
+        public ВнутрішнєСпоживанняТоварів_Pointer(object? uid) : base(Config.Kernel, "tab_b07", ВнутрішнєСпоживанняТоварів_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ВнутрішнєСпоживанняТоварів_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b07", ВнутрішнєСпоживанняТоварів_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ВнутрішнєСпоживанняТоварів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b07", ВнутрішнєСпоживанняТоварів_Const.TYPE) => base.Init(uid);
+        public ВнутрішнєСпоживанняТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b07", ВнутрішнєСпоживанняТоварів_Const.TYPE) => base.Init(uid, fields);
+        public ВнутрішнєСпоживанняТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b07", ВнутрішнєСпоживанняТоварів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ВнутрішнєСпоживанняТоварів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ВнутрішнєСпоживанняТоварів_Const.PRESENTATION_FIELDS.Length];
@@ -27985,35 +25645,20 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ВнутрішнєСпоживанняТоварів_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ВнутрішнєСпоживанняТоварів_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             ВнутрішнєСпоживанняТоварів_Objest? obj = await GetDocumentObject();
             if (obj != null) await obj.ClearSpendTheDocument();
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -28031,7 +25676,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           ВнутрішнєСпоживанняТоварів_Objest? obj = await GetDocumentObject();
@@ -28041,17 +25685,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ВнутрішнєСпоживанняТоварів_Pointer Copy()
-        {
-            return new ВнутрішнєСпоживанняТоварів_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ВнутрішнєСпоживанняТоварів_Pointer GetEmptyPointer()
-        {
-            return new ВнутрішнєСпоживанняТоварів_Pointer();
-        }
-
+        public ВнутрішнєСпоживанняТоварів_Pointer Copy() => new ВнутрішнєСпоживанняТоварів_Pointer(base.UniqueID, base.Fields, Name);
+        public ВнутрішнєСпоживанняТоварів_Pointer GetEmptyPointer() => new ВнутрішнєСпоживанняТоварів_Pointer();
         public async Task<ВнутрішнєСпоживанняТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -28063,7 +25698,7 @@ namespace GeneratedCode.Документи
     public class ВнутрішнєСпоживанняТоварів_Select : DocumentSelect
     {		
         public ВнутрішнєСпоживанняТоварів_Select() : base(Config.Kernel, "tab_b07") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВнутрішнєСпоживанняТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ВнутрішнєСпоживанняТоварів_Pointer? Current { get; private set; }
@@ -28683,15 +26318,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_b11", "tab_c27", ]);
         }
         
-        public РахунокФактура_Pointer GetDocumentPointer()
-        {
-            return new РахунокФактура_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(РахунокФактура_Const.PRESENTATION_FIELDS);
-        }
+        public РахунокФактура_Pointer GetDocumentPointer() => new РахунокФактура_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(РахунокФактура_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -28725,26 +26353,14 @@ namespace GeneratedCode.Документи
     
     public class РахунокФактура_Pointer : DocumentPointer
     {
-        public РахунокФактура_Pointer(object? uid = null) : base(Config.Kernel, "tab_b10", РахунокФактура_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public РахунокФактура_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b10", "РахунокФактура")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(РахунокФактура_Const.PRESENTATION_FIELDS);
-        }
-
+        public РахунокФактура_Pointer() : base(Config.Kernel, "tab_b10", РахунокФактура_Const.TYPE) => base.Init(new UniqueID());
+        public РахунокФактура_Pointer(object? uid) : base(Config.Kernel, "tab_b10", РахунокФактура_Const.TYPE) => base.Init(new UniqueID(uid));
+        public РахунокФактура_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b10", РахунокФактура_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public РахунокФактура_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b10", РахунокФактура_Const.TYPE) => base.Init(uid);
+        public РахунокФактура_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b10", РахунокФактура_Const.TYPE) => base.Init(uid, fields);
+        public РахунокФактура_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b10", РахунокФактура_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(РахунокФактура_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [РахунокФактура_Const.PRESENTATION_FIELDS.Length];
@@ -28752,35 +26368,20 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(РахунокФактура_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             РахунокФактура_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             РахунокФактура_Objest? obj = await GetDocumentObject();
             if (obj != null) await obj.ClearSpendTheDocument();
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -28794,7 +26395,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           РахунокФактура_Objest? obj = await GetDocumentObject();
@@ -28804,17 +26404,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public РахунокФактура_Pointer Copy()
-        {
-            return new РахунокФактура_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public РахунокФактура_Pointer GetEmptyPointer()
-        {
-            return new РахунокФактура_Pointer();
-        }
-
+        public РахунокФактура_Pointer Copy() => new РахунокФактура_Pointer(base.UniqueID, base.Fields, Name);
+        public РахунокФактура_Pointer GetEmptyPointer() => new РахунокФактура_Pointer();
         public async Task<РахунокФактура_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -28826,7 +26417,7 @@ namespace GeneratedCode.Документи
     public class РахунокФактура_Select : DocumentSelect
     {		
         public РахунокФактура_Select() : base(Config.Kernel, "tab_b10") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new РахунокФактура_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public РахунокФактура_Pointer? Current { get; private set; }
@@ -29555,15 +27146,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a68", ]);
         }
         
-        public РозміщенняТоварівНаСкладі_Pointer GetDocumentPointer()
-        {
-            return new РозміщенняТоварівНаСкладі_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(РозміщенняТоварівНаСкладі_Const.PRESENTATION_FIELDS);
-        }
+        public РозміщенняТоварівНаСкладі_Pointer GetDocumentPointer() => new РозміщенняТоварівНаСкладі_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(РозміщенняТоварівНаСкладі_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
@@ -29584,26 +27168,14 @@ namespace GeneratedCode.Документи
     
     public class РозміщенняТоварівНаСкладі_Pointer : DocumentPointer
     {
-        public РозміщенняТоварівНаСкладі_Pointer(object? uid = null) : base(Config.Kernel, "tab_a64", РозміщенняТоварівНаСкладі_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public РозміщенняТоварівНаСкладі_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a64", "РозміщенняТоварівНаСкладі")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(РозміщенняТоварівНаСкладі_Const.PRESENTATION_FIELDS);
-        }
-
+        public РозміщенняТоварівНаСкладі_Pointer() : base(Config.Kernel, "tab_a64", РозміщенняТоварівНаСкладі_Const.TYPE) => base.Init(new UniqueID());
+        public РозміщенняТоварівНаСкладі_Pointer(object? uid) : base(Config.Kernel, "tab_a64", РозміщенняТоварівНаСкладі_Const.TYPE) => base.Init(new UniqueID(uid));
+        public РозміщенняТоварівНаСкладі_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a64", РозміщенняТоварівНаСкладі_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public РозміщенняТоварівНаСкладі_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a64", РозміщенняТоварівНаСкладі_Const.TYPE) => base.Init(uid);
+        public РозміщенняТоварівНаСкладі_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a64", РозміщенняТоварівНаСкладі_Const.TYPE) => base.Init(uid, fields);
+        public РозміщенняТоварівНаСкладі_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a64", РозміщенняТоварівНаСкладі_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(РозміщенняТоварівНаСкладі_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [РозміщенняТоварівНаСкладі_Const.PRESENTATION_FIELDS.Length];
@@ -29611,23 +27183,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(РозміщенняТоварівНаСкладі_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             РозміщенняТоварівНаСкладі_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -29635,12 +27197,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -29654,7 +27211,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -29666,17 +27222,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public РозміщенняТоварівНаСкладі_Pointer Copy()
-        {
-            return new РозміщенняТоварівНаСкладі_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public РозміщенняТоварівНаСкладі_Pointer GetEmptyPointer()
-        {
-            return new РозміщенняТоварівНаСкладі_Pointer();
-        }
-
+        public РозміщенняТоварівНаСкладі_Pointer Copy() => new РозміщенняТоварівНаСкладі_Pointer(base.UniqueID, base.Fields, Name);
+        public РозміщенняТоварівНаСкладі_Pointer GetEmptyPointer() => new РозміщенняТоварівНаСкладі_Pointer();
         public async Task<РозміщенняТоварівНаСкладі_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -29688,7 +27235,7 @@ namespace GeneratedCode.Документи
     public class РозміщенняТоварівНаСкладі_Select : DocumentSelect
     {		
         public РозміщенняТоварівНаСкладі_Select() : base(Config.Kernel, "tab_a64") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new РозміщенняТоварівНаСкладі_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public РозміщенняТоварівНаСкладі_Pointer? Current { get; private set; }
@@ -30074,15 +27621,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_b26", ]);
         }
         
-        public ПереміщенняТоварівНаСкладі_Pointer GetDocumentPointer()
-        {
-            return new ПереміщенняТоварівНаСкладі_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПереміщенняТоварівНаСкладі_Const.PRESENTATION_FIELDS);
-        }
+        public ПереміщенняТоварівНаСкладі_Pointer GetDocumentPointer() => new ПереміщенняТоварівНаСкладі_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПереміщенняТоварівНаСкладі_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
@@ -30102,26 +27642,14 @@ namespace GeneratedCode.Документи
     
     public class ПереміщенняТоварівНаСкладі_Pointer : DocumentPointer
     {
-        public ПереміщенняТоварівНаСкладі_Pointer(object? uid = null) : base(Config.Kernel, "tab_b09", ПереміщенняТоварівНаСкладі_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПереміщенняТоварівНаСкладі_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b09", "ПереміщенняТоварівНаСкладі")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПереміщенняТоварівНаСкладі_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПереміщенняТоварівНаСкладі_Pointer() : base(Config.Kernel, "tab_b09", ПереміщенняТоварівНаСкладі_Const.TYPE) => base.Init(new UniqueID());
+        public ПереміщенняТоварівНаСкладі_Pointer(object? uid) : base(Config.Kernel, "tab_b09", ПереміщенняТоварівНаСкладі_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПереміщенняТоварівНаСкладі_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b09", ПереміщенняТоварівНаСкладі_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПереміщенняТоварівНаСкладі_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b09", ПереміщенняТоварівНаСкладі_Const.TYPE) => base.Init(uid);
+        public ПереміщенняТоварівНаСкладі_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b09", ПереміщенняТоварівНаСкладі_Const.TYPE) => base.Init(uid, fields);
+        public ПереміщенняТоварівНаСкладі_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b09", ПереміщенняТоварівНаСкладі_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПереміщенняТоварівНаСкладі_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПереміщенняТоварівНаСкладі_Const.PRESENTATION_FIELDS.Length];
@@ -30129,23 +27657,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПереміщенняТоварівНаСкладі_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПереміщенняТоварівНаСкладі_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -30153,12 +27671,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -30172,7 +27685,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -30184,17 +27696,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПереміщенняТоварівНаСкладі_Pointer Copy()
-        {
-            return new ПереміщенняТоварівНаСкладі_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПереміщенняТоварівНаСкладі_Pointer GetEmptyPointer()
-        {
-            return new ПереміщенняТоварівНаСкладі_Pointer();
-        }
-
+        public ПереміщенняТоварівНаСкладі_Pointer Copy() => new ПереміщенняТоварівНаСкладі_Pointer(base.UniqueID, base.Fields, Name);
+        public ПереміщенняТоварівНаСкладі_Pointer GetEmptyPointer() => new ПереміщенняТоварівНаСкладі_Pointer();
         public async Task<ПереміщенняТоварівНаСкладі_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -30206,7 +27709,7 @@ namespace GeneratedCode.Документи
     public class ПереміщенняТоварівНаСкладі_Select : DocumentSelect
     {		
         public ПереміщенняТоварівНаСкладі_Select() : base(Config.Kernel, "tab_b09") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПереміщенняТоварівНаСкладі_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПереміщенняТоварівНаСкладі_Pointer? Current { get; private set; }
@@ -30604,15 +28107,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_b28", ]);
         }
         
-        public ЗбіркаТоварівНаСкладі_Pointer GetDocumentPointer()
-        {
-            return new ЗбіркаТоварівНаСкладі_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ЗбіркаТоварівНаСкладі_Const.PRESENTATION_FIELDS);
-        }
+        public ЗбіркаТоварівНаСкладі_Pointer GetDocumentPointer() => new ЗбіркаТоварівНаСкладі_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ЗбіркаТоварівНаСкладі_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
@@ -30633,26 +28129,14 @@ namespace GeneratedCode.Документи
     
     public class ЗбіркаТоварівНаСкладі_Pointer : DocumentPointer
     {
-        public ЗбіркаТоварівНаСкладі_Pointer(object? uid = null) : base(Config.Kernel, "tab_b27", ЗбіркаТоварівНаСкладі_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ЗбіркаТоварівНаСкладі_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b27", "ЗбіркаТоварівНаСкладі")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ЗбіркаТоварівНаСкладі_Const.PRESENTATION_FIELDS);
-        }
-
+        public ЗбіркаТоварівНаСкладі_Pointer() : base(Config.Kernel, "tab_b27", ЗбіркаТоварівНаСкладі_Const.TYPE) => base.Init(new UniqueID());
+        public ЗбіркаТоварівНаСкладі_Pointer(object? uid) : base(Config.Kernel, "tab_b27", ЗбіркаТоварівНаСкладі_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ЗбіркаТоварівНаСкладі_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b27", ЗбіркаТоварівНаСкладі_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ЗбіркаТоварівНаСкладі_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b27", ЗбіркаТоварівНаСкладі_Const.TYPE) => base.Init(uid);
+        public ЗбіркаТоварівНаСкладі_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b27", ЗбіркаТоварівНаСкладі_Const.TYPE) => base.Init(uid, fields);
+        public ЗбіркаТоварівНаСкладі_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b27", ЗбіркаТоварівНаСкладі_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ЗбіркаТоварівНаСкладі_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ЗбіркаТоварівНаСкладі_Const.PRESENTATION_FIELDS.Length];
@@ -30660,23 +28144,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ЗбіркаТоварівНаСкладі_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ЗбіркаТоварівНаСкладі_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -30684,12 +28158,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -30703,7 +28172,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -30715,17 +28183,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ЗбіркаТоварівНаСкладі_Pointer Copy()
-        {
-            return new ЗбіркаТоварівНаСкладі_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ЗбіркаТоварівНаСкладі_Pointer GetEmptyPointer()
-        {
-            return new ЗбіркаТоварівНаСкладі_Pointer();
-        }
-
+        public ЗбіркаТоварівНаСкладі_Pointer Copy() => new ЗбіркаТоварівНаСкладі_Pointer(base.UniqueID, base.Fields, Name);
+        public ЗбіркаТоварівНаСкладі_Pointer GetEmptyPointer() => new ЗбіркаТоварівНаСкладі_Pointer();
         public async Task<ЗбіркаТоварівНаСкладі_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -30737,7 +28196,7 @@ namespace GeneratedCode.Документи
     public class ЗбіркаТоварівНаСкладі_Select : DocumentSelect
     {		
         public ЗбіркаТоварівНаСкладі_Select() : base(Config.Kernel, "tab_b27") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗбіркаТоварівНаСкладі_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ЗбіркаТоварівНаСкладі_Pointer? Current { get; private set; }
@@ -31113,15 +28572,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_b32", ]);
         }
         
-        public РозміщенняНоменклатуриПоКоміркам_Pointer GetDocumentPointer()
-        {
-            return new РозміщенняНоменклатуриПоКоміркам_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(РозміщенняНоменклатуриПоКоміркам_Const.PRESENTATION_FIELDS);
-        }
+        public РозміщенняНоменклатуриПоКоміркам_Pointer GetDocumentPointer() => new РозміщенняНоменклатуриПоКоміркам_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(РозміщенняНоменклатуриПоКоміркам_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -31141,26 +28593,14 @@ namespace GeneratedCode.Документи
     
     public class РозміщенняНоменклатуриПоКоміркам_Pointer : DocumentPointer
     {
-        public РозміщенняНоменклатуриПоКоміркам_Pointer(object? uid = null) : base(Config.Kernel, "tab_b29", РозміщенняНоменклатуриПоКоміркам_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public РозміщенняНоменклатуриПоКоміркам_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b29", "РозміщенняНоменклатуриПоКоміркам")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(РозміщенняНоменклатуриПоКоміркам_Const.PRESENTATION_FIELDS);
-        }
-
+        public РозміщенняНоменклатуриПоКоміркам_Pointer() : base(Config.Kernel, "tab_b29", РозміщенняНоменклатуриПоКоміркам_Const.TYPE) => base.Init(new UniqueID());
+        public РозміщенняНоменклатуриПоКоміркам_Pointer(object? uid) : base(Config.Kernel, "tab_b29", РозміщенняНоменклатуриПоКоміркам_Const.TYPE) => base.Init(new UniqueID(uid));
+        public РозміщенняНоменклатуриПоКоміркам_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b29", РозміщенняНоменклатуриПоКоміркам_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public РозміщенняНоменклатуриПоКоміркам_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b29", РозміщенняНоменклатуриПоКоміркам_Const.TYPE) => base.Init(uid);
+        public РозміщенняНоменклатуриПоКоміркам_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b29", РозміщенняНоменклатуриПоКоміркам_Const.TYPE) => base.Init(uid, fields);
+        public РозміщенняНоменклатуриПоКоміркам_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b29", РозміщенняНоменклатуриПоКоміркам_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(РозміщенняНоменклатуриПоКоміркам_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [РозміщенняНоменклатуриПоКоміркам_Const.PRESENTATION_FIELDS.Length];
@@ -31168,23 +28608,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(РозміщенняНоменклатуриПоКоміркам_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             РозміщенняНоменклатуриПоКоміркам_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -31192,16 +28622,10 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         Task ClearRegAccum() => Task.CompletedTask;
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -31213,17 +28637,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public РозміщенняНоменклатуриПоКоміркам_Pointer Copy()
-        {
-            return new РозміщенняНоменклатуриПоКоміркам_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public РозміщенняНоменклатуриПоКоміркам_Pointer GetEmptyPointer()
-        {
-            return new РозміщенняНоменклатуриПоКоміркам_Pointer();
-        }
-
+        public РозміщенняНоменклатуриПоКоміркам_Pointer Copy() => new РозміщенняНоменклатуриПоКоміркам_Pointer(base.UniqueID, base.Fields, Name);
+        public РозміщенняНоменклатуриПоКоміркам_Pointer GetEmptyPointer() => new РозміщенняНоменклатуриПоКоміркам_Pointer();
         public async Task<РозміщенняНоменклатуриПоКоміркам_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -31235,7 +28650,7 @@ namespace GeneratedCode.Документи
     public class РозміщенняНоменклатуриПоКоміркам_Select : DocumentSelect
     {		
         public РозміщенняНоменклатуриПоКоміркам_Select() : base(Config.Kernel, "tab_b29") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new РозміщенняНоменклатуриПоКоміркам_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public РозміщенняНоменклатуриПоКоміркам_Pointer? Current { get; private set; }
@@ -31611,15 +29026,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_b12", "tab_c34", ]);
         }
         
-        public КорегуванняБоргу_Pointer GetDocumentPointer()
-        {
-            return new КорегуванняБоргу_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(КорегуванняБоргу_Const.PRESENTATION_FIELDS);
-        }
+        public КорегуванняБоргу_Pointer GetDocumentPointer() => new КорегуванняБоргу_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(КорегуванняБоргу_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -31641,26 +29049,14 @@ namespace GeneratedCode.Документи
     
     public class КорегуванняБоргу_Pointer : DocumentPointer
     {
-        public КорегуванняБоргу_Pointer(object? uid = null) : base(Config.Kernel, "tab_a65", КорегуванняБоргу_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public КорегуванняБоргу_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a65", "КорегуванняБоргу")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(КорегуванняБоргу_Const.PRESENTATION_FIELDS);
-        }
-
+        public КорегуванняБоргу_Pointer() : base(Config.Kernel, "tab_a65", КорегуванняБоргу_Const.TYPE) => base.Init(new UniqueID());
+        public КорегуванняБоргу_Pointer(object? uid) : base(Config.Kernel, "tab_a65", КорегуванняБоргу_Const.TYPE) => base.Init(new UniqueID(uid));
+        public КорегуванняБоргу_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a65", КорегуванняБоргу_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public КорегуванняБоргу_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a65", КорегуванняБоргу_Const.TYPE) => base.Init(uid);
+        public КорегуванняБоргу_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a65", КорегуванняБоргу_Const.TYPE) => base.Init(uid, fields);
+        public КорегуванняБоргу_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a65", КорегуванняБоргу_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(КорегуванняБоргу_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [КорегуванняБоргу_Const.PRESENTATION_FIELDS.Length];
@@ -31668,35 +29064,20 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(КорегуванняБоргу_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             КорегуванняБоргу_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             КорегуванняБоргу_Objest? obj = await GetDocumentObject();
             if (obj != null) await obj.ClearSpendTheDocument();
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -31712,7 +29093,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           КорегуванняБоргу_Objest? obj = await GetDocumentObject();
@@ -31722,17 +29102,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public КорегуванняБоргу_Pointer Copy()
-        {
-            return new КорегуванняБоргу_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public КорегуванняБоргу_Pointer GetEmptyPointer()
-        {
-            return new КорегуванняБоргу_Pointer();
-        }
-
+        public КорегуванняБоргу_Pointer Copy() => new КорегуванняБоргу_Pointer(base.UniqueID, base.Fields, Name);
+        public КорегуванняБоргу_Pointer GetEmptyPointer() => new КорегуванняБоргу_Pointer();
         public async Task<КорегуванняБоргу_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -31744,7 +29115,7 @@ namespace GeneratedCode.Документи
     public class КорегуванняБоргу_Select : DocumentSelect
     {		
         public КорегуванняБоргу_Select() : base(Config.Kernel, "tab_a65") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new КорегуванняБоргу_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public КорегуванняБоргу_Pointer? Current { get; private set; }
@@ -32302,15 +29673,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_b39", ]);
         }
         
-        public ЗакриттяЗамовленняКлієнта_Pointer GetDocumentPointer()
-        {
-            return new ЗакриттяЗамовленняКлієнта_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ЗакриттяЗамовленняКлієнта_Const.PRESENTATION_FIELDS);
-        }
+        public ЗакриттяЗамовленняКлієнта_Pointer GetDocumentPointer() => new ЗакриттяЗамовленняКлієнта_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ЗакриттяЗамовленняКлієнта_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -32337,26 +29701,14 @@ namespace GeneratedCode.Документи
     
     public class ЗакриттяЗамовленняКлієнта_Pointer : DocumentPointer
     {
-        public ЗакриттяЗамовленняКлієнта_Pointer(object? uid = null) : base(Config.Kernel, "tab_a96", ЗакриттяЗамовленняКлієнта_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ЗакриттяЗамовленняКлієнта_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_a96", "ЗакриттяЗамовленняКлієнта")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ЗакриттяЗамовленняКлієнта_Const.PRESENTATION_FIELDS);
-        }
-
+        public ЗакриттяЗамовленняКлієнта_Pointer() : base(Config.Kernel, "tab_a96", ЗакриттяЗамовленняКлієнта_Const.TYPE) => base.Init(new UniqueID());
+        public ЗакриттяЗамовленняКлієнта_Pointer(object? uid) : base(Config.Kernel, "tab_a96", ЗакриттяЗамовленняКлієнта_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ЗакриттяЗамовленняКлієнта_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a96", ЗакриттяЗамовленняКлієнта_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ЗакриттяЗамовленняКлієнта_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a96", ЗакриттяЗамовленняКлієнта_Const.TYPE) => base.Init(uid);
+        public ЗакриттяЗамовленняКлієнта_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a96", ЗакриттяЗамовленняКлієнта_Const.TYPE) => base.Init(uid, fields);
+        public ЗакриттяЗамовленняКлієнта_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a96", ЗакриттяЗамовленняКлієнта_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ЗакриттяЗамовленняКлієнта_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ЗакриттяЗамовленняКлієнта_Const.PRESENTATION_FIELDS.Length];
@@ -32364,23 +29716,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ЗакриттяЗамовленняКлієнта_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ЗакриттяЗамовленняКлієнта_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -32388,12 +29730,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -32409,7 +29746,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -32421,17 +29757,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ЗакриттяЗамовленняКлієнта_Pointer Copy()
-        {
-            return new ЗакриттяЗамовленняКлієнта_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ЗакриттяЗамовленняКлієнта_Pointer GetEmptyPointer()
-        {
-            return new ЗакриттяЗамовленняКлієнта_Pointer();
-        }
-
+        public ЗакриттяЗамовленняКлієнта_Pointer Copy() => new ЗакриттяЗамовленняКлієнта_Pointer(base.UniqueID, base.Fields, Name);
+        public ЗакриттяЗамовленняКлієнта_Pointer GetEmptyPointer() => new ЗакриттяЗамовленняКлієнта_Pointer();
         public async Task<ЗакриттяЗамовленняКлієнта_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -32443,7 +29770,7 @@ namespace GeneratedCode.Документи
     public class ЗакриттяЗамовленняКлієнта_Select : DocumentSelect
     {		
         public ЗакриттяЗамовленняКлієнта_Select() : base(Config.Kernel, "tab_a96") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗакриттяЗамовленняКлієнта_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ЗакриттяЗамовленняКлієнта_Pointer? Current { get; private set; }
@@ -32857,15 +30184,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_b42", ]);
         }
         
-        public ЗакриттяРахункуФактури_Pointer GetDocumentPointer()
-        {
-            return new ЗакриттяРахункуФактури_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ЗакриттяРахункуФактури_Const.PRESENTATION_FIELDS);
-        }
+        public ЗакриттяРахункуФактури_Pointer GetDocumentPointer() => new ЗакриттяРахункуФактури_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ЗакриттяРахункуФактури_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -32892,26 +30212,14 @@ namespace GeneratedCode.Документи
     
     public class ЗакриттяРахункуФактури_Pointer : DocumentPointer
     {
-        public ЗакриттяРахункуФактури_Pointer(object? uid = null) : base(Config.Kernel, "tab_b41", ЗакриттяРахункуФактури_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ЗакриттяРахункуФактури_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b41", "ЗакриттяРахункуФактури")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ЗакриттяРахункуФактури_Const.PRESENTATION_FIELDS);
-        }
-
+        public ЗакриттяРахункуФактури_Pointer() : base(Config.Kernel, "tab_b41", ЗакриттяРахункуФактури_Const.TYPE) => base.Init(new UniqueID());
+        public ЗакриттяРахункуФактури_Pointer(object? uid) : base(Config.Kernel, "tab_b41", ЗакриттяРахункуФактури_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ЗакриттяРахункуФактури_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b41", ЗакриттяРахункуФактури_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ЗакриттяРахункуФактури_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b41", ЗакриттяРахункуФактури_Const.TYPE) => base.Init(uid);
+        public ЗакриттяРахункуФактури_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b41", ЗакриттяРахункуФактури_Const.TYPE) => base.Init(uid, fields);
+        public ЗакриттяРахункуФактури_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b41", ЗакриттяРахункуФактури_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ЗакриттяРахункуФактури_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ЗакриттяРахункуФактури_Const.PRESENTATION_FIELDS.Length];
@@ -32919,23 +30227,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ЗакриттяРахункуФактури_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ЗакриттяРахункуФактури_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -32943,12 +30241,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -32962,7 +30255,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -32974,17 +30266,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ЗакриттяРахункуФактури_Pointer Copy()
-        {
-            return new ЗакриттяРахункуФактури_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ЗакриттяРахункуФактури_Pointer GetEmptyPointer()
-        {
-            return new ЗакриттяРахункуФактури_Pointer();
-        }
-
+        public ЗакриттяРахункуФактури_Pointer Copy() => new ЗакриттяРахункуФактури_Pointer(base.UniqueID, base.Fields, Name);
+        public ЗакриттяРахункуФактури_Pointer GetEmptyPointer() => new ЗакриттяРахункуФактури_Pointer();
         public async Task<ЗакриттяРахункуФактури_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -32996,7 +30279,7 @@ namespace GeneratedCode.Документи
     public class ЗакриттяРахункуФактури_Select : DocumentSelect
     {		
         public ЗакриттяРахункуФактури_Select() : base(Config.Kernel, "tab_b41") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗакриттяРахункуФактури_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ЗакриттяРахункуФактури_Pointer? Current { get; private set; }
@@ -33410,15 +30693,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_b47", ]);
         }
         
-        public ЗакриттяЗамовленняПостачальнику_Pointer GetDocumentPointer()
-        {
-            return new ЗакриттяЗамовленняПостачальнику_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ЗакриттяЗамовленняПостачальнику_Const.PRESENTATION_FIELDS);
-        }
+        public ЗакриттяЗамовленняПостачальнику_Pointer GetDocumentPointer() => new ЗакриттяЗамовленняПостачальнику_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ЗакриттяЗамовленняПостачальнику_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -33445,26 +30721,14 @@ namespace GeneratedCode.Документи
     
     public class ЗакриттяЗамовленняПостачальнику_Pointer : DocumentPointer
     {
-        public ЗакриттяЗамовленняПостачальнику_Pointer(object? uid = null) : base(Config.Kernel, "tab_b44", ЗакриттяЗамовленняПостачальнику_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ЗакриттяЗамовленняПостачальнику_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b44", "ЗакриттяЗамовленняПостачальнику")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ЗакриттяЗамовленняПостачальнику_Const.PRESENTATION_FIELDS);
-        }
-
+        public ЗакриттяЗамовленняПостачальнику_Pointer() : base(Config.Kernel, "tab_b44", ЗакриттяЗамовленняПостачальнику_Const.TYPE) => base.Init(new UniqueID());
+        public ЗакриттяЗамовленняПостачальнику_Pointer(object? uid) : base(Config.Kernel, "tab_b44", ЗакриттяЗамовленняПостачальнику_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ЗакриттяЗамовленняПостачальнику_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b44", ЗакриттяЗамовленняПостачальнику_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ЗакриттяЗамовленняПостачальнику_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b44", ЗакриттяЗамовленняПостачальнику_Const.TYPE) => base.Init(uid);
+        public ЗакриттяЗамовленняПостачальнику_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b44", ЗакриттяЗамовленняПостачальнику_Const.TYPE) => base.Init(uid, fields);
+        public ЗакриттяЗамовленняПостачальнику_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b44", ЗакриттяЗамовленняПостачальнику_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ЗакриттяЗамовленняПостачальнику_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ЗакриттяЗамовленняПостачальнику_Const.PRESENTATION_FIELDS.Length];
@@ -33472,23 +30736,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ЗакриттяЗамовленняПостачальнику_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ЗакриттяЗамовленняПостачальнику_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -33496,12 +30750,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -33515,7 +30764,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -33527,17 +30775,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ЗакриттяЗамовленняПостачальнику_Pointer Copy()
-        {
-            return new ЗакриттяЗамовленняПостачальнику_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ЗакриттяЗамовленняПостачальнику_Pointer GetEmptyPointer()
-        {
-            return new ЗакриттяЗамовленняПостачальнику_Pointer();
-        }
-
+        public ЗакриттяЗамовленняПостачальнику_Pointer Copy() => new ЗакриттяЗамовленняПостачальнику_Pointer(base.UniqueID, base.Fields, Name);
+        public ЗакриттяЗамовленняПостачальнику_Pointer GetEmptyPointer() => new ЗакриттяЗамовленняПостачальнику_Pointer();
         public async Task<ЗакриттяЗамовленняПостачальнику_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -33549,7 +30788,7 @@ namespace GeneratedCode.Документи
     public class ЗакриттяЗамовленняПостачальнику_Select : DocumentSelect
     {		
         public ЗакриттяЗамовленняПостачальнику_Select() : base(Config.Kernel, "tab_b44") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗакриттяЗамовленняПостачальнику_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ЗакриттяЗамовленняПостачальнику_Pointer? Current { get; private set; }
@@ -33955,15 +31194,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_b50", ]);
         }
         
-        public ЧекККМ_Pointer GetDocumentPointer()
-        {
-            return new ЧекККМ_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ЧекККМ_Const.PRESENTATION_FIELDS);
-        }
+        public ЧекККМ_Pointer GetDocumentPointer() => new ЧекККМ_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ЧекККМ_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -33987,26 +31219,14 @@ namespace GeneratedCode.Документи
     
     public class ЧекККМ_Pointer : DocumentPointer
     {
-        public ЧекККМ_Pointer(object? uid = null) : base(Config.Kernel, "tab_b51", ЧекККМ_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ЧекККМ_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b51", "ЧекККМ")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ЧекККМ_Const.PRESENTATION_FIELDS);
-        }
-
+        public ЧекККМ_Pointer() : base(Config.Kernel, "tab_b51", ЧекККМ_Const.TYPE) => base.Init(new UniqueID());
+        public ЧекККМ_Pointer(object? uid) : base(Config.Kernel, "tab_b51", ЧекККМ_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ЧекККМ_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b51", ЧекККМ_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ЧекККМ_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b51", ЧекККМ_Const.TYPE) => base.Init(uid);
+        public ЧекККМ_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b51", ЧекККМ_Const.TYPE) => base.Init(uid, fields);
+        public ЧекККМ_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b51", ЧекККМ_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ЧекККМ_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ЧекККМ_Const.PRESENTATION_FIELDS.Length];
@@ -34014,23 +31234,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ЧекККМ_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ЧекККМ_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -34038,12 +31248,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -34061,7 +31266,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -34073,17 +31277,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ЧекККМ_Pointer Copy()
-        {
-            return new ЧекККМ_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ЧекККМ_Pointer GetEmptyPointer()
-        {
-            return new ЧекККМ_Pointer();
-        }
-
+        public ЧекККМ_Pointer Copy() => new ЧекККМ_Pointer(base.UniqueID, base.Fields, Name);
+        public ЧекККМ_Pointer GetEmptyPointer() => new ЧекККМ_Pointer();
         public async Task<ЧекККМ_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -34095,7 +31290,7 @@ namespace GeneratedCode.Документи
     public class ЧекККМ_Select : DocumentSelect
     {		
         public ЧекККМ_Select() : base(Config.Kernel, "tab_b51") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЧекККМ_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ЧекККМ_Pointer? Current { get; private set; }
@@ -34483,15 +31678,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["acc_operations_tp_operation", ]);
         }
         
-        public БухгалтерськаОперація_Pointer GetDocumentPointer()
-        {
-            return new БухгалтерськаОперація_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(БухгалтерськаОперація_Const.PRESENTATION_FIELDS);
-        }
+        public БухгалтерськаОперація_Pointer GetDocumentPointer() => new БухгалтерськаОперація_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(БухгалтерськаОперація_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -34508,26 +31696,14 @@ namespace GeneratedCode.Документи
     
     public class БухгалтерськаОперація_Pointer : DocumentPointer
     {
-        public БухгалтерськаОперація_Pointer(object? uid = null) : base(Config.Kernel, "acc_operations", БухгалтерськаОперація_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public БухгалтерськаОперація_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "acc_operations", "БухгалтерськаОперація")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(БухгалтерськаОперація_Const.PRESENTATION_FIELDS);
-        }
-
+        public БухгалтерськаОперація_Pointer() : base(Config.Kernel, "acc_operations", БухгалтерськаОперація_Const.TYPE) => base.Init(new UniqueID());
+        public БухгалтерськаОперація_Pointer(object? uid) : base(Config.Kernel, "acc_operations", БухгалтерськаОперація_Const.TYPE) => base.Init(new UniqueID(uid));
+        public БухгалтерськаОперація_Pointer(object? uid, object? name) : base(Config.Kernel, "acc_operations", БухгалтерськаОперація_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public БухгалтерськаОперація_Pointer(UniqueID uid) : base(Config.Kernel, "acc_operations", БухгалтерськаОперація_Const.TYPE) => base.Init(uid);
+        public БухгалтерськаОперація_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "acc_operations", БухгалтерськаОперація_Const.TYPE) => base.Init(uid, fields);
+        public БухгалтерськаОперація_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "acc_operations", БухгалтерськаОперація_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(БухгалтерськаОперація_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [БухгалтерськаОперація_Const.PRESENTATION_FIELDS.Length];
@@ -34535,23 +31711,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(БухгалтерськаОперація_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             БухгалтерськаОперація_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -34559,12 +31725,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -34578,7 +31739,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -34590,17 +31750,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public БухгалтерськаОперація_Pointer Copy()
-        {
-            return new БухгалтерськаОперація_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public БухгалтерськаОперація_Pointer GetEmptyPointer()
-        {
-            return new БухгалтерськаОперація_Pointer();
-        }
-
+        public БухгалтерськаОперація_Pointer Copy() => new БухгалтерськаОперація_Pointer(base.UniqueID, base.Fields, Name);
+        public БухгалтерськаОперація_Pointer GetEmptyPointer() => new БухгалтерськаОперація_Pointer();
         public async Task<БухгалтерськаОперація_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -34612,7 +31763,7 @@ namespace GeneratedCode.Документи
     public class БухгалтерськаОперація_Select : DocumentSelect
     {		
         public БухгалтерськаОперація_Select() : base(Config.Kernel, "acc_operations") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new БухгалтерськаОперація_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public БухгалтерськаОперація_Pointer? Current { get; private set; }
@@ -35124,15 +32275,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_c35", "tab_c36", ]);
         }
         
-        public АвансовийЗвіт_Pointer GetDocumentPointer()
-        {
-            return new АвансовийЗвіт_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(АвансовийЗвіт_Const.PRESENTATION_FIELDS);
-        }
+        public АвансовийЗвіт_Pointer GetDocumentPointer() => new АвансовийЗвіт_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(АвансовийЗвіт_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -35158,26 +32302,14 @@ namespace GeneratedCode.Документи
     
     public class АвансовийЗвіт_Pointer : DocumentPointer
     {
-        public АвансовийЗвіт_Pointer(object? uid = null) : base(Config.Kernel, "tab_b72", АвансовийЗвіт_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public АвансовийЗвіт_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b72", "АвансовийЗвіт")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(АвансовийЗвіт_Const.PRESENTATION_FIELDS);
-        }
-
+        public АвансовийЗвіт_Pointer() : base(Config.Kernel, "tab_b72", АвансовийЗвіт_Const.TYPE) => base.Init(new UniqueID());
+        public АвансовийЗвіт_Pointer(object? uid) : base(Config.Kernel, "tab_b72", АвансовийЗвіт_Const.TYPE) => base.Init(new UniqueID(uid));
+        public АвансовийЗвіт_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b72", АвансовийЗвіт_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public АвансовийЗвіт_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b72", АвансовийЗвіт_Const.TYPE) => base.Init(uid);
+        public АвансовийЗвіт_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b72", АвансовийЗвіт_Const.TYPE) => base.Init(uid, fields);
+        public АвансовийЗвіт_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b72", АвансовийЗвіт_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(АвансовийЗвіт_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [АвансовийЗвіт_Const.PRESENTATION_FIELDS.Length];
@@ -35185,35 +32317,20 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(АвансовийЗвіт_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             АвансовийЗвіт_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             АвансовийЗвіт_Objest? obj = await GetDocumentObject();
             if (obj != null) await obj.ClearSpendTheDocument();
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -35227,7 +32344,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           АвансовийЗвіт_Objest? obj = await GetDocumentObject();
@@ -35237,17 +32353,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public АвансовийЗвіт_Pointer Copy()
-        {
-            return new АвансовийЗвіт_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public АвансовийЗвіт_Pointer GetEmptyPointer()
-        {
-            return new АвансовийЗвіт_Pointer();
-        }
-
+        public АвансовийЗвіт_Pointer Copy() => new АвансовийЗвіт_Pointer(base.UniqueID, base.Fields, Name);
+        public АвансовийЗвіт_Pointer GetEmptyPointer() => new АвансовийЗвіт_Pointer();
         public async Task<АвансовийЗвіт_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -35259,7 +32366,7 @@ namespace GeneratedCode.Документи
     public class АвансовийЗвіт_Select : DocumentSelect
     {		
         public АвансовийЗвіт_Select() : base(Config.Kernel, "tab_b72") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new АвансовийЗвіт_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public АвансовийЗвіт_Pointer? Current { get; private set; }
@@ -35745,15 +32852,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public Амортизація_Pointer GetDocumentPointer()
-        {
-            return new Амортизація_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(Амортизація_Const.PRESENTATION_FIELDS);
-        }
+        public Амортизація_Pointer GetDocumentPointer() => new Амортизація_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(Амортизація_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -35769,26 +32869,14 @@ namespace GeneratedCode.Документи
     
     public class Амортизація_Pointer : DocumentPointer
     {
-        public Амортизація_Pointer(object? uid = null) : base(Config.Kernel, "tab_b73", Амортизація_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public Амортизація_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b73", "Амортизація")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(Амортизація_Const.PRESENTATION_FIELDS);
-        }
-
+        public Амортизація_Pointer() : base(Config.Kernel, "tab_b73", Амортизація_Const.TYPE) => base.Init(new UniqueID());
+        public Амортизація_Pointer(object? uid) : base(Config.Kernel, "tab_b73", Амортизація_Const.TYPE) => base.Init(new UniqueID(uid));
+        public Амортизація_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b73", Амортизація_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public Амортизація_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b73", Амортизація_Const.TYPE) => base.Init(uid);
+        public Амортизація_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b73", Амортизація_Const.TYPE) => base.Init(uid, fields);
+        public Амортизація_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b73", Амортизація_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(Амортизація_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [Амортизація_Const.PRESENTATION_FIELDS.Length];
@@ -35796,35 +32884,20 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(Амортизація_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             Амортизація_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             Амортизація_Objest? obj = await GetDocumentObject();
             if (obj != null) await obj.ClearSpendTheDocument();
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -35838,7 +32911,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           Амортизація_Objest? obj = await GetDocumentObject();
@@ -35848,17 +32920,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public Амортизація_Pointer Copy()
-        {
-            return new Амортизація_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public Амортизація_Pointer GetEmptyPointer()
-        {
-            return new Амортизація_Pointer();
-        }
-
+        public Амортизація_Pointer Copy() => new Амортизація_Pointer(base.UniqueID, base.Fields, Name);
+        public Амортизація_Pointer GetEmptyPointer() => new Амортизація_Pointer();
         public async Task<Амортизація_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -35870,7 +32933,7 @@ namespace GeneratedCode.Документи
     public class Амортизація_Select : DocumentSelect
     {		
         public Амортизація_Select() : base(Config.Kernel, "tab_b73") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Амортизація_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Амортизація_Pointer? Current { get; private set; }
@@ -36060,15 +33123,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ВизначенняФінансовогоРезультату_Pointer GetDocumentPointer()
-        {
-            return new ВизначенняФінансовогоРезультату_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ВизначенняФінансовогоРезультату_Const.PRESENTATION_FIELDS);
-        }
+        public ВизначенняФінансовогоРезультату_Pointer GetDocumentPointer() => new ВизначенняФінансовогоРезультату_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ВизначенняФінансовогоРезультату_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -36084,26 +33140,14 @@ namespace GeneratedCode.Документи
     
     public class ВизначенняФінансовогоРезультату_Pointer : DocumentPointer
     {
-        public ВизначенняФінансовогоРезультату_Pointer(object? uid = null) : base(Config.Kernel, "tab_b74", ВизначенняФінансовогоРезультату_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ВизначенняФінансовогоРезультату_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b74", "ВизначенняФінансовогоРезультату")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ВизначенняФінансовогоРезультату_Const.PRESENTATION_FIELDS);
-        }
-
+        public ВизначенняФінансовогоРезультату_Pointer() : base(Config.Kernel, "tab_b74", ВизначенняФінансовогоРезультату_Const.TYPE) => base.Init(new UniqueID());
+        public ВизначенняФінансовогоРезультату_Pointer(object? uid) : base(Config.Kernel, "tab_b74", ВизначенняФінансовогоРезультату_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ВизначенняФінансовогоРезультату_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b74", ВизначенняФінансовогоРезультату_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ВизначенняФінансовогоРезультату_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b74", ВизначенняФінансовогоРезультату_Const.TYPE) => base.Init(uid);
+        public ВизначенняФінансовогоРезультату_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b74", ВизначенняФінансовогоРезультату_Const.TYPE) => base.Init(uid, fields);
+        public ВизначенняФінансовогоРезультату_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b74", ВизначенняФінансовогоРезультату_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ВизначенняФінансовогоРезультату_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ВизначенняФінансовогоРезультату_Const.PRESENTATION_FIELDS.Length];
@@ -36111,23 +33155,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ВизначенняФінансовогоРезультату_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ВизначенняФінансовогоРезультату_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -36135,12 +33169,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -36154,7 +33183,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -36166,17 +33194,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ВизначенняФінансовогоРезультату_Pointer Copy()
-        {
-            return new ВизначенняФінансовогоРезультату_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ВизначенняФінансовогоРезультату_Pointer GetEmptyPointer()
-        {
-            return new ВизначенняФінансовогоРезультату_Pointer();
-        }
-
+        public ВизначенняФінансовогоРезультату_Pointer Copy() => new ВизначенняФінансовогоРезультату_Pointer(base.UniqueID, base.Fields, Name);
+        public ВизначенняФінансовогоРезультату_Pointer GetEmptyPointer() => new ВизначенняФінансовогоРезультату_Pointer();
         public async Task<ВизначенняФінансовогоРезультату_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -36188,7 +33207,7 @@ namespace GeneratedCode.Документи
     public class ВизначенняФінансовогоРезультату_Select : DocumentSelect
     {		
         public ВизначенняФінансовогоРезультату_Select() : base(Config.Kernel, "tab_b74") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВизначенняФінансовогоРезультату_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ВизначенняФінансовогоРезультату_Pointer? Current { get; private set; }
@@ -36362,15 +33381,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ВиплатаЗаробітноїПлати_Pointer GetDocumentPointer()
-        {
-            return new ВиплатаЗаробітноїПлати_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ВиплатаЗаробітноїПлати_Const.PRESENTATION_FIELDS);
-        }
+        public ВиплатаЗаробітноїПлати_Pointer GetDocumentPointer() => new ВиплатаЗаробітноїПлати_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ВиплатаЗаробітноїПлати_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -36382,26 +33394,14 @@ namespace GeneratedCode.Документи
     
     public class ВиплатаЗаробітноїПлати_Pointer : DocumentPointer
     {
-        public ВиплатаЗаробітноїПлати_Pointer(object? uid = null) : base(Config.Kernel, "tab_b75", ВиплатаЗаробітноїПлати_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ВиплатаЗаробітноїПлати_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b75", "ВиплатаЗаробітноїПлати")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ВиплатаЗаробітноїПлати_Const.PRESENTATION_FIELDS);
-        }
-
+        public ВиплатаЗаробітноїПлати_Pointer() : base(Config.Kernel, "tab_b75", ВиплатаЗаробітноїПлати_Const.TYPE) => base.Init(new UniqueID());
+        public ВиплатаЗаробітноїПлати_Pointer(object? uid) : base(Config.Kernel, "tab_b75", ВиплатаЗаробітноїПлати_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ВиплатаЗаробітноїПлати_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b75", ВиплатаЗаробітноїПлати_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ВиплатаЗаробітноїПлати_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b75", ВиплатаЗаробітноїПлати_Const.TYPE) => base.Init(uid);
+        public ВиплатаЗаробітноїПлати_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b75", ВиплатаЗаробітноїПлати_Const.TYPE) => base.Init(uid, fields);
+        public ВиплатаЗаробітноїПлати_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b75", ВиплатаЗаробітноїПлати_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ВиплатаЗаробітноїПлати_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ВиплатаЗаробітноїПлати_Const.PRESENTATION_FIELDS.Length];
@@ -36409,23 +33409,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ВиплатаЗаробітноїПлати_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ВиплатаЗаробітноїПлати_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -36433,12 +33423,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -36452,7 +33437,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -36464,17 +33448,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ВиплатаЗаробітноїПлати_Pointer Copy()
-        {
-            return new ВиплатаЗаробітноїПлати_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ВиплатаЗаробітноїПлати_Pointer GetEmptyPointer()
-        {
-            return new ВиплатаЗаробітноїПлати_Pointer();
-        }
-
+        public ВиплатаЗаробітноїПлати_Pointer Copy() => new ВиплатаЗаробітноїПлати_Pointer(base.UniqueID, base.Fields, Name);
+        public ВиплатаЗаробітноїПлати_Pointer GetEmptyPointer() => new ВиплатаЗаробітноїПлати_Pointer();
         public async Task<ВиплатаЗаробітноїПлати_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -36486,7 +33461,7 @@ namespace GeneratedCode.Документи
     public class ВиплатаЗаробітноїПлати_Select : DocumentSelect
     {		
         public ВиплатаЗаробітноїПлати_Select() : base(Config.Kernel, "tab_b75") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВиплатаЗаробітноїПлати_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ВиплатаЗаробітноїПлати_Pointer? Current { get; private set; }
@@ -36660,15 +33635,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ВиготовленняПродукції_Pointer GetDocumentPointer()
-        {
-            return new ВиготовленняПродукції_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ВиготовленняПродукції_Const.PRESENTATION_FIELDS);
-        }
+        public ВиготовленняПродукції_Pointer GetDocumentPointer() => new ВиготовленняПродукції_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ВиготовленняПродукції_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -36680,26 +33648,14 @@ namespace GeneratedCode.Документи
     
     public class ВиготовленняПродукції_Pointer : DocumentPointer
     {
-        public ВиготовленняПродукції_Pointer(object? uid = null) : base(Config.Kernel, "tab_b76", ВиготовленняПродукції_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ВиготовленняПродукції_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b76", "ВиготовленняПродукції")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ВиготовленняПродукції_Const.PRESENTATION_FIELDS);
-        }
-
+        public ВиготовленняПродукції_Pointer() : base(Config.Kernel, "tab_b76", ВиготовленняПродукції_Const.TYPE) => base.Init(new UniqueID());
+        public ВиготовленняПродукції_Pointer(object? uid) : base(Config.Kernel, "tab_b76", ВиготовленняПродукції_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ВиготовленняПродукції_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b76", ВиготовленняПродукції_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ВиготовленняПродукції_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b76", ВиготовленняПродукції_Const.TYPE) => base.Init(uid);
+        public ВиготовленняПродукції_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b76", ВиготовленняПродукції_Const.TYPE) => base.Init(uid, fields);
+        public ВиготовленняПродукції_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b76", ВиготовленняПродукції_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ВиготовленняПродукції_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ВиготовленняПродукції_Const.PRESENTATION_FIELDS.Length];
@@ -36707,23 +33663,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ВиготовленняПродукції_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ВиготовленняПродукції_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -36731,12 +33677,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -36750,7 +33691,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -36762,17 +33702,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ВиготовленняПродукції_Pointer Copy()
-        {
-            return new ВиготовленняПродукції_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ВиготовленняПродукції_Pointer GetEmptyPointer()
-        {
-            return new ВиготовленняПродукції_Pointer();
-        }
-
+        public ВиготовленняПродукції_Pointer Copy() => new ВиготовленняПродукції_Pointer(base.UniqueID, base.Fields, Name);
+        public ВиготовленняПродукції_Pointer GetEmptyPointer() => new ВиготовленняПродукції_Pointer();
         public async Task<ВиготовленняПродукції_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -36784,7 +33715,7 @@ namespace GeneratedCode.Документи
     public class ВиготовленняПродукції_Select : DocumentSelect
     {		
         public ВиготовленняПродукції_Select() : base(Config.Kernel, "tab_b76") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВиготовленняПродукції_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ВиготовленняПродукції_Pointer? Current { get; private set; }
@@ -36958,15 +33889,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public Додаток1ДоПодатковоїНакладної_Pointer GetDocumentPointer()
-        {
-            return new Додаток1ДоПодатковоїНакладної_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(Додаток1ДоПодатковоїНакладної_Const.PRESENTATION_FIELDS);
-        }
+        public Додаток1ДоПодатковоїНакладної_Pointer GetDocumentPointer() => new Додаток1ДоПодатковоїНакладної_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(Додаток1ДоПодатковоїНакладної_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -36978,26 +33902,14 @@ namespace GeneratedCode.Документи
     
     public class Додаток1ДоПодатковоїНакладної_Pointer : DocumentPointer
     {
-        public Додаток1ДоПодатковоїНакладної_Pointer(object? uid = null) : base(Config.Kernel, "tab_b77", Додаток1ДоПодатковоїНакладної_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public Додаток1ДоПодатковоїНакладної_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b77", "Додаток1ДоПодатковоїНакладної")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(Додаток1ДоПодатковоїНакладної_Const.PRESENTATION_FIELDS);
-        }
-
+        public Додаток1ДоПодатковоїНакладної_Pointer() : base(Config.Kernel, "tab_b77", Додаток1ДоПодатковоїНакладної_Const.TYPE) => base.Init(new UniqueID());
+        public Додаток1ДоПодатковоїНакладної_Pointer(object? uid) : base(Config.Kernel, "tab_b77", Додаток1ДоПодатковоїНакладної_Const.TYPE) => base.Init(new UniqueID(uid));
+        public Додаток1ДоПодатковоїНакладної_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b77", Додаток1ДоПодатковоїНакладної_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public Додаток1ДоПодатковоїНакладної_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b77", Додаток1ДоПодатковоїНакладної_Const.TYPE) => base.Init(uid);
+        public Додаток1ДоПодатковоїНакладної_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b77", Додаток1ДоПодатковоїНакладної_Const.TYPE) => base.Init(uid, fields);
+        public Додаток1ДоПодатковоїНакладної_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b77", Додаток1ДоПодатковоїНакладної_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(Додаток1ДоПодатковоїНакладної_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [Додаток1ДоПодатковоїНакладної_Const.PRESENTATION_FIELDS.Length];
@@ -37005,23 +33917,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(Додаток1ДоПодатковоїНакладної_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             Додаток1ДоПодатковоїНакладної_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -37029,12 +33931,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -37048,7 +33945,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -37060,17 +33956,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public Додаток1ДоПодатковоїНакладної_Pointer Copy()
-        {
-            return new Додаток1ДоПодатковоїНакладної_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public Додаток1ДоПодатковоїНакладної_Pointer GetEmptyPointer()
-        {
-            return new Додаток1ДоПодатковоїНакладної_Pointer();
-        }
-
+        public Додаток1ДоПодатковоїНакладної_Pointer Copy() => new Додаток1ДоПодатковоїНакладної_Pointer(base.UniqueID, base.Fields, Name);
+        public Додаток1ДоПодатковоїНакладної_Pointer GetEmptyPointer() => new Додаток1ДоПодатковоїНакладної_Pointer();
         public async Task<Додаток1ДоПодатковоїНакладної_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -37082,7 +33969,7 @@ namespace GeneratedCode.Документи
     public class Додаток1ДоПодатковоїНакладної_Select : DocumentSelect
     {		
         public Додаток1ДоПодатковоїНакладної_Select() : base(Config.Kernel, "tab_b77") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Додаток1ДоПодатковоїНакладної_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Додаток1ДоПодатковоїНакладної_Pointer? Current { get; private set; }
@@ -37246,15 +34133,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public Додаток2ДоПодатковоїНакладної_Pointer GetDocumentPointer()
-        {
-            return new Додаток2ДоПодатковоїНакладної_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(Додаток2ДоПодатковоїНакладної_Const.PRESENTATION_FIELDS);
-        }
+        public Додаток2ДоПодатковоїНакладної_Pointer GetDocumentPointer() => new Додаток2ДоПодатковоїНакладної_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(Додаток2ДоПодатковоїНакладної_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -37266,26 +34146,14 @@ namespace GeneratedCode.Документи
     
     public class Додаток2ДоПодатковоїНакладної_Pointer : DocumentPointer
     {
-        public Додаток2ДоПодатковоїНакладної_Pointer(object? uid = null) : base(Config.Kernel, "tab_b78", Додаток2ДоПодатковоїНакладної_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public Додаток2ДоПодатковоїНакладної_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b78", "Додаток2ДоПодатковоїНакладної")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(Додаток2ДоПодатковоїНакладної_Const.PRESENTATION_FIELDS);
-        }
-
+        public Додаток2ДоПодатковоїНакладної_Pointer() : base(Config.Kernel, "tab_b78", Додаток2ДоПодатковоїНакладної_Const.TYPE) => base.Init(new UniqueID());
+        public Додаток2ДоПодатковоїНакладної_Pointer(object? uid) : base(Config.Kernel, "tab_b78", Додаток2ДоПодатковоїНакладної_Const.TYPE) => base.Init(new UniqueID(uid));
+        public Додаток2ДоПодатковоїНакладної_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b78", Додаток2ДоПодатковоїНакладної_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public Додаток2ДоПодатковоїНакладної_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b78", Додаток2ДоПодатковоїНакладної_Const.TYPE) => base.Init(uid);
+        public Додаток2ДоПодатковоїНакладної_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b78", Додаток2ДоПодатковоїНакладної_Const.TYPE) => base.Init(uid, fields);
+        public Додаток2ДоПодатковоїНакладної_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b78", Додаток2ДоПодатковоїНакладної_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(Додаток2ДоПодатковоїНакладної_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [Додаток2ДоПодатковоїНакладної_Const.PRESENTATION_FIELDS.Length];
@@ -37293,23 +34161,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(Додаток2ДоПодатковоїНакладної_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             Додаток2ДоПодатковоїНакладної_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -37317,16 +34175,10 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         Task ClearRegAccum() => Task.CompletedTask;
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -37338,17 +34190,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public Додаток2ДоПодатковоїНакладної_Pointer Copy()
-        {
-            return new Додаток2ДоПодатковоїНакладної_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public Додаток2ДоПодатковоїНакладної_Pointer GetEmptyPointer()
-        {
-            return new Додаток2ДоПодатковоїНакладної_Pointer();
-        }
-
+        public Додаток2ДоПодатковоїНакладної_Pointer Copy() => new Додаток2ДоПодатковоїНакладної_Pointer(base.UniqueID, base.Fields, Name);
+        public Додаток2ДоПодатковоїНакладної_Pointer GetEmptyPointer() => new Додаток2ДоПодатковоїНакладної_Pointer();
         public async Task<Додаток2ДоПодатковоїНакладної_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -37360,7 +34203,7 @@ namespace GeneratedCode.Документи
     public class Додаток2ДоПодатковоїНакладної_Select : DocumentSelect
     {		
         public Додаток2ДоПодатковоїНакладної_Select() : base(Config.Kernel, "tab_b78") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Додаток2ДоПодатковоїНакладної_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Додаток2ДоПодатковоїНакладної_Pointer? Current { get; private set; }
@@ -37534,15 +34377,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ЗаписКнигиПридбання_Pointer GetDocumentPointer()
-        {
-            return new ЗаписКнигиПридбання_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ЗаписКнигиПридбання_Const.PRESENTATION_FIELDS);
-        }
+        public ЗаписКнигиПридбання_Pointer GetDocumentPointer() => new ЗаписКнигиПридбання_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ЗаписКнигиПридбання_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -37554,26 +34390,14 @@ namespace GeneratedCode.Документи
     
     public class ЗаписКнигиПридбання_Pointer : DocumentPointer
     {
-        public ЗаписКнигиПридбання_Pointer(object? uid = null) : base(Config.Kernel, "tab_b79", ЗаписКнигиПридбання_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ЗаписКнигиПридбання_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b79", "ЗаписКнигиПридбання")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ЗаписКнигиПридбання_Const.PRESENTATION_FIELDS);
-        }
-
+        public ЗаписКнигиПридбання_Pointer() : base(Config.Kernel, "tab_b79", ЗаписКнигиПридбання_Const.TYPE) => base.Init(new UniqueID());
+        public ЗаписКнигиПридбання_Pointer(object? uid) : base(Config.Kernel, "tab_b79", ЗаписКнигиПридбання_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ЗаписКнигиПридбання_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b79", ЗаписКнигиПридбання_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ЗаписКнигиПридбання_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b79", ЗаписКнигиПридбання_Const.TYPE) => base.Init(uid);
+        public ЗаписКнигиПридбання_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b79", ЗаписКнигиПридбання_Const.TYPE) => base.Init(uid, fields);
+        public ЗаписКнигиПридбання_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b79", ЗаписКнигиПридбання_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ЗаписКнигиПридбання_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ЗаписКнигиПридбання_Const.PRESENTATION_FIELDS.Length];
@@ -37581,23 +34405,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ЗаписКнигиПридбання_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ЗаписКнигиПридбання_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -37605,12 +34419,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -37624,7 +34433,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -37636,17 +34444,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ЗаписКнигиПридбання_Pointer Copy()
-        {
-            return new ЗаписКнигиПридбання_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ЗаписКнигиПридбання_Pointer GetEmptyPointer()
-        {
-            return new ЗаписКнигиПридбання_Pointer();
-        }
-
+        public ЗаписКнигиПридбання_Pointer Copy() => new ЗаписКнигиПридбання_Pointer(base.UniqueID, base.Fields, Name);
+        public ЗаписКнигиПридбання_Pointer GetEmptyPointer() => new ЗаписКнигиПридбання_Pointer();
         public async Task<ЗаписКнигиПридбання_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -37658,7 +34457,7 @@ namespace GeneratedCode.Документи
     public class ЗаписКнигиПридбання_Select : DocumentSelect
     {		
         public ЗаписКнигиПридбання_Select() : base(Config.Kernel, "tab_b79") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗаписКнигиПридбання_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ЗаписКнигиПридбання_Pointer? Current { get; private set; }
@@ -37832,15 +34631,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ЗмінаПараметрівОсновнихЗасобів_Pointer GetDocumentPointer()
-        {
-            return new ЗмінаПараметрівОсновнихЗасобів_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ЗмінаПараметрівОсновнихЗасобів_Const.PRESENTATION_FIELDS);
-        }
+        public ЗмінаПараметрівОсновнихЗасобів_Pointer GetDocumentPointer() => new ЗмінаПараметрівОсновнихЗасобів_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ЗмінаПараметрівОсновнихЗасобів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -37852,26 +34644,14 @@ namespace GeneratedCode.Документи
     
     public class ЗмінаПараметрівОсновнихЗасобів_Pointer : DocumentPointer
     {
-        public ЗмінаПараметрівОсновнихЗасобів_Pointer(object? uid = null) : base(Config.Kernel, "tab_b80", ЗмінаПараметрівОсновнихЗасобів_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ЗмінаПараметрівОсновнихЗасобів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b80", "ЗмінаПараметрівОсновнихЗасобів")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ЗмінаПараметрівОсновнихЗасобів_Const.PRESENTATION_FIELDS);
-        }
-
+        public ЗмінаПараметрівОсновнихЗасобів_Pointer() : base(Config.Kernel, "tab_b80", ЗмінаПараметрівОсновнихЗасобів_Const.TYPE) => base.Init(new UniqueID());
+        public ЗмінаПараметрівОсновнихЗасобів_Pointer(object? uid) : base(Config.Kernel, "tab_b80", ЗмінаПараметрівОсновнихЗасобів_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ЗмінаПараметрівОсновнихЗасобів_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b80", ЗмінаПараметрівОсновнихЗасобів_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ЗмінаПараметрівОсновнихЗасобів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b80", ЗмінаПараметрівОсновнихЗасобів_Const.TYPE) => base.Init(uid);
+        public ЗмінаПараметрівОсновнихЗасобів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b80", ЗмінаПараметрівОсновнихЗасобів_Const.TYPE) => base.Init(uid, fields);
+        public ЗмінаПараметрівОсновнихЗасобів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b80", ЗмінаПараметрівОсновнихЗасобів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ЗмінаПараметрівОсновнихЗасобів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ЗмінаПараметрівОсновнихЗасобів_Const.PRESENTATION_FIELDS.Length];
@@ -37879,23 +34659,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ЗмінаПараметрівОсновнихЗасобів_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ЗмінаПараметрівОсновнихЗасобів_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -37903,12 +34673,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -37922,7 +34687,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -37934,17 +34698,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ЗмінаПараметрівОсновнихЗасобів_Pointer Copy()
-        {
-            return new ЗмінаПараметрівОсновнихЗасобів_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ЗмінаПараметрівОсновнихЗасобів_Pointer GetEmptyPointer()
-        {
-            return new ЗмінаПараметрівОсновнихЗасобів_Pointer();
-        }
-
+        public ЗмінаПараметрівОсновнихЗасобів_Pointer Copy() => new ЗмінаПараметрівОсновнихЗасобів_Pointer(base.UniqueID, base.Fields, Name);
+        public ЗмінаПараметрівОсновнихЗасобів_Pointer GetEmptyPointer() => new ЗмінаПараметрівОсновнихЗасобів_Pointer();
         public async Task<ЗмінаПараметрівОсновнихЗасобів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -37956,7 +34711,7 @@ namespace GeneratedCode.Документи
     public class ЗмінаПараметрівОсновнихЗасобів_Select : DocumentSelect
     {		
         public ЗмінаПараметрівОсновнихЗасобів_Select() : base(Config.Kernel, "tab_b80") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗмінаПараметрівОсновнихЗасобів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ЗмінаПараметрівОсновнихЗасобів_Pointer? Current { get; private set; }
@@ -38130,15 +34885,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ЗвітКомісіонераПроПродажТоварів_Pointer GetDocumentPointer()
-        {
-            return new ЗвітКомісіонераПроПродажТоварів_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ЗвітКомісіонераПроПродажТоварів_Const.PRESENTATION_FIELDS);
-        }
+        public ЗвітКомісіонераПроПродажТоварів_Pointer GetDocumentPointer() => new ЗвітКомісіонераПроПродажТоварів_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ЗвітКомісіонераПроПродажТоварів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -38150,26 +34898,14 @@ namespace GeneratedCode.Документи
     
     public class ЗвітКомісіонераПроПродажТоварів_Pointer : DocumentPointer
     {
-        public ЗвітКомісіонераПроПродажТоварів_Pointer(object? uid = null) : base(Config.Kernel, "tab_b81", ЗвітКомісіонераПроПродажТоварів_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ЗвітКомісіонераПроПродажТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b81", "ЗвітКомісіонераПроПродажТоварів")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ЗвітКомісіонераПроПродажТоварів_Const.PRESENTATION_FIELDS);
-        }
-
+        public ЗвітКомісіонераПроПродажТоварів_Pointer() : base(Config.Kernel, "tab_b81", ЗвітКомісіонераПроПродажТоварів_Const.TYPE) => base.Init(new UniqueID());
+        public ЗвітКомісіонераПроПродажТоварів_Pointer(object? uid) : base(Config.Kernel, "tab_b81", ЗвітКомісіонераПроПродажТоварів_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ЗвітКомісіонераПроПродажТоварів_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b81", ЗвітКомісіонераПроПродажТоварів_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ЗвітКомісіонераПроПродажТоварів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b81", ЗвітКомісіонераПроПродажТоварів_Const.TYPE) => base.Init(uid);
+        public ЗвітКомісіонераПроПродажТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b81", ЗвітКомісіонераПроПродажТоварів_Const.TYPE) => base.Init(uid, fields);
+        public ЗвітКомісіонераПроПродажТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b81", ЗвітКомісіонераПроПродажТоварів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ЗвітКомісіонераПроПродажТоварів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ЗвітКомісіонераПроПродажТоварів_Const.PRESENTATION_FIELDS.Length];
@@ -38177,23 +34913,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ЗвітКомісіонераПроПродажТоварів_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ЗвітКомісіонераПроПродажТоварів_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -38201,12 +34927,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -38220,7 +34941,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -38232,17 +34952,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ЗвітКомісіонераПроПродажТоварів_Pointer Copy()
-        {
-            return new ЗвітКомісіонераПроПродажТоварів_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ЗвітКомісіонераПроПродажТоварів_Pointer GetEmptyPointer()
-        {
-            return new ЗвітКомісіонераПроПродажТоварів_Pointer();
-        }
-
+        public ЗвітКомісіонераПроПродажТоварів_Pointer Copy() => new ЗвітКомісіонераПроПродажТоварів_Pointer(base.UniqueID, base.Fields, Name);
+        public ЗвітКомісіонераПроПродажТоварів_Pointer GetEmptyPointer() => new ЗвітКомісіонераПроПродажТоварів_Pointer();
         public async Task<ЗвітКомісіонераПроПродажТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -38254,7 +34965,7 @@ namespace GeneratedCode.Документи
     public class ЗвітКомісіонераПроПродажТоварів_Select : DocumentSelect
     {		
         public ЗвітКомісіонераПроПродажТоварів_Select() : base(Config.Kernel, "tab_b81") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗвітКомісіонераПроПродажТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ЗвітКомісіонераПроПродажТоварів_Pointer? Current { get; private set; }
@@ -38428,15 +35139,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ЗвітКомітентуПроПродажТоварів_Pointer GetDocumentPointer()
-        {
-            return new ЗвітКомітентуПроПродажТоварів_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ЗвітКомітентуПроПродажТоварів_Const.PRESENTATION_FIELDS);
-        }
+        public ЗвітКомітентуПроПродажТоварів_Pointer GetDocumentPointer() => new ЗвітКомітентуПроПродажТоварів_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ЗвітКомітентуПроПродажТоварів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -38448,26 +35152,14 @@ namespace GeneratedCode.Документи
     
     public class ЗвітКомітентуПроПродажТоварів_Pointer : DocumentPointer
     {
-        public ЗвітКомітентуПроПродажТоварів_Pointer(object? uid = null) : base(Config.Kernel, "tab_b82", ЗвітКомітентуПроПродажТоварів_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ЗвітКомітентуПроПродажТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b82", "ЗвітКомітентуПроПродажТоварів")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ЗвітКомітентуПроПродажТоварів_Const.PRESENTATION_FIELDS);
-        }
-
+        public ЗвітКомітентуПроПродажТоварів_Pointer() : base(Config.Kernel, "tab_b82", ЗвітКомітентуПроПродажТоварів_Const.TYPE) => base.Init(new UniqueID());
+        public ЗвітКомітентуПроПродажТоварів_Pointer(object? uid) : base(Config.Kernel, "tab_b82", ЗвітКомітентуПроПродажТоварів_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ЗвітКомітентуПроПродажТоварів_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b82", ЗвітКомітентуПроПродажТоварів_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ЗвітКомітентуПроПродажТоварів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b82", ЗвітКомітентуПроПродажТоварів_Const.TYPE) => base.Init(uid);
+        public ЗвітКомітентуПроПродажТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b82", ЗвітКомітентуПроПродажТоварів_Const.TYPE) => base.Init(uid, fields);
+        public ЗвітКомітентуПроПродажТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b82", ЗвітКомітентуПроПродажТоварів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ЗвітКомітентуПроПродажТоварів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ЗвітКомітентуПроПродажТоварів_Const.PRESENTATION_FIELDS.Length];
@@ -38475,23 +35167,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ЗвітКомітентуПроПродажТоварів_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ЗвітКомітентуПроПродажТоварів_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -38499,12 +35181,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -38518,7 +35195,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -38530,17 +35206,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ЗвітКомітентуПроПродажТоварів_Pointer Copy()
-        {
-            return new ЗвітКомітентуПроПродажТоварів_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ЗвітКомітентуПроПродажТоварів_Pointer GetEmptyPointer()
-        {
-            return new ЗвітКомітентуПроПродажТоварів_Pointer();
-        }
-
+        public ЗвітКомітентуПроПродажТоварів_Pointer Copy() => new ЗвітКомітентуПроПродажТоварів_Pointer(base.UniqueID, base.Fields, Name);
+        public ЗвітКомітентуПроПродажТоварів_Pointer GetEmptyPointer() => new ЗвітКомітентуПроПродажТоварів_Pointer();
         public async Task<ЗвітКомітентуПроПродажТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -38552,7 +35219,7 @@ namespace GeneratedCode.Документи
     public class ЗвітКомітентуПроПродажТоварів_Select : DocumentSelect
     {		
         public ЗвітКомітентуПроПродажТоварів_Select() : base(Config.Kernel, "tab_b82") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗвітКомітентуПроПродажТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ЗвітКомітентуПроПродажТоварів_Pointer? Current { get; private set; }
@@ -38726,15 +35393,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public КоригуванняНезавершеногоВиробництва_Pointer GetDocumentPointer()
-        {
-            return new КоригуванняНезавершеногоВиробництва_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(КоригуванняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS);
-        }
+        public КоригуванняНезавершеногоВиробництва_Pointer GetDocumentPointer() => new КоригуванняНезавершеногоВиробництва_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(КоригуванняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -38746,26 +35406,14 @@ namespace GeneratedCode.Документи
     
     public class КоригуванняНезавершеногоВиробництва_Pointer : DocumentPointer
     {
-        public КоригуванняНезавершеногоВиробництва_Pointer(object? uid = null) : base(Config.Kernel, "tab_b83", КоригуванняНезавершеногоВиробництва_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public КоригуванняНезавершеногоВиробництва_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b83", "КоригуванняНезавершеногоВиробництва")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(КоригуванняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS);
-        }
-
+        public КоригуванняНезавершеногоВиробництва_Pointer() : base(Config.Kernel, "tab_b83", КоригуванняНезавершеногоВиробництва_Const.TYPE) => base.Init(new UniqueID());
+        public КоригуванняНезавершеногоВиробництва_Pointer(object? uid) : base(Config.Kernel, "tab_b83", КоригуванняНезавершеногоВиробництва_Const.TYPE) => base.Init(new UniqueID(uid));
+        public КоригуванняНезавершеногоВиробництва_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b83", КоригуванняНезавершеногоВиробництва_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public КоригуванняНезавершеногоВиробництва_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b83", КоригуванняНезавершеногоВиробництва_Const.TYPE) => base.Init(uid);
+        public КоригуванняНезавершеногоВиробництва_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b83", КоригуванняНезавершеногоВиробництва_Const.TYPE) => base.Init(uid, fields);
+        public КоригуванняНезавершеногоВиробництва_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b83", КоригуванняНезавершеногоВиробництва_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(КоригуванняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [КоригуванняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS.Length];
@@ -38773,23 +35421,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(КоригуванняНезавершеногоВиробництва_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             КоригуванняНезавершеногоВиробництва_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -38797,12 +35435,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -38816,7 +35449,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -38828,17 +35460,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public КоригуванняНезавершеногоВиробництва_Pointer Copy()
-        {
-            return new КоригуванняНезавершеногоВиробництва_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public КоригуванняНезавершеногоВиробництва_Pointer GetEmptyPointer()
-        {
-            return new КоригуванняНезавершеногоВиробництва_Pointer();
-        }
-
+        public КоригуванняНезавершеногоВиробництва_Pointer Copy() => new КоригуванняНезавершеногоВиробництва_Pointer(base.UniqueID, base.Fields, Name);
+        public КоригуванняНезавершеногоВиробництва_Pointer GetEmptyPointer() => new КоригуванняНезавершеногоВиробництва_Pointer();
         public async Task<КоригуванняНезавершеногоВиробництва_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -38850,7 +35473,7 @@ namespace GeneratedCode.Документи
     public class КоригуванняНезавершеногоВиробництва_Select : DocumentSelect
     {		
         public КоригуванняНезавершеногоВиробництва_Select() : base(Config.Kernel, "tab_b83") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new КоригуванняНезавершеногоВиробництва_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public КоригуванняНезавершеногоВиробництва_Pointer? Current { get; private set; }
@@ -39024,15 +35647,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public КоригуванняПДВ_Pointer GetDocumentPointer()
-        {
-            return new КоригуванняПДВ_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(КоригуванняПДВ_Const.PRESENTATION_FIELDS);
-        }
+        public КоригуванняПДВ_Pointer GetDocumentPointer() => new КоригуванняПДВ_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(КоригуванняПДВ_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -39044,26 +35660,14 @@ namespace GeneratedCode.Документи
     
     public class КоригуванняПДВ_Pointer : DocumentPointer
     {
-        public КоригуванняПДВ_Pointer(object? uid = null) : base(Config.Kernel, "tab_b84", КоригуванняПДВ_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public КоригуванняПДВ_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b84", "КоригуванняПДВ")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(КоригуванняПДВ_Const.PRESENTATION_FIELDS);
-        }
-
+        public КоригуванняПДВ_Pointer() : base(Config.Kernel, "tab_b84", КоригуванняПДВ_Const.TYPE) => base.Init(new UniqueID());
+        public КоригуванняПДВ_Pointer(object? uid) : base(Config.Kernel, "tab_b84", КоригуванняПДВ_Const.TYPE) => base.Init(new UniqueID(uid));
+        public КоригуванняПДВ_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b84", КоригуванняПДВ_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public КоригуванняПДВ_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b84", КоригуванняПДВ_Const.TYPE) => base.Init(uid);
+        public КоригуванняПДВ_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b84", КоригуванняПДВ_Const.TYPE) => base.Init(uid, fields);
+        public КоригуванняПДВ_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b84", КоригуванняПДВ_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(КоригуванняПДВ_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [КоригуванняПДВ_Const.PRESENTATION_FIELDS.Length];
@@ -39071,23 +35675,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(КоригуванняПДВ_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             КоригуванняПДВ_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -39095,12 +35689,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -39114,7 +35703,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -39126,17 +35714,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public КоригуванняПДВ_Pointer Copy()
-        {
-            return new КоригуванняПДВ_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public КоригуванняПДВ_Pointer GetEmptyPointer()
-        {
-            return new КоригуванняПДВ_Pointer();
-        }
-
+        public КоригуванняПДВ_Pointer Copy() => new КоригуванняПДВ_Pointer(base.UniqueID, base.Fields, Name);
+        public КоригуванняПДВ_Pointer GetEmptyPointer() => new КоригуванняПДВ_Pointer();
         public async Task<КоригуванняПДВ_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -39148,7 +35727,7 @@ namespace GeneratedCode.Документи
     public class КоригуванняПДВ_Select : DocumentSelect
     {		
         public КоригуванняПДВ_Select() : base(Config.Kernel, "tab_b84") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new КоригуванняПДВ_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public КоригуванняПДВ_Pointer? Current { get; private set; }
@@ -39322,15 +35901,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public КоригуванняІншихВитрат_Pointer GetDocumentPointer()
-        {
-            return new КоригуванняІншихВитрат_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(КоригуванняІншихВитрат_Const.PRESENTATION_FIELDS);
-        }
+        public КоригуванняІншихВитрат_Pointer GetDocumentPointer() => new КоригуванняІншихВитрат_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(КоригуванняІншихВитрат_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -39342,26 +35914,14 @@ namespace GeneratedCode.Документи
     
     public class КоригуванняІншихВитрат_Pointer : DocumentPointer
     {
-        public КоригуванняІншихВитрат_Pointer(object? uid = null) : base(Config.Kernel, "tab_b85", КоригуванняІншихВитрат_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public КоригуванняІншихВитрат_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b85", "КоригуванняІншихВитрат")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(КоригуванняІншихВитрат_Const.PRESENTATION_FIELDS);
-        }
-
+        public КоригуванняІншихВитрат_Pointer() : base(Config.Kernel, "tab_b85", КоригуванняІншихВитрат_Const.TYPE) => base.Init(new UniqueID());
+        public КоригуванняІншихВитрат_Pointer(object? uid) : base(Config.Kernel, "tab_b85", КоригуванняІншихВитрат_Const.TYPE) => base.Init(new UniqueID(uid));
+        public КоригуванняІншихВитрат_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b85", КоригуванняІншихВитрат_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public КоригуванняІншихВитрат_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b85", КоригуванняІншихВитрат_Const.TYPE) => base.Init(uid);
+        public КоригуванняІншихВитрат_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b85", КоригуванняІншихВитрат_Const.TYPE) => base.Init(uid, fields);
+        public КоригуванняІншихВитрат_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b85", КоригуванняІншихВитрат_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(КоригуванняІншихВитрат_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [КоригуванняІншихВитрат_Const.PRESENTATION_FIELDS.Length];
@@ -39369,23 +35929,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(КоригуванняІншихВитрат_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             КоригуванняІншихВитрат_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -39393,12 +35943,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -39412,7 +35957,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -39424,17 +35968,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public КоригуванняІншихВитрат_Pointer Copy()
-        {
-            return new КоригуванняІншихВитрат_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public КоригуванняІншихВитрат_Pointer GetEmptyPointer()
-        {
-            return new КоригуванняІншихВитрат_Pointer();
-        }
-
+        public КоригуванняІншихВитрат_Pointer Copy() => new КоригуванняІншихВитрат_Pointer(base.UniqueID, base.Fields, Name);
+        public КоригуванняІншихВитрат_Pointer GetEmptyPointer() => new КоригуванняІншихВитрат_Pointer();
         public async Task<КоригуванняІншихВитрат_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -39446,7 +35981,7 @@ namespace GeneratedCode.Документи
     public class КоригуванняІншихВитрат_Select : DocumentSelect
     {		
         public КоригуванняІншихВитрат_Select() : base(Config.Kernel, "tab_b85") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new КоригуванняІншихВитрат_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public КоригуванняІншихВитрат_Pointer? Current { get; private set; }
@@ -39620,15 +36155,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public Модернізація_Pointer GetDocumentPointer()
-        {
-            return new Модернізація_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(Модернізація_Const.PRESENTATION_FIELDS);
-        }
+        public Модернізація_Pointer GetDocumentPointer() => new Модернізація_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(Модернізація_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -39640,26 +36168,14 @@ namespace GeneratedCode.Документи
     
     public class Модернізація_Pointer : DocumentPointer
     {
-        public Модернізація_Pointer(object? uid = null) : base(Config.Kernel, "tab_b86", Модернізація_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public Модернізація_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b86", "Модернізація")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(Модернізація_Const.PRESENTATION_FIELDS);
-        }
-
+        public Модернізація_Pointer() : base(Config.Kernel, "tab_b86", Модернізація_Const.TYPE) => base.Init(new UniqueID());
+        public Модернізація_Pointer(object? uid) : base(Config.Kernel, "tab_b86", Модернізація_Const.TYPE) => base.Init(new UniqueID(uid));
+        public Модернізація_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b86", Модернізація_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public Модернізація_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b86", Модернізація_Const.TYPE) => base.Init(uid);
+        public Модернізація_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b86", Модернізація_Const.TYPE) => base.Init(uid, fields);
+        public Модернізація_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b86", Модернізація_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(Модернізація_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [Модернізація_Const.PRESENTATION_FIELDS.Length];
@@ -39667,23 +36183,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(Модернізація_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             Модернізація_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -39691,12 +36197,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -39710,7 +36211,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -39722,17 +36222,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public Модернізація_Pointer Copy()
-        {
-            return new Модернізація_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public Модернізація_Pointer GetEmptyPointer()
-        {
-            return new Модернізація_Pointer();
-        }
-
+        public Модернізація_Pointer Copy() => new Модернізація_Pointer(base.UniqueID, base.Fields, Name);
+        public Модернізація_Pointer GetEmptyPointer() => new Модернізація_Pointer();
         public async Task<Модернізація_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -39744,7 +36235,7 @@ namespace GeneratedCode.Документи
     public class Модернізація_Select : DocumentSelect
     {		
         public Модернізація_Select() : base(Config.Kernel, "tab_b86") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Модернізація_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Модернізація_Pointer? Current { get; private set; }
@@ -39918,15 +36409,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public Комплектація_Pointer GetDocumentPointer()
-        {
-            return new Комплектація_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(Комплектація_Const.PRESENTATION_FIELDS);
-        }
+        public Комплектація_Pointer GetDocumentPointer() => new Комплектація_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(Комплектація_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -39938,26 +36422,14 @@ namespace GeneratedCode.Документи
     
     public class Комплектація_Pointer : DocumentPointer
     {
-        public Комплектація_Pointer(object? uid = null) : base(Config.Kernel, "tab_b87", Комплектація_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public Комплектація_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b87", "Комплектація")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(Комплектація_Const.PRESENTATION_FIELDS);
-        }
-
+        public Комплектація_Pointer() : base(Config.Kernel, "tab_b87", Комплектація_Const.TYPE) => base.Init(new UniqueID());
+        public Комплектація_Pointer(object? uid) : base(Config.Kernel, "tab_b87", Комплектація_Const.TYPE) => base.Init(new UniqueID(uid));
+        public Комплектація_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b87", Комплектація_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public Комплектація_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b87", Комплектація_Const.TYPE) => base.Init(uid);
+        public Комплектація_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b87", Комплектація_Const.TYPE) => base.Init(uid, fields);
+        public Комплектація_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b87", Комплектація_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(Комплектація_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [Комплектація_Const.PRESENTATION_FIELDS.Length];
@@ -39965,23 +36437,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(Комплектація_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             Комплектація_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -39989,12 +36451,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -40008,7 +36465,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -40020,17 +36476,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public Комплектація_Pointer Copy()
-        {
-            return new Комплектація_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public Комплектація_Pointer GetEmptyPointer()
-        {
-            return new Комплектація_Pointer();
-        }
-
+        public Комплектація_Pointer Copy() => new Комплектація_Pointer(base.UniqueID, base.Fields, Name);
+        public Комплектація_Pointer GetEmptyPointer() => new Комплектація_Pointer();
         public async Task<Комплектація_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -40042,7 +36489,7 @@ namespace GeneratedCode.Документи
     public class Комплектація_Select : DocumentSelect
     {		
         public Комплектація_Select() : base(Config.Kernel, "tab_b87") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Комплектація_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Комплектація_Pointer? Current { get; private set; }
@@ -40216,15 +36663,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public НакладнаВимога_Pointer GetDocumentPointer()
-        {
-            return new НакладнаВимога_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(НакладнаВимога_Const.PRESENTATION_FIELDS);
-        }
+        public НакладнаВимога_Pointer GetDocumentPointer() => new НакладнаВимога_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(НакладнаВимога_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -40236,26 +36676,14 @@ namespace GeneratedCode.Документи
     
     public class НакладнаВимога_Pointer : DocumentPointer
     {
-        public НакладнаВимога_Pointer(object? uid = null) : base(Config.Kernel, "tab_b88", НакладнаВимога_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public НакладнаВимога_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b88", "НакладнаВимога")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(НакладнаВимога_Const.PRESENTATION_FIELDS);
-        }
-
+        public НакладнаВимога_Pointer() : base(Config.Kernel, "tab_b88", НакладнаВимога_Const.TYPE) => base.Init(new UniqueID());
+        public НакладнаВимога_Pointer(object? uid) : base(Config.Kernel, "tab_b88", НакладнаВимога_Const.TYPE) => base.Init(new UniqueID(uid));
+        public НакладнаВимога_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b88", НакладнаВимога_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public НакладнаВимога_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b88", НакладнаВимога_Const.TYPE) => base.Init(uid);
+        public НакладнаВимога_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b88", НакладнаВимога_Const.TYPE) => base.Init(uid, fields);
+        public НакладнаВимога_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b88", НакладнаВимога_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(НакладнаВимога_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [НакладнаВимога_Const.PRESENTATION_FIELDS.Length];
@@ -40263,23 +36691,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(НакладнаВимога_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             НакладнаВимога_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -40287,12 +36705,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -40306,7 +36719,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -40318,17 +36730,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public НакладнаВимога_Pointer Copy()
-        {
-            return new НакладнаВимога_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public НакладнаВимога_Pointer GetEmptyPointer()
-        {
-            return new НакладнаВимога_Pointer();
-        }
-
+        public НакладнаВимога_Pointer Copy() => new НакладнаВимога_Pointer(base.UniqueID, base.Fields, Name);
+        public НакладнаВимога_Pointer GetEmptyPointer() => new НакладнаВимога_Pointer();
         public async Task<НакладнаВимога_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -40340,7 +36743,7 @@ namespace GeneratedCode.Документи
     public class НакладнаВимога_Select : DocumentSelect
     {		
         public НакладнаВимога_Select() : base(Config.Kernel, "tab_b88") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new НакладнаВимога_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public НакладнаВимога_Pointer? Current { get; private set; }
@@ -40514,15 +36917,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public Наряд_Pointer GetDocumentPointer()
-        {
-            return new Наряд_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(Наряд_Const.PRESENTATION_FIELDS);
-        }
+        public Наряд_Pointer GetDocumentPointer() => new Наряд_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(Наряд_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -40534,26 +36930,14 @@ namespace GeneratedCode.Документи
     
     public class Наряд_Pointer : DocumentPointer
     {
-        public Наряд_Pointer(object? uid = null) : base(Config.Kernel, "tab_b89", Наряд_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public Наряд_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b89", "Наряд")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(Наряд_Const.PRESENTATION_FIELDS);
-        }
-
+        public Наряд_Pointer() : base(Config.Kernel, "tab_b89", Наряд_Const.TYPE) => base.Init(new UniqueID());
+        public Наряд_Pointer(object? uid) : base(Config.Kernel, "tab_b89", Наряд_Const.TYPE) => base.Init(new UniqueID(uid));
+        public Наряд_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b89", Наряд_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public Наряд_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b89", Наряд_Const.TYPE) => base.Init(uid);
+        public Наряд_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b89", Наряд_Const.TYPE) => base.Init(uid, fields);
+        public Наряд_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b89", Наряд_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(Наряд_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [Наряд_Const.PRESENTATION_FIELDS.Length];
@@ -40561,23 +36945,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(Наряд_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             Наряд_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -40585,12 +36959,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -40604,7 +36973,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -40616,17 +36984,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public Наряд_Pointer Copy()
-        {
-            return new Наряд_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public Наряд_Pointer GetEmptyPointer()
-        {
-            return new Наряд_Pointer();
-        }
-
+        public Наряд_Pointer Copy() => new Наряд_Pointer(base.UniqueID, base.Fields, Name);
+        public Наряд_Pointer GetEmptyPointer() => new Наряд_Pointer();
         public async Task<Наряд_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -40638,7 +36997,7 @@ namespace GeneratedCode.Документи
     public class Наряд_Select : DocumentSelect
     {		
         public Наряд_Select() : base(Config.Kernel, "tab_b89") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Наряд_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Наряд_Pointer? Current { get; private set; }
@@ -40812,15 +37171,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public НарахуванняЗаробітньоїПлати_Pointer GetDocumentPointer()
-        {
-            return new НарахуванняЗаробітньоїПлати_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(НарахуванняЗаробітньоїПлати_Const.PRESENTATION_FIELDS);
-        }
+        public НарахуванняЗаробітньоїПлати_Pointer GetDocumentPointer() => new НарахуванняЗаробітньоїПлати_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(НарахуванняЗаробітньоїПлати_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -40832,26 +37184,14 @@ namespace GeneratedCode.Документи
     
     public class НарахуванняЗаробітньоїПлати_Pointer : DocumentPointer
     {
-        public НарахуванняЗаробітньоїПлати_Pointer(object? uid = null) : base(Config.Kernel, "tab_b90", НарахуванняЗаробітньоїПлати_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public НарахуванняЗаробітньоїПлати_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b90", "НарахуванняЗаробітньоїПлати")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(НарахуванняЗаробітньоїПлати_Const.PRESENTATION_FIELDS);
-        }
-
+        public НарахуванняЗаробітньоїПлати_Pointer() : base(Config.Kernel, "tab_b90", НарахуванняЗаробітньоїПлати_Const.TYPE) => base.Init(new UniqueID());
+        public НарахуванняЗаробітньоїПлати_Pointer(object? uid) : base(Config.Kernel, "tab_b90", НарахуванняЗаробітньоїПлати_Const.TYPE) => base.Init(new UniqueID(uid));
+        public НарахуванняЗаробітньоїПлати_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b90", НарахуванняЗаробітньоїПлати_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public НарахуванняЗаробітньоїПлати_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b90", НарахуванняЗаробітньоїПлати_Const.TYPE) => base.Init(uid);
+        public НарахуванняЗаробітньоїПлати_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b90", НарахуванняЗаробітньоїПлати_Const.TYPE) => base.Init(uid, fields);
+        public НарахуванняЗаробітньоїПлати_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b90", НарахуванняЗаробітньоїПлати_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(НарахуванняЗаробітньоїПлати_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [НарахуванняЗаробітньоїПлати_Const.PRESENTATION_FIELDS.Length];
@@ -40859,23 +37199,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(НарахуванняЗаробітньоїПлати_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             НарахуванняЗаробітньоїПлати_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -40883,12 +37213,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -40902,7 +37227,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -40914,17 +37238,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public НарахуванняЗаробітньоїПлати_Pointer Copy()
-        {
-            return new НарахуванняЗаробітньоїПлати_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public НарахуванняЗаробітньоїПлати_Pointer GetEmptyPointer()
-        {
-            return new НарахуванняЗаробітньоїПлати_Pointer();
-        }
-
+        public НарахуванняЗаробітньоїПлати_Pointer Copy() => new НарахуванняЗаробітньоїПлати_Pointer(base.UniqueID, base.Fields, Name);
+        public НарахуванняЗаробітньоїПлати_Pointer GetEmptyPointer() => new НарахуванняЗаробітньоїПлати_Pointer();
         public async Task<НарахуванняЗаробітньоїПлати_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -40936,7 +37251,7 @@ namespace GeneratedCode.Документи
     public class НарахуванняЗаробітньоїПлати_Select : DocumentSelect
     {		
         public НарахуванняЗаробітньоїПлати_Select() : base(Config.Kernel, "tab_b90") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new НарахуванняЗаробітньоїПлати_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public НарахуванняЗаробітньоїПлати_Pointer? Current { get; private set; }
@@ -41110,15 +37425,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПередачаМатеріалівВЕксплуатацію_Pointer GetDocumentPointer()
-        {
-            return new ПередачаМатеріалівВЕксплуатацію_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПередачаМатеріалівВЕксплуатацію_Const.PRESENTATION_FIELDS);
-        }
+        public ПередачаМатеріалівВЕксплуатацію_Pointer GetDocumentPointer() => new ПередачаМатеріалівВЕксплуатацію_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПередачаМатеріалівВЕксплуатацію_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -41130,26 +37438,14 @@ namespace GeneratedCode.Документи
     
     public class ПередачаМатеріалівВЕксплуатацію_Pointer : DocumentPointer
     {
-        public ПередачаМатеріалівВЕксплуатацію_Pointer(object? uid = null) : base(Config.Kernel, "tab_b91", ПередачаМатеріалівВЕксплуатацію_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПередачаМатеріалівВЕксплуатацію_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b91", "ПередачаМатеріалівВЕксплуатацію")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПередачаМатеріалівВЕксплуатацію_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПередачаМатеріалівВЕксплуатацію_Pointer() : base(Config.Kernel, "tab_b91", ПередачаМатеріалівВЕксплуатацію_Const.TYPE) => base.Init(new UniqueID());
+        public ПередачаМатеріалівВЕксплуатацію_Pointer(object? uid) : base(Config.Kernel, "tab_b91", ПередачаМатеріалівВЕксплуатацію_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПередачаМатеріалівВЕксплуатацію_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b91", ПередачаМатеріалівВЕксплуатацію_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПередачаМатеріалівВЕксплуатацію_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b91", ПередачаМатеріалівВЕксплуатацію_Const.TYPE) => base.Init(uid);
+        public ПередачаМатеріалівВЕксплуатацію_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b91", ПередачаМатеріалівВЕксплуатацію_Const.TYPE) => base.Init(uid, fields);
+        public ПередачаМатеріалівВЕксплуатацію_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b91", ПередачаМатеріалівВЕксплуатацію_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПередачаМатеріалівВЕксплуатацію_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПередачаМатеріалівВЕксплуатацію_Const.PRESENTATION_FIELDS.Length];
@@ -41157,23 +37453,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПередачаМатеріалівВЕксплуатацію_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПередачаМатеріалівВЕксплуатацію_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -41181,12 +37467,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -41200,7 +37481,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -41212,17 +37492,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПередачаМатеріалівВЕксплуатацію_Pointer Copy()
-        {
-            return new ПередачаМатеріалівВЕксплуатацію_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПередачаМатеріалівВЕксплуатацію_Pointer GetEmptyPointer()
-        {
-            return new ПередачаМатеріалівВЕксплуатацію_Pointer();
-        }
-
+        public ПередачаМатеріалівВЕксплуатацію_Pointer Copy() => new ПередачаМатеріалівВЕксплуатацію_Pointer(base.UniqueID, base.Fields, Name);
+        public ПередачаМатеріалівВЕксплуатацію_Pointer GetEmptyPointer() => new ПередачаМатеріалівВЕксплуатацію_Pointer();
         public async Task<ПередачаМатеріалівВЕксплуатацію_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -41234,7 +37505,7 @@ namespace GeneratedCode.Документи
     public class ПередачаМатеріалівВЕксплуатацію_Select : DocumentSelect
     {		
         public ПередачаМатеріалівВЕксплуатацію_Select() : base(Config.Kernel, "tab_b91") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПередачаМатеріалівВЕксплуатацію_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПередачаМатеріалівВЕксплуатацію_Pointer? Current { get; private set; }
@@ -41408,15 +37679,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПереміщенняМатеріалівВЕксплуатації_Pointer GetDocumentPointer()
-        {
-            return new ПереміщенняМатеріалівВЕксплуатації_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПереміщенняМатеріалівВЕксплуатації_Const.PRESENTATION_FIELDS);
-        }
+        public ПереміщенняМатеріалівВЕксплуатації_Pointer GetDocumentPointer() => new ПереміщенняМатеріалівВЕксплуатації_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПереміщенняМатеріалівВЕксплуатації_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -41428,26 +37692,14 @@ namespace GeneratedCode.Документи
     
     public class ПереміщенняМатеріалівВЕксплуатації_Pointer : DocumentPointer
     {
-        public ПереміщенняМатеріалівВЕксплуатації_Pointer(object? uid = null) : base(Config.Kernel, "tab_b92", ПереміщенняМатеріалівВЕксплуатації_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПереміщенняМатеріалівВЕксплуатації_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b92", "ПереміщенняМатеріалівВЕксплуатації")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПереміщенняМатеріалівВЕксплуатації_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПереміщенняМатеріалівВЕксплуатації_Pointer() : base(Config.Kernel, "tab_b92", ПереміщенняМатеріалівВЕксплуатації_Const.TYPE) => base.Init(new UniqueID());
+        public ПереміщенняМатеріалівВЕксплуатації_Pointer(object? uid) : base(Config.Kernel, "tab_b92", ПереміщенняМатеріалівВЕксплуатації_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПереміщенняМатеріалівВЕксплуатації_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b92", ПереміщенняМатеріалівВЕксплуатації_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПереміщенняМатеріалівВЕксплуатації_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b92", ПереміщенняМатеріалівВЕксплуатації_Const.TYPE) => base.Init(uid);
+        public ПереміщенняМатеріалівВЕксплуатації_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b92", ПереміщенняМатеріалівВЕксплуатації_Const.TYPE) => base.Init(uid, fields);
+        public ПереміщенняМатеріалівВЕксплуатації_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b92", ПереміщенняМатеріалівВЕксплуатації_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПереміщенняМатеріалівВЕксплуатації_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПереміщенняМатеріалівВЕксплуатації_Const.PRESENTATION_FIELDS.Length];
@@ -41455,23 +37707,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПереміщенняМатеріалівВЕксплуатації_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПереміщенняМатеріалівВЕксплуатації_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -41479,12 +37721,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -41498,7 +37735,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -41510,17 +37746,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПереміщенняМатеріалівВЕксплуатації_Pointer Copy()
-        {
-            return new ПереміщенняМатеріалівВЕксплуатації_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПереміщенняМатеріалівВЕксплуатації_Pointer GetEmptyPointer()
-        {
-            return new ПереміщенняМатеріалівВЕксплуатації_Pointer();
-        }
-
+        public ПереміщенняМатеріалівВЕксплуатації_Pointer Copy() => new ПереміщенняМатеріалівВЕксплуатації_Pointer(base.UniqueID, base.Fields, Name);
+        public ПереміщенняМатеріалівВЕксплуатації_Pointer GetEmptyPointer() => new ПереміщенняМатеріалівВЕксплуатації_Pointer();
         public async Task<ПереміщенняМатеріалівВЕксплуатації_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -41532,7 +37759,7 @@ namespace GeneratedCode.Документи
     public class ПереміщенняМатеріалівВЕксплуатації_Select : DocumentSelect
     {		
         public ПереміщенняМатеріалівВЕксплуатації_Select() : base(Config.Kernel, "tab_b92") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПереміщенняМатеріалівВЕксплуатації_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПереміщенняМатеріалівВЕксплуатації_Pointer? Current { get; private set; }
@@ -41706,15 +37933,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПередачаНематеріальнихАктивів_Pointer GetDocumentPointer()
-        {
-            return new ПередачаНематеріальнихАктивів_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПередачаНематеріальнихАктивів_Const.PRESENTATION_FIELDS);
-        }
+        public ПередачаНематеріальнихАктивів_Pointer GetDocumentPointer() => new ПередачаНематеріальнихАктивів_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПередачаНематеріальнихАктивів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -41726,26 +37946,14 @@ namespace GeneratedCode.Документи
     
     public class ПередачаНематеріальнихАктивів_Pointer : DocumentPointer
     {
-        public ПередачаНематеріальнихАктивів_Pointer(object? uid = null) : base(Config.Kernel, "tab_b93", ПередачаНематеріальнихАктивів_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПередачаНематеріальнихАктивів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b93", "ПередачаНематеріальнихАктивів")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПередачаНематеріальнихАктивів_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПередачаНематеріальнихАктивів_Pointer() : base(Config.Kernel, "tab_b93", ПередачаНематеріальнихАктивів_Const.TYPE) => base.Init(new UniqueID());
+        public ПередачаНематеріальнихАктивів_Pointer(object? uid) : base(Config.Kernel, "tab_b93", ПередачаНематеріальнихАктивів_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПередачаНематеріальнихАктивів_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b93", ПередачаНематеріальнихАктивів_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПередачаНематеріальнихАктивів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b93", ПередачаНематеріальнихАктивів_Const.TYPE) => base.Init(uid);
+        public ПередачаНематеріальнихАктивів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b93", ПередачаНематеріальнихАктивів_Const.TYPE) => base.Init(uid, fields);
+        public ПередачаНематеріальнихАктивів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b93", ПередачаНематеріальнихАктивів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПередачаНематеріальнихАктивів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПередачаНематеріальнихАктивів_Const.PRESENTATION_FIELDS.Length];
@@ -41753,23 +37961,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПередачаНематеріальнихАктивів_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПередачаНематеріальнихАктивів_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -41777,12 +37975,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -41796,7 +37989,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -41808,17 +38000,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПередачаНематеріальнихАктивів_Pointer Copy()
-        {
-            return new ПередачаНематеріальнихАктивів_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПередачаНематеріальнихАктивів_Pointer GetEmptyPointer()
-        {
-            return new ПередачаНематеріальнихАктивів_Pointer();
-        }
-
+        public ПередачаНематеріальнихАктивів_Pointer Copy() => new ПередачаНематеріальнихАктивів_Pointer(base.UniqueID, base.Fields, Name);
+        public ПередачаНематеріальнихАктивів_Pointer GetEmptyPointer() => new ПередачаНематеріальнихАктивів_Pointer();
         public async Task<ПередачаНематеріальнихАктивів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -41830,7 +38013,7 @@ namespace GeneratedCode.Документи
     public class ПередачаНематеріальнихАктивів_Select : DocumentSelect
     {		
         public ПередачаНематеріальнихАктивів_Select() : base(Config.Kernel, "tab_b93") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПередачаНематеріальнихАктивів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПередачаНематеріальнихАктивів_Pointer? Current { get; private set; }
@@ -42004,15 +38187,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПереміщенняНематеріальнихАктивів_Pointer GetDocumentPointer()
-        {
-            return new ПереміщенняНематеріальнихАктивів_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПереміщенняНематеріальнихАктивів_Const.PRESENTATION_FIELDS);
-        }
+        public ПереміщенняНематеріальнихАктивів_Pointer GetDocumentPointer() => new ПереміщенняНематеріальнихАктивів_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПереміщенняНематеріальнихАктивів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -42024,26 +38200,14 @@ namespace GeneratedCode.Документи
     
     public class ПереміщенняНематеріальнихАктивів_Pointer : DocumentPointer
     {
-        public ПереміщенняНематеріальнихАктивів_Pointer(object? uid = null) : base(Config.Kernel, "tab_b94", ПереміщенняНематеріальнихАктивів_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПереміщенняНематеріальнихАктивів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b94", "ПереміщенняНематеріальнихАктивів")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПереміщенняНематеріальнихАктивів_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПереміщенняНематеріальнихАктивів_Pointer() : base(Config.Kernel, "tab_b94", ПереміщенняНематеріальнихАктивів_Const.TYPE) => base.Init(new UniqueID());
+        public ПереміщенняНематеріальнихАктивів_Pointer(object? uid) : base(Config.Kernel, "tab_b94", ПереміщенняНематеріальнихАктивів_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПереміщенняНематеріальнихАктивів_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b94", ПереміщенняНематеріальнихАктивів_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПереміщенняНематеріальнихАктивів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b94", ПереміщенняНематеріальнихАктивів_Const.TYPE) => base.Init(uid);
+        public ПереміщенняНематеріальнихАктивів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b94", ПереміщенняНематеріальнихАктивів_Const.TYPE) => base.Init(uid, fields);
+        public ПереміщенняНематеріальнихАктивів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b94", ПереміщенняНематеріальнихАктивів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПереміщенняНематеріальнихАктивів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПереміщенняНематеріальнихАктивів_Const.PRESENTATION_FIELDS.Length];
@@ -42051,23 +38215,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПереміщенняНематеріальнихАктивів_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПереміщенняНематеріальнихАктивів_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -42075,12 +38229,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -42094,7 +38243,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -42106,17 +38254,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПереміщенняНематеріальнихАктивів_Pointer Copy()
-        {
-            return new ПереміщенняНематеріальнихАктивів_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПереміщенняНематеріальнихАктивів_Pointer GetEmptyPointer()
-        {
-            return new ПереміщенняНематеріальнихАктивів_Pointer();
-        }
-
+        public ПереміщенняНематеріальнихАктивів_Pointer Copy() => new ПереміщенняНематеріальнихАктивів_Pointer(base.UniqueID, base.Fields, Name);
+        public ПереміщенняНематеріальнихАктивів_Pointer GetEmptyPointer() => new ПереміщенняНематеріальнихАктивів_Pointer();
         public async Task<ПереміщенняНематеріальнихАктивів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -42128,7 +38267,7 @@ namespace GeneratedCode.Документи
     public class ПереміщенняНематеріальнихАктивів_Select : DocumentSelect
     {		
         public ПереміщенняНематеріальнихАктивів_Select() : base(Config.Kernel, "tab_b94") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПереміщенняНематеріальнихАктивів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПереміщенняНематеріальнихАктивів_Pointer? Current { get; private set; }
@@ -42302,15 +38441,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПередачаОбладнанняВМонтаж_Pointer GetDocumentPointer()
-        {
-            return new ПередачаОбладнанняВМонтаж_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПередачаОбладнанняВМонтаж_Const.PRESENTATION_FIELDS);
-        }
+        public ПередачаОбладнанняВМонтаж_Pointer GetDocumentPointer() => new ПередачаОбладнанняВМонтаж_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПередачаОбладнанняВМонтаж_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -42322,26 +38454,14 @@ namespace GeneratedCode.Документи
     
     public class ПередачаОбладнанняВМонтаж_Pointer : DocumentPointer
     {
-        public ПередачаОбладнанняВМонтаж_Pointer(object? uid = null) : base(Config.Kernel, "tab_b95", ПередачаОбладнанняВМонтаж_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПередачаОбладнанняВМонтаж_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b95", "ПередачаОбладнанняВМонтаж")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПередачаОбладнанняВМонтаж_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПередачаОбладнанняВМонтаж_Pointer() : base(Config.Kernel, "tab_b95", ПередачаОбладнанняВМонтаж_Const.TYPE) => base.Init(new UniqueID());
+        public ПередачаОбладнанняВМонтаж_Pointer(object? uid) : base(Config.Kernel, "tab_b95", ПередачаОбладнанняВМонтаж_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПередачаОбладнанняВМонтаж_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b95", ПередачаОбладнанняВМонтаж_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПередачаОбладнанняВМонтаж_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b95", ПередачаОбладнанняВМонтаж_Const.TYPE) => base.Init(uid);
+        public ПередачаОбладнанняВМонтаж_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b95", ПередачаОбладнанняВМонтаж_Const.TYPE) => base.Init(uid, fields);
+        public ПередачаОбладнанняВМонтаж_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b95", ПередачаОбладнанняВМонтаж_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПередачаОбладнанняВМонтаж_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПередачаОбладнанняВМонтаж_Const.PRESENTATION_FIELDS.Length];
@@ -42349,23 +38469,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПередачаОбладнанняВМонтаж_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПередачаОбладнанняВМонтаж_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -42373,12 +38483,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -42392,7 +38497,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -42404,17 +38508,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПередачаОбладнанняВМонтаж_Pointer Copy()
-        {
-            return new ПередачаОбладнанняВМонтаж_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПередачаОбладнанняВМонтаж_Pointer GetEmptyPointer()
-        {
-            return new ПередачаОбладнанняВМонтаж_Pointer();
-        }
-
+        public ПередачаОбладнанняВМонтаж_Pointer Copy() => new ПередачаОбладнанняВМонтаж_Pointer(base.UniqueID, base.Fields, Name);
+        public ПередачаОбладнанняВМонтаж_Pointer GetEmptyPointer() => new ПередачаОбладнанняВМонтаж_Pointer();
         public async Task<ПередачаОбладнанняВМонтаж_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -42426,7 +38521,7 @@ namespace GeneratedCode.Документи
     public class ПередачаОбладнанняВМонтаж_Select : DocumentSelect
     {		
         public ПередачаОбладнанняВМонтаж_Select() : base(Config.Kernel, "tab_b95") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПередачаОбладнанняВМонтаж_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПередачаОбладнанняВМонтаж_Pointer? Current { get; private set; }
@@ -42600,15 +38695,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПередачаОсновнихЗасобів_Pointer GetDocumentPointer()
-        {
-            return new ПередачаОсновнихЗасобів_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПередачаОсновнихЗасобів_Const.PRESENTATION_FIELDS);
-        }
+        public ПередачаОсновнихЗасобів_Pointer GetDocumentPointer() => new ПередачаОсновнихЗасобів_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПередачаОсновнихЗасобів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -42620,26 +38708,14 @@ namespace GeneratedCode.Документи
     
     public class ПередачаОсновнихЗасобів_Pointer : DocumentPointer
     {
-        public ПередачаОсновнихЗасобів_Pointer(object? uid = null) : base(Config.Kernel, "tab_b96", ПередачаОсновнихЗасобів_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПередачаОсновнихЗасобів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b96", "ПередачаОсновнихЗасобів")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПередачаОсновнихЗасобів_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПередачаОсновнихЗасобів_Pointer() : base(Config.Kernel, "tab_b96", ПередачаОсновнихЗасобів_Const.TYPE) => base.Init(new UniqueID());
+        public ПередачаОсновнихЗасобів_Pointer(object? uid) : base(Config.Kernel, "tab_b96", ПередачаОсновнихЗасобів_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПередачаОсновнихЗасобів_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b96", ПередачаОсновнихЗасобів_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПередачаОсновнихЗасобів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b96", ПередачаОсновнихЗасобів_Const.TYPE) => base.Init(uid);
+        public ПередачаОсновнихЗасобів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b96", ПередачаОсновнихЗасобів_Const.TYPE) => base.Init(uid, fields);
+        public ПередачаОсновнихЗасобів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b96", ПередачаОсновнихЗасобів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПередачаОсновнихЗасобів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПередачаОсновнихЗасобів_Const.PRESENTATION_FIELDS.Length];
@@ -42647,23 +38723,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПередачаОсновнихЗасобів_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПередачаОсновнихЗасобів_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -42671,12 +38737,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -42690,7 +38751,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -42702,17 +38762,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПередачаОсновнихЗасобів_Pointer Copy()
-        {
-            return new ПередачаОсновнихЗасобів_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПередачаОсновнихЗасобів_Pointer GetEmptyPointer()
-        {
-            return new ПередачаОсновнихЗасобів_Pointer();
-        }
-
+        public ПередачаОсновнихЗасобів_Pointer Copy() => new ПередачаОсновнихЗасобів_Pointer(base.UniqueID, base.Fields, Name);
+        public ПередачаОсновнихЗасобів_Pointer GetEmptyPointer() => new ПередачаОсновнихЗасобів_Pointer();
         public async Task<ПередачаОсновнихЗасобів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -42724,7 +38775,7 @@ namespace GeneratedCode.Документи
     public class ПередачаОсновнихЗасобів_Select : DocumentSelect
     {		
         public ПередачаОсновнихЗасобів_Select() : base(Config.Kernel, "tab_b96") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПередачаОсновнихЗасобів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПередачаОсновнихЗасобів_Pointer? Current { get; private set; }
@@ -42898,15 +38949,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПереміщенняОсновнихЗасобів_Pointer GetDocumentPointer()
-        {
-            return new ПереміщенняОсновнихЗасобів_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПереміщенняОсновнихЗасобів_Const.PRESENTATION_FIELDS);
-        }
+        public ПереміщенняОсновнихЗасобів_Pointer GetDocumentPointer() => new ПереміщенняОсновнихЗасобів_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПереміщенняОсновнихЗасобів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -42918,26 +38962,14 @@ namespace GeneratedCode.Документи
     
     public class ПереміщенняОсновнихЗасобів_Pointer : DocumentPointer
     {
-        public ПереміщенняОсновнихЗасобів_Pointer(object? uid = null) : base(Config.Kernel, "tab_b97", ПереміщенняОсновнихЗасобів_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПереміщенняОсновнихЗасобів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b97", "ПереміщенняОсновнихЗасобів")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПереміщенняОсновнихЗасобів_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПереміщенняОсновнихЗасобів_Pointer() : base(Config.Kernel, "tab_b97", ПереміщенняОсновнихЗасобів_Const.TYPE) => base.Init(new UniqueID());
+        public ПереміщенняОсновнихЗасобів_Pointer(object? uid) : base(Config.Kernel, "tab_b97", ПереміщенняОсновнихЗасобів_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПереміщенняОсновнихЗасобів_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b97", ПереміщенняОсновнихЗасобів_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПереміщенняОсновнихЗасобів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b97", ПереміщенняОсновнихЗасобів_Const.TYPE) => base.Init(uid);
+        public ПереміщенняОсновнихЗасобів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b97", ПереміщенняОсновнихЗасобів_Const.TYPE) => base.Init(uid, fields);
+        public ПереміщенняОсновнихЗасобів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b97", ПереміщенняОсновнихЗасобів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПереміщенняОсновнихЗасобів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПереміщенняОсновнихЗасобів_Const.PRESENTATION_FIELDS.Length];
@@ -42945,23 +38977,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПереміщенняОсновнихЗасобів_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПереміщенняОсновнихЗасобів_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -42969,12 +38991,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -42988,7 +39005,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -43000,17 +39016,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПереміщенняОсновнихЗасобів_Pointer Copy()
-        {
-            return new ПереміщенняОсновнихЗасобів_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПереміщенняОсновнихЗасобів_Pointer GetEmptyPointer()
-        {
-            return new ПереміщенняОсновнихЗасобів_Pointer();
-        }
-
+        public ПереміщенняОсновнихЗасобів_Pointer Copy() => new ПереміщенняОсновнихЗасобів_Pointer(base.UniqueID, base.Fields, Name);
+        public ПереміщенняОсновнихЗасобів_Pointer GetEmptyPointer() => new ПереміщенняОсновнихЗасобів_Pointer();
         public async Task<ПереміщенняОсновнихЗасобів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -43022,7 +39029,7 @@ namespace GeneratedCode.Документи
     public class ПереміщенняОсновнихЗасобів_Select : DocumentSelect
     {		
         public ПереміщенняОсновнихЗасобів_Select() : base(Config.Kernel, "tab_b97") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПереміщенняОсновнихЗасобів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПереміщенняОсновнихЗасобів_Pointer? Current { get; private set; }
@@ -43196,15 +39203,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПередачаТоварів_Pointer GetDocumentPointer()
-        {
-            return new ПередачаТоварів_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПередачаТоварів_Const.PRESENTATION_FIELDS);
-        }
+        public ПередачаТоварів_Pointer GetDocumentPointer() => new ПередачаТоварів_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПередачаТоварів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -43216,26 +39216,14 @@ namespace GeneratedCode.Документи
     
     public class ПередачаТоварів_Pointer : DocumentPointer
     {
-        public ПередачаТоварів_Pointer(object? uid = null) : base(Config.Kernel, "tab_b98", ПередачаТоварів_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПередачаТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b98", "ПередачаТоварів")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПередачаТоварів_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПередачаТоварів_Pointer() : base(Config.Kernel, "tab_b98", ПередачаТоварів_Const.TYPE) => base.Init(new UniqueID());
+        public ПередачаТоварів_Pointer(object? uid) : base(Config.Kernel, "tab_b98", ПередачаТоварів_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПередачаТоварів_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b98", ПередачаТоварів_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПередачаТоварів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b98", ПередачаТоварів_Const.TYPE) => base.Init(uid);
+        public ПередачаТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b98", ПередачаТоварів_Const.TYPE) => base.Init(uid, fields);
+        public ПередачаТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b98", ПередачаТоварів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПередачаТоварів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПередачаТоварів_Const.PRESENTATION_FIELDS.Length];
@@ -43243,23 +39231,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПередачаТоварів_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПередачаТоварів_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -43267,12 +39245,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -43286,7 +39259,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -43298,17 +39270,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПередачаТоварів_Pointer Copy()
-        {
-            return new ПередачаТоварів_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПередачаТоварів_Pointer GetEmptyPointer()
-        {
-            return new ПередачаТоварів_Pointer();
-        }
-
+        public ПередачаТоварів_Pointer Copy() => new ПередачаТоварів_Pointer(base.UniqueID, base.Fields, Name);
+        public ПередачаТоварів_Pointer GetEmptyPointer() => new ПередачаТоварів_Pointer();
         public async Task<ПередачаТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -43320,7 +39283,7 @@ namespace GeneratedCode.Документи
     public class ПередачаТоварів_Select : DocumentSelect
     {		
         public ПередачаТоварів_Select() : base(Config.Kernel, "tab_b98") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПередачаТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПередачаТоварів_Pointer? Current { get; private set; }
@@ -43494,15 +39457,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПереоцінкаВалюти_Pointer GetDocumentPointer()
-        {
-            return new ПереоцінкаВалюти_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПереоцінкаВалюти_Const.PRESENTATION_FIELDS);
-        }
+        public ПереоцінкаВалюти_Pointer GetDocumentPointer() => new ПереоцінкаВалюти_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПереоцінкаВалюти_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -43514,26 +39470,14 @@ namespace GeneratedCode.Документи
     
     public class ПереоцінкаВалюти_Pointer : DocumentPointer
     {
-        public ПереоцінкаВалюти_Pointer(object? uid = null) : base(Config.Kernel, "tab_b99", ПереоцінкаВалюти_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПереоцінкаВалюти_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_b99", "ПереоцінкаВалюти")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПереоцінкаВалюти_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПереоцінкаВалюти_Pointer() : base(Config.Kernel, "tab_b99", ПереоцінкаВалюти_Const.TYPE) => base.Init(new UniqueID());
+        public ПереоцінкаВалюти_Pointer(object? uid) : base(Config.Kernel, "tab_b99", ПереоцінкаВалюти_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПереоцінкаВалюти_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b99", ПереоцінкаВалюти_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПереоцінкаВалюти_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b99", ПереоцінкаВалюти_Const.TYPE) => base.Init(uid);
+        public ПереоцінкаВалюти_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b99", ПереоцінкаВалюти_Const.TYPE) => base.Init(uid, fields);
+        public ПереоцінкаВалюти_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b99", ПереоцінкаВалюти_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПереоцінкаВалюти_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПереоцінкаВалюти_Const.PRESENTATION_FIELDS.Length];
@@ -43541,23 +39485,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПереоцінкаВалюти_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПереоцінкаВалюти_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -43565,12 +39499,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -43584,7 +39513,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -43596,17 +39524,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПереоцінкаВалюти_Pointer Copy()
-        {
-            return new ПереоцінкаВалюти_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПереоцінкаВалюти_Pointer GetEmptyPointer()
-        {
-            return new ПереоцінкаВалюти_Pointer();
-        }
-
+        public ПереоцінкаВалюти_Pointer Copy() => new ПереоцінкаВалюти_Pointer(base.UniqueID, base.Fields, Name);
+        public ПереоцінкаВалюти_Pointer GetEmptyPointer() => new ПереоцінкаВалюти_Pointer();
         public async Task<ПереоцінкаВалюти_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -43618,7 +39537,7 @@ namespace GeneratedCode.Документи
     public class ПереоцінкаВалюти_Select : DocumentSelect
     {		
         public ПереоцінкаВалюти_Select() : base(Config.Kernel, "tab_b99") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПереоцінкаВалюти_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПереоцінкаВалюти_Pointer? Current { get; private set; }
@@ -43792,15 +39711,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПереоцінкаОсновнихЗасобів_Pointer GetDocumentPointer()
-        {
-            return new ПереоцінкаОсновнихЗасобів_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПереоцінкаОсновнихЗасобів_Const.PRESENTATION_FIELDS);
-        }
+        public ПереоцінкаОсновнихЗасобів_Pointer GetDocumentPointer() => new ПереоцінкаОсновнихЗасобів_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПереоцінкаОсновнихЗасобів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -43812,26 +39724,14 @@ namespace GeneratedCode.Документи
     
     public class ПереоцінкаОсновнихЗасобів_Pointer : DocumentPointer
     {
-        public ПереоцінкаОсновнихЗасобів_Pointer(object? uid = null) : base(Config.Kernel, "tab_c01", ПереоцінкаОсновнихЗасобів_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПереоцінкаОсновнихЗасобів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c01", "ПереоцінкаОсновнихЗасобів")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПереоцінкаОсновнихЗасобів_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПереоцінкаОсновнихЗасобів_Pointer() : base(Config.Kernel, "tab_c01", ПереоцінкаОсновнихЗасобів_Const.TYPE) => base.Init(new UniqueID());
+        public ПереоцінкаОсновнихЗасобів_Pointer(object? uid) : base(Config.Kernel, "tab_c01", ПереоцінкаОсновнихЗасобів_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПереоцінкаОсновнихЗасобів_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_c01", ПереоцінкаОсновнихЗасобів_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПереоцінкаОсновнихЗасобів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_c01", ПереоцінкаОсновнихЗасобів_Const.TYPE) => base.Init(uid);
+        public ПереоцінкаОсновнихЗасобів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_c01", ПереоцінкаОсновнихЗасобів_Const.TYPE) => base.Init(uid, fields);
+        public ПереоцінкаОсновнихЗасобів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_c01", ПереоцінкаОсновнихЗасобів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПереоцінкаОсновнихЗасобів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПереоцінкаОсновнихЗасобів_Const.PRESENTATION_FIELDS.Length];
@@ -43839,23 +39739,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПереоцінкаОсновнихЗасобів_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПереоцінкаОсновнихЗасобів_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -43863,12 +39753,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -43882,7 +39767,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -43894,17 +39778,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПереоцінкаОсновнихЗасобів_Pointer Copy()
-        {
-            return new ПереоцінкаОсновнихЗасобів_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПереоцінкаОсновнихЗасобів_Pointer GetEmptyPointer()
-        {
-            return new ПереоцінкаОсновнихЗасобів_Pointer();
-        }
-
+        public ПереоцінкаОсновнихЗасобів_Pointer Copy() => new ПереоцінкаОсновнихЗасобів_Pointer(base.UniqueID, base.Fields, Name);
+        public ПереоцінкаОсновнихЗасобів_Pointer GetEmptyPointer() => new ПереоцінкаОсновнихЗасобів_Pointer();
         public async Task<ПереоцінкаОсновнихЗасобів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -43916,7 +39791,7 @@ namespace GeneratedCode.Документи
     public class ПереоцінкаОсновнихЗасобів_Select : DocumentSelect
     {		
         public ПереоцінкаОсновнихЗасобів_Select() : base(Config.Kernel, "tab_c01") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПереоцінкаОсновнихЗасобів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПереоцінкаОсновнихЗасобів_Pointer? Current { get; private set; }
@@ -44090,15 +39965,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПереоцінкаТоварів_Pointer GetDocumentPointer()
-        {
-            return new ПереоцінкаТоварів_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПереоцінкаТоварів_Const.PRESENTATION_FIELDS);
-        }
+        public ПереоцінкаТоварів_Pointer GetDocumentPointer() => new ПереоцінкаТоварів_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПереоцінкаТоварів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -44110,26 +39978,14 @@ namespace GeneratedCode.Документи
     
     public class ПереоцінкаТоварів_Pointer : DocumentPointer
     {
-        public ПереоцінкаТоварів_Pointer(object? uid = null) : base(Config.Kernel, "tab_c02", ПереоцінкаТоварів_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПереоцінкаТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c02", "ПереоцінкаТоварів")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПереоцінкаТоварів_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПереоцінкаТоварів_Pointer() : base(Config.Kernel, "tab_c02", ПереоцінкаТоварів_Const.TYPE) => base.Init(new UniqueID());
+        public ПереоцінкаТоварів_Pointer(object? uid) : base(Config.Kernel, "tab_c02", ПереоцінкаТоварів_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПереоцінкаТоварів_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_c02", ПереоцінкаТоварів_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПереоцінкаТоварів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_c02", ПереоцінкаТоварів_Const.TYPE) => base.Init(uid);
+        public ПереоцінкаТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_c02", ПереоцінкаТоварів_Const.TYPE) => base.Init(uid, fields);
+        public ПереоцінкаТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_c02", ПереоцінкаТоварів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПереоцінкаТоварів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПереоцінкаТоварів_Const.PRESENTATION_FIELDS.Length];
@@ -44137,23 +39993,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПереоцінкаТоварів_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПереоцінкаТоварів_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -44161,12 +40007,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -44180,7 +40021,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -44192,17 +40032,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПереоцінкаТоварів_Pointer Copy()
-        {
-            return new ПереоцінкаТоварів_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПереоцінкаТоварів_Pointer GetEmptyPointer()
-        {
-            return new ПереоцінкаТоварів_Pointer();
-        }
-
+        public ПереоцінкаТоварів_Pointer Copy() => new ПереоцінкаТоварів_Pointer(base.UniqueID, base.Fields, Name);
+        public ПереоцінкаТоварів_Pointer GetEmptyPointer() => new ПереоцінкаТоварів_Pointer();
         public async Task<ПереоцінкаТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -44214,7 +40045,7 @@ namespace GeneratedCode.Документи
     public class ПереоцінкаТоварів_Select : DocumentSelect
     {		
         public ПереоцінкаТоварів_Select() : base(Config.Kernel, "tab_c02") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПереоцінкаТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПереоцінкаТоварів_Pointer? Current { get; private set; }
@@ -44388,15 +40219,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПлатіжнеДорученняВхідне_Pointer GetDocumentPointer()
-        {
-            return new ПлатіжнеДорученняВхідне_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПлатіжнеДорученняВхідне_Const.PRESENTATION_FIELDS);
-        }
+        public ПлатіжнеДорученняВхідне_Pointer GetDocumentPointer() => new ПлатіжнеДорученняВхідне_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПлатіжнеДорученняВхідне_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -44408,26 +40232,14 @@ namespace GeneratedCode.Документи
     
     public class ПлатіжнеДорученняВхідне_Pointer : DocumentPointer
     {
-        public ПлатіжнеДорученняВхідне_Pointer(object? uid = null) : base(Config.Kernel, "tab_c03", ПлатіжнеДорученняВхідне_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПлатіжнеДорученняВхідне_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c03", "ПлатіжнеДорученняВхідне")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПлатіжнеДорученняВхідне_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПлатіжнеДорученняВхідне_Pointer() : base(Config.Kernel, "tab_c03", ПлатіжнеДорученняВхідне_Const.TYPE) => base.Init(new UniqueID());
+        public ПлатіжнеДорученняВхідне_Pointer(object? uid) : base(Config.Kernel, "tab_c03", ПлатіжнеДорученняВхідне_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПлатіжнеДорученняВхідне_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_c03", ПлатіжнеДорученняВхідне_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПлатіжнеДорученняВхідне_Pointer(UniqueID uid) : base(Config.Kernel, "tab_c03", ПлатіжнеДорученняВхідне_Const.TYPE) => base.Init(uid);
+        public ПлатіжнеДорученняВхідне_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_c03", ПлатіжнеДорученняВхідне_Const.TYPE) => base.Init(uid, fields);
+        public ПлатіжнеДорученняВхідне_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_c03", ПлатіжнеДорученняВхідне_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПлатіжнеДорученняВхідне_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПлатіжнеДорученняВхідне_Const.PRESENTATION_FIELDS.Length];
@@ -44435,23 +40247,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПлатіжнеДорученняВхідне_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПлатіжнеДорученняВхідне_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -44459,12 +40261,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -44478,7 +40275,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -44490,17 +40286,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПлатіжнеДорученняВхідне_Pointer Copy()
-        {
-            return new ПлатіжнеДорученняВхідне_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПлатіжнеДорученняВхідне_Pointer GetEmptyPointer()
-        {
-            return new ПлатіжнеДорученняВхідне_Pointer();
-        }
-
+        public ПлатіжнеДорученняВхідне_Pointer Copy() => new ПлатіжнеДорученняВхідне_Pointer(base.UniqueID, base.Fields, Name);
+        public ПлатіжнеДорученняВхідне_Pointer GetEmptyPointer() => new ПлатіжнеДорученняВхідне_Pointer();
         public async Task<ПлатіжнеДорученняВхідне_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -44512,7 +40299,7 @@ namespace GeneratedCode.Документи
     public class ПлатіжнеДорученняВхідне_Select : DocumentSelect
     {		
         public ПлатіжнеДорученняВхідне_Select() : base(Config.Kernel, "tab_c03") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПлатіжнеДорученняВхідне_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПлатіжнеДорученняВхідне_Pointer? Current { get; private set; }
@@ -44686,15 +40473,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПлатіжнеДорученняВихідне_Pointer GetDocumentPointer()
-        {
-            return new ПлатіжнеДорученняВихідне_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПлатіжнеДорученняВихідне_Const.PRESENTATION_FIELDS);
-        }
+        public ПлатіжнеДорученняВихідне_Pointer GetDocumentPointer() => new ПлатіжнеДорученняВихідне_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПлатіжнеДорученняВихідне_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -44706,26 +40486,14 @@ namespace GeneratedCode.Документи
     
     public class ПлатіжнеДорученняВихідне_Pointer : DocumentPointer
     {
-        public ПлатіжнеДорученняВихідне_Pointer(object? uid = null) : base(Config.Kernel, "tab_c04", ПлатіжнеДорученняВихідне_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПлатіжнеДорученняВихідне_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c04", "ПлатіжнеДорученняВихідне")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПлатіжнеДорученняВихідне_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПлатіжнеДорученняВихідне_Pointer() : base(Config.Kernel, "tab_c04", ПлатіжнеДорученняВихідне_Const.TYPE) => base.Init(new UniqueID());
+        public ПлатіжнеДорученняВихідне_Pointer(object? uid) : base(Config.Kernel, "tab_c04", ПлатіжнеДорученняВихідне_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПлатіжнеДорученняВихідне_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_c04", ПлатіжнеДорученняВихідне_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПлатіжнеДорученняВихідне_Pointer(UniqueID uid) : base(Config.Kernel, "tab_c04", ПлатіжнеДорученняВихідне_Const.TYPE) => base.Init(uid);
+        public ПлатіжнеДорученняВихідне_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_c04", ПлатіжнеДорученняВихідне_Const.TYPE) => base.Init(uid, fields);
+        public ПлатіжнеДорученняВихідне_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_c04", ПлатіжнеДорученняВихідне_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПлатіжнеДорученняВихідне_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПлатіжнеДорученняВихідне_Const.PRESENTATION_FIELDS.Length];
@@ -44733,23 +40501,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПлатіжнеДорученняВихідне_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПлатіжнеДорученняВихідне_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -44757,12 +40515,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -44776,7 +40529,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -44788,17 +40540,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПлатіжнеДорученняВихідне_Pointer Copy()
-        {
-            return new ПлатіжнеДорученняВихідне_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПлатіжнеДорученняВихідне_Pointer GetEmptyPointer()
-        {
-            return new ПлатіжнеДорученняВихідне_Pointer();
-        }
-
+        public ПлатіжнеДорученняВихідне_Pointer Copy() => new ПлатіжнеДорученняВихідне_Pointer(base.UniqueID, base.Fields, Name);
+        public ПлатіжнеДорученняВихідне_Pointer GetEmptyPointer() => new ПлатіжнеДорученняВихідне_Pointer();
         public async Task<ПлатіжнеДорученняВихідне_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -44810,7 +40553,7 @@ namespace GeneratedCode.Документи
     public class ПлатіжнеДорученняВихідне_Select : DocumentSelect
     {		
         public ПлатіжнеДорученняВихідне_Select() : base(Config.Kernel, "tab_c04") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПлатіжнеДорученняВихідне_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПлатіжнеДорученняВихідне_Pointer? Current { get; private set; }
@@ -44984,15 +40727,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПодатковаНакладна_Pointer GetDocumentPointer()
-        {
-            return new ПодатковаНакладна_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПодатковаНакладна_Const.PRESENTATION_FIELDS);
-        }
+        public ПодатковаНакладна_Pointer GetDocumentPointer() => new ПодатковаНакладна_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПодатковаНакладна_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -45004,26 +40740,14 @@ namespace GeneratedCode.Документи
     
     public class ПодатковаНакладна_Pointer : DocumentPointer
     {
-        public ПодатковаНакладна_Pointer(object? uid = null) : base(Config.Kernel, "tab_c05", ПодатковаНакладна_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПодатковаНакладна_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c05", "ПодатковаНакладна")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПодатковаНакладна_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПодатковаНакладна_Pointer() : base(Config.Kernel, "tab_c05", ПодатковаНакладна_Const.TYPE) => base.Init(new UniqueID());
+        public ПодатковаНакладна_Pointer(object? uid) : base(Config.Kernel, "tab_c05", ПодатковаНакладна_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПодатковаНакладна_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_c05", ПодатковаНакладна_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПодатковаНакладна_Pointer(UniqueID uid) : base(Config.Kernel, "tab_c05", ПодатковаНакладна_Const.TYPE) => base.Init(uid);
+        public ПодатковаНакладна_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_c05", ПодатковаНакладна_Const.TYPE) => base.Init(uid, fields);
+        public ПодатковаНакладна_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_c05", ПодатковаНакладна_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПодатковаНакладна_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПодатковаНакладна_Const.PRESENTATION_FIELDS.Length];
@@ -45031,23 +40755,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПодатковаНакладна_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПодатковаНакладна_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -45055,12 +40769,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -45074,7 +40783,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -45086,17 +40794,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПодатковаНакладна_Pointer Copy()
-        {
-            return new ПодатковаНакладна_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПодатковаНакладна_Pointer GetEmptyPointer()
-        {
-            return new ПодатковаНакладна_Pointer();
-        }
-
+        public ПодатковаНакладна_Pointer Copy() => new ПодатковаНакладна_Pointer(base.UniqueID, base.Fields, Name);
+        public ПодатковаНакладна_Pointer GetEmptyPointer() => new ПодатковаНакладна_Pointer();
         public async Task<ПодатковаНакладна_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -45108,7 +40807,7 @@ namespace GeneratedCode.Документи
     public class ПодатковаНакладна_Select : DocumentSelect
     {		
         public ПодатковаНакладна_Select() : base(Config.Kernel, "tab_c05") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПодатковаНакладна_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПодатковаНакладна_Pointer? Current { get; private set; }
@@ -45282,15 +40981,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПокупкаАбоПродажВалюти_Pointer GetDocumentPointer()
-        {
-            return new ПокупкаАбоПродажВалюти_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПокупкаАбоПродажВалюти_Const.PRESENTATION_FIELDS);
-        }
+        public ПокупкаАбоПродажВалюти_Pointer GetDocumentPointer() => new ПокупкаАбоПродажВалюти_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПокупкаАбоПродажВалюти_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -45302,26 +40994,14 @@ namespace GeneratedCode.Документи
     
     public class ПокупкаАбоПродажВалюти_Pointer : DocumentPointer
     {
-        public ПокупкаАбоПродажВалюти_Pointer(object? uid = null) : base(Config.Kernel, "tab_c06", ПокупкаАбоПродажВалюти_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПокупкаАбоПродажВалюти_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c06", "ПокупкаАбоПродажВалюти")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПокупкаАбоПродажВалюти_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПокупкаАбоПродажВалюти_Pointer() : base(Config.Kernel, "tab_c06", ПокупкаАбоПродажВалюти_Const.TYPE) => base.Init(new UniqueID());
+        public ПокупкаАбоПродажВалюти_Pointer(object? uid) : base(Config.Kernel, "tab_c06", ПокупкаАбоПродажВалюти_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПокупкаАбоПродажВалюти_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_c06", ПокупкаАбоПродажВалюти_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПокупкаАбоПродажВалюти_Pointer(UniqueID uid) : base(Config.Kernel, "tab_c06", ПокупкаАбоПродажВалюти_Const.TYPE) => base.Init(uid);
+        public ПокупкаАбоПродажВалюти_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_c06", ПокупкаАбоПродажВалюти_Const.TYPE) => base.Init(uid, fields);
+        public ПокупкаАбоПродажВалюти_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_c06", ПокупкаАбоПродажВалюти_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПокупкаАбоПродажВалюти_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПокупкаАбоПродажВалюти_Const.PRESENTATION_FIELDS.Length];
@@ -45329,23 +41009,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПокупкаАбоПродажВалюти_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПокупкаАбоПродажВалюти_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -45353,12 +41023,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -45372,7 +41037,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -45384,17 +41048,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПокупкаАбоПродажВалюти_Pointer Copy()
-        {
-            return new ПокупкаАбоПродажВалюти_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПокупкаАбоПродажВалюти_Pointer GetEmptyPointer()
-        {
-            return new ПокупкаАбоПродажВалюти_Pointer();
-        }
-
+        public ПокупкаАбоПродажВалюти_Pointer Copy() => new ПокупкаАбоПродажВалюти_Pointer(base.UniqueID, base.Fields, Name);
+        public ПокупкаАбоПродажВалюти_Pointer GetEmptyPointer() => new ПокупкаАбоПродажВалюти_Pointer();
         public async Task<ПокупкаАбоПродажВалюти_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -45406,7 +41061,7 @@ namespace GeneratedCode.Документи
     public class ПокупкаАбоПродажВалюти_Select : DocumentSelect
     {		
         public ПокупкаАбоПродажВалюти_Select() : base(Config.Kernel, "tab_c06") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПокупкаАбоПродажВалюти_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПокупкаАбоПродажВалюти_Pointer? Current { get; private set; }
@@ -45580,15 +41235,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПідготовкаДоПередачіОсновнихЗасобів_Pointer GetDocumentPointer()
-        {
-            return new ПідготовкаДоПередачіОсновнихЗасобів_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПідготовкаДоПередачіОсновнихЗасобів_Const.PRESENTATION_FIELDS);
-        }
+        public ПідготовкаДоПередачіОсновнихЗасобів_Pointer GetDocumentPointer() => new ПідготовкаДоПередачіОсновнихЗасобів_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПідготовкаДоПередачіОсновнихЗасобів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -45600,26 +41248,14 @@ namespace GeneratedCode.Документи
     
     public class ПідготовкаДоПередачіОсновнихЗасобів_Pointer : DocumentPointer
     {
-        public ПідготовкаДоПередачіОсновнихЗасобів_Pointer(object? uid = null) : base(Config.Kernel, "tab_c07", ПідготовкаДоПередачіОсновнихЗасобів_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПідготовкаДоПередачіОсновнихЗасобів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c07", "ПідготовкаДоПередачіОсновнихЗасобів")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПідготовкаДоПередачіОсновнихЗасобів_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПідготовкаДоПередачіОсновнихЗасобів_Pointer() : base(Config.Kernel, "tab_c07", ПідготовкаДоПередачіОсновнихЗасобів_Const.TYPE) => base.Init(new UniqueID());
+        public ПідготовкаДоПередачіОсновнихЗасобів_Pointer(object? uid) : base(Config.Kernel, "tab_c07", ПідготовкаДоПередачіОсновнихЗасобів_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПідготовкаДоПередачіОсновнихЗасобів_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_c07", ПідготовкаДоПередачіОсновнихЗасобів_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПідготовкаДоПередачіОсновнихЗасобів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_c07", ПідготовкаДоПередачіОсновнихЗасобів_Const.TYPE) => base.Init(uid);
+        public ПідготовкаДоПередачіОсновнихЗасобів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_c07", ПідготовкаДоПередачіОсновнихЗасобів_Const.TYPE) => base.Init(uid, fields);
+        public ПідготовкаДоПередачіОсновнихЗасобів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_c07", ПідготовкаДоПередачіОсновнихЗасобів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПідготовкаДоПередачіОсновнихЗасобів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПідготовкаДоПередачіОсновнихЗасобів_Const.PRESENTATION_FIELDS.Length];
@@ -45627,23 +41263,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПідготовкаДоПередачіОсновнихЗасобів_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПідготовкаДоПередачіОсновнихЗасобів_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -45651,12 +41277,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -45670,7 +41291,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -45682,17 +41302,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПідготовкаДоПередачіОсновнихЗасобів_Pointer Copy()
-        {
-            return new ПідготовкаДоПередачіОсновнихЗасобів_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПідготовкаДоПередачіОсновнихЗасобів_Pointer GetEmptyPointer()
-        {
-            return new ПідготовкаДоПередачіОсновнихЗасобів_Pointer();
-        }
-
+        public ПідготовкаДоПередачіОсновнихЗасобів_Pointer Copy() => new ПідготовкаДоПередачіОсновнихЗасобів_Pointer(base.UniqueID, base.Fields, Name);
+        public ПідготовкаДоПередачіОсновнихЗасобів_Pointer GetEmptyPointer() => new ПідготовкаДоПередачіОсновнихЗасобів_Pointer();
         public async Task<ПідготовкаДоПередачіОсновнихЗасобів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -45704,7 +41315,7 @@ namespace GeneratedCode.Документи
     public class ПідготовкаДоПередачіОсновнихЗасобів_Select : DocumentSelect
     {		
         public ПідготовкаДоПередачіОсновнихЗасобів_Select() : base(Config.Kernel, "tab_c07") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПідготовкаДоПередачіОсновнихЗасобів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПідготовкаДоПередачіОсновнихЗасобів_Pointer? Current { get; private set; }
@@ -45878,15 +41489,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПослугиСторонньоїОрганізації_Pointer GetDocumentPointer()
-        {
-            return new ПослугиСторонньоїОрганізації_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПослугиСторонньоїОрганізації_Const.PRESENTATION_FIELDS);
-        }
+        public ПослугиСторонньоїОрганізації_Pointer GetDocumentPointer() => new ПослугиСторонньоїОрганізації_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПослугиСторонньоїОрганізації_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -45898,26 +41502,14 @@ namespace GeneratedCode.Документи
     
     public class ПослугиСторонньоїОрганізації_Pointer : DocumentPointer
     {
-        public ПослугиСторонньоїОрганізації_Pointer(object? uid = null) : base(Config.Kernel, "tab_c08", ПослугиСторонньоїОрганізації_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПослугиСторонньоїОрганізації_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c08", "ПослугиСторонньоїОрганізації")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПослугиСторонньоїОрганізації_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПослугиСторонньоїОрганізації_Pointer() : base(Config.Kernel, "tab_c08", ПослугиСторонньоїОрганізації_Const.TYPE) => base.Init(new UniqueID());
+        public ПослугиСторонньоїОрганізації_Pointer(object? uid) : base(Config.Kernel, "tab_c08", ПослугиСторонньоїОрганізації_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПослугиСторонньоїОрганізації_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_c08", ПослугиСторонньоїОрганізації_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПослугиСторонньоїОрганізації_Pointer(UniqueID uid) : base(Config.Kernel, "tab_c08", ПослугиСторонньоїОрганізації_Const.TYPE) => base.Init(uid);
+        public ПослугиСторонньоїОрганізації_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_c08", ПослугиСторонньоїОрганізації_Const.TYPE) => base.Init(uid, fields);
+        public ПослугиСторонньоїОрганізації_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_c08", ПослугиСторонньоїОрганізації_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПослугиСторонньоїОрганізації_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПослугиСторонньоїОрганізації_Const.PRESENTATION_FIELDS.Length];
@@ -45925,23 +41517,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПослугиСторонньоїОрганізації_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПослугиСторонньоїОрганізації_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -45949,12 +41531,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -45968,7 +41545,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -45980,17 +41556,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПослугиСторонньоїОрганізації_Pointer Copy()
-        {
-            return new ПослугиСторонньоїОрганізації_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПослугиСторонньоїОрганізації_Pointer GetEmptyPointer()
-        {
-            return new ПослугиСторонньоїОрганізації_Pointer();
-        }
-
+        public ПослугиСторонньоїОрганізації_Pointer Copy() => new ПослугиСторонньоїОрганізації_Pointer(base.UniqueID, base.Fields, Name);
+        public ПослугиСторонньоїОрганізації_Pointer GetEmptyPointer() => new ПослугиСторонньоїОрганізації_Pointer();
         public async Task<ПослугиСторонньоїОрганізації_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -46002,7 +41569,7 @@ namespace GeneratedCode.Документи
     public class ПослугиСторонньоїОрганізації_Select : DocumentSelect
     {		
         public ПослугиСторонньоїОрганізації_Select() : base(Config.Kernel, "tab_c08") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПослугиСторонньоїОрганізації_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПослугиСторонньоїОрганізації_Pointer? Current { get; private set; }
@@ -46176,15 +41743,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПрибуткуванняМатеріалівЗВиробництва_Pointer GetDocumentPointer()
-        {
-            return new ПрибуткуванняМатеріалівЗВиробництва_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПрибуткуванняМатеріалівЗВиробництва_Const.PRESENTATION_FIELDS);
-        }
+        public ПрибуткуванняМатеріалівЗВиробництва_Pointer GetDocumentPointer() => new ПрибуткуванняМатеріалівЗВиробництва_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПрибуткуванняМатеріалівЗВиробництва_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -46196,26 +41756,14 @@ namespace GeneratedCode.Документи
     
     public class ПрибуткуванняМатеріалівЗВиробництва_Pointer : DocumentPointer
     {
-        public ПрибуткуванняМатеріалівЗВиробництва_Pointer(object? uid = null) : base(Config.Kernel, "tab_c09", ПрибуткуванняМатеріалівЗВиробництва_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПрибуткуванняМатеріалівЗВиробництва_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c09", "ПрибуткуванняМатеріалівЗВиробництва")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПрибуткуванняМатеріалівЗВиробництва_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПрибуткуванняМатеріалівЗВиробництва_Pointer() : base(Config.Kernel, "tab_c09", ПрибуткуванняМатеріалівЗВиробництва_Const.TYPE) => base.Init(new UniqueID());
+        public ПрибуткуванняМатеріалівЗВиробництва_Pointer(object? uid) : base(Config.Kernel, "tab_c09", ПрибуткуванняМатеріалівЗВиробництва_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПрибуткуванняМатеріалівЗВиробництва_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_c09", ПрибуткуванняМатеріалівЗВиробництва_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПрибуткуванняМатеріалівЗВиробництва_Pointer(UniqueID uid) : base(Config.Kernel, "tab_c09", ПрибуткуванняМатеріалівЗВиробництва_Const.TYPE) => base.Init(uid);
+        public ПрибуткуванняМатеріалівЗВиробництва_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_c09", ПрибуткуванняМатеріалівЗВиробництва_Const.TYPE) => base.Init(uid, fields);
+        public ПрибуткуванняМатеріалівЗВиробництва_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_c09", ПрибуткуванняМатеріалівЗВиробництва_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПрибуткуванняМатеріалівЗВиробництва_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПрибуткуванняМатеріалівЗВиробництва_Const.PRESENTATION_FIELDS.Length];
@@ -46223,23 +41771,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПрибуткуванняМатеріалівЗВиробництва_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПрибуткуванняМатеріалівЗВиробництва_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -46247,12 +41785,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -46266,7 +41799,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -46278,17 +41810,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПрибуткуванняМатеріалівЗВиробництва_Pointer Copy()
-        {
-            return new ПрибуткуванняМатеріалівЗВиробництва_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПрибуткуванняМатеріалівЗВиробництва_Pointer GetEmptyPointer()
-        {
-            return new ПрибуткуванняМатеріалівЗВиробництва_Pointer();
-        }
-
+        public ПрибуткуванняМатеріалівЗВиробництва_Pointer Copy() => new ПрибуткуванняМатеріалівЗВиробництва_Pointer(base.UniqueID, base.Fields, Name);
+        public ПрибуткуванняМатеріалівЗВиробництва_Pointer GetEmptyPointer() => new ПрибуткуванняМатеріалівЗВиробництва_Pointer();
         public async Task<ПрибуткуванняМатеріалівЗВиробництва_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -46300,7 +41823,7 @@ namespace GeneratedCode.Документи
     public class ПрибуткуванняМатеріалівЗВиробництва_Select : DocumentSelect
     {		
         public ПрибуткуванняМатеріалівЗВиробництва_Select() : base(Config.Kernel, "tab_c09") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПрибуткуванняМатеріалівЗВиробництва_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПрибуткуванняМатеріалівЗВиробництва_Pointer? Current { get; private set; }
@@ -46474,15 +41997,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПрибуткуванняТоварівВПереробку_Pointer GetDocumentPointer()
-        {
-            return new ПрибуткуванняТоварівВПереробку_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПрибуткуванняТоварівВПереробку_Const.PRESENTATION_FIELDS);
-        }
+        public ПрибуткуванняТоварівВПереробку_Pointer GetDocumentPointer() => new ПрибуткуванняТоварівВПереробку_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПрибуткуванняТоварівВПереробку_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -46494,26 +42010,14 @@ namespace GeneratedCode.Документи
     
     public class ПрибуткуванняТоварівВПереробку_Pointer : DocumentPointer
     {
-        public ПрибуткуванняТоварівВПереробку_Pointer(object? uid = null) : base(Config.Kernel, "tab_c10", ПрибуткуванняТоварівВПереробку_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПрибуткуванняТоварівВПереробку_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c10", "ПрибуткуванняТоварівВПереробку")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПрибуткуванняТоварівВПереробку_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПрибуткуванняТоварівВПереробку_Pointer() : base(Config.Kernel, "tab_c10", ПрибуткуванняТоварівВПереробку_Const.TYPE) => base.Init(new UniqueID());
+        public ПрибуткуванняТоварівВПереробку_Pointer(object? uid) : base(Config.Kernel, "tab_c10", ПрибуткуванняТоварівВПереробку_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПрибуткуванняТоварівВПереробку_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_c10", ПрибуткуванняТоварівВПереробку_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПрибуткуванняТоварівВПереробку_Pointer(UniqueID uid) : base(Config.Kernel, "tab_c10", ПрибуткуванняТоварівВПереробку_Const.TYPE) => base.Init(uid);
+        public ПрибуткуванняТоварівВПереробку_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_c10", ПрибуткуванняТоварівВПереробку_Const.TYPE) => base.Init(uid, fields);
+        public ПрибуткуванняТоварівВПереробку_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_c10", ПрибуткуванняТоварівВПереробку_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПрибуткуванняТоварівВПереробку_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПрибуткуванняТоварівВПереробку_Const.PRESENTATION_FIELDS.Length];
@@ -46521,23 +42025,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПрибуткуванняТоварівВПереробку_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПрибуткуванняТоварівВПереробку_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -46545,12 +42039,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -46564,7 +42053,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -46576,17 +42064,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПрибуткуванняТоварівВПереробку_Pointer Copy()
-        {
-            return new ПрибуткуванняТоварівВПереробку_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПрибуткуванняТоварівВПереробку_Pointer GetEmptyPointer()
-        {
-            return new ПрибуткуванняТоварівВПереробку_Pointer();
-        }
-
+        public ПрибуткуванняТоварівВПереробку_Pointer Copy() => new ПрибуткуванняТоварівВПереробку_Pointer(base.UniqueID, base.Fields, Name);
+        public ПрибуткуванняТоварівВПереробку_Pointer GetEmptyPointer() => new ПрибуткуванняТоварівВПереробку_Pointer();
         public async Task<ПрибуткуванняТоварівВПереробку_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -46598,7 +42077,7 @@ namespace GeneratedCode.Документи
     public class ПрибуткуванняТоварівВПереробку_Select : DocumentSelect
     {		
         public ПрибуткуванняТоварівВПереробку_Select() : base(Config.Kernel, "tab_c10") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПрибуткуванняТоварівВПереробку_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПрибуткуванняТоварівВПереробку_Pointer? Current { get; private set; }
@@ -46772,15 +42251,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПрибуткуванняТоварівЗПереробки_Pointer GetDocumentPointer()
-        {
-            return new ПрибуткуванняТоварівЗПереробки_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПрибуткуванняТоварівЗПереробки_Const.PRESENTATION_FIELDS);
-        }
+        public ПрибуткуванняТоварівЗПереробки_Pointer GetDocumentPointer() => new ПрибуткуванняТоварівЗПереробки_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПрибуткуванняТоварівЗПереробки_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -46792,26 +42264,14 @@ namespace GeneratedCode.Документи
     
     public class ПрибуткуванняТоварівЗПереробки_Pointer : DocumentPointer
     {
-        public ПрибуткуванняТоварівЗПереробки_Pointer(object? uid = null) : base(Config.Kernel, "tab_c11", ПрибуткуванняТоварівЗПереробки_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПрибуткуванняТоварівЗПереробки_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c11", "ПрибуткуванняТоварівЗПереробки")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПрибуткуванняТоварівЗПереробки_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПрибуткуванняТоварівЗПереробки_Pointer() : base(Config.Kernel, "tab_c11", ПрибуткуванняТоварівЗПереробки_Const.TYPE) => base.Init(new UniqueID());
+        public ПрибуткуванняТоварівЗПереробки_Pointer(object? uid) : base(Config.Kernel, "tab_c11", ПрибуткуванняТоварівЗПереробки_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПрибуткуванняТоварівЗПереробки_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_c11", ПрибуткуванняТоварівЗПереробки_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПрибуткуванняТоварівЗПереробки_Pointer(UniqueID uid) : base(Config.Kernel, "tab_c11", ПрибуткуванняТоварівЗПереробки_Const.TYPE) => base.Init(uid);
+        public ПрибуткуванняТоварівЗПереробки_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_c11", ПрибуткуванняТоварівЗПереробки_Const.TYPE) => base.Init(uid, fields);
+        public ПрибуткуванняТоварівЗПереробки_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_c11", ПрибуткуванняТоварівЗПереробки_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПрибуткуванняТоварівЗПереробки_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПрибуткуванняТоварівЗПереробки_Const.PRESENTATION_FIELDS.Length];
@@ -46819,23 +42279,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПрибуткуванняТоварівЗПереробки_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПрибуткуванняТоварівЗПереробки_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -46843,12 +42293,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -46862,7 +42307,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -46874,17 +42318,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПрибуткуванняТоварівЗПереробки_Pointer Copy()
-        {
-            return new ПрибуткуванняТоварівЗПереробки_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПрибуткуванняТоварівЗПереробки_Pointer GetEmptyPointer()
-        {
-            return new ПрибуткуванняТоварівЗПереробки_Pointer();
-        }
-
+        public ПрибуткуванняТоварівЗПереробки_Pointer Copy() => new ПрибуткуванняТоварівЗПереробки_Pointer(base.UniqueID, base.Fields, Name);
+        public ПрибуткуванняТоварівЗПереробки_Pointer GetEmptyPointer() => new ПрибуткуванняТоварівЗПереробки_Pointer();
         public async Task<ПрибуткуванняТоварівЗПереробки_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -46896,7 +42331,7 @@ namespace GeneratedCode.Документи
     public class ПрибуткуванняТоварівЗПереробки_Select : DocumentSelect
     {		
         public ПрибуткуванняТоварівЗПереробки_Select() : base(Config.Kernel, "tab_c11") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПрибуткуванняТоварівЗПереробки_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПрибуткуванняТоварівЗПереробки_Pointer? Current { get; private set; }
@@ -47070,15 +42505,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПрибуткуванняНезавершеногоВиробництва_Pointer GetDocumentPointer()
-        {
-            return new ПрибуткуванняНезавершеногоВиробництва_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПрибуткуванняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS);
-        }
+        public ПрибуткуванняНезавершеногоВиробництва_Pointer GetDocumentPointer() => new ПрибуткуванняНезавершеногоВиробництва_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПрибуткуванняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -47090,26 +42518,14 @@ namespace GeneratedCode.Документи
     
     public class ПрибуткуванняНезавершеногоВиробництва_Pointer : DocumentPointer
     {
-        public ПрибуткуванняНезавершеногоВиробництва_Pointer(object? uid = null) : base(Config.Kernel, "tab_c12", ПрибуткуванняНезавершеногоВиробництва_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПрибуткуванняНезавершеногоВиробництва_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c12", "ПрибуткуванняНезавершеногоВиробництва")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПрибуткуванняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПрибуткуванняНезавершеногоВиробництва_Pointer() : base(Config.Kernel, "tab_c12", ПрибуткуванняНезавершеногоВиробництва_Const.TYPE) => base.Init(new UniqueID());
+        public ПрибуткуванняНезавершеногоВиробництва_Pointer(object? uid) : base(Config.Kernel, "tab_c12", ПрибуткуванняНезавершеногоВиробництва_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПрибуткуванняНезавершеногоВиробництва_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_c12", ПрибуткуванняНезавершеногоВиробництва_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПрибуткуванняНезавершеногоВиробництва_Pointer(UniqueID uid) : base(Config.Kernel, "tab_c12", ПрибуткуванняНезавершеногоВиробництва_Const.TYPE) => base.Init(uid);
+        public ПрибуткуванняНезавершеногоВиробництва_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_c12", ПрибуткуванняНезавершеногоВиробництва_Const.TYPE) => base.Init(uid, fields);
+        public ПрибуткуванняНезавершеногоВиробництва_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_c12", ПрибуткуванняНезавершеногоВиробництва_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПрибуткуванняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПрибуткуванняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS.Length];
@@ -47117,23 +42533,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПрибуткуванняНезавершеногоВиробництва_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПрибуткуванняНезавершеногоВиробництва_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -47141,12 +42547,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -47160,7 +42561,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -47172,17 +42572,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПрибуткуванняНезавершеногоВиробництва_Pointer Copy()
-        {
-            return new ПрибуткуванняНезавершеногоВиробництва_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПрибуткуванняНезавершеногоВиробництва_Pointer GetEmptyPointer()
-        {
-            return new ПрибуткуванняНезавершеногоВиробництва_Pointer();
-        }
-
+        public ПрибуткуванняНезавершеногоВиробництва_Pointer Copy() => new ПрибуткуванняНезавершеногоВиробництва_Pointer(base.UniqueID, base.Fields, Name);
+        public ПрибуткуванняНезавершеногоВиробництва_Pointer GetEmptyPointer() => new ПрибуткуванняНезавершеногоВиробництва_Pointer();
         public async Task<ПрибуткуванняНезавершеногоВиробництва_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -47194,7 +42585,7 @@ namespace GeneratedCode.Документи
     public class ПрибуткуванняНезавершеногоВиробництва_Select : DocumentSelect
     {		
         public ПрибуткуванняНезавершеногоВиробництва_Select() : base(Config.Kernel, "tab_c12") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПрибуткуванняНезавершеногоВиробництва_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПрибуткуванняНезавершеногоВиробництва_Pointer? Current { get; private set; }
@@ -47368,15 +42759,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПрийняттяДоОбліку_Pointer GetDocumentPointer()
-        {
-            return new ПрийняттяДоОбліку_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПрийняттяДоОбліку_Const.PRESENTATION_FIELDS);
-        }
+        public ПрийняттяДоОбліку_Pointer GetDocumentPointer() => new ПрийняттяДоОбліку_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПрийняттяДоОбліку_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -47388,26 +42772,14 @@ namespace GeneratedCode.Документи
     
     public class ПрийняттяДоОбліку_Pointer : DocumentPointer
     {
-        public ПрийняттяДоОбліку_Pointer(object? uid = null) : base(Config.Kernel, "tab_c13", ПрийняттяДоОбліку_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПрийняттяДоОбліку_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c13", "ПрийняттяДоОбліку")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПрийняттяДоОбліку_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПрийняттяДоОбліку_Pointer() : base(Config.Kernel, "tab_c13", ПрийняттяДоОбліку_Const.TYPE) => base.Init(new UniqueID());
+        public ПрийняттяДоОбліку_Pointer(object? uid) : base(Config.Kernel, "tab_c13", ПрийняттяДоОбліку_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПрийняттяДоОбліку_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_c13", ПрийняттяДоОбліку_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПрийняттяДоОбліку_Pointer(UniqueID uid) : base(Config.Kernel, "tab_c13", ПрийняттяДоОбліку_Const.TYPE) => base.Init(uid);
+        public ПрийняттяДоОбліку_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_c13", ПрийняттяДоОбліку_Const.TYPE) => base.Init(uid, fields);
+        public ПрийняттяДоОбліку_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_c13", ПрийняттяДоОбліку_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПрийняттяДоОбліку_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПрийняттяДоОбліку_Const.PRESENTATION_FIELDS.Length];
@@ -47415,23 +42787,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПрийняттяДоОбліку_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПрийняттяДоОбліку_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -47439,12 +42801,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -47458,7 +42815,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -47470,17 +42826,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПрийняттяДоОбліку_Pointer Copy()
-        {
-            return new ПрийняттяДоОбліку_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПрийняттяДоОбліку_Pointer GetEmptyPointer()
-        {
-            return new ПрийняттяДоОбліку_Pointer();
-        }
-
+        public ПрийняттяДоОбліку_Pointer Copy() => new ПрийняттяДоОбліку_Pointer(base.UniqueID, base.Fields, Name);
+        public ПрийняттяДоОбліку_Pointer GetEmptyPointer() => new ПрийняттяДоОбліку_Pointer();
         public async Task<ПрийняттяДоОбліку_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -47492,7 +42839,7 @@ namespace GeneratedCode.Документи
     public class ПрийняттяДоОбліку_Select : DocumentSelect
     {		
         public ПрийняттяДоОбліку_Select() : base(Config.Kernel, "tab_c13") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПрийняттяДоОбліку_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПрийняттяДоОбліку_Pointer? Current { get; private set; }
@@ -47666,15 +43013,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПоверненняПереданихТоварів_Pointer GetDocumentPointer()
-        {
-            return new ПоверненняПереданихТоварів_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(ПоверненняПереданихТоварів_Const.PRESENTATION_FIELDS);
-        }
+        public ПоверненняПереданихТоварів_Pointer GetDocumentPointer() => new ПоверненняПереданихТоварів_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(ПоверненняПереданихТоварів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -47686,26 +43026,14 @@ namespace GeneratedCode.Документи
     
     public class ПоверненняПереданихТоварів_Pointer : DocumentPointer
     {
-        public ПоверненняПереданихТоварів_Pointer(object? uid = null) : base(Config.Kernel, "tab_c14", ПоверненняПереданихТоварів_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public ПоверненняПереданихТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c14", "ПоверненняПереданихТоварів")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(ПоверненняПереданихТоварів_Const.PRESENTATION_FIELDS);
-        }
-
+        public ПоверненняПереданихТоварів_Pointer() : base(Config.Kernel, "tab_c14", ПоверненняПереданихТоварів_Const.TYPE) => base.Init(new UniqueID());
+        public ПоверненняПереданихТоварів_Pointer(object? uid) : base(Config.Kernel, "tab_c14", ПоверненняПереданихТоварів_Const.TYPE) => base.Init(new UniqueID(uid));
+        public ПоверненняПереданихТоварів_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_c14", ПоверненняПереданихТоварів_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public ПоверненняПереданихТоварів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_c14", ПоверненняПереданихТоварів_Const.TYPE) => base.Init(uid);
+        public ПоверненняПереданихТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_c14", ПоверненняПереданихТоварів_Const.TYPE) => base.Init(uid, fields);
+        public ПоверненняПереданихТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_c14", ПоверненняПереданихТоварів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПоверненняПереданихТоварів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [ПоверненняПереданихТоварів_Const.PRESENTATION_FIELDS.Length];
@@ -47713,23 +43041,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(ПоверненняПереданихТоварів_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             ПоверненняПереданихТоварів_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -47737,12 +43055,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -47756,7 +43069,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -47768,17 +43080,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public ПоверненняПереданихТоварів_Pointer Copy()
-        {
-            return new ПоверненняПереданихТоварів_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public ПоверненняПереданихТоварів_Pointer GetEmptyPointer()
-        {
-            return new ПоверненняПереданихТоварів_Pointer();
-        }
-
+        public ПоверненняПереданихТоварів_Pointer Copy() => new ПоверненняПереданихТоварів_Pointer(base.UniqueID, base.Fields, Name);
+        public ПоверненняПереданихТоварів_Pointer GetEmptyPointer() => new ПоверненняПереданихТоварів_Pointer();
         public async Task<ПоверненняПереданихТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -47790,7 +43093,7 @@ namespace GeneratedCode.Документи
     public class ПоверненняПереданихТоварів_Select : DocumentSelect
     {		
         public ПоверненняПереданихТоварів_Select() : base(Config.Kernel, "tab_c14") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПоверненняПереданихТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public ПоверненняПереданихТоварів_Pointer? Current { get; private set; }
@@ -47964,15 +43267,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public РемонтОсновнихЗасобів_Pointer GetDocumentPointer()
-        {
-            return new РемонтОсновнихЗасобів_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(РемонтОсновнихЗасобів_Const.PRESENTATION_FIELDS);
-        }
+        public РемонтОсновнихЗасобів_Pointer GetDocumentPointer() => new РемонтОсновнихЗасобів_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(РемонтОсновнихЗасобів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -47984,26 +43280,14 @@ namespace GeneratedCode.Документи
     
     public class РемонтОсновнихЗасобів_Pointer : DocumentPointer
     {
-        public РемонтОсновнихЗасобів_Pointer(object? uid = null) : base(Config.Kernel, "tab_c15", РемонтОсновнихЗасобів_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public РемонтОсновнихЗасобів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c15", "РемонтОсновнихЗасобів")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(РемонтОсновнихЗасобів_Const.PRESENTATION_FIELDS);
-        }
-
+        public РемонтОсновнихЗасобів_Pointer() : base(Config.Kernel, "tab_c15", РемонтОсновнихЗасобів_Const.TYPE) => base.Init(new UniqueID());
+        public РемонтОсновнихЗасобів_Pointer(object? uid) : base(Config.Kernel, "tab_c15", РемонтОсновнихЗасобів_Const.TYPE) => base.Init(new UniqueID(uid));
+        public РемонтОсновнихЗасобів_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_c15", РемонтОсновнихЗасобів_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public РемонтОсновнихЗасобів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_c15", РемонтОсновнихЗасобів_Const.TYPE) => base.Init(uid);
+        public РемонтОсновнихЗасобів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_c15", РемонтОсновнихЗасобів_Const.TYPE) => base.Init(uid, fields);
+        public РемонтОсновнихЗасобів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_c15", РемонтОсновнихЗасобів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(РемонтОсновнихЗасобів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [РемонтОсновнихЗасобів_Const.PRESENTATION_FIELDS.Length];
@@ -48011,23 +43295,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(РемонтОсновнихЗасобів_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             РемонтОсновнихЗасобів_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -48035,12 +43309,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -48054,7 +43323,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -48066,17 +43334,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public РемонтОсновнихЗасобів_Pointer Copy()
-        {
-            return new РемонтОсновнихЗасобів_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public РемонтОсновнихЗасобів_Pointer GetEmptyPointer()
-        {
-            return new РемонтОсновнихЗасобів_Pointer();
-        }
-
+        public РемонтОсновнихЗасобів_Pointer Copy() => new РемонтОсновнихЗасобів_Pointer(base.UniqueID, base.Fields, Name);
+        public РемонтОсновнихЗасобів_Pointer GetEmptyPointer() => new РемонтОсновнихЗасобів_Pointer();
         public async Task<РемонтОсновнихЗасобів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -48088,7 +43347,7 @@ namespace GeneratedCode.Документи
     public class РемонтОсновнихЗасобів_Select : DocumentSelect
     {		
         public РемонтОсновнихЗасобів_Select() : base(Config.Kernel, "tab_c15") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new РемонтОсновнихЗасобів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public РемонтОсновнихЗасобів_Pointer? Current { get; private set; }
@@ -48262,15 +43521,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public РозподілІншихВитрат_Pointer GetDocumentPointer()
-        {
-            return new РозподілІншихВитрат_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(РозподілІншихВитрат_Const.PRESENTATION_FIELDS);
-        }
+        public РозподілІншихВитрат_Pointer GetDocumentPointer() => new РозподілІншихВитрат_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(РозподілІншихВитрат_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -48282,26 +43534,14 @@ namespace GeneratedCode.Документи
     
     public class РозподілІншихВитрат_Pointer : DocumentPointer
     {
-        public РозподілІншихВитрат_Pointer(object? uid = null) : base(Config.Kernel, "tab_c16", РозподілІншихВитрат_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public РозподілІншихВитрат_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c16", "РозподілІншихВитрат")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(РозподілІншихВитрат_Const.PRESENTATION_FIELDS);
-        }
-
+        public РозподілІншихВитрат_Pointer() : base(Config.Kernel, "tab_c16", РозподілІншихВитрат_Const.TYPE) => base.Init(new UniqueID());
+        public РозподілІншихВитрат_Pointer(object? uid) : base(Config.Kernel, "tab_c16", РозподілІншихВитрат_Const.TYPE) => base.Init(new UniqueID(uid));
+        public РозподілІншихВитрат_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_c16", РозподілІншихВитрат_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public РозподілІншихВитрат_Pointer(UniqueID uid) : base(Config.Kernel, "tab_c16", РозподілІншихВитрат_Const.TYPE) => base.Init(uid);
+        public РозподілІншихВитрат_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_c16", РозподілІншихВитрат_Const.TYPE) => base.Init(uid, fields);
+        public РозподілІншихВитрат_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_c16", РозподілІншихВитрат_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(РозподілІншихВитрат_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [РозподілІншихВитрат_Const.PRESENTATION_FIELDS.Length];
@@ -48309,23 +43549,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(РозподілІншихВитрат_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             РозподілІншихВитрат_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -48333,12 +43563,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -48352,7 +43577,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -48364,17 +43588,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public РозподілІншихВитрат_Pointer Copy()
-        {
-            return new РозподілІншихВитрат_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public РозподілІншихВитрат_Pointer GetEmptyPointer()
-        {
-            return new РозподілІншихВитрат_Pointer();
-        }
-
+        public РозподілІншихВитрат_Pointer Copy() => new РозподілІншихВитрат_Pointer(base.UniqueID, base.Fields, Name);
+        public РозподілІншихВитрат_Pointer GetEmptyPointer() => new РозподілІншихВитрат_Pointer();
         public async Task<РозподілІншихВитрат_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -48386,7 +43601,7 @@ namespace GeneratedCode.Документи
     public class РозподілІншихВитрат_Select : DocumentSelect
     {		
         public РозподілІншихВитрат_Select() : base(Config.Kernel, "tab_c16") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new РозподілІншихВитрат_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public РозподілІншихВитрат_Pointer? Current { get; private set; }
@@ -48560,15 +43775,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public РозрахунокСобівартостіВипуску_Pointer GetDocumentPointer()
-        {
-            return new РозрахунокСобівартостіВипуску_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(РозрахунокСобівартостіВипуску_Const.PRESENTATION_FIELDS);
-        }
+        public РозрахунокСобівартостіВипуску_Pointer GetDocumentPointer() => new РозрахунокСобівартостіВипуску_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(РозрахунокСобівартостіВипуску_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -48580,26 +43788,14 @@ namespace GeneratedCode.Документи
     
     public class РозрахунокСобівартостіВипуску_Pointer : DocumentPointer
     {
-        public РозрахунокСобівартостіВипуску_Pointer(object? uid = null) : base(Config.Kernel, "tab_c17", РозрахунокСобівартостіВипуску_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public РозрахунокСобівартостіВипуску_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c17", "РозрахунокСобівартостіВипуску")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(РозрахунокСобівартостіВипуску_Const.PRESENTATION_FIELDS);
-        }
-
+        public РозрахунокСобівартостіВипуску_Pointer() : base(Config.Kernel, "tab_c17", РозрахунокСобівартостіВипуску_Const.TYPE) => base.Init(new UniqueID());
+        public РозрахунокСобівартостіВипуску_Pointer(object? uid) : base(Config.Kernel, "tab_c17", РозрахунокСобівартостіВипуску_Const.TYPE) => base.Init(new UniqueID(uid));
+        public РозрахунокСобівартостіВипуску_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_c17", РозрахунокСобівартостіВипуску_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public РозрахунокСобівартостіВипуску_Pointer(UniqueID uid) : base(Config.Kernel, "tab_c17", РозрахунокСобівартостіВипуску_Const.TYPE) => base.Init(uid);
+        public РозрахунокСобівартостіВипуску_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_c17", РозрахунокСобівартостіВипуску_Const.TYPE) => base.Init(uid, fields);
+        public РозрахунокСобівартостіВипуску_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_c17", РозрахунокСобівартостіВипуску_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(РозрахунокСобівартостіВипуску_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [РозрахунокСобівартостіВипуску_Const.PRESENTATION_FIELDS.Length];
@@ -48607,23 +43803,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(РозрахунокСобівартостіВипуску_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             РозрахунокСобівартостіВипуску_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -48631,12 +43817,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -48650,7 +43831,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -48662,17 +43842,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public РозрахунокСобівартостіВипуску_Pointer Copy()
-        {
-            return new РозрахунокСобівартостіВипуску_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public РозрахунокСобівартостіВипуску_Pointer GetEmptyPointer()
-        {
-            return new РозрахунокСобівартостіВипуску_Pointer();
-        }
-
+        public РозрахунокСобівартостіВипуску_Pointer Copy() => new РозрахунокСобівартостіВипуску_Pointer(base.UniqueID, base.Fields, Name);
+        public РозрахунокСобівартостіВипуску_Pointer GetEmptyPointer() => new РозрахунокСобівартостіВипуску_Pointer();
         public async Task<РозрахунокСобівартостіВипуску_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -48684,7 +43855,7 @@ namespace GeneratedCode.Документи
     public class РозрахунокСобівартостіВипуску_Select : DocumentSelect
     {		
         public РозрахунокСобівартостіВипуску_Select() : base(Config.Kernel, "tab_c17") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new РозрахунокСобівартостіВипуску_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public РозрахунокСобівартостіВипуску_Pointer? Current { get; private set; }
@@ -48858,15 +44029,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public СписанняМатеріалів_Pointer GetDocumentPointer()
-        {
-            return new СписанняМатеріалів_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(СписанняМатеріалів_Const.PRESENTATION_FIELDS);
-        }
+        public СписанняМатеріалів_Pointer GetDocumentPointer() => new СписанняМатеріалів_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(СписанняМатеріалів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -48878,26 +44042,14 @@ namespace GeneratedCode.Документи
     
     public class СписанняМатеріалів_Pointer : DocumentPointer
     {
-        public СписанняМатеріалів_Pointer(object? uid = null) : base(Config.Kernel, "tab_c18", СписанняМатеріалів_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public СписанняМатеріалів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c18", "СписанняМатеріалів")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(СписанняМатеріалів_Const.PRESENTATION_FIELDS);
-        }
-
+        public СписанняМатеріалів_Pointer() : base(Config.Kernel, "tab_c18", СписанняМатеріалів_Const.TYPE) => base.Init(new UniqueID());
+        public СписанняМатеріалів_Pointer(object? uid) : base(Config.Kernel, "tab_c18", СписанняМатеріалів_Const.TYPE) => base.Init(new UniqueID(uid));
+        public СписанняМатеріалів_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_c18", СписанняМатеріалів_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public СписанняМатеріалів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_c18", СписанняМатеріалів_Const.TYPE) => base.Init(uid);
+        public СписанняМатеріалів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_c18", СписанняМатеріалів_Const.TYPE) => base.Init(uid, fields);
+        public СписанняМатеріалів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_c18", СписанняМатеріалів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(СписанняМатеріалів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [СписанняМатеріалів_Const.PRESENTATION_FIELDS.Length];
@@ -48905,23 +44057,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(СписанняМатеріалів_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             СписанняМатеріалів_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -48929,12 +44071,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -48948,7 +44085,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -48960,17 +44096,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public СписанняМатеріалів_Pointer Copy()
-        {
-            return new СписанняМатеріалів_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public СписанняМатеріалів_Pointer GetEmptyPointer()
-        {
-            return new СписанняМатеріалів_Pointer();
-        }
-
+        public СписанняМатеріалів_Pointer Copy() => new СписанняМатеріалів_Pointer(base.UniqueID, base.Fields, Name);
+        public СписанняМатеріалів_Pointer GetEmptyPointer() => new СписанняМатеріалів_Pointer();
         public async Task<СписанняМатеріалів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -48982,7 +44109,7 @@ namespace GeneratedCode.Документи
     public class СписанняМатеріалів_Select : DocumentSelect
     {		
         public СписанняМатеріалів_Select() : base(Config.Kernel, "tab_c18") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СписанняМатеріалів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public СписанняМатеріалів_Pointer? Current { get; private set; }
@@ -49156,15 +44283,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public СписанняНезавершеногоВиробництва_Pointer GetDocumentPointer()
-        {
-            return new СписанняНезавершеногоВиробництва_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(СписанняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS);
-        }
+        public СписанняНезавершеногоВиробництва_Pointer GetDocumentPointer() => new СписанняНезавершеногоВиробництва_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(СписанняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -49176,26 +44296,14 @@ namespace GeneratedCode.Документи
     
     public class СписанняНезавершеногоВиробництва_Pointer : DocumentPointer
     {
-        public СписанняНезавершеногоВиробництва_Pointer(object? uid = null) : base(Config.Kernel, "tab_c19", СписанняНезавершеногоВиробництва_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public СписанняНезавершеногоВиробництва_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c19", "СписанняНезавершеногоВиробництва")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(СписанняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS);
-        }
-
+        public СписанняНезавершеногоВиробництва_Pointer() : base(Config.Kernel, "tab_c19", СписанняНезавершеногоВиробництва_Const.TYPE) => base.Init(new UniqueID());
+        public СписанняНезавершеногоВиробництва_Pointer(object? uid) : base(Config.Kernel, "tab_c19", СписанняНезавершеногоВиробництва_Const.TYPE) => base.Init(new UniqueID(uid));
+        public СписанняНезавершеногоВиробництва_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_c19", СписанняНезавершеногоВиробництва_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public СписанняНезавершеногоВиробництва_Pointer(UniqueID uid) : base(Config.Kernel, "tab_c19", СписанняНезавершеногоВиробництва_Const.TYPE) => base.Init(uid);
+        public СписанняНезавершеногоВиробництва_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_c19", СписанняНезавершеногоВиробництва_Const.TYPE) => base.Init(uid, fields);
+        public СписанняНезавершеногоВиробництва_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_c19", СписанняНезавершеногоВиробництва_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(СписанняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [СписанняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS.Length];
@@ -49203,23 +44311,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(СписанняНезавершеногоВиробництва_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             СписанняНезавершеногоВиробництва_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -49227,12 +44325,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -49246,7 +44339,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -49258,17 +44350,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public СписанняНезавершеногоВиробництва_Pointer Copy()
-        {
-            return new СписанняНезавершеногоВиробництва_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public СписанняНезавершеногоВиробництва_Pointer GetEmptyPointer()
-        {
-            return new СписанняНезавершеногоВиробництва_Pointer();
-        }
-
+        public СписанняНезавершеногоВиробництва_Pointer Copy() => new СписанняНезавершеногоВиробництва_Pointer(base.UniqueID, base.Fields, Name);
+        public СписанняНезавершеногоВиробництва_Pointer GetEmptyPointer() => new СписанняНезавершеногоВиробництва_Pointer();
         public async Task<СписанняНезавершеногоВиробництва_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -49280,7 +44363,7 @@ namespace GeneratedCode.Документи
     public class СписанняНезавершеногоВиробництва_Select : DocumentSelect
     {		
         public СписанняНезавершеногоВиробництва_Select() : base(Config.Kernel, "tab_c19") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СписанняНезавершеногоВиробництва_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public СписанняНезавершеногоВиробництва_Pointer? Current { get; private set; }
@@ -49454,15 +44537,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public СписанняНематеріальнихАктивів_Pointer GetDocumentPointer()
-        {
-            return new СписанняНематеріальнихАктивів_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(СписанняНематеріальнихАктивів_Const.PRESENTATION_FIELDS);
-        }
+        public СписанняНематеріальнихАктивів_Pointer GetDocumentPointer() => new СписанняНематеріальнихАктивів_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(СписанняНематеріальнихАктивів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -49474,26 +44550,14 @@ namespace GeneratedCode.Документи
     
     public class СписанняНематеріальнихАктивів_Pointer : DocumentPointer
     {
-        public СписанняНематеріальнихАктивів_Pointer(object? uid = null) : base(Config.Kernel, "tab_c20", СписанняНематеріальнихАктивів_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public СписанняНематеріальнихАктивів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c20", "СписанняНематеріальнихАктивів")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(СписанняНематеріальнихАктивів_Const.PRESENTATION_FIELDS);
-        }
-
+        public СписанняНематеріальнихАктивів_Pointer() : base(Config.Kernel, "tab_c20", СписанняНематеріальнихАктивів_Const.TYPE) => base.Init(new UniqueID());
+        public СписанняНематеріальнихАктивів_Pointer(object? uid) : base(Config.Kernel, "tab_c20", СписанняНематеріальнихАктивів_Const.TYPE) => base.Init(new UniqueID(uid));
+        public СписанняНематеріальнихАктивів_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_c20", СписанняНематеріальнихАктивів_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public СписанняНематеріальнихАктивів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_c20", СписанняНематеріальнихАктивів_Const.TYPE) => base.Init(uid);
+        public СписанняНематеріальнихАктивів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_c20", СписанняНематеріальнихАктивів_Const.TYPE) => base.Init(uid, fields);
+        public СписанняНематеріальнихАктивів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_c20", СписанняНематеріальнихАктивів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(СписанняНематеріальнихАктивів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [СписанняНематеріальнихАктивів_Const.PRESENTATION_FIELDS.Length];
@@ -49501,23 +44565,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(СписанняНематеріальнихАктивів_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             СписанняНематеріальнихАктивів_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -49525,12 +44579,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -49544,7 +44593,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -49556,17 +44604,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public СписанняНематеріальнихАктивів_Pointer Copy()
-        {
-            return new СписанняНематеріальнихАктивів_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public СписанняНематеріальнихАктивів_Pointer GetEmptyPointer()
-        {
-            return new СписанняНематеріальнихАктивів_Pointer();
-        }
-
+        public СписанняНематеріальнихАктивів_Pointer Copy() => new СписанняНематеріальнихАктивів_Pointer(base.UniqueID, base.Fields, Name);
+        public СписанняНематеріальнихАктивів_Pointer GetEmptyPointer() => new СписанняНематеріальнихАктивів_Pointer();
         public async Task<СписанняНематеріальнихАктивів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -49578,7 +44617,7 @@ namespace GeneratedCode.Документи
     public class СписанняНематеріальнихАктивів_Select : DocumentSelect
     {		
         public СписанняНематеріальнихАктивів_Select() : base(Config.Kernel, "tab_c20") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СписанняНематеріальнихАктивів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public СписанняНематеріальнихАктивів_Pointer? Current { get; private set; }
@@ -49752,15 +44791,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public СписанняОсновнихЗасобів_Pointer GetDocumentPointer()
-        {
-            return new СписанняОсновнихЗасобів_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(СписанняОсновнихЗасобів_Const.PRESENTATION_FIELDS);
-        }
+        public СписанняОсновнихЗасобів_Pointer GetDocumentPointer() => new СписанняОсновнихЗасобів_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(СписанняОсновнихЗасобів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -49772,26 +44804,14 @@ namespace GeneratedCode.Документи
     
     public class СписанняОсновнихЗасобів_Pointer : DocumentPointer
     {
-        public СписанняОсновнихЗасобів_Pointer(object? uid = null) : base(Config.Kernel, "tab_c21", СписанняОсновнихЗасобів_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public СписанняОсновнихЗасобів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c21", "СписанняОсновнихЗасобів")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(СписанняОсновнихЗасобів_Const.PRESENTATION_FIELDS);
-        }
-
+        public СписанняОсновнихЗасобів_Pointer() : base(Config.Kernel, "tab_c21", СписанняОсновнихЗасобів_Const.TYPE) => base.Init(new UniqueID());
+        public СписанняОсновнихЗасобів_Pointer(object? uid) : base(Config.Kernel, "tab_c21", СписанняОсновнихЗасобів_Const.TYPE) => base.Init(new UniqueID(uid));
+        public СписанняОсновнихЗасобів_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_c21", СписанняОсновнихЗасобів_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public СписанняОсновнихЗасобів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_c21", СписанняОсновнихЗасобів_Const.TYPE) => base.Init(uid);
+        public СписанняОсновнихЗасобів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_c21", СписанняОсновнихЗасобів_Const.TYPE) => base.Init(uid, fields);
+        public СписанняОсновнихЗасобів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_c21", СписанняОсновнихЗасобів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(СписанняОсновнихЗасобів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [СписанняОсновнихЗасобів_Const.PRESENTATION_FIELDS.Length];
@@ -49799,23 +44819,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(СписанняОсновнихЗасобів_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             СписанняОсновнихЗасобів_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -49823,12 +44833,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -49842,7 +44847,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -49854,17 +44858,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public СписанняОсновнихЗасобів_Pointer Copy()
-        {
-            return new СписанняОсновнихЗасобів_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public СписанняОсновнихЗасобів_Pointer GetEmptyPointer()
-        {
-            return new СписанняОсновнихЗасобів_Pointer();
-        }
-
+        public СписанняОсновнихЗасобів_Pointer Copy() => new СписанняОсновнихЗасобів_Pointer(base.UniqueID, base.Fields, Name);
+        public СписанняОсновнихЗасобів_Pointer GetEmptyPointer() => new СписанняОсновнихЗасобів_Pointer();
         public async Task<СписанняОсновнихЗасобів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -49876,7 +44871,7 @@ namespace GeneratedCode.Документи
     public class СписанняОсновнихЗасобів_Select : DocumentSelect
     {		
         public СписанняОсновнихЗасобів_Select() : base(Config.Kernel, "tab_c21") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СписанняОсновнихЗасобів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public СписанняОсновнихЗасобів_Pointer? Current { get; private set; }
@@ -50050,15 +45045,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public СписанняВитратМайбутніхПеріодів_Pointer GetDocumentPointer()
-        {
-            return new СписанняВитратМайбутніхПеріодів_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(СписанняВитратМайбутніхПеріодів_Const.PRESENTATION_FIELDS);
-        }
+        public СписанняВитратМайбутніхПеріодів_Pointer GetDocumentPointer() => new СписанняВитратМайбутніхПеріодів_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(СписанняВитратМайбутніхПеріодів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -50070,26 +45058,14 @@ namespace GeneratedCode.Документи
     
     public class СписанняВитратМайбутніхПеріодів_Pointer : DocumentPointer
     {
-        public СписанняВитратМайбутніхПеріодів_Pointer(object? uid = null) : base(Config.Kernel, "tab_c22", СписанняВитратМайбутніхПеріодів_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public СписанняВитратМайбутніхПеріодів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c22", "СписанняВитратМайбутніхПеріодів")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(СписанняВитратМайбутніхПеріодів_Const.PRESENTATION_FIELDS);
-        }
-
+        public СписанняВитратМайбутніхПеріодів_Pointer() : base(Config.Kernel, "tab_c22", СписанняВитратМайбутніхПеріодів_Const.TYPE) => base.Init(new UniqueID());
+        public СписанняВитратМайбутніхПеріодів_Pointer(object? uid) : base(Config.Kernel, "tab_c22", СписанняВитратМайбутніхПеріодів_Const.TYPE) => base.Init(new UniqueID(uid));
+        public СписанняВитратМайбутніхПеріодів_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_c22", СписанняВитратМайбутніхПеріодів_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public СписанняВитратМайбутніхПеріодів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_c22", СписанняВитратМайбутніхПеріодів_Const.TYPE) => base.Init(uid);
+        public СписанняВитратМайбутніхПеріодів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_c22", СписанняВитратМайбутніхПеріодів_Const.TYPE) => base.Init(uid, fields);
+        public СписанняВитратМайбутніхПеріодів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_c22", СписанняВитратМайбутніхПеріодів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(СписанняВитратМайбутніхПеріодів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [СписанняВитратМайбутніхПеріодів_Const.PRESENTATION_FIELDS.Length];
@@ -50097,23 +45073,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(СписанняВитратМайбутніхПеріодів_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             СписанняВитратМайбутніхПеріодів_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -50121,12 +45087,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -50140,7 +45101,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -50152,17 +45112,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public СписанняВитратМайбутніхПеріодів_Pointer Copy()
-        {
-            return new СписанняВитратМайбутніхПеріодів_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public СписанняВитратМайбутніхПеріодів_Pointer GetEmptyPointer()
-        {
-            return new СписанняВитратМайбутніхПеріодів_Pointer();
-        }
-
+        public СписанняВитратМайбутніхПеріодів_Pointer Copy() => new СписанняВитратМайбутніхПеріодів_Pointer(base.UniqueID, base.Fields, Name);
+        public СписанняВитратМайбутніхПеріодів_Pointer GetEmptyPointer() => new СписанняВитратМайбутніхПеріодів_Pointer();
         public async Task<СписанняВитратМайбутніхПеріодів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -50174,7 +45125,7 @@ namespace GeneratedCode.Документи
     public class СписанняВитратМайбутніхПеріодів_Select : DocumentSelect
     {		
         public СписанняВитратМайбутніхПеріодів_Select() : base(Config.Kernel, "tab_c22") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СписанняВитратМайбутніхПеріодів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public СписанняВитратМайбутніхПеріодів_Pointer? Current { get; private set; }
@@ -50348,15 +45299,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public СписанняТоварів_Pointer GetDocumentPointer()
-        {
-            return new СписанняТоварів_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(СписанняТоварів_Const.PRESENTATION_FIELDS);
-        }
+        public СписанняТоварів_Pointer GetDocumentPointer() => new СписанняТоварів_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(СписанняТоварів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -50368,26 +45312,14 @@ namespace GeneratedCode.Документи
     
     public class СписанняТоварів_Pointer : DocumentPointer
     {
-        public СписанняТоварів_Pointer(object? uid = null) : base(Config.Kernel, "tab_c23", СписанняТоварів_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public СписанняТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c23", "СписанняТоварів")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(СписанняТоварів_Const.PRESENTATION_FIELDS);
-        }
-
+        public СписанняТоварів_Pointer() : base(Config.Kernel, "tab_c23", СписанняТоварів_Const.TYPE) => base.Init(new UniqueID());
+        public СписанняТоварів_Pointer(object? uid) : base(Config.Kernel, "tab_c23", СписанняТоварів_Const.TYPE) => base.Init(new UniqueID(uid));
+        public СписанняТоварів_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_c23", СписанняТоварів_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public СписанняТоварів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_c23", СписанняТоварів_Const.TYPE) => base.Init(uid);
+        public СписанняТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_c23", СписанняТоварів_Const.TYPE) => base.Init(uid, fields);
+        public СписанняТоварів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_c23", СписанняТоварів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(СписанняТоварів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [СписанняТоварів_Const.PRESENTATION_FIELDS.Length];
@@ -50395,23 +45327,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(СписанняТоварів_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             СписанняТоварів_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -50419,12 +45341,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -50438,7 +45355,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -50450,17 +45366,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public СписанняТоварів_Pointer Copy()
-        {
-            return new СписанняТоварів_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public СписанняТоварів_Pointer GetEmptyPointer()
-        {
-            return new СписанняТоварів_Pointer();
-        }
-
+        public СписанняТоварів_Pointer Copy() => new СписанняТоварів_Pointer(base.UniqueID, base.Fields, Name);
+        public СписанняТоварів_Pointer GetEmptyPointer() => new СписанняТоварів_Pointer();
         public async Task<СписанняТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -50472,7 +45379,7 @@ namespace GeneratedCode.Документи
     public class СписанняТоварів_Select : DocumentSelect
     {		
         public СписанняТоварів_Select() : base(Config.Kernel, "tab_c23") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СписанняТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public СписанняТоварів_Pointer? Current { get; private set; }
@@ -50646,15 +45553,8 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public Сторнування_Pointer GetDocumentPointer()
-        {
-            return new Сторнування_Pointer(UniqueID.UGuid);
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return await base.BasePresentation(Сторнування_Const.PRESENTATION_FIELDS);
-        }
+        public Сторнування_Pointer GetDocumentPointer() => new Сторнування_Pointer(UniqueID.UGuid);
+        public async Task<string> GetPresentation() => await base.BasePresentation(Сторнування_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
         public string НомерДок { get; set; } = "";
@@ -50666,26 +45566,14 @@ namespace GeneratedCode.Документи
     
     public class Сторнування_Pointer : DocumentPointer
     {
-        public Сторнування_Pointer(object? uid = null) : base(Config.Kernel, "tab_c24", Сторнування_Const.TYPE)
-        {
-            base.Init(new UniqueID(uid));
-        }
-        
-        public Сторнування_Pointer(UniqueID uid, Dictionary<string, object>? fields = null) : base(Config.Kernel, "tab_c24", "Сторнування")
-        {
-            base.Init(uid, fields);
-        }
-
-        public string Назва
-        {
-            get { return Name; } set { Name = value; }
-        }
-
-        public async Task<string> GetPresentation()
-        {
-            return Name = await base.BasePresentation(Сторнування_Const.PRESENTATION_FIELDS);
-        }
-
+        public Сторнування_Pointer() : base(Config.Kernel, "tab_c24", Сторнування_Const.TYPE) => base.Init(new UniqueID());
+        public Сторнування_Pointer(object? uid) : base(Config.Kernel, "tab_c24", Сторнування_Const.TYPE) => base.Init(new UniqueID(uid));
+        public Сторнування_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_c24", Сторнування_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public Сторнування_Pointer(UniqueID uid) : base(Config.Kernel, "tab_c24", Сторнування_Const.TYPE) => base.Init(uid);
+        public Сторнування_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_c24", Сторнування_Const.TYPE) => base.Init(uid, fields);
+        public Сторнування_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_c24", Сторнування_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(Сторнування_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
         {
             string[] presentationField = new string [Сторнування_Const.PRESENTATION_FIELDS.Length];
@@ -50693,23 +45581,13 @@ namespace GeneratedCode.Документи
             querySelect.Joins.Add(new Join(Сторнування_Const.TABLE, joinField, parentTable, joinTableAlias));
             querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
         }
-
-        public async Task<bool?> IsSpend()
-        {
-            return await base.BaseIsSpend();
-        }
-
-        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend()
-        {
-            return await base.BaseGetSpend();
-        }
-
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
             Сторнування_Objest? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
-
         public async Task ClearSpendTheDocument()
         {
             
@@ -50717,12 +45595,7 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
                 
         }
-
-        public async Task<bool?> GetDeletionLabel()
-        {
-            return await base.BaseGetDeletionLabel();
-        }
-
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         
         /* Очищення регістрів накопичення */
         
@@ -50736,7 +45609,6 @@ namespace GeneratedCode.Документи
             }
         }
           
-
         public async Task SetDeletionLabel(bool label = true)
         {
           
@@ -50748,17 +45620,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-
-        public Сторнування_Pointer Copy()
-        {
-            return new Сторнування_Pointer(base.UniqueID, base.Fields) { Name = Name };
-        }
-
-        public Сторнування_Pointer GetEmptyPointer()
-        {
-            return new Сторнування_Pointer();
-        }
-
+        public Сторнування_Pointer Copy() => new Сторнування_Pointer(base.UniqueID, base.Fields, Name);
+        public Сторнування_Pointer GetEmptyPointer() => new Сторнування_Pointer();
         public async Task<Сторнування_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -50770,7 +45633,7 @@ namespace GeneratedCode.Документи
     public class Сторнування_Select : DocumentSelect
     {		
         public Сторнування_Select() : base(Config.Kernel, "tab_c24") { }
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Сторнування_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields); return true; } else { Current = null; return false; } }
         public Сторнування_Pointer? Current { get; private set; }
@@ -51042,10 +45905,7 @@ namespace GeneratedCode.РегістриВідомостей
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
         
-        public async Task Delete(Guid owner)
-        {
-            await base.BaseDelete(owner);
-        }
+        public async Task Delete(Guid owner) => await base.BaseDelete(owner);
 
         public class Record : RegisterInformationRecord
         {
@@ -51245,10 +46105,7 @@ namespace GeneratedCode.РегістриВідомостей
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
         
-        public async Task Delete(Guid owner)
-        {
-            await base.BaseDelete(owner);
-        }
+        public async Task Delete(Guid owner) => await base.BaseDelete(owner);
 
         public class Record : RegisterInformationRecord
         {
@@ -51444,10 +46301,7 @@ namespace GeneratedCode.РегістриВідомостей
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
         
-        public async Task Delete(Guid owner)
-        {
-            await base.BaseDelete(owner);
-        }
+        public async Task Delete(Guid owner) => await base.BaseDelete(owner);
 
         public class Record : RegisterInformationRecord
         {
@@ -51631,10 +46485,7 @@ namespace GeneratedCode.РегістриВідомостей
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
         
-        public async Task Delete(Guid owner)
-        {
-            await base.BaseDelete(owner);
-        }
+        public async Task Delete(Guid owner) => await base.BaseDelete(owner);
 
         public class Record : RegisterInformationRecord
         {
@@ -51824,10 +46675,7 @@ namespace GeneratedCode.РегістриВідомостей
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
         
-        public async Task Delete(Guid owner)
-        {
-            await base.BaseDelete(owner);
-        }
+        public async Task Delete(Guid owner) => await base.BaseDelete(owner);
 
         public class Record : RegisterInformationRecord
         {
@@ -52293,17 +47141,6 @@ namespace GeneratedCode.РегістриНакопичення
 
             /* Назва власника */
             QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({ТовариНаСкладах_Const.TABLE}.owner, {ТовариНаСкладах_Const.TABLE}.ownertype)", "OwnerName"));
-
-            //Назва документу
-            /*if (docname_required)
-            {
-              string query_case = $"CASE WHEN join_doc_1.uid IS NOT NULL THEN join_doc_1.{Документи.ПоступленняТоварівТаПослуг_Const.Назва} WHEN join_doc_2.uid IS NOT NULL THEN join_doc_2.{Документи.РеалізаціяТоварівТаПослуг_Const.Назва} WHEN join_doc_3.uid IS NOT NULL THEN join_doc_3.{Документи.ПереміщенняТоварів_Const.Назва} WHEN join_doc_4.uid IS NOT NULL THEN join_doc_4.{Документи.ПоверненняТоварівПостачальнику_Const.Назва} WHEN join_doc_5.uid IS NOT NULL THEN join_doc_5.{Документи.ПоверненняТоварівВідКлієнта_Const.Назва} WHEN join_doc_6.uid IS NOT NULL THEN join_doc_6.{Документи.ВведенняЗалишків_Const.Назва} WHEN join_doc_7.uid IS NOT NULL THEN join_doc_7.{Документи.ПсуванняТоварів_Const.Назва} WHEN join_doc_8.uid IS NOT NULL THEN join_doc_8.{Документи.ВнутрішнєСпоживанняТоварів_Const.Назва} WHEN join_doc_9.uid IS NOT NULL THEN join_doc_9.{Документи.ЧекККМ_Const.Назва} END";
-              QuerySelect.FieldAndAlias.Add(new ValueName<string>(query_case, "docname"));
-
-              int i = 0;
-              foreach (string table in ТовариНаСкладах_Const.AllowDocumentSpendTable)
-                  QuerySelect.Joins.Add(new Join(table, "owner", "tab_a38", $"join_doc_{++i}"));
-            }*/
         }
 
         public async Task Read()
@@ -52473,10 +47310,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async Task Delete()
-        {
-            await base.BaseDelete();
-        }
+        public async Task Delete() => await base.BaseDelete();
         
         public class Record : RegisterAccumulationTablePartRecord
         {
@@ -52586,10 +47420,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async Task Delete()
-        {
-            await base.BaseDelete();
-        }
+        public async Task Delete() => await base.BaseDelete();
         
         public class Record : RegisterAccumulationTablePartRecord
         {
@@ -52688,10 +47519,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async Task Delete()
-        {
-            await base.BaseDelete();
-        }
+        public async Task Delete() => await base.BaseDelete();
         
         public class Record : RegisterAccumulationTablePartRecord
         {
@@ -52755,17 +47583,6 @@ namespace GeneratedCode.РегістриНакопичення
 
             /* Назва власника */
             QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({ЗамовленняКлієнтів_Const.TABLE}.owner, {ЗамовленняКлієнтів_Const.TABLE}.ownertype)", "OwnerName"));
-
-            //Назва документу
-            /*if (docname_required)
-            {
-              string query_case = $"CASE WHEN join_doc_1.uid IS NOT NULL THEN join_doc_1.{Документи.ЗамовленняКлієнта_Const.Назва} WHEN join_doc_2.uid IS NOT NULL THEN join_doc_2.{Документи.РеалізаціяТоварівТаПослуг_Const.Назва} WHEN join_doc_3.uid IS NOT NULL THEN join_doc_3.{Документи.ЗакриттяЗамовленняКлієнта_Const.Назва} END";
-              QuerySelect.FieldAndAlias.Add(new ValueName<string>(query_case, "docname"));
-
-              int i = 0;
-              foreach (string table in ЗамовленняКлієнтів_Const.AllowDocumentSpendTable)
-                  QuerySelect.Joins.Add(new Join(table, "owner", "tab_a55", $"join_doc_{++i}"));
-            }*/
         }
 
         public async Task Read()
@@ -52935,10 +47752,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async Task Delete()
-        {
-            await base.BaseDelete();
-        }
+        public async Task Delete() => await base.BaseDelete();
         
         public class Record : RegisterAccumulationTablePartRecord
         {
@@ -52994,17 +47808,6 @@ namespace GeneratedCode.РегістриНакопичення
 
             /* Назва власника */
             QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({РозрахункиЗКлієнтами_Const.TABLE}.owner, {РозрахункиЗКлієнтами_Const.TABLE}.ownertype)", "OwnerName"));
-
-            //Назва документу
-            /*if (docname_required)
-            {
-              string query_case = $"CASE WHEN join_doc_1.uid IS NOT NULL THEN join_doc_1.{Документи.РеалізаціяТоварівТаПослуг_Const.Назва} WHEN join_doc_2.uid IS NOT NULL THEN join_doc_2.{Документи.ПрихіднийКасовийОрдер_Const.Назва} WHEN join_doc_3.uid IS NOT NULL THEN join_doc_3.{Документи.РозхіднийКасовийОрдер_Const.Назва} WHEN join_doc_4.uid IS NOT NULL THEN join_doc_4.{Документи.ПоверненняТоварівВідКлієнта_Const.Назва} WHEN join_doc_5.uid IS NOT NULL THEN join_doc_5.{Документи.АктВиконанихРобіт_Const.Назва} WHEN join_doc_6.uid IS NOT NULL THEN join_doc_6.{Документи.ВведенняЗалишків_Const.Назва} WHEN join_doc_7.uid IS NOT NULL THEN join_doc_7.{Документи.КорегуванняБоргу_Const.Назва} END";
-              QuerySelect.FieldAndAlias.Add(new ValueName<string>(query_case, "docname"));
-
-              int i = 0;
-              foreach (string table in РозрахункиЗКлієнтами_Const.AllowDocumentSpendTable)
-                  QuerySelect.Joins.Add(new Join(table, "owner", "tab_a56", $"join_doc_{++i}"));
-            }*/
         }
 
         public async Task Read()
@@ -53154,10 +47957,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async Task Delete()
-        {
-            await base.BaseDelete();
-        }
+        public async Task Delete() => await base.BaseDelete();
         
         public class Record : RegisterAccumulationTablePartRecord
         {
@@ -53249,10 +48049,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async Task Delete()
-        {
-            await base.BaseDelete();
-        }
+        public async Task Delete() => await base.BaseDelete();
         
         public class Record : RegisterAccumulationTablePartRecord
         {
@@ -53325,17 +48122,6 @@ namespace GeneratedCode.РегістриНакопичення
 
             /* Назва власника */
             QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({Закупівлі_Const.TABLE}.owner, {Закупівлі_Const.TABLE}.ownertype)", "OwnerName"));
-
-            //Назва документу
-            /*if (docname_required)
-            {
-              string query_case = $"CASE WHEN join_doc_1.uid IS NOT NULL THEN join_doc_1.{Документи.ПоступленняТоварівТаПослуг_Const.Назва} WHEN join_doc_2.uid IS NOT NULL THEN join_doc_2.{Документи.ПоверненняТоварівПостачальнику_Const.Назва} END";
-              QuerySelect.FieldAndAlias.Add(new ValueName<string>(query_case, "docname"));
-
-              int i = 0;
-              foreach (string table in Закупівлі_Const.AllowDocumentSpendTable)
-                  QuerySelect.Joins.Add(new Join(table, "owner", "tab_a57", $"join_doc_{++i}"));
-            }*/
         }
 
         public async Task Read()
@@ -53525,10 +48311,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async Task Delete()
-        {
-            await base.BaseDelete();
-        }
+        public async Task Delete() => await base.BaseDelete();
         
         public class Record : RegisterAccumulationTablePartRecord
         {
@@ -53594,17 +48377,6 @@ namespace GeneratedCode.РегістриНакопичення
 
             /* Назва власника */
             QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({ВільніЗалишки_Const.TABLE}.owner, {ВільніЗалишки_Const.TABLE}.ownertype)", "OwnerName"));
-
-            //Назва документу
-            /*if (docname_required)
-            {
-              string query_case = $"CASE WHEN join_doc_1.uid IS NOT NULL THEN join_doc_1.{Документи.ПоступленняТоварівТаПослуг_Const.Назва} WHEN join_doc_2.uid IS NOT NULL THEN join_doc_2.{Документи.ЗамовленняКлієнта_Const.Назва} WHEN join_doc_3.uid IS NOT NULL THEN join_doc_3.{Документи.РеалізаціяТоварівТаПослуг_Const.Назва} WHEN join_doc_4.uid IS NOT NULL THEN join_doc_4.{Документи.ПереміщенняТоварів_Const.Назва} WHEN join_doc_5.uid IS NOT NULL THEN join_doc_5.{Документи.ПоверненняТоварівПостачальнику_Const.Назва} WHEN join_doc_6.uid IS NOT NULL THEN join_doc_6.{Документи.ПоверненняТоварівВідКлієнта_Const.Назва} WHEN join_doc_7.uid IS NOT NULL THEN join_doc_7.{Документи.ВведенняЗалишків_Const.Назва} WHEN join_doc_8.uid IS NOT NULL THEN join_doc_8.{Документи.ПсуванняТоварів_Const.Назва} WHEN join_doc_9.uid IS NOT NULL THEN join_doc_9.{Документи.ВнутрішнєСпоживанняТоварів_Const.Назва} WHEN join_doc_10.uid IS NOT NULL THEN join_doc_10.{Документи.РахунокФактура_Const.Назва} WHEN join_doc_11.uid IS NOT NULL THEN join_doc_11.{Документи.ЗакриттяЗамовленняКлієнта_Const.Назва} WHEN join_doc_12.uid IS NOT NULL THEN join_doc_12.{Документи.ЗакриттяРахункуФактури_Const.Назва} WHEN join_doc_13.uid IS NOT NULL THEN join_doc_13.{Документи.ЧекККМ_Const.Назва} END";
-              QuerySelect.FieldAndAlias.Add(new ValueName<string>(query_case, "docname"));
-
-              int i = 0;
-              foreach (string table in ВільніЗалишки_Const.AllowDocumentSpendTable)
-                  QuerySelect.Joins.Add(new Join(table, "owner", "tab_a58", $"join_doc_{++i}"));
-            }*/
         }
 
         public async Task Read()
@@ -53776,10 +48548,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async Task Delete()
-        {
-            await base.BaseDelete();
-        }
+        public async Task Delete() => await base.BaseDelete();
         
         public class Record : RegisterAccumulationTablePartRecord
         {
@@ -53874,10 +48643,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async Task Delete()
-        {
-            await base.BaseDelete();
-        }
+        public async Task Delete() => await base.BaseDelete();
         
         public class Record : RegisterAccumulationTablePartRecord
         {
@@ -53940,17 +48706,6 @@ namespace GeneratedCode.РегістриНакопичення
 
             /* Назва власника */
             QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({ЗамовленняПостачальникам_Const.TABLE}.owner, {ЗамовленняПостачальникам_Const.TABLE}.ownertype)", "OwnerName"));
-
-            //Назва документу
-            /*if (docname_required)
-            {
-              string query_case = $"CASE WHEN join_doc_1.uid IS NOT NULL THEN join_doc_1.{Документи.ЗамовленняПостачальнику_Const.Назва} WHEN join_doc_2.uid IS NOT NULL THEN join_doc_2.{Документи.ПоступленняТоварівТаПослуг_Const.Назва} WHEN join_doc_3.uid IS NOT NULL THEN join_doc_3.{Документи.ЗакриттяЗамовленняПостачальнику_Const.Назва} END";
-              QuerySelect.FieldAndAlias.Add(new ValueName<string>(query_case, "docname"));
-
-              int i = 0;
-              foreach (string table in ЗамовленняПостачальникам_Const.AllowDocumentSpendTable)
-                  QuerySelect.Joins.Add(new Join(table, "owner", "tab_a60", $"join_doc_{++i}"));
-            }*/
         }
 
         public async Task Read()
@@ -54114,10 +48869,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async Task Delete()
-        {
-            await base.BaseDelete();
-        }
+        public async Task Delete() => await base.BaseDelete();
         
         public class Record : RegisterAccumulationTablePartRecord
         {
@@ -54172,17 +48924,6 @@ namespace GeneratedCode.РегістриНакопичення
 
             /* Назва власника */
             QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({РозрахункиЗПостачальниками_Const.TABLE}.owner, {РозрахункиЗПостачальниками_Const.TABLE}.ownertype)", "OwnerName"));
-
-            //Назва документу
-            /*if (docname_required)
-            {
-              string query_case = $"CASE WHEN join_doc_1.uid IS NOT NULL THEN join_doc_1.{Документи.ПоступленняТоварівТаПослуг_Const.Назва} WHEN join_doc_2.uid IS NOT NULL THEN join_doc_2.{Документи.ПрихіднийКасовийОрдер_Const.Назва} WHEN join_doc_3.uid IS NOT NULL THEN join_doc_3.{Документи.РозхіднийКасовийОрдер_Const.Назва} WHEN join_doc_4.uid IS NOT NULL THEN join_doc_4.{Документи.ПоверненняТоварівПостачальнику_Const.Назва} WHEN join_doc_5.uid IS NOT NULL THEN join_doc_5.{Документи.ВведенняЗалишків_Const.Назва} WHEN join_doc_6.uid IS NOT NULL THEN join_doc_6.{Документи.КорегуванняБоргу_Const.Назва} END";
-              QuerySelect.FieldAndAlias.Add(new ValueName<string>(query_case, "docname"));
-
-              int i = 0;
-              foreach (string table in РозрахункиЗПостачальниками_Const.AllowDocumentSpendTable)
-                  QuerySelect.Joins.Add(new Join(table, "owner", "tab_a61", $"join_doc_{++i}"));
-            }*/
         }
 
         public async Task Read()
@@ -54332,10 +49073,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async Task Delete()
-        {
-            await base.BaseDelete();
-        }
+        public async Task Delete() => await base.BaseDelete();
         
         public class Record : RegisterAccumulationTablePartRecord
         {
@@ -54427,10 +49165,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async Task Delete()
-        {
-            await base.BaseDelete();
-        }
+        public async Task Delete() => await base.BaseDelete();
         
         public class Record : RegisterAccumulationTablePartRecord
         {
@@ -54489,17 +49224,6 @@ namespace GeneratedCode.РегістриНакопичення
 
             /* Назва власника */
             QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({РухКоштів_Const.TABLE}.owner, {РухКоштів_Const.TABLE}.ownertype)", "OwnerName"));
-
-            //Назва документу
-            /*if (docname_required)
-            {
-              string query_case = $"CASE WHEN join_doc_1.uid IS NOT NULL THEN join_doc_1.{Документи.ПрихіднийКасовийОрдер_Const.Назва} WHEN join_doc_2.uid IS NOT NULL THEN join_doc_2.{Документи.РозхіднийКасовийОрдер_Const.Назва} WHEN join_doc_3.uid IS NOT NULL THEN join_doc_3.{Документи.ВведенняЗалишків_Const.Назва} END";
-              QuerySelect.FieldAndAlias.Add(new ValueName<string>(query_case, "docname"));
-
-              int i = 0;
-              foreach (string table in РухКоштів_Const.AllowDocumentSpendTable)
-                  QuerySelect.Joins.Add(new Join(table, "owner", "tab_a78", $"join_doc_{++i}"));
-            }*/
         }
 
         public async Task Read()
@@ -54656,10 +49380,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async Task Delete()
-        {
-            await base.BaseDelete();
-        }
+        public async Task Delete() => await base.BaseDelete();
         
         public class Record : RegisterAccumulationTablePartRecord
         {
@@ -54755,10 +49476,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async Task Delete()
-        {
-            await base.BaseDelete();
-        }
+        public async Task Delete() => await base.BaseDelete();
         
         public class Record : RegisterAccumulationTablePartRecord
         {
@@ -54847,10 +49565,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async Task Delete()
-        {
-            await base.BaseDelete();
-        }
+        public async Task Delete() => await base.BaseDelete();
         
         public class Record : RegisterAccumulationTablePartRecord
         {
@@ -54922,17 +49637,6 @@ namespace GeneratedCode.РегістриНакопичення
 
             /* Назва власника */
             QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({ПартіїТоварів_Const.TABLE}.owner, {ПартіїТоварів_Const.TABLE}.ownertype)", "OwnerName"));
-
-            //Назва документу
-            /*if (docname_required)
-            {
-              string query_case = $"CASE WHEN join_doc_1.uid IS NOT NULL THEN join_doc_1.{Документи.ПоступленняТоварівТаПослуг_Const.Назва} WHEN join_doc_2.uid IS NOT NULL THEN join_doc_2.{Документи.РеалізаціяТоварівТаПослуг_Const.Назва} WHEN join_doc_3.uid IS NOT NULL THEN join_doc_3.{Документи.ПереміщенняТоварів_Const.Назва} WHEN join_doc_4.uid IS NOT NULL THEN join_doc_4.{Документи.ПоверненняТоварівПостачальнику_Const.Назва} WHEN join_doc_5.uid IS NOT NULL THEN join_doc_5.{Документи.ПоверненняТоварівВідКлієнта_Const.Назва} WHEN join_doc_6.uid IS NOT NULL THEN join_doc_6.{Документи.ВведенняЗалишків_Const.Назва} WHEN join_doc_7.uid IS NOT NULL THEN join_doc_7.{Документи.ПсуванняТоварів_Const.Назва} WHEN join_doc_8.uid IS NOT NULL THEN join_doc_8.{Документи.ВнутрішнєСпоживанняТоварів_Const.Назва} END";
-              QuerySelect.FieldAndAlias.Add(new ValueName<string>(query_case, "docname"));
-
-              int i = 0;
-              foreach (string table in ПартіїТоварів_Const.AllowDocumentSpendTable)
-                  QuerySelect.Joins.Add(new Join(table, "owner", "tab_a79", $"join_doc_{++i}"));
-            }*/
         }
 
         public async Task Read()
@@ -55125,10 +49829,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async Task Delete()
-        {
-            await base.BaseDelete();
-        }
+        public async Task Delete() => await base.BaseDelete();
         
         public class Record : RegisterAccumulationTablePartRecord
         {
@@ -55250,10 +49951,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async Task Delete()
-        {
-            await base.BaseDelete();
-        }
+        public async Task Delete() => await base.BaseDelete();
         
         public class Record : RegisterAccumulationTablePartRecord
         {
@@ -55358,10 +50056,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async Task Delete()
-        {
-            await base.BaseDelete();
-        }
+        public async Task Delete() => await base.BaseDelete();
         
         public class Record : RegisterAccumulationTablePartRecord
         {
@@ -55436,17 +50131,6 @@ namespace GeneratedCode.РегістриНакопичення
 
             /* Назва власника */
             QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({Продажі_Const.TABLE}.owner, {Продажі_Const.TABLE}.ownertype)", "OwnerName"));
-
-            //Назва документу
-            /*if (docname_required)
-            {
-              string query_case = $"CASE WHEN join_doc_1.uid IS NOT NULL THEN join_doc_1.{Документи.РеалізаціяТоварівТаПослуг_Const.Назва} WHEN join_doc_2.uid IS NOT NULL THEN join_doc_2.{Документи.ПоверненняТоварівВідКлієнта_Const.Назва} WHEN join_doc_3.uid IS NOT NULL THEN join_doc_3.{Документи.АктВиконанихРобіт_Const.Назва} END";
-              QuerySelect.FieldAndAlias.Add(new ValueName<string>(query_case, "docname"));
-
-              int i = 0;
-              foreach (string table in Продажі_Const.AllowDocumentSpendTable)
-                  QuerySelect.Joins.Add(new Join(table, "owner", "tab_a66", $"join_doc_{++i}"));
-            }*/
         }
 
         public async Task Read()
@@ -55642,10 +50326,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async Task Delete()
-        {
-            await base.BaseDelete();
-        }
+        public async Task Delete() => await base.BaseDelete();
         
         public class Record : RegisterAccumulationTablePartRecord
         {
@@ -55717,17 +50398,6 @@ namespace GeneratedCode.РегістриНакопичення
 
             /* Назва власника */
             QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({ТовариВКомірках_Const.TABLE}.owner, {ТовариВКомірках_Const.TABLE}.ownertype)", "OwnerName"));
-
-            //Назва документу
-            /*if (docname_required)
-            {
-              string query_case = $"CASE WHEN join_doc_1.uid IS NOT NULL THEN join_doc_1.{Документи.РозміщенняТоварівНаСкладі_Const.Назва} WHEN join_doc_2.uid IS NOT NULL THEN join_doc_2.{Документи.ПереміщенняТоварівНаСкладі_Const.Назва} WHEN join_doc_3.uid IS NOT NULL THEN join_doc_3.{Документи.ЗбіркаТоварівНаСкладі_Const.Назва} END";
-              QuerySelect.FieldAndAlias.Add(new ValueName<string>(query_case, "docname"));
-
-              int i = 0;
-              foreach (string table in ТовариВКомірках_Const.AllowDocumentSpendTable)
-                  QuerySelect.Joins.Add(new Join(table, "owner", "tab_b01", $"join_doc_{++i}"));
-            }*/
         }
 
         public async Task Read()
@@ -55904,10 +50574,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async Task Delete()
-        {
-            await base.BaseDelete();
-        }
+        public async Task Delete() => await base.BaseDelete();
         
         public class Record : RegisterAccumulationTablePartRecord
         {
@@ -56007,10 +50674,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async Task Delete()
-        {
-            await base.BaseDelete();
-        }
+        public async Task Delete() => await base.BaseDelete();
         
         public class Record : RegisterAccumulationTablePartRecord
         {
@@ -56105,10 +50769,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async Task Delete()
-        {
-            await base.BaseDelete();
-        }
+        public async Task Delete() => await base.BaseDelete();
         
         public class Record : RegisterAccumulationTablePartRecord
         {
@@ -56167,17 +50828,6 @@ namespace GeneratedCode.РегістриНакопичення
 
             /* Назва власника */
             QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({РухКоштівККМ_Const.TABLE}.owner, {РухКоштівККМ_Const.TABLE}.ownertype)", "OwnerName"));
-
-            //Назва документу
-            /*if (docname_required)
-            {
-              string query_case = $"CASE WHEN join_doc_1.uid IS NOT NULL THEN join_doc_1.{Документи.ЧекККМ_Const.Назва} END";
-              QuerySelect.FieldAndAlias.Add(new ValueName<string>(query_case, "docname"));
-
-              int i = 0;
-              foreach (string table in РухКоштівККМ_Const.AllowDocumentSpendTable)
-                  QuerySelect.Joins.Add(new Join(table, "owner", "tab_b53", $"join_doc_{++i}"));
-            }*/
         }
 
         public async Task Read()
@@ -56331,10 +50981,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async Task Delete()
-        {
-            await base.BaseDelete();
-        }
+        public async Task Delete() => await base.BaseDelete();
         
         public class Record : RegisterAccumulationTablePartRecord
         {
@@ -56429,10 +51076,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async Task Delete()
-        {
-            await base.BaseDelete();
-        }
+        public async Task Delete() => await base.BaseDelete();
         
         public class Record : RegisterAccumulationTablePartRecord
         {
@@ -56524,10 +51168,7 @@ namespace GeneratedCode.РегістриНакопичення
             Records.RemoveAll((Record item) => removeList.Exists((Guid uid) => uid == item.UID));
         }
     
-        public async Task Delete()
-        {
-            await base.BaseDelete();
-        }
+        public async Task Delete() => await base.BaseDelete();
         
         public class Record : RegisterAccumulationTablePartRecord
         {
@@ -56644,17 +51285,6 @@ namespace GeneratedCode.РегістриНакопичення
 
             /* Назва власника */
             QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({БухгалтерськіОперації_Const.TABLE}.owner, {БухгалтерськіОперації_Const.TABLE}.ownertype)", "OwnerName"));
-
-            //Назва документу
-            /*if (docname_required)
-            {
-              string query_case = $"CASE WHEN join_doc_1.uid IS NOT NULL THEN join_doc_1.{Документи.БухгалтерськаОперація_Const.Назва} WHEN join_doc_2.uid IS NOT NULL THEN join_doc_2.{Документи.АвансовийЗвіт_Const.Назва} WHEN join_doc_3.uid IS NOT NULL THEN join_doc_3.{Документи.Амортизація_Const.Назва} WHEN join_doc_4.uid IS NOT NULL THEN join_doc_4.{Документи.ВизначенняФінансовогоРезультату_Const.Назва} WHEN join_doc_5.uid IS NOT NULL THEN join_doc_5.{Документи.ВиплатаЗаробітноїПлати_Const.Назва} WHEN join_doc_6.uid IS NOT NULL THEN join_doc_6.{Документи.ВиготовленняПродукції_Const.Назва} WHEN join_doc_7.uid IS NOT NULL THEN join_doc_7.{Документи.Додаток1ДоПодатковоїНакладної_Const.Назва} WHEN join_doc_8.uid IS NOT NULL THEN join_doc_8.{Документи.ЗаписКнигиПридбання_Const.Назва} WHEN join_doc_9.uid IS NOT NULL THEN join_doc_9.{Документи.ЗмінаПараметрівОсновнихЗасобів_Const.Назва} WHEN join_doc_10.uid IS NOT NULL THEN join_doc_10.{Документи.ЗвітКомісіонераПроПродажТоварів_Const.Назва} WHEN join_doc_11.uid IS NOT NULL THEN join_doc_11.{Документи.ЗвітКомітентуПроПродажТоварів_Const.Назва} WHEN join_doc_12.uid IS NOT NULL THEN join_doc_12.{Документи.КоригуванняНезавершеногоВиробництва_Const.Назва} WHEN join_doc_13.uid IS NOT NULL THEN join_doc_13.{Документи.КоригуванняПДВ_Const.Назва} WHEN join_doc_14.uid IS NOT NULL THEN join_doc_14.{Документи.КоригуванняІншихВитрат_Const.Назва} WHEN join_doc_15.uid IS NOT NULL THEN join_doc_15.{Документи.Модернізація_Const.Назва} WHEN join_doc_16.uid IS NOT NULL THEN join_doc_16.{Документи.Комплектація_Const.Назва} WHEN join_doc_17.uid IS NOT NULL THEN join_doc_17.{Документи.НакладнаВимога_Const.Назва} WHEN join_doc_18.uid IS NOT NULL THEN join_doc_18.{Документи.Наряд_Const.Назва} WHEN join_doc_19.uid IS NOT NULL THEN join_doc_19.{Документи.НарахуванняЗаробітньоїПлати_Const.Назва} WHEN join_doc_20.uid IS NOT NULL THEN join_doc_20.{Документи.ПередачаМатеріалівВЕксплуатацію_Const.Назва} WHEN join_doc_21.uid IS NOT NULL THEN join_doc_21.{Документи.ПереміщенняМатеріалівВЕксплуатації_Const.Назва} WHEN join_doc_22.uid IS NOT NULL THEN join_doc_22.{Документи.ПередачаНематеріальнихАктивів_Const.Назва} WHEN join_doc_23.uid IS NOT NULL THEN join_doc_23.{Документи.ПереміщенняНематеріальнихАктивів_Const.Назва} WHEN join_doc_24.uid IS NOT NULL THEN join_doc_24.{Документи.ПередачаОбладнанняВМонтаж_Const.Назва} WHEN join_doc_25.uid IS NOT NULL THEN join_doc_25.{Документи.ПередачаОсновнихЗасобів_Const.Назва} WHEN join_doc_26.uid IS NOT NULL THEN join_doc_26.{Документи.ПереміщенняОсновнихЗасобів_Const.Назва} WHEN join_doc_27.uid IS NOT NULL THEN join_doc_27.{Документи.ПередачаТоварів_Const.Назва} WHEN join_doc_28.uid IS NOT NULL THEN join_doc_28.{Документи.ПереоцінкаВалюти_Const.Назва} WHEN join_doc_29.uid IS NOT NULL THEN join_doc_29.{Документи.ПереоцінкаОсновнихЗасобів_Const.Назва} WHEN join_doc_30.uid IS NOT NULL THEN join_doc_30.{Документи.ПереоцінкаТоварів_Const.Назва} WHEN join_doc_31.uid IS NOT NULL THEN join_doc_31.{Документи.ПлатіжнеДорученняВхідне_Const.Назва} WHEN join_doc_32.uid IS NOT NULL THEN join_doc_32.{Документи.ПлатіжнеДорученняВихідне_Const.Назва} WHEN join_doc_33.uid IS NOT NULL THEN join_doc_33.{Документи.ПодатковаНакладна_Const.Назва} WHEN join_doc_34.uid IS NOT NULL THEN join_doc_34.{Документи.ПокупкаАбоПродажВалюти_Const.Назва} WHEN join_doc_35.uid IS NOT NULL THEN join_doc_35.{Документи.ПідготовкаДоПередачіОсновнихЗасобів_Const.Назва} WHEN join_doc_36.uid IS NOT NULL THEN join_doc_36.{Документи.ПослугиСторонньоїОрганізації_Const.Назва} WHEN join_doc_37.uid IS NOT NULL THEN join_doc_37.{Документи.ПрибуткуванняМатеріалівЗВиробництва_Const.Назва} WHEN join_doc_38.uid IS NOT NULL THEN join_doc_38.{Документи.ПрибуткуванняТоварівВПереробку_Const.Назва} WHEN join_doc_39.uid IS NOT NULL THEN join_doc_39.{Документи.ПрибуткуванняТоварівЗПереробки_Const.Назва} WHEN join_doc_40.uid IS NOT NULL THEN join_doc_40.{Документи.ПрибуткуванняНезавершеногоВиробництва_Const.Назва} WHEN join_doc_41.uid IS NOT NULL THEN join_doc_41.{Документи.ПрийняттяДоОбліку_Const.Назва} WHEN join_doc_42.uid IS NOT NULL THEN join_doc_42.{Документи.ПоверненняПереданихТоварів_Const.Назва} WHEN join_doc_43.uid IS NOT NULL THEN join_doc_43.{Документи.РемонтОсновнихЗасобів_Const.Назва} WHEN join_doc_44.uid IS NOT NULL THEN join_doc_44.{Документи.РозподілІншихВитрат_Const.Назва} WHEN join_doc_45.uid IS NOT NULL THEN join_doc_45.{Документи.РозрахунокСобівартостіВипуску_Const.Назва} WHEN join_doc_46.uid IS NOT NULL THEN join_doc_46.{Документи.СписанняМатеріалів_Const.Назва} WHEN join_doc_47.uid IS NOT NULL THEN join_doc_47.{Документи.СписанняНезавершеногоВиробництва_Const.Назва} WHEN join_doc_48.uid IS NOT NULL THEN join_doc_48.{Документи.СписанняНематеріальнихАктивів_Const.Назва} WHEN join_doc_49.uid IS NOT NULL THEN join_doc_49.{Документи.СписанняОсновнихЗасобів_Const.Назва} WHEN join_doc_50.uid IS NOT NULL THEN join_doc_50.{Документи.СписанняВитратМайбутніхПеріодів_Const.Назва} WHEN join_doc_51.uid IS NOT NULL THEN join_doc_51.{Документи.СписанняТоварів_Const.Назва} WHEN join_doc_52.uid IS NOT NULL THEN join_doc_52.{Документи.Сторнування_Const.Назва} END";
-              QuerySelect.FieldAndAlias.Add(new ValueName<string>(query_case, "docname"));
-
-              int i = 0;
-              foreach (string table in БухгалтерськіОперації_Const.AllowDocumentSpendTable)
-                  QuerySelect.Joins.Add(new Join(table, "owner", "general_ledger_entries", $"join_doc_{++i}"));
-            }*/
         }
 
         public async Task Read()
