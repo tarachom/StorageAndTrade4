@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 07.06.2026 12:11:02
+ * Дата конфігурації: 10.06.2026 18:06:02
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон GeneratedCode.xslt
@@ -501,7 +501,7 @@ namespace GeneratedCode.Константи
 
                 foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
                 {
-                    Record record = new Record()
+                    Record record = new()
                     {
                         UID = (Guid)fieldValue["uid"],
                         Дата = (fieldValue["col_a7"] != DBNull.Value) ? DateTime.Parse(fieldValue["col_a7"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue,
@@ -528,7 +528,7 @@ namespace GeneratedCode.Константи
                 foreach (Record record in Records)
                 {
                     
-                    Dictionary<string, object> fieldValue = new Dictionary<string, object>()
+                    Dictionary<string, object> fieldValue = new()
                     {
                         {"col_a7", record.Дата},
                         {"col_a8", record.Коментар},
@@ -564,10 +564,7 @@ namespace GeneratedCode.Константи
                 Records.RemoveAll(item => removeList.Exists(uid => uid == item.UID));
             }
         
-            public async Task Delete()
-            {
-                await base.BaseDelete();
-            }
+            public async Task Delete() => await base.BaseDelete();
             
             public class Record : ConstantsTablePartRecord
             {
@@ -607,7 +604,7 @@ namespace GeneratedCode.Константи
 
                 foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
                 {
-                    Record record = new Record()
+                    Record record = new()
                     {
                         UID = (Guid)fieldValue["uid"],
                         Назва = fieldValue["col_a2"].ToString() ?? "",
@@ -636,7 +633,7 @@ namespace GeneratedCode.Константи
                 foreach (Record record in Records)
                 {
                     
-                    Dictionary<string, object> fieldValue = new Dictionary<string, object>()
+                    Dictionary<string, object> fieldValue = new()
                     {
                         {"col_a2", record.Назва},
                         {"col_a1", record.Дата},
@@ -674,10 +671,7 @@ namespace GeneratedCode.Константи
                 Records.RemoveAll(item => removeList.Exists(uid => uid == item.UID));
             }
         
-            public async Task Delete()
-            {
-                await base.BaseDelete();
-            }
+            public async Task Delete() => await base.BaseDelete();
             
             public class Record : ConstantsTablePartRecord
             {
@@ -717,7 +711,7 @@ namespace GeneratedCode.Константи
 
                 foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
                 {
-                    Record record = new Record()
+                    Record record = new()
                     {
                         UID = (Guid)fieldValue["uid"],
                         Обєкт = (fieldValue["col_a1"] != DBNull.Value) ? (Guid)fieldValue["col_a1"] : Guid.Empty,
@@ -744,7 +738,7 @@ namespace GeneratedCode.Константи
                 foreach (Record record in Records)
                 {
                     
-                    Dictionary<string, object> fieldValue = new Dictionary<string, object>()
+                    Dictionary<string, object> fieldValue = new()
                     {
                         {"col_a1", record.Обєкт},
                         {"col_a2", record.Користувач},
@@ -780,10 +774,7 @@ namespace GeneratedCode.Константи
                 Records.RemoveAll(item => removeList.Exists(uid => uid == item.UID));
             }
         
-            public async Task Delete()
-            {
-                await base.BaseDelete();
-            }
+            public async Task Delete() => await base.BaseDelete();
             
             public class Record : ConstantsTablePartRecord
             {
@@ -823,7 +814,7 @@ namespace GeneratedCode.Константи
 
                 foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
                 {
-                    Record record = new Record()
+                    Record record = new()
                     {
                         UID = (Guid)fieldValue["uid"],
                         Дата = (fieldValue["col_a2"] != DBNull.Value) ? DateTime.Parse(fieldValue["col_a2"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue,
@@ -852,7 +843,7 @@ namespace GeneratedCode.Константи
                 foreach (Record record in Records)
                 {
                     
-                    Dictionary<string, object> fieldValue = new Dictionary<string, object>()
+                    Dictionary<string, object> fieldValue = new()
                     {
                         {"col_a2", record.Дата},
                         {"col_a5", record.НазваПроцесу},
@@ -890,10 +881,7 @@ namespace GeneratedCode.Константи
                 Records.RemoveAll(item => removeList.Exists(uid => uid == item.UID));
             }
         
-            public async Task Delete()
-            {
-                await base.BaseDelete();
-            }
+            public async Task Delete() => await base.BaseDelete();
             
             public class Record : ConstantsTablePartRecord
             {
@@ -934,7 +922,7 @@ namespace GeneratedCode.Константи
 
                 foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
                 {
-                    Record record = new Record()
+                    Record record = new()
                     {
                         UID = (Guid)fieldValue["uid"],
                         Користувач = new Довідники.Користувачі_Pointer(fieldValue["col_a1"]),
@@ -962,7 +950,7 @@ namespace GeneratedCode.Константи
                 foreach (Record record in Records)
                 {
                     
-                    Dictionary<string, object> fieldValue = new Dictionary<string, object>()
+                    Dictionary<string, object> fieldValue = new()
                     {
                         {"col_a1", record.Користувач.UniqueID.UGuid},
                         {"col_a2", record.Журнал},
@@ -999,10 +987,7 @@ namespace GeneratedCode.Константи
                 Records.RemoveAll(item => removeList.Exists(uid => uid == item.UID));
             }
         
-            public async Task Delete()
-            {
-                await base.BaseDelete();
-            }
+            public async Task Delete() => await base.BaseDelete();
             
             public class Record : ConstantsTablePartRecord
             {
@@ -2462,7 +2447,7 @@ namespace GeneratedCode.Константи
 
                 foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
                 {
-                    Record record = new Record()
+                    Record record = new()
                     {
                         UID = (Guid)fieldValue["uid"],
                         Дата = (fieldValue["col_a1"] != DBNull.Value) ? DateTime.Parse(fieldValue["col_a1"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue,
@@ -2489,7 +2474,7 @@ namespace GeneratedCode.Константи
                 foreach (Record record in Records)
                 {
                     
-                    Dictionary<string, object> fieldValue = new Dictionary<string, object>()
+                    Dictionary<string, object> fieldValue = new()
                     {
                         {"col_a1", record.Дата},
                         {"col_a2", record.Стан},
@@ -2525,10 +2510,7 @@ namespace GeneratedCode.Константи
                 Records.RemoveAll(item => removeList.Exists(uid => uid == item.UID));
             }
         
-            public async Task Delete()
-            {
-                await base.BaseDelete();
-            }
+            public async Task Delete() => await base.BaseDelete();
             
             public class Record : ConstantsTablePartRecord
             {
@@ -2674,7 +2656,7 @@ namespace GeneratedCode.Довідники
                 КраїнаРеєстрації = КраїнаРеєстрації,
                 СвідоцтвоСеріяНомер = СвідоцтвоСеріяНомер,
                 СвідоцтвоДатаВидачі = СвідоцтвоДатаВидачі,
-                Холдинг = Холдинг,
+                Холдинг = Холдинг.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
                 
             };
@@ -2708,9 +2690,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete(["tab_a02", ]);
         }
         
-        public Організації_Pointer GetDirectoryPointer() => new Організації_Pointer(UniqueID.UGuid);
+        public Організації_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(Організації_Const.PRESENTATION_FIELDS);
-                
+        
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
         public string НазваПовна { get; set; } = "";
@@ -2741,7 +2723,7 @@ namespace GeneratedCode.Довідники
             Організації_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public Організації_Pointer Copy() => new Організації_Pointer(base.UniqueID, base.Fields, Name);
+        public Організації_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(Організації_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -2757,7 +2739,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public Організації_Pointer GetEmptyPointer() => new Організації_Pointer();
+        public Організації_Pointer GetEmptyPointer() => new();
     }
     
     public class Організації_Select : DirectorySelect
@@ -2912,11 +2894,27 @@ namespace GeneratedCode.Довідники
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [..Records];
-            foreach (Record copyRecordItem in Records)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    Тип = original.Тип,
+                    Телефон = original.Телефон,
+                    ЕлектроннаПошта = original.ЕлектроннаПошта,
+                    Країна = original.Країна,
+                    Область = original.Область,
+                    Район = original.Район,
+                    Місто = original.Місто,
+                    Значення = original.Значення,
+                    НомерРядка = original.НомерРядка,
+                    
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
         
         public class Record : DirectoryTablePartRecord
@@ -3049,12 +3047,12 @@ namespace GeneratedCode.Довідники
                 Опис = Опис,
                 Артикул = Артикул,
                 ТипНоменклатури = ТипНоменклатури,
-                Виробник = Виробник,
-                ВидНоменклатури = ВидНоменклатури,
-                ОдиницяВиміру = ОдиницяВиміру,
-                Папка = Папка,
-                ОсновнаКартинкаФайл = ОсновнаКартинкаФайл,
-                Категорія = Категорія,
+                Виробник = Виробник.Copy(),
+                ВидНоменклатури = ВидНоменклатури.Copy(),
+                ОдиницяВиміру = ОдиницяВиміру.Copy(),
+                Папка = Папка.Copy(),
+                ОсновнаКартинкаФайл = ОсновнаКартинкаФайл.Copy(),
+                Категорія = Категорія.Copy(),
                 
             };
             
@@ -3091,9 +3089,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete(["tab_b19", ]);
         }
         
-        public Номенклатура_Pointer GetDirectoryPointer() => new Номенклатура_Pointer(UniqueID.UGuid);
+        public Номенклатура_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(Номенклатура_Const.PRESENTATION_FIELDS);
-                
+        
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
         public string НазваПовна { get; set; } = "";
@@ -3126,7 +3124,7 @@ namespace GeneratedCode.Довідники
             Номенклатура_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public Номенклатура_Pointer Copy() => new Номенклатура_Pointer(base.UniqueID, base.Fields, Name);
+        public Номенклатура_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(Номенклатура_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -3144,7 +3142,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public Номенклатура_Pointer GetEmptyPointer() => new Номенклатура_Pointer();
+        public Номенклатура_Pointer GetEmptyPointer() => new();
     }
     
     public class Номенклатура_Select : DirectorySelect
@@ -3291,11 +3289,21 @@ namespace GeneratedCode.Довідники
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [..Records];
-            foreach (Record copyRecordItem in Records)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    Файл = original.Файл.Copy(),
+                    Основний = original.Основний,
+                    НомерРядка = original.НомерРядка,
+                    
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
         
         public class Record : DirectoryTablePartRecord
@@ -3402,9 +3410,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public Виробники_Pointer GetDirectoryPointer() => new Виробники_Pointer(UniqueID.UGuid);
+        public Виробники_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(Виробники_Const.PRESENTATION_FIELDS);
-                
+        
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
         
@@ -3424,7 +3432,7 @@ namespace GeneratedCode.Довідники
             Виробники_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public Виробники_Pointer Copy() => new Виробники_Pointer(base.UniqueID, base.Fields, Name);
+        public Виробники_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(Виробники_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -3440,7 +3448,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public Виробники_Pointer GetEmptyPointer() => new Виробники_Pointer();
+        public Виробники_Pointer GetEmptyPointer() => new();
     }
     
     public class Виробники_Select : DirectorySelect
@@ -3550,7 +3558,7 @@ namespace GeneratedCode.Довідники
                 Код = Код,
                 Опис = Опис,
                 ТипНоменклатури = ТипНоменклатури,
-                ОдиницяВиміру = ОдиницяВиміру,
+                ОдиницяВиміру = ОдиницяВиміру.Copy(),
                 
             };
             
@@ -3574,9 +3582,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ВидиНоменклатури_Pointer GetDirectoryPointer() => new ВидиНоменклатури_Pointer(UniqueID.UGuid);
+        public ВидиНоменклатури_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ВидиНоменклатури_Const.PRESENTATION_FIELDS);
-                
+        
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
         public string Опис { get; set; } = "";
@@ -3599,7 +3607,7 @@ namespace GeneratedCode.Довідники
             ВидиНоменклатури_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public ВидиНоменклатури_Pointer Copy() => new ВидиНоменклатури_Pointer(base.UniqueID, base.Fields, Name);
+        public ВидиНоменклатури_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(ВидиНоменклатури_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -3615,7 +3623,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public ВидиНоменклатури_Pointer GetEmptyPointer() => new ВидиНоменклатури_Pointer();
+        public ВидиНоменклатури_Pointer GetEmptyPointer() => new();
     }
     
     public class ВидиНоменклатури_Select : DirectorySelect
@@ -3747,9 +3755,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ПакуванняОдиниціВиміру_Pointer GetDirectoryPointer() => new ПакуванняОдиниціВиміру_Pointer(UniqueID.UGuid);
+        public ПакуванняОдиниціВиміру_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПакуванняОдиниціВиміру_Const.PRESENTATION_FIELDS);
-                
+        
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
         public string НазваПовна { get; set; } = "";
@@ -3771,7 +3779,7 @@ namespace GeneratedCode.Довідники
             ПакуванняОдиниціВиміру_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public ПакуванняОдиниціВиміру_Pointer Copy() => new ПакуванняОдиниціВиміру_Pointer(base.UniqueID, base.Fields, Name);
+        public ПакуванняОдиниціВиміру_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПакуванняОдиниціВиміру_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -3787,7 +3795,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public ПакуванняОдиниціВиміру_Pointer GetEmptyPointer() => new ПакуванняОдиниціВиміру_Pointer();
+        public ПакуванняОдиниціВиміру_Pointer GetEmptyPointer() => new();
     }
     
     public class ПакуванняОдиниціВиміру_Select : DirectorySelect
@@ -3925,9 +3933,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public Валюти_Pointer GetDirectoryPointer() => new Валюти_Pointer(UniqueID.UGuid);
+        public Валюти_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(Валюти_Const.PRESENTATION_FIELDS);
-                
+        
         public string Назва { get; set; } = "";
         public string КороткаНазва { get; set; } = "";
         public string Код { get; set; } = "";
@@ -3950,7 +3958,7 @@ namespace GeneratedCode.Довідники
             Валюти_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public Валюти_Pointer Copy() => new Валюти_Pointer(base.UniqueID, base.Fields, Name);
+        public Валюти_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(Валюти_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -3968,7 +3976,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public Валюти_Pointer GetEmptyPointer() => new Валюти_Pointer();
+        public Валюти_Pointer GetEmptyPointer() => new();
     }
     
     public class Валюти_Select : DirectorySelect
@@ -4103,7 +4111,7 @@ namespace GeneratedCode.Довідники
                 Код = Код,
                 НазваПовна = НазваПовна,
                 РеєстраційнийНомер = РеєстраційнийНомер,
-                Папка = Папка,
+                Папка = Папка.Copy(),
                 Опис = Опис,
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
                 Постачальник = Постачальник,
@@ -4146,9 +4154,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete(["tab_a09", "tab_b20", ]);
         }
         
-        public Контрагенти_Pointer GetDirectoryPointer() => new Контрагенти_Pointer(UniqueID.UGuid);
+        public Контрагенти_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(Контрагенти_Const.PRESENTATION_FIELDS);
-                
+        
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
         public string НазваПовна { get; set; } = "";
@@ -4179,7 +4187,7 @@ namespace GeneratedCode.Довідники
             Контрагенти_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public Контрагенти_Pointer Copy() => new Контрагенти_Pointer(base.UniqueID, base.Fields, Name);
+        public Контрагенти_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(Контрагенти_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -4197,7 +4205,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public Контрагенти_Pointer GetEmptyPointer() => new Контрагенти_Pointer();
+        public Контрагенти_Pointer GetEmptyPointer() => new();
     }
     
     public class Контрагенти_Select : DirectorySelect
@@ -4352,11 +4360,27 @@ namespace GeneratedCode.Довідники
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [..Records];
-            foreach (Record copyRecordItem in Records)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    Тип = original.Тип,
+                    Телефон = original.Телефон,
+                    ЕлектроннаПошта = original.ЕлектроннаПошта,
+                    Країна = original.Країна,
+                    Область = original.Область,
+                    Район = original.Район,
+                    Місто = original.Місто,
+                    Значення = original.Значення,
+                    НомерРядка = original.НомерРядка,
+                    
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
         
         public class Record : DirectoryTablePartRecord
@@ -4491,11 +4515,20 @@ namespace GeneratedCode.Довідники
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [..Records];
-            foreach (Record copyRecordItem in Records)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    Файл = original.Файл.Copy(),
+                    НомерРядка = original.НомерРядка,
+                    
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
         
         public class Record : DirectoryTablePartRecord
@@ -4609,10 +4642,10 @@ namespace GeneratedCode.Довідники
                 Назва = Назва,
                 Код = Код,
                 ТипСкладу = ТипСкладу,
-                Відповідальний = Відповідальний,
-                ВидЦін = ВидЦін,
-                Підрозділ = Підрозділ,
-                Папка = Папка,
+                Відповідальний = Відповідальний.Copy(),
+                ВидЦін = ВидЦін.Copy(),
+                Підрозділ = Підрозділ.Copy(),
+                Папка = Папка.Copy(),
                 НалаштуванняАдресногоЗберігання = НалаштуванняАдресногоЗберігання,
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
                 
@@ -4647,9 +4680,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete(["tab_a11", ]);
         }
         
-        public Склади_Pointer GetDirectoryPointer() => new Склади_Pointer(UniqueID.UGuid);
+        public Склади_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(Склади_Const.PRESENTATION_FIELDS);
-                
+        
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
         public Перелічення.ТипиСкладів ТипСкладу { get; set; } = 0;
@@ -4679,7 +4712,7 @@ namespace GeneratedCode.Довідники
             Склади_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public Склади_Pointer Copy() => new Склади_Pointer(base.UniqueID, base.Fields, Name);
+        public Склади_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(Склади_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -4695,7 +4728,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public Склади_Pointer GetEmptyPointer() => new Склади_Pointer();
+        public Склади_Pointer GetEmptyPointer() => new();
     }
     
     public class Склади_Select : DirectorySelect
@@ -4850,11 +4883,27 @@ namespace GeneratedCode.Довідники
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [..Records];
-            foreach (Record copyRecordItem in Records)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    Тип = original.Тип,
+                    Телефон = original.Телефон,
+                    ЕлектроннаПошта = original.ЕлектроннаПошта,
+                    Країна = original.Країна,
+                    Область = original.Область,
+                    Район = original.Район,
+                    Місто = original.Місто,
+                    Значення = original.Значення,
+                    НомерРядка = original.НомерРядка,
+                    
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
         
         public class Record : DirectoryTablePartRecord
@@ -4947,7 +4996,7 @@ namespace GeneratedCode.Довідники
             {
                 Назва = Назва,
                 Код = Код,
-                Валюта = Валюта,
+                Валюта = Валюта.Copy(),
                 
             };
             
@@ -4971,9 +5020,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ВидиЦін_Pointer GetDirectoryPointer() => new ВидиЦін_Pointer(UniqueID.UGuid);
+        public ВидиЦін_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ВидиЦін_Const.PRESENTATION_FIELDS);
-                
+        
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
         public Довідники.Валюти_Pointer Валюта { get; set; } = new Довідники.Валюти_Pointer();
@@ -4994,7 +5043,7 @@ namespace GeneratedCode.Довідники
             ВидиЦін_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public ВидиЦін_Pointer Copy() => new ВидиЦін_Pointer(base.UniqueID, base.Fields, Name);
+        public ВидиЦін_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(ВидиЦін_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -5010,7 +5059,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public ВидиЦін_Pointer GetEmptyPointer() => new ВидиЦін_Pointer();
+        public ВидиЦін_Pointer GetEmptyPointer() => new();
     }
     
     public class ВидиЦін_Select : DirectorySelect
@@ -5112,7 +5161,7 @@ namespace GeneratedCode.Довідники
             {
                 Назва = Назва,
                 Код = Код,
-                Валюта = Валюта,
+                Валюта = Валюта.Copy(),
                 
             };
             
@@ -5136,9 +5185,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ВидиЦінПостачальників_Pointer GetDirectoryPointer() => new ВидиЦінПостачальників_Pointer(UniqueID.UGuid);
+        public ВидиЦінПостачальників_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ВидиЦінПостачальників_Const.PRESENTATION_FIELDS);
-                
+        
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
         public Довідники.Валюти_Pointer Валюта { get; set; } = new Довідники.Валюти_Pointer();
@@ -5159,7 +5208,7 @@ namespace GeneratedCode.Довідники
             ВидиЦінПостачальників_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public ВидиЦінПостачальників_Pointer Copy() => new ВидиЦінПостачальників_Pointer(base.UniqueID, base.Fields, Name);
+        public ВидиЦінПостачальників_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(ВидиЦінПостачальників_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -5175,7 +5224,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public ВидиЦінПостачальників_Pointer GetEmptyPointer() => new ВидиЦінПостачальників_Pointer();
+        public ВидиЦінПостачальників_Pointer GetEmptyPointer() => new();
     }
     
     public class ВидиЦінПостачальників_Select : DirectorySelect
@@ -5292,7 +5341,7 @@ namespace GeneratedCode.Довідники
             {
                 Назва = Назва,
                 Код = Код,
-                ФізичнаОсоба = ФізичнаОсоба,
+                ФізичнаОсоба = ФізичнаОсоба.Copy(),
                 Коментар = Коментар,
                 КодВСпеціальнійТаблиці = КодВСпеціальнійТаблиці,
                 
@@ -5327,9 +5376,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete(["tab_a15", ]);
         }
         
-        public Користувачі_Pointer GetDirectoryPointer() => new Користувачі_Pointer(UniqueID.UGuid);
+        public Користувачі_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(Користувачі_Const.PRESENTATION_FIELDS);
-                
+        
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
         public Довідники.ФізичніОсоби_Pointer ФізичнаОсоба { get; set; } = new Довідники.ФізичніОсоби_Pointer();
@@ -5355,7 +5404,7 @@ namespace GeneratedCode.Довідники
             Користувачі_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public Користувачі_Pointer Copy() => new Користувачі_Pointer(base.UniqueID, base.Fields, Name);
+        public Користувачі_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(Користувачі_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -5371,7 +5420,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public Користувачі_Pointer GetEmptyPointer() => new Користувачі_Pointer();
+        public Користувачі_Pointer GetEmptyPointer() => new();
     }
     
     public class Користувачі_Select : DirectorySelect
@@ -5518,11 +5567,27 @@ namespace GeneratedCode.Довідники
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [..Records];
-            foreach (Record copyRecordItem in Records)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    Тип = original.Тип,
+                    Телефон = original.Телефон,
+                    ЕлектроннаПошта = original.ЕлектроннаПошта,
+                    Країна = original.Країна,
+                    Область = original.Область,
+                    Район = original.Район,
+                    Місто = original.Місто,
+                    НомерРядка = original.НомерРядка,
+                    Значення = original.Значення,
+                    
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
         
         public class Record : DirectoryTablePartRecord
@@ -5665,9 +5730,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete(["tab_a17", ]);
         }
         
-        public ФізичніОсоби_Pointer GetDirectoryPointer() => new ФізичніОсоби_Pointer(UniqueID.UGuid);
+        public ФізичніОсоби_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ФізичніОсоби_Const.PRESENTATION_FIELDS);
-                
+        
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
         public DateTime ДатаНародження { get; set; } = DateTime.MinValue;
@@ -5693,7 +5758,7 @@ namespace GeneratedCode.Довідники
             ФізичніОсоби_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public ФізичніОсоби_Pointer Copy() => new ФізичніОсоби_Pointer(base.UniqueID, base.Fields, Name);
+        public ФізичніОсоби_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(ФізичніОсоби_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -5709,7 +5774,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public ФізичніОсоби_Pointer GetEmptyPointer() => new ФізичніОсоби_Pointer();
+        public ФізичніОсоби_Pointer GetEmptyPointer() => new();
     }
     
     public class ФізичніОсоби_Select : DirectorySelect
@@ -5864,11 +5929,27 @@ namespace GeneratedCode.Довідники
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [..Records];
-            foreach (Record copyRecordItem in Records)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    Тип = original.Тип,
+                    Телефон = original.Телефон,
+                    ЕлектроннаПошта = original.ЕлектроннаПошта,
+                    Країна = original.Країна,
+                    Область = original.Область,
+                    Район = original.Район,
+                    Місто = original.Місто,
+                    Значення = original.Значення,
+                    НомерРядка = original.НомерРядка,
+                    
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
         
         public class Record : DirectoryTablePartRecord
@@ -5961,7 +6042,7 @@ namespace GeneratedCode.Довідники
             {
                 Назва = Назва,
                 Код = Код,
-                Керівник = Керівник,
+                Керівник = Керівник.Copy(),
                 
             };
             
@@ -5985,9 +6066,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public СтруктураПідприємства_Pointer GetDirectoryPointer() => new СтруктураПідприємства_Pointer(UniqueID.UGuid);
+        public СтруктураПідприємства_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(СтруктураПідприємства_Const.PRESENTATION_FIELDS);
-                
+        
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
         public Довідники.ФізичніОсоби_Pointer Керівник { get; set; } = new Довідники.ФізичніОсоби_Pointer();
@@ -6008,7 +6089,7 @@ namespace GeneratedCode.Довідники
             СтруктураПідприємства_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public СтруктураПідприємства_Pointer Copy() => new СтруктураПідприємства_Pointer(base.UniqueID, base.Fields, Name);
+        public СтруктураПідприємства_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(СтруктураПідприємства_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -6024,7 +6105,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public СтруктураПідприємства_Pointer GetEmptyPointer() => new СтруктураПідприємства_Pointer();
+        public СтруктураПідприємства_Pointer GetEmptyPointer() => new();
     }
     
     public class СтруктураПідприємства_Select : DirectorySelect
@@ -6146,9 +6227,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public КраїниСвіту_Pointer GetDirectoryPointer() => new КраїниСвіту_Pointer(UniqueID.UGuid);
+        public КраїниСвіту_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(КраїниСвіту_Const.PRESENTATION_FIELDS);
-                
+        
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
         
@@ -6168,7 +6249,7 @@ namespace GeneratedCode.Довідники
             КраїниСвіту_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public КраїниСвіту_Pointer Copy() => new КраїниСвіту_Pointer(base.UniqueID, base.Fields, Name);
+        public КраїниСвіту_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(КраїниСвіту_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -6184,7 +6265,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public КраїниСвіту_Pointer GetEmptyPointer() => new КраїниСвіту_Pointer();
+        public КраїниСвіту_Pointer GetEmptyPointer() => new();
     }
     
     public class КраїниСвіту_Select : DirectorySelect
@@ -6322,9 +6403,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public Файли_Pointer GetDirectoryPointer() => new Файли_Pointer(UniqueID.UGuid);
+        public Файли_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(Файли_Const.PRESENTATION_FIELDS);
-                
+        
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
         public string НазваФайлу { get; set; } = "";
@@ -6348,7 +6429,7 @@ namespace GeneratedCode.Довідники
             Файли_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public Файли_Pointer Copy() => new Файли_Pointer(base.UniqueID, base.Fields, Name);
+        public Файли_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(Файли_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -6364,7 +6445,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public Файли_Pointer GetEmptyPointer() => new Файли_Pointer();
+        public Файли_Pointer GetEmptyPointer() => new();
     }
     
     public class Файли_Select : DirectorySelect
@@ -6470,7 +6551,7 @@ namespace GeneratedCode.Довідники
                 Назва = Назва,
                 Код = Код,
                 НазваПовна = НазваПовна,
-                Номенклатура = Номенклатура,
+                Номенклатура = Номенклатура.Copy(),
                 
             };
             
@@ -6494,9 +6575,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ХарактеристикиНоменклатури_Pointer GetDirectoryPointer() => new ХарактеристикиНоменклатури_Pointer(UniqueID.UGuid);
+        public ХарактеристикиНоменклатури_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ХарактеристикиНоменклатури_Const.PRESENTATION_FIELDS);
-                
+        
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
         public string НазваПовна { get; set; } = "";
@@ -6518,7 +6599,7 @@ namespace GeneratedCode.Довідники
             ХарактеристикиНоменклатури_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public ХарактеристикиНоменклатури_Pointer Copy() => new ХарактеристикиНоменклатури_Pointer(base.UniqueID, base.Fields, Name);
+        public ХарактеристикиНоменклатури_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(ХарактеристикиНоменклатури_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -6534,7 +6615,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public ХарактеристикиНоменклатури_Pointer GetEmptyPointer() => new ХарактеристикиНоменклатури_Pointer();
+        public ХарактеристикиНоменклатури_Pointer GetEmptyPointer() => new();
     }
     
     public class ХарактеристикиНоменклатури_Select : DirectorySelect
@@ -6636,7 +6717,7 @@ namespace GeneratedCode.Довідники
             {
                 Назва = Назва,
                 Код = Код,
-                Родич = Родич,
+                Родич = Родич.Copy(),
                 
             };
             
@@ -6664,9 +6745,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public Номенклатура_Папки_Pointer GetDirectoryPointer() => new Номенклатура_Папки_Pointer(UniqueID.UGuid);
+        public Номенклатура_Папки_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(Номенклатура_Папки_Const.PRESENTATION_FIELDS);
-                
+        
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
         public Довідники.Номенклатура_Папки_Pointer Родич { get; set; } = new Довідники.Номенклатура_Папки_Pointer();
@@ -6687,7 +6768,7 @@ namespace GeneratedCode.Довідники
             Номенклатура_Папки_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public Номенклатура_Папки_Pointer Copy() => new Номенклатура_Папки_Pointer(base.UniqueID, base.Fields, Name);
+        public Номенклатура_Папки_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(Номенклатура_Папки_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -6705,7 +6786,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public Номенклатура_Папки_Pointer GetEmptyPointer() => new Номенклатура_Папки_Pointer();
+        public Номенклатура_Папки_Pointer GetEmptyPointer() => new();
     }
     
     public class Номенклатура_Папки_Select : DirectorySelect
@@ -6823,7 +6904,7 @@ namespace GeneratedCode.Довідники
             {
                 Назва = Назва,
                 Код = Код,
-                Родич = Родич,
+                Родич = Родич.Copy(),
                 
             };
             
@@ -6851,9 +6932,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public Контрагенти_Папки_Pointer GetDirectoryPointer() => new Контрагенти_Папки_Pointer(UniqueID.UGuid);
+        public Контрагенти_Папки_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(Контрагенти_Папки_Const.PRESENTATION_FIELDS);
-                
+        
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
         public Довідники.Контрагенти_Папки_Pointer Родич { get; set; } = new Довідники.Контрагенти_Папки_Pointer();
@@ -6874,7 +6955,7 @@ namespace GeneratedCode.Довідники
             Контрагенти_Папки_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public Контрагенти_Папки_Pointer Copy() => new Контрагенти_Папки_Pointer(base.UniqueID, base.Fields, Name);
+        public Контрагенти_Папки_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(Контрагенти_Папки_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -6892,7 +6973,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public Контрагенти_Папки_Pointer GetEmptyPointer() => new Контрагенти_Папки_Pointer();
+        public Контрагенти_Папки_Pointer GetEmptyPointer() => new();
     }
     
     public class Контрагенти_Папки_Select : DirectorySelect
@@ -7010,7 +7091,7 @@ namespace GeneratedCode.Довідники
             {
                 Назва = Назва,
                 Код = Код,
-                Родич = Родич,
+                Родич = Родич.Copy(),
                 
             };
             
@@ -7038,9 +7119,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public Склади_Папки_Pointer GetDirectoryPointer() => new Склади_Папки_Pointer(UniqueID.UGuid);
+        public Склади_Папки_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(Склади_Папки_Const.PRESENTATION_FIELDS);
-                
+        
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
         public Довідники.Склади_Папки_Pointer Родич { get; set; } = new Довідники.Склади_Папки_Pointer();
@@ -7061,7 +7142,7 @@ namespace GeneratedCode.Довідники
             Склади_Папки_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public Склади_Папки_Pointer Copy() => new Склади_Папки_Pointer(base.UniqueID, base.Fields, Name);
+        public Склади_Папки_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(Склади_Папки_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -7079,7 +7160,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public Склади_Папки_Pointer GetEmptyPointer() => new Склади_Папки_Pointer();
+        public Склади_Папки_Pointer GetEmptyPointer() => new();
     }
     
     public class Склади_Папки_Select : DirectorySelect
@@ -7200,8 +7281,8 @@ namespace GeneratedCode.Довідники
             {
                 Назва = Назва,
                 Код = Код,
-                Валюта = Валюта,
-                Підрозділ = Підрозділ,
+                Валюта = Валюта.Copy(),
+                Підрозділ = Підрозділ.Copy(),
                 
             };
             
@@ -7225,9 +7306,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public Каси_Pointer GetDirectoryPointer() => new Каси_Pointer(UniqueID.UGuid);
+        public Каси_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(Каси_Const.PRESENTATION_FIELDS);
-                
+        
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
         public Довідники.Валюти_Pointer Валюта { get; set; } = new Довідники.Валюти_Pointer();
@@ -7249,7 +7330,7 @@ namespace GeneratedCode.Довідники
             Каси_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public Каси_Pointer Copy() => new Каси_Pointer(base.UniqueID, base.Fields, Name);
+        public Каси_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(Каси_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -7265,7 +7346,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public Каси_Pointer GetEmptyPointer() => new Каси_Pointer();
+        public Каси_Pointer GetEmptyPointer() => new();
     }
     
     public class Каси_Select : DirectorySelect
@@ -7379,11 +7460,11 @@ namespace GeneratedCode.Довідники
             {
                 Назва = Назва,
                 Код = Код,
-                Валюта = Валюта,
-                Банк = Банк,
-                Підрозділ = Підрозділ,
+                Валюта = Валюта.Copy(),
+                Банк = Банк.Copy(),
+                Підрозділ = Підрозділ.Copy(),
                 НомерРахунку = НомерРахунку,
-                Організація = Організація,
+                Організація = Організація.Copy(),
                 
             };
             
@@ -7407,9 +7488,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public БанківськіРахункиОрганізацій_Pointer GetDirectoryPointer() => new БанківськіРахункиОрганізацій_Pointer(UniqueID.UGuid);
+        public БанківськіРахункиОрганізацій_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(БанківськіРахункиОрганізацій_Const.PRESENTATION_FIELDS);
-                
+        
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
         public Довідники.Валюти_Pointer Валюта { get; set; } = new Довідники.Валюти_Pointer();
@@ -7434,7 +7515,7 @@ namespace GeneratedCode.Довідники
             БанківськіРахункиОрганізацій_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public БанківськіРахункиОрганізацій_Pointer Copy() => new БанківськіРахункиОрганізацій_Pointer(base.UniqueID, base.Fields, Name);
+        public БанківськіРахункиОрганізацій_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(БанківськіРахункиОрганізацій_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -7450,7 +7531,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public БанківськіРахункиОрганізацій_Pointer GetEmptyPointer() => new БанківськіРахункиОрганізацій_Pointer();
+        public БанківськіРахункиОрганізацій_Pointer GetEmptyPointer() => new();
     }
     
     public class БанківськіРахункиОрганізацій_Select : DirectorySelect
@@ -7605,16 +7686,16 @@ namespace GeneratedCode.Довідники
             {
                 Назва = Назва,
                 Код = Код,
-                БанківськийРахунок = БанківськийРахунок,
-                БанківськийРахунокКонтрагента = БанківськийРахунокКонтрагента,
-                ВалютаВзаєморозрахунків = ВалютаВзаєморозрахунків,
+                БанківськийРахунок = БанківськийРахунок.Copy(),
+                БанківськийРахунокКонтрагента = БанківськийРахунокКонтрагента.Copy(),
+                ВалютаВзаєморозрахунків = ВалютаВзаєморозрахунків.Copy(),
                 ДатаПочаткуДії = ДатаПочаткуДії,
                 ДатаЗакінченняДії = ДатаЗакінченняДії,
-                Організація = Організація,
-                Контрагент = Контрагент,
+                Організація = Організація.Copy(),
+                Контрагент = Контрагент.Copy(),
                 Дата = Дата,
                 Номер = Номер,
-                Підрозділ = Підрозділ,
+                Підрозділ = Підрозділ.Copy(),
                 Узгоджений = Узгоджений,
                 Статус = Статус,
                 ГосподарськаОперація = ГосподарськаОперація,
@@ -7646,9 +7727,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ДоговориКонтрагентів_Pointer GetDirectoryPointer() => new ДоговориКонтрагентів_Pointer(UniqueID.UGuid);
+        public ДоговориКонтрагентів_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ДоговориКонтрагентів_Const.PRESENTATION_FIELDS);
-                
+        
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
         public Довідники.БанківськіРахункиОрганізацій_Pointer БанківськийРахунок { get; set; } = new Довідники.БанківськіРахункиОрганізацій_Pointer();
@@ -7686,7 +7767,7 @@ namespace GeneratedCode.Довідники
             ДоговориКонтрагентів_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public ДоговориКонтрагентів_Pointer Copy() => new ДоговориКонтрагентів_Pointer(base.UniqueID, base.Fields, Name);
+        public ДоговориКонтрагентів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(ДоговориКонтрагентів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -7702,7 +7783,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public ДоговориКонтрагентів_Pointer GetEmptyPointer() => new ДоговориКонтрагентів_Pointer();
+        public ДоговориКонтрагентів_Pointer GetEmptyPointer() => new();
     }
     
     public class ДоговориКонтрагентів_Select : DirectorySelect
@@ -7814,9 +7895,9 @@ namespace GeneratedCode.Довідники
                 Назва = Назва,
                 Код = Код,
                 НомерРахунку = НомерРахунку,
-                Банк = Банк,
-                Валюта = Валюта,
-                Контрагент = Контрагент,
+                Банк = Банк.Copy(),
+                Валюта = Валюта.Copy(),
+                Контрагент = Контрагент.Copy(),
                 
             };
             
@@ -7840,9 +7921,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public БанківськіРахункиКонтрагентів_Pointer GetDirectoryPointer() => new БанківськіРахункиКонтрагентів_Pointer(UniqueID.UGuid);
+        public БанківськіРахункиКонтрагентів_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(БанківськіРахункиКонтрагентів_Const.PRESENTATION_FIELDS);
-                
+        
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
         public string НомерРахунку { get; set; } = "";
@@ -7866,7 +7947,7 @@ namespace GeneratedCode.Довідники
             БанківськіРахункиКонтрагентів_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public БанківськіРахункиКонтрагентів_Pointer Copy() => new БанківськіРахункиКонтрагентів_Pointer(base.UniqueID, base.Fields, Name);
+        public БанківськіРахункиКонтрагентів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(БанківськіРахункиКонтрагентів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -7882,7 +7963,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public БанківськіРахункиКонтрагентів_Pointer GetEmptyPointer() => new БанківськіРахункиКонтрагентів_Pointer();
+        public БанківськіРахункиКонтрагентів_Pointer GetEmptyPointer() => new();
     }
     
     public class БанківськіРахункиКонтрагентів_Select : DirectorySelect
@@ -8034,9 +8115,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete(["tab_a46", ]);
         }
         
-        public СтаттяРухуКоштів_Pointer GetDirectoryPointer() => new СтаттяРухуКоштів_Pointer(UniqueID.UGuid);
+        public СтаттяРухуКоштів_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(СтаттяРухуКоштів_Const.PRESENTATION_FIELDS);
-                
+        
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
         public string КореспондуючийРахунок { get; set; } = "";
@@ -8062,7 +8143,7 @@ namespace GeneratedCode.Довідники
             СтаттяРухуКоштів_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public СтаттяРухуКоштів_Pointer Copy() => new СтаттяРухуКоштів_Pointer(base.UniqueID, base.Fields, Name);
+        public СтаттяРухуКоштів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(СтаттяРухуКоштів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -8078,7 +8159,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public СтаттяРухуКоштів_Pointer GetEmptyPointer() => new СтаттяРухуКоштів_Pointer();
+        public СтаттяРухуКоштів_Pointer GetEmptyPointer() => new();
     }
     
     public class СтаттяРухуКоштів_Select : DirectorySelect
@@ -8189,11 +8270,19 @@ namespace GeneratedCode.Довідники
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [..Records];
-            foreach (Record copyRecordItem in Records)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    ГосподарськаОперація = original.ГосподарськаОперація,
+                    
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
         
         public class Record : DirectoryTablePartRecord
@@ -8304,9 +8393,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public СеріїНоменклатури_Pointer GetDirectoryPointer() => new СеріїНоменклатури_Pointer(UniqueID.UGuid);
+        public СеріїНоменклатури_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(СеріїНоменклатури_Const.PRESENTATION_FIELDS);
-                
+        
         public string Номер { get; set; } = "";
         public string Коментар { get; set; } = "";
         public DateTime ДатаСтворення { get; set; } = DateTime.MinValue;
@@ -8327,7 +8416,7 @@ namespace GeneratedCode.Довідники
             СеріїНоменклатури_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public СеріїНоменклатури_Pointer Copy() => new СеріїНоменклатури_Pointer(base.UniqueID, base.Fields, Name);
+        public СеріїНоменклатури_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(СеріїНоменклатури_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -8343,7 +8432,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public СеріїНоменклатури_Pointer GetEmptyPointer() => new СеріїНоменклатури_Pointer();
+        public СеріїНоменклатури_Pointer GetEmptyPointer() => new();
     }
     
     public class СеріїНоменклатури_Select : DirectorySelect
@@ -8456,8 +8545,8 @@ namespace GeneratedCode.Довідники
                 Дата = Дата,
                 ТипДокументу = ТипДокументу,
                 ДокументКлюч = ДокументКлюч,
-                ПоступленняТоварівТаПослуг = ПоступленняТоварівТаПослуг,
-                ВведенняЗалишків = ВведенняЗалишків,
+                ПоступленняТоварівТаПослуг = ПоступленняТоварівТаПослуг.Copy(),
+                ВведенняЗалишків = ВведенняЗалишків.Copy(),
                 
             };
             
@@ -8479,9 +8568,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ПартіяТоварівКомпозит_Pointer GetDirectoryPointer() => new ПартіяТоварівКомпозит_Pointer(UniqueID.UGuid);
+        public ПартіяТоварівКомпозит_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПартіяТоварівКомпозит_Const.PRESENTATION_FIELDS);
-                
+        
         public string Назва { get; set; } = "";
         public DateTime Дата { get; set; } = DateTime.MinValue;
         public Перелічення.ТипДокументуПартіяТоварівКомпозит ТипДокументу { get; set; } = 0;
@@ -8505,7 +8594,7 @@ namespace GeneratedCode.Довідники
             ПартіяТоварівКомпозит_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public ПартіяТоварівКомпозит_Pointer Copy() => new ПартіяТоварівКомпозит_Pointer(base.UniqueID, base.Fields, Name);
+        public ПартіяТоварівКомпозит_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПартіяТоварівКомпозит_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -8521,7 +8610,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public ПартіяТоварівКомпозит_Pointer GetEmptyPointer() => new ПартіяТоварівКомпозит_Pointer();
+        public ПартіяТоварівКомпозит_Pointer GetEmptyPointer() => new();
     }
     
     public class ПартіяТоварівКомпозит_Select : DirectorySelect
@@ -8634,11 +8723,11 @@ namespace GeneratedCode.Довідники
             ВидиЗапасів_Objest copy = new()
             {
                 Назва = Назва,
-                Організація = Організація,
+                Організація = Організація.Copy(),
                 ТипЗапасів = ТипЗапасів,
-                Валюта = Валюта,
-                Контрагент = Контрагент,
-                Договір = Договір,
+                Валюта = Валюта.Copy(),
+                Контрагент = Контрагент.Copy(),
+                Договір = Договір.Copy(),
                 Код = Код,
                 
             };
@@ -8663,9 +8752,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ВидиЗапасів_Pointer GetDirectoryPointer() => new ВидиЗапасів_Pointer(UniqueID.UGuid);
+        public ВидиЗапасів_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ВидиЗапасів_Const.PRESENTATION_FIELDS);
-                
+        
         public string Назва { get; set; } = "";
         public Довідники.Організації_Pointer Організація { get; set; } = new Довідники.Організації_Pointer();
         public Перелічення.ТипЗапасів ТипЗапасів { get; set; } = 0;
@@ -8690,7 +8779,7 @@ namespace GeneratedCode.Довідники
             ВидиЗапасів_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public ВидиЗапасів_Pointer Copy() => new ВидиЗапасів_Pointer(base.UniqueID, base.Fields, Name);
+        public ВидиЗапасів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(ВидиЗапасів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -8706,7 +8795,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public ВидиЗапасів_Pointer GetEmptyPointer() => new ВидиЗапасів_Pointer();
+        public ВидиЗапасів_Pointer GetEmptyPointer() => new();
     }
     
     public class ВидиЗапасів_Select : DirectorySelect
@@ -8932,9 +9021,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public Банки_Pointer GetDirectoryPointer() => new Банки_Pointer(UniqueID.UGuid);
+        public Банки_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(Банки_Const.PRESENTATION_FIELDS);
-                
+        
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
         public string ТипНаселеногоПункту { get; set; } = "";
@@ -8980,7 +9069,7 @@ namespace GeneratedCode.Довідники
             Банки_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public Банки_Pointer Copy() => new Банки_Pointer(base.UniqueID, base.Fields, Name);
+        public Банки_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(Банки_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -8996,7 +9085,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public Банки_Pointer GetEmptyPointer() => new Банки_Pointer();
+        public Банки_Pointer GetEmptyPointer() => new();
     }
     
     public class Банки_Select : DirectorySelect
@@ -9098,7 +9187,7 @@ namespace GeneratedCode.Довідники
             {
                 Назва = Назва,
                 НалаштуванняАдресногоЗберігання = НалаштуванняАдресногоЗберігання,
-                Склад = Склад,
+                Склад = Склад.Copy(),
                 
             };
             
@@ -9122,9 +9211,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public СкладськіПриміщення_Pointer GetDirectoryPointer() => new СкладськіПриміщення_Pointer(UniqueID.UGuid);
+        public СкладськіПриміщення_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(СкладськіПриміщення_Const.PRESENTATION_FIELDS);
-                
+        
         public string Назва { get; set; } = "";
         public Перелічення.НалаштуванняАдресногоЗберігання НалаштуванняАдресногоЗберігання { get; set; } = 0;
         public Довідники.Склади_Pointer Склад { get; set; } = new Довідники.Склади_Pointer();
@@ -9145,7 +9234,7 @@ namespace GeneratedCode.Довідники
             СкладськіПриміщення_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public СкладськіПриміщення_Pointer Copy() => new СкладськіПриміщення_Pointer(base.UniqueID, base.Fields, Name);
+        public СкладськіПриміщення_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(СкладськіПриміщення_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -9161,7 +9250,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public СкладськіПриміщення_Pointer GetEmptyPointer() => new СкладськіПриміщення_Pointer();
+        public СкладськіПриміщення_Pointer GetEmptyPointer() => new();
     }
     
     public class СкладськіПриміщення_Select : DirectorySelect
@@ -9282,16 +9371,16 @@ namespace GeneratedCode.Довідники
         {
             СкладськіКомірки_Objest copy = new()
             {
-                Папка = Папка,
+                Папка = Папка.Copy(),
                 Назва = Назва,
-                ОбластьЗберігання = ОбластьЗберігання,
+                ОбластьЗберігання = ОбластьЗберігання.Copy(),
                 Лінія = Лінія,
                 Позиція = Позиція,
-                Приміщення = Приміщення,
+                Приміщення = Приміщення.Copy(),
                 Стелаж = Стелаж,
                 Ярус = Ярус,
                 ТипСкладськоїКомірки = ТипСкладськоїКомірки,
-                Типорозмір = Типорозмір,
+                Типорозмір = Типорозмір.Copy(),
                 
             };
             
@@ -9315,9 +9404,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public СкладськіКомірки_Pointer GetDirectoryPointer() => new СкладськіКомірки_Pointer(UniqueID.UGuid);
+        public СкладськіКомірки_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(СкладськіКомірки_Const.PRESENTATION_FIELDS);
-                
+        
         public Довідники.СкладськіКомірки_Папки_Pointer Папка { get; set; } = new Довідники.СкладськіКомірки_Папки_Pointer();
         public string Назва { get; set; } = "";
         public Довідники.ОбластьЗберігання_Pointer ОбластьЗберігання { get; set; } = new Довідники.ОбластьЗберігання_Pointer();
@@ -9345,7 +9434,7 @@ namespace GeneratedCode.Довідники
             СкладськіКомірки_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public СкладськіКомірки_Pointer Copy() => new СкладськіКомірки_Pointer(base.UniqueID, base.Fields, Name);
+        public СкладськіКомірки_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(СкладськіКомірки_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -9361,7 +9450,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public СкладськіКомірки_Pointer GetEmptyPointer() => new СкладськіКомірки_Pointer();
+        public СкладськіКомірки_Pointer GetEmptyPointer() => new();
     }
     
     public class СкладськіКомірки_Select : DirectorySelect
@@ -9463,7 +9552,7 @@ namespace GeneratedCode.Довідники
             {
                 Назва = Назва,
                 Опис = Опис,
-                Приміщення = Приміщення,
+                Приміщення = Приміщення.Copy(),
                 
             };
             
@@ -9485,9 +9574,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ОбластьЗберігання_Pointer GetDirectoryPointer() => new ОбластьЗберігання_Pointer(UniqueID.UGuid);
+        public ОбластьЗберігання_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ОбластьЗберігання_Const.PRESENTATION_FIELDS);
-                
+        
         public string Назва { get; set; } = "";
         public string Опис { get; set; } = "";
         public Довідники.СкладськіПриміщення_Pointer Приміщення { get; set; } = new Довідники.СкладськіПриміщення_Pointer();
@@ -9508,7 +9597,7 @@ namespace GeneratedCode.Довідники
             ОбластьЗберігання_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public ОбластьЗберігання_Pointer Copy() => new ОбластьЗберігання_Pointer(base.UniqueID, base.Fields, Name);
+        public ОбластьЗберігання_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(ОбластьЗберігання_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -9524,7 +9613,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public ОбластьЗберігання_Pointer GetEmptyPointer() => new ОбластьЗберігання_Pointer();
+        public ОбластьЗберігання_Pointer GetEmptyPointer() => new();
     }
     
     public class ОбластьЗберігання_Select : DirectorySelect
@@ -9662,9 +9751,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ТипорозміриКомірок_Pointer GetDirectoryPointer() => new ТипорозміриКомірок_Pointer(UniqueID.UGuid);
+        public ТипорозміриКомірок_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ТипорозміриКомірок_Const.PRESENTATION_FIELDS);
-                
+        
         public string Висота { get; set; } = "";
         public string Назва { get; set; } = "";
         public string Глибина { get; set; } = "";
@@ -9688,7 +9777,7 @@ namespace GeneratedCode.Довідники
             ТипорозміриКомірок_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public ТипорозміриКомірок_Pointer Copy() => new ТипорозміриКомірок_Pointer(base.UniqueID, base.Fields, Name);
+        public ТипорозміриКомірок_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(ТипорозміриКомірок_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -9704,7 +9793,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public ТипорозміриКомірок_Pointer GetEmptyPointer() => new ТипорозміриКомірок_Pointer();
+        public ТипорозміриКомірок_Pointer GetEmptyPointer() => new();
     }
     
     public class ТипорозміриКомірок_Select : DirectorySelect
@@ -9809,8 +9898,8 @@ namespace GeneratedCode.Довідники
             {
                 Назва = Назва,
                 Код = Код,
-                Родич = Родич,
-                Власник = Власник,
+                Родич = Родич.Copy(),
+                Власник = Власник.Copy(),
                 
             };
             
@@ -9838,9 +9927,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public СкладськіКомірки_Папки_Pointer GetDirectoryPointer() => new СкладськіКомірки_Папки_Pointer(UniqueID.UGuid);
+        public СкладськіКомірки_Папки_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(СкладськіКомірки_Папки_Const.PRESENTATION_FIELDS);
-                
+        
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
         public Довідники.СкладськіКомірки_Папки_Pointer Родич { get; set; } = new Довідники.СкладськіКомірки_Папки_Pointer();
@@ -9862,7 +9951,7 @@ namespace GeneratedCode.Довідники
             СкладськіКомірки_Папки_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public СкладськіКомірки_Папки_Pointer Copy() => new СкладськіКомірки_Папки_Pointer(base.UniqueID, base.Fields, Name);
+        public СкладськіКомірки_Папки_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(СкладськіКомірки_Папки_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -9880,7 +9969,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public СкладськіКомірки_Папки_Pointer GetEmptyPointer() => new СкладськіКомірки_Папки_Pointer();
+        public СкладськіКомірки_Папки_Pointer GetEmptyPointer() => new();
     }
     
     public class СкладськіКомірки_Папки_Select : DirectorySelect
@@ -10030,9 +10119,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public Блокнот_Pointer GetDirectoryPointer() => new Блокнот_Pointer(UniqueID.UGuid);
+        public Блокнот_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(Блокнот_Const.PRESENTATION_FIELDS);
-                
+        
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
         public DateTime ДатаЗапису { get; set; } = DateTime.MinValue;
@@ -10055,7 +10144,7 @@ namespace GeneratedCode.Довідники
             Блокнот_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public Блокнот_Pointer Copy() => new Блокнот_Pointer(base.UniqueID, base.Fields, Name);
+        public Блокнот_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(Блокнот_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -10071,7 +10160,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public Блокнот_Pointer GetEmptyPointer() => new Блокнот_Pointer();
+        public Блокнот_Pointer GetEmptyPointer() => new();
     }
     
     public class Блокнот_Select : DirectorySelect
@@ -10189,7 +10278,7 @@ namespace GeneratedCode.Довідники
             {
                 Додано = Додано,
                 Назва = Назва,
-                Користувач = Користувач,
+                Користувач = Користувач.Copy(),
                 Опис = Опис,
                 Інформація = Інформація,
                 Код = Код,
@@ -10225,9 +10314,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete(["tab_b15", ]);
         }
         
-        public ЗбереженіЗвіти_Pointer GetDirectoryPointer() => new ЗбереженіЗвіти_Pointer(UniqueID.UGuid);
+        public ЗбереженіЗвіти_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ЗбереженіЗвіти_Const.PRESENTATION_FIELDS);
-                
+        
         public DateTime Додано { get; set; } = DateTime.MinValue;
         public string Назва { get; set; } = "";
         public Довідники.Користувачі_Pointer Користувач { get; set; } = new Довідники.Користувачі_Pointer();
@@ -10254,7 +10343,7 @@ namespace GeneratedCode.Довідники
             ЗбереженіЗвіти_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public ЗбереженіЗвіти_Pointer Copy() => new ЗбереженіЗвіти_Pointer(base.UniqueID, base.Fields, Name);
+        public ЗбереженіЗвіти_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(ЗбереженіЗвіти_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -10270,7 +10359,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public ЗбереженіЗвіти_Pointer GetEmptyPointer() => new ЗбереженіЗвіти_Pointer();
+        public ЗбереженіЗвіти_Pointer GetEmptyPointer() => new();
     }
     
     public class ЗбереженіЗвіти_Select : DirectorySelect
@@ -10485,11 +10574,51 @@ namespace GeneratedCode.Довідники
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [..Records];
-            foreach (Record copyRecordItem in Records)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    А = original.А,
+                    Б = original.Б,
+                    В = original.В,
+                    Г = original.Г,
+                    Ґ = original.Ґ,
+                    Д = original.Д,
+                    Е = original.Е,
+                    Є = original.Є,
+                    Ж = original.Ж,
+                    З = original.З,
+                    И = original.И,
+                    І = original.І,
+                    Ї = original.Ї,
+                    Й = original.Й,
+                    К = original.К,
+                    Л = original.Л,
+                    М = original.М,
+                    Н = original.Н,
+                    О = original.О,
+                    П = original.П,
+                    Р = original.Р,
+                    С = original.С,
+                    Т = original.Т,
+                    У = original.У,
+                    Ф = original.Ф,
+                    Х = original.Х,
+                    Ц = original.Ц,
+                    Ч = original.Ч,
+                    Ш = original.Ш,
+                    Щ = original.Щ,
+                    Ь = original.Ь,
+                    Ю = original.Ю,
+                    Я = original.Я,
+                    
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
         
         public class Record : DirectoryTablePartRecord
@@ -10606,9 +10735,9 @@ namespace GeneratedCode.Довідники
             КасиККМ_Objest copy = new()
             {
                 Назва = Назва,
-                Склад = Склад,
+                Склад = Склад.Copy(),
                 Тип = Тип,
-                Валюта = Валюта,
+                Валюта = Валюта.Copy(),
                 
             };
             
@@ -10632,9 +10761,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public КасиККМ_Pointer GetDirectoryPointer() => new КасиККМ_Pointer(UniqueID.UGuid);
+        public КасиККМ_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(КасиККМ_Const.PRESENTATION_FIELDS);
-                
+        
         public string Назва { get; set; } = "";
         public Довідники.Склади_Pointer Склад { get; set; } = new Довідники.Склади_Pointer();
         public Перелічення.ТипККМ Тип { get; set; } = 0;
@@ -10656,7 +10785,7 @@ namespace GeneratedCode.Довідники
             КасиККМ_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public КасиККМ_Pointer Copy() => new КасиККМ_Pointer(base.UniqueID, base.Fields, Name);
+        public КасиККМ_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(КасиККМ_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -10672,7 +10801,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public КасиККМ_Pointer GetEmptyPointer() => new КасиККМ_Pointer();
+        public КасиККМ_Pointer GetEmptyPointer() => new();
     }
     
     public class КасиККМ_Select : DirectorySelect
@@ -10799,7 +10928,7 @@ namespace GeneratedCode.Довідники
             {
                 Код = Код,
                 Назва = Назва,
-                Родич = Родич,
+                Родич = Родич.Copy(),
                 ЦеГрупа = ЦеГрупа,
                 Сумовий = Сумовий,
                 Кількісний = Кількісний,
@@ -10836,9 +10965,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ПланРахунків_Pointer GetDirectoryPointer() => new ПланРахунків_Pointer(UniqueID.UGuid);
+        public ПланРахунків_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПланРахунків_Const.PRESENTATION_FIELDS);
-                
+        
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
         public Довідники.ПланРахунків_Pointer Родич { get; set; } = new Довідники.ПланРахунків_Pointer();
@@ -10868,7 +10997,7 @@ namespace GeneratedCode.Довідники
             ПланРахунків_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public ПланРахунків_Pointer Copy() => new ПланРахунків_Pointer(base.UniqueID, base.Fields, Name);
+        public ПланРахунків_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(ПланРахунків_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -10886,7 +11015,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public ПланРахунків_Pointer GetEmptyPointer() => new ПланРахунків_Pointer();
+        public ПланРахунків_Pointer GetEmptyPointer() => new();
     }
     
     public class ПланРахунків_Select : DirectorySelect
@@ -11020,13 +11149,13 @@ namespace GeneratedCode.Довідники
             {
                 Код = Код,
                 Назва = Назва,
-                Родич = Родич,
+                Родич = Родич.Copy(),
                 МетодСписання = МетодСписання,
-                РахунокОбліку = РахунокОбліку,
-                РахунокДоходів = РахунокДоходів,
-                СтаттяДоходів = СтаттяДоходів,
-                РахунокВитрат = РахунокВитрат,
-                СтаттяВитрат = СтаттяВитрат,
+                РахунокОбліку = РахунокОбліку.Copy(),
+                РахунокДоходів = РахунокДоходів.Copy(),
+                СтаттяДоходів = СтаттяДоходів.Copy(),
+                РахунокВитрат = РахунокВитрат.Copy(),
+                СтаттяВитрат = СтаттяВитрат.Copy(),
                 
             };
             
@@ -11052,9 +11181,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public Категорії_Pointer GetDirectoryPointer() => new Категорії_Pointer(UniqueID.UGuid);
+        public Категорії_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(Категорії_Const.PRESENTATION_FIELDS);
-                
+        
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
         public Довідники.Категорії_Pointer Родич { get; set; } = new Довідники.Категорії_Pointer();
@@ -11081,7 +11210,7 @@ namespace GeneratedCode.Довідники
             Категорії_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public Категорії_Pointer Copy() => new Категорії_Pointer(base.UniqueID, base.Fields, Name);
+        public Категорії_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(Категорії_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -11099,7 +11228,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public Категорії_Pointer GetEmptyPointer() => new Категорії_Pointer();
+        public Категорії_Pointer GetEmptyPointer() => new();
     }
     
     public class Категорії_Select : DirectorySelect
@@ -11221,7 +11350,7 @@ namespace GeneratedCode.Довідники
             {
                 Код = Код,
                 Назва = Назва,
-                Родич = Родич,
+                Родич = Родич.Copy(),
                 ЦеПапка = ЦеПапка,
                 КодЗПодатковоїДекларації = КодЗПодатковоїДекларації,
                 
@@ -11249,9 +11378,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public Статті_Pointer GetDirectoryPointer() => new Статті_Pointer(UniqueID.UGuid);
+        public Статті_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(Статті_Const.PRESENTATION_FIELDS);
-                
+        
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
         public Довідники.Статті_Pointer Родич { get; set; } = new Довідники.Статті_Pointer();
@@ -11274,7 +11403,7 @@ namespace GeneratedCode.Довідники
             Статті_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public Статті_Pointer Copy() => new Статті_Pointer(base.UniqueID, base.Fields, Name);
+        public Статті_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(Статті_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -11292,7 +11421,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public Статті_Pointer GetEmptyPointer() => new Статті_Pointer();
+        public Статті_Pointer GetEmptyPointer() => new();
     }
     
     public class Статті_Select : DirectorySelect
@@ -11428,9 +11557,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ВидиПодатків_Pointer GetDirectoryPointer() => new ВидиПодатків_Pointer(UniqueID.UGuid);
+        public ВидиПодатків_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ВидиПодатків_Const.PRESENTATION_FIELDS);
-                
+        
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
         
@@ -11450,7 +11579,7 @@ namespace GeneratedCode.Довідники
             ВидиПодатків_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public ВидиПодатків_Pointer Copy() => new ВидиПодатків_Pointer(base.UniqueID, base.Fields, Name);
+        public ВидиПодатків_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(ВидиПодатків_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -11466,7 +11595,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public ВидиПодатків_Pointer GetEmptyPointer() => new ВидиПодатків_Pointer();
+        public ВидиПодатків_Pointer GetEmptyPointer() => new();
     }
     
     public class ВидиПодатків_Select : DirectorySelect
@@ -11586,9 +11715,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ВидиЖурналів_Pointer GetDirectoryPointer() => new ВидиЖурналів_Pointer(UniqueID.UGuid);
+        public ВидиЖурналів_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ВидиЖурналів_Const.PRESENTATION_FIELDS);
-                
+        
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
         
@@ -11608,7 +11737,7 @@ namespace GeneratedCode.Довідники
             ВидиЖурналів_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public ВидиЖурналів_Pointer Copy() => new ВидиЖурналів_Pointer(base.UniqueID, base.Fields, Name);
+        public ВидиЖурналів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(ВидиЖурналів_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -11624,7 +11753,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public ВидиЖурналів_Pointer GetEmptyPointer() => new ВидиЖурналів_Pointer();
+        public ВидиЖурналів_Pointer GetEmptyPointer() => new();
     }
     
     public class ВидиЖурналів_Select : DirectorySelect
@@ -11744,9 +11873,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ОсновніЗасоби_Pointer GetDirectoryPointer() => new ОсновніЗасоби_Pointer(UniqueID.UGuid);
+        public ОсновніЗасоби_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ОсновніЗасоби_Const.PRESENTATION_FIELDS);
-                
+        
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
         
@@ -11766,7 +11895,7 @@ namespace GeneratedCode.Довідники
             ОсновніЗасоби_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public ОсновніЗасоби_Pointer Copy() => new ОсновніЗасоби_Pointer(base.UniqueID, base.Fields, Name);
+        public ОсновніЗасоби_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(ОсновніЗасоби_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -11782,7 +11911,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public ОсновніЗасоби_Pointer GetEmptyPointer() => new ОсновніЗасоби_Pointer();
+        public ОсновніЗасоби_Pointer GetEmptyPointer() => new();
     }
     
     public class ОсновніЗасоби_Select : DirectorySelect
@@ -11902,9 +12031,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public МалоцінніПредмети_Pointer GetDirectoryPointer() => new МалоцінніПредмети_Pointer(UniqueID.UGuid);
+        public МалоцінніПредмети_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(МалоцінніПредмети_Const.PRESENTATION_FIELDS);
-                
+        
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
         
@@ -11924,7 +12053,7 @@ namespace GeneratedCode.Довідники
             МалоцінніПредмети_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public МалоцінніПредмети_Pointer Copy() => new МалоцінніПредмети_Pointer(base.UniqueID, base.Fields, Name);
+        public МалоцінніПредмети_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(МалоцінніПредмети_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -11940,7 +12069,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public МалоцінніПредмети_Pointer GetEmptyPointer() => new МалоцінніПредмети_Pointer();
+        public МалоцінніПредмети_Pointer GetEmptyPointer() => new();
     }
     
     public class МалоцінніПредмети_Select : DirectorySelect
@@ -12060,9 +12189,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ГрошовіРахункиВласні_Pointer GetDirectoryPointer() => new ГрошовіРахункиВласні_Pointer(UniqueID.UGuid);
+        public ГрошовіРахункиВласні_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ГрошовіРахункиВласні_Const.PRESENTATION_FIELDS);
-                
+        
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
         
@@ -12082,7 +12211,7 @@ namespace GeneratedCode.Довідники
             ГрошовіРахункиВласні_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public ГрошовіРахункиВласні_Pointer Copy() => new ГрошовіРахункиВласні_Pointer(base.UniqueID, base.Fields, Name);
+        public ГрошовіРахункиВласні_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(ГрошовіРахункиВласні_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -12098,7 +12227,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public ГрошовіРахункиВласні_Pointer GetEmptyPointer() => new ГрошовіРахункиВласні_Pointer();
+        public ГрошовіРахункиВласні_Pointer GetEmptyPointer() => new();
     }
     
     public class ГрошовіРахункиВласні_Select : DirectorySelect
@@ -12198,7 +12327,7 @@ namespace GeneratedCode.Довідники
             {
                 Код = Код,
                 Назва = Назва,
-                Папка = Папка,
+                Папка = Папка.Copy(),
                 
             };
             
@@ -12222,9 +12351,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public НоменклатураВнутрішня_Pointer GetDirectoryPointer() => new НоменклатураВнутрішня_Pointer(UniqueID.UGuid);
+        public НоменклатураВнутрішня_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(НоменклатураВнутрішня_Const.PRESENTATION_FIELDS);
-                
+        
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
         public Довідники.НоменклатураВнутрішня_Папки_Pointer Папка { get; set; } = new Довідники.НоменклатураВнутрішня_Папки_Pointer();
@@ -12245,7 +12374,7 @@ namespace GeneratedCode.Довідники
             НоменклатураВнутрішня_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public НоменклатураВнутрішня_Pointer Copy() => new НоменклатураВнутрішня_Pointer(base.UniqueID, base.Fields, Name);
+        public НоменклатураВнутрішня_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(НоменклатураВнутрішня_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -12261,7 +12390,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public НоменклатураВнутрішня_Pointer GetEmptyPointer() => new НоменклатураВнутрішня_Pointer();
+        public НоменклатураВнутрішня_Pointer GetEmptyPointer() => new();
     }
     
     public class НоменклатураВнутрішня_Select : DirectorySelect
@@ -12361,7 +12490,7 @@ namespace GeneratedCode.Довідники
             {
                 Код = Код,
                 Назва = Назва,
-                Родич = Родич,
+                Родич = Родич.Copy(),
                 
             };
             
@@ -12389,9 +12518,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public НоменклатураВнутрішня_Папки_Pointer GetDirectoryPointer() => new НоменклатураВнутрішня_Папки_Pointer(UniqueID.UGuid);
+        public НоменклатураВнутрішня_Папки_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(НоменклатураВнутрішня_Папки_Const.PRESENTATION_FIELDS);
-                
+        
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
         public Довідники.НоменклатураВнутрішня_Папки_Pointer Родич { get; set; } = new Довідники.НоменклатураВнутрішня_Папки_Pointer();
@@ -12412,7 +12541,7 @@ namespace GeneratedCode.Довідники
             НоменклатураВнутрішня_Папки_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public НоменклатураВнутрішня_Папки_Pointer Copy() => new НоменклатураВнутрішня_Папки_Pointer(base.UniqueID, base.Fields, Name);
+        public НоменклатураВнутрішня_Папки_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(НоменклатураВнутрішня_Папки_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -12430,7 +12559,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public НоменклатураВнутрішня_Папки_Pointer GetEmptyPointer() => new НоменклатураВнутрішня_Папки_Pointer();
+        public НоменклатураВнутрішня_Папки_Pointer GetEmptyPointer() => new();
     }
     
     public class НоменклатураВнутрішня_Папки_Select : DirectorySelect
@@ -12566,9 +12695,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public Бланки_Pointer GetDirectoryPointer() => new Бланки_Pointer(UniqueID.UGuid);
+        public Бланки_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(Бланки_Const.PRESENTATION_FIELDS);
-                
+        
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
         
@@ -12588,7 +12717,7 @@ namespace GeneratedCode.Довідники
             Бланки_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public Бланки_Pointer Copy() => new Бланки_Pointer(base.UniqueID, base.Fields, Name);
+        public Бланки_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(Бланки_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -12604,7 +12733,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public Бланки_Pointer GetEmptyPointer() => new Бланки_Pointer();
+        public Бланки_Pointer GetEmptyPointer() => new();
     }
     
     public class Бланки_Select : DirectorySelect
@@ -12724,9 +12853,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public Співробітники_Pointer GetDirectoryPointer() => new Співробітники_Pointer(UniqueID.UGuid);
+        public Співробітники_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(Співробітники_Const.PRESENTATION_FIELDS);
-                
+        
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
         
@@ -12746,7 +12875,7 @@ namespace GeneratedCode.Довідники
             Співробітники_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public Співробітники_Pointer Copy() => new Співробітники_Pointer(base.UniqueID, base.Fields, Name);
+        public Співробітники_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(Співробітники_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -12762,7 +12891,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public Співробітники_Pointer GetEmptyPointer() => new Співробітники_Pointer();
+        public Співробітники_Pointer GetEmptyPointer() => new();
     }
     
     public class Співробітники_Select : DirectorySelect
@@ -12882,9 +13011,9 @@ namespace GeneratedCode.Довідники
             await base.BaseDelete([]);
         }
         
-        public ТипиБухОперацій_Pointer GetDirectoryPointer() => new ТипиБухОперацій_Pointer(UniqueID.UGuid);
+        public ТипиБухОперацій_Pointer GetDirectoryPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ТипиБухОперацій_Const.PRESENTATION_FIELDS);
-                
+        
         public string Код { get; set; } = "";
         public string Назва { get; set; } = "";
         
@@ -12904,7 +13033,7 @@ namespace GeneratedCode.Довідники
             ТипиБухОперацій_Objest obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
-        public ТипиБухОперацій_Pointer Copy() => new ТипиБухОперацій_Pointer(base.UniqueID, base.Fields, Name);
+        public ТипиБухОперацій_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public string Назва { get => Name; set => Name = value; }
         public async Task<string> GetPresentation() => Name = await base.BasePresentation(ТипиБухОперацій_Const.PRESENTATION_FIELDS);
         public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
@@ -12920,7 +13049,7 @@ namespace GeneratedCode.Довідники
             
             await base.BaseDeletionLabel(label);
         }
-        public ТипиБухОперацій_Pointer GetEmptyPointer() => new ТипиБухОперацій_Pointer();
+        public ТипиБухОперацій_Pointer GetEmptyPointer() => new();
     }
     
     public class ТипиБухОперацій_Select : DirectorySelect
@@ -14326,16 +14455,16 @@ namespace GeneratedCode.Документи
                 Назва = Назва,
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
-                Контрагент = Контрагент,
-                Організація = Організація,
-                Склад = Склад,
-                Валюта = Валюта,
+                Контрагент = Контрагент.Copy(),
+                Організація = Організація.Copy(),
+                Склад = Склад.Copy(),
+                Валюта = Валюта.Copy(),
                 СумаДокументу = СумаДокументу,
-                Каса = Каса,
-                БанківськийРахунок = БанківськийРахунок,
-                Підрозділ = Підрозділ,
-                Договір = Договір,
-                Автор = Автор,
+                Каса = Каса.Copy(),
+                БанківськийРахунок = БанківськийРахунок.Copy(),
+                Підрозділ = Підрозділ.Copy(),
+                Договір = Договір.Copy(),
+                Автор = Автор.Copy(),
                 ДатаПоступлення = ДатаПоступлення,
                 АдресаДоставкиДляПостачальника = АдресаДоставкиДляПостачальника,
                 ПовернутиТару = ПовернутиТару,
@@ -14346,8 +14475,8 @@ namespace GeneratedCode.Документи
                 ГосподарськаОперація = ГосподарськаОперація,
                 Статус = Статус,
                 ФормаОплати = ФормаОплати,
-                Менеджер = Менеджер,
-                Основа = Основа,
+                Менеджер = Менеджер.Copy(),
+                Основа = Основа.Copy(),
                 Коментар = Коментар,
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
                 
@@ -14384,7 +14513,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a30", ]);
         }
         
-        public ЗамовленняПостачальнику_Pointer GetDocumentPointer() => new ЗамовленняПостачальнику_Pointer(UniqueID.UGuid);
+        public ЗамовленняПостачальнику_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ЗамовленняПостачальнику_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -14476,8 +14605,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ЗамовленняПостачальнику_Pointer Copy() => new ЗамовленняПостачальнику_Pointer(base.UniqueID, base.Fields, Name);
-        public ЗамовленняПостачальнику_Pointer GetEmptyPointer() => new ЗамовленняПостачальнику_Pointer();
+        public ЗамовленняПостачальнику_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ЗамовленняПостачальнику_Pointer GetEmptyPointer() => new();
         public async Task<ЗамовленняПостачальнику_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -14673,11 +14802,30 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Номенклатура = original.Номенклатура.Copy(),
+                    ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
+                    Пакування = original.Пакування.Copy(),
+                    КількістьУпаковок = original.КількістьУпаковок,
+                    Кількість = original.Кількість,
+                    ДатаПоступлення = original.ДатаПоступлення,
+                    Ціна = original.Ціна,
+                    Сума = original.Сума,
+                    Скидка = original.Скидка,
+                    Склад = original.Склад.Copy(),
+                    Підрозділ = original.Підрозділ.Copy(),
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -15089,37 +15237,37 @@ namespace GeneratedCode.Документи
                 Назва = Назва,
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
-                Валюта = Валюта,
+                Валюта = Валюта.Copy(),
                 ГосподарськаОперація = ГосподарськаОперація,
-                Підрозділ = Підрозділ,
-                Склад = Склад,
-                Контрагент = Контрагент,
+                Підрозділ = Підрозділ.Copy(),
+                Склад = Склад.Copy(),
+                Контрагент = Контрагент.Copy(),
                 СумаДокументу = СумаДокументу,
-                ЗамовленняПостачальнику = ЗамовленняПостачальнику,
+                ЗамовленняПостачальнику = ЗамовленняПостачальнику.Copy(),
                 ДатаОплати = ДатаОплати,
                 ФормаОплати = ФормаОплати,
                 Узгоджений = Узгоджений,
-                БанківськийРахунокОрганізації = БанківськийРахунокОрганізації,
+                БанківськийРахунокОрганізації = БанківськийРахунокОрганізації.Copy(),
                 НомерВхідногоДокументу = НомерВхідногоДокументу,
                 ДатаВхідногоДокументу = ДатаВхідногоДокументу,
-                БанківськийРахунокКонтрагента = БанківськийРахунокКонтрагента,
-                Договір = Договір,
-                Автор = Автор,
+                БанківськийРахунокКонтрагента = БанківськийРахунокКонтрагента.Copy(),
+                Договір = Договір.Copy(),
+                Автор = Автор.Copy(),
                 ПовернутиТару = ПовернутиТару,
                 ДатаПоверненняТари = ДатаПоверненняТари,
                 СпосібДоставки = СпосібДоставки,
-                Організація = Організація,
+                Організація = Організація.Copy(),
                 Курс = Курс,
                 Кратність = Кратність,
                 ЧасДоставкиЗ = ЧасДоставкиЗ,
                 ЧасДоставкиДо = ЧасДоставкиДо,
-                Менеджер = Менеджер,
-                СтаттяРухуКоштів = СтаттяРухуКоштів,
-                Каса = Каса,
-                Основа = Основа,
+                Менеджер = Менеджер.Copy(),
+                СтаттяРухуКоштів = СтаттяРухуКоштів.Copy(),
+                Каса = Каса.Copy(),
+                Основа = Основа.Copy(),
                 Коментар = Коментар,
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
-                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація,
+                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація.Copy(),
                 ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку,
                 
             };
@@ -15161,7 +15309,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a33", "tab_b71", ]);
         }
         
-        public ПоступленняТоварівТаПослуг_Pointer GetDocumentPointer() => new ПоступленняТоварівТаПослуг_Pointer(UniqueID.UGuid);
+        public ПоступленняТоварівТаПослуг_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПоступленняТоварівТаПослуг_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -15271,8 +15419,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПоступленняТоварівТаПослуг_Pointer Copy() => new ПоступленняТоварівТаПослуг_Pointer(base.UniqueID, base.Fields, Name);
-        public ПоступленняТоварівТаПослуг_Pointer GetEmptyPointer() => new ПоступленняТоварівТаПослуг_Pointer();
+        public ПоступленняТоварівТаПослуг_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПоступленняТоварівТаПослуг_Pointer GetEmptyPointer() => new();
         public async Task<ПоступленняТоварівТаПослуг_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -15486,11 +15634,32 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Номенклатура = original.Номенклатура.Copy(),
+                    ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
+                    Серія = original.Серія.Copy(),
+                    Пакування = original.Пакування.Copy(),
+                    КількістьУпаковок = original.КількістьУпаковок,
+                    Кількість = original.Кількість,
+                    Ціна = original.Ціна,
+                    Сума = original.Сума,
+                    Склад = original.Склад.Copy(),
+                    ЗамовленняПостачальнику = original.ЗамовленняПостачальнику.Copy(),
+                    Скидка = original.Скидка,
+                    Підрозділ = original.Підрозділ.Copy(),
+                    ВидЦіни = original.ВидЦіни.Copy(),
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -15658,11 +15827,26 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Рахунок = original.Рахунок.Copy(),
+                    Аналітика1 = original.Аналітика1.Copy(),
+                    Аналітика2 = original.Аналітика2.Copy(),
+                    Аналітика3 = original.Аналітика3.Copy(),
+                    Податки = original.Податки.Copy(),
+                    Дебет = original.Дебет,
+                    Кредит = original.Кредит,
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -16065,34 +16249,34 @@ namespace GeneratedCode.Документи
                 Назва = Назва,
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
-                Контрагент = Контрагент,
-                Організація = Організація,
-                Валюта = Валюта,
+                Контрагент = Контрагент.Copy(),
+                Організація = Організація.Copy(),
+                Валюта = Валюта.Copy(),
                 СумаДокументу = СумаДокументу,
-                Склад = Склад,
+                Склад = Склад.Copy(),
                 Статус = Статус,
                 Узгоджений = Узгоджений,
                 ФормаОплати = ФормаОплати,
-                БанківськийРахунок = БанківськийРахунок,
-                БанківськийРахунокКонтрагента = БанківськийРахунокКонтрагента,
-                Каса = Каса,
+                БанківськийРахунок = БанківськийРахунок.Copy(),
+                БанківськийРахунокКонтрагента = БанківськийРахунокКонтрагента.Copy(),
+                Каса = Каса.Copy(),
                 СумаАвансуДоЗабезпечення = СумаАвансуДоЗабезпечення,
                 СумаПередоплатиДоВідгрузки = СумаПередоплатиДоВідгрузки,
                 ДатаВідгрузки = ДатаВідгрузки,
                 АдресаДоставки = АдресаДоставки,
                 ГосподарськаОперація = ГосподарськаОперація,
-                Договір = Договір,
-                Підрозділ = Підрозділ,
-                Автор = Автор,
+                Договір = Договір.Copy(),
+                Підрозділ = Підрозділ.Copy(),
+                Автор = Автор.Copy(),
                 СпосібДоставки = СпосібДоставки,
                 ЧасДоставкиЗ = ЧасДоставкиЗ,
                 ЧасДоставкиДо = ЧасДоставкиДо,
                 ПовернутиТару = ПовернутиТару,
                 ДатаПоверненняТари = ДатаПоверненняТари,
                 Коментар = Коментар,
-                Менеджер = Менеджер,
+                Менеджер = Менеджер.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -16127,7 +16311,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a35", ]);
         }
         
-        public ЗамовленняКлієнта_Pointer GetDocumentPointer() => new ЗамовленняКлієнта_Pointer(UniqueID.UGuid);
+        public ЗамовленняКлієнта_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ЗамовленняКлієнта_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -16225,8 +16409,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ЗамовленняКлієнта_Pointer Copy() => new ЗамовленняКлієнта_Pointer(base.UniqueID, base.Fields, Name);
-        public ЗамовленняКлієнта_Pointer GetEmptyPointer() => new ЗамовленняКлієнта_Pointer();
+        public ЗамовленняКлієнта_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ЗамовленняКлієнта_Pointer GetEmptyPointer() => new();
         public async Task<ЗамовленняКлієнта_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -16419,11 +16603,29 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Номенклатура = original.Номенклатура.Copy(),
+                    ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
+                    Пакування = original.Пакування.Copy(),
+                    КількістьУпаковок = original.КількістьУпаковок,
+                    Кількість = original.Кількість,
+                    ВидЦіни = original.ВидЦіни.Copy(),
+                    Ціна = original.Ціна,
+                    Сума = original.Сума,
+                    Скидка = original.Скидка,
+                    Склад = original.Склад.Copy(),
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -16827,23 +17029,23 @@ namespace GeneratedCode.Документи
                 Назва = Назва,
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
-                Організація = Організація,
-                Валюта = Валюта,
-                БанківськийРахунокОрганізації = БанківськийРахунокОрганізації,
-                БанківськийРахунокКонтрагента = БанківськийРахунокКонтрагента,
+                Організація = Організація.Copy(),
+                Валюта = Валюта.Copy(),
+                БанківськийРахунокОрганізації = БанківськийРахунокОрганізації.Copy(),
+                БанківськийРахунокКонтрагента = БанківськийРахунокКонтрагента.Copy(),
                 ДатаОплати = ДатаОплати,
-                ЗамовленняКлієнта = ЗамовленняКлієнта,
-                Контрагент = Контрагент,
+                ЗамовленняКлієнта = ЗамовленняКлієнта.Copy(),
+                Контрагент = Контрагент.Copy(),
                 СумаДокументу = СумаДокументу,
-                Підрозділ = Підрозділ,
-                Склад = Склад,
+                Підрозділ = Підрозділ.Copy(),
+                Склад = Склад.Copy(),
                 ФормаОплати = ФормаОплати,
                 ГосподарськаОперація = ГосподарськаОперація,
-                Каса = Каса,
-                Договір = Договір,
-                Основа = Основа,
+                Каса = Каса.Copy(),
+                Договір = Договір.Copy(),
+                Основа = Основа.Copy(),
                 Статус = Статус,
-                Автор = Автор,
+                Автор = Автор.Copy(),
                 СумаПередоплати = СумаПередоплати,
                 СумаПередоплатиЗаТару = СумаПередоплатиЗаТару,
                 СпосібДоставки = СпосібДоставки,
@@ -16854,9 +17056,9 @@ namespace GeneratedCode.Документи
                 Курс = Курс,
                 Кратність = Кратність,
                 Коментар = Коментар,
-                Менеджер = Менеджер,
+                Менеджер = Менеджер.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
-                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація,
+                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація.Copy(),
                 ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку,
                 
             };
@@ -16896,7 +17098,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a37", "tab_c25", ]);
         }
         
-        public РеалізаціяТоварівТаПослуг_Pointer GetDocumentPointer() => new РеалізаціяТоварівТаПослуг_Pointer(UniqueID.UGuid);
+        public РеалізаціяТоварівТаПослуг_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(РеалізаціяТоварівТаПослуг_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -17006,8 +17208,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public РеалізаціяТоварівТаПослуг_Pointer Copy() => new РеалізаціяТоварівТаПослуг_Pointer(base.UniqueID, base.Fields, Name);
-        public РеалізаціяТоварівТаПослуг_Pointer GetEmptyPointer() => new РеалізаціяТоварівТаПослуг_Pointer();
+        public РеалізаціяТоварівТаПослуг_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public РеалізаціяТоварівТаПослуг_Pointer GetEmptyPointer() => new();
         public async Task<РеалізаціяТоварівТаПослуг_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -17228,11 +17430,33 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Номенклатура = original.Номенклатура.Copy(),
+                    ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
+                    Серія = original.Серія.Copy(),
+                    Пакування = original.Пакування.Copy(),
+                    КількістьУпаковок = original.КількістьУпаковок,
+                    Кількість = original.Кількість,
+                    ВидЦіни = original.ВидЦіни.Copy(),
+                    Ціна = original.Ціна,
+                    Сума = original.Сума,
+                    Склад = original.Склад.Copy(),
+                    ЗамовленняКлієнта = original.ЗамовленняКлієнта.Copy(),
+                    РахунокФактура = original.РахунокФактура.Copy(),
+                    Скидка = original.Скидка,
+                    Партія = original.Партія.Copy(),
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -17401,11 +17625,26 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Рахунок = original.Рахунок.Copy(),
+                    Аналітика1 = original.Аналітика1.Copy(),
+                    Аналітика2 = original.Аналітика2.Copy(),
+                    Аналітика3 = original.Аналітика3.Copy(),
+                    Податки = original.Податки.Copy(),
+                    Дебет = original.Дебет,
+                    Кредит = original.Кредит,
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -17735,13 +17974,13 @@ namespace GeneratedCode.Документи
                 Назва = Назва,
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
-                Організація = Організація,
-                Валюта = Валюта,
-                ВидЦіни = ВидЦіни,
+                Організація = Організація.Copy(),
+                Валюта = Валюта.Copy(),
+                ВидЦіни = ВидЦіни.Copy(),
                 Коментар = Коментар,
-                Автор = Автор,
+                Автор = Автор.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -17776,7 +18015,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a43", ]);
         }
         
-        public ВстановленняЦінНоменклатури_Pointer GetDocumentPointer() => new ВстановленняЦінНоменклатури_Pointer(UniqueID.UGuid);
+        public ВстановленняЦінНоменклатури_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ВстановленняЦінНоменклатури_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -17838,8 +18077,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ВстановленняЦінНоменклатури_Pointer Copy() => new ВстановленняЦінНоменклатури_Pointer(base.UniqueID, base.Fields, Name);
-        public ВстановленняЦінНоменклатури_Pointer GetEmptyPointer() => new ВстановленняЦінНоменклатури_Pointer();
+        public ВстановленняЦінНоменклатури_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ВстановленняЦінНоменклатури_Pointer GetEmptyPointer() => new();
         public async Task<ВстановленняЦінНоменклатури_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -18013,11 +18252,24 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Номенклатура = original.Номенклатура.Copy(),
+                    ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
+                    Пакування = original.Пакування.Copy(),
+                    ВидЦіни = original.ВидЦіни.Copy(),
+                    Ціна = original.Ціна,
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -18222,22 +18474,22 @@ namespace GeneratedCode.Документи
                 Назва = Назва,
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
-                Організація = Організація,
-                Каса = Каса,
+                Організація = Організація.Copy(),
+                Каса = Каса.Copy(),
                 СумаДокументу = СумаДокументу,
                 ГосподарськаОперація = ГосподарськаОперація,
-                Основа = Основа,
-                Контрагент = Контрагент,
-                Договір = Договір,
-                БанківськийРахунок = БанківськийРахунок,
-                Валюта = Валюта,
-                СтаттяРухуКоштів = СтаттяРухуКоштів,
-                КасаВідправник = КасаВідправник,
+                Основа = Основа.Copy(),
+                Контрагент = Контрагент.Copy(),
+                Договір = Договір.Copy(),
+                БанківськийРахунок = БанківськийРахунок.Copy(),
+                Валюта = Валюта.Copy(),
+                СтаттяРухуКоштів = СтаттяРухуКоштів.Copy(),
+                КасаВідправник = КасаВідправник.Copy(),
                 Курс = Курс,
                 Коментар = Коментар,
-                Автор = Автор,
+                Автор = Автор.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
-                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація,
+                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація.Copy(),
                 ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку,
                 
             };
@@ -18277,7 +18529,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a47", "tab_c32", ]);
         }
         
-        public ПрихіднийКасовийОрдер_Pointer GetDocumentPointer() => new ПрихіднийКасовийОрдер_Pointer(UniqueID.UGuid);
+        public ПрихіднийКасовийОрдер_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПрихіднийКасовийОрдер_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -18364,8 +18616,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПрихіднийКасовийОрдер_Pointer Copy() => new ПрихіднийКасовийОрдер_Pointer(base.UniqueID, base.Fields, Name);
-        public ПрихіднийКасовийОрдер_Pointer GetEmptyPointer() => new ПрихіднийКасовийОрдер_Pointer();
+        public ПрихіднийКасовийОрдер_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПрихіднийКасовийОрдер_Pointer GetEmptyPointer() => new();
         public async Task<ПрихіднийКасовийОрдер_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -18535,11 +18787,24 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Замовлення = original.Замовлення,
+                    Сума = original.Сума,
+                    Підрозділ = original.Підрозділ.Copy(),
+                    ВалютаВзаєморозрахунків = original.ВалютаВзаєморозрахунків.Copy(),
+                    Організація = original.Організація.Copy(),
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -18699,11 +18964,26 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Рахунок = original.Рахунок.Copy(),
+                    Аналітика1 = original.Аналітика1.Copy(),
+                    Аналітика2 = original.Аналітика2.Copy(),
+                    Аналітика3 = original.Аналітика3.Copy(),
+                    Податки = original.Податки.Copy(),
+                    Дебет = original.Дебет,
+                    Кредит = original.Кредит,
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -18916,24 +19196,24 @@ namespace GeneratedCode.Документи
                 Назва = Назва,
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
-                Організація = Організація,
-                Каса = Каса,
+                Організація = Організація.Copy(),
+                Каса = Каса.Copy(),
                 СумаДокументу = СумаДокументу,
                 СумаДокументуПоКурсу = СумаДокументуПоКурсу,
                 ГосподарськаОперація = ГосподарськаОперація,
-                ОрганізаціяОтримувач = ОрганізаціяОтримувач,
-                Контрагент = Контрагент,
-                Договір = Договір,
-                БанківськийРахунок = БанківськийРахунок,
-                Валюта = Валюта,
-                СтаттяРухуКоштів = СтаттяРухуКоштів,
-                КасаОтримувач = КасаОтримувач,
+                ОрганізаціяОтримувач = ОрганізаціяОтримувач.Copy(),
+                Контрагент = Контрагент.Copy(),
+                Договір = Договір.Copy(),
+                БанківськийРахунок = БанківськийРахунок.Copy(),
+                Валюта = Валюта.Copy(),
+                СтаттяРухуКоштів = СтаттяРухуКоштів.Copy(),
+                КасаОтримувач = КасаОтримувач.Copy(),
                 Курс = Курс,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 Коментар = Коментар,
-                Автор = Автор,
+                Автор = Автор.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
-                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація,
+                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація.Copy(),
                 ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку,
                 
             };
@@ -18973,7 +19253,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a49", "tab_c33", ]);
         }
         
-        public РозхіднийКасовийОрдер_Pointer GetDocumentPointer() => new РозхіднийКасовийОрдер_Pointer(UniqueID.UGuid);
+        public РозхіднийКасовийОрдер_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(РозхіднийКасовийОрдер_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -19062,8 +19342,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public РозхіднийКасовийОрдер_Pointer Copy() => new РозхіднийКасовийОрдер_Pointer(base.UniqueID, base.Fields, Name);
-        public РозхіднийКасовийОрдер_Pointer GetEmptyPointer() => new РозхіднийКасовийОрдер_Pointer();
+        public РозхіднийКасовийОрдер_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public РозхіднийКасовийОрдер_Pointer GetEmptyPointer() => new();
         public async Task<РозхіднийКасовийОрдер_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -19236,11 +19516,25 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Замовлення = original.Замовлення,
+                    Сума = original.Сума,
+                    ВалютаВзаєморозрахунків = original.ВалютаВзаєморозрахунків.Copy(),
+                    Підрозділ = original.Підрозділ.Copy(),
+                    Коментар = original.Коментар,
+                    Організація = original.Організація.Copy(),
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -19401,11 +19695,26 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Рахунок = original.Рахунок.Copy(),
+                    Аналітика1 = original.Аналітика1.Copy(),
+                    Аналітика2 = original.Аналітика2.Copy(),
+                    Аналітика3 = original.Аналітика3.Copy(),
+                    Податки = original.Податки.Copy(),
+                    Дебет = original.Дебет,
+                    Кредит = original.Кредит,
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -19621,14 +19930,14 @@ namespace GeneratedCode.Документи
                 Назва = Назва,
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
-                Організація = Організація,
-                БанківськийРахунокОрганізації = БанківськийРахунокОрганізації,
-                ВидЦіни = ВидЦіни,
-                ОрганізаціяОтримувач = ОрганізаціяОтримувач,
-                Відповідальний = Відповідальний,
-                Підрозділ = Підрозділ,
-                СкладВідправник = СкладВідправник,
-                СкладОтримувач = СкладОтримувач,
+                Організація = Організація.Copy(),
+                БанківськийРахунокОрганізації = БанківськийРахунокОрганізації.Copy(),
+                ВидЦіни = ВидЦіни.Copy(),
+                ОрганізаціяОтримувач = ОрганізаціяОтримувач.Copy(),
+                Відповідальний = Відповідальний.Copy(),
+                Підрозділ = Підрозділ.Copy(),
+                СкладВідправник = СкладВідправник.Copy(),
+                СкладОтримувач = СкладОтримувач.Copy(),
                 Статус = Статус,
                 ГосподарськаОперація = ГосподарськаОперація,
                 СпосібДоставки = СпосібДоставки,
@@ -19636,10 +19945,10 @@ namespace GeneratedCode.Документи
                 ЧасДоставкиЗ = ЧасДоставкиЗ,
                 ЧасДоставкиДо = ЧасДоставкиДо,
                 Коментар = Коментар,
-                Автор = Автор,
-                Основа = Основа,
+                Автор = Автор.Copy(),
+                Основа = Основа.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
-                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація,
+                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація.Copy(),
                 ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку,
                 
             };
@@ -19679,7 +19988,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a50", "tab_c30", ]);
         }
         
-        public ПереміщенняТоварів_Pointer GetDocumentPointer() => new ПереміщенняТоварів_Pointer(UniqueID.UGuid);
+        public ПереміщенняТоварів_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПереміщенняТоварів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -19769,8 +20078,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПереміщенняТоварів_Pointer Copy() => new ПереміщенняТоварів_Pointer(base.UniqueID, base.Fields, Name);
-        public ПереміщенняТоварів_Pointer GetEmptyPointer() => new ПереміщенняТоварів_Pointer();
+        public ПереміщенняТоварів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПереміщенняТоварів_Pointer GetEmptyPointer() => new();
         public async Task<ПереміщенняТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -19954,11 +20263,26 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Номенклатура = original.Номенклатура.Copy(),
+                    ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
+                    Серія = original.Серія.Copy(),
+                    Пакування = original.Пакування.Copy(),
+                    КількістьУпаковок = original.КількістьУпаковок,
+                    Кількість = original.Кількість,
+                    Партія = original.Партія.Copy(),
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -20120,11 +20444,26 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Рахунок = original.Рахунок.Copy(),
+                    Аналітика1 = original.Аналітика1.Copy(),
+                    Аналітика2 = original.Аналітика2.Copy(),
+                    Аналітика3 = original.Аналітика3.Copy(),
+                    Податки = original.Податки.Copy(),
+                    Дебет = original.Дебет,
+                    Кредит = original.Кредит,
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -20350,27 +20689,27 @@ namespace GeneratedCode.Документи
                 Назва = Назва,
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
-                Організація = Організація,
-                Контрагент = Контрагент,
-                Підрозділ = Підрозділ,
-                Валюта = Валюта,
-                Склад = Склад,
+                Організація = Організація.Copy(),
+                Контрагент = Контрагент.Copy(),
+                Підрозділ = Підрозділ.Copy(),
+                Валюта = Валюта.Copy(),
+                Склад = Склад.Copy(),
                 СумаДокументу = СумаДокументу,
                 ГосподарськаОперація = ГосподарськаОперація,
-                БанківськийРахунокОрганізації = БанківськийРахунокОрганізації,
-                БанківськийРахунокКонтрагента = БанківськийРахунокКонтрагента,
-                Договір = Договір,
+                БанківськийРахунокОрганізації = БанківськийРахунокОрганізації.Copy(),
+                БанківськийРахунокКонтрагента = БанківськийРахунокКонтрагента.Copy(),
+                Договір = Договір.Copy(),
                 СпосібДоставки = СпосібДоставки,
                 АдресДоставки = АдресДоставки,
                 ЧасДоставкиЗ = ЧасДоставкиЗ,
                 ЧасДоставкиДо = ЧасДоставкиДо,
-                Каса = Каса,
-                Основа = Основа,
+                Каса = Каса.Copy(),
+                Основа = Основа.Copy(),
                 Коментар = Коментар,
-                Автор = Автор,
-                Менеджер = Менеджер,
+                Автор = Автор.Copy(),
+                Менеджер = Менеджер.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
-                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація,
+                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація.Copy(),
                 ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку,
                 
             };
@@ -20410,7 +20749,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a52", "tab_c28", ]);
         }
         
-        public ПоверненняТоварівПостачальнику_Pointer GetDocumentPointer() => new ПоверненняТоварівПостачальнику_Pointer(UniqueID.UGuid);
+        public ПоверненняТоварівПостачальнику_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПоверненняТоварівПостачальнику_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -20506,8 +20845,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПоверненняТоварівПостачальнику_Pointer Copy() => new ПоверненняТоварівПостачальнику_Pointer(base.UniqueID, base.Fields, Name);
-        public ПоверненняТоварівПостачальнику_Pointer GetEmptyPointer() => new ПоверненняТоварівПостачальнику_Pointer();
+        public ПоверненняТоварівПостачальнику_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПоверненняТоварівПостачальнику_Pointer GetEmptyPointer() => new();
         public async Task<ПоверненняТоварівПостачальнику_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -20697,11 +21036,28 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Номенклатура = original.Номенклатура.Copy(),
+                    ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
+                    Серія = original.Серія.Copy(),
+                    Пакування = original.Пакування.Copy(),
+                    КількістьУпаковок = original.КількістьУпаковок,
+                    Кількість = original.Кількість,
+                    Ціна = original.Ціна,
+                    Сума = original.Сума,
+                    ДокументПоступлення = original.ДокументПоступлення.Copy(),
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -20865,11 +21221,26 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Рахунок = original.Рахунок.Copy(),
+                    Аналітика1 = original.Аналітика1.Copy(),
+                    Аналітика2 = original.Аналітика2.Copy(),
+                    Аналітика3 = original.Аналітика3.Copy(),
+                    Податки = original.Податки.Copy(),
+                    Дебет = original.Дебет,
+                    Кредит = original.Кредит,
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -21083,23 +21454,23 @@ namespace GeneratedCode.Документи
                 Назва = Назва,
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
-                Організація = Організація,
-                Валюта = Валюта,
+                Організація = Організація.Copy(),
+                Валюта = Валюта.Copy(),
                 СумаДокументу = СумаДокументу,
-                Склад = Склад,
-                Підрозділ = Підрозділ,
-                Менеджер = Менеджер,
-                ДокументПродажу = ДокументПродажу,
+                Склад = Склад.Copy(),
+                Підрозділ = Підрозділ.Copy(),
+                Менеджер = Менеджер.Copy(),
+                ДокументПродажу = ДокументПродажу.Copy(),
                 ГосподарськаОперація = ГосподарськаОперація,
-                Договір = Договір,
+                Договір = Договір.Copy(),
                 ПричинаПовернення = ПричинаПовернення,
-                Контрагент = Контрагент,
-                Каса = Каса,
-                Основа = Основа,
+                Контрагент = Контрагент.Copy(),
+                Каса = Каса.Copy(),
+                Основа = Основа.Copy(),
                 Коментар = Коментар,
-                Автор = Автор,
+                Автор = Автор.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
-                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація,
+                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація.Copy(),
                 ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку,
                 
             };
@@ -21139,7 +21510,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a54", "tab_c29", ]);
         }
         
-        public ПоверненняТоварівВідКлієнта_Pointer GetDocumentPointer() => new ПоверненняТоварівВідКлієнта_Pointer(UniqueID.UGuid);
+        public ПоверненняТоварівВідКлієнта_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПоверненняТоварівВідКлієнта_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -21231,8 +21602,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПоверненняТоварівВідКлієнта_Pointer Copy() => new ПоверненняТоварівВідКлієнта_Pointer(base.UniqueID, base.Fields, Name);
-        public ПоверненняТоварівВідКлієнта_Pointer GetEmptyPointer() => new ПоверненняТоварівВідКлієнта_Pointer();
+        public ПоверненняТоварівВідКлієнта_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПоверненняТоварівВідКлієнта_Pointer GetEmptyPointer() => new();
         public async Task<ПоверненняТоварівВідКлієнта_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -21425,11 +21796,29 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Номенклатура = original.Номенклатура.Copy(),
+                    ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
+                    Серія = original.Серія.Copy(),
+                    Пакування = original.Пакування.Copy(),
+                    КількістьУпаковок = original.КількістьУпаковок,
+                    Кількість = original.Кількість,
+                    Ціна = original.Ціна,
+                    Сума = original.Сума,
+                    Штрихкод = original.Штрихкод,
+                    ДокументРеалізації = original.ДокументРеалізації.Copy(),
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -21594,11 +21983,26 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Рахунок = original.Рахунок.Copy(),
+                    Аналітика1 = original.Аналітика1.Copy(),
+                    Аналітика2 = original.Аналітика2.Copy(),
+                    Аналітика3 = original.Аналітика3.Copy(),
+                    Податки = original.Податки.Copy(),
+                    Дебет = original.Дебет,
+                    Кредит = original.Кредит,
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -21803,22 +22207,22 @@ namespace GeneratedCode.Документи
                 Назва = Назва,
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
-                Валюта = Валюта,
-                ЗамовленняКлієнта = ЗамовленняКлієнта,
-                Каса = Каса,
-                Контрагент = Контрагент,
-                Організація = Організація,
-                Підрозділ = Підрозділ,
+                Валюта = Валюта.Copy(),
+                ЗамовленняКлієнта = ЗамовленняКлієнта.Copy(),
+                Каса = Каса.Copy(),
+                Контрагент = Контрагент.Copy(),
+                Організація = Організація.Copy(),
+                Підрозділ = Підрозділ.Copy(),
                 СумаДокументу = СумаДокументу,
                 ФормаОплати = ФормаОплати,
-                Договір = Договір,
+                Договір = Договір.Copy(),
                 ГосподарськаОперація = ГосподарськаОперація,
                 Коментар = Коментар,
-                Автор = Автор,
-                Менеджер = Менеджер,
+                Автор = Автор.Copy(),
+                Менеджер = Менеджер.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
-                Основа = Основа,
-                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація,
+                Основа = Основа.Copy(),
+                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація.Copy(),
                 ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку,
                 
             };
@@ -21858,7 +22262,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a82", "tab_c26", ]);
         }
         
-        public АктВиконанихРобіт_Pointer GetDocumentPointer() => new АктВиконанихРобіт_Pointer(UniqueID.UGuid);
+        public АктВиконанихРобіт_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(АктВиконанихРобіт_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -21943,8 +22347,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public АктВиконанихРобіт_Pointer Copy() => new АктВиконанихРобіт_Pointer(base.UniqueID, base.Fields, Name);
-        public АктВиконанихРобіт_Pointer GetEmptyPointer() => new АктВиконанихРобіт_Pointer();
+        public АктВиконанихРобіт_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public АктВиконанихРобіт_Pointer GetEmptyPointer() => new();
         public async Task<АктВиконанихРобіт_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -22110,11 +22514,24 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Номенклатура = original.Номенклатура.Copy(),
+                    ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
+                    Кількість = original.Кількість,
+                    Ціна = original.Ціна,
+                    Сума = original.Сума,
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -22274,11 +22691,26 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Рахунок = original.Рахунок.Copy(),
+                    Аналітика1 = original.Аналітика1.Copy(),
+                    Аналітика2 = original.Аналітика2.Copy(),
+                    Аналітика3 = original.Аналітика3.Copy(),
+                    Податки = original.Податки.Copy(),
+                    Дебет = original.Дебет,
+                    Кредит = original.Кредит,
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -22624,18 +23056,18 @@ namespace GeneratedCode.Документи
                 Назва = Назва,
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
-                Організація = Організація,
-                Підрозділ = Підрозділ,
-                Склад = Склад,
-                Валюта = Валюта,
-                Контрагент = Контрагент,
-                Договір = Договір,
+                Організація = Організація.Copy(),
+                Підрозділ = Підрозділ.Copy(),
+                Склад = Склад.Copy(),
+                Валюта = Валюта.Copy(),
+                Контрагент = Контрагент.Copy(),
+                Договір = Договір.Copy(),
                 ГосподарськаОперація = ГосподарськаОперація,
                 Коментар = Коментар,
-                Автор = Автор,
+                Автор = Автор.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
-                Основа = Основа,
-                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація,
+                Основа = Основа.Copy(),
+                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація.Copy(),
                 ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку,
                 
             };
@@ -22689,7 +23121,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a84", "tab_a85", "tab_a86", "tab_a87", "tab_c31", ]);
         }
         
-        public ВведенняЗалишків_Pointer GetDocumentPointer() => new ВведенняЗалишків_Pointer(UniqueID.UGuid);
+        public ВведенняЗалишків_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ВведенняЗалишків_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -22783,8 +23215,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ВведенняЗалишків_Pointer Copy() => new ВведенняЗалишків_Pointer(base.UniqueID, base.Fields, Name);
-        public ВведенняЗалишків_Pointer GetEmptyPointer() => new ВведенняЗалишків_Pointer();
+        public ВведенняЗалишків_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ВведенняЗалишків_Pointer GetEmptyPointer() => new();
         public async Task<ВведенняЗалишків_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -22967,11 +23399,27 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Номенклатура = original.Номенклатура.Copy(),
+                    ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
+                    Серія = original.Серія.Copy(),
+                    Пакування = original.Пакування.Copy(),
+                    КількістьУпаковок = original.КількістьУпаковок,
+                    Кількість = original.Кількість,
+                    Ціна = original.Ціна,
+                    Сума = original.Сума,
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -23109,11 +23557,21 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Каса = original.Каса.Copy(),
+                    Сума = original.Сума,
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -23245,11 +23703,21 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    БанківськийРахунок = original.БанківськийРахунок.Copy(),
+                    Сума = original.Сума,
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -23391,11 +23859,23 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Контрагент = original.Контрагент.Copy(),
+                    Валюта = original.Валюта.Copy(),
+                    Сума = original.Сума,
+                    ТипКонтрагента = original.ТипКонтрагента,
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -23554,11 +24034,26 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Рахунок = original.Рахунок.Copy(),
+                    Аналітика1 = original.Аналітика1.Copy(),
+                    Аналітика2 = original.Аналітика2.Copy(),
+                    Аналітика3 = original.Аналітика3.Copy(),
+                    Податки = original.Податки.Copy(),
+                    Дебет = original.Дебет,
+                    Кредит = original.Кредит,
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -23708,15 +24203,15 @@ namespace GeneratedCode.Документи
         {
             НадлишкиТоварів_Objest copy = new()
             {
-                Організація = Організація,
-                Підрозділ = Підрозділ,
-                Склад = Склад,
-                ВидЦіни = ВидЦіни,
+                Організація = Організація.Copy(),
+                Підрозділ = Підрозділ.Copy(),
+                Склад = Склад.Copy(),
+                ВидЦіни = ВидЦіни.Copy(),
                 Коментар = Коментар,
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Назва = Назва,
-                Автор = Автор,
+                Автор = Автор.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
                 
             };
@@ -23750,7 +24245,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a89", ]);
         }
         
-        public НадлишкиТоварів_Pointer GetDocumentPointer() => new НадлишкиТоварів_Pointer(UniqueID.UGuid);
+        public НадлишкиТоварів_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(НадлишкиТоварів_Const.PRESENTATION_FIELDS);
         
         public Довідники.Організації_Pointer Організація { get; set; } = new Довідники.Організації_Pointer();
@@ -23815,8 +24310,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public НадлишкиТоварів_Pointer Copy() => new НадлишкиТоварів_Pointer(base.UniqueID, base.Fields, Name);
-        public НадлишкиТоварів_Pointer GetEmptyPointer() => new НадлишкиТоварів_Pointer();
+        public НадлишкиТоварів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public НадлишкиТоварів_Pointer GetEmptyPointer() => new();
         public async Task<НадлишкиТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -23982,11 +24477,24 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    Номенклатура = original.Номенклатура.Copy(),
+                    ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
+                    Кількість = original.Кількість,
+                    Ціна = original.Ціна,
+                    Сума = original.Сума,
+                    НомерРядка = original.НомерРядка,
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -24137,12 +24645,12 @@ namespace GeneratedCode.Документи
                 Назва = Назва,
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
-                Організація = Організація,
-                Підрозділ = Підрозділ,
-                Склад = Склад,
-                ВидЦіни = ВидЦіни,
+                Організація = Організація.Copy(),
+                Підрозділ = Підрозділ.Copy(),
+                Склад = Склад.Copy(),
+                ВидЦіни = ВидЦіни.Copy(),
                 Коментар = Коментар,
-                Автор = Автор,
+                Автор = Автор.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
                 
             };
@@ -24176,7 +24684,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a91", ]);
         }
         
-        public ПересортицяТоварів_Pointer GetDocumentPointer() => new ПересортицяТоварів_Pointer(UniqueID.UGuid);
+        public ПересортицяТоварів_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПересортицяТоварів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -24241,8 +24749,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПересортицяТоварів_Pointer Copy() => new ПересортицяТоварів_Pointer(base.UniqueID, base.Fields, Name);
-        public ПересортицяТоварів_Pointer GetEmptyPointer() => new ПересортицяТоварів_Pointer();
+        public ПересортицяТоварів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПересортицяТоварів_Pointer GetEmptyPointer() => new();
         public async Task<ПересортицяТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -24405,11 +24913,23 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Номенклатура = original.Номенклатура.Copy(),
+                    ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
+                    Кількість = original.Кількість,
+                    Ціна = original.Ціна,
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -24568,14 +25088,14 @@ namespace GeneratedCode.Документи
                 Назва = Назва,
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
-                Склад = Склад,
-                Відповідальний = Відповідальний,
+                Склад = Склад.Copy(),
+                Відповідальний = Відповідальний.Copy(),
                 Коментар = Коментар,
-                Автор = Автор,
+                Автор = Автор.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
-                Організація = Організація,
-                Підрозділ = Підрозділ,
-                Основа = Основа,
+                Організація = Організація.Copy(),
+                Підрозділ = Підрозділ.Copy(),
+                Основа = Основа.Copy(),
                 
             };
             
@@ -24610,7 +25130,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a93", ]);
         }
         
-        public ПерерахунокТоварів_Pointer GetDocumentPointer() => new ПерерахунокТоварів_Pointer(UniqueID.UGuid);
+        public ПерерахунокТоварів_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПерерахунокТоварів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -24676,8 +25196,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПерерахунокТоварів_Pointer Copy() => new ПерерахунокТоварів_Pointer(base.UniqueID, base.Fields, Name);
-        public ПерерахунокТоварів_Pointer GetEmptyPointer() => new ПерерахунокТоварів_Pointer();
+        public ПерерахунокТоварів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПерерахунокТоварів_Pointer GetEmptyPointer() => new();
         public async Task<ПерерахунокТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -24856,11 +25376,27 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    Кількість = original.Кількість,
+                    КількістьФакт = original.КількістьФакт,
+                    КількістьУпаковок = original.КількістьУпаковок,
+                    КількістьУпаковокФакт = original.КількістьУпаковокФакт,
+                    Номенклатура = original.Номенклатура.Copy(),
+                    Пакування = original.Пакування.Copy(),
+                    ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
+                    НомерРядка = original.НомерРядка,
+                    Коментар = original.Коментар,
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -25040,15 +25576,15 @@ namespace GeneratedCode.Документи
                 Назва = Назва,
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
-                Організація = Організація,
-                Підрозділ = Підрозділ,
-                Склад = Склад,
+                Організація = Організація.Copy(),
+                Підрозділ = Підрозділ.Copy(),
+                Склад = Склад.Copy(),
                 Причина = Причина,
                 СумаДокументу = СумаДокументу,
                 Коментар = Коментар,
-                Автор = Автор,
+                Автор = Автор.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -25083,7 +25619,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a95", ]);
         }
         
-        public ПсуванняТоварів_Pointer GetDocumentPointer() => new ПсуванняТоварів_Pointer(UniqueID.UGuid);
+        public ПсуванняТоварів_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПсуванняТоварів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -25164,8 +25700,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПсуванняТоварів_Pointer Copy() => new ПсуванняТоварів_Pointer(base.UniqueID, base.Fields, Name);
-        public ПсуванняТоварів_Pointer GetEmptyPointer() => new ПсуванняТоварів_Pointer();
+        public ПсуванняТоварів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПсуванняТоварів_Pointer GetEmptyPointer() => new();
         public async Task<ПсуванняТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -25355,11 +25891,28 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Номенклатура = original.Номенклатура.Copy(),
+                    ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
+                    Серія = original.Серія.Copy(),
+                    Пакування = original.Пакування.Copy(),
+                    КількістьУпаковок = original.КількістьУпаковок,
+                    Кількість = original.Кількість,
+                    Ціна = original.Ціна,
+                    Сума = original.Сума,
+                    Партія = original.Партія.Copy(),
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -25553,17 +26106,17 @@ namespace GeneratedCode.Документи
                 Назва = Назва,
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
-                Організація = Організація,
-                Склад = Склад,
-                Валюта = Валюта,
-                Підрозділ = Підрозділ,
+                Організація = Організація.Copy(),
+                Склад = Склад.Copy(),
+                Валюта = Валюта.Copy(),
+                Підрозділ = Підрозділ.Copy(),
                 СумаДокументу = СумаДокументу,
-                Основа = Основа,
-                Автор = Автор,
+                Основа = Основа.Copy(),
+                Автор = Автор.Copy(),
                 ГосподарськаОперація = ГосподарськаОперація,
                 Коментар = Коментар,
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
-                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація,
+                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація.Copy(),
                 ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку,
                 
             };
@@ -25603,7 +26156,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_b08", "tab_c37", ]);
         }
         
-        public ВнутрішнєСпоживанняТоварів_Pointer GetDocumentPointer() => new ВнутрішнєСпоживанняТоварів_Pointer(UniqueID.UGuid);
+        public ВнутрішнєСпоживанняТоварів_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ВнутрішнєСпоживанняТоварів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -25685,8 +26238,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ВнутрішнєСпоживанняТоварів_Pointer Copy() => new ВнутрішнєСпоживанняТоварів_Pointer(base.UniqueID, base.Fields, Name);
-        public ВнутрішнєСпоживанняТоварів_Pointer GetEmptyPointer() => new ВнутрішнєСпоживанняТоварів_Pointer();
+        public ВнутрішнєСпоживанняТоварів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ВнутрішнєСпоживанняТоварів_Pointer GetEmptyPointer() => new();
         public async Task<ВнутрішнєСпоживанняТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -25876,11 +26429,28 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Номенклатура = original.Номенклатура.Copy(),
+                    ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
+                    Серія = original.Серія.Copy(),
+                    Пакування = original.Пакування.Copy(),
+                    КількістьУпаковок = original.КількістьУпаковок,
+                    Кількість = original.Кількість,
+                    Ціна = original.Ціна,
+                    Сума = original.Сума,
+                    Партія = original.Партія.Copy(),
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -26044,11 +26614,26 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Рахунок = original.Рахунок.Copy(),
+                    Аналітика1 = original.Аналітика1.Copy(),
+                    Аналітика2 = original.Аналітика2.Copy(),
+                    Аналітика3 = original.Аналітика3.Copy(),
+                    Податки = original.Податки.Copy(),
+                    Дебет = original.Дебет,
+                    Кредит = original.Кредит,
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -26260,25 +26845,25 @@ namespace GeneratedCode.Документи
                 Назва = Назва,
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
-                Контрагент = Контрагент,
-                Організація = Організація,
-                Валюта = Валюта,
+                Контрагент = Контрагент.Copy(),
+                Організація = Організація.Copy(),
+                Валюта = Валюта.Copy(),
                 СумаДокументу = СумаДокументу,
-                Склад = Склад,
+                Склад = Склад.Copy(),
                 Статус = Статус,
                 ФормаОплати = ФормаОплати,
-                БанківськийРахунок = БанківськийРахунок,
-                БанківськийРахунокКонтрагента = БанківськийРахунокКонтрагента,
-                Каса = Каса,
+                БанківськийРахунок = БанківськийРахунок.Copy(),
+                БанківськийРахунокКонтрагента = БанківськийРахунокКонтрагента.Copy(),
+                Каса = Каса.Copy(),
                 ГосподарськаОперація = ГосподарськаОперація,
-                Договір = Договір,
-                Підрозділ = Підрозділ,
-                Автор = Автор,
+                Договір = Договір.Copy(),
+                Підрозділ = Підрозділ.Copy(),
+                Автор = Автор.Copy(),
                 Коментар = Коментар,
-                Менеджер = Менеджер,
+                Менеджер = Менеджер.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
-                Основа = Основа,
-                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація,
+                Основа = Основа.Copy(),
+                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація.Copy(),
                 ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку,
                 
             };
@@ -26318,7 +26903,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_b11", "tab_c27", ]);
         }
         
-        public РахунокФактура_Pointer GetDocumentPointer() => new РахунокФактура_Pointer(UniqueID.UGuid);
+        public РахунокФактура_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(РахунокФактура_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -26404,8 +26989,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public РахунокФактура_Pointer Copy() => new РахунокФактура_Pointer(base.UniqueID, base.Fields, Name);
-        public РахунокФактура_Pointer GetEmptyPointer() => new РахунокФактура_Pointer();
+        public РахунокФактура_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public РахунокФактура_Pointer GetEmptyPointer() => new();
         public async Task<РахунокФактура_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -26598,11 +27183,29 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Номенклатура = original.Номенклатура.Copy(),
+                    ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
+                    Пакування = original.Пакування.Copy(),
+                    КількістьУпаковок = original.КількістьУпаковок,
+                    Кількість = original.Кількість,
+                    ВидЦіни = original.ВидЦіни.Copy(),
+                    Ціна = original.Ціна,
+                    Сума = original.Сума,
+                    Скидка = original.Скидка,
+                    Склад = original.Склад.Copy(),
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -26767,11 +27370,26 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Рахунок = original.Рахунок.Copy(),
+                    Аналітика1 = original.Аналітика1.Copy(),
+                    Аналітика2 = original.Аналітика2.Copy(),
+                    Аналітика3 = original.Аналітика3.Copy(),
+                    Податки = original.Податки.Copy(),
+                    Дебет = original.Дебет,
+                    Кредит = original.Кредит,
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -27105,12 +27723,12 @@ namespace GeneratedCode.Документи
                 ДатаДок = ДатаДок,
                 НомерДок = НомерДок,
                 Коментар = Коментар,
-                Основа = Основа,
-                Склад = Склад,
-                Автор = Автор,
-                Організація = Організація,
-                Підрозділ = Підрозділ,
-                ДокументПоступлення = ДокументПоступлення,
+                Основа = Основа.Copy(),
+                Склад = Склад.Copy(),
+                Автор = Автор.Copy(),
+                Організація = Організація.Copy(),
+                Підрозділ = Підрозділ.Copy(),
+                ДокументПоступлення = ДокументПоступлення.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
                 
             };
@@ -27146,7 +27764,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_a68", ]);
         }
         
-        public РозміщенняТоварівНаСкладі_Pointer GetDocumentPointer() => new РозміщенняТоварівНаСкладі_Pointer(UniqueID.UGuid);
+        public РозміщенняТоварівНаСкладі_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(РозміщенняТоварівНаСкладі_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -27222,8 +27840,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public РозміщенняТоварівНаСкладі_Pointer Copy() => new РозміщенняТоварівНаСкладі_Pointer(base.UniqueID, base.Fields, Name);
-        public РозміщенняТоварівНаСкладі_Pointer GetEmptyPointer() => new РозміщенняТоварівНаСкладі_Pointer();
+        public РозміщенняТоварівНаСкладі_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public РозміщенняТоварівНаСкладі_Pointer GetEmptyPointer() => new();
         public async Task<РозміщенняТоварівНаСкладі_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -27407,11 +28025,26 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Номенклатура = original.Номенклатура.Copy(),
+                    ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
+                    Серія = original.Серія.Copy(),
+                    Пакування = original.Пакування.Copy(),
+                    КількістьУпаковок = original.КількістьУпаковок,
+                    Кількість = original.Кількість,
+                    Комірка = original.Комірка.Copy(),
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -27581,11 +28214,11 @@ namespace GeneratedCode.Документи
                 ДатаДок = ДатаДок,
                 НомерДок = НомерДок,
                 Коментар = Коментар,
-                Основа = Основа,
-                Склад = Склад,
-                Автор = Автор,
-                Організація = Організація,
-                Підрозділ = Підрозділ,
+                Основа = Основа.Copy(),
+                Склад = Склад.Copy(),
+                Автор = Автор.Copy(),
+                Організація = Організація.Copy(),
+                Підрозділ = Підрозділ.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
                 
             };
@@ -27621,7 +28254,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_b26", ]);
         }
         
-        public ПереміщенняТоварівНаСкладі_Pointer GetDocumentPointer() => new ПереміщенняТоварівНаСкладі_Pointer(UniqueID.UGuid);
+        public ПереміщенняТоварівНаСкладі_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПереміщенняТоварівНаСкладі_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -27696,8 +28329,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПереміщенняТоварівНаСкладі_Pointer Copy() => new ПереміщенняТоварівНаСкладі_Pointer(base.UniqueID, base.Fields, Name);
-        public ПереміщенняТоварівНаСкладі_Pointer GetEmptyPointer() => new ПереміщенняТоварівНаСкладі_Pointer();
+        public ПереміщенняТоварівНаСкладі_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПереміщенняТоварівНаСкладі_Pointer GetEmptyPointer() => new();
         public async Task<ПереміщенняТоварівНаСкладі_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -27888,11 +28521,27 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Номенклатура = original.Номенклатура.Copy(),
+                    ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
+                    Серія = original.Серія.Copy(),
+                    Пакування = original.Пакування.Copy(),
+                    КількістьУпаковок = original.КількістьУпаковок,
+                    Кількість = original.Кількість,
+                    КоміркаВідправник = original.КоміркаВідправник.Copy(),
+                    КоміркаОтримувач = original.КоміркаОтримувач.Copy(),
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -28066,12 +28715,12 @@ namespace GeneratedCode.Документи
                 ДатаДок = ДатаДок,
                 НомерДок = НомерДок,
                 Коментар = Коментар,
-                Основа = Основа,
-                Склад = Склад,
-                Автор = Автор,
-                Організація = Організація,
-                Підрозділ = Підрозділ,
-                ДокументРеалізації = ДокументРеалізації,
+                Основа = Основа.Copy(),
+                Склад = Склад.Copy(),
+                Автор = Автор.Copy(),
+                Організація = Організація.Copy(),
+                Підрозділ = Підрозділ.Copy(),
+                ДокументРеалізації = ДокументРеалізації.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
                 
             };
@@ -28107,7 +28756,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_b28", ]);
         }
         
-        public ЗбіркаТоварівНаСкладі_Pointer GetDocumentPointer() => new ЗбіркаТоварівНаСкладі_Pointer(UniqueID.UGuid);
+        public ЗбіркаТоварівНаСкладі_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ЗбіркаТоварівНаСкладі_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -28183,8 +28832,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ЗбіркаТоварівНаСкладі_Pointer Copy() => new ЗбіркаТоварівНаСкладі_Pointer(base.UniqueID, base.Fields, Name);
-        public ЗбіркаТоварівНаСкладі_Pointer GetEmptyPointer() => new ЗбіркаТоварівНаСкладі_Pointer();
+        public ЗбіркаТоварівНаСкладі_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ЗбіркаТоварівНаСкладі_Pointer GetEmptyPointer() => new();
         public async Task<ЗбіркаТоварівНаСкладі_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -28368,11 +29017,26 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Номенклатура = original.Номенклатура.Copy(),
+                    ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
+                    Серія = original.Серія.Copy(),
+                    Пакування = original.Пакування.Copy(),
+                    КількістьУпаковок = original.КількістьУпаковок,
+                    Кількість = original.Кількість,
+                    Комірка = original.Комірка.Copy(),
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -28531,12 +29195,12 @@ namespace GeneratedCode.Документи
                 Назва = Назва,
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
-                Організація = Організація,
-                Склад = Склад,
+                Організація = Організація.Copy(),
+                Склад = Склад.Copy(),
                 Коментар = Коментар,
-                Автор = Автор,
-                Підрозділ = Підрозділ,
-                Основа = Основа,
+                Автор = Автор.Copy(),
+                Підрозділ = Підрозділ.Copy(),
+                Основа = Основа.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
                 
             };
@@ -28572,7 +29236,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_b32", ]);
         }
         
-        public РозміщенняНоменклатуриПоКоміркам_Pointer GetDocumentPointer() => new РозміщенняНоменклатуриПоКоміркам_Pointer(UniqueID.UGuid);
+        public РозміщенняНоменклатуриПоКоміркам_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(РозміщенняНоменклатуриПоКоміркам_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -28637,8 +29301,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public РозміщенняНоменклатуриПоКоміркам_Pointer Copy() => new РозміщенняНоменклатуриПоКоміркам_Pointer(base.UniqueID, base.Fields, Name);
-        public РозміщенняНоменклатуриПоКоміркам_Pointer GetEmptyPointer() => new РозміщенняНоменклатуриПоКоміркам_Pointer();
+        public РозміщенняНоменклатуриПоКоміркам_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public РозміщенняНоменклатуриПоКоміркам_Pointer GetEmptyPointer() => new();
         public async Task<РозміщенняНоменклатуриПоКоміркам_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -28802,11 +29466,22 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Номенклатура = original.Номенклатура.Copy(),
+                    Комірка = original.Комірка.Copy(),
+                    Пакування = original.Пакування.Copy(),
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -28980,13 +29655,13 @@ namespace GeneratedCode.Документи
                 Назва = Назва,
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
-                Організація = Організація,
-                Підрозділ = Підрозділ,
+                Організація = Організація.Copy(),
+                Підрозділ = Підрозділ.Copy(),
                 Коментар = Коментар,
-                Автор = Автор,
+                Автор = Автор.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
-                Основа = Основа,
-                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація,
+                Основа = Основа.Copy(),
+                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація.Copy(),
                 ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку,
                 
             };
@@ -29026,7 +29701,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_b12", "tab_c34", ]);
         }
         
-        public КорегуванняБоргу_Pointer GetDocumentPointer() => new КорегуванняБоргу_Pointer(UniqueID.UGuid);
+        public КорегуванняБоргу_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(КорегуванняБоргу_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -29102,8 +29777,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public КорегуванняБоргу_Pointer Copy() => new КорегуванняБоргу_Pointer(base.UniqueID, base.Fields, Name);
-        public КорегуванняБоргу_Pointer GetEmptyPointer() => new КорегуванняБоргу_Pointer();
+        public КорегуванняБоргу_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public КорегуванняБоргу_Pointer GetEmptyPointer() => new();
         public async Task<КорегуванняБоргу_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -29266,11 +29941,23 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Контрагент = original.Контрагент.Copy(),
+                    Валюта = original.Валюта.Copy(),
+                    Сума = original.Сума,
+                    ТипКонтрагента = original.ТипКонтрагента,
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -29429,11 +30116,26 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Рахунок = original.Рахунок.Copy(),
+                    Аналітика1 = original.Аналітика1.Copy(),
+                    Аналітика2 = original.Аналітика2.Copy(),
+                    Аналітика3 = original.Аналітика3.Copy(),
+                    Податки = original.Податки.Copy(),
+                    Дебет = original.Дебет,
+                    Кредит = original.Кредит,
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -29625,20 +30327,20 @@ namespace GeneratedCode.Документи
                 Назва = Назва,
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
-                Контрагент = Контрагент,
-                Організація = Організація,
-                Валюта = Валюта,
+                Контрагент = Контрагент.Copy(),
+                Організація = Організація.Copy(),
+                Валюта = Валюта.Copy(),
                 ПричинаЗакриттяЗамовлення = ПричинаЗакриттяЗамовлення,
-                Склад = Склад,
-                ЗамовленняКлієнта = ЗамовленняКлієнта,
-                Каса = Каса,
-                Договір = Договір,
-                Автор = Автор,
+                Склад = Склад.Copy(),
+                ЗамовленняКлієнта = ЗамовленняКлієнта.Copy(),
+                Каса = Каса.Copy(),
+                Договір = Договір.Copy(),
+                Автор = Автор.Copy(),
                 Коментар = Коментар,
-                Менеджер = Менеджер,
+                Менеджер = Менеджер.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
                 СумаДокументу = СумаДокументу,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -29673,7 +30375,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_b39", ]);
         }
         
-        public ЗакриттяЗамовленняКлієнта_Pointer GetDocumentPointer() => new ЗакриттяЗамовленняКлієнта_Pointer(UniqueID.UGuid);
+        public ЗакриттяЗамовленняКлієнта_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ЗакриттяЗамовленняКлієнта_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -29757,8 +30459,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ЗакриттяЗамовленняКлієнта_Pointer Copy() => new ЗакриттяЗамовленняКлієнта_Pointer(base.UniqueID, base.Fields, Name);
-        public ЗакриттяЗамовленняКлієнта_Pointer GetEmptyPointer() => new ЗакриттяЗамовленняКлієнта_Pointer();
+        public ЗакриттяЗамовленняКлієнта_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ЗакриттяЗамовленняКлієнта_Pointer GetEmptyPointer() => new();
         public async Task<ЗакриттяЗамовленняКлієнта_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -29941,11 +30643,27 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Номенклатура = original.Номенклатура.Copy(),
+                    ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
+                    Пакування = original.Пакування.Copy(),
+                    КількістьУпаковок = original.КількістьУпаковок,
+                    Кількість = original.Кількість,
+                    Склад = original.Склад.Copy(),
+                    Ціна = original.Ціна,
+                    Сума = original.Сума,
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -30136,20 +30854,20 @@ namespace GeneratedCode.Документи
                 Назва = Назва,
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
-                Контрагент = Контрагент,
-                Організація = Організація,
-                Валюта = Валюта,
+                Контрагент = Контрагент.Copy(),
+                Організація = Організація.Copy(),
+                Валюта = Валюта.Copy(),
                 ПричинаЗакриттяРахунку = ПричинаЗакриттяРахунку,
-                Склад = Склад,
-                РахунокФактура = РахунокФактура,
-                Каса = Каса,
-                Договір = Договір,
-                Автор = Автор,
+                Склад = Склад.Copy(),
+                РахунокФактура = РахунокФактура.Copy(),
+                Каса = Каса.Copy(),
+                Договір = Договір.Copy(),
+                Автор = Автор.Copy(),
                 Коментар = Коментар,
-                Менеджер = Менеджер,
+                Менеджер = Менеджер.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
                 СумаДокументу = СумаДокументу,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -30184,7 +30902,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_b42", ]);
         }
         
-        public ЗакриттяРахункуФактури_Pointer GetDocumentPointer() => new ЗакриттяРахункуФактури_Pointer(UniqueID.UGuid);
+        public ЗакриттяРахункуФактури_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ЗакриттяРахункуФактури_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -30266,8 +30984,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ЗакриттяРахункуФактури_Pointer Copy() => new ЗакриттяРахункуФактури_Pointer(base.UniqueID, base.Fields, Name);
-        public ЗакриттяРахункуФактури_Pointer GetEmptyPointer() => new ЗакриттяРахункуФактури_Pointer();
+        public ЗакриттяРахункуФактури_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ЗакриттяРахункуФактури_Pointer GetEmptyPointer() => new();
         public async Task<ЗакриттяРахункуФактури_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -30450,11 +31168,27 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Номенклатура = original.Номенклатура.Copy(),
+                    ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
+                    Пакування = original.Пакування.Copy(),
+                    КількістьУпаковок = original.КількістьУпаковок,
+                    Кількість = original.Кількість,
+                    Склад = original.Склад.Copy(),
+                    Ціна = original.Ціна,
+                    Сума = original.Сума,
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -30645,20 +31379,20 @@ namespace GeneratedCode.Документи
                 Назва = Назва,
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
-                Контрагент = Контрагент,
-                Організація = Організація,
-                Валюта = Валюта,
+                Контрагент = Контрагент.Copy(),
+                Організація = Організація.Copy(),
+                Валюта = Валюта.Copy(),
                 ПричинаЗакриттяЗамовлення = ПричинаЗакриттяЗамовлення,
-                Склад = Склад,
-                ЗамовленняПостачальнику = ЗамовленняПостачальнику,
-                Каса = Каса,
-                Договір = Договір,
-                Автор = Автор,
+                Склад = Склад.Copy(),
+                ЗамовленняПостачальнику = ЗамовленняПостачальнику.Copy(),
+                Каса = Каса.Copy(),
+                Договір = Договір.Copy(),
+                Автор = Автор.Copy(),
                 Коментар = Коментар,
-                Менеджер = Менеджер,
+                Менеджер = Менеджер.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
                 СумаДокументу = СумаДокументу,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -30693,7 +31427,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_b47", ]);
         }
         
-        public ЗакриттяЗамовленняПостачальнику_Pointer GetDocumentPointer() => new ЗакриттяЗамовленняПостачальнику_Pointer(UniqueID.UGuid);
+        public ЗакриттяЗамовленняПостачальнику_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ЗакриттяЗамовленняПостачальнику_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -30775,8 +31509,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ЗакриттяЗамовленняПостачальнику_Pointer Copy() => new ЗакриттяЗамовленняПостачальнику_Pointer(base.UniqueID, base.Fields, Name);
-        public ЗакриттяЗамовленняПостачальнику_Pointer GetEmptyPointer() => new ЗакриттяЗамовленняПостачальнику_Pointer();
+        public ЗакриттяЗамовленняПостачальнику_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ЗакриттяЗамовленняПостачальнику_Pointer GetEmptyPointer() => new();
         public async Task<ЗакриттяЗамовленняПостачальнику_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -30959,11 +31693,27 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Номенклатура = original.Номенклатура.Copy(),
+                    ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
+                    Пакування = original.Пакування.Copy(),
+                    КількістьУпаковок = original.КількістьУпаковок,
+                    Кількість = original.Кількість,
+                    Склад = original.Склад.Copy(),
+                    Ціна = original.Ціна,
+                    Сума = original.Сума,
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -31150,13 +31900,13 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
-                Організація = Організація,
-                Валюта = Валюта,
+                Основа = Основа.Copy(),
+                Організація = Організація.Copy(),
+                Валюта = Валюта.Copy(),
                 СумаДокументу = СумаДокументу,
-                Склад = Склад,
-                КасаККМ = КасаККМ,
-                Автор = Автор,
+                Склад = Склад.Copy(),
+                КасаККМ = КасаККМ.Copy(),
+                Автор = Автор.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
                 Знижка = Знижка,
                 СумаБезЗнижки = СумаБезЗнижки,
@@ -31194,7 +31944,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_b50", ]);
         }
         
-        public ЧекККМ_Pointer GetDocumentPointer() => new ЧекККМ_Pointer(UniqueID.UGuid);
+        public ЧекККМ_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ЧекККМ_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -31277,8 +32027,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ЧекККМ_Pointer Copy() => new ЧекККМ_Pointer(base.UniqueID, base.Fields, Name);
-        public ЧекККМ_Pointer GetEmptyPointer() => new ЧекККМ_Pointer();
+        public ЧекККМ_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ЧекККМ_Pointer GetEmptyPointer() => new();
         public async Task<ЧекККМ_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -31474,11 +32224,30 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Номенклатура = original.Номенклатура.Copy(),
+                    ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
+                    Серія = original.Серія.Copy(),
+                    Пакування = original.Пакування.Copy(),
+                    КількістьУпаковок = original.КількістьУпаковок,
+                    Кількість = original.Кількість,
+                    Ціна = original.Ціна,
+                    Сума = original.Сума,
+                    Знижка = original.Знижка,
+                    ВидЦіни = original.ВидЦіни.Copy(),
+                    СумаБезЗнижки = original.СумаБезЗнижки,
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -31641,9 +32410,9 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
-                Автор = Автор,
-                Організація = Організація,
+                Основа = Основа.Copy(),
+                Автор = Автор.Copy(),
+                Організація = Організація.Copy(),
                 
             };
             
@@ -31678,7 +32447,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["acc_operations_tp_operation", ]);
         }
         
-        public БухгалтерськаОперація_Pointer GetDocumentPointer() => new БухгалтерськаОперація_Pointer(UniqueID.UGuid);
+        public БухгалтерськаОперація_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(БухгалтерськаОперація_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -31750,8 +32519,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public БухгалтерськаОперація_Pointer Copy() => new БухгалтерськаОперація_Pointer(base.UniqueID, base.Fields, Name);
-        public БухгалтерськаОперація_Pointer GetEmptyPointer() => new БухгалтерськаОперація_Pointer();
+        public БухгалтерськаОперація_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public БухгалтерськаОперація_Pointer GetEmptyPointer() => new();
         public async Task<БухгалтерськаОперація_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -32016,11 +32785,45 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    ДатаЗапису = original.ДатаЗапису,
+                    Рахунок = original.Рахунок.Copy(),
+                    Аналітика1 = original.Аналітика1.Copy(),
+                    Аналітика2 = original.Аналітика2.Copy(),
+                    Аналітика3 = original.Аналітика3.Copy(),
+                    Дебет = original.Дебет,
+                    КількістьДебет = original.КількістьДебет,
+                    ВалютаДебет = original.ВалютаДебет.Copy(),
+                    СумаВВалютіДебет = original.СумаВВалютіДебет,
+                    СумаПОДебет = original.СумаПОДебет,
+                    Кредит = original.Кредит,
+                    КількістьКредит = original.КількістьКредит,
+                    ВалютаКредит = original.ВалютаКредит.Copy(),
+                    СумаВВалютіКредит = original.СумаВВалютіКредит,
+                    СумаПОКредит = original.СумаПОКредит,
+                    Коментар = original.Коментар,
+                    КореспондуючийРахунок = original.КореспондуючийРахунок.Copy(),
+                    КорАналітика1 = original.КорАналітика1.Copy(),
+                    КорАналітика2 = original.КорАналітика2.Copy(),
+                    КорАналітика3 = original.КорАналітика3.Copy(),
+                    Податок = original.Податок.Copy(),
+                    СумаПодатку = original.СумаПодатку,
+                    Журнал = original.Журнал.Copy(),
+                    ТипБухОперації = original.ТипБухОперації.Copy(),
+                    КурсВалютиДебет = original.КурсВалютиДебет,
+                    КурсВалютиКредит = original.КурсВалютиКредит,
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -32226,16 +33029,16 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
-                Організація = Організація,
-                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація,
-                Валюта = Валюта,
-                ФізичнаОсоба = ФізичнаОсоба,
+                Основа = Основа.Copy(),
+                Організація = Організація.Copy(),
+                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація.Copy(),
+                Валюта = Валюта.Copy(),
+                ФізичнаОсоба = ФізичнаОсоба.Copy(),
                 СумаДокументу = СумаДокументу,
-                Автор = Автор,
+                Автор = Автор.Copy(),
                 ПризначенняАвансу = ПризначенняАвансу,
-                ВидЦіни = ВидЦіни,
-                Підрозділ = Підрозділ,
+                ВидЦіни = ВидЦіни.Copy(),
+                Підрозділ = Підрозділ.Copy(),
                 ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку,
                 
             };
@@ -32275,7 +33078,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete(["tab_c35", "tab_c36", ]);
         }
         
-        public АвансовийЗвіт_Pointer GetDocumentPointer() => new АвансовийЗвіт_Pointer(UniqueID.UGuid);
+        public АвансовийЗвіт_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(АвансовийЗвіт_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -32353,8 +33156,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public АвансовийЗвіт_Pointer Copy() => new АвансовийЗвіт_Pointer(base.UniqueID, base.Fields, Name);
-        public АвансовийЗвіт_Pointer GetEmptyPointer() => new АвансовийЗвіт_Pointer();
+        public АвансовийЗвіт_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public АвансовийЗвіт_Pointer GetEmptyPointer() => new();
         public async Task<АвансовийЗвіт_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -32532,11 +33335,26 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Рахунок = original.Рахунок.Copy(),
+                    Аналітика1 = original.Аналітика1.Copy(),
+                    Аналітика2 = original.Аналітика2.Copy(),
+                    Аналітика3 = original.Аналітика3.Copy(),
+                    Податки = original.Податки.Copy(),
+                    Дебет = original.Дебет,
+                    Кредит = original.Кредит,
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -32665,11 +33483,21 @@ namespace GeneratedCode.Документи
 
         public List<Record> Copy()
         {
-            List<Record> copyRecords = [.. Records];
-            foreach (Record copyRecordItem in copyRecords)
-                copyRecordItem.UID = Guid.Empty;
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    ДокументАвансу = original.ДокументАвансу.Copy(),
+                    Сума = original.Сума,
+                     
+                });
+            }
 
-            return copyRecords;
+            return copy;
         }
 
         public class Record : DocumentTablePartRecord
@@ -32822,10 +33650,10 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
-                Організація = Організація,
-                Автор = Автор,
-                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація,
+                Основа = Основа.Copy(),
+                Організація = Організація.Copy(),
+                Автор = Автор.Copy(),
+                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація.Copy(),
                 ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку,
                 
             };
@@ -32852,7 +33680,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public Амортизація_Pointer GetDocumentPointer() => new Амортизація_Pointer(UniqueID.UGuid);
+        public Амортизація_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(Амортизація_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -32920,8 +33748,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public Амортизація_Pointer Copy() => new Амортизація_Pointer(base.UniqueID, base.Fields, Name);
-        public Амортизація_Pointer GetEmptyPointer() => new Амортизація_Pointer();
+        public Амортизація_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public Амортизація_Pointer GetEmptyPointer() => new();
         public async Task<Амортизація_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -33093,10 +33921,10 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
-                Організація = Організація,
-                Автор = Автор,
-                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація,
+                Основа = Основа.Copy(),
+                Організація = Організація.Copy(),
+                Автор = Автор.Copy(),
+                ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація.Copy(),
                 ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку,
                 
             };
@@ -33123,7 +33951,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ВизначенняФінансовогоРезультату_Pointer GetDocumentPointer() => new ВизначенняФінансовогоРезультату_Pointer(UniqueID.UGuid);
+        public ВизначенняФінансовогоРезультату_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ВизначенняФінансовогоРезультату_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -33194,8 +34022,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ВизначенняФінансовогоРезультату_Pointer Copy() => new ВизначенняФінансовогоРезультату_Pointer(base.UniqueID, base.Fields, Name);
-        public ВизначенняФінансовогоРезультату_Pointer GetEmptyPointer() => new ВизначенняФінансовогоРезультату_Pointer();
+        public ВизначенняФінансовогоРезультату_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ВизначенняФінансовогоРезультату_Pointer GetEmptyPointer() => new();
         public async Task<ВизначенняФінансовогоРезультату_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -33355,7 +34183,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -33381,7 +34209,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ВиплатаЗаробітноїПлати_Pointer GetDocumentPointer() => new ВиплатаЗаробітноїПлати_Pointer(UniqueID.UGuid);
+        public ВиплатаЗаробітноїПлати_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ВиплатаЗаробітноїПлати_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -33448,8 +34276,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ВиплатаЗаробітноїПлати_Pointer Copy() => new ВиплатаЗаробітноїПлати_Pointer(base.UniqueID, base.Fields, Name);
-        public ВиплатаЗаробітноїПлати_Pointer GetEmptyPointer() => new ВиплатаЗаробітноїПлати_Pointer();
+        public ВиплатаЗаробітноїПлати_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ВиплатаЗаробітноїПлати_Pointer GetEmptyPointer() => new();
         public async Task<ВиплатаЗаробітноїПлати_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -33609,7 +34437,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -33635,7 +34463,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ВиготовленняПродукції_Pointer GetDocumentPointer() => new ВиготовленняПродукції_Pointer(UniqueID.UGuid);
+        public ВиготовленняПродукції_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ВиготовленняПродукції_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -33702,8 +34530,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ВиготовленняПродукції_Pointer Copy() => new ВиготовленняПродукції_Pointer(base.UniqueID, base.Fields, Name);
-        public ВиготовленняПродукції_Pointer GetEmptyPointer() => new ВиготовленняПродукції_Pointer();
+        public ВиготовленняПродукції_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ВиготовленняПродукції_Pointer GetEmptyPointer() => new();
         public async Task<ВиготовленняПродукції_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -33863,7 +34691,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -33889,7 +34717,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public Додаток1ДоПодатковоїНакладної_Pointer GetDocumentPointer() => new Додаток1ДоПодатковоїНакладної_Pointer(UniqueID.UGuid);
+        public Додаток1ДоПодатковоїНакладної_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(Додаток1ДоПодатковоїНакладної_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -33956,8 +34784,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public Додаток1ДоПодатковоїНакладної_Pointer Copy() => new Додаток1ДоПодатковоїНакладної_Pointer(base.UniqueID, base.Fields, Name);
-        public Додаток1ДоПодатковоїНакладної_Pointer GetEmptyPointer() => new Додаток1ДоПодатковоїНакладної_Pointer();
+        public Додаток1ДоПодатковоїНакладної_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public Додаток1ДоПодатковоїНакладної_Pointer GetEmptyPointer() => new();
         public async Task<Додаток1ДоПодатковоїНакладної_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -34107,7 +34935,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -34133,7 +34961,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public Додаток2ДоПодатковоїНакладної_Pointer GetDocumentPointer() => new Додаток2ДоПодатковоїНакладної_Pointer(UniqueID.UGuid);
+        public Додаток2ДоПодатковоїНакладної_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(Додаток2ДоПодатковоїНакладної_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -34190,8 +35018,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public Додаток2ДоПодатковоїНакладної_Pointer Copy() => new Додаток2ДоПодатковоїНакладної_Pointer(base.UniqueID, base.Fields, Name);
-        public Додаток2ДоПодатковоїНакладної_Pointer GetEmptyPointer() => new Додаток2ДоПодатковоїНакладної_Pointer();
+        public Додаток2ДоПодатковоїНакладної_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public Додаток2ДоПодатковоїНакладної_Pointer GetEmptyPointer() => new();
         public async Task<Додаток2ДоПодатковоїНакладної_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -34351,7 +35179,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -34377,7 +35205,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ЗаписКнигиПридбання_Pointer GetDocumentPointer() => new ЗаписКнигиПридбання_Pointer(UniqueID.UGuid);
+        public ЗаписКнигиПридбання_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ЗаписКнигиПридбання_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -34444,8 +35272,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ЗаписКнигиПридбання_Pointer Copy() => new ЗаписКнигиПридбання_Pointer(base.UniqueID, base.Fields, Name);
-        public ЗаписКнигиПридбання_Pointer GetEmptyPointer() => new ЗаписКнигиПридбання_Pointer();
+        public ЗаписКнигиПридбання_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ЗаписКнигиПридбання_Pointer GetEmptyPointer() => new();
         public async Task<ЗаписКнигиПридбання_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -34605,7 +35433,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -34631,7 +35459,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ЗмінаПараметрівОсновнихЗасобів_Pointer GetDocumentPointer() => new ЗмінаПараметрівОсновнихЗасобів_Pointer(UniqueID.UGuid);
+        public ЗмінаПараметрівОсновнихЗасобів_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ЗмінаПараметрівОсновнихЗасобів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -34698,8 +35526,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ЗмінаПараметрівОсновнихЗасобів_Pointer Copy() => new ЗмінаПараметрівОсновнихЗасобів_Pointer(base.UniqueID, base.Fields, Name);
-        public ЗмінаПараметрівОсновнихЗасобів_Pointer GetEmptyPointer() => new ЗмінаПараметрівОсновнихЗасобів_Pointer();
+        public ЗмінаПараметрівОсновнихЗасобів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ЗмінаПараметрівОсновнихЗасобів_Pointer GetEmptyPointer() => new();
         public async Task<ЗмінаПараметрівОсновнихЗасобів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -34859,7 +35687,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -34885,7 +35713,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ЗвітКомісіонераПроПродажТоварів_Pointer GetDocumentPointer() => new ЗвітКомісіонераПроПродажТоварів_Pointer(UniqueID.UGuid);
+        public ЗвітКомісіонераПроПродажТоварів_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ЗвітКомісіонераПроПродажТоварів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -34952,8 +35780,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ЗвітКомісіонераПроПродажТоварів_Pointer Copy() => new ЗвітКомісіонераПроПродажТоварів_Pointer(base.UniqueID, base.Fields, Name);
-        public ЗвітКомісіонераПроПродажТоварів_Pointer GetEmptyPointer() => new ЗвітКомісіонераПроПродажТоварів_Pointer();
+        public ЗвітКомісіонераПроПродажТоварів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ЗвітКомісіонераПроПродажТоварів_Pointer GetEmptyPointer() => new();
         public async Task<ЗвітКомісіонераПроПродажТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -35113,7 +35941,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -35139,7 +35967,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ЗвітКомітентуПроПродажТоварів_Pointer GetDocumentPointer() => new ЗвітКомітентуПроПродажТоварів_Pointer(UniqueID.UGuid);
+        public ЗвітКомітентуПроПродажТоварів_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ЗвітКомітентуПроПродажТоварів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -35206,8 +36034,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ЗвітКомітентуПроПродажТоварів_Pointer Copy() => new ЗвітКомітентуПроПродажТоварів_Pointer(base.UniqueID, base.Fields, Name);
-        public ЗвітКомітентуПроПродажТоварів_Pointer GetEmptyPointer() => new ЗвітКомітентуПроПродажТоварів_Pointer();
+        public ЗвітКомітентуПроПродажТоварів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ЗвітКомітентуПроПродажТоварів_Pointer GetEmptyPointer() => new();
         public async Task<ЗвітКомітентуПроПродажТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -35367,7 +36195,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -35393,7 +36221,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public КоригуванняНезавершеногоВиробництва_Pointer GetDocumentPointer() => new КоригуванняНезавершеногоВиробництва_Pointer(UniqueID.UGuid);
+        public КоригуванняНезавершеногоВиробництва_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(КоригуванняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -35460,8 +36288,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public КоригуванняНезавершеногоВиробництва_Pointer Copy() => new КоригуванняНезавершеногоВиробництва_Pointer(base.UniqueID, base.Fields, Name);
-        public КоригуванняНезавершеногоВиробництва_Pointer GetEmptyPointer() => new КоригуванняНезавершеногоВиробництва_Pointer();
+        public КоригуванняНезавершеногоВиробництва_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public КоригуванняНезавершеногоВиробництва_Pointer GetEmptyPointer() => new();
         public async Task<КоригуванняНезавершеногоВиробництва_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -35621,7 +36449,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -35647,7 +36475,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public КоригуванняПДВ_Pointer GetDocumentPointer() => new КоригуванняПДВ_Pointer(UniqueID.UGuid);
+        public КоригуванняПДВ_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(КоригуванняПДВ_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -35714,8 +36542,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public КоригуванняПДВ_Pointer Copy() => new КоригуванняПДВ_Pointer(base.UniqueID, base.Fields, Name);
-        public КоригуванняПДВ_Pointer GetEmptyPointer() => new КоригуванняПДВ_Pointer();
+        public КоригуванняПДВ_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public КоригуванняПДВ_Pointer GetEmptyPointer() => new();
         public async Task<КоригуванняПДВ_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -35875,7 +36703,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -35901,7 +36729,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public КоригуванняІншихВитрат_Pointer GetDocumentPointer() => new КоригуванняІншихВитрат_Pointer(UniqueID.UGuid);
+        public КоригуванняІншихВитрат_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(КоригуванняІншихВитрат_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -35968,8 +36796,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public КоригуванняІншихВитрат_Pointer Copy() => new КоригуванняІншихВитрат_Pointer(base.UniqueID, base.Fields, Name);
-        public КоригуванняІншихВитрат_Pointer GetEmptyPointer() => new КоригуванняІншихВитрат_Pointer();
+        public КоригуванняІншихВитрат_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public КоригуванняІншихВитрат_Pointer GetEmptyPointer() => new();
         public async Task<КоригуванняІншихВитрат_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -36129,7 +36957,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -36155,7 +36983,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public Модернізація_Pointer GetDocumentPointer() => new Модернізація_Pointer(UniqueID.UGuid);
+        public Модернізація_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(Модернізація_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -36222,8 +37050,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public Модернізація_Pointer Copy() => new Модернізація_Pointer(base.UniqueID, base.Fields, Name);
-        public Модернізація_Pointer GetEmptyPointer() => new Модернізація_Pointer();
+        public Модернізація_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public Модернізація_Pointer GetEmptyPointer() => new();
         public async Task<Модернізація_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -36383,7 +37211,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -36409,7 +37237,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public Комплектація_Pointer GetDocumentPointer() => new Комплектація_Pointer(UniqueID.UGuid);
+        public Комплектація_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(Комплектація_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -36476,8 +37304,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public Комплектація_Pointer Copy() => new Комплектація_Pointer(base.UniqueID, base.Fields, Name);
-        public Комплектація_Pointer GetEmptyPointer() => new Комплектація_Pointer();
+        public Комплектація_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public Комплектація_Pointer GetEmptyPointer() => new();
         public async Task<Комплектація_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -36637,7 +37465,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -36663,7 +37491,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public НакладнаВимога_Pointer GetDocumentPointer() => new НакладнаВимога_Pointer(UniqueID.UGuid);
+        public НакладнаВимога_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(НакладнаВимога_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -36730,8 +37558,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public НакладнаВимога_Pointer Copy() => new НакладнаВимога_Pointer(base.UniqueID, base.Fields, Name);
-        public НакладнаВимога_Pointer GetEmptyPointer() => new НакладнаВимога_Pointer();
+        public НакладнаВимога_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public НакладнаВимога_Pointer GetEmptyPointer() => new();
         public async Task<НакладнаВимога_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -36891,7 +37719,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -36917,7 +37745,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public Наряд_Pointer GetDocumentPointer() => new Наряд_Pointer(UniqueID.UGuid);
+        public Наряд_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(Наряд_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -36984,8 +37812,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public Наряд_Pointer Copy() => new Наряд_Pointer(base.UniqueID, base.Fields, Name);
-        public Наряд_Pointer GetEmptyPointer() => new Наряд_Pointer();
+        public Наряд_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public Наряд_Pointer GetEmptyPointer() => new();
         public async Task<Наряд_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -37145,7 +37973,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -37171,7 +37999,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public НарахуванняЗаробітньоїПлати_Pointer GetDocumentPointer() => new НарахуванняЗаробітньоїПлати_Pointer(UniqueID.UGuid);
+        public НарахуванняЗаробітньоїПлати_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(НарахуванняЗаробітньоїПлати_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -37238,8 +38066,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public НарахуванняЗаробітньоїПлати_Pointer Copy() => new НарахуванняЗаробітньоїПлати_Pointer(base.UniqueID, base.Fields, Name);
-        public НарахуванняЗаробітньоїПлати_Pointer GetEmptyPointer() => new НарахуванняЗаробітньоїПлати_Pointer();
+        public НарахуванняЗаробітньоїПлати_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public НарахуванняЗаробітньоїПлати_Pointer GetEmptyPointer() => new();
         public async Task<НарахуванняЗаробітньоїПлати_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -37399,7 +38227,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -37425,7 +38253,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПередачаМатеріалівВЕксплуатацію_Pointer GetDocumentPointer() => new ПередачаМатеріалівВЕксплуатацію_Pointer(UniqueID.UGuid);
+        public ПередачаМатеріалівВЕксплуатацію_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПередачаМатеріалівВЕксплуатацію_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -37492,8 +38320,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПередачаМатеріалівВЕксплуатацію_Pointer Copy() => new ПередачаМатеріалівВЕксплуатацію_Pointer(base.UniqueID, base.Fields, Name);
-        public ПередачаМатеріалівВЕксплуатацію_Pointer GetEmptyPointer() => new ПередачаМатеріалівВЕксплуатацію_Pointer();
+        public ПередачаМатеріалівВЕксплуатацію_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПередачаМатеріалівВЕксплуатацію_Pointer GetEmptyPointer() => new();
         public async Task<ПередачаМатеріалівВЕксплуатацію_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -37653,7 +38481,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -37679,7 +38507,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПереміщенняМатеріалівВЕксплуатації_Pointer GetDocumentPointer() => new ПереміщенняМатеріалівВЕксплуатації_Pointer(UniqueID.UGuid);
+        public ПереміщенняМатеріалівВЕксплуатації_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПереміщенняМатеріалівВЕксплуатації_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -37746,8 +38574,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПереміщенняМатеріалівВЕксплуатації_Pointer Copy() => new ПереміщенняМатеріалівВЕксплуатації_Pointer(base.UniqueID, base.Fields, Name);
-        public ПереміщенняМатеріалівВЕксплуатації_Pointer GetEmptyPointer() => new ПереміщенняМатеріалівВЕксплуатації_Pointer();
+        public ПереміщенняМатеріалівВЕксплуатації_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПереміщенняМатеріалівВЕксплуатації_Pointer GetEmptyPointer() => new();
         public async Task<ПереміщенняМатеріалівВЕксплуатації_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -37907,7 +38735,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -37933,7 +38761,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПередачаНематеріальнихАктивів_Pointer GetDocumentPointer() => new ПередачаНематеріальнихАктивів_Pointer(UniqueID.UGuid);
+        public ПередачаНематеріальнихАктивів_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПередачаНематеріальнихАктивів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -38000,8 +38828,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПередачаНематеріальнихАктивів_Pointer Copy() => new ПередачаНематеріальнихАктивів_Pointer(base.UniqueID, base.Fields, Name);
-        public ПередачаНематеріальнихАктивів_Pointer GetEmptyPointer() => new ПередачаНематеріальнихАктивів_Pointer();
+        public ПередачаНематеріальнихАктивів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПередачаНематеріальнихАктивів_Pointer GetEmptyPointer() => new();
         public async Task<ПередачаНематеріальнихАктивів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -38161,7 +38989,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -38187,7 +39015,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПереміщенняНематеріальнихАктивів_Pointer GetDocumentPointer() => new ПереміщенняНематеріальнихАктивів_Pointer(UniqueID.UGuid);
+        public ПереміщенняНематеріальнихАктивів_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПереміщенняНематеріальнихАктивів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -38254,8 +39082,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПереміщенняНематеріальнихАктивів_Pointer Copy() => new ПереміщенняНематеріальнихАктивів_Pointer(base.UniqueID, base.Fields, Name);
-        public ПереміщенняНематеріальнихАктивів_Pointer GetEmptyPointer() => new ПереміщенняНематеріальнихАктивів_Pointer();
+        public ПереміщенняНематеріальнихАктивів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПереміщенняНематеріальнихАктивів_Pointer GetEmptyPointer() => new();
         public async Task<ПереміщенняНематеріальнихАктивів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -38415,7 +39243,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -38441,7 +39269,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПередачаОбладнанняВМонтаж_Pointer GetDocumentPointer() => new ПередачаОбладнанняВМонтаж_Pointer(UniqueID.UGuid);
+        public ПередачаОбладнанняВМонтаж_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПередачаОбладнанняВМонтаж_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -38508,8 +39336,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПередачаОбладнанняВМонтаж_Pointer Copy() => new ПередачаОбладнанняВМонтаж_Pointer(base.UniqueID, base.Fields, Name);
-        public ПередачаОбладнанняВМонтаж_Pointer GetEmptyPointer() => new ПередачаОбладнанняВМонтаж_Pointer();
+        public ПередачаОбладнанняВМонтаж_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПередачаОбладнанняВМонтаж_Pointer GetEmptyPointer() => new();
         public async Task<ПередачаОбладнанняВМонтаж_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -38669,7 +39497,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -38695,7 +39523,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПередачаОсновнихЗасобів_Pointer GetDocumentPointer() => new ПередачаОсновнихЗасобів_Pointer(UniqueID.UGuid);
+        public ПередачаОсновнихЗасобів_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПередачаОсновнихЗасобів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -38762,8 +39590,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПередачаОсновнихЗасобів_Pointer Copy() => new ПередачаОсновнихЗасобів_Pointer(base.UniqueID, base.Fields, Name);
-        public ПередачаОсновнихЗасобів_Pointer GetEmptyPointer() => new ПередачаОсновнихЗасобів_Pointer();
+        public ПередачаОсновнихЗасобів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПередачаОсновнихЗасобів_Pointer GetEmptyPointer() => new();
         public async Task<ПередачаОсновнихЗасобів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -38923,7 +39751,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -38949,7 +39777,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПереміщенняОсновнихЗасобів_Pointer GetDocumentPointer() => new ПереміщенняОсновнихЗасобів_Pointer(UniqueID.UGuid);
+        public ПереміщенняОсновнихЗасобів_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПереміщенняОсновнихЗасобів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -39016,8 +39844,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПереміщенняОсновнихЗасобів_Pointer Copy() => new ПереміщенняОсновнихЗасобів_Pointer(base.UniqueID, base.Fields, Name);
-        public ПереміщенняОсновнихЗасобів_Pointer GetEmptyPointer() => new ПереміщенняОсновнихЗасобів_Pointer();
+        public ПереміщенняОсновнихЗасобів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПереміщенняОсновнихЗасобів_Pointer GetEmptyPointer() => new();
         public async Task<ПереміщенняОсновнихЗасобів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -39177,7 +40005,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -39203,7 +40031,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПередачаТоварів_Pointer GetDocumentPointer() => new ПередачаТоварів_Pointer(UniqueID.UGuid);
+        public ПередачаТоварів_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПередачаТоварів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -39270,8 +40098,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПередачаТоварів_Pointer Copy() => new ПередачаТоварів_Pointer(base.UniqueID, base.Fields, Name);
-        public ПередачаТоварів_Pointer GetEmptyPointer() => new ПередачаТоварів_Pointer();
+        public ПередачаТоварів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПередачаТоварів_Pointer GetEmptyPointer() => new();
         public async Task<ПередачаТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -39431,7 +40259,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -39457,7 +40285,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПереоцінкаВалюти_Pointer GetDocumentPointer() => new ПереоцінкаВалюти_Pointer(UniqueID.UGuid);
+        public ПереоцінкаВалюти_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПереоцінкаВалюти_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -39524,8 +40352,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПереоцінкаВалюти_Pointer Copy() => new ПереоцінкаВалюти_Pointer(base.UniqueID, base.Fields, Name);
-        public ПереоцінкаВалюти_Pointer GetEmptyPointer() => new ПереоцінкаВалюти_Pointer();
+        public ПереоцінкаВалюти_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПереоцінкаВалюти_Pointer GetEmptyPointer() => new();
         public async Task<ПереоцінкаВалюти_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -39685,7 +40513,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -39711,7 +40539,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПереоцінкаОсновнихЗасобів_Pointer GetDocumentPointer() => new ПереоцінкаОсновнихЗасобів_Pointer(UniqueID.UGuid);
+        public ПереоцінкаОсновнихЗасобів_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПереоцінкаОсновнихЗасобів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -39778,8 +40606,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПереоцінкаОсновнихЗасобів_Pointer Copy() => new ПереоцінкаОсновнихЗасобів_Pointer(base.UniqueID, base.Fields, Name);
-        public ПереоцінкаОсновнихЗасобів_Pointer GetEmptyPointer() => new ПереоцінкаОсновнихЗасобів_Pointer();
+        public ПереоцінкаОсновнихЗасобів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПереоцінкаОсновнихЗасобів_Pointer GetEmptyPointer() => new();
         public async Task<ПереоцінкаОсновнихЗасобів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -39939,7 +40767,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -39965,7 +40793,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПереоцінкаТоварів_Pointer GetDocumentPointer() => new ПереоцінкаТоварів_Pointer(UniqueID.UGuid);
+        public ПереоцінкаТоварів_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПереоцінкаТоварів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -40032,8 +40860,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПереоцінкаТоварів_Pointer Copy() => new ПереоцінкаТоварів_Pointer(base.UniqueID, base.Fields, Name);
-        public ПереоцінкаТоварів_Pointer GetEmptyPointer() => new ПереоцінкаТоварів_Pointer();
+        public ПереоцінкаТоварів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПереоцінкаТоварів_Pointer GetEmptyPointer() => new();
         public async Task<ПереоцінкаТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -40193,7 +41021,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -40219,7 +41047,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПлатіжнеДорученняВхідне_Pointer GetDocumentPointer() => new ПлатіжнеДорученняВхідне_Pointer(UniqueID.UGuid);
+        public ПлатіжнеДорученняВхідне_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПлатіжнеДорученняВхідне_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -40286,8 +41114,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПлатіжнеДорученняВхідне_Pointer Copy() => new ПлатіжнеДорученняВхідне_Pointer(base.UniqueID, base.Fields, Name);
-        public ПлатіжнеДорученняВхідне_Pointer GetEmptyPointer() => new ПлатіжнеДорученняВхідне_Pointer();
+        public ПлатіжнеДорученняВхідне_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПлатіжнеДорученняВхідне_Pointer GetEmptyPointer() => new();
         public async Task<ПлатіжнеДорученняВхідне_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -40447,7 +41275,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -40473,7 +41301,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПлатіжнеДорученняВихідне_Pointer GetDocumentPointer() => new ПлатіжнеДорученняВихідне_Pointer(UniqueID.UGuid);
+        public ПлатіжнеДорученняВихідне_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПлатіжнеДорученняВихідне_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -40540,8 +41368,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПлатіжнеДорученняВихідне_Pointer Copy() => new ПлатіжнеДорученняВихідне_Pointer(base.UniqueID, base.Fields, Name);
-        public ПлатіжнеДорученняВихідне_Pointer GetEmptyPointer() => new ПлатіжнеДорученняВихідне_Pointer();
+        public ПлатіжнеДорученняВихідне_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПлатіжнеДорученняВихідне_Pointer GetEmptyPointer() => new();
         public async Task<ПлатіжнеДорученняВихідне_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -40701,7 +41529,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -40727,7 +41555,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПодатковаНакладна_Pointer GetDocumentPointer() => new ПодатковаНакладна_Pointer(UniqueID.UGuid);
+        public ПодатковаНакладна_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПодатковаНакладна_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -40794,8 +41622,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПодатковаНакладна_Pointer Copy() => new ПодатковаНакладна_Pointer(base.UniqueID, base.Fields, Name);
-        public ПодатковаНакладна_Pointer GetEmptyPointer() => new ПодатковаНакладна_Pointer();
+        public ПодатковаНакладна_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПодатковаНакладна_Pointer GetEmptyPointer() => new();
         public async Task<ПодатковаНакладна_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -40955,7 +41783,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -40981,7 +41809,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПокупкаАбоПродажВалюти_Pointer GetDocumentPointer() => new ПокупкаАбоПродажВалюти_Pointer(UniqueID.UGuid);
+        public ПокупкаАбоПродажВалюти_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПокупкаАбоПродажВалюти_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -41048,8 +41876,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПокупкаАбоПродажВалюти_Pointer Copy() => new ПокупкаАбоПродажВалюти_Pointer(base.UniqueID, base.Fields, Name);
-        public ПокупкаАбоПродажВалюти_Pointer GetEmptyPointer() => new ПокупкаАбоПродажВалюти_Pointer();
+        public ПокупкаАбоПродажВалюти_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПокупкаАбоПродажВалюти_Pointer GetEmptyPointer() => new();
         public async Task<ПокупкаАбоПродажВалюти_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -41209,7 +42037,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -41235,7 +42063,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПідготовкаДоПередачіОсновнихЗасобів_Pointer GetDocumentPointer() => new ПідготовкаДоПередачіОсновнихЗасобів_Pointer(UniqueID.UGuid);
+        public ПідготовкаДоПередачіОсновнихЗасобів_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПідготовкаДоПередачіОсновнихЗасобів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -41302,8 +42130,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПідготовкаДоПередачіОсновнихЗасобів_Pointer Copy() => new ПідготовкаДоПередачіОсновнихЗасобів_Pointer(base.UniqueID, base.Fields, Name);
-        public ПідготовкаДоПередачіОсновнихЗасобів_Pointer GetEmptyPointer() => new ПідготовкаДоПередачіОсновнихЗасобів_Pointer();
+        public ПідготовкаДоПередачіОсновнихЗасобів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПідготовкаДоПередачіОсновнихЗасобів_Pointer GetEmptyPointer() => new();
         public async Task<ПідготовкаДоПередачіОсновнихЗасобів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -41463,7 +42291,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -41489,7 +42317,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПослугиСторонньоїОрганізації_Pointer GetDocumentPointer() => new ПослугиСторонньоїОрганізації_Pointer(UniqueID.UGuid);
+        public ПослугиСторонньоїОрганізації_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПослугиСторонньоїОрганізації_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -41556,8 +42384,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПослугиСторонньоїОрганізації_Pointer Copy() => new ПослугиСторонньоїОрганізації_Pointer(base.UniqueID, base.Fields, Name);
-        public ПослугиСторонньоїОрганізації_Pointer GetEmptyPointer() => new ПослугиСторонньоїОрганізації_Pointer();
+        public ПослугиСторонньоїОрганізації_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПослугиСторонньоїОрганізації_Pointer GetEmptyPointer() => new();
         public async Task<ПослугиСторонньоїОрганізації_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -41717,7 +42545,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -41743,7 +42571,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПрибуткуванняМатеріалівЗВиробництва_Pointer GetDocumentPointer() => new ПрибуткуванняМатеріалівЗВиробництва_Pointer(UniqueID.UGuid);
+        public ПрибуткуванняМатеріалівЗВиробництва_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПрибуткуванняМатеріалівЗВиробництва_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -41810,8 +42638,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПрибуткуванняМатеріалівЗВиробництва_Pointer Copy() => new ПрибуткуванняМатеріалівЗВиробництва_Pointer(base.UniqueID, base.Fields, Name);
-        public ПрибуткуванняМатеріалівЗВиробництва_Pointer GetEmptyPointer() => new ПрибуткуванняМатеріалівЗВиробництва_Pointer();
+        public ПрибуткуванняМатеріалівЗВиробництва_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПрибуткуванняМатеріалівЗВиробництва_Pointer GetEmptyPointer() => new();
         public async Task<ПрибуткуванняМатеріалівЗВиробництва_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -41971,7 +42799,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -41997,7 +42825,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПрибуткуванняТоварівВПереробку_Pointer GetDocumentPointer() => new ПрибуткуванняТоварівВПереробку_Pointer(UniqueID.UGuid);
+        public ПрибуткуванняТоварівВПереробку_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПрибуткуванняТоварівВПереробку_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -42064,8 +42892,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПрибуткуванняТоварівВПереробку_Pointer Copy() => new ПрибуткуванняТоварівВПереробку_Pointer(base.UniqueID, base.Fields, Name);
-        public ПрибуткуванняТоварівВПереробку_Pointer GetEmptyPointer() => new ПрибуткуванняТоварівВПереробку_Pointer();
+        public ПрибуткуванняТоварівВПереробку_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПрибуткуванняТоварівВПереробку_Pointer GetEmptyPointer() => new();
         public async Task<ПрибуткуванняТоварівВПереробку_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -42225,7 +43053,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -42251,7 +43079,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПрибуткуванняТоварівЗПереробки_Pointer GetDocumentPointer() => new ПрибуткуванняТоварівЗПереробки_Pointer(UniqueID.UGuid);
+        public ПрибуткуванняТоварівЗПереробки_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПрибуткуванняТоварівЗПереробки_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -42318,8 +43146,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПрибуткуванняТоварівЗПереробки_Pointer Copy() => new ПрибуткуванняТоварівЗПереробки_Pointer(base.UniqueID, base.Fields, Name);
-        public ПрибуткуванняТоварівЗПереробки_Pointer GetEmptyPointer() => new ПрибуткуванняТоварівЗПереробки_Pointer();
+        public ПрибуткуванняТоварівЗПереробки_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПрибуткуванняТоварівЗПереробки_Pointer GetEmptyPointer() => new();
         public async Task<ПрибуткуванняТоварівЗПереробки_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -42479,7 +43307,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -42505,7 +43333,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПрибуткуванняНезавершеногоВиробництва_Pointer GetDocumentPointer() => new ПрибуткуванняНезавершеногоВиробництва_Pointer(UniqueID.UGuid);
+        public ПрибуткуванняНезавершеногоВиробництва_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПрибуткуванняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -42572,8 +43400,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПрибуткуванняНезавершеногоВиробництва_Pointer Copy() => new ПрибуткуванняНезавершеногоВиробництва_Pointer(base.UniqueID, base.Fields, Name);
-        public ПрибуткуванняНезавершеногоВиробництва_Pointer GetEmptyPointer() => new ПрибуткуванняНезавершеногоВиробництва_Pointer();
+        public ПрибуткуванняНезавершеногоВиробництва_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПрибуткуванняНезавершеногоВиробництва_Pointer GetEmptyPointer() => new();
         public async Task<ПрибуткуванняНезавершеногоВиробництва_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -42733,7 +43561,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -42759,7 +43587,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПрийняттяДоОбліку_Pointer GetDocumentPointer() => new ПрийняттяДоОбліку_Pointer(UniqueID.UGuid);
+        public ПрийняттяДоОбліку_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПрийняттяДоОбліку_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -42826,8 +43654,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПрийняттяДоОбліку_Pointer Copy() => new ПрийняттяДоОбліку_Pointer(base.UniqueID, base.Fields, Name);
-        public ПрийняттяДоОбліку_Pointer GetEmptyPointer() => new ПрийняттяДоОбліку_Pointer();
+        public ПрийняттяДоОбліку_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПрийняттяДоОбліку_Pointer GetEmptyPointer() => new();
         public async Task<ПрийняттяДоОбліку_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -42987,7 +43815,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -43013,7 +43841,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public ПоверненняПереданихТоварів_Pointer GetDocumentPointer() => new ПоверненняПереданихТоварів_Pointer(UniqueID.UGuid);
+        public ПоверненняПереданихТоварів_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(ПоверненняПереданихТоварів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -43080,8 +43908,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public ПоверненняПереданихТоварів_Pointer Copy() => new ПоверненняПереданихТоварів_Pointer(base.UniqueID, base.Fields, Name);
-        public ПоверненняПереданихТоварів_Pointer GetEmptyPointer() => new ПоверненняПереданихТоварів_Pointer();
+        public ПоверненняПереданихТоварів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public ПоверненняПереданихТоварів_Pointer GetEmptyPointer() => new();
         public async Task<ПоверненняПереданихТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -43241,7 +44069,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -43267,7 +44095,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public РемонтОсновнихЗасобів_Pointer GetDocumentPointer() => new РемонтОсновнихЗасобів_Pointer(UniqueID.UGuid);
+        public РемонтОсновнихЗасобів_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(РемонтОсновнихЗасобів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -43334,8 +44162,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public РемонтОсновнихЗасобів_Pointer Copy() => new РемонтОсновнихЗасобів_Pointer(base.UniqueID, base.Fields, Name);
-        public РемонтОсновнихЗасобів_Pointer GetEmptyPointer() => new РемонтОсновнихЗасобів_Pointer();
+        public РемонтОсновнихЗасобів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public РемонтОсновнихЗасобів_Pointer GetEmptyPointer() => new();
         public async Task<РемонтОсновнихЗасобів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -43495,7 +44323,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -43521,7 +44349,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public РозподілІншихВитрат_Pointer GetDocumentPointer() => new РозподілІншихВитрат_Pointer(UniqueID.UGuid);
+        public РозподілІншихВитрат_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(РозподілІншихВитрат_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -43588,8 +44416,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public РозподілІншихВитрат_Pointer Copy() => new РозподілІншихВитрат_Pointer(base.UniqueID, base.Fields, Name);
-        public РозподілІншихВитрат_Pointer GetEmptyPointer() => new РозподілІншихВитрат_Pointer();
+        public РозподілІншихВитрат_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public РозподілІншихВитрат_Pointer GetEmptyPointer() => new();
         public async Task<РозподілІншихВитрат_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -43749,7 +44577,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -43775,7 +44603,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public РозрахунокСобівартостіВипуску_Pointer GetDocumentPointer() => new РозрахунокСобівартостіВипуску_Pointer(UniqueID.UGuid);
+        public РозрахунокСобівартостіВипуску_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(РозрахунокСобівартостіВипуску_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -43842,8 +44670,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public РозрахунокСобівартостіВипуску_Pointer Copy() => new РозрахунокСобівартостіВипуску_Pointer(base.UniqueID, base.Fields, Name);
-        public РозрахунокСобівартостіВипуску_Pointer GetEmptyPointer() => new РозрахунокСобівартостіВипуску_Pointer();
+        public РозрахунокСобівартостіВипуску_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public РозрахунокСобівартостіВипуску_Pointer GetEmptyPointer() => new();
         public async Task<РозрахунокСобівартостіВипуску_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -44003,7 +44831,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -44029,7 +44857,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public СписанняМатеріалів_Pointer GetDocumentPointer() => new СписанняМатеріалів_Pointer(UniqueID.UGuid);
+        public СписанняМатеріалів_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(СписанняМатеріалів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -44096,8 +44924,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public СписанняМатеріалів_Pointer Copy() => new СписанняМатеріалів_Pointer(base.UniqueID, base.Fields, Name);
-        public СписанняМатеріалів_Pointer GetEmptyPointer() => new СписанняМатеріалів_Pointer();
+        public СписанняМатеріалів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public СписанняМатеріалів_Pointer GetEmptyPointer() => new();
         public async Task<СписанняМатеріалів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -44257,7 +45085,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -44283,7 +45111,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public СписанняНезавершеногоВиробництва_Pointer GetDocumentPointer() => new СписанняНезавершеногоВиробництва_Pointer(UniqueID.UGuid);
+        public СписанняНезавершеногоВиробництва_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(СписанняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -44350,8 +45178,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public СписанняНезавершеногоВиробництва_Pointer Copy() => new СписанняНезавершеногоВиробництва_Pointer(base.UniqueID, base.Fields, Name);
-        public СписанняНезавершеногоВиробництва_Pointer GetEmptyPointer() => new СписанняНезавершеногоВиробництва_Pointer();
+        public СписанняНезавершеногоВиробництва_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public СписанняНезавершеногоВиробництва_Pointer GetEmptyPointer() => new();
         public async Task<СписанняНезавершеногоВиробництва_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -44511,7 +45339,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -44537,7 +45365,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public СписанняНематеріальнихАктивів_Pointer GetDocumentPointer() => new СписанняНематеріальнихАктивів_Pointer(UniqueID.UGuid);
+        public СписанняНематеріальнихАктивів_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(СписанняНематеріальнихАктивів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -44604,8 +45432,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public СписанняНематеріальнихАктивів_Pointer Copy() => new СписанняНематеріальнихАктивів_Pointer(base.UniqueID, base.Fields, Name);
-        public СписанняНематеріальнихАктивів_Pointer GetEmptyPointer() => new СписанняНематеріальнихАктивів_Pointer();
+        public СписанняНематеріальнихАктивів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public СписанняНематеріальнихАктивів_Pointer GetEmptyPointer() => new();
         public async Task<СписанняНематеріальнихАктивів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -44765,7 +45593,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -44791,7 +45619,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public СписанняОсновнихЗасобів_Pointer GetDocumentPointer() => new СписанняОсновнихЗасобів_Pointer(UniqueID.UGuid);
+        public СписанняОсновнихЗасобів_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(СписанняОсновнихЗасобів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -44858,8 +45686,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public СписанняОсновнихЗасобів_Pointer Copy() => new СписанняОсновнихЗасобів_Pointer(base.UniqueID, base.Fields, Name);
-        public СписанняОсновнихЗасобів_Pointer GetEmptyPointer() => new СписанняОсновнихЗасобів_Pointer();
+        public СписанняОсновнихЗасобів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public СписанняОсновнихЗасобів_Pointer GetEmptyPointer() => new();
         public async Task<СписанняОсновнихЗасобів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -45019,7 +45847,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -45045,7 +45873,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public СписанняВитратМайбутніхПеріодів_Pointer GetDocumentPointer() => new СписанняВитратМайбутніхПеріодів_Pointer(UniqueID.UGuid);
+        public СписанняВитратМайбутніхПеріодів_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(СписанняВитратМайбутніхПеріодів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -45112,8 +45940,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public СписанняВитратМайбутніхПеріодів_Pointer Copy() => new СписанняВитратМайбутніхПеріодів_Pointer(base.UniqueID, base.Fields, Name);
-        public СписанняВитратМайбутніхПеріодів_Pointer GetEmptyPointer() => new СписанняВитратМайбутніхПеріодів_Pointer();
+        public СписанняВитратМайбутніхПеріодів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public СписанняВитратМайбутніхПеріодів_Pointer GetEmptyPointer() => new();
         public async Task<СписанняВитратМайбутніхПеріодів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -45273,7 +46101,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -45299,7 +46127,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public СписанняТоварів_Pointer GetDocumentPointer() => new СписанняТоварів_Pointer(UniqueID.UGuid);
+        public СписанняТоварів_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(СписанняТоварів_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -45366,8 +46194,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public СписанняТоварів_Pointer Copy() => new СписанняТоварів_Pointer(base.UniqueID, base.Fields, Name);
-        public СписанняТоварів_Pointer GetEmptyPointer() => new СписанняТоварів_Pointer();
+        public СписанняТоварів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public СписанняТоварів_Pointer GetEmptyPointer() => new();
         public async Task<СписанняТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -45527,7 +46355,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа,
+                Основа = Основа.Copy(),
                 
             };
             
@@ -45553,7 +46381,7 @@ namespace GeneratedCode.Документи
             await base.BaseDelete([]);
         }
         
-        public Сторнування_Pointer GetDocumentPointer() => new Сторнування_Pointer(UniqueID.UGuid);
+        public Сторнування_Pointer GetDocumentPointer() => new(UniqueID);
         public async Task<string> GetPresentation() => await base.BasePresentation(Сторнування_Const.PRESENTATION_FIELDS);
         
         public string Назва { get; set; } = "";
@@ -45620,8 +46448,8 @@ namespace GeneratedCode.Документи
             
           await base.BaseDeletionLabel(label);
         }
-        public Сторнування_Pointer Copy() => new Сторнування_Pointer(base.UniqueID, base.Fields, Name);
-        public Сторнування_Pointer GetEmptyPointer() => new Сторнування_Pointer();
+        public Сторнування_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public Сторнування_Pointer GetEmptyPointer() => new();
         public async Task<Сторнування_Objest?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -45968,12 +46796,12 @@ namespace GeneratedCode.РегістриВідомостей
             ЦіниНоменклатури_Objest copy = new ЦіниНоменклатури_Objest()
             {
                 Period = Period, /* Базове поле */
-                Номенклатура = Номенклатура,
-                ХарактеристикаНоменклатури = ХарактеристикаНоменклатури,
-                ВидЦіни = ВидЦіни,
+                Номенклатура = Номенклатура.Copy(),
+                ХарактеристикаНоменклатури = ХарактеристикаНоменклатури.Copy(),
+                ВидЦіни = ВидЦіни.Copy(),
                 Ціна = Ціна,
-                Пакування = Пакування,
-                Валюта = Валюта,
+                Пакування = Пакування.Copy(),
+                Валюта = Валюта.Copy(),
                 
             };
             copy.New();
@@ -46159,7 +46987,7 @@ namespace GeneratedCode.РегістриВідомостей
             КурсиВалют_Objest copy = new КурсиВалют_Objest()
             {
                 Period = Period, /* Базове поле */
-                Валюта = Валюта,
+                Валюта = Валюта.Copy(),
                 Курс = Курс,
                 Кратність = Кратність,
                 
@@ -46359,9 +47187,9 @@ namespace GeneratedCode.РегістриВідомостей
             {
                 Period = Period, /* Базове поле */
                 Штрихкод = Штрихкод,
-                Номенклатура = Номенклатура,
-                ХарактеристикаНоменклатури = ХарактеристикаНоменклатури,
-                Пакування = Пакування,
+                Номенклатура = Номенклатура.Copy(),
+                ХарактеристикаНоменклатури = ХарактеристикаНоменклатури.Copy(),
+                Пакування = Пакування.Copy(),
                 
             };
             copy.New();
@@ -46533,7 +47361,7 @@ namespace GeneratedCode.РегістриВідомостей
             ФайлиДокументів_Objest copy = new ФайлиДокументів_Objest()
             {
                 Period = Period, /* Базове поле */
-                Файл = Файл,
+                Файл = Файл.Copy(),
                 
             };
             copy.New();
@@ -46732,10 +47560,10 @@ namespace GeneratedCode.РегістриВідомостей
             РозміщенняНоменклатуриПоКоміркамНаСкладі_Objest copy = new РозміщенняНоменклатуриПоКоміркамНаСкладі_Objest()
             {
                 Period = Period, /* Базове поле */
-                Номенклатура = Номенклатура,
-                Склад = Склад,
-                Приміщення = Приміщення,
-                Комірка = Комірка,
+                Номенклатура = Номенклатура.Copy(),
+                Склад = Склад.Copy(),
+                Приміщення = Приміщення.Copy(),
+                Комірка = Комірка.Copy(),
                 
             };
             copy.New();
