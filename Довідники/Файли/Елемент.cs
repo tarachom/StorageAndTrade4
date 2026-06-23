@@ -54,7 +54,19 @@ partial class Файли_Елемент : DirectoryFormElement
         return element;
     }
 
-    protected override void CreateStart(Box vBox)
+    #region Interface
+
+    FunctionForInterfaces.DirectoryElementSmall Interface;
+
+    protected override void BuildInterface()
+    {
+        Interface = FunctionForInterfaces.ForDirectorySmall();
+
+        Append(Interface.MainBox);
+        CreateStart(Interface.TopStartBox);
+    }
+
+    void CreateStart(Box vBox)
     {
         // Код
         CreateField(vBox, "Код:", Код);
@@ -72,10 +84,7 @@ partial class Файли_Елемент : DirectoryFormElement
         CreateField(vBox, "Дата створення:", ДатаСтворення);
     }
 
-    protected override void CreateEnd(Box vBox)
-    {
-
-    }
+    #endregion
 
     #region Присвоєння / зчитування значень
 

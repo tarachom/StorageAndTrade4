@@ -11,7 +11,7 @@ using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<PointerControl>("PointerControl_gNOAJSe9USqOs6LfIKyqg")]
+[GObject.Subclass<PointerControl>("PointerControl_9fSeAe1DMXCeqXE7JZfAEQ")]
 public partial class Блокнот_PointerControl : PointerControl
 {
     event EventHandler<Блокнот_Pointer>? PointerChanged;
@@ -20,7 +20,7 @@ public partial class Блокнот_PointerControl : PointerControl
     {
         WidthPresentation = 300;
         Caption = $"{Блокнот_Const.FULLNAME}:";
-        PointerChanged += async (_, pointer) => Presentation = pointer != null ? await pointer.GetPresentation() : "";
+        PointerChanged += async (_, pointer) => Presentation = !pointer.IsEmpty() ? await pointer.GetPresentation() : "";
     }
 
     public static Блокнот_PointerControl New() => NewWithProperties([]);
@@ -28,10 +28,7 @@ public partial class Блокнот_PointerControl : PointerControl
     Блокнот_Pointer pointer = new();
     public Блокнот_Pointer Pointer
     {
-        get
-        {
-            return pointer;
-        }
+        get => pointer;
         set
         {
             pointer = value;

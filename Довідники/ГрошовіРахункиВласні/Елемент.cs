@@ -46,7 +46,19 @@ partial class ГрошовіРахункиВласні_Елемент : Director
         return element;
     }
 
-    protected override void CreateStart(Box vBox)
+    #region Interface
+
+    FunctionForInterfaces.DirectoryElementSmall Interface;
+
+    protected override void BuildInterface()
+    {
+        Interface = FunctionForInterfaces.ForDirectorySmall();
+
+        Append(Interface.MainBox);
+        CreateStart(Interface.TopStartBox);
+    }
+
+    void CreateStart(Box vBox)
     {
         // Код
         CreateField(vBox, "Код:", Код);
@@ -55,10 +67,7 @@ partial class ГрошовіРахункиВласні_Елемент : Director
         CreateField(vBox, "Назва:", Назва);
     }
 
-    protected override void CreateEnd(Box vBox)
-    {
-
-    }
+    #endregion
 
     #region Присвоєння / зчитування значень
 

@@ -42,7 +42,6 @@ partial class Склади_Папки_Елемент : DirectoryFormElement
         // Родич:
         Родич.Caption = "Папка:";
         Родич.WidthPresentation = 300;
-
     }
 
     public static Склади_Папки_Елемент New()
@@ -53,7 +52,19 @@ partial class Склади_Папки_Елемент : DirectoryFormElement
         return element;
     }
 
-    protected override void CreateStart(Box vBox)
+    #region Interface
+
+    FunctionForInterfaces.DirectoryElementSmall Interface;
+
+    protected override void BuildInterface()
+    {
+        Interface = FunctionForInterfaces.ForDirectorySmall();
+
+        Append(Interface.MainBox);
+        CreateStart(Interface.TopStartBox);
+    }
+
+    void CreateStart(Box vBox)
     {
         // Код
         CreateField(vBox, "Код:", Код);
@@ -65,10 +76,7 @@ partial class Склади_Папки_Елемент : DirectoryFormElement
         CreateField(vBox, null, Родич);
     }
 
-    protected override void CreateEnd(Box vBox)
-    {
-
-    }
+    #endregion
 
     #region Присвоєння / зчитування значень
 

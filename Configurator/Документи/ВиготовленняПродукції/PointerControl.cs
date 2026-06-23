@@ -10,7 +10,7 @@ using GeneratedCode.Документи;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<PointerControl>("PointerControl_ztEYvX366ECCB6Vc0BfJ2A")]
+[GObject.Subclass<PointerControl>("PointerControl_7PSeAf9Z0nipfzL2zTX1hw")]
 public partial class ВиготовленняПродукції_PointerControl : PointerControl
 {
     event EventHandler<ВиготовленняПродукції_Pointer>? PointerChanged;
@@ -19,7 +19,7 @@ public partial class ВиготовленняПродукції_PointerControl :
     {
         WidthPresentation = 300;
         Caption = $"{ВиготовленняПродукції_Const.FULLNAME}:";
-        PointerChanged += async (_, pointer) => Presentation = pointer != null ? await pointer.GetPresentation() : "";
+        PointerChanged += async (_, pointer) => Presentation = !pointer.IsEmpty() ? await pointer.GetPresentation() : "";
     }
 
     public static ВиготовленняПродукції_PointerControl New() => NewWithProperties([]);

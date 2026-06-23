@@ -74,7 +74,20 @@ partial class Контрагенти_Елемент : DirectoryFormElement
         return element;
     }
 
-    protected override void CreateStart(Box vBox)
+    #region Interface
+
+    FunctionForInterfaces.DirectoryElement Interface;
+
+    protected override void BuildInterface()
+    {
+        Interface = FunctionForInterfaces.ForDirectory();
+
+        Append(Interface.MainBox);
+        CreateStart(Interface.TopStartBox);
+        CreateEnd(Interface.TopEndBox);
+    }
+
+    void CreateStart(Box vBox)
     {
         // Код
         CreateField(vBox, "Код:", Код);
@@ -103,7 +116,7 @@ partial class Контрагенти_Елемент : DirectoryFormElement
         CreateFieldView(vBox, "Опис:", Опис, 500, 200);
     }
 
-    protected override void CreateEnd(Box vBox)
+    void CreateEnd(Box vBox)
     {
         // Таблична частина "Контакти"
         Контакти.WidthRequest = 500;
@@ -117,6 +130,8 @@ partial class Контрагенти_Елемент : DirectoryFormElement
         Файли.Vexpand = false;
         CreateTablePart(vBox, "Файли", Файли);
     }
+
+    #endregion
 
     #region Присвоєння / зчитування значень
 

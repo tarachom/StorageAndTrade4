@@ -44,6 +44,9 @@ partial class ПланРахунків_Елемент : DirectoryFormElement
     {
         Element = Елемент;
 
+        // ЦеГрупа
+        CreateField(CreateField(HBoxTop, null, ЦеГрупаНазва), null, ЦеГрупа, Align.Start, true);
+
         // Код:
         Код.WidthRequest = 100;
 
@@ -81,11 +84,21 @@ partial class ПланРахунків_Елемент : DirectoryFormElement
         return element;
     }
 
-    protected override void CreateStart(Box vBox)
-    {
-        // ЦеГрупа
-        CreateField(CreateField(vBox, null, ЦеГрупаНазва), null, ЦеГрупа);
+    #region Interface
 
+    FunctionForInterfaces.DirectoryElementTwoBoxes Interface;
+
+    protected override void BuildInterface()
+    {
+        Interface = FunctionForInterfaces.ForDirectoryTwoBoxes();
+
+        Append(Interface.MainBox);
+        CreateStart(Interface.TopStartBox);
+        CreateEnd(Interface.TopEndBox);
+    }
+
+    void CreateStart(Box vBox)
+    {
         CreateCaptionLink(vBox, "Спільні реквізити для груп та елементів");
 
         {
@@ -103,13 +116,13 @@ partial class ПланРахунків_Елемент : DirectoryFormElement
         CreateField(vBox, null, Родич);
     }
 
-    protected override void CreateEnd(Box vBox)
+    void CreateEnd(Box vBox)
     {
         CreateCaptionLink(vBox, "Реквізити для елементів");
 
         {
             // Сумовий
-            Box hBox = CreateField(vBox, null, Сумовий, Align.Start);
+            Box hBox = CreateField(vBox, null, Сумовий);
 
             // Кількісний
             CreateField(hBox, null, Кількісний);
@@ -122,14 +135,16 @@ partial class ПланРахунків_Елемент : DirectoryFormElement
         }
 
         // Субконто1
-        CreateField(vBox, "Субконто 1:", Субконто1, Align.Start);
+        CreateField(vBox, "Субконто 1:", Субконто1);
 
         // Субконто2
-        CreateField(vBox, "Субконто 2:", Субконто2, Align.Start);
+        CreateField(vBox, "Субконто 2:", Субконто2);
 
         // Субконто3
-        CreateField(vBox, "Субконто 3:", Субконто3, Align.Start);
+        CreateField(vBox, "Субконто 3:", Субконто3);
     }
+
+    #endregion
 
     #region Присвоєння / зчитування значень
 

@@ -104,7 +104,20 @@ partial class Номенклатура_Елемент : DirectoryFormElement
         return element;
     }
 
-    protected override void CreateStart(Box vBox)
+    #region Interface
+
+    FunctionForInterfaces.DirectoryElement Interface;
+
+    protected override void BuildInterface()
+    {
+        Interface = FunctionForInterfaces.ForDirectory();
+
+        Append(Interface.MainBox);
+        CreateStart(Interface.TopStartBox);
+        CreateEnd(Interface.TopEndBox);
+    }
+
+    void CreateStart(Box vBox)
     {
         // Код
         CreateField(vBox, "Код:", Код);
@@ -144,7 +157,7 @@ partial class Номенклатура_Елемент : DirectoryFormElement
         CreateField(vBox, null, Категорія);
     }
 
-    protected override void CreateEnd(Box vBox)
+    void CreateEnd(Box vBox)
     {
         // Таблична частина "Файли"
         Файли.WidthRequest = 500;
@@ -156,6 +169,8 @@ partial class Номенклатура_Елемент : DirectoryFormElement
         // ОсновнаКартинкаФайл
         CreateField(vBox, null, ОсновнаКартинкаФайл, Align.Start);
     }
+
+    #endregion
 
     #region Присвоєння / зчитування значень
 

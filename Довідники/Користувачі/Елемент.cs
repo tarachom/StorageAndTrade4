@@ -57,7 +57,20 @@ partial class Користувачі_Елемент : DirectoryFormElement
         return element;
     }
 
-    protected override void CreateStart(Box vBox)
+    #region Interface
+
+    FunctionForInterfaces.DirectoryElement Interface;
+
+    protected override void BuildInterface()
+    {
+        Interface = FunctionForInterfaces.ForDirectory();
+
+        Append(Interface.MainBox);
+        CreateStart(Interface.TopStartBox);
+        CreateEnd(Interface.TopEndBox);
+    }
+
+    void CreateStart(Box vBox)
     {
 
         // Код
@@ -73,7 +86,7 @@ partial class Користувачі_Елемент : DirectoryFormElement
         CreateField(vBox, "Коментар:", Коментар);
     }
 
-    protected override void CreateEnd(Box vBox)
+    void CreateEnd(Box vBox)
     {
         // Таблична частина "Контакти"
         Контакти.WidthRequest = 500;
@@ -81,6 +94,8 @@ partial class Користувачі_Елемент : DirectoryFormElement
         Контакти.Vexpand = false;
         CreateTablePart(vBox, "Контакти", Контакти);
     }
+
+    #endregion
 
     #region Присвоєння / зчитування значень
 

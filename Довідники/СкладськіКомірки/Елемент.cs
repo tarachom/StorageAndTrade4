@@ -86,7 +86,19 @@ partial class СкладськіКомірки_Елемент : DirectoryFormEle
         return element;
     }
 
-    protected override void CreateStart(Box vBox)
+    #region Interface
+
+    FunctionForInterfaces.DirectoryElementSmall Interface;
+
+    protected override void BuildInterface()
+    {
+        Interface = FunctionForInterfaces.ForDirectorySmall();
+
+        Append(Interface.MainBox);
+        CreateStart(Interface.TopStartBox);
+    }
+
+    void CreateStart(Box vBox)
     {
         // Назва
         CreateField(vBox, "Назва:", Назва);
@@ -116,10 +128,7 @@ partial class СкладськіКомірки_Елемент : DirectoryFormEle
         CreateField(vBox, null, Типорозмір);
     }
 
-    protected override void CreateEnd(Box vBox)
-    {
-
-    }
+    #endregion
 
     #region Присвоєння / зчитування значень
 

@@ -18,41 +18,39 @@ namespace StorageAndTrade;
 partial class СкладськіПриміщення_Елемент : DirectoryFormElement
 {
     public СкладськіПриміщення_Object Елемент { get; init; } = new();
-    
+
     public Склади_Pointer ВласникДляНового = new();
-    
+
     #region Fields
     Entry Назва = Entry.New();
-                    ComboBoxText НалаштуванняАдресногоЗберігання = ComboBoxText.New();
-            Склади_PointerControl Склад = Склади_PointerControl.New();
-            
+    ComboBoxText НалаштуванняАдресногоЗберігання = ComboBoxText.New();
+    Склади_PointerControl Склад = Склади_PointerControl.New();
+
     #endregion
 
     #region TabularParts
-    
+
     #endregion
 
     partial void Initialize()
-    { 
+    {
         Element = Елемент;
 
-        
-            // Назва:
-            Назва.WidthRequest = 300;
-                        
-            // НалаштуванняАдресногоЗберігання:
-            {
-                //Заповнення списку
-                foreach (var field in ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_List())
-                    НалаштуванняАдресногоЗберігання.Append(field.Value.ToString(), field.Name);
+        // Назва:
+        Назва.WidthRequest = 300;
 
-                НалаштуванняАдресногоЗберігання.AddController(FunctionForComboBox.DisableScrolling());
-            }
-                
-            // Склад:
-            Склад.Caption = "Склад";
-                    Склад.WidthPresentation = 300;
-                
+        // НалаштуванняАдресногоЗберігання:
+        {
+            //Заповнення списку
+            foreach (var field in ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_List())
+                НалаштуванняАдресногоЗберігання.Append(field.Value.ToString(), field.Name);
+
+            НалаштуванняАдресногоЗберігання.AddController(FunctionForComboBox.DisableScrolling());
+        }
+
+        // Склад:
+        Склад.Caption = "Склад";
+        Склад.WidthPresentation = 300;
     }
 
     public static СкладськіПриміщення_Елемент New()
@@ -63,44 +61,48 @@ partial class СкладськіПриміщення_Елемент : DirectoryF
         return element;
     }
 
-    protected override void CreateStart(Box vBox)
+    #region Interface
+
+    FunctionForInterfaces.DirectoryElementSmall Interface;
+
+    protected override void BuildInterface()
     {
-        
-            // Назва
-            CreateField(vBox, "Назва:", Назва);
-                        
-            // НалаштуванняАдресногоЗберігання
-            CreateField(vBox, "Адресне зберігання:", НалаштуванняАдресногоЗберігання);
-                
-            // Склад
-            CreateField(vBox, null, Склад);
-                
+        Interface = FunctionForInterfaces.ForDirectorySmall();
+
+        Append(Interface.MainBox);
+        CreateStart(Interface.TopStartBox);
     }
 
-    protected override void CreateEnd(Box vBox)
+    void CreateStart(Box vBox)
     {
-        
+        // Назва
+        CreateField(vBox, "Назва:", Назва);
+
+        // НалаштуванняАдресногоЗберігання
+        CreateField(vBox, "Адресне зберігання:", НалаштуванняАдресногоЗберігання);
+
+        // Склад
+        CreateField(vBox, null, Склад);
     }
+
+    #endregion
 
     #region Присвоєння / зчитування значень
 
     public override async Task AssignValue()
     {
-        
-        if (IsNew) 
+        if (IsNew)
             Елемент.Склад = ВласникДляНового;
         Назва.SetText(Елемент.Назва);
-                        НалаштуванняАдресногоЗберігання.ActiveId = Елемент.НалаштуванняАдресногоЗберігання.ToString();
-                Склад.Pointer = Елемент.Склад;
-                
+        НалаштуванняАдресногоЗберігання.ActiveId = Елемент.НалаштуванняАдресногоЗберігання.ToString();
+        Склад.Pointer = Елемент.Склад;
     }
 
     protected override void GetValue()
     {
         Елемент.Назва = Назва.GetText();
-                        Елемент.НалаштуванняАдресногоЗберігання = ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_FindByName(НалаштуванняАдресногоЗберігання.ActiveId);
-                Елемент.Склад = Склад.Pointer;
-                
+        Елемент.НалаштуванняАдресногоЗберігання = ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_FindByName(НалаштуванняАдресногоЗберігання.ActiveId);
+        Елемент.Склад = Склад.Pointer;
     }
 
     #endregion
@@ -112,7 +114,7 @@ partial class СкладськіПриміщення_Елемент : DirectoryF
         {
             if (await Елемент.Save())
             {
-                
+
                 isSaved = true;
             }
         }
@@ -123,4 +125,3 @@ partial class СкладськіПриміщення_Елемент : DirectoryF
         return isSaved;
     }
 }
-    

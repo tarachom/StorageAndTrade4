@@ -35,7 +35,6 @@ partial class ВидиПодатків_Елемент : DirectoryFormElement
 
         // Назва:
         Назва.WidthRequest = 500;
-
     }
 
     public static ВидиПодатків_Елемент New()
@@ -46,7 +45,19 @@ partial class ВидиПодатків_Елемент : DirectoryFormElement
         return element;
     }
 
-    protected override void CreateStart(Box vBox)
+    #region Interface
+
+    FunctionForInterfaces.DirectoryElementSmall Interface;
+
+    protected override void BuildInterface()
+    {
+        Interface = FunctionForInterfaces.ForDirectorySmall();
+
+        Append(Interface.MainBox);
+        CreateStart(Interface.TopStartBox);
+    }
+
+    void CreateStart(Box vBox)
     {
         // Код
         CreateField(vBox, "Код:", Код);
@@ -55,10 +66,7 @@ partial class ВидиПодатків_Елемент : DirectoryFormElement
         CreateField(vBox, "Назва:", Назва);
     }
 
-    protected override void CreateEnd(Box vBox)
-    {
-
-    }
+    #endregion
 
     #region Присвоєння / зчитування значень
 

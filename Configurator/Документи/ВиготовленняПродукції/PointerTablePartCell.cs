@@ -11,7 +11,7 @@ using AccountingSoftware;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<PointerTablePartCell>("PointerTablePartCell_cerGtCnMU0qib2ZbTGsBA")]
+[GObject.Subclass<PointerTablePartCell>("PointerTablePartCell_7PSeATdpfXa1EO0o8FKI9w")]
 public partial class ВиготовленняПродукції_PointerTablePartCell : PointerTablePartCell
 {
     public static ВиготовленняПродукції_PointerTablePartCell New() => NewWithProperties([]);
@@ -27,7 +27,7 @@ public partial class ВиготовленняПродукції_PointerTablePart
         }
     }
 
-    public async Task GetPresentation() => Presentation = pointer != null ? await pointer.GetPresentation() : "";
+    public async Task GetPresentation() => Presentation = !pointer.IsEmpty() ? await pointer.GetPresentation() : "";
 
     async Task PointerChange(UniqueID? p)
     {

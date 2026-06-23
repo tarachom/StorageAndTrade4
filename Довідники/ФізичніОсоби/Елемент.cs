@@ -51,7 +51,7 @@ partial class ФізичніОсоби_Елемент : DirectoryFormElement
             //Заповнення списку
             foreach (var field in ПсевдонімиПерелічення.СтатьФізичноїОсоби_List())
                 Стать.Append(field.Value.ToString(), field.Name);
-                
+
             Стать.AddController(FunctionForComboBox.DisableScrolling());
         }
 
@@ -67,7 +67,20 @@ partial class ФізичніОсоби_Елемент : DirectoryFormElement
         return element;
     }
 
-    protected override void CreateStart(Box vBox)
+    #region Interface
+
+    FunctionForInterfaces.DirectoryElement Interface;
+
+    protected override void BuildInterface()
+    {
+        Interface = FunctionForInterfaces.ForDirectory();
+
+        Append(Interface.MainBox);
+        CreateStart(Interface.TopStartBox);
+        CreateEnd(Interface.TopEndBox);
+    }
+
+    void CreateStart(Box vBox)
     {
         // Код
         CreateField(vBox, "Код:", Код);
@@ -85,7 +98,7 @@ partial class ФізичніОсоби_Елемент : DirectoryFormElement
         CreateField(vBox, "ІПН:", ІПН);
     }
 
-    protected override void CreateEnd(Box vBox)
+    void CreateEnd(Box vBox)
     {
         // Таблична частина "Контакти"
         Контакти.WidthRequest = 500;
@@ -93,6 +106,8 @@ partial class ФізичніОсоби_Елемент : DirectoryFormElement
         Контакти.Vexpand = false;
         CreateTablePart(vBox, "Контакти", Контакти);
     }
+
+    #endregion
 
     #region Присвоєння / зчитування значень
 

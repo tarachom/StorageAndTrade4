@@ -37,6 +37,9 @@ partial class Статті_Елемент : DirectoryFormElement
     {
         Element = Елемент;
 
+        // ЦеГрупа
+        CreateField(CreateField(HBoxTop, null, ЦеПапкаНазва), null, ЦеПапка, Align.Start, true);
+
         // Код:
         Код.WidthRequest = 100;
 
@@ -68,11 +71,21 @@ partial class Статті_Елемент : DirectoryFormElement
         return element;
     }
 
-    protected override void CreateStart(Box vBox)
-    {
-        // ЦеГрупа
-        CreateField(CreateField(vBox, null, ЦеПапкаНазва), null, ЦеПапка);
+    #region Interface
 
+    FunctionForInterfaces.DirectoryElementTwoBoxes Interface;
+
+    protected override void BuildInterface()
+    {
+        Interface = FunctionForInterfaces.ForDirectoryTwoBoxes();
+
+        Append(Interface.MainBox);
+        CreateStart(Interface.TopStartBox);
+        CreateEnd(Interface.TopEndBox);
+    }
+
+    void CreateStart(Box vBox)
+    {
         CreateCaptionLink(vBox, "Спільні реквізити для груп та елементів");
 
         // Код
@@ -85,13 +98,15 @@ partial class Статті_Елемент : DirectoryFormElement
         CreateField(vBox, null, Родич);
     }
 
-    protected override void CreateEnd(Box vBox)
+    void CreateEnd(Box vBox)
     {
         CreateCaptionLink(vBox, "Реквізити для елементів");
 
         // КодЗПодатковоїДекларації
-        CreateField(vBox, "Код з податкової декларації:", КодЗПодатковоїДекларації, Align.Start);
+        CreateField(vBox, "Код з податкової декларації:", КодЗПодатковоїДекларації);
     }
+
+    #endregion
 
     #region Присвоєння / зчитування значень
 
