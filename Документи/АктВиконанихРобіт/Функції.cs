@@ -69,10 +69,10 @@ static class АктВиконанихРобіт_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        АктВиконанихРобіт_Objest Обєкт = new();
+        АктВиконанихРобіт_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            АктВиконанихРобіт_Objest Новий = await Обєкт.Copy(true);
+            АктВиконанихРобіт_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
                 await Новий.Послуги_TablePart.Save(false); // Таблична частина "Послуги"
@@ -90,7 +90,7 @@ static class АктВиконанихРобіт_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        АктВиконанихРобіт_Objest? Обєкт = await new АктВиконанихРобіт_Pointer(uniqueID).GetDocumentObject(true);
+        АктВиконанихРобіт_Object? Обєкт = await new АктВиконанихРобіт_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

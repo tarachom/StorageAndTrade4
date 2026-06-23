@@ -72,10 +72,10 @@ static class ОсновніЗасоби_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ОсновніЗасоби_Objest Обєкт = new();
+        ОсновніЗасоби_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ОсновніЗасоби_Objest Новий = await Обєкт.Copy(true);
+            ОсновніЗасоби_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;

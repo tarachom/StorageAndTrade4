@@ -17,7 +17,7 @@ namespace GeneratedCode.Документи;
 
 static class КоригуванняПДВ_SpendTheDocument
 {
-    public static async Task<bool> Spend(КоригуванняПДВ_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(КоригуванняПДВ_Object ДокументОбєкт)
     {
         try
         {
@@ -33,7 +33,7 @@ static class КоригуванняПДВ_SpendTheDocument
         }
     }
 
-    public static Task Clear(КоригуванняПДВ_Objest ДокументОбєкт)
+    public static Task Clear(КоригуванняПДВ_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

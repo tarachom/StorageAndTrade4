@@ -72,10 +72,10 @@ static class ПланРахунків_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ПланРахунків_Objest Обєкт = new();
+        ПланРахунків_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ПланРахунків_Objest Новий = await Обєкт.Copy(true);
+            ПланРахунків_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;

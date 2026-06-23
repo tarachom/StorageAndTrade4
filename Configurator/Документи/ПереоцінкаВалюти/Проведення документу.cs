@@ -17,7 +17,7 @@ namespace GeneratedCode.Документи;
 
 static class ПереоцінкаВалюти_SpendTheDocument
 {
-    public static async Task<bool> Spend(ПереоцінкаВалюти_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(ПереоцінкаВалюти_Object ДокументОбєкт)
     {
         try
         {
@@ -33,7 +33,7 @@ static class ПереоцінкаВалюти_SpendTheDocument
         }
     }
 
-    public static Task Clear(ПереоцінкаВалюти_Objest ДокументОбєкт)
+    public static Task Clear(ПереоцінкаВалюти_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

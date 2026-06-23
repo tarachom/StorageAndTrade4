@@ -217,7 +217,7 @@ partial class Контрагенти_ТабличнаЧастина_Контак
     #endregion
 
 
-    public Контрагенти_Objest? ЕлементВласник { get; set; }
+    public Контрагенти_Object? ЕлементВласник { get; set; }
 
 
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());

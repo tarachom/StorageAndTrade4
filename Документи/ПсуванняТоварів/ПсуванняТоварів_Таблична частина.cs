@@ -236,7 +236,7 @@ partial class ПсуванняТоварів_ТабличнаЧастина_То
     #endregion
 
     
-    public ПсуванняТоварів_Objest? ЕлементВласник { get; set; }
+    public ПсуванняТоварів_Object? ЕлементВласник { get; set; }
         
     
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());

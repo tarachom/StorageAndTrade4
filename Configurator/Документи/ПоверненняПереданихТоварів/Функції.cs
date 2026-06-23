@@ -66,10 +66,10 @@ static class ПоверненняПереданихТоварів_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ПоверненняПереданихТоварів_Objest Обєкт = new();
+        ПоверненняПереданихТоварів_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ПоверненняПереданихТоварів_Objest Новий = await Обєкт.Copy(true);
+            ПоверненняПереданихТоварів_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;
@@ -83,7 +83,7 @@ static class ПоверненняПереданихТоварів_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        ПоверненняПереданихТоварів_Objest? Обєкт = await new ПоверненняПереданихТоварів_Pointer(uniqueID).GetDocumentObject(true);
+        ПоверненняПереданихТоварів_Object? Обєкт = await new ПоверненняПереданихТоварів_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

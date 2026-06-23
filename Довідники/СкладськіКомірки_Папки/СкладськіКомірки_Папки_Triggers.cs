@@ -11,29 +11,29 @@ namespace GeneratedCode.Довідники;
 
 class СкладськіКомірки_Папки_Triggers
 {
-    public static async Task New(СкладськіКомірки_Папки_Objest ДовідникОбєкт)
+    public static async Task New(СкладськіКомірки_Папки_Object ДовідникОбєкт)
     {
         int number = await НумераціяДовідників.СкладськіКомірки_Папки();
         ДовідникОбєкт.Код = (await НумераціяДовідників.СкладськіКомірки_Папки(++number)).ToString("D6");
     }
 
-    public static Task Copying(СкладськіКомірки_Папки_Objest ДовідникОбєкт, СкладськіКомірки_Папки_Objest Основа)
+    public static Task Copying(СкладськіКомірки_Папки_Object ДовідникОбєкт, СкладськіКомірки_Папки_Object Основа)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(СкладськіКомірки_Папки_Objest ДовідникОбєкт)
+    public static Task BeforeSave(СкладськіКомірки_Папки_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(СкладськіКомірки_Папки_Objest ДовідникОбєкт)
+    public static Task AfterSave(СкладськіКомірки_Папки_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static async Task SetDeletionLabel(СкладськіКомірки_Папки_Objest ДовідникОбєкт, bool label)
+    public static async Task SetDeletionLabel(СкладськіКомірки_Папки_Object ДовідникОбєкт, bool label)
     {
         //Якщо встановлюється мітка на видалення
         if (label)
@@ -63,7 +63,7 @@ class СкладськіКомірки_Папки_Triggers
         }
     }
 
-    public static async Task BeforeDelete(СкладськіКомірки_Папки_Objest ДовідникОбєкт)
+    public static async Task BeforeDelete(СкладськіКомірки_Папки_Object ДовідникОбєкт)
     {
         //Елементи помічаються на видалення
         {
@@ -76,7 +76,7 @@ class СкладськіКомірки_Папки_Triggers
             while (select.MoveNext())
                 if (select.Current != null)
                 {
-                    СкладськіКомірки_Objest? Обєкт = await select.Current.GetDirectoryObject();
+                    СкладськіКомірки_Object? Обєкт = await select.Current.GetDirectoryObject();
                     if (Обєкт != null)
                     {
                         await Обєкт.SetDeletionLabel();
@@ -96,7 +96,7 @@ class СкладськіКомірки_Папки_Triggers
             while (select.MoveNext())
                 if (select.Current != null)
                 {
-                    СкладськіКомірки_Папки_Objest? Обєкт = await select.Current.GetDirectoryObject();
+                    СкладськіКомірки_Папки_Object? Обєкт = await select.Current.GetDirectoryObject();
                     if (Обєкт != null)
                         await Обєкт.Delete();
                 }

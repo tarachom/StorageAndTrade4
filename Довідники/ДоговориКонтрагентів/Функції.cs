@@ -78,10 +78,10 @@ static class ДоговориКонтрагентів_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ДоговориКонтрагентів_Objest Обєкт = new();
+        ДоговориКонтрагентів_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ДоговориКонтрагентів_Objest Новий = await Обєкт.Copy(true);
+            ДоговориКонтрагентів_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;

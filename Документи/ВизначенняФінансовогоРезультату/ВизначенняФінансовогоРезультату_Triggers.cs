@@ -13,7 +13,7 @@ namespace GeneratedCode.Документи;
 
 static class ВизначенняФінансовогоРезультату_Triggers
 {
-    public static async Task New(ВизначенняФінансовогоРезультату_Objest ДокументОбєкт)
+    public static async Task New(ВизначенняФінансовогоРезультату_Object ДокументОбєкт)
     {
         ДокументОбєкт.ДатаДок = DateTime.Now;
 
@@ -23,14 +23,14 @@ static class ВизначенняФінансовогоРезультату_Trig
         ДокументОбєкт.Автор = Program.Користувач;
     }
 
-    public static Task Copying(ВизначенняФінансовогоРезультату_Objest ДокументОбєкт, ВизначенняФінансовогоРезультату_Objest Основа)
+    public static Task Copying(ВизначенняФінансовогоРезультату_Object ДокументОбєкт, ВизначенняФінансовогоРезультату_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         ДокументОбєкт.ДокументБухгалтерськаОперація = new();
         return Task.CompletedTask;
     }
 
-    public static async Task BeforeSave(ВизначенняФінансовогоРезультату_Objest ДокументОбєкт)
+    public static async Task BeforeSave(ВизначенняФінансовогоРезультату_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{ВизначенняФінансовогоРезультату_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
 
@@ -49,17 +49,17 @@ static class ВизначенняФінансовогоРезультату_Trig
         }
     }
 
-    public static Task AfterSave(ВизначенняФінансовогоРезультату_Objest ДокументОбєкт)
+    public static Task AfterSave(ВизначенняФінансовогоРезультату_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(ВизначенняФінансовогоРезультату_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(ВизначенняФінансовогоРезультату_Object ДокументОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(ВизначенняФінансовогоРезультату_Objest ДокументОбєкт)
+    public static Task BeforeDelete(ВизначенняФінансовогоРезультату_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

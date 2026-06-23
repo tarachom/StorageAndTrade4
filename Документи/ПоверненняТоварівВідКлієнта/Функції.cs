@@ -66,10 +66,10 @@ static class ПоверненняТоварівВідКлієнта_Функці
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ПоверненняТоварівВідКлієнта_Objest Обєкт = new();
+        ПоверненняТоварівВідКлієнта_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ПоверненняТоварівВідКлієнта_Objest Новий = await Обєкт.Copy(true);
+            ПоверненняТоварівВідКлієнта_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
                 await Новий.Товари_TablePart.Save(false); // Таблична частина "Товари"
@@ -87,7 +87,7 @@ static class ПоверненняТоварівВідКлієнта_Функці
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        ПоверненняТоварівВідКлієнта_Objest? Обєкт = await new ПоверненняТоварівВідКлієнта_Pointer(uniqueID).GetDocumentObject(true);
+        ПоверненняТоварівВідКлієнта_Object? Обєкт = await new ПоверненняТоварівВідКлієнта_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

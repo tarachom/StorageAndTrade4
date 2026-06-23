@@ -72,10 +72,10 @@ static class Співробітники_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        Співробітники_Objest Обєкт = new();
+        Співробітники_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            Співробітники_Objest Новий = await Обєкт.Copy(true);
+            Співробітники_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;

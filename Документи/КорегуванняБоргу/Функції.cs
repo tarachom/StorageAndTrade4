@@ -69,10 +69,10 @@ static class КорегуванняБоргу_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        КорегуванняБоргу_Objest Обєкт = new();
+        КорегуванняБоргу_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            КорегуванняБоргу_Objest Новий = await Обєкт.Copy(true);
+            КорегуванняБоргу_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
                 await Новий.РозрахункиЗКонтрагентами_TablePart.Save(false); // Таблична частина "РозрахункиЗКонтрагентами"
@@ -90,7 +90,7 @@ static class КорегуванняБоргу_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        КорегуванняБоргу_Objest? Обєкт = await new КорегуванняБоргу_Pointer(uniqueID).GetDocumentObject(true);
+        КорегуванняБоргу_Object? Обєкт = await new КорегуванняБоргу_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

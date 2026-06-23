@@ -14,7 +14,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DirectoryFormElement>("Element_85hOfF7rSES5dgDILMwBLQ")]
 partial class БанківськіРахункиКонтрагентів_Елемент : DirectoryFormElement
 {
-    public БанківськіРахункиКонтрагентів_Objest Елемент { get; init; } = new();
+    public БанківськіРахункиКонтрагентів_Object Елемент { get; init; } = new();
 
     #region Fields
     Entry Код = Entry.New();

@@ -11,7 +11,7 @@ namespace GeneratedCode.Документи;
 
 class РозміщенняНоменклатуриПоКоміркам_SpendTheDocument
 {
-    public static async Task<bool> Spend(РозміщенняНоменклатуриПоКоміркам_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(РозміщенняНоменклатуриПоКоміркам_Object ДокументОбєкт)
     {
         try
         {
@@ -45,7 +45,7 @@ class РозміщенняНоменклатуриПоКоміркам_SpendTheD
         }
     }
 
-    public static async Task ClearSpend(РозміщенняНоменклатуриПоКоміркам_Objest ДокументОбєкт)
+    public static async Task ClearSpend(РозміщенняНоменклатуриПоКоміркам_Object ДокументОбєкт)
     {
         //Очистка
         await new РозміщенняНоменклатуриПоКоміркамНаСкладі_RecordsSet().Delete(ДокументОбєкт.UniqueID.UGuid);

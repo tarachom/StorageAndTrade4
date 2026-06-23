@@ -66,10 +66,10 @@ static class СписанняВитратМайбутніхПеріодів_Фу
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        СписанняВитратМайбутніхПеріодів_Objest Обєкт = new();
+        СписанняВитратМайбутніхПеріодів_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            СписанняВитратМайбутніхПеріодів_Objest Новий = await Обєкт.Copy(true);
+            СписанняВитратМайбутніхПеріодів_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;
@@ -83,7 +83,7 @@ static class СписанняВитратМайбутніхПеріодів_Фу
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        СписанняВитратМайбутніхПеріодів_Objest? Обєкт = await new СписанняВитратМайбутніхПеріодів_Pointer(uniqueID).GetDocumentObject(true);
+        СписанняВитратМайбутніхПеріодів_Object? Обєкт = await new СписанняВитратМайбутніхПеріодів_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

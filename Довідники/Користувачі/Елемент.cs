@@ -14,7 +14,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DirectoryFormElement>("Element_WT6EiQO5EE65QE4NYAmIew")]
 partial class Користувачі_Елемент : DirectoryFormElement
 {
-    public Користувачі_Objest Елемент { get; init; } = new();
+    public Користувачі_Object Елемент { get; init; } = new();
 
     #region Fields
     Entry Код = Entry.New();

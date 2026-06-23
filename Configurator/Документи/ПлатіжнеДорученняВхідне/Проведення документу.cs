@@ -17,7 +17,7 @@ namespace GeneratedCode.Документи;
 
 static class ПлатіжнеДорученняВхідне_SpendTheDocument
 {
-    public static async Task<bool> Spend(ПлатіжнеДорученняВхідне_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(ПлатіжнеДорученняВхідне_Object ДокументОбєкт)
     {
         try
         {
@@ -33,7 +33,7 @@ static class ПлатіжнеДорученняВхідне_SpendTheDocument
         }
     }
 
-    public static Task Clear(ПлатіжнеДорученняВхідне_Objest ДокументОбєкт)
+    public static Task Clear(ПлатіжнеДорученняВхідне_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

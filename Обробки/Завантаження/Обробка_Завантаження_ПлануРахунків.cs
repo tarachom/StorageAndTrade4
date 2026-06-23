@@ -156,7 +156,7 @@ partial class Обробка_Завантаження_ПлануРахунків
 
                 IRow row = sheet.GetRow(i);
 
-                ПланРахунків_Objest Обєкт = new();
+                ПланРахунків_Object Обєкт = new();
                 await Обєкт.New();
 
                 //Клас

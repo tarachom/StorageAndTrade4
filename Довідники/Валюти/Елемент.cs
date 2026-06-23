@@ -14,7 +14,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DirectoryFormElement>("Element_3FY3TJMbG0y9WEVZR5UM0Q")]
 partial class Валюти_Елемент : DirectoryFormElement
 {
-    public Валюти_Objest Елемент { get; init; } = new();
+    public Валюти_Object Елемент { get; init; } = new();
 
     #region Fields
     Entry Код = Entry.New();

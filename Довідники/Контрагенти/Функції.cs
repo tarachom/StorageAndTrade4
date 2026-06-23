@@ -78,10 +78,10 @@ static class Контрагенти_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        Контрагенти_Objest Обєкт = new();
+        Контрагенти_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            Контрагенти_Objest Новий = await Обєкт.Copy(true);
+            Контрагенти_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
                 await Новий.Контакти_TablePart.Save(false); // Таблична частина "Контакти"

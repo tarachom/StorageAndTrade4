@@ -66,10 +66,10 @@ static class Модернізація_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        Модернізація_Objest Обєкт = new();
+        Модернізація_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            Модернізація_Objest Новий = await Обєкт.Copy(true);
+            Модернізація_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;
@@ -83,7 +83,7 @@ static class Модернізація_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        Модернізація_Objest? Обєкт = await new Модернізація_Pointer(uniqueID).GetDocumentObject(true);
+        Модернізація_Object? Обєкт = await new Модернізація_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

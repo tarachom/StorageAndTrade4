@@ -12,29 +12,29 @@ namespace GeneratedCode.Довідники;
 
 class Контрагенти_Triggers
 {
-    public static async Task New(Контрагенти_Objest ДовідникОбєкт)
+    public static async Task New(Контрагенти_Object ДовідникОбєкт)
     {
         int number = await НумераціяДовідників.Контрагенти();
         ДовідникОбєкт.Код = (await НумераціяДовідників.Контрагенти(++number)).ToString("D6");
     }
 
-    public static Task Copying(Контрагенти_Objest ДовідникОбєкт, Контрагенти_Objest Основа)
+    public static Task Copying(Контрагенти_Object ДовідникОбєкт, Контрагенти_Object Основа)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(Контрагенти_Objest ДовідникОбєкт)
+    public static Task BeforeSave(Контрагенти_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static async Task AfterSave(Контрагенти_Objest ДовідникОбєкт)
+    public static async Task AfterSave(Контрагенти_Object ДовідникОбєкт)
     {
         await ФункціїДляДовідників.СтворитиДоговориКонтрагента(ДовідникОбєкт.GetDirectoryPointer());
     }
 
-    public static async Task SetDeletionLabel(Контрагенти_Objest ДовідникОбєкт, bool label)
+    public static async Task SetDeletionLabel(Контрагенти_Object ДовідникОбєкт, bool label)
     {
         // Помітка на виделення всіх договорів
         if (label)
@@ -51,7 +51,7 @@ class Контрагенти_Triggers
         }
     }
 
-    public static Task BeforeDelete(Контрагенти_Objest ДовідникОбєкт)
+    public static Task BeforeDelete(Контрагенти_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }

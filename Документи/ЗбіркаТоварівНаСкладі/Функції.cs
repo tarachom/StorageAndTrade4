@@ -69,10 +69,10 @@ static class ЗбіркаТоварівНаСкладі_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ЗбіркаТоварівНаСкладі_Objest Обєкт = new();
+        ЗбіркаТоварівНаСкладі_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ЗбіркаТоварівНаСкладі_Objest Новий = await Обєкт.Copy(true);
+            ЗбіркаТоварівНаСкладі_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
                 await Новий.Товари_TablePart.Save(false); // Таблична частина "Товари"
@@ -88,7 +88,7 @@ static class ЗбіркаТоварівНаСкладі_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        ЗбіркаТоварівНаСкладі_Objest? Обєкт = await new ЗбіркаТоварівНаСкладі_Pointer(uniqueID).GetDocumentObject(true);
+        ЗбіркаТоварівНаСкладі_Object? Обєкт = await new ЗбіркаТоварівНаСкладі_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

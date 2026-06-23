@@ -72,10 +72,10 @@ static class ВидиНоменклатури_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ВидиНоменклатури_Objest Обєкт = new();
+        ВидиНоменклатури_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ВидиНоменклатури_Objest Новий = await Обєкт.Copy(true);
+            ВидиНоменклатури_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;

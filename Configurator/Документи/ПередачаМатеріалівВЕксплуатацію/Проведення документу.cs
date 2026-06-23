@@ -17,7 +17,7 @@ namespace GeneratedCode.Документи;
 
 static class ПередачаМатеріалівВЕксплуатацію_SpendTheDocument
 {
-    public static async Task<bool> Spend(ПередачаМатеріалівВЕксплуатацію_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(ПередачаМатеріалівВЕксплуатацію_Object ДокументОбєкт)
     {
         try
         {
@@ -33,7 +33,7 @@ static class ПередачаМатеріалівВЕксплуатацію_Spen
         }
     }
 
-    public static Task Clear(ПередачаМатеріалівВЕксплуатацію_Objest ДокументОбєкт)
+    public static Task Clear(ПередачаМатеріалівВЕксплуатацію_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

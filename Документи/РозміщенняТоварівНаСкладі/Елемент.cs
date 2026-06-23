@@ -8,11 +8,7 @@ using Gtk;
 using InterfaceGtk4;
 using AccountingSoftware;
 
-using GeneratedCode;
-using GeneratedCode.Константи;
-using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
-using GeneratedCode.Перелічення;
 using Функції = StorageAndTrade.РозміщенняТоварівНаСкладі_Функції;
 
 namespace StorageAndTrade;
@@ -20,26 +16,26 @@ namespace StorageAndTrade;
 [GObject.Subclass<DocumentFormElement>("Element_NcJajvePUqI7ovZESFrg")]
 partial class РозміщенняТоварівНаСкладі_Елемент : DocumentFormElement
 {
-    public РозміщенняТоварівНаСкладі_Objest Елемент { get; init; } = new();
+    public РозміщенняТоварівНаСкладі_Object Елемент { get; init; } = new();
 
     #region Fields
     DateTimeControl ДатаДок = DateTimeControl.New();
-            Entry НомерДок = Entry.New();
-                    Entry Коментар = Entry.New();
-                    CompositePointerControl Основа = CompositePointerControl.New();
-            Склади_PointerControl Склад = Склади_PointerControl.New();
-            Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
-            Організації_PointerControl Організація = Організації_PointerControl.New();
-            СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
-            ПоступленняТоварівТаПослуг_PointerControl ДокументПоступлення = ПоступленняТоварівТаПослуг_PointerControl.New();
-            
+    Entry НомерДок = Entry.New();
+    Entry Коментар = Entry.New();
+    CompositePointerControl Основа = CompositePointerControl.New();
+    Склади_PointerControl Склад = Склади_PointerControl.New();
+    Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
+    Організації_PointerControl Організація = Організації_PointerControl.New();
+    СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
+    ПоступленняТоварівТаПослуг_PointerControl ДокументПоступлення = ПоступленняТоварівТаПослуг_PointerControl.New();
+
     #endregion
 
     #region TabularParts
-    
-        // Таблична частина "Товари" 
-        РозміщенняТоварівНаСкладі_ТабличнаЧастина_Товари Товари = РозміщенняТоварівНаСкладі_ТабличнаЧастина_Товари.New();
-    
+
+    // Таблична частина "Товари" 
+    РозміщенняТоварівНаСкладі_ТабличнаЧастина_Товари Товари = РозміщенняТоварівНаСкладі_ТабличнаЧастина_Товари.New();
+
     #endregion
 
     partial void Initialize()
@@ -47,47 +43,41 @@ partial class РозміщенняТоварівНаСкладі_Елемент 
         Element = Елемент;
 
         CreateDocName(РозміщенняТоварівНаСкладі_Const.FULLNAME, НомерДок, ДатаДок);
-        
-        CreateField(HBoxComment, "Коментар:", Коментар);
-        
-            // Таблична частина "Товари"
-            Товари.WidthRequest = 500;
-            Товари.HeightRequest = 300;
-            NotebookTablePart.InsertPage(Товари, Label.New("Товари"), 0);
-            
-            NotebookTablePart.SetCurrentPage(0);
-        
-            //ДатаДок:
-            
-            //НомерДок:
-            НомерДок.WidthRequest = 300;
-                        
-            //Коментар:
-            Коментар.WidthRequest = 300;
-                        
-            //Основа:
-            Основа.BoundConfType = "Документи.РозміщенняТоварівНаСкладі.Основа";
-                
-            //Склад:
-            Склад.Caption = "Склад";
-                    Склад.WidthPresentation = 300;
-                
-            //Автор:
-            Автор.Caption = "Автор";
-                    Автор.WidthPresentation = 300;
-                
-            //Організація:
-            Організація.Caption = "Організація";
-                    Організація.WidthPresentation = 300;
-                
-            //Підрозділ:
-            Підрозділ.Caption = "Підрозділ";
-                    Підрозділ.WidthPresentation = 300;
-                
-            //ДокументПоступлення:
-            ДокументПоступлення.Caption = "Документ поступлення";
-                    ДокументПоступлення.WidthPresentation = 300;
-                
+        CreateField(Interface.CommentBox, "Коментар:", Коментар);
+
+        // Таблична частина "Товари"
+        Товари.HeightRequest = 300;
+        Interface.Notebook.InsertPage(Товари, Label.New("Товари"), 0);
+        Interface.Notebook.SetCurrentPage(0);
+
+        //НомерДок:
+        НомерДок.WidthRequest = 300;
+
+        //Коментар:
+        Коментар.WidthRequest = 300;
+
+        //Основа:
+        Основа.BoundConfType = "Документи.РозміщенняТоварівНаСкладі.Основа";
+
+        //Склад:
+        Склад.Caption = "Склад";
+        Склад.WidthPresentation = 300;
+
+        //Автор:
+        Автор.Caption = "Автор";
+        Автор.WidthPresentation = 300;
+
+        //Організація:
+        Організація.Caption = "Організація";
+        Організація.WidthPresentation = 300;
+
+        //Підрозділ:
+        Підрозділ.Caption = "Підрозділ";
+        Підрозділ.WidthPresentation = 300;
+
+        //ДокументПоступлення:
+        ДокументПоступлення.Caption = "Документ поступлення";
+        ДокументПоступлення.WidthPresentation = 300;
     }
 
     public static РозміщенняТоварівНаСкладі_Елемент New()
@@ -98,97 +88,113 @@ partial class РозміщенняТоварівНаСкладі_Елемент 
         return element;
     }
 
-    protected override void CreateTopStart(Box vBox)
+    #region Interface
+
+    FunctionForInterfaces.DocumentElement Interface;
+
+    protected override void BuildInterface()
     {
-        
+        Interface = FunctionForInterfaces.ForDocument();
+
+        Append(Interface.MainBox);
+
+        CreateTopStart(Interface.TopStartBox);
+        CreateTopEnd(Interface.TopEndBox);
+        CreateBottomStart(Interface.BottomStartBox);
+        CreateBottomEnd(Interface.BottomEndBox);
     }
 
-    protected override void CreateTopEnd(Box vBox)
+    void CreateTopStart(Box vBox)
     {
-        
+
     }
 
-    protected override void CreateBottomStart(Box vBox)
+    void CreateTopEnd(Box vBox)
     {
-        
-            // Основа
-            CreateField(vBox, null, Основа);
-                
-            // Склад
-            CreateField(vBox, null, Склад);
-                
-            // Автор
-            CreateField(vBox, null, Автор);
-                
-            // Організація
-            CreateField(vBox, null, Організація);
-                
-            // Підрозділ
-            CreateField(vBox, null, Підрозділ);
-                
-            // ДокументПоступлення
-            CreateField(vBox, null, ДокументПоступлення);
-                
+
     }
 
-    protected override void CreateBottomEnd(Box vBox)
+    void CreateBottomStart(Box vBox)
     {
-        
+        // Основа
+        CreateField(vBox, null, Основа);
+
+        // Склад
+        CreateField(vBox, null, Склад);
+
+        // Автор
+        CreateField(vBox, null, Автор);
+
+        // Організація
+        CreateField(vBox, null, Організація);
+
+        // Підрозділ
+        CreateField(vBox, null, Підрозділ);
+
+        // ДокументПоступлення
+        CreateField(vBox, null, ДокументПоступлення);
     }
+
+    void CreateBottomEnd(Box vBox)
+    {
+
+    }
+
+    #endregion
 
     #region Присвоєння / зчитування значень
 
     public override async Task AssignValue()
     {
         ДатаДок.Value = Елемент.ДатаДок;
-                НомерДок.SetText(Елемент.НомерДок);
-                        Коментар.SetText(Елемент.Коментар);
-                        Основа.Pointer = Елемент.Основа;
-                Склад.Pointer = Елемент.Склад;
-                Автор.Pointer = Елемент.Автор;
-                Організація.Pointer = Елемент.Організація;
-                Підрозділ.Pointer = Елемент.Підрозділ;
-                ДокументПоступлення.Pointer = Елемент.ДокументПоступлення;
-                
-            // Таблична частина "Товари" 
-            Товари.ЕлементВласник = Елемент; 
-            await Товари.LoadRecords();
-        
+        НомерДок.SetText(Елемент.НомерДок);
+        Коментар.SetText(Елемент.Коментар);
+        Основа.Pointer = Елемент.Основа;
+        Склад.Pointer = Елемент.Склад;
+        Автор.Pointer = Елемент.Автор;
+        Організація.Pointer = Елемент.Організація;
+        Підрозділ.Pointer = Елемент.Підрозділ;
+        ДокументПоступлення.Pointer = Елемент.ДокументПоступлення;
+
+        // Таблична частина "Товари" 
+        Товари.ЕлементВласник = Елемент;
+        await Товари.LoadRecords();
+
     }
 
     protected override void GetValue()
     {
         Елемент.ДатаДок = ДатаДок.Value;
-                Елемент.НомерДок = НомерДок.GetText();
-                        Елемент.Коментар = Коментар.GetText();
-                        Елемент.Основа = Основа.Pointer;
-                Елемент.Склад = Склад.Pointer;
-                Елемент.Автор = Автор.Pointer;
-                Елемент.Організація = Організація.Pointer;
-                Елемент.Підрозділ = Підрозділ.Pointer;
-                Елемент.ДокументПоступлення = ДокументПоступлення.Pointer;
-                
+        Елемент.НомерДок = НомерДок.GetText();
+        Елемент.Коментар = Коментар.GetText();
+        Елемент.Основа = Основа.Pointer;
+        Елемент.Склад = Склад.Pointer;
+        Елемент.Автор = Автор.Pointer;
+        Елемент.Організація = Організація.Pointer;
+        Елемент.Підрозділ = Підрозділ.Pointer;
+        Елемент.ДокументПоступлення = ДокументПоступлення.Pointer;
+
     }
 
-    
+
     /*string КлючовіСловаДляПошуку()
     {
         return $"\n {Склад.Pointer.Назва} {Автор.Pointer.Назва} {Організація.Pointer.Назва} {Підрозділ.Pointer.Назва} {ДокументПоступлення.Pointer.Назва}"
          + Товари.КлючовіСловаДляПошуку();
     }*/
-    
+
 
     #endregion
-    
+
     protected override async Task<bool> Save()
     {
         bool isSaved = false;
         try
         {
-            if(await Елемент.Save())
+            if (await Елемент.Save())
             {
                 await Товари.SaveRecords(); // Таблична частина "Товари"
-                
+
                 isSaved = true;
             }
         }
@@ -224,4 +230,3 @@ partial class РозміщенняТоварівНаСкладі_Елемент 
         await Функції.OpenPageList(uniqueID);
     }
 }
-    

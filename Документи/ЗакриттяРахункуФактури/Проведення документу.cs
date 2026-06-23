@@ -13,7 +13,7 @@ namespace GeneratedCode.Документи;
 
 class ЗакриттяРахункуФактури_SpendTheDocument
 {
-    private static async Task<SelectRequest_Record> ОтриматиВільніЗалишки(ЗакриттяРахункуФактури_Objest ДокументОбєкт,
+    private static async Task<SelectRequest_Record> ОтриматиВільніЗалишки(ЗакриттяРахункуФактури_Object ДокументОбєкт,
         ЗакриттяРахункуФактури_Товари_TablePart.Record ТовариРядок)
     {
         string query = $@"
@@ -40,13 +40,13 @@ WHERE
         });
     }
 
-    public static async Task<bool> Spend(ЗакриттяРахункуФактури_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(ЗакриттяРахункуФактури_Object ДокументОбєкт)
     {
         try
         {
             #region Підготовка
 
-            Dictionary<int, Номенклатура_Objest> СписокНоменклатури = [];
+            Dictionary<int, Номенклатура_Object> СписокНоменклатури = [];
             List<string> СписокІнформаційнихПовідомлень = [];
 
             if (ДокументОбєкт.РахунокФактура.IsEmpty())
@@ -124,7 +124,7 @@ WHERE
         }
     }
 
-    public static Task ClearSpend(ЗакриттяРахункуФактури_Objest ДокументОбєкт)
+    public static Task ClearSpend(ЗакриттяРахункуФактури_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

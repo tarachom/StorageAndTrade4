@@ -11,13 +11,13 @@ namespace GeneratedCode.Документи;
 
 class ПерерахунокТоварів_SpendTheDocument
 {
-    public static async Task<bool> Spend(ПерерахунокТоварів_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(ПерерахунокТоварів_Object ДокументОбєкт)
     {
         try
         {
             #region Підготовка
 
-            Dictionary<int, Номенклатура_Objest> СписокНоменклатури = new Dictionary<int, Номенклатура_Objest>(); //?
+            Dictionary<int, Номенклатура_Object> СписокНоменклатури = new Dictionary<int, Номенклатура_Object>(); //?
             Dictionary<int, decimal> ЗалишокНоменклатури = [];
             Dictionary<int, decimal> РезервНоменклатури = [];
 
@@ -43,7 +43,7 @@ class ПерерахунокТоварів_SpendTheDocument
         }
     }
 
-    public static Task ClearSpend(ПерерахунокТоварів_Objest ДокументОбєкт)
+    public static Task ClearSpend(ПерерахунокТоварів_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

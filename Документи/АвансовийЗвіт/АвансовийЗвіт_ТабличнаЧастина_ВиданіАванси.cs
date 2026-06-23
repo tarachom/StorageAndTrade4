@@ -142,7 +142,7 @@ partial class АвансовийЗвіт_ТабличнаЧастина_Вида
 
     #endregion
 
-    public АвансовийЗвіт_Objest? ЕлементВласник { get; set; }
+    public АвансовийЗвіт_Object? ЕлементВласник { get; set; }
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());
     TotalControl Підсумок = TotalControl.New();
 

@@ -66,10 +66,10 @@ static class СписанняНематеріальнихАктивів_Функ
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        СписанняНематеріальнихАктивів_Objest Обєкт = new();
+        СписанняНематеріальнихАктивів_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            СписанняНематеріальнихАктивів_Objest Новий = await Обєкт.Copy(true);
+            СписанняНематеріальнихАктивів_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;
@@ -83,7 +83,7 @@ static class СписанняНематеріальнихАктивів_Функ
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        СписанняНематеріальнихАктивів_Objest? Обєкт = await new СписанняНематеріальнихАктивів_Pointer(uniqueID).GetDocumentObject(true);
+        СписанняНематеріальнихАктивів_Object? Обєкт = await new СписанняНематеріальнихАктивів_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

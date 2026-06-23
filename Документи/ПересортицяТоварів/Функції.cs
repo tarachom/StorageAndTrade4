@@ -63,10 +63,10 @@ static class ПересортицяТоварів_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ПересортицяТоварів_Objest Обєкт = new();
+        ПересортицяТоварів_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ПересортицяТоварів_Objest Новий = await Обєкт.Copy(true);
+            ПересортицяТоварів_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
                 await Новий.Товари_TablePart.Save(false); // Таблична частина "Товари"
@@ -82,7 +82,7 @@ static class ПересортицяТоварів_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        ПересортицяТоварів_Objest? Обєкт = await new ПересортицяТоварів_Pointer(uniqueID).GetDocumentObject(true);
+        ПересортицяТоварів_Object? Обєкт = await new ПересортицяТоварів_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

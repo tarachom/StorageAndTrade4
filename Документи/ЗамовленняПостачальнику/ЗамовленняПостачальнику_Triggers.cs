@@ -11,7 +11,7 @@ namespace GeneratedCode.Документи;
 
 class ЗамовленняПостачальнику_Triggers
 {
-    public static async Task New(ЗамовленняПостачальнику_Objest ДокументОбєкт)
+    public static async Task New(ЗамовленняПостачальнику_Object ДокументОбєкт)
     {
         int number = await НумераціяДокументів.ЗамовленняПостачальнику();
         ДокументОбєкт.НомерДок = (await НумераціяДокументів.ЗамовленняПостачальнику(++number)).ToString("D8");
@@ -21,29 +21,29 @@ class ЗамовленняПостачальнику_Triggers
         ДокументОбєкт.Менеджер = Program.Користувач;
     }
 
-    public static Task Copying(ЗамовленняПостачальнику_Objest ДокументОбєкт, ЗамовленняПостачальнику_Objest Основа)
+    public static Task Copying(ЗамовленняПостачальнику_Object ДокументОбєкт, ЗамовленняПостачальнику_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(ЗамовленняПостачальнику_Objest ДокументОбєкт)
+    public static Task BeforeSave(ЗамовленняПостачальнику_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{ЗамовленняПостачальнику_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(ЗамовленняПостачальнику_Objest ДокументОбєкт)
+    public static Task AfterSave(ЗамовленняПостачальнику_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(ЗамовленняПостачальнику_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(ЗамовленняПостачальнику_Object ДокументОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(ЗамовленняПостачальнику_Objest ДокументОбєкт)
+    public static Task BeforeDelete(ЗамовленняПостачальнику_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

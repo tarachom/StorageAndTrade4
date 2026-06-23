@@ -81,10 +81,10 @@ static class ХарактеристикиНоменклатури_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ХарактеристикиНоменклатури_Objest Обєкт = new();
+        ХарактеристикиНоменклатури_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ХарактеристикиНоменклатури_Objest Новий = await Обєкт.Copy(true);
+            ХарактеристикиНоменклатури_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;

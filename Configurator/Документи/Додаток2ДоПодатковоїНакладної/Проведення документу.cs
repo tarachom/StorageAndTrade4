@@ -17,7 +17,7 @@ namespace GeneratedCode.Документи;
 
 static class Додаток2ДоПодатковоїНакладної_SpendTheDocument
 {
-    public static async Task<bool> Spend(Додаток2ДоПодатковоїНакладної_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(Додаток2ДоПодатковоїНакладної_Object ДокументОбєкт)
     {
         try
         {
@@ -33,7 +33,7 @@ static class Додаток2ДоПодатковоїНакладної_SpendTheD
         }
     }
 
-    public static Task Clear(Додаток2ДоПодатковоїНакладної_Objest ДокументОбєкт)
+    public static Task Clear(Додаток2ДоПодатковоїНакладної_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

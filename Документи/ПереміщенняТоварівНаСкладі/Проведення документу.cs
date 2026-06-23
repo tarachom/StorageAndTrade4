@@ -12,13 +12,13 @@ namespace GeneratedCode.Документи;
 
 class ПереміщенняТоварівНаСкладі_SpendTheDocument
 {
-    public static async Task<bool> Spend(ПереміщенняТоварівНаСкладі_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(ПереміщенняТоварівНаСкладі_Object ДокументОбєкт)
     {
         try
         {
             #region Підготовка
 
-            Dictionary<int, Номенклатура_Objest> СписокНоменклатури = [];
+            Dictionary<int, Номенклатура_Object> СписокНоменклатури = [];
             Dictionary<int, decimal> ЗалишокНоменклатури = [];
 
             foreach (ПереміщенняТоварівНаСкладі_Товари_TablePart.Record ТовариРядок in ДокументОбєкт.Товари_TablePart.Records)
@@ -135,7 +135,7 @@ class ПереміщенняТоварівНаСкладі_SpendTheDocument
         }
     }
 
-    public static Task ClearSpend(ПереміщенняТоварівНаСкладі_Objest ДокументОбєкт)
+    public static Task ClearSpend(ПереміщенняТоварівНаСкладі_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

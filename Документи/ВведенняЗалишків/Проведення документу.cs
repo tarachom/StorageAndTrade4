@@ -11,13 +11,13 @@ namespace GeneratedCode.Документи;
 
 class ВведенняЗалишків_SpendTheDocument
 {
-    public static async Task<bool> Spend(ВведенняЗалишків_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(ВведенняЗалишків_Object ДокументОбєкт)
     {
         try
         {
             #region Підготовка
 
-            Dictionary<int, Номенклатура_Objest> СписокНоменклатури = [];
+            Dictionary<int, Номенклатура_Object> СписокНоменклатури = [];
 
             foreach (ВведенняЗалишків_Товари_TablePart.Record ТовариРядок in ДокументОбєкт.Товари_TablePart.Records)
             {
@@ -212,7 +212,7 @@ class ВведенняЗалишків_SpendTheDocument
         }
     }
 
-    public static async Task Clear(ВведенняЗалишків_Objest ДокументОбєкт)
+    public static async Task Clear(ВведенняЗалишків_Object ДокументОбєкт)
     {
         if (!ДокументОбєкт.ДокументБухгалтерськаОперація.IsEmpty())
             await ДокументОбєкт.ДокументБухгалтерськаОперація.ClearSpendTheDocument();

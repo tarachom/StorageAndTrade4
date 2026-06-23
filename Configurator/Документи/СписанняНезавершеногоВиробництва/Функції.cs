@@ -66,10 +66,10 @@ static class СписанняНезавершеногоВиробництва_Ф
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        СписанняНезавершеногоВиробництва_Objest Обєкт = new();
+        СписанняНезавершеногоВиробництва_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            СписанняНезавершеногоВиробництва_Objest Новий = await Обєкт.Copy(true);
+            СписанняНезавершеногоВиробництва_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;
@@ -83,7 +83,7 @@ static class СписанняНезавершеногоВиробництва_Ф
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        СписанняНезавершеногоВиробництва_Objest? Обєкт = await new СписанняНезавершеногоВиробництва_Pointer(uniqueID).GetDocumentObject(true);
+        СписанняНезавершеногоВиробництва_Object? Обєкт = await new СписанняНезавершеногоВиробництва_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

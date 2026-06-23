@@ -72,10 +72,10 @@ static class НоменклатураВнутрішня_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        НоменклатураВнутрішня_Objest Обєкт = new();
+        НоменклатураВнутрішня_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            НоменклатураВнутрішня_Objest Новий = await Обєкт.Copy(true);
+            НоменклатураВнутрішня_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;

@@ -17,7 +17,7 @@ namespace GeneratedCode.Документи;
 
 static class ВизначенняФінансовогоРезультату_SpendTheDocument
 {
-    public static async Task<bool> Spend(ВизначенняФінансовогоРезультату_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(ВизначенняФінансовогоРезультату_Object ДокументОбєкт)
     {
         try
         {
@@ -46,7 +46,7 @@ static class ВизначенняФінансовогоРезультату_Spen
         }
     }
 
-    public static async Task Clear(ВизначенняФінансовогоРезультату_Objest ДокументОбєкт)
+    public static async Task Clear(ВизначенняФінансовогоРезультату_Object ДокументОбєкт)
     {
         if (!ДокументОбєкт.ДокументБухгалтерськаОперація.IsEmpty())
             await ДокументОбєкт.ДокументБухгалтерськаОперація.ClearSpendTheDocument();

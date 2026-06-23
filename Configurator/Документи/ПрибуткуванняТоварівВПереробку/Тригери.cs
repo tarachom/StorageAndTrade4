@@ -12,7 +12,7 @@ namespace GeneratedCode.Документи;
 
 static class ПрибуткуванняТоварівВПереробку_Triggers
 {
-    public static async Task New(ПрибуткуванняТоварівВПереробку_Objest ДокументОбєкт)
+    public static async Task New(ПрибуткуванняТоварівВПереробку_Object ДокументОбєкт)
     {
         ДокументОбєкт.ДатаДок = DateTime.Now;
         
@@ -21,29 +21,29 @@ static class ПрибуткуванняТоварівВПереробку_Trigge
                     
     }
 
-    public static Task Copying(ПрибуткуванняТоварівВПереробку_Objest ДокументОбєкт, ПрибуткуванняТоварівВПереробку_Objest Основа)
+    public static Task Copying(ПрибуткуванняТоварівВПереробку_Object ДокументОбєкт, ПрибуткуванняТоварівВПереробку_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(ПрибуткуванняТоварівВПереробку_Objest ДокументОбєкт)
+    public static Task BeforeSave(ПрибуткуванняТоварівВПереробку_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{ПрибуткуванняТоварівВПереробку_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(ПрибуткуванняТоварівВПереробку_Objest ДокументОбєкт)
+    public static Task AfterSave(ПрибуткуванняТоварівВПереробку_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(ПрибуткуванняТоварівВПереробку_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(ПрибуткуванняТоварівВПереробку_Object ДокументОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(ПрибуткуванняТоварівВПереробку_Objest ДокументОбєкт)
+    public static Task BeforeDelete(ПрибуткуванняТоварівВПереробку_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

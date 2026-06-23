@@ -66,10 +66,10 @@ static class ПрийняттяДоОбліку_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ПрийняттяДоОбліку_Objest Обєкт = new();
+        ПрийняттяДоОбліку_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ПрийняттяДоОбліку_Objest Новий = await Обєкт.Copy(true);
+            ПрийняттяДоОбліку_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;
@@ -83,7 +83,7 @@ static class ПрийняттяДоОбліку_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        ПрийняттяДоОбліку_Objest? Обєкт = await new ПрийняттяДоОбліку_Pointer(uniqueID).GetDocumentObject(true);
+        ПрийняттяДоОбліку_Object? Обєкт = await new ПрийняттяДоОбліку_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

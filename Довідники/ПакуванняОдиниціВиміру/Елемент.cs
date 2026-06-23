@@ -14,7 +14,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DirectoryFormElement>("Element_SarB1K28a0uBgQ2lw3yVaQ")]
 partial class ПакуванняОдиниціВиміру_Елемент : DirectoryFormElement
 {
-    public ПакуванняОдиниціВиміру_Objest Елемент { get; init; } = new();
+    public ПакуванняОдиниціВиміру_Object Елемент { get; init; } = new();
 
     #region Fields
     Entry Код = Entry.New();

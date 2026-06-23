@@ -63,10 +63,10 @@ static class НадлишкиТоварів_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        НадлишкиТоварів_Objest Обєкт = new();
+        НадлишкиТоварів_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            НадлишкиТоварів_Objest Новий = await Обєкт.Copy(true);
+            НадлишкиТоварів_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
                 await Новий.Товари_TablePart.Save(false); // Таблична частина "Товари"
@@ -82,7 +82,7 @@ static class НадлишкиТоварів_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        НадлишкиТоварів_Objest? Обєкт = await new НадлишкиТоварів_Pointer(uniqueID).GetDocumentObject(true);
+        НадлишкиТоварів_Object? Обєкт = await new НадлишкиТоварів_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

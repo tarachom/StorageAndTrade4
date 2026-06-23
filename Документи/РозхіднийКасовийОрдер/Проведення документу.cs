@@ -11,7 +11,7 @@ namespace GeneratedCode.Документи;
 
 class РозхіднийКасовийОрдер_SpendTheDocument
 {
-    public static async Task<bool> Spend(РозхіднийКасовийОрдер_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(РозхіднийКасовийОрдер_Object ДокументОбєкт)
     {
         try
         {
@@ -130,7 +130,7 @@ class РозхіднийКасовийОрдер_SpendTheDocument
         }
     }
 
-    public static async Task Clear(РозхіднийКасовийОрдер_Objest ДокументОбєкт)
+    public static async Task Clear(РозхіднийКасовийОрдер_Object ДокументОбєкт)
     {
         if (!ДокументОбєкт.ДокументБухгалтерськаОперація.IsEmpty())
             await ДокументОбєкт.ДокументБухгалтерськаОперація.ClearSpendTheDocument();

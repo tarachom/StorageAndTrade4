@@ -17,7 +17,7 @@ namespace GeneratedCode.Документи;
 
 static class Наряд_SpendTheDocument
 {
-    public static async Task<bool> Spend(Наряд_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(Наряд_Object ДокументОбєкт)
     {
         try
         {
@@ -33,7 +33,7 @@ static class Наряд_SpendTheDocument
         }
     }
 
-    public static Task Clear(Наряд_Objest ДокументОбєкт)
+    public static Task Clear(Наряд_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

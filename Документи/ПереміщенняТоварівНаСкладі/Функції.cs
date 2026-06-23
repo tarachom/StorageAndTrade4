@@ -69,10 +69,10 @@ static class ПереміщенняТоварівНаСкладі_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ПереміщенняТоварівНаСкладі_Objest Обєкт = new();
+        ПереміщенняТоварівНаСкладі_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ПереміщенняТоварівНаСкладі_Objest Новий = await Обєкт.Copy(true);
+            ПереміщенняТоварівНаСкладі_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
                 await Новий.Товари_TablePart.Save(false); // Таблична частина "Товари"
@@ -88,7 +88,7 @@ static class ПереміщенняТоварівНаСкладі_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        ПереміщенняТоварівНаСкладі_Objest? Обєкт = await new ПереміщенняТоварівНаСкладі_Pointer(uniqueID).GetDocumentObject(true);
+        ПереміщенняТоварівНаСкладі_Object? Обєкт = await new ПереміщенняТоварівНаСкладі_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

@@ -11,7 +11,7 @@ namespace GeneratedCode.Документи;
 
 static class БухгалтерськаОперація_SpendTheDocument
 {
-    public static async Task<bool> Spend(БухгалтерськаОперація_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(БухгалтерськаОперація_Object ДокументОбєкт)
     {
         try
         {
@@ -72,7 +72,7 @@ static class БухгалтерськаОперація_SpendTheDocument
         }
     }
 
-    public static Task Clear(БухгалтерськаОперація_Objest ДокументОбєкт)
+    public static Task Clear(БухгалтерськаОперація_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

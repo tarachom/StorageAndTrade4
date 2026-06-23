@@ -20,7 +20,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DocumentFormElement>("Element_4m6eATgOVXKomUBqKFWYg")]
 partial class ПлатіжнеДорученняВихідне_Елемент : DocumentFormElement
 {
-    public ПлатіжнеДорученняВихідне_Objest Елемент { get; init; } = new();
+    public ПлатіжнеДорученняВихідне_Object Елемент { get; init; } = new();
 
     #region Fields
     Entry НомерДок = Entry.New();
@@ -63,17 +63,17 @@ partial class ПлатіжнеДорученняВихідне_Елемент : 
         return element;
     }
 
-    protected override void CreateTopStart(Box vBox)
+    void CreateTopStart(Box vBox)
     {
         
     }
 
-    protected override void CreateTopEnd(Box vBox)
+    void CreateTopEnd(Box vBox)
     {
         
     }
 
-    protected override void CreateBottomStart(Box vBox)
+    void CreateBottomStart(Box vBox)
     {
         
             // Основа
@@ -81,7 +81,7 @@ partial class ПлатіжнеДорученняВихідне_Елемент : 
                 
     }
 
-    protected override void CreateBottomEnd(Box vBox)
+    void CreateBottomEnd(Box vBox)
     {
         
     }

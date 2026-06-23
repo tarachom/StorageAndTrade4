@@ -11,12 +11,12 @@ namespace GeneratedCode.Документи;
 
 static class РозхіднийКасовийОрдер_Проводки_Triggers
 {
-    public static Task BeforeSave(РозхіднийКасовийОрдер_Objest ДокументОбєкт, РозхіднийКасовийОрдер_Проводки_TablePart ТабличнаЧастина)
+    public static Task BeforeSave(РозхіднийКасовийОрдер_Object ДокументОбєкт, РозхіднийКасовийОрдер_Проводки_TablePart ТабличнаЧастина)
     {
         return Task.CompletedTask;
     }
 
-    public static async Task AfterSave(РозхіднийКасовийОрдер_Objest ДокументОбєкт, РозхіднийКасовийОрдер_Проводки_TablePart ТабличнаЧастина)
+    public static async Task AfterSave(РозхіднийКасовийОрдер_Object ДокументОбєкт, РозхіднийКасовийОрдер_Проводки_TablePart ТабличнаЧастина)
     {
         if (!ДокументОбєкт.ДокументБухгалтерськаОперація.IsEmpty())
         {

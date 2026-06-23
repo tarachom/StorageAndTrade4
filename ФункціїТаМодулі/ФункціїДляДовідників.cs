@@ -39,7 +39,7 @@ static class ФункціїДляДовідників
 
             if (!await Вибірка.Select())
             {
-                ДоговориКонтрагентів_Objest Новий = new()
+                ДоговориКонтрагентів_Object Новий = new()
                 {
                     Назва = "Основний договір",
                     Контрагент = контрагент,
@@ -68,7 +68,7 @@ static class ФункціїДляДовідників
             return ЗнайденаСеріяНоменклатури;
         else
         {
-            СеріїНоменклатури_Objest НоваСеріяНоменклатури = new() { Номер = номер };
+            СеріїНоменклатури_Object НоваСеріяНоменклатури = new() { Номер = номер };
             await НоваСеріяНоменклатури.New();
             await НоваСеріяНоменклатури.Save();
 
@@ -85,7 +85,7 @@ static class ФункціїДляДовідників
     {
         FileInfo fileInfo = new(pathToFile);
 
-        Файли_Objest Обєкт = new()
+        Файли_Object Обєкт = new()
         {
             НазваФайлу = fileInfo.Name,
             Назва = Path.GetFileNameWithoutExtension(pathToFile),

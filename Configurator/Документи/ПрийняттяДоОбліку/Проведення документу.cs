@@ -17,7 +17,7 @@ namespace GeneratedCode.Документи;
 
 static class ПрийняттяДоОбліку_SpendTheDocument
 {
-    public static async Task<bool> Spend(ПрийняттяДоОбліку_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(ПрийняттяДоОбліку_Object ДокументОбєкт)
     {
         try
         {
@@ -33,7 +33,7 @@ static class ПрийняттяДоОбліку_SpendTheDocument
         }
     }
 
-    public static Task Clear(ПрийняттяДоОбліку_Objest ДокументОбєкт)
+    public static Task Clear(ПрийняттяДоОбліку_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

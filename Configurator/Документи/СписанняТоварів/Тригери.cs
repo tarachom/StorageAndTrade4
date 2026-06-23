@@ -12,7 +12,7 @@ namespace GeneratedCode.Документи;
 
 static class СписанняТоварів_Triggers
 {
-    public static async Task New(СписанняТоварів_Objest ДокументОбєкт)
+    public static async Task New(СписанняТоварів_Object ДокументОбєкт)
     {
         ДокументОбєкт.ДатаДок = DateTime.Now;
         
@@ -21,29 +21,29 @@ static class СписанняТоварів_Triggers
                     
     }
 
-    public static Task Copying(СписанняТоварів_Objest ДокументОбєкт, СписанняТоварів_Objest Основа)
+    public static Task Copying(СписанняТоварів_Object ДокументОбєкт, СписанняТоварів_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(СписанняТоварів_Objest ДокументОбєкт)
+    public static Task BeforeSave(СписанняТоварів_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{СписанняТоварів_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(СписанняТоварів_Objest ДокументОбєкт)
+    public static Task AfterSave(СписанняТоварів_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(СписанняТоварів_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(СписанняТоварів_Object ДокументОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(СписанняТоварів_Objest ДокументОбєкт)
+    public static Task BeforeDelete(СписанняТоварів_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

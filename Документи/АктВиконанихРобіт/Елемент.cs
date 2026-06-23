@@ -18,7 +18,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DocumentFormElement>("Element_LSmlvSiulEyUyxLlU6VTuA")]
 partial class АктВиконанихРобіт_Елемент : DocumentFormElement
 {
-    public АктВиконанихРобіт_Objest Елемент { get; init; } = new();
+    public АктВиконанихРобіт_Object Елемент { get; init; } = new();
 
     #region Fields
     Entry НомерДок = Entry.New();
@@ -55,17 +55,17 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
 
         CreateDocName(АктВиконанихРобіт_Const.FULLNAME, НомерДок, ДатаДок);
         CreateField(HBoxTop, null, ВідобразитиВБухгалтерськомуОбліку);
-        CreateField(HBoxComment, "Коментар:", Коментар);
+        CreateField(Interface.CommentBox, "Коментар:", Коментар);
 
         // Таблична частина "Послуги"
         Послуги.HeightRequest = 300;
-        NotebookTablePart.InsertPage(Послуги, Label.New("Послуги"), 0);
+        Interface.Notebook.InsertPage(Послуги, Label.New("Послуги"), 0);
 
         // Таблична частина "Проводки"
         Проводки.HeightRequest = 300;
-        NotebookTablePart.InsertPage(Проводки, Label.New("Проводки"), 1);
+        Interface.Notebook.InsertPage(Проводки, Label.New("Проводки"), 1);
 
-        NotebookTablePart.SetCurrentPage(0);
+        Interface.Notebook.SetCurrentPage(0);
 
         //НомерДок:
         НомерДок.WidthRequest = 100;
@@ -138,7 +138,23 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
         return element;
     }
 
-    protected override void CreateTopStart(Box vBox)
+    #region Interface
+
+    FunctionForInterfaces.DocumentElement Interface;
+
+    protected override void BuildInterface()
+    {
+        Interface = FunctionForInterfaces.ForDocument();
+
+        Append(Interface.MainBox);
+
+        CreateTopStart(Interface.TopStartBox);
+        CreateTopEnd(Interface.TopEndBox);
+        CreateBottomStart(Interface.BottomStartBox);
+        CreateBottomEnd(Interface.BottomEndBox);
+    }
+
+    void CreateTopStart(Box vBox)
     {
         //Організація
         CreateField(vBox, null, Організація);
@@ -152,7 +168,7 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
         Договір.BeforeClickOpenFunc = () => Договір.Власник = Контрагент.Pointer;
     }
 
-    protected override void CreateTopEnd(Box vBox)
+    void CreateTopEnd(Box vBox)
     {
         //Каса
         CreateField(vBox, null, Каса);
@@ -161,7 +177,7 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
         CreateField(vBox, null, Валюта);
     }
 
-    protected override void CreateBottomStart(Box vBox)
+    void CreateBottomStart(Box vBox)
     {
         //ГосподарськаОперація
         CreateField(vBox, "Господарська операція:", ГосподарськаОперація);
@@ -173,7 +189,7 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
         CreateField(vBox, null, Автор);
     }
 
-    protected override void CreateBottomEnd(Box vBox)
+    void CreateBottomEnd(Box vBox)
     {
         //ФормаОплати
         CreateField(vBox, "Форма оплати:", ФормаОплати);
@@ -184,6 +200,8 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
         //Менеджер
         CreateField(vBox, null, Менеджер);
     }
+
+    #endregion
 
     #region Присвоєння / зчитування значень
 

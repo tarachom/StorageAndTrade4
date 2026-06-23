@@ -10,35 +10,35 @@ namespace GeneratedCode.Довідники;
 
 class Валюти_Triggers
 {
-    public static async Task New(Валюти_Objest ДовідникОбєкт)
+    public static async Task New(Валюти_Object ДовідникОбєкт)
     {
         int number = await НумераціяДовідників.Валюти();
         ДовідникОбєкт.Код = (await НумераціяДовідників.Валюти(++number)).ToString("D6");
     }
 
-    public static Task Copying(Валюти_Objest ДовідникОбєкт, Валюти_Objest Основа)
+    public static Task Copying(Валюти_Object ДовідникОбєкт, Валюти_Object Основа)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(Валюти_Objest ДовідникОбєкт)
+    public static Task BeforeSave(Валюти_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(Валюти_Objest ДовідникОбєкт)
+    public static Task AfterSave(Валюти_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static async Task SetDeletionLabel(Валюти_Objest ДовідникОбєкт, bool label)
+    public static async Task SetDeletionLabel(Валюти_Object ДовідникОбєкт, bool label)
     {
         if (label)
             await BeforeDelete(ДовідникОбєкт);
     }
 
-    public static async Task BeforeDelete(Валюти_Objest ДовідникОбєкт)
+    public static async Task BeforeDelete(Валюти_Object ДовідникОбєкт)
     {
         //Очистити регістр КурсиВалют при видаленні валюти
         string query = $@"

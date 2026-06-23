@@ -14,7 +14,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DirectoryFormElement>("Element_Bv2feEDrfUOsrlN9ctqbg")]
 partial class ЗбереженіЗвіти_Елемент : DirectoryFormElement
 {
-    public ЗбереженіЗвіти_Objest Елемент { get; init; } = new();
+    public ЗбереженіЗвіти_Object Елемент { get; init; } = new();
 
     public Користувачі_Pointer ВласникДляНового = new();
 

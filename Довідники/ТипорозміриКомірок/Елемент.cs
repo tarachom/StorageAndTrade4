@@ -14,7 +14,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DirectoryFormElement>("Element_CIv08HskkyqI69ISwzmAQ")]
 partial class ТипорозміриКомірок_Елемент : DirectoryFormElement
 {
-    public ТипорозміриКомірок_Objest Елемент { get; init; } = new();
+    public ТипорозміриКомірок_Object Елемент { get; init; } = new();
 
     #region Fields
     Entry Назва = Entry.New();

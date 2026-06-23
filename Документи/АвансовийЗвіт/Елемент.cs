@@ -17,7 +17,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DocumentFormElement>("Element_lpaeAS98yHtJBlH9nFJbg")]
 partial class АвансовийЗвіт_Елемент : DocumentFormElement
 {
-    public АвансовийЗвіт_Objest Елемент { get; init; } = new();
+    public АвансовийЗвіт_Object Елемент { get; init; } = new();
 
     #region Fields
     Entry НомерДок = Entry.New();
@@ -51,17 +51,17 @@ partial class АвансовийЗвіт_Елемент : DocumentFormElement
 
         CreateDocName(АвансовийЗвіт_Const.FULLNAME, НомерДок, ДатаДок);
         CreateField(HBoxTop, null, ВідобразитиВБухгалтерськомуОбліку);
-        CreateField(HBoxComment, "Коментар:", Коментар);
+        CreateField(Interface.CommentBox, "Коментар:", Коментар);
 
         // Таблична частина "ВиданіАванси"
         ВиданіАванси.HeightRequest = 300;
-        NotebookTablePart.InsertPage(ВиданіАванси, Label.New("Видані аванси"), 0);
+        Interface.Notebook.InsertPage(ВиданіАванси, Label.New("Видані аванси"), 0);
 
         // Таблична частина "Проводки"
         Проводки.HeightRequest = 300;
-        NotebookTablePart.InsertPage(Проводки, Label.New("Проводки"), 1);
+        Interface.Notebook.InsertPage(Проводки, Label.New("Проводки"), 1);
 
-        NotebookTablePart.SetCurrentPage(0);
+        Interface.Notebook.SetCurrentPage(0);
 
         //НомерДок:
         НомерДок.WidthRequest = 100;
@@ -108,7 +108,23 @@ partial class АвансовийЗвіт_Елемент : DocumentFormElement
         return element;
     }
 
-    protected override void CreateTopStart(Box vBox)
+    #region Interface
+
+    FunctionForInterfaces.DocumentElement Interface;
+
+    protected override void BuildInterface()
+    {
+        Interface = FunctionForInterfaces.ForDocument();
+
+        Append(Interface.MainBox);
+
+        CreateTopStart(Interface.TopStartBox);
+        CreateTopEnd(Interface.TopEndBox);
+        CreateBottomStart(Interface.BottomStartBox);
+        CreateBottomEnd(Interface.BottomEndBox);
+    }
+
+    void CreateTopStart(Box vBox)
     {
         // Організація
         CreateField(vBox, null, Організація);
@@ -117,13 +133,13 @@ partial class АвансовийЗвіт_Елемент : DocumentFormElement
         CreateField(vBox, null, ФізичнаОсоба);
     }
 
-    protected override void CreateTopEnd(Box vBox)
+    void CreateTopEnd(Box vBox)
     {
         // ПризначенняАвансу
         CreateField(vBox, "Призначення авансу:", ПризначенняАвансу);
     }
 
-    protected override void CreateBottomStart(Box vBox)
+    void CreateBottomStart(Box vBox)
     {
         // Валюта
         CreateField(vBox, null, Валюта);
@@ -135,7 +151,7 @@ partial class АвансовийЗвіт_Елемент : DocumentFormElement
         CreateField(vBox, null, Підрозділ);
     }
 
-    protected override void CreateBottomEnd(Box vBox)
+    void CreateBottomEnd(Box vBox)
     {
         // ВидЦіни
         CreateField(vBox, null, ВидЦіни);
@@ -143,6 +159,8 @@ partial class АвансовийЗвіт_Елемент : DocumentFormElement
         // Основа
         CreateField(vBox, null, Основа);
     }
+
+    #endregion
 
     #region Присвоєння / зчитування значень
 

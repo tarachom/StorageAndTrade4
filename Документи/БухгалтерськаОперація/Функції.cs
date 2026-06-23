@@ -66,10 +66,10 @@ static class БухгалтерськаОперація_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        БухгалтерськаОперація_Objest Обєкт = new();
+        БухгалтерськаОперація_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            БухгалтерськаОперація_Objest Новий = await Обєкт.Copy(true);
+            БухгалтерськаОперація_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
                 await Новий.Операції_TablePart.Save(false); // Таблична частина "Операції"
@@ -85,7 +85,7 @@ static class БухгалтерськаОперація_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        БухгалтерськаОперація_Objest? Обєкт = await new БухгалтерськаОперація_Pointer(uniqueID).GetDocumentObject(true);
+        БухгалтерськаОперація_Object? Обєкт = await new БухгалтерськаОперація_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

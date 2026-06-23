@@ -15,7 +15,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DirectoryFormElement>("Element_KJSgWXQS2EyhyfX7APw")]
 partial class ДоговориКонтрагентів_Елемент : DirectoryFormElement
 {
-    public ДоговориКонтрагентів_Objest Елемент { get; init; } = new();
+    public ДоговориКонтрагентів_Object Елемент { get; init; } = new();
 
     public Контрагенти_Pointer ВласникДляНового = new();
 

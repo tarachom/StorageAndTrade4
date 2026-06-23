@@ -66,10 +66,10 @@ static class РозрахунокСобівартостіВипуску_Функ
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        РозрахунокСобівартостіВипуску_Objest Обєкт = new();
+        РозрахунокСобівартостіВипуску_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            РозрахунокСобівартостіВипуску_Objest Новий = await Обєкт.Copy(true);
+            РозрахунокСобівартостіВипуску_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;
@@ -83,7 +83,7 @@ static class РозрахунокСобівартостіВипуску_Функ
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        РозрахунокСобівартостіВипуску_Objest? Обєкт = await new РозрахунокСобівартостіВипуску_Pointer(uniqueID).GetDocumentObject(true);
+        РозрахунокСобівартостіВипуску_Object? Обєкт = await new РозрахунокСобівартостіВипуску_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

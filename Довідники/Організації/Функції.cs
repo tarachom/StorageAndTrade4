@@ -84,10 +84,10 @@ static class Організації_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        Організації_Objest Обєкт = new();
+        Організації_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            Організації_Objest Новий = await Обєкт.Copy(true);
+            Організації_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
                 await Новий.Контакти_TablePart.Save(false); // Таблична частина "Контакти"

@@ -12,7 +12,7 @@ namespace GeneratedCode.Документи;
 
 static class ПоверненняПереданихТоварів_Triggers
 {
-    public static async Task New(ПоверненняПереданихТоварів_Objest ДокументОбєкт)
+    public static async Task New(ПоверненняПереданихТоварів_Object ДокументОбєкт)
     {
         ДокументОбєкт.ДатаДок = DateTime.Now;
         
@@ -21,29 +21,29 @@ static class ПоверненняПереданихТоварів_Triggers
                     
     }
 
-    public static Task Copying(ПоверненняПереданихТоварів_Objest ДокументОбєкт, ПоверненняПереданихТоварів_Objest Основа)
+    public static Task Copying(ПоверненняПереданихТоварів_Object ДокументОбєкт, ПоверненняПереданихТоварів_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(ПоверненняПереданихТоварів_Objest ДокументОбєкт)
+    public static Task BeforeSave(ПоверненняПереданихТоварів_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{ПоверненняПереданихТоварів_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(ПоверненняПереданихТоварів_Objest ДокументОбєкт)
+    public static Task AfterSave(ПоверненняПереданихТоварів_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(ПоверненняПереданихТоварів_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(ПоверненняПереданихТоварів_Object ДокументОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(ПоверненняПереданихТоварів_Objest ДокументОбєкт)
+    public static Task BeforeDelete(ПоверненняПереданихТоварів_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

@@ -66,10 +66,10 @@ static class Амортизація_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        Амортизація_Objest Обєкт = new();
+        Амортизація_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            Амортизація_Objest Новий = await Обєкт.Copy(true);
+            Амортизація_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;
@@ -83,7 +83,7 @@ static class Амортизація_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        Амортизація_Objest? Обєкт = await new Амортизація_Pointer(uniqueID).GetDocumentObject(true);
+        Амортизація_Object? Обєкт = await new Амортизація_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

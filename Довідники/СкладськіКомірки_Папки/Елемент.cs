@@ -14,7 +14,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DirectoryFormElement>("Element_9B8CJcwBDkCf4iTpRvsOvA")]
 partial class СкладськіКомірки_Папки_Елемент : DirectoryFormElement
 {
-    public СкладськіКомірки_Папки_Objest Елемент { get; init; } = new();
+    public СкладськіКомірки_Папки_Object Елемент { get; init; } = new();
 
     public СкладськіПриміщення_Pointer ВласникДляНового = new();
 

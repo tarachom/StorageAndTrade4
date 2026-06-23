@@ -10,34 +10,34 @@ namespace GeneratedCode.Довідники;
 
 class ВидиЗапасів_Triggers
 {
-    public static async Task New(ВидиЗапасів_Objest ДовідникОбєкт)
+    public static async Task New(ВидиЗапасів_Object ДовідникОбєкт)
     {
         int number = await НумераціяДовідників.ВидиЗапасів();
         ДовідникОбєкт.Код = (await НумераціяДовідників.ВидиЗапасів(++number)).ToString("D6");
     }
 
-    public static Task Copying(ВидиЗапасів_Objest ДовідникОбєкт, ВидиЗапасів_Objest Основа)
+    public static Task Copying(ВидиЗапасів_Object ДовідникОбєкт, ВидиЗапасів_Object Основа)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(ВидиЗапасів_Objest ДовідникОбєкт)
+    public static Task BeforeSave(ВидиЗапасів_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(ВидиЗапасів_Objest ДовідникОбєкт)
+    public static Task AfterSave(ВидиЗапасів_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(ВидиЗапасів_Objest ДовідникОбєкт, bool label)
+    public static Task SetDeletionLabel(ВидиЗапасів_Object ДовідникОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(ВидиЗапасів_Objest ДовідникОбєкт)
+    public static Task BeforeDelete(ВидиЗапасів_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }

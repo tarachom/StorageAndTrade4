@@ -107,7 +107,7 @@ partial class Номенклатура_ТабличнаЧастина_Файли
     #endregion
 
 
-    public Номенклатура_Objest? ЕлементВласник { get; set; }
+    public Номенклатура_Object? ЕлементВласник { get; set; }
 
 
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());

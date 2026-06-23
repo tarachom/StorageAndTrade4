@@ -78,10 +78,10 @@ static class Блокнот_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        Блокнот_Objest Обєкт = new();
+        Блокнот_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            Блокнот_Objest Новий = await Обєкт.Copy(true);
+            Блокнот_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;

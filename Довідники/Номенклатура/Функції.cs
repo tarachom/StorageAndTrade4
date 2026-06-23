@@ -81,10 +81,10 @@ static class Номенклатура_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        Номенклатура_Objest Обєкт = new();
+        Номенклатура_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            Номенклатура_Objest Новий = await Обєкт.Copy(true);
+            Номенклатура_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
                 await Новий.Файли_TablePart.Save(false); // Таблична частина "Файли"

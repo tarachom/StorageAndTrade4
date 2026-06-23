@@ -12,7 +12,7 @@ namespace GeneratedCode.Документи;
 
 static class ПередачаТоварів_Triggers
 {
-    public static async Task New(ПередачаТоварів_Objest ДокументОбєкт)
+    public static async Task New(ПередачаТоварів_Object ДокументОбєкт)
     {
         ДокументОбєкт.ДатаДок = DateTime.Now;
         
@@ -21,29 +21,29 @@ static class ПередачаТоварів_Triggers
                     
     }
 
-    public static Task Copying(ПередачаТоварів_Objest ДокументОбєкт, ПередачаТоварів_Objest Основа)
+    public static Task Copying(ПередачаТоварів_Object ДокументОбєкт, ПередачаТоварів_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(ПередачаТоварів_Objest ДокументОбєкт)
+    public static Task BeforeSave(ПередачаТоварів_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{ПередачаТоварів_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(ПередачаТоварів_Objest ДокументОбєкт)
+    public static Task AfterSave(ПередачаТоварів_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(ПередачаТоварів_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(ПередачаТоварів_Object ДокументОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(ПередачаТоварів_Objest ДокументОбєкт)
+    public static Task BeforeDelete(ПередачаТоварів_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

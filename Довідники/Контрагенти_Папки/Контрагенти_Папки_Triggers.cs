@@ -11,29 +11,29 @@ namespace GeneratedCode.Довідники;
 
 class Контрагенти_Папки_Triggers
 {
-    public static async Task New(Контрагенти_Папки_Objest ДовідникОбєкт)
+    public static async Task New(Контрагенти_Папки_Object ДовідникОбєкт)
     {
         int number = await НумераціяДовідників.Контрагенти_Папки();
         ДовідникОбєкт.Код = (await НумераціяДовідників.Контрагенти_Папки(++number)).ToString("D6");
     }
 
-    public static Task Copying(Контрагенти_Папки_Objest ДовідникОбєкт, Контрагенти_Папки_Objest Основа)
+    public static Task Copying(Контрагенти_Папки_Object ДовідникОбєкт, Контрагенти_Папки_Object Основа)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(Контрагенти_Папки_Objest ДовідникОбєкт)
+    public static Task BeforeSave(Контрагенти_Папки_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(Контрагенти_Папки_Objest ДовідникОбєкт)
+    public static Task AfterSave(Контрагенти_Папки_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static async Task SetDeletionLabel(Контрагенти_Папки_Objest ДовідникОбєкт, bool label)
+    public static async Task SetDeletionLabel(Контрагенти_Папки_Object ДовідникОбєкт, bool label)
     {
         //Якщо встановлюється мітка на видалення
         if (label)
@@ -63,7 +63,7 @@ class Контрагенти_Папки_Triggers
         }
     }
 
-    public static async Task BeforeDelete(Контрагенти_Папки_Objest ДовідникОбєкт)
+    public static async Task BeforeDelete(Контрагенти_Папки_Object ДовідникОбєкт)
     {
         //Елементи переносяться на верхній рівень
         {
@@ -74,7 +74,7 @@ class Контрагенти_Папки_Triggers
             while (select.MoveNext())
                 if (select.Current != null)
                 {
-                    Контрагенти_Objest? Обєкт = await select.Current.GetDirectoryObject();
+                    Контрагенти_Object? Обєкт = await select.Current.GetDirectoryObject();
                     if (Обєкт != null)
                     {
                         //Ставиться помітка на видалення для елементу
@@ -96,9 +96,9 @@ class Контрагенти_Папки_Triggers
             while (select.MoveNext())
                 if (select.Current != null)
                 {
-                    Контрагенти_Папки_Objest? контрагенти_Папки_Objest = await select.Current.GetDirectoryObject();
-                    if (контрагенти_Папки_Objest != null)
-                        await контрагенти_Папки_Objest.Delete();
+                    Контрагенти_Папки_Object? контрагенти_Папки_Object = await select.Current.GetDirectoryObject();
+                    if (контрагенти_Папки_Object != null)
+                        await контрагенти_Папки_Object.Delete();
                 }
         }
     }

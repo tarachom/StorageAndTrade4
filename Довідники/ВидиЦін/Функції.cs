@@ -72,10 +72,10 @@ static class ВидиЦін_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ВидиЦін_Objest Обєкт = new();
+        ВидиЦін_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ВидиЦін_Objest Новий = await Обєкт.Copy(true);
+            ВидиЦін_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;

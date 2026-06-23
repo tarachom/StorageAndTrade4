@@ -66,10 +66,10 @@ static class СеріїНоменклатури_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        СеріїНоменклатури_Objest Обєкт = new();
+        СеріїНоменклатури_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            СеріїНоменклатури_Objest Новий = await Обєкт.Copy(true);
+            СеріїНоменклатури_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;

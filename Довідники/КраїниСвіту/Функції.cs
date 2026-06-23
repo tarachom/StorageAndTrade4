@@ -72,10 +72,10 @@ static class КраїниСвіту_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        КраїниСвіту_Objest Обєкт = new();
+        КраїниСвіту_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            КраїниСвіту_Objest Новий = await Обєкт.Copy(true);
+            КраїниСвіту_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;

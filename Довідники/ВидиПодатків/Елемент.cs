@@ -14,7 +14,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DirectoryFormElement>("Element_xIIzKjup00FF8ZwwKb7A")]
 partial class ВидиПодатків_Елемент : DirectoryFormElement
 {
-    public ВидиПодатків_Objest Елемент { get; init; } = new();
+    public ВидиПодатків_Object Елемент { get; init; } = new();
 
     #region Fields
     Entry Код = Entry.New();

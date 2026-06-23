@@ -20,7 +20,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DocumentFormElement>("Element_z5GeARuLzXWSUwIWeHuvQ")]
 partial class КорегуванняБоргу_Елемент : DocumentFormElement
 {
-    public КорегуванняБоргу_Objest Елемент { get; init; } = new();
+    public КорегуванняБоргу_Object Елемент { get; init; } = new();
 
     #region Fields
     Entry НомерДок = Entry.New();
@@ -50,17 +50,17 @@ partial class КорегуванняБоргу_Елемент : DocumentFormElem
 
         CreateDocName(КорегуванняБоргу_Const.FULLNAME, НомерДок, ДатаДок);
         CreateField(HBoxTop, null, ВідобразитиВБухгалтерськомуОбліку);
-        CreateField(HBoxComment, "Коментар:", Коментар);
+        CreateField(Interface.CommentBox, "Коментар:", Коментар);
 
         // Таблична частина "РозрахункиЗКонтрагентами"
         РозрахункиЗКонтрагентами.HeightRequest = 300;
-        NotebookTablePart.InsertPage(РозрахункиЗКонтрагентами, Label.New("Розрахунки з контрагентами"), 0);
+        Interface.Notebook.InsertPage(РозрахункиЗКонтрагентами, Label.New("Розрахунки з контрагентами"), 0);
 
         // Таблична частина "Проводки"
         Проводки.HeightRequest = 300;
-        NotebookTablePart.InsertPage(Проводки, Label.New("Проводки"), 1);
+        Interface.Notebook.InsertPage(Проводки, Label.New("Проводки"), 1);
 
-        NotebookTablePart.SetCurrentPage(0);
+        Interface.Notebook.SetCurrentPage(0);
 
         //НомерДок:
         НомерДок.WidthRequest = 100;
@@ -92,18 +92,34 @@ partial class КорегуванняБоргу_Елемент : DocumentFormElem
         return element;
     }
 
-    protected override void CreateTopStart(Box vBox)
+    #region Interface
+
+    FunctionForInterfaces.DocumentElement Interface;
+
+    protected override void BuildInterface()
+    {
+        Interface = FunctionForInterfaces.ForDocument();
+
+        Append(Interface.MainBox);
+
+        CreateTopStart(Interface.TopStartBox);
+        CreateTopEnd(Interface.TopEndBox);
+        CreateBottomStart(Interface.BottomStartBox);
+        CreateBottomEnd(Interface.BottomEndBox);
+    }
+
+    void CreateTopStart(Box vBox)
     {
         //Організація
         CreateField(vBox, null, Організація);
     }
 
-    protected override void CreateTopEnd(Box vBox)
+    void CreateTopEnd(Box vBox)
     {
 
     }
 
-    protected override void CreateBottomStart(Box vBox)
+    void CreateBottomStart(Box vBox)
     {
         //Підрозділ
         CreateField(vBox, null, Підрозділ);
@@ -112,11 +128,13 @@ partial class КорегуванняБоргу_Елемент : DocumentFormElem
         CreateField(vBox, null, Автор);
     }
 
-    protected override void CreateBottomEnd(Box vBox)
+    void CreateBottomEnd(Box vBox)
     {
         //Основа
         CreateField(vBox, null, Основа);
     }
+
+    #endregion
 
     #region Присвоєння / зчитування значень
 

@@ -17,7 +17,7 @@ namespace GeneratedCode.Документи;
 
 static class АвансовийЗвіт_SpendTheDocument
 {
-    public static async Task<bool> Spend(АвансовийЗвіт_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(АвансовийЗвіт_Object ДокументОбєкт)
     {
         try
         {
@@ -46,7 +46,7 @@ static class АвансовийЗвіт_SpendTheDocument
         }
     }
 
-    public static async Task Clear(АвансовийЗвіт_Objest ДокументОбєкт)
+    public static async Task Clear(АвансовийЗвіт_Object ДокументОбєкт)
     {
         if (!ДокументОбєкт.ДокументБухгалтерськаОперація.IsEmpty())
             await ДокументОбєкт.ДокументБухгалтерськаОперація.ClearSpendTheDocument();

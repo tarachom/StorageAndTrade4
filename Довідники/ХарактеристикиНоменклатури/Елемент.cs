@@ -14,7 +14,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DirectoryFormElement>("Element_hzeVjfSgEegSvCLgm75VA")]
 partial class ХарактеристикиНоменклатури_Елемент : DirectoryFormElement
 {
-    public ХарактеристикиНоменклатури_Objest Елемент { get; init; } = new();
+    public ХарактеристикиНоменклатури_Object Елемент { get; init; } = new();
 
     public Номенклатура_Pointer ВласникДляНового = new();
 

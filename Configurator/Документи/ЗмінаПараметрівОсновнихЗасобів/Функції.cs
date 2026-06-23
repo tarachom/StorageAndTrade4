@@ -66,10 +66,10 @@ static class ЗмінаПараметрівОсновнихЗасобів_Фун
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ЗмінаПараметрівОсновнихЗасобів_Objest Обєкт = new();
+        ЗмінаПараметрівОсновнихЗасобів_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ЗмінаПараметрівОсновнихЗасобів_Objest Новий = await Обєкт.Copy(true);
+            ЗмінаПараметрівОсновнихЗасобів_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;
@@ -83,7 +83,7 @@ static class ЗмінаПараметрівОсновнихЗасобів_Фун
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        ЗмінаПараметрівОсновнихЗасобів_Objest? Обєкт = await new ЗмінаПараметрівОсновнихЗасобів_Pointer(uniqueID).GetDocumentObject(true);
+        ЗмінаПараметрівОсновнихЗасобів_Object? Обєкт = await new ЗмінаПараметрівОсновнихЗасобів_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

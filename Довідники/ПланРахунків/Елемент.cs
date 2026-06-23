@@ -15,7 +15,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DirectoryFormElement>("Element_iEP5X7rPMEuR2U0CC77uwQ")]
 partial class ПланРахунків_Елемент : DirectoryFormElement
 {
-    public ПланРахунків_Objest Елемент { get; init; } = new();
+    public ПланРахунків_Object Елемент { get; init; } = new();
 
     public ПланРахунків_Pointer РодичДляНового { get; set; } = new();
 

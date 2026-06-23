@@ -11,7 +11,7 @@ namespace GeneratedCode.Документи;
 
 class ВнутрішнєСпоживанняТоварів_Triggers
 {
-    public static async Task New(ВнутрішнєСпоживанняТоварів_Objest ДокументОбєкт)
+    public static async Task New(ВнутрішнєСпоживанняТоварів_Object ДокументОбєкт)
     {
         int number = await НумераціяДокументів.ВнутрішнєСпоживанняТоварів();
         ДокументОбєкт.НомерДок = (await НумераціяДокументів.ВнутрішнєСпоживанняТоварів(++number)).ToString("D8");
@@ -20,14 +20,14 @@ class ВнутрішнєСпоживанняТоварів_Triggers
         ДокументОбєкт.Автор = Program.Користувач;
     }
 
-    public static Task Copying(ВнутрішнєСпоживанняТоварів_Objest ДокументОбєкт, ВнутрішнєСпоживанняТоварів_Objest Основа)
+    public static Task Copying(ВнутрішнєСпоживанняТоварів_Object ДокументОбєкт, ВнутрішнєСпоживанняТоварів_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         ДокументОбєкт.ДокументБухгалтерськаОперація = new();
         return Task.CompletedTask;
     }
 
-    public static async Task BeforeSave(ВнутрішнєСпоживанняТоварів_Objest ДокументОбєкт)
+    public static async Task BeforeSave(ВнутрішнєСпоживанняТоварів_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{ВнутрішнєСпоживанняТоварів_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
 
@@ -46,17 +46,17 @@ class ВнутрішнєСпоживанняТоварів_Triggers
         }
     }
 
-    public static Task AfterSave(ВнутрішнєСпоживанняТоварів_Objest ДокументОбєкт)
+    public static Task AfterSave(ВнутрішнєСпоживанняТоварів_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(ВнутрішнєСпоживанняТоварів_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(ВнутрішнєСпоживанняТоварів_Object ДокументОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(ВнутрішнєСпоживанняТоварів_Objest ДокументОбєкт)
+    public static Task BeforeDelete(ВнутрішнєСпоживанняТоварів_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

@@ -75,10 +75,10 @@ static class СкладськіКомірки_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        СкладськіКомірки_Objest Обєкт = new();
+        СкладськіКомірки_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            СкладськіКомірки_Objest Новий = await Обєкт.Copy(true);
+            СкладськіКомірки_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;

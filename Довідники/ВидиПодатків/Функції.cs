@@ -72,10 +72,10 @@ static class ВидиПодатків_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ВидиПодатків_Objest Обєкт = new();
+        ВидиПодатків_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ВидиПодатків_Objest Новий = await Обєкт.Copy(true);
+            ВидиПодатків_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;

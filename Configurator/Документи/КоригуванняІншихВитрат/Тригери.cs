@@ -12,7 +12,7 @@ namespace GeneratedCode.Документи;
 
 static class КоригуванняІншихВитрат_Triggers
 {
-    public static async Task New(КоригуванняІншихВитрат_Objest ДокументОбєкт)
+    public static async Task New(КоригуванняІншихВитрат_Object ДокументОбєкт)
     {
         ДокументОбєкт.ДатаДок = DateTime.Now;
         
@@ -21,29 +21,29 @@ static class КоригуванняІншихВитрат_Triggers
                     
     }
 
-    public static Task Copying(КоригуванняІншихВитрат_Objest ДокументОбєкт, КоригуванняІншихВитрат_Objest Основа)
+    public static Task Copying(КоригуванняІншихВитрат_Object ДокументОбєкт, КоригуванняІншихВитрат_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(КоригуванняІншихВитрат_Objest ДокументОбєкт)
+    public static Task BeforeSave(КоригуванняІншихВитрат_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{КоригуванняІншихВитрат_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(КоригуванняІншихВитрат_Objest ДокументОбєкт)
+    public static Task AfterSave(КоригуванняІншихВитрат_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(КоригуванняІншихВитрат_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(КоригуванняІншихВитрат_Object ДокументОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(КоригуванняІншихВитрат_Objest ДокументОбєкт)
+    public static Task BeforeDelete(КоригуванняІншихВитрат_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

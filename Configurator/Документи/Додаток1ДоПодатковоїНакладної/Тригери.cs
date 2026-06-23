@@ -12,7 +12,7 @@ namespace GeneratedCode.Документи;
 
 static class Додаток1ДоПодатковоїНакладної_Triggers
 {
-    public static async Task New(Додаток1ДоПодатковоїНакладної_Objest ДокументОбєкт)
+    public static async Task New(Додаток1ДоПодатковоїНакладної_Object ДокументОбєкт)
     {
         ДокументОбєкт.ДатаДок = DateTime.Now;
         
@@ -21,29 +21,29 @@ static class Додаток1ДоПодатковоїНакладної_Triggers
                     
     }
 
-    public static Task Copying(Додаток1ДоПодатковоїНакладної_Objest ДокументОбєкт, Додаток1ДоПодатковоїНакладної_Objest Основа)
+    public static Task Copying(Додаток1ДоПодатковоїНакладної_Object ДокументОбєкт, Додаток1ДоПодатковоїНакладної_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(Додаток1ДоПодатковоїНакладної_Objest ДокументОбєкт)
+    public static Task BeforeSave(Додаток1ДоПодатковоїНакладної_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{Додаток1ДоПодатковоїНакладної_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(Додаток1ДоПодатковоїНакладної_Objest ДокументОбєкт)
+    public static Task AfterSave(Додаток1ДоПодатковоїНакладної_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(Додаток1ДоПодатковоїНакладної_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(Додаток1ДоПодатковоїНакладної_Object ДокументОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(Додаток1ДоПодатковоїНакладної_Objest ДокументОбєкт)
+    public static Task BeforeDelete(Додаток1ДоПодатковоїНакладної_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

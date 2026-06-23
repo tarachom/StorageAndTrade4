@@ -12,7 +12,7 @@ namespace GeneratedCode.Документи;
 
 static class ЗвітКомісіонераПроПродажТоварів_Triggers
 {
-    public static async Task New(ЗвітКомісіонераПроПродажТоварів_Objest ДокументОбєкт)
+    public static async Task New(ЗвітКомісіонераПроПродажТоварів_Object ДокументОбєкт)
     {
         ДокументОбєкт.ДатаДок = DateTime.Now;
         
@@ -21,29 +21,29 @@ static class ЗвітКомісіонераПроПродажТоварів_Trig
                     
     }
 
-    public static Task Copying(ЗвітКомісіонераПроПродажТоварів_Objest ДокументОбєкт, ЗвітКомісіонераПроПродажТоварів_Objest Основа)
+    public static Task Copying(ЗвітКомісіонераПроПродажТоварів_Object ДокументОбєкт, ЗвітКомісіонераПроПродажТоварів_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(ЗвітКомісіонераПроПродажТоварів_Objest ДокументОбєкт)
+    public static Task BeforeSave(ЗвітКомісіонераПроПродажТоварів_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{ЗвітКомісіонераПроПродажТоварів_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(ЗвітКомісіонераПроПродажТоварів_Objest ДокументОбєкт)
+    public static Task AfterSave(ЗвітКомісіонераПроПродажТоварів_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(ЗвітКомісіонераПроПродажТоварів_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(ЗвітКомісіонераПроПродажТоварів_Object ДокументОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(ЗвітКомісіонераПроПродажТоварів_Objest ДокументОбєкт)
+    public static Task BeforeDelete(ЗвітКомісіонераПроПродажТоварів_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

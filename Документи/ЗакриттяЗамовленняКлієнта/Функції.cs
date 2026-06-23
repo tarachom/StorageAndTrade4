@@ -69,10 +69,10 @@ static class ЗакриттяЗамовленняКлієнта_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ЗакриттяЗамовленняКлієнта_Objest Обєкт = new();
+        ЗакриттяЗамовленняКлієнта_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ЗакриттяЗамовленняКлієнта_Objest Новий = await Обєкт.Copy(true);
+            ЗакриттяЗамовленняКлієнта_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
 
             await Новий.Товари_TablePart.Save(false); // Таблична частина "Товари"
@@ -88,7 +88,7 @@ static class ЗакриттяЗамовленняКлієнта_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        ЗакриттяЗамовленняКлієнта_Objest? Обєкт = await new ЗакриттяЗамовленняКлієнта_Pointer(uniqueID).GetDocumentObject(true);
+        ЗакриттяЗамовленняКлієнта_Object? Обєкт = await new ЗакриттяЗамовленняКлієнта_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

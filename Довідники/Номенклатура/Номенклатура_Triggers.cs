@@ -13,29 +13,29 @@ namespace GeneratedCode.Довідники;
 
 static class Номенклатура_Triggers
 {
-    public static async Task New(Номенклатура_Objest ДовідникОбєкт)
+    public static async Task New(Номенклатура_Object ДовідникОбєкт)
     {
         int number = await НумераціяДовідників.Номенклатура();
         ДовідникОбєкт.Код = (await НумераціяДовідників.Номенклатура(++number)).ToString("D6");
     }
 
-    public static Task Copying(Номенклатура_Objest ДовідникОбєкт, Номенклатура_Objest Основа)
+    public static Task Copying(Номенклатура_Object ДовідникОбєкт, Номенклатура_Object Основа)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(Номенклатура_Objest ДовідникОбєкт)
+    public static Task BeforeSave(Номенклатура_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(Номенклатура_Objest ДовідникОбєкт)
+    public static Task AfterSave(Номенклатура_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static async Task SetDeletionLabel(Номенклатура_Objest ДовідникОбєкт, bool label)
+    public static async Task SetDeletionLabel(Номенклатура_Object ДовідникОбєкт, bool label)
     {
         // Помітка на видалення всіх характеристик елементу номенклатури у випадку label = true
         // Якщо мітка знімається, то з характеристик мітка не має зніматися
@@ -54,7 +54,7 @@ static class Номенклатура_Triggers
         }
     }
 
-    public static Task BeforeDelete(Номенклатура_Objest ДовідникОбєкт)
+    public static Task BeforeDelete(Номенклатура_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }

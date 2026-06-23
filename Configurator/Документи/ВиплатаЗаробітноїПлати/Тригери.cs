@@ -12,7 +12,7 @@ namespace GeneratedCode.Документи;
 
 static class ВиплатаЗаробітноїПлати_Triggers
 {
-    public static async Task New(ВиплатаЗаробітноїПлати_Objest ДокументОбєкт)
+    public static async Task New(ВиплатаЗаробітноїПлати_Object ДокументОбєкт)
     {
         ДокументОбєкт.ДатаДок = DateTime.Now;
         
@@ -21,29 +21,29 @@ static class ВиплатаЗаробітноїПлати_Triggers
                     
     }
 
-    public static Task Copying(ВиплатаЗаробітноїПлати_Objest ДокументОбєкт, ВиплатаЗаробітноїПлати_Objest Основа)
+    public static Task Copying(ВиплатаЗаробітноїПлати_Object ДокументОбєкт, ВиплатаЗаробітноїПлати_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(ВиплатаЗаробітноїПлати_Objest ДокументОбєкт)
+    public static Task BeforeSave(ВиплатаЗаробітноїПлати_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{ВиплатаЗаробітноїПлати_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(ВиплатаЗаробітноїПлати_Objest ДокументОбєкт)
+    public static Task AfterSave(ВиплатаЗаробітноїПлати_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(ВиплатаЗаробітноїПлати_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(ВиплатаЗаробітноїПлати_Object ДокументОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(ВиплатаЗаробітноїПлати_Objest ДокументОбєкт)
+    public static Task BeforeDelete(ВиплатаЗаробітноїПлати_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

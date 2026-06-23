@@ -63,10 +63,10 @@ static class НакладнаВимога_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        НакладнаВимога_Objest Обєкт = new();
+        НакладнаВимога_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            НакладнаВимога_Objest Новий = await Обєкт.Copy(true);
+            НакладнаВимога_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;
@@ -80,7 +80,7 @@ static class НакладнаВимога_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        НакладнаВимога_Objest? Обєкт = await new НакладнаВимога_Pointer(uniqueID).GetDocumentObject(true);
+        НакладнаВимога_Object? Обєкт = await new НакладнаВимога_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

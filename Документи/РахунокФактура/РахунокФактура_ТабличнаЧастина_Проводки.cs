@@ -223,7 +223,7 @@ partial class РахунокФактура_ТабличнаЧастина_Про
 
     #endregion
 
-    public РахунокФактура_Objest? ЕлементВласник { get; set; }
+    public РахунокФактура_Object? ЕлементВласник { get; set; }
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());
     TotalControl Підсумок = TotalControl.New();
 

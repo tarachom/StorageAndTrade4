@@ -154,7 +154,7 @@ partial class КорегуванняБоргу_ТабличнаЧастина_Р
 
     #endregion
 
-    public КорегуванняБоргу_Objest? ЕлементВласник { get; set; }
+    public КорегуванняБоргу_Object? ЕлементВласник { get; set; }
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());
 
     partial void Initialize()

@@ -70,10 +70,10 @@ static class Категорії_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        Категорії_Objest Обєкт = new();
+        Категорії_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            Категорії_Objest Новий = await Обєкт.Copy(true);
+            Категорії_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
 
             return Новий.UniqueID;

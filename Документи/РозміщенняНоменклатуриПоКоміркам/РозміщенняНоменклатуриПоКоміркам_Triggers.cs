@@ -11,7 +11,7 @@ namespace GeneratedCode.Документи;
 
 class РозміщенняНоменклатуриПоКоміркам_Triggers
 {
-    public static async Task New(РозміщенняНоменклатуриПоКоміркам_Objest ДокументОбєкт)
+    public static async Task New(РозміщенняНоменклатуриПоКоміркам_Object ДокументОбєкт)
     {
         int number = await НумераціяДокументів.РозміщенняНоменклатуриПоКоміркам();
         ДокументОбєкт.НомерДок = (await НумераціяДокументів.РозміщенняНоменклатуриПоКоміркам(++number)).ToString("D8");
@@ -19,29 +19,29 @@ class РозміщенняНоменклатуриПоКоміркам_Triggers
         ДокументОбєкт.Автор = Program.Користувач;
     }
 
-    public static Task Copying(РозміщенняНоменклатуриПоКоміркам_Objest ДокументОбєкт, РозміщенняНоменклатуриПоКоміркам_Objest Основа)
+    public static Task Copying(РозміщенняНоменклатуриПоКоміркам_Object ДокументОбєкт, РозміщенняНоменклатуриПоКоміркам_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(РозміщенняНоменклатуриПоКоміркам_Objest ДокументОбєкт)
+    public static Task BeforeSave(РозміщенняНоменклатуриПоКоміркам_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{РозміщенняНоменклатуриПоКоміркам_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(РозміщенняНоменклатуриПоКоміркам_Objest ДокументОбєкт)
+    public static Task AfterSave(РозміщенняНоменклатуриПоКоміркам_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(РозміщенняНоменклатуриПоКоміркам_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(РозміщенняНоменклатуриПоКоміркам_Object ДокументОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(РозміщенняНоменклатуриПоКоміркам_Objest ДокументОбєкт)
+    public static Task BeforeDelete(РозміщенняНоменклатуриПоКоміркам_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

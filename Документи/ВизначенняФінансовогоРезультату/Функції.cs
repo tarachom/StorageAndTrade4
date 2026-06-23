@@ -66,10 +66,10 @@ static class ВизначенняФінансовогоРезультату_Фу
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ВизначенняФінансовогоРезультату_Objest Обєкт = new();
+        ВизначенняФінансовогоРезультату_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ВизначенняФінансовогоРезультату_Objest Новий = await Обєкт.Copy(true);
+            ВизначенняФінансовогоРезультату_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;
@@ -83,7 +83,7 @@ static class ВизначенняФінансовогоРезультату_Фу
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        ВизначенняФінансовогоРезультату_Objest? Обєкт = await new ВизначенняФінансовогоРезультату_Pointer(uniqueID).GetDocumentObject(true);
+        ВизначенняФінансовогоРезультату_Object? Обєкт = await new ВизначенняФінансовогоРезультату_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

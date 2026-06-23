@@ -67,7 +67,7 @@ partial class Контрагенти_Список : DirectoryFormJournalFull
     {
         if (SelectPointerItem != null || DirectoryPointerItem != null)
         {
-            Контрагенти_Objest? Обєкт = await new Контрагенти_Pointer(SelectPointerItem ?? DirectoryPointerItem ?? new UniqueID()).GetDirectoryObject();
+            Контрагенти_Object? Обєкт = await new Контрагенти_Pointer(SelectPointerItem ?? DirectoryPointerItem ?? new UniqueID()).GetDirectoryObject();
             if (Обєкт != null) Папки.SelectPointerItem = Обєкт.Папка.UniqueID;
         }
 

@@ -12,14 +12,14 @@ namespace GeneratedCode.Документи;
 
 class ЗбіркаТоварівНаСкладі_SpendTheDocument
 {
-    public static async Task<bool> Spend(ЗбіркаТоварівНаСкладі_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(ЗбіркаТоварівНаСкладі_Object ДокументОбєкт)
     {
         try
         {
             #region Підготовка ОтриматиЗалишкиТоваруВКомірці
 
             Dictionary<int, decimal> ЗалишокНоменклатури = [];
-            Dictionary<int, Номенклатура_Objest> СписокНоменклатури = [];
+            Dictionary<int, Номенклатура_Object> СписокНоменклатури = [];
 
             foreach (ЗбіркаТоварівНаСкладі_Товари_TablePart.Record ТовариРядок in ДокументОбєкт.Товари_TablePart.Records)
             {
@@ -117,7 +117,7 @@ class ЗбіркаТоварівНаСкладі_SpendTheDocument
         }
     }
 
-    public static Task ClearSpend(ЗбіркаТоварівНаСкладі_Objest ДокументОбєкт)
+    public static Task ClearSpend(ЗбіркаТоварівНаСкладі_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

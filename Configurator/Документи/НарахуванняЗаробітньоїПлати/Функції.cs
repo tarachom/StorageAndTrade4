@@ -66,10 +66,10 @@ static class НарахуванняЗаробітньоїПлати_Функці
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        НарахуванняЗаробітньоїПлати_Objest Обєкт = new();
+        НарахуванняЗаробітньоїПлати_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            НарахуванняЗаробітньоїПлати_Objest Новий = await Обєкт.Copy(true);
+            НарахуванняЗаробітньоїПлати_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;
@@ -83,7 +83,7 @@ static class НарахуванняЗаробітньоїПлати_Функці
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        НарахуванняЗаробітньоїПлати_Objest? Обєкт = await new НарахуванняЗаробітньоїПлати_Pointer(uniqueID).GetDocumentObject(true);
+        НарахуванняЗаробітньоїПлати_Object? Обєкт = await new НарахуванняЗаробітньоїПлати_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

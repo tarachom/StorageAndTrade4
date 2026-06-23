@@ -13,7 +13,7 @@ namespace GeneratedCode.Документи;
 
 class ВведенняЗалишків_Triggers
 {
-    public static async Task New(ВведенняЗалишків_Objest ДокументОбєкт)
+    public static async Task New(ВведенняЗалишків_Object ДокументОбєкт)
     {
         int number = await НумераціяДокументів.ВведенняЗалишків();
         ДокументОбєкт.НомерДок = (await НумераціяДокументів.ВведенняЗалишків(++number)).ToString("D8");
@@ -22,14 +22,14 @@ class ВведенняЗалишків_Triggers
         ДокументОбєкт.Автор = Program.Користувач;
     }
 
-    public static Task Copying(ВведенняЗалишків_Objest ДокументОбєкт, ВведенняЗалишків_Objest Основа)
+    public static Task Copying(ВведенняЗалишків_Object ДокументОбєкт, ВведенняЗалишків_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         ДокументОбєкт.ДокументБухгалтерськаОперація = new();
         return Task.CompletedTask;
     }
 
-    public static async Task BeforeSave(ВведенняЗалишків_Objest ДокументОбєкт)
+    public static async Task BeforeSave(ВведенняЗалишків_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{ВведенняЗалишків_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
 
@@ -48,12 +48,12 @@ class ВведенняЗалишків_Triggers
         }
     }
 
-    public static Task AfterSave(ВведенняЗалишків_Objest ДокументОбєкт)
+    public static Task AfterSave(ВведенняЗалишків_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static async Task SetDeletionLabel(ВведенняЗалишків_Objest ДокументОбєкт, bool label)
+    public static async Task SetDeletionLabel(ВведенняЗалишків_Object ДокументОбєкт, bool label)
     {
         // Помітка на виделення всіх партій
         if (label)
@@ -70,7 +70,7 @@ class ВведенняЗалишків_Triggers
         }
     }
 
-    public static Task BeforeDelete(ВведенняЗалишків_Objest ДокументОбєкт)
+    public static Task BeforeDelete(ВведенняЗалишків_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

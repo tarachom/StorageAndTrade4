@@ -67,7 +67,7 @@ partial class Номенклатура_Список : DirectoryFormJournalFull
     {
         if (SelectPointerItem != null || DirectoryPointerItem != null)
         {
-            Номенклатура_Objest? Обєкт = await new Номенклатура_Pointer(SelectPointerItem ?? DirectoryPointerItem ?? new UniqueID()).GetDirectoryObject();
+            Номенклатура_Object? Обєкт = await new Номенклатура_Pointer(SelectPointerItem ?? DirectoryPointerItem ?? new UniqueID()).GetDirectoryObject();
             if (Обєкт != null) Папки.SelectPointerItem = Обєкт.Папка.UniqueID;
         }
 

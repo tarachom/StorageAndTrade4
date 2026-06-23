@@ -12,7 +12,7 @@ namespace GeneratedCode.Документи;
 
 static class ПереоцінкаВалюти_Triggers
 {
-    public static async Task New(ПереоцінкаВалюти_Objest ДокументОбєкт)
+    public static async Task New(ПереоцінкаВалюти_Object ДокументОбєкт)
     {
         ДокументОбєкт.ДатаДок = DateTime.Now;
         
@@ -21,29 +21,29 @@ static class ПереоцінкаВалюти_Triggers
                     
     }
 
-    public static Task Copying(ПереоцінкаВалюти_Objest ДокументОбєкт, ПереоцінкаВалюти_Objest Основа)
+    public static Task Copying(ПереоцінкаВалюти_Object ДокументОбєкт, ПереоцінкаВалюти_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(ПереоцінкаВалюти_Objest ДокументОбєкт)
+    public static Task BeforeSave(ПереоцінкаВалюти_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{ПереоцінкаВалюти_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(ПереоцінкаВалюти_Objest ДокументОбєкт)
+    public static Task AfterSave(ПереоцінкаВалюти_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(ПереоцінкаВалюти_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(ПереоцінкаВалюти_Object ДокументОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(ПереоцінкаВалюти_Objest ДокументОбєкт)
+    public static Task BeforeDelete(ПереоцінкаВалюти_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

@@ -66,10 +66,10 @@ static class ЗакриттяРахункуФактури_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ЗакриттяРахункуФактури_Objest Обєкт = new();
+        ЗакриттяРахункуФактури_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ЗакриттяРахункуФактури_Objest Новий = await Обєкт.Copy(true);
+            ЗакриттяРахункуФактури_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
 
             await Новий.Товари_TablePart.Save(false); // Таблична частина "Товари"
@@ -85,7 +85,7 @@ static class ЗакриттяРахункуФактури_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        ЗакриттяРахункуФактури_Objest? Обєкт = await new ЗакриттяРахункуФактури_Pointer(uniqueID).GetDocumentObject(true);
+        ЗакриттяРахункуФактури_Object? Обєкт = await new ЗакриттяРахункуФактури_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

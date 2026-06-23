@@ -66,10 +66,10 @@ static class ПокупкаАбоПродажВалюти_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ПокупкаАбоПродажВалюти_Objest Обєкт = new();
+        ПокупкаАбоПродажВалюти_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ПокупкаАбоПродажВалюти_Objest Новий = await Обєкт.Copy(true);
+            ПокупкаАбоПродажВалюти_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;
@@ -83,7 +83,7 @@ static class ПокупкаАбоПродажВалюти_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        ПокупкаАбоПродажВалюти_Objest? Обєкт = await new ПокупкаАбоПродажВалюти_Pointer(uniqueID).GetDocumentObject(true);
+        ПокупкаАбоПродажВалюти_Object? Обєкт = await new ПокупкаАбоПродажВалюти_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

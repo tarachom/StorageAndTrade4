@@ -17,7 +17,7 @@ namespace GeneratedCode.Документи;
 
 static class Комплектація_SpendTheDocument
 {
-    public static async Task<bool> Spend(Комплектація_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(Комплектація_Object ДокументОбєкт)
     {
         try
         {
@@ -33,7 +33,7 @@ static class Комплектація_SpendTheDocument
         }
     }
 
-    public static Task Clear(Комплектація_Objest ДокументОбєкт)
+    public static Task Clear(Комплектація_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

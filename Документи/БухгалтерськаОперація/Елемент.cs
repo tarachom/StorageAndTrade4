@@ -17,7 +17,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DocumentFormElement>("Element_atRQpjGFYUqSI19kL6UIRQ")]
 partial class БухгалтерськаОперація_Елемент : DocumentFormElement
 {
-    public БухгалтерськаОперація_Objest Елемент { get; init; } = new();
+    public БухгалтерськаОперація_Object Елемент { get; init; } = new();
 
     #region Fields
     Entry НомерДок = Entry.New();
@@ -40,13 +40,13 @@ partial class БухгалтерськаОперація_Елемент : Docume
         Element = Елемент;
 
         CreateDocName(БухгалтерськаОперація_Const.FULLNAME, НомерДок, ДатаДок);
-        CreateField(HBoxComment, "Коментар:", Коментар);
+        CreateField(Interface.CommentBox, "Коментар:", Коментар);
 
         // Таблична частина "Проводки"
         Операції.WidthRequest = 500;
         Операції.HeightRequest = 300;
-        NotebookTablePart.InsertPage(Операції, Label.New("Операції"), 0);
-        NotebookTablePart.SetCurrentPage(0);
+        Interface.Notebook.InsertPage(Операції, Label.New("Операції"), 0);
+        Interface.Notebook.SetCurrentPage(0);
 
         //НомерДок:
         НомерДок.WidthRequest = 100;
@@ -70,27 +70,45 @@ partial class БухгалтерськаОперація_Елемент : Docume
         return element;
     }
 
-    protected override void CreateTopStart(Box vBox)
+    #region Interface
+
+    FunctionForInterfaces.DocumentElement Interface;
+
+    protected override void BuildInterface()
+    {
+        Interface = FunctionForInterfaces.ForDocument();
+
+        Append(Interface.MainBox);
+
+        CreateTopStart(Interface.TopStartBox);
+        CreateTopEnd(Interface.TopEndBox);
+        CreateBottomStart(Interface.BottomStartBox);
+        CreateBottomEnd(Interface.BottomEndBox);
+    }
+
+    void CreateTopStart(Box vBox)
     {
         // Організація
         CreateField(vBox, null, Організація);
     }
 
-    protected override void CreateTopEnd(Box vBox)
+    void CreateTopEnd(Box vBox)
     {
 
     }
 
-    protected override void CreateBottomStart(Box vBox)
+    void CreateBottomStart(Box vBox)
     {
         // Основа
         CreateField(vBox, null, Основа);
     }
 
-    protected override void CreateBottomEnd(Box vBox)
+    void CreateBottomEnd(Box vBox)
     {
 
     }
+
+    #endregion
 
     #region Присвоєння / зчитування значень
 

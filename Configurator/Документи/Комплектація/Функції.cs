@@ -66,10 +66,10 @@ static class Комплектація_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        Комплектація_Objest Обєкт = new();
+        Комплектація_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            Комплектація_Objest Новий = await Обєкт.Copy(true);
+            Комплектація_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;
@@ -83,7 +83,7 @@ static class Комплектація_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        Комплектація_Objest? Обєкт = await new Комплектація_Pointer(uniqueID).GetDocumentObject(true);
+        Комплектація_Object? Обєкт = await new Комплектація_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

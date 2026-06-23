@@ -69,10 +69,10 @@ static class РахунокФактура_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        РахунокФактура_Objest Обєкт = new();
+        РахунокФактура_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            РахунокФактура_Objest Новий = await Обєкт.Copy(true);
+            РахунокФактура_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
                 await Новий.Товари_TablePart.Save(false); // Таблична частина "Товари"
@@ -90,7 +90,7 @@ static class РахунокФактура_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        РахунокФактура_Objest? Обєкт = await new РахунокФактура_Pointer(uniqueID).GetDocumentObject(true);
+        РахунокФактура_Object? Обєкт = await new РахунокФактура_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

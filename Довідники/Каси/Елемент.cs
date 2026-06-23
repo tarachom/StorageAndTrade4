@@ -14,7 +14,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DirectoryFormElement>("Element_iz53H2Q7VUuuhrN53koS5A")]
 partial class Каси_Елемент : DirectoryFormElement
 {
-    public Каси_Objest Елемент { get; init; } = new();
+    public Каси_Object Елемент { get; init; } = new();
 
     #region Fields
     Entry Код = Entry.New();

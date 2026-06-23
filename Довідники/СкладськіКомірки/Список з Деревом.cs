@@ -82,7 +82,7 @@ partial class СкладськіКомірки_Список : DirectoryFormJourn
     {
         if (SelectPointerItem != null || DirectoryPointerItem != null)
         {
-            СкладськіКомірки_Objest? Обєкт = await new СкладськіКомірки_Pointer(SelectPointerItem ?? DirectoryPointerItem ?? new UniqueID()).GetDirectoryObject();
+            СкладськіКомірки_Object? Обєкт = await new СкладськіКомірки_Pointer(SelectPointerItem ?? DirectoryPointerItem ?? new UniqueID()).GetDirectoryObject();
             if (Обєкт != null) Папки.SelectPointerItem = Обєкт.Папка.UniqueID;
         }
 

@@ -14,7 +14,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DirectoryFormElement>("Element_jXYVxPP2lEiZalTXg2D7NQ")]
 partial class ТипиБухОперацій_Елемент : DirectoryFormElement
 {
-    public ТипиБухОперацій_Objest Елемент { get; init; } = new();
+    public ТипиБухОперацій_Object Елемент { get; init; } = new();
 
     #region Fields
     Entry Код = Entry.New();

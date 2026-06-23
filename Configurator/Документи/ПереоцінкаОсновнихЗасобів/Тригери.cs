@@ -12,7 +12,7 @@ namespace GeneratedCode.Документи;
 
 static class ПереоцінкаОсновнихЗасобів_Triggers
 {
-    public static async Task New(ПереоцінкаОсновнихЗасобів_Objest ДокументОбєкт)
+    public static async Task New(ПереоцінкаОсновнихЗасобів_Object ДокументОбєкт)
     {
         ДокументОбєкт.ДатаДок = DateTime.Now;
         
@@ -21,29 +21,29 @@ static class ПереоцінкаОсновнихЗасобів_Triggers
                     
     }
 
-    public static Task Copying(ПереоцінкаОсновнихЗасобів_Objest ДокументОбєкт, ПереоцінкаОсновнихЗасобів_Objest Основа)
+    public static Task Copying(ПереоцінкаОсновнихЗасобів_Object ДокументОбєкт, ПереоцінкаОсновнихЗасобів_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(ПереоцінкаОсновнихЗасобів_Objest ДокументОбєкт)
+    public static Task BeforeSave(ПереоцінкаОсновнихЗасобів_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{ПереоцінкаОсновнихЗасобів_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(ПереоцінкаОсновнихЗасобів_Objest ДокументОбєкт)
+    public static Task AfterSave(ПереоцінкаОсновнихЗасобів_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(ПереоцінкаОсновнихЗасобів_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(ПереоцінкаОсновнихЗасобів_Object ДокументОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(ПереоцінкаОсновнихЗасобів_Objest ДокументОбєкт)
+    public static Task BeforeDelete(ПереоцінкаОсновнихЗасобів_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

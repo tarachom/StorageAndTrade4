@@ -8,9 +8,7 @@ using Gtk;
 using InterfaceGtk4;
 using AccountingSoftware;
 
-using GeneratedCode;
 using GeneratedCode.Константи;
-using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
 using GeneratedCode.Перелічення;
 using Функції = StorageAndTrade.ЗакриттяЗамовленняКлієнта_Функції;
@@ -20,7 +18,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DocumentFormElement>("Element_v6RcNmdA20SMTmcaGaVXWw")]
 partial class ЗакриттяЗамовленняКлієнта_Елемент : DocumentFormElement
 {
-    public ЗакриттяЗамовленняКлієнта_Objest Елемент { get; init; } = new();
+    public ЗакриттяЗамовленняКлієнта_Object Елемент { get; init; } = new();
 
     #region Fields
     Entry НомерДок = Entry.New();
@@ -52,13 +50,13 @@ partial class ЗакриттяЗамовленняКлієнта_Елемент 
         Element = Елемент;
 
         CreateDocName(ЗакриттяЗамовленняКлієнта_Const.FULLNAME, НомерДок, ДатаДок);
-        CreateField(HBoxComment, "Коментар:", Коментар);
+        CreateField(Interface.CommentBox, "Коментар:", Коментар);
 
         // Таблична частина "Товари"
         Товари.HeightRequest = 300;
-        NotebookTablePart.InsertPage(Товари, Label.New("Товари"), 0);
+        Interface.Notebook.InsertPage(Товари, Label.New("Товари"), 0);
 
-        NotebookTablePart.SetCurrentPage(0);
+        Interface.Notebook.SetCurrentPage(0);
 
         //НомерДок:
         НомерДок.WidthRequest = 100;
@@ -124,7 +122,23 @@ partial class ЗакриттяЗамовленняКлієнта_Елемент 
         return element;
     }
 
-    protected override void CreateTopStart(Box vBox)
+    #region Interface
+
+    FunctionForInterfaces.DocumentElement Interface;
+
+    protected override void BuildInterface()
+    {
+        Interface = FunctionForInterfaces.ForDocument();
+
+        Append(Interface.MainBox);
+
+        CreateTopStart(Interface.TopStartBox);
+        CreateTopEnd(Interface.TopEndBox);
+        CreateBottomStart(Interface.BottomStartBox);
+        CreateBottomEnd(Interface.BottomEndBox);
+    }
+
+    void CreateTopStart(Box vBox)
     {
         //Організація
         CreateField(vBox, null, Організація);
@@ -141,7 +155,7 @@ partial class ЗакриттяЗамовленняКлієнта_Елемент 
         CreateField(vBox, null, ЗамовленняКлієнта);
     }
 
-    protected override void CreateTopEnd(Box vBox)
+    void CreateTopEnd(Box vBox)
     {
         //Каса
         CreateField(vBox, null, Каса);
@@ -156,7 +170,7 @@ partial class ЗакриттяЗамовленняКлієнта_Елемент 
         CreateField(vBox, "Причина закриття:", ПричинаЗакриттяЗамовлення);
     }
 
-    protected override void CreateBottomStart(Box vBox)
+    void CreateBottomStart(Box vBox)
     {
         // Автор
         CreateField(vBox, null, Автор);
@@ -165,11 +179,13 @@ partial class ЗакриттяЗамовленняКлієнта_Елемент 
         CreateField(vBox, null, Менеджер);
     }
 
-    protected override void CreateBottomEnd(Box vBox)
+    void CreateBottomEnd(Box vBox)
     {
         // Основа
         CreateField(vBox, null, Основа);
     }
+
+    #endregion
 
     #region Присвоєння / зчитування значень
 

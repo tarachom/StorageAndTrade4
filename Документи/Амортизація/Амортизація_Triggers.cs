@@ -13,7 +13,7 @@ namespace GeneratedCode.Документи;
 
 static class Амортизація_Triggers
 {
-    public static async Task New(Амортизація_Objest ДокументОбєкт)
+    public static async Task New(Амортизація_Object ДокументОбєкт)
     {
         ДокументОбєкт.ДатаДок = DateTime.Now;
 
@@ -23,14 +23,14 @@ static class Амортизація_Triggers
         ДокументОбєкт.Автор = Program.Користувач;
     }
 
-    public static Task Copying(Амортизація_Objest ДокументОбєкт, Амортизація_Objest Основа)
+    public static Task Copying(Амортизація_Object ДокументОбєкт, Амортизація_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         ДокументОбєкт.ДокументБухгалтерськаОперація = new();
         return Task.CompletedTask;
     }
 
-    public static async Task BeforeSave(Амортизація_Objest ДокументОбєкт)
+    public static async Task BeforeSave(Амортизація_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{Амортизація_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
 
@@ -49,17 +49,17 @@ static class Амортизація_Triggers
         }
     }
 
-    public static Task AfterSave(Амортизація_Objest ДокументОбєкт)
+    public static Task AfterSave(Амортизація_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(Амортизація_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(Амортизація_Object ДокументОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(Амортизація_Objest ДокументОбєкт)
+    public static Task BeforeDelete(Амортизація_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

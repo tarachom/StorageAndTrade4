@@ -12,7 +12,7 @@ namespace GeneratedCode.Документи;
 
 static class ПереміщенняНематеріальнихАктивів_Triggers
 {
-    public static async Task New(ПереміщенняНематеріальнихАктивів_Objest ДокументОбєкт)
+    public static async Task New(ПереміщенняНематеріальнихАктивів_Object ДокументОбєкт)
     {
         ДокументОбєкт.ДатаДок = DateTime.Now;
         
@@ -21,29 +21,29 @@ static class ПереміщенняНематеріальнихАктивів_Tr
                     
     }
 
-    public static Task Copying(ПереміщенняНематеріальнихАктивів_Objest ДокументОбєкт, ПереміщенняНематеріальнихАктивів_Objest Основа)
+    public static Task Copying(ПереміщенняНематеріальнихАктивів_Object ДокументОбєкт, ПереміщенняНематеріальнихАктивів_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(ПереміщенняНематеріальнихАктивів_Objest ДокументОбєкт)
+    public static Task BeforeSave(ПереміщенняНематеріальнихАктивів_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{ПереміщенняНематеріальнихАктивів_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(ПереміщенняНематеріальнихАктивів_Objest ДокументОбєкт)
+    public static Task AfterSave(ПереміщенняНематеріальнихАктивів_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(ПереміщенняНематеріальнихАктивів_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(ПереміщенняНематеріальнихАктивів_Object ДокументОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(ПереміщенняНематеріальнихАктивів_Objest ДокументОбєкт)
+    public static Task BeforeDelete(ПереміщенняНематеріальнихАктивів_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

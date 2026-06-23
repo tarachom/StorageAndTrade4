@@ -111,7 +111,7 @@ partial class FormStorageAndTrade : FormGeneral
         Користувачі_Pointer ЗнайденийКористувач = await new Користувачі_Select().FindByField(Користувачі_Const.КодВСпеціальнійТаблиці, Config.Kernel.User);
         if (ЗнайденийКористувач.IsEmpty())
         {
-            Користувачі_Objest НовийКористувач = new()
+            Користувачі_Object НовийКористувач = new()
             {
                 КодВСпеціальнійТаблиці = Config.Kernel.User,
                 Назва = await Config.Kernel.DataBase.SpetialTableUsersGetFullName(Config.Kernel.User)

@@ -15,7 +15,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DirectoryFormElement>("Element_tD9zKdrSUESFtGALCHPudw")]
 partial class ПартіяТоварівКомпозит_Елемент : DirectoryFormElement
 {
-    public ПартіяТоварівКомпозит_Objest Елемент { get; init; } = new();
+    public ПартіяТоварівКомпозит_Object Елемент { get; init; } = new();
 
     #region Fields
     Entry Назва = Entry.New();

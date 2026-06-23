@@ -20,25 +20,25 @@ namespace StorageAndTrade;
 [GObject.Subclass<DocumentFormElement>("Element_U1bksr8l8E6dJiI12IfWAQ")]
 partial class ПерерахунокТоварів_Елемент : DocumentFormElement
 {
-    public ПерерахунокТоварів_Objest Елемент { get; init; } = new();
+    public ПерерахунокТоварів_Object Елемент { get; init; } = new();
 
     #region Fields
     Entry НомерДок = Entry.New();
-                    DateTimeControl ДатаДок = DateTimeControl.New();
-            Склади_PointerControl Склад = Склади_PointerControl.New();
-            ФізичніОсоби_PointerControl Відповідальний = ФізичніОсоби_PointerControl.New();
-            Entry Коментар = Entry.New();
-                    Організації_PointerControl Організація = Організації_PointerControl.New();
-            СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
-            CompositePointerControl Основа = CompositePointerControl.New();
-            
+    DateTimeControl ДатаДок = DateTimeControl.New();
+    Склади_PointerControl Склад = Склади_PointerControl.New();
+    ФізичніОсоби_PointerControl Відповідальний = ФізичніОсоби_PointerControl.New();
+    Entry Коментар = Entry.New();
+    Організації_PointerControl Організація = Організації_PointerControl.New();
+    СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
+    CompositePointerControl Основа = CompositePointerControl.New();
+
     #endregion
 
     #region TabularParts
-    
-        // Таблична частина "Товари" 
-        ПерерахунокТоварів_ТабличнаЧастина_Товари Товари = ПерерахунокТоварів_ТабличнаЧастина_Товари.New();
-    
+
+    // Таблична частина "Товари" 
+    ПерерахунокТоварів_ТабличнаЧастина_Товари Товари = ПерерахунокТоварів_ТабличнаЧастина_Товари.New();
+
     #endregion
 
     partial void Initialize()
@@ -46,43 +46,38 @@ partial class ПерерахунокТоварів_Елемент : DocumentForm
         Element = Елемент;
 
         CreateDocName(ПерерахунокТоварів_Const.FULLNAME, НомерДок, ДатаДок);
-        
-        CreateField(HBoxComment, "Коментар:", Коментар);
-        
-            // Таблична частина "Товари"
-            Товари.WidthRequest = 500;
-            Товари.HeightRequest = 300;
-            NotebookTablePart.InsertPage(Товари, Label.New("Товари"), 0);
-            
-            NotebookTablePart.SetCurrentPage(0);
-        
-            //НомерДок:
-            НомерДок.WidthRequest = 100;
-                        
-            //ДатаДок:
-            
-            //Склад:
-            Склад.Caption = "Склад";
-                    Склад.WidthPresentation = 300;
-                
-            //Відповідальний:
-            Відповідальний.Caption = "Відповідальний";
-                    Відповідальний.WidthPresentation = 300;
-                
-            //Коментар:
-            Коментар.WidthRequest = 300;
-                        
-            //Організація:
-            Організація.Caption = "Організація";
-                    Організація.WidthPresentation = 300;
-                
-            //Підрозділ:
-            Підрозділ.Caption = "Підрозділ";
-                    Підрозділ.WidthPresentation = 300;
-                
-            //Основа:
-            Основа.BoundConfType = "Документи.ПерерахунокТоварів.Основа";
-                
+        CreateField(Interface.CommentBox, "Коментар:", Коментар);
+
+        // Таблична частина "Товари"
+        Товари.HeightRequest = 300;
+        Interface.Notebook.InsertPage(Товари, Label.New("Товари"), 0);
+
+        Interface.Notebook.SetCurrentPage(0);
+
+        //НомерДок:
+        НомерДок.WidthRequest = 100;
+
+        //Склад:
+        Склад.Caption = "Склад";
+        Склад.WidthPresentation = 300;
+
+        //Відповідальний:
+        Відповідальний.Caption = "Відповідальний";
+        Відповідальний.WidthPresentation = 300;
+
+        //Коментар:
+        Коментар.WidthRequest = 300;
+
+        //Організація:
+        Організація.Caption = "Організація";
+        Організація.WidthPresentation = 300;
+
+        //Підрозділ:
+        Підрозділ.Caption = "Підрозділ";
+        Підрозділ.WidthPresentation = 300;
+
+        //Основа:
+        Основа.BoundConfType = "Документи.ПерерахунокТоварів.Основа";
     }
 
     public static ПерерахунокТоварів_Елемент New()
@@ -93,92 +88,108 @@ partial class ПерерахунокТоварів_Елемент : DocumentForm
         return element;
     }
 
-    protected override void CreateTopStart(Box vBox)
+    #region Interface
+
+    FunctionForInterfaces.DocumentElement Interface;
+
+    protected override void BuildInterface()
     {
-        
+        Interface = FunctionForInterfaces.ForDocument();
+
+        Append(Interface.MainBox);
+
+        CreateTopStart(Interface.TopStartBox);
+        CreateTopEnd(Interface.TopEndBox);
+        CreateBottomStart(Interface.BottomStartBox);
+        CreateBottomEnd(Interface.BottomEndBox);
     }
 
-    protected override void CreateTopEnd(Box vBox)
+    void CreateTopStart(Box vBox)
     {
-        
+
     }
 
-    protected override void CreateBottomStart(Box vBox)
+    void CreateTopEnd(Box vBox)
     {
-        
-            // Склад
-            CreateField(vBox, null, Склад);
-                
-            // Відповідальний
-            CreateField(vBox, null, Відповідальний);
-                
-            // Організація
-            CreateField(vBox, null, Організація);
-                
-            // Підрозділ
-            CreateField(vBox, null, Підрозділ);
-                
-            // Основа
-            CreateField(vBox, null, Основа);
-                
+
     }
 
-    protected override void CreateBottomEnd(Box vBox)
+    void CreateBottomStart(Box vBox)
     {
-        
+        // Склад
+        CreateField(vBox, null, Склад);
+
+        // Відповідальний
+        CreateField(vBox, null, Відповідальний);
+
+        // Організація
+        CreateField(vBox, null, Організація);
+
+        // Підрозділ
+        CreateField(vBox, null, Підрозділ);
+
+        // Основа
+        CreateField(vBox, null, Основа);
     }
+
+    void CreateBottomEnd(Box vBox)
+    {
+
+    }
+
+    #endregion
 
     #region Присвоєння / зчитування значень
 
     public override async Task AssignValue()
     {
         НомерДок.SetText(Елемент.НомерДок);
-                        ДатаДок.Value = Елемент.ДатаДок;
-                Склад.Pointer = Елемент.Склад;
-                Відповідальний.Pointer = Елемент.Відповідальний;
-                Коментар.SetText(Елемент.Коментар);
-                        Організація.Pointer = Елемент.Організація;
-                Підрозділ.Pointer = Елемент.Підрозділ;
-                Основа.Pointer = Елемент.Основа;
-                
-            // Таблична частина "Товари" 
-            Товари.ЕлементВласник = Елемент; 
-            await Товари.LoadRecords();
-        
+        ДатаДок.Value = Елемент.ДатаДок;
+        Склад.Pointer = Елемент.Склад;
+        Відповідальний.Pointer = Елемент.Відповідальний;
+        Коментар.SetText(Елемент.Коментар);
+        Організація.Pointer = Елемент.Організація;
+        Підрозділ.Pointer = Елемент.Підрозділ;
+        Основа.Pointer = Елемент.Основа;
+
+        // Таблична частина "Товари" 
+        Товари.ЕлементВласник = Елемент;
+        await Товари.LoadRecords();
+
     }
 
     protected override void GetValue()
     {
         Елемент.НомерДок = НомерДок.GetText();
-                        Елемент.ДатаДок = ДатаДок.Value;
-                Елемент.Склад = Склад.Pointer;
-                Елемент.Відповідальний = Відповідальний.Pointer;
-                Елемент.Коментар = Коментар.GetText();
-                        Елемент.Організація = Організація.Pointer;
-                Елемент.Підрозділ = Підрозділ.Pointer;
-                Елемент.Основа = Основа.Pointer;
-                
+        Елемент.ДатаДок = ДатаДок.Value;
+        Елемент.Склад = Склад.Pointer;
+        Елемент.Відповідальний = Відповідальний.Pointer;
+        Елемент.Коментар = Коментар.GetText();
+        Елемент.Організація = Організація.Pointer;
+        Елемент.Підрозділ = Підрозділ.Pointer;
+        Елемент.Основа = Основа.Pointer;
+
     }
 
-    
+
     /*string КлючовіСловаДляПошуку()
     {
         return $"\n {Склад.Pointer.Назва} {Відповідальний.Pointer.Назва} {Організація.Pointer.Назва} {Підрозділ.Pointer.Назва}"
          + Товари.КлючовіСловаДляПошуку();
     }*/
-    
+
 
     #endregion
-    
+
     protected override async Task<bool> Save()
     {
         bool isSaved = false;
         try
         {
-            if(await Елемент.Save())
+            if (await Елемент.Save())
             {
                 await Товари.SaveRecords(); // Таблична частина "Товари"
-                
+
                 isSaved = true;
             }
         }
@@ -214,4 +225,3 @@ partial class ПерерахунокТоварів_Елемент : DocumentForm
         await Функції.OpenPageList(uniqueID);
     }
 }
-    

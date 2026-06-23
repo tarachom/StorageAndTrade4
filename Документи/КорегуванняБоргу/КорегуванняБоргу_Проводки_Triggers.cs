@@ -11,12 +11,12 @@ namespace GeneratedCode.Документи;
 
 static class КорегуванняБоргу_Проводки_Triggers
 {
-    public static Task BeforeSave(КорегуванняБоргу_Objest ДокументОбєкт, КорегуванняБоргу_Проводки_TablePart ТабличнаЧастина)
+    public static Task BeforeSave(КорегуванняБоргу_Object ДокументОбєкт, КорегуванняБоргу_Проводки_TablePart ТабличнаЧастина)
     {
         return Task.CompletedTask;
     }
 
-    public static async Task AfterSave(КорегуванняБоргу_Objest ДокументОбєкт, КорегуванняБоргу_Проводки_TablePart ТабличнаЧастина)
+    public static async Task AfterSave(КорегуванняБоргу_Object ДокументОбєкт, КорегуванняБоргу_Проводки_TablePart ТабличнаЧастина)
     {
         if (!ДокументОбєкт.ДокументБухгалтерськаОперація.IsEmpty())
         {

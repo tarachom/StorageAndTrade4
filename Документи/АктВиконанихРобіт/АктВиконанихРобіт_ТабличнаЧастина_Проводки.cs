@@ -224,7 +224,7 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
 
     #endregion
 
-    public АктВиконанихРобіт_Objest? ЕлементВласник { get; set; }
+    public АктВиконанихРобіт_Object? ЕлементВласник { get; set; }
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());
     TotalControl Підсумок = TotalControl.New();
 

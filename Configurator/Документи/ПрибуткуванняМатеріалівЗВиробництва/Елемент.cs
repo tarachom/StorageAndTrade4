@@ -20,7 +20,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DocumentFormElement>("Element_6G6eARGV0XKDoERpYFFyQ")]
 partial class ПрибуткуванняМатеріалівЗВиробництва_Елемент : DocumentFormElement
 {
-    public ПрибуткуванняМатеріалівЗВиробництва_Objest Елемент { get; init; } = new();
+    public ПрибуткуванняМатеріалівЗВиробництва_Object Елемент { get; init; } = new();
 
     #region Fields
     Entry НомерДок = Entry.New();
@@ -63,17 +63,17 @@ partial class ПрибуткуванняМатеріалівЗВиробницт
         return element;
     }
 
-    protected override void CreateTopStart(Box vBox)
+    void CreateTopStart(Box vBox)
     {
         
     }
 
-    protected override void CreateTopEnd(Box vBox)
+    void CreateTopEnd(Box vBox)
     {
         
     }
 
-    protected override void CreateBottomStart(Box vBox)
+    void CreateBottomStart(Box vBox)
     {
         
             // Основа
@@ -81,7 +81,7 @@ partial class ПрибуткуванняМатеріалівЗВиробницт
                 
     }
 
-    protected override void CreateBottomEnd(Box vBox)
+    void CreateBottomEnd(Box vBox)
     {
         
     }

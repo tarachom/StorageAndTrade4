@@ -14,7 +14,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DirectoryFormElement>("Element_I3KY48IfDEmTcqqI2stUJw")]
 partial class ГрошовіРахункиВласні_Елемент : DirectoryFormElement
 {
-    public ГрошовіРахункиВласні_Objest Елемент { get; init; } = new();
+    public ГрошовіРахункиВласні_Object Елемент { get; init; } = new();
 
     #region Fields
     Entry Код = Entry.New();

@@ -66,10 +66,10 @@ static class АвансовийЗвіт_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        АвансовийЗвіт_Objest Обєкт = new();
+        АвансовийЗвіт_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            АвансовийЗвіт_Objest Новий = await Обєкт.Copy(true);
+            АвансовийЗвіт_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
                 await Новий.Проводки_TablePart.Save(false); // Таблична частина "Проводки"
@@ -87,7 +87,7 @@ static class АвансовийЗвіт_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        АвансовийЗвіт_Objest? Обєкт = await new АвансовийЗвіт_Pointer(uniqueID).GetDocumentObject(true);
+        АвансовийЗвіт_Object? Обєкт = await new АвансовийЗвіт_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

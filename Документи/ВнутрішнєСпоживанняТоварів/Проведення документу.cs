@@ -12,13 +12,13 @@ namespace GeneratedCode.Документи;
 
 class ВнутрішнєСпоживанняТоварів_SpendTheDocument
 {
-    public static async Task<bool> Spend(ВнутрішнєСпоживанняТоварів_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(ВнутрішнєСпоживанняТоварів_Object ДокументОбєкт)
     {
         try
         {
             #region Підготовка
 
-            Dictionary<int, Номенклатура_Objest> СписокНоменклатури = [];
+            Dictionary<int, Номенклатура_Object> СписокНоменклатури = [];
             Dictionary<int, decimal> ЗалишокНоменклатури = [];
             Dictionary<int, decimal> РезервНоменклатури = [];
 
@@ -243,7 +243,7 @@ class ВнутрішнєСпоживанняТоварів_SpendTheDocument
         }
     }
 
-    public static async Task Clear(ВнутрішнєСпоживанняТоварів_Objest ДокументОбєкт)
+    public static async Task Clear(ВнутрішнєСпоживанняТоварів_Object ДокументОбєкт)
     {
         if (!ДокументОбєкт.ДокументБухгалтерськаОперація.IsEmpty())
             await ДокументОбєкт.ДокументБухгалтерськаОперація.ClearSpendTheDocument();

@@ -66,10 +66,10 @@ static class СписанняОсновнихЗасобів_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        СписанняОсновнихЗасобів_Objest Обєкт = new();
+        СписанняОсновнихЗасобів_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            СписанняОсновнихЗасобів_Objest Новий = await Обєкт.Copy(true);
+            СписанняОсновнихЗасобів_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;
@@ -83,7 +83,7 @@ static class СписанняОсновнихЗасобів_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        СписанняОсновнихЗасобів_Objest? Обєкт = await new СписанняОсновнихЗасобів_Pointer(uniqueID).GetDocumentObject(true);
+        СписанняОсновнихЗасобів_Object? Обєкт = await new СписанняОсновнихЗасобів_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

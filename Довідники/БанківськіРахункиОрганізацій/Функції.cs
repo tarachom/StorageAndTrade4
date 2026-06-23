@@ -72,10 +72,10 @@ static class БанківськіРахункиОрганізацій_Функц
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        БанківськіРахункиОрганізацій_Objest Обєкт = new();
+        БанківськіРахункиОрганізацій_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            БанківськіРахункиОрганізацій_Objest Новий = await Обєкт.Copy(true);
+            БанківськіРахункиОрганізацій_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;

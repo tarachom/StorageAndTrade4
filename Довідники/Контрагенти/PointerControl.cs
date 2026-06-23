@@ -88,7 +88,7 @@ public partial class Контрагенти_PointerControl : PointerControl
             else
             {
                 //Перевірити чи змінився контрагент
-                ДоговориКонтрагентів_Objest? обєкт = await Договір.Pointer.GetDirectoryObject();
+                ДоговориКонтрагентів_Object? обєкт = await Договір.Pointer.GetDirectoryObject();
                 if (обєкт != null)
                     if (обєкт.Контрагент != Pointer)
                     {

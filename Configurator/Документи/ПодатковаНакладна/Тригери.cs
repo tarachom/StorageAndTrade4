@@ -12,7 +12,7 @@ namespace GeneratedCode.Документи;
 
 static class ПодатковаНакладна_Triggers
 {
-    public static async Task New(ПодатковаНакладна_Objest ДокументОбєкт)
+    public static async Task New(ПодатковаНакладна_Object ДокументОбєкт)
     {
         ДокументОбєкт.ДатаДок = DateTime.Now;
         
@@ -21,29 +21,29 @@ static class ПодатковаНакладна_Triggers
                     
     }
 
-    public static Task Copying(ПодатковаНакладна_Objest ДокументОбєкт, ПодатковаНакладна_Objest Основа)
+    public static Task Copying(ПодатковаНакладна_Object ДокументОбєкт, ПодатковаНакладна_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(ПодатковаНакладна_Objest ДокументОбєкт)
+    public static Task BeforeSave(ПодатковаНакладна_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{ПодатковаНакладна_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(ПодатковаНакладна_Objest ДокументОбєкт)
+    public static Task AfterSave(ПодатковаНакладна_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(ПодатковаНакладна_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(ПодатковаНакладна_Object ДокументОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(ПодатковаНакладна_Objest ДокументОбєкт)
+    public static Task BeforeDelete(ПодатковаНакладна_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

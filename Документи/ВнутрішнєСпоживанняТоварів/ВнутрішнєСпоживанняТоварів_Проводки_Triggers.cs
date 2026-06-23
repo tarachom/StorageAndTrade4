@@ -11,12 +11,12 @@ namespace GeneratedCode.Документи;
 
 static class ВнутрішнєСпоживанняТоварів_Проводки_Triggers
 {
-    public static Task BeforeSave(ВнутрішнєСпоживанняТоварів_Objest ДокументОбєкт, ВнутрішнєСпоживанняТоварів_Проводки_TablePart ТабличнаЧастина)
+    public static Task BeforeSave(ВнутрішнєСпоживанняТоварів_Object ДокументОбєкт, ВнутрішнєСпоживанняТоварів_Проводки_TablePart ТабличнаЧастина)
     {
         return Task.CompletedTask;
     }
 
-    public static async Task AfterSave(ВнутрішнєСпоживанняТоварів_Objest ДокументОбєкт, ВнутрішнєСпоживанняТоварів_Проводки_TablePart ТабличнаЧастина)
+    public static async Task AfterSave(ВнутрішнєСпоживанняТоварів_Object ДокументОбєкт, ВнутрішнєСпоживанняТоварів_Проводки_TablePart ТабличнаЧастина)
     {
          if (!ДокументОбєкт.ДокументБухгалтерськаОперація.IsEmpty())
         {

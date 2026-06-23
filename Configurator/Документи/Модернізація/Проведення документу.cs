@@ -17,7 +17,7 @@ namespace GeneratedCode.Документи;
 
 static class Модернізація_SpendTheDocument
 {
-    public static async Task<bool> Spend(Модернізація_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(Модернізація_Object ДокументОбєкт)
     {
         try
         {
@@ -33,7 +33,7 @@ static class Модернізація_SpendTheDocument
         }
     }
 
-    public static Task Clear(Модернізація_Objest ДокументОбєкт)
+    public static Task Clear(Модернізація_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

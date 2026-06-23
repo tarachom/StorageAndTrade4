@@ -1,6 +1,8 @@
 ﻿
 /*
+
     Модуль проведення документів
+
 */
 
 using AccountingSoftware;

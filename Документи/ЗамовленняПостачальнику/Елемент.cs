@@ -20,7 +20,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DocumentFormElement>("Element_vo2eAV4uLXC87YiA2zid9g")]
 partial class ЗамовленняПостачальнику_Елемент : DocumentFormElement
 {
-    public ЗамовленняПостачальнику_Objest Елемент { get; init; } = new();
+    public ЗамовленняПостачальнику_Object Елемент { get; init; } = new();
 
     #region Fields
     Entry НомерДок = Entry.New();
@@ -62,13 +62,13 @@ partial class ЗамовленняПостачальнику_Елемент : Do
         Element = Елемент;
 
         CreateDocName(ЗамовленняПостачальнику_Const.FULLNAME, НомерДок, ДатаДок);
-        CreateField(HBoxComment, "Коментар:", Коментар);
+        CreateField(Interface.CommentBox, "Коментар:", Коментар);
 
         // Таблична частина "Товари"
         Товари.HeightRequest = 300;
-        NotebookTablePart.InsertPage(Товари, Label.New("Товари"), 0);
+        Interface.Notebook.InsertPage(Товари, Label.New("Товари"), 0);
 
-        NotebookTablePart.SetCurrentPage(0);
+        Interface.Notebook.SetCurrentPage(0);
 
         //НомерДок:
         НомерДок.WidthRequest = 300;
@@ -178,7 +178,23 @@ partial class ЗамовленняПостачальнику_Елемент : Do
         return element;
     }
 
-    protected override void CreateTopStart(Box vBox)
+    #region Interface
+
+    FunctionForInterfaces.DocumentElement Interface;
+
+    protected override void BuildInterface()
+    {
+        Interface = FunctionForInterfaces.ForDocument();
+
+        Append(Interface.MainBox);
+
+        CreateTopStart(Interface.TopStartBox);
+        CreateTopEnd(Interface.TopEndBox);
+        CreateBottomStart(Interface.BottomStartBox);
+        CreateBottomEnd(Interface.BottomEndBox);
+    }
+
+    void CreateTopStart(Box vBox)
     {
         //Організація
         CreateField(vBox, null, Організація);
@@ -192,7 +208,7 @@ partial class ЗамовленняПостачальнику_Елемент : Do
         Договір.BeforeClickOpenFunc = () => Договір.Власник = Контрагент.Pointer;
     }
 
-    protected override void CreateTopEnd(Box vBox)
+    void CreateTopEnd(Box vBox)
     {
         //Склад
         CreateField(vBox, null, Склад);
@@ -204,7 +220,7 @@ partial class ЗамовленняПостачальнику_Елемент : Do
         CreateField(vBox, null, Валюта);
     }
 
-    protected override void CreateBottomStart(Box vBox)
+    void CreateBottomStart(Box vBox)
     {
         //ГосподарськаОперація
         CreateField(vBox, "Господарська операція:", ГосподарськаОперація);
@@ -225,7 +241,7 @@ partial class ЗамовленняПостачальнику_Елемент : Do
         CreateField(vBox, null, Основа);
     }
 
-    protected override void CreateBottomEnd(Box vBox)
+    void CreateBottomEnd(Box vBox)
     {
         //ФормаОплати
         CreateField(vBox, "Форма оплати:", ФормаОплати);
@@ -242,6 +258,8 @@ partial class ЗамовленняПостачальнику_Елемент : Do
         //ЧасДоставки
         CreateField(CreateField(vBox, "Час доставки з", ЧасДоставкиЗ), "до", ЧасДоставкиДо);
     }
+
+    #endregion
 
     #region Присвоєння / зчитування значень
 

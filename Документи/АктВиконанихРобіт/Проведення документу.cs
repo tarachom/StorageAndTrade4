@@ -10,7 +10,7 @@ namespace GeneratedCode.Документи;
 
 static class АктВиконанихРобіт_SpendTheDocument
 {
-    public static async Task<bool> Spend(АктВиконанихРобіт_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(АктВиконанихРобіт_Object ДокументОбєкт)
     {
         try
         {
@@ -95,7 +95,7 @@ static class АктВиконанихРобіт_SpendTheDocument
         }
     }
 
-    public static async Task Clear(АктВиконанихРобіт_Objest ДокументОбєкт)
+    public static async Task Clear(АктВиконанихРобіт_Object ДокументОбєкт)
     {
         if (!ДокументОбєкт.ДокументБухгалтерськаОперація.IsEmpty())
             await ДокументОбєкт.ДокументБухгалтерськаОперація.ClearSpendTheDocument();

@@ -17,7 +17,7 @@ namespace GeneratedCode.Документи;
 
 static class СписанняНезавершеногоВиробництва_SpendTheDocument
 {
-    public static async Task<bool> Spend(СписанняНезавершеногоВиробництва_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(СписанняНезавершеногоВиробництва_Object ДокументОбєкт)
     {
         try
         {
@@ -33,7 +33,7 @@ static class СписанняНезавершеногоВиробництва_Sp
         }
     }
 
-    public static Task Clear(СписанняНезавершеногоВиробництва_Objest ДокументОбєкт)
+    public static Task Clear(СписанняНезавершеногоВиробництва_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

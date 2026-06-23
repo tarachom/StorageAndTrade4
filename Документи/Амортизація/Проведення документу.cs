@@ -17,7 +17,7 @@ namespace GeneratedCode.Документи;
 
 static class Амортизація_SpendTheDocument
 {
-    public static async Task<bool> Spend(Амортизація_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(Амортизація_Object ДокументОбєкт)
     {
         try
         {
@@ -46,7 +46,7 @@ static class Амортизація_SpendTheDocument
         }
     }
 
-    public static async Task Clear(Амортизація_Objest ДокументОбєкт)
+    public static async Task Clear(Амортизація_Object ДокументОбєкт)
     {
         if (!ДокументОбєкт.ДокументБухгалтерськаОперація.IsEmpty())
             await ДокументОбєкт.ДокументБухгалтерськаОперація.ClearSpendTheDocument();

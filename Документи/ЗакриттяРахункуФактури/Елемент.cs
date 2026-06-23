@@ -18,7 +18,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DocumentFormElement>("Element_c42eARtc366zsdptyICJg")]
 partial class ЗакриттяРахункуФактури_Елемент : DocumentFormElement
 {
-    public ЗакриттяРахункуФактури_Objest Елемент { get; init; } = new();
+    public ЗакриттяРахункуФактури_Object Елемент { get; init; } = new();
 
     #region Fields
     Entry НомерДок = Entry.New();
@@ -50,12 +50,12 @@ partial class ЗакриттяРахункуФактури_Елемент : Docu
         Element = Елемент;
 
         CreateDocName(ЗакриттяРахункуФактури_Const.FULLNAME, НомерДок, ДатаДок);
-        CreateField(HBoxComment, "Коментар:", Коментар);
+        CreateField(Interface.CommentBox, "Коментар:", Коментар);
 
         // Таблична частина "Товари"
         Товари.HeightRequest = 300;
-        NotebookTablePart.InsertPage(Товари, Label.New("Товари"), 0);
-        NotebookTablePart.SetCurrentPage(0);
+        Interface.Notebook.InsertPage(Товари, Label.New("Товари"), 0);
+        Interface.Notebook.SetCurrentPage(0);
 
         //НомерДок:
         НомерДок.WidthRequest = 100;
@@ -121,7 +121,23 @@ partial class ЗакриттяРахункуФактури_Елемент : Docu
         return element;
     }
 
-    protected override void CreateTopStart(Box vBox)
+    #region Interface
+
+    FunctionForInterfaces.DocumentElement Interface;
+
+    protected override void BuildInterface()
+    {
+        Interface = FunctionForInterfaces.ForDocument();
+
+        Append(Interface.MainBox);
+
+        CreateTopStart(Interface.TopStartBox);
+        CreateTopEnd(Interface.TopEndBox);
+        CreateBottomStart(Interface.BottomStartBox);
+        CreateBottomEnd(Interface.BottomEndBox);
+    }
+
+    void CreateTopStart(Box vBox)
     {
         //Організація
         CreateField(vBox, null, Організація);
@@ -138,7 +154,7 @@ partial class ЗакриттяРахункуФактури_Елемент : Docu
         CreateField(vBox, null, РахунокФактура);
     }
 
-    protected override void CreateTopEnd(Box vBox)
+    void CreateTopEnd(Box vBox)
     {
         //Каса
         CreateField(vBox, null, Каса);
@@ -153,7 +169,7 @@ partial class ЗакриттяРахункуФактури_Елемент : Docu
         CreateField(vBox, "Причина закриття:", ПричинаЗакриттяРахунку);
     }
 
-    protected override void CreateBottomStart(Box vBox)
+    void CreateBottomStart(Box vBox)
     {
         // Автор
         CreateField(vBox, null, Автор);
@@ -162,11 +178,13 @@ partial class ЗакриттяРахункуФактури_Елемент : Docu
         CreateField(vBox, null, Менеджер);
     }
 
-    protected override void CreateBottomEnd(Box vBox)
+    void CreateBottomEnd(Box vBox)
     {
         // Основа
         CreateField(vBox, null, Основа);
     }
+
+    #endregion
 
     #region Присвоєння / зчитування значень
 

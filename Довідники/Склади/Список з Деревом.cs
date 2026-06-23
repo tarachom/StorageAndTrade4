@@ -67,7 +67,7 @@ partial class Склади_Список : DirectoryFormJournalFull
     {
         if (SelectPointerItem != null || DirectoryPointerItem != null)
         {
-            Склади_Objest? Обєкт = await new Склади_Pointer(SelectPointerItem ?? DirectoryPointerItem ?? new UniqueID()).GetDirectoryObject();
+            Склади_Object? Обєкт = await new Склади_Pointer(SelectPointerItem ?? DirectoryPointerItem ?? new UniqueID()).GetDirectoryObject();
             if (Обєкт != null) Папки.SelectPointerItem = Обєкт.Папка.UniqueID;
         }
 

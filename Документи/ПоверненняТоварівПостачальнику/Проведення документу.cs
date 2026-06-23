@@ -13,7 +13,7 @@ namespace GeneratedCode.Документи;
 
 class ПоверненняТоварівПостачальнику_SpendTheDocument
 {
-    private static async Task<SelectRequest_Record> ОтриматиПартіїТоваруЗДокументуПоступлення(ПоверненняТоварівПостачальнику_Objest ДокументОбєкт,
+    private static async Task<SelectRequest_Record> ОтриматиПартіїТоваруЗДокументуПоступлення(ПоверненняТоварівПостачальнику_Object ДокументОбєкт,
         ПоверненняТоварівПостачальнику_Товари_TablePart.Record ТовариРядок)
     {
         string query = $@"
@@ -50,13 +50,13 @@ ORDER BY ПартіяТоварівКомпозит_Дата ASC
         });
     }
 
-    public static async Task<bool> Spend(ПоверненняТоварівПостачальнику_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(ПоверненняТоварівПостачальнику_Object ДокументОбєкт)
     {
         try
         {
             #region Підготовка
 
-            Dictionary<int, Номенклатура_Objest> СписокНоменклатури = [];
+            Dictionary<int, Номенклатура_Object> СписокНоменклатури = [];
 
             foreach (ПоверненняТоварівПостачальнику_Товари_TablePart.Record ТовариРядок in ДокументОбєкт.Товари_TablePart.Records)
             {
@@ -257,7 +257,7 @@ ORDER BY ПартіяТоварівКомпозит_Дата ASC
         }
     }
 
-    public static async Task Clear(ПоверненняТоварівПостачальнику_Objest ДокументОбєкт)
+    public static async Task Clear(ПоверненняТоварівПостачальнику_Object ДокументОбєкт)
     {
         if (!ДокументОбєкт.ДокументБухгалтерськаОперація.IsEmpty())
             await ДокументОбєкт.ДокументБухгалтерськаОперація.ClearSpendTheDocument();

@@ -20,7 +20,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DocumentFormElement>("Element_x5aeAZSjFXG8qpDWhZUGA")]
 partial class Амортизація_Елемент : DocumentFormElement
 {
-    public Амортизація_Objest Елемент { get; init; } = new();
+    public Амортизація_Object Елемент { get; init; } = new();
 
     #region Fields
     Entry НомерДок = Entry.New();
@@ -43,7 +43,7 @@ partial class Амортизація_Елемент : DocumentFormElement
 
         CreateDocName(Амортизація_Const.FULLNAME, НомерДок, ДатаДок);
         CreateField(HBoxTop, null, ВідобразитиВБухгалтерськомуОбліку);
-        CreateField(HBoxComment, "Коментар:", Коментар);
+        CreateField(Interface.CommentBox, "Коментар:", Коментар);
 
         //НомерДок:
         НомерДок.WidthRequest = 100;
@@ -71,28 +71,36 @@ partial class Амортизація_Елемент : DocumentFormElement
         return element;
     }
 
-    protected override void CreateTopStart(Box vBox)
+    #region Interface
+
+    FunctionForInterfaces.DocumentElementSmall Interface;
+
+    protected override void BuildInterface()
+    {
+        Interface = FunctionForInterfaces.ForDocumentSmall();
+
+        Append(Interface.MainBox);
+
+        CreateTopStart(Interface.TopStartBox);
+        CreateTopEnd(Interface.TopEndBox);
+    }
+
+    void CreateTopStart(Box vBox)
     {
         // Організація
         CreateField(vBox, null, Організація);
     }
 
-    protected override void CreateTopEnd(Box vBox)
-    {
-
-    }
-
-    protected override void CreateBottomStart(Box vBox)
+    void CreateTopEnd(Box vBox)
     {
         // Основа
         CreateField(vBox, null, Основа);
-    }
 
-    protected override void CreateBottomEnd(Box vBox)
-    {
         // Автор
         CreateField(vBox, null, Автор);
     }
+
+    #endregion
 
     #region Присвоєння / зчитування значень
 

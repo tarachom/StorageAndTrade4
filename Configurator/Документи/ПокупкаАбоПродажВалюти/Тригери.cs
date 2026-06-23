@@ -12,7 +12,7 @@ namespace GeneratedCode.Документи;
 
 static class ПокупкаАбоПродажВалюти_Triggers
 {
-    public static async Task New(ПокупкаАбоПродажВалюти_Objest ДокументОбєкт)
+    public static async Task New(ПокупкаАбоПродажВалюти_Object ДокументОбєкт)
     {
         ДокументОбєкт.ДатаДок = DateTime.Now;
         
@@ -21,29 +21,29 @@ static class ПокупкаАбоПродажВалюти_Triggers
                     
     }
 
-    public static Task Copying(ПокупкаАбоПродажВалюти_Objest ДокументОбєкт, ПокупкаАбоПродажВалюти_Objest Основа)
+    public static Task Copying(ПокупкаАбоПродажВалюти_Object ДокументОбєкт, ПокупкаАбоПродажВалюти_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(ПокупкаАбоПродажВалюти_Objest ДокументОбєкт)
+    public static Task BeforeSave(ПокупкаАбоПродажВалюти_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{ПокупкаАбоПродажВалюти_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(ПокупкаАбоПродажВалюти_Objest ДокументОбєкт)
+    public static Task AfterSave(ПокупкаАбоПродажВалюти_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(ПокупкаАбоПродажВалюти_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(ПокупкаАбоПродажВалюти_Object ДокументОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(ПокупкаАбоПродажВалюти_Objest ДокументОбєкт)
+    public static Task BeforeDelete(ПокупкаАбоПродажВалюти_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

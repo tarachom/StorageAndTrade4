@@ -10,34 +10,34 @@ namespace GeneratedCode.Довідники;
 
 class БанківськіРахункиКонтрагентів_Triggers
 {
-    public static async Task New(БанківськіРахункиКонтрагентів_Objest ДовідникОбєкт)
+    public static async Task New(БанківськіРахункиКонтрагентів_Object ДовідникОбєкт)
     {
         int number = await НумераціяДовідників.БанківськіРахункиКонтрагентів();
         ДовідникОбєкт.Код = (await НумераціяДовідників.БанківськіРахункиКонтрагентів(++number)).ToString("D6");
     }
 
-    public static Task Copying(БанківськіРахункиКонтрагентів_Objest ДовідникОбєкт, БанківськіРахункиКонтрагентів_Objest Основа)
+    public static Task Copying(БанківськіРахункиКонтрагентів_Object ДовідникОбєкт, БанківськіРахункиКонтрагентів_Object Основа)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(БанківськіРахункиКонтрагентів_Objest ДовідникОбєкт)
+    public static Task BeforeSave(БанківськіРахункиКонтрагентів_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(БанківськіРахункиКонтрагентів_Objest ДовідникОбєкт)
+    public static Task AfterSave(БанківськіРахункиКонтрагентів_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(БанківськіРахункиКонтрагентів_Objest ДовідникОбєкт, bool label)
+    public static Task SetDeletionLabel(БанківськіРахункиКонтрагентів_Object ДовідникОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(БанківськіРахункиКонтрагентів_Objest ДовідникОбєкт)
+    public static Task BeforeDelete(БанківськіРахункиКонтрагентів_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }

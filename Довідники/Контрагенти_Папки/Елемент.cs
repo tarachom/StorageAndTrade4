@@ -17,7 +17,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DirectoryFormElement>("Element_fT0mZq29EazYWRGzfDlQ")]
 partial class Контрагенти_Папки_Елемент : DirectoryFormElement
 {
-    public Контрагенти_Папки_Objest Елемент { get; init; } = new();
+    public Контрагенти_Папки_Object Елемент { get; init; } = new();
 
     public Контрагенти_Папки_Pointer РодичДляНового { get; set; } = new();
 

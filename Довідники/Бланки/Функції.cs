@@ -72,10 +72,10 @@ static class Бланки_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        Бланки_Objest Обєкт = new();
+        Бланки_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            Бланки_Objest Новий = await Обєкт.Copy(true);
+            Бланки_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;

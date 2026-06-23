@@ -13,7 +13,7 @@ namespace GeneratedCode.Документи;
 
 class ЗакриттяЗамовленняКлієнта_SpendTheDocument
 {
-    private static async Task<SelectRequest_Record> ОтриматиЗамовленняКлієнта(ЗакриттяЗамовленняКлієнта_Objest ДокументОбєкт,
+    private static async Task<SelectRequest_Record> ОтриматиЗамовленняКлієнта(ЗакриттяЗамовленняКлієнта_Object ДокументОбєкт,
         ЗакриттяЗамовленняКлієнта_Товари_TablePart.Record ТовариРядок)
     {
         string query = $@"
@@ -40,7 +40,7 @@ WHERE
         });
     }
 
-    private static async Task<SelectRequest_Record> ОтриматиВільніЗалишки(ЗакриттяЗамовленняКлієнта_Objest ДокументОбєкт,
+    private static async Task<SelectRequest_Record> ОтриматиВільніЗалишки(ЗакриттяЗамовленняКлієнта_Object ДокументОбєкт,
         ЗакриттяЗамовленняКлієнта_Товари_TablePart.Record ТовариРядок)
     {
         string query = $@"
@@ -67,13 +67,13 @@ WHERE
         });
     }
 
-    public static async Task<bool> Spend(ЗакриттяЗамовленняКлієнта_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(ЗакриттяЗамовленняКлієнта_Object ДокументОбєкт)
     {
         try
         {
             #region Підготовка
 
-            Dictionary<int, Номенклатура_Objest> СписокНоменклатури = [];
+            Dictionary<int, Номенклатура_Object> СписокНоменклатури = [];
             List<string> СписокІнформаційнихПовідомлень = [];
 
             if (ДокументОбєкт.ЗамовленняКлієнта.IsEmpty())
@@ -194,7 +194,7 @@ WHERE
         }
     }
 
-    public static Task ClearSpend(ЗакриттяЗамовленняКлієнта_Objest ДокументОбєкт)
+    public static Task ClearSpend(ЗакриттяЗамовленняКлієнта_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

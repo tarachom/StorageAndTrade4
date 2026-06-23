@@ -72,10 +72,10 @@ static class МалоцінніПредмети_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        МалоцінніПредмети_Objest Обєкт = new();
+        МалоцінніПредмети_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            МалоцінніПредмети_Objest Новий = await Обєкт.Copy(true);
+            МалоцінніПредмети_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;

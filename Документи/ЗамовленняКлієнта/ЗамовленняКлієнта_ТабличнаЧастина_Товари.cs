@@ -9,7 +9,6 @@ using InterfaceGtk4;
 using AccountingSoftware;
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
-using GeneratedCode.Перелічення;
 using GeneratedCode.РегістриВідомостей;
 using GeneratedCode;
 using GeneratedCode.Константи;
@@ -269,7 +268,7 @@ partial class ЗамовленняКлієнта_ТабличнаЧастина_
 
     async Task ПісляЗміни_Номенклатура(ItemRow row)
     {
-        Номенклатура_Objest? обєкт = await row.Номенклатура.GetDirectoryObject();
+        Номенклатура_Object? обєкт = await row.Номенклатура.GetDirectoryObject();
         if (обєкт != null && !обєкт.ОдиницяВиміру.IsEmpty())
         {
             await обєкт.ОдиницяВиміру.GetPresentation();
@@ -295,7 +294,7 @@ partial class ЗамовленняКлієнта_ТабличнаЧастина_
     {
         if (!row.Пакування.IsEmpty())
         {
-            ПакуванняОдиниціВиміру_Objest? обєкт = await row.Пакування.GetDirectoryObject();
+            ПакуванняОдиниціВиміру_Object? обєкт = await row.Пакування.GetDirectoryObject();
             if (обєкт != null)
                 row.КількістьУпаковок = (обєкт.КількістьУпаковок > 0) ? обєкт.КількістьУпаковок : 1;
             else
@@ -370,7 +369,7 @@ LIMIT 1
 
     #endregion
 
-    public ЗамовленняКлієнта_Objest? ЕлементВласник { get; set; }
+    public ЗамовленняКлієнта_Object? ЕлементВласник { get; set; }
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());
     TotalControl Підсумок = TotalControl.New();
 

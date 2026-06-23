@@ -69,10 +69,10 @@ static class ВведенняЗалишків_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ВведенняЗалишків_Objest Обєкт = new();
+        ВведенняЗалишків_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ВведенняЗалишків_Objest Новий = await Обєкт.Copy(true);
+            ВведенняЗалишків_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
                 await Новий.Товари_TablePart.Save(false); // Таблична частина "Товари"
@@ -96,7 +96,7 @@ static class ВведенняЗалишків_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        ВведенняЗалишків_Objest? Обєкт = await new ВведенняЗалишків_Pointer(uniqueID).GetDocumentObject(true);
+        ВведенняЗалишків_Object? Обєкт = await new ВведенняЗалишків_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

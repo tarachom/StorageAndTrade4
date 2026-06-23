@@ -272,7 +272,7 @@ partial class ЧекККМ_ТабличнаЧастина_Товари : Documen
     #endregion
 
     
-    public ЧекККМ_Objest? ЕлементВласник { get; set; }
+    public ЧекККМ_Object? ЕлементВласник { get; set; }
         
     
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());

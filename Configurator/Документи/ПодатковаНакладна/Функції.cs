@@ -66,10 +66,10 @@ static class ПодатковаНакладна_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ПодатковаНакладна_Objest Обєкт = new();
+        ПодатковаНакладна_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ПодатковаНакладна_Objest Новий = await Обєкт.Copy(true);
+            ПодатковаНакладна_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;
@@ -83,7 +83,7 @@ static class ПодатковаНакладна_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        ПодатковаНакладна_Objest? Обєкт = await new ПодатковаНакладна_Pointer(uniqueID).GetDocumentObject(true);
+        ПодатковаНакладна_Object? Обєкт = await new ПодатковаНакладна_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

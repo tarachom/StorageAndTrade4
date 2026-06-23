@@ -67,7 +67,7 @@ partial class НоменклатураВнутрішня_Список : Director
     {
         if (SelectPointerItem != null || DirectoryPointerItem != null)
         {
-            НоменклатураВнутрішня_Objest? Обєкт = await new НоменклатураВнутрішня_Pointer(SelectPointerItem ?? DirectoryPointerItem ?? new UniqueID()).GetDirectoryObject();
+            НоменклатураВнутрішня_Object? Обєкт = await new НоменклатураВнутрішня_Pointer(SelectPointerItem ?? DirectoryPointerItem ?? new UniqueID()).GetDirectoryObject();
             if (Обєкт != null) Папки.SelectPointerItem = Обєкт.Папка.UniqueID;
         }
 

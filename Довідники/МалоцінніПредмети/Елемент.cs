@@ -14,7 +14,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DirectoryFormElement>("Element_iV8qteynq0G84FtZxsoBg")]
 partial class МалоцінніПредмети_Елемент : DirectoryFormElement
 {
-    public МалоцінніПредмети_Objest Елемент { get; init; } = new();
+    public МалоцінніПредмети_Object Елемент { get; init; } = new();
 
     #region Fields
     Entry Код = Entry.New();

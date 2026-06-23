@@ -17,7 +17,7 @@ namespace GeneratedCode.Документи;
 
 static class РозподілІншихВитрат_SpendTheDocument
 {
-    public static async Task<bool> Spend(РозподілІншихВитрат_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(РозподілІншихВитрат_Object ДокументОбєкт)
     {
         try
         {
@@ -33,7 +33,7 @@ static class РозподілІншихВитрат_SpendTheDocument
         }
     }
 
-    public static Task Clear(РозподілІншихВитрат_Objest ДокументОбєкт)
+    public static Task Clear(РозподілІншихВитрат_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

@@ -66,10 +66,10 @@ static class РозподілІншихВитрат_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        РозподілІншихВитрат_Objest Обєкт = new();
+        РозподілІншихВитрат_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            РозподілІншихВитрат_Objest Новий = await Обєкт.Copy(true);
+            РозподілІншихВитрат_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;
@@ -83,7 +83,7 @@ static class РозподілІншихВитрат_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        РозподілІншихВитрат_Objest? Обєкт = await new РозподілІншихВитрат_Pointer(uniqueID).GetDocumentObject(true);
+        РозподілІншихВитрат_Object? Обєкт = await new РозподілІншихВитрат_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

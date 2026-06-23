@@ -66,10 +66,10 @@ static class ВиплатаЗаробітноїПлати_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ВиплатаЗаробітноїПлати_Objest Обєкт = new();
+        ВиплатаЗаробітноїПлати_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ВиплатаЗаробітноїПлати_Objest Новий = await Обєкт.Copy(true);
+            ВиплатаЗаробітноїПлати_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;
@@ -83,7 +83,7 @@ static class ВиплатаЗаробітноїПлати_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        ВиплатаЗаробітноїПлати_Objest? Обєкт = await new ВиплатаЗаробітноїПлати_Pointer(uniqueID).GetDocumentObject(true);
+        ВиплатаЗаробітноїПлати_Object? Обєкт = await new ВиплатаЗаробітноїПлати_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

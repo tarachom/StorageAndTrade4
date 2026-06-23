@@ -66,10 +66,10 @@ static class КоригуванняІншихВитрат_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        КоригуванняІншихВитрат_Objest Обєкт = new();
+        КоригуванняІншихВитрат_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            КоригуванняІншихВитрат_Objest Новий = await Обєкт.Copy(true);
+            КоригуванняІншихВитрат_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;
@@ -83,7 +83,7 @@ static class КоригуванняІншихВитрат_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        КоригуванняІншихВитрат_Objest? Обєкт = await new КоригуванняІншихВитрат_Pointer(uniqueID).GetDocumentObject(true);
+        КоригуванняІншихВитрат_Object? Обєкт = await new КоригуванняІншихВитрат_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

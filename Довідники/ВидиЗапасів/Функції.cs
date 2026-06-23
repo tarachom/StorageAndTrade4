@@ -72,10 +72,10 @@ static class ВидиЗапасів_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ВидиЗапасів_Objest Обєкт = new();
+        ВидиЗапасів_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ВидиЗапасів_Objest Новий = await Обєкт.Copy(true);
+            ВидиЗапасів_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;

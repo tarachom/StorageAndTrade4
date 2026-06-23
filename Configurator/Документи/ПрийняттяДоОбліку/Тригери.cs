@@ -12,7 +12,7 @@ namespace GeneratedCode.Документи;
 
 static class ПрийняттяДоОбліку_Triggers
 {
-    public static async Task New(ПрийняттяДоОбліку_Objest ДокументОбєкт)
+    public static async Task New(ПрийняттяДоОбліку_Object ДокументОбєкт)
     {
         ДокументОбєкт.ДатаДок = DateTime.Now;
         
@@ -21,29 +21,29 @@ static class ПрийняттяДоОбліку_Triggers
                     
     }
 
-    public static Task Copying(ПрийняттяДоОбліку_Objest ДокументОбєкт, ПрийняттяДоОбліку_Objest Основа)
+    public static Task Copying(ПрийняттяДоОбліку_Object ДокументОбєкт, ПрийняттяДоОбліку_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(ПрийняттяДоОбліку_Objest ДокументОбєкт)
+    public static Task BeforeSave(ПрийняттяДоОбліку_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{ПрийняттяДоОбліку_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(ПрийняттяДоОбліку_Objest ДокументОбєкт)
+    public static Task AfterSave(ПрийняттяДоОбліку_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(ПрийняттяДоОбліку_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(ПрийняттяДоОбліку_Object ДокументОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(ПрийняттяДоОбліку_Objest ДокументОбєкт)
+    public static Task BeforeDelete(ПрийняттяДоОбліку_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

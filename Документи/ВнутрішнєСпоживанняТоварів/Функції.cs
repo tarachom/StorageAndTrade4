@@ -69,10 +69,10 @@ static class ВнутрішнєСпоживанняТоварів_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ВнутрішнєСпоживанняТоварів_Objest Обєкт = new();
+        ВнутрішнєСпоживанняТоварів_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ВнутрішнєСпоживанняТоварів_Objest Новий = await Обєкт.Copy(true);
+            ВнутрішнєСпоживанняТоварів_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
                 await Новий.Товари_TablePart.Save(false); // Таблична частина "Товари"
@@ -90,7 +90,7 @@ static class ВнутрішнєСпоживанняТоварів_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        ВнутрішнєСпоживанняТоварів_Objest? Обєкт = await new ВнутрішнєСпоживанняТоварів_Pointer(uniqueID).GetDocumentObject(true);
+        ВнутрішнєСпоживанняТоварів_Object? Обєкт = await new ВнутрішнєСпоживанняТоварів_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

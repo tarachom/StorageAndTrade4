@@ -11,7 +11,7 @@ namespace GeneratedCode.Довідники;
 
 class ЗбереженіЗвіти_Triggers
 {
-    public static async Task New(ЗбереженіЗвіти_Objest ДовідникОбєкт)
+    public static async Task New(ЗбереженіЗвіти_Object ДовідникОбєкт)
     {
         int number = await НумераціяДовідників.ЗбереженіЗвіти();
         ДовідникОбєкт.Код = (await НумераціяДовідників.ЗбереженіЗвіти(++number)).ToString("D6");
@@ -19,28 +19,28 @@ class ЗбереженіЗвіти_Triggers
         ДовідникОбєкт.Користувач = Program.Користувач;
     }
 
-    public static Task Copying(ЗбереженіЗвіти_Objest ДовідникОбєкт, ЗбереженіЗвіти_Objest Основа)
+    public static Task Copying(ЗбереженіЗвіти_Object ДовідникОбєкт, ЗбереженіЗвіти_Object Основа)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(ЗбереженіЗвіти_Objest ДовідникОбєкт)
+    public static Task BeforeSave(ЗбереженіЗвіти_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(ЗбереженіЗвіти_Objest ДовідникОбєкт)
+    public static Task AfterSave(ЗбереженіЗвіти_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(ЗбереженіЗвіти_Objest ДовідникОбєкт, bool label)
+    public static Task SetDeletionLabel(ЗбереженіЗвіти_Object ДовідникОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(ЗбереженіЗвіти_Objest ДовідникОбєкт)
+    public static Task BeforeDelete(ЗбереженіЗвіти_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }

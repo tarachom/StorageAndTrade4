@@ -122,7 +122,7 @@ partial class ВведенняЗалишків_ТабличнаЧастина_К
 
     #endregion
 
-    public ВведенняЗалишків_Objest? ЕлементВласник { get; set; }
+    public ВведенняЗалишків_Object? ЕлементВласник { get; set; }
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());
     TotalControl Підсумок = TotalControl.New();
 

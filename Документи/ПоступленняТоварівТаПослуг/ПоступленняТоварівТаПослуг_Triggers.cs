@@ -14,7 +14,7 @@ namespace GeneratedCode.Документи;
 
 class ПоступленняТоварівТаПослуг_Triggers
 {
-    public static async Task New(ПоступленняТоварівТаПослуг_Objest ДокументОбєкт)
+    public static async Task New(ПоступленняТоварівТаПослуг_Object ДокументОбєкт)
     {
         int number = await НумераціяДокументів.ПоступленняТоварівТаПослуг();
         ДокументОбєкт.НомерДок = (await НумераціяДокументів.ПоступленняТоварівТаПослуг(++number)).ToString("D8");
@@ -24,14 +24,14 @@ class ПоступленняТоварівТаПослуг_Triggers
         ДокументОбєкт.Менеджер = Program.Користувач;
     }
 
-    public static Task Copying(ПоступленняТоварівТаПослуг_Objest ДокументОбєкт, ПоступленняТоварівТаПослуг_Objest Основа)
+    public static Task Copying(ПоступленняТоварівТаПослуг_Object ДокументОбєкт, ПоступленняТоварівТаПослуг_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         ДокументОбєкт.ДокументБухгалтерськаОперація = new();
         return Task.CompletedTask;
     }
 
-    public static async Task BeforeSave(ПоступленняТоварівТаПослуг_Objest ДокументОбєкт)
+    public static async Task BeforeSave(ПоступленняТоварівТаПослуг_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{ПоступленняТоварівТаПослуг_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
 
@@ -50,12 +50,12 @@ class ПоступленняТоварівТаПослуг_Triggers
         }
     }
 
-    public static Task AfterSave(ПоступленняТоварівТаПослуг_Objest ДокументОбєкт)
+    public static Task AfterSave(ПоступленняТоварівТаПослуг_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static async Task SetDeletionLabel(ПоступленняТоварівТаПослуг_Objest ДокументОбєкт, bool label)
+    public static async Task SetDeletionLabel(ПоступленняТоварівТаПослуг_Object ДокументОбєкт, bool label)
     {
         // Помітка на видалення всіх партій
         if (label)
@@ -72,7 +72,7 @@ class ПоступленняТоварівТаПослуг_Triggers
         }
     }
 
-    public static Task BeforeDelete(ПоступленняТоварівТаПослуг_Objest ДокументОбєкт)
+    public static Task BeforeDelete(ПоступленняТоварівТаПослуг_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

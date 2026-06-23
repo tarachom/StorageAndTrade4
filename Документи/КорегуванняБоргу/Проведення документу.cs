@@ -11,7 +11,7 @@ namespace GeneratedCode.Документи;
 
 class КорегуванняБоргу_SpendTheDocument
 {
-    public static async Task<bool> Spend(КорегуванняБоргу_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(КорегуванняБоргу_Object ДокументОбєкт)
     {
         try
         {
@@ -83,7 +83,7 @@ class КорегуванняБоргу_SpendTheDocument
         }
     }
 
-    public static async Task Clear(КорегуванняБоргу_Objest ДокументОбєкт)
+    public static async Task Clear(КорегуванняБоргу_Object ДокументОбєкт)
     {
         if (!ДокументОбєкт.ДокументБухгалтерськаОперація.IsEmpty())
             await ДокументОбєкт.ДокументБухгалтерськаОперація.ClearSpendTheDocument();

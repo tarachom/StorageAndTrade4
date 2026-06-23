@@ -66,10 +66,10 @@ static class ЗвітКомітентуПроПродажТоварів_Функ
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ЗвітКомітентуПроПродажТоварів_Objest Обєкт = new();
+        ЗвітКомітентуПроПродажТоварів_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ЗвітКомітентуПроПродажТоварів_Objest Новий = await Обєкт.Copy(true);
+            ЗвітКомітентуПроПродажТоварів_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;
@@ -83,7 +83,7 @@ static class ЗвітКомітентуПроПродажТоварів_Функ
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        ЗвітКомітентуПроПродажТоварів_Objest? Обєкт = await new ЗвітКомітентуПроПродажТоварів_Pointer(uniqueID).GetDocumentObject(true);
+        ЗвітКомітентуПроПродажТоварів_Object? Обєкт = await new ЗвітКомітентуПроПродажТоварів_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

@@ -17,7 +17,7 @@ namespace GeneratedCode.Документи;
 
 static class ЗмінаПараметрівОсновнихЗасобів_SpendTheDocument
 {
-    public static async Task<bool> Spend(ЗмінаПараметрівОсновнихЗасобів_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(ЗмінаПараметрівОсновнихЗасобів_Object ДокументОбєкт)
     {
         try
         {
@@ -33,7 +33,7 @@ static class ЗмінаПараметрівОсновнихЗасобів_SpendT
         }
     }
 
-    public static Task Clear(ЗмінаПараметрівОсновнихЗасобів_Objest ДокументОбєкт)
+    public static Task Clear(ЗмінаПараметрівОсновнихЗасобів_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

@@ -11,7 +11,7 @@ namespace GeneratedCode.Документи;
 
 class ПерерахунокТоварів_Triggers
 {
-    public static async Task New(ПерерахунокТоварів_Objest ДокументОбєкт)
+    public static async Task New(ПерерахунокТоварів_Object ДокументОбєкт)
     {
         int number = await НумераціяДокументів.ПерерахунокТоварів();
         ДокументОбєкт.НомерДок = (await НумераціяДокументів.ПерерахунокТоварів(++number)).ToString("D8");
@@ -25,29 +25,29 @@ class ПерерахунокТоварів_Triggers
             ДокументОбєкт.Відповідальний = Користувач_Обєкт.ФізичнаОсоба;
     }
 
-    public static Task Copying(ПерерахунокТоварів_Objest ДокументОбєкт, ПерерахунокТоварів_Objest Основа)
+    public static Task Copying(ПерерахунокТоварів_Object ДокументОбєкт, ПерерахунокТоварів_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(ПерерахунокТоварів_Objest ДокументОбєкт)
+    public static Task BeforeSave(ПерерахунокТоварів_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{ПерерахунокТоварів_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(ПерерахунокТоварів_Objest ДокументОбєкт)
+    public static Task AfterSave(ПерерахунокТоварів_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(ПерерахунокТоварів_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(ПерерахунокТоварів_Object ДокументОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(ПерерахунокТоварів_Objest ДокументОбєкт)
+    public static Task BeforeDelete(ПерерахунокТоварів_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

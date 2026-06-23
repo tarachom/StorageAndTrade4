@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+Базовий основний інтерфейс для документу, який складається із двох верхніх блоків, 
+блоку для коментаря та блокноту для таб частин і двох нижніх блоків які розміщені в окремій сторінці в блокноті.
+-->
 <interface>
+  <!-- Основний вертикальний бокс -->
   <object class="GtkBox" id="MainBox">
     <property name="orientation">vertical</property>
     <property name="hexpand">1</property>
@@ -34,7 +39,7 @@
       <object class="GtkBox" id="CommentBox">
         <property name="orientation">horizontal</property>
         <property name="margin-top">5</property>
-        <property name="margin-bottom">5</property>
+        <property name="margin-bottom">10</property>
       </object>
     </child>
 
@@ -50,6 +55,10 @@
           <object class="GtkNotebook" id="Notebook">
             <property name="vexpand">1</property>
             <property name="hexpand">1</property>
+            <property name="scrollable">true</property>
+            <property name="show-border">false</property>
+            <property name="tab-pos">top</property>
+            <property name="enable-popup">true</property>
 
             <!-- Прокрутка для блокноту -->
             <child>
@@ -85,7 +94,7 @@
             <!-- Назва сторінки в блокноті -->
             <child type="tab">
               <object class="GtkLabel">
-                <property name="label">Додаткові реквізити</property>
+                <property name="label">Додатково</property>
               </object>
             </child>
 
@@ -94,5 +103,6 @@
 
       </object>
     </child>
+
   </object>
 </interface>

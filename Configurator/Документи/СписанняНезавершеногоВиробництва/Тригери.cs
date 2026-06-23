@@ -12,7 +12,7 @@ namespace GeneratedCode.Документи;
 
 static class СписанняНезавершеногоВиробництва_Triggers
 {
-    public static async Task New(СписанняНезавершеногоВиробництва_Objest ДокументОбєкт)
+    public static async Task New(СписанняНезавершеногоВиробництва_Object ДокументОбєкт)
     {
         ДокументОбєкт.ДатаДок = DateTime.Now;
         
@@ -21,29 +21,29 @@ static class СписанняНезавершеногоВиробництва_Tr
                     
     }
 
-    public static Task Copying(СписанняНезавершеногоВиробництва_Objest ДокументОбєкт, СписанняНезавершеногоВиробництва_Objest Основа)
+    public static Task Copying(СписанняНезавершеногоВиробництва_Object ДокументОбєкт, СписанняНезавершеногоВиробництва_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(СписанняНезавершеногоВиробництва_Objest ДокументОбєкт)
+    public static Task BeforeSave(СписанняНезавершеногоВиробництва_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{СписанняНезавершеногоВиробництва_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(СписанняНезавершеногоВиробництва_Objest ДокументОбєкт)
+    public static Task AfterSave(СписанняНезавершеногоВиробництва_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(СписанняНезавершеногоВиробництва_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(СписанняНезавершеногоВиробництва_Object ДокументОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(СписанняНезавершеногоВиробництва_Objest ДокументОбєкт)
+    public static Task BeforeDelete(СписанняНезавершеногоВиробництва_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

@@ -11,7 +11,7 @@ namespace GeneratedCode.Документи;
 
 class ПоверненняТоварівПостачальнику_Triggers
 {
-    public static async Task New(ПоверненняТоварівПостачальнику_Objest ДокументОбєкт)
+    public static async Task New(ПоверненняТоварівПостачальнику_Object ДокументОбєкт)
     {
         int number = await НумераціяДокументів.ПоверненняТоварівПостачальнику();
         ДокументОбєкт.НомерДок = (await НумераціяДокументів.ПоверненняТоварівПостачальнику(++number)).ToString("D8");
@@ -21,14 +21,14 @@ class ПоверненняТоварівПостачальнику_Triggers
         ДокументОбєкт.Менеджер = Program.Користувач;
     }
 
-    public static Task Copying(ПоверненняТоварівПостачальнику_Objest ДокументОбєкт, ПоверненняТоварівПостачальнику_Objest Основа)
+    public static Task Copying(ПоверненняТоварівПостачальнику_Object ДокументОбєкт, ПоверненняТоварівПостачальнику_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         ДокументОбєкт.ДокументБухгалтерськаОперація = new();
         return Task.CompletedTask;
     }
 
-    public static async Task BeforeSave(ПоверненняТоварівПостачальнику_Objest ДокументОбєкт)
+    public static async Task BeforeSave(ПоверненняТоварівПостачальнику_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{ПоверненняТоварівПостачальнику_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
 
@@ -47,17 +47,17 @@ class ПоверненняТоварівПостачальнику_Triggers
         }
     }
 
-    public static Task AfterSave(ПоверненняТоварівПостачальнику_Objest ДокументОбєкт)
+    public static Task AfterSave(ПоверненняТоварівПостачальнику_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(ПоверненняТоварівПостачальнику_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(ПоверненняТоварівПостачальнику_Object ДокументОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(ПоверненняТоварівПостачальнику_Objest ДокументОбєкт)
+    public static Task BeforeDelete(ПоверненняТоварівПостачальнику_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

@@ -14,7 +14,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DirectoryFormElement>("Element_zCf6jT2H8UaqGBUkjMrG2A")]
 partial class СеріїНоменклатури_Елемент : DirectoryFormElement
 {
-    public СеріїНоменклатури_Objest Елемент { get; init; } = new();
+    public СеріїНоменклатури_Object Елемент { get; init; } = new();
 
     #region Fields
     Entry Номер = Entry.New();

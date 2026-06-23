@@ -8,33 +8,33 @@ namespace GeneratedCode.Довідники;
 
 class ПартіяТоварівКомпозит_Triggers
 {
-    public static Task New(ПартіяТоварівКомпозит_Objest ДовідникОбєкт)
+    public static Task New(ПартіяТоварівКомпозит_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task Copying(ПартіяТоварівКомпозит_Objest ДовідникОбєкт, ПартіяТоварівКомпозит_Objest Основа)
+    public static Task Copying(ПартіяТоварівКомпозит_Object ДовідникОбєкт, ПартіяТоварівКомпозит_Object Основа)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(ПартіяТоварівКомпозит_Objest ДовідникОбєкт)
+    public static Task BeforeSave(ПартіяТоварівКомпозит_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(ПартіяТоварівКомпозит_Objest ДовідникОбєкт)
+    public static Task AfterSave(ПартіяТоварівКомпозит_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(ПартіяТоварівКомпозит_Objest ДовідникОбєкт, bool label)
+    public static Task SetDeletionLabel(ПартіяТоварівКомпозит_Object ДовідникОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(ПартіяТоварівКомпозит_Objest ДовідникОбєкт)
+    public static Task BeforeDelete(ПартіяТоварівКомпозит_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }

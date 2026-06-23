@@ -11,7 +11,7 @@ namespace GeneratedCode.Документи;
 
 class ВстановленняЦінНоменклатури_SpendTheDocument
 {
-    public static async Task<bool> Spend(ВстановленняЦінНоменклатури_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(ВстановленняЦінНоменклатури_Object ДокументОбєкт)
     {
         try
         {
@@ -50,7 +50,7 @@ class ВстановленняЦінНоменклатури_SpendTheDocument
         }
     }
 
-    public static async Task ClearSpend(ВстановленняЦінНоменклатури_Objest ДокументОбєкт)
+    public static async Task ClearSpend(ВстановленняЦінНоменклатури_Object ДокументОбєкт)
     {
         //Очистка
         await new ЦіниНоменклатури_RecordsSet().Delete(ДокументОбєкт.UniqueID.UGuid);

@@ -78,10 +78,10 @@ static class ЗбереженіЗвіти_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ЗбереженіЗвіти_Objest Обєкт = new();
+        ЗбереженіЗвіти_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ЗбереженіЗвіти_Objest Новий = await Обєкт.Copy(true);
+            ЗбереженіЗвіти_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
                 await Новий.ЗвітСторінка_TablePart.Save(false); // Таблична частина "ЗвітСторінка"

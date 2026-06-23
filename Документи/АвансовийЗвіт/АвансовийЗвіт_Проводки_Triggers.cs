@@ -11,12 +11,12 @@ namespace GeneratedCode.Документи;
 
 static class АвансовийЗвіт_Проводки_Triggers
 {
-    public static Task BeforeSave(АвансовийЗвіт_Objest ДокументОбєкт, АвансовийЗвіт_Проводки_TablePart ТабличнаЧастина)
+    public static Task BeforeSave(АвансовийЗвіт_Object ДокументОбєкт, АвансовийЗвіт_Проводки_TablePart ТабличнаЧастина)
     {
         return Task.CompletedTask;
     }
 
-    public static async Task AfterSave(АвансовийЗвіт_Objest ДокументОбєкт, АвансовийЗвіт_Проводки_TablePart ТабличнаЧастина)
+    public static async Task AfterSave(АвансовийЗвіт_Object ДокументОбєкт, АвансовийЗвіт_Проводки_TablePart ТабличнаЧастина)
     {
         if (!ДокументОбєкт.ДокументБухгалтерськаОперація.IsEmpty())
         {

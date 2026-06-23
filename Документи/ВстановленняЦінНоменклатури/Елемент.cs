@@ -20,7 +20,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DocumentFormElement>("Element_D5eeAY3cK3qRMi13BP5ueA")]
 partial class ВстановленняЦінНоменклатури_Елемент : DocumentFormElement
 {
-    public ВстановленняЦінНоменклатури_Objest Елемент { get; init; } = new();
+    public ВстановленняЦінНоменклатури_Object Елемент { get; init; } = new();
 
     #region Fields
     Entry НомерДок = Entry.New();
@@ -52,13 +52,13 @@ partial class ВстановленняЦінНоменклатури_Елеме�
         Element = Елемент;
 
         CreateDocName(ВстановленняЦінНоменклатури_Const.FULLNAME, НомерДок, ДатаДок);
-        CreateField(HBoxComment, "Коментар:", Коментар);
+        CreateField(Interface.CommentBox, "Коментар:", Коментар);
 
         // Таблична частина "Товари"
         Товари.HeightRequest = 300;
-        NotebookTablePart.InsertPage(Товари, Label.New("Товари"), 0);
+        Interface.Notebook.InsertPage(Товари, Label.New("Товари"), 0);
 
-        NotebookTablePart.SetCurrentPage(0);
+        Interface.Notebook.SetCurrentPage(0);
 
         //НомерДок:
         НомерДок.WidthRequest = 100;
@@ -94,7 +94,23 @@ partial class ВстановленняЦінНоменклатури_Елеме�
         return element;
     }
 
-    protected override void CreateTopStart(Box vBox)
+    #region Interface
+
+    FunctionForInterfaces.DocumentElement Interface;
+
+    protected override void BuildInterface()
+    {
+        Interface = FunctionForInterfaces.ForDocument();
+
+        Append(Interface.MainBox);
+
+        CreateTopStart(Interface.TopStartBox);
+        CreateTopEnd(Interface.TopEndBox);
+        CreateBottomStart(Interface.BottomStartBox);
+        CreateBottomEnd(Interface.BottomEndBox);
+    }
+
+    void CreateTopStart(Box vBox)
     {
         // Організація
         CreateField(vBox, null, Організація);
@@ -103,23 +119,25 @@ partial class ВстановленняЦінНоменклатури_Елеме�
         CreateField(vBox, null, Валюта);
     }
 
-    protected override void CreateTopEnd(Box vBox)
+    void CreateTopEnd(Box vBox)
     {
         // ВидЦіни
         CreateField(vBox, null, ВидЦіни);
     }
 
-    protected override void CreateBottomStart(Box vBox)
+    void CreateBottomStart(Box vBox)
     {
         // Автор
         CreateField(vBox, null, Автор);
     }
 
-    protected override void CreateBottomEnd(Box vBox)
+    void CreateBottomEnd(Box vBox)
     {
         // Основа
         CreateField(vBox, null, Основа);
     }
+
+    #endregion
 
     #region Присвоєння / зчитування значень
 

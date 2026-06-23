@@ -12,7 +12,7 @@ namespace GeneratedCode.Документи;
 
 static class ПлатіжнеДорученняВихідне_Triggers
 {
-    public static async Task New(ПлатіжнеДорученняВихідне_Objest ДокументОбєкт)
+    public static async Task New(ПлатіжнеДорученняВихідне_Object ДокументОбєкт)
     {
         ДокументОбєкт.ДатаДок = DateTime.Now;
         
@@ -21,29 +21,29 @@ static class ПлатіжнеДорученняВихідне_Triggers
                     
     }
 
-    public static Task Copying(ПлатіжнеДорученняВихідне_Objest ДокументОбєкт, ПлатіжнеДорученняВихідне_Objest Основа)
+    public static Task Copying(ПлатіжнеДорученняВихідне_Object ДокументОбєкт, ПлатіжнеДорученняВихідне_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(ПлатіжнеДорученняВихідне_Objest ДокументОбєкт)
+    public static Task BeforeSave(ПлатіжнеДорученняВихідне_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{ПлатіжнеДорученняВихідне_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(ПлатіжнеДорученняВихідне_Objest ДокументОбєкт)
+    public static Task AfterSave(ПлатіжнеДорученняВихідне_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(ПлатіжнеДорученняВихідне_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(ПлатіжнеДорученняВихідне_Object ДокументОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(ПлатіжнеДорученняВихідне_Objest ДокументОбєкт)
+    public static Task BeforeDelete(ПлатіжнеДорученняВихідне_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

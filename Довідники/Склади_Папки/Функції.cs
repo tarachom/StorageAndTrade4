@@ -72,10 +72,10 @@ static class Склади_Папки_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        Склади_Папки_Objest Обєкт = new();
+        Склади_Папки_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            Склади_Папки_Objest Новий = await Обєкт.Copy(true);
+            Склади_Папки_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;

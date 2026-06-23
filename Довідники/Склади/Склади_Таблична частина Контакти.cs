@@ -218,7 +218,7 @@ partial class Склади_ТабличнаЧастина_Контакти : Dir
     #endregion
 
     
-    public Склади_Objest? ЕлементВласник { get; set; }
+    public Склади_Object? ЕлементВласник { get; set; }
         
     
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());

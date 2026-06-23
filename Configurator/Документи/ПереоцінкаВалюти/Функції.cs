@@ -66,10 +66,10 @@ static class ПереоцінкаВалюти_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ПереоцінкаВалюти_Objest Обєкт = new();
+        ПереоцінкаВалюти_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ПереоцінкаВалюти_Objest Новий = await Обєкт.Copy(true);
+            ПереоцінкаВалюти_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;
@@ -83,7 +83,7 @@ static class ПереоцінкаВалюти_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        ПереоцінкаВалюти_Objest? Обєкт = await new ПереоцінкаВалюти_Pointer(uniqueID).GetDocumentObject(true);
+        ПереоцінкаВалюти_Object? Обєкт = await new ПереоцінкаВалюти_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

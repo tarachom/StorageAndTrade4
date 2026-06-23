@@ -13,7 +13,7 @@ namespace GeneratedCode.Документи;
 
 class ЗакриттяЗамовленняПостачальнику_SpendTheDocument
 {
-    private static async Task<SelectRequest_Record> ОтриматиЗамовленняПостачальнику(ЗакриттяЗамовленняПостачальнику_Objest ДокументОбєкт,
+    private static async Task<SelectRequest_Record> ОтриматиЗамовленняПостачальнику(ЗакриттяЗамовленняПостачальнику_Object ДокументОбєкт,
         ЗакриттяЗамовленняПостачальнику_Товари_TablePart.Record ТовариРядок)
     {
         string query = $@"
@@ -39,13 +39,13 @@ WHERE
         });
     }
 
-    public static async Task<bool> Spend(ЗакриттяЗамовленняПостачальнику_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(ЗакриттяЗамовленняПостачальнику_Object ДокументОбєкт)
     {
         try
         {
             #region Підготовка
 
-            Dictionary<int, Номенклатура_Objest> СписокНоменклатури = [];
+            Dictionary<int, Номенклатура_Object> СписокНоменклатури = [];
             List<string> СписокІнформаційнихПовідомлень = [];
 
             if (ДокументОбєкт.ЗамовленняПостачальнику.IsEmpty())
@@ -120,7 +120,7 @@ WHERE
         }
     }
 
-    public static Task ClearSpend(ЗакриттяЗамовленняПостачальнику_Objest ДокументОбєкт)
+    public static Task ClearSpend(ЗакриттяЗамовленняПостачальнику_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

@@ -72,10 +72,10 @@ static class ПакуванняОдиниціВиміру_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ПакуванняОдиниціВиміру_Objest Обєкт = new();
+        ПакуванняОдиниціВиміру_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ПакуванняОдиниціВиміру_Objest Новий = await Обєкт.Copy(true);
+            ПакуванняОдиниціВиміру_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;

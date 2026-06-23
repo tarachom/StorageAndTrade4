@@ -218,7 +218,7 @@ partial class ФізичніОсоби_ТабличнаЧастина_Конта
     #endregion
 
     
-    public ФізичніОсоби_Objest? ЕлементВласник { get; set; }
+    public ФізичніОсоби_Object? ЕлементВласник { get; set; }
         
     
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());

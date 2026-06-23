@@ -69,10 +69,10 @@ static class КасиККМ_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        КасиККМ_Objest Обєкт = new();
+        КасиККМ_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            КасиККМ_Objest Новий = await Обєкт.Copy(true);
+            КасиККМ_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;

@@ -63,10 +63,10 @@ static class ЧекККМ_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ЧекККМ_Objest Обєкт = new();
+        ЧекККМ_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ЧекККМ_Objest Новий = await Обєкт.Copy(true);
+            ЧекККМ_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
                 await Новий.Товари_TablePart.Save(false); // Таблична частина "Товари"
@@ -82,7 +82,7 @@ static class ЧекККМ_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        ЧекККМ_Objest? Обєкт = await new ЧекККМ_Pointer(uniqueID).GetDocumentObject(true);
+        ЧекККМ_Object? Обєкт = await new ЧекККМ_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

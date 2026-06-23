@@ -69,10 +69,10 @@ static class ПартіяТоварівКомпозит_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ПартіяТоварівКомпозит_Objest Обєкт = new();
+        ПартіяТоварівКомпозит_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ПартіяТоварівКомпозит_Objest Новий = await Обєкт.Copy(true);
+            ПартіяТоварівКомпозит_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
 
             return Новий.UniqueID;

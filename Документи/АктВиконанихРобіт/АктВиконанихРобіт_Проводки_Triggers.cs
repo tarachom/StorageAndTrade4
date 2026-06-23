@@ -11,12 +11,12 @@ namespace GeneratedCode.Документи;
 
 static class АктВиконанихРобіт_Проводки_Triggers
 {
-    public static Task BeforeSave(АктВиконанихРобіт_Objest ДокументОбєкт, АктВиконанихРобіт_Проводки_TablePart ТабличнаЧастина)
+    public static Task BeforeSave(АктВиконанихРобіт_Object ДокументОбєкт, АктВиконанихРобіт_Проводки_TablePart ТабличнаЧастина)
     {
         return Task.CompletedTask;
     }
 
-    public static async Task AfterSave(АктВиконанихРобіт_Objest ДокументОбєкт, АктВиконанихРобіт_Проводки_TablePart ТабличнаЧастина)
+    public static async Task AfterSave(АктВиконанихРобіт_Object ДокументОбєкт, АктВиконанихРобіт_Проводки_TablePart ТабличнаЧастина)
     {
         if (!ДокументОбєкт.ДокументБухгалтерськаОперація.IsEmpty())
         {

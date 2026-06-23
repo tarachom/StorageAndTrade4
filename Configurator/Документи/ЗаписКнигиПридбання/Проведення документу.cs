@@ -17,7 +17,7 @@ namespace GeneratedCode.Документи;
 
 static class ЗаписКнигиПридбання_SpendTheDocument
 {
-    public static async Task<bool> Spend(ЗаписКнигиПридбання_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(ЗаписКнигиПридбання_Object ДокументОбєкт)
     {
         try
         {
@@ -33,7 +33,7 @@ static class ЗаписКнигиПридбання_SpendTheDocument
         }
     }
 
-    public static Task Clear(ЗаписКнигиПридбання_Objest ДокументОбєкт)
+    public static Task Clear(ЗаписКнигиПридбання_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

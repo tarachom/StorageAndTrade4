@@ -13,7 +13,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DirectoryFormElement>("Element_ZbpESiTL2k2KKUuuppiA")]
 partial class Номенклатура_Папки_Елемент : DirectoryFormElement
 {
-    public Номенклатура_Папки_Objest Елемент { get; init; } = new();
+    public Номенклатура_Папки_Object Елемент { get; init; } = new();
 
     public Номенклатура_Папки_Pointer РодичДляНового { get; set; } = new();
 

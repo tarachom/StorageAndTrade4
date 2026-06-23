@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 10.06.2026 18:06:02
+ * Дата конфігурації: 22.06.2026 16:56:24
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон GeneratedCode.xslt
@@ -2570,9 +2570,9 @@ namespace GeneratedCode.Довідники
         public const string КлючовіСловаДляПошуку = "col_b1";
     }
 
-    public class Організації_Objest : DirectoryObject
+    public class Організації_Object : DirectoryObject
     {
-        public Організації_Objest() : base(Config.Kernel, "tab_a01", Організації_Const.TYPE,
+        public Організації_Object() : base(Config.Kernel, "tab_a01", Організації_Const.TYPE,
              ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", "col_b1", ], true)
         {
             
@@ -2644,9 +2644,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<Організації_Objest> Copy(bool copyTableParts = false)
+        public async Task<Організації_Object> Copy(bool copyTableParts = false)
         {
-            Організації_Objest copy = new()
+            Організації_Object copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -2717,10 +2717,10 @@ namespace GeneratedCode.Довідники
         public Організації_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a01", Організації_Const.TYPE) => base.Init(uid);
         public Організації_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a01", Організації_Const.TYPE) => base.Init(uid, fields);
         public Організації_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a01", Організації_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<Організації_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Організації_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Організації_Objest obj = new();
+            Організації_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public Організації_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -2769,7 +2769,7 @@ namespace GeneratedCode.Довідники
     
     public class Організації_Контакти_TablePart : DirectoryTablePart
     {
-        public Організації_Контакти_TablePart(Організації_Objest owner) : base(Config.Kernel, "tab_a02",
+        public Організації_Контакти_TablePart(Організації_Object owner) : base(Config.Kernel, "tab_a02",
              ["col_a9", "col_a4", "col_a5", "col_a1", "col_a6", "col_a2", "col_a3", "col_a8", "col_a7", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -2791,7 +2791,7 @@ namespace GeneratedCode.Довідники
         public const string Значення = "col_a8";
         public const string НомерРядка = "col_a7";
 
-        public Організації_Objest Owner { get; private set; }
+        public Організації_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -2959,9 +2959,9 @@ namespace GeneratedCode.Довідники
         public const string Категорія = "col_a6";
     }
 
-    public class Номенклатура_Objest : DirectoryObject
+    public class Номенклатура_Object : DirectoryObject
     {
-        public Номенклатура_Objest() : base(Config.Kernel, "tab_a03", Номенклатура_Const.TYPE,
+        public Номенклатура_Object() : base(Config.Kernel, "tab_a03", Номенклатура_Const.TYPE,
              ["col_b1", "col_b2", "col_b4", "col_a1", "col_b3", "col_b5", "col_a2", "col_a3", "col_a4", "col_a5", "col_a7", "col_a6", ], true)
         {
             
@@ -3037,9 +3037,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<Номенклатура_Objest> Copy(bool copyTableParts = false)
+        public async Task<Номенклатура_Object> Copy(bool copyTableParts = false)
         {
-            Номенклатура_Objest copy = new()
+            Номенклатура_Object copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -3118,10 +3118,10 @@ namespace GeneratedCode.Довідники
         public Номенклатура_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a03", Номенклатура_Const.TYPE) => base.Init(uid);
         public Номенклатура_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a03", Номенклатура_Const.TYPE) => base.Init(uid, fields);
         public Номенклатура_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a03", Номенклатура_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<Номенклатура_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Номенклатура_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Номенклатура_Objest obj = new();
+            Номенклатура_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public Номенклатура_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -3137,7 +3137,7 @@ namespace GeneratedCode.Довідники
         public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
-            Номенклатура_Objest? obj = await GetDirectoryObject();
+            Номенклатура_Object? obj = await GetDirectoryObject();
               if (obj != null) await Номенклатура_Triggers.SetDeletionLabel(obj, label);
             
             await base.BaseDeletionLabel(label);
@@ -3172,7 +3172,7 @@ namespace GeneratedCode.Довідники
     
     public class Номенклатура_Файли_TablePart : DirectoryTablePart
     {
-        public Номенклатура_Файли_TablePart(Номенклатура_Objest owner) : base(Config.Kernel, "tab_b19",
+        public Номенклатура_Файли_TablePart(Номенклатура_Object owner) : base(Config.Kernel, "tab_b19",
              ["col_a1", "col_a3", "col_a2", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -3188,7 +3188,7 @@ namespace GeneratedCode.Довідники
         public const string Основний = "col_a3";
         public const string НомерРядка = "col_a2";
 
-        public Номенклатура_Objest Owner { get; private set; }
+        public Номенклатура_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -3332,9 +3332,9 @@ namespace GeneratedCode.Довідники
         public const string Код = "col_b7";
     }
 
-    public class Виробники_Objest : DirectoryObject
+    public class Виробники_Object : DirectoryObject
     {
-        public Виробники_Objest() : base(Config.Kernel, "tab_a04", Виробники_Const.TYPE,
+        public Виробники_Object() : base(Config.Kernel, "tab_a04", Виробники_Const.TYPE,
              ["col_b6", "col_b7", ], true)
         {
             
@@ -3381,9 +3381,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<Виробники_Objest> Copy(bool copyTableParts = false)
+        public async Task<Виробники_Object> Copy(bool copyTableParts = false)
         {
-            Виробники_Objest copy = new()
+            Виробники_Object copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -3426,10 +3426,10 @@ namespace GeneratedCode.Довідники
         public Виробники_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a04", Виробники_Const.TYPE) => base.Init(uid);
         public Виробники_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a04", Виробники_Const.TYPE) => base.Init(uid, fields);
         public Виробники_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a04", Виробники_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<Виробники_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Виробники_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Виробники_Objest obj = new();
+            Виробники_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public Виробники_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -3495,9 +3495,9 @@ namespace GeneratedCode.Довідники
         public const string ОдиницяВиміру = "col_a4";
     }
 
-    public class ВидиНоменклатури_Objest : DirectoryObject
+    public class ВидиНоменклатури_Object : DirectoryObject
     {
-        public ВидиНоменклатури_Objest() : base(Config.Kernel, "tab_a05", ВидиНоменклатури_Const.TYPE,
+        public ВидиНоменклатури_Object() : base(Config.Kernel, "tab_a05", ВидиНоменклатури_Const.TYPE,
              ["col_b8", "col_b9", "col_a2", "col_a1", "col_a4", ], true)
         {
             
@@ -3550,9 +3550,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<ВидиНоменклатури_Objest> Copy(bool copyTableParts = false)
+        public async Task<ВидиНоменклатури_Object> Copy(bool copyTableParts = false)
         {
-            ВидиНоменклатури_Objest copy = new()
+            ВидиНоменклатури_Object copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -3601,10 +3601,10 @@ namespace GeneratedCode.Довідники
         public ВидиНоменклатури_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a05", ВидиНоменклатури_Const.TYPE) => base.Init(uid);
         public ВидиНоменклатури_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a05", ВидиНоменклатури_Const.TYPE) => base.Init(uid, fields);
         public ВидиНоменклатури_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a05", ВидиНоменклатури_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<ВидиНоменклатури_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ВидиНоменклатури_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ВидиНоменклатури_Objest obj = new();
+            ВидиНоменклатури_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public ВидиНоменклатури_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -3669,9 +3669,9 @@ namespace GeneratedCode.Довідники
         public const string КількістьУпаковок = "col_c4";
     }
 
-    public class ПакуванняОдиниціВиміру_Objest : DirectoryObject
+    public class ПакуванняОдиниціВиміру_Object : DirectoryObject
     {
-        public ПакуванняОдиниціВиміру_Objest() : base(Config.Kernel, "tab_a06", ПакуванняОдиниціВиміру_Const.TYPE,
+        public ПакуванняОдиниціВиміру_Object() : base(Config.Kernel, "tab_a06", ПакуванняОдиниціВиміру_Const.TYPE,
              ["col_c1", "col_c2", "col_c3", "col_c4", ], true)
         {
             
@@ -3724,9 +3724,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<ПакуванняОдиниціВиміру_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПакуванняОдиниціВиміру_Object> Copy(bool copyTableParts = false)
         {
-            ПакуванняОдиниціВиміру_Objest copy = new()
+            ПакуванняОдиниціВиміру_Object copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -3773,10 +3773,10 @@ namespace GeneratedCode.Довідники
         public ПакуванняОдиниціВиміру_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a06", ПакуванняОдиниціВиміру_Const.TYPE) => base.Init(uid);
         public ПакуванняОдиниціВиміру_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a06", ПакуванняОдиниціВиміру_Const.TYPE) => base.Init(uid, fields);
         public ПакуванняОдиниціВиміру_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a06", ПакуванняОдиниціВиміру_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<ПакуванняОдиниціВиміру_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ПакуванняОдиниціВиміру_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПакуванняОдиниціВиміру_Objest obj = new();
+            ПакуванняОдиниціВиміру_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public ПакуванняОдиниціВиміру_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -3842,9 +3842,9 @@ namespace GeneratedCode.Довідники
         public const string ВиводитиКурсНаСтартову = "col_a3";
     }
 
-    public class Валюти_Objest : DirectoryObject
+    public class Валюти_Object : DirectoryObject
     {
-        public Валюти_Objest() : base(Config.Kernel, "tab_a07", Валюти_Const.TYPE,
+        public Валюти_Object() : base(Config.Kernel, "tab_a07", Валюти_Const.TYPE,
              ["col_c5", "col_a2", "col_c6", "col_a1", "col_a3", ], true)
         {
             
@@ -3897,9 +3897,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<Валюти_Objest> Copy(bool copyTableParts = false)
+        public async Task<Валюти_Object> Copy(bool copyTableParts = false)
         {
-            Валюти_Objest copy = new()
+            Валюти_Object copy = new()
             {
                 Назва = Назва,
                 КороткаНазва = КороткаНазва,
@@ -3952,10 +3952,10 @@ namespace GeneratedCode.Довідники
         public Валюти_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a07", Валюти_Const.TYPE) => base.Init(uid);
         public Валюти_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a07", Валюти_Const.TYPE) => base.Init(uid, fields);
         public Валюти_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a07", Валюти_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<Валюти_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Валюти_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Валюти_Objest obj = new();
+            Валюти_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public Валюти_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -3971,7 +3971,7 @@ namespace GeneratedCode.Довідники
         public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
-            Валюти_Objest? obj = await GetDirectoryObject();
+            Валюти_Object? obj = await GetDirectoryObject();
               if (obj != null) await Валюти_Triggers.SetDeletionLabel(obj, label);
             
             await base.BaseDeletionLabel(label);
@@ -4027,9 +4027,9 @@ namespace GeneratedCode.Довідники
         public const string Покупець = "col_a5";
     }
 
-    public class Контрагенти_Objest : DirectoryObject
+    public class Контрагенти_Object : DirectoryObject
     {
-        public Контрагенти_Objest() : base(Config.Kernel, "tab_a08", Контрагенти_Const.TYPE,
+        public Контрагенти_Object() : base(Config.Kernel, "tab_a08", Контрагенти_Const.TYPE,
              ["col_c7", "col_c8", "col_c9", "col_d1", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", ], true)
         {
             
@@ -4103,9 +4103,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<Контрагенти_Objest> Copy(bool copyTableParts = false)
+        public async Task<Контрагенти_Object> Copy(bool copyTableParts = false)
         {
-            Контрагенти_Objest copy = new()
+            Контрагенти_Object copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -4181,10 +4181,10 @@ namespace GeneratedCode.Довідники
         public Контрагенти_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a08", Контрагенти_Const.TYPE) => base.Init(uid);
         public Контрагенти_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a08", Контрагенти_Const.TYPE) => base.Init(uid, fields);
         public Контрагенти_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a08", Контрагенти_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<Контрагенти_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Контрагенти_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Контрагенти_Objest obj = new();
+            Контрагенти_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public Контрагенти_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -4200,7 +4200,7 @@ namespace GeneratedCode.Довідники
         public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
-            Контрагенти_Objest? obj = await GetDirectoryObject();
+            Контрагенти_Object? obj = await GetDirectoryObject();
               if (obj != null) await Контрагенти_Triggers.SetDeletionLabel(obj, label);
             
             await base.BaseDeletionLabel(label);
@@ -4235,7 +4235,7 @@ namespace GeneratedCode.Довідники
     
     public class Контрагенти_Контакти_TablePart : DirectoryTablePart
     {
-        public Контрагенти_Контакти_TablePart(Контрагенти_Objest owner) : base(Config.Kernel, "tab_a09",
+        public Контрагенти_Контакти_TablePart(Контрагенти_Object owner) : base(Config.Kernel, "tab_a09",
              ["col_d2", "col_d8", "col_d7", "col_d3", "col_d5", "col_d4", "col_d6", "col_a1", "col_a2", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -4257,7 +4257,7 @@ namespace GeneratedCode.Довідники
         public const string Значення = "col_a1";
         public const string НомерРядка = "col_a2";
 
-        public Контрагенти_Objest Owner { get; private set; }
+        public Контрагенти_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -4401,7 +4401,7 @@ namespace GeneratedCode.Довідники
     
     public class Контрагенти_Файли_TablePart : DirectoryTablePart
     {
-        public Контрагенти_Файли_TablePart(Контрагенти_Objest owner) : base(Config.Kernel, "tab_b20",
+        public Контрагенти_Файли_TablePart(Контрагенти_Object owner) : base(Config.Kernel, "tab_b20",
              ["col_a1", "col_a2", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -4416,7 +4416,7 @@ namespace GeneratedCode.Довідники
         public const string Файл = "col_a1";
         public const string НомерРядка = "col_a2";
 
-        public Контрагенти_Objest Owner { get; private set; }
+        public Контрагенти_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -4563,9 +4563,9 @@ namespace GeneratedCode.Довідники
         public const string КлючовіСловаДляПошуку = "col_a7";
     }
 
-    public class Склади_Objest : DirectoryObject
+    public class Склади_Object : DirectoryObject
     {
-        public Склади_Objest() : base(Config.Kernel, "tab_a10", Склади_Const.TYPE,
+        public Склади_Object() : base(Config.Kernel, "tab_a10", Склади_Const.TYPE,
              ["col_d9", "col_e1", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", ], true)
         {
             
@@ -4635,9 +4635,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<Склади_Objest> Copy(bool copyTableParts = false)
+        public async Task<Склади_Object> Copy(bool copyTableParts = false)
         {
-            Склади_Objest copy = new()
+            Склади_Object copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -4706,10 +4706,10 @@ namespace GeneratedCode.Довідники
         public Склади_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a10", Склади_Const.TYPE) => base.Init(uid);
         public Склади_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a10", Склади_Const.TYPE) => base.Init(uid, fields);
         public Склади_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a10", Склади_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<Склади_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Склади_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Склади_Objest obj = new();
+            Склади_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public Склади_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -4758,7 +4758,7 @@ namespace GeneratedCode.Довідники
     
     public class Склади_Контакти_TablePart : DirectoryTablePart
     {
-        public Склади_Контакти_TablePart(Склади_Objest owner) : base(Config.Kernel, "tab_a11",
+        public Склади_Контакти_TablePart(Склади_Object owner) : base(Config.Kernel, "tab_a11",
              ["col_e2", "col_e8", "col_e7", "col_e3", "col_e5", "col_e4", "col_e6", "col_a1", "col_a2", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -4780,7 +4780,7 @@ namespace GeneratedCode.Довідники
         public const string Значення = "col_a1";
         public const string НомерРядка = "col_a2";
 
-        public Склади_Objest Owner { get; private set; }
+        public Склади_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -4939,9 +4939,9 @@ namespace GeneratedCode.Довідники
         public const string Валюта = "col_f2";
     }
 
-    public class ВидиЦін_Objest : DirectoryObject
+    public class ВидиЦін_Object : DirectoryObject
     {
-        public ВидиЦін_Objest() : base(Config.Kernel, "tab_a12", ВидиЦін_Const.TYPE,
+        public ВидиЦін_Object() : base(Config.Kernel, "tab_a12", ВидиЦін_Const.TYPE,
              ["col_e9", "col_f1", "col_f2", ], true)
         {
             
@@ -4990,9 +4990,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<ВидиЦін_Objest> Copy(bool copyTableParts = false)
+        public async Task<ВидиЦін_Object> Copy(bool copyTableParts = false)
         {
-            ВидиЦін_Objest copy = new()
+            ВидиЦін_Object copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -5037,10 +5037,10 @@ namespace GeneratedCode.Довідники
         public ВидиЦін_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a12", ВидиЦін_Const.TYPE) => base.Init(uid);
         public ВидиЦін_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a12", ВидиЦін_Const.TYPE) => base.Init(uid, fields);
         public ВидиЦін_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a12", ВидиЦін_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<ВидиЦін_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ВидиЦін_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ВидиЦін_Objest obj = new();
+            ВидиЦін_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public ВидиЦін_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -5104,9 +5104,9 @@ namespace GeneratedCode.Довідники
         public const string Валюта = "col_f5";
     }
 
-    public class ВидиЦінПостачальників_Objest : DirectoryObject
+    public class ВидиЦінПостачальників_Object : DirectoryObject
     {
-        public ВидиЦінПостачальників_Objest() : base(Config.Kernel, "tab_a13", ВидиЦінПостачальників_Const.TYPE,
+        public ВидиЦінПостачальників_Object() : base(Config.Kernel, "tab_a13", ВидиЦінПостачальників_Const.TYPE,
              ["col_f3", "col_f4", "col_f5", ], true)
         {
             
@@ -5155,9 +5155,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<ВидиЦінПостачальників_Objest> Copy(bool copyTableParts = false)
+        public async Task<ВидиЦінПостачальників_Object> Copy(bool copyTableParts = false)
         {
-            ВидиЦінПостачальників_Objest copy = new()
+            ВидиЦінПостачальників_Object copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -5202,10 +5202,10 @@ namespace GeneratedCode.Довідники
         public ВидиЦінПостачальників_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a13", ВидиЦінПостачальників_Const.TYPE) => base.Init(uid);
         public ВидиЦінПостачальників_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a13", ВидиЦінПостачальників_Const.TYPE) => base.Init(uid, fields);
         public ВидиЦінПостачальників_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a13", ВидиЦінПостачальників_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<ВидиЦінПостачальників_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ВидиЦінПостачальників_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ВидиЦінПостачальників_Objest obj = new();
+            ВидиЦінПостачальників_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public ВидиЦінПостачальників_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -5271,9 +5271,9 @@ namespace GeneratedCode.Довідники
         public const string КодВСпеціальнійТаблиці = "col_a2";
     }
 
-    public class Користувачі_Objest : DirectoryObject
+    public class Користувачі_Object : DirectoryObject
     {
-        public Користувачі_Objest() : base(Config.Kernel, "tab_a14", Користувачі_Const.TYPE,
+        public Користувачі_Object() : base(Config.Kernel, "tab_a14", Користувачі_Const.TYPE,
              ["col_f6", "col_f7", "col_a1", "col_g6", "col_a2", ], true)
         {
             
@@ -5335,9 +5335,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<Користувачі_Objest> Copy(bool copyTableParts = false)
+        public async Task<Користувачі_Object> Copy(bool copyTableParts = false)
         {
-            Користувачі_Objest copy = new()
+            Користувачі_Object copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -5398,10 +5398,10 @@ namespace GeneratedCode.Довідники
         public Користувачі_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a14", Користувачі_Const.TYPE) => base.Init(uid);
         public Користувачі_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a14", Користувачі_Const.TYPE) => base.Init(uid, fields);
         public Користувачі_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a14", Користувачі_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<Користувачі_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Користувачі_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Користувачі_Objest obj = new();
+            Користувачі_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public Користувачі_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -5450,7 +5450,7 @@ namespace GeneratedCode.Довідники
     
     public class Користувачі_Контакти_TablePart : DirectoryTablePart
     {
-        public Користувачі_Контакти_TablePart(Користувачі_Objest owner) : base(Config.Kernel, "tab_a15",
+        public Користувачі_Контакти_TablePart(Користувачі_Object owner) : base(Config.Kernel, "tab_a15",
              ["col_f8", "col_g5", "col_g4", "col_f9", "col_g1", "col_g2", "col_g3", "col_a1", "col_a2", ])
         {
             if (owner == null) throw new Exception("owner null");
@@ -5472,7 +5472,7 @@ namespace GeneratedCode.Довідники
         public const string НомерРядка = "col_a1";
         public const string Значення = "col_a2";
 
-        public Користувачі_Objest Owner { get; private set; }
+        public Користувачі_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -5625,9 +5625,9 @@ namespace GeneratedCode.Довідники
         public const string ІПН = "col_a2";
     }
 
-    public class ФізичніОсоби_Objest : DirectoryObject
+    public class ФізичніОсоби_Object : DirectoryObject
     {
-        public ФізичніОсоби_Objest() : base(Config.Kernel, "tab_a16", ФізичніОсоби_Const.TYPE,
+        public ФізичніОсоби_Object() : base(Config.Kernel, "tab_a16", ФізичніОсоби_Const.TYPE,
              ["col_g7", "col_g8", "col_g9", "col_a1", "col_a2", ], true)
         {
             
@@ -5689,9 +5689,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<ФізичніОсоби_Objest> Copy(bool copyTableParts = false)
+        public async Task<ФізичніОсоби_Object> Copy(bool copyTableParts = false)
         {
-            ФізичніОсоби_Objest copy = new()
+            ФізичніОсоби_Object copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -5752,10 +5752,10 @@ namespace GeneratedCode.Довідники
         public ФізичніОсоби_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a16", ФізичніОсоби_Const.TYPE) => base.Init(uid);
         public ФізичніОсоби_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a16", ФізичніОсоби_Const.TYPE) => base.Init(uid, fields);
         public ФізичніОсоби_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a16", ФізичніОсоби_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<ФізичніОсоби_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ФізичніОсоби_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ФізичніОсоби_Objest obj = new();
+            ФізичніОсоби_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public ФізичніОсоби_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -5804,7 +5804,7 @@ namespace GeneratedCode.Довідники
     
     public class ФізичніОсоби_Контакти_TablePart : DirectoryTablePart
     {
-        public ФізичніОсоби_Контакти_TablePart(ФізичніОсоби_Objest owner) : base(Config.Kernel, "tab_a17",
+        public ФізичніОсоби_Контакти_TablePart(ФізичніОсоби_Object owner) : base(Config.Kernel, "tab_a17",
              ["col_h1", "col_h7", "col_h6", "col_h2", "col_h3", "col_h4", "col_h5", "col_a1", "col_a2", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -5826,7 +5826,7 @@ namespace GeneratedCode.Довідники
         public const string Значення = "col_a1";
         public const string НомерРядка = "col_a2";
 
-        public ФізичніОсоби_Objest Owner { get; private set; }
+        public ФізичніОсоби_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -5985,9 +5985,9 @@ namespace GeneratedCode.Довідники
         public const string Керівник = "col_i1";
     }
 
-    public class СтруктураПідприємства_Objest : DirectoryObject
+    public class СтруктураПідприємства_Object : DirectoryObject
     {
-        public СтруктураПідприємства_Objest() : base(Config.Kernel, "tab_a18", СтруктураПідприємства_Const.TYPE,
+        public СтруктураПідприємства_Object() : base(Config.Kernel, "tab_a18", СтруктураПідприємства_Const.TYPE,
              ["col_h8", "col_h9", "col_i1", ], true)
         {
             
@@ -6036,9 +6036,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<СтруктураПідприємства_Objest> Copy(bool copyTableParts = false)
+        public async Task<СтруктураПідприємства_Object> Copy(bool copyTableParts = false)
         {
-            СтруктураПідприємства_Objest copy = new()
+            СтруктураПідприємства_Object copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -6083,10 +6083,10 @@ namespace GeneratedCode.Довідники
         public СтруктураПідприємства_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a18", СтруктураПідприємства_Const.TYPE) => base.Init(uid);
         public СтруктураПідприємства_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a18", СтруктураПідприємства_Const.TYPE) => base.Init(uid, fields);
         public СтруктураПідприємства_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a18", СтруктураПідприємства_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<СтруктураПідприємства_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<СтруктураПідприємства_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            СтруктураПідприємства_Objest obj = new();
+            СтруктураПідприємства_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public СтруктураПідприємства_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -6149,9 +6149,9 @@ namespace GeneratedCode.Довідники
         public const string Код = "col_i3";
     }
 
-    public class КраїниСвіту_Objest : DirectoryObject
+    public class КраїниСвіту_Object : DirectoryObject
     {
-        public КраїниСвіту_Objest() : base(Config.Kernel, "tab_a19", КраїниСвіту_Const.TYPE,
+        public КраїниСвіту_Object() : base(Config.Kernel, "tab_a19", КраїниСвіту_Const.TYPE,
              ["col_i2", "col_i3", ], true)
         {
             
@@ -6198,9 +6198,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<КраїниСвіту_Objest> Copy(bool copyTableParts = false)
+        public async Task<КраїниСвіту_Object> Copy(bool copyTableParts = false)
         {
-            КраїниСвіту_Objest copy = new()
+            КраїниСвіту_Object copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -6243,10 +6243,10 @@ namespace GeneratedCode.Довідники
         public КраїниСвіту_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a19", КраїниСвіту_Const.TYPE) => base.Init(uid);
         public КраїниСвіту_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a19", КраїниСвіту_Const.TYPE) => base.Init(uid, fields);
         public КраїниСвіту_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a19", КраїниСвіту_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<КраїниСвіту_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<КраїниСвіту_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            КраїниСвіту_Objest obj = new();
+            КраїниСвіту_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public КраїниСвіту_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -6313,9 +6313,9 @@ namespace GeneratedCode.Довідники
         public const string ДатаСтворення = "col_a4";
     }
 
-    public class Файли_Objest : DirectoryObject
+    public class Файли_Object : DirectoryObject
     {
-        public Файли_Objest() : base(Config.Kernel, "tab_a20", Файли_Const.TYPE,
+        public Файли_Object() : base(Config.Kernel, "tab_a20", Файли_Const.TYPE,
              ["col_i6", "col_i5", "col_a2", "col_a1", "col_a3", "col_a4", ], true)
         {
             
@@ -6370,9 +6370,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<Файли_Objest> Copy(bool copyTableParts = false)
+        public async Task<Файли_Object> Copy(bool copyTableParts = false)
         {
-            Файли_Objest copy = new()
+            Файли_Object copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -6423,10 +6423,10 @@ namespace GeneratedCode.Довідники
         public Файли_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a20", Файли_Const.TYPE) => base.Init(uid);
         public Файли_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a20", Файли_Const.TYPE) => base.Init(uid, fields);
         public Файли_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a20", Файли_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<Файли_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Файли_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Файли_Objest obj = new();
+            Файли_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public Файли_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -6491,9 +6491,9 @@ namespace GeneratedCode.Довідники
         public const string Номенклатура = "col_a1";
     }
 
-    public class ХарактеристикиНоменклатури_Objest : DirectoryObject
+    public class ХарактеристикиНоменклатури_Object : DirectoryObject
     {
-        public ХарактеристикиНоменклатури_Objest() : base(Config.Kernel, "tab_a21", ХарактеристикиНоменклатури_Const.TYPE,
+        public ХарактеристикиНоменклатури_Object() : base(Config.Kernel, "tab_a21", ХарактеристикиНоменклатури_Const.TYPE,
              ["col_i7", "col_i8", "col_i9", "col_a1", ], true)
         {
             
@@ -6544,9 +6544,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<ХарактеристикиНоменклатури_Objest> Copy(bool copyTableParts = false)
+        public async Task<ХарактеристикиНоменклатури_Object> Copy(bool copyTableParts = false)
         {
-            ХарактеристикиНоменклатури_Objest copy = new()
+            ХарактеристикиНоменклатури_Object copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -6593,10 +6593,10 @@ namespace GeneratedCode.Довідники
         public ХарактеристикиНоменклатури_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a21", ХарактеристикиНоменклатури_Const.TYPE) => base.Init(uid);
         public ХарактеристикиНоменклатури_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a21", ХарактеристикиНоменклатури_Const.TYPE) => base.Init(uid, fields);
         public ХарактеристикиНоменклатури_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a21", ХарактеристикиНоменклатури_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<ХарактеристикиНоменклатури_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ХарактеристикиНоменклатури_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ХарактеристикиНоменклатури_Objest obj = new();
+            ХарактеристикиНоменклатури_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public ХарактеристикиНоменклатури_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -6660,9 +6660,9 @@ namespace GeneratedCode.Довідники
         public const string Родич = "col_j3";
     }
 
-    public class Номенклатура_Папки_Objest : DirectoryObject
+    public class Номенклатура_Папки_Object : DirectoryObject
     {
-        public Номенклатура_Папки_Objest() : base(Config.Kernel, "tab_a22", Номенклатура_Папки_Const.TYPE,
+        public Номенклатура_Папки_Object() : base(Config.Kernel, "tab_a22", Номенклатура_Папки_Const.TYPE,
              ["col_j1", "col_j2", "col_j3", ], true)
         {
             
@@ -6711,9 +6711,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<Номенклатура_Папки_Objest> Copy(bool copyTableParts = false)
+        public async Task<Номенклатура_Папки_Object> Copy(bool copyTableParts = false)
         {
-            Номенклатура_Папки_Objest copy = new()
+            Номенклатура_Папки_Object copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -6762,10 +6762,10 @@ namespace GeneratedCode.Довідники
         public Номенклатура_Папки_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a22", Номенклатура_Папки_Const.TYPE) => base.Init(uid);
         public Номенклатура_Папки_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a22", Номенклатура_Папки_Const.TYPE) => base.Init(uid, fields);
         public Номенклатура_Папки_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a22", Номенклатура_Папки_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<Номенклатура_Папки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Номенклатура_Папки_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Номенклатура_Папки_Objest obj = new();
+            Номенклатура_Папки_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public Номенклатура_Папки_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -6781,7 +6781,7 @@ namespace GeneratedCode.Довідники
         public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
-            Номенклатура_Папки_Objest? obj = await GetDirectoryObject();
+            Номенклатура_Папки_Object? obj = await GetDirectoryObject();
               if (obj != null) await Номенклатура_Папки_Triggers.SetDeletionLabel(obj, label);
             
             await base.BaseDeletionLabel(label);
@@ -6847,9 +6847,9 @@ namespace GeneratedCode.Довідники
         public const string Родич = "col_j6";
     }
 
-    public class Контрагенти_Папки_Objest : DirectoryObject
+    public class Контрагенти_Папки_Object : DirectoryObject
     {
-        public Контрагенти_Папки_Objest() : base(Config.Kernel, "tab_a23", Контрагенти_Папки_Const.TYPE,
+        public Контрагенти_Папки_Object() : base(Config.Kernel, "tab_a23", Контрагенти_Папки_Const.TYPE,
              ["col_j4", "col_j5", "col_j6", ], true)
         {
             
@@ -6898,9 +6898,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<Контрагенти_Папки_Objest> Copy(bool copyTableParts = false)
+        public async Task<Контрагенти_Папки_Object> Copy(bool copyTableParts = false)
         {
-            Контрагенти_Папки_Objest copy = new()
+            Контрагенти_Папки_Object copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -6949,10 +6949,10 @@ namespace GeneratedCode.Довідники
         public Контрагенти_Папки_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a23", Контрагенти_Папки_Const.TYPE) => base.Init(uid);
         public Контрагенти_Папки_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a23", Контрагенти_Папки_Const.TYPE) => base.Init(uid, fields);
         public Контрагенти_Папки_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a23", Контрагенти_Папки_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<Контрагенти_Папки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Контрагенти_Папки_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Контрагенти_Папки_Objest obj = new();
+            Контрагенти_Папки_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public Контрагенти_Папки_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -6968,7 +6968,7 @@ namespace GeneratedCode.Довідники
         public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
-            Контрагенти_Папки_Objest? obj = await GetDirectoryObject();
+            Контрагенти_Папки_Object? obj = await GetDirectoryObject();
               if (obj != null) await Контрагенти_Папки_Triggers.SetDeletionLabel(obj, label);
             
             await base.BaseDeletionLabel(label);
@@ -7034,9 +7034,9 @@ namespace GeneratedCode.Довідники
         public const string Родич = "col_a1";
     }
 
-    public class Склади_Папки_Objest : DirectoryObject
+    public class Склади_Папки_Object : DirectoryObject
     {
-        public Склади_Папки_Objest() : base(Config.Kernel, "tab_a24", Склади_Папки_Const.TYPE,
+        public Склади_Папки_Object() : base(Config.Kernel, "tab_a24", Склади_Папки_Const.TYPE,
              ["col_j7", "col_j8", "col_a1", ], true)
         {
             
@@ -7085,9 +7085,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<Склади_Папки_Objest> Copy(bool copyTableParts = false)
+        public async Task<Склади_Папки_Object> Copy(bool copyTableParts = false)
         {
-            Склади_Папки_Objest copy = new()
+            Склади_Папки_Object copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -7136,10 +7136,10 @@ namespace GeneratedCode.Довідники
         public Склади_Папки_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a24", Склади_Папки_Const.TYPE) => base.Init(uid);
         public Склади_Папки_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a24", Склади_Папки_Const.TYPE) => base.Init(uid, fields);
         public Склади_Папки_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a24", Склади_Папки_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<Склади_Папки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Склади_Папки_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Склади_Папки_Objest obj = new();
+            Склади_Папки_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public Склади_Папки_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -7155,7 +7155,7 @@ namespace GeneratedCode.Довідники
         public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
-            Склади_Папки_Objest? obj = await GetDirectoryObject();
+            Склади_Папки_Object? obj = await GetDirectoryObject();
               if (obj != null) await Склади_Папки_Triggers.SetDeletionLabel(obj, label);
             
             await base.BaseDeletionLabel(label);
@@ -7222,9 +7222,9 @@ namespace GeneratedCode.Довідники
         public const string Підрозділ = "col_a1";
     }
 
-    public class Каси_Objest : DirectoryObject
+    public class Каси_Object : DirectoryObject
     {
-        public Каси_Objest() : base(Config.Kernel, "tab_a26", Каси_Const.TYPE,
+        public Каси_Object() : base(Config.Kernel, "tab_a26", Каси_Const.TYPE,
              ["col_k8", "col_k9", "col_a2", "col_a1", ], true)
         {
             
@@ -7275,9 +7275,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<Каси_Objest> Copy(bool copyTableParts = false)
+        public async Task<Каси_Object> Copy(bool copyTableParts = false)
         {
-            Каси_Objest copy = new()
+            Каси_Object copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -7324,10 +7324,10 @@ namespace GeneratedCode.Довідники
         public Каси_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a26", Каси_Const.TYPE) => base.Init(uid);
         public Каси_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a26", Каси_Const.TYPE) => base.Init(uid, fields);
         public Каси_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a26", Каси_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<Каси_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Каси_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Каси_Objest obj = new();
+            Каси_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public Каси_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -7395,9 +7395,9 @@ namespace GeneratedCode.Довідники
         public const string Організація = "col_a1";
     }
 
-    public class БанківськіРахункиОрганізацій_Objest : DirectoryObject
+    public class БанківськіРахункиОрганізацій_Object : DirectoryObject
     {
-        public БанківськіРахункиОрганізацій_Objest() : base(Config.Kernel, "tab_a27", БанківськіРахункиОрганізацій_Const.TYPE,
+        public БанківськіРахункиОрганізацій_Object() : base(Config.Kernel, "tab_a27", БанківськіРахункиОрганізацій_Const.TYPE,
              ["col_l1", "col_l2", "col_l3", "col_l4", "col_l5", "col_l7", "col_a1", ], true)
         {
             
@@ -7454,9 +7454,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<БанківськіРахункиОрганізацій_Objest> Copy(bool copyTableParts = false)
+        public async Task<БанківськіРахункиОрганізацій_Object> Copy(bool copyTableParts = false)
         {
-            БанківськіРахункиОрганізацій_Objest copy = new()
+            БанківськіРахункиОрганізацій_Object copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -7509,10 +7509,10 @@ namespace GeneratedCode.Довідники
         public БанківськіРахункиОрганізацій_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a27", БанківськіРахункиОрганізацій_Const.TYPE) => base.Init(uid);
         public БанківськіРахункиОрганізацій_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a27", БанківськіРахункиОрганізацій_Const.TYPE) => base.Init(uid, fields);
         public БанківськіРахункиОрганізацій_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a27", БанківськіРахункиОрганізацій_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<БанківськіРахункиОрганізацій_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<БанківськіРахункиОрганізацій_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            БанківськіРахункиОрганізацій_Objest obj = new();
+            БанківськіРахункиОрганізацій_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public БанківськіРахункиОрганізацій_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -7593,9 +7593,9 @@ namespace GeneratedCode.Довідники
         public const string Коментар = "col_a3";
     }
 
-    public class ДоговориКонтрагентів_Objest : DirectoryObject
+    public class ДоговориКонтрагентів_Object : DirectoryObject
     {
-        public ДоговориКонтрагентів_Objest() : base(Config.Kernel, "tab_a28", ДоговориКонтрагентів_Const.TYPE,
+        public ДоговориКонтрагентів_Object() : base(Config.Kernel, "tab_a28", ДоговориКонтрагентів_Const.TYPE,
              ["col_n4", "col_n5", "col_n6", "col_a1", "col_a2", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", "col_b1", "col_b2", "col_b3", "col_b4", "col_b5", "col_b8", "col_b6", "col_b7", "col_a3", ], true)
         {
             
@@ -7680,9 +7680,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<ДоговориКонтрагентів_Objest> Copy(bool copyTableParts = false)
+        public async Task<ДоговориКонтрагентів_Object> Copy(bool copyTableParts = false)
         {
-            ДоговориКонтрагентів_Objest copy = new()
+            ДоговориКонтрагентів_Object copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -7761,10 +7761,10 @@ namespace GeneratedCode.Довідники
         public ДоговориКонтрагентів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a28", ДоговориКонтрагентів_Const.TYPE) => base.Init(uid);
         public ДоговориКонтрагентів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a28", ДоговориКонтрагентів_Const.TYPE) => base.Init(uid, fields);
         public ДоговориКонтрагентів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a28", ДоговориКонтрагентів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<ДоговориКонтрагентів_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ДоговориКонтрагентів_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ДоговориКонтрагентів_Objest obj = new();
+            ДоговориКонтрагентів_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public ДоговориКонтрагентів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -7831,9 +7831,9 @@ namespace GeneratedCode.Довідники
         public const string Контрагент = "col_o3";
     }
 
-    public class БанківськіРахункиКонтрагентів_Objest : DirectoryObject
+    public class БанківськіРахункиКонтрагентів_Object : DirectoryObject
     {
-        public БанківськіРахункиКонтрагентів_Objest() : base(Config.Kernel, "tab_a29", БанківськіРахункиКонтрагентів_Const.TYPE,
+        public БанківськіРахункиКонтрагентів_Object() : base(Config.Kernel, "tab_a29", БанківськіРахункиКонтрагентів_Const.TYPE,
              ["col_n7", "col_n8", "col_n9", "col_m1", "col_m5", "col_o3", ], true)
         {
             
@@ -7888,9 +7888,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<БанківськіРахункиКонтрагентів_Objest> Copy(bool copyTableParts = false)
+        public async Task<БанківськіРахункиКонтрагентів_Object> Copy(bool copyTableParts = false)
         {
-            БанківськіРахункиКонтрагентів_Objest copy = new()
+            БанківськіРахункиКонтрагентів_Object copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -7941,10 +7941,10 @@ namespace GeneratedCode.Довідники
         public БанківськіРахункиКонтрагентів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a29", БанківськіРахункиКонтрагентів_Const.TYPE) => base.Init(uid);
         public БанківськіРахункиКонтрагентів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a29", БанківськіРахункиКонтрагентів_Const.TYPE) => base.Init(uid, fields);
         public БанківськіРахункиКонтрагентів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a29", БанківськіРахункиКонтрагентів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<БанківськіРахункиКонтрагентів_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<БанківськіРахункиКонтрагентів_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            БанківськіРахункиКонтрагентів_Objest obj = new();
+            БанківськіРахункиКонтрагентів_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public БанківськіРахункиКонтрагентів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -8010,9 +8010,9 @@ namespace GeneratedCode.Довідники
         public const string Опис = "col_j1";
     }
 
-    public class СтаттяРухуКоштів_Objest : DirectoryObject
+    public class СтаттяРухуКоштів_Object : DirectoryObject
     {
-        public СтаттяРухуКоштів_Objest() : base(Config.Kernel, "tab_a45", СтаттяРухуКоштів_Const.TYPE,
+        public СтаттяРухуКоштів_Object() : base(Config.Kernel, "tab_a45", СтаттяРухуКоштів_Const.TYPE,
              ["col_i7", "col_i8", "col_i9", "col_j2", "col_j1", ], true)
         {
             
@@ -8074,9 +8074,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<СтаттяРухуКоштів_Objest> Copy(bool copyTableParts = false)
+        public async Task<СтаттяРухуКоштів_Object> Copy(bool copyTableParts = false)
         {
-            СтаттяРухуКоштів_Objest copy = new()
+            СтаттяРухуКоштів_Object copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -8137,10 +8137,10 @@ namespace GeneratedCode.Довідники
         public СтаттяРухуКоштів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a45", СтаттяРухуКоштів_Const.TYPE) => base.Init(uid);
         public СтаттяРухуКоштів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a45", СтаттяРухуКоштів_Const.TYPE) => base.Init(uid, fields);
         public СтаттяРухуКоштів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a45", СтаттяРухуКоштів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<СтаттяРухуКоштів_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<СтаттяРухуКоштів_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            СтаттяРухуКоштів_Objest obj = new();
+            СтаттяРухуКоштів_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public СтаттяРухуКоштів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -8189,7 +8189,7 @@ namespace GeneratedCode.Довідники
     
     public class СтаттяРухуКоштів_ГосподарськіОперації_TablePart : DirectoryTablePart
     {
-        public СтаттяРухуКоштів_ГосподарськіОперації_TablePart(СтаттяРухуКоштів_Objest owner) : base(Config.Kernel, "tab_a46",
+        public СтаттяРухуКоштів_ГосподарськіОперації_TablePart(СтаттяРухуКоштів_Object owner) : base(Config.Kernel, "tab_a46",
              ["col_j3", ])
         {
             if (owner == null) throw new Exception("owner null");
@@ -8201,7 +8201,7 @@ namespace GeneratedCode.Довідники
         
         public const string ГосподарськаОперація = "col_j3";
 
-        public СтаттяРухуКоштів_Objest Owner { get; private set; }
+        public СтаттяРухуКоштів_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -8310,9 +8310,9 @@ namespace GeneratedCode.Довідники
         public const string ДатаСтворення = "col_a2";
     }
 
-    public class СеріїНоменклатури_Objest : DirectoryObject
+    public class СеріїНоменклатури_Object : DirectoryObject
     {
-        public СеріїНоменклатури_Objest() : base(Config.Kernel, "tab_b02", СеріїНоменклатури_Const.TYPE,
+        public СеріїНоменклатури_Object() : base(Config.Kernel, "tab_b02", СеріїНоменклатури_Const.TYPE,
              ["col_a3", "col_a1", "col_a2", ], true)
         {
             
@@ -8363,9 +8363,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<СеріїНоменклатури_Objest> Copy(bool copyTableParts = false)
+        public async Task<СеріїНоменклатури_Object> Copy(bool copyTableParts = false)
         {
-            СеріїНоменклатури_Objest copy = new()
+            СеріїНоменклатури_Object copy = new()
             {
                 Номер = Номер,
                 Коментар = Коментар,
@@ -8410,10 +8410,10 @@ namespace GeneratedCode.Довідники
         public СеріїНоменклатури_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b02", СеріїНоменклатури_Const.TYPE) => base.Init(uid);
         public СеріїНоменклатури_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b02", СеріїНоменклатури_Const.TYPE) => base.Init(uid, fields);
         public СеріїНоменклатури_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b02", СеріїНоменклатури_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<СеріїНоменклатури_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<СеріїНоменклатури_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            СеріїНоменклатури_Objest obj = new();
+            СеріїНоменклатури_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public СеріїНоменклатури_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -8480,9 +8480,9 @@ namespace GeneratedCode.Довідники
         public const string ВведенняЗалишків = "col_a5";
     }
 
-    public class ПартіяТоварівКомпозит_Objest : DirectoryObject
+    public class ПартіяТоварівКомпозит_Object : DirectoryObject
     {
-        public ПартіяТоварівКомпозит_Objest() : base(Config.Kernel, "tab_b06", ПартіяТоварівКомпозит_Const.TYPE,
+        public ПартіяТоварівКомпозит_Object() : base(Config.Kernel, "tab_b06", ПартіяТоварівКомпозит_Const.TYPE,
              ["col_a1", "col_a2", "col_a3", "col_a6", "col_a4", "col_a5", ], true)
         {
             
@@ -8537,9 +8537,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<ПартіяТоварівКомпозит_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПартіяТоварівКомпозит_Object> Copy(bool copyTableParts = false)
         {
-            ПартіяТоварівКомпозит_Objest copy = new()
+            ПартіяТоварівКомпозит_Object copy = new()
             {
                 Назва = Назва,
                 Дата = Дата,
@@ -8588,10 +8588,10 @@ namespace GeneratedCode.Довідники
         public ПартіяТоварівКомпозит_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b06", ПартіяТоварівКомпозит_Const.TYPE) => base.Init(uid);
         public ПартіяТоварівКомпозит_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b06", ПартіяТоварівКомпозит_Const.TYPE) => base.Init(uid, fields);
         public ПартіяТоварівКомпозит_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b06", ПартіяТоварівКомпозит_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<ПартіяТоварівКомпозит_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ПартіяТоварівКомпозит_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПартіяТоварівКомпозит_Objest obj = new();
+            ПартіяТоварівКомпозит_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public ПартіяТоварівКомпозит_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -8659,9 +8659,9 @@ namespace GeneratedCode.Довідники
         public const string Код = "col_a1";
     }
 
-    public class ВидиЗапасів_Objest : DirectoryObject
+    public class ВидиЗапасів_Object : DirectoryObject
     {
-        public ВидиЗапасів_Objest() : base(Config.Kernel, "tab_b13", ВидиЗапасів_Const.TYPE,
+        public ВидиЗапасів_Object() : base(Config.Kernel, "tab_b13", ВидиЗапасів_Const.TYPE,
              ["col_a5", "col_b3", "col_a7", "col_a9", "col_b1", "col_b2", "col_a1", ], true)
         {
             
@@ -8718,9 +8718,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<ВидиЗапасів_Objest> Copy(bool copyTableParts = false)
+        public async Task<ВидиЗапасів_Object> Copy(bool copyTableParts = false)
         {
-            ВидиЗапасів_Objest copy = new()
+            ВидиЗапасів_Object copy = new()
             {
                 Назва = Назва,
                 Організація = Організація.Copy(),
@@ -8773,10 +8773,10 @@ namespace GeneratedCode.Довідники
         public ВидиЗапасів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b13", ВидиЗапасів_Const.TYPE) => base.Init(uid);
         public ВидиЗапасів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b13", ВидиЗапасів_Const.TYPE) => base.Init(uid, fields);
         public ВидиЗапасів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b13", ВидиЗапасів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<ВидиЗапасів_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ВидиЗапасів_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ВидиЗапасів_Objest obj = new();
+            ВидиЗапасів_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public ВидиЗапасів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -8865,9 +8865,9 @@ namespace GeneratedCode.Довідники
         public const string ДатаЗапису = "col_d1";
     }
 
-    public class Банки_Objest : DirectoryObject
+    public class Банки_Object : DirectoryObject
     {
-        public Банки_Objest() : base(Config.Kernel, "tab_a39", Банки_Const.TYPE,
+        public Банки_Object() : base(Config.Kernel, "tab_a39", Банки_Const.TYPE,
              ["col_a1", "col_a2", "col_b4", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", "col_b1", "col_b2", "col_b3", "col_b5", "col_b6", "col_b7", "col_b8", "col_b9", "col_c1", "col_c2", "col_c3", "col_c4", "col_c5", "col_c6", "col_c7", "col_c8", "col_c9", "col_d1", ], true)
         {
             
@@ -8966,9 +8966,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<Банки_Objest> Copy(bool copyTableParts = false)
+        public async Task<Банки_Object> Copy(bool copyTableParts = false)
         {
-            Банки_Objest copy = new()
+            Банки_Object copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -9063,10 +9063,10 @@ namespace GeneratedCode.Довідники
         public Банки_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a39", Банки_Const.TYPE) => base.Init(uid);
         public Банки_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a39", Банки_Const.TYPE) => base.Init(uid, fields);
         public Банки_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a39", Банки_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<Банки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Банки_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Банки_Objest obj = new();
+            Банки_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public Банки_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -9130,9 +9130,9 @@ namespace GeneratedCode.Довідники
         public const string Склад = "col_a1";
     }
 
-    public class СкладськіПриміщення_Objest : DirectoryObject
+    public class СкладськіПриміщення_Object : DirectoryObject
     {
-        public СкладськіПриміщення_Objest() : base(Config.Kernel, "tab_a71", СкладськіПриміщення_Const.TYPE,
+        public СкладськіПриміщення_Object() : base(Config.Kernel, "tab_a71", СкладськіПриміщення_Const.TYPE,
              ["col_a2", "col_a3", "col_a1", ], true)
         {
             
@@ -9181,9 +9181,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<СкладськіПриміщення_Objest> Copy(bool copyTableParts = false)
+        public async Task<СкладськіПриміщення_Object> Copy(bool copyTableParts = false)
         {
-            СкладськіПриміщення_Objest copy = new()
+            СкладськіПриміщення_Object copy = new()
             {
                 Назва = Назва,
                 НалаштуванняАдресногоЗберігання = НалаштуванняАдресногоЗберігання,
@@ -9228,10 +9228,10 @@ namespace GeneratedCode.Довідники
         public СкладськіПриміщення_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a71", СкладськіПриміщення_Const.TYPE) => base.Init(uid);
         public СкладськіПриміщення_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a71", СкладськіПриміщення_Const.TYPE) => base.Init(uid, fields);
         public СкладськіПриміщення_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a71", СкладськіПриміщення_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<СкладськіПриміщення_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<СкладськіПриміщення_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            СкладськіПриміщення_Objest obj = new();
+            СкладськіПриміщення_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public СкладськіПриміщення_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -9302,9 +9302,9 @@ namespace GeneratedCode.Довідники
         public const string Типорозмір = "col_b1";
     }
 
-    public class СкладськіКомірки_Objest : DirectoryObject
+    public class СкладськіКомірки_Object : DirectoryObject
     {
-        public СкладськіКомірки_Objest() : base(Config.Kernel, "tab_a72", СкладськіКомірки_Const.TYPE,
+        public СкладськіКомірки_Object() : base(Config.Kernel, "tab_a72", СкладськіКомірки_Const.TYPE,
              ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", "col_b1", ], true)
         {
             
@@ -9367,9 +9367,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<СкладськіКомірки_Objest> Copy(bool copyTableParts = false)
+        public async Task<СкладськіКомірки_Object> Copy(bool copyTableParts = false)
         {
-            СкладськіКомірки_Objest copy = new()
+            СкладськіКомірки_Object copy = new()
             {
                 Папка = Папка.Copy(),
                 Назва = Назва,
@@ -9428,10 +9428,10 @@ namespace GeneratedCode.Довідники
         public СкладськіКомірки_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a72", СкладськіКомірки_Const.TYPE) => base.Init(uid);
         public СкладськіКомірки_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a72", СкладськіКомірки_Const.TYPE) => base.Init(uid, fields);
         public СкладськіКомірки_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a72", СкладськіКомірки_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<СкладськіКомірки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<СкладськіКомірки_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            СкладськіКомірки_Objest obj = new();
+            СкладськіКомірки_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public СкладськіКомірки_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -9495,9 +9495,9 @@ namespace GeneratedCode.Довідники
         public const string Приміщення = "col_a4";
     }
 
-    public class ОбластьЗберігання_Objest : DirectoryObject
+    public class ОбластьЗберігання_Object : DirectoryObject
     {
-        public ОбластьЗберігання_Objest() : base(Config.Kernel, "tab_a73", ОбластьЗберігання_Const.TYPE,
+        public ОбластьЗберігання_Object() : base(Config.Kernel, "tab_a73", ОбластьЗберігання_Const.TYPE,
              ["col_a2", "col_a3", "col_a4", ], true)
         {
             
@@ -9546,9 +9546,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<ОбластьЗберігання_Objest> Copy(bool copyTableParts = false)
+        public async Task<ОбластьЗберігання_Object> Copy(bool copyTableParts = false)
         {
-            ОбластьЗберігання_Objest copy = new()
+            ОбластьЗберігання_Object copy = new()
             {
                 Назва = Назва,
                 Опис = Опис,
@@ -9591,10 +9591,10 @@ namespace GeneratedCode.Довідники
         public ОбластьЗберігання_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a73", ОбластьЗберігання_Const.TYPE) => base.Init(uid);
         public ОбластьЗберігання_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a73", ОбластьЗберігання_Const.TYPE) => base.Init(uid, fields);
         public ОбластьЗберігання_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a73", ОбластьЗберігання_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<ОбластьЗберігання_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ОбластьЗберігання_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ОбластьЗберігання_Objest obj = new();
+            ОбластьЗберігання_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public ОбластьЗберігання_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -9661,9 +9661,9 @@ namespace GeneratedCode.Довідники
         public const string Ширина = "col_a6";
     }
 
-    public class ТипорозміриКомірок_Objest : DirectoryObject
+    public class ТипорозміриКомірок_Object : DirectoryObject
     {
-        public ТипорозміриКомірок_Objest() : base(Config.Kernel, "tab_a75", ТипорозміриКомірок_Const.TYPE,
+        public ТипорозміриКомірок_Object() : base(Config.Kernel, "tab_a75", ТипорозміриКомірок_Const.TYPE,
              ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", ], true)
         {
             
@@ -9718,9 +9718,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<ТипорозміриКомірок_Objest> Copy(bool copyTableParts = false)
+        public async Task<ТипорозміриКомірок_Object> Copy(bool copyTableParts = false)
         {
-            ТипорозміриКомірок_Objest copy = new()
+            ТипорозміриКомірок_Object copy = new()
             {
                 Висота = Висота,
                 Назва = Назва,
@@ -9771,10 +9771,10 @@ namespace GeneratedCode.Довідники
         public ТипорозміриКомірок_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a75", ТипорозміриКомірок_Const.TYPE) => base.Init(uid);
         public ТипорозміриКомірок_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a75", ТипорозміриКомірок_Const.TYPE) => base.Init(uid, fields);
         public ТипорозміриКомірок_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a75", ТипорозміриКомірок_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<ТипорозміриКомірок_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ТипорозміриКомірок_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ТипорозміриКомірок_Objest obj = new();
+            ТипорозміриКомірок_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public ТипорозміриКомірок_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -9839,9 +9839,9 @@ namespace GeneratedCode.Довідники
         public const string Власник = "col_a1";
     }
 
-    public class СкладськіКомірки_Папки_Objest : DirectoryObject
+    public class СкладськіКомірки_Папки_Object : DirectoryObject
     {
-        public СкладськіКомірки_Папки_Objest() : base(Config.Kernel, "tab_a76", СкладськіКомірки_Папки_Const.TYPE,
+        public СкладськіКомірки_Папки_Object() : base(Config.Kernel, "tab_a76", СкладськіКомірки_Папки_Const.TYPE,
              ["col_j1", "col_j2", "col_j3", "col_a1", ], true)
         {
             
@@ -9892,9 +9892,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<СкладськіКомірки_Папки_Objest> Copy(bool copyTableParts = false)
+        public async Task<СкладськіКомірки_Папки_Object> Copy(bool copyTableParts = false)
         {
-            СкладськіКомірки_Папки_Objest copy = new()
+            СкладськіКомірки_Папки_Object copy = new()
             {
                 Назва = Назва,
                 Код = Код,
@@ -9945,10 +9945,10 @@ namespace GeneratedCode.Довідники
         public СкладськіКомірки_Папки_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a76", СкладськіКомірки_Папки_Const.TYPE) => base.Init(uid);
         public СкладськіКомірки_Папки_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a76", СкладськіКомірки_Папки_Const.TYPE) => base.Init(uid, fields);
         public СкладськіКомірки_Папки_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a76", СкладськіКомірки_Папки_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<СкладськіКомірки_Папки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<СкладськіКомірки_Папки_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            СкладськіКомірки_Папки_Objest obj = new();
+            СкладськіКомірки_Папки_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public СкладськіКомірки_Папки_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -9964,7 +9964,7 @@ namespace GeneratedCode.Довідники
         public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
-            СкладськіКомірки_Папки_Objest? obj = await GetDirectoryObject();
+            СкладськіКомірки_Папки_Object? obj = await GetDirectoryObject();
               if (obj != null) await СкладськіКомірки_Папки_Triggers.SetDeletionLabel(obj, label);
             
             await base.BaseDeletionLabel(label);
@@ -10032,9 +10032,9 @@ namespace GeneratedCode.Довідники
         public const string Лінк = "col_a5";
     }
 
-    public class Блокнот_Objest : DirectoryObject
+    public class Блокнот_Object : DirectoryObject
     {
-        public Блокнот_Objest() : base(Config.Kernel, "tab_a41", Блокнот_Const.TYPE,
+        public Блокнот_Object() : base(Config.Kernel, "tab_a41", Блокнот_Const.TYPE,
              ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", ], true)
         {
             
@@ -10087,9 +10087,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<Блокнот_Objest> Copy(bool copyTableParts = false)
+        public async Task<Блокнот_Object> Copy(bool copyTableParts = false)
         {
-            Блокнот_Objest copy = new()
+            Блокнот_Object copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -10138,10 +10138,10 @@ namespace GeneratedCode.Довідники
         public Блокнот_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a41", Блокнот_Const.TYPE) => base.Init(uid);
         public Блокнот_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a41", Блокнот_Const.TYPE) => base.Init(uid, fields);
         public Блокнот_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a41", Блокнот_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<Блокнот_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Блокнот_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Блокнот_Objest obj = new();
+            Блокнот_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public Блокнот_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -10208,9 +10208,9 @@ namespace GeneratedCode.Довідники
         public const string Код = "col_a6";
     }
 
-    public class ЗбереженіЗвіти_Objest : DirectoryObject
+    public class ЗбереженіЗвіти_Object : DirectoryObject
     {
-        public ЗбереженіЗвіти_Objest() : base(Config.Kernel, "tab_b04", ЗбереженіЗвіти_Const.TYPE,
+        public ЗбереженіЗвіти_Object() : base(Config.Kernel, "tab_b04", ЗбереженіЗвіти_Const.TYPE,
              ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", ], true)
         {
             
@@ -10272,9 +10272,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<ЗбереженіЗвіти_Objest> Copy(bool copyTableParts = false)
+        public async Task<ЗбереженіЗвіти_Object> Copy(bool copyTableParts = false)
         {
-            ЗбереженіЗвіти_Objest copy = new()
+            ЗбереженіЗвіти_Object copy = new()
             {
                 Додано = Додано,
                 Назва = Назва,
@@ -10337,10 +10337,10 @@ namespace GeneratedCode.Довідники
         public ЗбереженіЗвіти_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b04", ЗбереженіЗвіти_Const.TYPE) => base.Init(uid);
         public ЗбереженіЗвіти_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b04", ЗбереженіЗвіти_Const.TYPE) => base.Init(uid, fields);
         public ЗбереженіЗвіти_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b04", ЗбереженіЗвіти_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<ЗбереженіЗвіти_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ЗбереженіЗвіти_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ЗбереженіЗвіти_Objest obj = new();
+            ЗбереженіЗвіти_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public ЗбереженіЗвіти_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -10389,7 +10389,7 @@ namespace GeneratedCode.Довідники
     
     public class ЗбереженіЗвіти_ЗвітСторінка_TablePart : DirectoryTablePart
     {
-        public ЗбереженіЗвіти_ЗвітСторінка_TablePart(ЗбереженіЗвіти_Objest owner) : base(Config.Kernel, "tab_b15",
+        public ЗбереженіЗвіти_ЗвітСторінка_TablePart(ЗбереженіЗвіти_Object owner) : base(Config.Kernel, "tab_b15",
              ["col_a2", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", "col_b1", "col_b2", "col_b3", "col_b4", "col_b5", "col_b6", "col_b7", "col_b8", "col_b9", "col_c1", "col_c2", "col_c3", "col_c4", "col_c5", "col_c6", "col_c7", "col_c8", "col_c9", "col_d1", "col_d2", "col_d3", "col_d4", "col_d5", "col_d6", "col_d7", "col_d8", "col_d9", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -10433,7 +10433,7 @@ namespace GeneratedCode.Довідники
         public const string Ю = "col_d8";
         public const string Я = "col_d9";
 
-        public ЗбереженіЗвіти_Objest Owner { get; private set; }
+        public ЗбереженіЗвіти_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -10679,9 +10679,9 @@ namespace GeneratedCode.Довідники
         public const string Валюта = "col_a1";
     }
 
-    public class КасиККМ_Objest : DirectoryObject
+    public class КасиККМ_Object : DirectoryObject
     {
-        public КасиККМ_Objest() : base(Config.Kernel, "tab_b52", КасиККМ_Const.TYPE,
+        public КасиККМ_Object() : base(Config.Kernel, "tab_b52", КасиККМ_Const.TYPE,
              ["col_a2", "col_a3", "col_a4", "col_a1", ], true)
         {
             
@@ -10730,9 +10730,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<КасиККМ_Objest> Copy(bool copyTableParts = false)
+        public async Task<КасиККМ_Object> Copy(bool copyTableParts = false)
         {
-            КасиККМ_Objest copy = new()
+            КасиККМ_Object copy = new()
             {
                 Назва = Назва,
                 Склад = Склад.Copy(),
@@ -10779,10 +10779,10 @@ namespace GeneratedCode.Довідники
         public КасиККМ_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b52", КасиККМ_Const.TYPE) => base.Init(uid);
         public КасиККМ_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b52", КасиККМ_Const.TYPE) => base.Init(uid, fields);
         public КасиККМ_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b52", КасиККМ_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<КасиККМ_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<КасиККМ_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            КасиККМ_Objest obj = new();
+            КасиККМ_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public КасиККМ_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -10855,9 +10855,9 @@ namespace GeneratedCode.Довідники
         public const string Клас = "col_b3";
     }
 
-    public class ПланРахунків_Objest : DirectoryObject
+    public class ПланРахунків_Object : DirectoryObject
     {
-        public ПланРахунків_Objest() : base(Config.Kernel, "tab_b57", ПланРахунків_Const.TYPE,
+        public ПланРахунків_Object() : base(Config.Kernel, "tab_b57", ПланРахунків_Const.TYPE,
              ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", "col_b1", "col_b2", "col_b3", ])
         {
             
@@ -10922,9 +10922,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<ПланРахунків_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПланРахунків_Object> Copy(bool copyTableParts = false)
         {
-            ПланРахунків_Objest copy = new()
+            ПланРахунків_Object copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -10991,10 +10991,10 @@ namespace GeneratedCode.Довідники
         public ПланРахунків_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b57", ПланРахунків_Const.TYPE) => base.Init(uid);
         public ПланРахунків_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b57", ПланРахунків_Const.TYPE) => base.Init(uid, fields);
         public ПланРахунків_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b57", ПланРахунків_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<ПланРахунків_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ПланРахунків_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПланРахунків_Objest obj = new();
+            ПланРахунків_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public ПланРахунків_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -11010,7 +11010,7 @@ namespace GeneratedCode.Довідники
         public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
-            ПланРахунків_Objest? obj = await GetDirectoryObject();
+            ПланРахунків_Object? obj = await GetDirectoryObject();
               if (obj != null) await ПланРахунків_Triggers.SetDeletionLabel(obj, label);
             
             await base.BaseDeletionLabel(label);
@@ -11082,9 +11082,9 @@ namespace GeneratedCode.Довідники
         public const string СтаттяВитрат = "col_a9";
     }
 
-    public class Категорії_Objest : DirectoryObject
+    public class Категорії_Object : DirectoryObject
     {
-        public Категорії_Objest() : base(Config.Kernel, "tab_b58", Категорії_Const.TYPE,
+        public Категорії_Object() : base(Config.Kernel, "tab_b58", Категорії_Const.TYPE,
              ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", ])
         {
             
@@ -11143,9 +11143,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<Категорії_Objest> Copy(bool copyTableParts = false)
+        public async Task<Категорії_Object> Copy(bool copyTableParts = false)
         {
-            Категорії_Objest copy = new()
+            Категорії_Object copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -11204,10 +11204,10 @@ namespace GeneratedCode.Довідники
         public Категорії_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b58", Категорії_Const.TYPE) => base.Init(uid);
         public Категорії_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b58", Категорії_Const.TYPE) => base.Init(uid, fields);
         public Категорії_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b58", Категорії_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<Категорії_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Категорії_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Категорії_Objest obj = new();
+            Категорії_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public Категорії_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -11223,7 +11223,7 @@ namespace GeneratedCode.Довідники
         public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
-            Категорії_Objest? obj = await GetDirectoryObject();
+            Категорії_Object? obj = await GetDirectoryObject();
               if (obj != null) await Категорії_Triggers.SetDeletionLabel(obj, label);
             
             await base.BaseDeletionLabel(label);
@@ -11291,9 +11291,9 @@ namespace GeneratedCode.Довідники
         public const string КодЗПодатковоїДекларації = "col_a5";
     }
 
-    public class Статті_Objest : DirectoryObject
+    public class Статті_Object : DirectoryObject
     {
-        public Статті_Objest() : base(Config.Kernel, "tab_b59", Статті_Const.TYPE,
+        public Статті_Object() : base(Config.Kernel, "tab_b59", Статті_Const.TYPE,
              ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", ])
         {
             
@@ -11344,9 +11344,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<Статті_Objest> Copy(bool copyTableParts = false)
+        public async Task<Статті_Object> Copy(bool copyTableParts = false)
         {
-            Статті_Objest copy = new()
+            Статті_Object copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -11397,10 +11397,10 @@ namespace GeneratedCode.Довідники
         public Статті_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b59", Статті_Const.TYPE) => base.Init(uid);
         public Статті_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b59", Статті_Const.TYPE) => base.Init(uid, fields);
         public Статті_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b59", Статті_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<Статті_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Статті_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Статті_Objest obj = new();
+            Статті_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public Статті_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -11416,7 +11416,7 @@ namespace GeneratedCode.Довідники
         public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
-            Статті_Objest? obj = await GetDirectoryObject();
+            Статті_Object? obj = await GetDirectoryObject();
               if (obj != null) await Статті_Triggers.SetDeletionLabel(obj, label);
             
             await base.BaseDeletionLabel(label);
@@ -11481,9 +11481,9 @@ namespace GeneratedCode.Довідники
         public const string Назва = "col_a2";
     }
 
-    public class ВидиПодатків_Objest : DirectoryObject
+    public class ВидиПодатків_Object : DirectoryObject
     {
-        public ВидиПодатків_Objest() : base(Config.Kernel, "tab_b60", ВидиПодатків_Const.TYPE,
+        public ВидиПодатків_Object() : base(Config.Kernel, "tab_b60", ВидиПодатків_Const.TYPE,
              ["col_a1", "col_a2", ])
         {
             
@@ -11528,9 +11528,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<ВидиПодатків_Objest> Copy(bool copyTableParts = false)
+        public async Task<ВидиПодатків_Object> Copy(bool copyTableParts = false)
         {
-            ВидиПодатків_Objest copy = new()
+            ВидиПодатків_Object copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -11573,10 +11573,10 @@ namespace GeneratedCode.Довідники
         public ВидиПодатків_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b60", ВидиПодатків_Const.TYPE) => base.Init(uid);
         public ВидиПодатків_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b60", ВидиПодатків_Const.TYPE) => base.Init(uid, fields);
         public ВидиПодатків_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b60", ВидиПодатків_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<ВидиПодатків_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ВидиПодатків_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ВидиПодатків_Objest obj = new();
+            ВидиПодатків_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public ВидиПодатків_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -11639,9 +11639,9 @@ namespace GeneratedCode.Довідники
         public const string Назва = "col_a2";
     }
 
-    public class ВидиЖурналів_Objest : DirectoryObject
+    public class ВидиЖурналів_Object : DirectoryObject
     {
-        public ВидиЖурналів_Objest() : base(Config.Kernel, "tab_b61", ВидиЖурналів_Const.TYPE,
+        public ВидиЖурналів_Object() : base(Config.Kernel, "tab_b61", ВидиЖурналів_Const.TYPE,
              ["col_a1", "col_a2", ])
         {
             
@@ -11686,9 +11686,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<ВидиЖурналів_Objest> Copy(bool copyTableParts = false)
+        public async Task<ВидиЖурналів_Object> Copy(bool copyTableParts = false)
         {
-            ВидиЖурналів_Objest copy = new()
+            ВидиЖурналів_Object copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -11731,10 +11731,10 @@ namespace GeneratedCode.Довідники
         public ВидиЖурналів_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b61", ВидиЖурналів_Const.TYPE) => base.Init(uid);
         public ВидиЖурналів_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b61", ВидиЖурналів_Const.TYPE) => base.Init(uid, fields);
         public ВидиЖурналів_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b61", ВидиЖурналів_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<ВидиЖурналів_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ВидиЖурналів_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ВидиЖурналів_Objest obj = new();
+            ВидиЖурналів_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public ВидиЖурналів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -11797,9 +11797,9 @@ namespace GeneratedCode.Довідники
         public const string Назва = "col_a2";
     }
 
-    public class ОсновніЗасоби_Objest : DirectoryObject
+    public class ОсновніЗасоби_Object : DirectoryObject
     {
-        public ОсновніЗасоби_Objest() : base(Config.Kernel, "tab_b62", ОсновніЗасоби_Const.TYPE,
+        public ОсновніЗасоби_Object() : base(Config.Kernel, "tab_b62", ОсновніЗасоби_Const.TYPE,
              ["col_a1", "col_a2", ])
         {
             
@@ -11844,9 +11844,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<ОсновніЗасоби_Objest> Copy(bool copyTableParts = false)
+        public async Task<ОсновніЗасоби_Object> Copy(bool copyTableParts = false)
         {
-            ОсновніЗасоби_Objest copy = new()
+            ОсновніЗасоби_Object copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -11889,10 +11889,10 @@ namespace GeneratedCode.Довідники
         public ОсновніЗасоби_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b62", ОсновніЗасоби_Const.TYPE) => base.Init(uid);
         public ОсновніЗасоби_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b62", ОсновніЗасоби_Const.TYPE) => base.Init(uid, fields);
         public ОсновніЗасоби_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b62", ОсновніЗасоби_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<ОсновніЗасоби_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ОсновніЗасоби_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ОсновніЗасоби_Objest obj = new();
+            ОсновніЗасоби_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public ОсновніЗасоби_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -11955,9 +11955,9 @@ namespace GeneratedCode.Довідники
         public const string Назва = "col_a2";
     }
 
-    public class МалоцінніПредмети_Objest : DirectoryObject
+    public class МалоцінніПредмети_Object : DirectoryObject
     {
-        public МалоцінніПредмети_Objest() : base(Config.Kernel, "tab_b64", МалоцінніПредмети_Const.TYPE,
+        public МалоцінніПредмети_Object() : base(Config.Kernel, "tab_b64", МалоцінніПредмети_Const.TYPE,
              ["col_a1", "col_a2", ])
         {
             
@@ -12002,9 +12002,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<МалоцінніПредмети_Objest> Copy(bool copyTableParts = false)
+        public async Task<МалоцінніПредмети_Object> Copy(bool copyTableParts = false)
         {
-            МалоцінніПредмети_Objest copy = new()
+            МалоцінніПредмети_Object copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -12047,10 +12047,10 @@ namespace GeneratedCode.Довідники
         public МалоцінніПредмети_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b64", МалоцінніПредмети_Const.TYPE) => base.Init(uid);
         public МалоцінніПредмети_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b64", МалоцінніПредмети_Const.TYPE) => base.Init(uid, fields);
         public МалоцінніПредмети_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b64", МалоцінніПредмети_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<МалоцінніПредмети_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<МалоцінніПредмети_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            МалоцінніПредмети_Objest obj = new();
+            МалоцінніПредмети_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public МалоцінніПредмети_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -12113,9 +12113,9 @@ namespace GeneratedCode.Довідники
         public const string Назва = "col_a2";
     }
 
-    public class ГрошовіРахункиВласні_Objest : DirectoryObject
+    public class ГрошовіРахункиВласні_Object : DirectoryObject
     {
-        public ГрошовіРахункиВласні_Objest() : base(Config.Kernel, "tab_b65", ГрошовіРахункиВласні_Const.TYPE,
+        public ГрошовіРахункиВласні_Object() : base(Config.Kernel, "tab_b65", ГрошовіРахункиВласні_Const.TYPE,
              ["col_a1", "col_a2", ])
         {
             
@@ -12160,9 +12160,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<ГрошовіРахункиВласні_Objest> Copy(bool copyTableParts = false)
+        public async Task<ГрошовіРахункиВласні_Object> Copy(bool copyTableParts = false)
         {
-            ГрошовіРахункиВласні_Objest copy = new()
+            ГрошовіРахункиВласні_Object copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -12205,10 +12205,10 @@ namespace GeneratedCode.Довідники
         public ГрошовіРахункиВласні_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b65", ГрошовіРахункиВласні_Const.TYPE) => base.Init(uid);
         public ГрошовіРахункиВласні_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b65", ГрошовіРахункиВласні_Const.TYPE) => base.Init(uid, fields);
         public ГрошовіРахункиВласні_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b65", ГрошовіРахункиВласні_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<ГрошовіРахункиВласні_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ГрошовіРахункиВласні_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ГрошовіРахункиВласні_Objest obj = new();
+            ГрошовіРахункиВласні_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public ГрошовіРахункиВласні_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -12272,9 +12272,9 @@ namespace GeneratedCode.Довідники
         public const string Папка = "col_a3";
     }
 
-    public class НоменклатураВнутрішня_Objest : DirectoryObject
+    public class НоменклатураВнутрішня_Object : DirectoryObject
     {
-        public НоменклатураВнутрішня_Objest() : base(Config.Kernel, "tab_b66", НоменклатураВнутрішня_Const.TYPE,
+        public НоменклатураВнутрішня_Object() : base(Config.Kernel, "tab_b66", НоменклатураВнутрішня_Const.TYPE,
              ["col_a1", "col_a2", "col_a3", ])
         {
             
@@ -12321,9 +12321,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<НоменклатураВнутрішня_Objest> Copy(bool copyTableParts = false)
+        public async Task<НоменклатураВнутрішня_Object> Copy(bool copyTableParts = false)
         {
-            НоменклатураВнутрішня_Objest copy = new()
+            НоменклатураВнутрішня_Object copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -12368,10 +12368,10 @@ namespace GeneratedCode.Довідники
         public НоменклатураВнутрішня_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b66", НоменклатураВнутрішня_Const.TYPE) => base.Init(uid);
         public НоменклатураВнутрішня_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b66", НоменклатураВнутрішня_Const.TYPE) => base.Init(uid, fields);
         public НоменклатураВнутрішня_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b66", НоменклатураВнутрішня_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<НоменклатураВнутрішня_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<НоменклатураВнутрішня_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            НоменклатураВнутрішня_Objest obj = new();
+            НоменклатураВнутрішня_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public НоменклатураВнутрішня_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -12435,9 +12435,9 @@ namespace GeneratedCode.Довідники
         public const string Родич = "col_a3";
     }
 
-    public class НоменклатураВнутрішня_Папки_Objest : DirectoryObject
+    public class НоменклатураВнутрішня_Папки_Object : DirectoryObject
     {
-        public НоменклатураВнутрішня_Папки_Objest() : base(Config.Kernel, "tab_b67", НоменклатураВнутрішня_Папки_Const.TYPE,
+        public НоменклатураВнутрішня_Папки_Object() : base(Config.Kernel, "tab_b67", НоменклатураВнутрішня_Папки_Const.TYPE,
              ["col_a1", "col_a2", "col_a3", ])
         {
             
@@ -12484,9 +12484,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<НоменклатураВнутрішня_Папки_Objest> Copy(bool copyTableParts = false)
+        public async Task<НоменклатураВнутрішня_Папки_Object> Copy(bool copyTableParts = false)
         {
-            НоменклатураВнутрішня_Папки_Objest copy = new()
+            НоменклатураВнутрішня_Папки_Object copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -12535,10 +12535,10 @@ namespace GeneratedCode.Довідники
         public НоменклатураВнутрішня_Папки_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b67", НоменклатураВнутрішня_Папки_Const.TYPE) => base.Init(uid);
         public НоменклатураВнутрішня_Папки_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b67", НоменклатураВнутрішня_Папки_Const.TYPE) => base.Init(uid, fields);
         public НоменклатураВнутрішня_Папки_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b67", НоменклатураВнутрішня_Папки_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<НоменклатураВнутрішня_Папки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<НоменклатураВнутрішня_Папки_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            НоменклатураВнутрішня_Папки_Objest obj = new();
+            НоменклатураВнутрішня_Папки_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public НоменклатураВнутрішня_Папки_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -12554,7 +12554,7 @@ namespace GeneratedCode.Довідники
         public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
         public async Task SetDeletionLabel(bool label = true)
         {
-            НоменклатураВнутрішня_Папки_Objest? obj = await GetDirectoryObject();
+            НоменклатураВнутрішня_Папки_Object? obj = await GetDirectoryObject();
               if (obj != null) await НоменклатураВнутрішня_Папки_Triggers.SetDeletionLabel(obj, label);
             
             await base.BaseDeletionLabel(label);
@@ -12619,9 +12619,9 @@ namespace GeneratedCode.Довідники
         public const string Назва = "col_a2";
     }
 
-    public class Бланки_Objest : DirectoryObject
+    public class Бланки_Object : DirectoryObject
     {
-        public Бланки_Objest() : base(Config.Kernel, "tab_b68", Бланки_Const.TYPE,
+        public Бланки_Object() : base(Config.Kernel, "tab_b68", Бланки_Const.TYPE,
              ["col_a1", "col_a2", ])
         {
             
@@ -12666,9 +12666,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<Бланки_Objest> Copy(bool copyTableParts = false)
+        public async Task<Бланки_Object> Copy(bool copyTableParts = false)
         {
-            Бланки_Objest copy = new()
+            Бланки_Object copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -12711,10 +12711,10 @@ namespace GeneratedCode.Довідники
         public Бланки_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b68", Бланки_Const.TYPE) => base.Init(uid);
         public Бланки_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b68", Бланки_Const.TYPE) => base.Init(uid, fields);
         public Бланки_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b68", Бланки_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<Бланки_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Бланки_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Бланки_Objest obj = new();
+            Бланки_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public Бланки_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -12777,9 +12777,9 @@ namespace GeneratedCode.Довідники
         public const string Назва = "col_a2";
     }
 
-    public class Співробітники_Objest : DirectoryObject
+    public class Співробітники_Object : DirectoryObject
     {
-        public Співробітники_Objest() : base(Config.Kernel, "tab_b69", Співробітники_Const.TYPE,
+        public Співробітники_Object() : base(Config.Kernel, "tab_b69", Співробітники_Const.TYPE,
              ["col_a1", "col_a2", ])
         {
             
@@ -12824,9 +12824,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<Співробітники_Objest> Copy(bool copyTableParts = false)
+        public async Task<Співробітники_Object> Copy(bool copyTableParts = false)
         {
-            Співробітники_Objest copy = new()
+            Співробітники_Object copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -12869,10 +12869,10 @@ namespace GeneratedCode.Довідники
         public Співробітники_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b69", Співробітники_Const.TYPE) => base.Init(uid);
         public Співробітники_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b69", Співробітники_Const.TYPE) => base.Init(uid, fields);
         public Співробітники_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b69", Співробітники_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<Співробітники_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<Співробітники_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Співробітники_Objest obj = new();
+            Співробітники_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public Співробітники_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -12935,9 +12935,9 @@ namespace GeneratedCode.Довідники
         public const string Назва = "col_a2";
     }
 
-    public class ТипиБухОперацій_Objest : DirectoryObject
+    public class ТипиБухОперацій_Object : DirectoryObject
     {
-        public ТипиБухОперацій_Objest() : base(Config.Kernel, "tab_b70", ТипиБухОперацій_Const.TYPE,
+        public ТипиБухОперацій_Object() : base(Config.Kernel, "tab_b70", ТипиБухОперацій_Const.TYPE,
              ["col_a1", "col_a2", ])
         {
             
@@ -12982,9 +12982,9 @@ namespace GeneratedCode.Довідники
             return result;
         }
 
-        public async Task<ТипиБухОперацій_Objest> Copy(bool copyTableParts = false)
+        public async Task<ТипиБухОперацій_Object> Copy(bool copyTableParts = false)
         {
-            ТипиБухОперацій_Objest copy = new()
+            ТипиБухОперацій_Object copy = new()
             {
                 Код = Код,
                 Назва = Назва,
@@ -13027,10 +13027,10 @@ namespace GeneratedCode.Довідники
         public ТипиБухОперацій_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b70", ТипиБухОперацій_Const.TYPE) => base.Init(uid);
         public ТипиБухОперацій_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b70", ТипиБухОперацій_Const.TYPE) => base.Init(uid, fields);
         public ТипиБухОперацій_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b70", ТипиБухОперацій_Const.TYPE) => base.Init(uid, fields, name?.ToString());
-        public async Task<ТипиБухОперацій_Objest?> GetDirectoryObject(bool readAllTablePart = false)
+        public async Task<ТипиБухОперацій_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ТипиБухОперацій_Objest obj = new();
+            ТипиБухОперацій_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
         public ТипиБухОперацій_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
@@ -14305,9 +14305,9 @@ namespace GeneratedCode.Документи
         public const string КлючовіСловаДляПошуку = "col_b9";
     }
 
-    public class ЗамовленняПостачальнику_Objest : DocumentObject
+    public class ЗамовленняПостачальнику_Object : DocumentObject
     {
-        public ЗамовленняПостачальнику_Objest() : base(Config.Kernel, "tab_a25", ЗамовленняПостачальнику_Const.TYPE,
+        public ЗамовленняПостачальнику_Object() : base(Config.Kernel, "tab_a25", ЗамовленняПостачальнику_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_k2", "col_k3", "col_k4", "col_k5", "col_k6", "col_k7", "col_a1", "col_a3", "col_a4", "col_a5", "col_a7", "col_a8", "col_a9", "col_b1", "col_b2", "col_b3", "col_b4", "col_a6", "col_b5", "col_b6", "col_b7", "col_b8", "col_a2", "col_b9", ], true)
         {
             
@@ -14448,9 +14448,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ЗамовленняПостачальнику_Objest> Copy(bool copyTableParts = false)
+        public async Task<ЗамовленняПостачальнику_Object> Copy(bool copyTableParts = false)
         {
-            ЗамовленняПостачальнику_Objest copy = new()
+            ЗамовленняПостачальнику_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -14570,7 +14570,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ЗамовленняПостачальнику_Objest? obj = await GetDocumentObject();
+            ЗамовленняПостачальнику_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -14607,10 +14607,10 @@ namespace GeneratedCode.Документи
         }
         public ЗамовленняПостачальнику_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ЗамовленняПостачальнику_Pointer GetEmptyPointer() => new();
-        public async Task<ЗамовленняПостачальнику_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ЗамовленняПостачальнику_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ЗамовленняПостачальнику_Objest obj = new();
+            ЗамовленняПостачальнику_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -14642,7 +14642,7 @@ namespace GeneratedCode.Документи
     
     public class ЗамовленняПостачальнику_Товари_TablePart : DocumentTablePart
     {
-        public ЗамовленняПостачальнику_Товари_TablePart(ЗамовленняПостачальнику_Objest owner) : base(Config.Kernel, "tab_a30",
+        public ЗамовленняПостачальнику_Товари_TablePart(ЗамовленняПостачальнику_Object owner) : base(Config.Kernel, "tab_a30",
              ["col_b2", "col_o4", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", "col_b1", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -14667,7 +14667,7 @@ namespace GeneratedCode.Документи
         public const string Склад = "col_a9";
         public const string Підрозділ = "col_b1";
 
-        public ЗамовленняПостачальнику_Objest Owner { get; private set; }
+        public ЗамовленняПостачальнику_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -14851,7 +14851,7 @@ namespace GeneratedCode.Документи
     {
         public static async Task ToXmlFile(ЗамовленняПостачальнику_Pointer ЗамовленняПостачальнику, string pathToSave)
         {
-        ЗамовленняПостачальнику_Objest? obj = await ЗамовленняПостачальнику.GetDocumentObject(true);
+        ЗамовленняПостачальнику_Object? obj = await ЗамовленняПостачальнику.GetDocumentObject(true);
             if (obj == null) return;
 
             XmlWriter xmlWriter = XmlWriter.Create(pathToSave, new XmlWriterSettings() { Indent = true, Encoding = System.Text.Encoding.UTF8 });
@@ -15055,9 +15055,9 @@ namespace GeneratedCode.Документи
         public const string ВідобразитиВБухгалтерськомуОбліку = "col_d4";
     }
 
-    public class ПоступленняТоварівТаПослуг_Objest : DocumentObject
+    public class ПоступленняТоварівТаПослуг_Object : DocumentObject
     {
-        public ПоступленняТоварівТаПослуг_Objest() : base(Config.Kernel, "tab_a32", ПоступленняТоварівТаПослуг_Const.TYPE,
+        public ПоступленняТоварівТаПослуг_Object() : base(Config.Kernel, "tab_a32", ПоступленняТоварівТаПослуг_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", "col_b2", "col_b3", "col_b4", "col_b5", "col_b6", "col_b7", "col_b8", "col_b9", "col_c1", "col_c2", "col_c3", "col_c4", "col_c5", "col_c6", "col_c7", "col_c8", "col_c9", "col_d1", "col_d2", "col_d3", "col_a1", "col_b1", "col_a2", "col_d5", "col_d4", ], true)
         {
             
@@ -15230,9 +15230,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПоступленняТоварівТаПослуг_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПоступленняТоварівТаПослуг_Object> Copy(bool copyTableParts = false)
         {
-            ПоступленняТоварівТаПослуг_Objest copy = new()
+            ПоступленняТоварівТаПослуг_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -15375,12 +15375,12 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПоступленняТоварівТаПослуг_Objest? obj = await GetDocumentObject();
+            ПоступленняТоварівТаПослуг_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
         {
-            ПоступленняТоварівТаПослуг_Objest? obj = await GetDocumentObject();
+            ПоступленняТоварівТаПослуг_Object? obj = await GetDocumentObject();
             if (obj != null) await obj.ClearSpendTheDocument();
                 
         }
@@ -15410,7 +15410,7 @@ namespace GeneratedCode.Документи
           
         public async Task SetDeletionLabel(bool label = true)
         {
-          ПоступленняТоварівТаПослуг_Objest? obj = await GetDocumentObject();
+          ПоступленняТоварівТаПослуг_Object? obj = await GetDocumentObject();
             if (obj == null) return;
             
                 await ПоступленняТоварівТаПослуг_Triggers.SetDeletionLabel(obj, label);
@@ -15421,10 +15421,10 @@ namespace GeneratedCode.Документи
         }
         public ПоступленняТоварівТаПослуг_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПоступленняТоварівТаПослуг_Pointer GetEmptyPointer() => new();
-        public async Task<ПоступленняТоварівТаПослуг_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПоступленняТоварівТаПослуг_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПоступленняТоварівТаПослуг_Objest obj = new();
+            ПоступленняТоварівТаПослуг_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -15456,7 +15456,7 @@ namespace GeneratedCode.Документи
     
     public class ПоступленняТоварівТаПослуг_Товари_TablePart : DocumentTablePart
     {
-        public ПоступленняТоварівТаПослуг_Товари_TablePart(ПоступленняТоварівТаПослуг_Objest owner) : base(Config.Kernel, "tab_a33",
+        public ПоступленняТоварівТаПослуг_Товари_TablePart(ПоступленняТоварівТаПослуг_Object owner) : base(Config.Kernel, "tab_a33",
              ["col_b3", "col_a9", "col_b1", "col_b4", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_b2", "col_b5", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -15483,7 +15483,7 @@ namespace GeneratedCode.Документи
         public const string Підрозділ = "col_b2";
         public const string ВидЦіни = "col_b5";
 
-        public ПоступленняТоварівТаПослуг_Objest Owner { get; private set; }
+        public ПоступленняТоварівТаПослуг_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -15685,7 +15685,7 @@ namespace GeneratedCode.Документи
     
     public class ПоступленняТоварівТаПослуг_Проводки_TablePart : DocumentTablePart
     {
-        public ПоступленняТоварівТаПослуг_Проводки_TablePart(ПоступленняТоварівТаПослуг_Objest owner) : base(Config.Kernel, "tab_b71",
+        public ПоступленняТоварівТаПослуг_Проводки_TablePart(ПоступленняТоварівТаПослуг_Object owner) : base(Config.Kernel, "tab_b71",
              ["col_a1", "col_a2", "col_a3", "col_a7", "col_a8", "col_a9", "col_b1", "col_b2", ])
         {
             if (owner == null) throw new Exception("owner null");
@@ -15706,7 +15706,7 @@ namespace GeneratedCode.Документи
         public const string Дебет = "col_b1";
         public const string Кредит = "col_b2";
 
-        public ПоступленняТоварівТаПослуг_Objest Owner { get; private set; }
+        public ПоступленняТоварівТаПослуг_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -15868,7 +15868,7 @@ namespace GeneratedCode.Документи
     {
         public static async Task ToXmlFile(ПоступленняТоварівТаПослуг_Pointer ПоступленняТоварівТаПослуг, string pathToSave)
         {
-        ПоступленняТоварівТаПослуг_Objest? obj = await ПоступленняТоварівТаПослуг.GetDocumentObject(true);
+        ПоступленняТоварівТаПослуг_Object? obj = await ПоступленняТоварівТаПослуг.GetDocumentObject(true);
             if (obj == null) return;
 
             XmlWriter xmlWriter = XmlWriter.Create(pathToSave, new XmlWriterSettings() { Indent = true, Encoding = System.Text.Encoding.UTF8 });
@@ -16089,9 +16089,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_d1";
     }
 
-    public class ЗамовленняКлієнта_Objest : DocumentObject
+    public class ЗамовленняКлієнта_Object : DocumentObject
     {
-        public ЗамовленняКлієнта_Objest() : base(Config.Kernel, "tab_a34", ЗамовленняКлієнта_Const.TYPE,
+        public ЗамовленняКлієнта_Object() : base(Config.Kernel, "tab_a34", ЗамовленняКлієнта_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_b4", "col_b5", "col_b6", "col_b7", "col_b8", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_b1", "col_a9", "col_b9", "col_c2", "col_c3", "col_c4", "col_c5", "col_c6", "col_c7", "col_c8", "col_c9", "col_c1", "col_b2", "col_b3", "col_d1", ], true)
         {
             
@@ -16242,9 +16242,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ЗамовленняКлієнта_Objest> Copy(bool copyTableParts = false)
+        public async Task<ЗамовленняКлієнта_Object> Copy(bool copyTableParts = false)
         {
-            ЗамовленняКлієнта_Objest copy = new()
+            ЗамовленняКлієнта_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -16372,7 +16372,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ЗамовленняКлієнта_Objest? obj = await GetDocumentObject();
+            ЗамовленняКлієнта_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -16411,10 +16411,10 @@ namespace GeneratedCode.Документи
         }
         public ЗамовленняКлієнта_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ЗамовленняКлієнта_Pointer GetEmptyPointer() => new();
-        public async Task<ЗамовленняКлієнта_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ЗамовленняКлієнта_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ЗамовленняКлієнта_Objest obj = new();
+            ЗамовленняКлієнта_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -16446,7 +16446,7 @@ namespace GeneratedCode.Документи
     
     public class ЗамовленняКлієнта_Товари_TablePart : DocumentTablePart
     {
-        public ЗамовленняКлієнта_Товари_TablePart(ЗамовленняКлієнта_Objest owner) : base(Config.Kernel, "tab_a35",
+        public ЗамовленняКлієнта_Товари_TablePart(ЗамовленняКлієнта_Object owner) : base(Config.Kernel, "tab_a35",
              ["col_a2", "col_b9", "col_c1", "col_c2", "col_c3", "col_c4", "col_c5", "col_c6", "col_c7", "col_c8", "col_a1", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -16470,7 +16470,7 @@ namespace GeneratedCode.Документи
         public const string Скидка = "col_c8";
         public const string Склад = "col_a1";
 
-        public ЗамовленняКлієнта_Objest Owner { get; private set; }
+        public ЗамовленняКлієнта_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -16650,7 +16650,7 @@ namespace GeneratedCode.Документи
     {
         public static async Task ToXmlFile(ЗамовленняКлієнта_Pointer ЗамовленняКлієнта, string pathToSave)
         {
-        ЗамовленняКлієнта_Objest? obj = await ЗамовленняКлієнта.GetDocumentObject(true);
+        ЗамовленняКлієнта_Object? obj = await ЗамовленняКлієнта.GetDocumentObject(true);
             if (obj == null) return;
 
             XmlWriter xmlWriter = XmlWriter.Create(pathToSave, new XmlWriterSettings() { Indent = true, Encoding = System.Text.Encoding.UTF8 });
@@ -16853,9 +16853,9 @@ namespace GeneratedCode.Документи
         public const string ВідобразитиВБухгалтерськомуОбліку = "col_d4";
     }
 
-    public class РеалізаціяТоварівТаПослуг_Objest : DocumentObject
+    public class РеалізаціяТоварівТаПослуг_Object : DocumentObject
     {
-        public РеалізаціяТоварівТаПослуг_Objest() : base(Config.Kernel, "tab_a36", РеалізаціяТоварівТаПослуг_Const.TYPE,
+        public РеалізаціяТоварівТаПослуг_Object() : base(Config.Kernel, "tab_a36", РеалізаціяТоварівТаПослуг_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", "col_b1", "col_b3", "col_b4", "col_b5", "col_b6", "col_b7", "col_b8", "col_b9", "col_c1", "col_c2", "col_c3", "col_c4", "col_c5", "col_c6", "col_c7", "col_c8", "col_d2", "col_b2", "col_c9", "col_d1", "col_d3", "col_d4", ], true)
         {
             
@@ -17022,9 +17022,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<РеалізаціяТоварівТаПослуг_Objest> Copy(bool copyTableParts = false)
+        public async Task<РеалізаціяТоварівТаПослуг_Object> Copy(bool copyTableParts = false)
         {
-            РеалізаціяТоварівТаПослуг_Objest copy = new()
+            РеалізаціяТоварівТаПослуг_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -17163,7 +17163,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            РеалізаціяТоварівТаПослуг_Objest? obj = await GetDocumentObject();
+            РеалізаціяТоварівТаПослуг_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -17210,10 +17210,10 @@ namespace GeneratedCode.Документи
         }
         public РеалізаціяТоварівТаПослуг_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public РеалізаціяТоварівТаПослуг_Pointer GetEmptyPointer() => new();
-        public async Task<РеалізаціяТоварівТаПослуг_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<РеалізаціяТоварівТаПослуг_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            РеалізаціяТоварівТаПослуг_Objest obj = new();
+            РеалізаціяТоварівТаПослуг_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -17245,7 +17245,7 @@ namespace GeneratedCode.Документи
     
     public class РеалізаціяТоварівТаПослуг_Товари_TablePart : DocumentTablePart
     {
-        public РеалізаціяТоварівТаПослуг_Товари_TablePart(РеалізаціяТоварівТаПослуг_Objest owner) : base(Config.Kernel, "tab_a37",
+        public РеалізаціяТоварівТаПослуг_Товари_TablePart(РеалізаціяТоварівТаПослуг_Object owner) : base(Config.Kernel, "tab_a37",
              ["col_a1", "col_d2", "col_d3", "col_a2", "col_d4", "col_d5", "col_d6", "col_d7", "col_d8", "col_d9", "col_e1", "col_e2", "col_a3", "col_e3", "col_a4", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -17273,7 +17273,7 @@ namespace GeneratedCode.Документи
         public const string Скидка = "col_e3";
         public const string Партія = "col_a4";
 
-        public РеалізаціяТоварівТаПослуг_Objest Owner { get; private set; }
+        public РеалізаціяТоварівТаПослуг_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -17483,7 +17483,7 @@ namespace GeneratedCode.Документи
     
     public class РеалізаціяТоварівТаПослуг_Проводки_TablePart : DocumentTablePart
     {
-        public РеалізаціяТоварівТаПослуг_Проводки_TablePart(РеалізаціяТоварівТаПослуг_Objest owner) : base(Config.Kernel, "tab_c25",
+        public РеалізаціяТоварівТаПослуг_Проводки_TablePart(РеалізаціяТоварівТаПослуг_Object owner) : base(Config.Kernel, "tab_c25",
              ["col_a1", "col_a2", "col_a3", "col_a7", "col_a8", "col_a9", "col_b1", "col_b2", ])
         {
             if (owner == null) throw new Exception("owner null");
@@ -17504,7 +17504,7 @@ namespace GeneratedCode.Документи
         public const string Дебет = "col_b1";
         public const string Кредит = "col_b2";
 
-        public РеалізаціяТоварівТаПослуг_Objest Owner { get; private set; }
+        public РеалізаціяТоварівТаПослуг_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -17666,7 +17666,7 @@ namespace GeneratedCode.Документи
     {
         public static async Task ToXmlFile(РеалізаціяТоварівТаПослуг_Pointer РеалізаціяТоварівТаПослуг, string pathToSave)
         {
-        РеалізаціяТоварівТаПослуг_Objest? obj = await РеалізаціяТоварівТаПослуг.GetDocumentObject(true);
+        РеалізаціяТоварівТаПослуг_Object? obj = await РеалізаціяТоварівТаПослуг.GetDocumentObject(true);
             if (obj == null) return;
 
             XmlWriter xmlWriter = XmlWriter.Create(pathToSave, new XmlWriterSettings() { Indent = true, Encoding = System.Text.Encoding.UTF8 });
@@ -17866,9 +17866,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a6";
     }
 
-    public class ВстановленняЦінНоменклатури_Objest : DocumentObject
+    public class ВстановленняЦінНоменклатури_Object : DocumentObject
     {
-        public ВстановленняЦінНоменклатури_Objest() : base(Config.Kernel, "tab_a42", ВстановленняЦінНоменклатури_Const.TYPE,
+        public ВстановленняЦінНоменклатури_Object() : base(Config.Kernel, "tab_a42", ВстановленняЦінНоменклатури_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a2", "col_a1", "col_a3", "col_g9", "col_a4", "col_a5", "col_a6", ], true)
         {
             
@@ -17967,9 +17967,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ВстановленняЦінНоменклатури_Objest> Copy(bool copyTableParts = false)
+        public async Task<ВстановленняЦінНоменклатури_Object> Copy(bool copyTableParts = false)
         {
-            ВстановленняЦінНоменклатури_Objest copy = new()
+            ВстановленняЦінНоменклатури_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -18055,12 +18055,12 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ВстановленняЦінНоменклатури_Objest? obj = await GetDocumentObject();
+            ВстановленняЦінНоменклатури_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
         {
-            ВстановленняЦінНоменклатури_Objest? obj = await GetDocumentObject();
+            ВстановленняЦінНоменклатури_Object? obj = await GetDocumentObject();
             if (obj != null) await obj.ClearSpendTheDocument();
                 
         }
@@ -18070,7 +18070,7 @@ namespace GeneratedCode.Документи
         Task ClearRegAccum() => Task.CompletedTask;
         public async Task SetDeletionLabel(bool label = true)
         {
-          ВстановленняЦінНоменклатури_Objest? obj = await GetDocumentObject();
+          ВстановленняЦінНоменклатури_Object? obj = await GetDocumentObject();
             if (obj == null) return;
             
             if (label) await obj.ClearSpendTheDocument();
@@ -18079,10 +18079,10 @@ namespace GeneratedCode.Документи
         }
         public ВстановленняЦінНоменклатури_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ВстановленняЦінНоменклатури_Pointer GetEmptyPointer() => new();
-        public async Task<ВстановленняЦінНоменклатури_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ВстановленняЦінНоменклатури_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ВстановленняЦінНоменклатури_Objest obj = new();
+            ВстановленняЦінНоменклатури_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -18114,7 +18114,7 @@ namespace GeneratedCode.Документи
     
     public class ВстановленняЦінНоменклатури_Товари_TablePart : DocumentTablePart
     {
-        public ВстановленняЦінНоменклатури_Товари_TablePart(ВстановленняЦінНоменклатури_Objest owner) : base(Config.Kernel, "tab_a43",
+        public ВстановленняЦінНоменклатури_Товари_TablePart(ВстановленняЦінНоменклатури_Object owner) : base(Config.Kernel, "tab_a43",
              ["col_a1", "col_h1", "col_h2", "col_h3", "col_h4", "col_h5", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -18133,7 +18133,7 @@ namespace GeneratedCode.Документи
         public const string ВидЦіни = "col_h4";
         public const string Ціна = "col_h5";
 
-        public ВстановленняЦінНоменклатури_Objest Owner { get; private set; }
+        public ВстановленняЦінНоменклатури_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -18330,9 +18330,9 @@ namespace GeneratedCode.Документи
         public const string ВідобразитиВБухгалтерськомуОбліку = "col_a9";
     }
 
-    public class ПрихіднийКасовийОрдер_Objest : DocumentObject
+    public class ПрихіднийКасовийОрдер_Object : DocumentObject
     {
-        public ПрихіднийКасовийОрдер_Objest() : base(Config.Kernel, "tab_a44", ПрихіднийКасовийОрдер_Const.TYPE,
+        public ПрихіднийКасовийОрдер_Object() : base(Config.Kernel, "tab_a44", ПрихіднийКасовийОрдер_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_h8", "col_h9", "col_i1", "col_i2", "col_i3", "col_i4", "col_a6", "col_i5", "col_i6", "col_a1", "col_a2", "col_a4", "col_a3", "col_a5", "col_a7", "col_a8", "col_a9", ], true)
         {
             
@@ -18467,9 +18467,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПрихіднийКасовийОрдер_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПрихіднийКасовийОрдер_Object> Copy(bool copyTableParts = false)
         {
-            ПрихіднийКасовийОрдер_Objest copy = new()
+            ПрихіднийКасовийОрдер_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -18580,12 +18580,12 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПрихіднийКасовийОрдер_Objest? obj = await GetDocumentObject();
+            ПрихіднийКасовийОрдер_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
         {
-            ПрихіднийКасовийОрдер_Objest? obj = await GetDocumentObject();
+            ПрихіднийКасовийОрдер_Object? obj = await GetDocumentObject();
             if (obj != null) await obj.ClearSpendTheDocument();
                 
         }
@@ -18609,7 +18609,7 @@ namespace GeneratedCode.Документи
           
         public async Task SetDeletionLabel(bool label = true)
         {
-          ПрихіднийКасовийОрдер_Objest? obj = await GetDocumentObject();
+          ПрихіднийКасовийОрдер_Object? obj = await GetDocumentObject();
             if (obj == null) return;
             
             if (label) await obj.ClearSpendTheDocument();
@@ -18618,10 +18618,10 @@ namespace GeneratedCode.Документи
         }
         public ПрихіднийКасовийОрдер_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПрихіднийКасовийОрдер_Pointer GetEmptyPointer() => new();
-        public async Task<ПрихіднийКасовийОрдер_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПрихіднийКасовийОрдер_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПрихіднийКасовийОрдер_Objest obj = new();
+            ПрихіднийКасовийОрдер_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -18653,7 +18653,7 @@ namespace GeneratedCode.Документи
     
     public class ПрихіднийКасовийОрдер_РозшифруванняПлатежу_TablePart : DocumentTablePart
     {
-        public ПрихіднийКасовийОрдер_РозшифруванняПлатежу_TablePart(ПрихіднийКасовийОрдер_Objest owner) : base(Config.Kernel, "tab_a47",
+        public ПрихіднийКасовийОрдер_РозшифруванняПлатежу_TablePart(ПрихіднийКасовийОрдер_Object owner) : base(Config.Kernel, "tab_a47",
              ["col_a1", "col_j4", "col_j5", "col_j6", "col_j7", "col_j8", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -18672,7 +18672,7 @@ namespace GeneratedCode.Документи
         public const string ВалютаВзаєморозрахунків = "col_j7";
         public const string Організація = "col_j8";
 
-        public ПрихіднийКасовийОрдер_Objest Owner { get; private set; }
+        public ПрихіднийКасовийОрдер_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -18822,7 +18822,7 @@ namespace GeneratedCode.Документи
     
     public class ПрихіднийКасовийОрдер_Проводки_TablePart : DocumentTablePart
     {
-        public ПрихіднийКасовийОрдер_Проводки_TablePart(ПрихіднийКасовийОрдер_Objest owner) : base(Config.Kernel, "tab_c32",
+        public ПрихіднийКасовийОрдер_Проводки_TablePart(ПрихіднийКасовийОрдер_Object owner) : base(Config.Kernel, "tab_c32",
              ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", ])
         {
             if (owner == null) throw new Exception("owner null");
@@ -18843,7 +18843,7 @@ namespace GeneratedCode.Документи
         public const string Дебет = "col_a7";
         public const string Кредит = "col_a8";
 
-        public ПрихіднийКасовийОрдер_Objest Owner { get; private set; }
+        public ПрихіднийКасовийОрдер_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -19048,9 +19048,9 @@ namespace GeneratedCode.Документи
         public const string ВідобразитиВБухгалтерськомуОбліку = "col_a9";
     }
 
-    public class РозхіднийКасовийОрдер_Objest : DocumentObject
+    public class РозхіднийКасовийОрдер_Object : DocumentObject
     {
-        public РозхіднийКасовийОрдер_Objest() : base(Config.Kernel, "tab_a48", РозхіднийКасовийОрдер_Const.TYPE,
+        public РозхіднийКасовийОрдер_Object() : base(Config.Kernel, "tab_a48", РозхіднийКасовийОрдер_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_k2", "col_k3", "col_a3", "col_a5", "col_k5", "col_k4", "col_k7", "col_a4", "col_k8", "col_k9", "col_l2", "col_k6", "col_a2", "col_a1", "col_l1", "col_a6", "col_a7", "col_a8", "col_a9", ], true)
         {
             
@@ -19189,9 +19189,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<РозхіднийКасовийОрдер_Objest> Copy(bool copyTableParts = false)
+        public async Task<РозхіднийКасовийОрдер_Object> Copy(bool copyTableParts = false)
         {
-            РозхіднийКасовийОрдер_Objest copy = new()
+            РозхіднийКасовийОрдер_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -19306,12 +19306,12 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            РозхіднийКасовийОрдер_Objest? obj = await GetDocumentObject();
+            РозхіднийКасовийОрдер_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
         {
-            РозхіднийКасовийОрдер_Objest? obj = await GetDocumentObject();
+            РозхіднийКасовийОрдер_Object? obj = await GetDocumentObject();
             if (obj != null) await obj.ClearSpendTheDocument();
                 
         }
@@ -19335,7 +19335,7 @@ namespace GeneratedCode.Документи
           
         public async Task SetDeletionLabel(bool label = true)
         {
-          РозхіднийКасовийОрдер_Objest? obj = await GetDocumentObject();
+          РозхіднийКасовийОрдер_Object? obj = await GetDocumentObject();
             if (obj == null) return;
             
             if (label) await obj.ClearSpendTheDocument();
@@ -19344,10 +19344,10 @@ namespace GeneratedCode.Документи
         }
         public РозхіднийКасовийОрдер_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public РозхіднийКасовийОрдер_Pointer GetEmptyPointer() => new();
-        public async Task<РозхіднийКасовийОрдер_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<РозхіднийКасовийОрдер_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            РозхіднийКасовийОрдер_Objest obj = new();
+            РозхіднийКасовийОрдер_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -19379,7 +19379,7 @@ namespace GeneratedCode.Документи
     
     public class РозхіднийКасовийОрдер_РозшифруванняПлатежу_TablePart : DocumentTablePart
     {
-        public РозхіднийКасовийОрдер_РозшифруванняПлатежу_TablePart(РозхіднийКасовийОрдер_Objest owner) : base(Config.Kernel, "tab_a49",
+        public РозхіднийКасовийОрдер_РозшифруванняПлатежу_TablePart(РозхіднийКасовийОрдер_Object owner) : base(Config.Kernel, "tab_a49",
              ["col_a1", "col_l4", "col_l5", "col_l6", "col_l7", "col_l8", "col_l9", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -19399,7 +19399,7 @@ namespace GeneratedCode.Документи
         public const string Коментар = "col_l8";
         public const string Організація = "col_l9";
 
-        public РозхіднийКасовийОрдер_Objest Owner { get; private set; }
+        public РозхіднийКасовийОрдер_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -19553,7 +19553,7 @@ namespace GeneratedCode.Документи
     
     public class РозхіднийКасовийОрдер_Проводки_TablePart : DocumentTablePart
     {
-        public РозхіднийКасовийОрдер_Проводки_TablePart(РозхіднийКасовийОрдер_Objest owner) : base(Config.Kernel, "tab_c33",
+        public РозхіднийКасовийОрдер_Проводки_TablePart(РозхіднийКасовийОрдер_Object owner) : base(Config.Kernel, "tab_c33",
              ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", ])
         {
             if (owner == null) throw new Exception("owner null");
@@ -19574,7 +19574,7 @@ namespace GeneratedCode.Документи
         public const string Дебет = "col_a7";
         public const string Кредит = "col_a8";
 
-        public РозхіднийКасовийОрдер_Objest Owner { get; private set; }
+        public РозхіднийКасовийОрдер_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -19780,9 +19780,9 @@ namespace GeneratedCode.Документи
         public const string ВідобразитиВБухгалтерськомуОбліку = "col_c2";
     }
 
-    public class ПереміщенняТоварів_Objest : DocumentObject
+    public class ПереміщенняТоварів_Object : DocumentObject
     {
-        public ПереміщенняТоварів_Objest() : base(Config.Kernel, "tab_a31", ПереміщенняТоварів_Const.TYPE,
+        public ПереміщенняТоварів_Object() : base(Config.Kernel, "tab_a31", ПереміщенняТоварів_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a3", "col_a4", "col_a5", "col_a7", "col_a8", "col_a9", "col_b1", "col_b2", "col_b3", "col_b4", "col_b5", "col_b6", "col_b7", "col_b8", "col_a6", "col_a1", "col_a2", "col_b9", "col_c1", "col_c2", ], true)
         {
             
@@ -19923,9 +19923,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПереміщенняТоварів_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПереміщенняТоварів_Object> Copy(bool copyTableParts = false)
         {
-            ПереміщенняТоварів_Objest copy = new()
+            ПереміщенняТоварів_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -20042,12 +20042,12 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПереміщенняТоварів_Objest? obj = await GetDocumentObject();
+            ПереміщенняТоварів_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
         {
-            ПереміщенняТоварів_Objest? obj = await GetDocumentObject();
+            ПереміщенняТоварів_Object? obj = await GetDocumentObject();
             if (obj != null) await obj.ClearSpendTheDocument();
                 
         }
@@ -20071,7 +20071,7 @@ namespace GeneratedCode.Документи
           
         public async Task SetDeletionLabel(bool label = true)
         {
-          ПереміщенняТоварів_Objest? obj = await GetDocumentObject();
+          ПереміщенняТоварів_Object? obj = await GetDocumentObject();
             if (obj == null) return;
             
             if (label) await obj.ClearSpendTheDocument();
@@ -20080,10 +20080,10 @@ namespace GeneratedCode.Документи
         }
         public ПереміщенняТоварів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПереміщенняТоварів_Pointer GetEmptyPointer() => new();
-        public async Task<ПереміщенняТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПереміщенняТоварів_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПереміщенняТоварів_Objest obj = new();
+            ПереміщенняТоварів_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -20115,7 +20115,7 @@ namespace GeneratedCode.Документи
     
     public class ПереміщенняТоварів_Товари_TablePart : DocumentTablePart
     {
-        public ПереміщенняТоварів_Товари_TablePart(ПереміщенняТоварів_Objest owner) : base(Config.Kernel, "tab_a50",
+        public ПереміщенняТоварів_Товари_TablePart(ПереміщенняТоварів_Object owner) : base(Config.Kernel, "tab_a50",
              ["col_b8", "col_b3", "col_b4", "col_a1", "col_b5", "col_b6", "col_b7", "col_a2", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -20136,7 +20136,7 @@ namespace GeneratedCode.Документи
         public const string Кількість = "col_b7";
         public const string Партія = "col_a2";
 
-        public ПереміщенняТоварів_Objest Owner { get; private set; }
+        public ПереміщенняТоварів_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -20302,7 +20302,7 @@ namespace GeneratedCode.Документи
     
     public class ПереміщенняТоварів_Проводки_TablePart : DocumentTablePart
     {
-        public ПереміщенняТоварів_Проводки_TablePart(ПереміщенняТоварів_Objest owner) : base(Config.Kernel, "tab_c30",
+        public ПереміщенняТоварів_Проводки_TablePart(ПереміщенняТоварів_Object owner) : base(Config.Kernel, "tab_c30",
              ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", ])
         {
             if (owner == null) throw new Exception("owner null");
@@ -20323,7 +20323,7 @@ namespace GeneratedCode.Документи
         public const string Дебет = "col_a7";
         public const string Кредит = "col_a8";
 
-        public ПереміщенняТоварів_Objest Owner { get; private set; }
+        public ПереміщенняТоварів_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -20531,9 +20531,9 @@ namespace GeneratedCode.Документи
         public const string ВідобразитиВБухгалтерськомуОбліку = "col_a7";
     }
 
-    public class ПоверненняТоварівПостачальнику_Objest : DocumentObject
+    public class ПоверненняТоварівПостачальнику_Object : DocumentObject
     {
-        public ПоверненняТоварівПостачальнику_Objest() : base(Config.Kernel, "tab_a51", ПоверненняТоварівПостачальнику_Const.TYPE,
+        public ПоверненняТоварівПостачальнику_Object() : base(Config.Kernel, "tab_a51", ПоверненняТоварівПостачальнику_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_c2", "col_c3", "col_c4", "col_c5", "col_c6", "col_c7", "col_c9", "col_d1", "col_d2", "col_d3", "col_d4", "col_d5", "col_d6", "col_d7", "col_a1", "col_a2", "col_c8", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", ], true)
         {
             
@@ -20682,9 +20682,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПоверненняТоварівПостачальнику_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПоверненняТоварівПостачальнику_Object> Copy(bool copyTableParts = false)
         {
-            ПоверненняТоварівПостачальнику_Objest copy = new()
+            ПоверненняТоварівПостачальнику_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -20805,12 +20805,12 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПоверненняТоварівПостачальнику_Objest? obj = await GetDocumentObject();
+            ПоверненняТоварівПостачальнику_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
         {
-            ПоверненняТоварівПостачальнику_Objest? obj = await GetDocumentObject();
+            ПоверненняТоварівПостачальнику_Object? obj = await GetDocumentObject();
             if (obj != null) await obj.ClearSpendTheDocument();
                 
         }
@@ -20838,7 +20838,7 @@ namespace GeneratedCode.Документи
           
         public async Task SetDeletionLabel(bool label = true)
         {
-          ПоверненняТоварівПостачальнику_Objest? obj = await GetDocumentObject();
+          ПоверненняТоварівПостачальнику_Object? obj = await GetDocumentObject();
             if (obj == null) return;
             
             if (label) await obj.ClearSpendTheDocument();
@@ -20847,10 +20847,10 @@ namespace GeneratedCode.Документи
         }
         public ПоверненняТоварівПостачальнику_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПоверненняТоварівПостачальнику_Pointer GetEmptyPointer() => new();
-        public async Task<ПоверненняТоварівПостачальнику_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПоверненняТоварівПостачальнику_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПоверненняТоварівПостачальнику_Objest obj = new();
+            ПоверненняТоварівПостачальнику_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -20882,7 +20882,7 @@ namespace GeneratedCode.Документи
     
     public class ПоверненняТоварівПостачальнику_Товари_TablePart : DocumentTablePart
     {
-        public ПоверненняТоварівПостачальнику_Товари_TablePart(ПоверненняТоварівПостачальнику_Objest owner) : base(Config.Kernel, "tab_a52",
+        public ПоверненняТоварівПостачальнику_Товари_TablePart(ПоверненняТоварівПостачальнику_Object owner) : base(Config.Kernel, "tab_a52",
              ["col_a1", "col_d8", "col_d9", "col_a3", "col_e1", "col_e2", "col_e3", "col_e4", "col_e5", "col_a2", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -20905,7 +20905,7 @@ namespace GeneratedCode.Документи
         public const string Сума = "col_e5";
         public const string ДокументПоступлення = "col_a2";
 
-        public ПоверненняТоварівПостачальнику_Objest Owner { get; private set; }
+        public ПоверненняТоварівПостачальнику_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -21079,7 +21079,7 @@ namespace GeneratedCode.Документи
     
     public class ПоверненняТоварівПостачальнику_Проводки_TablePart : DocumentTablePart
     {
-        public ПоверненняТоварівПостачальнику_Проводки_TablePart(ПоверненняТоварівПостачальнику_Objest owner) : base(Config.Kernel, "tab_c28",
+        public ПоверненняТоварівПостачальнику_Проводки_TablePart(ПоверненняТоварівПостачальнику_Object owner) : base(Config.Kernel, "tab_c28",
              ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", ])
         {
             if (owner == null) throw new Exception("owner null");
@@ -21100,7 +21100,7 @@ namespace GeneratedCode.Документи
         public const string Дебет = "col_a7";
         public const string Кредит = "col_a8";
 
-        public ПоверненняТоварівПостачальнику_Objest Owner { get; private set; }
+        public ПоверненняТоварівПостачальнику_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -21304,9 +21304,9 @@ namespace GeneratedCode.Документи
         public const string ВідобразитиВБухгалтерськомуОбліку = "col_a6";
     }
 
-    public class ПоверненняТоварівВідКлієнта_Objest : DocumentObject
+    public class ПоверненняТоварівВідКлієнта_Object : DocumentObject
     {
-        public ПоверненняТоварівВідКлієнта_Objest() : base(Config.Kernel, "tab_a53", ПоверненняТоварівВідКлієнта_Const.TYPE,
+        public ПоверненняТоварівВідКлієнта_Object() : base(Config.Kernel, "tab_a53", ПоверненняТоварівВідКлієнта_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_e8", "col_e9", "col_f1", "col_f2", "col_f3", "col_f5", "col_f7", "col_f8", "col_f9", "col_g1", "col_g2", "col_a1", "col_a2", "col_f6", "col_a3", "col_a4", "col_a5", "col_a6", ], true)
         {
             
@@ -21447,9 +21447,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПоверненняТоварівВідКлієнта_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПоверненняТоварівВідКлієнта_Object> Copy(bool copyTableParts = false)
         {
-            ПоверненняТоварівВідКлієнта_Objest copy = new()
+            ПоверненняТоварівВідКлієнта_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -21562,12 +21562,12 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПоверненняТоварівВідКлієнта_Objest? obj = await GetDocumentObject();
+            ПоверненняТоварівВідКлієнта_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
         {
-            ПоверненняТоварівВідКлієнта_Objest? obj = await GetDocumentObject();
+            ПоверненняТоварівВідКлієнта_Object? obj = await GetDocumentObject();
             if (obj != null) await obj.ClearSpendTheDocument();
                 
         }
@@ -21595,7 +21595,7 @@ namespace GeneratedCode.Документи
           
         public async Task SetDeletionLabel(bool label = true)
         {
-          ПоверненняТоварівВідКлієнта_Objest? obj = await GetDocumentObject();
+          ПоверненняТоварівВідКлієнта_Object? obj = await GetDocumentObject();
             if (obj == null) return;
             
             if (label) await obj.ClearSpendTheDocument();
@@ -21604,10 +21604,10 @@ namespace GeneratedCode.Документи
         }
         public ПоверненняТоварівВідКлієнта_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПоверненняТоварівВідКлієнта_Pointer GetEmptyPointer() => new();
-        public async Task<ПоверненняТоварівВідКлієнта_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПоверненняТоварівВідКлієнта_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПоверненняТоварівВідКлієнта_Objest obj = new();
+            ПоверненняТоварівВідКлієнта_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -21639,7 +21639,7 @@ namespace GeneratedCode.Документи
     
     public class ПоверненняТоварівВідКлієнта_Товари_TablePart : DocumentTablePart
     {
-        public ПоверненняТоварівВідКлієнта_Товари_TablePart(ПоверненняТоварівВідКлієнта_Objest owner) : base(Config.Kernel, "tab_a54",
+        public ПоверненняТоварівВідКлієнта_Товари_TablePart(ПоверненняТоварівВідКлієнта_Object owner) : base(Config.Kernel, "tab_a54",
              ["col_h2", "col_g3", "col_g4", "col_a1", "col_g5", "col_g6", "col_g7", "col_g8", "col_g9", "col_h1", "col_a2", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -21663,7 +21663,7 @@ namespace GeneratedCode.Документи
         public const string Штрихкод = "col_h1";
         public const string ДокументРеалізації = "col_a2";
 
-        public ПоверненняТоварівВідКлієнта_Objest Owner { get; private set; }
+        public ПоверненняТоварівВідКлієнта_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -21841,7 +21841,7 @@ namespace GeneratedCode.Документи
     
     public class ПоверненняТоварівВідКлієнта_Проводки_TablePart : DocumentTablePart
     {
-        public ПоверненняТоварівВідКлієнта_Проводки_TablePart(ПоверненняТоварівВідКлієнта_Objest owner) : base(Config.Kernel, "tab_c29",
+        public ПоверненняТоварівВідКлієнта_Проводки_TablePart(ПоверненняТоварівВідКлієнта_Object owner) : base(Config.Kernel, "tab_c29",
              ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", ])
         {
             if (owner == null) throw new Exception("owner null");
@@ -21862,7 +21862,7 @@ namespace GeneratedCode.Документи
         public const string Дебет = "col_a7";
         public const string Кредит = "col_a8";
 
-        public ПоверненняТоварівВідКлієнта_Objest Owner { get; private set; }
+        public ПоверненняТоварівВідКлієнта_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -22065,9 +22065,9 @@ namespace GeneratedCode.Документи
         public const string ВідобразитиВБухгалтерськомуОбліку = "col_b8";
     }
 
-    public class АктВиконанихРобіт_Objest : DocumentObject
+    public class АктВиконанихРобіт_Object : DocumentObject
     {
-        public АктВиконанихРобіт_Objest() : base(Config.Kernel, "tab_a81", АктВиконанихРобіт_Const.TYPE,
+        public АктВиконанихРобіт_Object() : base(Config.Kernel, "tab_a81", АктВиконанихРобіт_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_b2", "col_b3", "col_b4", "col_b5", "col_b6", "col_a5", "col_a2", "col_a3", "col_a4", "col_a6", "col_a1", "col_a7", "col_a8", "col_a9", "col_b1", "col_b7", "col_b8", ], true)
         {
             
@@ -22200,9 +22200,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<АктВиконанихРобіт_Objest> Copy(bool copyTableParts = false)
+        public async Task<АктВиконанихРобіт_Object> Copy(bool copyTableParts = false)
         {
-            АктВиконанихРобіт_Objest copy = new()
+            АктВиконанихРобіт_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -22313,12 +22313,12 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            АктВиконанихРобіт_Objest? obj = await GetDocumentObject();
+            АктВиконанихРобіт_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
         {
-            АктВиконанихРобіт_Objest? obj = await GetDocumentObject();
+            АктВиконанихРобіт_Object? obj = await GetDocumentObject();
             if (obj != null) await obj.ClearSpendTheDocument();
                 
         }
@@ -22340,7 +22340,7 @@ namespace GeneratedCode.Документи
           
         public async Task SetDeletionLabel(bool label = true)
         {
-          АктВиконанихРобіт_Objest? obj = await GetDocumentObject();
+          АктВиконанихРобіт_Object? obj = await GetDocumentObject();
             if (obj == null) return;
             
             if (label) await obj.ClearSpendTheDocument();
@@ -22349,10 +22349,10 @@ namespace GeneratedCode.Документи
         }
         public АктВиконанихРобіт_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public АктВиконанихРобіт_Pointer GetEmptyPointer() => new();
-        public async Task<АктВиконанихРобіт_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<АктВиконанихРобіт_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            АктВиконанихРобіт_Objest obj = new();
+            АктВиконанихРобіт_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -22384,7 +22384,7 @@ namespace GeneratedCode.Документи
     
     public class АктВиконанихРобіт_Послуги_TablePart : DocumentTablePart
     {
-        public АктВиконанихРобіт_Послуги_TablePart(АктВиконанихРобіт_Objest owner) : base(Config.Kernel, "tab_a82",
+        public АктВиконанихРобіт_Послуги_TablePart(АктВиконанихРобіт_Object owner) : base(Config.Kernel, "tab_a82",
              ["col_c4", "col_b8", "col_b9", "col_c1", "col_c3", "col_c2", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -22403,7 +22403,7 @@ namespace GeneratedCode.Документи
         public const string Ціна = "col_c3";
         public const string Сума = "col_c2";
 
-        public АктВиконанихРобіт_Objest Owner { get; private set; }
+        public АктВиконанихРобіт_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -22549,7 +22549,7 @@ namespace GeneratedCode.Документи
     
     public class АктВиконанихРобіт_Проводки_TablePart : DocumentTablePart
     {
-        public АктВиконанихРобіт_Проводки_TablePart(АктВиконанихРобіт_Objest owner) : base(Config.Kernel, "tab_c26",
+        public АктВиконанихРобіт_Проводки_TablePart(АктВиконанихРобіт_Object owner) : base(Config.Kernel, "tab_c26",
              ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", ])
         {
             if (owner == null) throw new Exception("owner null");
@@ -22570,7 +22570,7 @@ namespace GeneratedCode.Документи
         public const string Дебет = "col_a7";
         public const string Кредит = "col_a8";
 
-        public АктВиконанихРобіт_Objest Owner { get; private set; }
+        public АктВиконанихРобіт_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -22732,7 +22732,7 @@ namespace GeneratedCode.Документи
     {
         public static async Task ToXmlFile(АктВиконанихРобіт_Pointer АктВиконанихРобіт, string pathToSave)
         {
-        АктВиконанихРобіт_Objest? obj = await АктВиконанихРобіт.GetDocumentObject(true);
+        АктВиконанихРобіт_Object? obj = await АктВиконанихРобіт.GetDocumentObject(true);
             if (obj == null) return;
 
             XmlWriter xmlWriter = XmlWriter.Create(pathToSave, new XmlWriterSettings() { Indent = true, Encoding = System.Text.Encoding.UTF8 });
@@ -22908,9 +22908,9 @@ namespace GeneratedCode.Документи
         public const string ВідобразитиВБухгалтерськомуОбліку = "col_a6";
     }
 
-    public class ВведенняЗалишків_Objest : DocumentObject
+    public class ВведенняЗалишків_Object : DocumentObject
     {
-        public ВведенняЗалишків_Objest() : base(Config.Kernel, "tab_a83", ВведенняЗалишків_Const.TYPE,
+        public ВведенняЗалишків_Object() : base(Config.Kernel, "tab_a83", ВведенняЗалишків_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_c8", "col_d5", "col_c9", "col_d2", "col_d3", "col_d4", "col_a1", "col_d1", "col_a3", "col_a2", "col_a4", "col_a5", "col_a6", ], true)
         {
             
@@ -23049,9 +23049,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ВведенняЗалишків_Objest> Copy(bool copyTableParts = false)
+        public async Task<ВведенняЗалишків_Object> Copy(bool copyTableParts = false)
         {
-            ВведенняЗалишків_Objest copy = new()
+            ВведенняЗалишків_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -23171,12 +23171,12 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ВведенняЗалишків_Objest? obj = await GetDocumentObject();
+            ВведенняЗалишків_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
         {
-            ВведенняЗалишків_Objest? obj = await GetDocumentObject();
+            ВведенняЗалишків_Object? obj = await GetDocumentObject();
             if (obj != null) await obj.ClearSpendTheDocument();
                 
         }
@@ -23206,7 +23206,7 @@ namespace GeneratedCode.Документи
           
         public async Task SetDeletionLabel(bool label = true)
         {
-          ВведенняЗалишків_Objest? obj = await GetDocumentObject();
+          ВведенняЗалишків_Object? obj = await GetDocumentObject();
             if (obj == null) return;
             
                 await ВведенняЗалишків_Triggers.SetDeletionLabel(obj, label);
@@ -23217,10 +23217,10 @@ namespace GeneratedCode.Документи
         }
         public ВведенняЗалишків_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ВведенняЗалишків_Pointer GetEmptyPointer() => new();
-        public async Task<ВведенняЗалишків_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ВведенняЗалишків_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ВведенняЗалишків_Objest obj = new();
+            ВведенняЗалишків_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -23252,7 +23252,7 @@ namespace GeneratedCode.Документи
     
     public class ВведенняЗалишків_Товари_TablePart : DocumentTablePart
     {
-        public ВведенняЗалишків_Товари_TablePart(ВведенняЗалишків_Objest owner) : base(Config.Kernel, "tab_a84",
+        public ВведенняЗалишків_Товари_TablePart(ВведенняЗалишків_Object owner) : base(Config.Kernel, "tab_a84",
              ["col_e4", "col_d6", "col_d7", "col_a1", "col_d8", "col_d9", "col_e1", "col_e2", "col_e3", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -23274,7 +23274,7 @@ namespace GeneratedCode.Документи
         public const string Ціна = "col_e2";
         public const string Сума = "col_e3";
 
-        public ВведенняЗалишків_Objest Owner { get; private set; }
+        public ВведенняЗалишків_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -23440,7 +23440,7 @@ namespace GeneratedCode.Документи
     
     public class ВведенняЗалишків_Каси_TablePart : DocumentTablePart
     {
-        public ВведенняЗалишків_Каси_TablePart(ВведенняЗалишків_Objest owner) : base(Config.Kernel, "tab_a85",
+        public ВведенняЗалишків_Каси_TablePart(ВведенняЗалишків_Object owner) : base(Config.Kernel, "tab_a85",
              ["col_a1", "col_e5", "col_e6", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -23456,7 +23456,7 @@ namespace GeneratedCode.Документи
         public const string Каса = "col_e5";
         public const string Сума = "col_e6";
 
-        public ВведенняЗалишків_Objest Owner { get; private set; }
+        public ВведенняЗалишків_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -23586,7 +23586,7 @@ namespace GeneratedCode.Документи
     
     public class ВведенняЗалишків_БанківськіРахунки_TablePart : DocumentTablePart
     {
-        public ВведенняЗалишків_БанківськіРахунки_TablePart(ВведенняЗалишків_Objest owner) : base(Config.Kernel, "tab_a86",
+        public ВведенняЗалишків_БанківськіРахунки_TablePart(ВведенняЗалишків_Object owner) : base(Config.Kernel, "tab_a86",
              ["col_a1", "col_e7", "col_e8", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -23602,7 +23602,7 @@ namespace GeneratedCode.Документи
         public const string БанківськийРахунок = "col_e7";
         public const string Сума = "col_e8";
 
-        public ВведенняЗалишків_Objest Owner { get; private set; }
+        public ВведенняЗалишків_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -23732,7 +23732,7 @@ namespace GeneratedCode.Документи
     
     public class ВведенняЗалишків_РозрахункиЗКонтрагентами_TablePart : DocumentTablePart
     {
-        public ВведенняЗалишків_РозрахункиЗКонтрагентами_TablePart(ВведенняЗалишків_Objest owner) : base(Config.Kernel, "tab_a87",
+        public ВведенняЗалишків_РозрахункиЗКонтрагентами_TablePart(ВведенняЗалишків_Object owner) : base(Config.Kernel, "tab_a87",
              ["col_a1", "col_e9", "col_f1", "col_f2", "col_a2", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -23750,7 +23750,7 @@ namespace GeneratedCode.Документи
         public const string Сума = "col_f2";
         public const string ТипКонтрагента = "col_a2";
 
-        public ВведенняЗалишків_Objest Owner { get; private set; }
+        public ВведенняЗалишків_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -23892,7 +23892,7 @@ namespace GeneratedCode.Документи
     
     public class ВведенняЗалишків_Проводки_TablePart : DocumentTablePart
     {
-        public ВведенняЗалишків_Проводки_TablePart(ВведенняЗалишків_Objest owner) : base(Config.Kernel, "tab_c31",
+        public ВведенняЗалишків_Проводки_TablePart(ВведенняЗалишків_Object owner) : base(Config.Kernel, "tab_c31",
              ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", ])
         {
             if (owner == null) throw new Exception("owner null");
@@ -23913,7 +23913,7 @@ namespace GeneratedCode.Документи
         public const string Дебет = "col_a7";
         public const string Кредит = "col_a8";
 
-        public ВведенняЗалишків_Objest Owner { get; private set; }
+        public ВведенняЗалишків_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -24106,9 +24106,9 @@ namespace GeneratedCode.Документи
         public const string КлючовіСловаДляПошуку = "col_a2";
     }
 
-    public class НадлишкиТоварів_Objest : DocumentObject
+    public class НадлишкиТоварів_Object : DocumentObject
     {
-        public НадлишкиТоварів_Objest() : base(Config.Kernel, "tab_a88", НадлишкиТоварів_Const.TYPE,
+        public НадлишкиТоварів_Object() : base(Config.Kernel, "tab_a88", НадлишкиТоварів_Const.TYPE,
              ["col_f6", "col_f7", "col_f8", "col_f9", "col_g1", "docnomer", "docdate", "docname", "col_a1", "col_a2", ], true)
         {
             
@@ -24199,9 +24199,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<НадлишкиТоварів_Objest> Copy(bool copyTableParts = false)
+        public async Task<НадлишкиТоварів_Object> Copy(bool copyTableParts = false)
         {
-            НадлишкиТоварів_Objest copy = new()
+            НадлишкиТоварів_Object copy = new()
             {
                 Організація = Організація.Copy(),
                 Підрозділ = Підрозділ.Copy(),
@@ -24285,7 +24285,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            НадлишкиТоварів_Objest? obj = await GetDocumentObject();
+            НадлишкиТоварів_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -24312,10 +24312,10 @@ namespace GeneratedCode.Документи
         }
         public НадлишкиТоварів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public НадлишкиТоварів_Pointer GetEmptyPointer() => new();
-        public async Task<НадлишкиТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<НадлишкиТоварів_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            НадлишкиТоварів_Objest obj = new();
+            НадлишкиТоварів_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -24347,7 +24347,7 @@ namespace GeneratedCode.Документи
     
     public class НадлишкиТоварів_Товари_TablePart : DocumentTablePart
     {
-        public НадлишкиТоварів_Товари_TablePart(НадлишкиТоварів_Objest owner) : base(Config.Kernel, "tab_a89",
+        public НадлишкиТоварів_Товари_TablePart(НадлишкиТоварів_Object owner) : base(Config.Kernel, "tab_a89",
              ["col_g2", "col_g3", "col_g4", "col_g5", "col_g6", "col_a1", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -24366,7 +24366,7 @@ namespace GeneratedCode.Документи
         public const string Сума = "col_g6";
         public const string НомерРядка = "col_a1";
 
-        public НадлишкиТоварів_Objest Owner { get; private set; }
+        public НадлишкиТоварів_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -24545,9 +24545,9 @@ namespace GeneratedCode.Документи
         public const string КлючовіСловаДляПошуку = "col_a2";
     }
 
-    public class ПересортицяТоварів_Objest : DocumentObject
+    public class ПересортицяТоварів_Object : DocumentObject
     {
-        public ПересортицяТоварів_Objest() : base(Config.Kernel, "tab_a90", ПересортицяТоварів_Const.TYPE,
+        public ПересортицяТоварів_Object() : base(Config.Kernel, "tab_a90", ПересортицяТоварів_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_h2", "col_h3", "col_h4", "col_h5", "col_h6", "col_a1", "col_a2", ], true)
         {
             
@@ -24638,9 +24638,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПересортицяТоварів_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПересортицяТоварів_Object> Copy(bool copyTableParts = false)
         {
-            ПересортицяТоварів_Objest copy = new()
+            ПересортицяТоварів_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -24724,7 +24724,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПересортицяТоварів_Objest? obj = await GetDocumentObject();
+            ПересортицяТоварів_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -24751,10 +24751,10 @@ namespace GeneratedCode.Документи
         }
         public ПересортицяТоварів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПересортицяТоварів_Pointer GetEmptyPointer() => new();
-        public async Task<ПересортицяТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПересортицяТоварів_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПересортицяТоварів_Objest obj = new();
+            ПересортицяТоварів_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -24786,7 +24786,7 @@ namespace GeneratedCode.Документи
     
     public class ПересортицяТоварів_Товари_TablePart : DocumentTablePart
     {
-        public ПересортицяТоварів_Товари_TablePart(ПересортицяТоварів_Objest owner) : base(Config.Kernel, "tab_a91",
+        public ПересортицяТоварів_Товари_TablePart(ПересортицяТоварів_Object owner) : base(Config.Kernel, "tab_a91",
              ["col_a1", "col_h7", "col_h8", "col_i1", "col_h9", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -24804,7 +24804,7 @@ namespace GeneratedCode.Документи
         public const string Кількість = "col_i1";
         public const string Ціна = "col_h9";
 
-        public ПересортицяТоварів_Objest Owner { get; private set; }
+        public ПересортицяТоварів_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -24980,9 +24980,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a5";
     }
 
-    public class ПерерахунокТоварів_Objest : DocumentObject
+    public class ПерерахунокТоварів_Object : DocumentObject
     {
-        public ПерерахунокТоварів_Objest() : base(Config.Kernel, "tab_a92", ПерерахунокТоварів_Const.TYPE,
+        public ПерерахунокТоварів_Object() : base(Config.Kernel, "tab_a92", ПерерахунокТоварів_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_i6", "col_i7", "col_i5", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", ], true)
         {
             
@@ -25081,9 +25081,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПерерахунокТоварів_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПерерахунокТоварів_Object> Copy(bool copyTableParts = false)
         {
-            ПерерахунокТоварів_Objest copy = new()
+            ПерерахунокТоварів_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -25171,7 +25171,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПерерахунокТоварів_Objest? obj = await GetDocumentObject();
+            ПерерахунокТоварів_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -25198,10 +25198,10 @@ namespace GeneratedCode.Документи
         }
         public ПерерахунокТоварів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПерерахунокТоварів_Pointer GetEmptyPointer() => new();
-        public async Task<ПерерахунокТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПерерахунокТоварів_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПерерахунокТоварів_Objest obj = new();
+            ПерерахунокТоварів_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -25233,7 +25233,7 @@ namespace GeneratedCode.Документи
     
     public class ПерерахунокТоварів_Товари_TablePart : DocumentTablePart
     {
-        public ПерерахунокТоварів_Товари_TablePart(ПерерахунокТоварів_Objest owner) : base(Config.Kernel, "tab_a93",
+        public ПерерахунокТоварів_Товари_TablePart(ПерерахунокТоварів_Object owner) : base(Config.Kernel, "tab_a93",
              ["col_i8", "col_i9", "col_j1", "col_j3", "col_j4", "col_j5", "col_j6", "col_a1", "col_a2", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -25255,7 +25255,7 @@ namespace GeneratedCode.Документи
         public const string НомерРядка = "col_a1";
         public const string Коментар = "col_a2";
 
-        public ПерерахунокТоварів_Objest Owner { get; private set; }
+        public ПерерахунокТоварів_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -25452,9 +25452,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_b2";
     }
 
-    public class ПсуванняТоварів_Objest : DocumentObject
+    public class ПсуванняТоварів_Object : DocumentObject
     {
-        public ПсуванняТоварів_Objest() : base(Config.Kernel, "tab_a94", ПсуванняТоварів_Const.TYPE,
+        public ПсуванняТоварів_Object() : base(Config.Kernel, "tab_a94", ПсуванняТоварів_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a6", "col_a7", "col_a4", "col_a8", "col_a1", "col_a5", "col_a2", "col_a3", "col_b2", ], true)
         {
             
@@ -25569,9 +25569,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПсуванняТоварів_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПсуванняТоварів_Object> Copy(bool copyTableParts = false)
         {
-            ПсуванняТоварів_Objest copy = new()
+            ПсуванняТоварів_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -25661,7 +25661,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПсуванняТоварів_Objest? obj = await GetDocumentObject();
+            ПсуванняТоварів_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -25702,10 +25702,10 @@ namespace GeneratedCode.Документи
         }
         public ПсуванняТоварів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПсуванняТоварів_Pointer GetEmptyPointer() => new();
-        public async Task<ПсуванняТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПсуванняТоварів_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПсуванняТоварів_Objest obj = new();
+            ПсуванняТоварів_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -25737,7 +25737,7 @@ namespace GeneratedCode.Документи
     
     public class ПсуванняТоварів_Товари_TablePart : DocumentTablePart
     {
-        public ПсуванняТоварів_Товари_TablePart(ПсуванняТоварів_Objest owner) : base(Config.Kernel, "tab_a95",
+        public ПсуванняТоварів_Товари_TablePart(ПсуванняТоварів_Object owner) : base(Config.Kernel, "tab_a95",
              ["col_a3", "col_b2", "col_b3", "col_a1", "col_a4", "col_a5", "col_b4", "col_b5", "col_a2", "col_a6", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -25760,7 +25760,7 @@ namespace GeneratedCode.Документи
         public const string Сума = "col_a2";
         public const string Партія = "col_a6";
 
-        public ПсуванняТоварів_Objest Owner { get; private set; }
+        public ПсуванняТоварів_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -25972,9 +25972,9 @@ namespace GeneratedCode.Документи
         public const string ВідобразитиВБухгалтерськомуОбліку = "col_a5";
     }
 
-    public class ВнутрішнєСпоживанняТоварів_Objest : DocumentObject
+    public class ВнутрішнєСпоживанняТоварів_Object : DocumentObject
     {
-        public ВнутрішнєСпоживанняТоварів_Objest() : base(Config.Kernel, "tab_b07", ВнутрішнєСпоживанняТоварів_Const.TYPE,
+        public ВнутрішнєСпоживанняТоварів_Object() : base(Config.Kernel, "tab_b07", ВнутрішнєСпоживанняТоварів_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_b1", "col_a2", "col_a9", "col_a8", "col_b7", "col_b9", "col_b4", "col_b2", "col_a3", "col_a4", "col_a5", ], true)
         {
             
@@ -26099,9 +26099,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ВнутрішнєСпоживанняТоварів_Objest> Copy(bool copyTableParts = false)
+        public async Task<ВнутрішнєСпоживанняТоварів_Object> Copy(bool copyTableParts = false)
         {
-            ВнутрішнєСпоживанняТоварів_Objest copy = new()
+            ВнутрішнєСпоживанняТоварів_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -26202,12 +26202,12 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ВнутрішнєСпоживанняТоварів_Objest? obj = await GetDocumentObject();
+            ВнутрішнєСпоживанняТоварів_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
         {
-            ВнутрішнєСпоживанняТоварів_Objest? obj = await GetDocumentObject();
+            ВнутрішнєСпоживанняТоварів_Object? obj = await GetDocumentObject();
             if (obj != null) await obj.ClearSpendTheDocument();
                 
         }
@@ -26231,7 +26231,7 @@ namespace GeneratedCode.Документи
           
         public async Task SetDeletionLabel(bool label = true)
         {
-          ВнутрішнєСпоживанняТоварів_Objest? obj = await GetDocumentObject();
+          ВнутрішнєСпоживанняТоварів_Object? obj = await GetDocumentObject();
             if (obj == null) return;
             
             if (label) await obj.ClearSpendTheDocument();
@@ -26240,10 +26240,10 @@ namespace GeneratedCode.Документи
         }
         public ВнутрішнєСпоживанняТоварів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ВнутрішнєСпоживанняТоварів_Pointer GetEmptyPointer() => new();
-        public async Task<ВнутрішнєСпоживанняТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ВнутрішнєСпоживанняТоварів_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ВнутрішнєСпоживанняТоварів_Objest obj = new();
+            ВнутрішнєСпоживанняТоварів_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -26275,7 +26275,7 @@ namespace GeneratedCode.Документи
     
     public class ВнутрішнєСпоживанняТоварів_Товари_TablePart : DocumentTablePart
     {
-        public ВнутрішнєСпоживанняТоварів_Товари_TablePart(ВнутрішнєСпоживанняТоварів_Objest owner) : base(Config.Kernel, "tab_b08",
+        public ВнутрішнєСпоживанняТоварів_Товари_TablePart(ВнутрішнєСпоживанняТоварів_Object owner) : base(Config.Kernel, "tab_b08",
              ["col_a1", "col_d2", "col_d3", "col_a2", "col_d4", "col_d5", "col_d6", "col_d8", "col_d9", "col_a3", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -26298,7 +26298,7 @@ namespace GeneratedCode.Документи
         public const string Сума = "col_d9";
         public const string Партія = "col_a3";
 
-        public ВнутрішнєСпоживанняТоварів_Objest Owner { get; private set; }
+        public ВнутрішнєСпоживанняТоварів_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -26472,7 +26472,7 @@ namespace GeneratedCode.Документи
     
     public class ВнутрішнєСпоживанняТоварів_Проводки_TablePart : DocumentTablePart
     {
-        public ВнутрішнєСпоживанняТоварів_Проводки_TablePart(ВнутрішнєСпоживанняТоварів_Objest owner) : base(Config.Kernel, "tab_c37",
+        public ВнутрішнєСпоживанняТоварів_Проводки_TablePart(ВнутрішнєСпоживанняТоварів_Object owner) : base(Config.Kernel, "tab_c37",
              ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", ])
         {
             if (owner == null) throw new Exception("owner null");
@@ -26493,7 +26493,7 @@ namespace GeneratedCode.Документи
         public const string Дебет = "col_a7";
         public const string Кредит = "col_a8";
 
-        public ВнутрішнєСпоживанняТоварів_Objest Owner { get; private set; }
+        public ВнутрішнєСпоживанняТоварів_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -26699,9 +26699,9 @@ namespace GeneratedCode.Документи
         public const string ВідобразитиВБухгалтерськомуОбліку = "col_b1";
     }
 
-    public class РахунокФактура_Objest : DocumentObject
+    public class РахунокФактура_Object : DocumentObject
     {
-        public РахунокФактура_Objest() : base(Config.Kernel, "tab_b10", РахунокФактура_Const.TYPE,
+        public РахунокФактура_Object() : base(Config.Kernel, "tab_b10", РахунокФактура_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_b4", "col_b5", "col_b6", "col_b7", "col_b8", "col_a1", "col_a3", "col_a4", "col_a5", "col_a6", "col_b9", "col_c2", "col_c3", "col_c4", "col_c1", "col_a2", "col_a7", "col_a8", "col_a9", "col_b1", ], true)
         {
             
@@ -26838,9 +26838,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<РахунокФактура_Objest> Copy(bool copyTableParts = false)
+        public async Task<РахунокФактура_Object> Copy(bool copyTableParts = false)
         {
-            РахунокФактура_Objest copy = new()
+            РахунокФактура_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -26957,12 +26957,12 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            РахунокФактура_Objest? obj = await GetDocumentObject();
+            РахунокФактура_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
         {
-            РахунокФактура_Objest? obj = await GetDocumentObject();
+            РахунокФактура_Object? obj = await GetDocumentObject();
             if (obj != null) await obj.ClearSpendTheDocument();
                 
         }
@@ -26982,7 +26982,7 @@ namespace GeneratedCode.Документи
           
         public async Task SetDeletionLabel(bool label = true)
         {
-          РахунокФактура_Objest? obj = await GetDocumentObject();
+          РахунокФактура_Object? obj = await GetDocumentObject();
             if (obj == null) return;
             
             if (label) await obj.ClearSpendTheDocument();
@@ -26991,10 +26991,10 @@ namespace GeneratedCode.Документи
         }
         public РахунокФактура_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public РахунокФактура_Pointer GetEmptyPointer() => new();
-        public async Task<РахунокФактура_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<РахунокФактура_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            РахунокФактура_Objest obj = new();
+            РахунокФактура_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -27026,7 +27026,7 @@ namespace GeneratedCode.Документи
     
     public class РахунокФактура_Товари_TablePart : DocumentTablePart
     {
-        public РахунокФактура_Товари_TablePart(РахунокФактура_Objest owner) : base(Config.Kernel, "tab_b11",
+        public РахунокФактура_Товари_TablePart(РахунокФактура_Object owner) : base(Config.Kernel, "tab_b11",
              ["col_a2", "col_b9", "col_c1", "col_c2", "col_c3", "col_c4", "col_c5", "col_c6", "col_c7", "col_c8", "col_a1", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -27050,7 +27050,7 @@ namespace GeneratedCode.Документи
         public const string Скидка = "col_c8";
         public const string Склад = "col_a1";
 
-        public РахунокФактура_Objest Owner { get; private set; }
+        public РахунокФактура_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -27228,7 +27228,7 @@ namespace GeneratedCode.Документи
     
     public class РахунокФактура_Проводки_TablePart : DocumentTablePart
     {
-        public РахунокФактура_Проводки_TablePart(РахунокФактура_Objest owner) : base(Config.Kernel, "tab_c27",
+        public РахунокФактура_Проводки_TablePart(РахунокФактура_Object owner) : base(Config.Kernel, "tab_c27",
              ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", ])
         {
             if (owner == null) throw new Exception("owner null");
@@ -27249,7 +27249,7 @@ namespace GeneratedCode.Документи
         public const string Дебет = "col_a7";
         public const string Кредит = "col_a8";
 
-        public РахунокФактура_Objest Owner { get; private set; }
+        public РахунокФактура_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -27411,7 +27411,7 @@ namespace GeneratedCode.Документи
     {
         public static async Task ToXmlFile(РахунокФактура_Pointer РахунокФактура, string pathToSave)
         {
-        РахунокФактура_Objest? obj = await РахунокФактура.GetDocumentObject(true);
+        РахунокФактура_Object? obj = await РахунокФактура.GetDocumentObject(true);
             if (obj == null) return;
 
             XmlWriter xmlWriter = XmlWriter.Create(pathToSave, new XmlWriterSettings() { Indent = true, Encoding = System.Text.Encoding.UTF8 });
@@ -27604,9 +27604,9 @@ namespace GeneratedCode.Документи
         public const string КлючовіСловаДляПошуку = "col_a8";
     }
 
-    public class РозміщенняТоварівНаСкладі_Objest : DocumentObject
+    public class РозміщенняТоварівНаСкладі_Object : DocumentObject
     {
-        public РозміщенняТоварівНаСкладі_Objest() : base(Config.Kernel, "tab_a64", РозміщенняТоварівНаСкладі_Const.TYPE,
+        public РозміщенняТоварівНаСкладі_Object() : base(Config.Kernel, "tab_a64", РозміщенняТоварівНаСкладі_Const.TYPE,
              ["docname", "docdate", "docnomer", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", ], true)
         {
             
@@ -27715,9 +27715,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<РозміщенняТоварівНаСкладі_Objest> Copy(bool copyTableParts = false)
+        public async Task<РозміщенняТоварівНаСкладі_Object> Copy(bool copyTableParts = false)
         {
-            РозміщенняТоварівНаСкладі_Objest copy = new()
+            РозміщенняТоварівНаСкладі_Object copy = new()
             {
                 Назва = Назва,
                 ДатаДок = ДатаДок,
@@ -27805,7 +27805,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            РозміщенняТоварівНаСкладі_Objest? obj = await GetDocumentObject();
+            РозміщенняТоварівНаСкладі_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -27842,10 +27842,10 @@ namespace GeneratedCode.Документи
         }
         public РозміщенняТоварівНаСкладі_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public РозміщенняТоварівНаСкладі_Pointer GetEmptyPointer() => new();
-        public async Task<РозміщенняТоварівНаСкладі_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<РозміщенняТоварівНаСкладі_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            РозміщенняТоварівНаСкладі_Objest obj = new();
+            РозміщенняТоварівНаСкладі_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -27877,7 +27877,7 @@ namespace GeneratedCode.Документи
     
     public class РозміщенняТоварівНаСкладі_Товари_TablePart : DocumentTablePart
     {
-        public РозміщенняТоварівНаСкладі_Товари_TablePart(РозміщенняТоварівНаСкладі_Objest owner) : base(Config.Kernel, "tab_a68",
+        public РозміщенняТоварівНаСкладі_Товари_TablePart(РозміщенняТоварівНаСкладі_Object owner) : base(Config.Kernel, "tab_a68",
              ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -27898,7 +27898,7 @@ namespace GeneratedCode.Документи
         public const string Кількість = "col_a7";
         public const string Комірка = "col_a8";
 
-        public РозміщенняТоварівНаСкладі_Objest Owner { get; private set; }
+        public РозміщенняТоварівНаСкладі_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -28097,9 +28097,9 @@ namespace GeneratedCode.Документи
         public const string КлючовіСловаДляПошуку = "col_a7";
     }
 
-    public class ПереміщенняТоварівНаСкладі_Objest : DocumentObject
+    public class ПереміщенняТоварівНаСкладі_Object : DocumentObject
     {
-        public ПереміщенняТоварівНаСкладі_Objest() : base(Config.Kernel, "tab_b09", ПереміщенняТоварівНаСкладі_Const.TYPE,
+        public ПереміщенняТоварівНаСкладі_Object() : base(Config.Kernel, "tab_b09", ПереміщенняТоварівНаСкладі_Const.TYPE,
              ["docname", "docdate", "docnomer", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", ], true)
         {
             
@@ -28206,9 +28206,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПереміщенняТоварівНаСкладі_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПереміщенняТоварівНаСкладі_Object> Copy(bool copyTableParts = false)
         {
-            ПереміщенняТоварівНаСкладі_Objest copy = new()
+            ПереміщенняТоварівНаСкладі_Object copy = new()
             {
                 Назва = Назва,
                 ДатаДок = ДатаДок,
@@ -28294,7 +28294,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПереміщенняТоварівНаСкладі_Objest? obj = await GetDocumentObject();
+            ПереміщенняТоварівНаСкладі_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -28331,10 +28331,10 @@ namespace GeneratedCode.Документи
         }
         public ПереміщенняТоварівНаСкладі_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПереміщенняТоварівНаСкладі_Pointer GetEmptyPointer() => new();
-        public async Task<ПереміщенняТоварівНаСкладі_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПереміщенняТоварівНаСкладі_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПереміщенняТоварівНаСкладі_Objest obj = new();
+            ПереміщенняТоварівНаСкладі_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -28366,7 +28366,7 @@ namespace GeneratedCode.Документи
     
     public class ПереміщенняТоварівНаСкладі_Товари_TablePart : DocumentTablePart
     {
-        public ПереміщенняТоварівНаСкладі_Товари_TablePart(ПереміщенняТоварівНаСкладі_Objest owner) : base(Config.Kernel, "tab_b26",
+        public ПереміщенняТоварівНаСкладі_Товари_TablePart(ПереміщенняТоварівНаСкладі_Object owner) : base(Config.Kernel, "tab_b26",
              ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -28388,7 +28388,7 @@ namespace GeneratedCode.Документи
         public const string КоміркаВідправник = "col_a8";
         public const string КоміркаОтримувач = "col_a9";
 
-        public ПереміщенняТоварівНаСкладі_Objest Owner { get; private set; }
+        public ПереміщенняТоварівНаСкладі_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -28596,9 +28596,9 @@ namespace GeneratedCode.Документи
         public const string КлючовіСловаДляПошуку = "col_a8";
     }
 
-    public class ЗбіркаТоварівНаСкладі_Objest : DocumentObject
+    public class ЗбіркаТоварівНаСкладі_Object : DocumentObject
     {
-        public ЗбіркаТоварівНаСкладі_Objest() : base(Config.Kernel, "tab_b27", ЗбіркаТоварівНаСкладі_Const.TYPE,
+        public ЗбіркаТоварівНаСкладі_Object() : base(Config.Kernel, "tab_b27", ЗбіркаТоварівНаСкладі_Const.TYPE,
              ["docname", "docdate", "docnomer", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", ], true)
         {
             
@@ -28707,9 +28707,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ЗбіркаТоварівНаСкладі_Objest> Copy(bool copyTableParts = false)
+        public async Task<ЗбіркаТоварівНаСкладі_Object> Copy(bool copyTableParts = false)
         {
-            ЗбіркаТоварівНаСкладі_Objest copy = new()
+            ЗбіркаТоварівНаСкладі_Object copy = new()
             {
                 Назва = Назва,
                 ДатаДок = ДатаДок,
@@ -28797,7 +28797,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ЗбіркаТоварівНаСкладі_Objest? obj = await GetDocumentObject();
+            ЗбіркаТоварівНаСкладі_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -28834,10 +28834,10 @@ namespace GeneratedCode.Документи
         }
         public ЗбіркаТоварівНаСкладі_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ЗбіркаТоварівНаСкладі_Pointer GetEmptyPointer() => new();
-        public async Task<ЗбіркаТоварівНаСкладі_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ЗбіркаТоварівНаСкладі_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ЗбіркаТоварівНаСкладі_Objest obj = new();
+            ЗбіркаТоварівНаСкладі_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -28869,7 +28869,7 @@ namespace GeneratedCode.Документи
     
     public class ЗбіркаТоварівНаСкладі_Товари_TablePart : DocumentTablePart
     {
-        public ЗбіркаТоварівНаСкладі_Товари_TablePart(ЗбіркаТоварівНаСкладі_Objest owner) : base(Config.Kernel, "tab_b28",
+        public ЗбіркаТоварівНаСкладі_Товари_TablePart(ЗбіркаТоварівНаСкладі_Object owner) : base(Config.Kernel, "tab_b28",
              ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -28890,7 +28890,7 @@ namespace GeneratedCode.Документи
         public const string Кількість = "col_a7";
         public const string Комірка = "col_a8";
 
-        public ЗбіркаТоварівНаСкладі_Objest Owner { get; private set; }
+        public ЗбіркаТоварівНаСкладі_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -29089,9 +29089,9 @@ namespace GeneratedCode.Документи
         public const string КлючовіСловаДляПошуку = "col_a6";
     }
 
-    public class РозміщенняНоменклатуриПоКоміркам_Objest : DocumentObject
+    public class РозміщенняНоменклатуриПоКоміркам_Object : DocumentObject
     {
-        public РозміщенняНоменклатуриПоКоміркам_Objest() : base(Config.Kernel, "tab_b29", РозміщенняНоменклатуриПоКоміркам_Const.TYPE,
+        public РозміщенняНоменклатуриПоКоміркам_Object() : base(Config.Kernel, "tab_b29", РозміщенняНоменклатуриПоКоміркам_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a2", "col_a1", "col_g9", "col_a4", "col_a3", "col_a5", "col_a6", ], true)
         {
             
@@ -29188,9 +29188,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<РозміщенняНоменклатуриПоКоміркам_Objest> Copy(bool copyTableParts = false)
+        public async Task<РозміщенняНоменклатуриПоКоміркам_Object> Copy(bool copyTableParts = false)
         {
-            РозміщенняНоменклатуриПоКоміркам_Objest copy = new()
+            РозміщенняНоменклатуриПоКоміркам_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -29276,7 +29276,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            РозміщенняНоменклатуриПоКоміркам_Objest? obj = await GetDocumentObject();
+            РозміщенняНоменклатуриПоКоміркам_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -29303,10 +29303,10 @@ namespace GeneratedCode.Документи
         }
         public РозміщенняНоменклатуриПоКоміркам_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public РозміщенняНоменклатуриПоКоміркам_Pointer GetEmptyPointer() => new();
-        public async Task<РозміщенняНоменклатуриПоКоміркам_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<РозміщенняНоменклатуриПоКоміркам_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            РозміщенняНоменклатуриПоКоміркам_Objest obj = new();
+            РозміщенняНоменклатуриПоКоміркам_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -29338,7 +29338,7 @@ namespace GeneratedCode.Документи
     
     public class РозміщенняНоменклатуриПоКоміркам_Товари_TablePart : DocumentTablePart
     {
-        public РозміщенняНоменклатуриПоКоміркам_Товари_TablePart(РозміщенняНоменклатуриПоКоміркам_Objest owner) : base(Config.Kernel, "tab_b32",
+        public РозміщенняНоменклатуриПоКоміркам_Товари_TablePart(РозміщенняНоменклатуриПоКоміркам_Object owner) : base(Config.Kernel, "tab_b32",
              ["col_a1", "col_h1", "col_a2", "col_h3", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -29355,7 +29355,7 @@ namespace GeneratedCode.Документи
         public const string Комірка = "col_a2";
         public const string Пакування = "col_h3";
 
-        public РозміщенняНоменклатуриПоКоміркам_Objest Owner { get; private set; }
+        public РозміщенняНоменклатуриПоКоміркам_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -29531,9 +29531,9 @@ namespace GeneratedCode.Документи
         public const string ВідобразитиВБухгалтерськомуОбліку = "col_a5";
     }
 
-    public class КорегуванняБоргу_Objest : DocumentObject
+    public class КорегуванняБоргу_Object : DocumentObject
     {
-        public КорегуванняБоргу_Objest() : base(Config.Kernel, "tab_a65", КорегуванняБоргу_Const.TYPE,
+        public КорегуванняБоргу_Object() : base(Config.Kernel, "tab_a65", КорегуванняБоргу_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_c8", "col_d5", "col_d1", "col_a3", "col_a2", "col_a1", "col_a4", "col_a5", ], true)
         {
             
@@ -29648,9 +29648,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<КорегуванняБоргу_Objest> Copy(bool copyTableParts = false)
+        public async Task<КорегуванняБоргу_Object> Copy(bool copyTableParts = false)
         {
-            КорегуванняБоргу_Objest copy = new()
+            КорегуванняБоргу_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -29743,12 +29743,12 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            КорегуванняБоргу_Objest? obj = await GetDocumentObject();
+            КорегуванняБоргу_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
         {
-            КорегуванняБоргу_Objest? obj = await GetDocumentObject();
+            КорегуванняБоргу_Object? obj = await GetDocumentObject();
             if (obj != null) await obj.ClearSpendTheDocument();
                 
         }
@@ -29770,7 +29770,7 @@ namespace GeneratedCode.Документи
           
         public async Task SetDeletionLabel(bool label = true)
         {
-          КорегуванняБоргу_Objest? obj = await GetDocumentObject();
+          КорегуванняБоргу_Object? obj = await GetDocumentObject();
             if (obj == null) return;
             
             if (label) await obj.ClearSpendTheDocument();
@@ -29779,10 +29779,10 @@ namespace GeneratedCode.Документи
         }
         public КорегуванняБоргу_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public КорегуванняБоргу_Pointer GetEmptyPointer() => new();
-        public async Task<КорегуванняБоргу_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<КорегуванняБоргу_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            КорегуванняБоргу_Objest obj = new();
+            КорегуванняБоргу_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -29814,7 +29814,7 @@ namespace GeneratedCode.Документи
     
     public class КорегуванняБоргу_РозрахункиЗКонтрагентами_TablePart : DocumentTablePart
     {
-        public КорегуванняБоргу_РозрахункиЗКонтрагентами_TablePart(КорегуванняБоргу_Objest owner) : base(Config.Kernel, "tab_b12",
+        public КорегуванняБоргу_РозрахункиЗКонтрагентами_TablePart(КорегуванняБоргу_Object owner) : base(Config.Kernel, "tab_b12",
              ["col_a1", "col_e9", "col_f1", "col_f2", "col_a2", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -29832,7 +29832,7 @@ namespace GeneratedCode.Документи
         public const string Сума = "col_f2";
         public const string ТипКонтрагента = "col_a2";
 
-        public КорегуванняБоргу_Objest Owner { get; private set; }
+        public КорегуванняБоргу_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -29974,7 +29974,7 @@ namespace GeneratedCode.Документи
     
     public class КорегуванняБоргу_Проводки_TablePart : DocumentTablePart
     {
-        public КорегуванняБоргу_Проводки_TablePart(КорегуванняБоргу_Objest owner) : base(Config.Kernel, "tab_c34",
+        public КорегуванняБоргу_Проводки_TablePart(КорегуванняБоргу_Object owner) : base(Config.Kernel, "tab_c34",
              ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", ])
         {
             if (owner == null) throw new Exception("owner null");
@@ -29995,7 +29995,7 @@ namespace GeneratedCode.Документи
         public const string Дебет = "col_a7";
         public const string Кредит = "col_a8";
 
-        public КорегуванняБоргу_Objest Owner { get; private set; }
+        public КорегуванняБоргу_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -30195,9 +30195,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a4";
     }
 
-    public class ЗакриттяЗамовленняКлієнта_Objest : DocumentObject
+    public class ЗакриттяЗамовленняКлієнта_Object : DocumentObject
     {
-        public ЗакриттяЗамовленняКлієнта_Objest() : base(Config.Kernel, "tab_a96", ЗакриттяЗамовленняКлієнта_Const.TYPE,
+        public ЗакриттяЗамовленняКлієнта_Object() : base(Config.Kernel, "tab_a96", ЗакриттяЗамовленняКлієнта_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_b4", "col_b5", "col_b6", "col_a2", "col_b8", "col_a1", "col_a6", "col_c2", "col_c4", "col_c1", "col_b2", "col_b3", "col_a3", "col_a4", ], true)
         {
             
@@ -30320,9 +30320,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ЗакриттяЗамовленняКлієнта_Objest> Copy(bool copyTableParts = false)
+        public async Task<ЗакриттяЗамовленняКлієнта_Object> Copy(bool copyTableParts = false)
         {
-            ЗакриттяЗамовленняКлієнта_Objest copy = new()
+            ЗакриттяЗамовленняКлієнта_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -30422,7 +30422,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ЗакриттяЗамовленняКлієнта_Objest? obj = await GetDocumentObject();
+            ЗакриттяЗамовленняКлієнта_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -30461,10 +30461,10 @@ namespace GeneratedCode.Документи
         }
         public ЗакриттяЗамовленняКлієнта_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ЗакриттяЗамовленняКлієнта_Pointer GetEmptyPointer() => new();
-        public async Task<ЗакриттяЗамовленняКлієнта_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ЗакриттяЗамовленняКлієнта_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ЗакриттяЗамовленняКлієнта_Objest obj = new();
+            ЗакриттяЗамовленняКлієнта_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -30496,7 +30496,7 @@ namespace GeneratedCode.Документи
     
     public class ЗакриттяЗамовленняКлієнта_Товари_TablePart : DocumentTablePart
     {
-        public ЗакриттяЗамовленняКлієнта_Товари_TablePart(ЗакриттяЗамовленняКлієнта_Objest owner) : base(Config.Kernel, "tab_b39",
+        public ЗакриттяЗамовленняКлієнта_Товари_TablePart(ЗакриттяЗамовленняКлієнта_Object owner) : base(Config.Kernel, "tab_b39",
              ["col_a2", "col_b9", "col_c1", "col_c2", "col_c3", "col_c4", "col_a1", "col_a3", "col_a4", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -30518,7 +30518,7 @@ namespace GeneratedCode.Документи
         public const string Ціна = "col_a3";
         public const string Сума = "col_a4";
 
-        public ЗакриттяЗамовленняКлієнта_Objest Owner { get; private set; }
+        public ЗакриттяЗамовленняКлієнта_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -30724,9 +30724,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a4";
     }
 
-    public class ЗакриттяРахункуФактури_Objest : DocumentObject
+    public class ЗакриттяРахункуФактури_Object : DocumentObject
     {
-        public ЗакриттяРахункуФактури_Objest() : base(Config.Kernel, "tab_b41", ЗакриттяРахункуФактури_Const.TYPE,
+        public ЗакриттяРахункуФактури_Object() : base(Config.Kernel, "tab_b41", ЗакриттяРахункуФактури_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_b4", "col_b5", "col_b6", "col_a2", "col_b8", "col_a1", "col_a6", "col_c2", "col_c4", "col_c1", "col_b2", "col_b3", "col_a3", "col_a4", ], true)
         {
             
@@ -30847,9 +30847,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ЗакриттяРахункуФактури_Objest> Copy(bool copyTableParts = false)
+        public async Task<ЗакриттяРахункуФактури_Object> Copy(bool copyTableParts = false)
         {
-            ЗакриттяРахункуФактури_Objest copy = new()
+            ЗакриттяРахункуФактури_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -30949,7 +30949,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ЗакриттяРахункуФактури_Objest? obj = await GetDocumentObject();
+            ЗакриттяРахункуФактури_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -30986,10 +30986,10 @@ namespace GeneratedCode.Документи
         }
         public ЗакриттяРахункуФактури_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ЗакриттяРахункуФактури_Pointer GetEmptyPointer() => new();
-        public async Task<ЗакриттяРахункуФактури_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ЗакриттяРахункуФактури_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ЗакриттяРахункуФактури_Objest obj = new();
+            ЗакриттяРахункуФактури_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -31021,7 +31021,7 @@ namespace GeneratedCode.Документи
     
     public class ЗакриттяРахункуФактури_Товари_TablePart : DocumentTablePart
     {
-        public ЗакриттяРахункуФактури_Товари_TablePart(ЗакриттяРахункуФактури_Objest owner) : base(Config.Kernel, "tab_b42",
+        public ЗакриттяРахункуФактури_Товари_TablePart(ЗакриттяРахункуФактури_Object owner) : base(Config.Kernel, "tab_b42",
              ["col_a2", "col_b9", "col_c1", "col_c2", "col_c3", "col_c4", "col_a1", "col_a3", "col_a4", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -31043,7 +31043,7 @@ namespace GeneratedCode.Документи
         public const string Ціна = "col_a3";
         public const string Сума = "col_a4";
 
-        public ЗакриттяРахункуФактури_Objest Owner { get; private set; }
+        public ЗакриттяРахункуФактури_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -31249,9 +31249,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a4";
     }
 
-    public class ЗакриттяЗамовленняПостачальнику_Objest : DocumentObject
+    public class ЗакриттяЗамовленняПостачальнику_Object : DocumentObject
     {
-        public ЗакриттяЗамовленняПостачальнику_Objest() : base(Config.Kernel, "tab_b44", ЗакриттяЗамовленняПостачальнику_Const.TYPE,
+        public ЗакриттяЗамовленняПостачальнику_Object() : base(Config.Kernel, "tab_b44", ЗакриттяЗамовленняПостачальнику_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_b4", "col_b5", "col_b6", "col_a2", "col_b8", "col_a1", "col_a6", "col_c2", "col_c4", "col_c1", "col_b2", "col_b3", "col_a3", "col_a4", ], true)
         {
             
@@ -31372,9 +31372,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ЗакриттяЗамовленняПостачальнику_Objest> Copy(bool copyTableParts = false)
+        public async Task<ЗакриттяЗамовленняПостачальнику_Object> Copy(bool copyTableParts = false)
         {
-            ЗакриттяЗамовленняПостачальнику_Objest copy = new()
+            ЗакриттяЗамовленняПостачальнику_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -31474,7 +31474,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ЗакриттяЗамовленняПостачальнику_Objest? obj = await GetDocumentObject();
+            ЗакриттяЗамовленняПостачальнику_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -31511,10 +31511,10 @@ namespace GeneratedCode.Документи
         }
         public ЗакриттяЗамовленняПостачальнику_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ЗакриттяЗамовленняПостачальнику_Pointer GetEmptyPointer() => new();
-        public async Task<ЗакриттяЗамовленняПостачальнику_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ЗакриттяЗамовленняПостачальнику_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ЗакриттяЗамовленняПостачальнику_Objest obj = new();
+            ЗакриттяЗамовленняПостачальнику_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -31546,7 +31546,7 @@ namespace GeneratedCode.Документи
     
     public class ЗакриттяЗамовленняПостачальнику_Товари_TablePart : DocumentTablePart
     {
-        public ЗакриттяЗамовленняПостачальнику_Товари_TablePart(ЗакриттяЗамовленняПостачальнику_Objest owner) : base(Config.Kernel, "tab_b47",
+        public ЗакриттяЗамовленняПостачальнику_Товари_TablePart(ЗакриттяЗамовленняПостачальнику_Object owner) : base(Config.Kernel, "tab_b47",
              ["col_a2", "col_b9", "col_c1", "col_c2", "col_c3", "col_c4", "col_a1", "col_a3", "col_a4", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -31568,7 +31568,7 @@ namespace GeneratedCode.Документи
         public const string Ціна = "col_a3";
         public const string Сума = "col_a4";
 
-        public ЗакриттяЗамовленняПостачальнику_Objest Owner { get; private set; }
+        public ЗакриттяЗамовленняПостачальнику_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -31771,9 +31771,9 @@ namespace GeneratedCode.Документи
         public const string СумаБезЗнижки = "col_b2";
     }
 
-    public class ЧекККМ_Objest : DocumentObject
+    public class ЧекККМ_Object : DocumentObject
     {
-        public ЧекККМ_Objest() : base(Config.Kernel, "tab_b51", ЧекККМ_Const.TYPE,
+        public ЧекККМ_Object() : base(Config.Kernel, "tab_b51", ЧекККМ_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a7", "col_a8", "col_a9", "col_b1", "col_a6", "col_b2", ], true)
         {
             
@@ -31892,9 +31892,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ЧекККМ_Objest> Copy(bool copyTableParts = false)
+        public async Task<ЧекККМ_Object> Copy(bool copyTableParts = false)
         {
-            ЧекККМ_Objest copy = new()
+            ЧекККМ_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -31988,7 +31988,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ЧекККМ_Objest? obj = await GetDocumentObject();
+            ЧекККМ_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -32029,10 +32029,10 @@ namespace GeneratedCode.Документи
         }
         public ЧекККМ_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ЧекККМ_Pointer GetEmptyPointer() => new();
-        public async Task<ЧекККМ_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ЧекККМ_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ЧекККМ_Objest obj = new();
+            ЧекККМ_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -32064,7 +32064,7 @@ namespace GeneratedCode.Документи
     
     public class ЧекККМ_Товари_TablePart : DocumentTablePart
     {
-        public ЧекККМ_Товари_TablePart(ЧекККМ_Objest owner) : base(Config.Kernel, "tab_b50",
+        public ЧекККМ_Товари_TablePart(ЧекККМ_Object owner) : base(Config.Kernel, "tab_b50",
              ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", "col_b1", "col_b2", "col_b3", ], true)
         {
             if (owner == null) throw new Exception("owner null");
@@ -32089,7 +32089,7 @@ namespace GeneratedCode.Документи
         public const string ВидЦіни = "col_b2";
         public const string СумаБезЗнижки = "col_b3";
 
-        public ЧекККМ_Objest Owner { get; private set; }
+        public ЧекККМ_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -32301,9 +32301,9 @@ namespace GeneratedCode.Документи
         public const string Організація = "col_a1";
     }
 
-    public class БухгалтерськаОперація_Objest : DocumentObject
+    public class БухгалтерськаОперація_Object : DocumentObject
     {
-        public БухгалтерськаОперація_Objest() : base(Config.Kernel, "acc_operations", БухгалтерськаОперація_Const.TYPE,
+        public БухгалтерськаОперація_Object() : base(Config.Kernel, "acc_operations", БухгалтерськаОперація_Const.TYPE,
              ["docname", "docnomer", "docdate", "comment", "base", "author", "col_a1", ])
         {
             
@@ -32402,9 +32402,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<БухгалтерськаОперація_Objest> Copy(bool copyTableParts = false)
+        public async Task<БухгалтерськаОперація_Object> Copy(bool copyTableParts = false)
         {
-            БухгалтерськаОперація_Objest copy = new()
+            БухгалтерськаОперація_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -32484,7 +32484,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            БухгалтерськаОперація_Objest? obj = await GetDocumentObject();
+            БухгалтерськаОперація_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -32521,10 +32521,10 @@ namespace GeneratedCode.Документи
         }
         public БухгалтерськаОперація_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public БухгалтерськаОперація_Pointer GetEmptyPointer() => new();
-        public async Task<БухгалтерськаОперація_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<БухгалтерськаОперація_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            БухгалтерськаОперація_Objest obj = new();
+            БухгалтерськаОперація_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -32556,7 +32556,7 @@ namespace GeneratedCode.Документи
     
     public class БухгалтерськаОперація_Операції_TablePart : DocumentTablePart
     {
-        public БухгалтерськаОперація_Операції_TablePart(БухгалтерськаОперація_Objest owner) : base(Config.Kernel, "acc_operations_tp_operation",
+        public БухгалтерськаОперація_Операції_TablePart(БухгалтерськаОперація_Object owner) : base(Config.Kernel, "acc_operations_tp_operation",
              ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", "col_b1", "col_b2", "col_b3", "col_b4", "col_b5", "col_b6", "col_b7", "col_b8", "col_b9", "col_c1", "col_c2", "col_c3", "col_c4", "col_c5", "col_c6", "col_c7", "col_c8", "col_c9", ])
         {
             if (owner == null) throw new Exception("owner null");
@@ -32596,7 +32596,7 @@ namespace GeneratedCode.Документи
         public const string КурсВалютиДебет = "col_c8";
         public const string КурсВалютиКредит = "col_c9";
 
-        public БухгалтерськаОперація_Objest Owner { get; private set; }
+        public БухгалтерськаОперація_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -32900,9 +32900,9 @@ namespace GeneratedCode.Документи
         public const string ВідобразитиВБухгалтерськомуОбліку = "col_b3";
     }
 
-    public class АвансовийЗвіт_Objest : DocumentObject
+    public class АвансовийЗвіт_Object : DocumentObject
     {
-        public АвансовийЗвіт_Objest() : base(Config.Kernel, "tab_b72", АвансовийЗвіт_Const.TYPE,
+        public АвансовийЗвіт_Object() : base(Config.Kernel, "tab_b72", АвансовийЗвіт_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", "col_b1", "col_b2", "col_b3", ])
         {
             
@@ -33021,9 +33021,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<АвансовийЗвіт_Objest> Copy(bool copyTableParts = false)
+        public async Task<АвансовийЗвіт_Object> Copy(bool copyTableParts = false)
         {
-            АвансовийЗвіт_Objest copy = new()
+            АвансовийЗвіт_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -33124,12 +33124,12 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            АвансовийЗвіт_Objest? obj = await GetDocumentObject();
+            АвансовийЗвіт_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
         {
-            АвансовийЗвіт_Objest? obj = await GetDocumentObject();
+            АвансовийЗвіт_Object? obj = await GetDocumentObject();
             if (obj != null) await obj.ClearSpendTheDocument();
                 
         }
@@ -33149,7 +33149,7 @@ namespace GeneratedCode.Документи
           
         public async Task SetDeletionLabel(bool label = true)
         {
-          АвансовийЗвіт_Objest? obj = await GetDocumentObject();
+          АвансовийЗвіт_Object? obj = await GetDocumentObject();
             if (obj == null) return;
             
             if (label) await obj.ClearSpendTheDocument();
@@ -33158,10 +33158,10 @@ namespace GeneratedCode.Документи
         }
         public АвансовийЗвіт_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public АвансовийЗвіт_Pointer GetEmptyPointer() => new();
-        public async Task<АвансовийЗвіт_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<АвансовийЗвіт_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            АвансовийЗвіт_Objest obj = new();
+            АвансовийЗвіт_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -33193,7 +33193,7 @@ namespace GeneratedCode.Документи
     
     public class АвансовийЗвіт_Проводки_TablePart : DocumentTablePart
     {
-        public АвансовийЗвіт_Проводки_TablePart(АвансовийЗвіт_Objest owner) : base(Config.Kernel, "tab_c35",
+        public АвансовийЗвіт_Проводки_TablePart(АвансовийЗвіт_Object owner) : base(Config.Kernel, "tab_c35",
              ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", ])
         {
             if (owner == null) throw new Exception("owner null");
@@ -33214,7 +33214,7 @@ namespace GeneratedCode.Документи
         public const string Дебет = "col_a7";
         public const string Кредит = "col_a8";
 
-        public АвансовийЗвіт_Objest Owner { get; private set; }
+        public АвансовийЗвіт_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -33374,7 +33374,7 @@ namespace GeneratedCode.Документи
     
     public class АвансовийЗвіт_ВиданіАванси_TablePart : DocumentTablePart
     {
-        public АвансовийЗвіт_ВиданіАванси_TablePart(АвансовийЗвіт_Objest owner) : base(Config.Kernel, "tab_c36",
+        public АвансовийЗвіт_ВиданіАванси_TablePart(АвансовийЗвіт_Object owner) : base(Config.Kernel, "tab_c36",
              ["col_a1", "col_a2", "col_a3", ])
         {
             if (owner == null) throw new Exception("owner null");
@@ -33390,7 +33390,7 @@ namespace GeneratedCode.Документи
         public const string ДокументАвансу = "col_a2";
         public const string Сума = "col_a3";
 
-        public АвансовийЗвіт_Objest Owner { get; private set; }
+        public АвансовийЗвіт_Object Owner { get; private set; }
         
         public List<Record> Records { get; set; } = [];
 
@@ -33544,9 +33544,9 @@ namespace GeneratedCode.Документи
         public const string ВідобразитиВБухгалтерськомуОбліку = "col_a6";
     }
 
-    public class Амортизація_Objest : DocumentObject
+    public class Амортизація_Object : DocumentObject
     {
-        public Амортизація_Objest() : base(Config.Kernel, "tab_b73", Амортизація_Const.TYPE,
+        public Амортизація_Object() : base(Config.Kernel, "tab_b73", Амортизація_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", ])
         {
             
@@ -33642,9 +33642,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<Амортизація_Objest> Copy(bool copyTableParts = false)
+        public async Task<Амортизація_Object> Copy(bool copyTableParts = false)
         {
-            Амортизація_Objest copy = new()
+            Амортизація_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -33716,12 +33716,12 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            Амортизація_Objest? obj = await GetDocumentObject();
+            Амортизація_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
         {
-            Амортизація_Objest? obj = await GetDocumentObject();
+            Амортизація_Object? obj = await GetDocumentObject();
             if (obj != null) await obj.ClearSpendTheDocument();
                 
         }
@@ -33741,7 +33741,7 @@ namespace GeneratedCode.Документи
           
         public async Task SetDeletionLabel(bool label = true)
         {
-          Амортизація_Objest? obj = await GetDocumentObject();
+          Амортизація_Object? obj = await GetDocumentObject();
             if (obj == null) return;
             
             if (label) await obj.ClearSpendTheDocument();
@@ -33750,10 +33750,10 @@ namespace GeneratedCode.Документи
         }
         public Амортизація_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public Амортизація_Pointer GetEmptyPointer() => new();
-        public async Task<Амортизація_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<Амортизація_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Амортизація_Objest obj = new();
+            Амортизація_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -33817,9 +33817,9 @@ namespace GeneratedCode.Документи
         public const string ВідобразитиВБухгалтерськомуОбліку = "col_a6";
     }
 
-    public class ВизначенняФінансовогоРезультату_Objest : DocumentObject
+    public class ВизначенняФінансовогоРезультату_Object : DocumentObject
     {
-        public ВизначенняФінансовогоРезультату_Objest() : base(Config.Kernel, "tab_b74", ВизначенняФінансовогоРезультату_Const.TYPE,
+        public ВизначенняФінансовогоРезультату_Object() : base(Config.Kernel, "tab_b74", ВизначенняФінансовогоРезультату_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", ])
         {
             
@@ -33913,9 +33913,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ВизначенняФінансовогоРезультату_Objest> Copy(bool copyTableParts = false)
+        public async Task<ВизначенняФінансовогоРезультату_Object> Copy(bool copyTableParts = false)
         {
-            ВизначенняФінансовогоРезультату_Objest copy = new()
+            ВизначенняФінансовогоРезультату_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -33987,7 +33987,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ВизначенняФінансовогоРезультату_Objest? obj = await GetDocumentObject();
+            ВизначенняФінансовогоРезультату_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -34024,10 +34024,10 @@ namespace GeneratedCode.Документи
         }
         public ВизначенняФінансовогоРезультату_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ВизначенняФінансовогоРезультату_Pointer GetEmptyPointer() => new();
-        public async Task<ВизначенняФінансовогоРезультату_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ВизначенняФінансовогоРезультату_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ВизначенняФінансовогоРезультату_Objest obj = new();
+            ВизначенняФінансовогоРезультату_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -34087,9 +34087,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class ВиплатаЗаробітноїПлати_Objest : DocumentObject
+    public class ВиплатаЗаробітноїПлати_Object : DocumentObject
     {
-        public ВиплатаЗаробітноїПлати_Objest() : base(Config.Kernel, "tab_b75", ВиплатаЗаробітноїПлати_Const.TYPE,
+        public ВиплатаЗаробітноїПлати_Object() : base(Config.Kernel, "tab_b75", ВиплатаЗаробітноїПлати_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -34175,9 +34175,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ВиплатаЗаробітноїПлати_Objest> Copy(bool copyTableParts = false)
+        public async Task<ВиплатаЗаробітноїПлати_Object> Copy(bool copyTableParts = false)
         {
-            ВиплатаЗаробітноїПлати_Objest copy = new()
+            ВиплатаЗаробітноїПлати_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -34241,7 +34241,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ВиплатаЗаробітноїПлати_Objest? obj = await GetDocumentObject();
+            ВиплатаЗаробітноїПлати_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -34278,10 +34278,10 @@ namespace GeneratedCode.Документи
         }
         public ВиплатаЗаробітноїПлати_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ВиплатаЗаробітноїПлати_Pointer GetEmptyPointer() => new();
-        public async Task<ВиплатаЗаробітноїПлати_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ВиплатаЗаробітноїПлати_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ВиплатаЗаробітноїПлати_Objest obj = new();
+            ВиплатаЗаробітноїПлати_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -34341,9 +34341,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class ВиготовленняПродукції_Objest : DocumentObject
+    public class ВиготовленняПродукції_Object : DocumentObject
     {
-        public ВиготовленняПродукції_Objest() : base(Config.Kernel, "tab_b76", ВиготовленняПродукції_Const.TYPE,
+        public ВиготовленняПродукції_Object() : base(Config.Kernel, "tab_b76", ВиготовленняПродукції_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -34429,9 +34429,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ВиготовленняПродукції_Objest> Copy(bool copyTableParts = false)
+        public async Task<ВиготовленняПродукції_Object> Copy(bool copyTableParts = false)
         {
-            ВиготовленняПродукції_Objest copy = new()
+            ВиготовленняПродукції_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -34495,7 +34495,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ВиготовленняПродукції_Objest? obj = await GetDocumentObject();
+            ВиготовленняПродукції_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -34532,10 +34532,10 @@ namespace GeneratedCode.Документи
         }
         public ВиготовленняПродукції_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ВиготовленняПродукції_Pointer GetEmptyPointer() => new();
-        public async Task<ВиготовленняПродукції_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ВиготовленняПродукції_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ВиготовленняПродукції_Objest obj = new();
+            ВиготовленняПродукції_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -34595,9 +34595,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class Додаток1ДоПодатковоїНакладної_Objest : DocumentObject
+    public class Додаток1ДоПодатковоїНакладної_Object : DocumentObject
     {
-        public Додаток1ДоПодатковоїНакладної_Objest() : base(Config.Kernel, "tab_b77", Додаток1ДоПодатковоїНакладної_Const.TYPE,
+        public Додаток1ДоПодатковоїНакладної_Object() : base(Config.Kernel, "tab_b77", Додаток1ДоПодатковоїНакладної_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -34683,9 +34683,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<Додаток1ДоПодатковоїНакладної_Objest> Copy(bool copyTableParts = false)
+        public async Task<Додаток1ДоПодатковоїНакладної_Object> Copy(bool copyTableParts = false)
         {
-            Додаток1ДоПодатковоїНакладної_Objest copy = new()
+            Додаток1ДоПодатковоїНакладної_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -34749,7 +34749,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            Додаток1ДоПодатковоїНакладної_Objest? obj = await GetDocumentObject();
+            Додаток1ДоПодатковоїНакладної_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -34786,10 +34786,10 @@ namespace GeneratedCode.Документи
         }
         public Додаток1ДоПодатковоїНакладної_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public Додаток1ДоПодатковоїНакладної_Pointer GetEmptyPointer() => new();
-        public async Task<Додаток1ДоПодатковоїНакладної_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<Додаток1ДоПодатковоїНакладної_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Додаток1ДоПодатковоїНакладної_Objest obj = new();
+            Додаток1ДоПодатковоїНакладної_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -34849,9 +34849,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class Додаток2ДоПодатковоїНакладної_Objest : DocumentObject
+    public class Додаток2ДоПодатковоїНакладної_Object : DocumentObject
     {
-        public Додаток2ДоПодатковоїНакладної_Objest() : base(Config.Kernel, "tab_b78", Додаток2ДоПодатковоїНакладної_Const.TYPE,
+        public Додаток2ДоПодатковоїНакладної_Object() : base(Config.Kernel, "tab_b78", Додаток2ДоПодатковоїНакладної_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -34927,9 +34927,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<Додаток2ДоПодатковоїНакладної_Objest> Copy(bool copyTableParts = false)
+        public async Task<Додаток2ДоПодатковоїНакладної_Object> Copy(bool copyTableParts = false)
         {
-            Додаток2ДоПодатковоїНакладної_Objest copy = new()
+            Додаток2ДоПодатковоїНакладної_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -34993,7 +34993,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            Додаток2ДоПодатковоїНакладної_Objest? obj = await GetDocumentObject();
+            Додаток2ДоПодатковоїНакладної_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -35020,10 +35020,10 @@ namespace GeneratedCode.Документи
         }
         public Додаток2ДоПодатковоїНакладної_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public Додаток2ДоПодатковоїНакладної_Pointer GetEmptyPointer() => new();
-        public async Task<Додаток2ДоПодатковоїНакладної_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<Додаток2ДоПодатковоїНакладної_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Додаток2ДоПодатковоїНакладної_Objest obj = new();
+            Додаток2ДоПодатковоїНакладної_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -35083,9 +35083,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class ЗаписКнигиПридбання_Objest : DocumentObject
+    public class ЗаписКнигиПридбання_Object : DocumentObject
     {
-        public ЗаписКнигиПридбання_Objest() : base(Config.Kernel, "tab_b79", ЗаписКнигиПридбання_Const.TYPE,
+        public ЗаписКнигиПридбання_Object() : base(Config.Kernel, "tab_b79", ЗаписКнигиПридбання_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -35171,9 +35171,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ЗаписКнигиПридбання_Objest> Copy(bool copyTableParts = false)
+        public async Task<ЗаписКнигиПридбання_Object> Copy(bool copyTableParts = false)
         {
-            ЗаписКнигиПридбання_Objest copy = new()
+            ЗаписКнигиПридбання_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -35237,7 +35237,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ЗаписКнигиПридбання_Objest? obj = await GetDocumentObject();
+            ЗаписКнигиПридбання_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -35274,10 +35274,10 @@ namespace GeneratedCode.Документи
         }
         public ЗаписКнигиПридбання_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ЗаписКнигиПридбання_Pointer GetEmptyPointer() => new();
-        public async Task<ЗаписКнигиПридбання_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ЗаписКнигиПридбання_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ЗаписКнигиПридбання_Objest obj = new();
+            ЗаписКнигиПридбання_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -35337,9 +35337,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class ЗмінаПараметрівОсновнихЗасобів_Objest : DocumentObject
+    public class ЗмінаПараметрівОсновнихЗасобів_Object : DocumentObject
     {
-        public ЗмінаПараметрівОсновнихЗасобів_Objest() : base(Config.Kernel, "tab_b80", ЗмінаПараметрівОсновнихЗасобів_Const.TYPE,
+        public ЗмінаПараметрівОсновнихЗасобів_Object() : base(Config.Kernel, "tab_b80", ЗмінаПараметрівОсновнихЗасобів_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -35425,9 +35425,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ЗмінаПараметрівОсновнихЗасобів_Objest> Copy(bool copyTableParts = false)
+        public async Task<ЗмінаПараметрівОсновнихЗасобів_Object> Copy(bool copyTableParts = false)
         {
-            ЗмінаПараметрівОсновнихЗасобів_Objest copy = new()
+            ЗмінаПараметрівОсновнихЗасобів_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -35491,7 +35491,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ЗмінаПараметрівОсновнихЗасобів_Objest? obj = await GetDocumentObject();
+            ЗмінаПараметрівОсновнихЗасобів_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -35528,10 +35528,10 @@ namespace GeneratedCode.Документи
         }
         public ЗмінаПараметрівОсновнихЗасобів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ЗмінаПараметрівОсновнихЗасобів_Pointer GetEmptyPointer() => new();
-        public async Task<ЗмінаПараметрівОсновнихЗасобів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ЗмінаПараметрівОсновнихЗасобів_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ЗмінаПараметрівОсновнихЗасобів_Objest obj = new();
+            ЗмінаПараметрівОсновнихЗасобів_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -35591,9 +35591,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class ЗвітКомісіонераПроПродажТоварів_Objest : DocumentObject
+    public class ЗвітКомісіонераПроПродажТоварів_Object : DocumentObject
     {
-        public ЗвітКомісіонераПроПродажТоварів_Objest() : base(Config.Kernel, "tab_b81", ЗвітКомісіонераПроПродажТоварів_Const.TYPE,
+        public ЗвітКомісіонераПроПродажТоварів_Object() : base(Config.Kernel, "tab_b81", ЗвітКомісіонераПроПродажТоварів_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -35679,9 +35679,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ЗвітКомісіонераПроПродажТоварів_Objest> Copy(bool copyTableParts = false)
+        public async Task<ЗвітКомісіонераПроПродажТоварів_Object> Copy(bool copyTableParts = false)
         {
-            ЗвітКомісіонераПроПродажТоварів_Objest copy = new()
+            ЗвітКомісіонераПроПродажТоварів_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -35745,7 +35745,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ЗвітКомісіонераПроПродажТоварів_Objest? obj = await GetDocumentObject();
+            ЗвітКомісіонераПроПродажТоварів_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -35782,10 +35782,10 @@ namespace GeneratedCode.Документи
         }
         public ЗвітКомісіонераПроПродажТоварів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ЗвітКомісіонераПроПродажТоварів_Pointer GetEmptyPointer() => new();
-        public async Task<ЗвітКомісіонераПроПродажТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ЗвітКомісіонераПроПродажТоварів_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ЗвітКомісіонераПроПродажТоварів_Objest obj = new();
+            ЗвітКомісіонераПроПродажТоварів_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -35845,9 +35845,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class ЗвітКомітентуПроПродажТоварів_Objest : DocumentObject
+    public class ЗвітКомітентуПроПродажТоварів_Object : DocumentObject
     {
-        public ЗвітКомітентуПроПродажТоварів_Objest() : base(Config.Kernel, "tab_b82", ЗвітКомітентуПроПродажТоварів_Const.TYPE,
+        public ЗвітКомітентуПроПродажТоварів_Object() : base(Config.Kernel, "tab_b82", ЗвітКомітентуПроПродажТоварів_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -35933,9 +35933,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ЗвітКомітентуПроПродажТоварів_Objest> Copy(bool copyTableParts = false)
+        public async Task<ЗвітКомітентуПроПродажТоварів_Object> Copy(bool copyTableParts = false)
         {
-            ЗвітКомітентуПроПродажТоварів_Objest copy = new()
+            ЗвітКомітентуПроПродажТоварів_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -35999,7 +35999,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ЗвітКомітентуПроПродажТоварів_Objest? obj = await GetDocumentObject();
+            ЗвітКомітентуПроПродажТоварів_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -36036,10 +36036,10 @@ namespace GeneratedCode.Документи
         }
         public ЗвітКомітентуПроПродажТоварів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ЗвітКомітентуПроПродажТоварів_Pointer GetEmptyPointer() => new();
-        public async Task<ЗвітКомітентуПроПродажТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ЗвітКомітентуПроПродажТоварів_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ЗвітКомітентуПроПродажТоварів_Objest obj = new();
+            ЗвітКомітентуПроПродажТоварів_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -36099,9 +36099,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class КоригуванняНезавершеногоВиробництва_Objest : DocumentObject
+    public class КоригуванняНезавершеногоВиробництва_Object : DocumentObject
     {
-        public КоригуванняНезавершеногоВиробництва_Objest() : base(Config.Kernel, "tab_b83", КоригуванняНезавершеногоВиробництва_Const.TYPE,
+        public КоригуванняНезавершеногоВиробництва_Object() : base(Config.Kernel, "tab_b83", КоригуванняНезавершеногоВиробництва_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -36187,9 +36187,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<КоригуванняНезавершеногоВиробництва_Objest> Copy(bool copyTableParts = false)
+        public async Task<КоригуванняНезавершеногоВиробництва_Object> Copy(bool copyTableParts = false)
         {
-            КоригуванняНезавершеногоВиробництва_Objest copy = new()
+            КоригуванняНезавершеногоВиробництва_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -36253,7 +36253,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            КоригуванняНезавершеногоВиробництва_Objest? obj = await GetDocumentObject();
+            КоригуванняНезавершеногоВиробництва_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -36290,10 +36290,10 @@ namespace GeneratedCode.Документи
         }
         public КоригуванняНезавершеногоВиробництва_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public КоригуванняНезавершеногоВиробництва_Pointer GetEmptyPointer() => new();
-        public async Task<КоригуванняНезавершеногоВиробництва_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<КоригуванняНезавершеногоВиробництва_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            КоригуванняНезавершеногоВиробництва_Objest obj = new();
+            КоригуванняНезавершеногоВиробництва_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -36353,9 +36353,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class КоригуванняПДВ_Objest : DocumentObject
+    public class КоригуванняПДВ_Object : DocumentObject
     {
-        public КоригуванняПДВ_Objest() : base(Config.Kernel, "tab_b84", КоригуванняПДВ_Const.TYPE,
+        public КоригуванняПДВ_Object() : base(Config.Kernel, "tab_b84", КоригуванняПДВ_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -36441,9 +36441,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<КоригуванняПДВ_Objest> Copy(bool copyTableParts = false)
+        public async Task<КоригуванняПДВ_Object> Copy(bool copyTableParts = false)
         {
-            КоригуванняПДВ_Objest copy = new()
+            КоригуванняПДВ_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -36507,7 +36507,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            КоригуванняПДВ_Objest? obj = await GetDocumentObject();
+            КоригуванняПДВ_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -36544,10 +36544,10 @@ namespace GeneratedCode.Документи
         }
         public КоригуванняПДВ_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public КоригуванняПДВ_Pointer GetEmptyPointer() => new();
-        public async Task<КоригуванняПДВ_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<КоригуванняПДВ_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            КоригуванняПДВ_Objest obj = new();
+            КоригуванняПДВ_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -36607,9 +36607,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class КоригуванняІншихВитрат_Objest : DocumentObject
+    public class КоригуванняІншихВитрат_Object : DocumentObject
     {
-        public КоригуванняІншихВитрат_Objest() : base(Config.Kernel, "tab_b85", КоригуванняІншихВитрат_Const.TYPE,
+        public КоригуванняІншихВитрат_Object() : base(Config.Kernel, "tab_b85", КоригуванняІншихВитрат_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -36695,9 +36695,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<КоригуванняІншихВитрат_Objest> Copy(bool copyTableParts = false)
+        public async Task<КоригуванняІншихВитрат_Object> Copy(bool copyTableParts = false)
         {
-            КоригуванняІншихВитрат_Objest copy = new()
+            КоригуванняІншихВитрат_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -36761,7 +36761,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            КоригуванняІншихВитрат_Objest? obj = await GetDocumentObject();
+            КоригуванняІншихВитрат_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -36798,10 +36798,10 @@ namespace GeneratedCode.Документи
         }
         public КоригуванняІншихВитрат_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public КоригуванняІншихВитрат_Pointer GetEmptyPointer() => new();
-        public async Task<КоригуванняІншихВитрат_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<КоригуванняІншихВитрат_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            КоригуванняІншихВитрат_Objest obj = new();
+            КоригуванняІншихВитрат_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -36861,9 +36861,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class Модернізація_Objest : DocumentObject
+    public class Модернізація_Object : DocumentObject
     {
-        public Модернізація_Objest() : base(Config.Kernel, "tab_b86", Модернізація_Const.TYPE,
+        public Модернізація_Object() : base(Config.Kernel, "tab_b86", Модернізація_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -36949,9 +36949,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<Модернізація_Objest> Copy(bool copyTableParts = false)
+        public async Task<Модернізація_Object> Copy(bool copyTableParts = false)
         {
-            Модернізація_Objest copy = new()
+            Модернізація_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -37015,7 +37015,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            Модернізація_Objest? obj = await GetDocumentObject();
+            Модернізація_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -37052,10 +37052,10 @@ namespace GeneratedCode.Документи
         }
         public Модернізація_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public Модернізація_Pointer GetEmptyPointer() => new();
-        public async Task<Модернізація_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<Модернізація_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Модернізація_Objest obj = new();
+            Модернізація_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -37115,9 +37115,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class Комплектація_Objest : DocumentObject
+    public class Комплектація_Object : DocumentObject
     {
-        public Комплектація_Objest() : base(Config.Kernel, "tab_b87", Комплектація_Const.TYPE,
+        public Комплектація_Object() : base(Config.Kernel, "tab_b87", Комплектація_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -37203,9 +37203,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<Комплектація_Objest> Copy(bool copyTableParts = false)
+        public async Task<Комплектація_Object> Copy(bool copyTableParts = false)
         {
-            Комплектація_Objest copy = new()
+            Комплектація_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -37269,7 +37269,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            Комплектація_Objest? obj = await GetDocumentObject();
+            Комплектація_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -37306,10 +37306,10 @@ namespace GeneratedCode.Документи
         }
         public Комплектація_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public Комплектація_Pointer GetEmptyPointer() => new();
-        public async Task<Комплектація_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<Комплектація_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Комплектація_Objest obj = new();
+            Комплектація_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -37369,9 +37369,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class НакладнаВимога_Objest : DocumentObject
+    public class НакладнаВимога_Object : DocumentObject
     {
-        public НакладнаВимога_Objest() : base(Config.Kernel, "tab_b88", НакладнаВимога_Const.TYPE,
+        public НакладнаВимога_Object() : base(Config.Kernel, "tab_b88", НакладнаВимога_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -37457,9 +37457,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<НакладнаВимога_Objest> Copy(bool copyTableParts = false)
+        public async Task<НакладнаВимога_Object> Copy(bool copyTableParts = false)
         {
-            НакладнаВимога_Objest copy = new()
+            НакладнаВимога_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -37523,7 +37523,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            НакладнаВимога_Objest? obj = await GetDocumentObject();
+            НакладнаВимога_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -37560,10 +37560,10 @@ namespace GeneratedCode.Документи
         }
         public НакладнаВимога_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public НакладнаВимога_Pointer GetEmptyPointer() => new();
-        public async Task<НакладнаВимога_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<НакладнаВимога_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            НакладнаВимога_Objest obj = new();
+            НакладнаВимога_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -37623,9 +37623,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class Наряд_Objest : DocumentObject
+    public class Наряд_Object : DocumentObject
     {
-        public Наряд_Objest() : base(Config.Kernel, "tab_b89", Наряд_Const.TYPE,
+        public Наряд_Object() : base(Config.Kernel, "tab_b89", Наряд_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -37711,9 +37711,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<Наряд_Objest> Copy(bool copyTableParts = false)
+        public async Task<Наряд_Object> Copy(bool copyTableParts = false)
         {
-            Наряд_Objest copy = new()
+            Наряд_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -37777,7 +37777,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            Наряд_Objest? obj = await GetDocumentObject();
+            Наряд_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -37814,10 +37814,10 @@ namespace GeneratedCode.Документи
         }
         public Наряд_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public Наряд_Pointer GetEmptyPointer() => new();
-        public async Task<Наряд_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<Наряд_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Наряд_Objest obj = new();
+            Наряд_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -37877,9 +37877,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class НарахуванняЗаробітньоїПлати_Objest : DocumentObject
+    public class НарахуванняЗаробітньоїПлати_Object : DocumentObject
     {
-        public НарахуванняЗаробітньоїПлати_Objest() : base(Config.Kernel, "tab_b90", НарахуванняЗаробітньоїПлати_Const.TYPE,
+        public НарахуванняЗаробітньоїПлати_Object() : base(Config.Kernel, "tab_b90", НарахуванняЗаробітньоїПлати_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -37965,9 +37965,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<НарахуванняЗаробітньоїПлати_Objest> Copy(bool copyTableParts = false)
+        public async Task<НарахуванняЗаробітньоїПлати_Object> Copy(bool copyTableParts = false)
         {
-            НарахуванняЗаробітньоїПлати_Objest copy = new()
+            НарахуванняЗаробітньоїПлати_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -38031,7 +38031,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            НарахуванняЗаробітньоїПлати_Objest? obj = await GetDocumentObject();
+            НарахуванняЗаробітньоїПлати_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -38068,10 +38068,10 @@ namespace GeneratedCode.Документи
         }
         public НарахуванняЗаробітньоїПлати_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public НарахуванняЗаробітньоїПлати_Pointer GetEmptyPointer() => new();
-        public async Task<НарахуванняЗаробітньоїПлати_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<НарахуванняЗаробітньоїПлати_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            НарахуванняЗаробітньоїПлати_Objest obj = new();
+            НарахуванняЗаробітньоїПлати_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -38131,9 +38131,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class ПередачаМатеріалівВЕксплуатацію_Objest : DocumentObject
+    public class ПередачаМатеріалівВЕксплуатацію_Object : DocumentObject
     {
-        public ПередачаМатеріалівВЕксплуатацію_Objest() : base(Config.Kernel, "tab_b91", ПередачаМатеріалівВЕксплуатацію_Const.TYPE,
+        public ПередачаМатеріалівВЕксплуатацію_Object() : base(Config.Kernel, "tab_b91", ПередачаМатеріалівВЕксплуатацію_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -38219,9 +38219,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПередачаМатеріалівВЕксплуатацію_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПередачаМатеріалівВЕксплуатацію_Object> Copy(bool copyTableParts = false)
         {
-            ПередачаМатеріалівВЕксплуатацію_Objest copy = new()
+            ПередачаМатеріалівВЕксплуатацію_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -38285,7 +38285,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПередачаМатеріалівВЕксплуатацію_Objest? obj = await GetDocumentObject();
+            ПередачаМатеріалівВЕксплуатацію_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -38322,10 +38322,10 @@ namespace GeneratedCode.Документи
         }
         public ПередачаМатеріалівВЕксплуатацію_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПередачаМатеріалівВЕксплуатацію_Pointer GetEmptyPointer() => new();
-        public async Task<ПередачаМатеріалівВЕксплуатацію_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПередачаМатеріалівВЕксплуатацію_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПередачаМатеріалівВЕксплуатацію_Objest obj = new();
+            ПередачаМатеріалівВЕксплуатацію_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -38385,9 +38385,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class ПереміщенняМатеріалівВЕксплуатації_Objest : DocumentObject
+    public class ПереміщенняМатеріалівВЕксплуатації_Object : DocumentObject
     {
-        public ПереміщенняМатеріалівВЕксплуатації_Objest() : base(Config.Kernel, "tab_b92", ПереміщенняМатеріалівВЕксплуатації_Const.TYPE,
+        public ПереміщенняМатеріалівВЕксплуатації_Object() : base(Config.Kernel, "tab_b92", ПереміщенняМатеріалівВЕксплуатації_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -38473,9 +38473,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПереміщенняМатеріалівВЕксплуатації_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПереміщенняМатеріалівВЕксплуатації_Object> Copy(bool copyTableParts = false)
         {
-            ПереміщенняМатеріалівВЕксплуатації_Objest copy = new()
+            ПереміщенняМатеріалівВЕксплуатації_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -38539,7 +38539,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПереміщенняМатеріалівВЕксплуатації_Objest? obj = await GetDocumentObject();
+            ПереміщенняМатеріалівВЕксплуатації_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -38576,10 +38576,10 @@ namespace GeneratedCode.Документи
         }
         public ПереміщенняМатеріалівВЕксплуатації_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПереміщенняМатеріалівВЕксплуатації_Pointer GetEmptyPointer() => new();
-        public async Task<ПереміщенняМатеріалівВЕксплуатації_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПереміщенняМатеріалівВЕксплуатації_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПереміщенняМатеріалівВЕксплуатації_Objest obj = new();
+            ПереміщенняМатеріалівВЕксплуатації_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -38639,9 +38639,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class ПередачаНематеріальнихАктивів_Objest : DocumentObject
+    public class ПередачаНематеріальнихАктивів_Object : DocumentObject
     {
-        public ПередачаНематеріальнихАктивів_Objest() : base(Config.Kernel, "tab_b93", ПередачаНематеріальнихАктивів_Const.TYPE,
+        public ПередачаНематеріальнихАктивів_Object() : base(Config.Kernel, "tab_b93", ПередачаНематеріальнихАктивів_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -38727,9 +38727,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПередачаНематеріальнихАктивів_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПередачаНематеріальнихАктивів_Object> Copy(bool copyTableParts = false)
         {
-            ПередачаНематеріальнихАктивів_Objest copy = new()
+            ПередачаНематеріальнихАктивів_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -38793,7 +38793,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПередачаНематеріальнихАктивів_Objest? obj = await GetDocumentObject();
+            ПередачаНематеріальнихАктивів_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -38830,10 +38830,10 @@ namespace GeneratedCode.Документи
         }
         public ПередачаНематеріальнихАктивів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПередачаНематеріальнихАктивів_Pointer GetEmptyPointer() => new();
-        public async Task<ПередачаНематеріальнихАктивів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПередачаНематеріальнихАктивів_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПередачаНематеріальнихАктивів_Objest obj = new();
+            ПередачаНематеріальнихАктивів_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -38893,9 +38893,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class ПереміщенняНематеріальнихАктивів_Objest : DocumentObject
+    public class ПереміщенняНематеріальнихАктивів_Object : DocumentObject
     {
-        public ПереміщенняНематеріальнихАктивів_Objest() : base(Config.Kernel, "tab_b94", ПереміщенняНематеріальнихАктивів_Const.TYPE,
+        public ПереміщенняНематеріальнихАктивів_Object() : base(Config.Kernel, "tab_b94", ПереміщенняНематеріальнихАктивів_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -38981,9 +38981,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПереміщенняНематеріальнихАктивів_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПереміщенняНематеріальнихАктивів_Object> Copy(bool copyTableParts = false)
         {
-            ПереміщенняНематеріальнихАктивів_Objest copy = new()
+            ПереміщенняНематеріальнихАктивів_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -39047,7 +39047,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПереміщенняНематеріальнихАктивів_Objest? obj = await GetDocumentObject();
+            ПереміщенняНематеріальнихАктивів_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -39084,10 +39084,10 @@ namespace GeneratedCode.Документи
         }
         public ПереміщенняНематеріальнихАктивів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПереміщенняНематеріальнихАктивів_Pointer GetEmptyPointer() => new();
-        public async Task<ПереміщенняНематеріальнихАктивів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПереміщенняНематеріальнихАктивів_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПереміщенняНематеріальнихАктивів_Objest obj = new();
+            ПереміщенняНематеріальнихАктивів_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -39147,9 +39147,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class ПередачаОбладнанняВМонтаж_Objest : DocumentObject
+    public class ПередачаОбладнанняВМонтаж_Object : DocumentObject
     {
-        public ПередачаОбладнанняВМонтаж_Objest() : base(Config.Kernel, "tab_b95", ПередачаОбладнанняВМонтаж_Const.TYPE,
+        public ПередачаОбладнанняВМонтаж_Object() : base(Config.Kernel, "tab_b95", ПередачаОбладнанняВМонтаж_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -39235,9 +39235,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПередачаОбладнанняВМонтаж_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПередачаОбладнанняВМонтаж_Object> Copy(bool copyTableParts = false)
         {
-            ПередачаОбладнанняВМонтаж_Objest copy = new()
+            ПередачаОбладнанняВМонтаж_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -39301,7 +39301,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПередачаОбладнанняВМонтаж_Objest? obj = await GetDocumentObject();
+            ПередачаОбладнанняВМонтаж_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -39338,10 +39338,10 @@ namespace GeneratedCode.Документи
         }
         public ПередачаОбладнанняВМонтаж_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПередачаОбладнанняВМонтаж_Pointer GetEmptyPointer() => new();
-        public async Task<ПередачаОбладнанняВМонтаж_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПередачаОбладнанняВМонтаж_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПередачаОбладнанняВМонтаж_Objest obj = new();
+            ПередачаОбладнанняВМонтаж_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -39401,9 +39401,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class ПередачаОсновнихЗасобів_Objest : DocumentObject
+    public class ПередачаОсновнихЗасобів_Object : DocumentObject
     {
-        public ПередачаОсновнихЗасобів_Objest() : base(Config.Kernel, "tab_b96", ПередачаОсновнихЗасобів_Const.TYPE,
+        public ПередачаОсновнихЗасобів_Object() : base(Config.Kernel, "tab_b96", ПередачаОсновнихЗасобів_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -39489,9 +39489,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПередачаОсновнихЗасобів_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПередачаОсновнихЗасобів_Object> Copy(bool copyTableParts = false)
         {
-            ПередачаОсновнихЗасобів_Objest copy = new()
+            ПередачаОсновнихЗасобів_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -39555,7 +39555,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПередачаОсновнихЗасобів_Objest? obj = await GetDocumentObject();
+            ПередачаОсновнихЗасобів_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -39592,10 +39592,10 @@ namespace GeneratedCode.Документи
         }
         public ПередачаОсновнихЗасобів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПередачаОсновнихЗасобів_Pointer GetEmptyPointer() => new();
-        public async Task<ПередачаОсновнихЗасобів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПередачаОсновнихЗасобів_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПередачаОсновнихЗасобів_Objest obj = new();
+            ПередачаОсновнихЗасобів_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -39655,9 +39655,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class ПереміщенняОсновнихЗасобів_Objest : DocumentObject
+    public class ПереміщенняОсновнихЗасобів_Object : DocumentObject
     {
-        public ПереміщенняОсновнихЗасобів_Objest() : base(Config.Kernel, "tab_b97", ПереміщенняОсновнихЗасобів_Const.TYPE,
+        public ПереміщенняОсновнихЗасобів_Object() : base(Config.Kernel, "tab_b97", ПереміщенняОсновнихЗасобів_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -39743,9 +39743,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПереміщенняОсновнихЗасобів_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПереміщенняОсновнихЗасобів_Object> Copy(bool copyTableParts = false)
         {
-            ПереміщенняОсновнихЗасобів_Objest copy = new()
+            ПереміщенняОсновнихЗасобів_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -39809,7 +39809,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПереміщенняОсновнихЗасобів_Objest? obj = await GetDocumentObject();
+            ПереміщенняОсновнихЗасобів_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -39846,10 +39846,10 @@ namespace GeneratedCode.Документи
         }
         public ПереміщенняОсновнихЗасобів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПереміщенняОсновнихЗасобів_Pointer GetEmptyPointer() => new();
-        public async Task<ПереміщенняОсновнихЗасобів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПереміщенняОсновнихЗасобів_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПереміщенняОсновнихЗасобів_Objest obj = new();
+            ПереміщенняОсновнихЗасобів_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -39909,9 +39909,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class ПередачаТоварів_Objest : DocumentObject
+    public class ПередачаТоварів_Object : DocumentObject
     {
-        public ПередачаТоварів_Objest() : base(Config.Kernel, "tab_b98", ПередачаТоварів_Const.TYPE,
+        public ПередачаТоварів_Object() : base(Config.Kernel, "tab_b98", ПередачаТоварів_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -39997,9 +39997,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПередачаТоварів_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПередачаТоварів_Object> Copy(bool copyTableParts = false)
         {
-            ПередачаТоварів_Objest copy = new()
+            ПередачаТоварів_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -40063,7 +40063,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПередачаТоварів_Objest? obj = await GetDocumentObject();
+            ПередачаТоварів_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -40100,10 +40100,10 @@ namespace GeneratedCode.Документи
         }
         public ПередачаТоварів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПередачаТоварів_Pointer GetEmptyPointer() => new();
-        public async Task<ПередачаТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПередачаТоварів_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПередачаТоварів_Objest obj = new();
+            ПередачаТоварів_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -40163,9 +40163,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class ПереоцінкаВалюти_Objest : DocumentObject
+    public class ПереоцінкаВалюти_Object : DocumentObject
     {
-        public ПереоцінкаВалюти_Objest() : base(Config.Kernel, "tab_b99", ПереоцінкаВалюти_Const.TYPE,
+        public ПереоцінкаВалюти_Object() : base(Config.Kernel, "tab_b99", ПереоцінкаВалюти_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -40251,9 +40251,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПереоцінкаВалюти_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПереоцінкаВалюти_Object> Copy(bool copyTableParts = false)
         {
-            ПереоцінкаВалюти_Objest copy = new()
+            ПереоцінкаВалюти_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -40317,7 +40317,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПереоцінкаВалюти_Objest? obj = await GetDocumentObject();
+            ПереоцінкаВалюти_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -40354,10 +40354,10 @@ namespace GeneratedCode.Документи
         }
         public ПереоцінкаВалюти_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПереоцінкаВалюти_Pointer GetEmptyPointer() => new();
-        public async Task<ПереоцінкаВалюти_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПереоцінкаВалюти_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПереоцінкаВалюти_Objest obj = new();
+            ПереоцінкаВалюти_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -40417,9 +40417,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class ПереоцінкаОсновнихЗасобів_Objest : DocumentObject
+    public class ПереоцінкаОсновнихЗасобів_Object : DocumentObject
     {
-        public ПереоцінкаОсновнихЗасобів_Objest() : base(Config.Kernel, "tab_c01", ПереоцінкаОсновнихЗасобів_Const.TYPE,
+        public ПереоцінкаОсновнихЗасобів_Object() : base(Config.Kernel, "tab_c01", ПереоцінкаОсновнихЗасобів_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -40505,9 +40505,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПереоцінкаОсновнихЗасобів_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПереоцінкаОсновнихЗасобів_Object> Copy(bool copyTableParts = false)
         {
-            ПереоцінкаОсновнихЗасобів_Objest copy = new()
+            ПереоцінкаОсновнихЗасобів_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -40571,7 +40571,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПереоцінкаОсновнихЗасобів_Objest? obj = await GetDocumentObject();
+            ПереоцінкаОсновнихЗасобів_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -40608,10 +40608,10 @@ namespace GeneratedCode.Документи
         }
         public ПереоцінкаОсновнихЗасобів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПереоцінкаОсновнихЗасобів_Pointer GetEmptyPointer() => new();
-        public async Task<ПереоцінкаОсновнихЗасобів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПереоцінкаОсновнихЗасобів_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПереоцінкаОсновнихЗасобів_Objest obj = new();
+            ПереоцінкаОсновнихЗасобів_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -40671,9 +40671,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class ПереоцінкаТоварів_Objest : DocumentObject
+    public class ПереоцінкаТоварів_Object : DocumentObject
     {
-        public ПереоцінкаТоварів_Objest() : base(Config.Kernel, "tab_c02", ПереоцінкаТоварів_Const.TYPE,
+        public ПереоцінкаТоварів_Object() : base(Config.Kernel, "tab_c02", ПереоцінкаТоварів_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -40759,9 +40759,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПереоцінкаТоварів_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПереоцінкаТоварів_Object> Copy(bool copyTableParts = false)
         {
-            ПереоцінкаТоварів_Objest copy = new()
+            ПереоцінкаТоварів_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -40825,7 +40825,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПереоцінкаТоварів_Objest? obj = await GetDocumentObject();
+            ПереоцінкаТоварів_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -40862,10 +40862,10 @@ namespace GeneratedCode.Документи
         }
         public ПереоцінкаТоварів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПереоцінкаТоварів_Pointer GetEmptyPointer() => new();
-        public async Task<ПереоцінкаТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПереоцінкаТоварів_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПереоцінкаТоварів_Objest obj = new();
+            ПереоцінкаТоварів_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -40925,9 +40925,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class ПлатіжнеДорученняВхідне_Objest : DocumentObject
+    public class ПлатіжнеДорученняВхідне_Object : DocumentObject
     {
-        public ПлатіжнеДорученняВхідне_Objest() : base(Config.Kernel, "tab_c03", ПлатіжнеДорученняВхідне_Const.TYPE,
+        public ПлатіжнеДорученняВхідне_Object() : base(Config.Kernel, "tab_c03", ПлатіжнеДорученняВхідне_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -41013,9 +41013,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПлатіжнеДорученняВхідне_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПлатіжнеДорученняВхідне_Object> Copy(bool copyTableParts = false)
         {
-            ПлатіжнеДорученняВхідне_Objest copy = new()
+            ПлатіжнеДорученняВхідне_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -41079,7 +41079,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПлатіжнеДорученняВхідне_Objest? obj = await GetDocumentObject();
+            ПлатіжнеДорученняВхідне_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -41116,10 +41116,10 @@ namespace GeneratedCode.Документи
         }
         public ПлатіжнеДорученняВхідне_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПлатіжнеДорученняВхідне_Pointer GetEmptyPointer() => new();
-        public async Task<ПлатіжнеДорученняВхідне_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПлатіжнеДорученняВхідне_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПлатіжнеДорученняВхідне_Objest obj = new();
+            ПлатіжнеДорученняВхідне_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -41179,9 +41179,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class ПлатіжнеДорученняВихідне_Objest : DocumentObject
+    public class ПлатіжнеДорученняВихідне_Object : DocumentObject
     {
-        public ПлатіжнеДорученняВихідне_Objest() : base(Config.Kernel, "tab_c04", ПлатіжнеДорученняВихідне_Const.TYPE,
+        public ПлатіжнеДорученняВихідне_Object() : base(Config.Kernel, "tab_c04", ПлатіжнеДорученняВихідне_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -41267,9 +41267,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПлатіжнеДорученняВихідне_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПлатіжнеДорученняВихідне_Object> Copy(bool copyTableParts = false)
         {
-            ПлатіжнеДорученняВихідне_Objest copy = new()
+            ПлатіжнеДорученняВихідне_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -41333,7 +41333,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПлатіжнеДорученняВихідне_Objest? obj = await GetDocumentObject();
+            ПлатіжнеДорученняВихідне_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -41370,10 +41370,10 @@ namespace GeneratedCode.Документи
         }
         public ПлатіжнеДорученняВихідне_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПлатіжнеДорученняВихідне_Pointer GetEmptyPointer() => new();
-        public async Task<ПлатіжнеДорученняВихідне_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПлатіжнеДорученняВихідне_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПлатіжнеДорученняВихідне_Objest obj = new();
+            ПлатіжнеДорученняВихідне_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -41433,9 +41433,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class ПодатковаНакладна_Objest : DocumentObject
+    public class ПодатковаНакладна_Object : DocumentObject
     {
-        public ПодатковаНакладна_Objest() : base(Config.Kernel, "tab_c05", ПодатковаНакладна_Const.TYPE,
+        public ПодатковаНакладна_Object() : base(Config.Kernel, "tab_c05", ПодатковаНакладна_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -41521,9 +41521,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПодатковаНакладна_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПодатковаНакладна_Object> Copy(bool copyTableParts = false)
         {
-            ПодатковаНакладна_Objest copy = new()
+            ПодатковаНакладна_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -41587,7 +41587,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПодатковаНакладна_Objest? obj = await GetDocumentObject();
+            ПодатковаНакладна_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -41624,10 +41624,10 @@ namespace GeneratedCode.Документи
         }
         public ПодатковаНакладна_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПодатковаНакладна_Pointer GetEmptyPointer() => new();
-        public async Task<ПодатковаНакладна_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПодатковаНакладна_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПодатковаНакладна_Objest obj = new();
+            ПодатковаНакладна_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -41687,9 +41687,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class ПокупкаАбоПродажВалюти_Objest : DocumentObject
+    public class ПокупкаАбоПродажВалюти_Object : DocumentObject
     {
-        public ПокупкаАбоПродажВалюти_Objest() : base(Config.Kernel, "tab_c06", ПокупкаАбоПродажВалюти_Const.TYPE,
+        public ПокупкаАбоПродажВалюти_Object() : base(Config.Kernel, "tab_c06", ПокупкаАбоПродажВалюти_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -41775,9 +41775,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПокупкаАбоПродажВалюти_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПокупкаАбоПродажВалюти_Object> Copy(bool copyTableParts = false)
         {
-            ПокупкаАбоПродажВалюти_Objest copy = new()
+            ПокупкаАбоПродажВалюти_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -41841,7 +41841,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПокупкаАбоПродажВалюти_Objest? obj = await GetDocumentObject();
+            ПокупкаАбоПродажВалюти_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -41878,10 +41878,10 @@ namespace GeneratedCode.Документи
         }
         public ПокупкаАбоПродажВалюти_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПокупкаАбоПродажВалюти_Pointer GetEmptyPointer() => new();
-        public async Task<ПокупкаАбоПродажВалюти_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПокупкаАбоПродажВалюти_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПокупкаАбоПродажВалюти_Objest obj = new();
+            ПокупкаАбоПродажВалюти_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -41941,9 +41941,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class ПідготовкаДоПередачіОсновнихЗасобів_Objest : DocumentObject
+    public class ПідготовкаДоПередачіОсновнихЗасобів_Object : DocumentObject
     {
-        public ПідготовкаДоПередачіОсновнихЗасобів_Objest() : base(Config.Kernel, "tab_c07", ПідготовкаДоПередачіОсновнихЗасобів_Const.TYPE,
+        public ПідготовкаДоПередачіОсновнихЗасобів_Object() : base(Config.Kernel, "tab_c07", ПідготовкаДоПередачіОсновнихЗасобів_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -42029,9 +42029,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПідготовкаДоПередачіОсновнихЗасобів_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПідготовкаДоПередачіОсновнихЗасобів_Object> Copy(bool copyTableParts = false)
         {
-            ПідготовкаДоПередачіОсновнихЗасобів_Objest copy = new()
+            ПідготовкаДоПередачіОсновнихЗасобів_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -42095,7 +42095,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПідготовкаДоПередачіОсновнихЗасобів_Objest? obj = await GetDocumentObject();
+            ПідготовкаДоПередачіОсновнихЗасобів_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -42132,10 +42132,10 @@ namespace GeneratedCode.Документи
         }
         public ПідготовкаДоПередачіОсновнихЗасобів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПідготовкаДоПередачіОсновнихЗасобів_Pointer GetEmptyPointer() => new();
-        public async Task<ПідготовкаДоПередачіОсновнихЗасобів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПідготовкаДоПередачіОсновнихЗасобів_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПідготовкаДоПередачіОсновнихЗасобів_Objest obj = new();
+            ПідготовкаДоПередачіОсновнихЗасобів_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -42195,9 +42195,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class ПослугиСторонньоїОрганізації_Objest : DocumentObject
+    public class ПослугиСторонньоїОрганізації_Object : DocumentObject
     {
-        public ПослугиСторонньоїОрганізації_Objest() : base(Config.Kernel, "tab_c08", ПослугиСторонньоїОрганізації_Const.TYPE,
+        public ПослугиСторонньоїОрганізації_Object() : base(Config.Kernel, "tab_c08", ПослугиСторонньоїОрганізації_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -42283,9 +42283,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПослугиСторонньоїОрганізації_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПослугиСторонньоїОрганізації_Object> Copy(bool copyTableParts = false)
         {
-            ПослугиСторонньоїОрганізації_Objest copy = new()
+            ПослугиСторонньоїОрганізації_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -42349,7 +42349,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПослугиСторонньоїОрганізації_Objest? obj = await GetDocumentObject();
+            ПослугиСторонньоїОрганізації_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -42386,10 +42386,10 @@ namespace GeneratedCode.Документи
         }
         public ПослугиСторонньоїОрганізації_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПослугиСторонньоїОрганізації_Pointer GetEmptyPointer() => new();
-        public async Task<ПослугиСторонньоїОрганізації_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПослугиСторонньоїОрганізації_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПослугиСторонньоїОрганізації_Objest obj = new();
+            ПослугиСторонньоїОрганізації_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -42449,9 +42449,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class ПрибуткуванняМатеріалівЗВиробництва_Objest : DocumentObject
+    public class ПрибуткуванняМатеріалівЗВиробництва_Object : DocumentObject
     {
-        public ПрибуткуванняМатеріалівЗВиробництва_Objest() : base(Config.Kernel, "tab_c09", ПрибуткуванняМатеріалівЗВиробництва_Const.TYPE,
+        public ПрибуткуванняМатеріалівЗВиробництва_Object() : base(Config.Kernel, "tab_c09", ПрибуткуванняМатеріалівЗВиробництва_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -42537,9 +42537,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПрибуткуванняМатеріалівЗВиробництва_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПрибуткуванняМатеріалівЗВиробництва_Object> Copy(bool copyTableParts = false)
         {
-            ПрибуткуванняМатеріалівЗВиробництва_Objest copy = new()
+            ПрибуткуванняМатеріалівЗВиробництва_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -42603,7 +42603,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПрибуткуванняМатеріалівЗВиробництва_Objest? obj = await GetDocumentObject();
+            ПрибуткуванняМатеріалівЗВиробництва_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -42640,10 +42640,10 @@ namespace GeneratedCode.Документи
         }
         public ПрибуткуванняМатеріалівЗВиробництва_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПрибуткуванняМатеріалівЗВиробництва_Pointer GetEmptyPointer() => new();
-        public async Task<ПрибуткуванняМатеріалівЗВиробництва_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПрибуткуванняМатеріалівЗВиробництва_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПрибуткуванняМатеріалівЗВиробництва_Objest obj = new();
+            ПрибуткуванняМатеріалівЗВиробництва_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -42703,9 +42703,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class ПрибуткуванняТоварівВПереробку_Objest : DocumentObject
+    public class ПрибуткуванняТоварівВПереробку_Object : DocumentObject
     {
-        public ПрибуткуванняТоварівВПереробку_Objest() : base(Config.Kernel, "tab_c10", ПрибуткуванняТоварівВПереробку_Const.TYPE,
+        public ПрибуткуванняТоварівВПереробку_Object() : base(Config.Kernel, "tab_c10", ПрибуткуванняТоварівВПереробку_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -42791,9 +42791,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПрибуткуванняТоварівВПереробку_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПрибуткуванняТоварівВПереробку_Object> Copy(bool copyTableParts = false)
         {
-            ПрибуткуванняТоварівВПереробку_Objest copy = new()
+            ПрибуткуванняТоварівВПереробку_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -42857,7 +42857,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПрибуткуванняТоварівВПереробку_Objest? obj = await GetDocumentObject();
+            ПрибуткуванняТоварівВПереробку_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -42894,10 +42894,10 @@ namespace GeneratedCode.Документи
         }
         public ПрибуткуванняТоварівВПереробку_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПрибуткуванняТоварівВПереробку_Pointer GetEmptyPointer() => new();
-        public async Task<ПрибуткуванняТоварівВПереробку_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПрибуткуванняТоварівВПереробку_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПрибуткуванняТоварівВПереробку_Objest obj = new();
+            ПрибуткуванняТоварівВПереробку_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -42957,9 +42957,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class ПрибуткуванняТоварівЗПереробки_Objest : DocumentObject
+    public class ПрибуткуванняТоварівЗПереробки_Object : DocumentObject
     {
-        public ПрибуткуванняТоварівЗПереробки_Objest() : base(Config.Kernel, "tab_c11", ПрибуткуванняТоварівЗПереробки_Const.TYPE,
+        public ПрибуткуванняТоварівЗПереробки_Object() : base(Config.Kernel, "tab_c11", ПрибуткуванняТоварівЗПереробки_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -43045,9 +43045,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПрибуткуванняТоварівЗПереробки_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПрибуткуванняТоварівЗПереробки_Object> Copy(bool copyTableParts = false)
         {
-            ПрибуткуванняТоварівЗПереробки_Objest copy = new()
+            ПрибуткуванняТоварівЗПереробки_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -43111,7 +43111,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПрибуткуванняТоварівЗПереробки_Objest? obj = await GetDocumentObject();
+            ПрибуткуванняТоварівЗПереробки_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -43148,10 +43148,10 @@ namespace GeneratedCode.Документи
         }
         public ПрибуткуванняТоварівЗПереробки_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПрибуткуванняТоварівЗПереробки_Pointer GetEmptyPointer() => new();
-        public async Task<ПрибуткуванняТоварівЗПереробки_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПрибуткуванняТоварівЗПереробки_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПрибуткуванняТоварівЗПереробки_Objest obj = new();
+            ПрибуткуванняТоварівЗПереробки_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -43211,9 +43211,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class ПрибуткуванняНезавершеногоВиробництва_Objest : DocumentObject
+    public class ПрибуткуванняНезавершеногоВиробництва_Object : DocumentObject
     {
-        public ПрибуткуванняНезавершеногоВиробництва_Objest() : base(Config.Kernel, "tab_c12", ПрибуткуванняНезавершеногоВиробництва_Const.TYPE,
+        public ПрибуткуванняНезавершеногоВиробництва_Object() : base(Config.Kernel, "tab_c12", ПрибуткуванняНезавершеногоВиробництва_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -43299,9 +43299,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПрибуткуванняНезавершеногоВиробництва_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПрибуткуванняНезавершеногоВиробництва_Object> Copy(bool copyTableParts = false)
         {
-            ПрибуткуванняНезавершеногоВиробництва_Objest copy = new()
+            ПрибуткуванняНезавершеногоВиробництва_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -43365,7 +43365,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПрибуткуванняНезавершеногоВиробництва_Objest? obj = await GetDocumentObject();
+            ПрибуткуванняНезавершеногоВиробництва_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -43402,10 +43402,10 @@ namespace GeneratedCode.Документи
         }
         public ПрибуткуванняНезавершеногоВиробництва_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПрибуткуванняНезавершеногоВиробництва_Pointer GetEmptyPointer() => new();
-        public async Task<ПрибуткуванняНезавершеногоВиробництва_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПрибуткуванняНезавершеногоВиробництва_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПрибуткуванняНезавершеногоВиробництва_Objest obj = new();
+            ПрибуткуванняНезавершеногоВиробництва_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -43465,9 +43465,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class ПрийняттяДоОбліку_Objest : DocumentObject
+    public class ПрийняттяДоОбліку_Object : DocumentObject
     {
-        public ПрийняттяДоОбліку_Objest() : base(Config.Kernel, "tab_c13", ПрийняттяДоОбліку_Const.TYPE,
+        public ПрийняттяДоОбліку_Object() : base(Config.Kernel, "tab_c13", ПрийняттяДоОбліку_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -43553,9 +43553,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПрийняттяДоОбліку_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПрийняттяДоОбліку_Object> Copy(bool copyTableParts = false)
         {
-            ПрийняттяДоОбліку_Objest copy = new()
+            ПрийняттяДоОбліку_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -43619,7 +43619,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПрийняттяДоОбліку_Objest? obj = await GetDocumentObject();
+            ПрийняттяДоОбліку_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -43656,10 +43656,10 @@ namespace GeneratedCode.Документи
         }
         public ПрийняттяДоОбліку_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПрийняттяДоОбліку_Pointer GetEmptyPointer() => new();
-        public async Task<ПрийняттяДоОбліку_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПрийняттяДоОбліку_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПрийняттяДоОбліку_Objest obj = new();
+            ПрийняттяДоОбліку_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -43719,9 +43719,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class ПоверненняПереданихТоварів_Objest : DocumentObject
+    public class ПоверненняПереданихТоварів_Object : DocumentObject
     {
-        public ПоверненняПереданихТоварів_Objest() : base(Config.Kernel, "tab_c14", ПоверненняПереданихТоварів_Const.TYPE,
+        public ПоверненняПереданихТоварів_Object() : base(Config.Kernel, "tab_c14", ПоверненняПереданихТоварів_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -43807,9 +43807,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<ПоверненняПереданихТоварів_Objest> Copy(bool copyTableParts = false)
+        public async Task<ПоверненняПереданихТоварів_Object> Copy(bool copyTableParts = false)
         {
-            ПоверненняПереданихТоварів_Objest copy = new()
+            ПоверненняПереданихТоварів_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -43873,7 +43873,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            ПоверненняПереданихТоварів_Objest? obj = await GetDocumentObject();
+            ПоверненняПереданихТоварів_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -43910,10 +43910,10 @@ namespace GeneratedCode.Документи
         }
         public ПоверненняПереданихТоварів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public ПоверненняПереданихТоварів_Pointer GetEmptyPointer() => new();
-        public async Task<ПоверненняПереданихТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<ПоверненняПереданихТоварів_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            ПоверненняПереданихТоварів_Objest obj = new();
+            ПоверненняПереданихТоварів_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -43973,9 +43973,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class РемонтОсновнихЗасобів_Objest : DocumentObject
+    public class РемонтОсновнихЗасобів_Object : DocumentObject
     {
-        public РемонтОсновнихЗасобів_Objest() : base(Config.Kernel, "tab_c15", РемонтОсновнихЗасобів_Const.TYPE,
+        public РемонтОсновнихЗасобів_Object() : base(Config.Kernel, "tab_c15", РемонтОсновнихЗасобів_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -44061,9 +44061,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<РемонтОсновнихЗасобів_Objest> Copy(bool copyTableParts = false)
+        public async Task<РемонтОсновнихЗасобів_Object> Copy(bool copyTableParts = false)
         {
-            РемонтОсновнихЗасобів_Objest copy = new()
+            РемонтОсновнихЗасобів_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -44127,7 +44127,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            РемонтОсновнихЗасобів_Objest? obj = await GetDocumentObject();
+            РемонтОсновнихЗасобів_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -44164,10 +44164,10 @@ namespace GeneratedCode.Документи
         }
         public РемонтОсновнихЗасобів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public РемонтОсновнихЗасобів_Pointer GetEmptyPointer() => new();
-        public async Task<РемонтОсновнихЗасобів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<РемонтОсновнихЗасобів_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            РемонтОсновнихЗасобів_Objest obj = new();
+            РемонтОсновнихЗасобів_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -44227,9 +44227,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class РозподілІншихВитрат_Objest : DocumentObject
+    public class РозподілІншихВитрат_Object : DocumentObject
     {
-        public РозподілІншихВитрат_Objest() : base(Config.Kernel, "tab_c16", РозподілІншихВитрат_Const.TYPE,
+        public РозподілІншихВитрат_Object() : base(Config.Kernel, "tab_c16", РозподілІншихВитрат_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -44315,9 +44315,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<РозподілІншихВитрат_Objest> Copy(bool copyTableParts = false)
+        public async Task<РозподілІншихВитрат_Object> Copy(bool copyTableParts = false)
         {
-            РозподілІншихВитрат_Objest copy = new()
+            РозподілІншихВитрат_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -44381,7 +44381,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            РозподілІншихВитрат_Objest? obj = await GetDocumentObject();
+            РозподілІншихВитрат_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -44418,10 +44418,10 @@ namespace GeneratedCode.Документи
         }
         public РозподілІншихВитрат_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public РозподілІншихВитрат_Pointer GetEmptyPointer() => new();
-        public async Task<РозподілІншихВитрат_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<РозподілІншихВитрат_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            РозподілІншихВитрат_Objest obj = new();
+            РозподілІншихВитрат_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -44481,9 +44481,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class РозрахунокСобівартостіВипуску_Objest : DocumentObject
+    public class РозрахунокСобівартостіВипуску_Object : DocumentObject
     {
-        public РозрахунокСобівартостіВипуску_Objest() : base(Config.Kernel, "tab_c17", РозрахунокСобівартостіВипуску_Const.TYPE,
+        public РозрахунокСобівартостіВипуску_Object() : base(Config.Kernel, "tab_c17", РозрахунокСобівартостіВипуску_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -44569,9 +44569,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<РозрахунокСобівартостіВипуску_Objest> Copy(bool copyTableParts = false)
+        public async Task<РозрахунокСобівартостіВипуску_Object> Copy(bool copyTableParts = false)
         {
-            РозрахунокСобівартостіВипуску_Objest copy = new()
+            РозрахунокСобівартостіВипуску_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -44635,7 +44635,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            РозрахунокСобівартостіВипуску_Objest? obj = await GetDocumentObject();
+            РозрахунокСобівартостіВипуску_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -44672,10 +44672,10 @@ namespace GeneratedCode.Документи
         }
         public РозрахунокСобівартостіВипуску_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public РозрахунокСобівартостіВипуску_Pointer GetEmptyPointer() => new();
-        public async Task<РозрахунокСобівартостіВипуску_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<РозрахунокСобівартостіВипуску_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            РозрахунокСобівартостіВипуску_Objest obj = new();
+            РозрахунокСобівартостіВипуску_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -44735,9 +44735,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class СписанняМатеріалів_Objest : DocumentObject
+    public class СписанняМатеріалів_Object : DocumentObject
     {
-        public СписанняМатеріалів_Objest() : base(Config.Kernel, "tab_c18", СписанняМатеріалів_Const.TYPE,
+        public СписанняМатеріалів_Object() : base(Config.Kernel, "tab_c18", СписанняМатеріалів_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -44823,9 +44823,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<СписанняМатеріалів_Objest> Copy(bool copyTableParts = false)
+        public async Task<СписанняМатеріалів_Object> Copy(bool copyTableParts = false)
         {
-            СписанняМатеріалів_Objest copy = new()
+            СписанняМатеріалів_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -44889,7 +44889,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            СписанняМатеріалів_Objest? obj = await GetDocumentObject();
+            СписанняМатеріалів_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -44926,10 +44926,10 @@ namespace GeneratedCode.Документи
         }
         public СписанняМатеріалів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public СписанняМатеріалів_Pointer GetEmptyPointer() => new();
-        public async Task<СписанняМатеріалів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<СписанняМатеріалів_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            СписанняМатеріалів_Objest obj = new();
+            СписанняМатеріалів_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -44989,9 +44989,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class СписанняНезавершеногоВиробництва_Objest : DocumentObject
+    public class СписанняНезавершеногоВиробництва_Object : DocumentObject
     {
-        public СписанняНезавершеногоВиробництва_Objest() : base(Config.Kernel, "tab_c19", СписанняНезавершеногоВиробництва_Const.TYPE,
+        public СписанняНезавершеногоВиробництва_Object() : base(Config.Kernel, "tab_c19", СписанняНезавершеногоВиробництва_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -45077,9 +45077,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<СписанняНезавершеногоВиробництва_Objest> Copy(bool copyTableParts = false)
+        public async Task<СписанняНезавершеногоВиробництва_Object> Copy(bool copyTableParts = false)
         {
-            СписанняНезавершеногоВиробництва_Objest copy = new()
+            СписанняНезавершеногоВиробництва_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -45143,7 +45143,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            СписанняНезавершеногоВиробництва_Objest? obj = await GetDocumentObject();
+            СписанняНезавершеногоВиробництва_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -45180,10 +45180,10 @@ namespace GeneratedCode.Документи
         }
         public СписанняНезавершеногоВиробництва_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public СписанняНезавершеногоВиробництва_Pointer GetEmptyPointer() => new();
-        public async Task<СписанняНезавершеногоВиробництва_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<СписанняНезавершеногоВиробництва_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            СписанняНезавершеногоВиробництва_Objest obj = new();
+            СписанняНезавершеногоВиробництва_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -45243,9 +45243,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class СписанняНематеріальнихАктивів_Objest : DocumentObject
+    public class СписанняНематеріальнихАктивів_Object : DocumentObject
     {
-        public СписанняНематеріальнихАктивів_Objest() : base(Config.Kernel, "tab_c20", СписанняНематеріальнихАктивів_Const.TYPE,
+        public СписанняНематеріальнихАктивів_Object() : base(Config.Kernel, "tab_c20", СписанняНематеріальнихАктивів_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -45331,9 +45331,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<СписанняНематеріальнихАктивів_Objest> Copy(bool copyTableParts = false)
+        public async Task<СписанняНематеріальнихАктивів_Object> Copy(bool copyTableParts = false)
         {
-            СписанняНематеріальнихАктивів_Objest copy = new()
+            СписанняНематеріальнихАктивів_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -45397,7 +45397,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            СписанняНематеріальнихАктивів_Objest? obj = await GetDocumentObject();
+            СписанняНематеріальнихАктивів_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -45434,10 +45434,10 @@ namespace GeneratedCode.Документи
         }
         public СписанняНематеріальнихАктивів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public СписанняНематеріальнихАктивів_Pointer GetEmptyPointer() => new();
-        public async Task<СписанняНематеріальнихАктивів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<СписанняНематеріальнихАктивів_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            СписанняНематеріальнихАктивів_Objest obj = new();
+            СписанняНематеріальнихАктивів_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -45497,9 +45497,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class СписанняОсновнихЗасобів_Objest : DocumentObject
+    public class СписанняОсновнихЗасобів_Object : DocumentObject
     {
-        public СписанняОсновнихЗасобів_Objest() : base(Config.Kernel, "tab_c21", СписанняОсновнихЗасобів_Const.TYPE,
+        public СписанняОсновнихЗасобів_Object() : base(Config.Kernel, "tab_c21", СписанняОсновнихЗасобів_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -45585,9 +45585,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<СписанняОсновнихЗасобів_Objest> Copy(bool copyTableParts = false)
+        public async Task<СписанняОсновнихЗасобів_Object> Copy(bool copyTableParts = false)
         {
-            СписанняОсновнихЗасобів_Objest copy = new()
+            СписанняОсновнихЗасобів_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -45651,7 +45651,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            СписанняОсновнихЗасобів_Objest? obj = await GetDocumentObject();
+            СписанняОсновнихЗасобів_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -45688,10 +45688,10 @@ namespace GeneratedCode.Документи
         }
         public СписанняОсновнихЗасобів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public СписанняОсновнихЗасобів_Pointer GetEmptyPointer() => new();
-        public async Task<СписанняОсновнихЗасобів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<СписанняОсновнихЗасобів_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            СписанняОсновнихЗасобів_Objest obj = new();
+            СписанняОсновнихЗасобів_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -45751,9 +45751,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class СписанняВитратМайбутніхПеріодів_Objest : DocumentObject
+    public class СписанняВитратМайбутніхПеріодів_Object : DocumentObject
     {
-        public СписанняВитратМайбутніхПеріодів_Objest() : base(Config.Kernel, "tab_c22", СписанняВитратМайбутніхПеріодів_Const.TYPE,
+        public СписанняВитратМайбутніхПеріодів_Object() : base(Config.Kernel, "tab_c22", СписанняВитратМайбутніхПеріодів_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -45839,9 +45839,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<СписанняВитратМайбутніхПеріодів_Objest> Copy(bool copyTableParts = false)
+        public async Task<СписанняВитратМайбутніхПеріодів_Object> Copy(bool copyTableParts = false)
         {
-            СписанняВитратМайбутніхПеріодів_Objest copy = new()
+            СписанняВитратМайбутніхПеріодів_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -45905,7 +45905,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            СписанняВитратМайбутніхПеріодів_Objest? obj = await GetDocumentObject();
+            СписанняВитратМайбутніхПеріодів_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -45942,10 +45942,10 @@ namespace GeneratedCode.Документи
         }
         public СписанняВитратМайбутніхПеріодів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public СписанняВитратМайбутніхПеріодів_Pointer GetEmptyPointer() => new();
-        public async Task<СписанняВитратМайбутніхПеріодів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<СписанняВитратМайбутніхПеріодів_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            СписанняВитратМайбутніхПеріодів_Objest obj = new();
+            СписанняВитратМайбутніхПеріодів_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -46005,9 +46005,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class СписанняТоварів_Objest : DocumentObject
+    public class СписанняТоварів_Object : DocumentObject
     {
-        public СписанняТоварів_Objest() : base(Config.Kernel, "tab_c23", СписанняТоварів_Const.TYPE,
+        public СписанняТоварів_Object() : base(Config.Kernel, "tab_c23", СписанняТоварів_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -46093,9 +46093,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<СписанняТоварів_Objest> Copy(bool copyTableParts = false)
+        public async Task<СписанняТоварів_Object> Copy(bool copyTableParts = false)
         {
-            СписанняТоварів_Objest copy = new()
+            СписанняТоварів_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -46159,7 +46159,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            СписанняТоварів_Objest? obj = await GetDocumentObject();
+            СписанняТоварів_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -46196,10 +46196,10 @@ namespace GeneratedCode.Документи
         }
         public СписанняТоварів_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public СписанняТоварів_Pointer GetEmptyPointer() => new();
-        public async Task<СписанняТоварів_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<СписанняТоварів_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            СписанняТоварів_Objest obj = new();
+            СписанняТоварів_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -46259,9 +46259,9 @@ namespace GeneratedCode.Документи
         public const string Основа = "col_a2";
     }
 
-    public class Сторнування_Objest : DocumentObject
+    public class Сторнування_Object : DocumentObject
     {
-        public Сторнування_Objest() : base(Config.Kernel, "tab_c24", Сторнування_Const.TYPE,
+        public Сторнування_Object() : base(Config.Kernel, "tab_c24", Сторнування_Const.TYPE,
              ["docname", "docnomer", "docdate", "col_a1", "col_a2", ])
         {
             
@@ -46347,9 +46347,9 @@ namespace GeneratedCode.Документи
             await BaseSpend(false, DateTime.MinValue);
         }
 
-        public async Task<Сторнування_Objest> Copy(bool copyTableParts = false)
+        public async Task<Сторнування_Object> Copy(bool copyTableParts = false)
         {
-            Сторнування_Objest copy = new()
+            Сторнування_Object copy = new()
             {
                 Назва = Назва,
                 НомерДок = НомерДок,
@@ -46413,7 +46413,7 @@ namespace GeneratedCode.Документи
         public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
         public async Task<bool> SpendTheDocument(DateTime spendDate)
         {
-            Сторнування_Objest? obj = await GetDocumentObject();
+            Сторнування_Object? obj = await GetDocumentObject();
             return obj != null && await obj.SpendTheDocument(spendDate);
         }
         public async Task ClearSpendTheDocument()
@@ -46450,10 +46450,10 @@ namespace GeneratedCode.Документи
         }
         public Сторнування_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
         public Сторнування_Pointer GetEmptyPointer() => new();
-        public async Task<Сторнування_Objest?> GetDocumentObject(bool readAllTablePart = false)
+        public async Task<Сторнування_Object?> GetDocumentObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
-            Сторнування_Objest obj = new();
+            Сторнування_Object obj = new();
             return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
         }
     }
@@ -46747,9 +46747,9 @@ namespace GeneratedCode.РегістриВідомостей
         }
     }
 
-    public class ЦіниНоменклатури_Objest : RegisterInformationObject
+    public class ЦіниНоменклатури_Object : RegisterInformationObject
     {
-		    public ЦіниНоменклатури_Objest() : base(Config.Kernel, "tab_a40",
+		    public ЦіниНоменклатури_Object() : base(Config.Kernel, "tab_a40",
              ["col_f5", "col_f6", "col_f7", "col_f8", "col_f9", "col_g2", ]) { }
 
         public void New()
@@ -46791,9 +46791,9 @@ namespace GeneratedCode.РегістриВідомостей
             return result;
         }
 
-        public ЦіниНоменклатури_Objest Copy()
+        public ЦіниНоменклатури_Object Copy()
         {
-            ЦіниНоменклатури_Objest copy = new ЦіниНоменклатури_Objest()
+            ЦіниНоменклатури_Object copy = new ЦіниНоменклатури_Object()
             {
                 Period = Period, /* Базове поле */
                 Номенклатура = Номенклатура.Copy(),
@@ -46944,9 +46944,9 @@ namespace GeneratedCode.РегістриВідомостей
         }
     }
 
-    public class КурсиВалют_Objest : RegisterInformationObject
+    public class КурсиВалют_Object : RegisterInformationObject
     {
-		    public КурсиВалют_Objest() : base(Config.Kernel, "tab_a59",
+		    public КурсиВалют_Object() : base(Config.Kernel, "tab_a59",
              ["col_a1", "col_a2", "col_a3", ]) { }
 
         public void New()
@@ -46982,9 +46982,9 @@ namespace GeneratedCode.РегістриВідомостей
             return result;
         }
 
-        public КурсиВалют_Objest Copy()
+        public КурсиВалют_Object Copy()
         {
-            КурсиВалют_Objest copy = new КурсиВалют_Objest()
+            КурсиВалют_Object copy = new КурсиВалют_Object()
             {
                 Period = Period, /* Базове поле */
                 Валюта = Валюта.Copy(),
@@ -47141,9 +47141,9 @@ namespace GeneratedCode.РегістриВідомостей
         }
     }
 
-    public class ШтрихкодиНоменклатури_Objest : RegisterInformationObject
+    public class ШтрихкодиНоменклатури_Object : RegisterInformationObject
     {
-		    public ШтрихкодиНоменклатури_Objest() : base(Config.Kernel, "tab_b17",
+		    public ШтрихкодиНоменклатури_Object() : base(Config.Kernel, "tab_b17",
              ["col_a1", "col_a2", "col_a3", "col_a4", ]) { }
 
         public void New()
@@ -47181,9 +47181,9 @@ namespace GeneratedCode.РегістриВідомостей
             return result;
         }
 
-        public ШтрихкодиНоменклатури_Objest Copy()
+        public ШтрихкодиНоменклатури_Object Copy()
         {
-            ШтрихкодиНоменклатури_Objest copy = new ШтрихкодиНоменклатури_Objest()
+            ШтрихкодиНоменклатури_Object copy = new ШтрихкодиНоменклатури_Object()
             {
                 Period = Period, /* Базове поле */
                 Штрихкод = Штрихкод,
@@ -47322,9 +47322,9 @@ namespace GeneratedCode.РегістриВідомостей
         }
     }
 
-    public class ФайлиДокументів_Objest : RegisterInformationObject
+    public class ФайлиДокументів_Object : RegisterInformationObject
     {
-		    public ФайлиДокументів_Objest() : base(Config.Kernel, "tab_b23",
+		    public ФайлиДокументів_Object() : base(Config.Kernel, "tab_b23",
              ["col_a1", ]) { }
 
         public void New()
@@ -47356,9 +47356,9 @@ namespace GeneratedCode.РегістриВідомостей
             return result;
         }
 
-        public ФайлиДокументів_Objest Copy()
+        public ФайлиДокументів_Object Copy()
         {
-            ФайлиДокументів_Objest copy = new ФайлиДокументів_Objest()
+            ФайлиДокументів_Object copy = new ФайлиДокументів_Object()
             {
                 Period = Period, /* Базове поле */
                 Файл = Файл.Copy(),
@@ -47515,9 +47515,9 @@ namespace GeneratedCode.РегістриВідомостей
         }
     }
 
-    public class РозміщенняНоменклатуриПоКоміркамНаСкладі_Objest : RegisterInformationObject
+    public class РозміщенняНоменклатуриПоКоміркамНаСкладі_Object : RegisterInformationObject
     {
-		    public РозміщенняНоменклатуриПоКоміркамНаСкладі_Objest() : base(Config.Kernel, "tab_a74",
+		    public РозміщенняНоменклатуриПоКоміркамНаСкладі_Object() : base(Config.Kernel, "tab_a74",
              ["col_a1", "col_a2", "col_a3", "col_a4", ]) { }
 
         public void New()
@@ -47555,9 +47555,9 @@ namespace GeneratedCode.РегістриВідомостей
             return result;
         }
 
-        public РозміщенняНоменклатуриПоКоміркамНаСкладі_Objest Copy()
+        public РозміщенняНоменклатуриПоКоміркамНаСкладі_Object Copy()
         {
-            РозміщенняНоменклатуриПоКоміркамНаСкладі_Objest copy = new РозміщенняНоменклатуриПоКоміркамНаСкладі_Objest()
+            РозміщенняНоменклатуриПоКоміркамНаСкладі_Object copy = new РозміщенняНоменклатуриПоКоміркамНаСкладі_Object()
             {
                 Period = Period, /* Базове поле */
                 Номенклатура = Номенклатура.Copy(),

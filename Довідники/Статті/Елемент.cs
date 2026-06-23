@@ -15,7 +15,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DirectoryFormElement>("Element_QBZ4LTJGKUiICZgInCNuvg")]
 partial class Статті_Елемент : DirectoryFormElement
 {
-    public Статті_Objest Елемент { get; init; } = new();
+    public Статті_Object Елемент { get; init; } = new();
 
     public Статті_Pointer РодичДляНового { get; set; } = new();
 

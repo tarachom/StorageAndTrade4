@@ -72,10 +72,10 @@ static class СтаттяРухуКоштів_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        СтаттяРухуКоштів_Objest Обєкт = new();
+        СтаттяРухуКоштів_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            СтаттяРухуКоштів_Objest Новий = await Обєкт.Copy(true);
+            СтаттяРухуКоштів_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
                 await Новий.ГосподарськіОперації_TablePart.Save(false); // Таблична частина "ГосподарськіОперації"

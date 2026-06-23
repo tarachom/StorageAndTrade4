@@ -11,7 +11,7 @@ namespace GeneratedCode.Документи;
 
 class ПереміщенняТоварів_Triggers
 {
-    public static async Task New(ПереміщенняТоварів_Objest ДокументОбєкт)
+    public static async Task New(ПереміщенняТоварів_Object ДокументОбєкт)
     {
         int number = await НумераціяДокументів.ПереміщенняТоварів();
         ДокументОбєкт.НомерДок = (await НумераціяДокументів.ПереміщенняТоварів(++number)).ToString("D8");
@@ -20,14 +20,14 @@ class ПереміщенняТоварів_Triggers
         ДокументОбєкт.Автор = Program.Користувач;
     }
 
-    public static Task Copying(ПереміщенняТоварів_Objest ДокументОбєкт, ПереміщенняТоварів_Objest Основа)
+    public static Task Copying(ПереміщенняТоварів_Object ДокументОбєкт, ПереміщенняТоварів_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         ДокументОбєкт.ДокументБухгалтерськаОперація = new();
         return Task.CompletedTask;
     }
 
-    public static async Task BeforeSave(ПереміщенняТоварів_Objest ДокументОбєкт)
+    public static async Task BeforeSave(ПереміщенняТоварів_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{ПереміщенняТоварів_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
 
@@ -46,17 +46,17 @@ class ПереміщенняТоварів_Triggers
         }
     }
 
-    public static Task AfterSave(ПереміщенняТоварів_Objest ДокументОбєкт)
+    public static Task AfterSave(ПереміщенняТоварів_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(ПереміщенняТоварів_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(ПереміщенняТоварів_Object ДокументОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(ПереміщенняТоварів_Objest ДокументОбєкт)
+    public static Task BeforeDelete(ПереміщенняТоварів_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

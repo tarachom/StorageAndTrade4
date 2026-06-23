@@ -11,12 +11,12 @@ namespace GeneratedCode.Документи;
 
 static class ПоверненняТоварівВідКлієнта_Проводки_Triggers
 {
-    public static Task BeforeSave(ПоверненняТоварівВідКлієнта_Objest ДокументОбєкт, ПоверненняТоварівВідКлієнта_Проводки_TablePart ТабличнаЧастина)
+    public static Task BeforeSave(ПоверненняТоварівВідКлієнта_Object ДокументОбєкт, ПоверненняТоварівВідКлієнта_Проводки_TablePart ТабличнаЧастина)
     {
         return Task.CompletedTask;
     }
 
-    public static async Task AfterSave(ПоверненняТоварівВідКлієнта_Objest ДокументОбєкт, ПоверненняТоварівВідКлієнта_Проводки_TablePart ТабличнаЧастина)
+    public static async Task AfterSave(ПоверненняТоварівВідКлієнта_Object ДокументОбєкт, ПоверненняТоварівВідКлієнта_Проводки_TablePart ТабличнаЧастина)
     {
         if (!ДокументОбєкт.ДокументБухгалтерськаОперація.IsEmpty())
         {

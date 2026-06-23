@@ -8,9 +8,7 @@ using Gtk;
 using InterfaceGtk4;
 using AccountingSoftware;
 
-using GeneratedCode;
 using GeneratedCode.Константи;
-using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
 using GeneratedCode.Перелічення;
 using Функції = StorageAndTrade.ПереміщенняТоварів_Функції;
@@ -20,7 +18,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DocumentFormElement>("Element_P46eAYqm6H6aJCMVQLEN1g")]
 partial class ПереміщенняТоварів_Елемент : DocumentFormElement
 {
-    public ПереміщенняТоварів_Objest Елемент { get; init; } = new();
+    public ПереміщенняТоварів_Object Елемент { get; init; } = new();
 
     #region Fields
     Entry НомерДок = Entry.New();
@@ -62,16 +60,16 @@ partial class ПереміщенняТоварів_Елемент : DocumentForm
 
         CreateDocName(ПереміщенняТоварів_Const.FULLNAME, НомерДок, ДатаДок);
         CreateField(HBoxTop, null, ВідобразитиВБухгалтерськомуОбліку);
-        CreateField(HBoxComment, "Коментар:", Коментар);
+        CreateField(Interface.CommentBox, "Коментар:", Коментар);
 
         // Таблична частина "Товари"
         Товари.HeightRequest = 300;
-        NotebookTablePart.InsertPage(Товари, Label.New("Товари"), 0);
+        Interface.Notebook.InsertPage(Товари, Label.New("Товари"), 0);
 
         // Таблична частина "Проводки"
         Проводки.HeightRequest = 300;
-        NotebookTablePart.InsertPage(Проводки, Label.New("Проводки"), 1);
-        NotebookTablePart.SetCurrentPage(0);
+        Interface.Notebook.InsertPage(Проводки, Label.New("Проводки"), 1);
+        Interface.Notebook.SetCurrentPage(0);
 
         //НомерДок:
         НомерДок.WidthRequest = 100;
@@ -161,7 +159,23 @@ partial class ПереміщенняТоварів_Елемент : DocumentForm
         return element;
     }
 
-    protected override void CreateTopStart(Box vBox)
+    #region Interface
+
+    FunctionForInterfaces.DocumentElement Interface;
+
+    protected override void BuildInterface()
+    {
+        Interface = FunctionForInterfaces.ForDocument();
+
+        Append(Interface.MainBox);
+
+        CreateTopStart(Interface.TopStartBox);
+        CreateTopEnd(Interface.TopEndBox);
+        CreateBottomStart(Interface.BottomStartBox);
+        CreateBottomEnd(Interface.BottomEndBox);
+    }
+
+    void CreateTopStart(Box vBox)
     {
         //Організація
         CreateField(vBox, null, Організація);
@@ -170,13 +184,13 @@ partial class ПереміщенняТоварів_Елемент : DocumentForm
         CreateField(vBox, null, СкладВідправник);
     }
 
-    protected override void CreateTopEnd(Box vBox)
+    void CreateTopEnd(Box vBox)
     {
         //СкладОтримувач
         CreateField(vBox, null, СкладОтримувач);
     }
 
-    protected override void CreateBottomStart(Box vBox)
+    void CreateBottomStart(Box vBox)
     {
         //Підрозділ
         CreateField(vBox, null, Підрозділ);
@@ -191,7 +205,7 @@ partial class ПереміщенняТоварів_Елемент : DocumentForm
         CreateField(vBox, null, Основа);
     }
 
-    protected override void CreateBottomEnd(Box vBox)
+    void CreateBottomEnd(Box vBox)
     {
         //ГосподарськаОперація
         CreateField(vBox, "Господарська операція:", ГосподарськаОперація);
@@ -202,6 +216,8 @@ partial class ПереміщенняТоварів_Елемент : DocumentForm
         //ЧасДоставки
         CreateField(CreateField(vBox, "Час доставки з", ЧасДоставкиЗ), "до", ЧасДоставкиДо);
     }
+
+    #endregion
 
     #region Присвоєння / зчитування значень
 

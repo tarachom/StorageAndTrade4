@@ -17,7 +17,7 @@ namespace GeneratedCode.Документи;
 
 static class СписанняОсновнихЗасобів_SpendTheDocument
 {
-    public static async Task<bool> Spend(СписанняОсновнихЗасобів_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(СписанняОсновнихЗасобів_Object ДокументОбєкт)
     {
         try
         {
@@ -33,7 +33,7 @@ static class СписанняОсновнихЗасобів_SpendTheDocument
         }
     }
 
-    public static Task Clear(СписанняОсновнихЗасобів_Objest ДокументОбєкт)
+    public static Task Clear(СписанняОсновнихЗасобів_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

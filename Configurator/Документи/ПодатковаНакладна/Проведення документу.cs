@@ -17,7 +17,7 @@ namespace GeneratedCode.Документи;
 
 static class ПодатковаНакладна_SpendTheDocument
 {
-    public static async Task<bool> Spend(ПодатковаНакладна_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(ПодатковаНакладна_Object ДокументОбєкт)
     {
         try
         {
@@ -33,7 +33,7 @@ static class ПодатковаНакладна_SpendTheDocument
         }
     }
 
-    public static Task Clear(ПодатковаНакладна_Objest ДокументОбєкт)
+    public static Task Clear(ПодатковаНакладна_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

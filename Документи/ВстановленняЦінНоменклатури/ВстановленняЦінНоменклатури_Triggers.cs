@@ -11,7 +11,7 @@ namespace GeneratedCode.Документи;
 
 class ВстановленняЦінНоменклатури_Triggers
 {
-    public static async Task New(ВстановленняЦінНоменклатури_Objest ДокументОбєкт)
+    public static async Task New(ВстановленняЦінНоменклатури_Object ДокументОбєкт)
     {
         int number = await НумераціяДокументів.ВстановленняЦінНоменклатури();
         ДокументОбєкт.НомерДок = (await НумераціяДокументів.ВстановленняЦінНоменклатури(++number)).ToString("D8");
@@ -20,29 +20,29 @@ class ВстановленняЦінНоменклатури_Triggers
         ДокументОбєкт.Автор = Program.Користувач;
     }
 
-    public static Task Copying(ВстановленняЦінНоменклатури_Objest ДокументОбєкт, ВстановленняЦінНоменклатури_Objest Основа)
+    public static Task Copying(ВстановленняЦінНоменклатури_Object ДокументОбєкт, ВстановленняЦінНоменклатури_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(ВстановленняЦінНоменклатури_Objest ДокументОбєкт)
+    public static Task BeforeSave(ВстановленняЦінНоменклатури_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{ВстановленняЦінНоменклатури_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(ВстановленняЦінНоменклатури_Objest ДокументОбєкт)
+    public static Task AfterSave(ВстановленняЦінНоменклатури_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(ВстановленняЦінНоменклатури_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(ВстановленняЦінНоменклатури_Object ДокументОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(ВстановленняЦінНоменклатури_Objest ДокументОбєкт)
+    public static Task BeforeDelete(ВстановленняЦінНоменклатури_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

@@ -72,10 +72,10 @@ static class ВидиЖурналів_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ВидиЖурналів_Objest Обєкт = new();
+        ВидиЖурналів_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ВидиЖурналів_Objest Новий = await Обєкт.Copy(true);
+            ВидиЖурналів_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;

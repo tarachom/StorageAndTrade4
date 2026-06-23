@@ -12,7 +12,7 @@ namespace GeneratedCode.Документи;
 
 static class КоригуванняПДВ_Triggers
 {
-    public static async Task New(КоригуванняПДВ_Objest ДокументОбєкт)
+    public static async Task New(КоригуванняПДВ_Object ДокументОбєкт)
     {
         ДокументОбєкт.ДатаДок = DateTime.Now;
         
@@ -21,29 +21,29 @@ static class КоригуванняПДВ_Triggers
                     
     }
 
-    public static Task Copying(КоригуванняПДВ_Objest ДокументОбєкт, КоригуванняПДВ_Objest Основа)
+    public static Task Copying(КоригуванняПДВ_Object ДокументОбєкт, КоригуванняПДВ_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(КоригуванняПДВ_Objest ДокументОбєкт)
+    public static Task BeforeSave(КоригуванняПДВ_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{КоригуванняПДВ_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(КоригуванняПДВ_Objest ДокументОбєкт)
+    public static Task AfterSave(КоригуванняПДВ_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(КоригуванняПДВ_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(КоригуванняПДВ_Object ДокументОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(КоригуванняПДВ_Objest ДокументОбєкт)
+    public static Task BeforeDelete(КоригуванняПДВ_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

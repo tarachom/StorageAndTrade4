@@ -11,7 +11,7 @@ namespace GeneratedCode.Документи;
 
 class ПоверненняТоварівВідКлієнта_Triggers
 {
-    public static async Task New(ПоверненняТоварівВідКлієнта_Objest ДокументОбєкт)
+    public static async Task New(ПоверненняТоварівВідКлієнта_Object ДокументОбєкт)
     {
         int number = await НумераціяДокументів.ПоверненняТоварівВідКлієнта();
         ДокументОбєкт.НомерДок = (await НумераціяДокументів.ПоверненняТоварівВідКлієнта(++number)).ToString("D8");
@@ -21,14 +21,14 @@ class ПоверненняТоварівВідКлієнта_Triggers
         ДокументОбєкт.Менеджер = Program.Користувач;
     }
 
-    public static Task Copying(ПоверненняТоварівВідКлієнта_Objest ДокументОбєкт, ПоверненняТоварівВідКлієнта_Objest Основа)
+    public static Task Copying(ПоверненняТоварівВідКлієнта_Object ДокументОбєкт, ПоверненняТоварівВідКлієнта_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         ДокументОбєкт.ДокументБухгалтерськаОперація = new();
         return Task.CompletedTask;
     }
 
-    public static async Task BeforeSave(ПоверненняТоварівВідКлієнта_Objest ДокументОбєкт)
+    public static async Task BeforeSave(ПоверненняТоварівВідКлієнта_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{ПоверненняТоварівВідКлієнта_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
         
@@ -47,17 +47,17 @@ class ПоверненняТоварівВідКлієнта_Triggers
         }
     }
 
-    public static Task AfterSave(ПоверненняТоварівВідКлієнта_Objest ДокументОбєкт)
+    public static Task AfterSave(ПоверненняТоварівВідКлієнта_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(ПоверненняТоварівВідКлієнта_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(ПоверненняТоварівВідКлієнта_Object ДокументОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(ПоверненняТоварівВідКлієнта_Objest ДокументОбєкт)
+    public static Task BeforeDelete(ПоверненняТоварівВідКлієнта_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

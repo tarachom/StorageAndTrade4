@@ -66,10 +66,10 @@ static class ПлатіжнеДорученняВихідне_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ПлатіжнеДорученняВихідне_Objest Обєкт = new();
+        ПлатіжнеДорученняВихідне_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ПлатіжнеДорученняВихідне_Objest Новий = await Обєкт.Copy(true);
+            ПлатіжнеДорученняВихідне_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;
@@ -83,7 +83,7 @@ static class ПлатіжнеДорученняВихідне_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        ПлатіжнеДорученняВихідне_Objest? Обєкт = await new ПлатіжнеДорученняВихідне_Pointer(uniqueID).GetDocumentObject(true);
+        ПлатіжнеДорученняВихідне_Object? Обєкт = await new ПлатіжнеДорученняВихідне_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

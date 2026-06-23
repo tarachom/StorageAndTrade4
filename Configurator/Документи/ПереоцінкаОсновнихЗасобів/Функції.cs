@@ -66,10 +66,10 @@ static class ПереоцінкаОсновнихЗасобів_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ПереоцінкаОсновнихЗасобів_Objest Обєкт = new();
+        ПереоцінкаОсновнихЗасобів_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ПереоцінкаОсновнихЗасобів_Objest Новий = await Обєкт.Copy(true);
+            ПереоцінкаОсновнихЗасобів_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;
@@ -83,7 +83,7 @@ static class ПереоцінкаОсновнихЗасобів_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        ПереоцінкаОсновнихЗасобів_Objest? Обєкт = await new ПереоцінкаОсновнихЗасобів_Pointer(uniqueID).GetDocumentObject(true);
+        ПереоцінкаОсновнихЗасобів_Object? Обєкт = await new ПереоцінкаОсновнихЗасобів_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

@@ -90,10 +90,10 @@ static class Банки_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        Банки_Objest Обєкт = new();
+        Банки_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            Банки_Objest Новий = await Обєкт.Copy(true);
+            Банки_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;

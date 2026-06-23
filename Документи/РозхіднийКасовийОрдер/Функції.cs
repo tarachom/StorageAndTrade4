@@ -69,10 +69,10 @@ static class РозхіднийКасовийОрдер_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        РозхіднийКасовийОрдер_Objest Обєкт = new();
+        РозхіднийКасовийОрдер_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            РозхіднийКасовийОрдер_Objest Новий = await Обєкт.Copy(true);
+            РозхіднийКасовийОрдер_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
                 await Новий.РозшифруванняПлатежу_TablePart.Save(false); // Таблична частина "РозшифруванняПлатежу"
@@ -90,7 +90,7 @@ static class РозхіднийКасовийОрдер_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        РозхіднийКасовийОрдер_Objest? Обєкт = await new РозхіднийКасовийОрдер_Pointer(uniqueID).GetDocumentObject(true);
+        РозхіднийКасовийОрдер_Object? Обєкт = await new РозхіднийКасовийОрдер_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

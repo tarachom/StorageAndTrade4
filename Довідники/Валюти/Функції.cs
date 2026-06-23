@@ -78,10 +78,10 @@ static class Валюти_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        Валюти_Objest Обєкт = new();
+        Валюти_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            Валюти_Objest Новий = await Обєкт.Copy(true);
+            Валюти_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;

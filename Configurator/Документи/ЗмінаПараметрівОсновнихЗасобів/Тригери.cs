@@ -12,7 +12,7 @@ namespace GeneratedCode.Документи;
 
 static class ЗмінаПараметрівОсновнихЗасобів_Triggers
 {
-    public static async Task New(ЗмінаПараметрівОсновнихЗасобів_Objest ДокументОбєкт)
+    public static async Task New(ЗмінаПараметрівОсновнихЗасобів_Object ДокументОбєкт)
     {
         ДокументОбєкт.ДатаДок = DateTime.Now;
         
@@ -21,29 +21,29 @@ static class ЗмінаПараметрівОсновнихЗасобів_Trigge
                     
     }
 
-    public static Task Copying(ЗмінаПараметрівОсновнихЗасобів_Objest ДокументОбєкт, ЗмінаПараметрівОсновнихЗасобів_Objest Основа)
+    public static Task Copying(ЗмінаПараметрівОсновнихЗасобів_Object ДокументОбєкт, ЗмінаПараметрівОсновнихЗасобів_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(ЗмінаПараметрівОсновнихЗасобів_Objest ДокументОбєкт)
+    public static Task BeforeSave(ЗмінаПараметрівОсновнихЗасобів_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{ЗмінаПараметрівОсновнихЗасобів_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(ЗмінаПараметрівОсновнихЗасобів_Objest ДокументОбєкт)
+    public static Task AfterSave(ЗмінаПараметрівОсновнихЗасобів_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(ЗмінаПараметрівОсновнихЗасобів_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(ЗмінаПараметрівОсновнихЗасобів_Object ДокументОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(ЗмінаПараметрівОсновнихЗасобів_Objest ДокументОбєкт)
+    public static Task BeforeDelete(ЗмінаПараметрівОсновнихЗасобів_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

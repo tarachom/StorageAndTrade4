@@ -11,7 +11,7 @@ namespace GeneratedCode.Документи;
 
 class АктВиконанихРобіт_Triggers
 {
-   public static async Task New(АктВиконанихРобіт_Objest ДокументОбєкт)
+   public static async Task New(АктВиконанихРобіт_Object ДокументОбєкт)
    {
       int number = await НумераціяДокументів.АктВиконанихРобіт();
       await НумераціяДокументів.АктВиконанихРобіт(++number);
@@ -22,14 +22,14 @@ class АктВиконанихРобіт_Triggers
       ДокументОбєкт.Менеджер = Program.Користувач;
    }
 
-   public static Task Copying(АктВиконанихРобіт_Objest ДокументОбєкт, АктВиконанихРобіт_Objest Основа)
+   public static Task Copying(АктВиконанихРобіт_Object ДокументОбєкт, АктВиконанихРобіт_Object Основа)
    {
       ДокументОбєкт.Назва += " - Копія";
       ДокументОбєкт.ДокументБухгалтерськаОперація = new();
       return Task.CompletedTask;
    }
 
-   public static async Task BeforeSave(АктВиконанихРобіт_Objest ДокументОбєкт)
+   public static async Task BeforeSave(АктВиконанихРобіт_Object ДокументОбєкт)
    {
       ДокументОбєкт.Назва = $"{АктВиконанихРобіт_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
 
@@ -48,17 +48,17 @@ class АктВиконанихРобіт_Triggers
       }
    }
 
-   public static Task AfterSave(АктВиконанихРобіт_Objest ДокументОбєкт)
+   public static Task AfterSave(АктВиконанихРобіт_Object ДокументОбєкт)
    {
       return Task.CompletedTask;
    }
 
-   public static Task SetDeletionLabel(АктВиконанихРобіт_Objest ДокументОбєкт, bool label)
+   public static Task SetDeletionLabel(АктВиконанихРобіт_Object ДокументОбєкт, bool label)
    {
       return Task.CompletedTask;
    }
 
-   public static Task BeforeDelete(АктВиконанихРобіт_Objest ДокументОбєкт)
+   public static Task BeforeDelete(АктВиконанихРобіт_Object ДокументОбєкт)
    {
       return Task.CompletedTask;
    }

@@ -17,7 +17,7 @@ namespace GeneratedCode.Документи;
 
 static class ПереміщенняОсновнихЗасобів_SpendTheDocument
 {
-    public static async Task<bool> Spend(ПереміщенняОсновнихЗасобів_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(ПереміщенняОсновнихЗасобів_Object ДокументОбєкт)
     {
         try
         {
@@ -33,7 +33,7 @@ static class ПереміщенняОсновнихЗасобів_SpendTheDocume
         }
     }
 
-    public static Task Clear(ПереміщенняОсновнихЗасобів_Objest ДокументОбєкт)
+    public static Task Clear(ПереміщенняОсновнихЗасобів_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

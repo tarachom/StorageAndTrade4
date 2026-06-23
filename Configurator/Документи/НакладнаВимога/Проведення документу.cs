@@ -17,7 +17,7 @@ namespace GeneratedCode.Документи;
 
 static class НакладнаВимога_SpendTheDocument
 {
-    public static async Task<bool> Spend(НакладнаВимога_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(НакладнаВимога_Object ДокументОбєкт)
     {
         try
         {
@@ -33,7 +33,7 @@ static class НакладнаВимога_SpendTheDocument
         }
     }
 
-    public static Task Clear(НакладнаВимога_Objest ДокументОбєкт)
+    public static Task Clear(НакладнаВимога_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

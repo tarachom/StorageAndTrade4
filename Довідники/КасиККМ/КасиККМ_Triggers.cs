@@ -9,33 +9,33 @@ namespace GeneratedCode.Довідники;
 
 static class КасиККМ_Triggers
 {
-    public static Task New(КасиККМ_Objest ДовідникОбєкт)
+    public static Task New(КасиККМ_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task Copying(КасиККМ_Objest ДовідникОбєкт, КасиККМ_Objest Основа)
+    public static Task Copying(КасиККМ_Object ДовідникОбєкт, КасиККМ_Object Основа)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(КасиККМ_Objest ДовідникОбєкт)
+    public static Task BeforeSave(КасиККМ_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(КасиККМ_Objest ДовідникОбєкт)
+    public static Task AfterSave(КасиККМ_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(КасиККМ_Objest ДовідникОбєкт, bool label)
+    public static Task SetDeletionLabel(КасиККМ_Object ДовідникОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(КасиККМ_Objest ДовідникОбєкт)
+    public static Task BeforeDelete(КасиККМ_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }

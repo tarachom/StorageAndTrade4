@@ -12,13 +12,13 @@ namespace GeneratedCode.Документи;
 
 class ПереміщенняТоварів_SpendTheDocument
 {
-    public static async Task<bool> Spend(ПереміщенняТоварів_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(ПереміщенняТоварів_Object ДокументОбєкт)
     {
         try
         {
             #region Підготовка
 
-            Dictionary<int, Номенклатура_Objest> СписокНоменклатури = [];
+            Dictionary<int, Номенклатура_Object> СписокНоменклатури = [];
             Dictionary<int, decimal> ЗалишокНоменклатури = [];
             Dictionary<int, decimal> РезервНоменклатури = [];
 
@@ -304,7 +304,7 @@ class ПереміщенняТоварів_SpendTheDocument
         }
     }
 
-    public static async Task Clear(ПереміщенняТоварів_Objest ДокументОбєкт)
+    public static async Task Clear(ПереміщенняТоварів_Object ДокументОбєкт)
     {
         if (!ДокументОбєкт.ДокументБухгалтерськаОперація.IsEmpty())
             await ДокументОбєкт.ДокументБухгалтерськаОперація.ClearSpendTheDocument();

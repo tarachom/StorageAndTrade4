@@ -69,10 +69,10 @@ static class РозміщенняНоменклатуриПоКоміркам_Ф
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        РозміщенняНоменклатуриПоКоміркам_Objest Обєкт = new();
+        РозміщенняНоменклатуриПоКоміркам_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            РозміщенняНоменклатуриПоКоміркам_Objest Новий = await Обєкт.Copy(true);
+            РозміщенняНоменклатуриПоКоміркам_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
                 await Новий.Товари_TablePart.Save(false); // Таблична частина "Товари"
@@ -88,7 +88,7 @@ static class РозміщенняНоменклатуриПоКоміркам_Ф
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        РозміщенняНоменклатуриПоКоміркам_Objest? Обєкт = await new РозміщенняНоменклатуриПоКоміркам_Pointer(uniqueID).GetDocumentObject(true);
+        РозміщенняНоменклатуриПоКоміркам_Object? Обєкт = await new РозміщенняНоменклатуриПоКоміркам_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

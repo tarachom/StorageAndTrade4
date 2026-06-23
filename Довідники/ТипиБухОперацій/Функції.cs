@@ -72,10 +72,10 @@ static class ТипиБухОперацій_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ТипиБухОперацій_Objest Обєкт = new();
+        ТипиБухОперацій_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ТипиБухОперацій_Objest Новий = await Обєкт.Copy(true);
+            ТипиБухОперацій_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;

@@ -17,7 +17,7 @@ namespace GeneratedCode.Документи;
 
 static class РозрахунокСобівартостіВипуску_SpendTheDocument
 {
-    public static async Task<bool> Spend(РозрахунокСобівартостіВипуску_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(РозрахунокСобівартостіВипуску_Object ДокументОбєкт)
     {
         try
         {
@@ -33,7 +33,7 @@ static class РозрахунокСобівартостіВипуску_SpendThe
         }
     }
 
-    public static Task Clear(РозрахунокСобівартостіВипуску_Objest ДокументОбєкт)
+    public static Task Clear(РозрахунокСобівартостіВипуску_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

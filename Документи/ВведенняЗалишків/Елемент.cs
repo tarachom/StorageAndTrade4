@@ -18,7 +18,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DocumentFormElement>("Element_PVohcj3O0ynLcwqwWKJLA")]
 partial class ВведенняЗалишків_Елемент : DocumentFormElement
 {
-    public ВведенняЗалишків_Objest Елемент { get; init; } = new();
+    public ВведенняЗалишків_Object Елемент { get; init; } = new();
 
     #region Fields
     Entry НомерДок = Entry.New();
@@ -62,29 +62,29 @@ partial class ВведенняЗалишків_Елемент : DocumentFormElem
 
         CreateDocName(ВведенняЗалишків_Const.FULLNAME, НомерДок, ДатаДок);
         CreateField(HBoxTop, null, ВідобразитиВБухгалтерськомуОбліку);
-        CreateField(HBoxComment, "Коментар:", Коментар);
+        CreateField(Interface.CommentBox, "Коментар:", Коментар);
 
         // Таблична частина "Товари"
         Товари.HeightRequest = 300;
-        NotebookTablePart.InsertPage(Товари, Label.New("Товари"), 0);
+        Interface.Notebook.InsertPage(Товари, Label.New("Товари"), 0);
 
         // Таблична частина "Каси"
         Каси.HeightRequest = 300;
-        NotebookTablePart.InsertPage(Каси, Label.New("Каси"), 1);
+        Interface.Notebook.InsertPage(Каси, Label.New("Каси"), 1);
 
         // Таблична частина "БанківськіРахунки"
         БанківськіРахунки.HeightRequest = 300;
-        NotebookTablePart.InsertPage(БанківськіРахунки, Label.New("Банківські рахунки"), 2);
+        Interface.Notebook.InsertPage(БанківськіРахунки, Label.New("Банківські рахунки"), 2);
 
         // Таблична частина "РозрахункиЗКонтрагентами"
         РозрахункиЗКонтрагентами.HeightRequest = 300;
-        NotebookTablePart.InsertPage(РозрахункиЗКонтрагентами, Label.New("Розрахунки з контрагентами"), 3);
+        Interface.Notebook.InsertPage(РозрахункиЗКонтрагентами, Label.New("Розрахунки з контрагентами"), 3);
 
         // Таблична частина "Проводки"
         Проводки.HeightRequest = 300;
-        NotebookTablePart.InsertPage(Проводки, Label.New("Проводки"), 4);
+        Interface.Notebook.InsertPage(Проводки, Label.New("Проводки"), 4);
 
-        NotebookTablePart.SetCurrentPage(0);
+        Interface.Notebook.SetCurrentPage(0);
 
         //НомерДок:
         НомерДок.WidthRequest = 100;
@@ -143,7 +143,23 @@ partial class ВведенняЗалишків_Елемент : DocumentFormElem
         return element;
     }
 
-    protected override void CreateTopStart(Box vBox)
+    #region Interface
+
+    FunctionForInterfaces.DocumentElement Interface;
+
+    protected override void BuildInterface()
+    {
+        Interface = FunctionForInterfaces.ForDocument();
+
+        Append(Interface.MainBox);
+
+        CreateTopStart(Interface.TopStartBox);
+        CreateTopEnd(Interface.TopEndBox);
+        CreateBottomStart(Interface.BottomStartBox);
+        CreateBottomEnd(Interface.BottomEndBox);
+    }
+
+    void CreateTopStart(Box vBox)
     {
         //Організація
         CreateField(vBox, null, Організація);
@@ -157,7 +173,7 @@ partial class ВведенняЗалишків_Елемент : DocumentFormElem
         Договір.BeforeClickOpenFunc = () => Договір.Власник = Контрагент.Pointer;
     }
 
-    protected override void CreateTopEnd(Box vBox)
+    void CreateTopEnd(Box vBox)
     {
         //Склад
         CreateField(vBox, null, Склад);
@@ -166,7 +182,7 @@ partial class ВведенняЗалишків_Елемент : DocumentFormElem
         CreateField(vBox, null, Валюта);
     }
 
-    protected override void CreateBottomStart(Box vBox)
+    void CreateBottomStart(Box vBox)
     {
         //ГосподарськаОперація
         CreateField(vBox, "Господарська операція:", ГосподарськаОперація);
@@ -175,7 +191,7 @@ partial class ВведенняЗалишків_Елемент : DocumentFormElem
         CreateField(vBox, null, Підрозділ);
     }
 
-    protected override void CreateBottomEnd(Box vBox)
+    void CreateBottomEnd(Box vBox)
     {
         //Основа
         CreateField(vBox, null, Основа);
@@ -183,6 +199,8 @@ partial class ВведенняЗалишків_Елемент : DocumentFormElem
         //Автор
         CreateField(vBox, null, Автор);
     }
+
+    #endregion
 
     #region Присвоєння / зчитування значень
 

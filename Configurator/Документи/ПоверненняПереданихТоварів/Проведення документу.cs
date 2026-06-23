@@ -17,7 +17,7 @@ namespace GeneratedCode.Документи;
 
 static class ПоверненняПереданихТоварів_SpendTheDocument
 {
-    public static async Task<bool> Spend(ПоверненняПереданихТоварів_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(ПоверненняПереданихТоварів_Object ДокументОбєкт)
     {
         try
         {
@@ -33,7 +33,7 @@ static class ПоверненняПереданихТоварів_SpendTheDocume
         }
     }
 
-    public static Task Clear(ПоверненняПереданихТоварів_Objest ДокументОбєкт)
+    public static Task Clear(ПоверненняПереданихТоварів_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

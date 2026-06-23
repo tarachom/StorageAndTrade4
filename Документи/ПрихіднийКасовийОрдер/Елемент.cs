@@ -18,7 +18,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DocumentFormElement>("Element_fZGeAS8l6nGinTYuGzmiQ")]
 partial class ПрихіднийКасовийОрдер_Елемент : DocumentFormElement
 {
-    public ПрихіднийКасовийОрдер_Objest Елемент { get; init; } = new();
+    public ПрихіднийКасовийОрдер_Object Елемент { get; init; } = new();
 
     #region Fields
     Entry НомерДок = Entry.New();
@@ -54,13 +54,13 @@ partial class ПрихіднийКасовийОрдер_Елемент : Docume
 
         CreateDocName(ПрихіднийКасовийОрдер_Const.FULLNAME, НомерДок, ДатаДок);
         CreateField(HBoxTop, null, ВідобразитиВБухгалтерськомуОбліку);
-        CreateField(HBoxComment, "Коментар:", Коментар);
+        CreateField(Interface.CommentBox, "Коментар:", Коментар);
 
         // Таблична частина "Проводки"
         Проводки.HeightRequest = 300;
-        NotebookTablePart.InsertPage(Проводки, Label.New("Проводки"), 0);
+        Interface.Notebook.InsertPage(Проводки, Label.New("Проводки"), 0);
 
-        NotebookTablePart.SetCurrentPage(0);
+        Interface.Notebook.SetCurrentPage(0);
 
         //НомерДок:
         НомерДок.WidthRequest = 100;
@@ -75,8 +75,7 @@ partial class ПрихіднийКасовийОрдер_Елемент : Docume
 
         //ГосподарськаОперація:
         {
-            List<ГосподарськіОперації> list =
-            [
+            List<ГосподарськіОперації> list = [
                 ГосподарськіОперації.ПоступленняОплатиВідКлієнта,
                 ГосподарськіОперації.ПоступленняКоштівЗІншоїКаси,
                 ГосподарськіОперації.ПоступленняКоштівЗБанку,
@@ -172,7 +171,23 @@ partial class ПрихіднийКасовийОрдер_Елемент : Docume
         return element;
     }
 
-    protected override void CreateTopStart(Box vBox)
+    #region Interface
+
+    FunctionForInterfaces.DocumentElement Interface;
+
+    protected override void BuildInterface()
+    {
+        Interface = FunctionForInterfaces.ForDocument();
+
+        Append(Interface.MainBox);
+
+        CreateTopStart(Interface.TopStartBox);
+        CreateTopEnd(Interface.TopEndBox);
+        CreateBottomStart(Interface.BottomStartBox);
+        CreateBottomEnd(Interface.BottomEndBox);
+    }
+
+    void CreateTopStart(Box vBox)
     {
         //Організація
         CreateField(vBox, null, Організація);
@@ -189,7 +204,7 @@ partial class ПрихіднийКасовийОрдер_Елемент : Docume
         CreateField(vBox, null, Валюта);
     }
 
-    protected override void CreateTopEnd(Box vBox)
+    void CreateTopEnd(Box vBox)
     {
         //ГосподарськаОперація
         CreateField(vBox, "Господарська операція:", ГосподарськаОперація);
@@ -207,7 +222,7 @@ partial class ПрихіднийКасовийОрдер_Елемент : Docume
         CreateField(CreateField(vBox, "Сума:", СумаДокументу), "Курс:", Курс);
     }
 
-    protected override void CreateBottomStart(Box vBox)
+    void CreateBottomStart(Box vBox)
     {
         //Автор
         CreateField(vBox, null, Автор);
@@ -216,11 +231,13 @@ partial class ПрихіднийКасовийОрдер_Елемент : Docume
         CreateField(vBox, null, Основа);
     }
 
-    protected override void CreateBottomEnd(Box vBox)
+    void CreateBottomEnd(Box vBox)
     {
         //СтаттяРухуКоштів
         CreateField(vBox, null, СтаттяРухуКоштів);
     }
+
+    #endregion
 
     #region Присвоєння / зчитування значень
 

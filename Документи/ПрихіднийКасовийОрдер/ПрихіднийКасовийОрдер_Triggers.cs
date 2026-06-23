@@ -11,7 +11,7 @@ namespace GeneratedCode.Документи;
 
 class ПрихіднийКасовийОрдер_Triggers
 {
-    public static async Task New(ПрихіднийКасовийОрдер_Objest ДокументОбєкт)
+    public static async Task New(ПрихіднийКасовийОрдер_Object ДокументОбєкт)
     {
         int number = await НумераціяДокументів.ПрихіднийКасовийОрдер();
         ДокументОбєкт.НомерДок = (await НумераціяДокументів.ПрихіднийКасовийОрдер(++number)).ToString("D8");
@@ -20,14 +20,14 @@ class ПрихіднийКасовийОрдер_Triggers
         ДокументОбєкт.Автор = Program.Користувач;
     }
 
-    public static Task Copying(ПрихіднийКасовийОрдер_Objest ДокументОбєкт, ПрихіднийКасовийОрдер_Objest Основа)
+    public static Task Copying(ПрихіднийКасовийОрдер_Object ДокументОбєкт, ПрихіднийКасовийОрдер_Object Основа)
     {
         ДокументОбєкт.Назва += " - Копія";
         ДокументОбєкт.ДокументБухгалтерськаОперація = new();
         return Task.CompletedTask;
     }
 
-    public static async Task BeforeSave(ПрихіднийКасовийОрдер_Objest ДокументОбєкт)
+    public static async Task BeforeSave(ПрихіднийКасовийОрдер_Object ДокументОбєкт)
     {
         ДокументОбєкт.Назва = $"{ПрихіднийКасовийОрдер_Const.FULLNAME} №{ДокументОбєкт.НомерДок} від {ДокументОбєкт.ДатаДок.ToString("dd.MM.yyyy")}";
 
@@ -46,17 +46,17 @@ class ПрихіднийКасовийОрдер_Triggers
         }
     }
 
-    public static Task AfterSave(ПрихіднийКасовийОрдер_Objest ДокументОбєкт)
+    public static Task AfterSave(ПрихіднийКасовийОрдер_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(ПрихіднийКасовийОрдер_Objest ДокументОбєкт, bool label)
+    public static Task SetDeletionLabel(ПрихіднийКасовийОрдер_Object ДокументОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(ПрихіднийКасовийОрдер_Objest ДокументОбєкт)
+    public static Task BeforeDelete(ПрихіднийКасовийОрдер_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

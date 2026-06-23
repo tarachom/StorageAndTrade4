@@ -72,10 +72,10 @@ static class Користувачі_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        Користувачі_Objest Обєкт = new();
+        Користувачі_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            Користувачі_Objest Новий = await Обєкт.Copy(true);
+            Користувачі_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
                 await Новий.Контакти_TablePart.Save(false); // Таблична частина "Контакти"

@@ -17,7 +17,7 @@ namespace StorageAndTrade;
 [GObject.Subclass<DirectoryFormElement>("Element_31dVji9NVku2b0mX4UhLkg")]
 partial class СкладськіПриміщення_Елемент : DirectoryFormElement
 {
-    public СкладськіПриміщення_Objest Елемент { get; init; } = new();
+    public СкладськіПриміщення_Object Елемент { get; init; } = new();
     
     public Склади_Pointer ВласникДляНового = new();
     

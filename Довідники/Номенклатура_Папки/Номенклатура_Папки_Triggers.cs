@@ -11,29 +11,29 @@ namespace GeneratedCode.Довідники;
 
 class Номенклатура_Папки_Triggers
 {
-    public static async Task New(Номенклатура_Папки_Objest ДовідникОбєкт)
+    public static async Task New(Номенклатура_Папки_Object ДовідникОбєкт)
     {
         int number = await НумераціяДовідників.Номенклатура_Папки();
         ДовідникОбєкт.Код = (await НумераціяДовідників.Номенклатура_Папки(++number)).ToString("D6");
     }
 
-    public static Task Copying(Номенклатура_Папки_Objest ДовідникОбєкт, Номенклатура_Папки_Objest Основа)
+    public static Task Copying(Номенклатура_Папки_Object ДовідникОбєкт, Номенклатура_Папки_Object Основа)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(Номенклатура_Папки_Objest ДовідникОбєкт)
+    public static Task BeforeSave(Номенклатура_Папки_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(Номенклатура_Папки_Objest ДовідникОбєкт)
+    public static Task AfterSave(Номенклатура_Папки_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static async Task SetDeletionLabel(Номенклатура_Папки_Objest ДовідникОбєкт, bool label)
+    public static async Task SetDeletionLabel(Номенклатура_Папки_Object ДовідникОбєкт, bool label)
     {
         //Якщо встановлюється мітка на видалення
         if (label)
@@ -63,7 +63,7 @@ class Номенклатура_Папки_Triggers
         }
     }
 
-    public static async Task BeforeDelete(Номенклатура_Папки_Objest ДовідникОбєкт)
+    public static async Task BeforeDelete(Номенклатура_Папки_Object ДовідникОбєкт)
     {
         //Елементи переносяться на верхній рівень
         {
@@ -74,7 +74,7 @@ class Номенклатура_Папки_Triggers
             while (select.MoveNext())
                 if (select.Current != null)
                 {
-                    Номенклатура_Objest? Обєкт = await select.Current.GetDirectoryObject();
+                    Номенклатура_Object? Обєкт = await select.Current.GetDirectoryObject();
                     if (Обєкт != null)
                     {
                         //Ставиться помітка на видалення для елементу
@@ -95,7 +95,7 @@ class Номенклатура_Папки_Triggers
             while (select.MoveNext())
                 if (select.Current != null)
                 {
-                    Номенклатура_Папки_Objest? Обєкт = await select.Current.GetDirectoryObject();
+                    Номенклатура_Папки_Object? Обєкт = await select.Current.GetDirectoryObject();
                     if (Обєкт != null)
                         await Обєкт.Delete();
                 }

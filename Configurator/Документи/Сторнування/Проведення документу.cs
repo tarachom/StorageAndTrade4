@@ -17,7 +17,7 @@ namespace GeneratedCode.Документи;
 
 static class Сторнування_SpendTheDocument
 {
-    public static async Task<bool> Spend(Сторнування_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(Сторнування_Object ДокументОбєкт)
     {
         try
         {
@@ -33,7 +33,7 @@ static class Сторнування_SpendTheDocument
         }
     }
 
-    public static Task Clear(Сторнування_Objest ДокументОбєкт)
+    public static Task Clear(Сторнування_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

@@ -17,7 +17,7 @@ namespace GeneratedCode.Документи;
 
 static class ВиплатаЗаробітноїПлати_SpendTheDocument
 {
-    public static async Task<bool> Spend(ВиплатаЗаробітноїПлати_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(ВиплатаЗаробітноїПлати_Object ДокументОбєкт)
     {
         try
         {
@@ -33,7 +33,7 @@ static class ВиплатаЗаробітноїПлати_SpendTheDocument
         }
     }
 
-    public static Task Clear(ВиплатаЗаробітноїПлати_Objest ДокументОбєкт)
+    public static Task Clear(ВиплатаЗаробітноїПлати_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

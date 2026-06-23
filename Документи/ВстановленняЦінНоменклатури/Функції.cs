@@ -69,10 +69,10 @@ static class ВстановленняЦінНоменклатури_Функці
 
     public static async ValueTask<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ВстановленняЦінНоменклатури_Objest Обєкт = new();
+        ВстановленняЦінНоменклатури_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ВстановленняЦінНоменклатури_Objest Новий = await Обєкт.Copy(true);
+            ВстановленняЦінНоменклатури_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
                 await Новий.Товари_TablePart.Save(false); // Таблична частина "Товари"
@@ -88,7 +88,7 @@ static class ВстановленняЦінНоменклатури_Функці
 
     public static async ValueTask SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        ВстановленняЦінНоменклатури_Objest? Обєкт = await new ВстановленняЦінНоменклатури_Pointer(uniqueID).GetDocumentObject(true);
+        ВстановленняЦінНоменклатури_Object? Обєкт = await new ВстановленняЦінНоменклатури_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

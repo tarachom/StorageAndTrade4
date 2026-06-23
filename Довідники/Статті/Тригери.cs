@@ -12,29 +12,29 @@ namespace GeneratedCode.Довідники;
 
 static class Статті_Triggers
 {
-    public static async Task New(Статті_Objest ДовідникОбєкт)
+    public static async Task New(Статті_Object ДовідникОбєкт)
     {
         int number = await НумераціяДовідників.Статті();
         ДовідникОбєкт.Код = (await НумераціяДовідників.Статті(++number)).ToString("D6");
     }
 
-    public static Task Copying(Статті_Objest ДовідникОбєкт, Статті_Objest Основа)
+    public static Task Copying(Статті_Object ДовідникОбєкт, Статті_Object Основа)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(Статті_Objest ДовідникОбєкт)
+    public static Task BeforeSave(Статті_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(Статті_Objest ДовідникОбєкт)
+    public static Task AfterSave(Статті_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static async Task SetDeletionLabel(Статті_Objest ДовідникОбєкт, bool label)
+    public static async Task SetDeletionLabel(Статті_Object ДовідникОбєкт, bool label)
     {
         //Якщо встановлюється мітка на видалення
         if (label)
@@ -54,7 +54,7 @@ static class Статті_Triggers
         }
     }
 
-    public static Task BeforeDelete(Статті_Objest ДовідникОбєкт)
+    public static Task BeforeDelete(Статті_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }

@@ -12,28 +12,28 @@ namespace GeneratedCode.Довідники;
 
 static class ПланРахунків_Triggers
 {
-    public static Task New(ПланРахунків_Objest ДовідникОбєкт)
+    public static Task New(ПланРахунків_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task Copying(ПланРахунків_Objest ДовідникОбєкт, ПланРахунків_Objest Основа)
+    public static Task Copying(ПланРахунків_Object ДовідникОбєкт, ПланРахунків_Object Основа)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(ПланРахунків_Objest ДовідникОбєкт)
+    public static Task BeforeSave(ПланРахунків_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(ПланРахунків_Objest ДовідникОбєкт)
+    public static Task AfterSave(ПланРахунків_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static async Task SetDeletionLabel(ПланРахунків_Objest ДовідникОбєкт, bool label)
+    public static async Task SetDeletionLabel(ПланРахунків_Object ДовідникОбєкт, bool label)
     {
         //Якщо встановлюється мітка на видалення
         if (label)
@@ -53,7 +53,7 @@ static class ПланРахунків_Triggers
         }
     }
 
-    public static Task BeforeDelete(ПланРахунків_Objest ДовідникОбєкт)
+    public static Task BeforeDelete(ПланРахунків_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }

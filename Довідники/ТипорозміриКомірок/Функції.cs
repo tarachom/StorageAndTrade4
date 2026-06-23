@@ -69,10 +69,10 @@ static class ТипорозміриКомірок_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ТипорозміриКомірок_Objest Обєкт = new();
+        ТипорозміриКомірок_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ТипорозміриКомірок_Objest Новий = await Обєкт.Copy(true);
+            ТипорозміриКомірок_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;

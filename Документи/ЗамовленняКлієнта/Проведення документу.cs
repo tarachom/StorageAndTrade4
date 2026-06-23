@@ -12,13 +12,13 @@ namespace GeneratedCode.Документи;
 
 class ЗамовленняКлієнта_SpendTheDocument
 {
-    public static async Task<bool> Spend(ЗамовленняКлієнта_Objest ДокументОбєкт)
+    public static async Task<bool> Spend(ЗамовленняКлієнта_Object ДокументОбєкт)
     {
         try
         {
             #region Підготовка
 
-            Dictionary<int, Номенклатура_Objest> СписокНоменклатури = [];
+            Dictionary<int, Номенклатура_Object> СписокНоменклатури = [];
             Dictionary<int, decimal> ВільнийЗалишокНоменклатури = [];
 
             foreach (ЗамовленняКлієнта_Товари_TablePart.Record ТовариРядок in ДокументОбєкт.Товари_TablePart.Records)
@@ -146,7 +146,7 @@ class ЗамовленняКлієнта_SpendTheDocument
         }
     }
 
-    public static Task ClearSpend(ЗамовленняКлієнта_Objest ДокументОбєкт)
+    public static Task ClearSpend(ЗамовленняКлієнта_Object ДокументОбєкт)
     {
         return Task.CompletedTask;
     }

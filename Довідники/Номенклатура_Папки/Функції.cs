@@ -72,10 +72,10 @@ static class Номенклатура_Папки_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        Номенклатура_Папки_Objest Обєкт = new();
+        Номенклатура_Папки_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            Номенклатура_Папки_Objest Новий = await Обєкт.Copy(true);
+            Номенклатура_Папки_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;

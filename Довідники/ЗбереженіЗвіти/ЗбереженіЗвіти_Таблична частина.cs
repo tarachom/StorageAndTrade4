@@ -650,7 +650,7 @@ partial class ЗбереженіЗвіти_ТабличнаЧастина_Зві
     #endregion
 
     
-    public ЗбереженіЗвіти_Objest? ЕлементВласник { get; set; }
+    public ЗбереженіЗвіти_Object? ЕлементВласник { get; set; }
         
     
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());

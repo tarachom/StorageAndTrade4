@@ -66,10 +66,10 @@ static class Наряд_Функції
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        Наряд_Objest Обєкт = new();
+        Наряд_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            Наряд_Objest Новий = await Обєкт.Copy(true);
+            Наряд_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
             return Новий.UniqueID;
@@ -83,7 +83,7 @@ static class Наряд_Функції
 
     public static async Task SpendTheDocument(UniqueID uniqueID, bool spendDoc)
     {
-        Наряд_Objest? Обєкт = await new Наряд_Pointer(uniqueID).GetDocumentObject(true);
+        Наряд_Object? Обєкт = await new Наряд_Pointer(uniqueID).GetDocumentObject(true);
         if (Обєкт == null) return;
 
         if (spendDoc)

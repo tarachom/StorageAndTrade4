@@ -10,7 +10,7 @@ namespace GeneratedCode.Довідники;
 
 class Блокнот_Triggers
 {
-    public static async Task New(Блокнот_Objest ДовідникОбєкт)
+    public static async Task New(Блокнот_Object ДовідникОбєкт)
     {
         int number = await НумераціяДовідників.Блокнот();
         ДовідникОбєкт.Код = (await НумераціяДовідників.Блокнот(++number)).ToString("D6");
@@ -18,28 +18,28 @@ class Блокнот_Triggers
         ДовідникОбєкт.ДатаЗапису = DateTime.Now;
     }
 
-    public static Task Copying(Блокнот_Objest ДовідникОбєкт, Блокнот_Objest Основа)
+    public static Task Copying(Блокнот_Object ДовідникОбєкт, Блокнот_Object Основа)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(Блокнот_Objest ДовідникОбєкт)
+    public static Task BeforeSave(Блокнот_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task AfterSave(Блокнот_Objest ДовідникОбєкт)
+    public static Task AfterSave(Блокнот_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
 
-    public static Task SetDeletionLabel(Блокнот_Objest ДовідникОбєкт, bool label)
+    public static Task SetDeletionLabel(Блокнот_Object ДовідникОбєкт, bool label)
     {
         return Task.CompletedTask;
     }
 
-    public static Task BeforeDelete(Блокнот_Objest ДовідникОбєкт)
+    public static Task BeforeDelete(Блокнот_Object ДовідникОбєкт)
     {
         return Task.CompletedTask;
     }
