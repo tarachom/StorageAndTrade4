@@ -31,6 +31,7 @@ partial class PageHome : Form
             LockObjectsView view = LockObjectsView.New(800, 300);
 
             Box hBox = New(Orientation.Horizontal, 0);
+            hBox.MarginBottom = 10;
             hBox.Append(view);
             Append(hBox);
         }

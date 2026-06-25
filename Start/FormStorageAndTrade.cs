@@ -101,9 +101,17 @@ partial class FormStorageAndTrade : FormGeneral
 
     public async Task OpenFirstPages()
     {
-        PageHome page = PageHome.New();
-        NotebookFunc?.CreatePage("Стартова", () => page, false, null, null, true);
-        await page.SetValue();
+        {
+            PageHome page = PageHome.New();
+            NotebookFunc?.CreatePage("Стартова", () => page, false, null, null, true);
+            await page.SetValue();
+        }
+
+        {
+            PageAI page = PageAI.New();
+            NotebookFunc?.CreatePage("AI", () => page);
+            await page.SetValue();
+        }
     }
 
     public async Task SetCurrentUser()
