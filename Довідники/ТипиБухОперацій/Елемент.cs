@@ -35,7 +35,6 @@ partial class ТипиБухОперацій_Елемент : DirectoryFormEleme
 
         // Назва:
         Назва.WidthRequest = 500;
-
     }
 
     public static ТипиБухОперацій_Елемент New()
@@ -48,12 +47,10 @@ partial class ТипиБухОперацій_Елемент : DirectoryFormEleme
 
     #region Interface
 
-    FunctionForInterfaces.DirectoryElementSmall Interface;
+    FunctionForInterfaces.DirectoryElementSmall Interface = FunctionForInterfaces.ForDirectorySmall();
 
     protected override void BuildInterface()
     {
-        Interface = FunctionForInterfaces.ForDirectorySmall();
-
         Append(Interface.MainBox);
         CreateStart(Interface.TopStartBox);
     }

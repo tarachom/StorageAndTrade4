@@ -73,12 +73,10 @@ partial class Статті_Елемент : DirectoryFormElement
 
     #region Interface
 
-    FunctionForInterfaces.DirectoryElementTwoBoxes Interface;
+    FunctionForInterfaces.DirectoryElementTwoBoxes Interface = FunctionForInterfaces.ForDirectoryTwoBoxes();
 
     protected override void BuildInterface()
     {
-        Interface = FunctionForInterfaces.ForDirectoryTwoBoxes();
-
         Append(Interface.MainBox);
         CreateStart(Interface.TopStartBox);
         CreateEnd(Interface.TopEndBox);

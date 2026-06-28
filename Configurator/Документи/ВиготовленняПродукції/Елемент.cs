@@ -39,7 +39,6 @@ partial class ВиготовленняПродукції_Елемент : Docume
         Element = Елемент;
 
         CreateDocName(ВиготовленняПродукції_Const.FULLNAME, НомерДок, ДатаДок);
-        
         CreateField(Interface.CommentBox, "Коментар:", Коментар);
         
             //НомерДок:
@@ -65,12 +64,10 @@ partial class ВиготовленняПродукції_Елемент : Docume
 
     #region Interface
 
-    FunctionForInterfaces.DocumentElement Interface;
+    FunctionForInterfaces.DocumentElement Interface = FunctionForInterfaces.ForDocument();
 
     protected override void BuildInterface()
     {
-        Interface = FunctionForInterfaces.ForDocument();
-
         Append(Interface.MainBox);
 
         CreateTopStart(Interface.TopStartBox);

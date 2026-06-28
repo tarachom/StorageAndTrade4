@@ -26,6 +26,7 @@ partial class ЧекККМ_Елемент : DocumentFormElement
     Організації_PointerControl Організація = Організації_PointerControl.New();
     Валюти_PointerControl Валюта = Валюти_PointerControl.New();
     Склади_PointerControl Склад = Склади_PointerControl.New();
+    Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
     КасиККМ_PointerControl КасаККМ = КасиККМ_PointerControl.New();
 
     #endregion
@@ -70,6 +71,10 @@ partial class ЧекККМ_Елемент : DocumentFormElement
         Склад.Caption = "Склад";
         Склад.WidthPresentation = 300;
 
+        //Автор:
+        Автор.Caption = "Автор";
+        Автор.WidthPresentation = 300;
+
         //КасаККМ:
         КасаККМ.Caption = "Каса ККМ";
         КасаККМ.WidthPresentation = 300;
@@ -85,12 +90,10 @@ partial class ЧекККМ_Елемент : DocumentFormElement
 
     #region Interface
 
-    FunctionForInterfaces.DocumentElement Interface;
+    FunctionForInterfaces.DocumentElement Interface = FunctionForInterfaces.ForDocument();
 
     protected override void BuildInterface()
     {
-        Interface = FunctionForInterfaces.ForDocument();
-
         Append(Interface.MainBox);
 
         CreateTopStart(Interface.TopStartBox);
@@ -101,35 +104,32 @@ partial class ЧекККМ_Елемент : DocumentFormElement
 
     void CreateTopStart(Box vBox)
     {
+        // Організація
+        CreateField(vBox, null, Організація);
 
+        // Склад
+        CreateField(vBox, null, Склад);
     }
 
     void CreateTopEnd(Box vBox)
     {
+        // Валюта
+        CreateField(vBox, null, Валюта);
 
+        // КасаККМ
+        CreateField(vBox, null, КасаККМ);
     }
 
     void CreateBottomStart(Box vBox)
     {
         // Основа
         CreateField(vBox, null, Основа);
-
-        // Організація
-        CreateField(vBox, null, Організація);
-
-        // Валюта
-        CreateField(vBox, null, Валюта);
-
-        // Склад
-        CreateField(vBox, null, Склад);
-
-        // КасаККМ
-        CreateField(vBox, null, КасаККМ);
     }
 
     void CreateBottomEnd(Box vBox)
     {
-
+        //Автор
+        CreateField(vBox, null, Автор);
     }
 
     #endregion
@@ -146,6 +146,7 @@ partial class ЧекККМ_Елемент : DocumentFormElement
         Валюта.Pointer = Елемент.Валюта;
         Склад.Pointer = Елемент.Склад;
         КасаККМ.Pointer = Елемент.КасаККМ;
+        Автор.Pointer = Елемент.Автор;
 
         // Таблична частина "Товари" 
         Товари.ЕлементВласник = Елемент;
@@ -163,16 +164,8 @@ partial class ЧекККМ_Елемент : DocumentFormElement
         Елемент.Валюта = Валюта.Pointer;
         Елемент.Склад = Склад.Pointer;
         Елемент.КасаККМ = КасаККМ.Pointer;
-
+        Елемент.Автор = Автор.Pointer;
     }
-
-
-    /*string КлючовіСловаДляПошуку()
-    {
-        return $"\n {Організація.Pointer.Назва} {Валюта.Pointer.Назва} {Склад.Pointer.Назва} {КасаККМ.Pointer.Назва}"
-         + Товари.КлючовіСловаДляПошуку();
-    }*/
-
 
     #endregion
 
@@ -184,7 +177,6 @@ partial class ЧекККМ_Елемент : DocumentFormElement
             if (await Елемент.Save())
             {
                 await Товари.SaveRecords(); // Таблична частина "Товари"
-
                 isSaved = true;
             }
         }

@@ -48,12 +48,10 @@ partial class СеріїНоменклатури_Елемент : DirectoryFormE
 
     #region Interface
 
-    FunctionForInterfaces.DirectoryElementSmall Interface;
+    FunctionForInterfaces.DirectoryElementSmall Interface = FunctionForInterfaces.ForDirectorySmall();
 
     protected override void BuildInterface()
     {
-        Interface = FunctionForInterfaces.ForDirectorySmall();
-
         Append(Interface.MainBox);
         CreateStart(Interface.TopStartBox);
     }

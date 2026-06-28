@@ -35,7 +35,6 @@ partial class ГрошовіРахункиВласні_Елемент : Director
 
         // Назва:
         Назва.WidthRequest = 500;
-
     }
 
     public static ГрошовіРахункиВласні_Елемент New()
@@ -48,12 +47,10 @@ partial class ГрошовіРахункиВласні_Елемент : Director
 
     #region Interface
 
-    FunctionForInterfaces.DirectoryElementSmall Interface;
+    FunctionForInterfaces.DirectoryElementSmall  Interface = FunctionForInterfaces.ForDirectorySmall();
 
     protected override void BuildInterface()
     {
-        Interface = FunctionForInterfaces.ForDirectorySmall();
-
         Append(Interface.MainBox);
         CreateStart(Interface.TopStartBox);
     }

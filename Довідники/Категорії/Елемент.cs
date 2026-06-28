@@ -64,8 +64,7 @@ partial class Категорії_Елемент : DirectoryFormElement
         РахунокОбліку.Caption = "Рахунок обліку";
         РахунокОбліку.WidthPresentation = 300;
         РахунокОбліку.AllowedContentSelection = ConfigurationDirectories.HierarchicalContentType.Elements;
-        РахунокОбліку.WhereList =
-        [
+        РахунокОбліку.WhereList = [
             new(ПланРахунків_Const.Код, Comparison.EQ, "20"),
             new(Comparison.OR, ПланРахунків_Const.Код, Comparison.EQ, "26"),
             new(Comparison.OR, ПланРахунків_Const.Код, Comparison.EQ, "28")
@@ -75,8 +74,7 @@ partial class Категорії_Елемент : DirectoryFormElement
         РахунокДоходів.Caption = "Рахунок доходів";
         РахунокДоходів.WidthPresentation = 300;
         РахунокДоходів.AllowedContentSelection = ConfigurationDirectories.HierarchicalContentType.Elements;
-        РахунокДоходів.WhereList =
-        [
+        РахунокДоходів.WhereList = [
             new(ПланРахунків_Const.Код, Comparison.EQ, "701"),
             new(Comparison.OR, ПланРахунків_Const.Код, Comparison.EQ, "702"),
             new(Comparison.OR, ПланРахунків_Const.Код, Comparison.EQ, "703")
@@ -91,8 +89,7 @@ partial class Категорії_Елемент : DirectoryFormElement
         РахунокВитрат.Caption = "Рахунок витрат";
         РахунокВитрат.WidthPresentation = 300;
         РахунокВитрат.AllowedContentSelection = ConfigurationDirectories.HierarchicalContentType.Elements;
-        РахунокВитрат.WhereList =
-        [
+        РахунокВитрат.WhereList = [
             new(ПланРахунків_Const.Код, Comparison.EQ, "901"),
             new(Comparison.OR, ПланРахунків_Const.Код, Comparison.EQ, "902"),
             new(Comparison.OR, ПланРахунків_Const.Код, Comparison.EQ, "903")
@@ -114,12 +111,10 @@ partial class Категорії_Елемент : DirectoryFormElement
 
     #region Interface
 
-    FunctionForInterfaces.DirectoryElementSmall Interface;
+    FunctionForInterfaces.DirectoryElementSmall Interface = FunctionForInterfaces.ForDirectorySmall();
 
     protected override void BuildInterface()
     {
-        Interface = FunctionForInterfaces.ForDirectorySmall();
-
         Append(Interface.MainBox);
         CreateStart(Interface.TopStartBox);
     }

@@ -13,12 +13,9 @@
   <ItemGroup>
     <PackageReference Include="GirCore.Gtk-4.0" Version="0.8.0" />
     <PackageReference Include="GirCore.Adw-1" Version="0.8.0" />
-    
     <PackageReference Include="QuestPDF" Version="2026.6.1" />
-
     <PackageReference Include="NPOI" Version="2.8.0" />
     <PackageReference Include="SkiaSharp" Version="3.119.2" />
-
     <PackageReference Include="Google.GenAI" Version="1.12.0" />
     <PackageReference Include="Microsoft.Extensions.AI" Version="10.7.0" />
   </ItemGroup>

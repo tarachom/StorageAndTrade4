@@ -149,7 +149,7 @@ columnview listview row cell box.pointer .text {
     padding-right: 3px;
 }
 
-/* ComboTextTablePartCell */
+/* ComboTextTablePartCell */ /* OBSOLETE */
 columnview listview row cell box.combotext combobox button.combo {
     padding: 0px 3px;
     margin: 0;
@@ -158,6 +158,23 @@ columnview listview row cell box.combotext combobox button.combo {
     border-radius: 0;
     border: 0;
     background: transparent;
+}
+
+/* DropDownTablePartCell */
+columnview listview row cell box.dropdown button {
+    padding: 0px 3px;
+    margin: 0;
+    min-height: 0;
+    min-width: 0;
+    border-radius: 0;
+    border: 0;
+    background: transparent;
+}
+
+/* DropDownTablePartCell menu */
+columnview listview row cell box.dropdown popover.menu listview row {
+    min-height: 24px;
+    padding: 0px 5px;
 }
 
 /* 

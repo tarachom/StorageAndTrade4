@@ -275,23 +275,16 @@ partial class Склади_ТабличнаЧастина_Контакти : Dir
             factory.OnSetup += (_, args) =>
             {
                 if (args.Object is not ListItem listItem) return;
-                var cell = ComboTextTablePartCell.New();
-                foreach (var field in ПсевдонімиПерелічення.ТипиКонтактноїІнформації_List())
-                    cell.Combo.Append(field.Value.ToString(), field.Name);
-                //Заборона прокрутки списку
-                EventControllerScroll contr = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-                cell.Combo.AddController(contr);
-                contr.OnScroll += (_, _) => true;
-                
+                var cell = DropDownTablePartCell.NewWithValues(ПсевдонімиПерелічення.ТипиКонтактноїІнформації_Dict());
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
                 if (args.Object is not ListItem listItem) return;
-                if (listItem.Child is not ComboTextTablePartCell cell) return;
+                if (listItem.Child is not DropDownTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
                 
-                cell.OnСhanged = () => row.Тип = ПсевдонімиПерелічення.ТипиКонтактноїІнформації_FindByName(cell.Combo.ActiveId);
+                cell.OnСhanged = () => row.Тип = ПсевдонімиПерелічення.ТипиКонтактноїІнформації_FindByName(cell.Value);
                 (row.Сhanged_Тип = () => cell.Value = row.Тип.ToString()).Invoke();
                     
             };

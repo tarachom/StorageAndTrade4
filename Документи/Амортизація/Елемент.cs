@@ -73,12 +73,10 @@ partial class Амортизація_Елемент : DocumentFormElement
 
     #region Interface
 
-    FunctionForInterfaces.DocumentElementSmall Interface;
+    FunctionForInterfaces.DocumentElementSmall Interface = FunctionForInterfaces.ForDocumentSmall();
 
     protected override void BuildInterface()
     {
-        Interface = FunctionForInterfaces.ForDocumentSmall();
-
         Append(Interface.MainBox);
 
         CreateTopStart(Interface.TopStartBox);

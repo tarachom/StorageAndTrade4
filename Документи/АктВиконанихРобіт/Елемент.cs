@@ -140,12 +140,10 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
 
     #region Interface
 
-    FunctionForInterfaces.DocumentElement Interface;
+    FunctionForInterfaces.DocumentElement Interface = FunctionForInterfaces.ForDocument();
 
     protected override void BuildInterface()
     {
-        Interface = FunctionForInterfaces.ForDocument();
-
         Append(Interface.MainBox);
 
         CreateTopStart(Interface.TopStartBox);

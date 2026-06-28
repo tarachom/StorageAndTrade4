@@ -93,12 +93,10 @@ partial class Склади_Елемент : DirectoryFormElement
 
     #region Interface
 
-    FunctionForInterfaces.DirectoryElement Interface;
+    FunctionForInterfaces.DirectoryElement Interface = FunctionForInterfaces.ForDirectory();
 
     protected override void BuildInterface()
     {
-        Interface = FunctionForInterfaces.ForDirectory();
-
         Append(Interface.MainBox);
         CreateStart(Interface.TopStartBox);
         CreateEnd(Interface.TopEndBox);
