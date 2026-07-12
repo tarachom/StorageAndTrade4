@@ -43,7 +43,7 @@ partial class СписанняМатеріалів_Елемент : DocumentForm
         CreateField(HBoxComment, "Коментар:", Коментар);
         
             //НомерДок:
-            НомерДок.WidthRequest = 300;
+            НомерДок.WidthRequest = 100;
                         
             //ДатаДок:
             

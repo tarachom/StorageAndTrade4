@@ -42,7 +42,7 @@ partial class ВиготовленняПродукції_Елемент : Docume
         CreateField(Interface.CommentBox, "Коментар:", Коментар);
         
             //НомерДок:
-            НомерДок.WidthRequest = 300;
+            НомерДок.WidthRequest = 100;
                         
             //ДатаДок:
             

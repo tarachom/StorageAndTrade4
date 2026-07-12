@@ -82,7 +82,7 @@ partial class РеалізаціяТоварівТаПослуг_Елемент 
         Interface.Notebook.SetCurrentPage(0);
 
         //НомерДок:
-        НомерДок.WidthRequest = 300;
+        НомерДок.WidthRequest = 100;
 
         //Організація:
         Організація.Caption = "Організація";

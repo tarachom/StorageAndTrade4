@@ -98,8 +98,14 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
             {
                 if (!Аналітика1_.Equals(value))
                 {
+                    Console.WriteLine("Змінилось значення");
+
                     Аналітика1_ = value;
                     Сhanged_Аналітика1?.Invoke();
+                }
+                else
+                {
+                    Console.WriteLine("Не змінилось значення");
                 }
             }
         }

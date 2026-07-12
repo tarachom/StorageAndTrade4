@@ -35,8 +35,8 @@ partial class PageAI : Form
         Append(HBoxBody);
 
         Text.Buffer?.Text = 
-@"Додай все в папку _Нове:
-Риба копчена, кг.
+@"Цукор пісок кг, папка Продукти
+Кава, пачка, папка Інше
 ";
 
         ScrolledWindow scroll = ScrolledWindow.New();

@@ -12,12 +12,13 @@
           "Configurator4": "4.0.0",
           "GirCore.Adw-1": "0.8.0",
           "GirCore.Gtk-4.0": "0.8.0",
-          "Google.GenAI": "1.12.0",
+          "Google.GenAI": "1.13.0",
           "InterfaceGtk4": "1.0.0",
           "Microsoft.Extensions.AI": "10.7.0",
           "NPOI": "2.8.0",
-          "QuestPDF": "2026.6.1",
-          "SkiaSharp": "3.119.2"
+          "OllamaSharp": "5.4.25",
+          "QuestPDF": "2026.7.0",
+          "SkiaSharp": "4.150.0"
         },
         "runtime": {
           "StorageAndTrade4.dll": {}
@@ -255,15 +256,15 @@
           }
         }
       },
-      "Google.GenAI/1.12.0": {
+      "Google.GenAI/1.13.0": {
         "dependencies": {
           "Google.Apis.Auth": "1.69.0",
           "Microsoft.Extensions.AI.Abstractions": "10.7.0"
         },
         "runtime": {
           "lib/net8.0/Google.GenAI.dll": {
-            "assemblyVersion": "1.12.0.0",
-            "fileVersion": "1.12.0.0"
+            "assemblyVersion": "1.13.0.0",
+            "fileVersion": "1.13.0.0"
           }
         }
       },
@@ -371,7 +372,7 @@
           "MathNet.Numerics.Signed": "5.0.0",
           "Microsoft.IO.RecyclableMemoryStream": "3.0.1",
           "SharpZipLib": "1.4.2",
-          "SkiaSharp": "3.119.2",
+          "SkiaSharp": "4.150.0",
           "SkiaSharp.NativeAssets.Linux.NoDependencies": "3.119.2",
           "System.Security.Cryptography.Xml": "8.0.2",
           "ZString": "2.6.0"
@@ -395,11 +396,22 @@
           }
         }
       },
-      "QuestPDF/2026.6.1": {
+      "OllamaSharp/5.4.25": {
+        "dependencies": {
+          "Microsoft.Extensions.AI.Abstractions": "10.7.0"
+        },
+        "runtime": {
+          "lib/net10.0/OllamaSharp.dll": {
+            "assemblyVersion": "5.4.25.0",
+            "fileVersion": "5.4.25.0"
+          }
+        }
+      },
+      "QuestPDF/2026.7.0": {
         "runtime": {
           "lib/net10.0/QuestPDF.dll": {
-            "assemblyVersion": "2026.6.1.0",
-            "fileVersion": "2026.6.1.0"
+            "assemblyVersion": "2026.7.0.0",
+            "fileVersion": "2026.7.0.0"
           }
         },
         "runtimeTargets": {
@@ -493,15 +505,15 @@
           }
         }
       },
-      "SkiaSharp/3.119.2": {
+      "SkiaSharp/4.150.0": {
         "dependencies": {
-          "SkiaSharp.NativeAssets.Win32": "3.119.2",
-          "SkiaSharp.NativeAssets.macOS": "3.119.2"
+          "SkiaSharp.NativeAssets.Win32": "4.150.0",
+          "SkiaSharp.NativeAssets.macOS": "4.150.0"
         },
         "runtime": {
-          "lib/net8.0/SkiaSharp.dll": {
-            "assemblyVersion": "3.119.0.0",
-            "fileVersion": "3.119.2.0"
+          "lib/net10.0/SkiaSharp.dll": {
+            "assemblyVersion": "4.150.0.0",
+            "fileVersion": "4.150.0.0"
           }
         }
       },
@@ -564,7 +576,7 @@
           }
         }
       },
-      "SkiaSharp.NativeAssets.macOS/3.119.2": {
+      "SkiaSharp.NativeAssets.macOS/4.150.0": {
         "runtimeTargets": {
           "runtimes/osx/native/libSkiaSharp.dylib": {
             "rid": "osx",
@@ -573,7 +585,7 @@
           }
         }
       },
-      "SkiaSharp.NativeAssets.Win32/3.119.2": {
+      "SkiaSharp.NativeAssets.Win32/4.150.0": {
         "runtimeTargets": {
           "runtimes/win-arm64/native/libSkiaSharp.dll": {
             "rid": "win-arm64",
@@ -878,12 +890,12 @@
       "path": "google.apis.core/1.69.0",
       "hashPath": "google.apis.core.1.69.0.nupkg.sha512"
     },
-    "Google.GenAI/1.12.0": {
+    "Google.GenAI/1.13.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-fYXg9PfZF2NiFs/yhIeCZQohbN3W/uU6B50N++RZWbJMh/jyCm1mL7RSVtClp/IgIeN0DSSpoSi5OfdEcW0tsQ==",
-      "path": "google.genai/1.12.0",
-      "hashPath": "google.genai.1.12.0.nupkg.sha512"
+      "sha512": "sha512-UhpamMmHIjF6e6CupohffTDOfREoXBk2IzK6hGHgxjKqS91AZLGvKlJeBt9w9NajarA60J1B/tE4dUzjaPXLcQ==",
+      "path": "google.genai/1.13.0",
+      "hashPath": "google.genai.1.13.0.nupkg.sha512"
     },
     "MathNet.Numerics.Signed/5.0.0": {
       "type": "package",
@@ -962,12 +974,19 @@
       "path": "npoi/2.8.0",
       "hashPath": "npoi.2.8.0.nupkg.sha512"
     },
-    "QuestPDF/2026.6.1": {
+    "OllamaSharp/5.4.25": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-EuGtkJcYNF/IV5Sd4WzshYJcqG5FNutBrRFPqzzlFxIEV9FOrN1pbPIYf38LVKEz9WCpHZN5SZjcISUefoHQvQ==",
-      "path": "questpdf/2026.6.1",
-      "hashPath": "questpdf.2026.6.1.nupkg.sha512"
+      "sha512": "sha512-EqkPM1gbkE+RbHgKUMzp4lYjpFymWUIgJntx3u4uDXAfAIFUXJ0MGklNFCi/PdCaxNAPRpcf205yx+g6jLLhZg==",
+      "path": "ollamasharp/5.4.25",
+      "hashPath": "ollamasharp.5.4.25.nupkg.sha512"
+    },
+    "QuestPDF/2026.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yI/l7rxqYDuZDzRzn60Xl/JvGpc0W47rkRzjkL8KTvBG+2+9qxJLbj7fbnHbQ7l+124LDH95DDlKj/adnEEbtA==",
+      "path": "questpdf/2026.7.0",
+      "hashPath": "questpdf.2026.7.0.nupkg.sha512"
     },
     "SharpZipLib/1.4.2": {
       "type": "package",
@@ -976,12 +995,12 @@
       "path": "sharpziplib/1.4.2",
       "hashPath": "sharpziplib.1.4.2.nupkg.sha512"
     },
-    "SkiaSharp/3.119.2": {
+    "SkiaSharp/4.150.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-nmy2dOFWPvQKMglfpjz8+/xQQcSrL9jzul3cUyzCJVSwrmSAw+6B1sEgU7jt6NZBptwGq2k/V0kjyu2GizMFtg==",
-      "path": "skiasharp/3.119.2",
-      "hashPath": "skiasharp.3.119.2.nupkg.sha512"
+      "sha512": "sha512-K8dpv8SJ7xwe+lPnOlHRMRcpfZ/LfR2tIMxIz3jndMR/X1q81UXwFw3Ybj8ZjMimGVl9gUFY6SoyQ3BiIfkuDg==",
+      "path": "skiasharp/4.150.0",
+      "hashPath": "skiasharp.4.150.0.nupkg.sha512"
     },
     "SkiaSharp.NativeAssets.Linux.NoDependencies/3.119.2": {
       "type": "package",
@@ -990,19 +1009,19 @@
       "path": "skiasharp.nativeassets.linux.nodependencies/3.119.2",
       "hashPath": "skiasharp.nativeassets.linux.nodependencies.3.119.2.nupkg.sha512"
     },
-    "SkiaSharp.NativeAssets.macOS/3.119.2": {
+    "SkiaSharp.NativeAssets.macOS/4.150.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-I2jMGQ/26KOnc6iAoR+Mxh9vSJJ2vioJyj9aJ9OL5yEZyXothXJxf4vBMqnSaiXMqiiU1scG7KqtT0CLkmMmWA==",
-      "path": "skiasharp.nativeassets.macos/3.119.2",
-      "hashPath": "skiasharp.nativeassets.macos.3.119.2.nupkg.sha512"
+      "sha512": "sha512-vy8/EtYhsu+zKM9uOns4RmKMPW+m/CPYaSjq4Hi3m8ZzcePaN45Sz1D7hbTDFKogobFOb1JQAkdikjCmAVaSQQ==",
+      "path": "skiasharp.nativeassets.macos/4.150.0",
+      "hashPath": "skiasharp.nativeassets.macos.4.150.0.nupkg.sha512"
     },
-    "SkiaSharp.NativeAssets.Win32/3.119.2": {
+    "SkiaSharp.NativeAssets.Win32/4.150.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-uYe+da6+GXVgPKkCopzvIZ83DmC8SXXKeUAPrNcztJNsg0SjPQAxfKMOPZqmVjbzznrq/QUIjLUlJSZV/e0IPA==",
-      "path": "skiasharp.nativeassets.win32/3.119.2",
-      "hashPath": "skiasharp.nativeassets.win32.3.119.2.nupkg.sha512"
+      "sha512": "sha512-et1ROcTSzDWTlxPFQGBupxIOHb62fItqVrSEdYfh26TUjfsH02PVE3yw1wfcskfRDYPUPu0o0hKPuclmT0hS9Q==",
+      "path": "skiasharp.nativeassets.win32/4.150.0",
+      "hashPath": "skiasharp.nativeassets.win32.4.150.0.nupkg.sha512"
     },
     "System.CodeDom/7.0.0": {
       "type": "package",

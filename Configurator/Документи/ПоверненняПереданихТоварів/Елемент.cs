@@ -43,7 +43,7 @@ partial class ПоверненняПереданихТоварів_Елемен�
         CreateField(HBoxComment, "Коментар:", Коментар);
         
             //НомерДок:
-            НомерДок.WidthRequest = 300;
+            НомерДок.WidthRequest = 100;
                         
             //ДатаДок:
             

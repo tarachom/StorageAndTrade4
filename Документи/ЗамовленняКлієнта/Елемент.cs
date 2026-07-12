@@ -72,7 +72,7 @@ partial class ЗамовленняКлієнта_Елемент : DocumentFormEl
         Interface.Notebook.SetCurrentPage(0);
 
         //НомерДок:
-        НомерДок.WidthRequest = 300;
+        НомерДок.WidthRequest = 100;
 
         //Контрагент:
         Контрагент.Caption = "Контрагент";

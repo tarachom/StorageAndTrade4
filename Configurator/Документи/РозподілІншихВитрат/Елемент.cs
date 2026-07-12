@@ -43,7 +43,7 @@ partial class РозподілІншихВитрат_Елемент : DocumentFo
         CreateField(HBoxComment, "Коментар:", Коментар);
         
             //НомерДок:
-            НомерДок.WidthRequest = 300;
+            НомерДок.WidthRequest = 100;
                         
             //ДатаДок:
             
