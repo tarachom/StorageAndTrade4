@@ -23,11 +23,19 @@ partial class PageProcessing : Form
             NotebookFunc?.CreatePage("Завантаження плану рахунків", page);
         });
 
+        CreateLink(vBox, "AI: створення нових елементів номенклатури", () =>
+        {
+            PageAI page = PageAI.New();
+            NotebookFunc?.CreatePage("AI: створення нових елементів номенклатури", page);
+        });
+
+        /*
         CreateLink(vBox, "Обробка", () =>
         {
             Обробка page = Обробка.New();
             NotebookFunc?.CreatePage("Обробка", page);
         });
+        */
     }
 
     public static PageProcessing New()

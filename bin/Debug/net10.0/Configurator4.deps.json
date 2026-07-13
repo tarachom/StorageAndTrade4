@@ -9,7 +9,7 @@
       "Configurator4/4.0.0.0": {
         "dependencies": {
           "AccountingSoftware": "3.1.3",
-          "GirCore.Gtk-4.0": "0.8.0",
+          "GirCore.Gtk-4.0": "0.8.1",
           "InterfaceGtk4": "1.0.0"
         },
         "runtime": {
@@ -24,156 +24,156 @@
           }
         }
       },
-      "GirCore.Cairo-1.0/0.8.0": {
+      "GirCore.Cairo-1.0/0.8.1": {
         "dependencies": {
-          "GirCore.GObject-2.0": "0.8.0"
+          "GirCore.GObject-2.0": "0.8.1"
         },
         "runtime": {
           "lib/net10.0/cairo-1.0.dll": {
-            "assemblyVersion": "0.8.0.0",
-            "fileVersion": "0.8.0.0"
+            "assemblyVersion": "0.8.1.0",
+            "fileVersion": "0.8.1.0"
           }
         }
       },
-      "GirCore.FreeType2-2.0/0.8.0": {
+      "GirCore.FreeType2-2.0/0.8.1": {
         "dependencies": {
-          "GirCore.GLib-2.0": "0.8.0",
-          "GirCore.GObject-2.0": "0.8.0"
+          "GirCore.GLib-2.0": "0.8.1",
+          "GirCore.GObject-2.0": "0.8.1"
         },
         "runtime": {
           "lib/net10.0/freetype2-2.0.dll": {
-            "assemblyVersion": "0.8.0.0",
-            "fileVersion": "0.8.0.0"
+            "assemblyVersion": "0.8.1.0",
+            "fileVersion": "0.8.1.0"
           }
         }
       },
-      "GirCore.Gdk-4.0/0.8.0": {
+      "GirCore.Gdk-4.0/0.8.1": {
         "dependencies": {
-          "GirCore.Cairo-1.0": "0.8.0",
-          "GirCore.GdkPixbuf-2.0": "0.8.0",
-          "GirCore.Gio-2.0": "0.8.0",
-          "GirCore.Pango-1.0": "0.8.0",
-          "GirCore.PangoCairo-1.0": "0.8.0"
+          "GirCore.Cairo-1.0": "0.8.1",
+          "GirCore.GdkPixbuf-2.0": "0.8.1",
+          "GirCore.Gio-2.0": "0.8.1",
+          "GirCore.Pango-1.0": "0.8.1",
+          "GirCore.PangoCairo-1.0": "0.8.1"
         },
         "runtime": {
           "lib/net10.0/Gdk-4.0.dll": {
-            "assemblyVersion": "0.8.0.0",
-            "fileVersion": "0.8.0.0"
+            "assemblyVersion": "0.8.1.0",
+            "fileVersion": "0.8.1.0"
           }
         }
       },
-      "GirCore.GdkPixbuf-2.0/0.8.0": {
+      "GirCore.GdkPixbuf-2.0/0.8.1": {
         "dependencies": {
-          "GirCore.Gio-2.0": "0.8.0"
+          "GirCore.Gio-2.0": "0.8.1"
         },
         "runtime": {
           "lib/net10.0/GdkPixbuf-2.0.dll": {
-            "assemblyVersion": "0.8.0.0",
-            "fileVersion": "0.8.0.0"
+            "assemblyVersion": "0.8.1.0",
+            "fileVersion": "0.8.1.0"
           }
         }
       },
-      "GirCore.Gio-2.0/0.8.0": {
+      "GirCore.Gio-2.0/0.8.1": {
         "dependencies": {
-          "GirCore.GObject-2.0": "0.8.0"
+          "GirCore.GObject-2.0": "0.8.1"
         },
         "runtime": {
           "lib/net10.0/Gio-2.0.dll": {
-            "assemblyVersion": "0.8.0.0",
-            "fileVersion": "0.8.0.0"
+            "assemblyVersion": "0.8.1.0",
+            "fileVersion": "0.8.1.0"
           }
         }
       },
-      "GirCore.GLib-2.0/0.8.0": {
+      "GirCore.GLib-2.0/0.8.1": {
         "runtime": {
           "lib/net10.0/GLib-2.0.dll": {
-            "assemblyVersion": "0.8.0.0",
-            "fileVersion": "0.8.0.0"
+            "assemblyVersion": "0.8.1.0",
+            "fileVersion": "0.8.1.0"
           }
         }
       },
-      "GirCore.GObject-2.0/0.8.0": {
+      "GirCore.GObject-2.0/0.8.1": {
         "dependencies": {
-          "GirCore.GLib-2.0": "0.8.0"
+          "GirCore.GLib-2.0": "0.8.1"
         },
         "runtime": {
           "lib/net10.0/GObject-2.0.dll": {
-            "assemblyVersion": "0.8.0.0",
-            "fileVersion": "0.8.0.0"
+            "assemblyVersion": "0.8.1.0",
+            "fileVersion": "0.8.1.0"
           }
         }
       },
-      "GirCore.Graphene-1.0/0.8.0": {
+      "GirCore.Graphene-1.0/0.8.1": {
         "dependencies": {
-          "GirCore.GObject-2.0": "0.8.0"
+          "GirCore.GObject-2.0": "0.8.1"
         },
         "runtime": {
           "lib/net10.0/Graphene-1.0.dll": {
-            "assemblyVersion": "0.8.0.0",
-            "fileVersion": "0.8.0.0"
+            "assemblyVersion": "0.8.1.0",
+            "fileVersion": "0.8.1.0"
           }
         }
       },
-      "GirCore.Gsk-4.0/0.8.0": {
+      "GirCore.Gsk-4.0/0.8.1": {
         "dependencies": {
-          "GirCore.Gdk-4.0": "0.8.0",
-          "GirCore.Graphene-1.0": "0.8.0"
+          "GirCore.Gdk-4.0": "0.8.1",
+          "GirCore.Graphene-1.0": "0.8.1"
         },
         "runtime": {
           "lib/net10.0/Gsk-4.0.dll": {
-            "assemblyVersion": "0.8.0.0",
-            "fileVersion": "0.8.0.0"
+            "assemblyVersion": "0.8.1.0",
+            "fileVersion": "0.8.1.0"
           }
         }
       },
-      "GirCore.Gtk-4.0/0.8.0": {
+      "GirCore.Gtk-4.0/0.8.1": {
         "dependencies": {
-          "GirCore.Gdk-4.0": "0.8.0",
-          "GirCore.Gsk-4.0": "0.8.0"
+          "GirCore.Gdk-4.0": "0.8.1",
+          "GirCore.Gsk-4.0": "0.8.1"
         },
         "runtime": {
           "lib/net10.0/Gtk-4.0.dll": {
-            "assemblyVersion": "0.8.0.0",
-            "fileVersion": "0.8.0.0"
+            "assemblyVersion": "0.8.1.0",
+            "fileVersion": "0.8.1.0"
           }
         }
       },
-      "GirCore.HarfBuzz-0.0/0.8.0": {
+      "GirCore.HarfBuzz-0.0/0.8.1": {
         "dependencies": {
-          "GirCore.FreeType2-2.0": "0.8.0",
-          "GirCore.GObject-2.0": "0.8.0"
+          "GirCore.FreeType2-2.0": "0.8.1",
+          "GirCore.GObject-2.0": "0.8.1"
         },
         "runtime": {
           "lib/net10.0/HarfBuzz-0.0.dll": {
-            "assemblyVersion": "0.8.0.0",
-            "fileVersion": "0.8.0.0"
+            "assemblyVersion": "0.8.1.0",
+            "fileVersion": "0.8.1.0"
           }
         }
       },
-      "GirCore.Pango-1.0/0.8.0": {
+      "GirCore.Pango-1.0/0.8.1": {
         "dependencies": {
-          "GirCore.Cairo-1.0": "0.8.0",
-          "GirCore.GObject-2.0": "0.8.0",
-          "GirCore.Gio-2.0": "0.8.0",
-          "GirCore.HarfBuzz-0.0": "0.8.0"
+          "GirCore.Cairo-1.0": "0.8.1",
+          "GirCore.GObject-2.0": "0.8.1",
+          "GirCore.Gio-2.0": "0.8.1",
+          "GirCore.HarfBuzz-0.0": "0.8.1"
         },
         "runtime": {
           "lib/net10.0/Pango-1.0.dll": {
-            "assemblyVersion": "0.8.0.0",
-            "fileVersion": "0.8.0.0"
+            "assemblyVersion": "0.8.1.0",
+            "fileVersion": "0.8.1.0"
           }
         }
       },
-      "GirCore.PangoCairo-1.0/0.8.0": {
+      "GirCore.PangoCairo-1.0/0.8.1": {
         "dependencies": {
-          "GirCore.Cairo-1.0": "0.8.0",
-          "GirCore.GObject-2.0": "0.8.0",
-          "GirCore.Pango-1.0": "0.8.0"
+          "GirCore.Cairo-1.0": "0.8.1",
+          "GirCore.GObject-2.0": "0.8.1",
+          "GirCore.Pango-1.0": "0.8.1"
         },
         "runtime": {
           "lib/net10.0/PangoCairo-1.0.dll": {
-            "assemblyVersion": "0.8.0.0",
-            "fileVersion": "0.8.0.0"
+            "assemblyVersion": "0.8.1.0",
+            "fileVersion": "0.8.1.0"
           }
         }
       },
@@ -222,7 +222,7 @@
       "InterfaceGtk4/1.0.0": {
         "dependencies": {
           "AccountingSoftware": "3.1.3",
-          "GirCore.Gtk-4.0": "0.8.0",
+          "GirCore.Gtk-4.0": "0.8.1",
           "InterfaceGtkLib": "1.0.0"
         },
         "runtime": {
@@ -255,96 +255,96 @@
       "path": "bcrypt.net-next/4.2.0",
       "hashPath": "bcrypt.net-next.4.2.0.nupkg.sha512"
     },
-    "GirCore.Cairo-1.0/0.8.0": {
+    "GirCore.Cairo-1.0/0.8.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ANZr+ekQPrKGrEtu46MX2zsI3iBU03kK7k6XNcSkCeO/5NXNTtjM3CtBygIWycTScYh285bAzNp3Ic/X92nVaQ==",
-      "path": "gircore.cairo-1.0/0.8.0",
-      "hashPath": "gircore.cairo-1.0.0.8.0.nupkg.sha512"
+      "sha512": "sha512-esyYCfjlJxi5+f0gwEnkL6VvXqlCeLGg0TnshXZMQAPVc8+HhOiML4UTR79DP3FWxa+thVp4YTEQGR2dxBwx0Q==",
+      "path": "gircore.cairo-1.0/0.8.1",
+      "hashPath": "gircore.cairo-1.0.0.8.1.nupkg.sha512"
     },
-    "GirCore.FreeType2-2.0/0.8.0": {
+    "GirCore.FreeType2-2.0/0.8.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-CsLarPjIzEv2UKRaMFCRnbpOEH7Bfgywpg6fy9NU2xctrtpHcHFXGrYrFLPfadCMlt12nUhVvBBREu0vQl2T1A==",
-      "path": "gircore.freetype2-2.0/0.8.0",
-      "hashPath": "gircore.freetype2-2.0.0.8.0.nupkg.sha512"
+      "sha512": "sha512-qnYts6YndqwBcqBFLDp2HB+2pzb8fG6Jo1ygti1kz2d07BWU0Md+C9IrbG5/G0soZlZ42eDkKcWDNe0ID6vx1w==",
+      "path": "gircore.freetype2-2.0/0.8.1",
+      "hashPath": "gircore.freetype2-2.0.0.8.1.nupkg.sha512"
     },
-    "GirCore.Gdk-4.0/0.8.0": {
+    "GirCore.Gdk-4.0/0.8.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-8H8qxDWDycZ7EXntL4O27lFgHG5XH38A7zknSIIc2PJqO3HrvCntoCUOH3QtK/e5mM6OLdAkm0ADqC0MiCiuZQ==",
-      "path": "gircore.gdk-4.0/0.8.0",
-      "hashPath": "gircore.gdk-4.0.0.8.0.nupkg.sha512"
+      "sha512": "sha512-lC9H41XOwW5d1NbbkptNcsuUwJDoqIHNTmI8ft6ueOSAwUCnLR5m0g0tPg03dCELeiCltOoihbjCQPbZaWG2Jg==",
+      "path": "gircore.gdk-4.0/0.8.1",
+      "hashPath": "gircore.gdk-4.0.0.8.1.nupkg.sha512"
     },
-    "GirCore.GdkPixbuf-2.0/0.8.0": {
+    "GirCore.GdkPixbuf-2.0/0.8.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-eEM/RF2FCX2CdTDwZqStg1FOIdW1oQDqlAFY2MwGGirAQinSLOQOxE8bOMJFA2RWcwVOe83gwALmoCqxkF8lvQ==",
-      "path": "gircore.gdkpixbuf-2.0/0.8.0",
-      "hashPath": "gircore.gdkpixbuf-2.0.0.8.0.nupkg.sha512"
+      "sha512": "sha512-Ez5HUcV3vjgqOAxFzo4b7YjbBTSIEFafeUDmzs4GlzjyT1ST6G3R/5lqWduNk2guCWHefa6/GkgThPirL/X6Fg==",
+      "path": "gircore.gdkpixbuf-2.0/0.8.1",
+      "hashPath": "gircore.gdkpixbuf-2.0.0.8.1.nupkg.sha512"
     },
-    "GirCore.Gio-2.0/0.8.0": {
+    "GirCore.Gio-2.0/0.8.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-8Cr6ePwL8+269QJSxbAwY+bwp591bhT7WMJpWqbX/JFv+J6EUiIW+CrV1chQJlGtrpcYHjNNny3AWfyEa5vUVQ==",
-      "path": "gircore.gio-2.0/0.8.0",
-      "hashPath": "gircore.gio-2.0.0.8.0.nupkg.sha512"
+      "sha512": "sha512-/Ddc3QqosowxKBdNx2bYGjfkwpCvn0bJg2v1XPfR/IE6fDEsAw7zPEhLMJKeFPehl6Dlm2no/SKh/QXoJCYkTQ==",
+      "path": "gircore.gio-2.0/0.8.1",
+      "hashPath": "gircore.gio-2.0.0.8.1.nupkg.sha512"
     },
-    "GirCore.GLib-2.0/0.8.0": {
+    "GirCore.GLib-2.0/0.8.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ghLBOSahDLj/b7cys4rYvLoFd5rIScSPzaD5WOQWeR+AiNPsCsL4wkYZX+n3T2HC0Wi7fCPTPWiiYfOvifvgdQ==",
-      "path": "gircore.glib-2.0/0.8.0",
-      "hashPath": "gircore.glib-2.0.0.8.0.nupkg.sha512"
+      "sha512": "sha512-WKEIITNPAYuqIic4zXUm021bJFnWCPqt5IW7mqGTlvJBZ+C6VJZukRt0hDSplQifbpEYzlCgxeinyqyyMtVbEA==",
+      "path": "gircore.glib-2.0/0.8.1",
+      "hashPath": "gircore.glib-2.0.0.8.1.nupkg.sha512"
     },
-    "GirCore.GObject-2.0/0.8.0": {
+    "GirCore.GObject-2.0/0.8.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-zj/RAbt+0xVgxoVzBzovnb4xjk0D0Cj2WxdzCMXGViIXK57VtjjpYDeuGShbvw53iBcyGvPI/JHzUXOd6V6wKg==",
-      "path": "gircore.gobject-2.0/0.8.0",
-      "hashPath": "gircore.gobject-2.0.0.8.0.nupkg.sha512"
+      "sha512": "sha512-fu6jkSGTzV8v+kRRLfDnTnfzJ1K+/EoMc55u0OSsfV5tleZY3VJAjyf5MnMmY5SBn1Mj0DE712YMPoQDR3G7RA==",
+      "path": "gircore.gobject-2.0/0.8.1",
+      "hashPath": "gircore.gobject-2.0.0.8.1.nupkg.sha512"
     },
-    "GirCore.Graphene-1.0/0.8.0": {
+    "GirCore.Graphene-1.0/0.8.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-zMpDBaoprJBa1VkEw+8Eggmjjc5MOaI+Acxb8fORWqcYrrG+SK7TX7Fb2DDZeRwshsKBQICfx/SUJy10FZlI8g==",
-      "path": "gircore.graphene-1.0/0.8.0",
-      "hashPath": "gircore.graphene-1.0.0.8.0.nupkg.sha512"
+      "sha512": "sha512-g947SPM7uTI0+a+ev6pT22Jyh08V1U8IAjbNO8aOOrvWYCzyg6nJBw8iHt2DrW9VTsqi7M1zmoMmkuSYGLQiDQ==",
+      "path": "gircore.graphene-1.0/0.8.1",
+      "hashPath": "gircore.graphene-1.0.0.8.1.nupkg.sha512"
     },
-    "GirCore.Gsk-4.0/0.8.0": {
+    "GirCore.Gsk-4.0/0.8.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-mOXlnilTq60L+es0zXuJXsNlSD3jeC/EOpZ5Uh1qxxdT7pQrmyCaH6nH6xxxw0sI/c00ujjvO1RrSJHRt06/kg==",
-      "path": "gircore.gsk-4.0/0.8.0",
-      "hashPath": "gircore.gsk-4.0.0.8.0.nupkg.sha512"
+      "sha512": "sha512-QLNB/ozKTsrGuhXPsTBBOjmR08DqZ+objRf4M3WCcjh21aUaGl5aLXcN9NaHa/wgpyJo29eGCpVW26O3CphecQ==",
+      "path": "gircore.gsk-4.0/0.8.1",
+      "hashPath": "gircore.gsk-4.0.0.8.1.nupkg.sha512"
     },
-    "GirCore.Gtk-4.0/0.8.0": {
+    "GirCore.Gtk-4.0/0.8.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-tF5BnDtJDus7rSqclVoUwQkfP6Gm1Sk58v/mKREF92Y1B/JSnDd2FXKLUlv3R4Ls3yrffhN6W21sNv2+kHDueQ==",
-      "path": "gircore.gtk-4.0/0.8.0",
-      "hashPath": "gircore.gtk-4.0.0.8.0.nupkg.sha512"
+      "sha512": "sha512-voCdlOtmgciZAthyL4Q/5HHJbzAhQfRVO0XzXApOkEs9iSire0umhuHHf7/PIpTCpde1CARzTTtTcZXu/5oRbA==",
+      "path": "gircore.gtk-4.0/0.8.1",
+      "hashPath": "gircore.gtk-4.0.0.8.1.nupkg.sha512"
     },
-    "GirCore.HarfBuzz-0.0/0.8.0": {
+    "GirCore.HarfBuzz-0.0/0.8.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-0KgcvOmnuUNYqRd/pTulrl5Mdw/ViDjI1xtIT9csKFwa6n11HOKlfobCtbs3nZicDiC7EUBFuLymutNpBDrTzw==",
-      "path": "gircore.harfbuzz-0.0/0.8.0",
-      "hashPath": "gircore.harfbuzz-0.0.0.8.0.nupkg.sha512"
+      "sha512": "sha512-N52x5hStRH0l/gQ6XyvZUDs1bh454i9KlUS3nNE34v3h6r63o+CiM1cGIXYBshrBPXlAR6LsiqPs1dryBGi+xQ==",
+      "path": "gircore.harfbuzz-0.0/0.8.1",
+      "hashPath": "gircore.harfbuzz-0.0.0.8.1.nupkg.sha512"
     },
-    "GirCore.Pango-1.0/0.8.0": {
+    "GirCore.Pango-1.0/0.8.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-VzKcRc2pTg3UlGyJMX9AndY2fCnfiiAez2rkbaxDtSNwz5uTv/aUm66uPgLflqowp/LqTZKOT2FDNnM5yveA9g==",
-      "path": "gircore.pango-1.0/0.8.0",
-      "hashPath": "gircore.pango-1.0.0.8.0.nupkg.sha512"
+      "sha512": "sha512-HU7ob5yHvo/pVjjjd9SiKGUw3FTACUC+7KDbmvcIrI+1TpoWnwqYzOiymPZ2bi3CRyK2M4Drn6NKDmfuV2eY2A==",
+      "path": "gircore.pango-1.0/0.8.1",
+      "hashPath": "gircore.pango-1.0.0.8.1.nupkg.sha512"
     },
-    "GirCore.PangoCairo-1.0/0.8.0": {
+    "GirCore.PangoCairo-1.0/0.8.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-1un6GX1GqEX6Fs9+DZPe2LJNLR0HmA3dEdoPxBCde5s4QAIiOlSNBI6ILo4lhVlXDqrgqhdjFzBBYNjv/wsAlA==",
-      "path": "gircore.pangocairo-1.0/0.8.0",
-      "hashPath": "gircore.pangocairo-1.0.0.8.0.nupkg.sha512"
+      "sha512": "sha512-aqTSYA2zQMGIc7d/UFDBl7hhURKAxGFI2dSwTBPcmHWu73MuIConw9hnQEwVYJF3svtP86Y3yfjP85xwHLfHKw==",
+      "path": "gircore.pangocairo-1.0/0.8.1",
+      "hashPath": "gircore.pangocairo-1.0.0.8.1.nupkg.sha512"
     },
     "Microsoft.Extensions.DependencyInjection.Abstractions/10.0.0": {
       "type": "package",

@@ -107,11 +107,13 @@ partial class FormStorageAndTrade : FormGeneral
             await page.SetValue();
         }
 
+        /*
         {
             PageAI page = PageAI.New();
             NotebookFunc?.CreatePage("AI", () => page);
             await page.SetValue();
         }
+        */
     }
 
     public async Task SetCurrentUser()

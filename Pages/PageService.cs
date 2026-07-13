@@ -34,6 +34,5 @@ partial class PageService : InterfaceGtk4.PageService
     }
 
     protected override async Task BeforeSetValue() => await ФункціїНалаштуванняКористувача.ОтриматиПеріодДляЖурналу(KeyForSettings, Period);
-
     protected override void PeriodChanged() => ФункціїНалаштуванняКористувача.ЗаписатиПеріодДляЖурналу(KeyForSettings, Period.Period.ToString(), Period.DateStart, Period.DateStop);
 }

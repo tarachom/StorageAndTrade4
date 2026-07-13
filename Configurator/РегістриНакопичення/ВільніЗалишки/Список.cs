@@ -57,4 +57,3 @@ public partial class ВільніЗалишки_Список : RegisterAccumulat
 
     #endregion
 }
-    
