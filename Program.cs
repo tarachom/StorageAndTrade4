@@ -29,7 +29,7 @@ namespace StorageAndTrade;
 
 class Program
 {
-    public static readonly Application BasicApp = Application.New("ua.org.accounting.storage_and_trade", Gio.ApplicationFlags.FlagsNone);
+    public static Application BasicApp { get; } = Application.New("ua.org.accounting.storage_and_trade", Gio.ApplicationFlags.FlagsNone);
 
     /// <summary>
     /// Основна форма
@@ -44,7 +44,7 @@ class Program
     static void Main()
     {
         //Підключення бібліотек
-        FunctionForNativeMethods.SetMsysDirectory(@"D:\Debug\msys64\ucrt64\bin");
+        FunctionForNativeMethods.SetMsysDirectory();
 
         BasicApp.OnActivate += (app, _) =>
         {
