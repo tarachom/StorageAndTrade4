@@ -43,7 +43,7 @@ class Program
 
     static void Main()
     {
-        //Підключення бібліотек
+        //Підключення бібліотек (тільки для Windows)
         FunctionForNativeMethods.SetMsysDirectory();
 
         BasicApp.OnActivate += (app, _) =>
