@@ -1,24 +1,67 @@
 
 using Gtk;
 using InterfaceGtk4;
+using InterfaceGtkLib;
 using GeneratedCode;
 using GeneratedCode.Довідники;
+using AccountingSoftware;
 
 namespace StorageAndTrade;
 
 [GObject.Subclass<FormGeneral>]
 partial class FormStorageAndTrade : FormGeneral
 {
-    public static new FormStorageAndTrade New()
+    public static FormStorageAndTrade NewWithParam(ConfigurationParam? openConfigurationParam)
     {
-        FormStorageAndTrade window = NewWithProperties([]);
-        window.Application = Program.BasicApp;
-        window.Init(Config.Kernel);
+        FormStorageAndTrade form = NewWithProperties([]);
+        form.Application = Program.BasicApp;
+        form.OpenConfigurationParam = openConfigurationParam;
 
-        return window;
+        form.SetValue();
+
+        return form;
+    }
+
+    public async Task OpenFirstPages()
+    {
+        {
+            PageHome page = PageHome.New();
+            NotebookFunc?.CreatePage("Стартова", () => page, false, null, null, true);
+            await page.SetValue();
+        }
+
+        /*
+        {
+            PageAI page = PageAI.New();
+            NotebookFunc?.CreatePage("AI", () => page);
+            await page.SetValue();
+        }
+        */
+    }
+
+    public async Task SetCurrentUser()
+    {
+        Користувачі_Pointer ЗнайденийКористувач = await new Користувачі_Select().FindByField(Користувачі_Const.КодВСпеціальнійТаблиці, Config.Kernel.User);
+        if (ЗнайденийКористувач.IsEmpty())
+        {
+            Користувачі_Object НовийКористувач = new()
+            {
+                КодВСпеціальнійТаблиці = Config.Kernel.User,
+                Назва = await Config.Kernel.DataBase.SpetialTableUsersGetFullName(Config.Kernel.User)
+            };
+
+            await НовийКористувач.New();
+            await НовийКористувач.Save();
+
+            Program.Користувач = НовийКористувач.GetDirectoryPointer();
+        }
+        else
+            Program.Користувач = ЗнайденийКористувач;
     }
 
     #region Override
+
+    protected override Kernel Kernel { get; set; } = Config.Kernel;
 
     protected override void ButtonMessageClicked()
     {
@@ -98,41 +141,4 @@ partial class FormStorageAndTrade : FormGeneral
     }
 
     #endregion
-
-    public async Task OpenFirstPages()
-    {
-        {
-            PageHome page = PageHome.New();
-            NotebookFunc?.CreatePage("Стартова", () => page, false, null, null, true);
-            await page.SetValue();
-        }
-
-        /*
-        {
-            PageAI page = PageAI.New();
-            NotebookFunc?.CreatePage("AI", () => page);
-            await page.SetValue();
-        }
-        */
-    }
-
-    public async Task SetCurrentUser()
-    {
-        Користувачі_Pointer ЗнайденийКористувач = await new Користувачі_Select().FindByField(Користувачі_Const.КодВСпеціальнійТаблиці, Config.Kernel.User);
-        if (ЗнайденийКористувач.IsEmpty())
-        {
-            Користувачі_Object НовийКористувач = new()
-            {
-                КодВСпеціальнійТаблиці = Config.Kernel.User,
-                Назва = await Config.Kernel.DataBase.SpetialTableUsersGetFullName(Config.Kernel.User)
-            };
-
-            await НовийКористувач.New();
-            await НовийКористувач.Save();
-
-            Program.Користувач = НовийКористувач.GetDirectoryPointer();
-        }
-        else
-            Program.Користувач = ЗнайденийКористувач;
-    }
 }

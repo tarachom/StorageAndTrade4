@@ -18,12 +18,14 @@ namespace StorageAndTrade;
 [GObject.Subclass<InterfaceGtk4.FormConfigurationSelection>]
 partial class FormConfigurationSelection : InterfaceGtk4.FormConfigurationSelection
 {
+    public override TypeForm TypeOpenForm { get; set; } = TypeForm.WorkingProgram;
+
     public static new FormConfigurationSelection New()
     {
         FormConfigurationSelection window = NewWithProperties([]);
         window.Application = Program.BasicApp;
-        window.Init(Config.Kernel, Config.Kernel, TypeForm.WorkingProgram);
-
+        window.ProgramKernel = Config.Kernel;
+        window.ConfiguratorKernel = Config.Kernel;
         return window;
     }
 
@@ -36,9 +38,7 @@ partial class FormConfigurationSelection : InterfaceGtk4.FormConfigurationSelect
         if (string.IsNullOrEmpty(await ЖурналиДокументів.ОсновнийТипПеріоду()))
             await ЖурналиДокументів.ОсновнийТипПеріоду(PeriodForJournal.TypePeriod.AllPeriod.ToString());
 
-        FormStorageAndTrade form = FormStorageAndTrade.New();
-        form.OpenConfigurationParam = openConfigurationParam;
-        form.SetStatusBar();
+        FormStorageAndTrade form = FormStorageAndTrade.NewWithParam(openConfigurationParam);
         form.Show();
 
         Program.BasicForm = form;
@@ -54,9 +54,7 @@ partial class FormConfigurationSelection : InterfaceGtk4.FormConfigurationSelect
 
     public override async Task<bool> OpenConfigurator(ConfigurationParam? openConfigurationParam)
     {
-        Configurator.FormConfigurator form = Configurator.FormConfigurator.NewProgramStart(Program.BasicApp, Config.Kernel);
-        form.OpenConfigurationParam = openConfigurationParam;
-        form.SetStatusBar();
+        Configurator.FormConfigurator form = Configurator.FormConfigurator.NewProgramStart(Program.BasicApp, Config.Kernel, openConfigurationParam);
         form.Show();
 
         //Відкрити перші сторінки
