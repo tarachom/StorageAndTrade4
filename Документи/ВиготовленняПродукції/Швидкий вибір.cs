@@ -14,7 +14,7 @@ using Функції = StorageAndTrade.ВиготовленняПродукці�
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<DocumentFormJournalSmall>("SmallList_VwakblJhY0e2kdtyVeHOcw")]
+[GObject.Subclass<DocumentFormJournalSmall>("SmallList_iq6fAbprz3CFETbNdoXnHg")]
 public partial class ВиготовленняПродукції_ШвидкийВибір : DocumentFormJournalSmall
 {
     partial void Initialize()

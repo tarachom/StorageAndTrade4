@@ -10,7 +10,7 @@ using GeneratedCode.Документи;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<PointerControl>("PointerControl_7PSeAf9Z0nipfzL2zTX1hw")]
+[GObject.Subclass<PointerControl>("PointerControl_iq6fAfNrQn6G5IiCvh9pTQ")]
 public partial class ВиготовленняПродукції_PointerControl : PointerControl
 {
     event EventHandler<ВиготовленняПродукції_Pointer>? PointerChanged;

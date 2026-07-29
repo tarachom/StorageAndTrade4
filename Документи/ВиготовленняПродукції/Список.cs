@@ -14,7 +14,7 @@ using Функції = StorageAndTrade.ВиготовленняПродукці�
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<DocumentFormJournalFull>("List_EbmOzceFjEaw4BaPQUnS5Q")]
+[GObject.Subclass<DocumentFormJournalFull>("List_iq6fAYhrCn6n9Sys9wjzug")]
 public partial class ВиготовленняПродукції_Список : DocumentFormJournalFull
 {
     partial void Initialize()

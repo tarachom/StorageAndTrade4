@@ -72,6 +72,10 @@ static class ВиготовленняПродукції_Функції
             ВиготовленняПродукції_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
             
+                await Новий.ГотовийВиріб_TablePart.Save(false); // Таблична частина "ГотовийВиріб"
+            
+                await Новий.Комплектуючі_TablePart.Save(false); // Таблична частина "Комплектуючі"
+            
             return Новий.UniqueID;
         }
         else

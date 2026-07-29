@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 24.07.2026 21:45:47
+ * Дата конфігурації: 29.07.2026 20:54:06
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон Gtk4.xslt
@@ -31924,6 +31924,69 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 form.Grid.AppendColumn(column);
             }
         
+            //Назва: Організація, "Організація"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Організація"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Підрозділ, "Підрозділ"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Підрозділ"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Підрозділ", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Автор, "Автор"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Автор"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
             //Назва: Коментар, "Коментар"
             {
                 SignalListItemFactory factory = SignalListItemFactory.New();
@@ -31957,6 +32020,52 @@ namespace GeneratedCode.Документи.ТабличніСписки
         public static void CreateFilter(DocumentFormJournalBase form)
         {
             
+            List<FilterControl.FilterListItem> filterList = [];
+            
+            { /* Організація, pointer */
+                Switch sw = Switch.New();
+                Організації_PointerControl Організація = Організації_PointerControl.New();
+                        Організація.Caption = "";
+                        Організація.AfterSelectFunc = () => sw.Active = true;
+                        object get() => Організація.Pointer.UniqueID.UGuid;
+                    
+                filterList.Add(new(ВиготовленняПродукції_Const.Організація, get, sw));
+                form.Filter.Append("Організація:", Організація, sw);
+            }
+            
+            { /* Підрозділ, pointer */
+                Switch sw = Switch.New();
+                СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
+                        Підрозділ.Caption = "";
+                        Підрозділ.AfterSelectFunc = () => sw.Active = true;
+                        object get() => Підрозділ.Pointer.UniqueID.UGuid;
+                    
+                filterList.Add(new(ВиготовленняПродукції_Const.Підрозділ, get, sw));
+                form.Filter.Append("Підрозділ:", Підрозділ, sw);
+            }
+            
+            { /* Автор, pointer */
+                Switch sw = Switch.New();
+                Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
+                        Автор.Caption = "";
+                        Автор.AfterSelectFunc = () => sw.Active = true;
+                        object get() => Автор.Pointer.UniqueID.UGuid;
+                    
+                filterList.Add(new(ВиготовленняПродукції_Const.Автор, get, sw));
+                form.Filter.Append("Автор:", Автор, sw);
+            }
+            
+            form.Filter.GetWhere = () =>
+            {
+                List<Where> where = [];
+                foreach (var filter in filterList)
+                    if (filter.IsOn.Active)
+                        where.Add(new Where(filter.Field, Comparison.EQ, filter.GetValueFunc.Invoke()));
+
+                form.WhereList = where;
+                return where.Count != 0;
+            };
+        
         }
 
         public static async Task UpdateRecords(DocumentFormJournalBase form)
@@ -31984,6 +32093,18 @@ namespace GeneratedCode.Документи.ТабличніСписки
                     /* Сортування */
                     ВиготовленняПродукції_Select.QuerySelect.Order.Add(Документи.ВиготовленняПродукції_Const.ДатаДок, SelectOrder.ASC);
                 
+                            /* Приєднання pointer */
+                            Довідники.Організації_Pointer.GetJoin(ВиготовленняПродукції_Select.QuerySelect, Документи.ВиготовленняПродукції_Const.Організація,
+                            ВиготовленняПродукції_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                        
+                            /* Приєднання pointer */
+                            Довідники.СтруктураПідприємства_Pointer.GetJoin(ВиготовленняПродукції_Select.QuerySelect, Документи.ВиготовленняПродукції_Const.Підрозділ,
+                            ВиготовленняПродукції_Select.QuerySelect.Table, "join_tab_2", "Підрозділ");
+                        
+                            /* Приєднання pointer */
+                            Довідники.Користувачі_Pointer.GetJoin(ВиготовленняПродукції_Select.QuerySelect, Документи.ВиготовленняПродукції_Const.Автор,
+                            ВиготовленняПродукції_Select.QuerySelect.Table, "join_tab_3", "Автор");
+                        
 
             /* Відбори */
             ВиготовленняПродукції_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -32003,6 +32124,9 @@ namespace GeneratedCode.Документи.ТабличніСписки
                     row.Fields.Add("Назва", Fields[ВиготовленняПродукції_Const.Назва].ToString());
                     row.Fields.Add("НомерДок", Fields[ВиготовленняПродукції_Const.НомерДок].ToString());
                     row.Fields.Add("ДатаДок", Fields[ВиготовленняПродукції_Const.ДатаДок].ToString());
+                    row.Fields.Add("Організація", Fields["Організація"].ToString());
+                    row.Fields.Add("Підрозділ", Fields["Підрозділ"].ToString());
+                    row.Fields.Add("Автор", Fields["Автор"].ToString());
                     row.Fields.Add("Коментар", Fields[ВиготовленняПродукції_Const.Коментар].ToString());
                     
                     ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
@@ -32049,6 +32173,18 @@ namespace GeneratedCode.Документи.ТабличніСписки
                     /* Сортування */
                     ВиготовленняПродукції_Select.QuerySelect.Order.Add(Документи.ВиготовленняПродукції_Const.ДатаДок, SelectOrder.ASC);
                 
+                            /* Приєднання pointer */
+                            Довідники.Організації_Pointer.GetJoin(ВиготовленняПродукції_Select.QuerySelect, Документи.ВиготовленняПродукції_Const.Організація,
+                            ВиготовленняПродукції_Select.QuerySelect.Table, "join_tab_1", "Організація");
+                        
+                            /* Приєднання pointer */
+                            Довідники.СтруктураПідприємства_Pointer.GetJoin(ВиготовленняПродукції_Select.QuerySelect, Документи.ВиготовленняПродукції_Const.Підрозділ,
+                            ВиготовленняПродукції_Select.QuerySelect.Table, "join_tab_2", "Підрозділ");
+                        
+                            /* Приєднання pointer */
+                            Довідники.Користувачі_Pointer.GetJoin(ВиготовленняПродукції_Select.QuerySelect, Документи.ВиготовленняПродукції_Const.Автор,
+                            ВиготовленняПродукції_Select.QuerySelect.Table, "join_tab_3", "Автор");
+                        
 
             /* Відбори */
             if (form.WhereList != null) ВиготовленняПродукції_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -32080,6 +32216,9 @@ namespace GeneratedCode.Документи.ТабличніСписки
                     row.Fields.Add("Назва", Fields[ВиготовленняПродукції_Const.Назва].ToString());
                     row.Fields.Add("НомерДок", Fields[ВиготовленняПродукції_Const.НомерДок].ToString());
                     row.Fields.Add("ДатаДок", Fields[ВиготовленняПродукції_Const.ДатаДок].ToString());
+                    row.Fields.Add("Організація", Fields["Організація"].ToString());
+                    row.Fields.Add("Підрозділ", Fields["Підрозділ"].ToString());
+                    row.Fields.Add("Автор", Fields["Автор"].ToString());
                     row.Fields.Add("Коментар", Fields[ВиготовленняПродукції_Const.Коментар].ToString());
                     
                     form.Store.Append(row);
