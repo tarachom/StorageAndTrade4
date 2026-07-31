@@ -26,6 +26,7 @@ partial class Склади_Елемент : DirectoryFormElement
     СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
     Склади_Папки_PointerControl Папка = Склади_Папки_PointerControl.New();
     ComboBoxText НалаштуванняАдресногоЗберігання = ComboBoxText.New();
+    Категорії_PointerControl Категорія = Категорії_PointerControl.New();
 
     #endregion
 
@@ -81,6 +82,16 @@ partial class Склади_Елемент : DirectoryFormElement
             НалаштуванняАдресногоЗберігання.Active = 0;
             НалаштуванняАдресногоЗберігання.AddController(FunctionForComboBox.DisableScrolling());
         }
+
+        // Категорія:
+        Категорія.Caption = "Категорія";
+        Категорія.WidthPresentation = 300;
+
+        // Таблична частина "Контакти"
+        Контакти.ЕлементВласник = Елемент;
+        Контакти.WidthRequest = 500;
+        Контакти.HeightRequest = 300;
+        Контакти.Vexpand = false;
     }
 
     public static Склади_Елемент New()
@@ -127,15 +138,14 @@ partial class Склади_Елемент : DirectoryFormElement
 
         // НалаштуванняАдресногоЗберігання
         CreateField(vBox, "Адресне зберігання:", НалаштуванняАдресногоЗберігання);
+
+        // Категорія
+        CreateField(vBox, null, Категорія);
     }
 
     void CreateEnd(Box vBox)
     {
         // Таблична частина "Контакти"
-        Контакти.WidthRequest = 500;
-        Контакти.HeightRequest = 300;
-        Контакти.Vexpand = false;
-
         CreateTablePart(vBox, "Контакти", Контакти);
     }
 
@@ -153,9 +163,9 @@ partial class Склади_Елемент : DirectoryFormElement
         Підрозділ.Pointer = Елемент.Підрозділ;
         Папка.Pointer = Елемент.Папка;
         НалаштуванняАдресногоЗберігання.ActiveId = Елемент.НалаштуванняАдресногоЗберігання.ToString();
+        Категорія.Pointer = Елемент.Категорія;
 
         // Таблична частина "Контакти"
-        Контакти.ЕлементВласник = Елемент;
         await Контакти.LoadRecords();
     }
 
@@ -169,6 +179,7 @@ partial class Склади_Елемент : DirectoryFormElement
         Елемент.Підрозділ = Підрозділ.Pointer;
         Елемент.Папка = Папка.Pointer;
         Елемент.НалаштуванняАдресногоЗберігання = ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_FindByName(НалаштуванняАдресногоЗберігання.ActiveId);
+        Елемент.Категорія = Категорія.Pointer;
     }
 
     #endregion
@@ -181,7 +192,6 @@ partial class Склади_Елемент : DirectoryFormElement
             if (await Елемент.Save())
             {
                 await Контакти.SaveRecords(); // Таблична частина "Контакти"
-
                 isSaved = true;
             }
         }

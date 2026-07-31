@@ -1,4 +1,3 @@
-
 /*
         ВиготовленняПродукції_ТабличнаЧастина_Комплектуючі.cs
         Таблична Частина
@@ -9,7 +8,6 @@ using InterfaceGtk4;
 using AccountingSoftware;
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
-using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
@@ -193,6 +191,39 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
         public Action? Сhanged_Коментар { get; set; } = null;
 
 
+        /* Серія */
+        public СеріїНоменклатури_Pointer Серія
+        {
+            get => Серія_;
+            set
+            {
+                if (!Серія_.Equals(value))
+                {
+                    Серія_ = value;
+                    Сhanged_Серія?.Invoke();
+                }
+            }
+        }
+        СеріїНоменклатури_Pointer Серія_ = new();
+        public Action? Сhanged_Серія { get; set; } = null;
+
+
+        /* КількістьУпаковок */
+        public int КількістьУпаковок
+        {
+            get => КількістьУпаковок_;
+            set
+            {
+                if (!КількістьУпаковок_.Equals(value))
+                {
+                    КількістьУпаковок_ = value;
+                    Сhanged_КількістьУпаковок?.Invoke();
+                }
+            }
+        }
+        int КількістьУпаковок_ = 0;
+        public Action? Сhanged_КількістьУпаковок { get; set; } = null;
+
 
         /*
         Функції
@@ -210,6 +241,8 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
             row.ОдиницяВиміру = ОдиницяВиміру.Copy();
             row.Кількість = Кількість;
             row.Коментар = Коментар;
+            row.Серія = Серія.Copy();
+            row.КількістьУпаковок = КількістьУпаковок;
 
             return row;
         }
@@ -225,9 +258,19 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
         return Task.CompletedTask;
     }
 
-    Task ПісляЗміни_Артикул(ItemRow row)
+    async Task ПісляЗміни_Артикул(ItemRow row)
     {
-        return Task.CompletedTask;
+        if (row.Номенклатура.IsEmpty() && row.Артикул.Trim().Length > 3)
+        {
+            Номенклатура_Pointer Вказівник = await new Номенклатура_Select().FindByField(Номенклатура_Const.Артикул, row.Артикул.Trim(), "LOWER");
+            if (!Вказівник.IsEmpty())
+            {
+                await Вказівник.GetPresentation();
+
+                row.Номенклатура = Вказівник;
+                await ПісляЗміни_Номенклатура(row);
+            }
+        }
     }
 
     async Task ПісляЗміни_Номенклатура(ItemRow row)
@@ -238,7 +281,7 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
             await обєкт.ОдиницяВиміру.GetPresentation();
             row.ОдиницяВиміру = обєкт.ОдиницяВиміру;
 
-            await ПісляЗміни_Пакування(row);
+            await ПісляЗміни_ОдиницяВиміру(row);
         }
     }
 
@@ -247,9 +290,16 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
         return Task.CompletedTask;
     }
 
-    Task ПісляЗміни_Пакування(ItemRow row)
+    async Task ПісляЗміни_ОдиницяВиміру(ItemRow row)
     {
-        return Task.CompletedTask;
+        if (!row.ОдиницяВиміру.IsEmpty())
+        {
+            ПакуванняОдиниціВиміру_Object? обєкт = await row.ОдиницяВиміру.GetDirectoryObject();
+            if (обєкт != null)
+                row.КількістьУпаковок = (обєкт.КількістьУпаковок > 0) ? обєкт.КількістьУпаковок : 1;
+            else
+                row.КількістьУпаковок = 1;
+        }
     }
 
     Task ПісляЗміни_Партія(ItemRow row)
@@ -262,9 +312,9 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
         return Task.CompletedTask;
     }
 
-    void ПісляЗміни_Кількість(ItemRow row)
+    Task ПісляЗміни_Серія(ItemRow row)
     {
-
+        return Task.CompletedTask;
     }
 
     #endregion
@@ -398,10 +448,9 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
                 if (listItem.Item is not ItemRow row) return;
 
                 cell.BeforeClickOpenFunc = () => cell.Власник = row.Номенклатура;
-
-                cell.BeforeClickOpenFunc = async () =>
+                cell.OnSelect = async () =>
                 {
-                    cell.Власник = row.Номенклатура;
+                    row.ХарактеристикаНоменклатури = cell.Pointer;
                     await ПісляЗміни_ХарактеристикаНоменклатури(row);
                 };
 
@@ -411,6 +460,65 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
             ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
             column.Resizable = true;
             column.FixedWidth = 300;
+
+            Grid.AppendColumn(column);
+        }
+
+        //Серія
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                var cell = СеріїНоменклатури_PointerTablePartCell.New();
+
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not СеріїНоменклатури_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnSelect = async () =>
+                {
+                    row.Серія = cell.Pointer;
+                    await ПісляЗміни_Серія(row);
+                };
+
+                (row.Сhanged_Серія = () => cell.Pointer = row.Серія).Invoke();
+
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("Серія", factory);
+            column.Resizable = true;
+            column.FixedWidth = 300;
+
+            Grid.AppendColumn(column);
+        }
+
+        //КількістьУпаковок
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                var cell = IntegerTablePartCell.New();
+
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not IntegerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnСhanged = () => row.КількістьУпаковок = cell.Value;
+                (row.Сhanged_КількістьУпаковок = () => cell.Value = row.КількістьУпаковок).Invoke();
+
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("Коєфіціент", factory);
+            column.Resizable = true;
+            column.FixedWidth = 100;
 
             Grid.AppendColumn(column);
         }
@@ -432,10 +540,10 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
                 if (listItem.Item is not ItemRow row) return;
 
                 cell.OnSelect = async () =>
-                 {
-                     row.ОдиницяВиміру = cell.Pointer;
-                     await ПісляЗміни_Пакування(row);
-                 };
+                {
+                    row.ОдиницяВиміру = cell.Pointer;
+                    await ПісляЗміни_ОдиницяВиміру(row);
+                };
 
                 (row.Сhanged_ОдиницяВиміру = () => cell.Pointer = row.ОдиницяВиміру).Invoke();
 
@@ -462,6 +570,12 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
                 if (args.Object is not ListItem listItem) return;
                 if (listItem.Child is not ПартіяТоварівКомпозит_PointerTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
+
+                cell.BeforeClickOpenFunc = () =>
+                {
+                    cell.НоменклатураВідбір = row.Номенклатура;
+                    cell.ХарактеристикиНоменклатуриВідбір = row.ХарактеристикаНоменклатури;
+                };
 
                 cell.OnSelect = async () =>
                 {
@@ -527,11 +641,7 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
                 if (listItem.Child is not NumericTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
 
-                cell.OnСhanged = () =>
-                {
-                    row.Кількість = cell.Value;
-                    ПісляЗміни_Кількість(row);
-                };
+                cell.OnСhanged = () => row.Кількість = cell.Value;
 
                 (row.Сhanged_Кількість = () => cell.Value = row.Кількість).Invoke();
 
@@ -600,6 +710,8 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
                 row.ОдиницяВиміру = record.ОдиницяВиміру;
                 row.Кількість = record.Кількість;
                 row.Коментар = record.Коментар;
+                row.Серія = record.Серія;
+                row.КількістьУпаковок = record.КількістьУпаковок;
 
                 Store.Append(row);
 
@@ -612,32 +724,43 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
         }
     }
 
+    /// <summary>
+    /// Функція повертає рядки табличної частини
+    /// </summary>
+    public List<ВиготовленняПродукції_Комплектуючі_TablePart.Record> GetRecords()
+    {
+        List<ВиготовленняПродукції_Комплектуючі_TablePart.Record> records = [];
+
+        for (uint i = 0; i <= Store.GetNItems(); i++)
+        {
+            ItemRow? row = (ItemRow?)Store.GetObject(i);
+            if (row != null)
+                records.Add(new()
+                {
+                    UID = row.UniqueID.UGuid,
+                    НомерРядка = row.НомерРядка,
+                    Артикул = row.Артикул,
+                    Номенклатура = row.Номенклатура,
+                    ХарактеристикаНоменклатури = row.ХарактеристикаНоменклатури,
+                    Партія = row.Партія,
+                    Склад = row.Склад,
+                    ОдиницяВиміру = row.ОдиницяВиміру,
+                    Кількість = row.Кількість,
+                    Коментар = row.Коментар,
+                    Серія = row.Серія,
+                    КількістьУпаковок = row.КількістьУпаковок,
+                });
+        }
+
+        return records;
+    }
+
     public override async Task SaveRecords()
     {
         if (ЕлементВласник != null)
         {
             ЕлементВласник.Комплектуючі_TablePart.Records.Clear();
-            for (uint i = 0; i <= Store.GetNItems(); i++)
-            {
-                ItemRow? row = (ItemRow?)Store.GetObject(i);
-                if (row != null)
-                {
-                    ЕлементВласник.Комплектуючі_TablePart.Records.Add(new()
-                    {
-                        UID = row.UniqueID.UGuid,
-                        НомерРядка = row.НомерРядка,
-                        Артикул = row.Артикул,
-                        Номенклатура = row.Номенклатура,
-                        ХарактеристикаНоменклатури = row.ХарактеристикаНоменклатури,
-                        Партія = row.Партія,
-                        Склад = row.Склад,
-                        ОдиницяВиміру = row.ОдиницяВиміру,
-                        Кількість = row.Кількість,
-                        Коментар = row.Коментар,
-
-                    });
-                }
-            }
+            ЕлементВласник.Комплектуючі_TablePart.Records.AddRange(GetRecords());
             await ЕлементВласник.Комплектуючі_TablePart.Save(true);
 
             //Оновлення табличної частини після збереження
@@ -661,6 +784,8 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
                     row.ОдиницяВиміру = x.ОдиницяВиміру;
                     row.Кількість = x.Кількість;
                     row.Коментар = x.Коментар;
+                    row.Серія = x.Серія;
+                    row.КількістьУпаковок = x.КількістьУпаковок;
 
                     return row;
                 });

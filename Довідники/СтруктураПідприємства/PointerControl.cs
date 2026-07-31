@@ -11,7 +11,7 @@ using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<PointerControl>("PointerControl_y734bzG2jEKfHOFvLm81Og")]
+[GObject.Subclass<PointerControl>("PointerControl_VrKfAcq6jHO1FfOusmKZvg")]
 public partial class СтруктураПідприємства_PointerControl : PointerControl
 {
     event EventHandler<СтруктураПідприємства_Pointer>? PointerChanged;
@@ -20,7 +20,7 @@ public partial class СтруктураПідприємства_PointerControl :
     {
         WidthPresentation = 300;
         Caption = $"{СтруктураПідприємства_Const.FULLNAME}:";
-        PointerChanged += async (_, pointer) => Presentation = pointer != null ? await pointer.GetPresentation() : "";
+        PointerChanged += async (_, pointer) => Presentation = !pointer.IsEmpty() ? await pointer.GetPresentation() : "";
     }
 
     public static СтруктураПідприємства_PointerControl New() => NewWithProperties([]);
@@ -28,10 +28,7 @@ public partial class СтруктураПідприємства_PointerControl :
     СтруктураПідприємства_Pointer pointer = new();
     public СтруктураПідприємства_Pointer Pointer
     {
-        get
-        {
-            return pointer;
-        }
+        get => pointer;
         set
         {
             pointer = value;

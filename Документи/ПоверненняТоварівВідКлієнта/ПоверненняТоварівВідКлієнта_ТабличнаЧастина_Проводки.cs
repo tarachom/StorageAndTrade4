@@ -18,7 +18,7 @@ partial class ПоверненняТоварівВідКлієнта_Табли�
 {
     #region Data
 
-    [GObject.Subclass<GObject.Object>("ItemRow_142eAb1hrHeMk3AmvGQ71Q")]
+    [GObject.Subclass<GObject.Object>("ItemRow_V7ifARozjXe4QKeBeBSWQ")]
     public partial class ItemRow : IRowSubclassTablePart
     {
         public static ItemRow New() => NewWithProperties([]);
@@ -74,6 +74,23 @@ partial class ПоверненняТоварівВідКлієнта_Табли�
         public Action? Сhanged_Рахунок { get; set; } = null;
 
 
+        /* ВидПроводки */
+        public ВидиПроводок ВидПроводки
+        {
+            get => ВидПроводки_;
+            set
+            {
+                if (!ВидПроводки_.Equals(value))
+                {
+                    ВидПроводки_ = value;
+                    Сhanged_ВидПроводки?.Invoke();
+                }
+            }
+        }
+        ВидиПроводок ВидПроводки_ = 0;
+        public Action? Сhanged_ВидПроводки { get; set; } = null;
+
+
         /* Аналітика1 */
         public UuidAndText Аналітика1
         {
@@ -125,40 +142,6 @@ partial class ПоверненняТоварівВідКлієнта_Табли�
         public Action? Сhanged_Аналітика3 { get; set; } = null;
 
 
-        /* Кредит */
-        public decimal Кредит
-        {
-            get => Кредит_;
-            set
-            {
-                if (!Кредит_.Equals(value))
-                {
-                    Кредит_ = value;
-                    Сhanged_Кредит?.Invoke();
-                }
-            }
-        }
-        decimal Кредит_ = 0;
-        public Action? Сhanged_Кредит { get; set; } = null;
-
-
-        /* Дебет */
-        public decimal Дебет
-        {
-            get => Дебет_;
-            set
-            {
-                if (!Дебет_.Equals(value))
-                {
-                    Дебет_ = value;
-                    Сhanged_Дебет?.Invoke();
-                }
-            }
-        }
-        decimal Дебет_ = 0;
-        public Action? Сhanged_Дебет { get; set; } = null;
-
-
         /* Податки */
         public ВидиПодатків_Pointer Податки
         {
@@ -176,6 +159,40 @@ partial class ПоверненняТоварівВідКлієнта_Табли�
         public Action? Сhanged_Податки { get; set; } = null;
 
 
+        /* Сума */
+        public decimal Сума
+        {
+            get => Сума_;
+            set
+            {
+                if (!Сума_.Equals(value))
+                {
+                    Сума_ = value;
+                    Сhanged_Сума?.Invoke();
+                }
+            }
+        }
+        decimal Сума_ = 0;
+        public Action? Сhanged_Сума { get; set; } = null;
+
+
+        /* Кількість */
+        public decimal Кількість
+        {
+            get => Кількість_;
+            set
+            {
+                if (!Кількість_.Equals(value))
+                {
+                    Кількість_ = value;
+                    Сhanged_Кількість?.Invoke();
+                }
+            }
+        }
+        decimal Кількість_ = 0;
+        public Action? Сhanged_Кількість { get; set; } = null;
+
+
 
         /*
         Функції
@@ -186,12 +203,13 @@ partial class ПоверненняТоварівВідКлієнта_Табли�
             var row = New();
             row.НомерРядка = НомерРядка;
             row.Рахунок = Рахунок.Copy();
+            row.ВидПроводки = ВидПроводки;
             row.Аналітика1 = Аналітика1.Copy();
             row.Аналітика2 = Аналітика2.Copy();
             row.Аналітика3 = Аналітика3.Copy();
-            row.Кредит = Кредит;
-            row.Дебет = Дебет;
             row.Податки = Податки.Copy();
+            row.Сума = Сума;
+            row.Кількість = Кількість;
 
             return row;
         }
@@ -217,7 +235,7 @@ partial class ПоверненняТоварівВідКлієнта_Табли�
         }
     }
 
-    void ПісляЗміни_ДебетАбоКредит(ItemRow row)
+    void ПісляЗміни_СумаАбоКількість(ItemRow row)
     {
         Підсумок.Recount();
     }
@@ -242,19 +260,19 @@ partial class ПоверненняТоварівВідКлієнта_Табли�
         model.OnItemsChanged += (_, _) => Підсумок.Recount();
         Підсумок.QuantifyFunc = () =>
         {
-            decimal Дебет = 0, Кредит = 0;
+            decimal Сума = 0, Кількість = 0;
 
             for (uint i = 0; i <= Store.GetNItems(); i++)
             {
                 ItemRow? row = (ItemRow?)Store.GetObject(i);
                 if (row != null)
                 {
-                    Дебет += row.Дебет;
-                    Кредит += row.Кредит;
+                    Сума += row.Сума;
+                    Кількість += row.Кількість;
                 }
             }
 
-            return new("Дебет: <b>{0}</b> Кредит: <b>{1}</b>", Дебет, Кредит);
+            return new("Сума: <b>{0}</b> Кількість: <b>{1}</b>", Сума, Кількість);
         };
 
         Append(Підсумок);
@@ -292,6 +310,32 @@ partial class ПоверненняТоварівВідКлієнта_Табли�
 
             };
             ColumnViewColumn column = ColumnViewColumn.New("№", factory);
+            column.Resizable = true;
+
+            Grid.AppendColumn(column);
+        }
+
+        //ВидПроводки
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                var cell = DropDownTablePartCell.NewWithValues(ПсевдонімиПерелічення.ВидиПроводок_Dict());
+
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not DropDownTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnСhanged = () => row.ВидПроводки = ПсевдонімиПерелічення.ВидиПроводок_FindByName(cell.Value);
+                (row.Сhanged_ВидПроводки = () => cell.Value = row.ВидПроводки.ToString()).Invoke();
+
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("Вид", factory);
             column.Resizable = true;
 
             Grid.AppendColumn(column);
@@ -394,7 +438,7 @@ partial class ПоверненняТоварівВідКлієнта_Табли�
             Grid.AppendColumn(column);
         }
 
-        //Дебет
+        //Сума
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
@@ -412,21 +456,21 @@ partial class ПоверненняТоварівВідКлієнта_Табли�
 
                 cell.OnСhanged = () =>
                 {
-                    row.Дебет = cell.Value;
-                    ПісляЗміни_ДебетАбоКредит(row);
+                    row.Сума = cell.Value;
+                    ПісляЗміни_СумаАбоКількість(row);
                 };
 
-                (row.Сhanged_Дебет = () => cell.Value = row.Дебет).Invoke();
+                (row.Сhanged_Сума = () => cell.Value = row.Сума).Invoke();
 
             };
-            ColumnViewColumn column = ColumnViewColumn.New("Дебет", factory);
+            ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
             column.Resizable = true;
             column.FixedWidth = 100;
 
             Grid.AppendColumn(column);
         }
 
-        //Кредит
+        //Кількість
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
@@ -444,14 +488,14 @@ partial class ПоверненняТоварівВідКлієнта_Табли�
 
                 cell.OnСhanged = () =>
                 {
-                    row.Кредит = cell.Value;
-                    ПісляЗміни_ДебетАбоКредит(row);
+                    row.Кількість = cell.Value;
+                    ПісляЗміни_СумаАбоКількість(row);
                 };
 
-                (row.Сhanged_Кредит = () => cell.Value = row.Кредит).Invoke();
+                (row.Сhanged_Кількість = () => cell.Value = row.Кількість).Invoke();
 
             };
-            ColumnViewColumn column = ColumnViewColumn.New("Кредит", factory);
+            ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
             column.Resizable = true;
             column.FixedWidth = 100;
 
@@ -481,12 +525,13 @@ partial class ПоверненняТоварівВідКлієнта_Табли�
                 row.UniqueID = new(record.UID);
                 row.НомерРядка = record.НомерРядка;
                 row.Рахунок = record.Рахунок;
+                row.ВидПроводки = record.ВидПроводки;
                 row.Аналітика1 = record.Аналітика1;
                 row.Аналітика2 = record.Аналітика2;
                 row.Аналітика3 = record.Аналітика3;
-                row.Кредит = record.Кредит;
-                row.Дебет = record.Дебет;
                 row.Податки = record.Податки;
+                row.Сума = record.Сума;
+                row.Кількість = record.Кількість;
 
                 Store.Append(row);
 
@@ -514,17 +559,17 @@ partial class ПоверненняТоварівВідКлієнта_Табли�
                         UID = row.UniqueID.UGuid,
                         НомерРядка = row.НомерРядка,
                         Рахунок = row.Рахунок,
+                        ВидПроводки = row.ВидПроводки,
                         Аналітика1 = row.Аналітика1,
                         Аналітика2 = row.Аналітика2,
                         Аналітика3 = row.Аналітика3,
-                        Кредит = row.Кредит,
-                        Дебет = row.Дебет,
                         Податки = row.Податки,
+                        Сума = row.Сума,
+                        Кількість = row.Кількість,
                     });
                 }
             }
             await ЕлементВласник.Проводки_TablePart.Save(true);
-
             //Оновлення табличної частини після збереження
             {
                 //Пошук виділених рядків
@@ -539,12 +584,13 @@ partial class ПоверненняТоварівВідКлієнта_Табли�
                     row.UniqueID = new(x.UID);
                     row.НомерРядка = x.НомерРядка;
                     row.Рахунок = x.Рахунок;
+                    row.ВидПроводки = x.ВидПроводки;
                     row.Аналітика1 = x.Аналітика1;
                     row.Аналітика2 = x.Аналітика2;
                     row.Аналітика3 = x.Аналітика3;
-                    row.Кредит = x.Кредит;
-                    row.Дебет = x.Дебет;
                     row.Податки = x.Податки;
+                    row.Сума = x.Сума;
+                    row.Кількість = x.Кількість;
 
                     return row;
                 });

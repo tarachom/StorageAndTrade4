@@ -9,6 +9,7 @@ using InterfaceGtk4;
 using AccountingSoftware;
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
+using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
@@ -17,7 +18,7 @@ partial class АвансовийЗвіт_ТабличнаЧастина_Пров
 {
     #region Data
 
-    [GObject.Subclass<GObject.Object>("ItemRow_DJKeAfBmbn6zKQtiJsccbw")]
+    [GObject.Subclass<GObject.Object>("ItemRow_frifATz1c3uMYB53ePq3Aw")]
     public partial class ItemRow : IRowSubclassTablePart
     {
         public static ItemRow New() => NewWithProperties([]);
@@ -71,6 +72,23 @@ partial class АвансовийЗвіт_ТабличнаЧастина_Пров
         }
         ПланРахунків_Pointer Рахунок_ = new();
         public Action? Сhanged_Рахунок { get; set; } = null;
+
+
+        /* ВидПроводки */
+        public ВидиПроводок ВидПроводки
+        {
+            get => ВидПроводки_;
+            set
+            {
+                if (!ВидПроводки_.Equals(value))
+                {
+                    ВидПроводки_ = value;
+                    Сhanged_ВидПроводки?.Invoke();
+                }
+            }
+        }
+        ВидиПроводок ВидПроводки_ = 0;
+        public Action? Сhanged_ВидПроводки { get; set; } = null;
 
 
         /* Аналітика1 */
@@ -141,38 +159,38 @@ partial class АвансовийЗвіт_ТабличнаЧастина_Пров
         public Action? Сhanged_Податки { get; set; } = null;
 
 
-        /* Дебет */
-        public decimal Дебет
+        /* Сума */
+        public decimal Сума
         {
-            get => Дебет_;
+            get => Сума_;
             set
             {
-                if (!Дебет_.Equals(value))
+                if (!Сума_.Equals(value))
                 {
-                    Дебет_ = value;
-                    Сhanged_Дебет?.Invoke();
+                    Сума_ = value;
+                    Сhanged_Сума?.Invoke();
                 }
             }
         }
-        decimal Дебет_ = 0;
-        public Action? Сhanged_Дебет { get; set; } = null;
+        decimal Сума_ = 0;
+        public Action? Сhanged_Сума { get; set; } = null;
 
 
-        /* Кредит */
-        public decimal Кредит
+        /* Кількість */
+        public decimal Кількість
         {
-            get => Кредит_;
+            get => Кількість_;
             set
             {
-                if (!Кредит_.Equals(value))
+                if (!Кількість_.Equals(value))
                 {
-                    Кредит_ = value;
-                    Сhanged_Кредит?.Invoke();
+                    Кількість_ = value;
+                    Сhanged_Кількість?.Invoke();
                 }
             }
         }
-        decimal Кредит_ = 0;
-        public Action? Сhanged_Кредит { get; set; } = null;
+        decimal Кількість_ = 0;
+        public Action? Сhanged_Кількість { get; set; } = null;
 
 
 
@@ -185,12 +203,13 @@ partial class АвансовийЗвіт_ТабличнаЧастина_Пров
             var row = New();
             row.НомерРядка = НомерРядка;
             row.Рахунок = Рахунок.Copy();
+            row.ВидПроводки = ВидПроводки;
             row.Аналітика1 = Аналітика1.Copy();
             row.Аналітика2 = Аналітика2.Copy();
             row.Аналітика3 = Аналітика3.Copy();
             row.Податки = Податки.Copy();
-            row.Дебет = Дебет;
-            row.Кредит = Кредит;
+            row.Сума = Сума;
+            row.Кількість = Кількість;
 
             return row;
         }
@@ -216,7 +235,7 @@ partial class АвансовийЗвіт_ТабличнаЧастина_Пров
         }
     }
 
-    void ПісляЗміни_ДебетАбоКредит(ItemRow row)
+    void ПісляЗміни_СумаАбоКількість(ItemRow row)
     {
         Підсумок.Recount();
     }
@@ -241,19 +260,19 @@ partial class АвансовийЗвіт_ТабличнаЧастина_Пров
         model.OnItemsChanged += (_, _) => Підсумок.Recount();
         Підсумок.QuantifyFunc = () =>
         {
-            decimal Дебет = 0, Кредит = 0;
+            decimal Сума = 0, Кількість = 0;
 
             for (uint i = 0; i <= Store.GetNItems(); i++)
             {
                 ItemRow? row = (ItemRow?)Store.GetObject(i);
                 if (row != null)
                 {
-                    Дебет += row.Дебет;
-                    Кредит += row.Кредит;
+                    Сума += row.Сума;
+                    Кількість += row.Кількість;
                 }
             }
 
-            return new("Дебет: <b>{0}</b> Кредит: <b>{1}</b>", Дебет, Кредит);
+            return new("Сума: <b>{0}</b> Кількість: <b>{1}</b>", Сума, Кількість);
         };
 
         Append(Підсумок);
@@ -291,6 +310,32 @@ partial class АвансовийЗвіт_ТабличнаЧастина_Пров
 
             };
             ColumnViewColumn column = ColumnViewColumn.New("№", factory);
+            column.Resizable = true;
+
+            Grid.AppendColumn(column);
+        }
+
+        //ВидПроводки
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                var cell = DropDownTablePartCell.NewWithValues(ПсевдонімиПерелічення.ВидиПроводок_Dict());
+
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not DropDownTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnСhanged = () => row.ВидПроводки = ПсевдонімиПерелічення.ВидиПроводок_FindByName(cell.Value);
+                (row.Сhanged_ВидПроводки = () => cell.Value = row.ВидПроводки.ToString()).Invoke();
+
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("Вид", factory);
             column.Resizable = true;
 
             Grid.AppendColumn(column);
@@ -393,7 +438,7 @@ partial class АвансовийЗвіт_ТабличнаЧастина_Пров
             Grid.AppendColumn(column);
         }
 
-        //Дебет
+        //Сума
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
@@ -411,21 +456,21 @@ partial class АвансовийЗвіт_ТабличнаЧастина_Пров
 
                 cell.OnСhanged = () =>
                 {
-                    row.Дебет = cell.Value;
-                    ПісляЗміни_ДебетАбоКредит(row);
+                    row.Сума = cell.Value;
+                    ПісляЗміни_СумаАбоКількість(row);
                 };
 
-                (row.Сhanged_Дебет = () => cell.Value = row.Дебет).Invoke();
+                (row.Сhanged_Сума = () => cell.Value = row.Сума).Invoke();
 
             };
-            ColumnViewColumn column = ColumnViewColumn.New("Дебет", factory);
+            ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
             column.Resizable = true;
             column.FixedWidth = 100;
 
             Grid.AppendColumn(column);
         }
 
-        //Кредит
+        //Кількість
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
@@ -443,14 +488,14 @@ partial class АвансовийЗвіт_ТабличнаЧастина_Пров
 
                 cell.OnСhanged = () =>
                 {
-                    row.Кредит = cell.Value;
-                    ПісляЗміни_ДебетАбоКредит(row);
+                    row.Кількість = cell.Value;
+                    ПісляЗміни_СумаАбоКількість(row);
                 };
 
-                (row.Сhanged_Кредит = () => cell.Value = row.Кредит).Invoke();
+                (row.Сhanged_Кількість = () => cell.Value = row.Кількість).Invoke();
 
             };
-            ColumnViewColumn column = ColumnViewColumn.New("Кредит", factory);
+            ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
             column.Resizable = true;
             column.FixedWidth = 100;
 
@@ -464,6 +509,7 @@ partial class АвансовийЗвіт_ТабличнаЧастина_Пров
             Grid.AppendColumn(column);
         }
     }
+
     public override async Task LoadRecords()
     {
         if (ЕлементВласник != null)
@@ -479,12 +525,13 @@ partial class АвансовийЗвіт_ТабличнаЧастина_Пров
                 row.UniqueID = new(record.UID);
                 row.НомерРядка = record.НомерРядка;
                 row.Рахунок = record.Рахунок;
+                row.ВидПроводки = record.ВидПроводки;
                 row.Аналітика1 = record.Аналітика1;
                 row.Аналітика2 = record.Аналітика2;
                 row.Аналітика3 = record.Аналітика3;
                 row.Податки = record.Податки;
-                row.Дебет = record.Дебет;
-                row.Кредит = record.Кредит;
+                row.Сума = record.Сума;
+                row.Кількість = record.Кількість;
 
                 Store.Append(row);
 
@@ -512,12 +559,14 @@ partial class АвансовийЗвіт_ТабличнаЧастина_Пров
                         UID = row.UniqueID.UGuid,
                         НомерРядка = row.НомерРядка,
                         Рахунок = row.Рахунок,
+                        ВидПроводки = row.ВидПроводки,
                         Аналітика1 = row.Аналітика1,
                         Аналітика2 = row.Аналітика2,
                         Аналітика3 = row.Аналітика3,
                         Податки = row.Податки,
-                        Дебет = row.Дебет,
-                        Кредит = row.Кредит,
+                        Сума = row.Сума,
+                        Кількість = row.Кількість,
+
                     });
                 }
             }
@@ -536,12 +585,13 @@ partial class АвансовийЗвіт_ТабличнаЧастина_Пров
                     row.UniqueID = new(x.UID);
                     row.НомерРядка = x.НомерРядка;
                     row.Рахунок = x.Рахунок;
+                    row.ВидПроводки = x.ВидПроводки;
                     row.Аналітика1 = x.Аналітика1;
                     row.Аналітика2 = x.Аналітика2;
                     row.Аналітика3 = x.Аналітика3;
                     row.Податки = x.Податки;
-                    row.Дебет = x.Дебет;
-                    row.Кредит = x.Кредит;
+                    row.Сума = x.Сума;
+                    row.Кількість = x.Кількість;
 
                     return row;
                 });
@@ -554,6 +604,7 @@ partial class АвансовийЗвіт_ТабличнаЧастина_Пров
                 //Виділення рядків після оновлення
                 foreach (var position in selection)
                     Grid.Model.SelectItem(position, false);
+
             }
         }
     }

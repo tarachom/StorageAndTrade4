@@ -37,10 +37,15 @@ static class ФункціїДляДокументів
     public static UuidAndText ЗадатиТипАналітики(UuidAndText Аналітика, string Субконто)
     {
         return !string.IsNullOrEmpty(Субконто) && Аналітика.Text == Субконто ?
-            //Якщо тип не зімінився, залишаю також значення
+            //Якщо тип не змінився, залишаю також значення
             new(Аналітика.Uuid, Субконто) :
             //Тільки тип задається
             new(Субконто);
+    }
+
+    public static UuidAndText ЗадатиТипАналітики(string Субконто)
+    {
+        return new(Субконто);
     }
 
     /// <summary>

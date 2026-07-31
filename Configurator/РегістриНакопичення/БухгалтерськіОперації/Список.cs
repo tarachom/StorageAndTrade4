@@ -15,7 +15,7 @@ using ТабличнийСписок = GeneratedCode.РегістриНакоп�
 
 namespace StorageAndTrade.РегістриНакопичення;
 
-[GObject.Subclass<RegisterAccumulationFormJournalBase>("List_NvUVI49MUi98ZWvJ19wg")]
+[GObject.Subclass<RegisterAccumulationFormJournalBase>("List_kbifAbUP5XKQ7fUCgNi45Q")]
 public partial class БухгалтерськіОперації_Список : RegisterAccumulationFormJournalBase
 {
     partial void Initialize()

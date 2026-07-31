@@ -14,8 +14,8 @@ using Функції = StorageAndTrade.СтруктураПідприємств�
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<DirectoryFormJournalFull>("List_TJ6FS1GZyUa3U6irBcCXrQ")]
-partial class СтруктураПідприємства_Список : DirectoryFormJournalFull
+[GObject.Subclass<DirectoryFormJournalFullTree>("List_VrKfAaTtx3iYoDHrIkTH4g")]
+partial class СтруктураПідприємства_Список : DirectoryFormJournalFullTree
 {
     
     
@@ -39,6 +39,16 @@ partial class СтруктураПідприємства_Список : Director
     public override async Task LoadRecords()
     {
         await ТабличнийСписок.LoadRecords(this);
+    }
+    
+    public override async Task<List<DirectoryHierarchicalRow>> LoadChildren(UniqueID[] parents)
+    {
+        return await ТабличнийСписок.LoadChildren(this, parents);
+    }
+
+    public override DirectoryHierarchicalRow LoadEmptyChildren()
+    {
+        return ТабличнийСписок.LoadEmptyChildren(this);
     }
     
     public override async Task UpdateRecords()

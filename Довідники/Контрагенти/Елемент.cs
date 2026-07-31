@@ -64,6 +64,18 @@ partial class Контрагенти_Елемент : DirectoryFormElement
 
         // Опис:
         Опис.WrapMode = WrapMode.Word;
+
+        // Таблична частина "Контакти"
+        Контакти.ЕлементВласник = Елемент;
+        Контакти.WidthRequest = 500;
+        Контакти.HeightRequest = 300;
+        Контакти.Vexpand = false;
+
+        // Таблична частина "Файли"
+        Файли.ЕлементВласник = Елемент;
+        Файли.WidthRequest = 500;
+        Файли.HeightRequest = 300;
+        Файли.Vexpand = false;
     }
 
     public static Контрагенти_Елемент New()
@@ -117,15 +129,9 @@ partial class Контрагенти_Елемент : DirectoryFormElement
     void CreateEnd(Box vBox)
     {
         // Таблична частина "Контакти"
-        Контакти.WidthRequest = 500;
-        Контакти.HeightRequest = 300;
-        Контакти.Vexpand = false;
         CreateTablePart(vBox, "Контакти", Контакти);
 
         // Таблична частина "Файли"
-        Файли.WidthRequest = 500;
-        Файли.HeightRequest = 300;
-        Файли.Vexpand = false;
         CreateTablePart(vBox, "Файли", Файли);
     }
 
@@ -148,11 +154,9 @@ partial class Контрагенти_Елемент : DirectoryFormElement
         Покупець.Active = Елемент.Покупець;
 
         // Таблична частина "Контакти"
-        Контакти.ЕлементВласник = Елемент;
         await Контакти.LoadRecords();
 
         // Таблична частина "Файли"
-        Файли.ЕлементВласник = Елемент;
         await Файли.LoadRecords();
     }
 

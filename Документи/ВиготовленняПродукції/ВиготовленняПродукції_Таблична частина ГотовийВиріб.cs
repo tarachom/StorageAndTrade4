@@ -225,9 +225,19 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
         return Task.CompletedTask;
     }
 
-    Task ПісляЗміни_Артикул(ItemRow row)
+    async Task ПісляЗміни_Артикул(ItemRow row)
     {
-        return Task.CompletedTask;
+        if (row.Номенклатура.IsEmpty() && row.Артикул.Trim().Length > 3)
+        {
+            Номенклатура_Pointer Вказівник = await new Номенклатура_Select().FindByField(Номенклатура_Const.Артикул, row.Артикул.Trim(), "LOWER");
+            if (!Вказівник.IsEmpty())
+            {
+                await Вказівник.GetPresentation();
+
+                row.Номенклатура = Вказівник;
+                await ПісляЗміни_Номенклатура(row);
+            }
+        }
     }
 
     async Task ПісляЗміни_Номенклатура(ItemRow row)
@@ -397,13 +407,13 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
                 if (listItem.Child is not ХарактеристикиНоменклатури_PointerTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
 
-                cell.BeforeClickOpenFunc = async () =>
+                cell.BeforeClickOpenFunc = async () => cell.Власник = row.Номенклатура;
+                cell.OnSelect = async () =>
                 {
-                    cell.Власник = row.Номенклатура;
+                    row.ХарактеристикаНоменклатури = cell.Pointer;
                     await ПісляЗміни_ХарактеристикаНоменклатури(row);
                 };
 
-                cell.OnSelect = () => row.ХарактеристикаНоменклатури = cell.Pointer;
                 (row.Сhanged_ХарактеристикаНоменклатури = () => cell.Pointer = row.ХарактеристикаНоменклатури).Invoke();
 
             };
@@ -613,32 +623,41 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
         }
     }
 
+    /// <summary>
+    /// Функція повертає рядки табличної частини
+    /// </summary>
+    public List<ВиготовленняПродукції_ГотовийВиріб_TablePart.Record> GetRecords()
+    {
+        List<ВиготовленняПродукції_ГотовийВиріб_TablePart.Record> records = [];
+
+        for (uint i = 0; i <= Store.GetNItems(); i++)
+        {
+            ItemRow? row = (ItemRow?)Store.GetObject(i);
+            if (row != null)
+                records.Add(new()
+                {
+                    UID = row.UniqueID.UGuid,
+                    НомерРядка = row.НомерРядка,
+                    Артикул = row.Артикул,
+                    Номенклатура = row.Номенклатура,
+                    ХарактеристикаНоменклатури = row.ХарактеристикаНоменклатури,
+                    Замовлення = row.Замовлення,
+                    Склад = row.Склад,
+                    ОдиницяВиміру = row.ОдиницяВиміру,
+                    Кількість = row.Кількість,
+                    Коментар = row.Коментар,
+                });
+        }
+
+        return records;
+    }
+
     public override async Task SaveRecords()
     {
         if (ЕлементВласник != null)
         {
             ЕлементВласник.ГотовийВиріб_TablePart.Records.Clear();
-            for (uint i = 0; i <= Store.GetNItems(); i++)
-            {
-                ItemRow? row = (ItemRow?)Store.GetObject(i);
-                if (row != null)
-                {
-                    ЕлементВласник.ГотовийВиріб_TablePart.Records.Add(new()
-                    {
-                        UID = row.UniqueID.UGuid,
-                        НомерРядка = row.НомерРядка,
-                        Артикул = row.Артикул,
-                        Номенклатура = row.Номенклатура,
-                        ХарактеристикаНоменклатури = row.ХарактеристикаНоменклатури,
-                        Замовлення = row.Замовлення,
-                        Склад = row.Склад,
-                        ОдиницяВиміру = row.ОдиницяВиміру,
-                        Кількість = row.Кількість,
-                        Коментар = row.Коментар,
-
-                    });
-                }
-            }
+            ЕлементВласник.ГотовийВиріб_TablePart.Records.AddRange(GetRecords());
             await ЕлементВласник.ГотовийВиріб_TablePart.Save(true);
 
             //Оновлення табличної частини після збереження

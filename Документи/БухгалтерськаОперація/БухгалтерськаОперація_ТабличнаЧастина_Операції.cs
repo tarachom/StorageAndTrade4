@@ -7,6 +7,7 @@
 using Gtk;
 using InterfaceGtk4;
 using AccountingSoftware;
+using GeneratedCode.Перелічення;
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
 
@@ -17,7 +18,7 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
 {
     #region Data
 
-    [GObject.Subclass<GObject.Object>("ItemRow_Wc5I6l3tR0azl5Y4HtABAg")]
+    [GObject.Subclass<GObject.Object>("ItemRow_NrefAf5WQn2qUPT4C4Ig0w")]
     public partial class ItemRow : IRowSubclassTablePart
     {
         public static ItemRow New() => NewWithProperties([]);
@@ -25,17 +26,17 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
         // Унікальний ідентифікатор
         public UniqueID UniqueID
         {
-            get => m_UnigueID;
+            get => UnigueID_;
             set
             {
-                if (!m_UnigueID.Equals(value))
+                if (!UnigueID_.Equals(value))
                 {
-                    m_UnigueID = value;
+                    UnigueID_ = value;
                     Сhanged_UnigueID?.Invoke();
                 }
             }
         }
-        UniqueID m_UnigueID = new();
+        UniqueID UnigueID_ = new();
         public Action? Сhanged_UnigueID { get; set; } = null;
 
 
@@ -90,6 +91,23 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
         public Action? Сhanged_Рахунок { get; set; } = null;
 
 
+        /* ВидПроводки */
+        public ВидиПроводок ВидПроводки
+        {
+            get => ВидПроводки_;
+            set
+            {
+                if (!ВидПроводки_.Equals(value))
+                {
+                    ВидПроводки_ = value;
+                    Сhanged_ВидПроводки?.Invoke();
+                }
+            }
+        }
+        ВидиПроводок ВидПроводки_ = 0;
+        public Action? Сhanged_ВидПроводки { get; set; } = null;
+
+
         /* Аналітика1 */
         public UuidAndText Аналітика1
         {
@@ -139,206 +157,6 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
         }
         UuidAndText Аналітика3_ = new();
         public Action? Сhanged_Аналітика3 { get; set; } = null;
-
-
-        /* Дебет */
-        public decimal Дебет
-        {
-            get => Дебет_;
-            set
-            {
-                if (!Дебет_.Equals(value))
-                {
-                    Дебет_ = value;
-                    Сhanged_Дебет?.Invoke();
-                }
-            }
-        }
-        decimal Дебет_ = 0;
-        public Action? Сhanged_Дебет { get; set; } = null;
-
-
-        /* КількістьДебет */
-        public decimal КількістьДебет
-        {
-            get => КількістьДебет_;
-            set
-            {
-                if (!КількістьДебет_.Equals(value))
-                {
-                    КількістьДебет_ = value;
-                    Сhanged_КількістьДебет?.Invoke();
-                }
-            }
-        }
-        decimal КількістьДебет_ = 0;
-        public Action? Сhanged_КількістьДебет { get; set; } = null;
-
-
-        /* ВалютаДебет */
-        public Валюти_Pointer ВалютаДебет
-        {
-            get => ВалютаДебет_;
-            set
-            {
-                if (!ВалютаДебет_.Equals(value))
-                {
-                    ВалютаДебет_ = value;
-                    Сhanged_ВалютаДебет?.Invoke();
-                }
-            }
-        }
-        Валюти_Pointer ВалютаДебет_ = new();
-        public Action? Сhanged_ВалютаДебет { get; set; } = null;
-
-        /* КурсВалютиДебет */
-        public decimal КурсВалютиДебет
-        {
-            get => КурсВалютиДебет_;
-            set
-            {
-                if (!КурсВалютиДебет_.Equals(value))
-                {
-                    КурсВалютиДебет_ = value;
-                    Сhanged_КурсВалютиДебет?.Invoke();
-                }
-            }
-        }
-        decimal КурсВалютиДебет_ = 0;
-        public Action? Сhanged_КурсВалютиДебет { get; set; } = null;
-
-        /* СумаВВалютіДебет */
-        public decimal СумаВВалютіДебет
-        {
-            get => СумаВВалютіДебет_;
-            set
-            {
-                if (!СумаВВалютіДебет_.Equals(value))
-                {
-                    СумаВВалютіДебет_ = value;
-                    Сhanged_СумаВВалютіДебет?.Invoke();
-                }
-            }
-        }
-        decimal СумаВВалютіДебет_ = 0;
-        public Action? Сhanged_СумаВВалютіДебет { get; set; } = null;
-
-
-        /* СумаПОДебет */
-        public decimal СумаПОДебет
-        {
-            get => СумаПОДебет_;
-            set
-            {
-                if (!СумаПОДебет_.Equals(value))
-                {
-                    СумаПОДебет_ = value;
-                    Сhanged_СумаПОДебет?.Invoke();
-                }
-            }
-        }
-        decimal СумаПОДебет_ = 0;
-        public Action? Сhanged_СумаПОДебет { get; set; } = null;
-
-
-        /* Кредит */
-        public decimal Кредит
-        {
-            get => Кредит_;
-            set
-            {
-                if (!Кредит_.Equals(value))
-                {
-                    Кредит_ = value;
-                    Сhanged_Кредит?.Invoke();
-                }
-            }
-        }
-        decimal Кредит_ = 0;
-        public Action? Сhanged_Кредит { get; set; } = null;
-
-
-        /* КількістьКредит */
-        public decimal КількістьКредит
-        {
-            get => КількістьКредит_;
-            set
-            {
-                if (!КількістьКредит_.Equals(value))
-                {
-                    КількістьКредит_ = value;
-                    Сhanged_КількістьКредит?.Invoke();
-                }
-            }
-        }
-        decimal КількістьКредит_ = 0;
-        public Action? Сhanged_КількістьКредит { get; set; } = null;
-
-
-        /* ВалютаКредит */
-        public Валюти_Pointer ВалютаКредит
-        {
-            get => ВалютаКредит_;
-            set
-            {
-                if (!ВалютаКредит_.Equals(value))
-                {
-                    ВалютаКредит_ = value;
-                    Сhanged_ВалютаКредит?.Invoke();
-                }
-            }
-        }
-        Валюти_Pointer ВалютаКредит_ = new();
-        public Action? Сhanged_ВалютаКредит { get; set; } = null;
-
-        /* КурсВалютиКредит */
-        public decimal КурсВалютиКредит
-        {
-            get => КурсВалютиКредит_;
-            set
-            {
-                if (!КурсВалютиКредит_.Equals(value))
-                {
-                    КурсВалютиКредит_ = value;
-                    Сhanged_КурсВалютиКредит?.Invoke();
-                }
-            }
-        }
-        decimal КурсВалютиКредит_ = 0;
-        public Action? Сhanged_КурсВалютиКредит { get; set; } = null;
-
-        /* СумаВВалютіКредит */
-        public decimal СумаВВалютіКредит
-        {
-            get => СумаВВалютіКредит_;
-            set
-            {
-                if (!СумаВВалютіКредит_.Equals(value))
-                {
-                    СумаВВалютіКредит_ = value;
-                    Сhanged_СумаВВалютіКредит?.Invoke();
-                }
-            }
-        }
-        decimal СумаВВалютіКредит_ = 0;
-        public Action? Сhanged_СумаВВалютіКредит { get; set; } = null;
-
-
-        /* СумаПОКредит */
-        public decimal СумаПОКредит
-        {
-            get => СумаПОКредит_;
-            set
-            {
-                if (!СумаПОКредит_.Equals(value))
-                {
-                    СумаПОКредит_ = value;
-                    Сhanged_СумаПОКредит?.Invoke();
-                }
-            }
-        }
-        decimal СумаПОКредит_ = 0;
-        public Action? Сhanged_СумаПОКредит { get; set; } = null;
 
 
         /* Коментар */
@@ -476,6 +294,7 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
         ВидиЖурналів_Pointer Журнал_ = new();
         public Action? Сhanged_Журнал { get; set; } = null;
 
+
         /* ТипБухОперації */
         public ТипиБухОперацій_Pointer ТипБухОперації
         {
@@ -492,6 +311,110 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
         ТипиБухОперацій_Pointer ТипБухОперації_ = new();
         public Action? Сhanged_ТипБухОперації { get; set; } = null;
 
+
+        /* Сума */
+        public decimal Сума
+        {
+            get => Сума_;
+            set
+            {
+                if (!Сума_.Equals(value))
+                {
+                    Сума_ = value;
+                    Сhanged_Сума?.Invoke();
+                }
+            }
+        }
+        decimal Сума_ = 0;
+        public Action? Сhanged_Сума { get; set; } = null;
+
+
+        /* Кількість */
+        public decimal Кількість
+        {
+            get => Кількість_;
+            set
+            {
+                if (!Кількість_.Equals(value))
+                {
+                    Кількість_ = value;
+                    Сhanged_Кількість?.Invoke();
+                }
+            }
+        }
+        decimal Кількість_ = 0;
+        public Action? Сhanged_Кількість { get; set; } = null;
+
+
+        /* Валюта */
+        public Валюти_Pointer Валюта
+        {
+            get => Валюта_;
+            set
+            {
+                if (!Валюта_.Equals(value))
+                {
+                    Валюта_ = value;
+                    Сhanged_Валюта?.Invoke();
+                }
+            }
+        }
+        Валюти_Pointer Валюта_ = new();
+        public Action? Сhanged_Валюта { get; set; } = null;
+
+
+        /* СумаВВалюті */
+        public decimal СумаВВалюті
+        {
+            get => СумаВВалюті_;
+            set
+            {
+                if (!СумаВВалюті_.Equals(value))
+                {
+                    СумаВВалюті_ = value;
+                    Сhanged_СумаВВалюті?.Invoke();
+                }
+            }
+        }
+        decimal СумаВВалюті_ = 0;
+        public Action? Сhanged_СумаВВалюті { get; set; } = null;
+
+
+        /* СумаПО */
+        public decimal СумаПО
+        {
+            get => СумаПО_;
+            set
+            {
+                if (!СумаПО_.Equals(value))
+                {
+                    СумаПО_ = value;
+                    Сhanged_СумаПО?.Invoke();
+                }
+            }
+        }
+        decimal СумаПО_ = 0;
+        public Action? Сhanged_СумаПО { get; set; } = null;
+
+
+        /* КурсВалюти */
+        public decimal КурсВалюти
+        {
+            get => КурсВалюти_;
+            set
+            {
+                if (!КурсВалюти_.Equals(value))
+                {
+                    КурсВалюти_ = value;
+                    Сhanged_КурсВалюти?.Invoke();
+                }
+            }
+        }
+        decimal КурсВалюти_ = 0;
+        public Action? Сhanged_КурсВалюти { get; set; } = null;
+
+
+
         /*
         Функції
         */
@@ -502,21 +425,10 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
             row.НомерРядка = НомерРядка;
             row.ДатаЗапису = ДатаЗапису;
             row.Рахунок = Рахунок.Copy();
+            row.ВидПроводки = ВидПроводки;
             row.Аналітика1 = Аналітика1.Copy();
             row.Аналітика2 = Аналітика2.Copy();
             row.Аналітика3 = Аналітика3.Copy();
-            row.Дебет = Дебет;
-            row.КількістьДебет = КількістьДебет;
-            row.ВалютаДебет = ВалютаДебет.Copy();
-            row.КурсВалютиДебет = КурсВалютиДебет;
-            row.СумаВВалютіДебет = СумаВВалютіДебет;
-            row.СумаПОДебет = СумаПОДебет;
-            row.Кредит = Кредит;
-            row.КількістьКредит = КількістьКредит;
-            row.ВалютаКредит = ВалютаКредит.Copy();
-            row.КурсВалютиКредит = КурсВалютиКредит;
-            row.СумаВВалютіКредит = СумаВВалютіКредит;
-            row.СумаПОКредит = СумаПОКредит;
             row.Коментар = Коментар;
             row.КореспондуючийРахунок = КореспондуючийРахунок.Copy();
             row.КорАналітика1 = КорАналітика1.Copy();
@@ -526,6 +438,12 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
             row.СумаПодатку = СумаПодатку;
             row.Журнал = Журнал.Copy();
             row.ТипБухОперації = ТипБухОперації.Copy();
+            row.Сума = Сума;
+            row.Кількість = Кількість;
+            row.Валюта = Валюта.Copy();
+            row.СумаВВалюті = СумаВВалюті;
+            row.СумаПО = СумаПО;
+            row.КурсВалюти = КурсВалюти;
 
             return row;
         }
@@ -691,6 +609,32 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
             Grid.AppendColumn(column);
         }
 
+        //ВидПроводки
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                var cell = DropDownTablePartCell.NewWithValues(ПсевдонімиПерелічення.ВидиПроводок_Dict());
+
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not DropDownTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnСhanged = () => row.ВидПроводки = ПсевдонімиПерелічення.ВидиПроводок_FindByName(cell.Value);
+                (row.Сhanged_ВидПроводки = () => cell.Value = row.ВидПроводки.ToString()).Invoke();
+
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("Вид", factory);
+            column.Resizable = true;
+
+            Grid.AppendColumn(column);
+        }
+
         //Рахунок
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
@@ -760,7 +704,7 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
             Grid.AppendColumn(column);
         }
 
-        //Дебет
+        //Сума
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
@@ -776,17 +720,17 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                 if (listItem.Child is not NumericTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
 
-                cell.OnСhanged = () => row.Дебет = cell.Value;
-                (row.Сhanged_Дебет = () => cell.Value = row.Дебет).Invoke();
+                cell.OnСhanged = () => row.Сума = cell.Value;
+                (row.Сhanged_Сума = () => cell.Value = row.Сума).Invoke();
 
             };
-            ColumnViewColumn column = ColumnViewColumn.New("Дебет", factory);
+            ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
             column.Resizable = true;
 
             Grid.AppendColumn(column);
         }
 
-        //КількістьДебет
+        //Кількість
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
@@ -802,8 +746,8 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                 if (listItem.Child is not NumericTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
 
-                cell.OnСhanged = () => row.КількістьДебет = cell.Value;
-                (row.Сhanged_КількістьДебет = () => cell.Value = row.КількістьДебет).Invoke();
+                cell.OnСhanged = () => row.Кількість = cell.Value;
+                (row.Сhanged_Кількість = () => cell.Value = row.Кількість).Invoke();
 
             };
             ColumnViewColumn column = ColumnViewColumn.New("Кількість Дт", factory);
@@ -812,7 +756,7 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
             Grid.AppendColumn(column);
         }
 
-        //ВалютаДебет, СумаВВалютіДебет, СумаПОДебет
+        //Валюта, СумаВВалюті, СумаПО
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
@@ -828,14 +772,14 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                 if (listItem.Child is not Група_ВалютаТаСуми cell) return;
                 if (listItem.Item is not ItemRow row) return;
 
-                cell.Валюта.OnSelect = () => row.ВалютаДебет = cell.Валюта.Pointer;
-                (row.Сhanged_ВалютаДебет = () => cell.Валюта.Pointer = row.ВалютаДебет).Invoke();
+                cell.Валюта.OnSelect = () => row.Валюта = cell.Валюта.Pointer;
+                (row.Сhanged_Валюта = () => cell.Валюта.Pointer = row.Валюта).Invoke();
 
-                cell.СумаВВалюті.OnСhanged = () => row.СумаВВалютіДебет = cell.СумаВВалюті.Value;
-                (row.Сhanged_СумаВВалютіДебет = () => cell.СумаВВалюті.Value = row.СумаВВалютіДебет).Invoke();
+                cell.СумаВВалюті.OnСhanged = () => row.СумаВВалюті = cell.СумаВВалюті.Value;
+                (row.Сhanged_СумаВВалюті = () => cell.СумаВВалюті.Value = row.СумаВВалюті).Invoke();
 
-                cell.СумаПО.OnСhanged = () => row.СумаПОДебет = cell.СумаПО.Value;
-                (row.Сhanged_СумаПОДебет = () => cell.СумаПО.Value = row.СумаПОДебет).Invoke();
+                cell.СумаПО.OnСhanged = () => row.СумаПО = cell.СумаПО.Value;
+                (row.Сhanged_СумаПО = () => cell.СумаПО.Value = row.СумаПО).Invoke();
 
             };
             ColumnViewColumn column = ColumnViewColumn.New("Валюта Дт\nСума в валюті Дт\nСума ПО Дт", factory);
@@ -844,7 +788,7 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
             Grid.AppendColumn(column);
         }
 
-        //КурсВалютиДебет
+        //КурсВалюти
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
@@ -860,121 +804,11 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                 if (listItem.Child is not NumericTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
 
-                cell.OnСhanged = () => row.КурсВалютиДебет = cell.Value;
-                (row.Сhanged_КурсВалютиДебет = () => cell.Value = row.КурсВалютиДебет).Invoke();
+                cell.OnСhanged = () => row.КурсВалюти = cell.Value;
+                (row.Сhanged_КурсВалюти = () => cell.Value = row.КурсВалюти).Invoke();
 
             };
             ColumnViewColumn column = ColumnViewColumn.New("Курс валюти Дт", factory);
-            column.Resizable = true;
-
-            Grid.AppendColumn(column);
-        }
-
-        //Кредит
-        {
-            SignalListItemFactory factory = SignalListItemFactory.New();
-            factory.OnSetup += (_, args) =>
-            {
-                if (args.Object is not ListItem listItem) return;
-                var cell = NumericTablePartCell.New();
-
-                listItem.Child = cell;
-            };
-            factory.OnBind += (_, args) =>
-            {
-                if (args.Object is not ListItem listItem) return;
-                if (listItem.Child is not NumericTablePartCell cell) return;
-                if (listItem.Item is not ItemRow row) return;
-
-                cell.OnСhanged = () => row.Кредит = cell.Value;
-                (row.Сhanged_Кредит = () => cell.Value = row.Кредит).Invoke();
-
-            };
-            ColumnViewColumn column = ColumnViewColumn.New("Кредит", factory);
-            column.Resizable = true;
-
-            Grid.AppendColumn(column);
-        }
-
-        //КількістьКредит
-        {
-            SignalListItemFactory factory = SignalListItemFactory.New();
-            factory.OnSetup += (_, args) =>
-            {
-                if (args.Object is not ListItem listItem) return;
-                var cell = NumericTablePartCell.New();
-
-                listItem.Child = cell;
-            };
-            factory.OnBind += (_, args) =>
-            {
-                if (args.Object is not ListItem listItem) return;
-                if (listItem.Child is not NumericTablePartCell cell) return;
-                if (listItem.Item is not ItemRow row) return;
-
-                cell.OnСhanged = () => row.КількістьКредит = cell.Value;
-                (row.Сhanged_КількістьКредит = () => cell.Value = row.КількістьКредит).Invoke();
-
-            };
-            ColumnViewColumn column = ColumnViewColumn.New("Кількість Кт", factory);
-            column.Resizable = true;
-
-            Grid.AppendColumn(column);
-        }
-
-        //ВалютаКредит, СумаВВалютіКредит, СумаПОКредит
-        {
-            SignalListItemFactory factory = SignalListItemFactory.New();
-            factory.OnSetup += (_, args) =>
-            {
-                if (args.Object is not ListItem listItem) return;
-                var cell = Група_ВалютаТаСуми.New();
-
-                listItem.Child = cell;
-            };
-            factory.OnBind += (_, args) =>
-            {
-                if (args.Object is not ListItem listItem) return;
-                if (listItem.Child is not Група_ВалютаТаСуми cell) return;
-                if (listItem.Item is not ItemRow row) return;
-
-                cell.Валюта.OnSelect = () => row.ВалютаКредит = cell.Валюта.Pointer;
-                (row.Сhanged_ВалютаКредит = () => cell.Валюта.Pointer = row.ВалютаКредит).Invoke();
-
-                cell.СумаВВалюті.OnСhanged = () => row.СумаВВалютіКредит = cell.СумаВВалюті.Value;
-                (row.Сhanged_СумаВВалютіКредит = () => cell.СумаВВалюті.Value = row.СумаВВалютіКредит).Invoke();
-
-                cell.СумаПО.OnСhanged = () => row.СумаПОКредит = cell.СумаПО.Value;
-                (row.Сhanged_СумаПОКредит = () => cell.СумаПО.Value = row.СумаПОКредит).Invoke();
-
-            };
-            ColumnViewColumn column = ColumnViewColumn.New("Валюта Кт\nСума в валюті Кт\nСума ПО Кт", factory);
-            column.Resizable = true;
-
-            Grid.AppendColumn(column);
-        }
-
-        //КурсВалютиКредит
-        {
-            SignalListItemFactory factory = SignalListItemFactory.New();
-            factory.OnSetup += (_, args) =>
-            {
-                if (args.Object is not ListItem listItem) return;
-                var cell = NumericTablePartCell.New();
-
-                listItem.Child = cell;
-            };
-            factory.OnBind += (_, args) =>
-            {
-                if (args.Object is not ListItem listItem) return;
-                if (listItem.Child is not NumericTablePartCell cell) return;
-                if (listItem.Item is not ItemRow row) return;
-
-                cell.OnСhanged = () => row.КурсВалютиКредит = cell.Value;
-                (row.Сhanged_КурсВалютиКредит = () => cell.Value = row.КурсВалютиКредит).Invoke();
-
-            };
-            ColumnViewColumn column = ColumnViewColumn.New("Курс валюти Кт", factory);
             column.Resizable = true;
 
             Grid.AppendColumn(column);
@@ -1194,8 +1028,10 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
 
     public override async Task LoadRecords()
     {
+
         if (ЕлементВласник != null)
         {
+
             ЕлементВласник.Операції_TablePart.FillJoin([БухгалтерськаОперація_Операції_TablePart.НомерРядка,]);
             await ЕлементВласник.Операції_TablePart.Read();
 
@@ -1208,21 +1044,10 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                 row.НомерРядка = record.НомерРядка;
                 row.ДатаЗапису = record.ДатаЗапису;
                 row.Рахунок = record.Рахунок;
+                row.ВидПроводки = record.ВидПроводки;
                 row.Аналітика1 = record.Аналітика1;
                 row.Аналітика2 = record.Аналітика2;
                 row.Аналітика3 = record.Аналітика3;
-                row.Дебет = record.Дебет;
-                row.КількістьДебет = record.КількістьДебет;
-                row.ВалютаДебет = record.ВалютаДебет;
-                row.КурсВалютиДебет = record.КурсВалютиДебет;
-                row.СумаВВалютіДебет = record.СумаВВалютіДебет;
-                row.СумаПОДебет = record.СумаПОДебет;
-                row.Кредит = record.Кредит;
-                row.КількістьКредит = record.КількістьКредит;
-                row.ВалютаКредит = record.ВалютаКредит;
-                row.КурсВалютиКредит = record.КурсВалютиКредит;
-                row.СумаВВалютіКредит = record.СумаВВалютіКредит;
-                row.СумаПОКредит = record.СумаПОКредит;
                 row.Коментар = record.Коментар;
                 row.КореспондуючийРахунок = record.КореспондуючийРахунок;
                 row.КорАналітика1 = record.КорАналітика1;
@@ -1232,6 +1057,12 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                 row.СумаПодатку = record.СумаПодатку;
                 row.Журнал = record.Журнал;
                 row.ТипБухОперації = record.ТипБухОперації;
+                row.Сума = record.Сума;
+                row.Кількість = record.Кількість;
+                row.Валюта = record.Валюта;
+                row.СумаВВалюті = record.СумаВВалюті;
+                row.СумаПО = record.СумаПО;
+                row.КурсВалюти = record.КурсВалюти;
 
                 Store.Append(row);
 
@@ -1246,6 +1077,7 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
 
     public override async Task SaveRecords()
     {
+
         if (ЕлементВласник != null)
         {
             ЕлементВласник.Операції_TablePart.Records.Clear();
@@ -1260,21 +1092,10 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                         НомерРядка = row.НомерРядка,
                         ДатаЗапису = row.ДатаЗапису,
                         Рахунок = row.Рахунок,
+                        ВидПроводки = row.ВидПроводки,
                         Аналітика1 = row.Аналітика1,
                         Аналітика2 = row.Аналітика2,
                         Аналітика3 = row.Аналітика3,
-                        Дебет = row.Дебет,
-                        КількістьДебет = row.КількістьДебет,
-                        ВалютаДебет = row.ВалютаДебет,
-                        КурсВалютиДебет = row.КурсВалютиДебет,
-                        СумаВВалютіДебет = row.СумаВВалютіДебет,
-                        СумаПОДебет = row.СумаПОДебет,
-                        Кредит = row.Кредит,
-                        КількістьКредит = row.КількістьКредит,
-                        ВалютаКредит = row.ВалютаКредит,
-                        КурсВалютиКредит = row.КурсВалютиКредит,
-                        СумаВВалютіКредит = row.СумаВВалютіКредит,
-                        СумаПОКредит = row.СумаПОКредит,
                         Коментар = row.Коментар,
                         КореспондуючийРахунок = row.КореспондуючийРахунок,
                         КорАналітика1 = row.КорАналітика1,
@@ -1284,10 +1105,16 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                         СумаПодатку = row.СумаПодатку,
                         Журнал = row.Журнал,
                         ТипБухОперації = row.ТипБухОперації,
+                        Сума = row.Сума,
+                        Кількість = row.Кількість,
+                        Валюта = row.Валюта,
+                        СумаВВалюті = row.СумаВВалюті,
+                        СумаПО = row.СумаПО,
+                        КурсВалюти = row.КурсВалюти,
+
                     });
                 }
             }
-
             await ЕлементВласник.Операції_TablePart.Save(true);
             //Оновлення табличної частини після збереження
             {
@@ -1304,21 +1131,10 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                     row.НомерРядка = x.НомерРядка;
                     row.ДатаЗапису = x.ДатаЗапису;
                     row.Рахунок = x.Рахунок;
+                    row.ВидПроводки = x.ВидПроводки;
                     row.Аналітика1 = x.Аналітика1;
                     row.Аналітика2 = x.Аналітика2;
                     row.Аналітика3 = x.Аналітика3;
-                    row.Дебет = x.Дебет;
-                    row.КількістьДебет = x.КількістьДебет;
-                    row.ВалютаДебет = x.ВалютаДебет;
-                    row.КурсВалютиДебет = x.КурсВалютиДебет;
-                    row.СумаВВалютіДебет = x.СумаВВалютіДебет;
-                    row.СумаПОДебет = x.СумаПОДебет;
-                    row.Кредит = x.Кредит;
-                    row.КількістьКредит = x.КількістьКредит;
-                    row.ВалютаКредит = x.ВалютаКредит;
-                    row.КурсВалютиКредит = x.КурсВалютиКредит;
-                    row.СумаВВалютіКредит = x.СумаВВалютіКредит;
-                    row.СумаПОКредит = x.СумаПОКредит;
                     row.Коментар = x.Коментар;
                     row.КореспондуючийРахунок = x.КореспондуючийРахунок;
                     row.КорАналітика1 = x.КорАналітика1;
@@ -1328,6 +1144,12 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                     row.СумаПодатку = x.СумаПодатку;
                     row.Журнал = x.Журнал;
                     row.ТипБухОперації = x.ТипБухОперації;
+                    row.Сума = x.Сума;
+                    row.Кількість = x.Кількість;
+                    row.Валюта = x.Валюта;
+                    row.СумаВВалюті = x.СумаВВалюті;
+                    row.СумаПО = x.СумаПО;
+                    row.КурсВалюти = x.КурсВалюти;
 
                     return row;
                 });
@@ -1340,6 +1162,7 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                 //Виділення рядків після оновлення
                 foreach (var position in selection)
                     Grid.Model.SelectItem(position, false);
+
             }
         }
     }

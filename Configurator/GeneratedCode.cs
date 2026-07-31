@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 29.07.2026 20:54:06
+ * Дата конфігурації: 31.07.2026 17:26:07
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон GeneratedCode.xslt
@@ -4561,12 +4561,13 @@ namespace GeneratedCode.Довідники
         public const string Папка = "col_a5";
         public const string НалаштуванняАдресногоЗберігання = "col_a6";
         public const string КлючовіСловаДляПошуку = "col_a7";
+        public const string Категорія = "col_a8";
     }
 
     public class Склади_Object : DirectoryObject
     {
         public Склади_Object() : base(Config.Kernel, "tab_a10", Склади_Const.TYPE,
-             ["col_d9", "col_e1", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", ], true)
+             ["col_d9", "col_e1", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", ], true)
         {
             
                 //Табличні частини
@@ -4596,6 +4597,7 @@ namespace GeneratedCode.Довідники
                 Папка = new Довідники.Склади_Папки_Pointer(base.FieldValue["col_a5"]);
                 НалаштуванняАдресногоЗберігання = (base.FieldValue["col_a6"] != DBNull.Value) ? (Перелічення.НалаштуванняАдресногоЗберігання)base.FieldValue["col_a6"] : 0;
                 КлючовіСловаДляПошуку = base.FieldValue["col_a7"].ToString() ?? "";
+                Категорія = new Довідники.Категорії_Pointer(base.FieldValue["col_a8"]);
                 
                 BaseClear();
                 
@@ -4623,6 +4625,7 @@ namespace GeneratedCode.Довідники
             base.FieldValue["col_a5"] = Папка.UniqueID.UGuid;
             base.FieldValue["col_a6"] = (int)НалаштуванняАдресногоЗберігання;
             base.FieldValue["col_a7"] = КлючовіСловаДляПошуку;
+            base.FieldValue["col_a8"] = Категорія.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
@@ -4648,6 +4651,7 @@ namespace GeneratedCode.Довідники
                 Папка = Папка.Copy(),
                 НалаштуванняАдресногоЗберігання = НалаштуванняАдресногоЗберігання,
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
+                Категорія = Категорія.Copy(),
                 
             };
             
@@ -4692,6 +4696,7 @@ namespace GeneratedCode.Довідники
         public Довідники.Склади_Папки_Pointer Папка { get; set; } = new Довідники.Склади_Папки_Pointer();
         public Перелічення.НалаштуванняАдресногоЗберігання НалаштуванняАдресногоЗберігання { get; set; } = 0;
         public string КлючовіСловаДляПошуку { get; set; } = "";
+        public Довідники.Категорії_Pointer Категорія { get; set; } = new Довідники.Категорії_Pointer();
         
         //Табличні частини
         public Склади_Контакти_TablePart Контакти_TablePart { get; private set; }
@@ -5983,12 +5988,15 @@ namespace GeneratedCode.Довідники
         public const string Назва = "col_h8";
         public const string Код = "col_h9";
         public const string Керівник = "col_i1";
+        public const string Родич = "col_a1";
+        public const string Склад = "col_a2";
+        public const string Категорія = "col_a3";
     }
 
     public class СтруктураПідприємства_Object : DirectoryObject
     {
         public СтруктураПідприємства_Object() : base(Config.Kernel, "tab_a18", СтруктураПідприємства_Const.TYPE,
-             ["col_h8", "col_h9", "col_i1", ], true)
+             ["col_h8", "col_h9", "col_i1", "col_a1", "col_a2", "col_a3", ], true)
         {
             
         }
@@ -6009,6 +6017,9 @@ namespace GeneratedCode.Довідники
                 Назва = base.FieldValue["col_h8"].ToString() ?? "";
                 Код = base.FieldValue["col_h9"].ToString() ?? "";
                 Керівник = new Довідники.ФізичніОсоби_Pointer(base.FieldValue["col_i1"]);
+                Родич = new Довідники.СтруктураПідприємства_Pointer(base.FieldValue["col_a1"]);
+                Склад = new Довідники.Склади_Pointer(base.FieldValue["col_a2"]);
+                Категорія = new Довідники.Категорії_Pointer(base.FieldValue["col_a3"]);
                 
                 BaseClear();
                 
@@ -6024,6 +6035,9 @@ namespace GeneratedCode.Довідники
             base.FieldValue["col_h8"] = Назва;
             base.FieldValue["col_h9"] = Код;
             base.FieldValue["col_i1"] = Керівник.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = Родич.UniqueID.UGuid;
+            base.FieldValue["col_a2"] = Склад.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = Категорія.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
@@ -6043,6 +6057,9 @@ namespace GeneratedCode.Довідники
                 Назва = Назва,
                 Код = Код,
                 Керівник = Керівник.Copy(),
+                Родич = Родич.Copy(),
+                Склад = Склад.Copy(),
+                Категорія = Категорія.Copy(),
                 
             };
             
@@ -6072,6 +6089,9 @@ namespace GeneratedCode.Довідники
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
         public Довідники.ФізичніОсоби_Pointer Керівник { get; set; } = new Довідники.ФізичніОсоби_Pointer();
+        public Довідники.СтруктураПідприємства_Pointer Родич { get; set; } = new Довідники.СтруктураПідприємства_Pointer();
+        public Довідники.Склади_Pointer Склад { get; set; } = new Довідники.Склади_Pointer();
+        public Довідники.Категорії_Pointer Категорія { get; set; } = new Довідники.Категорії_Pointer();
         
     }
 
@@ -6131,6 +6151,22 @@ namespace GeneratedCode.Довідники
         }
     }
 
+    
+    public class СтруктураПідприємства_SelectHierarchical : DirectorySelectHierarchical
+    {
+        public СтруктураПідприємства_SelectHierarchical() : base(Config.Kernel, "tab_a18", "col_a1", "") { }        
+        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPositionHierarchical.HasValue) { 
+          Current = new СтруктураПідприємства_Pointer(base.CurrentPointerPositionHierarchical.Value.UniqueID, base.CurrentPointerPositionHierarchical.Value.Fields); 
+          Parent = new СтруктураПідприємства_Pointer(base.CurrentPointerPositionHierarchical.Value.Parent); 
+          IsFolder = false;
+          Level = base.CurrentPointerPositionHierarchical.Value.Level; return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
+        public СтруктураПідприємства_Pointer? Current { get; private set; }
+        public СтруктураПідприємства_Pointer? Parent { get; private set; }
+        public int Level { get; private set; } = 0;
+        public bool IsFolder { get; private set; }
+    }
     
    
     #endregion
@@ -13328,6 +13364,14 @@ namespace GeneratedCode.Перелічення
     }
     #endregion
     
+    #region ENUM "ВидиПроводок"
+    public enum ВидиПроводок
+    {
+         Дебет = 1,
+         Кредет = 2
+    }
+    #endregion
+    
 
     public static class ПсевдонімиПерелічення
     {
@@ -14454,6 +14498,44 @@ namespace GeneratedCode.Перелічення
         {
             return new() {
             {"Фіскальний", "Фіскальний"},
+            };
+        }
+        #endregion
+    
+        #region ENUM "ВидиПроводок"
+        public static string ВидиПроводок_Alias(ВидиПроводок value)
+        {
+            return value switch
+            {
+                ВидиПроводок.Дебет => "Дт",
+                ВидиПроводок.Кредет => "Кт",
+                _ => ""
+            };
+        }
+
+        public static ВидиПроводок ВидиПроводок_FindByName(string? name)
+        {
+            return name switch
+            {
+                "Дебет" or "Дт" => ВидиПроводок.Дебет,
+                "Кредет" or "Кт" => ВидиПроводок.Кредет,
+                _ => 0
+            };
+        }
+
+        public static List<NameValue<ВидиПроводок>> ВидиПроводок_List()
+        {
+            return [
+            new NameValue<ВидиПроводок>("Дт", ВидиПроводок.Дебет),
+            new NameValue<ВидиПроводок>("Кт", ВидиПроводок.Кредет),
+            ];
+        }
+
+        public static Dictionary<string, string> ВидиПроводок_Dict()
+        {
+            return new() {
+            {"Дебет", "Дт"},
+            {"Кредет", "Кт"},
             };
         }
         #endregion
@@ -15887,7 +15969,7 @@ namespace GeneratedCode.Документи
     public class ПоступленняТоварівТаПослуг_Проводки_TablePart : DocumentTablePart
     {
         public ПоступленняТоварівТаПослуг_Проводки_TablePart(ПоступленняТоварівТаПослуг_Object owner) : base(Config.Kernel, "tab_b71",
-             ["col_a1", "col_a2", "col_a3", "col_a7", "col_a8", "col_a9", "col_b1", "col_b2", ])
+             ["col_a1", "col_a2", "col_a3", "col_a7", "col_a8", "col_a9", "col_b1", "col_b2", "col_a4", ])
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
@@ -15904,8 +15986,9 @@ namespace GeneratedCode.Документи
         public const string Аналітика2 = "col_a7";
         public const string Аналітика3 = "col_a8";
         public const string Податки = "col_a9";
-        public const string Дебет = "col_b1";
-        public const string Кредит = "col_b2";
+        public const string Сума = "col_b1";
+        public const string Кількість = "col_b2";
+        public const string ВидПроводки = "col_a4";
 
         public ПоступленняТоварівТаПослуг_Object Owner { get; private set; }
         
@@ -15962,8 +16045,9 @@ namespace GeneratedCode.Документи
                     Аналітика2 = (fieldValue["col_a7"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a7"] : new UuidAndText(),
                     Аналітика3 = (fieldValue["col_a8"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a8"] : new UuidAndText(),
                     Податки = new Довідники.ВидиПодатків_Pointer(fieldValue["col_a9"]),
-                    Дебет = (fieldValue["col_b1"] != DBNull.Value) ? (decimal)fieldValue["col_b1"] : 0,
-                    Кредит = (fieldValue["col_b2"] != DBNull.Value) ? (decimal)fieldValue["col_b2"] : 0,
+                    Сума = (fieldValue["col_b1"] != DBNull.Value) ? (decimal)fieldValue["col_b1"] : 0,
+                    Кількість = (fieldValue["col_b2"] != DBNull.Value) ? (decimal)fieldValue["col_b2"] : 0,
+                    ВидПроводки = (fieldValue["col_a4"] != DBNull.Value) ? (Перелічення.ВидиПроводок)fieldValue["col_a4"] : 0,
                     
                 };
                 Records.Add(record);
@@ -16011,8 +16095,9 @@ namespace GeneratedCode.Документи
                     {"col_a7", record.Аналітика2},
                     {"col_a8", record.Аналітика3},
                     {"col_a9", record.Податки.UniqueID.UGuid},
-                    {"col_b1", record.Дебет},
-                    {"col_b2", record.Кредит},
+                    {"col_b1", record.Сума},
+                    {"col_b2", record.Кількість},
+                    {"col_a4", (int)record.ВидПроводки},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -16041,8 +16126,9 @@ namespace GeneratedCode.Документи
                     Аналітика2 = original.Аналітика2.Copy(),
                     Аналітика3 = original.Аналітика3.Copy(),
                     Податки = original.Податки.Copy(),
-                    Дебет = original.Дебет,
-                    Кредит = original.Кредит,
+                    Сума = original.Сума,
+                    Кількість = original.Кількість,
+                    ВидПроводки = original.ВидПроводки,
                      
                 });
             }
@@ -16058,8 +16144,9 @@ namespace GeneratedCode.Документи
             public UuidAndText Аналітика2 { get; set; } = new UuidAndText();
             public UuidAndText Аналітика3 { get; set; } = new UuidAndText();
             public Довідники.ВидиПодатків_Pointer Податки { get; set; } = new Довідники.ВидиПодатків_Pointer();
-            public decimal Дебет { get; set; } = 0;
-            public decimal Кредит { get; set; } = 0;
+            public decimal Сума { get; set; } = 0;
+            public decimal Кількість { get; set; } = 0;
+            public Перелічення.ВидиПроводок ВидПроводки { get; set; } = 0;
             
         }
     }
@@ -17685,7 +17772,7 @@ namespace GeneratedCode.Документи
     public class РеалізаціяТоварівТаПослуг_Проводки_TablePart : DocumentTablePart
     {
         public РеалізаціяТоварівТаПослуг_Проводки_TablePart(РеалізаціяТоварівТаПослуг_Object owner) : base(Config.Kernel, "tab_c25",
-             ["col_a1", "col_a2", "col_a3", "col_a7", "col_a8", "col_a9", "col_b1", "col_b2", ])
+             ["col_a1", "col_a2", "col_a3", "col_a7", "col_a8", "col_a9", "col_b1", "col_b2", "col_a4", ])
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
@@ -17702,8 +17789,9 @@ namespace GeneratedCode.Документи
         public const string Аналітика2 = "col_a7";
         public const string Аналітика3 = "col_a8";
         public const string Податки = "col_a9";
-        public const string Дебет = "col_b1";
-        public const string Кредит = "col_b2";
+        public const string Сума = "col_b1";
+        public const string Кількість = "col_b2";
+        public const string ВидПроводки = "col_a4";
 
         public РеалізаціяТоварівТаПослуг_Object Owner { get; private set; }
         
@@ -17760,8 +17848,9 @@ namespace GeneratedCode.Документи
                     Аналітика2 = (fieldValue["col_a7"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a7"] : new UuidAndText(),
                     Аналітика3 = (fieldValue["col_a8"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a8"] : new UuidAndText(),
                     Податки = new Довідники.ВидиПодатків_Pointer(fieldValue["col_a9"]),
-                    Дебет = (fieldValue["col_b1"] != DBNull.Value) ? (decimal)fieldValue["col_b1"] : 0,
-                    Кредит = (fieldValue["col_b2"] != DBNull.Value) ? (decimal)fieldValue["col_b2"] : 0,
+                    Сума = (fieldValue["col_b1"] != DBNull.Value) ? (decimal)fieldValue["col_b1"] : 0,
+                    Кількість = (fieldValue["col_b2"] != DBNull.Value) ? (decimal)fieldValue["col_b2"] : 0,
+                    ВидПроводки = (fieldValue["col_a4"] != DBNull.Value) ? (Перелічення.ВидиПроводок)fieldValue["col_a4"] : 0,
                     
                 };
                 Records.Add(record);
@@ -17809,8 +17898,9 @@ namespace GeneratedCode.Документи
                     {"col_a7", record.Аналітика2},
                     {"col_a8", record.Аналітика3},
                     {"col_a9", record.Податки.UniqueID.UGuid},
-                    {"col_b1", record.Дебет},
-                    {"col_b2", record.Кредит},
+                    {"col_b1", record.Сума},
+                    {"col_b2", record.Кількість},
+                    {"col_a4", (int)record.ВидПроводки},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -17839,8 +17929,9 @@ namespace GeneratedCode.Документи
                     Аналітика2 = original.Аналітика2.Copy(),
                     Аналітика3 = original.Аналітика3.Copy(),
                     Податки = original.Податки.Copy(),
-                    Дебет = original.Дебет,
-                    Кредит = original.Кредит,
+                    Сума = original.Сума,
+                    Кількість = original.Кількість,
+                    ВидПроводки = original.ВидПроводки,
                      
                 });
             }
@@ -17856,8 +17947,9 @@ namespace GeneratedCode.Документи
             public UuidAndText Аналітика2 { get; set; } = new UuidAndText();
             public UuidAndText Аналітика3 { get; set; } = new UuidAndText();
             public Довідники.ВидиПодатків_Pointer Податки { get; set; } = new Довідники.ВидиПодатків_Pointer();
-            public decimal Дебет { get; set; } = 0;
-            public decimal Кредит { get; set; } = 0;
+            public decimal Сума { get; set; } = 0;
+            public decimal Кількість { get; set; } = 0;
+            public Перелічення.ВидиПроводок ВидПроводки { get; set; } = 0;
             
         }
     }
@@ -19024,7 +19116,7 @@ namespace GeneratedCode.Документи
     public class ПрихіднийКасовийОрдер_Проводки_TablePart : DocumentTablePart
     {
         public ПрихіднийКасовийОрдер_Проводки_TablePart(ПрихіднийКасовийОрдер_Object owner) : base(Config.Kernel, "tab_c32",
-             ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", ])
+             ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", ])
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
@@ -19041,8 +19133,9 @@ namespace GeneratedCode.Документи
         public const string Аналітика2 = "col_a4";
         public const string Аналітика3 = "col_a5";
         public const string Податки = "col_a6";
-        public const string Дебет = "col_a7";
-        public const string Кредит = "col_a8";
+        public const string Сума = "col_a7";
+        public const string Кількість = "col_a8";
+        public const string ВидПроводки = "col_a9";
 
         public ПрихіднийКасовийОрдер_Object Owner { get; private set; }
         
@@ -19099,8 +19192,9 @@ namespace GeneratedCode.Документи
                     Аналітика2 = (fieldValue["col_a4"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a4"] : new UuidAndText(),
                     Аналітика3 = (fieldValue["col_a5"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a5"] : new UuidAndText(),
                     Податки = new Довідники.ВидиПодатків_Pointer(fieldValue["col_a6"]),
-                    Дебет = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
-                    Кредит = (fieldValue["col_a8"] != DBNull.Value) ? (decimal)fieldValue["col_a8"] : 0,
+                    Сума = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
+                    Кількість = (fieldValue["col_a8"] != DBNull.Value) ? (decimal)fieldValue["col_a8"] : 0,
+                    ВидПроводки = (fieldValue["col_a9"] != DBNull.Value) ? (Перелічення.ВидиПроводок)fieldValue["col_a9"] : 0,
                     
                 };
                 Records.Add(record);
@@ -19148,8 +19242,9 @@ namespace GeneratedCode.Документи
                     {"col_a4", record.Аналітика2},
                     {"col_a5", record.Аналітика3},
                     {"col_a6", record.Податки.UniqueID.UGuid},
-                    {"col_a7", record.Дебет},
-                    {"col_a8", record.Кредит},
+                    {"col_a7", record.Сума},
+                    {"col_a8", record.Кількість},
+                    {"col_a9", (int)record.ВидПроводки},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -19178,8 +19273,9 @@ namespace GeneratedCode.Документи
                     Аналітика2 = original.Аналітика2.Copy(),
                     Аналітика3 = original.Аналітика3.Copy(),
                     Податки = original.Податки.Copy(),
-                    Дебет = original.Дебет,
-                    Кредит = original.Кредит,
+                    Сума = original.Сума,
+                    Кількість = original.Кількість,
+                    ВидПроводки = original.ВидПроводки,
                      
                 });
             }
@@ -19195,8 +19291,9 @@ namespace GeneratedCode.Документи
             public UuidAndText Аналітика2 { get; set; } = new UuidAndText();
             public UuidAndText Аналітика3 { get; set; } = new UuidAndText();
             public Довідники.ВидиПодатків_Pointer Податки { get; set; } = new Довідники.ВидиПодатків_Pointer();
-            public decimal Дебет { get; set; } = 0;
-            public decimal Кредит { get; set; } = 0;
+            public decimal Сума { get; set; } = 0;
+            public decimal Кількість { get; set; } = 0;
+            public Перелічення.ВидиПроводок ВидПроводки { get; set; } = 0;
             
         }
     }
@@ -19755,7 +19852,7 @@ namespace GeneratedCode.Документи
     public class РозхіднийКасовийОрдер_Проводки_TablePart : DocumentTablePart
     {
         public РозхіднийКасовийОрдер_Проводки_TablePart(РозхіднийКасовийОрдер_Object owner) : base(Config.Kernel, "tab_c33",
-             ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", ])
+             ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", ])
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
@@ -19772,8 +19869,9 @@ namespace GeneratedCode.Документи
         public const string Аналітика2 = "col_a4";
         public const string Аналітика3 = "col_a5";
         public const string Податки = "col_a6";
-        public const string Дебет = "col_a7";
-        public const string Кредит = "col_a8";
+        public const string Сума = "col_a7";
+        public const string Кількість = "col_a8";
+        public const string ВидПроводки = "col_a9";
 
         public РозхіднийКасовийОрдер_Object Owner { get; private set; }
         
@@ -19830,8 +19928,9 @@ namespace GeneratedCode.Документи
                     Аналітика2 = (fieldValue["col_a4"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a4"] : new UuidAndText(),
                     Аналітика3 = (fieldValue["col_a5"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a5"] : new UuidAndText(),
                     Податки = new Довідники.ВидиПодатків_Pointer(fieldValue["col_a6"]),
-                    Дебет = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
-                    Кредит = (fieldValue["col_a8"] != DBNull.Value) ? (decimal)fieldValue["col_a8"] : 0,
+                    Сума = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
+                    Кількість = (fieldValue["col_a8"] != DBNull.Value) ? (decimal)fieldValue["col_a8"] : 0,
+                    ВидПроводки = (fieldValue["col_a9"] != DBNull.Value) ? (Перелічення.ВидиПроводок)fieldValue["col_a9"] : 0,
                     
                 };
                 Records.Add(record);
@@ -19879,8 +19978,9 @@ namespace GeneratedCode.Документи
                     {"col_a4", record.Аналітика2},
                     {"col_a5", record.Аналітика3},
                     {"col_a6", record.Податки.UniqueID.UGuid},
-                    {"col_a7", record.Дебет},
-                    {"col_a8", record.Кредит},
+                    {"col_a7", record.Сума},
+                    {"col_a8", record.Кількість},
+                    {"col_a9", (int)record.ВидПроводки},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -19909,8 +20009,9 @@ namespace GeneratedCode.Документи
                     Аналітика2 = original.Аналітика2.Copy(),
                     Аналітика3 = original.Аналітика3.Copy(),
                     Податки = original.Податки.Copy(),
-                    Дебет = original.Дебет,
-                    Кредит = original.Кредит,
+                    Сума = original.Сума,
+                    Кількість = original.Кількість,
+                    ВидПроводки = original.ВидПроводки,
                      
                 });
             }
@@ -19926,8 +20027,9 @@ namespace GeneratedCode.Документи
             public UuidAndText Аналітика2 { get; set; } = new UuidAndText();
             public UuidAndText Аналітика3 { get; set; } = new UuidAndText();
             public Довідники.ВидиПодатків_Pointer Податки { get; set; } = new Довідники.ВидиПодатків_Pointer();
-            public decimal Дебет { get; set; } = 0;
-            public decimal Кредит { get; set; } = 0;
+            public decimal Сума { get; set; } = 0;
+            public decimal Кількість { get; set; } = 0;
+            public Перелічення.ВидиПроводок ВидПроводки { get; set; } = 0;
             
         }
     }
@@ -20504,7 +20606,7 @@ namespace GeneratedCode.Документи
     public class ПереміщенняТоварів_Проводки_TablePart : DocumentTablePart
     {
         public ПереміщенняТоварів_Проводки_TablePart(ПереміщенняТоварів_Object owner) : base(Config.Kernel, "tab_c30",
-             ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", ])
+             ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", ])
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
@@ -20521,8 +20623,9 @@ namespace GeneratedCode.Документи
         public const string Аналітика2 = "col_a4";
         public const string Аналітика3 = "col_a5";
         public const string Податки = "col_a6";
-        public const string Дебет = "col_a7";
-        public const string Кредит = "col_a8";
+        public const string Сума = "col_a7";
+        public const string Кількість = "col_a8";
+        public const string ВидПроводки = "col_a9";
 
         public ПереміщенняТоварів_Object Owner { get; private set; }
         
@@ -20579,8 +20682,9 @@ namespace GeneratedCode.Документи
                     Аналітика2 = (fieldValue["col_a4"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a4"] : new UuidAndText(),
                     Аналітика3 = (fieldValue["col_a5"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a5"] : new UuidAndText(),
                     Податки = new Довідники.ВидиПодатків_Pointer(fieldValue["col_a6"]),
-                    Дебет = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
-                    Кредит = (fieldValue["col_a8"] != DBNull.Value) ? (decimal)fieldValue["col_a8"] : 0,
+                    Сума = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
+                    Кількість = (fieldValue["col_a8"] != DBNull.Value) ? (decimal)fieldValue["col_a8"] : 0,
+                    ВидПроводки = (fieldValue["col_a9"] != DBNull.Value) ? (Перелічення.ВидиПроводок)fieldValue["col_a9"] : 0,
                     
                 };
                 Records.Add(record);
@@ -20628,8 +20732,9 @@ namespace GeneratedCode.Документи
                     {"col_a4", record.Аналітика2},
                     {"col_a5", record.Аналітика3},
                     {"col_a6", record.Податки.UniqueID.UGuid},
-                    {"col_a7", record.Дебет},
-                    {"col_a8", record.Кредит},
+                    {"col_a7", record.Сума},
+                    {"col_a8", record.Кількість},
+                    {"col_a9", (int)record.ВидПроводки},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -20658,8 +20763,9 @@ namespace GeneratedCode.Документи
                     Аналітика2 = original.Аналітика2.Copy(),
                     Аналітика3 = original.Аналітика3.Copy(),
                     Податки = original.Податки.Copy(),
-                    Дебет = original.Дебет,
-                    Кредит = original.Кредит,
+                    Сума = original.Сума,
+                    Кількість = original.Кількість,
+                    ВидПроводки = original.ВидПроводки,
                      
                 });
             }
@@ -20675,8 +20781,9 @@ namespace GeneratedCode.Документи
             public UuidAndText Аналітика2 { get; set; } = new UuidAndText();
             public UuidAndText Аналітика3 { get; set; } = new UuidAndText();
             public Довідники.ВидиПодатків_Pointer Податки { get; set; } = new Довідники.ВидиПодатків_Pointer();
-            public decimal Дебет { get; set; } = 0;
-            public decimal Кредит { get; set; } = 0;
+            public decimal Сума { get; set; } = 0;
+            public decimal Кількість { get; set; } = 0;
+            public Перелічення.ВидиПроводок ВидПроводки { get; set; } = 0;
             
         }
     }
@@ -21281,7 +21388,7 @@ namespace GeneratedCode.Документи
     public class ПоверненняТоварівПостачальнику_Проводки_TablePart : DocumentTablePart
     {
         public ПоверненняТоварівПостачальнику_Проводки_TablePart(ПоверненняТоварівПостачальнику_Object owner) : base(Config.Kernel, "tab_c28",
-             ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", ])
+             ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", ])
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
@@ -21298,8 +21405,9 @@ namespace GeneratedCode.Документи
         public const string Аналітика2 = "col_a4";
         public const string Аналітика3 = "col_a5";
         public const string Податки = "col_a6";
-        public const string Дебет = "col_a7";
-        public const string Кредит = "col_a8";
+        public const string Сума = "col_a7";
+        public const string Кількість = "col_a8";
+        public const string ВидПроводки = "col_a9";
 
         public ПоверненняТоварівПостачальнику_Object Owner { get; private set; }
         
@@ -21356,8 +21464,9 @@ namespace GeneratedCode.Документи
                     Аналітика2 = (fieldValue["col_a4"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a4"] : new UuidAndText(),
                     Аналітика3 = (fieldValue["col_a5"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a5"] : new UuidAndText(),
                     Податки = new Довідники.ВидиПодатків_Pointer(fieldValue["col_a6"]),
-                    Дебет = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
-                    Кредит = (fieldValue["col_a8"] != DBNull.Value) ? (decimal)fieldValue["col_a8"] : 0,
+                    Сума = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
+                    Кількість = (fieldValue["col_a8"] != DBNull.Value) ? (decimal)fieldValue["col_a8"] : 0,
+                    ВидПроводки = (fieldValue["col_a9"] != DBNull.Value) ? (Перелічення.ВидиПроводок)fieldValue["col_a9"] : 0,
                     
                 };
                 Records.Add(record);
@@ -21405,8 +21514,9 @@ namespace GeneratedCode.Документи
                     {"col_a4", record.Аналітика2},
                     {"col_a5", record.Аналітика3},
                     {"col_a6", record.Податки.UniqueID.UGuid},
-                    {"col_a7", record.Дебет},
-                    {"col_a8", record.Кредит},
+                    {"col_a7", record.Сума},
+                    {"col_a8", record.Кількість},
+                    {"col_a9", (int)record.ВидПроводки},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -21435,8 +21545,9 @@ namespace GeneratedCode.Документи
                     Аналітика2 = original.Аналітика2.Copy(),
                     Аналітика3 = original.Аналітика3.Copy(),
                     Податки = original.Податки.Copy(),
-                    Дебет = original.Дебет,
-                    Кредит = original.Кредит,
+                    Сума = original.Сума,
+                    Кількість = original.Кількість,
+                    ВидПроводки = original.ВидПроводки,
                      
                 });
             }
@@ -21452,8 +21563,9 @@ namespace GeneratedCode.Документи
             public UuidAndText Аналітика2 { get; set; } = new UuidAndText();
             public UuidAndText Аналітика3 { get; set; } = new UuidAndText();
             public Довідники.ВидиПодатків_Pointer Податки { get; set; } = new Довідники.ВидиПодатків_Pointer();
-            public decimal Дебет { get; set; } = 0;
-            public decimal Кредит { get; set; } = 0;
+            public decimal Сума { get; set; } = 0;
+            public decimal Кількість { get; set; } = 0;
+            public Перелічення.ВидиПроводок ВидПроводки { get; set; } = 0;
             
         }
     }
@@ -22043,7 +22155,7 @@ namespace GeneratedCode.Документи
     public class ПоверненняТоварівВідКлієнта_Проводки_TablePart : DocumentTablePart
     {
         public ПоверненняТоварівВідКлієнта_Проводки_TablePart(ПоверненняТоварівВідКлієнта_Object owner) : base(Config.Kernel, "tab_c29",
-             ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", ])
+             ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", ])
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
@@ -22060,8 +22172,9 @@ namespace GeneratedCode.Документи
         public const string Аналітика2 = "col_a4";
         public const string Аналітика3 = "col_a5";
         public const string Податки = "col_a6";
-        public const string Дебет = "col_a7";
-        public const string Кредит = "col_a8";
+        public const string Сума = "col_a7";
+        public const string Кількість = "col_a8";
+        public const string ВидПроводки = "col_a9";
 
         public ПоверненняТоварівВідКлієнта_Object Owner { get; private set; }
         
@@ -22118,8 +22231,9 @@ namespace GeneratedCode.Документи
                     Аналітика2 = (fieldValue["col_a4"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a4"] : new UuidAndText(),
                     Аналітика3 = (fieldValue["col_a5"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a5"] : new UuidAndText(),
                     Податки = new Довідники.ВидиПодатків_Pointer(fieldValue["col_a6"]),
-                    Дебет = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
-                    Кредит = (fieldValue["col_a8"] != DBNull.Value) ? (decimal)fieldValue["col_a8"] : 0,
+                    Сума = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
+                    Кількість = (fieldValue["col_a8"] != DBNull.Value) ? (decimal)fieldValue["col_a8"] : 0,
+                    ВидПроводки = (fieldValue["col_a9"] != DBNull.Value) ? (Перелічення.ВидиПроводок)fieldValue["col_a9"] : 0,
                     
                 };
                 Records.Add(record);
@@ -22167,8 +22281,9 @@ namespace GeneratedCode.Документи
                     {"col_a4", record.Аналітика2},
                     {"col_a5", record.Аналітика3},
                     {"col_a6", record.Податки.UniqueID.UGuid},
-                    {"col_a7", record.Дебет},
-                    {"col_a8", record.Кредит},
+                    {"col_a7", record.Сума},
+                    {"col_a8", record.Кількість},
+                    {"col_a9", (int)record.ВидПроводки},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -22197,8 +22312,9 @@ namespace GeneratedCode.Документи
                     Аналітика2 = original.Аналітика2.Copy(),
                     Аналітика3 = original.Аналітика3.Copy(),
                     Податки = original.Податки.Copy(),
-                    Дебет = original.Дебет,
-                    Кредит = original.Кредит,
+                    Сума = original.Сума,
+                    Кількість = original.Кількість,
+                    ВидПроводки = original.ВидПроводки,
                      
                 });
             }
@@ -22214,8 +22330,9 @@ namespace GeneratedCode.Документи
             public UuidAndText Аналітика2 { get; set; } = new UuidAndText();
             public UuidAndText Аналітика3 { get; set; } = new UuidAndText();
             public Довідники.ВидиПодатків_Pointer Податки { get; set; } = new Довідники.ВидиПодатків_Pointer();
-            public decimal Дебет { get; set; } = 0;
-            public decimal Кредит { get; set; } = 0;
+            public decimal Сума { get; set; } = 0;
+            public decimal Кількість { get; set; } = 0;
+            public Перелічення.ВидиПроводок ВидПроводки { get; set; } = 0;
             
         }
     }
@@ -22751,7 +22868,7 @@ namespace GeneratedCode.Документи
     public class АктВиконанихРобіт_Проводки_TablePart : DocumentTablePart
     {
         public АктВиконанихРобіт_Проводки_TablePart(АктВиконанихРобіт_Object owner) : base(Config.Kernel, "tab_c26",
-             ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", ])
+             ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", ])
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
@@ -22768,8 +22885,9 @@ namespace GeneratedCode.Документи
         public const string Аналітика2 = "col_a4";
         public const string Аналітика3 = "col_a5";
         public const string Податки = "col_a6";
-        public const string Дебет = "col_a7";
-        public const string Кредит = "col_a8";
+        public const string Сума = "col_a7";
+        public const string Кількість = "col_a8";
+        public const string ВидПроводки = "col_a9";
 
         public АктВиконанихРобіт_Object Owner { get; private set; }
         
@@ -22826,8 +22944,9 @@ namespace GeneratedCode.Документи
                     Аналітика2 = (fieldValue["col_a4"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a4"] : new UuidAndText(),
                     Аналітика3 = (fieldValue["col_a5"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a5"] : new UuidAndText(),
                     Податки = new Довідники.ВидиПодатків_Pointer(fieldValue["col_a6"]),
-                    Дебет = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
-                    Кредит = (fieldValue["col_a8"] != DBNull.Value) ? (decimal)fieldValue["col_a8"] : 0,
+                    Сума = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
+                    Кількість = (fieldValue["col_a8"] != DBNull.Value) ? (decimal)fieldValue["col_a8"] : 0,
+                    ВидПроводки = (fieldValue["col_a9"] != DBNull.Value) ? (Перелічення.ВидиПроводок)fieldValue["col_a9"] : 0,
                     
                 };
                 Records.Add(record);
@@ -22875,8 +22994,9 @@ namespace GeneratedCode.Документи
                     {"col_a4", record.Аналітика2},
                     {"col_a5", record.Аналітика3},
                     {"col_a6", record.Податки.UniqueID.UGuid},
-                    {"col_a7", record.Дебет},
-                    {"col_a8", record.Кредит},
+                    {"col_a7", record.Сума},
+                    {"col_a8", record.Кількість},
+                    {"col_a9", (int)record.ВидПроводки},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -22905,8 +23025,9 @@ namespace GeneratedCode.Документи
                     Аналітика2 = original.Аналітика2.Copy(),
                     Аналітика3 = original.Аналітика3.Copy(),
                     Податки = original.Податки.Copy(),
-                    Дебет = original.Дебет,
-                    Кредит = original.Кредит,
+                    Сума = original.Сума,
+                    Кількість = original.Кількість,
+                    ВидПроводки = original.ВидПроводки,
                      
                 });
             }
@@ -22922,8 +23043,9 @@ namespace GeneratedCode.Документи
             public UuidAndText Аналітика2 { get; set; } = new UuidAndText();
             public UuidAndText Аналітика3 { get; set; } = new UuidAndText();
             public Довідники.ВидиПодатків_Pointer Податки { get; set; } = new Довідники.ВидиПодатків_Pointer();
-            public decimal Дебет { get; set; } = 0;
-            public decimal Кредит { get; set; } = 0;
+            public decimal Сума { get; set; } = 0;
+            public decimal Кількість { get; set; } = 0;
+            public Перелічення.ВидиПроводок ВидПроводки { get; set; } = 0;
             
         }
     }
@@ -24094,7 +24216,7 @@ namespace GeneratedCode.Документи
     public class ВведенняЗалишків_Проводки_TablePart : DocumentTablePart
     {
         public ВведенняЗалишків_Проводки_TablePart(ВведенняЗалишків_Object owner) : base(Config.Kernel, "tab_c31",
-             ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", ])
+             ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", ])
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
@@ -24111,8 +24233,9 @@ namespace GeneratedCode.Документи
         public const string Аналітика2 = "col_a4";
         public const string Аналітика3 = "col_a5";
         public const string Податки = "col_a6";
-        public const string Дебет = "col_a7";
-        public const string Кредит = "col_a8";
+        public const string Сума = "col_a7";
+        public const string Кількість = "col_a8";
+        public const string ВидПроводки = "col_a9";
 
         public ВведенняЗалишків_Object Owner { get; private set; }
         
@@ -24169,8 +24292,9 @@ namespace GeneratedCode.Документи
                     Аналітика2 = (fieldValue["col_a4"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a4"] : new UuidAndText(),
                     Аналітика3 = (fieldValue["col_a5"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a5"] : new UuidAndText(),
                     Податки = new Довідники.ВидиПодатків_Pointer(fieldValue["col_a6"]),
-                    Дебет = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
-                    Кредит = (fieldValue["col_a8"] != DBNull.Value) ? (decimal)fieldValue["col_a8"] : 0,
+                    Сума = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
+                    Кількість = (fieldValue["col_a8"] != DBNull.Value) ? (decimal)fieldValue["col_a8"] : 0,
+                    ВидПроводки = (fieldValue["col_a9"] != DBNull.Value) ? (Перелічення.ВидиПроводок)fieldValue["col_a9"] : 0,
                     
                 };
                 Records.Add(record);
@@ -24218,8 +24342,9 @@ namespace GeneratedCode.Документи
                     {"col_a4", record.Аналітика2},
                     {"col_a5", record.Аналітика3},
                     {"col_a6", record.Податки.UniqueID.UGuid},
-                    {"col_a7", record.Дебет},
-                    {"col_a8", record.Кредит},
+                    {"col_a7", record.Сума},
+                    {"col_a8", record.Кількість},
+                    {"col_a9", (int)record.ВидПроводки},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -24248,8 +24373,9 @@ namespace GeneratedCode.Документи
                     Аналітика2 = original.Аналітика2.Copy(),
                     Аналітика3 = original.Аналітика3.Copy(),
                     Податки = original.Податки.Copy(),
-                    Дебет = original.Дебет,
-                    Кредит = original.Кредит,
+                    Сума = original.Сума,
+                    Кількість = original.Кількість,
+                    ВидПроводки = original.ВидПроводки,
                      
                 });
             }
@@ -24265,8 +24391,9 @@ namespace GeneratedCode.Документи
             public UuidAndText Аналітика2 { get; set; } = new UuidAndText();
             public UuidAndText Аналітика3 { get; set; } = new UuidAndText();
             public Довідники.ВидиПодатків_Pointer Податки { get; set; } = new Довідники.ВидиПодатків_Pointer();
-            public decimal Дебет { get; set; } = 0;
-            public decimal Кредит { get; set; } = 0;
+            public decimal Сума { get; set; } = 0;
+            public decimal Кількість { get; set; } = 0;
+            public Перелічення.ВидиПроводок ВидПроводки { get; set; } = 0;
             
         }
     }
@@ -26674,7 +26801,7 @@ namespace GeneratedCode.Документи
     public class ВнутрішнєСпоживанняТоварів_Проводки_TablePart : DocumentTablePart
     {
         public ВнутрішнєСпоживанняТоварів_Проводки_TablePart(ВнутрішнєСпоживанняТоварів_Object owner) : base(Config.Kernel, "tab_c37",
-             ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", ])
+             ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", ])
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
@@ -26691,8 +26818,9 @@ namespace GeneratedCode.Документи
         public const string Аналітика2 = "col_a4";
         public const string Аналітика3 = "col_a5";
         public const string Податки = "col_a6";
-        public const string Дебет = "col_a7";
-        public const string Кредит = "col_a8";
+        public const string Сума = "col_a7";
+        public const string Кількість = "col_a8";
+        public const string ВидПроводки = "col_a9";
 
         public ВнутрішнєСпоживанняТоварів_Object Owner { get; private set; }
         
@@ -26749,8 +26877,9 @@ namespace GeneratedCode.Документи
                     Аналітика2 = (fieldValue["col_a4"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a4"] : new UuidAndText(),
                     Аналітика3 = (fieldValue["col_a5"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a5"] : new UuidAndText(),
                     Податки = new Довідники.ВидиПодатків_Pointer(fieldValue["col_a6"]),
-                    Дебет = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
-                    Кредит = (fieldValue["col_a8"] != DBNull.Value) ? (decimal)fieldValue["col_a8"] : 0,
+                    Сума = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
+                    Кількість = (fieldValue["col_a8"] != DBNull.Value) ? (decimal)fieldValue["col_a8"] : 0,
+                    ВидПроводки = (fieldValue["col_a9"] != DBNull.Value) ? (Перелічення.ВидиПроводок)fieldValue["col_a9"] : 0,
                     
                 };
                 Records.Add(record);
@@ -26798,8 +26927,9 @@ namespace GeneratedCode.Документи
                     {"col_a4", record.Аналітика2},
                     {"col_a5", record.Аналітика3},
                     {"col_a6", record.Податки.UniqueID.UGuid},
-                    {"col_a7", record.Дебет},
-                    {"col_a8", record.Кредит},
+                    {"col_a7", record.Сума},
+                    {"col_a8", record.Кількість},
+                    {"col_a9", (int)record.ВидПроводки},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -26828,8 +26958,9 @@ namespace GeneratedCode.Документи
                     Аналітика2 = original.Аналітика2.Copy(),
                     Аналітика3 = original.Аналітика3.Copy(),
                     Податки = original.Податки.Copy(),
-                    Дебет = original.Дебет,
-                    Кредит = original.Кредит,
+                    Сума = original.Сума,
+                    Кількість = original.Кількість,
+                    ВидПроводки = original.ВидПроводки,
                      
                 });
             }
@@ -26845,8 +26976,9 @@ namespace GeneratedCode.Документи
             public UuidAndText Аналітика2 { get; set; } = new UuidAndText();
             public UuidAndText Аналітика3 { get; set; } = new UuidAndText();
             public Довідники.ВидиПодатків_Pointer Податки { get; set; } = new Довідники.ВидиПодатків_Pointer();
-            public decimal Дебет { get; set; } = 0;
-            public decimal Кредит { get; set; } = 0;
+            public decimal Сума { get; set; } = 0;
+            public decimal Кількість { get; set; } = 0;
+            public Перелічення.ВидиПроводок ВидПроводки { get; set; } = 0;
             
         }
     }
@@ -27430,7 +27562,7 @@ namespace GeneratedCode.Документи
     public class РахунокФактура_Проводки_TablePart : DocumentTablePart
     {
         public РахунокФактура_Проводки_TablePart(РахунокФактура_Object owner) : base(Config.Kernel, "tab_c27",
-             ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", ])
+             ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", ])
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
@@ -27447,8 +27579,9 @@ namespace GeneratedCode.Документи
         public const string Аналітика2 = "col_a4";
         public const string Аналітика3 = "col_a5";
         public const string Податки = "col_a6";
-        public const string Дебет = "col_a7";
-        public const string Кредит = "col_a8";
+        public const string Сума = "col_a7";
+        public const string Кількість = "col_a8";
+        public const string ВидПроводки = "col_a9";
 
         public РахунокФактура_Object Owner { get; private set; }
         
@@ -27505,8 +27638,9 @@ namespace GeneratedCode.Документи
                     Аналітика2 = (fieldValue["col_a4"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a4"] : new UuidAndText(),
                     Аналітика3 = (fieldValue["col_a5"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a5"] : new UuidAndText(),
                     Податки = new Довідники.ВидиПодатків_Pointer(fieldValue["col_a6"]),
-                    Дебет = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
-                    Кредит = (fieldValue["col_a8"] != DBNull.Value) ? (decimal)fieldValue["col_a8"] : 0,
+                    Сума = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
+                    Кількість = (fieldValue["col_a8"] != DBNull.Value) ? (decimal)fieldValue["col_a8"] : 0,
+                    ВидПроводки = (fieldValue["col_a9"] != DBNull.Value) ? (Перелічення.ВидиПроводок)fieldValue["col_a9"] : 0,
                     
                 };
                 Records.Add(record);
@@ -27554,8 +27688,9 @@ namespace GeneratedCode.Документи
                     {"col_a4", record.Аналітика2},
                     {"col_a5", record.Аналітика3},
                     {"col_a6", record.Податки.UniqueID.UGuid},
-                    {"col_a7", record.Дебет},
-                    {"col_a8", record.Кредит},
+                    {"col_a7", record.Сума},
+                    {"col_a8", record.Кількість},
+                    {"col_a9", (int)record.ВидПроводки},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -27584,8 +27719,9 @@ namespace GeneratedCode.Документи
                     Аналітика2 = original.Аналітика2.Copy(),
                     Аналітика3 = original.Аналітика3.Copy(),
                     Податки = original.Податки.Copy(),
-                    Дебет = original.Дебет,
-                    Кредит = original.Кредит,
+                    Сума = original.Сума,
+                    Кількість = original.Кількість,
+                    ВидПроводки = original.ВидПроводки,
                      
                 });
             }
@@ -27601,8 +27737,9 @@ namespace GeneratedCode.Документи
             public UuidAndText Аналітика2 { get; set; } = new UuidAndText();
             public UuidAndText Аналітика3 { get; set; } = new UuidAndText();
             public Довідники.ВидиПодатків_Pointer Податки { get; set; } = new Довідники.ВидиПодатків_Pointer();
-            public decimal Дебет { get; set; } = 0;
-            public decimal Кредит { get; set; } = 0;
+            public decimal Сума { get; set; } = 0;
+            public decimal Кількість { get; set; } = 0;
+            public Перелічення.ВидиПроводок ВидПроводки { get; set; } = 0;
             
         }
     }
@@ -30176,7 +30313,7 @@ namespace GeneratedCode.Документи
     public class КорегуванняБоргу_Проводки_TablePart : DocumentTablePart
     {
         public КорегуванняБоргу_Проводки_TablePart(КорегуванняБоргу_Object owner) : base(Config.Kernel, "tab_c34",
-             ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", ])
+             ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", ])
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
@@ -30193,8 +30330,9 @@ namespace GeneratedCode.Документи
         public const string Аналітика2 = "col_a4";
         public const string Аналітика3 = "col_a5";
         public const string Податки = "col_a6";
-        public const string Дебет = "col_a7";
-        public const string Кредит = "col_a8";
+        public const string Сума = "col_a7";
+        public const string Кількість = "col_a8";
+        public const string ВидПроводки = "col_a9";
 
         public КорегуванняБоргу_Object Owner { get; private set; }
         
@@ -30251,8 +30389,9 @@ namespace GeneratedCode.Документи
                     Аналітика2 = (fieldValue["col_a4"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a4"] : new UuidAndText(),
                     Аналітика3 = (fieldValue["col_a5"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a5"] : new UuidAndText(),
                     Податки = new Довідники.ВидиПодатків_Pointer(fieldValue["col_a6"]),
-                    Дебет = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
-                    Кредит = (fieldValue["col_a8"] != DBNull.Value) ? (decimal)fieldValue["col_a8"] : 0,
+                    Сума = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
+                    Кількість = (fieldValue["col_a8"] != DBNull.Value) ? (decimal)fieldValue["col_a8"] : 0,
+                    ВидПроводки = (fieldValue["col_a9"] != DBNull.Value) ? (Перелічення.ВидиПроводок)fieldValue["col_a9"] : 0,
                     
                 };
                 Records.Add(record);
@@ -30300,8 +30439,9 @@ namespace GeneratedCode.Документи
                     {"col_a4", record.Аналітика2},
                     {"col_a5", record.Аналітика3},
                     {"col_a6", record.Податки.UniqueID.UGuid},
-                    {"col_a7", record.Дебет},
-                    {"col_a8", record.Кредит},
+                    {"col_a7", record.Сума},
+                    {"col_a8", record.Кількість},
+                    {"col_a9", (int)record.ВидПроводки},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -30330,8 +30470,9 @@ namespace GeneratedCode.Документи
                     Аналітика2 = original.Аналітика2.Copy(),
                     Аналітика3 = original.Аналітика3.Copy(),
                     Податки = original.Податки.Copy(),
-                    Дебет = original.Дебет,
-                    Кредит = original.Кредит,
+                    Сума = original.Сума,
+                    Кількість = original.Кількість,
+                    ВидПроводки = original.ВидПроводки,
                      
                 });
             }
@@ -30347,8 +30488,9 @@ namespace GeneratedCode.Документи
             public UuidAndText Аналітика2 { get; set; } = new UuidAndText();
             public UuidAndText Аналітика3 { get; set; } = new UuidAndText();
             public Довідники.ВидиПодатків_Pointer Податки { get; set; } = new Довідники.ВидиПодатків_Pointer();
-            public decimal Дебет { get; set; } = 0;
-            public decimal Кредит { get; set; } = 0;
+            public decimal Сума { get; set; } = 0;
+            public decimal Кількість { get; set; } = 0;
+            public Перелічення.ВидиПроводок ВидПроводки { get; set; } = 0;
             
         }
     }
@@ -32758,7 +32900,7 @@ namespace GeneratedCode.Документи
     public class БухгалтерськаОперація_Операції_TablePart : DocumentTablePart
     {
         public БухгалтерськаОперація_Операції_TablePart(БухгалтерськаОперація_Object owner) : base(Config.Kernel, "acc_operations_tp_operation",
-             ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", "col_b1", "col_b2", "col_b3", "col_b4", "col_b5", "col_b6", "col_b7", "col_b8", "col_b9", "col_c1", "col_c2", "col_c3", "col_c4", "col_c5", "col_c6", "col_c7", "col_c8", "col_c9", ])
+             ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", "col_b1", "col_b2", "col_b8", "col_b9", "col_c1", "col_c2", "col_c3", "col_c4", "col_c5", "col_c6", "col_c7", "col_c8", "col_d2", ])
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
@@ -32775,16 +32917,11 @@ namespace GeneratedCode.Документи
         public const string Аналітика1 = "col_a4";
         public const string Аналітика2 = "col_a5";
         public const string Аналітика3 = "col_a6";
-        public const string Дебет = "col_a7";
-        public const string КількістьДебет = "col_a8";
-        public const string ВалютаДебет = "col_a9";
-        public const string СумаВВалютіДебет = "col_b1";
-        public const string СумаПОДебет = "col_b2";
-        public const string Кредит = "col_b3";
-        public const string КількістьКредит = "col_b4";
-        public const string ВалютаКредит = "col_b5";
-        public const string СумаВВалютіКредит = "col_b6";
-        public const string СумаПОКредит = "col_b7";
+        public const string Сума = "col_a7";
+        public const string Кількість = "col_a8";
+        public const string Валюта = "col_a9";
+        public const string СумаВВалюті = "col_b1";
+        public const string СумаПО = "col_b2";
         public const string Коментар = "col_b8";
         public const string КореспондуючийРахунок = "col_b9";
         public const string КорАналітика1 = "col_c1";
@@ -32794,8 +32931,8 @@ namespace GeneratedCode.Документи
         public const string СумаПодатку = "col_c5";
         public const string Журнал = "col_c6";
         public const string ТипБухОперації = "col_c7";
-        public const string КурсВалютиДебет = "col_c8";
-        public const string КурсВалютиКредит = "col_c9";
+        public const string КурсВалюти = "col_c8";
+        public const string ВидПроводки = "col_d2";
 
         public БухгалтерськаОперація_Object Owner { get; private set; }
         
@@ -32832,13 +32969,10 @@ namespace GeneratedCode.Документи
                       QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({TABLE}.{Аналітика3})", "Аналітика3"));
                   
                       /* pointer */
-                      Довідники.Валюти_Pointer.GetJoin(QuerySelect, ВалютаДебет, $"{TABLE}", "join_tab_9", "ВалютаДебет");
+                      Довідники.Валюти_Pointer.GetJoin(QuerySelect, Валюта, $"{TABLE}", "join_tab_9", "Валюта");
                   
                       /* pointer */
-                      Довідники.Валюти_Pointer.GetJoin(QuerySelect, ВалютаКредит, $"{TABLE}", "join_tab_14", "ВалютаКредит");
-                  
-                      /* pointer */
-                      Довідники.ПланРахунків_Pointer.GetJoin(QuerySelect, КореспондуючийРахунок, $"{TABLE}", "join_tab_18", "КореспондуючийРахунок");
+                      Довідники.ПланРахунків_Pointer.GetJoin(QuerySelect, КореспондуючийРахунок, $"{TABLE}", "join_tab_13", "КореспондуючийРахунок");
                   
                       /* composite_pointer */
                       QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({TABLE}.{КорАналітика1})", "КорАналітика1"));
@@ -32850,13 +32984,13 @@ namespace GeneratedCode.Документи
                       QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({TABLE}.{КорАналітика3})", "КорАналітика3"));
                   
                       /* pointer */
-                      Довідники.ВидиПодатків_Pointer.GetJoin(QuerySelect, Податок, $"{TABLE}", "join_tab_22", "Податок");
+                      Довідники.ВидиПодатків_Pointer.GetJoin(QuerySelect, Податок, $"{TABLE}", "join_tab_17", "Податок");
                   
                       /* pointer */
-                      Довідники.ВидиЖурналів_Pointer.GetJoin(QuerySelect, Журнал, $"{TABLE}", "join_tab_24", "Журнал");
+                      Довідники.ВидиЖурналів_Pointer.GetJoin(QuerySelect, Журнал, $"{TABLE}", "join_tab_19", "Журнал");
                   
                       /* pointer */
-                      Довідники.ТипиБухОперацій_Pointer.GetJoin(QuerySelect, ТипБухОперації, $"{TABLE}", "join_tab_25", "ТипБухОперації");
+                      Довідники.ТипиБухОперацій_Pointer.GetJoin(QuerySelect, ТипБухОперації, $"{TABLE}", "join_tab_20", "ТипБухОперації");
                   
         }
 
@@ -32876,16 +33010,11 @@ namespace GeneratedCode.Документи
                     Аналітика1 = (fieldValue["col_a4"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a4"] : new UuidAndText(),
                     Аналітика2 = (fieldValue["col_a5"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a5"] : new UuidAndText(),
                     Аналітика3 = (fieldValue["col_a6"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a6"] : new UuidAndText(),
-                    Дебет = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
-                    КількістьДебет = (fieldValue["col_a8"] != DBNull.Value) ? (decimal)fieldValue["col_a8"] : 0,
-                    ВалютаДебет = new Довідники.Валюти_Pointer(fieldValue["col_a9"]),
-                    СумаВВалютіДебет = (fieldValue["col_b1"] != DBNull.Value) ? (decimal)fieldValue["col_b1"] : 0,
-                    СумаПОДебет = (fieldValue["col_b2"] != DBNull.Value) ? (decimal)fieldValue["col_b2"] : 0,
-                    Кредит = (fieldValue["col_b3"] != DBNull.Value) ? (decimal)fieldValue["col_b3"] : 0,
-                    КількістьКредит = (fieldValue["col_b4"] != DBNull.Value) ? (decimal)fieldValue["col_b4"] : 0,
-                    ВалютаКредит = new Довідники.Валюти_Pointer(fieldValue["col_b5"]),
-                    СумаВВалютіКредит = (fieldValue["col_b6"] != DBNull.Value) ? (decimal)fieldValue["col_b6"] : 0,
-                    СумаПОКредит = (fieldValue["col_b7"] != DBNull.Value) ? (decimal)fieldValue["col_b7"] : 0,
+                    Сума = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
+                    Кількість = (fieldValue["col_a8"] != DBNull.Value) ? (decimal)fieldValue["col_a8"] : 0,
+                    Валюта = new Довідники.Валюти_Pointer(fieldValue["col_a9"]),
+                    СумаВВалюті = (fieldValue["col_b1"] != DBNull.Value) ? (decimal)fieldValue["col_b1"] : 0,
+                    СумаПО = (fieldValue["col_b2"] != DBNull.Value) ? (decimal)fieldValue["col_b2"] : 0,
                     Коментар = fieldValue["col_b8"].ToString() ?? "",
                     КореспондуючийРахунок = new Довідники.ПланРахунків_Pointer(fieldValue["col_b9"]),
                     КорАналітика1 = (fieldValue["col_c1"] != DBNull.Value) ? (UuidAndText)fieldValue["col_c1"] : new UuidAndText(),
@@ -32895,8 +33024,8 @@ namespace GeneratedCode.Документи
                     СумаПодатку = (fieldValue["col_c5"] != DBNull.Value) ? (decimal)fieldValue["col_c5"] : 0,
                     Журнал = new Довідники.ВидиЖурналів_Pointer(fieldValue["col_c6"]),
                     ТипБухОперації = new Довідники.ТипиБухОперацій_Pointer(fieldValue["col_c7"]),
-                    КурсВалютиДебет = (fieldValue["col_c8"] != DBNull.Value) ? (decimal)fieldValue["col_c8"] : 0,
-                    КурсВалютиКредит = (fieldValue["col_c9"] != DBNull.Value) ? (decimal)fieldValue["col_c9"] : 0,
+                    КурсВалюти = (fieldValue["col_c8"] != DBNull.Value) ? (decimal)fieldValue["col_c8"] : 0,
+                    ВидПроводки = (fieldValue["col_d2"] != DBNull.Value) ? (Перелічення.ВидиПроводок)fieldValue["col_d2"] : 0,
                     
                 };
                 Records.Add(record);
@@ -32908,8 +33037,7 @@ namespace GeneratedCode.Документи
                       record.Аналітика1.Name = ItemValue["Аналітика1"];
                       record.Аналітика2.Name = ItemValue["Аналітика2"];
                       record.Аналітика3.Name = ItemValue["Аналітика3"];
-                      record.ВалютаДебет.Name = ItemValue["ВалютаДебет"];
-                      record.ВалютаКредит.Name = ItemValue["ВалютаКредит"];
+                      record.Валюта.Name = ItemValue["Валюта"];
                       record.КореспондуючийРахунок.Name = ItemValue["КореспондуючийРахунок"];
                       record.КорАналітика1.Name = ItemValue["КорАналітика1"];
                       record.КорАналітика2.Name = ItemValue["КорАналітика2"];
@@ -32952,16 +33080,11 @@ namespace GeneratedCode.Документи
                     {"col_a4", record.Аналітика1},
                     {"col_a5", record.Аналітика2},
                     {"col_a6", record.Аналітика3},
-                    {"col_a7", record.Дебет},
-                    {"col_a8", record.КількістьДебет},
-                    {"col_a9", record.ВалютаДебет.UniqueID.UGuid},
-                    {"col_b1", record.СумаВВалютіДебет},
-                    {"col_b2", record.СумаПОДебет},
-                    {"col_b3", record.Кредит},
-                    {"col_b4", record.КількістьКредит},
-                    {"col_b5", record.ВалютаКредит.UniqueID.UGuid},
-                    {"col_b6", record.СумаВВалютіКредит},
-                    {"col_b7", record.СумаПОКредит},
+                    {"col_a7", record.Сума},
+                    {"col_a8", record.Кількість},
+                    {"col_a9", record.Валюта.UniqueID.UGuid},
+                    {"col_b1", record.СумаВВалюті},
+                    {"col_b2", record.СумаПО},
                     {"col_b8", record.Коментар},
                     {"col_b9", record.КореспондуючийРахунок.UniqueID.UGuid},
                     {"col_c1", record.КорАналітика1},
@@ -32971,8 +33094,8 @@ namespace GeneratedCode.Документи
                     {"col_c5", record.СумаПодатку},
                     {"col_c6", record.Журнал.UniqueID.UGuid},
                     {"col_c7", record.ТипБухОперації.UniqueID.UGuid},
-                    {"col_c8", record.КурсВалютиДебет},
-                    {"col_c9", record.КурсВалютиКредит},
+                    {"col_c8", record.КурсВалюти},
+                    {"col_d2", (int)record.ВидПроводки},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -32999,16 +33122,11 @@ namespace GeneratedCode.Документи
                     Аналітика1 = original.Аналітика1.Copy(),
                     Аналітика2 = original.Аналітика2.Copy(),
                     Аналітика3 = original.Аналітика3.Copy(),
-                    Дебет = original.Дебет,
-                    КількістьДебет = original.КількістьДебет,
-                    ВалютаДебет = original.ВалютаДебет.Copy(),
-                    СумаВВалютіДебет = original.СумаВВалютіДебет,
-                    СумаПОДебет = original.СумаПОДебет,
-                    Кредит = original.Кредит,
-                    КількістьКредит = original.КількістьКредит,
-                    ВалютаКредит = original.ВалютаКредит.Copy(),
-                    СумаВВалютіКредит = original.СумаВВалютіКредит,
-                    СумаПОКредит = original.СумаПОКредит,
+                    Сума = original.Сума,
+                    Кількість = original.Кількість,
+                    Валюта = original.Валюта.Copy(),
+                    СумаВВалюті = original.СумаВВалюті,
+                    СумаПО = original.СумаПО,
                     Коментар = original.Коментар,
                     КореспондуючийРахунок = original.КореспондуючийРахунок.Copy(),
                     КорАналітика1 = original.КорАналітика1.Copy(),
@@ -33018,8 +33136,8 @@ namespace GeneratedCode.Документи
                     СумаПодатку = original.СумаПодатку,
                     Журнал = original.Журнал.Copy(),
                     ТипБухОперації = original.ТипБухОперації.Copy(),
-                    КурсВалютиДебет = original.КурсВалютиДебет,
-                    КурсВалютиКредит = original.КурсВалютиКредит,
+                    КурсВалюти = original.КурсВалюти,
+                    ВидПроводки = original.ВидПроводки,
                      
                 });
             }
@@ -33035,16 +33153,11 @@ namespace GeneratedCode.Документи
             public UuidAndText Аналітика1 { get; set; } = new UuidAndText();
             public UuidAndText Аналітика2 { get; set; } = new UuidAndText();
             public UuidAndText Аналітика3 { get; set; } = new UuidAndText();
-            public decimal Дебет { get; set; } = 0;
-            public decimal КількістьДебет { get; set; } = 0;
-            public Довідники.Валюти_Pointer ВалютаДебет { get; set; } = new Довідники.Валюти_Pointer();
-            public decimal СумаВВалютіДебет { get; set; } = 0;
-            public decimal СумаПОДебет { get; set; } = 0;
-            public decimal Кредит { get; set; } = 0;
-            public decimal КількістьКредит { get; set; } = 0;
-            public Довідники.Валюти_Pointer ВалютаКредит { get; set; } = new Довідники.Валюти_Pointer();
-            public decimal СумаВВалютіКредит { get; set; } = 0;
-            public decimal СумаПОКредит { get; set; } = 0;
+            public decimal Сума { get; set; } = 0;
+            public decimal Кількість { get; set; } = 0;
+            public Довідники.Валюти_Pointer Валюта { get; set; } = new Довідники.Валюти_Pointer();
+            public decimal СумаВВалюті { get; set; } = 0;
+            public decimal СумаПО { get; set; } = 0;
             public string Коментар { get; set; } = "";
             public Довідники.ПланРахунків_Pointer КореспондуючийРахунок { get; set; } = new Довідники.ПланРахунків_Pointer();
             public UuidAndText КорАналітика1 { get; set; } = new UuidAndText();
@@ -33054,8 +33167,8 @@ namespace GeneratedCode.Документи
             public decimal СумаПодатку { get; set; } = 0;
             public Довідники.ВидиЖурналів_Pointer Журнал { get; set; } = new Довідники.ВидиЖурналів_Pointer();
             public Довідники.ТипиБухОперацій_Pointer ТипБухОперації { get; set; } = new Довідники.ТипиБухОперацій_Pointer();
-            public decimal КурсВалютиДебет { get; set; } = 0;
-            public decimal КурсВалютиКредит { get; set; } = 0;
+            public decimal КурсВалюти { get; set; } = 0;
+            public Перелічення.ВидиПроводок ВидПроводки { get; set; } = 0;
             
         }
     }
@@ -33395,7 +33508,7 @@ namespace GeneratedCode.Документи
     public class АвансовийЗвіт_Проводки_TablePart : DocumentTablePart
     {
         public АвансовийЗвіт_Проводки_TablePart(АвансовийЗвіт_Object owner) : base(Config.Kernel, "tab_c35",
-             ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", ])
+             ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", ])
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
@@ -33412,8 +33525,9 @@ namespace GeneratedCode.Документи
         public const string Аналітика2 = "col_a4";
         public const string Аналітика3 = "col_a5";
         public const string Податки = "col_a6";
-        public const string Дебет = "col_a7";
-        public const string Кредит = "col_a8";
+        public const string Сума = "col_a7";
+        public const string Кількість = "col_a8";
+        public const string ВидПроводки = "col_a9";
 
         public АвансовийЗвіт_Object Owner { get; private set; }
         
@@ -33470,8 +33584,9 @@ namespace GeneratedCode.Документи
                     Аналітика2 = (fieldValue["col_a4"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a4"] : new UuidAndText(),
                     Аналітика3 = (fieldValue["col_a5"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a5"] : new UuidAndText(),
                     Податки = new Довідники.ВидиПодатків_Pointer(fieldValue["col_a6"]),
-                    Дебет = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
-                    Кредит = (fieldValue["col_a8"] != DBNull.Value) ? (decimal)fieldValue["col_a8"] : 0,
+                    Сума = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
+                    Кількість = (fieldValue["col_a8"] != DBNull.Value) ? (decimal)fieldValue["col_a8"] : 0,
+                    ВидПроводки = (fieldValue["col_a9"] != DBNull.Value) ? (Перелічення.ВидиПроводок)fieldValue["col_a9"] : 0,
                     
                 };
                 Records.Add(record);
@@ -33519,8 +33634,9 @@ namespace GeneratedCode.Документи
                     {"col_a4", record.Аналітика2},
                     {"col_a5", record.Аналітика3},
                     {"col_a6", record.Податки.UniqueID.UGuid},
-                    {"col_a7", record.Дебет},
-                    {"col_a8", record.Кредит},
+                    {"col_a7", record.Сума},
+                    {"col_a8", record.Кількість},
+                    {"col_a9", (int)record.ВидПроводки},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -33549,8 +33665,9 @@ namespace GeneratedCode.Документи
                     Аналітика2 = original.Аналітика2.Copy(),
                     Аналітика3 = original.Аналітика3.Copy(),
                     Податки = original.Податки.Copy(),
-                    Дебет = original.Дебет,
-                    Кредит = original.Кредит,
+                    Сума = original.Сума,
+                    Кількість = original.Кількість,
+                    ВидПроводки = original.ВидПроводки,
                      
                 });
             }
@@ -33566,8 +33683,9 @@ namespace GeneratedCode.Документи
             public UuidAndText Аналітика2 { get; set; } = new UuidAndText();
             public UuidAndText Аналітика3 { get; set; } = new UuidAndText();
             public Довідники.ВидиПодатків_Pointer Податки { get; set; } = new Довідники.ВидиПодатків_Pointer();
-            public decimal Дебет { get; set; } = 0;
-            public decimal Кредит { get; set; } = 0;
+            public decimal Сума { get; set; } = 0;
+            public decimal Кількість { get; set; } = 0;
+            public Перелічення.ВидиПроводок ВидПроводки { get; set; } = 0;
             
         }
     }
@@ -34547,14 +34665,13 @@ namespace GeneratedCode.Документи
         public const string ДокументБухгалтерськаОперація = "col_a7";
         public const string ВідобразитиВБухгалтерськомуОбліку = "col_a8";
         public const string Валюта = "col_a9";
-        public const string СкладГотовихВиробів = "col_b1";
         public const string СкладКомплектуючих = "col_b3";
     }
 
     public class ВиготовленняПродукції_Object : DocumentObject
     {
         public ВиготовленняПродукції_Object() : base(Config.Kernel, "tab_b76", ВиготовленняПродукції_Const.TYPE,
-             ["docname", "docnomer", "docdate", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", "col_b1", "col_b3", ])
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", "col_b3", ])
         {
             
                 //Табличні частини
@@ -34589,7 +34706,6 @@ namespace GeneratedCode.Документи
                 ДокументБухгалтерськаОперація = new Документи.БухгалтерськаОперація_Pointer(base.FieldValue["col_a7"]);
                 ВідобразитиВБухгалтерськомуОбліку = (base.FieldValue["col_a8"] != DBNull.Value) ? (bool)base.FieldValue["col_a8"] : false;
                 Валюта = new Довідники.Валюти_Pointer(base.FieldValue["col_a9"]);
-                СкладГотовихВиробів = new Довідники.Склади_Pointer(base.FieldValue["col_b1"]);
                 СкладКомплектуючих = new Довідники.Склади_Pointer(base.FieldValue["col_b3"]);
                 
                 BaseClear();
@@ -34625,7 +34741,6 @@ namespace GeneratedCode.Документи
             base.FieldValue["col_a7"] = ДокументБухгалтерськаОперація.UniqueID.UGuid;
             base.FieldValue["col_a8"] = ВідобразитиВБухгалтерськомуОбліку;
             base.FieldValue["col_a9"] = Валюта.UniqueID.UGuid;
-            base.FieldValue["col_b1"] = СкладГотовихВиробів.UniqueID.UGuid;
             base.FieldValue["col_b3"] = СкладКомплектуючих.UniqueID.UGuid;
             
             bool result = await BaseSave();
@@ -34698,7 +34813,6 @@ namespace GeneratedCode.Документи
                 ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація.Copy(),
                 ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку,
                 Валюта = Валюта.Copy(),
-                СкладГотовихВиробів = СкладГотовихВиробів.Copy(),
                 СкладКомплектуючих = СкладКомплектуючих.Copy(),
                 
             };
@@ -34757,7 +34871,6 @@ namespace GeneratedCode.Документи
         public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get; set; } = new Документи.БухгалтерськаОперація_Pointer();
         public bool ВідобразитиВБухгалтерськомуОбліку { get; set; } = false;
         public Довідники.Валюти_Pointer Валюта { get; set; } = new Довідники.Валюти_Pointer();
-        public Довідники.Склади_Pointer СкладГотовихВиробів { get; set; } = new Довідники.Склади_Pointer();
         public Довідники.Склади_Pointer СкладКомплектуючих { get; set; } = new Довідники.Склади_Pointer();
         
         //Табличні частини
@@ -35050,7 +35163,7 @@ namespace GeneratedCode.Документи
     public class ВиготовленняПродукції_Комплектуючі_TablePart : DocumentTablePart
     {
         public ВиготовленняПродукції_Комплектуючі_TablePart(ВиготовленняПродукції_Object owner) : base(Config.Kernel, "tab_c39",
-             ["col_a1", "col_a6", "col_a7", "col_a8", "col_a9", "col_b1", "col_b2", "col_b3", "col_b4", ])
+             ["col_a1", "col_a6", "col_a7", "col_a8", "col_a9", "col_b1", "col_b2", "col_b3", "col_b4", "col_a2", "col_a3", ])
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
@@ -35070,6 +35183,8 @@ namespace GeneratedCode.Документи
         public const string ОдиницяВиміру = "col_b2";
         public const string Кількість = "col_b3";
         public const string Коментар = "col_b4";
+        public const string Серія = "col_a2";
+        public const string КількістьУпаковок = "col_a3";
 
         public ВиготовленняПродукції_Object Owner { get; private set; }
         
@@ -35108,6 +35223,9 @@ namespace GeneratedCode.Документи
                       /* pointer */
                       Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(QuerySelect, ОдиницяВиміру, $"{TABLE}", "join_tab_7", "ОдиницяВиміру");
                   
+                      /* pointer */
+                      Довідники.СеріїНоменклатури_Pointer.GetJoin(QuerySelect, Серія, $"{TABLE}", "join_tab_10", "Серія");
+                  
         }
 
         public async Task Read()
@@ -35129,6 +35247,8 @@ namespace GeneratedCode.Документи
                     ОдиницяВиміру = new Довідники.ПакуванняОдиниціВиміру_Pointer(fieldValue["col_b2"]),
                     Кількість = (fieldValue["col_b3"] != DBNull.Value) ? (decimal)fieldValue["col_b3"] : 0,
                     Коментар = fieldValue["col_b4"].ToString() ?? "",
+                    Серія = new Довідники.СеріїНоменклатури_Pointer(fieldValue["col_a2"]),
+                    КількістьУпаковок = (fieldValue["col_a3"] != DBNull.Value) ? (int)fieldValue["col_a3"] : 0,
                     
                 };
                 Records.Add(record);
@@ -35141,6 +35261,7 @@ namespace GeneratedCode.Документи
                       record.Партія.Name = ItemValue["Партія"];
                       record.Склад.Name = ItemValue["Склад"];
                       record.ОдиницяВиміру.Name = ItemValue["ОдиницяВиміру"];
+                      record.Серія.Name = ItemValue["Серія"];
                       
                 }
                 
@@ -35179,6 +35300,8 @@ namespace GeneratedCode.Документи
                     {"col_b2", record.ОдиницяВиміру.UniqueID.UGuid},
                     {"col_b3", record.Кількість},
                     {"col_b4", record.Коментар},
+                    {"col_a2", record.Серія.UniqueID.UGuid},
+                    {"col_a3", record.КількістьУпаковок},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -35208,6 +35331,8 @@ namespace GeneratedCode.Документи
                     ОдиницяВиміру = original.ОдиницяВиміру.Copy(),
                     Кількість = original.Кількість,
                     Коментар = original.Коментар,
+                    Серія = original.Серія.Copy(),
+                    КількістьУпаковок = original.КількістьУпаковок,
                      
                 });
             }
@@ -35226,6 +35351,8 @@ namespace GeneratedCode.Документи
             public Довідники.ПакуванняОдиниціВиміру_Pointer ОдиницяВиміру { get; set; } = new Довідники.ПакуванняОдиниціВиміру_Pointer();
             public decimal Кількість { get; set; } = 0;
             public string Коментар { get; set; } = "";
+            public Довідники.СеріїНоменклатури_Pointer Серія { get; set; } = new Довідники.СеріїНоменклатури_Pointer();
+            public int КількістьУпаковок { get; set; } = 0;
             
         }
     }
@@ -35234,7 +35361,7 @@ namespace GeneratedCode.Документи
     public class ВиготовленняПродукції_Проводки_TablePart : DocumentTablePart
     {
         public ВиготовленняПродукції_Проводки_TablePart(ВиготовленняПродукції_Object owner) : base(Config.Kernel, "tab_c40",
-             ["col_a1", "col_b5", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", ])
+             ["col_a1", "col_b5", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_b1", "col_b2", "col_b3", "col_b4", ])
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
@@ -35251,8 +35378,13 @@ namespace GeneratedCode.Документи
         public const string Аналітика2 = "col_a3";
         public const string Аналітика3 = "col_a4";
         public const string Податки = "col_a5";
-        public const string Дебет = "col_a6";
-        public const string Кредит = "col_a7";
+        public const string Сума = "col_a6";
+        public const string Кількість = "col_a7";
+        public const string ВидПроводки = "col_a8";
+        public const string КореспондуючийРахунок = "col_b1";
+        public const string КорАналітика1 = "col_b2";
+        public const string КорАналітика2 = "col_b3";
+        public const string КорАналітика3 = "col_b4";
 
         public ВиготовленняПродукції_Object Owner { get; private set; }
         
@@ -35291,6 +35423,18 @@ namespace GeneratedCode.Документи
                       /* pointer */
                       Довідники.ВидиПодатків_Pointer.GetJoin(QuerySelect, Податки, $"{TABLE}", "join_tab_6", "Податки");
                   
+                      /* pointer */
+                      Довідники.ПланРахунків_Pointer.GetJoin(QuerySelect, КореспондуючийРахунок, $"{TABLE}", "join_tab_10", "КореспондуючийРахунок");
+                  
+                      /* composite_pointer */
+                      QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({TABLE}.{КорАналітика1})", "КорАналітика1"));
+                  
+                      /* composite_pointer */
+                      QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({TABLE}.{КорАналітика2})", "КорАналітика2"));
+                  
+                      /* composite_pointer */
+                      QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({TABLE}.{КорАналітика3})", "КорАналітика3"));
+                  
         }
 
         public async Task Read()
@@ -35309,8 +35453,13 @@ namespace GeneratedCode.Документи
                     Аналітика2 = (fieldValue["col_a3"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a3"] : new UuidAndText(),
                     Аналітика3 = (fieldValue["col_a4"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a4"] : new UuidAndText(),
                     Податки = new Довідники.ВидиПодатків_Pointer(fieldValue["col_a5"]),
-                    Дебет = (fieldValue["col_a6"] != DBNull.Value) ? (decimal)fieldValue["col_a6"] : 0,
-                    Кредит = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
+                    Сума = (fieldValue["col_a6"] != DBNull.Value) ? (decimal)fieldValue["col_a6"] : 0,
+                    Кількість = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
+                    ВидПроводки = (fieldValue["col_a8"] != DBNull.Value) ? (Перелічення.ВидиПроводок)fieldValue["col_a8"] : 0,
+                    КореспондуючийРахунок = new Довідники.ПланРахунків_Pointer(fieldValue["col_b1"]),
+                    КорАналітика1 = (fieldValue["col_b2"] != DBNull.Value) ? (UuidAndText)fieldValue["col_b2"] : new UuidAndText(),
+                    КорАналітика2 = (fieldValue["col_b3"] != DBNull.Value) ? (UuidAndText)fieldValue["col_b3"] : new UuidAndText(),
+                    КорАналітика3 = (fieldValue["col_b4"] != DBNull.Value) ? (UuidAndText)fieldValue["col_b4"] : new UuidAndText(),
                     
                 };
                 Records.Add(record);
@@ -35323,6 +35472,10 @@ namespace GeneratedCode.Документи
                       record.Аналітика2.Name = ItemValue["Аналітика2"];
                       record.Аналітика3.Name = ItemValue["Аналітика3"];
                       record.Податки.Name = ItemValue["Податки"];
+                      record.КореспондуючийРахунок.Name = ItemValue["КореспондуючийРахунок"];
+                      record.КорАналітика1.Name = ItemValue["КорАналітика1"];
+                      record.КорАналітика2.Name = ItemValue["КорАналітика2"];
+                      record.КорАналітика3.Name = ItemValue["КорАналітика3"];
                       
                 }
                 
@@ -35358,8 +35511,13 @@ namespace GeneratedCode.Документи
                     {"col_a3", record.Аналітика2},
                     {"col_a4", record.Аналітика3},
                     {"col_a5", record.Податки.UniqueID.UGuid},
-                    {"col_a6", record.Дебет},
-                    {"col_a7", record.Кредит},
+                    {"col_a6", record.Сума},
+                    {"col_a7", record.Кількість},
+                    {"col_a8", (int)record.ВидПроводки},
+                    {"col_b1", record.КореспондуючийРахунок.UniqueID.UGuid},
+                    {"col_b2", record.КорАналітика1},
+                    {"col_b3", record.КорАналітика2},
+                    {"col_b4", record.КорАналітика3},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -35388,8 +35546,13 @@ namespace GeneratedCode.Документи
                     Аналітика2 = original.Аналітика2.Copy(),
                     Аналітика3 = original.Аналітика3.Copy(),
                     Податки = original.Податки.Copy(),
-                    Дебет = original.Дебет,
-                    Кредит = original.Кредит,
+                    Сума = original.Сума,
+                    Кількість = original.Кількість,
+                    ВидПроводки = original.ВидПроводки,
+                    КореспондуючийРахунок = original.КореспондуючийРахунок.Copy(),
+                    КорАналітика1 = original.КорАналітика1.Copy(),
+                    КорАналітика2 = original.КорАналітика2.Copy(),
+                    КорАналітика3 = original.КорАналітика3.Copy(),
                      
                 });
             }
@@ -35405,8 +35568,13 @@ namespace GeneratedCode.Документи
             public UuidAndText Аналітика2 { get; set; } = new UuidAndText();
             public UuidAndText Аналітика3 { get; set; } = new UuidAndText();
             public Довідники.ВидиПодатків_Pointer Податки { get; set; } = new Довідники.ВидиПодатків_Pointer();
-            public decimal Дебет { get; set; } = 0;
-            public decimal Кредит { get; set; } = 0;
+            public decimal Сума { get; set; } = 0;
+            public decimal Кількість { get; set; } = 0;
+            public Перелічення.ВидиПроводок ВидПроводки { get; set; } = 0;
+            public Довідники.ПланРахунків_Pointer КореспондуючийРахунок { get; set; } = new Довідники.ПланРахунків_Pointer();
+            public UuidAndText КорАналітика1 { get; set; } = new UuidAndText();
+            public UuidAndText КорАналітика2 { get; set; } = new UuidAndText();
+            public UuidAndText КорАналітика3 { get; set; } = new UuidAndText();
             
         }
     }
@@ -52871,8 +53039,8 @@ namespace GeneratedCode.РегістриНакопичення
         public const string Аналітика1 = "analysis_1";
         public const string Аналітика2 = "analysis_2";
         public const string Аналітика3 = "analysis_3";
-        public const string ВалютаДебет = "currency_debit";
-        public const string ВалютаКредит = "currency_credit";
+        public const string Валюта = "currency_debit";
+        public const string ВидПроводки = "col_a1";
         public const string КореспондуючийРахунок = "corresponding_account";
         public const string КорАналітика1 = "corresponding_analysis_1";
         public const string КорАналітика2 = "corresponding_analysis_2";
@@ -52880,17 +53048,12 @@ namespace GeneratedCode.РегістриНакопичення
         public const string Податок = "tax_information";
         public const string Журнал = "journal";
         public const string ТипБухОперації = "transaction_type";
-        public const string Дебет = "debit";
-        public const string КількістьДебет = "debit_quantity";
-        public const string СумаВВалютіДебет = "currency_debit_amount";
-        public const string СумаПОДебет = "debit_tax";
-        public const string Кредит = "credit";
-        public const string КількістьКредит = "credit_quantity";
-        public const string СумаВВалютіКредит = "currency_credit_amount";
-        public const string СумаПОКредит = "credit_tax";
+        public const string Сума = "debit";
+        public const string Кількість = "debit_quantity";
+        public const string СумаВВалюті = "currency_debit_amount";
+        public const string СумаПО = "debit_tax";
         public const string СумаПодатку = "tax_amount";
-        public const string КурсВалютиДебет = "currency_debit_exchange_rate";
-        public const string КурсВалютиКредит = "currency_credit_exchange_rate";
+        public const string КурсВалюти = "currency_debit_exchange_rate";
         public const string Коментар = "description";
         public const string Автор = "author";
         public const string Організація = "company";
@@ -52899,7 +53062,7 @@ namespace GeneratedCode.РегістриНакопичення
     public class БухгалтерськіОперації_RecordsSet : RegisterAccumulationRecordsSet
     {
         public БухгалтерськіОперації_RecordsSet() : base(Config.Kernel, "general_ledger_entries", "БухгалтерськіОперації",
-             ["account", "analysis_1", "analysis_2", "analysis_3", "currency_debit", "currency_credit", "corresponding_account", "corresponding_analysis_1", "corresponding_analysis_2", "corresponding_analysis_3", "tax_information", "journal", "transaction_type", "debit", "debit_quantity", "currency_debit_amount", "debit_tax", "credit", "credit_quantity", "currency_credit_amount", "credit_tax", "tax_amount", "currency_debit_exchange_rate", "currency_credit_exchange_rate", "description", "author", "company", ]) { }
+             ["account", "analysis_1", "analysis_2", "analysis_3", "currency_debit", "col_a1", "corresponding_account", "corresponding_analysis_1", "corresponding_analysis_2", "corresponding_analysis_3", "tax_information", "journal", "transaction_type", "debit", "debit_quantity", "currency_debit_amount", "debit_tax", "tax_amount", "currency_debit_exchange_rate", "description", "author", "company", ]) { }
 		
         public List<Record> Records { get; set; } = [];
         
@@ -52925,10 +53088,7 @@ namespace GeneratedCode.РегістриНакопичення
                       QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({БухгалтерськіОперації_Const.TABLE}.{БухгалтерськіОперації_Const.Аналітика3})", "Аналітика3"));
                   
                       /* pointer */
-                      Довідники.Валюти_Pointer.GetJoin(QuerySelect, БухгалтерськіОперації_Const.ВалютаДебет, БухгалтерськіОперації_Const.TABLE, "join_tab_5", "ВалютаДебет");
-                  
-                      /* pointer */
-                      Довідники.Валюти_Pointer.GetJoin(QuerySelect, БухгалтерськіОперації_Const.ВалютаКредит, БухгалтерськіОперації_Const.TABLE, "join_tab_6", "ВалютаКредит");
+                      Довідники.Валюти_Pointer.GetJoin(QuerySelect, БухгалтерськіОперації_Const.Валюта, БухгалтерськіОперації_Const.TABLE, "join_tab_5", "Валюта");
                   
                       /* pointer */
                       Довідники.ПланРахунків_Pointer.GetJoin(QuerySelect, БухгалтерськіОперації_Const.КореспондуючийРахунок, БухгалтерськіОперації_Const.TABLE, "join_tab_7", "КореспондуючийРахунок");
@@ -52952,10 +53112,10 @@ namespace GeneratedCode.РегістриНакопичення
                       Довідники.ТипиБухОперацій_Pointer.GetJoin(QuerySelect, БухгалтерськіОперації_Const.ТипБухОперації, БухгалтерськіОперації_Const.TABLE, "join_tab_13", "ТипБухОперації");
                   
                       /* pointer */
-                      Довідники.Користувачі_Pointer.GetJoin(QuerySelect, БухгалтерськіОперації_Const.Автор, БухгалтерськіОперації_Const.TABLE, "join_tab_26", "Автор");
+                      Довідники.Користувачі_Pointer.GetJoin(QuerySelect, БухгалтерськіОперації_Const.Автор, БухгалтерськіОперації_Const.TABLE, "join_tab_21", "Автор");
                   
                       /* pointer */
-                      Довідники.Організації_Pointer.GetJoin(QuerySelect, БухгалтерськіОперації_Const.Організація, БухгалтерськіОперації_Const.TABLE, "join_tab_27", "Організація");
+                      Довідники.Організації_Pointer.GetJoin(QuerySelect, БухгалтерськіОперації_Const.Організація, БухгалтерськіОперації_Const.TABLE, "join_tab_22", "Організація");
                   
 
             /* Назва власника */
@@ -52980,8 +53140,8 @@ namespace GeneratedCode.РегістриНакопичення
                     Аналітика1 = (fieldValue["analysis_1"] != DBNull.Value) ? (UuidAndText)fieldValue["analysis_1"] : new UuidAndText(),
                     Аналітика2 = (fieldValue["analysis_2"] != DBNull.Value) ? (UuidAndText)fieldValue["analysis_2"] : new UuidAndText(),
                     Аналітика3 = (fieldValue["analysis_3"] != DBNull.Value) ? (UuidAndText)fieldValue["analysis_3"] : new UuidAndText(),
-                    ВалютаДебет = new Довідники.Валюти_Pointer(fieldValue["currency_debit"]),
-                    ВалютаКредит = new Довідники.Валюти_Pointer(fieldValue["currency_credit"]),
+                    Валюта = new Довідники.Валюти_Pointer(fieldValue["currency_debit"]),
+                    ВидПроводки = (fieldValue["col_a1"] != DBNull.Value) ? (Перелічення.ВидиПроводок)fieldValue["col_a1"] : 0,
                     КореспондуючийРахунок = new Довідники.ПланРахунків_Pointer(fieldValue["corresponding_account"]),
                     КорАналітика1 = (fieldValue["corresponding_analysis_1"] != DBNull.Value) ? (UuidAndText)fieldValue["corresponding_analysis_1"] : new UuidAndText(),
                     КорАналітика2 = (fieldValue["corresponding_analysis_2"] != DBNull.Value) ? (UuidAndText)fieldValue["corresponding_analysis_2"] : new UuidAndText(),
@@ -52989,17 +53149,12 @@ namespace GeneratedCode.РегістриНакопичення
                     Податок = new Довідники.ВидиПодатків_Pointer(fieldValue["tax_information"]),
                     Журнал = new Довідники.ВидиЖурналів_Pointer(fieldValue["journal"]),
                     ТипБухОперації = new Довідники.ТипиБухОперацій_Pointer(fieldValue["transaction_type"]),
-                    Дебет = (fieldValue["debit"] != DBNull.Value) ? (decimal)fieldValue["debit"] : 0,
-                    КількістьДебет = (fieldValue["debit_quantity"] != DBNull.Value) ? (decimal)fieldValue["debit_quantity"] : 0,
-                    СумаВВалютіДебет = (fieldValue["currency_debit_amount"] != DBNull.Value) ? (decimal)fieldValue["currency_debit_amount"] : 0,
-                    СумаПОДебет = (fieldValue["debit_tax"] != DBNull.Value) ? (decimal)fieldValue["debit_tax"] : 0,
-                    Кредит = (fieldValue["credit"] != DBNull.Value) ? (decimal)fieldValue["credit"] : 0,
-                    КількістьКредит = (fieldValue["credit_quantity"] != DBNull.Value) ? (decimal)fieldValue["credit_quantity"] : 0,
-                    СумаВВалютіКредит = (fieldValue["currency_credit_amount"] != DBNull.Value) ? (decimal)fieldValue["currency_credit_amount"] : 0,
-                    СумаПОКредит = (fieldValue["credit_tax"] != DBNull.Value) ? (decimal)fieldValue["credit_tax"] : 0,
+                    Сума = (fieldValue["debit"] != DBNull.Value) ? (decimal)fieldValue["debit"] : 0,
+                    Кількість = (fieldValue["debit_quantity"] != DBNull.Value) ? (decimal)fieldValue["debit_quantity"] : 0,
+                    СумаВВалюті = (fieldValue["currency_debit_amount"] != DBNull.Value) ? (decimal)fieldValue["currency_debit_amount"] : 0,
+                    СумаПО = (fieldValue["debit_tax"] != DBNull.Value) ? (decimal)fieldValue["debit_tax"] : 0,
                     СумаПодатку = (fieldValue["tax_amount"] != DBNull.Value) ? (decimal)fieldValue["tax_amount"] : 0,
-                    КурсВалютиДебет = (fieldValue["currency_debit_exchange_rate"] != DBNull.Value) ? (decimal)fieldValue["currency_debit_exchange_rate"] : 0,
-                    КурсВалютиКредит = (fieldValue["currency_credit_exchange_rate"] != DBNull.Value) ? (decimal)fieldValue["currency_credit_exchange_rate"] : 0,
+                    КурсВалюти = (fieldValue["currency_debit_exchange_rate"] != DBNull.Value) ? (decimal)fieldValue["currency_debit_exchange_rate"] : 0,
                     Коментар = fieldValue["description"].ToString() ?? "",
                     Автор = new Довідники.Користувачі_Pointer(fieldValue["author"]),
                     Організація = new Довідники.Організації_Pointer(fieldValue["company"]),
@@ -53015,8 +53170,7 @@ namespace GeneratedCode.РегістриНакопичення
                         record.Аналітика1.Name = ItemValue["Аналітика1"];
                         record.Аналітика2.Name = ItemValue["Аналітика2"];
                         record.Аналітика3.Name = ItemValue["Аналітика3"];
-                        record.ВалютаДебет.Name = ItemValue["ВалютаДебет"];
-                        record.ВалютаКредит.Name = ItemValue["ВалютаКредит"];
+                        record.Валюта.Name = ItemValue["Валюта"];
                         record.КореспондуючийРахунок.Name = ItemValue["КореспондуючийРахунок"];
                         record.КорАналітика1.Name = ItemValue["КорАналітика1"];
                         record.КорАналітика2.Name = ItemValue["КорАналітика2"];
@@ -53049,8 +53203,8 @@ namespace GeneratedCode.РегістриНакопичення
                     {"analysis_1", record.Аналітика1},
                     {"analysis_2", record.Аналітика2},
                     {"analysis_3", record.Аналітика3},
-                    {"currency_debit", record.ВалютаДебет.UniqueID.UGuid},
-                    {"currency_credit", record.ВалютаКредит.UniqueID.UGuid},
+                    {"currency_debit", record.Валюта.UniqueID.UGuid},
+                    {"col_a1", (int)record.ВидПроводки},
                     {"corresponding_account", record.КореспондуючийРахунок.UniqueID.UGuid},
                     {"corresponding_analysis_1", record.КорАналітика1},
                     {"corresponding_analysis_2", record.КорАналітика2},
@@ -53058,17 +53212,12 @@ namespace GeneratedCode.РегістриНакопичення
                     {"tax_information", record.Податок.UniqueID.UGuid},
                     {"journal", record.Журнал.UniqueID.UGuid},
                     {"transaction_type", record.ТипБухОперації.UniqueID.UGuid},
-                    {"debit", record.Дебет},
-                    {"debit_quantity", record.КількістьДебет},
-                    {"currency_debit_amount", record.СумаВВалютіДебет},
-                    {"debit_tax", record.СумаПОДебет},
-                    {"credit", record.Кредит},
-                    {"credit_quantity", record.КількістьКредит},
-                    {"currency_credit_amount", record.СумаВВалютіКредит},
-                    {"credit_tax", record.СумаПОКредит},
+                    {"debit", record.Сума},
+                    {"debit_quantity", record.Кількість},
+                    {"currency_debit_amount", record.СумаВВалюті},
+                    {"debit_tax", record.СумаПО},
                     {"tax_amount", record.СумаПодатку},
-                    {"currency_debit_exchange_rate", record.КурсВалютиДебет},
-                    {"currency_credit_exchange_rate", record.КурсВалютиКредит},
+                    {"currency_debit_exchange_rate", record.КурсВалюти},
                     {"description", record.Коментар},
                     {"author", record.Автор.UniqueID.UGuid},
                     {"company", record.Організація.UniqueID.UGuid},
@@ -53092,8 +53241,8 @@ namespace GeneratedCode.РегістриНакопичення
             public UuidAndText Аналітика1 { get; set; } = new UuidAndText();
             public UuidAndText Аналітика2 { get; set; } = new UuidAndText();
             public UuidAndText Аналітика3 { get; set; } = new UuidAndText();
-            public Довідники.Валюти_Pointer ВалютаДебет { get; set; } = new Довідники.Валюти_Pointer();
-            public Довідники.Валюти_Pointer ВалютаКредит { get; set; } = new Довідники.Валюти_Pointer();
+            public Довідники.Валюти_Pointer Валюта { get; set; } = new Довідники.Валюти_Pointer();
+            public Перелічення.ВидиПроводок ВидПроводки { get; set; } = 0;
             public Довідники.ПланРахунків_Pointer КореспондуючийРахунок { get; set; } = new Довідники.ПланРахунків_Pointer();
             public UuidAndText КорАналітика1 { get; set; } = new UuidAndText();
             public UuidAndText КорАналітика2 { get; set; } = new UuidAndText();
@@ -53101,17 +53250,12 @@ namespace GeneratedCode.РегістриНакопичення
             public Довідники.ВидиПодатків_Pointer Податок { get; set; } = new Довідники.ВидиПодатків_Pointer();
             public Довідники.ВидиЖурналів_Pointer Журнал { get; set; } = new Довідники.ВидиЖурналів_Pointer();
             public Довідники.ТипиБухОперацій_Pointer ТипБухОперації { get; set; } = new Довідники.ТипиБухОперацій_Pointer();
-            public decimal Дебет { get; set; } = 0;
-            public decimal КількістьДебет { get; set; } = 0;
-            public decimal СумаВВалютіДебет { get; set; } = 0;
-            public decimal СумаПОДебет { get; set; } = 0;
-            public decimal Кредит { get; set; } = 0;
-            public decimal КількістьКредит { get; set; } = 0;
-            public decimal СумаВВалютіКредит { get; set; } = 0;
-            public decimal СумаПОКредит { get; set; } = 0;
+            public decimal Сума { get; set; } = 0;
+            public decimal Кількість { get; set; } = 0;
+            public decimal СумаВВалюті { get; set; } = 0;
+            public decimal СумаПО { get; set; } = 0;
             public decimal СумаПодатку { get; set; } = 0;
-            public decimal КурсВалютиДебет { get; set; } = 0;
-            public decimal КурсВалютиКредит { get; set; } = 0;
+            public decimal КурсВалюти { get; set; } = 0;
             public string Коментар { get; set; } = "";
             public Довідники.Користувачі_Pointer Автор { get; set; } = new Довідники.Користувачі_Pointer();
             public Довідники.Організації_Pointer Організація { get; set; } = new Довідники.Організації_Pointer();
