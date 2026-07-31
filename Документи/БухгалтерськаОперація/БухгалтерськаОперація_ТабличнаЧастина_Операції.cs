@@ -660,7 +660,7 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
 
                 (row.Сhanged_Рахунок = () => cell.Pointer = row.Рахунок).Invoke();
             };
-            ColumnViewColumn column = ColumnViewColumn.New("Рахунок Дт", factory);
+            ColumnViewColumn column = ColumnViewColumn.New("Рахунок", factory);
             column.Resizable = true;
             column.FixedWidth = 200;
 
@@ -782,7 +782,7 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                 (row.Сhanged_СумаПО = () => cell.СумаПО.Value = row.СумаПО).Invoke();
 
             };
-            ColumnViewColumn column = ColumnViewColumn.New("Валюта Дт\nСума в валюті Дт\nСума ПО Дт", factory);
+            ColumnViewColumn column = ColumnViewColumn.New("Валюта\nСума в валюті\nСума ПО", factory);
             column.Resizable = true;
 
             Grid.AppendColumn(column);
@@ -808,7 +808,7 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                 (row.Сhanged_КурсВалюти = () => cell.Value = row.КурсВалюти).Invoke();
 
             };
-            ColumnViewColumn column = ColumnViewColumn.New("Курс валюти Дт", factory);
+            ColumnViewColumn column = ColumnViewColumn.New("Курс валюти", factory);
             column.Resizable = true;
 
             Grid.AppendColumn(column);
@@ -839,7 +839,7 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
 
                 (row.Сhanged_КореспондуючийРахунок = () => cell.Pointer = row.КореспондуючийРахунок).Invoke();
             };
-            ColumnViewColumn column = ColumnViewColumn.New("Кореспондуючий рахунок", factory);
+            ColumnViewColumn column = ColumnViewColumn.New("Кореспондуючий\nрахунок", factory);
             column.Resizable = true;
             column.FixedWidth = 200;
 
