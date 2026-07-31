@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 31.07.2026 17:26:07
+ * Дата конфігурації: 31.07.2026 19:35:53
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон GeneratedCode.xslt
@@ -32900,7 +32900,7 @@ namespace GeneratedCode.Документи
     public class БухгалтерськаОперація_Операції_TablePart : DocumentTablePart
     {
         public БухгалтерськаОперація_Операції_TablePart(БухгалтерськаОперація_Object owner) : base(Config.Kernel, "acc_operations_tp_operation",
-             ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", "col_b1", "col_b2", "col_b8", "col_b9", "col_c1", "col_c2", "col_c3", "col_c4", "col_c5", "col_c6", "col_c7", "col_c8", "col_d2", ])
+             ["col_a1", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", "col_b1", "col_b2", "col_b8", "col_b9", "col_c1", "col_c2", "col_c3", "col_c4", "col_c5", "col_c6", "col_c7", "col_c8", "col_d2", ])
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
@@ -32912,7 +32912,6 @@ namespace GeneratedCode.Документи
         public const string TABLE = "acc_operations_tp_operation";
         
         public const string НомерРядка = "col_a1";
-        public const string ДатаЗапису = "col_a2";
         public const string Рахунок = "col_a3";
         public const string Аналітика1 = "col_a4";
         public const string Аналітика2 = "col_a5";
@@ -32957,7 +32956,7 @@ namespace GeneratedCode.Документи
             }
             
                       /* pointer */
-                      Довідники.ПланРахунків_Pointer.GetJoin(QuerySelect, Рахунок, $"{TABLE}", "join_tab_3", "Рахунок");
+                      Довідники.ПланРахунків_Pointer.GetJoin(QuerySelect, Рахунок, $"{TABLE}", "join_tab_2", "Рахунок");
                   
                       /* composite_pointer */
                       QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({TABLE}.{Аналітика1})", "Аналітика1"));
@@ -32969,10 +32968,10 @@ namespace GeneratedCode.Документи
                       QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({TABLE}.{Аналітика3})", "Аналітика3"));
                   
                       /* pointer */
-                      Довідники.Валюти_Pointer.GetJoin(QuerySelect, Валюта, $"{TABLE}", "join_tab_9", "Валюта");
+                      Довідники.Валюти_Pointer.GetJoin(QuerySelect, Валюта, $"{TABLE}", "join_tab_8", "Валюта");
                   
                       /* pointer */
-                      Довідники.ПланРахунків_Pointer.GetJoin(QuerySelect, КореспондуючийРахунок, $"{TABLE}", "join_tab_13", "КореспондуючийРахунок");
+                      Довідники.ПланРахунків_Pointer.GetJoin(QuerySelect, КореспондуючийРахунок, $"{TABLE}", "join_tab_12", "КореспондуючийРахунок");
                   
                       /* composite_pointer */
                       QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({TABLE}.{КорАналітика1})", "КорАналітика1"));
@@ -32984,13 +32983,13 @@ namespace GeneratedCode.Документи
                       QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({TABLE}.{КорАналітика3})", "КорАналітика3"));
                   
                       /* pointer */
-                      Довідники.ВидиПодатків_Pointer.GetJoin(QuerySelect, Податок, $"{TABLE}", "join_tab_17", "Податок");
+                      Довідники.ВидиПодатків_Pointer.GetJoin(QuerySelect, Податок, $"{TABLE}", "join_tab_16", "Податок");
                   
                       /* pointer */
-                      Довідники.ВидиЖурналів_Pointer.GetJoin(QuerySelect, Журнал, $"{TABLE}", "join_tab_19", "Журнал");
+                      Довідники.ВидиЖурналів_Pointer.GetJoin(QuerySelect, Журнал, $"{TABLE}", "join_tab_18", "Журнал");
                   
                       /* pointer */
-                      Довідники.ТипиБухОперацій_Pointer.GetJoin(QuerySelect, ТипБухОперації, $"{TABLE}", "join_tab_20", "ТипБухОперації");
+                      Довідники.ТипиБухОперацій_Pointer.GetJoin(QuerySelect, ТипБухОперації, $"{TABLE}", "join_tab_19", "ТипБухОперації");
                   
         }
 
@@ -33005,7 +33004,6 @@ namespace GeneratedCode.Документи
                 {
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_a1"] != DBNull.Value) ? (int)fieldValue["col_a1"] : 0,
-                    ДатаЗапису = (fieldValue["col_a2"] != DBNull.Value) ? DateTime.Parse(fieldValue["col_a2"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue,
                     Рахунок = new Довідники.ПланРахунків_Pointer(fieldValue["col_a3"]),
                     Аналітика1 = (fieldValue["col_a4"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a4"] : new UuidAndText(),
                     Аналітика2 = (fieldValue["col_a5"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a5"] : new UuidAndText(),
@@ -33075,7 +33073,6 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.НомерРядка},
-                    {"col_a2", record.ДатаЗапису},
                     {"col_a3", record.Рахунок.UniqueID.UGuid},
                     {"col_a4", record.Аналітика1},
                     {"col_a5", record.Аналітика2},
@@ -33117,7 +33114,6 @@ namespace GeneratedCode.Документи
                 copy.Add(new()
                 {
                     НомерРядка = original.НомерРядка,
-                    ДатаЗапису = original.ДатаЗапису,
                     Рахунок = original.Рахунок.Copy(),
                     Аналітика1 = original.Аналітика1.Copy(),
                     Аналітика2 = original.Аналітика2.Copy(),
@@ -33148,7 +33144,6 @@ namespace GeneratedCode.Документи
         public class Record : DocumentTablePartRecord
         {
             public int НомерРядка { get; set; } = 0;
-            public DateTime ДатаЗапису { get; set; } = DateTime.MinValue;
             public Довідники.ПланРахунків_Pointer Рахунок { get; set; } = new Довідники.ПланРахунків_Pointer();
             public UuidAndText Аналітика1 { get; set; } = new UuidAndText();
             public UuidAndText Аналітика2 { get; set; } = new UuidAndText();

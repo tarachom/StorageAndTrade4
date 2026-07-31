@@ -40,6 +40,7 @@ public partial class ПланРахунків_PointerTablePartCell : PointerTabl
     {
         Popover popover = Popover.New();
         popover.SetParent(button);
+        //popover.SetOffset(0,-30);
         popover.WidthRequest = 800;
         popover.HeightRequest = 400;
         BeforeClickOpenFunc?.Invoke();

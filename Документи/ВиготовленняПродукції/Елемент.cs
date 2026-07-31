@@ -8,11 +8,9 @@ using Gtk;
 using InterfaceGtk4;
 using AccountingSoftware;
 
-using GeneratedCode;
 using GeneratedCode.Константи;
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
-using GeneratedCode.Перелічення;
 using Функції = StorageAndTrade.ВиготовленняПродукції_Функції;
 
 namespace StorageAndTrade;
@@ -23,7 +21,7 @@ partial class ВиготовленняПродукції_Елемент : Docume
     public ВиготовленняПродукції_Object Елемент { get; init; } = new();
 
     #region Fields
-    
+
     Entry НомерДок = Entry.New();
     DateTimeControl ДатаДок = DateTimeControl.New();
     Entry Коментар = Entry.New();
@@ -34,6 +32,7 @@ partial class ВиготовленняПродукції_Елемент : Docume
     CheckButton ВідобразитиВБухгалтерськомуОбліку = CheckButton.NewWithLabel("Відобразити в бух обліку");
     Валюти_PointerControl Валюта = Валюти_PointerControl.New();
     Склади_PointerControl СкладКомплектуючих = Склади_PointerControl.New();
+    БухгалтерськаОперація_PointerControl ДокументБухгалтерськаОперація = БухгалтерськаОперація_PointerControl.New();
 
     #endregion
 
@@ -53,7 +52,6 @@ partial class ВиготовленняПродукції_Елемент : Docume
     #region Значення полів та таб частин на зовні (тільки читання)
 
     public СтруктураПідприємства_Pointer Підрозділ_Значення { get => Підрозділ.Pointer; }
-    //public Склади_Pointer СкладКомплектуючих_Значення { get => СкладКомплектуючих.Pointer; }
 
     /// <summary>
     /// Функція повертає рядки табличної частини ГотовийВиріб
@@ -73,6 +71,7 @@ partial class ВиготовленняПродукції_Елемент : Docume
 
         CreateDocName(ВиготовленняПродукції_Const.FULLNAME, НомерДок, ДатаДок);
         CreateField(HBoxTop, null, ВідобразитиВБухгалтерськомуОбліку);
+        CreateField(HBoxTop, null, ДокументБухгалтерськаОперація);
         CreateField(Interface.CommentBox, "Коментар:", Коментар);
 
         // Таблична частина "ГотовийВиріб"
@@ -121,6 +120,10 @@ partial class ВиготовленняПродукції_Елемент : Docume
         //СкладКомплектуючих:
         СкладКомплектуючих.Caption = "Склад комплектуючих";
         СкладКомплектуючих.WidthPresentation = 300;
+
+        //БухгалтерськаОперація
+        ДокументБухгалтерськаОперація.Caption = "";
+        ДокументБухгалтерськаОперація.WidthPresentation = 100;
     }
 
     public static ВиготовленняПродукції_Елемент New()
@@ -199,6 +202,7 @@ partial class ВиготовленняПродукції_Елемент : Docume
         ВідобразитиВБухгалтерськомуОбліку.Active = Елемент.ВідобразитиВБухгалтерськомуОбліку;
         Валюта.Pointer = Елемент.Валюта;
         СкладКомплектуючих.Pointer = Елемент.СкладКомплектуючих;
+        ДокументБухгалтерськаОперація.Pointer = Елемент.ДокументБухгалтерськаОперація;
 
         // Таблична частина "ГотовийВиріб" 
         await ГотовийВиріб.LoadRecords();

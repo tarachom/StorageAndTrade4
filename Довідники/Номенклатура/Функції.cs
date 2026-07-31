@@ -50,7 +50,7 @@ static class Номенклатура_Функції
         }
         else if (uniqueID == null || !await page.Елемент.Read(uniqueID))
         {
-            Message.Error(Program.BasicApp, Program.BasicForm, "Не вдалось прочитати!");
+            Message.Error(Program.BasicForm, "Не вдалось прочитати!");
             return;
         }
 
@@ -93,7 +93,7 @@ static class Номенклатура_Функції
         }
         else
         {
-            Message.Error(Program.BasicApp, Program.BasicForm, "Не вдалось прочитати!");
+            Message.Error(Program.BasicForm, "Не вдалось прочитати!");
             return null;
         }
     }

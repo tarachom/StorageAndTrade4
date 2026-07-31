@@ -377,7 +377,18 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
         button.OnClicked += async (_, _) =>
         {
             button.Sensitive = false;
-            await ЗаповнитиПроводки();
+
+            if (Store.GetNItems() == 0)
+                await ЗаповнитиПроводки();
+            else
+                Message.Request(NotebookFunc?.BasicForm, "Очистити табличну частину?",
+                    "В табличній частині вже є дані. Щоб продовжити заповнення потрібно спочатку очистити табличну частину!",
+                    async x =>
+                    {
+                        if (x == Message.YesNo.Yes)
+                            await ЗаповнитиПроводки();
+                    });
+
             button.Sensitive = true;
         };
         HBoxToolbarTop.Append(button);
@@ -390,6 +401,7 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
             Store.RemoveAll();
 
             СтруктураПідприємства_Pointer Підрозділ = ЕлементВласникФорма.Підрозділ_Значення;
+
             ПланРахунків_Pointer РахунокДт = new();
             Статті_Pointer СтаттяВитрат = new();
 
@@ -412,6 +424,7 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
             if (РахунокДт.IsEmpty())
                 РахунокДт = await new ПланРахунків_Select().FindByField(ПланРахунків_Const.Код, "23");
 
+            //Представлення 
             await РахунокДт.GetPresentation();
 
             foreach (var Рядок in ЕлементВласникФорма.Комплектуючі_Колекція())
@@ -445,22 +458,101 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
 
                 await РахунокКт.GetPresentation();
 
-                var row = ItemRow.New();
-                row.Рахунок = РахунокКт;
-                row.Аналітика1 = new UuidAndText(Рядок.Склад);
-                row.Аналітика2 = new UuidAndText(Рядок.Номенклатура);
-                row.Сума = 0;
-                row.Кількість = 0;
-                row.КореспондуючийРахунок = РахунокДт;
-                row.КорАналітика1 = new UuidAndText(Підрозділ);
-                row.КорАналітика2 = new UuidAndText(СтаттяВитрат);
+                //Кредит
+                {
+                    var row = ItemRow.New();
+                    row.ВидПроводки = ВидиПроводок.Кредет;
+                    row.Рахунок = РахунокКт;
+                    row.Аналітика1 = new UuidAndText(Рядок.Склад);
+                    row.Аналітика2 = new UuidAndText(Рядок.Номенклатура);
+                    row.Сума = 1;
+                    row.Кількість = Рядок.Кількість;
+                    row.КореспондуючийРахунок = РахунокДт;
+                    row.КорАналітика1 = new UuidAndText(Підрозділ);
+                    row.КорАналітика2 = new UuidAndText(СтаттяВитрат);
 
-                Store.Append(row);
+                    Store.Append(row);
+                }
+
+                //Дебет
+                {
+                    var row = ItemRow.New();
+                    row.ВидПроводки = ВидиПроводок.Дебет;
+                    row.Рахунок = РахунокДт;
+                    row.Аналітика1 = new UuidAndText(Підрозділ);
+                    row.Аналітика2 = new UuidAndText(СтаттяВитрат);
+                    row.Сума = 0;
+                    row.Кількість = Рядок.Кількість;
+                    row.КореспондуючийРахунок = РахунокКт;
+                    row.КорАналітика1 = new UuidAndText(Рядок.Склад);
+                    row.КорАналітика2 = new UuidAndText(Рядок.Номенклатура);
+
+                    Store.Append(row);
+                }
             }
 
-            foreach (var item in ЕлементВласникФорма.ГотовийВиріб_Колекція())
+            foreach (var Рядок in ЕлементВласникФорма.ГотовийВиріб_Колекція())
             {
+                ПланРахунків_Pointer РахунокКт = new();
 
+                //Пошук в Номенклатура
+                Номенклатура_Object? НоменклатураОбєкт = await Рядок.Номенклатура.GetDirectoryObject();
+                if (НоменклатураОбєкт != null && !НоменклатураОбєкт.Категорія.IsEmpty())
+                {
+                    Категорії_Object? КатегоріяОбєкт = await НоменклатураОбєкт.Категорія.GetDirectoryObject();
+                    if (КатегоріяОбєкт != null)
+                        РахунокКт = КатегоріяОбєкт.РахунокВитрат;
+                }
+
+                //Пошук в Склади
+                if (РахунокКт.IsEmpty() && !Рядок.Склад.IsEmpty())
+                {
+                    Склади_Object? СкладОбєкт = await Рядок.Склад.GetDirectoryObject();
+                    if (СкладОбєкт != null && !СкладОбєкт.Категорія.IsEmpty())
+                    {
+                        Категорії_Object? КатегоріяОбєкт = await СкладОбєкт.Категорія.GetDirectoryObject();
+                        if (КатегоріяОбєкт != null)
+                            РахунокКт = КатегоріяОбєкт.РахунокВитрат;
+                    }
+                }
+
+                //Якщо не знайдено, тоді стандарний рахунок
+                if (РахунокКт.IsEmpty())
+                    РахунокКт = await new ПланРахунків_Select().FindByField(ПланРахунків_Const.Код, "26");
+
+                await РахунокКт.GetPresentation();
+
+                //Кредит
+                {
+                    var row = ItemRow.New();
+                    row.ВидПроводки = ВидиПроводок.Кредет;
+                    row.Рахунок = РахунокДт;
+                    row.Аналітика1 = new UuidAndText(Підрозділ);
+                    row.Аналітика2 = new UuidAndText(СтаттяВитрат);
+                    row.Сума = 0;
+                    row.Кількість = Рядок.Кількість;
+                    row.КореспондуючийРахунок = РахунокКт;
+                    row.КорАналітика1 = new UuidAndText(Рядок.Склад);
+                    row.КорАналітика2 = new UuidAndText(Рядок.Номенклатура);
+
+                    Store.Append(row);
+                }
+
+                //Дебет
+                {
+                    var row = ItemRow.New();
+                    row.ВидПроводки = ВидиПроводок.Дебет;
+                    row.Рахунок = РахунокКт;
+                    row.Аналітика1 = new UuidAndText(Рядок.Склад);
+                    row.Аналітика2 = new UuidAndText(Рядок.Номенклатура);
+                    row.Сума = 0;
+                    row.Кількість = Рядок.Кількість;
+                    row.КореспондуючийРахунок = РахунокДт;
+                    row.КорАналітика1 = new UuidAndText(Підрозділ);
+                    row.КорАналітика2 = new UuidAndText(СтаттяВитрат);
+
+                    Store.Append(row);
+                }
             }
         }
     }
@@ -556,7 +648,7 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
             };
             ColumnViewColumn column = ColumnViewColumn.New("Рахунок", factory);
             column.Resizable = true;
-            column.FixedWidth = 300;
+            column.FixedWidth = 200;
 
             Grid.AppendColumn(column);
         }
@@ -651,7 +743,7 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
 
                 (row.Сhanged_КореспондуючийРахунок = () => cell.Pointer = row.КореспондуючийРахунок).Invoke();
             };
-            ColumnViewColumn column = ColumnViewColumn.New("Кореспондуючий рахунок", factory);
+            ColumnViewColumn column = ColumnViewColumn.New("Кореспондуючий\nрахунок", factory);
             column.Resizable = true;
             column.FixedWidth = 200;
 
@@ -717,7 +809,7 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
                     ПісляЗміни_СумаАбоКількість(row);
                 };
 
-                (row.Сhanged_Сума = () => cell.Value = row.Кількість).Invoke();
+                (row.Сhanged_Сума = () => cell.Value = row.Сума).Invoke();
 
             };
             ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);

@@ -5,13 +5,10 @@
         Модуль проведення документу
 */
 
-using AccountingSoftware;
 using StorageAndTrade;
-using GeneratedCode;
 
 using GeneratedCode.Довідники;
 using GeneratedCode.РегістриНакопичення;
-using GeneratedCode.РегістриВідомостей;
 
 namespace GeneratedCode.Документи;
 
@@ -222,17 +219,7 @@ static class ВиготовленняПродукції_SpendTheDocument
 
             #region Бух
 
-            if (!ДокументОбєкт.ДокументБухгалтерськаОперація.IsEmpty())
-            {
-                var БухОперація = await ДокументОбєкт.ДокументБухгалтерськаОперація.GetDocumentObject(true);
-                if (БухОперація != null)
-                {
-                    if (!await БухОперація.SpendTheDocument(БухОперація.ДатаДок))
-                        throw new Exception($"Не вдалось провести бухгалтерський документ {БухОперація.Назва}");
-                }
-                else
-                    throw new Exception($"Не вдалось прочитати бухгалтерський документ {ДокументОбєкт.ДокументБухгалтерськаОперація}");
-            }
+            await ФункціїДляДокументів.ПровестиДокументБухгалтерськаОперація(ДокументОбєкт.ДокументБухгалтерськаОперація);
 
             #endregion
 
@@ -247,7 +234,10 @@ static class ВиготовленняПродукції_SpendTheDocument
 
     public static async Task Clear(ВиготовленняПродукції_Object ДокументОбєкт)
     {
-        if (!ДокументОбєкт.ДокументБухгалтерськаОперація.IsEmpty())
-            await ДокументОбєкт.ДокументБухгалтерськаОперація.ClearSpendTheDocument();
+        #region Бух
+
+        await ФункціїДляДокументів.ВідмінитиПроведенняДокументуБухгалтерськаОперація(ДокументОбєкт.ДокументБухгалтерськаОперація);
+
+        #endregion
     }
 }

@@ -42,7 +42,7 @@ static class РозміщенняНоменклатуриПоКоміркам_Ф
             await page.Елемент.New();
         else if (uniqueID == null || !await page.Елемент.Read(uniqueID))
         {
-            Message.Error(Program.BasicApp, Program.BasicForm, "Не вдалось прочитати!");
+            Message.Error(Program.BasicForm, "Не вдалось прочитати!");
             return;
         }
 
@@ -81,7 +81,7 @@ static class РозміщенняНоменклатуриПоКоміркам_Ф
         }
         else
         {
-            Message.Error(Program.BasicApp, Program.BasicForm, "Не вдалось прочитати!");
+            Message.Error(Program.BasicForm, "Не вдалось прочитати!");
             return null;
         }
     }

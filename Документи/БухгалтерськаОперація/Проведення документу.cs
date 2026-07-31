@@ -20,7 +20,6 @@ static class БухгалтерськаОперація_SpendTheDocument
                 БухгалтерськіОперації_RecordsSet БухгалтерськіОперації = new();
 
                 foreach (var record in ДокументОбєкт.Операції_TablePart.Records)
-                {
                     БухгалтерськіОперації.Records.Add(new()
                     {
                         OwnerLineNum = record.НомерРядка,
@@ -53,7 +52,6 @@ static class БухгалтерськаОперація_SpendTheDocument
                         Автор = ДокументОбєкт.Автор,
                         Організація = ДокументОбєкт.Організація
                     });
-                }
 
                 await БухгалтерськіОперації.Save(ДокументОбєкт.ДатаДок, ДокументОбєкт.GetBasis());
             }

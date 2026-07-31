@@ -24,11 +24,8 @@ static class АвансовийЗвіт_Проводки_Triggers
             if (БухОперація != null)
             {
                 foreach (var record in ТабличнаЧастина.Records)
-                {
                     БухОперація.Операції_TablePart.Records.Add(new()
                     {
-                        ДатаЗапису = ДокументОбєкт.ДатаДок,
-
                         Рахунок = record.Рахунок,
                         ВидПроводки = record.ВидПроводки,
                         Аналітика1 = record.Аналітика1,
@@ -38,7 +35,6 @@ static class АвансовийЗвіт_Проводки_Triggers
                         Податок = record.Податки,
                         Валюта = ДокументОбєкт.Валюта
                     });
-                }
 
                 await БухОперація.Операції_TablePart.Save(true);
             }

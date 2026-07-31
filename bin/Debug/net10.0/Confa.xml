@@ -7,7 +7,7 @@
   <Author>Тарахомин Юрій Іванович, accounting.org.ua</Author>
   <Desc>Конфігурація "Зберігання та Торгівля"
 https://accounting.org.ua/storage_and_trade.html</Desc>
-  <DateTimeSave>31.07.2026 17:26:07</DateTimeSave>
+  <DateTimeSave>31.07.2026 19:35:53</DateTimeSave>
   <DictTSearch>simple</DictTSearch>
   <GtkVersion>Gtk4</GtkVersion>
   <ConstantsBlocks>
@@ -43927,16 +43927,6 @@ FROM
               <AutomaticNumbering>1</AutomaticNumbering>
             </Field>
             <Field>
-              <Name>ДатаЗапису</Name>
-              <FullName>Дата запису</FullName>
-              <NameInTable>col_a2</NameInTable>
-              <Type>datetime</Type>
-              <IsIndex>0</IsIndex>
-              <IsFullTextSearch>0</IsFullTextSearch>
-              <IsSearch>0</IsSearch>
-              <IsExport>0</IsExport>
-            </Field>
-            <Field>
               <Name>Рахунок</Name>
               <FullName>Рахунок</FullName>
               <NameInTable>col_a3</NameInTable>
@@ -44174,15 +44164,6 @@ FROM
                   <ReadOnly>0</ReadOnly>
                   <Type>integer</Type>
                   <AutomaticNumbering>1</AutomaticNumbering>
-                </Field>
-                <Field>
-                  <Name>ДатаЗапису</Name>
-                  <Caption>Дата запису</Caption>
-                  <Size>0</Size>
-                  <Height>0</Height>
-                  <SortNum>3</SortNum>
-                  <ReadOnly>0</ReadOnly>
-                  <Type>datetime</Type>
                 </Field>
                 <Field>
                   <Name>Рахунок</Name>
@@ -76867,7 +76848,7 @@ HAVING
         </TabularLists>
       </PrintBalances>
       <Forms>
-        <Form Modified="1">
+        <Form Modified="0">
           <Name>Список</Name>
           <Desc>Список</Desc>
           <Type>List</Type>
@@ -76875,7 +76856,7 @@ HAVING
           <NotSaveToFile>0</NotSaveToFile>
           <TabularList>Записи</TabularList>
         </Form>
-        <Form Modified="1">
+        <Form Modified="0">
           <Name>Список міні</Name>
           <Desc>Список міні</Desc>
           <Type>ListSmall</Type>

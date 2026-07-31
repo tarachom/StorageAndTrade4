@@ -57,23 +57,6 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
         public Action? Сhanged_НомерРядка { get; set; } = null;
 
 
-        /* ДатаЗапису */
-        public DateTime ДатаЗапису
-        {
-            get => ДатаЗапису_;
-            set
-            {
-                if (!ДатаЗапису_.Equals(value))
-                {
-                    ДатаЗапису_ = value;
-                    Сhanged_ДатаЗапису?.Invoke();
-                }
-            }
-        }
-        DateTime ДатаЗапису_ = DateTime.MinValue;
-        public Action? Сhanged_ДатаЗапису { get; set; } = null;
-
-
         /* Рахунок */
         public ПланРахунків_Pointer Рахунок
         {
@@ -423,7 +406,6 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
         {
             var row = New();
             row.НомерРядка = НомерРядка;
-            row.ДатаЗапису = ДатаЗапису;
             row.Рахунок = Рахунок.Copy();
             row.ВидПроводки = ВидПроводки;
             row.Аналітика1 = Аналітика1.Copy();
@@ -478,7 +460,6 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
 
     Task ПісляДодаванняНового(ItemRow row)
     {
-        row.ДатаЗапису = DateTime.Now;
         return Task.CompletedTask;
     }
 
@@ -574,37 +555,6 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
             };
             ColumnViewColumn column = ColumnViewColumn.New("№", factory);
             column.Resizable = true;
-
-            Grid.AppendColumn(column);
-        }
-
-        //ДатаЗапису
-        {
-            SignalListItemFactory factory = SignalListItemFactory.New();
-            factory.OnSetup += (_, args) =>
-            {
-                if (args.Object is not ListItem listItem) return;
-                var cell = DateTimeTablePartCell.New();
-                cell.OnlyDate = true;
-
-                listItem.Child = cell;
-            };
-            factory.OnBind += (_, args) =>
-            {
-                if (args.Object is not ListItem listItem) return;
-                if (listItem.Child is not DateTimeTablePartCell cell) return;
-                if (listItem.Item is not ItemRow row) return;
-
-                //-> В модель
-                cell.OnСhanged = () => row.ДатаЗапису = cell.Value;
-
-                //<- З моделі
-                (row.Сhanged_ДатаЗапису = () => cell.Value = row.ДатаЗапису).Invoke();
-
-            };
-            ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
-            column.Resizable = true;
-            column.FixedWidth = 100;
 
             Grid.AppendColumn(column);
         }
@@ -750,7 +700,7 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                 (row.Сhanged_Кількість = () => cell.Value = row.Кількість).Invoke();
 
             };
-            ColumnViewColumn column = ColumnViewColumn.New("Кількість Дт", factory);
+            ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
             column.Resizable = true;
 
             Grid.AppendColumn(column);
@@ -1028,10 +978,8 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
 
     public override async Task LoadRecords()
     {
-
         if (ЕлементВласник != null)
         {
-
             ЕлементВласник.Операції_TablePart.FillJoin([БухгалтерськаОперація_Операції_TablePart.НомерРядка,]);
             await ЕлементВласник.Операції_TablePart.Read();
 
@@ -1042,7 +990,6 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                 var row = ItemRow.New();
                 row.UniqueID = new(record.UID);
                 row.НомерРядка = record.НомерРядка;
-                row.ДатаЗапису = record.ДатаЗапису;
                 row.Рахунок = record.Рахунок;
                 row.ВидПроводки = record.ВидПроводки;
                 row.Аналітика1 = record.Аналітика1;
@@ -1077,7 +1024,6 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
 
     public override async Task SaveRecords()
     {
-
         if (ЕлементВласник != null)
         {
             ЕлементВласник.Операції_TablePart.Records.Clear();
@@ -1090,7 +1036,6 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                     {
                         UID = row.UniqueID.UGuid,
                         НомерРядка = row.НомерРядка,
-                        ДатаЗапису = row.ДатаЗапису,
                         Рахунок = row.Рахунок,
                         ВидПроводки = row.ВидПроводки,
                         Аналітика1 = row.Аналітика1,
@@ -1116,6 +1061,7 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                 }
             }
             await ЕлементВласник.Операції_TablePart.Save(true);
+
             //Оновлення табличної частини після збереження
             {
                 //Пошук виділених рядків
@@ -1129,7 +1075,6 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                     var row = ItemRow.New();
                     row.UniqueID = new(x.UID);
                     row.НомерРядка = x.НомерРядка;
-                    row.ДатаЗапису = x.ДатаЗапису;
                     row.Рахунок = x.Рахунок;
                     row.ВидПроводки = x.ВидПроводки;
                     row.Аналітика1 = x.Аналітика1;
@@ -1162,7 +1107,6 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                 //Виділення рядків після оновлення
                 foreach (var position in selection)
                     Grid.Model.SelectItem(position, false);
-
             }
         }
     }
