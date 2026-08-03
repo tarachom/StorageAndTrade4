@@ -8,6 +8,7 @@ using Gtk;
 using InterfaceGtk4;
 using GeneratedCode;
 using GeneratedCode.Документи;
+using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
 
@@ -52,6 +53,22 @@ partial class PageHome : Form
 
     public async Task SetValue()
     {
+        var РахунокКт = await new ПланРахунків_Select().FindByField(ПланРахунків_Const.Код, "201");
+        Console.WriteLine(РахунокКт);
+
+        var РахунокКтList = await new ПланРахунків_Select().FindListByField(ПланРахунків_Const.Клас, 0);
+        Console.WriteLine(РахунокКтList.Count);
+        foreach (var item in РахунокКтList)
+        {
+            Console.WriteLine(item);
+        }
+
+        var docs = await new ВиготовленняПродукції_Select().FindListByField(ВиготовленняПродукції_Const.Автор, Program.Користувач.UniqueID.UGuid);
+        foreach (var item in docs)
+        {
+            Console.WriteLine(item);
+        }
+
         /*
         var Вибірка = new ВиготовленняПродукції_Select();
         Вибірка.QuerySelect.Field.AddRange([
