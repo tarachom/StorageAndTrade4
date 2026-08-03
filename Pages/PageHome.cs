@@ -7,6 +7,7 @@
 using Gtk;
 using InterfaceGtk4;
 using GeneratedCode;
+using GeneratedCode.Документи;
 
 namespace StorageAndTrade;
 
@@ -51,6 +52,24 @@ partial class PageHome : Form
 
     public async Task SetValue()
     {
+        /*
+        var Вибірка = new ВиготовленняПродукції_Select();
+        Вибірка.QuerySelect.Field.AddRange([
+            ВиготовленняПродукції_Const.Назва,
+            ВиготовленняПродукції_Const.Валюта,
+            ВиготовленняПродукції_Const.Організація,
+            ВиготовленняПродукції_Const.Основа
+        ]);
 
+        await Вибірка.Select();
+        while (Вибірка.MoveNext())
+        {
+            ВиготовленняПродукції_Pointer? Вказівник = Вибірка.Current;
+            if (Вказівник != null)
+            {
+                Console.WriteLine(Вибірка.Назва + " " + Вибірка.Організація + " " + Вибірка.Основа + " " + Вибірка.Валюта);
+            }
+        }
+        */
     }
 }
