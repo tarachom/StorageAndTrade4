@@ -254,6 +254,9 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
 
     Task ПісляДодаванняНового(ItemRow row)
     {
+        if (ЕлементВласник != null && ЕлементВласникФорма != null)
+            row.Склад = ЕлементВласникФорма.СкладКомплектуючих_Значення; //Склад з форми елементу
+
         row.Кількість = 1;
         return Task.CompletedTask;
     }
@@ -265,8 +268,6 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
             Номенклатура_Pointer Вказівник = await new Номенклатура_Select().FindByField(Номенклатура_Const.Артикул, row.Артикул.Trim(), "LOWER");
             if (!Вказівник.IsEmpty())
             {
-                await Вказівник.GetPresentation();
-
                 row.Номенклатура = Вказівник;
                 await ПісляЗміни_Номенклатура(row);
             }
@@ -320,6 +321,7 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
     #endregion
 
     public ВиготовленняПродукції_Object? ЕлементВласник { get; set; }
+    public ВиготовленняПродукції_Елемент? ЕлементВласникФорма { get; set; }
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());
 
     partial void Initialize()

@@ -7,7 +7,7 @@
   <Author>Тарахомин Юрій Іванович, accounting.org.ua</Author>
   <Desc>Конфігурація "Зберігання та Торгівля"
 https://accounting.org.ua/storage_and_trade.html</Desc>
-  <DateTimeSave>03.08.2026 14:56:21</DateTimeSave>
+  <DateTimeSave>03.08.2026 17:00:48</DateTimeSave>
   <DictTSearch>simple</DictTSearch>
   <GtkVersion>Gtk4</GtkVersion>
   <ConstantsBlocks>
@@ -76376,26 +76376,26 @@ HAVING
           <Name>Записи</Name>
           <Fields>
             <Field>
-              <Name>Рахунок</Name>
-              <Caption>Рахунок</Caption>
-              <Size>0</Size>
-              <SortNum>1</SortNum>
-              <SortField>False</SortField>
-              <SortDirection>False</SortDirection>
-              <FilterField>True</FilterField>
-              <Type>pointer</Type>
-              <Pointer>Довідники.ПланРахунків</Pointer>
-            </Field>
-            <Field>
               <Name>ВидПроводки</Name>
               <Caption>Вид</Caption>
               <Size>0</Size>
-              <SortNum>2</SortNum>
+              <SortNum>1</SortNum>
               <SortField>False</SortField>
               <SortDirection>False</SortDirection>
               <FilterField>False</FilterField>
               <Type>enum</Type>
               <Pointer>Перелічення.ВидиПроводок</Pointer>
+            </Field>
+            <Field>
+              <Name>Рахунок</Name>
+              <Caption>Рахунок</Caption>
+              <Size>0</Size>
+              <SortNum>2</SortNum>
+              <SortField>False</SortField>
+              <SortDirection>False</SortDirection>
+              <FilterField>True</FilterField>
+              <Type>pointer</Type>
+              <Pointer>Довідники.ПланРахунків</Pointer>
             </Field>
             <Field>
               <Name>Аналітика1</Name>
@@ -76501,39 +76501,6 @@ HAVING
               <Type>numeric</Type>
             </Field>
             <Field>
-              <Name>Коментар</Name>
-              <Caption>Коментар</Caption>
-              <Size>0</Size>
-              <SortNum>25</SortNum>
-              <SortField>False</SortField>
-              <SortDirection>False</SortDirection>
-              <FilterField>False</FilterField>
-              <Type>string</Type>
-              <Multiline>0</Multiline>
-            </Field>
-            <Field>
-              <Name>Автор</Name>
-              <Caption>Автор</Caption>
-              <Size>0</Size>
-              <SortNum>26</SortNum>
-              <SortField>False</SortField>
-              <SortDirection>False</SortDirection>
-              <FilterField>False</FilterField>
-              <Type>pointer</Type>
-              <Pointer>Довідники.Користувачі</Pointer>
-            </Field>
-            <Field>
-              <Name>Організація</Name>
-              <Caption>Організація</Caption>
-              <Size>0</Size>
-              <SortNum>27</SortNum>
-              <SortField>False</SortField>
-              <SortDirection>False</SortDirection>
-              <FilterField>False</FilterField>
-              <Type>pointer</Type>
-              <Pointer>Довідники.Організації</Pointer>
-            </Field>
-            <Field>
               <Name>ТипБухОперації</Name>
               <Caption>Тип бух операції</Caption>
               <Size>0</Size>
@@ -76605,6 +76572,39 @@ HAVING
               <FilterField>False</FilterField>
               <Type>numeric</Type>
             </Field>
+            <Field>
+              <Name>Коментар</Name>
+              <Caption>Коментар</Caption>
+              <Size>0</Size>
+              <SortNum>101</SortNum>
+              <SortField>False</SortField>
+              <SortDirection>False</SortDirection>
+              <FilterField>False</FilterField>
+              <Type>string</Type>
+              <Multiline>0</Multiline>
+            </Field>
+            <Field>
+              <Name>Автор</Name>
+              <Caption>Автор</Caption>
+              <Size>0</Size>
+              <SortNum>102</SortNum>
+              <SortField>False</SortField>
+              <SortDirection>False</SortDirection>
+              <FilterField>False</FilterField>
+              <Type>pointer</Type>
+              <Pointer>Довідники.Користувачі</Pointer>
+            </Field>
+            <Field>
+              <Name>Організація</Name>
+              <Caption>Організація</Caption>
+              <Size>0</Size>
+              <SortNum>103</SortNum>
+              <SortField>False</SortField>
+              <SortDirection>False</SortDirection>
+              <FilterField>False</FilterField>
+              <Type>pointer</Type>
+              <Pointer>Довідники.Організації</Pointer>
+            </Field>
           </Fields>
         </TabularList>
       </TabularLists>
@@ -76614,26 +76614,26 @@ HAVING
             <Name>Записи</Name>
             <Fields>
               <Field>
-                <Name>Рахунок</Name>
-                <Caption>Рахунок</Caption>
+                <Name>ВидПроводки</Name>
+                <Caption>Вид</Caption>
                 <Size>0</Size>
                 <SortNum>1</SortNum>
                 <SortField>False</SortField>
                 <SortDirection>False</SortDirection>
                 <FilterField>False</FilterField>
-                <Type>pointer</Type>
-                <Pointer>Довідники.ПланРахунків</Pointer>
+                <Type>enum</Type>
+                <Pointer>Перелічення.ВидиПроводок</Pointer>
               </Field>
               <Field>
-                <Name>ВидПроводки</Name>
-                <Caption>Вид</Caption>
+                <Name>Рахунок</Name>
+                <Caption>Рахунок</Caption>
                 <Size>0</Size>
                 <SortNum>2</SortNum>
                 <SortField>False</SortField>
                 <SortDirection>False</SortDirection>
                 <FilterField>False</FilterField>
-                <Type>enum</Type>
-                <Pointer>Перелічення.ВидиПроводок</Pointer>
+                <Type>pointer</Type>
+                <Pointer>Довідники.ПланРахунків</Pointer>
               </Field>
               <Field>
                 <Name>Аналітика1</Name>
@@ -76739,39 +76739,6 @@ HAVING
                 <Type>numeric</Type>
               </Field>
               <Field>
-                <Name>Коментар</Name>
-                <Caption>Коментар</Caption>
-                <Size>0</Size>
-                <SortNum>25</SortNum>
-                <SortField>False</SortField>
-                <SortDirection>False</SortDirection>
-                <FilterField>False</FilterField>
-                <Type>string</Type>
-                <Multiline>0</Multiline>
-              </Field>
-              <Field>
-                <Name>Автор</Name>
-                <Caption>Автор</Caption>
-                <Size>0</Size>
-                <SortNum>26</SortNum>
-                <SortField>False</SortField>
-                <SortDirection>False</SortDirection>
-                <FilterField>False</FilterField>
-                <Type>pointer</Type>
-                <Pointer>Довідники.Користувачі</Pointer>
-              </Field>
-              <Field>
-                <Name>Організація</Name>
-                <Caption>Організація</Caption>
-                <Size>0</Size>
-                <SortNum>27</SortNum>
-                <SortField>False</SortField>
-                <SortDirection>False</SortDirection>
-                <FilterField>False</FilterField>
-                <Type>pointer</Type>
-                <Pointer>Довідники.Організації</Pointer>
-              </Field>
-              <Field>
                 <Name>ТипБухОперації</Name>
                 <Caption>Тип бух операції</Caption>
                 <Size>0</Size>
@@ -76842,6 +76809,39 @@ HAVING
                 <SortDirection>False</SortDirection>
                 <FilterField>False</FilterField>
                 <Type>numeric</Type>
+              </Field>
+              <Field>
+                <Name>Коментар</Name>
+                <Caption>Коментар</Caption>
+                <Size>0</Size>
+                <SortNum>101</SortNum>
+                <SortField>True</SortField>
+                <SortDirection>False</SortDirection>
+                <FilterField>False</FilterField>
+                <Type>string</Type>
+                <Multiline>0</Multiline>
+              </Field>
+              <Field>
+                <Name>Автор</Name>
+                <Caption>Автор</Caption>
+                <Size>0</Size>
+                <SortNum>102</SortNum>
+                <SortField>False</SortField>
+                <SortDirection>False</SortDirection>
+                <FilterField>False</FilterField>
+                <Type>pointer</Type>
+                <Pointer>Довідники.Користувачі</Pointer>
+              </Field>
+              <Field>
+                <Name>Організація</Name>
+                <Caption>Організація</Caption>
+                <Size>0</Size>
+                <SortNum>103</SortNum>
+                <SortField>False</SortField>
+                <SortDirection>False</SortDirection>
+                <FilterField>False</FilterField>
+                <Type>pointer</Type>
+                <Pointer>Довідники.Організації</Pointer>
               </Field>
             </Fields>
           </TabularList>

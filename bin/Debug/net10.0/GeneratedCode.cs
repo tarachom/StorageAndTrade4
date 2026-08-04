@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 03.08.2026 17:00:48
+ * Дата конфігурації: 03.08.2026 16:54:01
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон GeneratedCode.xslt
@@ -2752,16 +2752,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<Організації_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Організації_Pointer(pointer) : new Організації_Pointer();
         }
         
-        public async Task<List<Організації_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<Організації_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<Організації_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<Організації_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new Організації_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -3168,16 +3168,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<Номенклатура_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Номенклатура_Pointer(pointer) : new Номенклатура_Pointer();
         }
         
-        public async Task<List<Номенклатура_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<Номенклатура_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<Номенклатура_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<Номенклатура_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new Номенклатура_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -3489,16 +3489,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<Виробники_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Виробники_Pointer(pointer) : new Виробники_Pointer();
         }
         
-        public async Task<List<Виробники_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<Виробники_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<Виробники_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<Виробники_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new Виробники_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -3669,16 +3669,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<ВидиНоменклатури_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ВидиНоменклатури_Pointer(pointer) : new ВидиНоменклатури_Pointer();
         }
         
-        public async Task<List<ВидиНоменклатури_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ВидиНоменклатури_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ВидиНоменклатури_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ВидиНоменклатури_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new ВидиНоменклатури_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -3849,16 +3849,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<ПакуванняОдиниціВиміру_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПакуванняОдиниціВиміру_Pointer(pointer) : new ПакуванняОдиниціВиміру_Pointer();
         }
         
-        public async Task<List<ПакуванняОдиниціВиміру_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПакуванняОдиниціВиміру_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПакуванняОдиниціВиміру_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПакуванняОдиниціВиміру_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new ПакуванняОдиниціВиміру_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -4037,16 +4037,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<Валюти_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Валюти_Pointer(pointer) : new Валюти_Pointer();
         }
         
-        public async Task<List<Валюти_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<Валюти_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<Валюти_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<Валюти_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new Валюти_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -4274,16 +4274,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<Контрагенти_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Контрагенти_Pointer(pointer) : new Контрагенти_Pointer();
         }
         
-        public async Task<List<Контрагенти_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<Контрагенти_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<Контрагенти_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<Контрагенти_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new Контрагенти_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -4814,16 +4814,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<Склади_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Склади_Pointer(pointer) : new Склади_Pointer();
         }
         
-        public async Task<List<Склади_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<Склади_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<Склади_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<Склади_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new Склади_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -5158,16 +5158,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<ВидиЦін_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ВидиЦін_Pointer(pointer) : new ВидиЦін_Pointer();
         }
         
-        public async Task<List<ВидиЦін_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ВидиЦін_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ВидиЦін_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ВидиЦін_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new ВидиЦін_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -5329,16 +5329,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<ВидиЦінПостачальників_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ВидиЦінПостачальників_Pointer(pointer) : new ВидиЦінПостачальників_Pointer();
         }
         
-        public async Task<List<ВидиЦінПостачальників_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ВидиЦінПостачальників_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ВидиЦінПостачальників_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ВидиЦінПостачальників_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new ВидиЦінПостачальників_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -5531,16 +5531,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<Користувачі_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Користувачі_Pointer(pointer) : new Користувачі_Pointer();
         }
         
-        public async Task<List<Користувачі_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<Користувачі_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<Користувачі_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<Користувачі_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new Користувачі_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -5893,16 +5893,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<ФізичніОсоби_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ФізичніОсоби_Pointer(pointer) : new ФізичніОсоби_Pointer();
         }
         
-        public async Task<List<ФізичніОсоби_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ФізичніОсоби_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ФізичніОсоби_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ФізичніОсоби_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new ФізичніОсоби_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -6247,16 +6247,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<СтруктураПідприємства_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new СтруктураПідприємства_Pointer(pointer) : new СтруктураПідприємства_Pointer();
         }
         
-        public async Task<List<СтруктураПідприємства_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<СтруктураПідприємства_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<СтруктураПідприємства_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<СтруктураПідприємства_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new СтруктураПідприємства_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -6441,16 +6441,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<КраїниСвіту_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new КраїниСвіту_Pointer(pointer) : new КраїниСвіту_Pointer();
         }
         
-        public async Task<List<КраїниСвіту_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<КраїниСвіту_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<КраїниСвіту_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<КраїниСвіту_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new КраїниСвіту_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -6626,16 +6626,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<Файли_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Файли_Pointer(pointer) : new Файли_Pointer();
         }
         
-        public async Task<List<Файли_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<Файли_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<Файли_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<Файли_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new Файли_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -6805,16 +6805,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<ХарактеристикиНоменклатури_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ХарактеристикиНоменклатури_Pointer(pointer) : new ХарактеристикиНоменклатури_Pointer();
         }
         
-        public async Task<List<ХарактеристикиНоменклатури_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ХарактеристикиНоменклатури_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ХарактеристикиНоменклатури_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ХарактеристикиНоменклатури_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new ХарактеристикиНоменклатури_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -6983,16 +6983,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<Номенклатура_Папки_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Номенклатура_Папки_Pointer(pointer) : new Номенклатура_Папки_Pointer();
         }
         
-        public async Task<List<Номенклатура_Папки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<Номенклатура_Папки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<Номенклатура_Папки_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<Номенклатура_Папки_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new Номенклатура_Папки_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -7182,16 +7182,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<Контрагенти_Папки_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Контрагенти_Папки_Pointer(pointer) : new Контрагенти_Папки_Pointer();
         }
         
-        public async Task<List<Контрагенти_Папки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<Контрагенти_Папки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<Контрагенти_Папки_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<Контрагенти_Папки_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new Контрагенти_Папки_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -7381,16 +7381,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<Склади_Папки_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Склади_Папки_Pointer(pointer) : new Склади_Папки_Pointer();
         }
         
-        public async Task<List<Склади_Папки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<Склади_Папки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<Склади_Папки_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<Склади_Папки_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new Склади_Папки_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -7579,16 +7579,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<Каси_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Каси_Pointer(pointer) : new Каси_Pointer();
         }
         
-        public async Task<List<Каси_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<Каси_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<Каси_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<Каси_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new Каси_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -7771,16 +7771,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<БанківськіРахункиОрганізацій_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new БанківськіРахункиОрганізацій_Pointer(pointer) : new БанківськіРахункиОрганізацій_Pointer();
         }
         
-        public async Task<List<БанківськіРахункиОрганізацій_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<БанківськіРахункиОрганізацій_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<БанківськіРахункиОрганізацій_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<БанківськіРахункиОрганізацій_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new БанківськіРахункиОрганізацій_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -8033,16 +8033,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<ДоговориКонтрагентів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ДоговориКонтрагентів_Pointer(pointer) : new ДоговориКонтрагентів_Pointer();
         }
         
-        public async Task<List<ДоговориКонтрагентів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ДоговориКонтрагентів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ДоговориКонтрагентів_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ДоговориКонтрагентів_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new ДоговориКонтрагентів_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -8236,16 +8236,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<БанківськіРахункиКонтрагентів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new БанківськіРахункиКонтрагентів_Pointer(pointer) : new БанківськіРахункиКонтрагентів_Pointer();
         }
         
-        public async Task<List<БанківськіРахункиКонтрагентів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<БанківськіРахункиКонтрагентів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<БанківськіРахункиКонтрагентів_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<БанківськіРахункиКонтрагентів_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new БанківськіРахункиКонтрагентів_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -8441,16 +8441,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<СтаттяРухуКоштів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new СтаттяРухуКоштів_Pointer(pointer) : new СтаттяРухуКоштів_Pointer();
         }
         
-        public async Task<List<СтаттяРухуКоштів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<СтаттяРухуКоштів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<СтаттяРухуКоштів_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<СтаттяРухуКоштів_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new СтаттяРухуКоштів_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -8722,16 +8722,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<СеріїНоменклатури_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new СеріїНоменклатури_Pointer(pointer) : new СеріїНоменклатури_Pointer();
         }
         
-        public async Task<List<СеріїНоменклатури_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<СеріїНоменклатури_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<СеріїНоменклатури_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<СеріїНоменклатури_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new СеріїНоменклатури_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -8906,16 +8906,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<ПартіяТоварівКомпозит_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПартіяТоварівКомпозит_Pointer(pointer) : new ПартіяТоварівКомпозит_Pointer();
         }
         
-        public async Task<List<ПартіяТоварівКомпозит_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПартіяТоварівКомпозит_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПартіяТоварівКомпозит_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПартіяТоварівКомпозит_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new ПартіяТоварівКомпозит_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -9100,16 +9100,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<ВидиЗапасів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ВидиЗапасів_Pointer(pointer) : new ВидиЗапасів_Pointer();
         }
         
-        public async Task<List<ВидиЗапасів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ВидиЗапасів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ВидиЗапасів_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ВидиЗапасів_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new ВидиЗапасів_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -9400,16 +9400,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<Банки_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Банки_Pointer(pointer) : new Банки_Pointer();
         }
         
-        public async Task<List<Банки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<Банки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<Банки_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<Банки_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new Банки_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -9596,16 +9596,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<СкладськіПриміщення_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new СкладськіПриміщення_Pointer(pointer) : new СкладськіПриміщення_Pointer();
         }
         
-        public async Task<List<СкладськіПриміщення_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<СкладськіПриміщення_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<СкладськіПриміщення_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<СкладськіПриміщення_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new СкладськіПриміщення_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -9802,16 +9802,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<СкладськіКомірки_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new СкладськіКомірки_Pointer(pointer) : new СкладськіКомірки_Pointer();
         }
         
-        public async Task<List<СкладськіКомірки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<СкладськіКомірки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<СкладськіКомірки_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<СкладськіКомірки_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new СкладськіКомірки_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -9978,16 +9978,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<ОбластьЗберігання_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ОбластьЗберігання_Pointer(pointer) : new ОбластьЗберігання_Pointer();
         }
         
-        public async Task<List<ОбластьЗберігання_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ОбластьЗберігання_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ОбластьЗберігання_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ОбластьЗберігання_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new ОбластьЗберігання_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -10164,16 +10164,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<ТипорозміриКомірок_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ТипорозміриКомірок_Pointer(pointer) : new ТипорозміриКомірок_Pointer();
         }
         
-        public async Task<List<ТипорозміриКомірок_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ТипорозміриКомірок_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ТипорозміриКомірок_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ТипорозміриКомірок_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new ТипорозміриКомірок_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -10349,16 +10349,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<СкладськіКомірки_Папки_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new СкладськіКомірки_Папки_Pointer(pointer) : new СкладськіКомірки_Папки_Pointer();
         }
         
-        public async Task<List<СкладськіКомірки_Папки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<СкладськіКомірки_Папки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<СкладськіКомірки_Папки_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<СкладськіКомірки_Папки_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new СкладськіКомірки_Папки_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -10554,16 +10554,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<Блокнот_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Блокнот_Pointer(pointer) : new Блокнот_Pointer();
         }
         
-        public async Task<List<Блокнот_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<Блокнот_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<Блокнот_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<Блокнот_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new Блокнот_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -10761,16 +10761,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<ЗбереженіЗвіти_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ЗбереженіЗвіти_Pointer(pointer) : new ЗбереженіЗвіти_Pointer();
         }
         
-        public async Task<List<ЗбереженіЗвіти_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ЗбереженіЗвіти_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ЗбереженіЗвіти_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ЗбереженіЗвіти_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new ЗбереженіЗвіти_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -11212,16 +11212,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<КасиККМ_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new КасиККМ_Pointer(pointer) : new КасиККМ_Pointer();
         }
         
-        public async Task<List<КасиККМ_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<КасиККМ_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<КасиККМ_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<КасиККМ_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new КасиККМ_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -11433,16 +11433,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<ПланРахунків_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПланРахунків_Pointer(pointer) : new ПланРахунків_Pointer();
         }
         
-        public async Task<List<ПланРахунків_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПланРахунків_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПланРахунків_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПланРахунків_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new ПланРахунків_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -11676,16 +11676,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<Категорії_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Категорії_Pointer(pointer) : new Категорії_Pointer();
         }
         
-        public async Task<List<Категорії_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<Категорії_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<Категорії_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<Категорії_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new Категорії_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -11893,16 +11893,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<Статті_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Статті_Pointer(pointer) : new Статті_Pointer();
         }
         
-        public async Task<List<Статті_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<Статті_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<Статті_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<Статті_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new Статті_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -12083,16 +12083,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<ВидиПодатків_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ВидиПодатків_Pointer(pointer) : new ВидиПодатків_Pointer();
         }
         
-        public async Task<List<ВидиПодатків_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ВидиПодатків_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ВидиПодатків_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ВидиПодатків_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new ВидиПодатків_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -12246,16 +12246,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<ВидиЖурналів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ВидиЖурналів_Pointer(pointer) : new ВидиЖурналів_Pointer();
         }
         
-        public async Task<List<ВидиЖурналів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ВидиЖурналів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ВидиЖурналів_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ВидиЖурналів_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new ВидиЖурналів_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -12409,16 +12409,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<ОсновніЗасоби_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ОсновніЗасоби_Pointer(pointer) : new ОсновніЗасоби_Pointer();
         }
         
-        public async Task<List<ОсновніЗасоби_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ОсновніЗасоби_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ОсновніЗасоби_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ОсновніЗасоби_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new ОсновніЗасоби_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -12572,16 +12572,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<МалоцінніПредмети_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new МалоцінніПредмети_Pointer(pointer) : new МалоцінніПредмети_Pointer();
         }
         
-        public async Task<List<МалоцінніПредмети_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<МалоцінніПредмети_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<МалоцінніПредмети_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<МалоцінніПредмети_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new МалоцінніПредмети_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -12735,16 +12735,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<ГрошовіРахункиВласні_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ГрошовіРахункиВласні_Pointer(pointer) : new ГрошовіРахункиВласні_Pointer();
         }
         
-        public async Task<List<ГрошовіРахункиВласні_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ГрошовіРахункиВласні_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ГрошовіРахункиВласні_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ГрошовіРахункиВласні_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new ГрошовіРахункиВласні_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -12903,16 +12903,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<НоменклатураВнутрішня_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new НоменклатураВнутрішня_Pointer(pointer) : new НоменклатураВнутрішня_Pointer();
         }
         
-        public async Task<List<НоменклатураВнутрішня_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<НоменклатураВнутрішня_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<НоменклатураВнутрішня_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<НоменклатураВнутрішня_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new НоменклатураВнутрішня_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -13078,16 +13078,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<НоменклатураВнутрішня_Папки_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new НоменклатураВнутрішня_Папки_Pointer(pointer) : new НоменклатураВнутрішня_Папки_Pointer();
         }
         
-        public async Task<List<НоменклатураВнутрішня_Папки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<НоменклатураВнутрішня_Папки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<НоменклатураВнутрішня_Папки_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<НоменклатураВнутрішня_Папки_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new НоменклатураВнутрішня_Папки_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -13264,16 +13264,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<Бланки_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Бланки_Pointer(pointer) : new Бланки_Pointer();
         }
         
-        public async Task<List<Бланки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<Бланки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<Бланки_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<Бланки_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new Бланки_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -13427,16 +13427,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<Співробітники_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Співробітники_Pointer(pointer) : new Співробітники_Pointer();
         }
         
-        public async Task<List<Співробітники_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<Співробітники_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<Співробітники_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<Співробітники_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new Співробітники_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -13590,16 +13590,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<ТипиБухОперацій_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ТипиБухОперацій_Pointer(pointer) : new ТипиБухОперацій_Pointer();
         }
         
-        public async Task<List<ТипиБухОперацій_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ТипиБухОперацій_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ТипиБухОперацій_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ТипиБухОперацій_Pointer> directoryPointerList = [];
+            foreach (var directoryPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                directoryPointerList.Add(new ТипиБухОперацій_Pointer(directoryPointer.UniqueID, directoryPointer.Fields));
+            return directoryPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -15405,16 +15405,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ЗамовленняПостачальнику_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ЗамовленняПостачальнику_Pointer(pointer) : new ЗамовленняПостачальнику_Pointer();
         }
         
-        public async Task<List<ЗамовленняПостачальнику_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ЗамовленняПостачальнику_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ЗамовленняПостачальнику_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ЗамовленняПостачальнику_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ЗамовленняПостачальнику_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -16249,16 +16249,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПоступленняТоварівТаПослуг_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПоступленняТоварівТаПослуг_Pointer(pointer) : new ПоступленняТоварівТаПослуг_Pointer();
         }
         
-        public async Task<List<ПоступленняТоварівТаПослуг_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПоступленняТоварівТаПослуг_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПоступленняТоварівТаПослуг_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПоступленняТоварівТаПослуг_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПоступленняТоварівТаПослуг_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -17282,16 +17282,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ЗамовленняКлієнта_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ЗамовленняКлієнта_Pointer(pointer) : new ЗамовленняКлієнта_Pointer();
         }
         
-        public async Task<List<ЗамовленняКлієнта_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ЗамовленняКлієнта_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ЗамовленняКлієнта_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ЗамовленняКлієнта_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ЗамовленняКлієнта_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -18115,16 +18115,16 @@ namespace GeneratedCode.Документи
 
         public async Task<РеалізаціяТоварівТаПослуг_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new РеалізаціяТоварівТаПослуг_Pointer(pointer) : new РеалізаціяТоварівТаПослуг_Pointer();
         }
         
-        public async Task<List<РеалізаціяТоварівТаПослуг_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<РеалізаціяТоварівТаПослуг_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<РеалізаціяТоварівТаПослуг_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<РеалізаціяТоварівТаПослуг_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new РеалізаціяТоварівТаПослуг_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -19026,16 +19026,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ВстановленняЦінНоменклатури_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ВстановленняЦінНоменклатури_Pointer(pointer) : new ВстановленняЦінНоменклатури_Pointer();
         }
         
-        public async Task<List<ВстановленняЦінНоменклатури_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ВстановленняЦінНоменклатури_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ВстановленняЦінНоменклатури_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ВстановленняЦінНоменклатури_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ВстановленняЦінНоменклатури_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -19578,16 +19578,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПрихіднийКасовийОрдер_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПрихіднийКасовийОрдер_Pointer(pointer) : new ПрихіднийКасовийОрдер_Pointer();
         }
         
-        public async Task<List<ПрихіднийКасовийОрдер_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПрихіднийКасовийОрдер_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПрихіднийКасовийОрдер_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПрихіднийКасовийОрдер_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПрихіднийКасовийОрдер_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -20332,16 +20332,16 @@ namespace GeneratedCode.Документи
 
         public async Task<РозхіднийКасовийОрдер_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new РозхіднийКасовийОрдер_Pointer(pointer) : new РозхіднийКасовийОрдер_Pointer();
         }
         
-        public async Task<List<РозхіднийКасовийОрдер_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<РозхіднийКасовийОрдер_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<РозхіднийКасовийОрдер_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<РозхіднийКасовийОрдер_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new РозхіднийКасовийОрдер_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -21098,16 +21098,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПереміщенняТоварів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПереміщенняТоварів_Pointer(pointer) : new ПереміщенняТоварів_Pointer();
         }
         
-        public async Task<List<ПереміщенняТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПереміщенняТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПереміщенняТоварів_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПереміщенняТоварів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПереміщенняТоварів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -21896,16 +21896,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПоверненняТоварівПостачальнику_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПоверненняТоварівПостачальнику_Pointer(pointer) : new ПоверненняТоварівПостачальнику_Pointer();
         }
         
-        public async Task<List<ПоверненняТоварівПостачальнику_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПоверненняТоварівПостачальнику_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПоверненняТоварівПостачальнику_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПоверненняТоварівПостачальнику_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПоверненняТоварівПостачальнику_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -22686,16 +22686,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПоверненняТоварівВідКлієнта_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПоверненняТоварівВідКлієнта_Pointer(pointer) : new ПоверненняТоварівВідКлієнта_Pointer();
         }
         
-        public async Task<List<ПоверненняТоварівВідКлієнта_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПоверненняТоварівВідКлієнта_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПоверненняТоварівВідКлієнта_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПоверненняТоварівВідКлієнта_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПоверненняТоварівВідКлієнта_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -23460,16 +23460,16 @@ namespace GeneratedCode.Документи
 
         public async Task<АктВиконанихРобіт_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new АктВиконанихРобіт_Pointer(pointer) : new АктВиконанихРобіт_Pointer();
         }
         
-        public async Task<List<АктВиконанихРобіт_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<АктВиконанихРобіт_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<АктВиконанихРобіт_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<АктВиконанихРобіт_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new АктВиконанихРобіт_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -24356,16 +24356,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ВведенняЗалишків_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ВведенняЗалишків_Pointer(pointer) : new ВведенняЗалишків_Pointer();
         }
         
-        public async Task<List<ВведенняЗалишків_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ВведенняЗалишків_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ВведенняЗалишків_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ВведенняЗалишків_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ВведенняЗалишків_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -25475,16 +25475,16 @@ namespace GeneratedCode.Документи
 
         public async Task<НадлишкиТоварів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new НадлишкиТоварів_Pointer(pointer) : new НадлишкиТоварів_Pointer();
         }
         
-        public async Task<List<НадлишкиТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<НадлишкиТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<НадлишкиТоварів_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<НадлишкиТоварів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new НадлишкиТоварів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -25927,16 +25927,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПересортицяТоварів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПересортицяТоварів_Pointer(pointer) : new ПересортицяТоварів_Pointer();
         }
         
-        public async Task<List<ПересортицяТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПересортицяТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПересортицяТоварів_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПересортицяТоварів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПересортицяТоварів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -26387,16 +26387,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПерерахунокТоварів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПерерахунокТоварів_Pointer(pointer) : new ПерерахунокТоварів_Pointer();
         }
         
-        public async Task<List<ПерерахунокТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПерерахунокТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПерерахунокТоварів_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПерерахунокТоварів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПерерахунокТоварів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -26905,16 +26905,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПсуванняТоварів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПсуванняТоварів_Pointer(pointer) : new ПсуванняТоварів_Pointer();
         }
         
-        public async Task<List<ПсуванняТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПсуванняТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПсуванняТоварів_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПсуванняТоварів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПсуванняТоварів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -27458,16 +27458,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ВнутрішнєСпоживанняТоварів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ВнутрішнєСпоживанняТоварів_Pointer(pointer) : new ВнутрішнєСпоживанняТоварів_Pointer();
         }
         
-        public async Task<List<ВнутрішнєСпоживанняТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ВнутрішнєСпоживанняТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ВнутрішнєСпоживанняТоварів_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ВнутрішнєСпоживанняТоварів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ВнутрішнєСпоживанняТоварів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -28232,16 +28232,16 @@ namespace GeneratedCode.Документи
 
         public async Task<РахунокФактура_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new РахунокФактура_Pointer(pointer) : new РахунокФактура_Pointer();
         }
         
-        public async Task<List<РахунокФактура_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<РахунокФактура_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<РахунокФактура_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<РахунокФактура_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new РахунокФактура_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -29114,16 +29114,16 @@ namespace GeneratedCode.Документи
 
         public async Task<РозміщенняТоварівНаСкладі_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new РозміщенняТоварівНаСкладі_Pointer(pointer) : new РозміщенняТоварівНаСкладі_Pointer();
         }
         
-        public async Task<List<РозміщенняТоварівНаСкладі_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<РозміщенняТоварівНаСкладі_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<РозміщенняТоварівНаСкладі_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<РозміщенняТоварівНаСкладі_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new РозміщенняТоварівНаСкладі_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -29617,16 +29617,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПереміщенняТоварівНаСкладі_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПереміщенняТоварівНаСкладі_Pointer(pointer) : new ПереміщенняТоварівНаСкладі_Pointer();
         }
         
-        public async Task<List<ПереміщенняТоварівНаСкладі_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПереміщенняТоварівНаСкладі_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПереміщенняТоварівНаСкладі_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПереміщенняТоварівНаСкладі_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПереміщенняТоварівНаСкладі_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -30133,16 +30133,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ЗбіркаТоварівНаСкладі_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ЗбіркаТоварівНаСкладі_Pointer(pointer) : new ЗбіркаТоварівНаСкладі_Pointer();
         }
         
-        public async Task<List<ЗбіркаТоварівНаСкладі_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ЗбіркаТоварівНаСкладі_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ЗбіркаТоварівНаСкладі_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ЗбіркаТоварівНаСкладі_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ЗбіркаТоварівНаСкладі_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -30616,16 +30616,16 @@ namespace GeneratedCode.Документи
 
         public async Task<РозміщенняНоменклатуриПоКоміркам_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new РозміщенняНоменклатуриПоКоміркам_Pointer(pointer) : new РозміщенняНоменклатуриПоКоміркам_Pointer();
         }
         
-        public async Task<List<РозміщенняНоменклатуриПоКоміркам_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<РозміщенняНоменклатуриПоКоміркам_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<РозміщенняНоменклатуриПоКоміркам_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<РозміщенняНоменклатуриПоКоміркам_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new РозміщенняНоменклатуриПоКоміркам_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -31105,16 +31105,16 @@ namespace GeneratedCode.Документи
 
         public async Task<КорегуванняБоргу_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new КорегуванняБоргу_Pointer(pointer) : new КорегуванняБоргу_Pointer();
         }
         
-        public async Task<List<КорегуванняБоргу_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<КорегуванняБоргу_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<КорегуванняБоргу_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<КорегуванняБоргу_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new КорегуванняБоргу_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -31806,16 +31806,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ЗакриттяЗамовленняКлієнта_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ЗакриттяЗамовленняКлієнта_Pointer(pointer) : new ЗакриттяЗамовленняКлієнта_Pointer();
         }
         
-        public async Task<List<ЗакриттяЗамовленняКлієнта_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ЗакриттяЗамовленняКлієнта_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ЗакриттяЗамовленняКлієнта_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ЗакриттяЗамовленняКлієнта_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ЗакриттяЗамовленняКлієнта_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -32351,16 +32351,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ЗакриттяРахункуФактури_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ЗакриттяРахункуФактури_Pointer(pointer) : new ЗакриттяРахункуФактури_Pointer();
         }
         
-        public async Task<List<ЗакриттяРахункуФактури_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ЗакриттяРахункуФактури_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ЗакриттяРахункуФактури_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ЗакриттяРахункуФактури_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ЗакриттяРахункуФактури_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -32896,16 +32896,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ЗакриттяЗамовленняПостачальнику_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ЗакриттяЗамовленняПостачальнику_Pointer(pointer) : new ЗакриттяЗамовленняПостачальнику_Pointer();
         }
         
-        public async Task<List<ЗакриттяЗамовленняПостачальнику_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ЗакриттяЗамовленняПостачальнику_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ЗакриттяЗамовленняПостачальнику_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ЗакриттяЗамовленняПостачальнику_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ЗакриттяЗамовленняПостачальнику_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -33434,16 +33434,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ЧекККМ_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ЧекККМ_Pointer(pointer) : new ЧекККМ_Pointer();
         }
         
-        public async Task<List<ЧекККМ_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ЧекККМ_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ЧекККМ_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ЧекККМ_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ЧекККМ_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -33943,16 +33943,16 @@ namespace GeneratedCode.Документи
 
         public async Task<БухгалтерськаОперація_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new БухгалтерськаОперація_Pointer(pointer) : new БухгалтерськаОперація_Pointer();
         }
         
-        public async Task<List<БухгалтерськаОперація_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<БухгалтерськаОперація_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<БухгалтерськаОперація_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<БухгалтерськаОперація_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new БухгалтерськаОперація_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -34556,16 +34556,16 @@ namespace GeneratedCode.Документи
 
         public async Task<АвансовийЗвіт_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new АвансовийЗвіт_Pointer(pointer) : new АвансовийЗвіт_Pointer();
         }
         
-        public async Task<List<АвансовийЗвіт_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<АвансовийЗвіт_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<АвансовийЗвіт_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<АвансовийЗвіт_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new АвансовийЗвіт_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -35171,16 +35171,16 @@ namespace GeneratedCode.Документи
 
         public async Task<Амортизація_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Амортизація_Pointer(pointer) : new Амортизація_Pointer();
         }
         
-        public async Task<List<Амортизація_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<Амортизація_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<Амортизація_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<Амортизація_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new Амортизація_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -35457,16 +35457,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ВизначенняФінансовогоРезультату_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ВизначенняФінансовогоРезультату_Pointer(pointer) : new ВизначенняФінансовогоРезультату_Pointer();
         }
         
-        public async Task<List<ВизначенняФінансовогоРезультату_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ВизначенняФінансовогоРезультату_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ВизначенняФінансовогоРезультату_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ВизначенняФінансовогоРезультату_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ВизначенняФінансовогоРезультату_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -35723,16 +35723,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ВиплатаЗаробітноїПлати_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ВиплатаЗаробітноїПлати_Pointer(pointer) : new ВиплатаЗаробітноїПлати_Pointer();
         }
         
-        public async Task<List<ВиплатаЗаробітноїПлати_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ВиплатаЗаробітноїПлати_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ВиплатаЗаробітноїПлати_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ВиплатаЗаробітноїПлати_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ВиплатаЗаробітноїПлати_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -36077,16 +36077,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ВиготовленняПродукції_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ВиготовленняПродукції_Pointer(pointer) : new ВиготовленняПродукції_Pointer();
         }
         
-        public async Task<List<ВиготовленняПродукції_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ВиготовленняПродукції_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ВиготовленняПродукції_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ВиготовленняПродукції_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ВиготовленняПродукції_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -36951,16 +36951,16 @@ namespace GeneratedCode.Документи
 
         public async Task<Додаток1ДоПодатковоїНакладної_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Додаток1ДоПодатковоїНакладної_Pointer(pointer) : new Додаток1ДоПодатковоїНакладної_Pointer();
         }
         
-        public async Task<List<Додаток1ДоПодатковоїНакладної_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<Додаток1ДоПодатковоїНакладної_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<Додаток1ДоПодатковоїНакладної_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<Додаток1ДоПодатковоїНакладної_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new Додаток1ДоПодатковоїНакладної_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -37193,16 +37193,16 @@ namespace GeneratedCode.Документи
 
         public async Task<Додаток2ДоПодатковоїНакладної_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Додаток2ДоПодатковоїНакладної_Pointer(pointer) : new Додаток2ДоПодатковоїНакладної_Pointer();
         }
         
-        public async Task<List<Додаток2ДоПодатковоїНакладної_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<Додаток2ДоПодатковоїНакладної_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<Додаток2ДоПодатковоїНакладної_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<Додаток2ДоПодатковоїНакладної_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new Додаток2ДоПодатковоїНакладної_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -37455,16 +37455,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ЗаписКнигиПридбання_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ЗаписКнигиПридбання_Pointer(pointer) : new ЗаписКнигиПридбання_Pointer();
         }
         
-        public async Task<List<ЗаписКнигиПридбання_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ЗаписКнигиПридбання_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ЗаписКнигиПридбання_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ЗаписКнигиПридбання_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ЗаписКнигиПридбання_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -37717,16 +37717,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ЗмінаПараметрівОсновнихЗасобів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ЗмінаПараметрівОсновнихЗасобів_Pointer(pointer) : new ЗмінаПараметрівОсновнихЗасобів_Pointer();
         }
         
-        public async Task<List<ЗмінаПараметрівОсновнихЗасобів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ЗмінаПараметрівОсновнихЗасобів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ЗмінаПараметрівОсновнихЗасобів_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ЗмінаПараметрівОсновнихЗасобів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ЗмінаПараметрівОсновнихЗасобів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -37979,16 +37979,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ЗвітКомісіонераПроПродажТоварів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ЗвітКомісіонераПроПродажТоварів_Pointer(pointer) : new ЗвітКомісіонераПроПродажТоварів_Pointer();
         }
         
-        public async Task<List<ЗвітКомісіонераПроПродажТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ЗвітКомісіонераПроПродажТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ЗвітКомісіонераПроПродажТоварів_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ЗвітКомісіонераПроПродажТоварів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ЗвітКомісіонераПроПродажТоварів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -38241,16 +38241,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ЗвітКомітентуПроПродажТоварів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ЗвітКомітентуПроПродажТоварів_Pointer(pointer) : new ЗвітКомітентуПроПродажТоварів_Pointer();
         }
         
-        public async Task<List<ЗвітКомітентуПроПродажТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ЗвітКомітентуПроПродажТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ЗвітКомітентуПроПродажТоварів_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ЗвітКомітентуПроПродажТоварів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ЗвітКомітентуПроПродажТоварів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -38503,16 +38503,16 @@ namespace GeneratedCode.Документи
 
         public async Task<КоригуванняНезавершеногоВиробництва_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new КоригуванняНезавершеногоВиробництва_Pointer(pointer) : new КоригуванняНезавершеногоВиробництва_Pointer();
         }
         
-        public async Task<List<КоригуванняНезавершеногоВиробництва_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<КоригуванняНезавершеногоВиробництва_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<КоригуванняНезавершеногоВиробництва_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<КоригуванняНезавершеногоВиробництва_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new КоригуванняНезавершеногоВиробництва_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -38765,16 +38765,16 @@ namespace GeneratedCode.Документи
 
         public async Task<КоригуванняПДВ_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new КоригуванняПДВ_Pointer(pointer) : new КоригуванняПДВ_Pointer();
         }
         
-        public async Task<List<КоригуванняПДВ_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<КоригуванняПДВ_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<КоригуванняПДВ_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<КоригуванняПДВ_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new КоригуванняПДВ_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -39027,16 +39027,16 @@ namespace GeneratedCode.Документи
 
         public async Task<КоригуванняІншихВитрат_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new КоригуванняІншихВитрат_Pointer(pointer) : new КоригуванняІншихВитрат_Pointer();
         }
         
-        public async Task<List<КоригуванняІншихВитрат_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<КоригуванняІншихВитрат_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<КоригуванняІншихВитрат_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<КоригуванняІншихВитрат_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new КоригуванняІншихВитрат_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -39289,16 +39289,16 @@ namespace GeneratedCode.Документи
 
         public async Task<Модернізація_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Модернізація_Pointer(pointer) : new Модернізація_Pointer();
         }
         
-        public async Task<List<Модернізація_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<Модернізація_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<Модернізація_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<Модернізація_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new Модернізація_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -39551,16 +39551,16 @@ namespace GeneratedCode.Документи
 
         public async Task<Комплектація_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Комплектація_Pointer(pointer) : new Комплектація_Pointer();
         }
         
-        public async Task<List<Комплектація_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<Комплектація_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<Комплектація_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<Комплектація_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new Комплектація_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -39813,16 +39813,16 @@ namespace GeneratedCode.Документи
 
         public async Task<НакладнаВимога_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new НакладнаВимога_Pointer(pointer) : new НакладнаВимога_Pointer();
         }
         
-        public async Task<List<НакладнаВимога_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<НакладнаВимога_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<НакладнаВимога_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<НакладнаВимога_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new НакладнаВимога_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -40075,16 +40075,16 @@ namespace GeneratedCode.Документи
 
         public async Task<Наряд_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Наряд_Pointer(pointer) : new Наряд_Pointer();
         }
         
-        public async Task<List<Наряд_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<Наряд_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<Наряд_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<Наряд_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new Наряд_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -40337,16 +40337,16 @@ namespace GeneratedCode.Документи
 
         public async Task<НарахуванняЗаробітньоїПлати_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new НарахуванняЗаробітньоїПлати_Pointer(pointer) : new НарахуванняЗаробітньоїПлати_Pointer();
         }
         
-        public async Task<List<НарахуванняЗаробітньоїПлати_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<НарахуванняЗаробітньоїПлати_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<НарахуванняЗаробітньоїПлати_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<НарахуванняЗаробітньоїПлати_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new НарахуванняЗаробітньоїПлати_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -40599,16 +40599,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПередачаМатеріалівВЕксплуатацію_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПередачаМатеріалівВЕксплуатацію_Pointer(pointer) : new ПередачаМатеріалівВЕксплуатацію_Pointer();
         }
         
-        public async Task<List<ПередачаМатеріалівВЕксплуатацію_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПередачаМатеріалівВЕксплуатацію_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПередачаМатеріалівВЕксплуатацію_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПередачаМатеріалівВЕксплуатацію_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПередачаМатеріалівВЕксплуатацію_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -40861,16 +40861,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПереміщенняМатеріалівВЕксплуатації_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПереміщенняМатеріалівВЕксплуатації_Pointer(pointer) : new ПереміщенняМатеріалівВЕксплуатації_Pointer();
         }
         
-        public async Task<List<ПереміщенняМатеріалівВЕксплуатації_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПереміщенняМатеріалівВЕксплуатації_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПереміщенняМатеріалівВЕксплуатації_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПереміщенняМатеріалівВЕксплуатації_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПереміщенняМатеріалівВЕксплуатації_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -41123,16 +41123,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПередачаНематеріальнихАктивів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПередачаНематеріальнихАктивів_Pointer(pointer) : new ПередачаНематеріальнихАктивів_Pointer();
         }
         
-        public async Task<List<ПередачаНематеріальнихАктивів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПередачаНематеріальнихАктивів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПередачаНематеріальнихАктивів_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПередачаНематеріальнихАктивів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПередачаНематеріальнихАктивів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -41385,16 +41385,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПереміщенняНематеріальнихАктивів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПереміщенняНематеріальнихАктивів_Pointer(pointer) : new ПереміщенняНематеріальнихАктивів_Pointer();
         }
         
-        public async Task<List<ПереміщенняНематеріальнихАктивів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПереміщенняНематеріальнихАктивів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПереміщенняНематеріальнихАктивів_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПереміщенняНематеріальнихАктивів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПереміщенняНематеріальнихАктивів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -41647,16 +41647,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПередачаОбладнанняВМонтаж_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПередачаОбладнанняВМонтаж_Pointer(pointer) : new ПередачаОбладнанняВМонтаж_Pointer();
         }
         
-        public async Task<List<ПередачаОбладнанняВМонтаж_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПередачаОбладнанняВМонтаж_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПередачаОбладнанняВМонтаж_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПередачаОбладнанняВМонтаж_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПередачаОбладнанняВМонтаж_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -41909,16 +41909,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПередачаОсновнихЗасобів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПередачаОсновнихЗасобів_Pointer(pointer) : new ПередачаОсновнихЗасобів_Pointer();
         }
         
-        public async Task<List<ПередачаОсновнихЗасобів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПередачаОсновнихЗасобів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПередачаОсновнихЗасобів_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПередачаОсновнихЗасобів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПередачаОсновнихЗасобів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -42171,16 +42171,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПереміщенняОсновнихЗасобів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПереміщенняОсновнихЗасобів_Pointer(pointer) : new ПереміщенняОсновнихЗасобів_Pointer();
         }
         
-        public async Task<List<ПереміщенняОсновнихЗасобів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПереміщенняОсновнихЗасобів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПереміщенняОсновнихЗасобів_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПереміщенняОсновнихЗасобів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПереміщенняОсновнихЗасобів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -42433,16 +42433,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПередачаТоварів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПередачаТоварів_Pointer(pointer) : new ПередачаТоварів_Pointer();
         }
         
-        public async Task<List<ПередачаТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПередачаТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПередачаТоварів_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПередачаТоварів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПередачаТоварів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -42695,16 +42695,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПереоцінкаВалюти_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПереоцінкаВалюти_Pointer(pointer) : new ПереоцінкаВалюти_Pointer();
         }
         
-        public async Task<List<ПереоцінкаВалюти_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПереоцінкаВалюти_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПереоцінкаВалюти_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПереоцінкаВалюти_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПереоцінкаВалюти_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -42957,16 +42957,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПереоцінкаОсновнихЗасобів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПереоцінкаОсновнихЗасобів_Pointer(pointer) : new ПереоцінкаОсновнихЗасобів_Pointer();
         }
         
-        public async Task<List<ПереоцінкаОсновнихЗасобів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПереоцінкаОсновнихЗасобів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПереоцінкаОсновнихЗасобів_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПереоцінкаОсновнихЗасобів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПереоцінкаОсновнихЗасобів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -43219,16 +43219,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПереоцінкаТоварів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПереоцінкаТоварів_Pointer(pointer) : new ПереоцінкаТоварів_Pointer();
         }
         
-        public async Task<List<ПереоцінкаТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПереоцінкаТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПереоцінкаТоварів_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПереоцінкаТоварів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПереоцінкаТоварів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -43481,16 +43481,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПлатіжнеДорученняВхідне_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПлатіжнеДорученняВхідне_Pointer(pointer) : new ПлатіжнеДорученняВхідне_Pointer();
         }
         
-        public async Task<List<ПлатіжнеДорученняВхідне_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПлатіжнеДорученняВхідне_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПлатіжнеДорученняВхідне_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПлатіжнеДорученняВхідне_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПлатіжнеДорученняВхідне_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -43743,16 +43743,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПлатіжнеДорученняВихідне_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПлатіжнеДорученняВихідне_Pointer(pointer) : new ПлатіжнеДорученняВихідне_Pointer();
         }
         
-        public async Task<List<ПлатіжнеДорученняВихідне_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПлатіжнеДорученняВихідне_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПлатіжнеДорученняВихідне_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПлатіжнеДорученняВихідне_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПлатіжнеДорученняВихідне_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -44005,16 +44005,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПодатковаНакладна_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПодатковаНакладна_Pointer(pointer) : new ПодатковаНакладна_Pointer();
         }
         
-        public async Task<List<ПодатковаНакладна_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПодатковаНакладна_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПодатковаНакладна_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПодатковаНакладна_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПодатковаНакладна_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -44267,16 +44267,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПокупкаАбоПродажВалюти_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПокупкаАбоПродажВалюти_Pointer(pointer) : new ПокупкаАбоПродажВалюти_Pointer();
         }
         
-        public async Task<List<ПокупкаАбоПродажВалюти_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПокупкаАбоПродажВалюти_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПокупкаАбоПродажВалюти_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПокупкаАбоПродажВалюти_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПокупкаАбоПродажВалюти_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -44529,16 +44529,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПідготовкаДоПередачіОсновнихЗасобів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПідготовкаДоПередачіОсновнихЗасобів_Pointer(pointer) : new ПідготовкаДоПередачіОсновнихЗасобів_Pointer();
         }
         
-        public async Task<List<ПідготовкаДоПередачіОсновнихЗасобів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПідготовкаДоПередачіОсновнихЗасобів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПідготовкаДоПередачіОсновнихЗасобів_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПідготовкаДоПередачіОсновнихЗасобів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПідготовкаДоПередачіОсновнихЗасобів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -44791,16 +44791,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПослугиСторонньоїОрганізації_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПослугиСторонньоїОрганізації_Pointer(pointer) : new ПослугиСторонньоїОрганізації_Pointer();
         }
         
-        public async Task<List<ПослугиСторонньоїОрганізації_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПослугиСторонньоїОрганізації_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПослугиСторонньоїОрганізації_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПослугиСторонньоїОрганізації_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПослугиСторонньоїОрганізації_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -45053,16 +45053,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПрибуткуванняМатеріалівЗВиробництва_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПрибуткуванняМатеріалівЗВиробництва_Pointer(pointer) : new ПрибуткуванняМатеріалівЗВиробництва_Pointer();
         }
         
-        public async Task<List<ПрибуткуванняМатеріалівЗВиробництва_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПрибуткуванняМатеріалівЗВиробництва_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПрибуткуванняМатеріалівЗВиробництва_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПрибуткуванняМатеріалівЗВиробництва_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПрибуткуванняМатеріалівЗВиробництва_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -45315,16 +45315,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПрибуткуванняТоварівВПереробку_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПрибуткуванняТоварівВПереробку_Pointer(pointer) : new ПрибуткуванняТоварівВПереробку_Pointer();
         }
         
-        public async Task<List<ПрибуткуванняТоварівВПереробку_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПрибуткуванняТоварівВПереробку_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПрибуткуванняТоварівВПереробку_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПрибуткуванняТоварівВПереробку_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПрибуткуванняТоварівВПереробку_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -45577,16 +45577,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПрибуткуванняТоварівЗПереробки_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПрибуткуванняТоварівЗПереробки_Pointer(pointer) : new ПрибуткуванняТоварівЗПереробки_Pointer();
         }
         
-        public async Task<List<ПрибуткуванняТоварівЗПереробки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПрибуткуванняТоварівЗПереробки_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПрибуткуванняТоварівЗПереробки_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПрибуткуванняТоварівЗПереробки_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПрибуткуванняТоварівЗПереробки_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -45839,16 +45839,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПрибуткуванняНезавершеногоВиробництва_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПрибуткуванняНезавершеногоВиробництва_Pointer(pointer) : new ПрибуткуванняНезавершеногоВиробництва_Pointer();
         }
         
-        public async Task<List<ПрибуткуванняНезавершеногоВиробництва_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПрибуткуванняНезавершеногоВиробництва_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПрибуткуванняНезавершеногоВиробництва_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПрибуткуванняНезавершеногоВиробництва_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПрибуткуванняНезавершеногоВиробництва_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -46101,16 +46101,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПрийняттяДоОбліку_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПрийняттяДоОбліку_Pointer(pointer) : new ПрийняттяДоОбліку_Pointer();
         }
         
-        public async Task<List<ПрийняттяДоОбліку_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПрийняттяДоОбліку_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПрийняттяДоОбліку_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПрийняттяДоОбліку_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПрийняттяДоОбліку_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -46363,16 +46363,16 @@ namespace GeneratedCode.Документи
 
         public async Task<ПоверненняПереданихТоварів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new ПоверненняПереданихТоварів_Pointer(pointer) : new ПоверненняПереданихТоварів_Pointer();
         }
         
-        public async Task<List<ПоверненняПереданихТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<ПоверненняПереданихТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<ПоверненняПереданихТоварів_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<ПоверненняПереданихТоварів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new ПоверненняПереданихТоварів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -46625,16 +46625,16 @@ namespace GeneratedCode.Документи
 
         public async Task<РемонтОсновнихЗасобів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new РемонтОсновнихЗасобів_Pointer(pointer) : new РемонтОсновнихЗасобів_Pointer();
         }
         
-        public async Task<List<РемонтОсновнихЗасобів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<РемонтОсновнихЗасобів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<РемонтОсновнихЗасобів_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<РемонтОсновнихЗасобів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new РемонтОсновнихЗасобів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -46887,16 +46887,16 @@ namespace GeneratedCode.Документи
 
         public async Task<РозподілІншихВитрат_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new РозподілІншихВитрат_Pointer(pointer) : new РозподілІншихВитрат_Pointer();
         }
         
-        public async Task<List<РозподілІншихВитрат_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<РозподілІншихВитрат_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<РозподілІншихВитрат_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<РозподілІншихВитрат_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new РозподілІншихВитрат_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -47149,16 +47149,16 @@ namespace GeneratedCode.Документи
 
         public async Task<РозрахунокСобівартостіВипуску_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new РозрахунокСобівартостіВипуску_Pointer(pointer) : new РозрахунокСобівартостіВипуску_Pointer();
         }
         
-        public async Task<List<РозрахунокСобівартостіВипуску_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<РозрахунокСобівартостіВипуску_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<РозрахунокСобівартостіВипуску_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<РозрахунокСобівартостіВипуску_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new РозрахунокСобівартостіВипуску_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -47411,16 +47411,16 @@ namespace GeneratedCode.Документи
 
         public async Task<СписанняМатеріалів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new СписанняМатеріалів_Pointer(pointer) : new СписанняМатеріалів_Pointer();
         }
         
-        public async Task<List<СписанняМатеріалів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<СписанняМатеріалів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<СписанняМатеріалів_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<СписанняМатеріалів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new СписанняМатеріалів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -47673,16 +47673,16 @@ namespace GeneratedCode.Документи
 
         public async Task<СписанняНезавершеногоВиробництва_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new СписанняНезавершеногоВиробництва_Pointer(pointer) : new СписанняНезавершеногоВиробництва_Pointer();
         }
         
-        public async Task<List<СписанняНезавершеногоВиробництва_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<СписанняНезавершеногоВиробництва_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<СписанняНезавершеногоВиробництва_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<СписанняНезавершеногоВиробництва_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new СписанняНезавершеногоВиробництва_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -47935,16 +47935,16 @@ namespace GeneratedCode.Документи
 
         public async Task<СписанняНематеріальнихАктивів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new СписанняНематеріальнихАктивів_Pointer(pointer) : new СписанняНематеріальнихАктивів_Pointer();
         }
         
-        public async Task<List<СписанняНематеріальнихАктивів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<СписанняНематеріальнихАктивів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<СписанняНематеріальнихАктивів_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<СписанняНематеріальнихАктивів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new СписанняНематеріальнихАктивів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -48197,16 +48197,16 @@ namespace GeneratedCode.Документи
 
         public async Task<СписанняОсновнихЗасобів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new СписанняОсновнихЗасобів_Pointer(pointer) : new СписанняОсновнихЗасобів_Pointer();
         }
         
-        public async Task<List<СписанняОсновнихЗасобів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<СписанняОсновнихЗасобів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<СписанняОсновнихЗасобів_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<СписанняОсновнихЗасобів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new СписанняОсновнихЗасобів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -48459,16 +48459,16 @@ namespace GeneratedCode.Документи
 
         public async Task<СписанняВитратМайбутніхПеріодів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new СписанняВитратМайбутніхПеріодів_Pointer(pointer) : new СписанняВитратМайбутніхПеріодів_Pointer();
         }
         
-        public async Task<List<СписанняВитратМайбутніхПеріодів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<СписанняВитратМайбутніхПеріодів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<СписанняВитратМайбутніхПеріодів_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<СписанняВитратМайбутніхПеріодів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new СписанняВитратМайбутніхПеріодів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -48721,16 +48721,16 @@ namespace GeneratedCode.Документи
 
         public async Task<СписанняТоварів_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new СписанняТоварів_Pointer(pointer) : new СписанняТоварів_Pointer();
         }
         
-        public async Task<List<СписанняТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<СписанняТоварів_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<СписанняТоварів_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<СписанняТоварів_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new СписанняТоварів_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
@@ -48983,16 +48983,16 @@ namespace GeneratedCode.Документи
 
         public async Task<Сторнування_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
         {
-            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
-            return result && MoveNext() && Current != null ? Current : new();
+            UniqueID? pointer = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return pointer != null ? new Сторнування_Pointer(pointer) : new Сторнування_Pointer();
         }
         
-        public async Task<List<Сторнування_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0, string funcToField = "", string funcToField_Param1 = "")
+        public async Task<List<Сторнування_Pointer>> FindListByField(string name, object value, int limit = 0, int offset = 0)
         {
-            List<Сторнування_Pointer> list = [];
-            if (await base.BaseFindListByField(name, value, limit, offset, funcToField, funcToField_Param1))
-                while(MoveNext()) if (Current != null) list.Add(Current);
-            return list;
+            List<Сторнування_Pointer> documentPointerList = [];
+            foreach (var documentPointer in await base.BaseFindListByField(name, value, limit, offset)) 
+                documentPointerList.Add(new Сторнування_Pointer(documentPointer.UniqueID, documentPointer.Fields));
+            return documentPointerList;
         }
         
         object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");

@@ -23,6 +23,7 @@ static class БухгалтерськаОперація_SpendTheDocument
                     БухгалтерськіОперації.Records.Add(new()
                     {
                         OwnerLineNum = record.НомерРядка,
+                        Income = record.ВидПроводки == Перелічення.ВидиПроводок.Дебет,
 
                         //Виміри
                         Рахунок = record.Рахунок,

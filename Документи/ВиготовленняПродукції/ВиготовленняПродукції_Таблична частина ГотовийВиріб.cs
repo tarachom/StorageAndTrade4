@@ -232,8 +232,6 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
             Номенклатура_Pointer Вказівник = await new Номенклатура_Select().FindByField(Номенклатура_Const.Артикул, row.Артикул.Trim(), "LOWER");
             if (!Вказівник.IsEmpty())
             {
-                await Вказівник.GetPresentation();
-
                 row.Номенклатура = Вказівник;
                 await ПісляЗміни_Номенклатура(row);
             }

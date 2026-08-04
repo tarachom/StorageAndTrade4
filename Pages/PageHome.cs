@@ -53,6 +53,7 @@ partial class PageHome : Form
 
     public async Task SetValue()
     {
+        /*
         var РахунокКт = await new ПланРахунків_Select().FindByField(ПланРахунків_Const.Код, "201");
         Console.WriteLine(РахунокКт);
 
@@ -68,6 +69,7 @@ partial class PageHome : Form
         {
             Console.WriteLine(item);
         }
+        */
 
         /*
         var Вибірка = new ВиготовленняПродукції_Select();

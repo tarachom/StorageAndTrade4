@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 03.08.2026 17:00:48
+ * Дата конфігурації: 03.08.2026 16:54:01
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон Gtk4.xslt
@@ -50724,27 +50724,6 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 form.Grid.AppendColumn(column);
             }
   
-            //Назва: ВидПроводки, "Вид"
-            {
-                SignalListItemFactory factory = SignalListItemFactory.New();
-                factory.OnSetup += (_, args) =>
-                {
-                    ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartCell.NewFromType("enum");
-                };
-                factory.OnBind += (_, args) =>
-                {
-                    ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
-                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
-                    if (cell != null && row != null)
-                        cell.SetText(row.Fields["ВидПроводки"]);
-                };
-                ColumnViewColumn column = ColumnViewColumn.New("Вид", factory);
-                column.Resizable = true;
-                form.Grid.AppendColumn(column);
-            }
-        
             //Назва: Рахунок, "Рахунок"
             {
                 SignalListItemFactory factory = SignalListItemFactory.New();
@@ -50762,6 +50741,27 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                         cell.SetText(row.Fields["Рахунок"]);
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Рахунок", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ВидПроводки, "Вид"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("enum");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ВидПроводки"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Вид", factory);
                 column.Resizable = true;
                 form.Grid.AppendColumn(column);
             }
@@ -50976,6 +50976,69 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 form.Grid.AppendColumn(column);
             }
         
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Автор, "Автор"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Автор"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Організація, "Організація"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Організація"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
             //Назва: ТипБухОперації, "Тип бух операції"
             {
                 SignalListItemFactory factory = SignalListItemFactory.New();
@@ -51123,69 +51186,6 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 form.Grid.AppendColumn(column);
             }
         
-            //Назва: Коментар, "Коментар"
-            {
-                SignalListItemFactory factory = SignalListItemFactory.New();
-                factory.OnSetup += (_, args) =>
-                {
-                    ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartCell.NewFromType("string");
-                };
-                factory.OnBind += (_, args) =>
-                {
-                    ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
-                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
-                    if (cell != null && row != null)
-                        cell.SetText(row.Fields["Коментар"]);
-                };
-                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
-                column.Resizable = true;
-                form.Grid.AppendColumn(column);
-            }
-        
-            //Назва: Автор, "Автор"
-            {
-                SignalListItemFactory factory = SignalListItemFactory.New();
-                factory.OnSetup += (_, args) =>
-                {
-                    ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
-                };
-                factory.OnBind += (_, args) =>
-                {
-                    ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
-                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
-                    if (cell != null && row != null)
-                        cell.SetText(row.Fields["Автор"]);
-                };
-                ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
-                column.Resizable = true;
-                form.Grid.AppendColumn(column);
-            }
-        
-            //Назва: Організація, "Організація"
-            {
-                SignalListItemFactory factory = SignalListItemFactory.New();
-                factory.OnSetup += (_, args) =>
-                {
-                    ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
-                };
-                factory.OnBind += (_, args) =>
-                {
-                    ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
-                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
-                    if (cell != null && row != null)
-                        cell.SetText(row.Fields["Організація"]);
-                };
-                ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
-                column.Resizable = true;
-                form.Grid.AppendColumn(column);
-            }
-        
             { /* Пуста колонка для заповнення вільного простору */
                 ColumnViewColumn column = ColumnViewColumn.New(null, null);
                 column.Resizable = true;
@@ -51296,8 +51296,8 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 row.OwnerType = record.OwnerType;
                 row.OwnerName = record.OwnerName;
                 row.OwnerLineNum = record.OwnerLineNum;
-                row.Fields.Add("ВидПроводки", Перелічення.ПсевдонімиПерелічення.ВидиПроводок_Alias(record.ВидПроводки));
                 row.Fields.Add("Рахунок", record.Рахунок.Name);
+                row.Fields.Add("ВидПроводки", Перелічення.ПсевдонімиПерелічення.ВидиПроводок_Alias(record.ВидПроводки));
                 row.Fields.Add("Аналітика1", record.Аналітика1.Name);
                 row.Fields.Add("Аналітика2", record.Аналітика2.Name);
                 row.Fields.Add("Аналітика3", record.Аналітика3.Name);
@@ -51308,6 +51308,9 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 row.Fields.Add("Податок", record.Податок.Name);
                 row.Fields.Add("Журнал", record.Журнал.Name);
                 row.Fields.Add("СумаПодатку", record.СумаПодатку.ToString());
+                row.Fields.Add("Коментар", record.Коментар.ToString());
+                row.Fields.Add("Автор", record.Автор.Name);
+                row.Fields.Add("Організація", record.Організація.Name);
                 row.Fields.Add("ТипБухОперації", record.ТипБухОперації.Name);
                 row.Fields.Add("Валюта", record.Валюта.Name);
                 row.Fields.Add("Сума", record.Сума.ToString());
@@ -51315,9 +51318,6 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 row.Fields.Add("СумаВВалюті", record.СумаВВалюті.ToString());
                 row.Fields.Add("СумаПО", record.СумаПО.ToString());
                 row.Fields.Add("КурсВалюти", record.КурсВалюти.ToString());
-                row.Fields.Add("Коментар", record.Коментар.ToString());
-                row.Fields.Add("Автор", record.Автор.Name);
-                row.Fields.Add("Організація", record.Організація.Name);
                 
                 form.Store.Append(row);
                 if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
@@ -54121,27 +54121,6 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 form.Grid.AppendColumn(column);
             }
   
-            //Назва: ВидПроводки, "Вид"
-            {
-                SignalListItemFactory factory = SignalListItemFactory.New();
-                factory.OnSetup += (_, args) =>
-                {
-                    ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartCell.NewFromType("enum");
-                };
-                factory.OnBind += (_, args) =>
-                {
-                    ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
-                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
-                    if (cell != null && row != null)
-                        cell.SetText(row.Fields["ВидПроводки"]);
-                };
-                ColumnViewColumn column = ColumnViewColumn.New("Вид", factory);
-                column.Resizable = true;
-                form.Grid.AppendColumn(column);
-            }
-        
             //Назва: Рахунок, "Рахунок"
             {
                 SignalListItemFactory factory = SignalListItemFactory.New();
@@ -54159,6 +54138,27 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                         cell.SetText(row.Fields["Рахунок"]);
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Рахунок", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ВидПроводки, "Вид"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("enum");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ВидПроводки"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Вид", factory);
                 column.Resizable = true;
                 form.Grid.AppendColumn(column);
             }
@@ -54373,6 +54373,69 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 form.Grid.AppendColumn(column);
             }
         
+            //Назва: Коментар, "Коментар"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Коментар"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Автор, "Автор"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Автор"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Організація, "Організація"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Організація"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
             //Назва: ТипБухОперації, "Тип бух операції"
             {
                 SignalListItemFactory factory = SignalListItemFactory.New();
@@ -54520,69 +54583,6 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 form.Grid.AppendColumn(column);
             }
         
-            //Назва: Коментар, "Коментар"
-            {
-                SignalListItemFactory factory = SignalListItemFactory.New();
-                factory.OnSetup += (_, args) =>
-                {
-                    ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartCell.NewFromType("string");
-                };
-                factory.OnBind += (_, args) =>
-                {
-                    ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
-                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
-                    if (cell != null && row != null)
-                        cell.SetText(row.Fields["Коментар"]);
-                };
-                ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
-                column.Resizable = true;
-                form.Grid.AppendColumn(column);
-            }
-        
-            //Назва: Автор, "Автор"
-            {
-                SignalListItemFactory factory = SignalListItemFactory.New();
-                factory.OnSetup += (_, args) =>
-                {
-                    ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
-                };
-                factory.OnBind += (_, args) =>
-                {
-                    ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
-                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
-                    if (cell != null && row != null)
-                        cell.SetText(row.Fields["Автор"]);
-                };
-                ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
-                column.Resizable = true;
-                form.Grid.AppendColumn(column);
-            }
-        
-            //Назва: Організація, "Організація"
-            {
-                SignalListItemFactory factory = SignalListItemFactory.New();
-                factory.OnSetup += (_, args) =>
-                {
-                    ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
-                };
-                factory.OnBind += (_, args) =>
-                {
-                    ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
-                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
-                    if (cell != null && row != null)
-                        cell.SetText(row.Fields["Організація"]);
-                };
-                ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
-                column.Resizable = true;
-                form.Grid.AppendColumn(column);
-            }
-        
             { /* Пуста колонка для заповнення вільного простору */
                 ColumnViewColumn column = ColumnViewColumn.New(null, null);
                 column.Resizable = true;
@@ -54622,8 +54622,8 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 row.OwnerType = record.OwnerType;
                 row.OwnerName = record.OwnerName;
                 row.OwnerLineNum = record.OwnerLineNum;
-                row.Fields.Add("ВидПроводки", Перелічення.ПсевдонімиПерелічення.ВидиПроводок_Alias(record.ВидПроводки));
                 row.Fields.Add("Рахунок", record.Рахунок.Name);
+                row.Fields.Add("ВидПроводки", Перелічення.ПсевдонімиПерелічення.ВидиПроводок_Alias(record.ВидПроводки));
                 row.Fields.Add("Аналітика1", record.Аналітика1.Name);
                 row.Fields.Add("Аналітика2", record.Аналітика2.Name);
                 row.Fields.Add("Аналітика3", record.Аналітика3.Name);
@@ -54634,6 +54634,9 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 row.Fields.Add("Податок", record.Податок.Name);
                 row.Fields.Add("Журнал", record.Журнал.Name);
                 row.Fields.Add("СумаПодатку", record.СумаПодатку.ToString());
+                row.Fields.Add("Коментар", record.Коментар.ToString());
+                row.Fields.Add("Автор", record.Автор.Name);
+                row.Fields.Add("Організація", record.Організація.Name);
                 row.Fields.Add("ТипБухОперації", record.ТипБухОперації.Name);
                 row.Fields.Add("Валюта", record.Валюта.Name);
                 row.Fields.Add("Сума", record.Сума.ToString());
@@ -54641,9 +54644,6 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 row.Fields.Add("СумаВВалюті", record.СумаВВалюті.ToString());
                 row.Fields.Add("СумаПО", record.СумаПО.ToString());
                 row.Fields.Add("КурсВалюти", record.КурсВалюти.ToString());
-                row.Fields.Add("Коментар", record.Коментар.ToString());
-                row.Fields.Add("Автор", record.Автор.Name);
-                row.Fields.Add("Організація", record.Організація.Name);
                 
                 form.Store.Append(row);
             }
