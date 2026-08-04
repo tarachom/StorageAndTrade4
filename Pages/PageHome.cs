@@ -53,23 +53,34 @@ partial class PageHome : Form
 
     public async Task SetValue()
     {
-        /*
-        var РахунокКт = await new ПланРахунків_Select().FindByField(ПланРахунків_Const.Код, "201");
+
+        /*var РахунокКт = await new ПланРахунків_Select().FindByField("Код", "201");
         Console.WriteLine(РахунокКт);
 
-        var РахунокКтList = await new ПланРахунків_Select().FindListByField(ПланРахунків_Const.Клас, 0);
+        var РахунокКтList = await new ПланРахунків_Select().FindListByField("Клас", 0);
         Console.WriteLine(РахунокКтList.Count);
         foreach (var item in РахунокКтList)
         {
             Console.WriteLine(item);
         }
 
-        var docs = await new ВиготовленняПродукції_Select().FindListByField(ВиготовленняПродукції_Const.Автор, Program.Користувач.UniqueID.UGuid);
+        var docs = await new ВиготовленняПродукції_Select().FindListByField("Автор", Program.Користувач.UniqueID.UGuid);
         foreach (var item in docs)
         {
             Console.WriteLine(item);
         }
-        */
+
+        Категорії_SelectHierarchical Вибірка = new Категорії_SelectHierarchical();
+        Вибірка.QuerySelect.Field.AddRange("МетодСписання", "СтаттяВитрат", Категорії_Const.Назва);
+        await Вибірка.Select();
+        while (Вибірка.MoveNext())
+        {
+            if (Вибірка.Current != null)
+            {
+                Console.WriteLine(Вибірка.Current + " " + Вибірка.Назва + " " + Вибірка.МетодСписання + " " + Вибірка.СтаттяВитрат);
+            }
+        }*/
+
 
         /*
         var Вибірка = new ВиготовленняПродукції_Select();

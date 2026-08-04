@@ -529,7 +529,7 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
 
                     //Якщо не знайдено, тоді стандарний рахунок
                     if (РахунокКор.IsEmpty())
-                        РахунокКор = await new ПланРахунків_Select().FindByField(ПланРахунків_Const.Код, "26");
+                        РахунокКор = await new ПланРахунків_Select().FindByField("Код", "26");
 
                     await РахунокКор.GetPresentation();
                 }

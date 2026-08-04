@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 03.08.2026 17:00:48
+ * Дата конфігурації: 04.08.2026 08:34:46
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон GeneratedCode.xslt
@@ -2744,7 +2744,7 @@ namespace GeneratedCode.Довідники
     
     public class Організації_Select : DirectorySelect
     {
-        public Організації_Select() : base(Config.Kernel, "tab_a01", Організації_Const.PRESENTATION_FIELDS) { }        
+        public Організації_Select() : base(Config.Kernel, "tab_a01", Організації_Const.TYPE, Організації_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Організації_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -2764,17 +2764,17 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public string Код { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
-        public string НазваПовна { get { var obj = Get("col_a3"); return obj.ToString() ?? ""; } }
-        public string НазваСкорочена { get { var obj = Get("col_a4"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаРеєстрації { get { var obj = Get("col_a5"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string КраїнаРеєстрації { get { var obj = Get("col_a6"); return obj.ToString() ?? ""; } }
-        public string СвідоцтвоСеріяНомер { get { var obj = Get("col_a7"); return obj.ToString() ?? ""; } }
-        public string СвідоцтвоДатаВидачі { get { var obj = Get("col_a8"); return obj.ToString() ?? ""; } }
-        public Довідники.Організації_Pointer Холдинг { get { var obj = Get("col_a9"); return new Довідники.Організації_Pointer(obj); } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_b1"); return obj.ToString() ?? ""; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public string Код { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
+        public string НазваПовна { get { var obj = getValue("col_a3"); return obj.ToString() ?? ""; } }
+        public string НазваСкорочена { get { var obj = getValue("col_a4"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаРеєстрації { get { var obj = getValue("col_a5"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string КраїнаРеєстрації { get { var obj = getValue("col_a6"); return obj.ToString() ?? ""; } }
+        public string СвідоцтвоСеріяНомер { get { var obj = getValue("col_a7"); return obj.ToString() ?? ""; } }
+        public string СвідоцтвоДатаВидачі { get { var obj = getValue("col_a8"); return obj.ToString() ?? ""; } }
+        public Довідники.Організації_Pointer Холдинг { get { var obj = getValue("col_a9"); return new Довідники.Організації_Pointer(obj); } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_b1"); return obj.ToString() ?? ""; } }
         
     }
 
@@ -3160,7 +3160,7 @@ namespace GeneratedCode.Довідники
     
     public class Номенклатура_Select : DirectorySelect
     {
-        public Номенклатура_Select() : base(Config.Kernel, "tab_a03", Номенклатура_Const.PRESENTATION_FIELDS) { }        
+        public Номенклатура_Select() : base(Config.Kernel, "tab_a03", Номенклатура_Const.TYPE, Номенклатура_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Номенклатура_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -3180,19 +3180,19 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_b1"); return obj.ToString() ?? ""; } }
-        public string Код { get { var obj = Get("col_b2"); return obj.ToString() ?? ""; } }
-        public string НазваПовна { get { var obj = Get("col_b4"); return obj.ToString() ?? ""; } }
-        public string Опис { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public string Артикул { get { var obj = Get("col_b3"); return obj.ToString() ?? ""; } }
-        public Перелічення.ТипиНоменклатури ТипНоменклатури { get { var obj = Get("col_b5"); return (obj != DBNull.Value) ? (Перелічення.ТипиНоменклатури)obj : 0; } }
-        public Довідники.Виробники_Pointer Виробник { get { var obj = Get("col_a2"); return new Довідники.Виробники_Pointer(obj); } }
-        public Довідники.ВидиНоменклатури_Pointer ВидНоменклатури { get { var obj = Get("col_a3"); return new Довідники.ВидиНоменклатури_Pointer(obj); } }
-        public Довідники.ПакуванняОдиниціВиміру_Pointer ОдиницяВиміру { get { var obj = Get("col_a4"); return new Довідники.ПакуванняОдиниціВиміру_Pointer(obj); } }
-        public Довідники.Номенклатура_Папки_Pointer Папка { get { var obj = Get("col_a5"); return new Довідники.Номенклатура_Папки_Pointer(obj); } }
-        public Довідники.Файли_Pointer ОсновнаКартинкаФайл { get { var obj = Get("col_a7"); return new Довідники.Файли_Pointer(obj); } }
-        public Довідники.Категорії_Pointer Категорія { get { var obj = Get("col_a6"); return new Довідники.Категорії_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_b1"); return obj.ToString() ?? ""; } }
+        public string Код { get { var obj = getValue("col_b2"); return obj.ToString() ?? ""; } }
+        public string НазваПовна { get { var obj = getValue("col_b4"); return obj.ToString() ?? ""; } }
+        public string Опис { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public string Артикул { get { var obj = getValue("col_b3"); return obj.ToString() ?? ""; } }
+        public Перелічення.ТипиНоменклатури ТипНоменклатури { get { var obj = getValue("col_b5"); return (obj != DBNull.Value) ? (Перелічення.ТипиНоменклатури)obj : 0; } }
+        public Довідники.Виробники_Pointer Виробник { get { var obj = getValue("col_a2"); return new Довідники.Виробники_Pointer(obj); } }
+        public Довідники.ВидиНоменклатури_Pointer ВидНоменклатури { get { var obj = getValue("col_a3"); return new Довідники.ВидиНоменклатури_Pointer(obj); } }
+        public Довідники.ПакуванняОдиниціВиміру_Pointer ОдиницяВиміру { get { var obj = getValue("col_a4"); return new Довідники.ПакуванняОдиниціВиміру_Pointer(obj); } }
+        public Довідники.Номенклатура_Папки_Pointer Папка { get { var obj = getValue("col_a5"); return new Довідники.Номенклатура_Папки_Pointer(obj); } }
+        public Довідники.Файли_Pointer ОсновнаКартинкаФайл { get { var obj = getValue("col_a7"); return new Довідники.Файли_Pointer(obj); } }
+        public Довідники.Категорії_Pointer Категорія { get { var obj = getValue("col_a6"); return new Довідники.Категорії_Pointer(obj); } }
         
     }
 
@@ -3481,7 +3481,7 @@ namespace GeneratedCode.Довідники
     
     public class Виробники_Select : DirectorySelect
     {
-        public Виробники_Select() : base(Config.Kernel, "tab_a04", Виробники_Const.PRESENTATION_FIELDS) { }        
+        public Виробники_Select() : base(Config.Kernel, "tab_a04", Виробники_Const.TYPE, Виробники_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Виробники_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -3501,9 +3501,9 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_b6"); return obj.ToString() ?? ""; } }
-        public string Код { get { var obj = Get("col_b7"); return obj.ToString() ?? ""; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_b6"); return obj.ToString() ?? ""; } }
+        public string Код { get { var obj = getValue("col_b7"); return obj.ToString() ?? ""; } }
         
     }
 
@@ -3661,7 +3661,7 @@ namespace GeneratedCode.Довідники
     
     public class ВидиНоменклатури_Select : DirectorySelect
     {
-        public ВидиНоменклатури_Select() : base(Config.Kernel, "tab_a05", ВидиНоменклатури_Const.PRESENTATION_FIELDS) { }        
+        public ВидиНоменклатури_Select() : base(Config.Kernel, "tab_a05", ВидиНоменклатури_Const.TYPE, ВидиНоменклатури_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВидиНоменклатури_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -3681,12 +3681,12 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_b8"); return obj.ToString() ?? ""; } }
-        public string Код { get { var obj = Get("col_b9"); return obj.ToString() ?? ""; } }
-        public string Опис { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
-        public Перелічення.ТипиНоменклатури ТипНоменклатури { get { var obj = Get("col_a1"); return (obj != DBNull.Value) ? (Перелічення.ТипиНоменклатури)obj : 0; } }
-        public Довідники.ПакуванняОдиниціВиміру_Pointer ОдиницяВиміру { get { var obj = Get("col_a4"); return new Довідники.ПакуванняОдиниціВиміру_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_b8"); return obj.ToString() ?? ""; } }
+        public string Код { get { var obj = getValue("col_b9"); return obj.ToString() ?? ""; } }
+        public string Опис { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
+        public Перелічення.ТипиНоменклатури ТипНоменклатури { get { var obj = getValue("col_a1"); return (obj != DBNull.Value) ? (Перелічення.ТипиНоменклатури)obj : 0; } }
+        public Довідники.ПакуванняОдиниціВиміру_Pointer ОдиницяВиміру { get { var obj = getValue("col_a4"); return new Довідники.ПакуванняОдиниціВиміру_Pointer(obj); } }
         
     }
 
@@ -3841,7 +3841,7 @@ namespace GeneratedCode.Довідники
     
     public class ПакуванняОдиниціВиміру_Select : DirectorySelect
     {
-        public ПакуванняОдиниціВиміру_Select() : base(Config.Kernel, "tab_a06", ПакуванняОдиниціВиміру_Const.PRESENTATION_FIELDS) { }        
+        public ПакуванняОдиниціВиміру_Select() : base(Config.Kernel, "tab_a06", ПакуванняОдиниціВиміру_Const.TYPE, ПакуванняОдиниціВиміру_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПакуванняОдиниціВиміру_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -3861,11 +3861,11 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_c1"); return obj.ToString() ?? ""; } }
-        public string Код { get { var obj = Get("col_c2"); return obj.ToString() ?? ""; } }
-        public string НазваПовна { get { var obj = Get("col_c3"); return obj.ToString() ?? ""; } }
-        public int КількістьУпаковок { get { var obj = Get("col_c4"); return (obj != DBNull.Value) ? (int)obj : 0; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_c1"); return obj.ToString() ?? ""; } }
+        public string Код { get { var obj = getValue("col_c2"); return obj.ToString() ?? ""; } }
+        public string НазваПовна { get { var obj = getValue("col_c3"); return obj.ToString() ?? ""; } }
+        public int КількістьУпаковок { get { var obj = getValue("col_c4"); return (obj != DBNull.Value) ? (int)obj : 0; } }
         
     }
 
@@ -4029,7 +4029,7 @@ namespace GeneratedCode.Довідники
     
     public class Валюти_Select : DirectorySelect
     {
-        public Валюти_Select() : base(Config.Kernel, "tab_a07", Валюти_Const.PRESENTATION_FIELDS) { }        
+        public Валюти_Select() : base(Config.Kernel, "tab_a07", Валюти_Const.TYPE, Валюти_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Валюти_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -4049,12 +4049,12 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_c5"); return obj.ToString() ?? ""; } }
-        public string КороткаНазва { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
-        public string Код { get { var obj = Get("col_c6"); return obj.ToString() ?? ""; } }
-        public string Код_R030 { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public bool ВиводитиКурсНаСтартову { get { var obj = Get("col_a3"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_c5"); return obj.ToString() ?? ""; } }
+        public string КороткаНазва { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
+        public string Код { get { var obj = getValue("col_c6"); return obj.ToString() ?? ""; } }
+        public string Код_R030 { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public bool ВиводитиКурсНаСтартову { get { var obj = getValue("col_a3"); return (obj != DBNull.Value) ? (bool)obj : false; } }
         
     }
 
@@ -4266,7 +4266,7 @@ namespace GeneratedCode.Довідники
     
     public class Контрагенти_Select : DirectorySelect
     {
-        public Контрагенти_Select() : base(Config.Kernel, "tab_a08", Контрагенти_Const.PRESENTATION_FIELDS) { }        
+        public Контрагенти_Select() : base(Config.Kernel, "tab_a08", Контрагенти_Const.TYPE, Контрагенти_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Контрагенти_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -4286,16 +4286,16 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_c7"); return obj.ToString() ?? ""; } }
-        public string Код { get { var obj = Get("col_c8"); return obj.ToString() ?? ""; } }
-        public string НазваПовна { get { var obj = Get("col_c9"); return obj.ToString() ?? ""; } }
-        public string РеєстраційнийНомер { get { var obj = Get("col_d1"); return obj.ToString() ?? ""; } }
-        public Довідники.Контрагенти_Папки_Pointer Папка { get { var obj = Get("col_a1"); return new Довідники.Контрагенти_Папки_Pointer(obj); } }
-        public string Опис { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_a3"); return obj.ToString() ?? ""; } }
-        public bool Постачальник { get { var obj = Get("col_a4"); return (obj != DBNull.Value) ? (bool)obj : false; } }
-        public bool Покупець { get { var obj = Get("col_a5"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_c7"); return obj.ToString() ?? ""; } }
+        public string Код { get { var obj = getValue("col_c8"); return obj.ToString() ?? ""; } }
+        public string НазваПовна { get { var obj = getValue("col_c9"); return obj.ToString() ?? ""; } }
+        public string РеєстраційнийНомер { get { var obj = getValue("col_d1"); return obj.ToString() ?? ""; } }
+        public Довідники.Контрагенти_Папки_Pointer Папка { get { var obj = getValue("col_a1"); return new Довідники.Контрагенти_Папки_Pointer(obj); } }
+        public string Опис { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a3"); return obj.ToString() ?? ""; } }
+        public bool Постачальник { get { var obj = getValue("col_a4"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        public bool Покупець { get { var obj = getValue("col_a5"); return (obj != DBNull.Value) ? (bool)obj : false; } }
         
     }
 
@@ -4806,7 +4806,7 @@ namespace GeneratedCode.Довідники
     
     public class Склади_Select : DirectorySelect
     {
-        public Склади_Select() : base(Config.Kernel, "tab_a10", Склади_Const.PRESENTATION_FIELDS) { }        
+        public Склади_Select() : base(Config.Kernel, "tab_a10", Склади_Const.TYPE, Склади_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Склади_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -4826,17 +4826,17 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_d9"); return obj.ToString() ?? ""; } }
-        public string Код { get { var obj = Get("col_e1"); return obj.ToString() ?? ""; } }
-        public Перелічення.ТипиСкладів ТипСкладу { get { var obj = Get("col_a1"); return (obj != DBNull.Value) ? (Перелічення.ТипиСкладів)obj : 0; } }
-        public Довідники.ФізичніОсоби_Pointer Відповідальний { get { var obj = Get("col_a2"); return new Довідники.ФізичніОсоби_Pointer(obj); } }
-        public Довідники.ВидиЦін_Pointer ВидЦін { get { var obj = Get("col_a3"); return new Довідники.ВидиЦін_Pointer(obj); } }
-        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = Get("col_a4"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
-        public Довідники.Склади_Папки_Pointer Папка { get { var obj = Get("col_a5"); return new Довідники.Склади_Папки_Pointer(obj); } }
-        public Перелічення.НалаштуванняАдресногоЗберігання НалаштуванняАдресногоЗберігання { get { var obj = Get("col_a6"); return (obj != DBNull.Value) ? (Перелічення.НалаштуванняАдресногоЗберігання)obj : 0; } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_a7"); return obj.ToString() ?? ""; } }
-        public Довідники.Категорії_Pointer Категорія { get { var obj = Get("col_a8"); return new Довідники.Категорії_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_d9"); return obj.ToString() ?? ""; } }
+        public string Код { get { var obj = getValue("col_e1"); return obj.ToString() ?? ""; } }
+        public Перелічення.ТипиСкладів ТипСкладу { get { var obj = getValue("col_a1"); return (obj != DBNull.Value) ? (Перелічення.ТипиСкладів)obj : 0; } }
+        public Довідники.ФізичніОсоби_Pointer Відповідальний { get { var obj = getValue("col_a2"); return new Довідники.ФізичніОсоби_Pointer(obj); } }
+        public Довідники.ВидиЦін_Pointer ВидЦін { get { var obj = getValue("col_a3"); return new Довідники.ВидиЦін_Pointer(obj); } }
+        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = getValue("col_a4"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
+        public Довідники.Склади_Папки_Pointer Папка { get { var obj = getValue("col_a5"); return new Довідники.Склади_Папки_Pointer(obj); } }
+        public Перелічення.НалаштуванняАдресногоЗберігання НалаштуванняАдресногоЗберігання { get { var obj = getValue("col_a6"); return (obj != DBNull.Value) ? (Перелічення.НалаштуванняАдресногоЗберігання)obj : 0; } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a7"); return obj.ToString() ?? ""; } }
+        public Довідники.Категорії_Pointer Категорія { get { var obj = getValue("col_a8"); return new Довідники.Категорії_Pointer(obj); } }
         
     }
 
@@ -5150,7 +5150,7 @@ namespace GeneratedCode.Довідники
     
     public class ВидиЦін_Select : DirectorySelect
     {
-        public ВидиЦін_Select() : base(Config.Kernel, "tab_a12", ВидиЦін_Const.PRESENTATION_FIELDS) { }        
+        public ВидиЦін_Select() : base(Config.Kernel, "tab_a12", ВидиЦін_Const.TYPE, ВидиЦін_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВидиЦін_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -5170,10 +5170,10 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_e9"); return obj.ToString() ?? ""; } }
-        public string Код { get { var obj = Get("col_f1"); return obj.ToString() ?? ""; } }
-        public Довідники.Валюти_Pointer Валюта { get { var obj = Get("col_f2"); return new Довідники.Валюти_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_e9"); return obj.ToString() ?? ""; } }
+        public string Код { get { var obj = getValue("col_f1"); return obj.ToString() ?? ""; } }
+        public Довідники.Валюти_Pointer Валюта { get { var obj = getValue("col_f2"); return new Довідники.Валюти_Pointer(obj); } }
         
     }
 
@@ -5321,7 +5321,7 @@ namespace GeneratedCode.Довідники
     
     public class ВидиЦінПостачальників_Select : DirectorySelect
     {
-        public ВидиЦінПостачальників_Select() : base(Config.Kernel, "tab_a13", ВидиЦінПостачальників_Const.PRESENTATION_FIELDS) { }        
+        public ВидиЦінПостачальників_Select() : base(Config.Kernel, "tab_a13", ВидиЦінПостачальників_Const.TYPE, ВидиЦінПостачальників_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВидиЦінПостачальників_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -5341,10 +5341,10 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_f3"); return obj.ToString() ?? ""; } }
-        public string Код { get { var obj = Get("col_f4"); return obj.ToString() ?? ""; } }
-        public Довідники.Валюти_Pointer Валюта { get { var obj = Get("col_f5"); return new Довідники.Валюти_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_f3"); return obj.ToString() ?? ""; } }
+        public string Код { get { var obj = getValue("col_f4"); return obj.ToString() ?? ""; } }
+        public Довідники.Валюти_Pointer Валюта { get { var obj = getValue("col_f5"); return new Довідники.Валюти_Pointer(obj); } }
         
     }
 
@@ -5523,7 +5523,7 @@ namespace GeneratedCode.Довідники
     
     public class Користувачі_Select : DirectorySelect
     {
-        public Користувачі_Select() : base(Config.Kernel, "tab_a14", Користувачі_Const.PRESENTATION_FIELDS) { }        
+        public Користувачі_Select() : base(Config.Kernel, "tab_a14", Користувачі_Const.TYPE, Користувачі_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Користувачі_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -5543,12 +5543,12 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_f6"); return obj.ToString() ?? ""; } }
-        public string Код { get { var obj = Get("col_f7"); return obj.ToString() ?? ""; } }
-        public Довідники.ФізичніОсоби_Pointer ФізичнаОсоба { get { var obj = Get("col_a1"); return new Довідники.ФізичніОсоби_Pointer(obj); } }
-        public string Коментар { get { var obj = Get("col_g6"); return obj.ToString() ?? ""; } }
-        public Guid КодВСпеціальнійТаблиці { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (Guid)obj : Guid.Empty; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_f6"); return obj.ToString() ?? ""; } }
+        public string Код { get { var obj = getValue("col_f7"); return obj.ToString() ?? ""; } }
+        public Довідники.ФізичніОсоби_Pointer ФізичнаОсоба { get { var obj = getValue("col_a1"); return new Довідники.ФізичніОсоби_Pointer(obj); } }
+        public string Коментар { get { var obj = getValue("col_g6"); return obj.ToString() ?? ""; } }
+        public Guid КодВСпеціальнійТаблиці { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (Guid)obj : Guid.Empty; } }
         
     }
 
@@ -5885,7 +5885,7 @@ namespace GeneratedCode.Довідники
     
     public class ФізичніОсоби_Select : DirectorySelect
     {
-        public ФізичніОсоби_Select() : base(Config.Kernel, "tab_a16", ФізичніОсоби_Const.PRESENTATION_FIELDS) { }        
+        public ФізичніОсоби_Select() : base(Config.Kernel, "tab_a16", ФізичніОсоби_Const.TYPE, ФізичніОсоби_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ФізичніОсоби_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -5905,12 +5905,12 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_g7"); return obj.ToString() ?? ""; } }
-        public string Код { get { var obj = Get("col_g8"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаНародження { get { var obj = Get("col_g9"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public Перелічення.СтатьФізичноїОсоби Стать { get { var obj = Get("col_a1"); return (obj != DBNull.Value) ? (Перелічення.СтатьФізичноїОсоби)obj : 0; } }
-        public string ІПН { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_g7"); return obj.ToString() ?? ""; } }
+        public string Код { get { var obj = getValue("col_g8"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаНародження { get { var obj = getValue("col_g9"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public Перелічення.СтатьФізичноїОсоби Стать { get { var obj = getValue("col_a1"); return (obj != DBNull.Value) ? (Перелічення.СтатьФізичноїОсоби)obj : 0; } }
+        public string ІПН { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
         
     }
 
@@ -6239,7 +6239,7 @@ namespace GeneratedCode.Довідники
     
     public class СтруктураПідприємства_Select : DirectorySelect
     {
-        public СтруктураПідприємства_Select() : base(Config.Kernel, "tab_a18", СтруктураПідприємства_Const.PRESENTATION_FIELDS) { }        
+        public СтруктураПідприємства_Select() : base(Config.Kernel, "tab_a18", СтруктураПідприємства_Const.TYPE, СтруктураПідприємства_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СтруктураПідприємства_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -6259,24 +6259,24 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_h8"); return obj.ToString() ?? ""; } }
-        public string Код { get { var obj = Get("col_h9"); return obj.ToString() ?? ""; } }
-        public Довідники.ФізичніОсоби_Pointer Керівник { get { var obj = Get("col_i1"); return new Довідники.ФізичніОсоби_Pointer(obj); } }
-        public Довідники.СтруктураПідприємства_Pointer Родич { get { var obj = Get("col_a1"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
-        public Довідники.Склади_Pointer Склад { get { var obj = Get("col_a2"); return new Довідники.Склади_Pointer(obj); } }
-        public Довідники.Категорії_Pointer Категорія { get { var obj = Get("col_a3"); return new Довідники.Категорії_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_h8"); return obj.ToString() ?? ""; } }
+        public string Код { get { var obj = getValue("col_h9"); return obj.ToString() ?? ""; } }
+        public Довідники.ФізичніОсоби_Pointer Керівник { get { var obj = getValue("col_i1"); return new Довідники.ФізичніОсоби_Pointer(obj); } }
+        public Довідники.СтруктураПідприємства_Pointer Родич { get { var obj = getValue("col_a1"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
+        public Довідники.Склади_Pointer Склад { get { var obj = getValue("col_a2"); return new Довідники.Склади_Pointer(obj); } }
+        public Довідники.Категорії_Pointer Категорія { get { var obj = getValue("col_a3"); return new Довідники.Категорії_Pointer(obj); } }
         
     }
 
     
     public class СтруктураПідприємства_SelectHierarchical : DirectorySelectHierarchical
     {
-        public СтруктураПідприємства_SelectHierarchical() : base(Config.Kernel, "tab_a18", "col_a1", "", СтруктураПідприємства_Const.PRESENTATION_FIELDS) { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public СтруктураПідприємства_SelectHierarchical() : base(Config.Kernel, "tab_a18", СтруктураПідприємства_Const.TYPE, "col_a1", "", СтруктураПідприємства_Const.PRESENTATION_FIELDS) { }        
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPositionHierarchical.HasValue) { 
-          Current = new СтруктураПідприємства_Pointer(base.CurrentPointerPositionHierarchical.Value.UniqueID, base.CurrentPointerPositionHierarchical.Value.Fields); 
+          Current = new СтруктураПідприємства_Pointer(base.CurrentPointerPositionHierarchical.Value.UniqueID, base.CurrentPointerPositionHierarchical.Value.Fields, base.CurrentPointerPresentation); 
           Parent = new СтруктураПідприємства_Pointer(base.CurrentPointerPositionHierarchical.Value.Parent); 
           IsFolder = false;
           Level = base.CurrentPointerPositionHierarchical.Value.Level; return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
@@ -6285,13 +6285,13 @@ namespace GeneratedCode.Довідники
         public int Level { get; private set; } = 0;
         public bool IsFolder { get; private set; }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_h8"); return obj.ToString() ?? ""; } }
-        public string Код { get { var obj = Get("col_h9"); return obj.ToString() ?? ""; } }
-        public Довідники.ФізичніОсоби_Pointer Керівник { get { var obj = Get("col_i1"); return new Довідники.ФізичніОсоби_Pointer(obj); } }
-        public Довідники.СтруктураПідприємства_Pointer Родич { get { var obj = Get("col_a1"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
-        public Довідники.Склади_Pointer Склад { get { var obj = Get("col_a2"); return new Довідники.Склади_Pointer(obj); } }
-        public Довідники.Категорії_Pointer Категорія { get { var obj = Get("col_a3"); return new Довідники.Категорії_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_h8"); return obj.ToString() ?? ""; } }
+        public string Код { get { var obj = getValue("col_h9"); return obj.ToString() ?? ""; } }
+        public Довідники.ФізичніОсоби_Pointer Керівник { get { var obj = getValue("col_i1"); return new Довідники.ФізичніОсоби_Pointer(obj); } }
+        public Довідники.СтруктураПідприємства_Pointer Родич { get { var obj = getValue("col_a1"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
+        public Довідники.Склади_Pointer Склад { get { var obj = getValue("col_a2"); return new Довідники.Склади_Pointer(obj); } }
+        public Довідники.Категорії_Pointer Категорія { get { var obj = getValue("col_a3"); return new Довідники.Категорії_Pointer(obj); } }
         
     }
     
@@ -6433,7 +6433,7 @@ namespace GeneratedCode.Довідники
     
     public class КраїниСвіту_Select : DirectorySelect
     {
-        public КраїниСвіту_Select() : base(Config.Kernel, "tab_a19", КраїниСвіту_Const.PRESENTATION_FIELDS) { }        
+        public КраїниСвіту_Select() : base(Config.Kernel, "tab_a19", КраїниСвіту_Const.TYPE, КраїниСвіту_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new КраїниСвіту_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -6453,9 +6453,9 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_i2"); return obj.ToString() ?? ""; } }
-        public string Код { get { var obj = Get("col_i3"); return obj.ToString() ?? ""; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_i2"); return obj.ToString() ?? ""; } }
+        public string Код { get { var obj = getValue("col_i3"); return obj.ToString() ?? ""; } }
         
     }
 
@@ -6618,7 +6618,7 @@ namespace GeneratedCode.Довідники
     
     public class Файли_Select : DirectorySelect
     {
-        public Файли_Select() : base(Config.Kernel, "tab_a20", Файли_Const.PRESENTATION_FIELDS) { }        
+        public Файли_Select() : base(Config.Kernel, "tab_a20", Файли_Const.TYPE, Файли_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Файли_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -6638,13 +6638,13 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Код { get { var obj = Get("col_i6"); return obj.ToString() ?? ""; } }
-        public string Назва { get { var obj = Get("col_i5"); return obj.ToString() ?? ""; } }
-        public string НазваФайлу { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
-        public byte[] БінарніДані { get { var obj = Get("col_a1"); return (obj != DBNull.Value) ? (byte[])obj : []; } }
-        public string Розмір { get { var obj = Get("col_a3"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаСтворення { get { var obj = Get("col_a4"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Код { get { var obj = getValue("col_i6"); return obj.ToString() ?? ""; } }
+        public string Назва { get { var obj = getValue("col_i5"); return obj.ToString() ?? ""; } }
+        public string НазваФайлу { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
+        public byte[] БінарніДані { get { var obj = getValue("col_a1"); return (obj != DBNull.Value) ? (byte[])obj : []; } }
+        public string Розмір { get { var obj = getValue("col_a3"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаСтворення { get { var obj = getValue("col_a4"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         
     }
 
@@ -6797,7 +6797,7 @@ namespace GeneratedCode.Довідники
     
     public class ХарактеристикиНоменклатури_Select : DirectorySelect
     {
-        public ХарактеристикиНоменклатури_Select() : base(Config.Kernel, "tab_a21", ХарактеристикиНоменклатури_Const.PRESENTATION_FIELDS) { }        
+        public ХарактеристикиНоменклатури_Select() : base(Config.Kernel, "tab_a21", ХарактеристикиНоменклатури_Const.TYPE, ХарактеристикиНоменклатури_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ХарактеристикиНоменклатури_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -6817,11 +6817,11 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_i7"); return obj.ToString() ?? ""; } }
-        public string Код { get { var obj = Get("col_i8"); return obj.ToString() ?? ""; } }
-        public string НазваПовна { get { var obj = Get("col_i9"); return obj.ToString() ?? ""; } }
-        public Довідники.Номенклатура_Pointer Номенклатура { get { var obj = Get("col_a1"); return new Довідники.Номенклатура_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_i7"); return obj.ToString() ?? ""; } }
+        public string Код { get { var obj = getValue("col_i8"); return obj.ToString() ?? ""; } }
+        public string НазваПовна { get { var obj = getValue("col_i9"); return obj.ToString() ?? ""; } }
+        public Довідники.Номенклатура_Pointer Номенклатура { get { var obj = getValue("col_a1"); return new Довідники.Номенклатура_Pointer(obj); } }
         
     }
 
@@ -6975,7 +6975,7 @@ namespace GeneratedCode.Довідники
     
     public class Номенклатура_Папки_Select : DirectorySelect
     {
-        public Номенклатура_Папки_Select() : base(Config.Kernel, "tab_a22", Номенклатура_Папки_Const.PRESENTATION_FIELDS) { }        
+        public Номенклатура_Папки_Select() : base(Config.Kernel, "tab_a22", Номенклатура_Папки_Const.TYPE, Номенклатура_Папки_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Номенклатура_Папки_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -6995,21 +6995,21 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_j1"); return obj.ToString() ?? ""; } }
-        public string Код { get { var obj = Get("col_j2"); return obj.ToString() ?? ""; } }
-        public Довідники.Номенклатура_Папки_Pointer Родич { get { var obj = Get("col_j3"); return new Довідники.Номенклатура_Папки_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_j1"); return obj.ToString() ?? ""; } }
+        public string Код { get { var obj = getValue("col_j2"); return obj.ToString() ?? ""; } }
+        public Довідники.Номенклатура_Папки_Pointer Родич { get { var obj = getValue("col_j3"); return new Довідники.Номенклатура_Папки_Pointer(obj); } }
         
     }
 
     
     public class Номенклатура_Папки_SelectHierarchical : DirectorySelectHierarchical
     {
-        public Номенклатура_Папки_SelectHierarchical() : base(Config.Kernel, "tab_a22", "col_j3", "", Номенклатура_Папки_Const.PRESENTATION_FIELDS) { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public Номенклатура_Папки_SelectHierarchical() : base(Config.Kernel, "tab_a22", Номенклатура_Папки_Const.TYPE, "col_j3", "", Номенклатура_Папки_Const.PRESENTATION_FIELDS) { }        
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPositionHierarchical.HasValue) { 
-          Current = new Номенклатура_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.UniqueID, base.CurrentPointerPositionHierarchical.Value.Fields); 
+          Current = new Номенклатура_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.UniqueID, base.CurrentPointerPositionHierarchical.Value.Fields, base.CurrentPointerPresentation); 
           Parent = new Номенклатура_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.Parent); 
           IsFolder = true;
           Level = base.CurrentPointerPositionHierarchical.Value.Level; return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
@@ -7018,10 +7018,10 @@ namespace GeneratedCode.Довідники
         public int Level { get; private set; } = 0;
         public bool IsFolder { get; private set; }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_j1"); return obj.ToString() ?? ""; } }
-        public string Код { get { var obj = Get("col_j2"); return obj.ToString() ?? ""; } }
-        public Довідники.Номенклатура_Папки_Pointer Родич { get { var obj = Get("col_j3"); return new Довідники.Номенклатура_Папки_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_j1"); return obj.ToString() ?? ""; } }
+        public string Код { get { var obj = getValue("col_j2"); return obj.ToString() ?? ""; } }
+        public Довідники.Номенклатура_Папки_Pointer Родич { get { var obj = getValue("col_j3"); return new Довідники.Номенклатура_Папки_Pointer(obj); } }
         
     }
     
@@ -7174,7 +7174,7 @@ namespace GeneratedCode.Довідники
     
     public class Контрагенти_Папки_Select : DirectorySelect
     {
-        public Контрагенти_Папки_Select() : base(Config.Kernel, "tab_a23", Контрагенти_Папки_Const.PRESENTATION_FIELDS) { }        
+        public Контрагенти_Папки_Select() : base(Config.Kernel, "tab_a23", Контрагенти_Папки_Const.TYPE, Контрагенти_Папки_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Контрагенти_Папки_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -7194,21 +7194,21 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_j4"); return obj.ToString() ?? ""; } }
-        public string Код { get { var obj = Get("col_j5"); return obj.ToString() ?? ""; } }
-        public Довідники.Контрагенти_Папки_Pointer Родич { get { var obj = Get("col_j6"); return new Довідники.Контрагенти_Папки_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_j4"); return obj.ToString() ?? ""; } }
+        public string Код { get { var obj = getValue("col_j5"); return obj.ToString() ?? ""; } }
+        public Довідники.Контрагенти_Папки_Pointer Родич { get { var obj = getValue("col_j6"); return new Довідники.Контрагенти_Папки_Pointer(obj); } }
         
     }
 
     
     public class Контрагенти_Папки_SelectHierarchical : DirectorySelectHierarchical
     {
-        public Контрагенти_Папки_SelectHierarchical() : base(Config.Kernel, "tab_a23", "col_j6", "", Контрагенти_Папки_Const.PRESENTATION_FIELDS) { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public Контрагенти_Папки_SelectHierarchical() : base(Config.Kernel, "tab_a23", Контрагенти_Папки_Const.TYPE, "col_j6", "", Контрагенти_Папки_Const.PRESENTATION_FIELDS) { }        
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPositionHierarchical.HasValue) { 
-          Current = new Контрагенти_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.UniqueID, base.CurrentPointerPositionHierarchical.Value.Fields); 
+          Current = new Контрагенти_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.UniqueID, base.CurrentPointerPositionHierarchical.Value.Fields, base.CurrentPointerPresentation); 
           Parent = new Контрагенти_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.Parent); 
           IsFolder = true;
           Level = base.CurrentPointerPositionHierarchical.Value.Level; return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
@@ -7217,10 +7217,10 @@ namespace GeneratedCode.Довідники
         public int Level { get; private set; } = 0;
         public bool IsFolder { get; private set; }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_j4"); return obj.ToString() ?? ""; } }
-        public string Код { get { var obj = Get("col_j5"); return obj.ToString() ?? ""; } }
-        public Довідники.Контрагенти_Папки_Pointer Родич { get { var obj = Get("col_j6"); return new Довідники.Контрагенти_Папки_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_j4"); return obj.ToString() ?? ""; } }
+        public string Код { get { var obj = getValue("col_j5"); return obj.ToString() ?? ""; } }
+        public Довідники.Контрагенти_Папки_Pointer Родич { get { var obj = getValue("col_j6"); return new Довідники.Контрагенти_Папки_Pointer(obj); } }
         
     }
     
@@ -7373,7 +7373,7 @@ namespace GeneratedCode.Довідники
     
     public class Склади_Папки_Select : DirectorySelect
     {
-        public Склади_Папки_Select() : base(Config.Kernel, "tab_a24", Склади_Папки_Const.PRESENTATION_FIELDS) { }        
+        public Склади_Папки_Select() : base(Config.Kernel, "tab_a24", Склади_Папки_Const.TYPE, Склади_Папки_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Склади_Папки_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -7393,21 +7393,21 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_j7"); return obj.ToString() ?? ""; } }
-        public string Код { get { var obj = Get("col_j8"); return obj.ToString() ?? ""; } }
-        public Довідники.Склади_Папки_Pointer Родич { get { var obj = Get("col_a1"); return new Довідники.Склади_Папки_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_j7"); return obj.ToString() ?? ""; } }
+        public string Код { get { var obj = getValue("col_j8"); return obj.ToString() ?? ""; } }
+        public Довідники.Склади_Папки_Pointer Родич { get { var obj = getValue("col_a1"); return new Довідники.Склади_Папки_Pointer(obj); } }
         
     }
 
     
     public class Склади_Папки_SelectHierarchical : DirectorySelectHierarchical
     {
-        public Склади_Папки_SelectHierarchical() : base(Config.Kernel, "tab_a24", "col_a1", "", Склади_Папки_Const.PRESENTATION_FIELDS) { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public Склади_Папки_SelectHierarchical() : base(Config.Kernel, "tab_a24", Склади_Папки_Const.TYPE, "col_a1", "", Склади_Папки_Const.PRESENTATION_FIELDS) { }        
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPositionHierarchical.HasValue) { 
-          Current = new Склади_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.UniqueID, base.CurrentPointerPositionHierarchical.Value.Fields); 
+          Current = new Склади_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.UniqueID, base.CurrentPointerPositionHierarchical.Value.Fields, base.CurrentPointerPresentation); 
           Parent = new Склади_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.Parent); 
           IsFolder = true;
           Level = base.CurrentPointerPositionHierarchical.Value.Level; return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
@@ -7416,10 +7416,10 @@ namespace GeneratedCode.Довідники
         public int Level { get; private set; } = 0;
         public bool IsFolder { get; private set; }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_j7"); return obj.ToString() ?? ""; } }
-        public string Код { get { var obj = Get("col_j8"); return obj.ToString() ?? ""; } }
-        public Довідники.Склади_Папки_Pointer Родич { get { var obj = Get("col_a1"); return new Довідники.Склади_Папки_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_j7"); return obj.ToString() ?? ""; } }
+        public string Код { get { var obj = getValue("col_j8"); return obj.ToString() ?? ""; } }
+        public Довідники.Склади_Папки_Pointer Родич { get { var obj = getValue("col_a1"); return new Довідники.Склади_Папки_Pointer(obj); } }
         
     }
     
@@ -7571,7 +7571,7 @@ namespace GeneratedCode.Довідники
     
     public class Каси_Select : DirectorySelect
     {
-        public Каси_Select() : base(Config.Kernel, "tab_a26", Каси_Const.PRESENTATION_FIELDS) { }        
+        public Каси_Select() : base(Config.Kernel, "tab_a26", Каси_Const.TYPE, Каси_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Каси_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -7591,11 +7591,11 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_k8"); return obj.ToString() ?? ""; } }
-        public string Код { get { var obj = Get("col_k9"); return obj.ToString() ?? ""; } }
-        public Довідники.Валюти_Pointer Валюта { get { var obj = Get("col_a2"); return new Довідники.Валюти_Pointer(obj); } }
-        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = Get("col_a1"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_k8"); return obj.ToString() ?? ""; } }
+        public string Код { get { var obj = getValue("col_k9"); return obj.ToString() ?? ""; } }
+        public Довідники.Валюти_Pointer Валюта { get { var obj = getValue("col_a2"); return new Довідники.Валюти_Pointer(obj); } }
+        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = getValue("col_a1"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
         
     }
 
@@ -7763,7 +7763,7 @@ namespace GeneratedCode.Довідники
     
     public class БанківськіРахункиОрганізацій_Select : DirectorySelect
     {
-        public БанківськіРахункиОрганізацій_Select() : base(Config.Kernel, "tab_a27", БанківськіРахункиОрганізацій_Const.PRESENTATION_FIELDS) { }        
+        public БанківськіРахункиОрганізацій_Select() : base(Config.Kernel, "tab_a27", БанківськіРахункиОрганізацій_Const.TYPE, БанківськіРахункиОрганізацій_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new БанківськіРахункиОрганізацій_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -7783,14 +7783,14 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_l1"); return obj.ToString() ?? ""; } }
-        public string Код { get { var obj = Get("col_l2"); return obj.ToString() ?? ""; } }
-        public Довідники.Валюти_Pointer Валюта { get { var obj = Get("col_l3"); return new Довідники.Валюти_Pointer(obj); } }
-        public Довідники.Банки_Pointer Банк { get { var obj = Get("col_l4"); return new Довідники.Банки_Pointer(obj); } }
-        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = Get("col_l5"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
-        public string НомерРахунку { get { var obj = Get("col_l7"); return obj.ToString() ?? ""; } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_a1"); return new Довідники.Організації_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_l1"); return obj.ToString() ?? ""; } }
+        public string Код { get { var obj = getValue("col_l2"); return obj.ToString() ?? ""; } }
+        public Довідники.Валюти_Pointer Валюта { get { var obj = getValue("col_l3"); return new Довідники.Валюти_Pointer(obj); } }
+        public Довідники.Банки_Pointer Банк { get { var obj = getValue("col_l4"); return new Довідники.Банки_Pointer(obj); } }
+        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = getValue("col_l5"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
+        public string НомерРахунку { get { var obj = getValue("col_l7"); return obj.ToString() ?? ""; } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_a1"); return new Довідники.Організації_Pointer(obj); } }
         
     }
 
@@ -8025,7 +8025,7 @@ namespace GeneratedCode.Довідники
     
     public class ДоговориКонтрагентів_Select : DirectorySelect
     {
-        public ДоговориКонтрагентів_Select() : base(Config.Kernel, "tab_a28", ДоговориКонтрагентів_Const.PRESENTATION_FIELDS) { }        
+        public ДоговориКонтрагентів_Select() : base(Config.Kernel, "tab_a28", ДоговориКонтрагентів_Const.TYPE, ДоговориКонтрагентів_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ДоговориКонтрагентів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -8045,27 +8045,27 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_n4"); return obj.ToString() ?? ""; } }
-        public string Код { get { var obj = Get("col_n5"); return obj.ToString() ?? ""; } }
-        public Довідники.БанківськіРахункиОрганізацій_Pointer БанківськийРахунок { get { var obj = Get("col_n6"); return new Довідники.БанківськіРахункиОрганізацій_Pointer(obj); } }
-        public Довідники.БанківськіРахункиКонтрагентів_Pointer БанківськийРахунокКонтрагента { get { var obj = Get("col_a1"); return new Довідники.БанківськіРахункиКонтрагентів_Pointer(obj); } }
-        public Довідники.Валюти_Pointer ВалютаВзаєморозрахунків { get { var obj = Get("col_a2"); return new Довідники.Валюти_Pointer(obj); } }
-        public DateTime ДатаПочаткуДії { get { var obj = Get("col_a4"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public DateTime ДатаЗакінченняДії { get { var obj = Get("col_a5"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_a6"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = Get("col_a7"); return new Довідники.Контрагенти_Pointer(obj); } }
-        public DateTime Дата { get { var obj = Get("col_a8"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Номер { get { var obj = Get("col_a9"); return obj.ToString() ?? ""; } }
-        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = Get("col_b1"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
-        public bool Узгоджений { get { var obj = Get("col_b2"); return (obj != DBNull.Value) ? (bool)obj : false; } }
-        public Перелічення.СтатусиДоговорівКонтрагентів Статус { get { var obj = Get("col_b3"); return (obj != DBNull.Value) ? (Перелічення.СтатусиДоговорівКонтрагентів)obj : 0; } }
-        public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = Get("col_b4"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
-        public Перелічення.ТипДоговорів ТипДоговору { get { var obj = Get("col_b5"); return (obj != DBNull.Value) ? (Перелічення.ТипДоговорів)obj : 0; } }
-        public string ТипДоговоруПредставлення { get { var obj = Get("col_b8"); return obj.ToString() ?? ""; } }
-        public decimal ДопустимаСумаЗаборгованості { get { var obj = Get("col_b6"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public decimal Сума { get { var obj = Get("col_b7"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public string Коментар { get { var obj = Get("col_a3"); return obj.ToString() ?? ""; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_n4"); return obj.ToString() ?? ""; } }
+        public string Код { get { var obj = getValue("col_n5"); return obj.ToString() ?? ""; } }
+        public Довідники.БанківськіРахункиОрганізацій_Pointer БанківськийРахунок { get { var obj = getValue("col_n6"); return new Довідники.БанківськіРахункиОрганізацій_Pointer(obj); } }
+        public Довідники.БанківськіРахункиКонтрагентів_Pointer БанківськийРахунокКонтрагента { get { var obj = getValue("col_a1"); return new Довідники.БанківськіРахункиКонтрагентів_Pointer(obj); } }
+        public Довідники.Валюти_Pointer ВалютаВзаєморозрахунків { get { var obj = getValue("col_a2"); return new Довідники.Валюти_Pointer(obj); } }
+        public DateTime ДатаПочаткуДії { get { var obj = getValue("col_a4"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public DateTime ДатаЗакінченняДії { get { var obj = getValue("col_a5"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_a6"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = getValue("col_a7"); return new Довідники.Контрагенти_Pointer(obj); } }
+        public DateTime Дата { get { var obj = getValue("col_a8"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Номер { get { var obj = getValue("col_a9"); return obj.ToString() ?? ""; } }
+        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = getValue("col_b1"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
+        public bool Узгоджений { get { var obj = getValue("col_b2"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        public Перелічення.СтатусиДоговорівКонтрагентів Статус { get { var obj = getValue("col_b3"); return (obj != DBNull.Value) ? (Перелічення.СтатусиДоговорівКонтрагентів)obj : 0; } }
+        public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = getValue("col_b4"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
+        public Перелічення.ТипДоговорів ТипДоговору { get { var obj = getValue("col_b5"); return (obj != DBNull.Value) ? (Перелічення.ТипДоговорів)obj : 0; } }
+        public string ТипДоговоруПредставлення { get { var obj = getValue("col_b8"); return obj.ToString() ?? ""; } }
+        public decimal ДопустимаСумаЗаборгованості { get { var obj = getValue("col_b6"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public decimal Сума { get { var obj = getValue("col_b7"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public string Коментар { get { var obj = getValue("col_a3"); return obj.ToString() ?? ""; } }
         
     }
 
@@ -8228,7 +8228,7 @@ namespace GeneratedCode.Довідники
     
     public class БанківськіРахункиКонтрагентів_Select : DirectorySelect
     {
-        public БанківськіРахункиКонтрагентів_Select() : base(Config.Kernel, "tab_a29", БанківськіРахункиКонтрагентів_Const.PRESENTATION_FIELDS) { }        
+        public БанківськіРахункиКонтрагентів_Select() : base(Config.Kernel, "tab_a29", БанківськіРахункиКонтрагентів_Const.TYPE, БанківськіРахункиКонтрагентів_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new БанківськіРахункиКонтрагентів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -8248,13 +8248,13 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_n7"); return obj.ToString() ?? ""; } }
-        public string Код { get { var obj = Get("col_n8"); return obj.ToString() ?? ""; } }
-        public string НомерРахунку { get { var obj = Get("col_n9"); return obj.ToString() ?? ""; } }
-        public Довідники.Банки_Pointer Банк { get { var obj = Get("col_m1"); return new Довідники.Банки_Pointer(obj); } }
-        public Довідники.Валюти_Pointer Валюта { get { var obj = Get("col_m5"); return new Довідники.Валюти_Pointer(obj); } }
-        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = Get("col_o3"); return new Довідники.Контрагенти_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_n7"); return obj.ToString() ?? ""; } }
+        public string Код { get { var obj = getValue("col_n8"); return obj.ToString() ?? ""; } }
+        public string НомерРахунку { get { var obj = getValue("col_n9"); return obj.ToString() ?? ""; } }
+        public Довідники.Банки_Pointer Банк { get { var obj = getValue("col_m1"); return new Довідники.Банки_Pointer(obj); } }
+        public Довідники.Валюти_Pointer Валюта { get { var obj = getValue("col_m5"); return new Довідники.Валюти_Pointer(obj); } }
+        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = getValue("col_o3"); return new Довідники.Контрагенти_Pointer(obj); } }
         
     }
 
@@ -8433,7 +8433,7 @@ namespace GeneratedCode.Довідники
     
     public class СтаттяРухуКоштів_Select : DirectorySelect
     {
-        public СтаттяРухуКоштів_Select() : base(Config.Kernel, "tab_a45", СтаттяРухуКоштів_Const.PRESENTATION_FIELDS) { }        
+        public СтаттяРухуКоштів_Select() : base(Config.Kernel, "tab_a45", СтаттяРухуКоштів_Const.TYPE, СтаттяРухуКоштів_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СтаттяРухуКоштів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -8453,12 +8453,12 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_i7"); return obj.ToString() ?? ""; } }
-        public string Код { get { var obj = Get("col_i8"); return obj.ToString() ?? ""; } }
-        public string КореспондуючийРахунок { get { var obj = Get("col_i9"); return obj.ToString() ?? ""; } }
-        public Перелічення.ВидиРухуКоштів ВидРухуКоштів { get { var obj = Get("col_j2"); return (obj != DBNull.Value) ? (Перелічення.ВидиРухуКоштів)obj : 0; } }
-        public string Опис { get { var obj = Get("col_j1"); return obj.ToString() ?? ""; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_i7"); return obj.ToString() ?? ""; } }
+        public string Код { get { var obj = getValue("col_i8"); return obj.ToString() ?? ""; } }
+        public string КореспондуючийРахунок { get { var obj = getValue("col_i9"); return obj.ToString() ?? ""; } }
+        public Перелічення.ВидиРухуКоштів ВидРухуКоштів { get { var obj = getValue("col_j2"); return (obj != DBNull.Value) ? (Перелічення.ВидиРухуКоштів)obj : 0; } }
+        public string Опис { get { var obj = getValue("col_j1"); return obj.ToString() ?? ""; } }
         
     }
 
@@ -8714,7 +8714,7 @@ namespace GeneratedCode.Довідники
     
     public class СеріїНоменклатури_Select : DirectorySelect
     {
-        public СеріїНоменклатури_Select() : base(Config.Kernel, "tab_b02", СеріїНоменклатури_Const.PRESENTATION_FIELDS) { }        
+        public СеріїНоменклатури_Select() : base(Config.Kernel, "tab_b02", СеріїНоменклатури_Const.TYPE, СеріїНоменклатури_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СеріїНоменклатури_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -8734,10 +8734,10 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Номер { get { var obj = Get("col_a3"); return obj.ToString() ?? ""; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаСтворення { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Номер { get { var obj = getValue("col_a3"); return obj.ToString() ?? ""; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаСтворення { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         
     }
 
@@ -8898,7 +8898,7 @@ namespace GeneratedCode.Довідники
     
     public class ПартіяТоварівКомпозит_Select : DirectorySelect
     {
-        public ПартіяТоварівКомпозит_Select() : base(Config.Kernel, "tab_b06", ПартіяТоварівКомпозит_Const.PRESENTATION_FIELDS) { }        
+        public ПартіяТоварівКомпозит_Select() : base(Config.Kernel, "tab_b06", ПартіяТоварівКомпозит_Const.TYPE, ПартіяТоварівКомпозит_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПартіяТоварівКомпозит_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -8918,13 +8918,13 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public DateTime Дата { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public Перелічення.ТипДокументуПартіяТоварівКомпозит ТипДокументу { get { var obj = Get("col_a3"); return (obj != DBNull.Value) ? (Перелічення.ТипДокументуПартіяТоварівКомпозит)obj : 0; } }
-        public Guid ДокументКлюч { get { var obj = Get("col_a6"); return (obj != DBNull.Value) ? (Guid)obj : Guid.Empty; } }
-        public Документи.ПоступленняТоварівТаПослуг_Pointer ПоступленняТоварівТаПослуг { get { var obj = Get("col_a4"); return new Документи.ПоступленняТоварівТаПослуг_Pointer(obj); } }
-        public Документи.ВведенняЗалишків_Pointer ВведенняЗалишків { get { var obj = Get("col_a5"); return new Документи.ВведенняЗалишків_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public DateTime Дата { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public Перелічення.ТипДокументуПартіяТоварівКомпозит ТипДокументу { get { var obj = getValue("col_a3"); return (obj != DBNull.Value) ? (Перелічення.ТипДокументуПартіяТоварівКомпозит)obj : 0; } }
+        public Guid ДокументКлюч { get { var obj = getValue("col_a6"); return (obj != DBNull.Value) ? (Guid)obj : Guid.Empty; } }
+        public Документи.ПоступленняТоварівТаПослуг_Pointer ПоступленняТоварівТаПослуг { get { var obj = getValue("col_a4"); return new Документи.ПоступленняТоварівТаПослуг_Pointer(obj); } }
+        public Документи.ВведенняЗалишків_Pointer ВведенняЗалишків { get { var obj = getValue("col_a5"); return new Документи.ВведенняЗалишків_Pointer(obj); } }
         
     }
 
@@ -9092,7 +9092,7 @@ namespace GeneratedCode.Довідники
     
     public class ВидиЗапасів_Select : DirectorySelect
     {
-        public ВидиЗапасів_Select() : base(Config.Kernel, "tab_b13", ВидиЗапасів_Const.PRESENTATION_FIELDS) { }        
+        public ВидиЗапасів_Select() : base(Config.Kernel, "tab_b13", ВидиЗапасів_Const.TYPE, ВидиЗапасів_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВидиЗапасів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -9112,14 +9112,14 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_a5"); return obj.ToString() ?? ""; } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_b3"); return new Довідники.Організації_Pointer(obj); } }
-        public Перелічення.ТипЗапасів ТипЗапасів { get { var obj = Get("col_a7"); return (obj != DBNull.Value) ? (Перелічення.ТипЗапасів)obj : 0; } }
-        public Довідники.Валюти_Pointer Валюта { get { var obj = Get("col_a9"); return new Довідники.Валюти_Pointer(obj); } }
-        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = Get("col_b1"); return new Довідники.Контрагенти_Pointer(obj); } }
-        public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = Get("col_b2"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
-        public string Код { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_a5"); return obj.ToString() ?? ""; } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_b3"); return new Довідники.Організації_Pointer(obj); } }
+        public Перелічення.ТипЗапасів ТипЗапасів { get { var obj = getValue("col_a7"); return (obj != DBNull.Value) ? (Перелічення.ТипЗапасів)obj : 0; } }
+        public Довідники.Валюти_Pointer Валюта { get { var obj = getValue("col_a9"); return new Довідники.Валюти_Pointer(obj); } }
+        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = getValue("col_b1"); return new Довідники.Контрагенти_Pointer(obj); } }
+        public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = getValue("col_b2"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
+        public string Код { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
         
     }
 
@@ -9392,7 +9392,7 @@ namespace GeneratedCode.Довідники
     
     public class Банки_Select : DirectorySelect
     {
-        public Банки_Select() : base(Config.Kernel, "tab_a39", Банки_Const.PRESENTATION_FIELDS) { }        
+        public Банки_Select() : base(Config.Kernel, "tab_a39", Банки_Const.TYPE, Банки_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Банки_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -9412,35 +9412,35 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Код { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public string Назва { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
-        public string ТипНаселеногоПункту { get { var obj = Get("col_b4"); return obj.ToString() ?? ""; } }
-        public string КодМФО { get { var obj = Get("col_a3"); return obj.ToString() ?? ""; } }
-        public string НазваГоловноїУстановиАнг { get { var obj = Get("col_a4"); return obj.ToString() ?? ""; } }
-        public string КодЄДРПОУ { get { var obj = Get("col_a5"); return obj.ToString() ?? ""; } }
-        public string ПовнаНазва { get { var obj = Get("col_a6"); return obj.ToString() ?? ""; } }
-        public string УнікальнийКодБанку { get { var obj = Get("col_a7"); return obj.ToString() ?? ""; } }
-        public string КодОбластіОпераційноїДіяльності { get { var obj = Get("col_a8"); return obj.ToString() ?? ""; } }
-        public string НазваОбластіОпераційноїДіяльності { get { var obj = Get("col_a9"); return obj.ToString() ?? ""; } }
-        public string КодОбластіЗгідноСтатуту { get { var obj = Get("col_b1"); return obj.ToString() ?? ""; } }
-        public string НазваОбластіЗгідноСтатуту { get { var obj = Get("col_b2"); return obj.ToString() ?? ""; } }
-        public string ПоштовийІндекс { get { var obj = Get("col_b3"); return obj.ToString() ?? ""; } }
-        public string НазваНаселеногоПункту { get { var obj = Get("col_b5"); return obj.ToString() ?? ""; } }
-        public string Адреса { get { var obj = Get("col_b6"); return obj.ToString() ?? ""; } }
-        public string КодТелефонногоЗвязку { get { var obj = Get("col_b7"); return obj.ToString() ?? ""; } }
-        public string НомерТелефону { get { var obj = Get("col_b8"); return obj.ToString() ?? ""; } }
-        public string ЧисловийКодСтануУстанови { get { var obj = Get("col_b9"); return obj.ToString() ?? ""; } }
-        public string НазваСтануУстанови { get { var obj = Get("col_c1"); return obj.ToString() ?? ""; } }
-        public string ДатаЗміниСтану { get { var obj = Get("col_c2"); return obj.ToString() ?? ""; } }
-        public string ДатаВідкриттяУстанови { get { var obj = Get("col_c3"); return obj.ToString() ?? ""; } }
-        public string ДатаЗакриттяУстанови { get { var obj = Get("col_c4"); return obj.ToString() ?? ""; } }
-        public string КодНБУ { get { var obj = Get("col_c5"); return obj.ToString() ?? ""; } }
-        public string НомерЛіцензії { get { var obj = Get("col_c6"); return obj.ToString() ?? ""; } }
-        public string ДатаЛіцензії { get { var obj = Get("col_c7"); return obj.ToString() ?? ""; } }
-        public string КодСтатусу { get { var obj = Get("col_c8"); return obj.ToString() ?? ""; } }
-        public string Статус { get { var obj = Get("col_c9"); return obj.ToString() ?? ""; } }
-        public string ДатаЗапису { get { var obj = Get("col_d1"); return obj.ToString() ?? ""; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Код { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public string Назва { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
+        public string ТипНаселеногоПункту { get { var obj = getValue("col_b4"); return obj.ToString() ?? ""; } }
+        public string КодМФО { get { var obj = getValue("col_a3"); return obj.ToString() ?? ""; } }
+        public string НазваГоловноїУстановиАнг { get { var obj = getValue("col_a4"); return obj.ToString() ?? ""; } }
+        public string КодЄДРПОУ { get { var obj = getValue("col_a5"); return obj.ToString() ?? ""; } }
+        public string ПовнаНазва { get { var obj = getValue("col_a6"); return obj.ToString() ?? ""; } }
+        public string УнікальнийКодБанку { get { var obj = getValue("col_a7"); return obj.ToString() ?? ""; } }
+        public string КодОбластіОпераційноїДіяльності { get { var obj = getValue("col_a8"); return obj.ToString() ?? ""; } }
+        public string НазваОбластіОпераційноїДіяльності { get { var obj = getValue("col_a9"); return obj.ToString() ?? ""; } }
+        public string КодОбластіЗгідноСтатуту { get { var obj = getValue("col_b1"); return obj.ToString() ?? ""; } }
+        public string НазваОбластіЗгідноСтатуту { get { var obj = getValue("col_b2"); return obj.ToString() ?? ""; } }
+        public string ПоштовийІндекс { get { var obj = getValue("col_b3"); return obj.ToString() ?? ""; } }
+        public string НазваНаселеногоПункту { get { var obj = getValue("col_b5"); return obj.ToString() ?? ""; } }
+        public string Адреса { get { var obj = getValue("col_b6"); return obj.ToString() ?? ""; } }
+        public string КодТелефонногоЗвязку { get { var obj = getValue("col_b7"); return obj.ToString() ?? ""; } }
+        public string НомерТелефону { get { var obj = getValue("col_b8"); return obj.ToString() ?? ""; } }
+        public string ЧисловийКодСтануУстанови { get { var obj = getValue("col_b9"); return obj.ToString() ?? ""; } }
+        public string НазваСтануУстанови { get { var obj = getValue("col_c1"); return obj.ToString() ?? ""; } }
+        public string ДатаЗміниСтану { get { var obj = getValue("col_c2"); return obj.ToString() ?? ""; } }
+        public string ДатаВідкриттяУстанови { get { var obj = getValue("col_c3"); return obj.ToString() ?? ""; } }
+        public string ДатаЗакриттяУстанови { get { var obj = getValue("col_c4"); return obj.ToString() ?? ""; } }
+        public string КодНБУ { get { var obj = getValue("col_c5"); return obj.ToString() ?? ""; } }
+        public string НомерЛіцензії { get { var obj = getValue("col_c6"); return obj.ToString() ?? ""; } }
+        public string ДатаЛіцензії { get { var obj = getValue("col_c7"); return obj.ToString() ?? ""; } }
+        public string КодСтатусу { get { var obj = getValue("col_c8"); return obj.ToString() ?? ""; } }
+        public string Статус { get { var obj = getValue("col_c9"); return obj.ToString() ?? ""; } }
+        public string ДатаЗапису { get { var obj = getValue("col_d1"); return obj.ToString() ?? ""; } }
         
     }
 
@@ -9588,7 +9588,7 @@ namespace GeneratedCode.Довідники
     
     public class СкладськіПриміщення_Select : DirectorySelect
     {
-        public СкладськіПриміщення_Select() : base(Config.Kernel, "tab_a71", СкладськіПриміщення_Const.PRESENTATION_FIELDS) { }        
+        public СкладськіПриміщення_Select() : base(Config.Kernel, "tab_a71", СкладськіПриміщення_Const.TYPE, СкладськіПриміщення_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СкладськіПриміщення_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -9608,10 +9608,10 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
-        public Перелічення.НалаштуванняАдресногоЗберігання НалаштуванняАдресногоЗберігання { get { var obj = Get("col_a3"); return (obj != DBNull.Value) ? (Перелічення.НалаштуванняАдресногоЗберігання)obj : 0; } }
-        public Довідники.Склади_Pointer Склад { get { var obj = Get("col_a1"); return new Довідники.Склади_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
+        public Перелічення.НалаштуванняАдресногоЗберігання НалаштуванняАдресногоЗберігання { get { var obj = getValue("col_a3"); return (obj != DBNull.Value) ? (Перелічення.НалаштуванняАдресногоЗберігання)obj : 0; } }
+        public Довідники.Склади_Pointer Склад { get { var obj = getValue("col_a1"); return new Довідники.Склади_Pointer(obj); } }
         
     }
 
@@ -9794,7 +9794,7 @@ namespace GeneratedCode.Довідники
     
     public class СкладськіКомірки_Select : DirectorySelect
     {
-        public СкладськіКомірки_Select() : base(Config.Kernel, "tab_a72", СкладськіКомірки_Const.PRESENTATION_FIELDS) { }        
+        public СкладськіКомірки_Select() : base(Config.Kernel, "tab_a72", СкладськіКомірки_Const.TYPE, СкладськіКомірки_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СкладськіКомірки_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -9814,17 +9814,17 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public Довідники.СкладськіКомірки_Папки_Pointer Папка { get { var obj = Get("col_a1"); return new Довідники.СкладськіКомірки_Папки_Pointer(obj); } }
-        public string Назва { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
-        public Довідники.ОбластьЗберігання_Pointer ОбластьЗберігання { get { var obj = Get("col_a3"); return new Довідники.ОбластьЗберігання_Pointer(obj); } }
-        public string Лінія { get { var obj = Get("col_a4"); return obj.ToString() ?? ""; } }
-        public string Позиція { get { var obj = Get("col_a5"); return obj.ToString() ?? ""; } }
-        public Довідники.СкладськіПриміщення_Pointer Приміщення { get { var obj = Get("col_a6"); return new Довідники.СкладськіПриміщення_Pointer(obj); } }
-        public string Стелаж { get { var obj = Get("col_a7"); return obj.ToString() ?? ""; } }
-        public string Ярус { get { var obj = Get("col_a8"); return obj.ToString() ?? ""; } }
-        public Перелічення.ТипиСкладськихКомірок ТипСкладськоїКомірки { get { var obj = Get("col_a9"); return (obj != DBNull.Value) ? (Перелічення.ТипиСкладськихКомірок)obj : 0; } }
-        public Довідники.ТипорозміриКомірок_Pointer Типорозмір { get { var obj = Get("col_b1"); return new Довідники.ТипорозміриКомірок_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public Довідники.СкладськіКомірки_Папки_Pointer Папка { get { var obj = getValue("col_a1"); return new Довідники.СкладськіКомірки_Папки_Pointer(obj); } }
+        public string Назва { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
+        public Довідники.ОбластьЗберігання_Pointer ОбластьЗберігання { get { var obj = getValue("col_a3"); return new Довідники.ОбластьЗберігання_Pointer(obj); } }
+        public string Лінія { get { var obj = getValue("col_a4"); return obj.ToString() ?? ""; } }
+        public string Позиція { get { var obj = getValue("col_a5"); return obj.ToString() ?? ""; } }
+        public Довідники.СкладськіПриміщення_Pointer Приміщення { get { var obj = getValue("col_a6"); return new Довідники.СкладськіПриміщення_Pointer(obj); } }
+        public string Стелаж { get { var obj = getValue("col_a7"); return obj.ToString() ?? ""; } }
+        public string Ярус { get { var obj = getValue("col_a8"); return obj.ToString() ?? ""; } }
+        public Перелічення.ТипиСкладськихКомірок ТипСкладськоїКомірки { get { var obj = getValue("col_a9"); return (obj != DBNull.Value) ? (Перелічення.ТипиСкладськихКомірок)obj : 0; } }
+        public Довідники.ТипорозміриКомірок_Pointer Типорозмір { get { var obj = getValue("col_b1"); return new Довідники.ТипорозміриКомірок_Pointer(obj); } }
         
     }
 
@@ -9970,7 +9970,7 @@ namespace GeneratedCode.Довідники
     
     public class ОбластьЗберігання_Select : DirectorySelect
     {
-        public ОбластьЗберігання_Select() : base(Config.Kernel, "tab_a73", ОбластьЗберігання_Const.PRESENTATION_FIELDS) { }        
+        public ОбластьЗберігання_Select() : base(Config.Kernel, "tab_a73", ОбластьЗберігання_Const.TYPE, ОбластьЗберігання_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ОбластьЗберігання_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -9990,10 +9990,10 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
-        public string Опис { get { var obj = Get("col_a3"); return obj.ToString() ?? ""; } }
-        public Довідники.СкладськіПриміщення_Pointer Приміщення { get { var obj = Get("col_a4"); return new Довідники.СкладськіПриміщення_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
+        public string Опис { get { var obj = getValue("col_a3"); return obj.ToString() ?? ""; } }
+        public Довідники.СкладськіПриміщення_Pointer Приміщення { get { var obj = getValue("col_a4"); return new Довідники.СкладськіПриміщення_Pointer(obj); } }
         
     }
 
@@ -10156,7 +10156,7 @@ namespace GeneratedCode.Довідники
     
     public class ТипорозміриКомірок_Select : DirectorySelect
     {
-        public ТипорозміриКомірок_Select() : base(Config.Kernel, "tab_a75", ТипорозміриКомірок_Const.PRESENTATION_FIELDS) { }        
+        public ТипорозміриКомірок_Select() : base(Config.Kernel, "tab_a75", ТипорозміриКомірок_Const.TYPE, ТипорозміриКомірок_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ТипорозміриКомірок_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -10176,13 +10176,13 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Висота { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public string Назва { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
-        public string Глибина { get { var obj = Get("col_a3"); return obj.ToString() ?? ""; } }
-        public string Вантажопідйомність { get { var obj = Get("col_a4"); return obj.ToString() ?? ""; } }
-        public string Обєм { get { var obj = Get("col_a5"); return obj.ToString() ?? ""; } }
-        public string Ширина { get { var obj = Get("col_a6"); return obj.ToString() ?? ""; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Висота { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public string Назва { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
+        public string Глибина { get { var obj = getValue("col_a3"); return obj.ToString() ?? ""; } }
+        public string Вантажопідйомність { get { var obj = getValue("col_a4"); return obj.ToString() ?? ""; } }
+        public string Обєм { get { var obj = getValue("col_a5"); return obj.ToString() ?? ""; } }
+        public string Ширина { get { var obj = getValue("col_a6"); return obj.ToString() ?? ""; } }
         
     }
 
@@ -10341,7 +10341,7 @@ namespace GeneratedCode.Довідники
     
     public class СкладськіКомірки_Папки_Select : DirectorySelect
     {
-        public СкладськіКомірки_Папки_Select() : base(Config.Kernel, "tab_a76", СкладськіКомірки_Папки_Const.PRESENTATION_FIELDS) { }        
+        public СкладськіКомірки_Папки_Select() : base(Config.Kernel, "tab_a76", СкладськіКомірки_Папки_Const.TYPE, СкладськіКомірки_Папки_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СкладськіКомірки_Папки_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -10361,22 +10361,22 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_j1"); return obj.ToString() ?? ""; } }
-        public string Код { get { var obj = Get("col_j2"); return obj.ToString() ?? ""; } }
-        public Довідники.СкладськіКомірки_Папки_Pointer Родич { get { var obj = Get("col_j3"); return new Довідники.СкладськіКомірки_Папки_Pointer(obj); } }
-        public Довідники.СкладськіПриміщення_Pointer Власник { get { var obj = Get("col_a1"); return new Довідники.СкладськіПриміщення_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_j1"); return obj.ToString() ?? ""; } }
+        public string Код { get { var obj = getValue("col_j2"); return obj.ToString() ?? ""; } }
+        public Довідники.СкладськіКомірки_Папки_Pointer Родич { get { var obj = getValue("col_j3"); return new Довідники.СкладськіКомірки_Папки_Pointer(obj); } }
+        public Довідники.СкладськіПриміщення_Pointer Власник { get { var obj = getValue("col_a1"); return new Довідники.СкладськіПриміщення_Pointer(obj); } }
         
     }
 
     
     public class СкладськіКомірки_Папки_SelectHierarchical : DirectorySelectHierarchical
     {
-        public СкладськіКомірки_Папки_SelectHierarchical() : base(Config.Kernel, "tab_a76", "col_j3", "", СкладськіКомірки_Папки_Const.PRESENTATION_FIELDS) { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public СкладськіКомірки_Папки_SelectHierarchical() : base(Config.Kernel, "tab_a76", СкладськіКомірки_Папки_Const.TYPE, "col_j3", "", СкладськіКомірки_Папки_Const.PRESENTATION_FIELDS) { }        
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPositionHierarchical.HasValue) { 
-          Current = new СкладськіКомірки_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.UniqueID, base.CurrentPointerPositionHierarchical.Value.Fields); 
+          Current = new СкладськіКомірки_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.UniqueID, base.CurrentPointerPositionHierarchical.Value.Fields, base.CurrentPointerPresentation); 
           Parent = new СкладськіКомірки_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.Parent); 
           IsFolder = true;
           Level = base.CurrentPointerPositionHierarchical.Value.Level; return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
@@ -10385,11 +10385,11 @@ namespace GeneratedCode.Довідники
         public int Level { get; private set; } = 0;
         public bool IsFolder { get; private set; }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_j1"); return obj.ToString() ?? ""; } }
-        public string Код { get { var obj = Get("col_j2"); return obj.ToString() ?? ""; } }
-        public Довідники.СкладськіКомірки_Папки_Pointer Родич { get { var obj = Get("col_j3"); return new Довідники.СкладськіКомірки_Папки_Pointer(obj); } }
-        public Довідники.СкладськіПриміщення_Pointer Власник { get { var obj = Get("col_a1"); return new Довідники.СкладськіПриміщення_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_j1"); return obj.ToString() ?? ""; } }
+        public string Код { get { var obj = getValue("col_j2"); return obj.ToString() ?? ""; } }
+        public Довідники.СкладськіКомірки_Папки_Pointer Родич { get { var obj = getValue("col_j3"); return new Довідники.СкладськіКомірки_Папки_Pointer(obj); } }
+        public Довідники.СкладськіПриміщення_Pointer Власник { get { var obj = getValue("col_a1"); return new Довідники.СкладськіПриміщення_Pointer(obj); } }
         
     }
     
@@ -10546,7 +10546,7 @@ namespace GeneratedCode.Довідники
     
     public class Блокнот_Select : DirectorySelect
     {
-        public Блокнот_Select() : base(Config.Kernel, "tab_a41", Блокнот_Const.PRESENTATION_FIELDS) { }        
+        public Блокнот_Select() : base(Config.Kernel, "tab_a41", Блокнот_Const.TYPE, Блокнот_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Блокнот_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -10566,12 +10566,12 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Код { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public string Назва { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаЗапису { get { var obj = Get("col_a3"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Опис { get { var obj = Get("col_a4"); return obj.ToString() ?? ""; } }
-        public string Лінк { get { var obj = Get("col_a5"); return obj.ToString() ?? ""; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Код { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public string Назва { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаЗапису { get { var obj = getValue("col_a3"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Опис { get { var obj = getValue("col_a4"); return obj.ToString() ?? ""; } }
+        public string Лінк { get { var obj = getValue("col_a5"); return obj.ToString() ?? ""; } }
         
     }
 
@@ -10753,7 +10753,7 @@ namespace GeneratedCode.Довідники
     
     public class ЗбереженіЗвіти_Select : DirectorySelect
     {
-        public ЗбереженіЗвіти_Select() : base(Config.Kernel, "tab_b04", ЗбереженіЗвіти_Const.PRESENTATION_FIELDS) { }        
+        public ЗбереженіЗвіти_Select() : base(Config.Kernel, "tab_b04", ЗбереженіЗвіти_Const.TYPE, ЗбереженіЗвіти_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗбереженіЗвіти_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -10773,13 +10773,13 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public DateTime Додано { get { var obj = Get("col_a1"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Назва { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
-        public Довідники.Користувачі_Pointer Користувач { get { var obj = Get("col_a3"); return new Довідники.Користувачі_Pointer(obj); } }
-        public string Опис { get { var obj = Get("col_a4"); return obj.ToString() ?? ""; } }
-        public string Інформація { get { var obj = Get("col_a5"); return obj.ToString() ?? ""; } }
-        public string Код { get { var obj = Get("col_a6"); return obj.ToString() ?? ""; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public DateTime Додано { get { var obj = getValue("col_a1"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Назва { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
+        public Довідники.Користувачі_Pointer Користувач { get { var obj = getValue("col_a3"); return new Довідники.Користувачі_Pointer(obj); } }
+        public string Опис { get { var obj = getValue("col_a4"); return obj.ToString() ?? ""; } }
+        public string Інформація { get { var obj = getValue("col_a5"); return obj.ToString() ?? ""; } }
+        public string Код { get { var obj = getValue("col_a6"); return obj.ToString() ?? ""; } }
         
     }
 
@@ -11204,7 +11204,7 @@ namespace GeneratedCode.Довідники
     
     public class КасиККМ_Select : DirectorySelect
     {
-        public КасиККМ_Select() : base(Config.Kernel, "tab_b52", КасиККМ_Const.PRESENTATION_FIELDS) { }        
+        public КасиККМ_Select() : base(Config.Kernel, "tab_b52", КасиККМ_Const.TYPE, КасиККМ_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new КасиККМ_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -11224,11 +11224,11 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
-        public Довідники.Склади_Pointer Склад { get { var obj = Get("col_a3"); return new Довідники.Склади_Pointer(obj); } }
-        public Перелічення.ТипККМ Тип { get { var obj = Get("col_a4"); return (obj != DBNull.Value) ? (Перелічення.ТипККМ)obj : 0; } }
-        public Довідники.Валюти_Pointer Валюта { get { var obj = Get("col_a1"); return new Довідники.Валюти_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
+        public Довідники.Склади_Pointer Склад { get { var obj = getValue("col_a3"); return new Довідники.Склади_Pointer(obj); } }
+        public Перелічення.ТипККМ Тип { get { var obj = getValue("col_a4"); return (obj != DBNull.Value) ? (Перелічення.ТипККМ)obj : 0; } }
+        public Довідники.Валюти_Pointer Валюта { get { var obj = getValue("col_a1"); return new Довідники.Валюти_Pointer(obj); } }
         
     }
 
@@ -11425,7 +11425,7 @@ namespace GeneratedCode.Довідники
     
     public class ПланРахунків_Select : DirectorySelect
     {
-        public ПланРахунків_Select() : base(Config.Kernel, "tab_b57", ПланРахунків_Const.PRESENTATION_FIELDS) { }        
+        public ПланРахунків_Select() : base(Config.Kernel, "tab_b57", ПланРахунків_Const.TYPE, ПланРахунків_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПланРахунків_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -11445,30 +11445,30 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Код { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public string Назва { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
-        public Довідники.ПланРахунків_Pointer Родич { get { var obj = Get("col_a3"); return new Довідники.ПланРахунків_Pointer(obj); } }
-        public bool ЦеГрупа { get { var obj = Get("col_a4"); return (obj != DBNull.Value) ? (bool)obj : false; } }
-        public bool Сумовий { get { var obj = Get("col_a5"); return (obj != DBNull.Value) ? (bool)obj : false; } }
-        public bool Кількісний { get { var obj = Get("col_a6"); return (obj != DBNull.Value) ? (bool)obj : false; } }
-        public bool Валютний { get { var obj = Get("col_a7"); return (obj != DBNull.Value) ? (bool)obj : false; } }
-        public bool Забалансовий { get { var obj = Get("col_a8"); return (obj != DBNull.Value) ? (bool)obj : false; } }
-        public string Субконто1 { get { var obj = Get("col_a9"); return obj.ToString() ?? ""; } }
-        public string Субконто2 { get { var obj = Get("col_b1"); return obj.ToString() ?? ""; } }
-        public string Субконто3 { get { var obj = Get("col_b2"); return obj.ToString() ?? ""; } }
-        public int Клас { get { var obj = Get("col_b3"); return (obj != DBNull.Value) ? (int)obj : 0; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Код { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public string Назва { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
+        public Довідники.ПланРахунків_Pointer Родич { get { var obj = getValue("col_a3"); return new Довідники.ПланРахунків_Pointer(obj); } }
+        public bool ЦеГрупа { get { var obj = getValue("col_a4"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        public bool Сумовий { get { var obj = getValue("col_a5"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        public bool Кількісний { get { var obj = getValue("col_a6"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        public bool Валютний { get { var obj = getValue("col_a7"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        public bool Забалансовий { get { var obj = getValue("col_a8"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        public string Субконто1 { get { var obj = getValue("col_a9"); return obj.ToString() ?? ""; } }
+        public string Субконто2 { get { var obj = getValue("col_b1"); return obj.ToString() ?? ""; } }
+        public string Субконто3 { get { var obj = getValue("col_b2"); return obj.ToString() ?? ""; } }
+        public int Клас { get { var obj = getValue("col_b3"); return (obj != DBNull.Value) ? (int)obj : 0; } }
         
     }
 
     
     public class ПланРахунків_SelectHierarchical : DirectorySelectHierarchical
     {
-        public ПланРахунків_SelectHierarchical() : base(Config.Kernel, "tab_b57", "col_a3", "col_a4", ПланРахунків_Const.PRESENTATION_FIELDS) { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public ПланРахунків_SelectHierarchical() : base(Config.Kernel, "tab_b57", ПланРахунків_Const.TYPE, "col_a3", "col_a4", ПланРахунків_Const.PRESENTATION_FIELDS) { }        
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPositionHierarchical.HasValue) { 
-          Current = new ПланРахунків_Pointer(base.CurrentPointerPositionHierarchical.Value.UniqueID, base.CurrentPointerPositionHierarchical.Value.Fields); 
+          Current = new ПланРахунків_Pointer(base.CurrentPointerPositionHierarchical.Value.UniqueID, base.CurrentPointerPositionHierarchical.Value.Fields, base.CurrentPointerPresentation); 
           Parent = new ПланРахунків_Pointer(base.CurrentPointerPositionHierarchical.Value.Parent); 
           IsFolder = base.CurrentPointerPositionHierarchical.Value.IsFolder;
           Level = base.CurrentPointerPositionHierarchical.Value.Level; return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
@@ -11477,19 +11477,19 @@ namespace GeneratedCode.Довідники
         public int Level { get; private set; } = 0;
         public bool IsFolder { get; private set; }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Код { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public string Назва { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
-        public Довідники.ПланРахунків_Pointer Родич { get { var obj = Get("col_a3"); return new Довідники.ПланРахунків_Pointer(obj); } }
-        public bool ЦеГрупа { get { var obj = Get("col_a4"); return (obj != DBNull.Value) ? (bool)obj : false; } }
-        public bool Сумовий { get { var obj = Get("col_a5"); return (obj != DBNull.Value) ? (bool)obj : false; } }
-        public bool Кількісний { get { var obj = Get("col_a6"); return (obj != DBNull.Value) ? (bool)obj : false; } }
-        public bool Валютний { get { var obj = Get("col_a7"); return (obj != DBNull.Value) ? (bool)obj : false; } }
-        public bool Забалансовий { get { var obj = Get("col_a8"); return (obj != DBNull.Value) ? (bool)obj : false; } }
-        public string Субконто1 { get { var obj = Get("col_a9"); return obj.ToString() ?? ""; } }
-        public string Субконто2 { get { var obj = Get("col_b1"); return obj.ToString() ?? ""; } }
-        public string Субконто3 { get { var obj = Get("col_b2"); return obj.ToString() ?? ""; } }
-        public int Клас { get { var obj = Get("col_b3"); return (obj != DBNull.Value) ? (int)obj : 0; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Код { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public string Назва { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
+        public Довідники.ПланРахунків_Pointer Родич { get { var obj = getValue("col_a3"); return new Довідники.ПланРахунків_Pointer(obj); } }
+        public bool ЦеГрупа { get { var obj = getValue("col_a4"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        public bool Сумовий { get { var obj = getValue("col_a5"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        public bool Кількісний { get { var obj = getValue("col_a6"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        public bool Валютний { get { var obj = getValue("col_a7"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        public bool Забалансовий { get { var obj = getValue("col_a8"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        public string Субконто1 { get { var obj = getValue("col_a9"); return obj.ToString() ?? ""; } }
+        public string Субконто2 { get { var obj = getValue("col_b1"); return obj.ToString() ?? ""; } }
+        public string Субконто3 { get { var obj = getValue("col_b2"); return obj.ToString() ?? ""; } }
+        public int Клас { get { var obj = getValue("col_b3"); return (obj != DBNull.Value) ? (int)obj : 0; } }
         
     }
     
@@ -11668,7 +11668,7 @@ namespace GeneratedCode.Довідники
     
     public class Категорії_Select : DirectorySelect
     {
-        public Категорії_Select() : base(Config.Kernel, "tab_b58", Категорії_Const.PRESENTATION_FIELDS) { }        
+        public Категорії_Select() : base(Config.Kernel, "tab_b58", Категорії_Const.TYPE, Категорії_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Категорії_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -11688,27 +11688,27 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Код { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public string Назва { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
-        public Довідники.Категорії_Pointer Родич { get { var obj = Get("col_a3"); return new Довідники.Категорії_Pointer(obj); } }
-        public Перелічення.МетодиСписання МетодСписання { get { var obj = Get("col_a4"); return (obj != DBNull.Value) ? (Перелічення.МетодиСписання)obj : 0; } }
-        public Довідники.ПланРахунків_Pointer РахунокОбліку { get { var obj = Get("col_a5"); return new Довідники.ПланРахунків_Pointer(obj); } }
-        public Довідники.ПланРахунків_Pointer РахунокДоходів { get { var obj = Get("col_a6"); return new Довідники.ПланРахунків_Pointer(obj); } }
-        public Довідники.Статті_Pointer СтаттяДоходів { get { var obj = Get("col_a7"); return new Довідники.Статті_Pointer(obj); } }
-        public Довідники.ПланРахунків_Pointer РахунокВитрат { get { var obj = Get("col_a8"); return new Довідники.ПланРахунків_Pointer(obj); } }
-        public Довідники.Статті_Pointer СтаттяВитрат { get { var obj = Get("col_a9"); return new Довідники.Статті_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Код { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public string Назва { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
+        public Довідники.Категорії_Pointer Родич { get { var obj = getValue("col_a3"); return new Довідники.Категорії_Pointer(obj); } }
+        public Перелічення.МетодиСписання МетодСписання { get { var obj = getValue("col_a4"); return (obj != DBNull.Value) ? (Перелічення.МетодиСписання)obj : 0; } }
+        public Довідники.ПланРахунків_Pointer РахунокОбліку { get { var obj = getValue("col_a5"); return new Довідники.ПланРахунків_Pointer(obj); } }
+        public Довідники.ПланРахунків_Pointer РахунокДоходів { get { var obj = getValue("col_a6"); return new Довідники.ПланРахунків_Pointer(obj); } }
+        public Довідники.Статті_Pointer СтаттяДоходів { get { var obj = getValue("col_a7"); return new Довідники.Статті_Pointer(obj); } }
+        public Довідники.ПланРахунків_Pointer РахунокВитрат { get { var obj = getValue("col_a8"); return new Довідники.ПланРахунків_Pointer(obj); } }
+        public Довідники.Статті_Pointer СтаттяВитрат { get { var obj = getValue("col_a9"); return new Довідники.Статті_Pointer(obj); } }
         
     }
 
     
     public class Категорії_SelectHierarchical : DirectorySelectHierarchical
     {
-        public Категорії_SelectHierarchical() : base(Config.Kernel, "tab_b58", "col_a3", "", Категорії_Const.PRESENTATION_FIELDS) { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public Категорії_SelectHierarchical() : base(Config.Kernel, "tab_b58", Категорії_Const.TYPE, "col_a3", "", Категорії_Const.PRESENTATION_FIELDS) { }        
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPositionHierarchical.HasValue) { 
-          Current = new Категорії_Pointer(base.CurrentPointerPositionHierarchical.Value.UniqueID, base.CurrentPointerPositionHierarchical.Value.Fields); 
+          Current = new Категорії_Pointer(base.CurrentPointerPositionHierarchical.Value.UniqueID, base.CurrentPointerPositionHierarchical.Value.Fields, base.CurrentPointerPresentation); 
           Parent = new Категорії_Pointer(base.CurrentPointerPositionHierarchical.Value.Parent); 
           IsFolder = false;
           Level = base.CurrentPointerPositionHierarchical.Value.Level; return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
@@ -11717,16 +11717,16 @@ namespace GeneratedCode.Довідники
         public int Level { get; private set; } = 0;
         public bool IsFolder { get; private set; }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Код { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public string Назва { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
-        public Довідники.Категорії_Pointer Родич { get { var obj = Get("col_a3"); return new Довідники.Категорії_Pointer(obj); } }
-        public Перелічення.МетодиСписання МетодСписання { get { var obj = Get("col_a4"); return (obj != DBNull.Value) ? (Перелічення.МетодиСписання)obj : 0; } }
-        public Довідники.ПланРахунків_Pointer РахунокОбліку { get { var obj = Get("col_a5"); return new Довідники.ПланРахунків_Pointer(obj); } }
-        public Довідники.ПланРахунків_Pointer РахунокДоходів { get { var obj = Get("col_a6"); return new Довідники.ПланРахунків_Pointer(obj); } }
-        public Довідники.Статті_Pointer СтаттяДоходів { get { var obj = Get("col_a7"); return new Довідники.Статті_Pointer(obj); } }
-        public Довідники.ПланРахунків_Pointer РахунокВитрат { get { var obj = Get("col_a8"); return new Довідники.ПланРахунків_Pointer(obj); } }
-        public Довідники.Статті_Pointer СтаттяВитрат { get { var obj = Get("col_a9"); return new Довідники.Статті_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Код { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public string Назва { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
+        public Довідники.Категорії_Pointer Родич { get { var obj = getValue("col_a3"); return new Довідники.Категорії_Pointer(obj); } }
+        public Перелічення.МетодиСписання МетодСписання { get { var obj = getValue("col_a4"); return (obj != DBNull.Value) ? (Перелічення.МетодиСписання)obj : 0; } }
+        public Довідники.ПланРахунків_Pointer РахунокОбліку { get { var obj = getValue("col_a5"); return new Довідники.ПланРахунків_Pointer(obj); } }
+        public Довідники.ПланРахунків_Pointer РахунокДоходів { get { var obj = getValue("col_a6"); return new Довідники.ПланРахунків_Pointer(obj); } }
+        public Довідники.Статті_Pointer СтаттяДоходів { get { var obj = getValue("col_a7"); return new Довідники.Статті_Pointer(obj); } }
+        public Довідники.ПланРахунків_Pointer РахунокВитрат { get { var obj = getValue("col_a8"); return new Довідники.ПланРахунків_Pointer(obj); } }
+        public Довідники.Статті_Pointer СтаттяВитрат { get { var obj = getValue("col_a9"); return new Довідники.Статті_Pointer(obj); } }
         
     }
     
@@ -11885,7 +11885,7 @@ namespace GeneratedCode.Довідники
     
     public class Статті_Select : DirectorySelect
     {
-        public Статті_Select() : base(Config.Kernel, "tab_b59", Статті_Const.PRESENTATION_FIELDS) { }        
+        public Статті_Select() : base(Config.Kernel, "tab_b59", Статті_Const.TYPE, Статті_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Статті_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -11905,23 +11905,23 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Код { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public string Назва { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
-        public Довідники.Статті_Pointer Родич { get { var obj = Get("col_a3"); return new Довідники.Статті_Pointer(obj); } }
-        public bool ЦеПапка { get { var obj = Get("col_a4"); return (obj != DBNull.Value) ? (bool)obj : false; } }
-        public string КодЗПодатковоїДекларації { get { var obj = Get("col_a5"); return obj.ToString() ?? ""; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Код { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public string Назва { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
+        public Довідники.Статті_Pointer Родич { get { var obj = getValue("col_a3"); return new Довідники.Статті_Pointer(obj); } }
+        public bool ЦеПапка { get { var obj = getValue("col_a4"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        public string КодЗПодатковоїДекларації { get { var obj = getValue("col_a5"); return obj.ToString() ?? ""; } }
         
     }
 
     
     public class Статті_SelectHierarchical : DirectorySelectHierarchical
     {
-        public Статті_SelectHierarchical() : base(Config.Kernel, "tab_b59", "col_a3", "col_a4", Статті_Const.PRESENTATION_FIELDS) { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public Статті_SelectHierarchical() : base(Config.Kernel, "tab_b59", Статті_Const.TYPE, "col_a3", "col_a4", Статті_Const.PRESENTATION_FIELDS) { }        
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPositionHierarchical.HasValue) { 
-          Current = new Статті_Pointer(base.CurrentPointerPositionHierarchical.Value.UniqueID, base.CurrentPointerPositionHierarchical.Value.Fields); 
+          Current = new Статті_Pointer(base.CurrentPointerPositionHierarchical.Value.UniqueID, base.CurrentPointerPositionHierarchical.Value.Fields, base.CurrentPointerPresentation); 
           Parent = new Статті_Pointer(base.CurrentPointerPositionHierarchical.Value.Parent); 
           IsFolder = base.CurrentPointerPositionHierarchical.Value.IsFolder;
           Level = base.CurrentPointerPositionHierarchical.Value.Level; return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
@@ -11930,12 +11930,12 @@ namespace GeneratedCode.Довідники
         public int Level { get; private set; } = 0;
         public bool IsFolder { get; private set; }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Код { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public string Назва { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
-        public Довідники.Статті_Pointer Родич { get { var obj = Get("col_a3"); return new Довідники.Статті_Pointer(obj); } }
-        public bool ЦеПапка { get { var obj = Get("col_a4"); return (obj != DBNull.Value) ? (bool)obj : false; } }
-        public string КодЗПодатковоїДекларації { get { var obj = Get("col_a5"); return obj.ToString() ?? ""; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Код { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public string Назва { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
+        public Довідники.Статті_Pointer Родич { get { var obj = getValue("col_a3"); return new Довідники.Статті_Pointer(obj); } }
+        public bool ЦеПапка { get { var obj = getValue("col_a4"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        public string КодЗПодатковоїДекларації { get { var obj = getValue("col_a5"); return obj.ToString() ?? ""; } }
         
     }
     
@@ -12075,7 +12075,7 @@ namespace GeneratedCode.Довідники
     
     public class ВидиПодатків_Select : DirectorySelect
     {
-        public ВидиПодатків_Select() : base(Config.Kernel, "tab_b60", ВидиПодатків_Const.PRESENTATION_FIELDS) { }        
+        public ВидиПодатків_Select() : base(Config.Kernel, "tab_b60", ВидиПодатків_Const.TYPE, ВидиПодатків_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВидиПодатків_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -12095,9 +12095,9 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Код { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public string Назва { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Код { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public string Назва { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
         
     }
 
@@ -12238,7 +12238,7 @@ namespace GeneratedCode.Довідники
     
     public class ВидиЖурналів_Select : DirectorySelect
     {
-        public ВидиЖурналів_Select() : base(Config.Kernel, "tab_b61", ВидиЖурналів_Const.PRESENTATION_FIELDS) { }        
+        public ВидиЖурналів_Select() : base(Config.Kernel, "tab_b61", ВидиЖурналів_Const.TYPE, ВидиЖурналів_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВидиЖурналів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -12258,9 +12258,9 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Код { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public string Назва { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Код { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public string Назва { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
         
     }
 
@@ -12401,7 +12401,7 @@ namespace GeneratedCode.Довідники
     
     public class ОсновніЗасоби_Select : DirectorySelect
     {
-        public ОсновніЗасоби_Select() : base(Config.Kernel, "tab_b62", ОсновніЗасоби_Const.PRESENTATION_FIELDS) { }        
+        public ОсновніЗасоби_Select() : base(Config.Kernel, "tab_b62", ОсновніЗасоби_Const.TYPE, ОсновніЗасоби_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ОсновніЗасоби_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -12421,9 +12421,9 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Код { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public string Назва { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Код { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public string Назва { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
         
     }
 
@@ -12564,7 +12564,7 @@ namespace GeneratedCode.Довідники
     
     public class МалоцінніПредмети_Select : DirectorySelect
     {
-        public МалоцінніПредмети_Select() : base(Config.Kernel, "tab_b64", МалоцінніПредмети_Const.PRESENTATION_FIELDS) { }        
+        public МалоцінніПредмети_Select() : base(Config.Kernel, "tab_b64", МалоцінніПредмети_Const.TYPE, МалоцінніПредмети_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new МалоцінніПредмети_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -12584,9 +12584,9 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Код { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public string Назва { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Код { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public string Назва { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
         
     }
 
@@ -12727,7 +12727,7 @@ namespace GeneratedCode.Довідники
     
     public class ГрошовіРахункиВласні_Select : DirectorySelect
     {
-        public ГрошовіРахункиВласні_Select() : base(Config.Kernel, "tab_b65", ГрошовіРахункиВласні_Const.PRESENTATION_FIELDS) { }        
+        public ГрошовіРахункиВласні_Select() : base(Config.Kernel, "tab_b65", ГрошовіРахункиВласні_Const.TYPE, ГрошовіРахункиВласні_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ГрошовіРахункиВласні_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -12747,9 +12747,9 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Код { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public string Назва { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Код { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public string Назва { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
         
     }
 
@@ -12895,7 +12895,7 @@ namespace GeneratedCode.Довідники
     
     public class НоменклатураВнутрішня_Select : DirectorySelect
     {
-        public НоменклатураВнутрішня_Select() : base(Config.Kernel, "tab_b66", НоменклатураВнутрішня_Const.PRESENTATION_FIELDS) { }        
+        public НоменклатураВнутрішня_Select() : base(Config.Kernel, "tab_b66", НоменклатураВнутрішня_Const.TYPE, НоменклатураВнутрішня_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new НоменклатураВнутрішня_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -12915,10 +12915,10 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Код { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public string Назва { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
-        public Довідники.НоменклатураВнутрішня_Папки_Pointer Папка { get { var obj = Get("col_a3"); return new Довідники.НоменклатураВнутрішня_Папки_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Код { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public string Назва { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
+        public Довідники.НоменклатураВнутрішня_Папки_Pointer Папка { get { var obj = getValue("col_a3"); return new Довідники.НоменклатураВнутрішня_Папки_Pointer(obj); } }
         
     }
 
@@ -13070,7 +13070,7 @@ namespace GeneratedCode.Довідники
     
     public class НоменклатураВнутрішня_Папки_Select : DirectorySelect
     {
-        public НоменклатураВнутрішня_Папки_Select() : base(Config.Kernel, "tab_b67", НоменклатураВнутрішня_Папки_Const.PRESENTATION_FIELDS) { }        
+        public НоменклатураВнутрішня_Папки_Select() : base(Config.Kernel, "tab_b67", НоменклатураВнутрішня_Папки_Const.TYPE, НоменклатураВнутрішня_Папки_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new НоменклатураВнутрішня_Папки_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -13090,21 +13090,21 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Код { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public string Назва { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
-        public Довідники.НоменклатураВнутрішня_Папки_Pointer Родич { get { var obj = Get("col_a3"); return new Довідники.НоменклатураВнутрішня_Папки_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Код { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public string Назва { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
+        public Довідники.НоменклатураВнутрішня_Папки_Pointer Родич { get { var obj = getValue("col_a3"); return new Довідники.НоменклатураВнутрішня_Папки_Pointer(obj); } }
         
     }
 
     
     public class НоменклатураВнутрішня_Папки_SelectHierarchical : DirectorySelectHierarchical
     {
-        public НоменклатураВнутрішня_Папки_SelectHierarchical() : base(Config.Kernel, "tab_b67", "col_a3", "", НоменклатураВнутрішня_Папки_Const.PRESENTATION_FIELDS) { }        
-        public async Task<bool> Select() { return await base.BaseSelect(); }
+        public НоменклатураВнутрішня_Папки_SelectHierarchical() : base(Config.Kernel, "tab_b67", НоменклатураВнутрішня_Папки_Const.TYPE, "col_a3", "", НоменклатураВнутрішня_Папки_Const.PRESENTATION_FIELDS) { }        
+        public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPositionHierarchical.HasValue) { 
-          Current = new НоменклатураВнутрішня_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.UniqueID, base.CurrentPointerPositionHierarchical.Value.Fields); 
+          Current = new НоменклатураВнутрішня_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.UniqueID, base.CurrentPointerPositionHierarchical.Value.Fields, base.CurrentPointerPresentation); 
           Parent = new НоменклатураВнутрішня_Папки_Pointer(base.CurrentPointerPositionHierarchical.Value.Parent); 
           IsFolder = true;
           Level = base.CurrentPointerPositionHierarchical.Value.Level; return true; } else { Current = Parent = null; Level = 0; IsFolder = false; return false; } }
@@ -13113,10 +13113,10 @@ namespace GeneratedCode.Довідники
         public int Level { get; private set; } = 0;
         public bool IsFolder { get; private set; }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Код { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public string Назва { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
-        public Довідники.НоменклатураВнутрішня_Папки_Pointer Родич { get { var obj = Get("col_a3"); return new Довідники.НоменклатураВнутрішня_Папки_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Код { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public string Назва { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
+        public Довідники.НоменклатураВнутрішня_Папки_Pointer Родич { get { var obj = getValue("col_a3"); return new Довідники.НоменклатураВнутрішня_Папки_Pointer(obj); } }
         
     }
     
@@ -13256,7 +13256,7 @@ namespace GeneratedCode.Довідники
     
     public class Бланки_Select : DirectorySelect
     {
-        public Бланки_Select() : base(Config.Kernel, "tab_b68", Бланки_Const.PRESENTATION_FIELDS) { }        
+        public Бланки_Select() : base(Config.Kernel, "tab_b68", Бланки_Const.TYPE, Бланки_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Бланки_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -13276,9 +13276,9 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Код { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public string Назва { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Код { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public string Назва { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
         
     }
 
@@ -13419,7 +13419,7 @@ namespace GeneratedCode.Довідники
     
     public class Співробітники_Select : DirectorySelect
     {
-        public Співробітники_Select() : base(Config.Kernel, "tab_b69", Співробітники_Const.PRESENTATION_FIELDS) { }        
+        public Співробітники_Select() : base(Config.Kernel, "tab_b69", Співробітники_Const.TYPE, Співробітники_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Співробітники_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -13439,9 +13439,9 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Код { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public string Назва { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Код { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public string Назва { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
         
     }
 
@@ -13582,7 +13582,7 @@ namespace GeneratedCode.Довідники
     
     public class ТипиБухОперацій_Select : DirectorySelect
     {
-        public ТипиБухОперацій_Select() : base(Config.Kernel, "tab_b70", ТипиБухОперацій_Const.PRESENTATION_FIELDS) { }        
+        public ТипиБухОперацій_Select() : base(Config.Kernel, "tab_b70", ТипиБухОперацій_Const.TYPE, ТипиБухОперацій_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ТипиБухОперацій_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -13602,9 +13602,9 @@ namespace GeneratedCode.Довідники
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Код { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public string Назва { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Код { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public string Назва { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
         
     }
 
@@ -15397,7 +15397,7 @@ namespace GeneratedCode.Документи
 
     public class ЗамовленняПостачальнику_Select : DocumentSelect
     {		
-        public ЗамовленняПостачальнику_Select() : base(Config.Kernel, "tab_a25", ЗамовленняПостачальнику_Const.PRESENTATION_FIELDS) { }
+        public ЗамовленняПостачальнику_Select() : base(Config.Kernel, "tab_a25", ЗамовленняПостачальнику_Const.TYPE, ЗамовленняПостачальнику_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗамовленняПостачальнику_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -15417,34 +15417,34 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = Get("col_k2"); return new Довідники.Контрагенти_Pointer(obj); } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_k3"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.Склади_Pointer Склад { get { var obj = Get("col_k4"); return new Довідники.Склади_Pointer(obj); } }
-        public Довідники.Валюти_Pointer Валюта { get { var obj = Get("col_k5"); return new Довідники.Валюти_Pointer(obj); } }
-        public decimal СумаДокументу { get { var obj = Get("col_k6"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public Довідники.Каси_Pointer Каса { get { var obj = Get("col_k7"); return new Довідники.Каси_Pointer(obj); } }
-        public Довідники.БанківськіРахункиОрганізацій_Pointer БанківськийРахунок { get { var obj = Get("col_a1"); return new Довідники.БанківськіРахункиОрганізацій_Pointer(obj); } }
-        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = Get("col_a3"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
-        public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = Get("col_a4"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_a5"); return new Довідники.Користувачі_Pointer(obj); } }
-        public DateTime ДатаПоступлення { get { var obj = Get("col_a7"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string АдресаДоставкиДляПостачальника { get { var obj = Get("col_a8"); return obj.ToString() ?? ""; } }
-        public bool ПовернутиТару { get { var obj = Get("col_a9"); return (obj != DBNull.Value) ? (bool)obj : false; } }
-        public Перелічення.СпособиДоставки СпосібДоставки { get { var obj = Get("col_b1"); return (obj != DBNull.Value) ? (Перелічення.СпособиДоставки)obj : 0; } }
-        public TimeSpan ЧасДоставкиЗ { get { var obj = Get("col_b2"); return (obj != DBNull.Value) ? TimeSpan.Parse(obj?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay; } }
-        public TimeSpan ЧасДоставкиДо { get { var obj = Get("col_b3"); return (obj != DBNull.Value) ? TimeSpan.Parse(obj?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay; } }
-        public string АдресаДоставки { get { var obj = Get("col_b4"); return obj.ToString() ?? ""; } }
-        public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = Get("col_a6"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
-        public Перелічення.СтатусиЗамовленьПостачальникам Статус { get { var obj = Get("col_b5"); return (obj != DBNull.Value) ? (Перелічення.СтатусиЗамовленьПостачальникам)obj : 0; } }
-        public Перелічення.ФормаОплати ФормаОплати { get { var obj = Get("col_b6"); return (obj != DBNull.Value) ? (Перелічення.ФормаОплати)obj : 0; } }
-        public Довідники.Користувачі_Pointer Менеджер { get { var obj = Get("col_b7"); return new Довідники.Користувачі_Pointer(obj); } }
-        public UuidAndText Основа { get { var obj = Get("col_b8"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
-        public string Коментар { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_b9"); return obj.ToString() ?? ""; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = getValue("col_k2"); return new Довідники.Контрагенти_Pointer(obj); } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_k3"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.Склади_Pointer Склад { get { var obj = getValue("col_k4"); return new Довідники.Склади_Pointer(obj); } }
+        public Довідники.Валюти_Pointer Валюта { get { var obj = getValue("col_k5"); return new Довідники.Валюти_Pointer(obj); } }
+        public decimal СумаДокументу { get { var obj = getValue("col_k6"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public Довідники.Каси_Pointer Каса { get { var obj = getValue("col_k7"); return new Довідники.Каси_Pointer(obj); } }
+        public Довідники.БанківськіРахункиОрганізацій_Pointer БанківськийРахунок { get { var obj = getValue("col_a1"); return new Довідники.БанківськіРахункиОрганізацій_Pointer(obj); } }
+        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = getValue("col_a3"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
+        public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = getValue("col_a4"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a5"); return new Довідники.Користувачі_Pointer(obj); } }
+        public DateTime ДатаПоступлення { get { var obj = getValue("col_a7"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string АдресаДоставкиДляПостачальника { get { var obj = getValue("col_a8"); return obj.ToString() ?? ""; } }
+        public bool ПовернутиТару { get { var obj = getValue("col_a9"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        public Перелічення.СпособиДоставки СпосібДоставки { get { var obj = getValue("col_b1"); return (obj != DBNull.Value) ? (Перелічення.СпособиДоставки)obj : 0; } }
+        public TimeSpan ЧасДоставкиЗ { get { var obj = getValue("col_b2"); return (obj != DBNull.Value) ? TimeSpan.Parse(obj?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay; } }
+        public TimeSpan ЧасДоставкиДо { get { var obj = getValue("col_b3"); return (obj != DBNull.Value) ? TimeSpan.Parse(obj?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay; } }
+        public string АдресаДоставки { get { var obj = getValue("col_b4"); return obj.ToString() ?? ""; } }
+        public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = getValue("col_a6"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
+        public Перелічення.СтатусиЗамовленьПостачальникам Статус { get { var obj = getValue("col_b5"); return (obj != DBNull.Value) ? (Перелічення.СтатусиЗамовленьПостачальникам)obj : 0; } }
+        public Перелічення.ФормаОплати ФормаОплати { get { var obj = getValue("col_b6"); return (obj != DBNull.Value) ? (Перелічення.ФормаОплати)obj : 0; } }
+        public Довідники.Користувачі_Pointer Менеджер { get { var obj = getValue("col_b7"); return new Довідники.Користувачі_Pointer(obj); } }
+        public UuidAndText Основа { get { var obj = getValue("col_b8"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public string Коментар { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_b9"); return obj.ToString() ?? ""; } }
         
     }
 
@@ -16241,7 +16241,7 @@ namespace GeneratedCode.Документи
 
     public class ПоступленняТоварівТаПослуг_Select : DocumentSelect
     {		
-        public ПоступленняТоварівТаПослуг_Select() : base(Config.Kernel, "tab_a32", ПоступленняТоварівТаПослуг_Const.PRESENTATION_FIELDS) { }
+        public ПоступленняТоварівТаПослуг_Select() : base(Config.Kernel, "tab_a32", ПоступленняТоварівТаПослуг_Const.TYPE, ПоступленняТоварівТаПослуг_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПоступленняТоварівТаПослуг_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -16261,42 +16261,42 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public Довідники.Валюти_Pointer Валюта { get { var obj = Get("col_a3"); return new Довідники.Валюти_Pointer(obj); } }
-        public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = Get("col_a4"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
-        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = Get("col_a5"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
-        public Довідники.Склади_Pointer Склад { get { var obj = Get("col_a6"); return new Довідники.Склади_Pointer(obj); } }
-        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = Get("col_a7"); return new Довідники.Контрагенти_Pointer(obj); } }
-        public decimal СумаДокументу { get { var obj = Get("col_a8"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public Документи.ЗамовленняПостачальнику_Pointer ЗамовленняПостачальнику { get { var obj = Get("col_a9"); return new Документи.ЗамовленняПостачальнику_Pointer(obj); } }
-        public DateTime ДатаОплати { get { var obj = Get("col_b2"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public Перелічення.ФормаОплати ФормаОплати { get { var obj = Get("col_b3"); return (obj != DBNull.Value) ? (Перелічення.ФормаОплати)obj : 0; } }
-        public bool Узгоджений { get { var obj = Get("col_b4"); return (obj != DBNull.Value) ? (bool)obj : false; } }
-        public Довідники.БанківськіРахункиОрганізацій_Pointer БанківськийРахунокОрганізації { get { var obj = Get("col_b5"); return new Довідники.БанківськіРахункиОрганізацій_Pointer(obj); } }
-        public string НомерВхідногоДокументу { get { var obj = Get("col_b6"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаВхідногоДокументу { get { var obj = Get("col_b7"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public Довідники.БанківськіРахункиКонтрагентів_Pointer БанківськийРахунокКонтрагента { get { var obj = Get("col_b8"); return new Довідники.БанківськіРахункиКонтрагентів_Pointer(obj); } }
-        public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = Get("col_b9"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_c1"); return new Довідники.Користувачі_Pointer(obj); } }
-        public bool ПовернутиТару { get { var obj = Get("col_c2"); return (obj != DBNull.Value) ? (bool)obj : false; } }
-        public DateTime ДатаПоверненняТари { get { var obj = Get("col_c3"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public Перелічення.СпособиДоставки СпосібДоставки { get { var obj = Get("col_c4"); return (obj != DBNull.Value) ? (Перелічення.СпособиДоставки)obj : 0; } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_c5"); return new Довідники.Організації_Pointer(obj); } }
-        public decimal Курс { get { var obj = Get("col_c6"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public int Кратність { get { var obj = Get("col_c7"); return (obj != DBNull.Value) ? (int)obj : 0; } }
-        public TimeSpan ЧасДоставкиЗ { get { var obj = Get("col_c8"); return (obj != DBNull.Value) ? TimeSpan.Parse(obj?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay; } }
-        public TimeSpan ЧасДоставкиДо { get { var obj = Get("col_c9"); return (obj != DBNull.Value) ? TimeSpan.Parse(obj?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay; } }
-        public Довідники.Користувачі_Pointer Менеджер { get { var obj = Get("col_d1"); return new Довідники.Користувачі_Pointer(obj); } }
-        public Довідники.СтаттяРухуКоштів_Pointer СтаттяРухуКоштів { get { var obj = Get("col_d2"); return new Довідники.СтаттяРухуКоштів_Pointer(obj); } }
-        public Довідники.Каси_Pointer Каса { get { var obj = Get("col_d3"); return new Довідники.Каси_Pointer(obj); } }
-        public UuidAndText Основа { get { var obj = Get("col_a1"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
-        public string Коментар { get { var obj = Get("col_b1"); return obj.ToString() ?? ""; } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
-        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = Get("col_d5"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
-        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = Get("col_d4"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public Довідники.Валюти_Pointer Валюта { get { var obj = getValue("col_a3"); return new Довідники.Валюти_Pointer(obj); } }
+        public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = getValue("col_a4"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
+        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = getValue("col_a5"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
+        public Довідники.Склади_Pointer Склад { get { var obj = getValue("col_a6"); return new Довідники.Склади_Pointer(obj); } }
+        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = getValue("col_a7"); return new Довідники.Контрагенти_Pointer(obj); } }
+        public decimal СумаДокументу { get { var obj = getValue("col_a8"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public Документи.ЗамовленняПостачальнику_Pointer ЗамовленняПостачальнику { get { var obj = getValue("col_a9"); return new Документи.ЗамовленняПостачальнику_Pointer(obj); } }
+        public DateTime ДатаОплати { get { var obj = getValue("col_b2"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public Перелічення.ФормаОплати ФормаОплати { get { var obj = getValue("col_b3"); return (obj != DBNull.Value) ? (Перелічення.ФормаОплати)obj : 0; } }
+        public bool Узгоджений { get { var obj = getValue("col_b4"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        public Довідники.БанківськіРахункиОрганізацій_Pointer БанківськийРахунокОрганізації { get { var obj = getValue("col_b5"); return new Довідники.БанківськіРахункиОрганізацій_Pointer(obj); } }
+        public string НомерВхідногоДокументу { get { var obj = getValue("col_b6"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаВхідногоДокументу { get { var obj = getValue("col_b7"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public Довідники.БанківськіРахункиКонтрагентів_Pointer БанківськийРахунокКонтрагента { get { var obj = getValue("col_b8"); return new Довідники.БанківськіРахункиКонтрагентів_Pointer(obj); } }
+        public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = getValue("col_b9"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_c1"); return new Довідники.Користувачі_Pointer(obj); } }
+        public bool ПовернутиТару { get { var obj = getValue("col_c2"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        public DateTime ДатаПоверненняТари { get { var obj = getValue("col_c3"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public Перелічення.СпособиДоставки СпосібДоставки { get { var obj = getValue("col_c4"); return (obj != DBNull.Value) ? (Перелічення.СпособиДоставки)obj : 0; } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_c5"); return new Довідники.Організації_Pointer(obj); } }
+        public decimal Курс { get { var obj = getValue("col_c6"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public int Кратність { get { var obj = getValue("col_c7"); return (obj != DBNull.Value) ? (int)obj : 0; } }
+        public TimeSpan ЧасДоставкиЗ { get { var obj = getValue("col_c8"); return (obj != DBNull.Value) ? TimeSpan.Parse(obj?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay; } }
+        public TimeSpan ЧасДоставкиДо { get { var obj = getValue("col_c9"); return (obj != DBNull.Value) ? TimeSpan.Parse(obj?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay; } }
+        public Довідники.Користувачі_Pointer Менеджер { get { var obj = getValue("col_d1"); return new Довідники.Користувачі_Pointer(obj); } }
+        public Довідники.СтаттяРухуКоштів_Pointer СтаттяРухуКоштів { get { var obj = getValue("col_d2"); return new Довідники.СтаттяРухуКоштів_Pointer(obj); } }
+        public Довідники.Каси_Pointer Каса { get { var obj = getValue("col_d3"); return new Довідники.Каси_Pointer(obj); } }
+        public UuidAndText Основа { get { var obj = getValue("col_a1"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public string Коментар { get { var obj = getValue("col_b1"); return obj.ToString() ?? ""; } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
+        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = getValue("col_d5"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
+        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = getValue("col_d4"); return (obj != DBNull.Value) ? (bool)obj : false; } }
         
     }
 
@@ -17274,7 +17274,7 @@ namespace GeneratedCode.Документи
 
     public class ЗамовленняКлієнта_Select : DocumentSelect
     {		
-        public ЗамовленняКлієнта_Select() : base(Config.Kernel, "tab_a34", ЗамовленняКлієнта_Const.PRESENTATION_FIELDS) { }
+        public ЗамовленняКлієнта_Select() : base(Config.Kernel, "tab_a34", ЗамовленняКлієнта_Const.TYPE, ЗамовленняКлієнта_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗамовленняКлієнта_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -17294,38 +17294,38 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = Get("col_b4"); return new Довідники.Контрагенти_Pointer(obj); } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_b5"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.Валюти_Pointer Валюта { get { var obj = Get("col_b6"); return new Довідники.Валюти_Pointer(obj); } }
-        public decimal СумаДокументу { get { var obj = Get("col_b7"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public Довідники.Склади_Pointer Склад { get { var obj = Get("col_b8"); return new Довідники.Склади_Pointer(obj); } }
-        public Перелічення.СтатусиЗамовленьКлієнтів Статус { get { var obj = Get("col_a1"); return (obj != DBNull.Value) ? (Перелічення.СтатусиЗамовленьКлієнтів)obj : 0; } }
-        public bool Узгоджений { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (bool)obj : false; } }
-        public Перелічення.ФормаОплати ФормаОплати { get { var obj = Get("col_a3"); return (obj != DBNull.Value) ? (Перелічення.ФормаОплати)obj : 0; } }
-        public Довідники.БанківськіРахункиОрганізацій_Pointer БанківськийРахунок { get { var obj = Get("col_a4"); return new Довідники.БанківськіРахункиОрганізацій_Pointer(obj); } }
-        public Довідники.БанківськіРахункиКонтрагентів_Pointer БанківськийРахунокКонтрагента { get { var obj = Get("col_a5"); return new Довідники.БанківськіРахункиКонтрагентів_Pointer(obj); } }
-        public Довідники.Каси_Pointer Каса { get { var obj = Get("col_a6"); return new Довідники.Каси_Pointer(obj); } }
-        public decimal СумаАвансуДоЗабезпечення { get { var obj = Get("col_a7"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public decimal СумаПередоплатиДоВідгрузки { get { var obj = Get("col_a8"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public DateTime ДатаВідгрузки { get { var obj = Get("col_b1"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string АдресаДоставки { get { var obj = Get("col_a9"); return obj.ToString() ?? ""; } }
-        public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = Get("col_b9"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
-        public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = Get("col_c2"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
-        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = Get("col_c3"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_c4"); return new Довідники.Користувачі_Pointer(obj); } }
-        public Перелічення.СпособиДоставки СпосібДоставки { get { var obj = Get("col_c5"); return (obj != DBNull.Value) ? (Перелічення.СпособиДоставки)obj : 0; } }
-        public TimeSpan ЧасДоставкиЗ { get { var obj = Get("col_c6"); return (obj != DBNull.Value) ? TimeSpan.Parse(obj?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay; } }
-        public TimeSpan ЧасДоставкиДо { get { var obj = Get("col_c7"); return (obj != DBNull.Value) ? TimeSpan.Parse(obj?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay; } }
-        public bool ПовернутиТару { get { var obj = Get("col_c8"); return (obj != DBNull.Value) ? (bool)obj : false; } }
-        public DateTime ДатаПоверненняТари { get { var obj = Get("col_c9"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_c1"); return obj.ToString() ?? ""; } }
-        public Довідники.Користувачі_Pointer Менеджер { get { var obj = Get("col_b2"); return new Довідники.Користувачі_Pointer(obj); } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_b3"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_d1"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = getValue("col_b4"); return new Довідники.Контрагенти_Pointer(obj); } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_b5"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.Валюти_Pointer Валюта { get { var obj = getValue("col_b6"); return new Довідники.Валюти_Pointer(obj); } }
+        public decimal СумаДокументу { get { var obj = getValue("col_b7"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public Довідники.Склади_Pointer Склад { get { var obj = getValue("col_b8"); return new Довідники.Склади_Pointer(obj); } }
+        public Перелічення.СтатусиЗамовленьКлієнтів Статус { get { var obj = getValue("col_a1"); return (obj != DBNull.Value) ? (Перелічення.СтатусиЗамовленьКлієнтів)obj : 0; } }
+        public bool Узгоджений { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        public Перелічення.ФормаОплати ФормаОплати { get { var obj = getValue("col_a3"); return (obj != DBNull.Value) ? (Перелічення.ФормаОплати)obj : 0; } }
+        public Довідники.БанківськіРахункиОрганізацій_Pointer БанківськийРахунок { get { var obj = getValue("col_a4"); return new Довідники.БанківськіРахункиОрганізацій_Pointer(obj); } }
+        public Довідники.БанківськіРахункиКонтрагентів_Pointer БанківськийРахунокКонтрагента { get { var obj = getValue("col_a5"); return new Довідники.БанківськіРахункиКонтрагентів_Pointer(obj); } }
+        public Довідники.Каси_Pointer Каса { get { var obj = getValue("col_a6"); return new Довідники.Каси_Pointer(obj); } }
+        public decimal СумаАвансуДоЗабезпечення { get { var obj = getValue("col_a7"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public decimal СумаПередоплатиДоВідгрузки { get { var obj = getValue("col_a8"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public DateTime ДатаВідгрузки { get { var obj = getValue("col_b1"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string АдресаДоставки { get { var obj = getValue("col_a9"); return obj.ToString() ?? ""; } }
+        public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = getValue("col_b9"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
+        public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = getValue("col_c2"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
+        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = getValue("col_c3"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_c4"); return new Довідники.Користувачі_Pointer(obj); } }
+        public Перелічення.СпособиДоставки СпосібДоставки { get { var obj = getValue("col_c5"); return (obj != DBNull.Value) ? (Перелічення.СпособиДоставки)obj : 0; } }
+        public TimeSpan ЧасДоставкиЗ { get { var obj = getValue("col_c6"); return (obj != DBNull.Value) ? TimeSpan.Parse(obj?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay; } }
+        public TimeSpan ЧасДоставкиДо { get { var obj = getValue("col_c7"); return (obj != DBNull.Value) ? TimeSpan.Parse(obj?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay; } }
+        public bool ПовернутиТару { get { var obj = getValue("col_c8"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        public DateTime ДатаПоверненняТари { get { var obj = getValue("col_c9"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_c1"); return obj.ToString() ?? ""; } }
+        public Довідники.Користувачі_Pointer Менеджер { get { var obj = getValue("col_b2"); return new Довідники.Користувачі_Pointer(obj); } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_b3"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_d1"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -18107,7 +18107,7 @@ namespace GeneratedCode.Документи
 
     public class РеалізаціяТоварівТаПослуг_Select : DocumentSelect
     {		
-        public РеалізаціяТоварівТаПослуг_Select() : base(Config.Kernel, "tab_a36", РеалізаціяТоварівТаПослуг_Const.PRESENTATION_FIELDS) { }
+        public РеалізаціяТоварівТаПослуг_Select() : base(Config.Kernel, "tab_a36", РеалізаціяТоварівТаПослуг_Const.TYPE, РеалізаціяТоварівТаПослуг_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new РеалізаціяТоварівТаПослуг_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -18127,41 +18127,41 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_a1"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.Валюти_Pointer Валюта { get { var obj = Get("col_a2"); return new Довідники.Валюти_Pointer(obj); } }
-        public Довідники.БанківськіРахункиОрганізацій_Pointer БанківськийРахунокОрганізації { get { var obj = Get("col_a3"); return new Довідники.БанківськіРахункиОрганізацій_Pointer(obj); } }
-        public Довідники.БанківськіРахункиКонтрагентів_Pointer БанківськийРахунокКонтрагента { get { var obj = Get("col_a4"); return new Довідники.БанківськіРахункиКонтрагентів_Pointer(obj); } }
-        public DateTime ДатаОплати { get { var obj = Get("col_a5"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public Документи.ЗамовленняКлієнта_Pointer ЗамовленняКлієнта { get { var obj = Get("col_a6"); return new Документи.ЗамовленняКлієнта_Pointer(obj); } }
-        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = Get("col_a7"); return new Довідники.Контрагенти_Pointer(obj); } }
-        public decimal СумаДокументу { get { var obj = Get("col_a8"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = Get("col_a9"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
-        public Довідники.Склади_Pointer Склад { get { var obj = Get("col_b1"); return new Довідники.Склади_Pointer(obj); } }
-        public Перелічення.ФормаОплати ФормаОплати { get { var obj = Get("col_b3"); return (obj != DBNull.Value) ? (Перелічення.ФормаОплати)obj : 0; } }
-        public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = Get("col_b4"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
-        public Довідники.Каси_Pointer Каса { get { var obj = Get("col_b5"); return new Довідники.Каси_Pointer(obj); } }
-        public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = Get("col_b6"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
-        public UuidAndText Основа { get { var obj = Get("col_b7"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
-        public Перелічення.СтатусиРеалізаціїТоварівТаПослуг Статус { get { var obj = Get("col_b8"); return (obj != DBNull.Value) ? (Перелічення.СтатусиРеалізаціїТоварівТаПослуг)obj : 0; } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_b9"); return new Довідники.Користувачі_Pointer(obj); } }
-        public decimal СумаПередоплати { get { var obj = Get("col_c1"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public decimal СумаПередоплатиЗаТару { get { var obj = Get("col_c2"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public Перелічення.СпособиДоставки СпосібДоставки { get { var obj = Get("col_c3"); return (obj != DBNull.Value) ? (Перелічення.СпособиДоставки)obj : 0; } }
-        public TimeSpan ЧасДоставкиЗ { get { var obj = Get("col_c4"); return (obj != DBNull.Value) ? TimeSpan.Parse(obj?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay; } }
-        public TimeSpan ЧасДоставкиДо { get { var obj = Get("col_c5"); return (obj != DBNull.Value) ? TimeSpan.Parse(obj?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay; } }
-        public bool ПовернутиТару { get { var obj = Get("col_c6"); return (obj != DBNull.Value) ? (bool)obj : false; } }
-        public DateTime ДатаПоверненняТари { get { var obj = Get("col_c7"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public decimal Курс { get { var obj = Get("col_c8"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public int Кратність { get { var obj = Get("col_d2"); return (obj != DBNull.Value) ? (int)obj : 0; } }
-        public string Коментар { get { var obj = Get("col_b2"); return obj.ToString() ?? ""; } }
-        public Довідники.Користувачі_Pointer Менеджер { get { var obj = Get("col_c9"); return new Довідники.Користувачі_Pointer(obj); } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_d1"); return obj.ToString() ?? ""; } }
-        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = Get("col_d3"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
-        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = Get("col_d4"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_a1"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.Валюти_Pointer Валюта { get { var obj = getValue("col_a2"); return new Довідники.Валюти_Pointer(obj); } }
+        public Довідники.БанківськіРахункиОрганізацій_Pointer БанківськийРахунокОрганізації { get { var obj = getValue("col_a3"); return new Довідники.БанківськіРахункиОрганізацій_Pointer(obj); } }
+        public Довідники.БанківськіРахункиКонтрагентів_Pointer БанківськийРахунокКонтрагента { get { var obj = getValue("col_a4"); return new Довідники.БанківськіРахункиКонтрагентів_Pointer(obj); } }
+        public DateTime ДатаОплати { get { var obj = getValue("col_a5"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public Документи.ЗамовленняКлієнта_Pointer ЗамовленняКлієнта { get { var obj = getValue("col_a6"); return new Документи.ЗамовленняКлієнта_Pointer(obj); } }
+        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = getValue("col_a7"); return new Довідники.Контрагенти_Pointer(obj); } }
+        public decimal СумаДокументу { get { var obj = getValue("col_a8"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = getValue("col_a9"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
+        public Довідники.Склади_Pointer Склад { get { var obj = getValue("col_b1"); return new Довідники.Склади_Pointer(obj); } }
+        public Перелічення.ФормаОплати ФормаОплати { get { var obj = getValue("col_b3"); return (obj != DBNull.Value) ? (Перелічення.ФормаОплати)obj : 0; } }
+        public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = getValue("col_b4"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
+        public Довідники.Каси_Pointer Каса { get { var obj = getValue("col_b5"); return new Довідники.Каси_Pointer(obj); } }
+        public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = getValue("col_b6"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
+        public UuidAndText Основа { get { var obj = getValue("col_b7"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public Перелічення.СтатусиРеалізаціїТоварівТаПослуг Статус { get { var obj = getValue("col_b8"); return (obj != DBNull.Value) ? (Перелічення.СтатусиРеалізаціїТоварівТаПослуг)obj : 0; } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_b9"); return new Довідники.Користувачі_Pointer(obj); } }
+        public decimal СумаПередоплати { get { var obj = getValue("col_c1"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public decimal СумаПередоплатиЗаТару { get { var obj = getValue("col_c2"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public Перелічення.СпособиДоставки СпосібДоставки { get { var obj = getValue("col_c3"); return (obj != DBNull.Value) ? (Перелічення.СпособиДоставки)obj : 0; } }
+        public TimeSpan ЧасДоставкиЗ { get { var obj = getValue("col_c4"); return (obj != DBNull.Value) ? TimeSpan.Parse(obj?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay; } }
+        public TimeSpan ЧасДоставкиДо { get { var obj = getValue("col_c5"); return (obj != DBNull.Value) ? TimeSpan.Parse(obj?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay; } }
+        public bool ПовернутиТару { get { var obj = getValue("col_c6"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        public DateTime ДатаПоверненняТари { get { var obj = getValue("col_c7"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public decimal Курс { get { var obj = getValue("col_c8"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public int Кратність { get { var obj = getValue("col_d2"); return (obj != DBNull.Value) ? (int)obj : 0; } }
+        public string Коментар { get { var obj = getValue("col_b2"); return obj.ToString() ?? ""; } }
+        public Довідники.Користувачі_Pointer Менеджер { get { var obj = getValue("col_c9"); return new Довідники.Користувачі_Pointer(obj); } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_d1"); return obj.ToString() ?? ""; } }
+        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = getValue("col_d3"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
+        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = getValue("col_d4"); return (obj != DBNull.Value) ? (bool)obj : false; } }
         
     }
 
@@ -19018,7 +19018,7 @@ namespace GeneratedCode.Документи
 
     public class ВстановленняЦінНоменклатури_Select : DocumentSelect
     {		
-        public ВстановленняЦінНоменклатури_Select() : base(Config.Kernel, "tab_a42", ВстановленняЦінНоменклатури_Const.PRESENTATION_FIELDS) { }
+        public ВстановленняЦінНоменклатури_Select() : base(Config.Kernel, "tab_a42", ВстановленняЦінНоменклатури_Const.TYPE, ВстановленняЦінНоменклатури_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВстановленняЦінНоменклатури_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -19038,17 +19038,17 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_a2"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.Валюти_Pointer Валюта { get { var obj = Get("col_a1"); return new Довідники.Валюти_Pointer(obj); } }
-        public Довідники.ВидиЦін_Pointer ВидЦіни { get { var obj = Get("col_a3"); return new Довідники.ВидиЦін_Pointer(obj); } }
-        public string Коментар { get { var obj = Get("col_g9"); return obj.ToString() ?? ""; } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_a4"); return new Довідники.Користувачі_Pointer(obj); } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_a5"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a6"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_a2"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.Валюти_Pointer Валюта { get { var obj = getValue("col_a1"); return new Довідники.Валюти_Pointer(obj); } }
+        public Довідники.ВидиЦін_Pointer ВидЦіни { get { var obj = getValue("col_a3"); return new Довідники.ВидиЦін_Pointer(obj); } }
+        public string Коментар { get { var obj = getValue("col_g9"); return obj.ToString() ?? ""; } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a4"); return new Довідники.Користувачі_Pointer(obj); } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a5"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a6"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -19570,7 +19570,7 @@ namespace GeneratedCode.Документи
 
     public class ПрихіднийКасовийОрдер_Select : DocumentSelect
     {		
-        public ПрихіднийКасовийОрдер_Select() : base(Config.Kernel, "tab_a44", ПрихіднийКасовийОрдер_Const.PRESENTATION_FIELDS) { }
+        public ПрихіднийКасовийОрдер_Select() : base(Config.Kernel, "tab_a44", ПрихіднийКасовийОрдер_Const.TYPE, ПрихіднийКасовийОрдер_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПрихіднийКасовийОрдер_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -19590,27 +19590,27 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_h8"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.Каси_Pointer Каса { get { var obj = Get("col_h9"); return new Довідники.Каси_Pointer(obj); } }
-        public decimal СумаДокументу { get { var obj = Get("col_i1"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = Get("col_i2"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
-        public UuidAndText Основа { get { var obj = Get("col_i3"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
-        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = Get("col_i4"); return new Довідники.Контрагенти_Pointer(obj); } }
-        public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = Get("col_a6"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
-        public Довідники.БанківськіРахункиОрганізацій_Pointer БанківськийРахунок { get { var obj = Get("col_i5"); return new Довідники.БанківськіРахункиОрганізацій_Pointer(obj); } }
-        public Довідники.Валюти_Pointer Валюта { get { var obj = Get("col_i6"); return new Довідники.Валюти_Pointer(obj); } }
-        public Довідники.СтаттяРухуКоштів_Pointer СтаттяРухуКоштів { get { var obj = Get("col_a1"); return new Довідники.СтаттяРухуКоштів_Pointer(obj); } }
-        public Довідники.Каси_Pointer КасаВідправник { get { var obj = Get("col_a2"); return new Довідники.Каси_Pointer(obj); } }
-        public decimal Курс { get { var obj = Get("col_a4"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public string Коментар { get { var obj = Get("col_a3"); return obj.ToString() ?? ""; } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_a5"); return new Довідники.Користувачі_Pointer(obj); } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_a7"); return obj.ToString() ?? ""; } }
-        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = Get("col_a8"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
-        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = Get("col_a9"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_h8"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.Каси_Pointer Каса { get { var obj = getValue("col_h9"); return new Довідники.Каси_Pointer(obj); } }
+        public decimal СумаДокументу { get { var obj = getValue("col_i1"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = getValue("col_i2"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
+        public UuidAndText Основа { get { var obj = getValue("col_i3"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = getValue("col_i4"); return new Довідники.Контрагенти_Pointer(obj); } }
+        public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = getValue("col_a6"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
+        public Довідники.БанківськіРахункиОрганізацій_Pointer БанківськийРахунок { get { var obj = getValue("col_i5"); return new Довідники.БанківськіРахункиОрганізацій_Pointer(obj); } }
+        public Довідники.Валюти_Pointer Валюта { get { var obj = getValue("col_i6"); return new Довідники.Валюти_Pointer(obj); } }
+        public Довідники.СтаттяРухуКоштів_Pointer СтаттяРухуКоштів { get { var obj = getValue("col_a1"); return new Довідники.СтаттяРухуКоштів_Pointer(obj); } }
+        public Довідники.Каси_Pointer КасаВідправник { get { var obj = getValue("col_a2"); return new Довідники.Каси_Pointer(obj); } }
+        public decimal Курс { get { var obj = getValue("col_a4"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public string Коментар { get { var obj = getValue("col_a3"); return obj.ToString() ?? ""; } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a5"); return new Довідники.Користувачі_Pointer(obj); } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a7"); return obj.ToString() ?? ""; } }
+        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = getValue("col_a8"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
+        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = getValue("col_a9"); return (obj != DBNull.Value) ? (bool)obj : false; } }
         
     }
 
@@ -20324,7 +20324,7 @@ namespace GeneratedCode.Документи
 
     public class РозхіднийКасовийОрдер_Select : DocumentSelect
     {		
-        public РозхіднийКасовийОрдер_Select() : base(Config.Kernel, "tab_a48", РозхіднийКасовийОрдер_Const.PRESENTATION_FIELDS) { }
+        public РозхіднийКасовийОрдер_Select() : base(Config.Kernel, "tab_a48", РозхіднийКасовийОрдер_Const.TYPE, РозхіднийКасовийОрдер_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new РозхіднийКасовийОрдер_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -20344,29 +20344,29 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_k2"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.Каси_Pointer Каса { get { var obj = Get("col_k3"); return new Довідники.Каси_Pointer(obj); } }
-        public decimal СумаДокументу { get { var obj = Get("col_a3"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public decimal СумаДокументуПоКурсу { get { var obj = Get("col_a5"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = Get("col_k5"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
-        public Довідники.Організації_Pointer ОрганізаціяОтримувач { get { var obj = Get("col_k4"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = Get("col_k7"); return new Довідники.Контрагенти_Pointer(obj); } }
-        public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = Get("col_a4"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
-        public Довідники.БанківськіРахункиОрганізацій_Pointer БанківськийРахунок { get { var obj = Get("col_k8"); return new Довідники.БанківськіРахункиОрганізацій_Pointer(obj); } }
-        public Довідники.Валюти_Pointer Валюта { get { var obj = Get("col_k9"); return new Довідники.Валюти_Pointer(obj); } }
-        public Довідники.СтаттяРухуКоштів_Pointer СтаттяРухуКоштів { get { var obj = Get("col_l2"); return new Довідники.СтаттяРухуКоштів_Pointer(obj); } }
-        public Довідники.Каси_Pointer КасаОтримувач { get { var obj = Get("col_k6"); return new Довідники.Каси_Pointer(obj); } }
-        public decimal Курс { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public UuidAndText Основа { get { var obj = Get("col_a1"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
-        public string Коментар { get { var obj = Get("col_l1"); return obj.ToString() ?? ""; } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_a6"); return new Довідники.Користувачі_Pointer(obj); } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_a7"); return obj.ToString() ?? ""; } }
-        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = Get("col_a8"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
-        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = Get("col_a9"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_k2"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.Каси_Pointer Каса { get { var obj = getValue("col_k3"); return new Довідники.Каси_Pointer(obj); } }
+        public decimal СумаДокументу { get { var obj = getValue("col_a3"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public decimal СумаДокументуПоКурсу { get { var obj = getValue("col_a5"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = getValue("col_k5"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
+        public Довідники.Організації_Pointer ОрганізаціяОтримувач { get { var obj = getValue("col_k4"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = getValue("col_k7"); return new Довідники.Контрагенти_Pointer(obj); } }
+        public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = getValue("col_a4"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
+        public Довідники.БанківськіРахункиОрганізацій_Pointer БанківськийРахунок { get { var obj = getValue("col_k8"); return new Довідники.БанківськіРахункиОрганізацій_Pointer(obj); } }
+        public Довідники.Валюти_Pointer Валюта { get { var obj = getValue("col_k9"); return new Довідники.Валюти_Pointer(obj); } }
+        public Довідники.СтаттяРухуКоштів_Pointer СтаттяРухуКоштів { get { var obj = getValue("col_l2"); return new Довідники.СтаттяРухуКоштів_Pointer(obj); } }
+        public Довідники.Каси_Pointer КасаОтримувач { get { var obj = getValue("col_k6"); return new Довідники.Каси_Pointer(obj); } }
+        public decimal Курс { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a1"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public string Коментар { get { var obj = getValue("col_l1"); return obj.ToString() ?? ""; } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a6"); return new Довідники.Користувачі_Pointer(obj); } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a7"); return obj.ToString() ?? ""; } }
+        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = getValue("col_a8"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
+        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = getValue("col_a9"); return (obj != DBNull.Value) ? (bool)obj : false; } }
         
     }
 
@@ -21090,7 +21090,7 @@ namespace GeneratedCode.Документи
 
     public class ПереміщенняТоварів_Select : DocumentSelect
     {		
-        public ПереміщенняТоварів_Select() : base(Config.Kernel, "tab_a31", ПереміщенняТоварів_Const.PRESENTATION_FIELDS) { }
+        public ПереміщенняТоварів_Select() : base(Config.Kernel, "tab_a31", ПереміщенняТоварів_Const.TYPE, ПереміщенняТоварів_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПереміщенняТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -21110,30 +21110,30 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_a3"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.БанківськіРахункиОрганізацій_Pointer БанківськийРахунокОрганізації { get { var obj = Get("col_a4"); return new Довідники.БанківськіРахункиОрганізацій_Pointer(obj); } }
-        public Довідники.ВидиЦін_Pointer ВидЦіни { get { var obj = Get("col_a5"); return new Довідники.ВидиЦін_Pointer(obj); } }
-        public Довідники.Організації_Pointer ОрганізаціяОтримувач { get { var obj = Get("col_a7"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.Користувачі_Pointer Відповідальний { get { var obj = Get("col_a8"); return new Довідники.Користувачі_Pointer(obj); } }
-        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = Get("col_a9"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
-        public Довідники.Склади_Pointer СкладВідправник { get { var obj = Get("col_b1"); return new Довідники.Склади_Pointer(obj); } }
-        public Довідники.Склади_Pointer СкладОтримувач { get { var obj = Get("col_b2"); return new Довідники.Склади_Pointer(obj); } }
-        public Перелічення.СтатусиПереміщенняТоварів Статус { get { var obj = Get("col_b3"); return (obj != DBNull.Value) ? (Перелічення.СтатусиПереміщенняТоварів)obj : 0; } }
-        public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = Get("col_b4"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
-        public Перелічення.СпособиДоставки СпосібДоставки { get { var obj = Get("col_b5"); return (obj != DBNull.Value) ? (Перелічення.СпособиДоставки)obj : 0; } }
-        public string АдресДоставки { get { var obj = Get("col_b6"); return obj.ToString() ?? ""; } }
-        public TimeSpan ЧасДоставкиЗ { get { var obj = Get("col_b7"); return (obj != DBNull.Value) ? TimeSpan.Parse(obj?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay; } }
-        public TimeSpan ЧасДоставкиДо { get { var obj = Get("col_b8"); return (obj != DBNull.Value) ? TimeSpan.Parse(obj?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay; } }
-        public string Коментар { get { var obj = Get("col_a6"); return obj.ToString() ?? ""; } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_a1"); return new Довідники.Користувачі_Pointer(obj); } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_b9"); return obj.ToString() ?? ""; } }
-        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = Get("col_c1"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
-        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = Get("col_c2"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_a3"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.БанківськіРахункиОрганізацій_Pointer БанківськийРахунокОрганізації { get { var obj = getValue("col_a4"); return new Довідники.БанківськіРахункиОрганізацій_Pointer(obj); } }
+        public Довідники.ВидиЦін_Pointer ВидЦіни { get { var obj = getValue("col_a5"); return new Довідники.ВидиЦін_Pointer(obj); } }
+        public Довідники.Організації_Pointer ОрганізаціяОтримувач { get { var obj = getValue("col_a7"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.Користувачі_Pointer Відповідальний { get { var obj = getValue("col_a8"); return new Довідники.Користувачі_Pointer(obj); } }
+        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = getValue("col_a9"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
+        public Довідники.Склади_Pointer СкладВідправник { get { var obj = getValue("col_b1"); return new Довідники.Склади_Pointer(obj); } }
+        public Довідники.Склади_Pointer СкладОтримувач { get { var obj = getValue("col_b2"); return new Довідники.Склади_Pointer(obj); } }
+        public Перелічення.СтатусиПереміщенняТоварів Статус { get { var obj = getValue("col_b3"); return (obj != DBNull.Value) ? (Перелічення.СтатусиПереміщенняТоварів)obj : 0; } }
+        public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = getValue("col_b4"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
+        public Перелічення.СпособиДоставки СпосібДоставки { get { var obj = getValue("col_b5"); return (obj != DBNull.Value) ? (Перелічення.СпособиДоставки)obj : 0; } }
+        public string АдресДоставки { get { var obj = getValue("col_b6"); return obj.ToString() ?? ""; } }
+        public TimeSpan ЧасДоставкиЗ { get { var obj = getValue("col_b7"); return (obj != DBNull.Value) ? TimeSpan.Parse(obj?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay; } }
+        public TimeSpan ЧасДоставкиДо { get { var obj = getValue("col_b8"); return (obj != DBNull.Value) ? TimeSpan.Parse(obj?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay; } }
+        public string Коментар { get { var obj = getValue("col_a6"); return obj.ToString() ?? ""; } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a1"); return new Довідники.Користувачі_Pointer(obj); } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_b9"); return obj.ToString() ?? ""; } }
+        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = getValue("col_c1"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
+        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = getValue("col_c2"); return (obj != DBNull.Value) ? (bool)obj : false; } }
         
     }
 
@@ -21888,7 +21888,7 @@ namespace GeneratedCode.Документи
 
     public class ПоверненняТоварівПостачальнику_Select : DocumentSelect
     {		
-        public ПоверненняТоварівПостачальнику_Select() : base(Config.Kernel, "tab_a51", ПоверненняТоварівПостачальнику_Const.PRESENTATION_FIELDS) { }
+        public ПоверненняТоварівПостачальнику_Select() : base(Config.Kernel, "tab_a51", ПоверненняТоварівПостачальнику_Const.TYPE, ПоверненняТоварівПостачальнику_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПоверненняТоварівПостачальнику_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -21908,32 +21908,32 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_c2"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = Get("col_c3"); return new Довідники.Контрагенти_Pointer(obj); } }
-        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = Get("col_c4"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
-        public Довідники.Валюти_Pointer Валюта { get { var obj = Get("col_c5"); return new Довідники.Валюти_Pointer(obj); } }
-        public Довідники.Склади_Pointer Склад { get { var obj = Get("col_c6"); return new Довідники.Склади_Pointer(obj); } }
-        public decimal СумаДокументу { get { var obj = Get("col_c7"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = Get("col_c9"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
-        public Довідники.БанківськіРахункиОрганізацій_Pointer БанківськийРахунокОрганізації { get { var obj = Get("col_d1"); return new Довідники.БанківськіРахункиОрганізацій_Pointer(obj); } }
-        public Довідники.БанківськіРахункиКонтрагентів_Pointer БанківськийРахунокКонтрагента { get { var obj = Get("col_d2"); return new Довідники.БанківськіРахункиКонтрагентів_Pointer(obj); } }
-        public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = Get("col_d3"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
-        public Перелічення.СпособиДоставки СпосібДоставки { get { var obj = Get("col_d4"); return (obj != DBNull.Value) ? (Перелічення.СпособиДоставки)obj : 0; } }
-        public string АдресДоставки { get { var obj = Get("col_d5"); return obj.ToString() ?? ""; } }
-        public TimeSpan ЧасДоставкиЗ { get { var obj = Get("col_d6"); return (obj != DBNull.Value) ? TimeSpan.Parse(obj?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay; } }
-        public TimeSpan ЧасДоставкиДо { get { var obj = Get("col_d7"); return (obj != DBNull.Value) ? TimeSpan.Parse(obj?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay; } }
-        public Довідники.Каси_Pointer Каса { get { var obj = Get("col_a1"); return new Довідники.Каси_Pointer(obj); } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
-        public string Коментар { get { var obj = Get("col_c8"); return obj.ToString() ?? ""; } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_a3"); return new Довідники.Користувачі_Pointer(obj); } }
-        public Довідники.Користувачі_Pointer Менеджер { get { var obj = Get("col_a4"); return new Довідники.Користувачі_Pointer(obj); } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_a5"); return obj.ToString() ?? ""; } }
-        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = Get("col_a6"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
-        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = Get("col_a7"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_c2"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = getValue("col_c3"); return new Довідники.Контрагенти_Pointer(obj); } }
+        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = getValue("col_c4"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
+        public Довідники.Валюти_Pointer Валюта { get { var obj = getValue("col_c5"); return new Довідники.Валюти_Pointer(obj); } }
+        public Довідники.Склади_Pointer Склад { get { var obj = getValue("col_c6"); return new Довідники.Склади_Pointer(obj); } }
+        public decimal СумаДокументу { get { var obj = getValue("col_c7"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = getValue("col_c9"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
+        public Довідники.БанківськіРахункиОрганізацій_Pointer БанківськийРахунокОрганізації { get { var obj = getValue("col_d1"); return new Довідники.БанківськіРахункиОрганізацій_Pointer(obj); } }
+        public Довідники.БанківськіРахункиКонтрагентів_Pointer БанківськийРахунокКонтрагента { get { var obj = getValue("col_d2"); return new Довідники.БанківськіРахункиКонтрагентів_Pointer(obj); } }
+        public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = getValue("col_d3"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
+        public Перелічення.СпособиДоставки СпосібДоставки { get { var obj = getValue("col_d4"); return (obj != DBNull.Value) ? (Перелічення.СпособиДоставки)obj : 0; } }
+        public string АдресДоставки { get { var obj = getValue("col_d5"); return obj.ToString() ?? ""; } }
+        public TimeSpan ЧасДоставкиЗ { get { var obj = getValue("col_d6"); return (obj != DBNull.Value) ? TimeSpan.Parse(obj?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay; } }
+        public TimeSpan ЧасДоставкиДо { get { var obj = getValue("col_d7"); return (obj != DBNull.Value) ? TimeSpan.Parse(obj?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay; } }
+        public Довідники.Каси_Pointer Каса { get { var obj = getValue("col_a1"); return new Довідники.Каси_Pointer(obj); } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public string Коментар { get { var obj = getValue("col_c8"); return obj.ToString() ?? ""; } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a3"); return new Довідники.Користувачі_Pointer(obj); } }
+        public Довідники.Користувачі_Pointer Менеджер { get { var obj = getValue("col_a4"); return new Довідники.Користувачі_Pointer(obj); } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a5"); return obj.ToString() ?? ""; } }
+        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = getValue("col_a6"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
+        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = getValue("col_a7"); return (obj != DBNull.Value) ? (bool)obj : false; } }
         
     }
 
@@ -22678,7 +22678,7 @@ namespace GeneratedCode.Документи
 
     public class ПоверненняТоварівВідКлієнта_Select : DocumentSelect
     {		
-        public ПоверненняТоварівВідКлієнта_Select() : base(Config.Kernel, "tab_a53", ПоверненняТоварівВідКлієнта_Const.PRESENTATION_FIELDS) { }
+        public ПоверненняТоварівВідКлієнта_Select() : base(Config.Kernel, "tab_a53", ПоверненняТоварівВідКлієнта_Const.TYPE, ПоверненняТоварівВідКлієнта_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПоверненняТоварівВідКлієнта_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -22698,28 +22698,28 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_e8"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.Валюти_Pointer Валюта { get { var obj = Get("col_e9"); return new Довідники.Валюти_Pointer(obj); } }
-        public decimal СумаДокументу { get { var obj = Get("col_f1"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public Довідники.Склади_Pointer Склад { get { var obj = Get("col_f2"); return new Довідники.Склади_Pointer(obj); } }
-        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = Get("col_f3"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
-        public Довідники.Користувачі_Pointer Менеджер { get { var obj = Get("col_f5"); return new Довідники.Користувачі_Pointer(obj); } }
-        public Документи.РеалізаціяТоварівТаПослуг_Pointer ДокументПродажу { get { var obj = Get("col_f7"); return new Документи.РеалізаціяТоварівТаПослуг_Pointer(obj); } }
-        public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = Get("col_f8"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
-        public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = Get("col_f9"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
-        public string ПричинаПовернення { get { var obj = Get("col_g1"); return obj.ToString() ?? ""; } }
-        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = Get("col_g2"); return new Довідники.Контрагенти_Pointer(obj); } }
-        public Довідники.Каси_Pointer Каса { get { var obj = Get("col_a1"); return new Довідники.Каси_Pointer(obj); } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
-        public string Коментар { get { var obj = Get("col_f6"); return obj.ToString() ?? ""; } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_a3"); return new Довідники.Користувачі_Pointer(obj); } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_a4"); return obj.ToString() ?? ""; } }
-        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = Get("col_a5"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
-        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = Get("col_a6"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_e8"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.Валюти_Pointer Валюта { get { var obj = getValue("col_e9"); return new Довідники.Валюти_Pointer(obj); } }
+        public decimal СумаДокументу { get { var obj = getValue("col_f1"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public Довідники.Склади_Pointer Склад { get { var obj = getValue("col_f2"); return new Довідники.Склади_Pointer(obj); } }
+        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = getValue("col_f3"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
+        public Довідники.Користувачі_Pointer Менеджер { get { var obj = getValue("col_f5"); return new Довідники.Користувачі_Pointer(obj); } }
+        public Документи.РеалізаціяТоварівТаПослуг_Pointer ДокументПродажу { get { var obj = getValue("col_f7"); return new Документи.РеалізаціяТоварівТаПослуг_Pointer(obj); } }
+        public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = getValue("col_f8"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
+        public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = getValue("col_f9"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
+        public string ПричинаПовернення { get { var obj = getValue("col_g1"); return obj.ToString() ?? ""; } }
+        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = getValue("col_g2"); return new Довідники.Контрагенти_Pointer(obj); } }
+        public Довідники.Каси_Pointer Каса { get { var obj = getValue("col_a1"); return new Довідники.Каси_Pointer(obj); } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public string Коментар { get { var obj = getValue("col_f6"); return obj.ToString() ?? ""; } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a3"); return new Довідники.Користувачі_Pointer(obj); } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a4"); return obj.ToString() ?? ""; } }
+        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = getValue("col_a5"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
+        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = getValue("col_a6"); return (obj != DBNull.Value) ? (bool)obj : false; } }
         
     }
 
@@ -23452,7 +23452,7 @@ namespace GeneratedCode.Документи
 
     public class АктВиконанихРобіт_Select : DocumentSelect
     {		
-        public АктВиконанихРобіт_Select() : base(Config.Kernel, "tab_a81", АктВиконанихРобіт_Const.PRESENTATION_FIELDS) { }
+        public АктВиконанихРобіт_Select() : base(Config.Kernel, "tab_a81", АктВиконанихРобіт_Const.TYPE, АктВиконанихРобіт_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new АктВиконанихРобіт_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -23472,27 +23472,27 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public Довідники.Валюти_Pointer Валюта { get { var obj = Get("col_b2"); return new Довідники.Валюти_Pointer(obj); } }
-        public Документи.ЗамовленняКлієнта_Pointer ЗамовленняКлієнта { get { var obj = Get("col_b3"); return new Документи.ЗамовленняКлієнта_Pointer(obj); } }
-        public Довідники.Каси_Pointer Каса { get { var obj = Get("col_b4"); return new Довідники.Каси_Pointer(obj); } }
-        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = Get("col_b5"); return new Довідники.Контрагенти_Pointer(obj); } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_b6"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = Get("col_a5"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
-        public decimal СумаДокументу { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public Перелічення.ФормаОплати ФормаОплати { get { var obj = Get("col_a3"); return (obj != DBNull.Value) ? (Перелічення.ФормаОплати)obj : 0; } }
-        public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = Get("col_a4"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
-        public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = Get("col_a6"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_a7"); return new Довідники.Користувачі_Pointer(obj); } }
-        public Довідники.Користувачі_Pointer Менеджер { get { var obj = Get("col_a8"); return new Довідники.Користувачі_Pointer(obj); } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_a9"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_b1"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
-        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = Get("col_b7"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
-        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = Get("col_b8"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public Довідники.Валюти_Pointer Валюта { get { var obj = getValue("col_b2"); return new Довідники.Валюти_Pointer(obj); } }
+        public Документи.ЗамовленняКлієнта_Pointer ЗамовленняКлієнта { get { var obj = getValue("col_b3"); return new Документи.ЗамовленняКлієнта_Pointer(obj); } }
+        public Довідники.Каси_Pointer Каса { get { var obj = getValue("col_b4"); return new Довідники.Каси_Pointer(obj); } }
+        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = getValue("col_b5"); return new Довідники.Контрагенти_Pointer(obj); } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_b6"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = getValue("col_a5"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
+        public decimal СумаДокументу { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public Перелічення.ФормаОплати ФормаОплати { get { var obj = getValue("col_a3"); return (obj != DBNull.Value) ? (Перелічення.ФормаОплати)obj : 0; } }
+        public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = getValue("col_a4"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
+        public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = getValue("col_a6"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a7"); return new Довідники.Користувачі_Pointer(obj); } }
+        public Довідники.Користувачі_Pointer Менеджер { get { var obj = getValue("col_a8"); return new Довідники.Користувачі_Pointer(obj); } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a9"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_b1"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = getValue("col_b7"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
+        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = getValue("col_b8"); return (obj != DBNull.Value) ? (bool)obj : false; } }
         
     }
 
@@ -24348,7 +24348,7 @@ namespace GeneratedCode.Документи
 
     public class ВведенняЗалишків_Select : DocumentSelect
     {		
-        public ВведенняЗалишків_Select() : base(Config.Kernel, "tab_a83", ВведенняЗалишків_Const.PRESENTATION_FIELDS) { }
+        public ВведенняЗалишків_Select() : base(Config.Kernel, "tab_a83", ВведенняЗалишків_Const.TYPE, ВведенняЗалишків_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВведенняЗалишків_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -24368,23 +24368,23 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_c8"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = Get("col_d5"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
-        public Довідники.Склади_Pointer Склад { get { var obj = Get("col_c9"); return new Довідники.Склади_Pointer(obj); } }
-        public Довідники.Валюти_Pointer Валюта { get { var obj = Get("col_d2"); return new Довідники.Валюти_Pointer(obj); } }
-        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = Get("col_d3"); return new Довідники.Контрагенти_Pointer(obj); } }
-        public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = Get("col_d4"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
-        public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = Get("col_a1"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
-        public string Коментар { get { var obj = Get("col_d1"); return obj.ToString() ?? ""; } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_a3"); return new Довідники.Користувачі_Pointer(obj); } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a4"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
-        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = Get("col_a5"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
-        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = Get("col_a6"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_c8"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = getValue("col_d5"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
+        public Довідники.Склади_Pointer Склад { get { var obj = getValue("col_c9"); return new Довідники.Склади_Pointer(obj); } }
+        public Довідники.Валюти_Pointer Валюта { get { var obj = getValue("col_d2"); return new Довідники.Валюти_Pointer(obj); } }
+        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = getValue("col_d3"); return new Довідники.Контрагенти_Pointer(obj); } }
+        public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = getValue("col_d4"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
+        public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = getValue("col_a1"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
+        public string Коментар { get { var obj = getValue("col_d1"); return obj.ToString() ?? ""; } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a3"); return new Довідники.Користувачі_Pointer(obj); } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a4"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = getValue("col_a5"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
+        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = getValue("col_a6"); return (obj != DBNull.Value) ? (bool)obj : false; } }
         
     }
 
@@ -25467,7 +25467,7 @@ namespace GeneratedCode.Документи
 
     public class НадлишкиТоварів_Select : DocumentSelect
     {		
-        public НадлишкиТоварів_Select() : base(Config.Kernel, "tab_a88", НадлишкиТоварів_Const.PRESENTATION_FIELDS) { }
+        public НадлишкиТоварів_Select() : base(Config.Kernel, "tab_a88", НадлишкиТоварів_Const.TYPE, НадлишкиТоварів_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new НадлишкиТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -25487,17 +25487,17 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_f6"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = Get("col_f7"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
-        public Довідники.Склади_Pointer Склад { get { var obj = Get("col_f8"); return new Довідники.Склади_Pointer(obj); } }
-        public Довідники.ВидиЦін_Pointer ВидЦіни { get { var obj = Get("col_f9"); return new Довідники.ВидиЦін_Pointer(obj); } }
-        public string Коментар { get { var obj = Get("col_g1"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_a1"); return new Довідники.Користувачі_Pointer(obj); } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_f6"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = getValue("col_f7"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
+        public Довідники.Склади_Pointer Склад { get { var obj = getValue("col_f8"); return new Довідники.Склади_Pointer(obj); } }
+        public Довідники.ВидиЦін_Pointer ВидЦіни { get { var obj = getValue("col_f9"); return new Довідники.ВидиЦін_Pointer(obj); } }
+        public string Коментар { get { var obj = getValue("col_g1"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a1"); return new Довідники.Користувачі_Pointer(obj); } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
         
     }
 
@@ -25919,7 +25919,7 @@ namespace GeneratedCode.Документи
 
     public class ПересортицяТоварів_Select : DocumentSelect
     {		
-        public ПересортицяТоварів_Select() : base(Config.Kernel, "tab_a90", ПересортицяТоварів_Const.PRESENTATION_FIELDS) { }
+        public ПересортицяТоварів_Select() : base(Config.Kernel, "tab_a90", ПересортицяТоварів_Const.TYPE, ПересортицяТоварів_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПересортицяТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -25939,17 +25939,17 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_h2"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = Get("col_h3"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
-        public Довідники.Склади_Pointer Склад { get { var obj = Get("col_h4"); return new Довідники.Склади_Pointer(obj); } }
-        public Довідники.ВидиЦін_Pointer ВидЦіни { get { var obj = Get("col_h5"); return new Довідники.ВидиЦін_Pointer(obj); } }
-        public string Коментар { get { var obj = Get("col_h6"); return obj.ToString() ?? ""; } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_a1"); return new Довідники.Користувачі_Pointer(obj); } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_h2"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = getValue("col_h3"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
+        public Довідники.Склади_Pointer Склад { get { var obj = getValue("col_h4"); return new Довідники.Склади_Pointer(obj); } }
+        public Довідники.ВидиЦін_Pointer ВидЦіни { get { var obj = getValue("col_h5"); return new Довідники.ВидиЦін_Pointer(obj); } }
+        public string Коментар { get { var obj = getValue("col_h6"); return obj.ToString() ?? ""; } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a1"); return new Довідники.Користувачі_Pointer(obj); } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
         
     }
 
@@ -26379,7 +26379,7 @@ namespace GeneratedCode.Документи
 
     public class ПерерахунокТоварів_Select : DocumentSelect
     {		
-        public ПерерахунокТоварів_Select() : base(Config.Kernel, "tab_a92", ПерерахунокТоварів_Const.PRESENTATION_FIELDS) { }
+        public ПерерахунокТоварів_Select() : base(Config.Kernel, "tab_a92", ПерерахунокТоварів_Const.TYPE, ПерерахунокТоварів_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПерерахунокТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -26399,18 +26399,18 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public Довідники.Склади_Pointer Склад { get { var obj = Get("col_i6"); return new Довідники.Склади_Pointer(obj); } }
-        public Довідники.ФізичніОсоби_Pointer Відповідальний { get { var obj = Get("col_i7"); return new Довідники.ФізичніОсоби_Pointer(obj); } }
-        public string Коментар { get { var obj = Get("col_i5"); return obj.ToString() ?? ""; } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_a1"); return new Довідники.Користувачі_Pointer(obj); } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_a3"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = Get("col_a4"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
-        public UuidAndText Основа { get { var obj = Get("col_a5"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public Довідники.Склади_Pointer Склад { get { var obj = getValue("col_i6"); return new Довідники.Склади_Pointer(obj); } }
+        public Довідники.ФізичніОсоби_Pointer Відповідальний { get { var obj = getValue("col_i7"); return new Довідники.ФізичніОсоби_Pointer(obj); } }
+        public string Коментар { get { var obj = getValue("col_i5"); return obj.ToString() ?? ""; } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a1"); return new Довідники.Користувачі_Pointer(obj); } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_a3"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = getValue("col_a4"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
+        public UuidAndText Основа { get { var obj = getValue("col_a5"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -26897,7 +26897,7 @@ namespace GeneratedCode.Документи
 
     public class ПсуванняТоварів_Select : DocumentSelect
     {		
-        public ПсуванняТоварів_Select() : base(Config.Kernel, "tab_a94", ПсуванняТоварів_Const.PRESENTATION_FIELDS) { }
+        public ПсуванняТоварів_Select() : base(Config.Kernel, "tab_a94", ПсуванняТоварів_Const.TYPE, ПсуванняТоварів_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПсуванняТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -26917,19 +26917,19 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_a6"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = Get("col_a7"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
-        public Довідники.Склади_Pointer Склад { get { var obj = Get("col_a4"); return new Довідники.Склади_Pointer(obj); } }
-        public string Причина { get { var obj = Get("col_a8"); return obj.ToString() ?? ""; } }
-        public decimal СумаДокументу { get { var obj = Get("col_a1"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public string Коментар { get { var obj = Get("col_a5"); return obj.ToString() ?? ""; } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_a2"); return new Довідники.Користувачі_Pointer(obj); } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_a3"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_b2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_a6"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = getValue("col_a7"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
+        public Довідники.Склади_Pointer Склад { get { var obj = getValue("col_a4"); return new Довідники.Склади_Pointer(obj); } }
+        public string Причина { get { var obj = getValue("col_a8"); return obj.ToString() ?? ""; } }
+        public decimal СумаДокументу { get { var obj = getValue("col_a1"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public string Коментар { get { var obj = getValue("col_a5"); return obj.ToString() ?? ""; } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a2"); return new Довідники.Користувачі_Pointer(obj); } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a3"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_b2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -27450,7 +27450,7 @@ namespace GeneratedCode.Документи
 
     public class ВнутрішнєСпоживанняТоварів_Select : DocumentSelect
     {		
-        public ВнутрішнєСпоживанняТоварів_Select() : base(Config.Kernel, "tab_b07", ВнутрішнєСпоживанняТоварів_Const.PRESENTATION_FIELDS) { }
+        public ВнутрішнєСпоживанняТоварів_Select() : base(Config.Kernel, "tab_b07", ВнутрішнєСпоживанняТоварів_Const.TYPE, ВнутрішнєСпоживанняТоварів_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВнутрішнєСпоживанняТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -27470,22 +27470,22 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_a1"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.Склади_Pointer Склад { get { var obj = Get("col_b1"); return new Довідники.Склади_Pointer(obj); } }
-        public Довідники.Валюти_Pointer Валюта { get { var obj = Get("col_a2"); return new Довідники.Валюти_Pointer(obj); } }
-        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = Get("col_a9"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
-        public decimal СумаДокументу { get { var obj = Get("col_a8"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public UuidAndText Основа { get { var obj = Get("col_b7"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_b9"); return new Довідники.Користувачі_Pointer(obj); } }
-        public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = Get("col_b4"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
-        public string Коментар { get { var obj = Get("col_b2"); return obj.ToString() ?? ""; } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_a3"); return obj.ToString() ?? ""; } }
-        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = Get("col_a4"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
-        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = Get("col_a5"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_a1"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.Склади_Pointer Склад { get { var obj = getValue("col_b1"); return new Довідники.Склади_Pointer(obj); } }
+        public Довідники.Валюти_Pointer Валюта { get { var obj = getValue("col_a2"); return new Довідники.Валюти_Pointer(obj); } }
+        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = getValue("col_a9"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
+        public decimal СумаДокументу { get { var obj = getValue("col_a8"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public UuidAndText Основа { get { var obj = getValue("col_b7"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_b9"); return new Довідники.Користувачі_Pointer(obj); } }
+        public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = getValue("col_b4"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
+        public string Коментар { get { var obj = getValue("col_b2"); return obj.ToString() ?? ""; } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a3"); return obj.ToString() ?? ""; } }
+        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = getValue("col_a4"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
+        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = getValue("col_a5"); return (obj != DBNull.Value) ? (bool)obj : false; } }
         
     }
 
@@ -28224,7 +28224,7 @@ namespace GeneratedCode.Документи
 
     public class РахунокФактура_Select : DocumentSelect
     {		
-        public РахунокФактура_Select() : base(Config.Kernel, "tab_b10", РахунокФактура_Const.PRESENTATION_FIELDS) { }
+        public РахунокФактура_Select() : base(Config.Kernel, "tab_b10", РахунокФактура_Const.TYPE, РахунокФактура_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new РахунокФактура_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -28244,30 +28244,30 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = Get("col_b4"); return new Довідники.Контрагенти_Pointer(obj); } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_b5"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.Валюти_Pointer Валюта { get { var obj = Get("col_b6"); return new Довідники.Валюти_Pointer(obj); } }
-        public decimal СумаДокументу { get { var obj = Get("col_b7"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public Довідники.Склади_Pointer Склад { get { var obj = Get("col_b8"); return new Довідники.Склади_Pointer(obj); } }
-        public Перелічення.СтатусиЗамовленьКлієнтів Статус { get { var obj = Get("col_a1"); return (obj != DBNull.Value) ? (Перелічення.СтатусиЗамовленьКлієнтів)obj : 0; } }
-        public Перелічення.ФормаОплати ФормаОплати { get { var obj = Get("col_a3"); return (obj != DBNull.Value) ? (Перелічення.ФормаОплати)obj : 0; } }
-        public Довідники.БанківськіРахункиОрганізацій_Pointer БанківськийРахунок { get { var obj = Get("col_a4"); return new Довідники.БанківськіРахункиОрганізацій_Pointer(obj); } }
-        public Довідники.БанківськіРахункиКонтрагентів_Pointer БанківськийРахунокКонтрагента { get { var obj = Get("col_a5"); return new Довідники.БанківськіРахункиКонтрагентів_Pointer(obj); } }
-        public Довідники.Каси_Pointer Каса { get { var obj = Get("col_a6"); return new Довідники.Каси_Pointer(obj); } }
-        public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = Get("col_b9"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
-        public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = Get("col_c2"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
-        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = Get("col_c3"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_c4"); return new Довідники.Користувачі_Pointer(obj); } }
-        public string Коментар { get { var obj = Get("col_c1"); return obj.ToString() ?? ""; } }
-        public Довідники.Користувачі_Pointer Менеджер { get { var obj = Get("col_a2"); return new Довідники.Користувачі_Pointer(obj); } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_a7"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a8"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
-        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = Get("col_a9"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
-        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = Get("col_b1"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = getValue("col_b4"); return new Довідники.Контрагенти_Pointer(obj); } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_b5"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.Валюти_Pointer Валюта { get { var obj = getValue("col_b6"); return new Довідники.Валюти_Pointer(obj); } }
+        public decimal СумаДокументу { get { var obj = getValue("col_b7"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public Довідники.Склади_Pointer Склад { get { var obj = getValue("col_b8"); return new Довідники.Склади_Pointer(obj); } }
+        public Перелічення.СтатусиЗамовленьКлієнтів Статус { get { var obj = getValue("col_a1"); return (obj != DBNull.Value) ? (Перелічення.СтатусиЗамовленьКлієнтів)obj : 0; } }
+        public Перелічення.ФормаОплати ФормаОплати { get { var obj = getValue("col_a3"); return (obj != DBNull.Value) ? (Перелічення.ФормаОплати)obj : 0; } }
+        public Довідники.БанківськіРахункиОрганізацій_Pointer БанківськийРахунок { get { var obj = getValue("col_a4"); return new Довідники.БанківськіРахункиОрганізацій_Pointer(obj); } }
+        public Довідники.БанківськіРахункиКонтрагентів_Pointer БанківськийРахунокКонтрагента { get { var obj = getValue("col_a5"); return new Довідники.БанківськіРахункиКонтрагентів_Pointer(obj); } }
+        public Довідники.Каси_Pointer Каса { get { var obj = getValue("col_a6"); return new Довідники.Каси_Pointer(obj); } }
+        public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = getValue("col_b9"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
+        public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = getValue("col_c2"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
+        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = getValue("col_c3"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_c4"); return new Довідники.Користувачі_Pointer(obj); } }
+        public string Коментар { get { var obj = getValue("col_c1"); return obj.ToString() ?? ""; } }
+        public Довідники.Користувачі_Pointer Менеджер { get { var obj = getValue("col_a2"); return new Довідники.Користувачі_Pointer(obj); } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a7"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a8"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = getValue("col_a9"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
+        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = getValue("col_b1"); return (obj != DBNull.Value) ? (bool)obj : false; } }
         
     }
 
@@ -29106,7 +29106,7 @@ namespace GeneratedCode.Документи
 
     public class РозміщенняТоварівНаСкладі_Select : DocumentSelect
     {		
-        public РозміщенняТоварівНаСкладі_Select() : base(Config.Kernel, "tab_a64", РозміщенняТоварівНаСкладі_Const.PRESENTATION_FIELDS) { }
+        public РозміщенняТоварівНаСкладі_Select() : base(Config.Kernel, "tab_a64", РозміщенняТоварівНаСкладі_Const.TYPE, РозміщенняТоварівНаСкладі_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new РозміщенняТоварівНаСкладі_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -29126,18 +29126,18 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
-        public Довідники.Склади_Pointer Склад { get { var obj = Get("col_a3"); return new Довідники.Склади_Pointer(obj); } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_a4"); return new Довідники.Користувачі_Pointer(obj); } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_a5"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = Get("col_a6"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
-        public Документи.ПоступленняТоварівТаПослуг_Pointer ДокументПоступлення { get { var obj = Get("col_a7"); return new Документи.ПоступленняТоварівТаПослуг_Pointer(obj); } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_a8"); return obj.ToString() ?? ""; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public Довідники.Склади_Pointer Склад { get { var obj = getValue("col_a3"); return new Довідники.Склади_Pointer(obj); } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a4"); return new Довідники.Користувачі_Pointer(obj); } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_a5"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = getValue("col_a6"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
+        public Документи.ПоступленняТоварівТаПослуг_Pointer ДокументПоступлення { get { var obj = getValue("col_a7"); return new Документи.ПоступленняТоварівТаПослуг_Pointer(obj); } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a8"); return obj.ToString() ?? ""; } }
         
     }
 
@@ -29609,7 +29609,7 @@ namespace GeneratedCode.Документи
 
     public class ПереміщенняТоварівНаСкладі_Select : DocumentSelect
     {		
-        public ПереміщенняТоварівНаСкладі_Select() : base(Config.Kernel, "tab_b09", ПереміщенняТоварівНаСкладі_Const.PRESENTATION_FIELDS) { }
+        public ПереміщенняТоварівНаСкладі_Select() : base(Config.Kernel, "tab_b09", ПереміщенняТоварівНаСкладі_Const.TYPE, ПереміщенняТоварівНаСкладі_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПереміщенняТоварівНаСкладі_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -29629,17 +29629,17 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
-        public Довідники.Склади_Pointer Склад { get { var obj = Get("col_a3"); return new Довідники.Склади_Pointer(obj); } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_a4"); return new Довідники.Користувачі_Pointer(obj); } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_a5"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = Get("col_a6"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_a7"); return obj.ToString() ?? ""; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public Довідники.Склади_Pointer Склад { get { var obj = getValue("col_a3"); return new Довідники.Склади_Pointer(obj); } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a4"); return new Довідники.Користувачі_Pointer(obj); } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_a5"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = getValue("col_a6"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a7"); return obj.ToString() ?? ""; } }
         
     }
 
@@ -30125,7 +30125,7 @@ namespace GeneratedCode.Документи
 
     public class ЗбіркаТоварівНаСкладі_Select : DocumentSelect
     {		
-        public ЗбіркаТоварівНаСкладі_Select() : base(Config.Kernel, "tab_b27", ЗбіркаТоварівНаСкладі_Const.PRESENTATION_FIELDS) { }
+        public ЗбіркаТоварівНаСкладі_Select() : base(Config.Kernel, "tab_b27", ЗбіркаТоварівНаСкладі_Const.TYPE, ЗбіркаТоварівНаСкладі_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗбіркаТоварівНаСкладі_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -30145,18 +30145,18 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
-        public Довідники.Склади_Pointer Склад { get { var obj = Get("col_a3"); return new Довідники.Склади_Pointer(obj); } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_a4"); return new Довідники.Користувачі_Pointer(obj); } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_a5"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = Get("col_a6"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
-        public Документи.РеалізаціяТоварівТаПослуг_Pointer ДокументРеалізації { get { var obj = Get("col_a7"); return new Документи.РеалізаціяТоварівТаПослуг_Pointer(obj); } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_a8"); return obj.ToString() ?? ""; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public Довідники.Склади_Pointer Склад { get { var obj = getValue("col_a3"); return new Довідники.Склади_Pointer(obj); } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a4"); return new Довідники.Користувачі_Pointer(obj); } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_a5"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = getValue("col_a6"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
+        public Документи.РеалізаціяТоварівТаПослуг_Pointer ДокументРеалізації { get { var obj = getValue("col_a7"); return new Документи.РеалізаціяТоварівТаПослуг_Pointer(obj); } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a8"); return obj.ToString() ?? ""; } }
         
     }
 
@@ -30608,7 +30608,7 @@ namespace GeneratedCode.Документи
 
     public class РозміщенняНоменклатуриПоКоміркам_Select : DocumentSelect
     {		
-        public РозміщенняНоменклатуриПоКоміркам_Select() : base(Config.Kernel, "tab_b29", РозміщенняНоменклатуриПоКоміркам_Const.PRESENTATION_FIELDS) { }
+        public РозміщенняНоменклатуриПоКоміркам_Select() : base(Config.Kernel, "tab_b29", РозміщенняНоменклатуриПоКоміркам_Const.TYPE, РозміщенняНоменклатуриПоКоміркам_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new РозміщенняНоменклатуриПоКоміркам_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -30628,17 +30628,17 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_a2"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.Склади_Pointer Склад { get { var obj = Get("col_a1"); return new Довідники.Склади_Pointer(obj); } }
-        public string Коментар { get { var obj = Get("col_g9"); return obj.ToString() ?? ""; } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_a4"); return new Довідники.Користувачі_Pointer(obj); } }
-        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = Get("col_a3"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
-        public UuidAndText Основа { get { var obj = Get("col_a5"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_a6"); return obj.ToString() ?? ""; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_a2"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.Склади_Pointer Склад { get { var obj = getValue("col_a1"); return new Довідники.Склади_Pointer(obj); } }
+        public string Коментар { get { var obj = getValue("col_g9"); return obj.ToString() ?? ""; } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a4"); return new Довідники.Користувачі_Pointer(obj); } }
+        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = getValue("col_a3"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
+        public UuidAndText Основа { get { var obj = getValue("col_a5"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a6"); return obj.ToString() ?? ""; } }
         
     }
 
@@ -31097,7 +31097,7 @@ namespace GeneratedCode.Документи
 
     public class КорегуванняБоргу_Select : DocumentSelect
     {		
-        public КорегуванняБоргу_Select() : base(Config.Kernel, "tab_a65", КорегуванняБоргу_Const.PRESENTATION_FIELDS) { }
+        public КорегуванняБоргу_Select() : base(Config.Kernel, "tab_a65", КорегуванняБоргу_Const.TYPE, КорегуванняБоргу_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new КорегуванняБоргу_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -31117,18 +31117,18 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_c8"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = Get("col_d5"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
-        public string Коментар { get { var obj = Get("col_d1"); return obj.ToString() ?? ""; } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_a3"); return new Довідники.Користувачі_Pointer(obj); } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_a2"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a1"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
-        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = Get("col_a4"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
-        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = Get("col_a5"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_c8"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = getValue("col_d5"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
+        public string Коментар { get { var obj = getValue("col_d1"); return obj.ToString() ?? ""; } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a3"); return new Довідники.Користувачі_Pointer(obj); } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a1"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = getValue("col_a4"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
+        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = getValue("col_a5"); return (obj != DBNull.Value) ? (bool)obj : false; } }
         
     }
 
@@ -31798,7 +31798,7 @@ namespace GeneratedCode.Документи
 
     public class ЗакриттяЗамовленняКлієнта_Select : DocumentSelect
     {		
-        public ЗакриттяЗамовленняКлієнта_Select() : base(Config.Kernel, "tab_a96", ЗакриттяЗамовленняКлієнта_Const.PRESENTATION_FIELDS) { }
+        public ЗакриттяЗамовленняКлієнта_Select() : base(Config.Kernel, "tab_a96", ЗакриттяЗамовленняКлієнта_Const.TYPE, ЗакриттяЗамовленняКлієнта_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗакриттяЗамовленняКлієнта_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -31818,24 +31818,24 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = Get("col_b4"); return new Довідники.Контрагенти_Pointer(obj); } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_b5"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.Валюти_Pointer Валюта { get { var obj = Get("col_b6"); return new Довідники.Валюти_Pointer(obj); } }
-        public Перелічення.ПричиниЗакриттяЗамовленняКлієнта ПричинаЗакриттяЗамовлення { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (Перелічення.ПричиниЗакриттяЗамовленняКлієнта)obj : 0; } }
-        public Довідники.Склади_Pointer Склад { get { var obj = Get("col_b8"); return new Довідники.Склади_Pointer(obj); } }
-        public Документи.ЗамовленняКлієнта_Pointer ЗамовленняКлієнта { get { var obj = Get("col_a1"); return new Документи.ЗамовленняКлієнта_Pointer(obj); } }
-        public Довідники.Каси_Pointer Каса { get { var obj = Get("col_a6"); return new Довідники.Каси_Pointer(obj); } }
-        public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = Get("col_c2"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_c4"); return new Довідники.Користувачі_Pointer(obj); } }
-        public string Коментар { get { var obj = Get("col_c1"); return obj.ToString() ?? ""; } }
-        public Довідники.Користувачі_Pointer Менеджер { get { var obj = Get("col_b2"); return new Довідники.Користувачі_Pointer(obj); } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_b3"); return obj.ToString() ?? ""; } }
-        public decimal СумаДокументу { get { var obj = Get("col_a3"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public UuidAndText Основа { get { var obj = Get("col_a4"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = getValue("col_b4"); return new Довідники.Контрагенти_Pointer(obj); } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_b5"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.Валюти_Pointer Валюта { get { var obj = getValue("col_b6"); return new Довідники.Валюти_Pointer(obj); } }
+        public Перелічення.ПричиниЗакриттяЗамовленняКлієнта ПричинаЗакриттяЗамовлення { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (Перелічення.ПричиниЗакриттяЗамовленняКлієнта)obj : 0; } }
+        public Довідники.Склади_Pointer Склад { get { var obj = getValue("col_b8"); return new Довідники.Склади_Pointer(obj); } }
+        public Документи.ЗамовленняКлієнта_Pointer ЗамовленняКлієнта { get { var obj = getValue("col_a1"); return new Документи.ЗамовленняКлієнта_Pointer(obj); } }
+        public Довідники.Каси_Pointer Каса { get { var obj = getValue("col_a6"); return new Довідники.Каси_Pointer(obj); } }
+        public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = getValue("col_c2"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_c4"); return new Довідники.Користувачі_Pointer(obj); } }
+        public string Коментар { get { var obj = getValue("col_c1"); return obj.ToString() ?? ""; } }
+        public Довідники.Користувачі_Pointer Менеджер { get { var obj = getValue("col_b2"); return new Довідники.Користувачі_Pointer(obj); } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_b3"); return obj.ToString() ?? ""; } }
+        public decimal СумаДокументу { get { var obj = getValue("col_a3"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a4"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -32343,7 +32343,7 @@ namespace GeneratedCode.Документи
 
     public class ЗакриттяРахункуФактури_Select : DocumentSelect
     {		
-        public ЗакриттяРахункуФактури_Select() : base(Config.Kernel, "tab_b41", ЗакриттяРахункуФактури_Const.PRESENTATION_FIELDS) { }
+        public ЗакриттяРахункуФактури_Select() : base(Config.Kernel, "tab_b41", ЗакриттяРахункуФактури_Const.TYPE, ЗакриттяРахункуФактури_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗакриттяРахункуФактури_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -32363,24 +32363,24 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = Get("col_b4"); return new Довідники.Контрагенти_Pointer(obj); } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_b5"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.Валюти_Pointer Валюта { get { var obj = Get("col_b6"); return new Довідники.Валюти_Pointer(obj); } }
-        public Перелічення.ПричиниЗакриттяРахункуФактури ПричинаЗакриттяРахунку { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (Перелічення.ПричиниЗакриттяРахункуФактури)obj : 0; } }
-        public Довідники.Склади_Pointer Склад { get { var obj = Get("col_b8"); return new Довідники.Склади_Pointer(obj); } }
-        public Документи.РахунокФактура_Pointer РахунокФактура { get { var obj = Get("col_a1"); return new Документи.РахунокФактура_Pointer(obj); } }
-        public Довідники.Каси_Pointer Каса { get { var obj = Get("col_a6"); return new Довідники.Каси_Pointer(obj); } }
-        public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = Get("col_c2"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_c4"); return new Довідники.Користувачі_Pointer(obj); } }
-        public string Коментар { get { var obj = Get("col_c1"); return obj.ToString() ?? ""; } }
-        public Довідники.Користувачі_Pointer Менеджер { get { var obj = Get("col_b2"); return new Довідники.Користувачі_Pointer(obj); } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_b3"); return obj.ToString() ?? ""; } }
-        public decimal СумаДокументу { get { var obj = Get("col_a3"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public UuidAndText Основа { get { var obj = Get("col_a4"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = getValue("col_b4"); return new Довідники.Контрагенти_Pointer(obj); } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_b5"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.Валюти_Pointer Валюта { get { var obj = getValue("col_b6"); return new Довідники.Валюти_Pointer(obj); } }
+        public Перелічення.ПричиниЗакриттяРахункуФактури ПричинаЗакриттяРахунку { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (Перелічення.ПричиниЗакриттяРахункуФактури)obj : 0; } }
+        public Довідники.Склади_Pointer Склад { get { var obj = getValue("col_b8"); return new Довідники.Склади_Pointer(obj); } }
+        public Документи.РахунокФактура_Pointer РахунокФактура { get { var obj = getValue("col_a1"); return new Документи.РахунокФактура_Pointer(obj); } }
+        public Довідники.Каси_Pointer Каса { get { var obj = getValue("col_a6"); return new Довідники.Каси_Pointer(obj); } }
+        public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = getValue("col_c2"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_c4"); return new Довідники.Користувачі_Pointer(obj); } }
+        public string Коментар { get { var obj = getValue("col_c1"); return obj.ToString() ?? ""; } }
+        public Довідники.Користувачі_Pointer Менеджер { get { var obj = getValue("col_b2"); return new Довідники.Користувачі_Pointer(obj); } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_b3"); return obj.ToString() ?? ""; } }
+        public decimal СумаДокументу { get { var obj = getValue("col_a3"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a4"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -32888,7 +32888,7 @@ namespace GeneratedCode.Документи
 
     public class ЗакриттяЗамовленняПостачальнику_Select : DocumentSelect
     {		
-        public ЗакриттяЗамовленняПостачальнику_Select() : base(Config.Kernel, "tab_b44", ЗакриттяЗамовленняПостачальнику_Const.PRESENTATION_FIELDS) { }
+        public ЗакриттяЗамовленняПостачальнику_Select() : base(Config.Kernel, "tab_b44", ЗакриттяЗамовленняПостачальнику_Const.TYPE, ЗакриттяЗамовленняПостачальнику_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗакриттяЗамовленняПостачальнику_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -32908,24 +32908,24 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = Get("col_b4"); return new Довідники.Контрагенти_Pointer(obj); } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_b5"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.Валюти_Pointer Валюта { get { var obj = Get("col_b6"); return new Довідники.Валюти_Pointer(obj); } }
-        public Перелічення.ПричиниЗакриттяЗамовленняПостачальнику ПричинаЗакриттяЗамовлення { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (Перелічення.ПричиниЗакриттяЗамовленняПостачальнику)obj : 0; } }
-        public Довідники.Склади_Pointer Склад { get { var obj = Get("col_b8"); return new Довідники.Склади_Pointer(obj); } }
-        public Документи.ЗамовленняПостачальнику_Pointer ЗамовленняПостачальнику { get { var obj = Get("col_a1"); return new Документи.ЗамовленняПостачальнику_Pointer(obj); } }
-        public Довідники.Каси_Pointer Каса { get { var obj = Get("col_a6"); return new Довідники.Каси_Pointer(obj); } }
-        public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = Get("col_c2"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_c4"); return new Довідники.Користувачі_Pointer(obj); } }
-        public string Коментар { get { var obj = Get("col_c1"); return obj.ToString() ?? ""; } }
-        public Довідники.Користувачі_Pointer Менеджер { get { var obj = Get("col_b2"); return new Довідники.Користувачі_Pointer(obj); } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_b3"); return obj.ToString() ?? ""; } }
-        public decimal СумаДокументу { get { var obj = Get("col_a3"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public UuidAndText Основа { get { var obj = Get("col_a4"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public Довідники.Контрагенти_Pointer Контрагент { get { var obj = getValue("col_b4"); return new Довідники.Контрагенти_Pointer(obj); } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_b5"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.Валюти_Pointer Валюта { get { var obj = getValue("col_b6"); return new Довідники.Валюти_Pointer(obj); } }
+        public Перелічення.ПричиниЗакриттяЗамовленняПостачальнику ПричинаЗакриттяЗамовлення { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (Перелічення.ПричиниЗакриттяЗамовленняПостачальнику)obj : 0; } }
+        public Довідники.Склади_Pointer Склад { get { var obj = getValue("col_b8"); return new Довідники.Склади_Pointer(obj); } }
+        public Документи.ЗамовленняПостачальнику_Pointer ЗамовленняПостачальнику { get { var obj = getValue("col_a1"); return new Документи.ЗамовленняПостачальнику_Pointer(obj); } }
+        public Довідники.Каси_Pointer Каса { get { var obj = getValue("col_a6"); return new Довідники.Каси_Pointer(obj); } }
+        public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = getValue("col_c2"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_c4"); return new Довідники.Користувачі_Pointer(obj); } }
+        public string Коментар { get { var obj = getValue("col_c1"); return obj.ToString() ?? ""; } }
+        public Довідники.Користувачі_Pointer Менеджер { get { var obj = getValue("col_b2"); return new Довідники.Користувачі_Pointer(obj); } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_b3"); return obj.ToString() ?? ""; } }
+        public decimal СумаДокументу { get { var obj = getValue("col_a3"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a4"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -33426,7 +33426,7 @@ namespace GeneratedCode.Документи
 
     public class ЧекККМ_Select : DocumentSelect
     {		
-        public ЧекККМ_Select() : base(Config.Kernel, "tab_b51", ЧекККМ_Const.PRESENTATION_FIELDS) { }
+        public ЧекККМ_Select() : base(Config.Kernel, "tab_b51", ЧекККМ_Const.TYPE, ЧекККМ_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЧекККМ_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -33446,21 +33446,21 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_a3"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.Валюти_Pointer Валюта { get { var obj = Get("col_a4"); return new Довідники.Валюти_Pointer(obj); } }
-        public decimal СумаДокументу { get { var obj = Get("col_a5"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public Довідники.Склади_Pointer Склад { get { var obj = Get("col_a7"); return new Довідники.Склади_Pointer(obj); } }
-        public Довідники.КасиККМ_Pointer КасаККМ { get { var obj = Get("col_a8"); return new Довідники.КасиККМ_Pointer(obj); } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_a9"); return new Довідники.Користувачі_Pointer(obj); } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_b1"); return obj.ToString() ?? ""; } }
-        public decimal Знижка { get { var obj = Get("col_a6"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public decimal СумаБезЗнижки { get { var obj = Get("col_b2"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_a3"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.Валюти_Pointer Валюта { get { var obj = getValue("col_a4"); return new Довідники.Валюти_Pointer(obj); } }
+        public decimal СумаДокументу { get { var obj = getValue("col_a5"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public Довідники.Склади_Pointer Склад { get { var obj = getValue("col_a7"); return new Довідники.Склади_Pointer(obj); } }
+        public Довідники.КасиККМ_Pointer КасаККМ { get { var obj = getValue("col_a8"); return new Довідники.КасиККМ_Pointer(obj); } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a9"); return new Довідники.Користувачі_Pointer(obj); } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_b1"); return obj.ToString() ?? ""; } }
+        public decimal Знижка { get { var obj = getValue("col_a6"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public decimal СумаБезЗнижки { get { var obj = getValue("col_b2"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
         
     }
 
@@ -33935,7 +33935,7 @@ namespace GeneratedCode.Документи
 
     public class БухгалтерськаОперація_Select : DocumentSelect
     {		
-        public БухгалтерськаОперація_Select() : base(Config.Kernel, "acc_operations", БухгалтерськаОперація_Const.PRESENTATION_FIELDS) { }
+        public БухгалтерськаОперація_Select() : base(Config.Kernel, "acc_operations", БухгалтерськаОперація_Const.TYPE, БухгалтерськаОперація_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new БухгалтерськаОперація_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -33955,14 +33955,14 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("comment"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("base"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("author"); return new Довідники.Користувачі_Pointer(obj); } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_a1"); return new Довідники.Організації_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("comment"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("base"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("author"); return new Довідники.Користувачі_Pointer(obj); } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_a1"); return new Довідники.Організації_Pointer(obj); } }
         
     }
 
@@ -34548,7 +34548,7 @@ namespace GeneratedCode.Документи
 
     public class АвансовийЗвіт_Select : DocumentSelect
     {		
-        public АвансовийЗвіт_Select() : base(Config.Kernel, "tab_b72", АвансовийЗвіт_Const.PRESENTATION_FIELDS) { }
+        public АвансовийЗвіт_Select() : base(Config.Kernel, "tab_b72", АвансовийЗвіт_Const.TYPE, АвансовийЗвіт_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new АвансовийЗвіт_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -34568,22 +34568,22 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_a3"); return new Довідники.Організації_Pointer(obj); } }
-        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = Get("col_a4"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
-        public Довідники.Валюти_Pointer Валюта { get { var obj = Get("col_a5"); return new Довідники.Валюти_Pointer(obj); } }
-        public Довідники.ФізичніОсоби_Pointer ФізичнаОсоба { get { var obj = Get("col_a6"); return new Довідники.ФізичніОсоби_Pointer(obj); } }
-        public decimal СумаДокументу { get { var obj = Get("col_a7"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_a8"); return new Довідники.Користувачі_Pointer(obj); } }
-        public string ПризначенняАвансу { get { var obj = Get("col_a9"); return obj.ToString() ?? ""; } }
-        public Довідники.ВидиЦін_Pointer ВидЦіни { get { var obj = Get("col_b1"); return new Довідники.ВидиЦін_Pointer(obj); } }
-        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = Get("col_b2"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
-        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = Get("col_b3"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_a3"); return new Довідники.Організації_Pointer(obj); } }
+        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = getValue("col_a4"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
+        public Довідники.Валюти_Pointer Валюта { get { var obj = getValue("col_a5"); return new Довідники.Валюти_Pointer(obj); } }
+        public Довідники.ФізичніОсоби_Pointer ФізичнаОсоба { get { var obj = getValue("col_a6"); return new Довідники.ФізичніОсоби_Pointer(obj); } }
+        public decimal СумаДокументу { get { var obj = getValue("col_a7"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a8"); return new Довідники.Користувачі_Pointer(obj); } }
+        public string ПризначенняАвансу { get { var obj = getValue("col_a9"); return obj.ToString() ?? ""; } }
+        public Довідники.ВидиЦін_Pointer ВидЦіни { get { var obj = getValue("col_b1"); return new Довідники.ВидиЦін_Pointer(obj); } }
+        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = getValue("col_b2"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
+        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = getValue("col_b3"); return (obj != DBNull.Value) ? (bool)obj : false; } }
         
     }
 
@@ -35163,7 +35163,7 @@ namespace GeneratedCode.Документи
 
     public class Амортизація_Select : DocumentSelect
     {		
-        public Амортизація_Select() : base(Config.Kernel, "tab_b73", Амортизація_Const.PRESENTATION_FIELDS) { }
+        public Амортизація_Select() : base(Config.Kernel, "tab_b73", Амортизація_Const.TYPE, Амортизація_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Амортизація_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -35183,16 +35183,16 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_a3"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_a4"); return new Довідники.Користувачі_Pointer(obj); } }
-        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = Get("col_a5"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
-        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = Get("col_a6"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_a3"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a4"); return new Довідники.Користувачі_Pointer(obj); } }
+        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = getValue("col_a5"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
+        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = getValue("col_a6"); return (obj != DBNull.Value) ? (bool)obj : false; } }
         
     }
 
@@ -35449,7 +35449,7 @@ namespace GeneratedCode.Документи
 
     public class ВизначенняФінансовогоРезультату_Select : DocumentSelect
     {		
-        public ВизначенняФінансовогоРезультату_Select() : base(Config.Kernel, "tab_b74", ВизначенняФінансовогоРезультату_Const.PRESENTATION_FIELDS) { }
+        public ВизначенняФінансовогоРезультату_Select() : base(Config.Kernel, "tab_b74", ВизначенняФінансовогоРезультату_Const.TYPE, ВизначенняФінансовогоРезультату_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВизначенняФінансовогоРезультату_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -35469,16 +35469,16 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_a3"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_a4"); return new Довідники.Користувачі_Pointer(obj); } }
-        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = Get("col_a5"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
-        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = Get("col_a6"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_a3"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a4"); return new Довідники.Користувачі_Pointer(obj); } }
+        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = getValue("col_a5"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
+        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = getValue("col_a6"); return (obj != DBNull.Value) ? (bool)obj : false; } }
         
     }
 
@@ -35715,7 +35715,7 @@ namespace GeneratedCode.Документи
 
     public class ВиплатаЗаробітноїПлати_Select : DocumentSelect
     {		
-        public ВиплатаЗаробітноїПлати_Select() : base(Config.Kernel, "tab_b75", ВиплатаЗаробітноїПлати_Const.PRESENTATION_FIELDS) { }
+        public ВиплатаЗаробітноїПлати_Select() : base(Config.Kernel, "tab_b75", ВиплатаЗаробітноїПлати_Const.TYPE, ВиплатаЗаробітноїПлати_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВиплатаЗаробітноїПлати_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -35735,12 +35735,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -36069,7 +36069,7 @@ namespace GeneratedCode.Документи
 
     public class ВиготовленняПродукції_Select : DocumentSelect
     {		
-        public ВиготовленняПродукції_Select() : base(Config.Kernel, "tab_b76", ВиготовленняПродукції_Const.PRESENTATION_FIELDS) { }
+        public ВиготовленняПродукції_Select() : base(Config.Kernel, "tab_b76", ВиготовленняПродукції_Const.TYPE, ВиготовленняПродукції_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ВиготовленняПродукції_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -36089,20 +36089,20 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
-        public Довідники.Організації_Pointer Організація { get { var obj = Get("col_a3"); return new Довідники.Організації_Pointer(obj); } }
-        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = Get("col_a4"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
-        public Довідники.Користувачі_Pointer Автор { get { var obj = Get("col_a5"); return new Довідники.Користувачі_Pointer(obj); } }
-        public string КлючовіСловаДляПошуку { get { var obj = Get("col_a6"); return obj.ToString() ?? ""; } }
-        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = Get("col_a7"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
-        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = Get("col_a8"); return (obj != DBNull.Value) ? (bool)obj : false; } }
-        public Довідники.Валюти_Pointer Валюта { get { var obj = Get("col_a9"); return new Довідники.Валюти_Pointer(obj); } }
-        public Довідники.Склади_Pointer СкладКомплектуючих { get { var obj = Get("col_b3"); return new Довідники.Склади_Pointer(obj); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_a3"); return new Довідники.Організації_Pointer(obj); } }
+        public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = getValue("col_a4"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
+        public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a5"); return new Довідники.Користувачі_Pointer(obj); } }
+        public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a6"); return obj.ToString() ?? ""; } }
+        public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = getValue("col_a7"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
+        public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = getValue("col_a8"); return (obj != DBNull.Value) ? (bool)obj : false; } }
+        public Довідники.Валюти_Pointer Валюта { get { var obj = getValue("col_a9"); return new Довідники.Валюти_Pointer(obj); } }
+        public Довідники.Склади_Pointer СкладКомплектуючих { get { var obj = getValue("col_b3"); return new Довідники.Склади_Pointer(obj); } }
         
     }
 
@@ -36943,7 +36943,7 @@ namespace GeneratedCode.Документи
 
     public class Додаток1ДоПодатковоїНакладної_Select : DocumentSelect
     {		
-        public Додаток1ДоПодатковоїНакладної_Select() : base(Config.Kernel, "tab_b77", Додаток1ДоПодатковоїНакладної_Const.PRESENTATION_FIELDS) { }
+        public Додаток1ДоПодатковоїНакладної_Select() : base(Config.Kernel, "tab_b77", Додаток1ДоПодатковоїНакладної_Const.TYPE, Додаток1ДоПодатковоїНакладної_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Додаток1ДоПодатковоїНакладної_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -36963,12 +36963,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -37185,7 +37185,7 @@ namespace GeneratedCode.Документи
 
     public class Додаток2ДоПодатковоїНакладної_Select : DocumentSelect
     {		
-        public Додаток2ДоПодатковоїНакладної_Select() : base(Config.Kernel, "tab_b78", Додаток2ДоПодатковоїНакладної_Const.PRESENTATION_FIELDS) { }
+        public Додаток2ДоПодатковоїНакладної_Select() : base(Config.Kernel, "tab_b78", Додаток2ДоПодатковоїНакладної_Const.TYPE, Додаток2ДоПодатковоїНакладної_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Додаток2ДоПодатковоїНакладної_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -37205,12 +37205,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -37447,7 +37447,7 @@ namespace GeneratedCode.Документи
 
     public class ЗаписКнигиПридбання_Select : DocumentSelect
     {		
-        public ЗаписКнигиПридбання_Select() : base(Config.Kernel, "tab_b79", ЗаписКнигиПридбання_Const.PRESENTATION_FIELDS) { }
+        public ЗаписКнигиПридбання_Select() : base(Config.Kernel, "tab_b79", ЗаписКнигиПридбання_Const.TYPE, ЗаписКнигиПридбання_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗаписКнигиПридбання_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -37467,12 +37467,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -37709,7 +37709,7 @@ namespace GeneratedCode.Документи
 
     public class ЗмінаПараметрівОсновнихЗасобів_Select : DocumentSelect
     {		
-        public ЗмінаПараметрівОсновнихЗасобів_Select() : base(Config.Kernel, "tab_b80", ЗмінаПараметрівОсновнихЗасобів_Const.PRESENTATION_FIELDS) { }
+        public ЗмінаПараметрівОсновнихЗасобів_Select() : base(Config.Kernel, "tab_b80", ЗмінаПараметрівОсновнихЗасобів_Const.TYPE, ЗмінаПараметрівОсновнихЗасобів_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗмінаПараметрівОсновнихЗасобів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -37729,12 +37729,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -37971,7 +37971,7 @@ namespace GeneratedCode.Документи
 
     public class ЗвітКомісіонераПроПродажТоварів_Select : DocumentSelect
     {		
-        public ЗвітКомісіонераПроПродажТоварів_Select() : base(Config.Kernel, "tab_b81", ЗвітКомісіонераПроПродажТоварів_Const.PRESENTATION_FIELDS) { }
+        public ЗвітКомісіонераПроПродажТоварів_Select() : base(Config.Kernel, "tab_b81", ЗвітКомісіонераПроПродажТоварів_Const.TYPE, ЗвітКомісіонераПроПродажТоварів_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗвітКомісіонераПроПродажТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -37991,12 +37991,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -38233,7 +38233,7 @@ namespace GeneratedCode.Документи
 
     public class ЗвітКомітентуПроПродажТоварів_Select : DocumentSelect
     {		
-        public ЗвітКомітентуПроПродажТоварів_Select() : base(Config.Kernel, "tab_b82", ЗвітКомітентуПроПродажТоварів_Const.PRESENTATION_FIELDS) { }
+        public ЗвітКомітентуПроПродажТоварів_Select() : base(Config.Kernel, "tab_b82", ЗвітКомітентуПроПродажТоварів_Const.TYPE, ЗвітКомітентуПроПродажТоварів_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ЗвітКомітентуПроПродажТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -38253,12 +38253,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -38495,7 +38495,7 @@ namespace GeneratedCode.Документи
 
     public class КоригуванняНезавершеногоВиробництва_Select : DocumentSelect
     {		
-        public КоригуванняНезавершеногоВиробництва_Select() : base(Config.Kernel, "tab_b83", КоригуванняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS) { }
+        public КоригуванняНезавершеногоВиробництва_Select() : base(Config.Kernel, "tab_b83", КоригуванняНезавершеногоВиробництва_Const.TYPE, КоригуванняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new КоригуванняНезавершеногоВиробництва_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -38515,12 +38515,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -38757,7 +38757,7 @@ namespace GeneratedCode.Документи
 
     public class КоригуванняПДВ_Select : DocumentSelect
     {		
-        public КоригуванняПДВ_Select() : base(Config.Kernel, "tab_b84", КоригуванняПДВ_Const.PRESENTATION_FIELDS) { }
+        public КоригуванняПДВ_Select() : base(Config.Kernel, "tab_b84", КоригуванняПДВ_Const.TYPE, КоригуванняПДВ_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new КоригуванняПДВ_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -38777,12 +38777,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -39019,7 +39019,7 @@ namespace GeneratedCode.Документи
 
     public class КоригуванняІншихВитрат_Select : DocumentSelect
     {		
-        public КоригуванняІншихВитрат_Select() : base(Config.Kernel, "tab_b85", КоригуванняІншихВитрат_Const.PRESENTATION_FIELDS) { }
+        public КоригуванняІншихВитрат_Select() : base(Config.Kernel, "tab_b85", КоригуванняІншихВитрат_Const.TYPE, КоригуванняІншихВитрат_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new КоригуванняІншихВитрат_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -39039,12 +39039,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -39281,7 +39281,7 @@ namespace GeneratedCode.Документи
 
     public class Модернізація_Select : DocumentSelect
     {		
-        public Модернізація_Select() : base(Config.Kernel, "tab_b86", Модернізація_Const.PRESENTATION_FIELDS) { }
+        public Модернізація_Select() : base(Config.Kernel, "tab_b86", Модернізація_Const.TYPE, Модернізація_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Модернізація_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -39301,12 +39301,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -39543,7 +39543,7 @@ namespace GeneratedCode.Документи
 
     public class Комплектація_Select : DocumentSelect
     {		
-        public Комплектація_Select() : base(Config.Kernel, "tab_b87", Комплектація_Const.PRESENTATION_FIELDS) { }
+        public Комплектація_Select() : base(Config.Kernel, "tab_b87", Комплектація_Const.TYPE, Комплектація_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Комплектація_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -39563,12 +39563,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -39805,7 +39805,7 @@ namespace GeneratedCode.Документи
 
     public class НакладнаВимога_Select : DocumentSelect
     {		
-        public НакладнаВимога_Select() : base(Config.Kernel, "tab_b88", НакладнаВимога_Const.PRESENTATION_FIELDS) { }
+        public НакладнаВимога_Select() : base(Config.Kernel, "tab_b88", НакладнаВимога_Const.TYPE, НакладнаВимога_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new НакладнаВимога_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -39825,12 +39825,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -40067,7 +40067,7 @@ namespace GeneratedCode.Документи
 
     public class Наряд_Select : DocumentSelect
     {		
-        public Наряд_Select() : base(Config.Kernel, "tab_b89", Наряд_Const.PRESENTATION_FIELDS) { }
+        public Наряд_Select() : base(Config.Kernel, "tab_b89", Наряд_Const.TYPE, Наряд_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Наряд_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -40087,12 +40087,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -40329,7 +40329,7 @@ namespace GeneratedCode.Документи
 
     public class НарахуванняЗаробітньоїПлати_Select : DocumentSelect
     {		
-        public НарахуванняЗаробітньоїПлати_Select() : base(Config.Kernel, "tab_b90", НарахуванняЗаробітньоїПлати_Const.PRESENTATION_FIELDS) { }
+        public НарахуванняЗаробітньоїПлати_Select() : base(Config.Kernel, "tab_b90", НарахуванняЗаробітньоїПлати_Const.TYPE, НарахуванняЗаробітньоїПлати_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new НарахуванняЗаробітньоїПлати_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -40349,12 +40349,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -40591,7 +40591,7 @@ namespace GeneratedCode.Документи
 
     public class ПередачаМатеріалівВЕксплуатацію_Select : DocumentSelect
     {		
-        public ПередачаМатеріалівВЕксплуатацію_Select() : base(Config.Kernel, "tab_b91", ПередачаМатеріалівВЕксплуатацію_Const.PRESENTATION_FIELDS) { }
+        public ПередачаМатеріалівВЕксплуатацію_Select() : base(Config.Kernel, "tab_b91", ПередачаМатеріалівВЕксплуатацію_Const.TYPE, ПередачаМатеріалівВЕксплуатацію_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПередачаМатеріалівВЕксплуатацію_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -40611,12 +40611,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -40853,7 +40853,7 @@ namespace GeneratedCode.Документи
 
     public class ПереміщенняМатеріалівВЕксплуатації_Select : DocumentSelect
     {		
-        public ПереміщенняМатеріалівВЕксплуатації_Select() : base(Config.Kernel, "tab_b92", ПереміщенняМатеріалівВЕксплуатації_Const.PRESENTATION_FIELDS) { }
+        public ПереміщенняМатеріалівВЕксплуатації_Select() : base(Config.Kernel, "tab_b92", ПереміщенняМатеріалівВЕксплуатації_Const.TYPE, ПереміщенняМатеріалівВЕксплуатації_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПереміщенняМатеріалівВЕксплуатації_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -40873,12 +40873,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -41115,7 +41115,7 @@ namespace GeneratedCode.Документи
 
     public class ПередачаНематеріальнихАктивів_Select : DocumentSelect
     {		
-        public ПередачаНематеріальнихАктивів_Select() : base(Config.Kernel, "tab_b93", ПередачаНематеріальнихАктивів_Const.PRESENTATION_FIELDS) { }
+        public ПередачаНематеріальнихАктивів_Select() : base(Config.Kernel, "tab_b93", ПередачаНематеріальнихАктивів_Const.TYPE, ПередачаНематеріальнихАктивів_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПередачаНематеріальнихАктивів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -41135,12 +41135,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -41377,7 +41377,7 @@ namespace GeneratedCode.Документи
 
     public class ПереміщенняНематеріальнихАктивів_Select : DocumentSelect
     {		
-        public ПереміщенняНематеріальнихАктивів_Select() : base(Config.Kernel, "tab_b94", ПереміщенняНематеріальнихАктивів_Const.PRESENTATION_FIELDS) { }
+        public ПереміщенняНематеріальнихАктивів_Select() : base(Config.Kernel, "tab_b94", ПереміщенняНематеріальнихАктивів_Const.TYPE, ПереміщенняНематеріальнихАктивів_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПереміщенняНематеріальнихАктивів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -41397,12 +41397,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -41639,7 +41639,7 @@ namespace GeneratedCode.Документи
 
     public class ПередачаОбладнанняВМонтаж_Select : DocumentSelect
     {		
-        public ПередачаОбладнанняВМонтаж_Select() : base(Config.Kernel, "tab_b95", ПередачаОбладнанняВМонтаж_Const.PRESENTATION_FIELDS) { }
+        public ПередачаОбладнанняВМонтаж_Select() : base(Config.Kernel, "tab_b95", ПередачаОбладнанняВМонтаж_Const.TYPE, ПередачаОбладнанняВМонтаж_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПередачаОбладнанняВМонтаж_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -41659,12 +41659,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -41901,7 +41901,7 @@ namespace GeneratedCode.Документи
 
     public class ПередачаОсновнихЗасобів_Select : DocumentSelect
     {		
-        public ПередачаОсновнихЗасобів_Select() : base(Config.Kernel, "tab_b96", ПередачаОсновнихЗасобів_Const.PRESENTATION_FIELDS) { }
+        public ПередачаОсновнихЗасобів_Select() : base(Config.Kernel, "tab_b96", ПередачаОсновнихЗасобів_Const.TYPE, ПередачаОсновнихЗасобів_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПередачаОсновнихЗасобів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -41921,12 +41921,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -42163,7 +42163,7 @@ namespace GeneratedCode.Документи
 
     public class ПереміщенняОсновнихЗасобів_Select : DocumentSelect
     {		
-        public ПереміщенняОсновнихЗасобів_Select() : base(Config.Kernel, "tab_b97", ПереміщенняОсновнихЗасобів_Const.PRESENTATION_FIELDS) { }
+        public ПереміщенняОсновнихЗасобів_Select() : base(Config.Kernel, "tab_b97", ПереміщенняОсновнихЗасобів_Const.TYPE, ПереміщенняОсновнихЗасобів_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПереміщенняОсновнихЗасобів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -42183,12 +42183,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -42425,7 +42425,7 @@ namespace GeneratedCode.Документи
 
     public class ПередачаТоварів_Select : DocumentSelect
     {		
-        public ПередачаТоварів_Select() : base(Config.Kernel, "tab_b98", ПередачаТоварів_Const.PRESENTATION_FIELDS) { }
+        public ПередачаТоварів_Select() : base(Config.Kernel, "tab_b98", ПередачаТоварів_Const.TYPE, ПередачаТоварів_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПередачаТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -42445,12 +42445,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -42687,7 +42687,7 @@ namespace GeneratedCode.Документи
 
     public class ПереоцінкаВалюти_Select : DocumentSelect
     {		
-        public ПереоцінкаВалюти_Select() : base(Config.Kernel, "tab_b99", ПереоцінкаВалюти_Const.PRESENTATION_FIELDS) { }
+        public ПереоцінкаВалюти_Select() : base(Config.Kernel, "tab_b99", ПереоцінкаВалюти_Const.TYPE, ПереоцінкаВалюти_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПереоцінкаВалюти_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -42707,12 +42707,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -42949,7 +42949,7 @@ namespace GeneratedCode.Документи
 
     public class ПереоцінкаОсновнихЗасобів_Select : DocumentSelect
     {		
-        public ПереоцінкаОсновнихЗасобів_Select() : base(Config.Kernel, "tab_c01", ПереоцінкаОсновнихЗасобів_Const.PRESENTATION_FIELDS) { }
+        public ПереоцінкаОсновнихЗасобів_Select() : base(Config.Kernel, "tab_c01", ПереоцінкаОсновнихЗасобів_Const.TYPE, ПереоцінкаОсновнихЗасобів_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПереоцінкаОсновнихЗасобів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -42969,12 +42969,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -43211,7 +43211,7 @@ namespace GeneratedCode.Документи
 
     public class ПереоцінкаТоварів_Select : DocumentSelect
     {		
-        public ПереоцінкаТоварів_Select() : base(Config.Kernel, "tab_c02", ПереоцінкаТоварів_Const.PRESENTATION_FIELDS) { }
+        public ПереоцінкаТоварів_Select() : base(Config.Kernel, "tab_c02", ПереоцінкаТоварів_Const.TYPE, ПереоцінкаТоварів_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПереоцінкаТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -43231,12 +43231,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -43473,7 +43473,7 @@ namespace GeneratedCode.Документи
 
     public class ПлатіжнеДорученняВхідне_Select : DocumentSelect
     {		
-        public ПлатіжнеДорученняВхідне_Select() : base(Config.Kernel, "tab_c03", ПлатіжнеДорученняВхідне_Const.PRESENTATION_FIELDS) { }
+        public ПлатіжнеДорученняВхідне_Select() : base(Config.Kernel, "tab_c03", ПлатіжнеДорученняВхідне_Const.TYPE, ПлатіжнеДорученняВхідне_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПлатіжнеДорученняВхідне_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -43493,12 +43493,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -43735,7 +43735,7 @@ namespace GeneratedCode.Документи
 
     public class ПлатіжнеДорученняВихідне_Select : DocumentSelect
     {		
-        public ПлатіжнеДорученняВихідне_Select() : base(Config.Kernel, "tab_c04", ПлатіжнеДорученняВихідне_Const.PRESENTATION_FIELDS) { }
+        public ПлатіжнеДорученняВихідне_Select() : base(Config.Kernel, "tab_c04", ПлатіжнеДорученняВихідне_Const.TYPE, ПлатіжнеДорученняВихідне_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПлатіжнеДорученняВихідне_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -43755,12 +43755,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -43997,7 +43997,7 @@ namespace GeneratedCode.Документи
 
     public class ПодатковаНакладна_Select : DocumentSelect
     {		
-        public ПодатковаНакладна_Select() : base(Config.Kernel, "tab_c05", ПодатковаНакладна_Const.PRESENTATION_FIELDS) { }
+        public ПодатковаНакладна_Select() : base(Config.Kernel, "tab_c05", ПодатковаНакладна_Const.TYPE, ПодатковаНакладна_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПодатковаНакладна_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -44017,12 +44017,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -44259,7 +44259,7 @@ namespace GeneratedCode.Документи
 
     public class ПокупкаАбоПродажВалюти_Select : DocumentSelect
     {		
-        public ПокупкаАбоПродажВалюти_Select() : base(Config.Kernel, "tab_c06", ПокупкаАбоПродажВалюти_Const.PRESENTATION_FIELDS) { }
+        public ПокупкаАбоПродажВалюти_Select() : base(Config.Kernel, "tab_c06", ПокупкаАбоПродажВалюти_Const.TYPE, ПокупкаАбоПродажВалюти_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПокупкаАбоПродажВалюти_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -44279,12 +44279,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -44521,7 +44521,7 @@ namespace GeneratedCode.Документи
 
     public class ПідготовкаДоПередачіОсновнихЗасобів_Select : DocumentSelect
     {		
-        public ПідготовкаДоПередачіОсновнихЗасобів_Select() : base(Config.Kernel, "tab_c07", ПідготовкаДоПередачіОсновнихЗасобів_Const.PRESENTATION_FIELDS) { }
+        public ПідготовкаДоПередачіОсновнихЗасобів_Select() : base(Config.Kernel, "tab_c07", ПідготовкаДоПередачіОсновнихЗасобів_Const.TYPE, ПідготовкаДоПередачіОсновнихЗасобів_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПідготовкаДоПередачіОсновнихЗасобів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -44541,12 +44541,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -44783,7 +44783,7 @@ namespace GeneratedCode.Документи
 
     public class ПослугиСторонньоїОрганізації_Select : DocumentSelect
     {		
-        public ПослугиСторонньоїОрганізації_Select() : base(Config.Kernel, "tab_c08", ПослугиСторонньоїОрганізації_Const.PRESENTATION_FIELDS) { }
+        public ПослугиСторонньоїОрганізації_Select() : base(Config.Kernel, "tab_c08", ПослугиСторонньоїОрганізації_Const.TYPE, ПослугиСторонньоїОрганізації_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПослугиСторонньоїОрганізації_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -44803,12 +44803,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -45045,7 +45045,7 @@ namespace GeneratedCode.Документи
 
     public class ПрибуткуванняМатеріалівЗВиробництва_Select : DocumentSelect
     {		
-        public ПрибуткуванняМатеріалівЗВиробництва_Select() : base(Config.Kernel, "tab_c09", ПрибуткуванняМатеріалівЗВиробництва_Const.PRESENTATION_FIELDS) { }
+        public ПрибуткуванняМатеріалівЗВиробництва_Select() : base(Config.Kernel, "tab_c09", ПрибуткуванняМатеріалівЗВиробництва_Const.TYPE, ПрибуткуванняМатеріалівЗВиробництва_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПрибуткуванняМатеріалівЗВиробництва_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -45065,12 +45065,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -45307,7 +45307,7 @@ namespace GeneratedCode.Документи
 
     public class ПрибуткуванняТоварівВПереробку_Select : DocumentSelect
     {		
-        public ПрибуткуванняТоварівВПереробку_Select() : base(Config.Kernel, "tab_c10", ПрибуткуванняТоварівВПереробку_Const.PRESENTATION_FIELDS) { }
+        public ПрибуткуванняТоварівВПереробку_Select() : base(Config.Kernel, "tab_c10", ПрибуткуванняТоварівВПереробку_Const.TYPE, ПрибуткуванняТоварівВПереробку_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПрибуткуванняТоварівВПереробку_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -45327,12 +45327,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -45569,7 +45569,7 @@ namespace GeneratedCode.Документи
 
     public class ПрибуткуванняТоварівЗПереробки_Select : DocumentSelect
     {		
-        public ПрибуткуванняТоварівЗПереробки_Select() : base(Config.Kernel, "tab_c11", ПрибуткуванняТоварівЗПереробки_Const.PRESENTATION_FIELDS) { }
+        public ПрибуткуванняТоварівЗПереробки_Select() : base(Config.Kernel, "tab_c11", ПрибуткуванняТоварівЗПереробки_Const.TYPE, ПрибуткуванняТоварівЗПереробки_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПрибуткуванняТоварівЗПереробки_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -45589,12 +45589,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -45831,7 +45831,7 @@ namespace GeneratedCode.Документи
 
     public class ПрибуткуванняНезавершеногоВиробництва_Select : DocumentSelect
     {		
-        public ПрибуткуванняНезавершеногоВиробництва_Select() : base(Config.Kernel, "tab_c12", ПрибуткуванняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS) { }
+        public ПрибуткуванняНезавершеногоВиробництва_Select() : base(Config.Kernel, "tab_c12", ПрибуткуванняНезавершеногоВиробництва_Const.TYPE, ПрибуткуванняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПрибуткуванняНезавершеногоВиробництва_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -45851,12 +45851,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -46093,7 +46093,7 @@ namespace GeneratedCode.Документи
 
     public class ПрийняттяДоОбліку_Select : DocumentSelect
     {		
-        public ПрийняттяДоОбліку_Select() : base(Config.Kernel, "tab_c13", ПрийняттяДоОбліку_Const.PRESENTATION_FIELDS) { }
+        public ПрийняттяДоОбліку_Select() : base(Config.Kernel, "tab_c13", ПрийняттяДоОбліку_Const.TYPE, ПрийняттяДоОбліку_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПрийняттяДоОбліку_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -46113,12 +46113,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -46355,7 +46355,7 @@ namespace GeneratedCode.Документи
 
     public class ПоверненняПереданихТоварів_Select : DocumentSelect
     {		
-        public ПоверненняПереданихТоварів_Select() : base(Config.Kernel, "tab_c14", ПоверненняПереданихТоварів_Const.PRESENTATION_FIELDS) { }
+        public ПоверненняПереданихТоварів_Select() : base(Config.Kernel, "tab_c14", ПоверненняПереданихТоварів_Const.TYPE, ПоверненняПереданихТоварів_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new ПоверненняПереданихТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -46375,12 +46375,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -46617,7 +46617,7 @@ namespace GeneratedCode.Документи
 
     public class РемонтОсновнихЗасобів_Select : DocumentSelect
     {		
-        public РемонтОсновнихЗасобів_Select() : base(Config.Kernel, "tab_c15", РемонтОсновнихЗасобів_Const.PRESENTATION_FIELDS) { }
+        public РемонтОсновнихЗасобів_Select() : base(Config.Kernel, "tab_c15", РемонтОсновнихЗасобів_Const.TYPE, РемонтОсновнихЗасобів_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new РемонтОсновнихЗасобів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -46637,12 +46637,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -46879,7 +46879,7 @@ namespace GeneratedCode.Документи
 
     public class РозподілІншихВитрат_Select : DocumentSelect
     {		
-        public РозподілІншихВитрат_Select() : base(Config.Kernel, "tab_c16", РозподілІншихВитрат_Const.PRESENTATION_FIELDS) { }
+        public РозподілІншихВитрат_Select() : base(Config.Kernel, "tab_c16", РозподілІншихВитрат_Const.TYPE, РозподілІншихВитрат_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new РозподілІншихВитрат_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -46899,12 +46899,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -47141,7 +47141,7 @@ namespace GeneratedCode.Документи
 
     public class РозрахунокСобівартостіВипуску_Select : DocumentSelect
     {		
-        public РозрахунокСобівартостіВипуску_Select() : base(Config.Kernel, "tab_c17", РозрахунокСобівартостіВипуску_Const.PRESENTATION_FIELDS) { }
+        public РозрахунокСобівартостіВипуску_Select() : base(Config.Kernel, "tab_c17", РозрахунокСобівартостіВипуску_Const.TYPE, РозрахунокСобівартостіВипуску_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new РозрахунокСобівартостіВипуску_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -47161,12 +47161,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -47403,7 +47403,7 @@ namespace GeneratedCode.Документи
 
     public class СписанняМатеріалів_Select : DocumentSelect
     {		
-        public СписанняМатеріалів_Select() : base(Config.Kernel, "tab_c18", СписанняМатеріалів_Const.PRESENTATION_FIELDS) { }
+        public СписанняМатеріалів_Select() : base(Config.Kernel, "tab_c18", СписанняМатеріалів_Const.TYPE, СписанняМатеріалів_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СписанняМатеріалів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -47423,12 +47423,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -47665,7 +47665,7 @@ namespace GeneratedCode.Документи
 
     public class СписанняНезавершеногоВиробництва_Select : DocumentSelect
     {		
-        public СписанняНезавершеногоВиробництва_Select() : base(Config.Kernel, "tab_c19", СписанняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS) { }
+        public СписанняНезавершеногоВиробництва_Select() : base(Config.Kernel, "tab_c19", СписанняНезавершеногоВиробництва_Const.TYPE, СписанняНезавершеногоВиробництва_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СписанняНезавершеногоВиробництва_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -47685,12 +47685,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -47927,7 +47927,7 @@ namespace GeneratedCode.Документи
 
     public class СписанняНематеріальнихАктивів_Select : DocumentSelect
     {		
-        public СписанняНематеріальнихАктивів_Select() : base(Config.Kernel, "tab_c20", СписанняНематеріальнихАктивів_Const.PRESENTATION_FIELDS) { }
+        public СписанняНематеріальнихАктивів_Select() : base(Config.Kernel, "tab_c20", СписанняНематеріальнихАктивів_Const.TYPE, СписанняНематеріальнихАктивів_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СписанняНематеріальнихАктивів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -47947,12 +47947,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -48189,7 +48189,7 @@ namespace GeneratedCode.Документи
 
     public class СписанняОсновнихЗасобів_Select : DocumentSelect
     {		
-        public СписанняОсновнихЗасобів_Select() : base(Config.Kernel, "tab_c21", СписанняОсновнихЗасобів_Const.PRESENTATION_FIELDS) { }
+        public СписанняОсновнихЗасобів_Select() : base(Config.Kernel, "tab_c21", СписанняОсновнихЗасобів_Const.TYPE, СписанняОсновнихЗасобів_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СписанняОсновнихЗасобів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -48209,12 +48209,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -48451,7 +48451,7 @@ namespace GeneratedCode.Документи
 
     public class СписанняВитратМайбутніхПеріодів_Select : DocumentSelect
     {		
-        public СписанняВитратМайбутніхПеріодів_Select() : base(Config.Kernel, "tab_c22", СписанняВитратМайбутніхПеріодів_Const.PRESENTATION_FIELDS) { }
+        public СписанняВитратМайбутніхПеріодів_Select() : base(Config.Kernel, "tab_c22", СписанняВитратМайбутніхПеріодів_Const.TYPE, СписанняВитратМайбутніхПеріодів_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СписанняВитратМайбутніхПеріодів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -48471,12 +48471,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -48713,7 +48713,7 @@ namespace GeneratedCode.Документи
 
     public class СписанняТоварів_Select : DocumentSelect
     {		
-        public СписанняТоварів_Select() : base(Config.Kernel, "tab_c23", СписанняТоварів_Const.PRESENTATION_FIELDS) { }
+        public СписанняТоварів_Select() : base(Config.Kernel, "tab_c23", СписанняТоварів_Const.TYPE, СписанняТоварів_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new СписанняТоварів_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -48733,12 +48733,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -48975,7 +48975,7 @@ namespace GeneratedCode.Документи
 
     public class Сторнування_Select : DocumentSelect
     {		
-        public Сторнування_Select() : base(Config.Kernel, "tab_c24", Сторнування_Const.PRESENTATION_FIELDS) { }
+        public Сторнування_Select() : base(Config.Kernel, "tab_c24", Сторнування_Const.TYPE, Сторнування_Const.PRESENTATION_FIELDS) { }
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Сторнування_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -48995,12 +48995,12 @@ namespace GeneratedCode.Документи
             return list;
         }
         
-        object Get(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new Exception($"Не знайдено поле {name} в колекції вибраних полів! Можливо потрібно додати поле в колекцію полів які потрбіно вибрати!");
-        public string Назва { get { var obj = Get("docname"); return obj.ToString() ?? ""; } }
-        public string НомерДок { get { var obj = Get("docnomer"); return obj.ToString() ?? ""; } }
-        public DateTime ДатаДок { get { var obj = Get("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
-        public string Коментар { get { var obj = Get("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = Get("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
