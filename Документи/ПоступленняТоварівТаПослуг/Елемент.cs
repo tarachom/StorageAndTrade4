@@ -229,15 +229,15 @@ partial class ПоступленняТоварівТаПослуг_Елемен�
         //Склад
         CreateField(vBox, null, Склад);
 
-        //Каса
-        CreateField(vBox, null, Каса);
-
         //Валюта
         CreateField(vBox, null, Валюта);
     }
 
     void CreateBottomStart(Box vBox)
     {
+        //Каса
+        CreateField(vBox, null, Каса);
+        
         //ЗамовленняПостачальнику
         CreateField(vBox, null, ЗамовленняПостачальнику);
 

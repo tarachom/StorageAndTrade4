@@ -53,8 +53,26 @@ partial class PageHome : Form
 
     public async Task SetValue()
     {
+        /*
+        Номенклатура_Select НоменклатураВибірка2 = new();
+        НоменклатураВибірка2.QuerySelect.Field.Add("Категорія");
+        var a = await НоменклатураВибірка2.FindByField("Код", "000503");
+        if (!a.IsEmpty())
+        {
+            Console.WriteLine(НоменклатураВибірка2.Категорія);
+        }
+        */
 
-        /*var РахунокКт = await new ПланРахунків_Select().FindByField("Код", "201");
+        /*
+        Номенклатура_Select НоменклатураВибірка = new();
+        if (await НоменклатураВибірка.SelectByField(["Категорія"], "Код", "000503"))
+        {
+            Console.WriteLine(НоменклатураВибірка.Категорія);
+        }
+        */
+
+        /*
+        var РахунокКт = await new ПланРахунків_Select().FindByField("Код", "201");
         Console.WriteLine(РахунокКт);
 
         var РахунокКтList = await new ПланРахунків_Select().FindListByField("Клас", 0);
@@ -79,7 +97,8 @@ partial class PageHome : Form
             {
                 Console.WriteLine(Вибірка.Current + " " + Вибірка.Назва + " " + Вибірка.МетодСписання + " " + Вибірка.СтаттяВитрат);
             }
-        }*/
+        }
+        */
 
 
         /*

@@ -29,6 +29,7 @@ partial class Контрагенти_Елемент : DirectoryFormElement
     TextView Опис = TextView.New();
     CheckButton Постачальник = CheckButton.NewWithLabel("Постачальник");
     CheckButton Покупець = CheckButton.NewWithLabel("Покупець");
+    Категорії_PointerControl Категорія = Категорії_PointerControl.New();
 
     #endregion
 
@@ -64,6 +65,10 @@ partial class Контрагенти_Елемент : DirectoryFormElement
 
         // Опис:
         Опис.WrapMode = WrapMode.Word;
+
+        // Категорія:
+        Категорія.Caption = "Категорія";
+        Категорія.WidthPresentation = 300;
 
         // Таблична частина "Контакти"
         Контакти.ЕлементВласник = Елемент;
@@ -124,6 +129,9 @@ partial class Контрагенти_Елемент : DirectoryFormElement
 
         // Опис
         CreateFieldView(vBox, "Опис:", Опис, 500, 200);
+
+        // Категорія
+        CreateField(vBox, null, Категорія);
     }
 
     void CreateEnd(Box vBox)
@@ -152,6 +160,7 @@ partial class Контрагенти_Елемент : DirectoryFormElement
         Опис.Buffer?.Text = Елемент.Опис;
         Постачальник.Active = Елемент.Постачальник;
         Покупець.Active = Елемент.Покупець;
+        Категорія.Pointer = Елемент.Категорія;
 
         // Таблична частина "Контакти"
         await Контакти.LoadRecords();
@@ -170,6 +179,7 @@ partial class Контрагенти_Елемент : DirectoryFormElement
         Елемент.Опис = Опис.Buffer?.Text ?? "";
         Елемент.Постачальник = Постачальник.Active;
         Елемент.Покупець = Покупець.Active;
+        Елемент.Категорія = Категорія.Pointer;
     }
 
     #endregion

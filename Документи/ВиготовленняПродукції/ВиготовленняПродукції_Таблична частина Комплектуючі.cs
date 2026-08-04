@@ -557,6 +557,34 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
             Grid.AppendColumn(column);
         }
 
+        //Кількість
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                var cell = NumericTablePartCell.New();
+
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnСhanged = () => row.Кількість = cell.Value;
+
+                (row.Сhanged_Кількість = () => cell.Value = row.Кількість).Invoke();
+
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
+            column.Resizable = true;
+            column.FixedWidth = 100;
+
+            Grid.AppendColumn(column);
+        }
+
         //Партія
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
@@ -623,34 +651,6 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
             ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
             column.Resizable = true;
             column.FixedWidth = 300;
-
-            Grid.AppendColumn(column);
-        }
-
-        //Кількість
-        {
-            SignalListItemFactory factory = SignalListItemFactory.New();
-            factory.OnSetup += (_, args) =>
-            {
-                if (args.Object is not ListItem listItem) return;
-                var cell = NumericTablePartCell.New();
-
-                listItem.Child = cell;
-            };
-            factory.OnBind += (_, args) =>
-            {
-                if (args.Object is not ListItem listItem) return;
-                if (listItem.Child is not NumericTablePartCell cell) return;
-                if (listItem.Item is not ItemRow row) return;
-
-                cell.OnСhanged = () => row.Кількість = cell.Value;
-
-                (row.Сhanged_Кількість = () => cell.Value = row.Кількість).Invoke();
-
-            };
-            ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
-            column.Resizable = true;
-            column.FixedWidth = 100;
 
             Grid.AppendColumn(column);
         }

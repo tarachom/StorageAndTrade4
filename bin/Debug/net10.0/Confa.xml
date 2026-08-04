@@ -7,7 +7,7 @@
   <Author>Тарахомин Юрій Іванович, accounting.org.ua</Author>
   <Desc>Конфігурація "Зберігання та Торгівля"
 https://accounting.org.ua/storage_and_trade.html</Desc>
-  <DateTimeSave>04.08.2026 08:34:46</DateTimeSave>
+  <DateTimeSave>04.08.2026 16:56:45</DateTimeSave>
   <DictTSearch>simple</DictTSearch>
   <GtkVersion>Gtk4</GtkVersion>
   <ConstantsBlocks>
@@ -3994,6 +3994,18 @@ END]]></Value>
           <IsSearch>0</IsSearch>
           <IsExport>0</IsExport>
         </Field>
+        <Field>
+          <Name>Категорія</Name>
+          <FullName>Категорія</FullName>
+          <NameInTable>col_a6</NameInTable>
+          <Type>pointer</Type>
+          <Pointer>Довідники.Категорії</Pointer>
+          <IsPresentation>0</IsPresentation>
+          <IsIndex>0</IsIndex>
+          <IsFullTextSearch>0</IsFullTextSearch>
+          <IsSearch>0</IsSearch>
+          <IsExport>0</IsExport>
+        </Field>
       </Fields>
       <TabularParts>
         <TablePart>
@@ -4553,6 +4565,19 @@ END]]></Value>
               <SortNum>8</SortNum>
               <ReadOnly>0</ReadOnly>
               <Type>boolean</Type>
+            </Field>
+            <Field>
+              <Name>Категорія</Name>
+              <Caption>Категорія</Caption>
+              <Size>0</Size>
+              <Height>0</Height>
+              <SortNum>100</SortNum>
+              <ReadOnly>0</ReadOnly>
+              <Type>pointer</Type>
+              <Pointer>Довідники.Категорії</Pointer>
+              <PresetntationFields Count="1">
+                <Field>Назва</Field>
+              </PresetntationFields>
             </Field>
           </ElementFields>
           <ElementTableParts>
@@ -47648,6 +47673,153 @@ FROM
             </Form>
           </Forms>
         </TablePart>
+        <TablePart>
+          <Name>Проводки2</Name>
+          <FullName>Проводки2</FullName>
+          <Table>tab_c41</Table>
+          <VersionsHistory>0</VersionsHistory>
+          <PredefinedFields>
+            <PredefinedField>
+              <Name>uid</Name>
+              <NameInTable>uid</NameInTable>
+              <Type>any_pointer</Type>
+              <IsPrimaryKey>1</IsPrimaryKey>
+              <IsIndex>0</IsIndex>
+              <IsNotNull>1</IsNotNull>
+            </PredefinedField>
+            <PredefinedField>
+              <Name>owner</Name>
+              <NameInTable>owner</NameInTable>
+              <Type>any_pointer</Type>
+              <IsPrimaryKey>0</IsPrimaryKey>
+              <IsIndex>1</IsIndex>
+              <IsNotNull>1</IsNotNull>
+            </PredefinedField>
+          </PredefinedFields>
+          <Fields>
+            <Field>
+              <Name>НомерРядка</Name>
+              <FullName>НомерРядка</FullName>
+              <NameInTable>col_a1</NameInTable>
+              <Type>integer</Type>
+              <Desc>НомерРядка</Desc>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <AutomaticNumbering>1</AutomaticNumbering>
+            </Field>
+            <Field>
+              <Name>Рахунок</Name>
+              <FullName>Рахунок</FullName>
+              <NameInTable>col_a2</NameInTable>
+              <Type>pointer</Type>
+              <Pointer>Довідники.ПланРахунків</Pointer>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>Дебет</Name>
+              <FullName>Дебет</FullName>
+              <NameInTable>col_a3</NameInTable>
+              <Type>numeric</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>Кредит</Name>
+              <FullName>Кредит</FullName>
+              <NameInTable>col_a4</NameInTable>
+              <Type>numeric</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>Кількість</Name>
+              <FullName>Кількість</FullName>
+              <NameInTable>col_a5</NameInTable>
+              <Type>numeric</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+          </Fields>
+          <TabularLists />
+          <TriggerFunctions>
+            <BeforeSave Action="0">BeforeSave</BeforeSave>
+            <AfterSave Action="0">AfterSave</AfterSave>
+          </TriggerFunctions>
+          <Forms>
+            <Form Modified="0">
+              <Name>Таблична частина Проводки2</Name>
+              <Desc>Таблична частина Проводки2</Desc>
+              <Type>TablePart</Type>
+              <GeneratedCode Zip="1">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</GeneratedCode>
+              <NotSaveToFile>0</NotSaveToFile>
+              <ElementFields>
+                <Field>
+                  <Name>НомерРядка</Name>
+                  <Caption>№</Caption>
+                  <Size>0</Size>
+                  <Height>0</Height>
+                  <SortNum>1</SortNum>
+                  <ReadOnly>1</ReadOnly>
+                  <Type>integer</Type>
+                  <AutomaticNumbering>1</AutomaticNumbering>
+                </Field>
+                <Field>
+                  <Name>Рахунок</Name>
+                  <Caption>Рахунок</Caption>
+                  <Size>0</Size>
+                  <Height>0</Height>
+                  <SortNum>2</SortNum>
+                  <ReadOnly>0</ReadOnly>
+                  <Type>pointer</Type>
+                  <Pointer>Довідники.ПланРахунків</Pointer>
+                  <PresetntationFields Count="2">
+                    <Field>Код</Field>
+                    <Field>Назва</Field>
+                  </PresetntationFields>
+                </Field>
+                <Field>
+                  <Name>Дебет</Name>
+                  <Caption>Дебет</Caption>
+                  <Size>0</Size>
+                  <Height>0</Height>
+                  <SortNum>3</SortNum>
+                  <ReadOnly>0</ReadOnly>
+                  <Type>numeric</Type>
+                </Field>
+                <Field>
+                  <Name>Кредит</Name>
+                  <Caption>Кредит</Caption>
+                  <Size>0</Size>
+                  <Height>0</Height>
+                  <SortNum>4</SortNum>
+                  <ReadOnly>0</ReadOnly>
+                  <Type>numeric</Type>
+                </Field>
+                <Field>
+                  <Name>Кількість</Name>
+                  <Caption>Кількість</Caption>
+                  <Size>0</Size>
+                  <Height>0</Height>
+                  <SortNum>5</SortNum>
+                  <ReadOnly>0</ReadOnly>
+                  <Type>numeric</Type>
+                </Field>
+              </ElementFields>
+              <IncludeIconColumn>0</IncludeIconColumn>
+            </Form>
+          </Forms>
+        </TablePart>
       </TabularParts>
       <TabularLists>
         <TabularList>
@@ -61973,7 +62145,7 @@ FROM
           <Desc>Дт</Desc>
         </Field>
         <Field>
-          <Name>Кредет</Name>
+          <Name>Кредит</Name>
           <Value>2</Value>
           <Desc>Кт</Desc>
         </Field>
