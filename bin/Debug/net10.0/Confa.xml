@@ -7,7 +7,7 @@
   <Author>Тарахомин Юрій Іванович, accounting.org.ua</Author>
   <Desc>Конфігурація "Зберігання та Торгівля"
 https://accounting.org.ua/storage_and_trade.html</Desc>
-  <DateTimeSave>04.08.2026 16:56:45</DateTimeSave>
+  <DateTimeSave>05.08.2026 15:07:13</DateTimeSave>
   <DictTSearch>simple</DictTSearch>
   <GtkVersion>Gtk4</GtkVersion>
   <ConstantsBlocks>
@@ -10283,6 +10283,18 @@ WHERE
           <IsSearch>0</IsSearch>
           <IsExport>0</IsExport>
         </Field>
+        <Field>
+          <Name>ВиготовленняПродукції</Name>
+          <FullName>Виготовлення продукції</FullName>
+          <NameInTable>col_a7</NameInTable>
+          <Type>pointer</Type>
+          <Pointer>Документи.ВиготовленняПродукції</Pointer>
+          <IsPresentation>0</IsPresentation>
+          <IsIndex>0</IsIndex>
+          <IsFullTextSearch>0</IsFullTextSearch>
+          <IsSearch>0</IsSearch>
+          <IsExport>0</IsExport>
+        </Field>
       </Fields>
       <TabularParts />
       <TabularLists>
@@ -10342,6 +10354,17 @@ WHERE
               <FilterField>False</FilterField>
               <Type>pointer</Type>
               <Pointer>Документи.ВведенняЗалишків</Pointer>
+            </Field>
+            <Field>
+              <Name>ВиготовленняПродукції</Name>
+              <Caption>Виготовлення продукції</Caption>
+              <Size>0</Size>
+              <SortNum>100</SortNum>
+              <SortField>False</SortField>
+              <SortDirection>False</SortDirection>
+              <FilterField>False</FilterField>
+              <Type>pointer</Type>
+              <Pointer>Документи.ВиготовленняПродукції</Pointer>
             </Field>
             <AdditionalField>
               <Visible>True</Visible>
@@ -47351,331 +47374,6 @@ FROM
         <TablePart>
           <Name>Проводки</Name>
           <FullName>Проводки</FullName>
-          <Table>tab_c40</Table>
-          <VersionsHistory>0</VersionsHistory>
-          <PredefinedFields>
-            <PredefinedField>
-              <Name>uid</Name>
-              <NameInTable>uid</NameInTable>
-              <Type>any_pointer</Type>
-              <IsPrimaryKey>1</IsPrimaryKey>
-              <IsIndex>0</IsIndex>
-              <IsNotNull>1</IsNotNull>
-            </PredefinedField>
-            <PredefinedField>
-              <Name>owner</Name>
-              <NameInTable>owner</NameInTable>
-              <Type>any_pointer</Type>
-              <IsPrimaryKey>0</IsPrimaryKey>
-              <IsIndex>1</IsIndex>
-              <IsNotNull>1</IsNotNull>
-            </PredefinedField>
-          </PredefinedFields>
-          <Fields>
-            <Field>
-              <Name>НомерРядка</Name>
-              <FullName>НомерРядка</FullName>
-              <NameInTable>col_a1</NameInTable>
-              <Type>integer</Type>
-              <Desc>НомерРядка</Desc>
-              <IsIndex>0</IsIndex>
-              <IsFullTextSearch>0</IsFullTextSearch>
-              <IsSearch>0</IsSearch>
-              <IsExport>0</IsExport>
-              <AutomaticNumbering>1</AutomaticNumbering>
-            </Field>
-            <Field>
-              <Name>Рахунок</Name>
-              <FullName>Рахунок</FullName>
-              <NameInTable>col_b5</NameInTable>
-              <Type>pointer</Type>
-              <Pointer>Довідники.ПланРахунків</Pointer>
-              <IsIndex>0</IsIndex>
-              <IsFullTextSearch>0</IsFullTextSearch>
-              <IsSearch>0</IsSearch>
-              <IsExport>0</IsExport>
-            </Field>
-            <Field>
-              <Name>Аналітика1</Name>
-              <FullName>Аналітика 1</FullName>
-              <NameInTable>col_a2</NameInTable>
-              <Type>composite_pointer</Type>
-              <IsIndex>0</IsIndex>
-              <IsFullTextSearch>0</IsFullTextSearch>
-              <IsSearch>0</IsSearch>
-              <IsExport>0</IsExport>
-              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
-            </Field>
-            <Field>
-              <Name>Аналітика2</Name>
-              <FullName>Аналітика 2</FullName>
-              <NameInTable>col_a3</NameInTable>
-              <Type>composite_pointer</Type>
-              <IsIndex>0</IsIndex>
-              <IsFullTextSearch>0</IsFullTextSearch>
-              <IsSearch>0</IsSearch>
-              <IsExport>0</IsExport>
-              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
-            </Field>
-            <Field>
-              <Name>Аналітика3</Name>
-              <FullName>Аналітика 3</FullName>
-              <NameInTable>col_a4</NameInTable>
-              <Type>composite_pointer</Type>
-              <IsIndex>0</IsIndex>
-              <IsFullTextSearch>0</IsFullTextSearch>
-              <IsSearch>0</IsSearch>
-              <IsExport>0</IsExport>
-              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
-            </Field>
-            <Field>
-              <Name>Податки</Name>
-              <FullName>Податки</FullName>
-              <NameInTable>col_a5</NameInTable>
-              <Type>pointer</Type>
-              <Pointer>Довідники.ВидиПодатків</Pointer>
-              <IsIndex>0</IsIndex>
-              <IsFullTextSearch>0</IsFullTextSearch>
-              <IsSearch>0</IsSearch>
-              <IsExport>0</IsExport>
-            </Field>
-            <Field>
-              <Name>Сума</Name>
-              <FullName>Сума</FullName>
-              <NameInTable>col_a6</NameInTable>
-              <Type>numeric</Type>
-              <IsIndex>0</IsIndex>
-              <IsFullTextSearch>0</IsFullTextSearch>
-              <IsSearch>0</IsSearch>
-              <IsExport>0</IsExport>
-            </Field>
-            <Field>
-              <Name>Кількість</Name>
-              <FullName>Кількість</FullName>
-              <NameInTable>col_a7</NameInTable>
-              <Type>numeric</Type>
-              <IsIndex>0</IsIndex>
-              <IsFullTextSearch>0</IsFullTextSearch>
-              <IsSearch>0</IsSearch>
-              <IsExport>0</IsExport>
-            </Field>
-            <Field>
-              <Name>ВидПроводки</Name>
-              <FullName>Вид проводки</FullName>
-              <NameInTable>col_a8</NameInTable>
-              <Type>enum</Type>
-              <Pointer>Перелічення.ВидиПроводок</Pointer>
-              <IsIndex>0</IsIndex>
-              <IsFullTextSearch>0</IsFullTextSearch>
-              <IsSearch>0</IsSearch>
-              <IsExport>0</IsExport>
-            </Field>
-            <Field>
-              <Name>КореспондуючийРахунок</Name>
-              <FullName>Кореспондуючий рахунок</FullName>
-              <NameInTable>col_b1</NameInTable>
-              <Type>pointer</Type>
-              <Pointer>Довідники.ПланРахунків</Pointer>
-              <IsIndex>0</IsIndex>
-              <IsFullTextSearch>0</IsFullTextSearch>
-              <IsSearch>0</IsSearch>
-              <IsExport>0</IsExport>
-            </Field>
-            <Field>
-              <Name>КорАналітика1</Name>
-              <FullName>КорАналітика 1</FullName>
-              <NameInTable>col_b2</NameInTable>
-              <Type>composite_pointer</Type>
-              <IsIndex>0</IsIndex>
-              <IsFullTextSearch>0</IsFullTextSearch>
-              <IsSearch>0</IsSearch>
-              <IsExport>0</IsExport>
-              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
-            </Field>
-            <Field>
-              <Name>КорАналітика2</Name>
-              <FullName>КорАналітика 2</FullName>
-              <NameInTable>col_b3</NameInTable>
-              <Type>composite_pointer</Type>
-              <IsIndex>0</IsIndex>
-              <IsFullTextSearch>0</IsFullTextSearch>
-              <IsSearch>0</IsSearch>
-              <IsExport>0</IsExport>
-              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
-            </Field>
-            <Field>
-              <Name>КорАналітика3</Name>
-              <FullName>КорАналітика 3</FullName>
-              <NameInTable>col_b4</NameInTable>
-              <Type>composite_pointer</Type>
-              <IsIndex>0</IsIndex>
-              <IsFullTextSearch>0</IsFullTextSearch>
-              <IsSearch>0</IsSearch>
-              <IsExport>0</IsExport>
-              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
-            </Field>
-          </Fields>
-          <TabularLists />
-          <TriggerFunctions>
-            <BeforeSave Action="0">BeforeSave</BeforeSave>
-            <AfterSave Action="1">AfterSave</AfterSave>
-          </TriggerFunctions>
-          <Forms>
-            <Form Modified="0">
-              <Name>Таблична частина Проводки</Name>
-              <Desc>Таблична частина Проводки</Desc>
-              <Type>TablePart</Type>
-              <GeneratedCode Zip="1">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</GeneratedCode>
-              <NotSaveToFile>0</NotSaveToFile>
-              <ElementFields>
-                <Field>
-                  <Name>НомерРядка</Name>
-                  <Caption>НомерРядка</Caption>
-                  <Size>0</Size>
-                  <Height>0</Height>
-                  <SortNum>1</SortNum>
-                  <ReadOnly>1</ReadOnly>
-                  <Type>integer</Type>
-                  <AutomaticNumbering>1</AutomaticNumbering>
-                </Field>
-                <Field>
-                  <Name>ВидПроводки</Name>
-                  <Caption>Вид</Caption>
-                  <Size>0</Size>
-                  <Height>0</Height>
-                  <SortNum>2</SortNum>
-                  <ReadOnly>0</ReadOnly>
-                  <Type>enum</Type>
-                  <Pointer>Перелічення.ВидиПроводок</Pointer>
-                </Field>
-                <Field>
-                  <Name>Рахунок</Name>
-                  <Caption>Рахунок</Caption>
-                  <Size>0</Size>
-                  <Height>0</Height>
-                  <SortNum>3</SortNum>
-                  <ReadOnly>0</ReadOnly>
-                  <Type>pointer</Type>
-                  <Pointer>Довідники.ПланРахунків</Pointer>
-                  <PresetntationFields Count="2">
-                    <Field>Код</Field>
-                    <Field>Назва</Field>
-                  </PresetntationFields>
-                </Field>
-                <Field>
-                  <Name>Аналітика1</Name>
-                  <Caption>Аналітика1</Caption>
-                  <Size>0</Size>
-                  <Height>0</Height>
-                  <SortNum>4</SortNum>
-                  <ReadOnly>0</ReadOnly>
-                  <Type>composite_pointer</Type>
-                </Field>
-                <Field>
-                  <Name>Аналітика2</Name>
-                  <Caption>Аналітика2</Caption>
-                  <Size>0</Size>
-                  <Height>0</Height>
-                  <SortNum>5</SortNum>
-                  <ReadOnly>0</ReadOnly>
-                  <Type>composite_pointer</Type>
-                </Field>
-                <Field>
-                  <Name>Аналітика3</Name>
-                  <Caption>Аналітика3</Caption>
-                  <Size>0</Size>
-                  <Height>0</Height>
-                  <SortNum>6</SortNum>
-                  <ReadOnly>0</ReadOnly>
-                  <Type>composite_pointer</Type>
-                </Field>
-                <Field>
-                  <Name>Податки</Name>
-                  <Caption>Податки</Caption>
-                  <Size>0</Size>
-                  <Height>0</Height>
-                  <SortNum>99</SortNum>
-                  <ReadOnly>0</ReadOnly>
-                  <Type>pointer</Type>
-                  <Pointer>Довідники.ВидиПодатків</Pointer>
-                  <PresetntationFields Count="1">
-                    <Field>Назва</Field>
-                  </PresetntationFields>
-                </Field>
-                <Field>
-                  <Name>Сума</Name>
-                  <Caption>Сума</Caption>
-                  <Size>0</Size>
-                  <Height>0</Height>
-                  <SortNum>100</SortNum>
-                  <ReadOnly>0</ReadOnly>
-                  <Type>numeric</Type>
-                </Field>
-                <Field>
-                  <Name>Кількість</Name>
-                  <Caption>Кількість</Caption>
-                  <Size>0</Size>
-                  <Height>0</Height>
-                  <SortNum>100</SortNum>
-                  <ReadOnly>0</ReadOnly>
-                  <Type>numeric</Type>
-                </Field>
-                <Field>
-                  <Name>КореспондуючийРахунок</Name>
-                  <Caption>КореспондуючийРахунок</Caption>
-                  <Size>0</Size>
-                  <Height>0</Height>
-                  <SortNum>100</SortNum>
-                  <ReadOnly>0</ReadOnly>
-                  <Type>pointer</Type>
-                  <Pointer>Довідники.ПланРахунків</Pointer>
-                  <PresetntationFields Count="2">
-                    <Field>Код</Field>
-                    <Field>Назва</Field>
-                  </PresetntationFields>
-                </Field>
-                <Field>
-                  <Name>КорАналітика1</Name>
-                  <Caption>КорАналітика1</Caption>
-                  <Size>0</Size>
-                  <Height>0</Height>
-                  <SortNum>100</SortNum>
-                  <ReadOnly>0</ReadOnly>
-                  <Type>composite_pointer</Type>
-                </Field>
-                <Field>
-                  <Name>КорАналітика2</Name>
-                  <Caption>КорАналітика2</Caption>
-                  <Size>0</Size>
-                  <Height>0</Height>
-                  <SortNum>100</SortNum>
-                  <ReadOnly>0</ReadOnly>
-                  <Type>composite_pointer</Type>
-                </Field>
-                <Field>
-                  <Name>КорАналітика3</Name>
-                  <Caption>КорАналітика3</Caption>
-                  <Size>0</Size>
-                  <Height>0</Height>
-                  <SortNum>100</SortNum>
-                  <ReadOnly>0</ReadOnly>
-                  <Type>composite_pointer</Type>
-                </Field>
-              </ElementFields>
-              <IncludeIconColumn>0</IncludeIconColumn>
-            </Form>
-            <Form Modified="0">
-              <Name>Тригери Проводки</Name>
-              <Desc>Тригери Проводки</Desc>
-              <Type>TriggersTablePart</Type>
-              <GeneratedCode Zip="1">H4sIAAAAAAAACuWRwU7CQBCG7036DntUYuABOCEHj5rAnSxlaKrQku1WD4YESyJHE0PkpgkXrwUlaYrtM/zzRqa0B9R4MHpzLrszO/lnv39MwzRqFdMQZeAeMV6QcYgMa2yxQYqU7/DEE2R45SkSvuUHXnTK0jovI0HcaSvHtkn5VcvfE1zyZCe5yU/BISKssEXMM6TIeCF4hohvOESMFLH4LGsalZppmEbgO64tGpblBa52XLvl9fWVVFTPH105JH8kLRIn5JKSmnpNr0dVzJEh4SnecpB8xq7d11I7lrAG0vf/BNk0rgvkUdAdOJYoB7SlfyGOqe8paslLOvjBqNPuOVlafAF4xIrnSDg8+t3HZXdAZ1JpgeWHjUR43ltHdFhglXR5KNKBcndo1aY3HA1IUy/P6kXPODf4GysafU3qPzkxLm7vipNf+2YDAAA=</GeneratedCode>
-              <NotSaveToFile>0</NotSaveToFile>
-            </Form>
-          </Forms>
-        </TablePart>
-        <TablePart>
-          <Name>Проводки2</Name>
-          <FullName>Проводки2</FullName>
           <Table>tab_c41</Table>
           <VersionsHistory>0</VersionsHistory>
           <PredefinedFields>
@@ -47750,11 +47448,99 @@ FROM
               <IsSearch>0</IsSearch>
               <IsExport>0</IsExport>
             </Field>
+            <Field>
+              <Name>Аналітика1</Name>
+              <FullName>Аналітика 1</FullName>
+              <NameInTable>col_a6</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>Аналітика2</Name>
+              <FullName>Аналітика 2</FullName>
+              <NameInTable>col_a7</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>Аналітика3</Name>
+              <FullName>Аналітика 3</FullName>
+              <NameInTable>col_a8</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>ВидПроводки</Name>
+              <FullName>Вид проводки</FullName>
+              <NameInTable>col_b3</NameInTable>
+              <Type>enum</Type>
+              <Pointer>Перелічення.ВидиПроводок</Pointer>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>КореспондуючийРахунок</Name>
+              <FullName>Кореспондуючий рахунок</FullName>
+              <NameInTable>col_b4</NameInTable>
+              <Type>pointer</Type>
+              <Pointer>Довідники.ПланРахунків</Pointer>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>КорАналітика1</Name>
+              <FullName>КорАналітика 1</FullName>
+              <NameInTable>col_b5</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>КорАналітика2</Name>
+              <FullName>КорАналітика 2</FullName>
+              <NameInTable>col_b6</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>КорАналітика3</Name>
+              <FullName>КорАналітика 3</FullName>
+              <NameInTable>col_b7</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
           </Fields>
           <TabularLists />
           <TriggerFunctions>
             <BeforeSave Action="0">BeforeSave</BeforeSave>
-            <AfterSave Action="0">AfterSave</AfterSave>
+            <AfterSave Action="1">AfterSave</AfterSave>
           </TriggerFunctions>
           <Forms>
             <Form Modified="0">
@@ -61933,7 +61719,7 @@ FROM
     </Enum>
     <Enum>
       <Name>ТипДокументуПартіяТоварівКомпозит</Name>
-      <SerialNumber>2</SerialNumber>
+      <SerialNumber>3</SerialNumber>
       <Fields>
         <Field>
           <Name>ПоступленняТоварівТаПослуг</Name>
@@ -61944,6 +61730,11 @@ FROM
           <Name>ВведенняЗалишків</Name>
           <Value>2</Value>
           <Desc>Введення залишків</Desc>
+        </Field>
+        <Field>
+          <Name>ВиготовленняПродукції</Name>
+          <Value>3</Value>
+          <Desc>Виготовлення продукції</Desc>
         </Field>
       </Fields>
     </Enum>

@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 04.08.2026 16:56:45
+ * Дата конфігурації: 05.08.2026 15:07:13
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон Gtk4.xslt
@@ -8943,6 +8943,27 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 form.Grid.AppendColumn(column);
             }
         
+            //Назва: ВиготовленняПродукції, "Виготовлення продукції"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ВиготовленняПродукції"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Виготовлення продукції", factory);
+                column.Resizable = true;
+                form.Grid.AppendColumn(column);
+            }
+        
             //Назва: Залишки, "Залишки"
             {
                 SignalListItemFactory factory = SignalListItemFactory.New();
@@ -9047,6 +9068,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                             Документи.ВведенняЗалишків_Pointer.GetJoin(ПартіяТоварівКомпозит_Select.QuerySelect, Довідники.ПартіяТоварівКомпозит_Const.ВведенняЗалишків,
                             ПартіяТоварівКомпозит_Select.QuerySelect.Table, "join_tab_2", "ВведенняЗалишків");
                         
+                            /* Приєднання pointer */
+                            Документи.ВиготовленняПродукції_Pointer.GetJoin(ПартіяТоварівКомпозит_Select.QuerySelect, Довідники.ПартіяТоварівКомпозит_Const.ВиготовленняПродукції,
+                            ПартіяТоварівКомпозит_Select.QuerySelect.Table, "join_tab_3", "ВиготовленняПродукції");
+                        
                 /* Додаткове поле: Залишки */
                 ПартіяТоварівКомпозит_Select.QuerySelect.FieldAndAlias.Add(new ValueName<string>(@$"(WITH Залишки AS ( SELECT ПартіїТоварів.{РегістриНакопичення.ПартіїТоварів_Підсумки_TablePart.ПартіяТоварівКомпозит} AS ПартіяТоварівКомпозит, SUM(ПартіїТоварів.{РегістриНакопичення.ПартіїТоварів_Підсумки_TablePart.Кількість} ) AS Кількість FROM {РегістриНакопичення.ПартіїТоварів_Підсумки_TablePart.TABLE} AS ПартіїТоварів WHERE ПартіїТоварів.{РегістриНакопичення.ПартіїТоварів_Підсумки_TablePart.ПартіяТоварівКомпозит} = {Довідники.ПартіяТоварівКомпозит_Const.TABLE}.uid GROUP BY ПартіяТоварівКомпозит ) SELECT ROUND(Кількість, 1) FROM Залишки)", "Залишки"));
             
@@ -9070,6 +9095,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("ТипДокументу", Перелічення.ПсевдонімиПерелічення.ТипДокументуПартіяТоварівКомпозит_Alias((Перелічення.ТипДокументуПартіяТоварівКомпозит)(Fields[ПартіяТоварівКомпозит_Const.ТипДокументу] != DBNull.Value ? Fields[ПартіяТоварівКомпозит_Const.ТипДокументу] : 0) ));
                     row.Fields.Add("ПоступленняТоварівТаПослуг", Fields["ПоступленняТоварівТаПослуг"].ToString());
                     row.Fields.Add("ВведенняЗалишків", Fields["ВведенняЗалишків"].ToString());
+                    row.Fields.Add("ВиготовленняПродукції", Fields["ВиготовленняПродукції"].ToString());
                     row.Fields.Add("Залишки", Fields["Залишки"].ToString());
                     
                     if (storeMap.TryGetValue(curr.UniqueID.UGuid, out uint index))
@@ -9116,6 +9142,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                             Документи.ВведенняЗалишків_Pointer.GetJoin(ПартіяТоварівКомпозит_Select.QuerySelect, Довідники.ПартіяТоварівКомпозит_Const.ВведенняЗалишків,
                             ПартіяТоварівКомпозит_Select.QuerySelect.Table, "join_tab_2", "ВведенняЗалишків");
                         
+                            /* Приєднання pointer */
+                            Документи.ВиготовленняПродукції_Pointer.GetJoin(ПартіяТоварівКомпозит_Select.QuerySelect, Довідники.ПартіяТоварівКомпозит_Const.ВиготовленняПродукції,
+                            ПартіяТоварівКомпозит_Select.QuerySelect.Table, "join_tab_3", "ВиготовленняПродукції");
+                        
                 /* Додаткове поле: Залишки */
                 ПартіяТоварівКомпозит_Select.QuerySelect.FieldAndAlias.Add(new ValueName<string>(@$"(WITH Залишки AS ( SELECT ПартіїТоварів.{РегістриНакопичення.ПартіїТоварів_Підсумки_TablePart.ПартіяТоварівКомпозит} AS ПартіяТоварівКомпозит, SUM(ПартіїТоварів.{РегістриНакопичення.ПартіїТоварів_Підсумки_TablePart.Кількість} ) AS Кількість FROM {РегістриНакопичення.ПартіїТоварів_Підсумки_TablePart.TABLE} AS ПартіїТоварів WHERE ПартіїТоварів.{РегістриНакопичення.ПартіїТоварів_Підсумки_TablePart.ПартіяТоварівКомпозит} = {Довідники.ПартіяТоварівКомпозит_Const.TABLE}.uid GROUP BY ПартіяТоварівКомпозит ) SELECT ROUND(Кількість, 1) FROM Залишки)", "Залишки"));
             
@@ -9151,6 +9181,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.Fields.Add("ТипДокументу", Перелічення.ПсевдонімиПерелічення.ТипДокументуПартіяТоварівКомпозит_Alias((Перелічення.ТипДокументуПартіяТоварівКомпозит)(Fields[Довідники.ПартіяТоварівКомпозит_Const.ТипДокументу] != DBNull.Value ? Fields[Довідники.ПартіяТоварівКомпозит_Const.ТипДокументу] : 0) ));
                     row.Fields.Add("ПоступленняТоварівТаПослуг", Fields["ПоступленняТоварівТаПослуг"].ToString());
                     row.Fields.Add("ВведенняЗалишків", Fields["ВведенняЗалишків"].ToString());
+                    row.Fields.Add("ВиготовленняПродукції", Fields["ВиготовленняПродукції"].ToString());
                     row.Fields.Add("Залишки", Fields["Залишки"].ToString() ?? "");
                     
                     form.Store.Append(row);

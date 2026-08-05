@@ -193,7 +193,6 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
         public Action? Сhanged_Коментар { get; set; } = null;
 
 
-
         /*
         Функції
         */
