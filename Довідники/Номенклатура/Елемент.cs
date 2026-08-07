@@ -264,6 +264,10 @@ partial class Номенклатура_Елемент : DirectoryFormElement
             if (await Елемент.Save())
             {
                 await Файли.SaveRecords(); // Таблична частина "Файли"
+                
+                //Перевантаження списку одиниць виміру
+                await ОдиниціВиміруСписок.LoadRecords();
+
                 isSaved = true;
             }
         }
