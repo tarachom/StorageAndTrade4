@@ -8,6 +8,8 @@
 
 using GeneratedCode.Константи;
 using AccountingSoftware;
+using StorageAndTrade;
+using GeneratedCode.Перелічення;
 
 namespace GeneratedCode.Довідники;
 
@@ -17,6 +19,10 @@ static class Номенклатура_Triggers
     {
         int number = await НумераціяДовідників.Номенклатура();
         ДовідникОбєкт.Код = (await НумераціяДовідників.Номенклатура(++number)).ToString("D6");
+
+        ДовідникОбєкт.БазоваОдиницяВиміру = await ЗначенняТипові.ОсновнаОдиницяВиміруЗаКласифікатором();
+        ДовідникОбєкт.ТипНоменклатури = ТипиНоменклатури.Товар;
+        ДовідникОбєкт.ВидНоменклатури = await ЗначенняТипові.ОсновнийВидНоменклатури();
     }
 
     public static Task Copying(Номенклатура_Object ДовідникОбєкт, Номенклатура_Object Основа)
@@ -25,32 +31,50 @@ static class Номенклатура_Triggers
         return Task.CompletedTask;
     }
 
-    public static Task BeforeSave(Номенклатура_Object ДовідникОбєкт)
+    public static async Task BeforeSave(Номенклатура_Object ДовідникОбєкт)
     {
-        return Task.CompletedTask;
+        //Встановлення базової од. виміру для номенклатури
+        if (ДовідникОбєкт.БазоваОдиницяВиміру.IsEmpty())
+            ДовідникОбєкт.БазоваОдиницяВиміру = await ЗначенняТипові.ОсновнаОдиницяВиміруЗаКласифікатором();
     }
 
-    public static Task AfterSave(Номенклатура_Object ДовідникОбєкт)
+    public static async Task AfterSave(Номенклатура_Object ДовідникОбєкт)
     {
-        return Task.CompletedTask;
+        _ = await ФункціїДляДовідників.СтворитиОсновнуОдиницюВиміру(ДовідникОбєкт);
     }
 
     public static async Task SetDeletionLabel(Номенклатура_Object ДовідникОбєкт, bool label)
     {
-        // Помітка на видалення всіх характеристик елементу номенклатури у випадку label = true
-        // Якщо мітка знімається, то з характеристик мітка не має зніматися
         if (label)
         {
-            ХарактеристикиНоменклатури_Select select = new();
-            select.QuerySelect.Where.AddRange([
-                new(ХарактеристикиНоменклатури_Const.Номенклатура, Comparison.EQ, ДовідникОбєкт.UniqueID.UGuid),
-                new(ХарактеристикиНоменклатури_Const.DELETION_LABEL, Comparison.NOT, true)
-            ]);
+            // Помітка на видалення всіх характеристик елементу номенклатури у випадку label = true
+            // Якщо мітка знімається, то з характеристик мітка не має зніматися
+            {
+                ХарактеристикиНоменклатури_Select select = new();
+                select.QuerySelect.Where.AddRange([
+                    new(ХарактеристикиНоменклатури_Const.Номенклатура, Comparison.EQ, ДовідникОбєкт.UniqueID.UGuid),
+                    new(ХарактеристикиНоменклатури_Const.DELETION_LABEL, Comparison.NOT, true)
+                ]);
 
-            await select.Select();
-            while (select.MoveNext())
-                if (select.Current != null)
-                    await select.Current.SetDeletionLabel();
+                await select.Select();
+                while (select.MoveNext())
+                    if (select.Current != null)
+                        await select.Current.SetDeletionLabel();
+            }
+
+            // Помітка на видалення всіх одиниць виміру
+            {
+                ПакуванняОдиниціВиміру_Select select = new();
+                select.QuerySelect.Where.AddRange([
+                    new(ПакуванняОдиниціВиміру_Const.Номенклатура, Comparison.EQ, ДовідникОбєкт.UniqueID.UGuid),
+                    new(ПакуванняОдиниціВиміру_Const.DELETION_LABEL, Comparison.NOT, true)
+                ]);
+
+                await select.Select();
+                while (select.MoveNext())
+                    if (select.Current != null)
+                        await select.Current.SetDeletionLabel();
+            }
         }
     }
 

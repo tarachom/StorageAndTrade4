@@ -8,19 +8,26 @@ using Gtk;
 using InterfaceGtk4;
 
 using GeneratedCode.Довідники;
+using GeneratedCode.Константи;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<DirectoryFormElement>("Element_SarB1K28a0uBgQ2lw3yVaQ")]
+[GObject.Subclass<DirectoryFormElement>("Element_b9afAT3lDnmUQPdz9QehQ")]
 partial class ПакуванняОдиниціВиміру_Елемент : DirectoryFormElement
 {
     public ПакуванняОдиниціВиміру_Object Елемент { get; init; } = new();
+
+    public Номенклатура_Pointer ВласникДляНового = new();
 
     #region Fields
     Entry Код = Entry.New();
     Entry Назва = Entry.New();
     Entry НазваПовна = Entry.New();
-    IntegerControl КількістьУпаковок = IntegerControl.New();
+    Номенклатура_PointerControl Номенклатура = Номенклатура_PointerControl.New();
+    КласифікаторОдиницьВиміру_PointerControl ОдиницяЗаКласифікатором = КласифікаторОдиницьВиміру_PointerControl.New();
+    NumericControl Коєфіціент = NumericControl.New();
+    NumericControl Вага = NumericControl.New();
+    NumericControl Обєм = NumericControl.New();
 
     #endregion
 
@@ -36,10 +43,18 @@ partial class ПакуванняОдиниціВиміру_Елемент : Dire
         Код.WidthRequest = 100;
 
         // Назва:
-        Назва.WidthRequest = 500;
+        Назва.WidthRequest = 300;
 
         // НазваПовна:
-        НазваПовна.WidthRequest = 500;
+        НазваПовна.WidthRequest = 300;
+
+        // Номенклатура:
+        Номенклатура.Caption = "Номенклатура";
+        Номенклатура.WidthPresentation = 300;
+
+        // ОдиницяЗаКласифікатором:
+        ОдиницяЗаКласифікатором.Caption = "За класифікатором";
+        ОдиницяЗаКласифікатором.WidthPresentation = 300;
     }
 
     public static ПакуванняОдиниціВиміру_Елемент New()
@@ -52,7 +67,7 @@ partial class ПакуванняОдиниціВиміру_Елемент : Dire
 
     #region Interface
 
-    FunctionForInterfaces.DirectoryElementSmall  Interface = FunctionForInterfaces.ForDirectorySmall();
+    FunctionForInterfaces.DirectoryElementSmall Interface = FunctionForInterfaces.ForDirectorySmall();
 
     protected override void BuildInterface()
     {
@@ -71,8 +86,20 @@ partial class ПакуванняОдиниціВиміру_Елемент : Dire
         // НазваПовна
         CreateField(vBox, "Опис:", НазваПовна);
 
-        // КількістьУпаковок
-        CreateField(vBox, "Коефіцієнт:", КількістьУпаковок);
+        // Номенклатура
+        CreateField(vBox, null, Номенклатура);
+
+        // ОдиницяЗаКласифікатором
+        CreateField(vBox, null, ОдиницяЗаКласифікатором);
+
+        // Коєфіціент
+        CreateField(vBox, "Коєфіціент:", Коєфіціент);
+
+        // Вага
+        CreateField(vBox, "Вага:", Вага);
+
+        // Обєм
+        CreateField(vBox, "Обєм:", Обєм);
     }
 
     #endregion
@@ -81,10 +108,20 @@ partial class ПакуванняОдиниціВиміру_Елемент : Dire
 
     public override async Task AssignValue()
     {
+        if (IsNew)
+        {
+            Елемент.Номенклатура = ВласникДляНового;
+            Елемент.ОдиницяЗаКласифікатором = await ЗначенняТипові.ОсновнаОдиницяВиміруЗаКласифікатором();
+        }
+
         Код.SetText(Елемент.Код);
         Назва.SetText(Елемент.Назва);
         НазваПовна.SetText(Елемент.НазваПовна);
-        КількістьУпаковок.Value = Елемент.КількістьУпаковок;
+        Номенклатура.Pointer = Елемент.Номенклатура;
+        ОдиницяЗаКласифікатором.Pointer = Елемент.ОдиницяЗаКласифікатором;
+        Коєфіціент.Value = Елемент.Коєфіціент;
+        Вага.Value = Елемент.Вага;
+        Обєм.Value = Елемент.Обєм;
     }
 
     protected override void GetValue()
@@ -92,7 +129,11 @@ partial class ПакуванняОдиниціВиміру_Елемент : Dire
         Елемент.Код = Код.GetText();
         Елемент.Назва = Назва.GetText();
         Елемент.НазваПовна = НазваПовна.GetText();
-        Елемент.КількістьУпаковок = КількістьУпаковок.Value;
+        Елемент.Номенклатура = Номенклатура.Pointer;
+        Елемент.ОдиницяЗаКласифікатором = ОдиницяЗаКласифікатором.Pointer;
+        Елемент.Коєфіціент = Коєфіціент.Value;
+        Елемент.Вага = Вага.Value;
+        Елемент.Обєм = Обєм.Value;
     }
 
     #endregion

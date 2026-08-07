@@ -163,10 +163,8 @@ partial class НадлишкиТоварів_ТабличнаЧастина_То
 
     #endregion
 
-    
     public НадлишкиТоварів_Object? ЕлементВласник { get; set; }
         
-    
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());
 
     partial void Initialize()

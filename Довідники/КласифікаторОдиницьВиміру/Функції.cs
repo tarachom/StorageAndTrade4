@@ -1,6 +1,6 @@
 
 /*
-        ПакуванняОдиниціВиміру_Функції.cs
+        КласифікаторОдиницьВиміру_Функції.cs
         Функції
 */
 
@@ -10,7 +10,7 @@ using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
 
-static class ПакуванняОдиниціВиміру_Функції
+static class КласифікаторОдиницьВиміру_Функції
 {
     public static List<Where> Відбори(string searchText)
     {
@@ -18,29 +18,26 @@ static class ПакуванняОдиниціВиміру_Функції
         [
             
             //Код
-            new Where(ПакуванняОдиниціВиміру_Const.Код, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
+            new Where(КласифікаторОдиницьВиміру_Const.Код, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
                     
             //Назва
-            new Where(Comparison.OR, ПакуванняОдиниціВиміру_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
-
+            new Where(Comparison.OR, КласифікаторОдиницьВиміру_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
+                    
         ];
     }
 
-    public static async Task OpenPageElement(bool IsNew, UniqueID? uniqueID = null,
-        Action<UniqueID?>? сallBack_LoadRecords = null,
-        Action<UniqueID>? сallBack_OnSelectPointer = null,
-            Номенклатура_Pointer? Власник = null)
+    public static async Task OpenPageElement(bool IsNew, UniqueID? uniqueID = null, 
+        Action<UniqueID?>? сallBack_LoadRecords = null, 
+        Action<UniqueID>? сallBack_OnSelectPointer = null)
     {
-        ПакуванняОдиниціВиміру_Елемент page = ПакуванняОдиниціВиміру_Елемент.New();
+        КласифікаторОдиницьВиміру_Елемент page = КласифікаторОдиницьВиміру_Елемент.New();
         page.CallBack_LoadRecords = сallBack_LoadRecords;
         page.CallBack_OnSelectPointer = сallBack_OnSelectPointer;
 
         if (IsNew)
         {
             await page.Елемент.New();
-
-            if (Власник != null) page.ВласникДляНового = Власник;
-
+            
         }
         else if (uniqueID == null || !await page.Елемент.Read(uniqueID))
         {
@@ -53,37 +50,34 @@ static class ПакуванняОдиниціВиміру_Функції
     }
 
     public static async Task OpenPageList(UniqueID? uniqueID = null, ConfigurationDirectories.HierarchicalContentType? allowedContentSelection = null, UniqueID? openFolder = null,
-        Action<UniqueID>? сallBack_OnSelectPointer = null,
-            Номенклатура_Pointer? Власник = null)
+        Action<UniqueID>? сallBack_OnSelectPointer = null)
     {
-        ПакуванняОдиниціВиміру_Список page = ПакуванняОдиниціВиміру_Список.New();
-        page.AllowedContentSelection = allowedContentSelection;
+        КласифікаторОдиницьВиміру_Список page = КласифікаторОдиницьВиміру_Список.New();
+        page.AllowedContentSelection  = allowedContentSelection;
         page.OpenFolder = openFolder;
         page.DirectoryPointerItem = uniqueID;
         page.CallBack_OnSelectPointer = сallBack_OnSelectPointer;
 
-
-        if (Власник != null) page.Власник.Pointer = Власник;
-
-        Program.BasicForm?.NotebookFunc.CreatePage(ПакуванняОдиниціВиміру_Const.FULLNAME, page);
+        
+        Program.BasicForm?.NotebookFunc.CreatePage(КласифікаторОдиницьВиміру_Const.FULLNAME, page);
         await page.SetValue();
     }
 
     public static async Task SetDeletionLabel(UniqueID uniqueID)
     {
-        ПакуванняОдиниціВиміру_Pointer Вказівник = new(uniqueID);
+        КласифікаторОдиницьВиміру_Pointer Вказівник = new(uniqueID);
         bool? label = await Вказівник.GetDeletionLabel();
         if (label.HasValue) await Вказівник.SetDeletionLabel(!label.Value);
     }
 
     public static async Task<UniqueID?> Copy(UniqueID uniqueID)
     {
-        ПакуванняОдиниціВиміру_Object Обєкт = new();
+        КласифікаторОдиницьВиміру_Object Обєкт = new();
         if (await Обєкт.Read(uniqueID))
         {
-            ПакуванняОдиниціВиміру_Object Новий = await Обєкт.Copy(true);
+            КласифікаторОдиницьВиміру_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
-
+            
             return Новий.UniqueID;
         }
         else
@@ -93,3 +87,4 @@ static class ПакуванняОдиниціВиміру_Функції
         }
     }
 }
+    

@@ -505,18 +505,21 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
         model.OnItemsChanged += (_, _) => Підсумок.Recount();
         Підсумок.QuantifyFunc = () =>
         {
-            /*
-            decimal Сума = 0;
+            decimal Дебет = 0, Кредит = 0;
 
             for (uint i = 0; i <= Store.GetNItems(); i++)
             {
                 ItemRow? row = (ItemRow?)Store.GetObject(i);
                 if (row != null)
-                    Сума += row.Сума;
+                {
+                    if (row.ВидПроводки == ВидиПроводок.Дебет)
+                        Дебет += row.Сума;
+                    else
+                        Кредит += row.Сума;
+                }
             }
-            */
 
-            return new();
+            return new("Дебет: <b>{0}</b> Кредит: <b>{1}</b>", Дебет, Кредит);
         };
 
         Append(Підсумок);
@@ -649,7 +652,7 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
             };
             ColumnViewColumn column = ColumnViewColumn.New("Аналітика 1\nАналітика 2\nАналітика 3", factory);
             column.Resizable = true;
-            column.FixedWidth = 300;
+            column.FixedWidth = 200;
 
             Grid.AppendColumn(column);
         }
@@ -676,6 +679,7 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
             };
             ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
             column.Resizable = true;
+            column.FixedWidth = 150;
 
             Grid.AppendColumn(column);
         }
@@ -702,6 +706,7 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
             };
             ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
             column.Resizable = true;
+            column.FixedWidth = 150;
 
             Grid.AppendColumn(column);
         }
@@ -734,6 +739,7 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
             };
             ColumnViewColumn column = ColumnViewColumn.New("Валюта\nСума в валюті\nСума ПО", factory);
             column.Resizable = true;
+            column.FixedWidth = 150;
 
             Grid.AppendColumn(column);
         }
@@ -760,6 +766,7 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
             };
             ColumnViewColumn column = ColumnViewColumn.New("Курс валюти", factory);
             column.Resizable = true;
+            column.FixedWidth = 100;
 
             Grid.AppendColumn(column);
         }
@@ -828,7 +835,7 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
             };
             ColumnViewColumn column = ColumnViewColumn.New("Кор аналітика 1\nКор аналітика 2\nКор аналітика 3", factory);
             column.Resizable = true;
-            column.FixedWidth = 300;
+            column.FixedWidth = 200;
 
             Grid.AppendColumn(column);
         }
@@ -855,7 +862,7 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
             };
             ColumnViewColumn column = ColumnViewColumn.New("Податок", factory);
             column.Resizable = true;
-            column.FixedWidth = 300;
+            column.FixedWidth = 200;
 
             Grid.AppendColumn(column);
         }
@@ -909,7 +916,7 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
             };
             ColumnViewColumn column = ColumnViewColumn.New("Журнал", factory);
             column.Resizable = true;
-            column.FixedWidth = 300;
+            column.FixedWidth = 200;
 
             Grid.AppendColumn(column);
         }
@@ -936,7 +943,7 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
             };
             ColumnViewColumn column = ColumnViewColumn.New("Тип бух операції", factory);
             column.Resizable = true;
-            column.FixedWidth = 300;
+            column.FixedWidth = 200;
 
             Grid.AppendColumn(column);
         }
@@ -963,7 +970,7 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
             };
             ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
             column.Resizable = true;
-            column.FixedWidth = 300;
+            column.FixedWidth = 200;
 
             Grid.AppendColumn(column);
         }

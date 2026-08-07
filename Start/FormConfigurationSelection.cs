@@ -9,6 +9,7 @@ using InterfaceGtkLib;
 using GeneratedCode;
 using GeneratedCode.Константи;
 using InterfaceGtk4;
+using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
 
@@ -34,9 +35,25 @@ partial class FormConfigurationSelection : InterfaceGtk4.FormConfigurationSelect
         //Запуск фонових задач
         Config.StartBackgroundTask();
 
-        //Значення констант за замовчуванням
-        if (string.IsNullOrEmpty(await ЖурналиДокументів.ОсновнийТипПеріоду()))
-            await ЖурналиДокументів.ОсновнийТипПеріоду(PeriodForJournal.TypePeriod.AllPeriod.ToString());
+        //Значення констант стандартно
+        {
+            if (string.IsNullOrEmpty(await ЖурналиДокументів.ОсновнийТипПеріоду()))
+                await ЖурналиДокументів.ОсновнийТипПеріоду(PeriodForJournal.TypePeriod.AllPeriod.ToString());
+
+            const string КодОдШтуки = "1";
+            if ((await new КласифікаторОдиницьВиміру_Select().FindByField("Назва", "шт.")).IsEmpty())
+            {
+                КласифікаторОдиницьВиміру_Object Обєкт = new();
+                await Обєкт.New();
+                Обєкт.Назва = "шт.";
+                Обєкт.ПовнаНазва = "Штуки";
+                Обєкт.Код = КодОдШтуки;
+                await Обєкт.Save();
+            }
+
+            if ((await ЗначенняТипові.ОсновнаОдиницяВиміруЗаКласифікатором()).IsEmpty())
+                await ЗначенняТипові.ОсновнаОдиницяВиміруЗаКласифікатором(await new КласифікаторОдиницьВиміру_Select().FindByField("Код", КодОдШтуки));
+        }
 
         FormStorageAndTrade form = FormStorageAndTrade.NewWithParam(openConfigurationParam);
         form.Show();

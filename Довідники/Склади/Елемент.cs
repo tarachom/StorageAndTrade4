@@ -118,11 +118,11 @@ partial class Склади_Елемент : DirectoryFormElement
         // Код
         CreateField(vBox, "Код:", Код);
 
-        // Папка
-        CreateField(vBox, null, Папка);
-
         // Назва
         CreateField(vBox, "Назва:", Назва);
+
+        // Папка
+        CreateField(vBox, null, Папка);
 
         // ТипСкладу
         CreateField(vBox, "Тип складу:", ТипСкладу);

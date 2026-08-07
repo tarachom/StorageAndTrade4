@@ -23,6 +23,12 @@ partial class PageProcessing : Form
             NotebookFunc?.CreatePage("Завантаження плану рахунків", page);
         });
 
+        CreateLink(vBox, "Встановлення одиниць виміру для номенклатури", () =>
+        {
+            Обробка_ВстановленняОдиницьВимірівДляНоменклатури page = Обробка_ВстановленняОдиницьВимірівДляНоменклатури.New();
+            NotebookFunc?.CreatePage("Встановлення одиниць виміру для номенклатури", page);
+        });
+
         CreateLink(vBox, "AI: створення нових елементів номенклатури", () =>
         {
             PageAI page = PageAI.New();

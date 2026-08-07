@@ -107,14 +107,14 @@ partial class Контрагенти_Елемент : DirectoryFormElement
         // Код
         CreateField(vBox, "Код:", Код);
 
-        // Папка
-        CreateField(vBox, null, Папка);
-
         // Назва
         CreateField(vBox, "Назва:", Назва);
 
         // НазваПовна
         CreateField(vBox, "Повна назва:", НазваПовна);
+
+        // Папка
+        CreateField(vBox, null, Папка);
 
         // РеєстраційнийНомер
         CreateField(vBox, "Реєстраційний номер:", РеєстраційнийНомер);

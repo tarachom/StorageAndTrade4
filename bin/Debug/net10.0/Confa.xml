@@ -7,7 +7,7 @@
   <Author>Тарахомин Юрій Іванович, accounting.org.ua</Author>
   <Desc>Конфігурація "Зберігання та Торгівля"
 https://accounting.org.ua/storage_and_trade.html</Desc>
-  <DateTimeSave>05.08.2026 15:07:13</DateTimeSave>
+  <DateTimeSave>07.08.2026 13:28:56</DateTimeSave>
   <DictTSearch>simple</DictTSearch>
   <GtkVersion>Gtk4</GtkVersion>
   <ConstantsBlocks>
@@ -57,10 +57,10 @@ https://accounting.org.ua/storage_and_trade.html</Desc>
           <TabularParts />
         </Constant>
         <Constant>
-          <Name>ОсновнаОдиницяПакування</Name>
+          <Name>ОсновнаОдиницяВиміруЗаКласифікатором</Name>
           <NameInTable>col_a7</NameInTable>
           <Type>pointer</Type>
-          <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
+          <Pointer>Довідники.КласифікаторОдиницьВиміру</Pointer>
           <TabularParts />
         </Constant>
         <Constant>
@@ -1406,6 +1406,12 @@ https://accounting.org.ua/storage_and_trade.html</Desc>
           <Type>integer</Type>
           <TabularParts />
         </Constant>
+        <Constant>
+          <Name>КласифікаторОдиницьВиміру</Name>
+          <NameInTable>col_m4</NameInTable>
+          <Type>integer</Type>
+          <TabularParts />
+        </Constant>
       </Constants>
     </ConstantsBlock>
     <ConstantsBlock>
@@ -2247,7 +2253,7 @@ https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange</Desc>
         </Field>
         <Field>
           <Name>ОдиницяВиміру</Name>
-          <FullName>Одиниця виміру</FullName>
+          <FullName>Одиниця зберігання залишків</FullName>
           <NameInTable>col_a4</NameInTable>
           <Type>pointer</Type>
           <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
@@ -2287,6 +2293,30 @@ https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange</Desc>
           <NameInTable>col_a6</NameInTable>
           <Type>pointer</Type>
           <Pointer>Довідники.Категорії</Pointer>
+          <IsPresentation>0</IsPresentation>
+          <IsIndex>0</IsIndex>
+          <IsFullTextSearch>0</IsFullTextSearch>
+          <IsSearch>0</IsSearch>
+          <IsExport>0</IsExport>
+        </Field>
+        <Field>
+          <Name>БазоваОдиницяВиміру</Name>
+          <FullName>Базова одиниця виміру</FullName>
+          <NameInTable>col_a8</NameInTable>
+          <Type>pointer</Type>
+          <Pointer>Довідники.КласифікаторОдиницьВиміру</Pointer>
+          <IsPresentation>0</IsPresentation>
+          <IsIndex>0</IsIndex>
+          <IsFullTextSearch>0</IsFullTextSearch>
+          <IsSearch>0</IsSearch>
+          <IsExport>0</IsExport>
+        </Field>
+        <Field>
+          <Name>ОдиницяДляЗвітів</Name>
+          <FullName>Одиниця для звітів</FullName>
+          <NameInTable>col_b6</NameInTable>
+          <Type>pointer</Type>
+          <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
           <IsPresentation>0</IsPresentation>
           <IsIndex>0</IsIndex>
           <IsFullTextSearch>0</IsFullTextSearch>
@@ -2723,8 +2753,8 @@ END]]></Value>
       <TriggerFunctions>
         <New Action="1">New</New>
         <Copying Action="1">Copying</Copying>
-        <BeforeSave Action="0">BeforeSave</BeforeSave>
-        <AfterSave Action="0">AfterSave</AfterSave>
+        <BeforeSave Action="1">BeforeSave</BeforeSave>
+        <AfterSave Action="1">AfterSave</AfterSave>
         <SetDeletionLabel Action="1">SetDeletionLabel</SetDeletionLabel>
         <BeforeDelete Action="1">BeforeDelete</BeforeDelete>
       </TriggerFunctions>
@@ -2763,7 +2793,7 @@ END]]></Value>
           <Name>Елемент</Name>
           <Desc>Елемент</Desc>
           <Type>Element</Type>
-          <GeneratedCode Zip="1">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</GeneratedCode>
+          <GeneratedCode Zip="1">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</GeneratedCode>
           <NotSaveToFile>0</NotSaveToFile>
           <ElementFields>
             <Field>
@@ -2861,6 +2891,7 @@ END]]></Value>
               <ReadOnly>0</ReadOnly>
               <Type>pointer</Type>
               <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
+              <DirectoryOwner>Довідники.Номенклатура</DirectoryOwner>
               <PresetntationFields Count="1">
                 <Field>Назва</Field>
               </PresetntationFields>
@@ -2900,6 +2931,33 @@ END]]></Value>
               <ReadOnly>0</ReadOnly>
               <Type>pointer</Type>
               <Pointer>Довідники.Категорії</Pointer>
+              <PresetntationFields Count="1">
+                <Field>Назва</Field>
+              </PresetntationFields>
+            </Field>
+            <Field>
+              <Name>БазоваОдиницяВиміру</Name>
+              <Caption>Базова од.</Caption>
+              <Size>0</Size>
+              <Height>0</Height>
+              <SortNum>100</SortNum>
+              <ReadOnly>0</ReadOnly>
+              <Type>pointer</Type>
+              <Pointer>Довідники.КласифікаторОдиницьВиміру</Pointer>
+              <PresetntationFields Count="1">
+                <Field>Назва</Field>
+              </PresetntationFields>
+            </Field>
+            <Field>
+              <Name>ОдиницяДляЗвітів</Name>
+              <Caption>Од. для звітів</Caption>
+              <Size>0</Size>
+              <Height>0</Height>
+              <SortNum>100</SortNum>
+              <ReadOnly>0</ReadOnly>
+              <Type>pointer</Type>
+              <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
+              <DirectoryOwner>Довідники.Номенклатура</DirectoryOwner>
               <PresetntationFields Count="1">
                 <Field>Назва</Field>
               </PresetntationFields>
@@ -3305,6 +3363,7 @@ END]]></Value>
               <ReadOnly>0</ReadOnly>
               <Type>pointer</Type>
               <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
+              <DirectoryOwner>Довідники.Номенклатура</DirectoryOwner>
               <PresetntationFields Count="1">
                 <Field>Назва</Field>
               </PresetntationFields>
@@ -3339,6 +3398,8 @@ END]]></Value>
       <AutoNum>1</AutoNum>
       <VersionsHistory>1</VersionsHistory>
       <Type>Normal</Type>
+      <DirectoryOwner>Довідники.Номенклатура</DirectoryOwner>
+      <PointerFieldOwner>Номенклатура</PointerFieldOwner>
       <PredefinedFields>
         <PredefinedField>
           <Name>uid</Name>
@@ -3392,21 +3453,66 @@ END]]></Value>
           <IsPresentation>0</IsPresentation>
           <IsIndex>0</IsIndex>
           <IsFullTextSearch>1</IsFullTextSearch>
-          <IsSearch>0</IsSearch>
+          <IsSearch>1</IsSearch>
           <IsExport>0</IsExport>
           <Multiline>0</Multiline>
         </Field>
         <Field>
-          <Name>КількістьУпаковок</Name>
-          <FullName>Кількість упаковок</FullName>
-          <NameInTable>col_c4</NameInTable>
-          <Type>integer</Type>
+          <Name>ОдиницяЗаКласифікатором</Name>
+          <FullName>Одиниця за класифікатором</FullName>
+          <NameInTable>col_a1</NameInTable>
+          <Type>pointer</Type>
+          <Pointer>Довідники.КласифікаторОдиницьВиміру</Pointer>
           <IsPresentation>0</IsPresentation>
           <IsIndex>0</IsIndex>
           <IsFullTextSearch>0</IsFullTextSearch>
           <IsSearch>0</IsSearch>
           <IsExport>0</IsExport>
-          <AutomaticNumbering>0</AutomaticNumbering>
+        </Field>
+        <Field>
+          <Name>Коєфіціент</Name>
+          <FullName>Коєфіціент</FullName>
+          <NameInTable>col_a2</NameInTable>
+          <Type>numeric</Type>
+          <IsPresentation>0</IsPresentation>
+          <IsIndex>0</IsIndex>
+          <IsFullTextSearch>0</IsFullTextSearch>
+          <IsSearch>0</IsSearch>
+          <IsExport>0</IsExport>
+        </Field>
+        <Field>
+          <Name>Вага</Name>
+          <FullName>Вага</FullName>
+          <NameInTable>col_a3</NameInTable>
+          <Type>numeric</Type>
+          <IsPresentation>0</IsPresentation>
+          <IsIndex>0</IsIndex>
+          <IsFullTextSearch>0</IsFullTextSearch>
+          <IsSearch>0</IsSearch>
+          <IsExport>0</IsExport>
+        </Field>
+        <Field>
+          <Name>Обєм</Name>
+          <FullName>Обєм</FullName>
+          <NameInTable>col_a4</NameInTable>
+          <Type>numeric</Type>
+          <IsPresentation>0</IsPresentation>
+          <IsIndex>0</IsIndex>
+          <IsFullTextSearch>0</IsFullTextSearch>
+          <IsSearch>0</IsSearch>
+          <IsExport>0</IsExport>
+        </Field>
+        <Field>
+          <Name>Номенклатура</Name>
+          <FullName>Номенклатура</FullName>
+          <NameInTable>col_a5</NameInTable>
+          <Type>pointer</Type>
+          <Pointer>Довідники.Номенклатура</Pointer>
+          <IsPresentation>0</IsPresentation>
+          <IsIndex>1</IsIndex>
+          <IsFullTextSearch>0</IsFullTextSearch>
+          <IsSearch>0</IsSearch>
+          <IsExport>0</IsExport>
         </Field>
       </Fields>
       <TabularParts />
@@ -3426,10 +3532,21 @@ END]]></Value>
               <Multiline>0</Multiline>
             </Field>
             <Field>
-              <Name>Назва</Name>
-              <Caption>Назва</Caption>
+              <Name>ОдиницяЗаКласифікатором</Name>
+              <Caption>За класифікатором</Caption>
               <Size>0</Size>
               <SortNum>2</SortNum>
+              <SortField>False</SortField>
+              <SortDirection>False</SortDirection>
+              <FilterField>False</FilterField>
+              <Type>pointer</Type>
+              <Pointer>Довідники.КласифікаторОдиницьВиміру</Pointer>
+            </Field>
+            <Field>
+              <Name>Назва</Name>
+              <Caption>Назва</Caption>
+              <Size>300</Size>
+              <SortNum>3</SortNum>
               <SortField>True</SortField>
               <SortDirection>False</SortDirection>
               <FilterField>False</FilterField>
@@ -3437,25 +3554,34 @@ END]]></Value>
               <Multiline>0</Multiline>
             </Field>
             <Field>
-              <Name>КількістьУпаковок</Name>
+              <Name>Коєфіціент</Name>
               <Caption>Коєфіціент</Caption>
-              <Size>0</Size>
-              <SortNum>3</SortNum>
-              <SortField>False</SortField>
-              <SortDirection>False</SortDirection>
-              <FilterField>False</FilterField>
-              <Type>integer</Type>
-            </Field>
-            <Field>
-              <Name>НазваПовна</Name>
-              <Caption>Опис</Caption>
               <Size>0</Size>
               <SortNum>4</SortNum>
               <SortField>False</SortField>
               <SortDirection>False</SortDirection>
               <FilterField>False</FilterField>
-              <Type>string</Type>
-              <Multiline>0</Multiline>
+              <Type>numeric</Type>
+            </Field>
+            <Field>
+              <Name>Вага</Name>
+              <Caption>Вага</Caption>
+              <Size>0</Size>
+              <SortNum>100</SortNum>
+              <SortField>False</SortField>
+              <SortDirection>False</SortDirection>
+              <FilterField>False</FilterField>
+              <Type>numeric</Type>
+            </Field>
+            <Field>
+              <Name>Обєм</Name>
+              <Caption>Обєм</Caption>
+              <Size>0</Size>
+              <SortNum>100</SortNum>
+              <SortField>False</SortField>
+              <SortDirection>False</SortDirection>
+              <FilterField>False</FilterField>
+              <Type>numeric</Type>
             </Field>
           </Fields>
         </TabularList>
@@ -3473,14 +3599,14 @@ END]]></Value>
           <Name>Функції</Name>
           <Desc>Функції</Desc>
           <Type>Function</Type>
-          <GeneratedCode Zip="1">H4sIAAAAAAAACs1W3WobRxS+F+gdxr6JHJY1hd45jlFkyxZVLGMp7UUpZrQ6VrZezWxnRlVNYvAPtDeBgEldKDil0AdQjE1VJVJe4cwbldld7a4kq6ntlHSuZmfmfOd835wzZ7OZxfvZDIkG/oZd7OsTvMAuDnCgX+JrvMQeDrCnf9RneIo9fKfP9KE+2cE/9AkOsG829C+2I1M4Y1vZzP3FbCabaUuXNUmJKRC71IF1tff50mg17zi8zZTLmlW+qzpUQLy1DgwEVdAo8AbY+AqHeKHP8NIEhX3sLRlsRlsgfeoAqSouaBPyrFETtGFgshmpqHId4nhUyruQzGaehST9dt1zHRLhll2pHnz1FAQ8JHgaxPYGh/oQezmphOEggQrnaQ1+UAshQIRjhgDVFiz5/jqZmjH+tbiIv+IQL8dXGXRI4D93I3IFzqSyQ0CLFHjLp8KVnNnl0hdrVjpo8owU28yp8aILXoMsk/laZaewkd+et9IbO1tU0NZnZv/evXlyYI2HOZPSOXbxTxPyLFqp2CrbFrkNy9jHp2H6zVI4PzD5OJ1CVO4zh3xJvTbUqNwjFR/YFm3CmgctYCpX59wjJbkJHYs8Ye53bSitrpB2NCPLhLU9z0r5yzvK5exBfPbhCtFH1PMeUWdvp8xpYxscLhryw6ZjlhVWBQ8ctcVdU8eR9XRS36zIfsa3eIXv8AoH+pj4tAlk+S4Q9iZ0cguR4oHYtAl24Xr618oy03ZagJniBE/PCMXdJbng/iKtJvQyg3aoq0J3H6AznloHyRQ8CYGrJDPCGyLPn5O52Q62gTZim4XZIT4GKY35mhBc5LYEbwrash9R6Tp537fI2EqRi5ZF5vEcrwhe4CV28S0O9ZF+QfC9PsSh/gl7+hi7+hh7c/OTBMN3MbUYl44ZU55W7E2uoM75nilTuyCAKjAllIsu0DdZbQX0065SolRBBRUYa33DYjV9IPcP1VngbNdttgU1kay6AhzFhQvS3nBBmBfIdahX4EwBU7V9H1YI9TzeMZ0vWAuzy+UsRkyccR9YkXuNuCatT1nQv+N77OkjHGL/duWcAri+mPMzlCHLs0SbRKikFUvkmzw2uqf9SKGSghZZji/3oz8Ut0rxWzTE4pNyeTP/eO0/qYgqqFXwwMhepnXw4qqIdbtjho1UxVPsm8auz/Ai/CE0GQyd5DFLETNNdIV4JiCTJgHNaQB7fTL4NIZ5XAMEe4PKgPDCbKQpGeZC09DuRpKmOjkpcH//oytaqX8LUhF8jW/0K+zr40jISfIR2fjYv+4dt4rm3PztYw//Si4s8RzooEQi5XgGJ8Z2lX6f5PB0pZkRtpu00Ujh8RY0mppW+z/qk8GzPR3pQTYTzf4GWStXK+oNAAA=</GeneratedCode>
+          <GeneratedCode Zip="1">H4sIAAAAAAAACtVWW2sbRxR+F+g/jP0kB7F+6ZvjCEWWHVPFMpbSPJRixqtjZevVjDozqmoSgy/QvhQCxnWh4JRCf4Ci2lSVY+UvnPlHZXZXe5G8jW+ldJ5mZ/Z855zv3CabmX+UzZBg4a/Yw6E+wj728Aqv9Ft8h+c4wCsc6O/1KR7jAD/oU72vjzbxd32EVzg0F/pny5YxnMRVNvNoPpvJZjrSYU2yyhSIbWrDitr5bGF8WrRt3mHKYc0a31ZdKiC8WgEGgipolHgDLDzBEfb1KZ4bo3CIgwWDzWgLZJvaQGqKC9qEImvUBW0YmGxGKqocm9gulfI+TmYzr30n250t17FJgFtxpHr88hUIeELw2LPtPY70Pg5yUgnjgwQq7Fd1+E7N+QABjlkCVEew6PvLaGtW8mt+Hn/BEZ4nTxl0iac/dyvnSpxJZfmAeVLirTYVjuTMqqx+Xs7HjSavyXKH2XW+7IDbIItktlJ9Wd6YJXv5pCWpVp9hD/80VqVZHlNf3ciTuzgS6vjXnPlqwd/vmayaTgQqd5lN6lTukGob2DptQtmFFjCV2+LcJatyDbp58oI533RgdalAOsGOLBLWcd18TFXRVg5nj8N/nxSIPqCu+5TaO5sVThsbYHPRkJ8WTUhWWQ1csNU6d0whjqWTjuMZjvADXpjMx0vs6UN9pPextxlIFQgee+cHfhEGKNO5fbta+wkv8cLXqw9JmzaBLN4HwlqDbm4uCJkXLdoEq3Q9ideSmyo7TWMqxV4HGqM42yTnZUHA1QRfZtEudZSv7hPuTBfaWMVEeGaC+ASoiUs8wUv91ot4H0f4B44M6YlfUlXuRVtwJXiqo5T2lZI3b8hMuk8bQBuhzFw6K89BSiNeFoKL3LrgTUFb1lMqHXuZi1aezOIZXhDs4zn28BJH+kD/SPCj3seR/gEH+tCkMQ5mZicZ9Ptv7DAsbrOmNBWsNa5gi/Md00SskgCqwFR6LsiQtim+vOdsXFWMghqoL6jbgTCYN28nZtTk/qF/lDjbdpodQY0RS44AW3HhgLSeOSBMB3Rs6pY4U8BUfbcNBUJdl3fNcPXO/Mx1OAsRI2W8DWyZu43rusb/teX8hh9xoA9whMO7NZwYwPXtppjCL1lMo34SoRrnPQrC5G/jaO8GjK0qaJHFMEUevJUl43fLrmNF2lJ7zZ2K8A7vhuUXlcpa8Xn5oWu2BmoJXDAhrdAtcMO6DWNyz+wdc4jHODRPH32K/ag6oBv11ZhP5iFSIK4xyKSg5+E0gLUyaXwcwwTbQ7CeUenRMpeONEXDjC/qy92UzdhDiJR4e/fByaxufQ22IvgO3+sTHOrDgMNJvwM/w99uPMHuZI0/lgf4VxSrSLPHgxIRi8m8xVDYqtFvo8y9voD9MRgXGjOcHI3jrRn4/9m09hrLtF172Uyw+xsfQzlu2A4AAA==</GeneratedCode>
           <NotSaveToFile>0</NotSaveToFile>
         </Form>
         <Form Modified="0">
           <Name>Список</Name>
           <Desc>Список</Desc>
           <Type>List</Type>
-          <GeneratedCode Zip="1">H4sIAAAAAAAACqVVUW8TRxB+t+T/sOLpgtBBEbw0GJQ42DIKjpVzGlUIReu9ibP1evfYnYtJKySqSO1jJVSFt1at+gMC4sFNm/AX5v4RuvPZuQuGxHAPd7s7O99+883MXrVy8zrLnmpl8mWM/qRjOkkO6S0d0ymdJr/RH/SOxnRK4+SX5Ihe0Zj+T46Sl8mhL1zB8S96T+PkZzqjk2rl+s1qpVqJndR91sTB8nTc0gh2lwto4uDObHVFCBNrlLofmF0ccQszUxM0WI4Q1k0IPv1OZ/Q2OaJ3KR86ofHy+Tn0Nx3TG/qPxsmvmfnfIidWuxTLLyMkRzP/zLiAMjv0mo5z35RiTvCf5JBO6STdnbxmNRagsbwPKzrsWp5SWuiIElqmg+ZDcBEXcBE5sz5pbvR+AIF+EPeE4s7dW5MWBBp70DB2+MjEVnPViJW6711blw53ou83t1fxcePRrdvrW88H3zQ3zeja0tNqJeIWJVcsg1moZnZKOfmWfYpCtfLTpLaK7+mx+0aGrKVlOpE/grc0Mece6dM9iKDNh8Bqi7GrG+3Q72y02t2Hm8uF6v5sbfkrYVg3Kh5qD/ekWyo4BoAd3gcXAKb17by7t1Lz+YbJ6MV0KYp7SgrmkKMUX6FsG0ZzZPlyPCUdsloKuy1xr2NNBBYlOO/J02K46Ta/bRB6xgwasRasxjrW9C0f+qvcSZGm+UFpR0kNCxhbncEsz1fG7IO1MgTG3YEW7DuuYuhyN2DrhoebIIwN3ZzI+YhLvCyNRYhiIl+UivASHltRyBG+kkkZ5AKXnIc1CAIhvEgl644AMABuxZ7n0KaXj8tmXXiOH1Pa3gMLacen7VK6Vnx6ld2Qb+gseUljr4ByBT4Zk4ZUqiEVgvUmn7rRaI1iu8XZnFr9vEJ1CxwhB15MoPNcbUSg0/Z8qGAIGr2eMYq1XBtGN9iWls9iaK09YHE+YjWmY6U+mdKychexc9gp2A1W50qtcjHYKZRdYXVDB6BAYMfI9Kf5JeEFgGugAKXR67wHypvGNGNxxVg+Apr5L87q3kzY+6xuooOrkMqvhbncMow5fPKm/QD57Zl65QgAAA==</GeneratedCode>
+          <GeneratedCode Zip="1">H4sIAAAAAAAACqVV3U4bRxS+t+R3GHG1jtDSi/YGYpAx2HWFMIlNqIoQGu8emynjme3MLA6tkEiRmstKqCJXbdWqD+BEqeSSQF/h7BtVs16bXYMDpudid2fPnG++8zv53MITEks+N3wTgr9jHy+jM3yHfbzCq+hn/A3f4wCvcBD9FF3gOQ7wY3QRnUZnrqdThn/gvziIXuE1XuZzTxbyuXwu1Ex0SNUcLo2+a8KAalMPqubw8/HfkufJUBgmOg3ZNj2qYKyqggBFDfhl6YOLv+A1vosu8L3lg5c4WLo5B//EPr7FDziIXsfqf9KcSPFeLDeLEF2M7WPlDJHZxzfYT2wtxYTgX9EZXuGl3R29IUXSMFLRDpSE31TUUprpiAxaHAdBu6AD6sEkcqzdrdZb34Jn3EbY8jjV+ukaU+AZqY4rUnW/kqESlFdCzpeduQ2mzX7Lp+3Sjqi8+Lq60Wadb6g8qj+bK+zlcwFVhlFOYpyZimY/k5RFMo1DPvfDsLiGzyBsceYR/BWv8SP+bR3HD9iPfozOolPs729JZkurLIVRkhM8j7WvhqklxYcaupvQcwpL6ZOT8xOHjyTzSU0wu2Dfg1MYqhOuVprHAWzSLthDZ4lLWQpt3K16bbO5/nwp1VifLGu35PtlycOucMwB0yPqVhpgtmgHdAOMbS3tfPGZVd9suPlaWMgG7EaTciwmk9nmlmlgmBSkSOamBXhxLkXJyper8mVTBm4pCED4ThYxzd9KvSdA7RyAAluQlVB4pEicAikuT1JJ8ujW9Ho3MMdOgayQ3T2ySHYF9JxHZGKaQ/OkLLsBVUxL4a4/m59GZFuw70Korbnb1ZD5hb0JzyasSm0DqgEcvJGXVB8Lb+hr1nIiJVbiPJc5UDUu3rTQHmWGbEjqPwdPKl/f2nWSWp9MVsjJqGiSJtSGGtuLj+76uMluNc7j8TjThhQt7A4zB1tKBqAMA+3s7qUdtdvcTWmgJeVhEuUtJTuKdt1VqplnR9BKZkemXxSYUIkYZunuyMgjUIr5kCSvSfVhNuy3nB6m5p4eT0OkuzzJ1L0UtgOfGvifJLIgEzQSCkoa8Az4kyziqdkA0wCqvANHG2XvQx2vmvDS3KY07nk7RjM3nYvn8aX9Fq+jUxw4KZQH8ImZVBjnFcYNKGf4Gl0b7fTqjgr9dITKCqiBBHi2AMVpqgcgbCevc+iCME5LSk5qehN682Q0TVZImHyRIhEh51OzmQ3aJHYCOwKbJ2XK+Sr1DvdTxZb6WxfD4ZRMt2lTb0aPG2DWgIO9QzZoC7gzcnNM7IHu3QIa289E6Ok4zMukLIPjh/BJpsKdtGKMO6gkjfsfP+flfoELAAA=</GeneratedCode>
           <NotSaveToFile>0</NotSaveToFile>
           <TabularList>Записи</TabularList>
         </Form>
@@ -3488,7 +3614,7 @@ END]]></Value>
           <Name>Швидкий вибір</Name>
           <Desc>Швидкий вибір</Desc>
           <Type>ListSmallSelect</Type>
-          <GeneratedCode Zip="1">H4sIAAAAAAAACq1VTW8bNxC9C9B/IHxaB8amQD9Q1FECR4oMJYYkeOXmEAQGxR3LrChyS3KtukWAFAbaY4GgcG4tWvTQo234oLi1+xdm/1HB1UradeTYQrSHJbkzfPPmzZBbLt2/R9xTLqUDIQR/xxO8SI7wDE/wEi+TX/A3PMcRXuIo+Sk5xjc4wn+T4+R1crSLf+MZjvAcL3CE71LTqTP5zOQQb3Aql+7dL5fKpdhw2SObtr8+mTekBb1HGWza/mfTrxuMqVhaLnuB2rNDqmFq2gQJmloIqyoEH3/FKzxLjvHckXZh12dx8E88wVP8B0fJz6n5Hf6B/+Eo+RGv8IJUbsXyiwjJ8XR/alxIvrd4ku11FDOCfyVHeIkXzjt5SyoksErTHmzIsKOpo7RQiAJaqoOkAzARZXAdObW+2Gx1vwFm/SDuMkGNeVDjGphV+rCu9OCpirWkIhhQIR56K+m4xY3dbbd6B7Wnn35R2+H0y9bBHgu2u9FwZfVluRRRbTkVJIVbToORr8iNtMqlH8bNl39POBwoHpKG5G7BvwdvdWzOdrincxhBkw6AVBajWlXSWL/dajQ7T7bXZ3jPwDEMwLrOJRWy4qcsV3IuH+5JfyMMq0rEA+nZfW5WcxsDsG3aA5OhG+/zT5x55jCevZp8iuKu4IwYSy1nS6pEE4ZzVFwOtuDGkooL8Zzb/bZWEWjLwXgvXuZlcG5+U1noKtWvx5KRCmlr1dN04D+mhjPXIo8KHgWVNNhYyxRmfb5i6gC05iEQag4lI19TEUOHmj7ZUjTcBqZ0aOaoQIeU29vKm4fIF/hVoX9v4bEThdTCRzIpglzjkvHQygKzEF6nkh6sAGwAVLN9z1jt2t2kqw58Z9+n9HwfNLi7w520wjXl45v0xj3Fq+Q1jrwcyh34pEzqXIg6Fxa0Nx6qSlqtBNnLr+b07YcVqmqgFjLgxQSa1aoVgXTH1uXu7Uj+bQyN2iMSZzNSITIW4sYaFqUqgE0g1siGEGro/mHSgrQBCGCWK7mWBq8rEYJeI1UqxGPK+rstOfZoK+5+vR+T1BMBA5DW6yolSMM0YbhGlpXjBDuDnWU7TSR3lpabXgC2BgKchlu0C2JatymLO+byHtB0/+KsHkyFfUiqKjq8C6nsrpvLLcWYwye7if4Hqejs3C4KAAA=</GeneratedCode>
+          <GeneratedCode Zip="1">H4sIAAAAAAAACrVWz08bRxS+W/L/MOK0jqyFQ3uBGGTMj7hF4MRGkYIQGu8+zJTxzHZmFodUSKRI7bESqsiprVr10KNBVHJIoP/C2/+omvXa7BocIKVz8O76vfnme9/7sZvPTT4hduVz8YUQgr9hFy+iIzzDLl7iZfQT/orn2MNL7EU/RCd4jD38GJ1Eh9HRFv6FZ9jDc7zAHr6PTafW5Ho6hTjGKZ97MpnP5XOhZqJFls3uzOC+KgyoberBstn9Yvhv2fNkKAwTrbrcNh2qYGhaBgGKGvAr0gcXf8YrPItO8NyStsfOXJ+Df2AXT/ED9qIfY/N7/B3/wV70Fq/wgpTuxHKzCNHJcH9sfJB877Cb7LUUE4J/Rkd4iRfWO3pHSqRupKItKAu/oail9KAjMmixDoK2QQfUg1Hk2LqxvNb8Bjzj1sOmx6nWTxeYAs9Itb8kVfsrGSpBeb1NOZ91JuLrCtNmq+nT7bJf01PP6Ks3OytTe63g1fOJwmY+F1BlGOUkRnuc+iLTZCyrfO67fu31f4OwyZlH8Be8wo/4t9UCP2A3+j46ig6xu1WTzFZbRQqjJCd4HFvf9rNNSvfd6K5CxynMpE9Ozk+i35PMJ1XB7AN7A06hb0642tXYD2CVtsEe+hCRKlJo49bWqquNxRcJA7u+BqtNHYxtGVIiE26sz0TK5dPN4JZ9vyJ52BaO2WF6EJ1ddTA12gKdoGvnyylrvna4vpuczGp6bUnFHpPJuLkVGhgmhSU+LgfT6VjsejYvXzdk4JaDAITvZBHT/O1a6whQL3dAgS3gpVB4pEScAinNjlJJUu1W9WI7MPtOgcyRjU0yTTYEdJzPSNa4gIqkItsBVUxL4S4+L44jsi7YtyFUF9z15ZD5hc2RyEZ2lbcNqDpw8AZRUr0vvH6s2Z0jKbErznOFA1XD+k4v2qHMkBVJ/RfgSeXrG14HqeeD0Qo5GBRN0qfaUGPb9VGmRNyTN/rscbA504aU7BEvmdmpKRmAMgy0s7GZFsC6uavSQFPK3UT9mpItRdvuPNXMs+NrLuOR6SMFJlQihpm5XTG5B0oxH5KkNqjezabjhgD9lN3R+2mIdPcnGbyTwnrgUwP/kUQWZIRGQkFJA54Bf5RFPHDrYOpAlbfjaKPsGNTxUwNem5uUhrPATuDMe9PF4/gT4BSvokPsOSmUe/CJmSwxzpcYN6Cc/mXwxtlOP91SrZ9WqKKAGkiAHyZQnKa1AITtcBu2MxgrcyRM7kiJiJDzsenLqpQBG0AUSZlz2bHfU8KAMP1BxKQoxocvSe6DKpIK5Xyeertba6Lvkcy6cTPwM+Nc5NAGYZymlJxU9Sp0iuSxwh5gJ7DXAgxjSzXV/x5xHcwCcLBKr9Am8GF2h8TuGd4NoOH+BxF6OpR5llRksH8fPsn0u5VWjHELlWRA/QsWJcTf2wwAAA==</GeneratedCode>
           <NotSaveToFile>0</NotSaveToFile>
           <TabularList>Записи</TabularList>
         </Form>
@@ -3496,14 +3622,14 @@ END]]></Value>
           <Name>PointerControl</Name>
           <Desc>PointerControl</Desc>
           <Type>PointerControl</Type>
-          <GeneratedCode Zip="1">H4sIAAAAAAAACq1VzW4bNxC+C9A7sEIPqzTYBGgOrZW1IW8cWUhqq1XcAA0Cg+KOVqxocsPlSnANAwUC5BqgKHxsrz2mhg9qUPcZqDcqyP2X7KC2y4O45Azn55tvRs3Gg3vIrGbDbggh/bv+oD8u3+pz/UFf6svle/2bvtALfakXy3fLM/2LXui/l2fLn5dvDweCcgXSF1xJwVwSl3bqombj3oNmo9lIYspD1FPTTv7dN1pjTKCnpo+K2y4hIuGK8nAoxmqOJRSiHnCQWEHgiwBc/av+R58vz/SFCVB/1IuO8cPxEcQRJoCGSkgcQpcHLyQOjJlm41Vvf/QjEOUOkxFhOI4f16PddFr1i8NvexAcDJ5Fo+kR606+fnb8ww7vttqvm40oGTFKUISlopgha+4uIKKNNehOUlRhBlyhHfO7i3nAQD6+jZ/NrcLBBPMQAguJcZDnMBM0QH1OzYH+BE47FWdhmPWSBmoykBADV1hRwZGHvnz4sFNq+DjK7j9vndwoTF/wWLlPD54/3+t+s3O60apYrQeOvvAQjo85Qc7hfRSlsjbyNtFKaJkIfeYhnjCGthCeY6rye7cHqvrCaaMN1Mr9nhbwpJWOjRK5U4n3YO7YOPdg/pIaJEUEUlGInVev20U9buOiyNVD3Hjp1GK/lcVsXyNBCKo8VO7NkqASyfNgKhU8LT/jT7wvs5hhlpiurUrrNNhy+3wmpuCY2pY8WHdaVHKlor7gYxom0hb/CZVAlJAUYneXgsSSTCjBzNQOuHpxHMEW6jIm5mYC2bshMCCWaicGlI7JrFPhjRQKiIIAiRlISQPIWGv7bD8CnhpwthOlBEcju91PO70rwxhhGcbrTTgQkTGIomz38hvX8quSf6bhDkENsASunNTHVTq2tb+DNwnECnnoq1pX50q7QMOJKrUe1bS2YSwk+IySqcnuacJJUaOS3TdmuP5Dn+uFvjBDXv9lRX8aEYpwCMj7f4ytY4dDcDNgU/DsQLHnVbWcO8cZQfsKjmxZ0jFzwOmbBPpPVp9dxybvOp6tGrAoCxZYEpSHVTUfM7aNyfRwP2Nc3uEeiuvnzWsbs3zCYX6reeLUfFWhNqs7ViDT6NZ4U7RzjUNX0tyfUBY4Jusr+2Ai0iKXouwPwcA0BPW9GTqFz091ctrD3GeA5c0b+M5YVrP7L9BZHRvslSqnzUY2K/8Fl616BhoKAAA=</GeneratedCode>
+          <GeneratedCode Zip="1">H4sIAAAAAAAACq1V32sbRxB+F+h/2Io+nNJwCTS0xcrZyIoiC1LbVPlRCMGs9kanrc675709CdcI0hr6WgjFb21f++gaF1Q3zt+w9x+V3fst2W1t9x58vp3ZmW+++WZUrz24h/RTr5kXQkj9qk7VRXysztSpulSX8Y/qF3WuFupSLeIf4hP1Ti3U+/gkfhsf7+1yyiSIDmdScN8mYRGnaqrX7j2o1+q1KKTMQz05aWX/97XXCBPoycmj/LRNCI+YpMwb8JGcYQG5qQcMBJbgdrgLtvpJfVBn8Yk61wDVhVq0dB6G9yEMMAE0kFxgD9rMfS6wq8PUa697O8NvgEh7EA2Jj8PwcRXtutWoHuwNJR61X3bbva8Pup8NhJh+7vK+12i+qdeCaOhTggIsJMU+MvHuwiJaW+HuKKEVpsAk6uq/W5i5PojHt8mzvpEnGGPmgWs40QmyGqacuqjPqP6g34LVTMwpDP28oq4c7woIgUksKWfIQZ8+fNgqPDo4SM8/bhzdCGaHs1DaT188e7bd/rI7X2uUolaBo08chMNDRpC1dx8Fia2JnHW0BO2j1Gb3w+5+IA+tJtpAeIapzG7ZPZDlS1YTraFGlnqeM5Q0O9RO5E5d3oaZZaBuw+wV1WTyAISkEFqv3zTzltwmRVYTchDTWVoV7LeKmL5XdOCB1DWkCUuNCkEWH6ULBkgOb4r9SI9k2Vpt8YbdZ1M+AYtFvl/0uHRnvtSiarE/qw/qvfpDXaoL9Zc6jb+Pj+O36jQvTL0zx98l2wMd6YpaGn0LzRP+/jVGTvCSSDqcjagXCaOnJ1QAkVxQCO0tCgILMqYE+1oOwOTzwwA2UNv3+UwvNnM2AB+IEXAFVZ5FcAlEgov4FISgLqSzYKZ3JwCWBLA2Iyk5Q0Pzup/sj7bwQoSFF66O9i4PdEAUpG8nO7GNZEvMpx72AOQuFsCkleS4yscsjK/gIIJQIgd9UdkVmdMWUG8sC69HFa9NGHEBHZ+Sia7uacRIro5iYG48NOo3daYW6lz/dqg/jel3bUIB9gA5/0+wVe6wB3ZKbEIecjIelt0y7RymgutL2DdtSTbXC0YPIug/Wb52nZqc63S2HMCwzH3XiKD4WHbrYN/fxGSyt5MqLpstB4XV7/VrV0JxxUzcLVaUVclVplo/7ZEEkaBb0U2+SCoaWiqyuifsAm/VUAp35Zx0xtR3LR3xykEa80QlhSn9kdIQBiBf6n2Zg/6nVZAsAdbxAYubb4A7N6Nc3X/h3vgYsFe6zOu1dM3/DegSzYKyCgAA</GeneratedCode>
           <NotSaveToFile>0</NotSaveToFile>
         </Form>
         <Form Modified="0">
           <Name>Елемент</Name>
           <Desc>Елемент</Desc>
           <Type>Element</Type>
-          <GeneratedCode Zip="1">H4sIAAAAAAAACq1XUWsbRxB+F+g/LO7LKZiTk/ShRFGK5doiFFynMslDCGF1N5a3Pt+qe3uWVWNw7NK8GALFVSHQ+KH9ASZYWMiW8xdm/1HZu5N0Op9yip19ELe3OzPffvPNaC+fK97L50g08BTPsK+O8COe4QAH6h1+wHPs4QB76g/VwT+xh1eqow7U0Wv8Cy+xi1fYxYE6NC0v5mdiKZ+7V8zn8jnfY26DVOVWafj81JUgNqgFVbn17ejtomVx35XMbdT4hmxRAaWYObggqAR7idtg4gle40fVwXMNEfvYK31moz5ZhGn6xlPsqgPs4qXqqLd6s6YhAODSbfCa1AJSk1zQBiy69rqgdgjvZfWn+i9gSbPm1y2Het7jH5gAS3LRXuFie9mBbXDlE2Muenpdo6Jy/8cH39EFv9J49sBpPWw/p8/mCq/yuSYVklGHBH7ukhXyiKShyOf2wmQ1/brDrC+LoI/pyUSOyR5pgCwR5jJZIvukTFxoGYVSGCb8/UZAg3GXrDBw7Egty64UbYLv8RrPSTmcmqsx0+SIDP7BM7zQcG9lhKdaNjiY0VzLtAFiibtScIfge9XBS3WMfdVRb9ShOsZ/8ZNmMPB6jX1STtikuo9YAdcOidEqivO0Tuu+Q8UaFTJia5rFUC87nNnkqcv0hP0GRiFc3osMAypCBZByIoGBhieRDUexGCXo0eT78KX5gtly82f41deqKJP7CwtTaEz3PEpK0vtoIRnh4W0jjNM+NdZ4y12jZookgSGc7Y9SGlamJ6n80gJNVGYgvUgIX6XVExhpaBVaL5jcXBO8CUIy8IyXr+Iyj3aaq1xCnfOtFd+1SJmsCd4QdNusUI9Zui99P7FjQosCpC/coadSkibBJVgSbMJ3QAhmQ1gESwKohJqkQhoVvkt2Knz3JglTdD75OnQVNC1Du5knc1E5zM1HBoXb6TE7zrg4dKzR7JbxxuLOjvwBP2FPvZmMO3ZQ+Lq1MBvjXfW76mhxqhOtw5D/LNfZSGcU07JrZ0ppP9nD8VQdaB41Fo1aFxopErxQb7GnDuP1R/BCMxteOtRxohGMEFGv7VrkOXV8WKfeFln0PNZwg3lamYc9ugZyHXalkbizZas31oWn+ZhJlakdNtPjbHrL1oAZ0HPjP8/MtkwJO6NoqiCnJiUtCxpdmKxqRMtnzzyNMu1mnLM7uZq4JaUm8DbuZ7k8zZrR7Oyk3JVu5itRUo/rnDtPSI3upCVPLxLm6VWblMkGdbw4Dina40nMTA+2QQzaoix5eTbDUFGsKcbjw024HAGR4gYf++Np7NGi0tokxvKuBU2pexQM21lK1GIR/1NHOMB+0Hf/xhO8VO9CCQSfXdd4FRxloI7Dj6xzPNOfV2lbdJdLFnsVpL4FeEZhnizRANC8RhQ7Sgx7dBmITj2+DERb/geVbU3ezg4AAA==</GeneratedCode>
+          <GeneratedCode Zip="1">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</GeneratedCode>
           <NotSaveToFile>0</NotSaveToFile>
           <ElementFields>
             <Field>
@@ -3511,7 +3637,7 @@ END]]></Value>
               <Caption>Код</Caption>
               <Size>100</Size>
               <Height>0</Height>
-              <SortNum>99</SortNum>
+              <SortNum>1</SortNum>
               <ReadOnly>0</ReadOnly>
               <Type>string</Type>
               <Multiline>0</Multiline>
@@ -3521,7 +3647,7 @@ END]]></Value>
               <Caption>Назва</Caption>
               <Size>0</Size>
               <Height>0</Height>
-              <SortNum>100</SortNum>
+              <SortNum>2</SortNum>
               <ReadOnly>0</ReadOnly>
               <Type>string</Type>
               <Multiline>0</Multiline>
@@ -3531,20 +3657,63 @@ END]]></Value>
               <Caption>Опис</Caption>
               <Size>0</Size>
               <Height>0</Height>
-              <SortNum>100</SortNum>
+              <SortNum>3</SortNum>
               <ReadOnly>0</ReadOnly>
               <Type>string</Type>
               <Multiline>0</Multiline>
             </Field>
             <Field>
-              <Name>КількістьУпаковок</Name>
-              <Caption>Коефіцієнт</Caption>
+              <Name>Номенклатура</Name>
+              <Caption>Номенклатура</Caption>
               <Size>0</Size>
               <Height>0</Height>
               <SortNum>100</SortNum>
               <ReadOnly>0</ReadOnly>
-              <Type>integer</Type>
-              <AutomaticNumbering>0</AutomaticNumbering>
+              <Type>pointer</Type>
+              <Pointer>Довідники.Номенклатура</Pointer>
+              <PresetntationFields Count="1">
+                <Field>Назва</Field>
+              </PresetntationFields>
+            </Field>
+            <Field>
+              <Name>ОдиницяЗаКласифікатором</Name>
+              <Caption>За класифікатором</Caption>
+              <Size>0</Size>
+              <Height>0</Height>
+              <SortNum>100</SortNum>
+              <ReadOnly>0</ReadOnly>
+              <Type>pointer</Type>
+              <Pointer>Довідники.КласифікаторОдиницьВиміру</Pointer>
+              <PresetntationFields Count="1">
+                <Field>Назва</Field>
+              </PresetntationFields>
+            </Field>
+            <Field>
+              <Name>Коєфіціент</Name>
+              <Caption>Коєфіціент</Caption>
+              <Size>0</Size>
+              <Height>0</Height>
+              <SortNum>100</SortNum>
+              <ReadOnly>0</ReadOnly>
+              <Type>numeric</Type>
+            </Field>
+            <Field>
+              <Name>Вага</Name>
+              <Caption>Вага</Caption>
+              <Size>0</Size>
+              <Height>0</Height>
+              <SortNum>100</SortNum>
+              <ReadOnly>0</ReadOnly>
+              <Type>numeric</Type>
+            </Field>
+            <Field>
+              <Name>Обєм</Name>
+              <Caption>Обєм</Caption>
+              <Size>0</Size>
+              <Height>0</Height>
+              <SortNum>101</SortNum>
+              <ReadOnly>0</ReadOnly>
+              <Type>numeric</Type>
             </Field>
           </ElementFields>
           <ElementTableParts />
@@ -3553,7 +3722,7 @@ END]]></Value>
           <Name>PointerTablePartCell</Name>
           <Desc>PointerTablePartCell</Desc>
           <Type>PointerTablePartCell</Type>
-          <GeneratedCode Zip="1">H4sIAAAAAAAACq1UTW/TQBC9W/J/WHJyKuQWUSTUkkZJWkIubWgKpVRVtbEnzhJ37a7HqSpUCakSVySEeoQrx1L1ECrKb9j8I7S24ziJi1DoXnbtfTtv5s2Hruna4gJRS9eijRAiv8lLeTM8l1fyUt7K2+En+VVey4G8lYPhx+GF/CwH8tfwYvhheH7Y9BhHEDu07UKTCqyB65pWMLaWB9C1hUVdCwPGHVLH3uro3FDIDrWgjr3l9G8dOAiKYNc8G0z5Rf6WV8MLea38kTdykAIrluWFHBl3Wl4HT6iAVV3TNU6PIPCpBaSFnqAOVLi9I6gd3+7Xt9rvwEKzFbYtlwbBszyP14xC3u/D5vLLx0/2Hr9xNo6q28fho93e2/pepVA80DU/bLvMIj4VyKhLItv/ry1ZuUPR97HkCWuAFJl1D3SbcGIUSWlNHXYZdpvC80Egg8DYPyhGCs5bM8RP9hLhimV1IoK5LCZ7bChRRC0HUMWQECZEagWA44/Mg8iR1L0+dUNVLdnbpoAAuJLZ46Q0Apub9CiLPIuPZyOdkuBocMot8lqZ3aFBj9QBs/ZixfMZyIMS4aHrkjKhJ5RhyjxrY4UUCmmGpikTqWpdyh0wXnF2HEJjvUz84ox6zWye5kqM4ZNyOXo9IjKKo3xHzkWRzESQQWzxFrhgYdls8L7Xg/QylTaVWHgIFoJNvD4IwWxIYu97zCaxFaMaInqctKPtIdnoA8eKcAJChRPkKeArY8RP9tLojxn1R8bPBGG2AJtUAEcj5sjD7DIbu9twHEKApESeLi3lgF4Ac7o4Ri1PoKrQ8QTUXGb1tnzgz0NuTSg051SX3+WVHMhrNV7lz+jqh7oiPnWAlO7H2Kx21AEzETYWLyr76Huq+6YerTMBFnriNKm3BsJRpilHRTfNVaOuW6VW73BUXeNKj0vGV31454CIq3aykfxsQGpVOggitj6TnXRKZM7ZnGWKqdZlrm0or3OrrevFUk63VBRmCzDq+9me+Xuv1Fygwpjthry41UjKevYvYUeYiCQXcqZryfj8A90B5sanCAAA</GeneratedCode>
+          <GeneratedCode Zip="1">H4sIAAAAAAAACq1VXYvbRhR9F+g/TPdJDkXJQygljmO8Tuq4lNjU24QSwjKWruWp5ZEyurJZwkLahbwGQti3tq993CwbcLfZ/Iarf1RGX5ZtpS3bzMuMZs6ce+fcD5mGady8wfQwjXRijNHvdEaXyQmd0xld0VXymn6jC1rRFa2SV8kpvaEVfUhOk5fJyeEwEBJBHfCxD0OusAu+bzvRmq0OYBo3bppGHAnpsR7OmsW6r5ET7kAPZ7fL3R5IUBzB7QYu2PSWPtJ5ckoX2h+6pFUJ7DhOEEsU0hsFE1xyBU3TMA3J5xCF3AE2wkBxDzrSPVDczU6f9gbjn8BBexSPHZ9H0d06j+9Ze3Xbh2Pkkw7MHvce8sFyPph+9eN3w2+Xe41nphHGY184LOQKBfdZyv3/tWV3PqHoi0zy3GqEHIXzGcw9gqXVYK17evFE4HSoghAUCoisp88aqYLXzRkW5nOLSW2lufGCazHmc0aUK6KHB6jfkBvMDekRAa4/KhdSR0r3FtyPdbZUT4cKIpBa5kCyVgG2H/F5FXmcLY8LnfLH8ehIOuyARzPWA6xSZWJvkX9RsPejB/MQj6wGazO+5AJLu7s0d9jeXhmfisFco+6USw+sH6R4HkP/fpuFjR3ZhtUAXSsiVsja7fR2YchqFIFO/UofseN8BTGQI/DBwbbdl4tgBuVhqelm2vxKH+kDvacruqS/6Cz5JTlJXtJZmSL0Jt3+Oese7IXOjabOgyY7Lh76LxylC2VUVYDgILgsWIBSwoVc8EUgXJb5b+3HiIFk43T6kj1YgMSO8iLGlRfVaR9qMhbmc6vYsdOSrCiUI+wR4JArkGhlNuowT4SL0+/heQwRshb7+tatGtBDEN4U16jbG6h9mAQKur5wZoMQ5DexdDZic80fCf1B57SiC93R6c/06J0+YiH3gLU+D9mudtwDOxc2Ey+t5fR7q+C3Lt0XChwM1FGeFH2EeaUPFOm+bavLfX+fO7PDIq/XNZalTKjr/5M9KauXzRIOqw/SozNBUBn7TnTKxlRZb7m4WSH22sHNgw2C2mzsToXvWpqzNl2nQRaL7W6QOjECfKy77m65/3OxdX3gytotpzrhZOz7Vc/+i24pJjVSCzk2jbzl/w3h6BMLWwkAAA==</GeneratedCode>
           <NotSaveToFile>0</NotSaveToFile>
         </Form>
       </Forms>
@@ -17400,6 +17569,241 @@ FROM
         </Form>
       </Forms>
     </Directory>
+    <Directory>
+      <Name>КласифікаторОдиницьВиміру</Name>
+      <FullName>Класифікатор одиниць виміру</FullName>
+      <Table>tab_c40</Table>
+      <AutoNum>1</AutoNum>
+      <VersionsHistory>0</VersionsHistory>
+      <Type>Normal</Type>
+      <PredefinedFields>
+        <PredefinedField>
+          <Name>uid</Name>
+          <NameInTable>uid</NameInTable>
+          <Type>any_pointer</Type>
+          <IsPrimaryKey>1</IsPrimaryKey>
+          <IsIndex>0</IsIndex>
+          <IsNotNull>1</IsNotNull>
+        </PredefinedField>
+        <PredefinedField>
+          <Name>deletion_label</Name>
+          <NameInTable>deletion_label</NameInTable>
+          <Type>boolean</Type>
+          <IsPrimaryKey>0</IsPrimaryKey>
+          <IsIndex>1</IsIndex>
+          <IsNotNull>1</IsNotNull>
+        </PredefinedField>
+      </PredefinedFields>
+      <Fields>
+        <Field>
+          <Name>Код</Name>
+          <FullName>Код</FullName>
+          <NameInTable>col_a1</NameInTable>
+          <Type>string</Type>
+          <Desc>Код</Desc>
+          <IsPresentation>0</IsPresentation>
+          <IsIndex>1</IsIndex>
+          <IsFullTextSearch>0</IsFullTextSearch>
+          <IsSearch>0</IsSearch>
+          <IsExport>0</IsExport>
+          <Multiline>0</Multiline>
+        </Field>
+        <Field>
+          <Name>Назва</Name>
+          <FullName>Назва</FullName>
+          <NameInTable>col_a2</NameInTable>
+          <Type>string</Type>
+          <Desc>Назва</Desc>
+          <IsPresentation>1</IsPresentation>
+          <IsIndex>1</IsIndex>
+          <IsFullTextSearch>0</IsFullTextSearch>
+          <IsSearch>0</IsSearch>
+          <IsExport>0</IsExport>
+          <Multiline>0</Multiline>
+        </Field>
+        <Field>
+          <Name>ПовнаНазва</Name>
+          <FullName>Повна назва</FullName>
+          <NameInTable>col_a3</NameInTable>
+          <Type>string</Type>
+          <Desc>Назва</Desc>
+          <IsPresentation>0</IsPresentation>
+          <IsIndex>0</IsIndex>
+          <IsFullTextSearch>0</IsFullTextSearch>
+          <IsSearch>0</IsSearch>
+          <IsExport>0</IsExport>
+          <Multiline>0</Multiline>
+        </Field>
+        <Field>
+          <Name>МіжнароднеСкорочення</Name>
+          <FullName>Міжнародне скорочення</FullName>
+          <NameInTable>col_a4</NameInTable>
+          <Type>string</Type>
+          <IsPresentation>0</IsPresentation>
+          <IsIndex>0</IsIndex>
+          <IsFullTextSearch>0</IsFullTextSearch>
+          <IsSearch>0</IsSearch>
+          <IsExport>0</IsExport>
+          <Multiline>0</Multiline>
+        </Field>
+      </Fields>
+      <TabularParts />
+      <TabularLists>
+        <TabularList>
+          <Name>Записи</Name>
+          <Fields>
+            <Field>
+              <Name>Код</Name>
+              <Caption>Код</Caption>
+              <Size>0</Size>
+              <SortNum>1</SortNum>
+              <SortField>False</SortField>
+              <SortDirection>False</SortDirection>
+              <FilterField>False</FilterField>
+              <Type>string</Type>
+              <Multiline>0</Multiline>
+            </Field>
+            <Field>
+              <Name>Назва</Name>
+              <Caption>Назва</Caption>
+              <Size>300</Size>
+              <SortNum>2</SortNum>
+              <SortField>True</SortField>
+              <SortDirection>False</SortDirection>
+              <FilterField>False</FilterField>
+              <Type>string</Type>
+              <Multiline>0</Multiline>
+            </Field>
+            <Field>
+              <Name>МіжнароднеСкорочення</Name>
+              <Caption>Міжнародне\nскорочення</Caption>
+              <Size>100</Size>
+              <SortNum>3</SortNum>
+              <SortField>False</SortField>
+              <SortDirection>False</SortDirection>
+              <FilterField>False</FilterField>
+              <Type>string</Type>
+              <Multiline>0</Multiline>
+            </Field>
+            <Field>
+              <Name>ПовнаНазва</Name>
+              <Caption>Повна назва</Caption>
+              <Size>300</Size>
+              <SortNum>4</SortNum>
+              <SortField>False</SortField>
+              <SortDirection>False</SortDirection>
+              <FilterField>False</FilterField>
+              <Type>string</Type>
+              <Multiline>0</Multiline>
+            </Field>
+          </Fields>
+        </TabularList>
+      </TabularLists>
+      <TriggerFunctions>
+        <New Action="1">New</New>
+        <Copying Action="1">Copying</Copying>
+        <BeforeSave Action="0">BeforeSave</BeforeSave>
+        <AfterSave Action="0">AfterSave</AfterSave>
+        <SetDeletionLabel Action="0">SetDeletionLabel</SetDeletionLabel>
+        <BeforeDelete Action="0">BeforeDelete</BeforeDelete>
+      </TriggerFunctions>
+      <Forms>
+        <Form Modified="0">
+          <Name>Функції</Name>
+          <Desc>Функції</Desc>
+          <Type>Function</Type>
+          <GeneratedCode Zip="1">H4sIAAAAAAAACsVWUW8aRxB+R+I/rP2EI3R+6ZvjIILBQSXGMqR5qKpoOcbk6mOX7i6lVmLJdqr0JU9WSqVIjlSpP4BYtnLFMfkLs/+o2rvj7gDTWNhR9mlv7+abmW/nm7l0avVeOkXChe/wEgf6CD39u+7jEAf6GEf6EN/jOXp4hZ5+rd/gCXr4Sff1oX71DP/Rr/AKh/q17uu/LFsm0CZepVP3VtOpdKorHdYiZaZA7FIbNtXed2vj07xt8y5TDmvV+K7qUQHRq01gIKiCZoE3wcK3OMIz3cdzExQO0Vsz2Iy2QXaoDaSmuKAtyLNmXdCmgUmnpKLKsYntUilvn2o69SJItdNtuI5NQvSKI9X9p89BwAOCJ36EH3xcLyOVMJlIoMJ+Xoff1EoAEOKYJUB1BYuff4y3Zk0+ra7iOxzh+eQpgx7x/WcWSLHAmVRWAJslBd7uUOFIzqxK+ftiNhk6eUFKXWbXeckBt0nWyXKl+rS4s0wOspPxzI39FAf4Ec9wMC/+hPvqTpYsnk7k6aul9NNasD8wdTZbFFTuM5vUqdwj1Q6wbdqCogttYCrT4NwlZbkFvSx5wpxfulDeyJFuuCPrhHVdN5twlbeVw9n96NsHOaKPqOs+pPbeswqnzR2wuWjKL5tOWFZZDVyw1TZ3jDRD69kKXUQ3f+IlXuAnvMArfUw6tAVk/fZA1hb0Mish8T7ntAVW4XoqrqVoru0sGXOJ8jvLGMXZJRn/LkPeprgzi/aoowJ3X0hnssIO4i24EnxXcZUEt0VeviRL8x3sAG1GNivzQ3wMUhrzohBcZLYFbwnath5S6dglLtpZsoyneEHwDM9xgJc40kf6DcHP+hBH+g/09LF/l97S8nQ6QXtLHEZ6MWvGU87a4goanO8ZXVoFAVSBEU8mvK6Oqeesn2zSVYKCGqgfqNuFiNmbK9R08sz/SLLA2a7T6gpqgthwBNiKCwek9cgBYZqKY1O3wJkCpur7HcgR6rq8ZyaYfxaUkcNZhBg74x1gJe42IyFmv72K/8bP6OkjHOHwNhpOwFyv4Pwclsj6PAKnEapJ9mIqpz8b39l+yFZZQZusRxd9591hoUpfeOqVnlQqW/nHxbuWRw3UBrhgeK/QBriRRCLi7qTcxuTiifkcP+o+ngX/eqaooRc3skRmZpjmiGvCMtXi5zkLYG1Op5DEMI3VR7AeUemTszIfaYaMpcA0sLspp4lhTgq8s/+VKK02fgZbEXyPH/RbHOrjkMnp7MNso89uPDhuEdOp+Z9HD/+N7y3273OiRMzoZCVjZGzV6K9xLc/qzqxgBiWNxmxPzqXx1kzbbzYq/fY9G9dBOhXu/gNWc9iwwA0AAA==</GeneratedCode>
+          <NotSaveToFile>0</NotSaveToFile>
+        </Form>
+        <Form Modified="0">
+          <Name>Елемент</Name>
+          <Desc>Елемент</Desc>
+          <Type>Element</Type>
+          <GeneratedCode Zip="1">H4sIAAAAAAAACq1X3WobRxS+F+gdBvdGDkZOaKEQRSmya6kJ1DGRaC5CCKPdI3ni9Yw6O+ufmoBjl+TGECiuCoXWN30AYWwsbMvPcOaNyuyOVqvtbhQ73QuxO3POd77zO6NiYfFesUDsg3/iFQ70OxzqX3UfL3GgD/BG7+PfeIZDHOFQv9dH+BsO8Vr39b4+fI2/4xWe4zWe40gflB0/gTa1VSzcWywWioXAZ7xLGmqjMn5/whXIDnWgoTa+iVdrjiMCrhjvNkVHbVMJlYQ6cJBUgbssXCjjMd7gqe7jmaGIlzisfELwUh+OOeULnuC53sdzvNJ9/cEI40h/DAlwugl+jzpAmkpI2oUad1uSuhG9l41n7TfgqHIzaDse9f1H3zMJjhJyty7k5ooHm8DV49KcfXvddGmn9rwuvR+ePfWd3rc0ePOgNjf/qljoUakY9UgI8+WpIQ9JFpViYS/KWC9oe8y5i53I41S6yR7pgqoQxpmqkLekSjhsl+YrkbHo9ysJXSY4qTPwXFs4K1zJXcPiBs9INfosryZU049V+AsHeIGnOLiN0ompGxzh4Jbqlj5wN/LAZD7pUIu2A4/KNSqVdStPY5zkLcFc8oQz88F+gdJ8tL1nFUPOUcJINRXpsO6mmY2fxUUbyYfT69Fi+QVz1fpz+DkA38A+uH8/x99s5DhmafR4I23h61tayMhP2laGyF2svo0TErWBr6i6Wzek2iAsI5vM/3HQEoirYRW2XzC1viZFD6Ri4JdevkoWrpUsrwoFbSE26gF3SJWsSdGVdLO8RH3mmIHw3ZTEVFVJUIHkY6RKKmTjqo/n+HjD4CgmeF3IeM8vx1NoXNDxHqnmqNSFjLXCprS5kkKBo8AlYgukZC5EfbQUMM+N1TPCX+v1gLulWKT8I2V8Sewkw7YsgSpoKipVQrAleuFSpvDKFGZL9Fa4mxCMAxaSTOIviR2yZST/wzSnn6eXI6hwipYMzAKZs20/t2AV8iZZto24lWbbmTSmsRV/3c5eRhPPthwrkVBzQiIDbTadrOSYfM5KzaQLck8DPNH7ONTv8BRv9HF0lSCLBC/0BxzqA31oGNplvDDEoyuHPkoNpbjKqb/LHdKi/gap+T7r8p+oF2QVuh30TVAt2FGl1GVtdmkkhmoexmfFOHNM5yF+Wf7yhkIDVG6UssJiztkoeg3L85MO5kXFwExcvgtU9iUlM6KfAz+zbDMCOKm3R20hvMekSbeyAmk2CfPNrkuqpEM931yLx9tK7k4+EmrmYR1SotuUpe+R5ciUtZWjPPFrCjImomSQ5GEDkPHqUOWsk9LKjgM9cwwRGDd+hlX8Rx/iCC/1e93Xf+AxXumPUVrCvyI3eB06MtJH0R+Ps/CUH2aJmN5P90EDlDmb/dL8AlmmIZ0FwyfhSIK5PaKtz5MTx4r8C5PU7gToDQAA</GeneratedCode>
+          <NotSaveToFile>0</NotSaveToFile>
+          <ElementFields>
+            <Field>
+              <Name>Код</Name>
+              <Caption>Код</Caption>
+              <Size>100</Size>
+              <Height>0</Height>
+              <SortNum>1</SortNum>
+              <ReadOnly>0</ReadOnly>
+              <Type>string</Type>
+              <Multiline>0</Multiline>
+            </Field>
+            <Field>
+              <Name>Назва</Name>
+              <Caption>Назва</Caption>
+              <Size>0</Size>
+              <Height>0</Height>
+              <SortNum>2</SortNum>
+              <ReadOnly>0</ReadOnly>
+              <Type>string</Type>
+              <Multiline>0</Multiline>
+            </Field>
+            <Field>
+              <Name>ПовнаНазва</Name>
+              <Caption>Повна назва</Caption>
+              <Size>0</Size>
+              <Height>0</Height>
+              <SortNum>3</SortNum>
+              <ReadOnly>0</ReadOnly>
+              <Type>string</Type>
+              <Multiline>0</Multiline>
+            </Field>
+            <Field>
+              <Name>МіжнароднеСкорочення</Name>
+              <Caption>Міжнародне cкорочення</Caption>
+              <Size>0</Size>
+              <Height>0</Height>
+              <SortNum>100</SortNum>
+              <ReadOnly>0</ReadOnly>
+              <Type>string</Type>
+              <Multiline>0</Multiline>
+            </Field>
+          </ElementFields>
+          <ElementTableParts />
+        </Form>
+        <Form Modified="0">
+          <Name>Список</Name>
+          <Desc>Список</Desc>
+          <Type>List</Type>
+          <GeneratedCode Zip="1">H4sIAAAAAAAACqVVX28TRxB/t+TvsOLpgtDRh1atGgxKHGy5CrbFGSGEULTemzhbr3fd3bmEtEKCUtGXPqHKSH2o1IoPEBAPboDwFWa/UXXns7kLDuTPPdzt7uz89je/mdmrVq5eZtlTrcy+jNFf9JYO/BOa+t/8hA7pwP9KR/4x/U1vaErvaeqf+T/oOU3pnZ/4x/5pKFzB/R/6QFP/hI7osFq5fLVaqVYSJ/WANXG4Oh+3NILd5gKaOPx6sbomhEk0Sj2IzDbucQsLUxM0WI4Q100MIf1JR/TaT+hNyocOabr68Rz6lw7oFb2lqf89M/9X5MRqX8QKywh+svDPjGfWZ4te0EGOkBLNab70T+k9HfpnfuJfsBqL0Fg+gDUd9yxPiZ3joBJmponmI3BjLuA4fma93+z0fwSBYZT0heLOXduQFgQau98wdvSDSazmqpEodT24tCkdbkUx316D5vot3fnu3sNv7+3GenBp5UG1MuYWJVcsgzlHFW2VsvQ9O4lItfLLrNqK7/nhu0bGrKVlOpE/Q7AyM+ce6dPbH0Obj4DVzsOxbrTDsNtptXs3b68Wqv6zNReuxXHdqGSkA9yRbqXgGAF2+QBcBJjWvQu++So1f9wwGz2aL42TvpKCOeQoxYVVbsPeEokuiqqkQ1ZLwe9K3OlaMwaLElxw/0Ex9HRb2DYIfWOGjUQLVmNdawaWj8J17qRIE3+jtKOkjAVMrM5gVperZHbBWhkD425fC9bjbsg2DY9vgzA2dktC53tc4peyWYQo5vNRqSJPpnBnHHOEC5IogxyjkVOwBkEgxMdZZF0SAUbArdgJHNr0QnLZrAcP8VNKd3fAQtr/aduULpmQnmd356usQqZBAeUUfDImDalUQyoEG8w+daPRGsW2i7Mldfp5heoWOEIOfDaBsjR1xqDT3rypYAQag74xirVcG/ausDta/pRAa+MGS/IRqzGdKHViNsuiHcfOYedgV1idK7XOxXCrUGyF1Y6OQIHArpHpn/SMkUWAG6AApdGbvA8qmIezIHDKMD4BWvifidC1hZzXWd2M90/DJ+/+pbQyjCVU8gb9H6vEM4H2CAAA</GeneratedCode>
+          <NotSaveToFile>0</NotSaveToFile>
+          <TabularList>Записи</TabularList>
+        </Form>
+        <Form Modified="0">
+          <Name>Швидкий вибір</Name>
+          <Desc>Швидкий вибір</Desc>
+          <Type>ListSmallSelect</Type>
+          <GeneratedCode Zip="1">H4sIAAAAAAAACq1VTW8bNxC9C9B/IHxaB8amh/ZSRwlkORLUupKQVZAWQWBQ3LHEiiIVkhvVDQLko0gvPQWFAvRQIEEPPdqBDxuncf/C7D8quFrJu46cOK72sCR3hm/evBlyy6WrV4h7yqV0IITgH/gOD5InGCe/JFM8xoPkKZ4kj/FPPMIY32OcPE9+wxcY4z/JNHmcPNvFv/ENxniExxjj29R06Ew+Mzncc5zKpStXy6VyKTJc9knDDjfn86a0oPcog4Ydfrn4WmVMRdJy2Q/Unp1QDQtTAyRoaiGsqRB8/B1P8E0yxSNH2oXdPI2Dr/EAD/EdxsmvqfktvsJ/MU6e4Akek8onsfwiQjJd7E+NlxDxJR5kCI5oRvOv5Bm+x+PkeTJNXpIKCazStA9VGXY1dcQuEaiAmWoi6QjMmDI4i59a7zbavR+BWT+IekxQY65tcw3MKr1fV3r0jYq0pCIYUSGue2vpuMON3Q1Culelje4P3/P6d6w+2mrfHzQma+v3yqUx1ZZTQVK4VbYc+ZqcS65cejhrx/x7zuSB4iFpSu4W/Gfw1mfmbId7uvtjaNERkMplCNeUNNbvtJut7s1bm6eo34LjGYB1HU0qZM1Pua7lXD7eq341DGtKRCPp2QE367mNAdgO7YPJ0I331RfOfOowmz2afxpHPcEZMZZazlZalRZMlii6ygiCG0sqLtAdbgcdrcagLQfj3b2Xl8S5+S1loafUsB5JRiqko1Vf05G/RQ1nrmluFDwKimmwkZYpzOZy9dQD0JqHQKjZl4x0qRmSHUXDW8CUDs0SGeiEcvupKuch8nV+VGjm8yncHofUwv8kUQQ5QyOjoJUFZiE8yyI9YAHYAKhmA89Y7RrepKsu/GQ/pHRnABrcTeJOXOHS8vFFehcfpt0SezmUC/BJmdS5EHUuLGhvNtSUtFoJspdfLenZjytU00AtZMCfJ1BapvYYpDuzLm3vtuT3I2hu3yBRNiMVIiMhzi1fUaUC2Bxig1SFUBP3Y5MWpA1AALNcyY00eF2JEPQGqVEhtigb7rblzKOjuPsfXzKfmwJGIK3XU0qQpmnBZIOsKr05dgZ7mugih9zhWVlmAdhtEOCU26E9EItqLQhcMI0PgBb7P4vQtYWc10lNjfcvwie7zZbSSjGWUMkunP8AoHAf6DoKAAA=</GeneratedCode>
+          <NotSaveToFile>0</NotSaveToFile>
+          <TabularList>Записи</TabularList>
+        </Form>
+        <Form Modified="0">
+          <Name>PointerControl</Name>
+          <Desc>PointerControl</Desc>
+          <Type>PointerControl</Type>
+          <GeneratedCode Zip="1">H4sIAAAAAAAACq1VT2/bNhS/G/B3eDN2kLtCDdAeirhK4KipY6BLgjpdBxRFwEjPMmeGVCnKRhoE6Lphp52GIYcddt6xK3Lwuq2fgfpGAynJluxk2JLwYJp8/3/v96hm494dMKvZsBsA6F/0n/p99q2eZd9n5/qjfp+905+yt/pXfaFn+m89y37IftQ/6Zn+KzvP3mbfHe4LyhVKX3AlBXODZOGtLmo27txrNpqNNKE8gp4ad8r/faM1JAH21PjB/LYbBCLlivJoIIZqSiTORT3kKInC0Bchuvpn/Ul/yM71hUlQf9SzjonDyTEmMQkQBkpIEmGXhweShMZNs/Gyt3f0DQbKHaRHASNJ8qie7YbTql8cDkIy7OKajzv+/eHD8eDrNweCT1vtV81GnB4xGkBMpKKEgfV3cyxhfQXB0xxcnCBXsG1+dwgPGcpH14+2sTkPMyI8wtDiY8KU9UwEDaHPqTnQN+i0c3GRjFkvaKhG+xIT5IooKjh4cH9trbPQ8Elc3H/eOr1Gsr7giXKfPH/6dLf75fbZeqviu54+fOEBSU54AM7hXYhzWRu8DVhK8LNC5vaT7eNYnTht2AQyJVSVVm4PVdXIacM6tMrQZ3Oc8vYnRim4hb7v4tSxCe/i9AU1wIoYpaKYOC9fteftuX6gsj7wgJtYnVodN/Bb7Cv8iFCZeoqwldYlqBaHioFNZ57khLDUjG1VWm/6ptvnEzFGh6eMLbpesTlbatpS83zBhzRKpe3zYyoxUEJSTNwdipLIYEQDwkyDkKuDkxg3ocuYmJonyN4NkGFgiXVqqu2YyjoVikihMFAYgpiglDTEgqN2tvZi5LkDZytVSnA4stvdfMa7MkqAyChZHbx9ERuHEBe7V964lkSV+gsNd4Bqn0jkysljXKZjx/kZvk4xUeDBw9okl0o7SKORWmg9qGlt4VBI9BkNxqa6JykP5j1aUPiaNNa/6Q96pi/MW6//sKLfjQhiEiF4t+lyFUcSoVuAnAMJXonJslrJo5OCrH2Fx7ZF+evynNPXKfYfL5tdxSzvKs4tO7CICxZaQiwOy2o+YWyLBOPDvYJ95Rh7kNTPG1cO6cKE4/QGT4dTi1gF3KzuUKHMc1xh0nzAa6y6lPj+iLLQMbVfOhkjkbd6ISq+BgasAaqvzDPklKb/Ntv5VHOfIZH/f6RvCdFqjf8FQKtjU75U5azZKN7QfwB5Wd7rOQoAAA==</GeneratedCode>
+          <NotSaveToFile>0</NotSaveToFile>
+        </Form>
+        <Form Modified="0">
+          <Name>PointerTablePartCell</Name>
+          <Desc>PointerTablePartCell</Desc>
+          <Type>PointerTablePartCell</Type>
+          <GeneratedCode Zip="1">H4sIAAAAAAAACq1UTU8TQRi+b7L/YeS0JaYQg4kBS1MK1hqFalFQQsh09+126DK7zL5bJIYEP+LJkzEcPHj2iIRDReU3zP4jM/vF0i7GBOYyszPPPu/7Pu+Hruna1CRRS9eijRAiv8pf8jh8K4fhh/BInsnj8J08Dw/lN3kqh/KPHIYfw0/ysxzK3+FReBi+32q5jCOIVdpxoEUF1sFxyqZ/wVkE0LXJKV0LfMZt0sD+XHpuKmSXmtDA/kx22wAOgiJYddeCsvwiz+VJeCRPlT/yTA4zYM003YAj43bb7eIeFTCna7rG6Q74HjWBtNEV1IYat1YFteLXjcZKZxtMLLeDjulQ379f5PG8MVF0vdW2aLf26vGT1+t3Ovbd7afrj/yXexOlTV3zgo7DTOJRgYw6JKK+KYHJ7BWyvol1T2z7SJGZN2Z0GfaMEqnMq8Maw15LuB4IZOAbG5ulSMzrFRHxkr1CuLI1dymaa/Ame0yXaKSWDajiScwm5tTyAS8+cj9E7mRODqgTqCLKv7YE+MCV8C4nlRRcXqY7eeRBfDxINUtCpP4+N8kq9fukAZinioUfIb+Vsjf9pR0P940SqRK6RxlmdsdpZsnERJarnMFEo3qPchuM55ztBtBcrBKvNCZbK5+ma+TF8Ei1GnGk5oxSmvTIuyiUsRByiBXeBgdMrJabfOD2IXvMlM0UFi6CiWARdwBCMAuS4Acus0jMYiwEiC4nnWi7TZYGwLEmbJ9QYftFOniKjHjJXklvylGr5PxMEOU2YIsK4GjENoowa8zC3jPYDcBHUiH3pqcLQA+B2T28QM1cQi1A1xVQd5jZX/GAPwi4eUmha018+V2eyKE8VaNX/oyefqgn4lEbSOUmKcd1pDaUE5FjIaMei75HGnHkp0UmwERX7Ce110TYyfVnWoCjturUcRao2d9KK+2i9uPy8VRfXjkr4gq+3FpePiC1al0EEbOPZSobGLlzPn+5wqr3mGMZyuvCyuu5sZSj7RWF2QZ8oYbZeP/8u2/qDlBhjHdGUdw8cJy8Z/8TdoSJjBRCDnQtmaR/AfusZ/HPCAAA</GeneratedCode>
+          <NotSaveToFile>0</NotSaveToFile>
+        </Form>
+        <Form Modified="0">
+          <Name>Тригери</Name>
+          <Desc>Тригери</Desc>
+          <Type>Triggers</Type>
+          <GeneratedCode Zip="1">H4sIAAAAAAAACtWSQYvTQBTH74F8h6GndqvZq1B6WLvgRfTQ3mWSvobRdKZMJpZFFtqu7EkQZMlhYXvwE8S1Yqjb+hXe+0YyScWwRUVrRecyMzDzf7/3/z/XcZ3DA9dhm4WX+AkzmmJOLynFJWY0wzVNcI4LzHGFOZ3TK3yDOd5QShM6e9LTIgxBx14QV3Te0gRzfI8f7O46B4eu4zpJLGTIHoAEzQ30O6oPHl7iGlc0pRlmuKIZ5q2vD4+CQCXSCBl21cCMuYaWVZF8CPGIB3Bb6QLXeE0pLiwnLgsl14kNNyJgQcTjeJf+XOdF2d8o8SMRsI0uj09kwHo8fsYewbj+GwUe+08hMGwLf47v6AKXNGuUdTfl7fp2EtIwmQx90KzN+JgLw/CKzvCmcD6jc0rp9W1pSvHa+3XSeqNVSfi7uGWkC9Zm9X0DNZtl742G11Ndo4UM67Xje7UqaNWxUzsQ2xkW6XXU6MT+30eCd9gOqnOa4soqY7Y9CT+K4Qoz/Gi/sWab1dhdC7HGzzaAWsUgDSbRsjDB66jhKAIDfXtr/dy0+zBQGrr8Ofylyd8F9mhgQP8nrF0wxxCBEUo+5D5EexpLX6mIRbbAn8Uv56Lo4B9y+7Q8fQHG0nC39QYAAA==</GeneratedCode>
+          <NotSaveToFile>0</NotSaveToFile>
+        </Form>
+      </Forms>
+    </Directory>
   </Directories>
   <Documents>
     <Document>
@@ -17834,15 +18238,14 @@ FROM
               <IsExport>1</IsExport>
             </Field>
             <Field>
-              <Name>КількістьУпаковок</Name>
+              <Name>Коєфіціент</Name>
               <FullName>Кількість упаковок</FullName>
               <NameInTable>col_a3</NameInTable>
-              <Type>integer</Type>
+              <Type>numeric</Type>
               <IsIndex>0</IsIndex>
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>1</IsExport>
-              <AutomaticNumbering>0</AutomaticNumbering>
             </Field>
             <Field>
               <Name>Кількість</Name>
@@ -17968,14 +18371,13 @@ FROM
                   </PresetntationFields>
                 </Field>
                 <Field>
-                  <Name>КількістьУпаковок</Name>
+                  <Name>Коєфіціент</Name>
                   <Caption>Коєфіціент</Caption>
                   <Size>0</Size>
                   <Height>0</Height>
                   <SortNum>4</SortNum>
                   <ReadOnly>0</ReadOnly>
-                  <Type>integer</Type>
-                  <AutomaticNumbering>0</AutomaticNumbering>
+                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Пакування</Name>
@@ -17986,6 +18388,7 @@ FROM
                   <ReadOnly>0</ReadOnly>
                   <Type>pointer</Type>
                   <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
+                  <DirectoryOwner>Довідники.Номенклатура</DirectoryOwner>
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
@@ -19056,15 +19459,14 @@ FROM
               <IsExport>1</IsExport>
             </Field>
             <Field>
-              <Name>КількістьУпаковок</Name>
+              <Name>Коєфіціент</Name>
               <FullName>Кількість упаковок</FullName>
               <NameInTable>col_a2</NameInTable>
-              <Type>integer</Type>
+              <Type>numeric</Type>
               <IsIndex>0</IsIndex>
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>1</IsExport>
-              <AutomaticNumbering>0</AutomaticNumbering>
             </Field>
             <Field>
               <Name>Кількість</Name>
@@ -19210,14 +19612,14 @@ FROM
                   <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
                 </Field>
                 <Field>
-                  <Name>КількістьУпаковок</Name>
-                  <Caption>КількістьУпаковок</Caption>
+                  <Name>Коєфіціент</Name>
+                  <Caption>Коєфіціент</Caption>
                   <Size>0</Size>
                   <SortNum>100</SortNum>
                   <SortField>False</SortField>
                   <SortDirection>False</SortDirection>
                   <FilterField>False</FilterField>
-                  <Type>integer</Type>
+                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Кількість</Name>
@@ -19370,14 +19772,13 @@ FROM
                   </PresetntationFields>
                 </Field>
                 <Field>
-                  <Name>КількістьУпаковок</Name>
+                  <Name>Коєфіціент</Name>
                   <Caption>Коєфіціент</Caption>
                   <Size>0</Size>
                   <Height>0</Height>
                   <SortNum>5</SortNum>
                   <ReadOnly>0</ReadOnly>
-                  <Type>integer</Type>
-                  <AutomaticNumbering>0</AutomaticNumbering>
+                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Пакування</Name>
@@ -19388,6 +19789,7 @@ FROM
                   <ReadOnly>0</ReadOnly>
                   <Type>pointer</Type>
                   <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
+                  <DirectoryOwner>Довідники.Номенклатура</DirectoryOwner>
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
@@ -19520,6 +19922,47 @@ FROM
               <IsExport>0</IsExport>
             </Field>
             <Field>
+              <Name>Дебет</Name>
+              <FullName>Дебет</FullName>
+              <NameInTable>col_b1</NameInTable>
+              <Type>numeric</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>Кредит</Name>
+              <FullName>Кредит</FullName>
+              <NameInTable>col_a5</NameInTable>
+              <Type>numeric</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>Кількість</Name>
+              <FullName>Кількість</FullName>
+              <NameInTable>col_b2</NameInTable>
+              <Type>numeric</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>ВидПроводки</Name>
+              <FullName>ВидПроводки</FullName>
+              <NameInTable>col_a4</NameInTable>
+              <Type>enum</Type>
+              <Pointer>Перелічення.ВидиПроводок</Pointer>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
               <Name>Аналітика1</Name>
               <FullName>Аналітика 1</FullName>
               <NameInTable>col_a3</NameInTable>
@@ -19553,42 +19996,55 @@ FROM
               <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
             </Field>
             <Field>
+              <Name>КореспондуючийРахунок</Name>
+              <FullName>Кореспондуючий рахунок</FullName>
+              <NameInTable>col_a6</NameInTable>
+              <Type>pointer</Type>
+              <Pointer>Довідники.ПланРахунків</Pointer>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>КорАналітика1</Name>
+              <FullName>КорАналітика 1</FullName>
+              <NameInTable>col_b3</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>КорАналітика2</Name>
+              <FullName>КорАналітика 2</FullName>
+              <NameInTable>col_b4</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>КорАналітика3</Name>
+              <FullName>КорАналітика 3</FullName>
+              <NameInTable>col_b5</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
               <Name>Податки</Name>
               <FullName>Податки</FullName>
               <NameInTable>col_a9</NameInTable>
               <Type>pointer</Type>
               <Pointer>Довідники.ВидиПодатків</Pointer>
-              <IsIndex>0</IsIndex>
-              <IsFullTextSearch>0</IsFullTextSearch>
-              <IsSearch>0</IsSearch>
-              <IsExport>0</IsExport>
-            </Field>
-            <Field>
-              <Name>Сума</Name>
-              <FullName>Сума</FullName>
-              <NameInTable>col_b1</NameInTable>
-              <Type>numeric</Type>
-              <IsIndex>0</IsIndex>
-              <IsFullTextSearch>0</IsFullTextSearch>
-              <IsSearch>0</IsSearch>
-              <IsExport>0</IsExport>
-            </Field>
-            <Field>
-              <Name>Кількість</Name>
-              <FullName>Кількість</FullName>
-              <NameInTable>col_b2</NameInTable>
-              <Type>numeric</Type>
-              <IsIndex>0</IsIndex>
-              <IsFullTextSearch>0</IsFullTextSearch>
-              <IsSearch>0</IsSearch>
-              <IsExport>0</IsExport>
-            </Field>
-            <Field>
-              <Name>ВидПроводки</Name>
-              <FullName>ВидПроводки</FullName>
-              <NameInTable>col_a4</NameInTable>
-              <Type>enum</Type>
-              <Pointer>Перелічення.ВидиПроводок</Pointer>
               <IsIndex>0</IsIndex>
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
@@ -19671,15 +20127,6 @@ FROM
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
-                </Field>
-                <Field>
-                  <Name>Сума</Name>
-                  <Caption>Сума</Caption>
-                  <Size>0</Size>
-                  <Height>0</Height>
-                  <SortNum>100</SortNum>
-                  <ReadOnly>0</ReadOnly>
-                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Кількість</Name>
@@ -20840,15 +21287,14 @@ FROM
               <IsExport>1</IsExport>
             </Field>
             <Field>
-              <Name>КількістьУпаковок</Name>
+              <Name>Коєфіціент</Name>
               <FullName>Кількість упаковок</FullName>
               <NameInTable>col_c3</NameInTable>
-              <Type>integer</Type>
+              <Type>numeric</Type>
               <IsIndex>0</IsIndex>
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>1</IsExport>
-              <AutomaticNumbering>0</AutomaticNumbering>
             </Field>
             <Field>
               <Name>Кількість</Name>
@@ -20964,14 +21410,13 @@ FROM
                   </PresetntationFields>
                 </Field>
                 <Field>
-                  <Name>КількістьУпаковок</Name>
+                  <Name>Коєфіціент</Name>
                   <Caption>Коєфіціент</Caption>
                   <Size>0</Size>
                   <Height>0</Height>
                   <SortNum>4</SortNum>
                   <ReadOnly>0</ReadOnly>
-                  <Type>integer</Type>
-                  <AutomaticNumbering>0</AutomaticNumbering>
+                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Пакування</Name>
@@ -20982,6 +21427,7 @@ FROM
                   <ReadOnly>0</ReadOnly>
                   <Type>pointer</Type>
                   <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
+                  <DirectoryOwner>Довідники.Номенклатура</DirectoryOwner>
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
@@ -22083,15 +22529,14 @@ FROM
               <IsExport>1</IsExport>
             </Field>
             <Field>
-              <Name>КількістьУпаковок</Name>
+              <Name>Коєфіціент</Name>
               <FullName>Кількість упаковок</FullName>
               <NameInTable>col_d5</NameInTable>
-              <Type>integer</Type>
+              <Type>numeric</Type>
               <IsIndex>0</IsIndex>
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>1</IsExport>
-              <AutomaticNumbering>0</AutomaticNumbering>
             </Field>
             <Field>
               <Name>Кількість</Name>
@@ -22254,14 +22699,13 @@ FROM
                   </PresetntationFields>
                 </Field>
                 <Field>
-                  <Name>КількістьУпаковок</Name>
+                  <Name>Коєфіціент</Name>
                   <Caption>Коєфіціент</Caption>
                   <Size>0</Size>
                   <Height>0</Height>
                   <SortNum>5</SortNum>
                   <ReadOnly>0</ReadOnly>
-                  <Type>integer</Type>
-                  <AutomaticNumbering>0</AutomaticNumbering>
+                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Пакування</Name>
@@ -22272,6 +22716,7 @@ FROM
                   <ReadOnly>0</ReadOnly>
                   <Type>pointer</Type>
                   <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
+                  <DirectoryOwner>Довідники.Номенклатура</DirectoryOwner>
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
@@ -23448,6 +23893,7 @@ FROM
                   <ReadOnly>0</ReadOnly>
                   <Type>pointer</Type>
                   <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
+                  <DirectoryOwner>Довідники.Номенклатура</DirectoryOwner>
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
@@ -26227,15 +26673,14 @@ FROM
               <IsExport>0</IsExport>
             </Field>
             <Field>
-              <Name>КількістьУпаковок</Name>
+              <Name>Коєфіціент</Name>
               <FullName>Кількість упаковок</FullName>
               <NameInTable>col_b6</NameInTable>
-              <Type>integer</Type>
+              <Type>numeric</Type>
               <IsIndex>0</IsIndex>
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>0</IsExport>
-              <AutomaticNumbering>0</AutomaticNumbering>
             </Field>
             <Field>
               <Name>Кількість</Name>
@@ -26324,14 +26769,13 @@ FROM
                   </PresetntationFields>
                 </Field>
                 <Field>
-                  <Name>КількістьУпаковок</Name>
+                  <Name>Коєфіціент</Name>
                   <Caption>Коєфіціент</Caption>
                   <Size>0</Size>
                   <Height>0</Height>
                   <SortNum>5</SortNum>
                   <ReadOnly>0</ReadOnly>
-                  <Type>integer</Type>
-                  <AutomaticNumbering>0</AutomaticNumbering>
+                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Пакування</Name>
@@ -26342,6 +26786,7 @@ FROM
                   <ReadOnly>0</ReadOnly>
                   <Type>pointer</Type>
                   <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
+                  <DirectoryOwner>Довідники.Номенклатура</DirectoryOwner>
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
@@ -27433,15 +27878,14 @@ FROM
               <IsExport>0</IsExport>
             </Field>
             <Field>
-              <Name>КількістьУпаковок</Name>
+              <Name>Коєфіціент</Name>
               <FullName>Кількість упаковок</FullName>
               <NameInTable>col_e2</NameInTable>
-              <Type>integer</Type>
+              <Type>numeric</Type>
               <IsIndex>0</IsIndex>
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>0</IsExport>
-              <AutomaticNumbering>0</AutomaticNumbering>
             </Field>
             <Field>
               <Name>Кількість</Name>
@@ -27549,14 +27993,13 @@ FROM
                   </PresetntationFields>
                 </Field>
                 <Field>
-                  <Name>КількістьУпаковок</Name>
+                  <Name>Коєфіціент</Name>
                   <Caption>Коєфіціент</Caption>
                   <Size>0</Size>
                   <Height>0</Height>
                   <SortNum>5</SortNum>
                   <ReadOnly>0</ReadOnly>
-                  <Type>integer</Type>
-                  <AutomaticNumbering>0</AutomaticNumbering>
+                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Пакування</Name>
@@ -27567,6 +28010,7 @@ FROM
                   <ReadOnly>0</ReadOnly>
                   <Type>pointer</Type>
                   <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
+                  <DirectoryOwner>Довідники.Номенклатура</DirectoryOwner>
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
@@ -28692,15 +29136,14 @@ FROM
               <IsExport>0</IsExport>
             </Field>
             <Field>
-              <Name>КількістьУпаковок</Name>
+              <Name>Коєфіціент</Name>
               <FullName>Кількість упаковок</FullName>
               <NameInTable>col_g6</NameInTable>
-              <Type>integer</Type>
+              <Type>numeric</Type>
               <IsIndex>0</IsIndex>
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>0</IsExport>
-              <AutomaticNumbering>0</AutomaticNumbering>
             </Field>
             <Field>
               <Name>Кількість</Name>
@@ -28819,14 +29262,13 @@ FROM
                   </PresetntationFields>
                 </Field>
                 <Field>
-                  <Name>КількістьУпаковок</Name>
+                  <Name>Коєфіціент</Name>
                   <Caption>Коєфіціент</Caption>
                   <Size>0</Size>
                   <Height>0</Height>
                   <SortNum>5</SortNum>
                   <ReadOnly>0</ReadOnly>
-                  <Type>integer</Type>
-                  <AutomaticNumbering>0</AutomaticNumbering>
+                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Пакування</Name>
@@ -28837,6 +29279,7 @@ FROM
                   <ReadOnly>0</ReadOnly>
                   <Type>pointer</Type>
                   <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
+                  <DirectoryOwner>Довідники.Номенклатура</DirectoryOwner>
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
@@ -30955,15 +31398,14 @@ FROM
               <IsExport>0</IsExport>
             </Field>
             <Field>
-              <Name>КількістьУпаковок</Name>
+              <Name>Коєфіціент</Name>
               <FullName>Кількість упаковок</FullName>
               <NameInTable>col_d9</NameInTable>
-              <Type>integer</Type>
+              <Type>numeric</Type>
               <IsIndex>0</IsIndex>
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>0</IsExport>
-              <AutomaticNumbering>0</AutomaticNumbering>
             </Field>
             <Field>
               <Name>Кількість</Name>
@@ -31060,14 +31502,13 @@ FROM
                   </PresetntationFields>
                 </Field>
                 <Field>
-                  <Name>КількістьУпаковок</Name>
+                  <Name>Коєфіціент</Name>
                   <Caption>Коєфіціент</Caption>
                   <Size>0</Size>
                   <Height>0</Height>
                   <SortNum>5</SortNum>
                   <ReadOnly>0</ReadOnly>
-                  <Type>integer</Type>
-                  <AutomaticNumbering>0</AutomaticNumbering>
+                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Пакування</Name>
@@ -31078,6 +31519,7 @@ FROM
                   <ReadOnly>0</ReadOnly>
                   <Type>pointer</Type>
                   <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
+                  <DirectoryOwner>Довідники.Номенклатура</DirectoryOwner>
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
@@ -33470,26 +33912,24 @@ FROM
               <IsExport>0</IsExport>
             </Field>
             <Field>
-              <Name>КількістьУпаковок</Name>
+              <Name>Коєфіціент</Name>
               <FullName>Кількість упаковок</FullName>
               <NameInTable>col_j1</NameInTable>
-              <Type>integer</Type>
+              <Type>numeric</Type>
               <IsIndex>0</IsIndex>
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>0</IsExport>
-              <AutomaticNumbering>0</AutomaticNumbering>
             </Field>
             <Field>
-              <Name>КількістьУпаковокФакт</Name>
+              <Name>КоєфіціентФакт</Name>
               <FullName>Кількість упаковок факт</FullName>
               <NameInTable>col_j3</NameInTable>
-              <Type>integer</Type>
+              <Type>numeric</Type>
               <IsIndex>0</IsIndex>
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>0</IsExport>
-              <AutomaticNumbering>0</AutomaticNumbering>
             </Field>
             <Field>
               <Name>Номенклатура</Name>
@@ -33598,24 +34038,22 @@ FROM
                   </PresetntationFields>
                 </Field>
                 <Field>
-                  <Name>КількістьУпаковок</Name>
+                  <Name>Коєфіціент</Name>
                   <Caption>Пак</Caption>
                   <Size>0</Size>
                   <Height>0</Height>
                   <SortNum>4</SortNum>
                   <ReadOnly>0</ReadOnly>
-                  <Type>integer</Type>
-                  <AutomaticNumbering>0</AutomaticNumbering>
+                  <Type>numeric</Type>
                 </Field>
                 <Field>
-                  <Name>КількістьУпаковокФакт</Name>
+                  <Name>КоєфіціентФакт</Name>
                   <Caption>Пак факт</Caption>
                   <Size>0</Size>
                   <Height>0</Height>
                   <SortNum>5</SortNum>
                   <ReadOnly>0</ReadOnly>
-                  <Type>integer</Type>
-                  <AutomaticNumbering>0</AutomaticNumbering>
+                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Пакування</Name>
@@ -33626,6 +34064,7 @@ FROM
                   <ReadOnly>0</ReadOnly>
                   <Type>pointer</Type>
                   <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
+                  <DirectoryOwner>Довідники.Номенклатура</DirectoryOwner>
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
@@ -34195,15 +34634,14 @@ FROM
               <IsExport>0</IsExport>
             </Field>
             <Field>
-              <Name>КількістьУпаковок</Name>
+              <Name>Коєфіціент</Name>
               <FullName>Кількість упаковок</FullName>
               <NameInTable>col_a5</NameInTable>
-              <Type>integer</Type>
+              <Type>numeric</Type>
               <IsIndex>0</IsIndex>
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>0</IsExport>
-              <AutomaticNumbering>0</AutomaticNumbering>
             </Field>
             <Field>
               <Name>Кількість</Name>
@@ -34312,14 +34750,13 @@ FROM
                   </PresetntationFields>
                 </Field>
                 <Field>
-                  <Name>КількістьУпаковок</Name>
+                  <Name>Коєфіціент</Name>
                   <Caption>Коєфіціент</Caption>
                   <Size>0</Size>
                   <Height>0</Height>
                   <SortNum>5</SortNum>
                   <ReadOnly>0</ReadOnly>
-                  <Type>integer</Type>
-                  <AutomaticNumbering>0</AutomaticNumbering>
+                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Пакування</Name>
@@ -34330,6 +34767,7 @@ FROM
                   <ReadOnly>0</ReadOnly>
                   <Type>pointer</Type>
                   <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
+                  <DirectoryOwner>Довідники.Номенклатура</DirectoryOwner>
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
@@ -34947,15 +35385,14 @@ FROM
               <IsExport>0</IsExport>
             </Field>
             <Field>
-              <Name>КількістьУпаковок</Name>
+              <Name>Коєфіціент</Name>
               <FullName>Кількість упаковок</FullName>
               <NameInTable>col_d5</NameInTable>
-              <Type>integer</Type>
+              <Type>numeric</Type>
               <IsIndex>0</IsIndex>
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>0</IsExport>
-              <AutomaticNumbering>0</AutomaticNumbering>
             </Field>
             <Field>
               <Name>Кількість</Name>
@@ -35064,14 +35501,13 @@ FROM
                   </PresetntationFields>
                 </Field>
                 <Field>
-                  <Name>КількістьУпаковок</Name>
+                  <Name>Коєфіціент</Name>
                   <Caption>Коєфіціент</Caption>
                   <Size>0</Size>
                   <Height>0</Height>
                   <SortNum>5</SortNum>
                   <ReadOnly>0</ReadOnly>
-                  <Type>integer</Type>
-                  <AutomaticNumbering>0</AutomaticNumbering>
+                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Пакування</Name>
@@ -35082,6 +35518,7 @@ FROM
                   <ReadOnly>0</ReadOnly>
                   <Type>pointer</Type>
                   <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
+                  <DirectoryOwner>Довідники.Номенклатура</DirectoryOwner>
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
@@ -36078,15 +36515,14 @@ FROM
               <IsExport>1</IsExport>
             </Field>
             <Field>
-              <Name>КількістьУпаковок</Name>
+              <Name>Коєфіціент</Name>
               <FullName>Кількість упаковок</FullName>
               <NameInTable>col_c3</NameInTable>
-              <Type>integer</Type>
+              <Type>numeric</Type>
               <IsIndex>0</IsIndex>
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>1</IsExport>
-              <AutomaticNumbering>0</AutomaticNumbering>
             </Field>
             <Field>
               <Name>Кількість</Name>
@@ -36202,14 +36638,13 @@ FROM
                   </PresetntationFields>
                 </Field>
                 <Field>
-                  <Name>КількістьУпаковок</Name>
+                  <Name>Коєфіціент</Name>
                   <Caption>Коєфіціент</Caption>
                   <Size>0</Size>
                   <Height>0</Height>
                   <SortNum>4</SortNum>
                   <ReadOnly>0</ReadOnly>
-                  <Type>integer</Type>
-                  <AutomaticNumbering>0</AutomaticNumbering>
+                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Пакування</Name>
@@ -36220,6 +36655,7 @@ FROM
                   <ReadOnly>0</ReadOnly>
                   <Type>pointer</Type>
                   <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
+                  <DirectoryOwner>Довідники.Номенклатура</DirectoryOwner>
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
@@ -37230,15 +37666,14 @@ FROM
               <IsExport>0</IsExport>
             </Field>
             <Field>
-              <Name>КількістьУпаковок</Name>
+              <Name>Коєфіціент</Name>
               <FullName>Кількість упаковок</FullName>
               <NameInTable>col_a6</NameInTable>
-              <Type>integer</Type>
+              <Type>numeric</Type>
               <IsIndex>0</IsIndex>
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>0</IsExport>
-              <AutomaticNumbering>0</AutomaticNumbering>
             </Field>
             <Field>
               <Name>Кількість</Name>
@@ -37326,14 +37761,13 @@ FROM
                   </PresetntationFields>
                 </Field>
                 <Field>
-                  <Name>КількістьУпаковок</Name>
+                  <Name>Коєфіціент</Name>
                   <Caption>Коєфіціент</Caption>
                   <Size>0</Size>
                   <Height>0</Height>
                   <SortNum>5</SortNum>
                   <ReadOnly>0</ReadOnly>
-                  <Type>integer</Type>
-                  <AutomaticNumbering>0</AutomaticNumbering>
+                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Пакування</Name>
@@ -37344,6 +37778,7 @@ FROM
                   <ReadOnly>0</ReadOnly>
                   <Type>pointer</Type>
                   <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
+                  <DirectoryOwner>Довідники.Номенклатура</DirectoryOwner>
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
@@ -37894,15 +38329,14 @@ FROM
               <IsExport>0</IsExport>
             </Field>
             <Field>
-              <Name>КількістьУпаковок</Name>
+              <Name>Коєфіціент</Name>
               <FullName>Кількість упаковок</FullName>
               <NameInTable>col_a6</NameInTable>
-              <Type>integer</Type>
+              <Type>numeric</Type>
               <IsIndex>0</IsIndex>
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>0</IsExport>
-              <AutomaticNumbering>0</AutomaticNumbering>
             </Field>
             <Field>
               <Name>Кількість</Name>
@@ -38001,14 +38435,13 @@ FROM
                   </PresetntationFields>
                 </Field>
                 <Field>
-                  <Name>КількістьУпаковок</Name>
+                  <Name>Коєфіціент</Name>
                   <Caption>Коєфіціент</Caption>
                   <Size>0</Size>
                   <Height>0</Height>
                   <SortNum>5</SortNum>
                   <ReadOnly>0</ReadOnly>
-                  <Type>integer</Type>
-                  <AutomaticNumbering>0</AutomaticNumbering>
+                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Пакування</Name>
@@ -38019,6 +38452,7 @@ FROM
                   <ReadOnly>0</ReadOnly>
                   <Type>pointer</Type>
                   <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
+                  <DirectoryOwner>Довідники.Номенклатура</DirectoryOwner>
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
@@ -38582,15 +39016,14 @@ FROM
               <IsExport>0</IsExport>
             </Field>
             <Field>
-              <Name>КількістьУпаковок</Name>
+              <Name>Коєфіціент</Name>
               <FullName>Кількість упаковок</FullName>
               <NameInTable>col_a6</NameInTable>
-              <Type>integer</Type>
+              <Type>numeric</Type>
               <IsIndex>0</IsIndex>
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>0</IsExport>
-              <AutomaticNumbering>0</AutomaticNumbering>
             </Field>
             <Field>
               <Name>Кількість</Name>
@@ -38678,14 +39111,13 @@ FROM
                   </PresetntationFields>
                 </Field>
                 <Field>
-                  <Name>КількістьУпаковок</Name>
+                  <Name>Коєфіціент</Name>
                   <Caption>Коєфіціент</Caption>
                   <Size>0</Size>
                   <Height>0</Height>
                   <SortNum>5</SortNum>
                   <ReadOnly>0</ReadOnly>
-                  <Type>integer</Type>
-                  <AutomaticNumbering>0</AutomaticNumbering>
+                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Пакування</Name>
@@ -38696,6 +39128,7 @@ FROM
                   <ReadOnly>0</ReadOnly>
                   <Type>pointer</Type>
                   <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
+                  <DirectoryOwner>Довідники.Номенклатура</DirectoryOwner>
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
@@ -39275,6 +39708,7 @@ FROM
                   <ReadOnly>0</ReadOnly>
                   <Type>pointer</Type>
                   <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
+                  <DirectoryOwner>Довідники.Номенклатура</DirectoryOwner>
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
@@ -40681,15 +41115,14 @@ FROM
               <IsExport>0</IsExport>
             </Field>
             <Field>
-              <Name>КількістьУпаковок</Name>
+              <Name>Коєфіціент</Name>
               <FullName>Кількість упаковок</FullName>
               <NameInTable>col_c3</NameInTable>
-              <Type>integer</Type>
+              <Type>numeric</Type>
               <IsIndex>0</IsIndex>
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>0</IsExport>
-              <AutomaticNumbering>0</AutomaticNumbering>
             </Field>
             <Field>
               <Name>Кількість</Name>
@@ -40784,14 +41217,13 @@ FROM
                   </PresetntationFields>
                 </Field>
                 <Field>
-                  <Name>КількістьУпаковок</Name>
+                  <Name>Коєфіціент</Name>
                   <Caption>Коєфіціент</Caption>
                   <Size>0</Size>
                   <Height>0</Height>
                   <SortNum>4</SortNum>
                   <ReadOnly>0</ReadOnly>
-                  <Type>integer</Type>
-                  <AutomaticNumbering>0</AutomaticNumbering>
+                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Пакування</Name>
@@ -40802,6 +41234,7 @@ FROM
                   <ReadOnly>0</ReadOnly>
                   <Type>pointer</Type>
                   <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
+                  <DirectoryOwner>Довідники.Номенклатура</DirectoryOwner>
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
@@ -41558,15 +41991,14 @@ FROM
               <IsExport>0</IsExport>
             </Field>
             <Field>
-              <Name>КількістьУпаковок</Name>
+              <Name>Коєфіціент</Name>
               <FullName>Кількість упаковок</FullName>
               <NameInTable>col_c3</NameInTable>
-              <Type>integer</Type>
+              <Type>numeric</Type>
               <IsIndex>0</IsIndex>
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>0</IsExport>
-              <AutomaticNumbering>0</AutomaticNumbering>
             </Field>
             <Field>
               <Name>Кількість</Name>
@@ -41669,19 +42101,19 @@ FROM
                   <ReadOnly>0</ReadOnly>
                   <Type>pointer</Type>
                   <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
+                  <DirectoryOwner>Довідники.Номенклатура</DirectoryOwner>
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
                 </Field>
                 <Field>
-                  <Name>КількістьУпаковок</Name>
+                  <Name>Коєфіціент</Name>
                   <Caption>Коєфіціент</Caption>
                   <Size>0</Size>
                   <Height>0</Height>
                   <SortNum>100</SortNum>
                   <ReadOnly>0</ReadOnly>
-                  <Type>integer</Type>
-                  <AutomaticNumbering>0</AutomaticNumbering>
+                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Кількість</Name>
@@ -42423,15 +42855,14 @@ FROM
               <IsExport>0</IsExport>
             </Field>
             <Field>
-              <Name>КількістьУпаковок</Name>
+              <Name>Коєфіціент</Name>
               <FullName>Кількість упаковок</FullName>
               <NameInTable>col_c3</NameInTable>
-              <Type>integer</Type>
+              <Type>numeric</Type>
               <IsIndex>0</IsIndex>
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>0</IsExport>
-              <AutomaticNumbering>0</AutomaticNumbering>
             </Field>
             <Field>
               <Name>Кількість</Name>
@@ -42534,19 +42965,19 @@ FROM
                   <ReadOnly>0</ReadOnly>
                   <Type>pointer</Type>
                   <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
+                  <DirectoryOwner>Довідники.Номенклатура</DirectoryOwner>
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
                 </Field>
                 <Field>
-                  <Name>КількістьУпаковок</Name>
+                  <Name>Коєфіціент</Name>
                   <Caption>Коєфіціент</Caption>
                   <Size>0</Size>
                   <Height>0</Height>
                   <SortNum>100</SortNum>
                   <ReadOnly>0</ReadOnly>
-                  <Type>integer</Type>
-                  <AutomaticNumbering>0</AutomaticNumbering>
+                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Кількість</Name>
@@ -43275,15 +43706,14 @@ FROM
               <IsExport>0</IsExport>
             </Field>
             <Field>
-              <Name>КількістьУпаковок</Name>
+              <Name>Коєфіціент</Name>
               <FullName>Кількість упаковок</FullName>
               <NameInTable>col_a6</NameInTable>
-              <Type>integer</Type>
+              <Type>numeric</Type>
               <IsIndex>0</IsIndex>
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>0</IsExport>
-              <AutomaticNumbering>0</AutomaticNumbering>
             </Field>
             <Field>
               <Name>Кількість</Name>
@@ -43411,14 +43841,13 @@ FROM
                   </PresetntationFields>
                 </Field>
                 <Field>
-                  <Name>КількістьУпаковок</Name>
+                  <Name>Коєфіціент</Name>
                   <Caption>Коєфіціент</Caption>
                   <Size>0</Size>
                   <Height>0</Height>
                   <SortNum>5</SortNum>
                   <ReadOnly>0</ReadOnly>
-                  <Type>integer</Type>
-                  <AutomaticNumbering>0</AutomaticNumbering>
+                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Пакування</Name>
@@ -43429,6 +43858,7 @@ FROM
                   <ReadOnly>0</ReadOnly>
                   <Type>pointer</Type>
                   <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
+                  <DirectoryOwner>Довідники.Номенклатура</DirectoryOwner>
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
@@ -46955,6 +47385,27 @@ FROM
               <IsExport>0</IsExport>
               <Multiline>0</Multiline>
             </Field>
+            <Field>
+              <Name>Серія</Name>
+              <FullName>Серія</FullName>
+              <NameInTable>col_b1</NameInTable>
+              <Type>pointer</Type>
+              <Pointer>Довідники.СеріїНоменклатури</Pointer>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>Коєфіціент</Name>
+              <FullName>Коєфіціент</FullName>
+              <NameInTable>col_b2</NameInTable>
+              <Type>numeric</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
           </Fields>
           <TabularLists />
           <TriggerFunctions>
@@ -47051,6 +47502,7 @@ FROM
                   <ReadOnly>0</ReadOnly>
                   <Type>pointer</Type>
                   <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
+                  <DirectoryOwner>Довідники.Номенклатура</DirectoryOwner>
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
@@ -47214,15 +47666,14 @@ FROM
               <IsExport>0</IsExport>
             </Field>
             <Field>
-              <Name>КількістьУпаковок</Name>
-              <FullName>Кількість упаковок</FullName>
+              <Name>Коєфіціент</Name>
+              <FullName>Коєфіціент</FullName>
               <NameInTable>col_a3</NameInTable>
-              <Type>integer</Type>
+              <Type>numeric</Type>
               <IsIndex>0</IsIndex>
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>0</IsExport>
-              <AutomaticNumbering>0</AutomaticNumbering>
             </Field>
           </Fields>
           <TabularLists />
@@ -47320,6 +47771,7 @@ FROM
                   <ReadOnly>0</ReadOnly>
                   <Type>pointer</Type>
                   <Pointer>Довідники.ПакуванняОдиниціВиміру</Pointer>
+                  <DirectoryOwner>Довідники.Номенклатура</DirectoryOwner>
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
@@ -47357,14 +47809,13 @@ FROM
                   </PresetntationFields>
                 </Field>
                 <Field>
-                  <Name>КількістьУпаковок</Name>
+                  <Name>Коєфіціент</Name>
                   <Caption>Коєфіціент</Caption>
                   <Size>100</Size>
                   <Height>0</Height>
                   <SortNum>100</SortNum>
                   <ReadOnly>0</ReadOnly>
-                  <Type>integer</Type>
-                  <AutomaticNumbering>0</AutomaticNumbering>
+                  <Type>numeric</Type>
                 </Field>
               </ElementFields>
               <IncludeIconColumn>0</IncludeIconColumn>
@@ -47535,6 +47986,17 @@ FROM
               <IsSearch>0</IsSearch>
               <IsExport>0</IsExport>
               <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>Податки</Name>
+              <FullName>Податки</FullName>
+              <NameInTable>col_a9</NameInTable>
+              <Type>pointer</Type>
+              <Pointer>Довідники.ВидиПодатків</Pointer>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
             </Field>
           </Fields>
           <TabularLists />

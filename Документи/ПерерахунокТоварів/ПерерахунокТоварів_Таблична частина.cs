@@ -91,38 +91,38 @@ partial class ПерерахунокТоварів_ТабличнаЧастин�
         public Action? Сhanged_ХарактеристикаНоменклатури { get; set; } = null;
 
     
-        /* КількістьУпаковок */
-        public int КількістьУпаковок
+        /* Коєфіціент */
+        public decimal Коєфіціент
         {
-            get => КількістьУпаковок_;
+            get => Коєфіціент_;
             set
             {
-                if (!КількістьУпаковок_.Equals(value))
+                if (!Коєфіціент_.Equals(value))
                 {
-                    КількістьУпаковок_ = value;
-                    Сhanged_КількістьУпаковок?.Invoke();
+                    Коєфіціент_ = value;
+                    Сhanged_Коєфіціент?.Invoke();
                 }
             }
         }
-        int КількістьУпаковок_ = 0;
-        public Action? Сhanged_КількістьУпаковок { get; set; } = null;
+        decimal Коєфіціент_ = 0;
+        public Action? Сhanged_Коєфіціент { get; set; } = null;
 
     
-        /* КількістьУпаковокФакт */
-        public int КількістьУпаковокФакт
+        /* КоєфіціентФакт */
+        public decimal КоєфіціентФакт
         {
-            get => КількістьУпаковокФакт_;
+            get => КоєфіціентФакт_;
             set
             {
-                if (!КількістьУпаковокФакт_.Equals(value))
+                if (!КоєфіціентФакт_.Equals(value))
                 {
-                    КількістьУпаковокФакт_ = value;
-                    Сhanged_КількістьУпаковокФакт?.Invoke();
+                    КоєфіціентФакт_ = value;
+                    Сhanged_КоєфіціентФакт?.Invoke();
                 }
             }
         }
-        int КількістьУпаковокФакт_ = 0;
-        public Action? Сhanged_КількістьУпаковокФакт { get; set; } = null;
+        decimal КоєфіціентФакт_ = 0;
+        public Action? Сhanged_КоєфіціентФакт { get; set; } = null;
 
     
         /* Пакування */
@@ -204,8 +204,8 @@ partial class ПерерахунокТоварів_ТабличнаЧастин�
             row.НомерРядка = НомерРядка;
             row.Номенклатура = Номенклатура.Copy();
             row.ХарактеристикаНоменклатури = ХарактеристикаНоменклатури.Copy();
-            row.КількістьУпаковок = КількістьУпаковок;
-            row.КількістьУпаковокФакт = КількістьУпаковокФакт;
+            row.Коєфіціент = Коєфіціент;
+            row.КоєфіціентФакт = КоєфіціентФакт;
             row.Пакування = Пакування.Copy();
             row.Кількість = Кількість;
             row.КількістьФакт = КількістьФакт;
@@ -327,24 +327,24 @@ partial class ПерерахунокТоварів_ТабличнаЧастин�
             Grid.AppendColumn(column);
         }
         
-        //КількістьУпаковок
+        //Коєфіціент
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
                 if (args.Object is not ListItem listItem) return;
-                var cell = IntegerTablePartCell.New();
+                var cell = NumericTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
                 if (args.Object is not ListItem listItem) return;
-                if (listItem.Child is not IntegerTablePartCell cell) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
                 
-                cell.OnСhanged = () => row.КількістьУпаковок = cell.Value;
-                (row.Сhanged_КількістьУпаковок = () => cell.Value = row.КількістьУпаковок).Invoke();
+                cell.OnСhanged = () => row.Коєфіціент = cell.Value;
+                (row.Сhanged_Коєфіціент = () => cell.Value = row.Коєфіціент).Invoke();
                     
             };
             ColumnViewColumn column = ColumnViewColumn.New("Пак", factory);
@@ -353,24 +353,24 @@ partial class ПерерахунокТоварів_ТабличнаЧастин�
             Grid.AppendColumn(column);
         }
         
-        //КількістьУпаковокФакт
+        //КоєфіціентФакт
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
                 if (args.Object is not ListItem listItem) return;
-                var cell = IntegerTablePartCell.New();
+                var cell = NumericTablePartCell.New();
                 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
                 if (args.Object is not ListItem listItem) return;
-                if (listItem.Child is not IntegerTablePartCell cell) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
                 
-                cell.OnСhanged = () => row.КількістьУпаковокФакт = cell.Value;
-                (row.Сhanged_КількістьУпаковокФакт = () => cell.Value = row.КількістьУпаковокФакт).Invoke();
+                cell.OnСhanged = () => row.КоєфіціентФакт = cell.Value;
+                (row.Сhanged_КоєфіціентФакт = () => cell.Value = row.КоєфіціентФакт).Invoke();
                     
             };
             ColumnViewColumn column = ColumnViewColumn.New("Пак факт", factory);
@@ -395,6 +395,7 @@ partial class ПерерахунокТоварів_ТабличнаЧастин�
                 if (listItem.Child is not ПакуванняОдиниціВиміру_PointerTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
                 
+                cell.BeforeClickOpenFunc = async () => cell.Власник = row.Номенклатура;
                 cell.OnSelect = () => row.Пакування = cell.Pointer;
                 (row.Сhanged_Пакування = () => cell.Pointer = row.Пакування).Invoke();
                     
@@ -511,8 +512,8 @@ partial class ПерерахунокТоварів_ТабличнаЧастин�
                 row.НомерРядка = record.НомерРядка;
                 row.Номенклатура = record.Номенклатура;
                 row.ХарактеристикаНоменклатури = record.ХарактеристикаНоменклатури;
-                row.КількістьУпаковок = record.КількістьУпаковок;
-                row.КількістьУпаковокФакт = record.КількістьУпаковокФакт;
+                row.Коєфіціент = record.Коєфіціент;
+                row.КоєфіціентФакт = record.КоєфіціентФакт;
                 row.Пакування = record.Пакування;
                 row.Кількість = record.Кількість;
                 row.КількістьФакт = record.КількістьФакт;
@@ -546,8 +547,8 @@ partial class ПерерахунокТоварів_ТабличнаЧастин�
                         НомерРядка = row.НомерРядка,
                         Номенклатура = row.Номенклатура,
                         ХарактеристикаНоменклатури = row.ХарактеристикаНоменклатури,
-                        КількістьУпаковок = row.КількістьУпаковок,
-                        КількістьУпаковокФакт = row.КількістьУпаковокФакт,
+                        Коєфіціент = row.Коєфіціент,
+                        КоєфіціентФакт = row.КоєфіціентФакт,
                         Пакування = row.Пакування,
                         Кількість = row.Кількість,
                         КількістьФакт = row.КількістьФакт,
@@ -572,8 +573,8 @@ partial class ПерерахунокТоварів_ТабличнаЧастин�
                     row.НомерРядка = x.НомерРядка;
                     row.Номенклатура = x.Номенклатура;
                     row.ХарактеристикаНоменклатури = x.ХарактеристикаНоменклатури;
-                    row.КількістьУпаковок = x.КількістьУпаковок;
-                    row.КількістьУпаковокФакт = x.КількістьУпаковокФакт;
+                    row.Коєфіціент = x.Коєфіціент;
+                    row.КоєфіціентФакт = x.КоєфіціентФакт;
                     row.Пакування = x.Пакування;
                     row.Кількість = x.Кількість;
                     row.КількістьФакт = x.КількістьФакт;

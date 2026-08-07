@@ -368,7 +368,7 @@ ORDER BY
             HBoxToolbarTop.Append(separator);
         }
 
-        static string ШаблонКнопки(string caption) => 
+        static string ШаблонКнопки(string caption) =>
 $"""
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
@@ -564,6 +564,7 @@ $"""
                 if (listItem.Child is not ПакуванняОдиниціВиміру_PointerTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
 
+                cell.BeforeClickOpenFunc = async () => cell.Власник = row.Номенклатура;
                 cell.OnSelect = () => row.Пакування = cell.Pointer;
                 (row.Сhanged_Пакування = () => cell.Pointer = row.Пакування).Invoke();
 

@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 05.08.2026 15:07:13
+ * Дата конфігурації: 07.08.2026 13:28:56
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон GeneratedCode.xslt
@@ -134,6 +134,7 @@ namespace GeneratedCode
                         "Бланки" => await new Довідники.Бланки_Pointer(uuidAndText.Uuid).GetPresentation(),
                         "Співробітники" => await new Довідники.Співробітники_Pointer(uuidAndText.Uuid).GetPresentation(),
                         "ТипиБухОперацій" => await new Довідники.ТипиБухОперацій_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "КласифікаторОдиницьВиміру" => await new Довідники.КласифікаторОдиницьВиміру_Pointer(uuidAndText.Uuid).GetPresentation(),
                         _ => ""
                         };
                     }
@@ -302,13 +303,13 @@ namespace GeneratedCode.Константи
             await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_a6", value.UniqueID.UGuid);
             return value;
         }
-        public static async Task<Довідники.ПакуванняОдиниціВиміру_Pointer> ОсновнаОдиницяПакування()
+        public static async Task<Довідники.КласифікаторОдиницьВиміру_Pointer> ОсновнаОдиницяВиміруЗаКласифікатором()
         {
             var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_a7");
-            return recordResult.Result ? (new Довідники.ПакуванняОдиниціВиміру_Pointer(recordResult.Value)) : new Довідники.ПакуванняОдиниціВиміру_Pointer();
+            return recordResult.Result ? (new Довідники.КласифікаторОдиницьВиміру_Pointer(recordResult.Value)) : new Довідники.КласифікаторОдиницьВиміру_Pointer();
         }
 
-        public static async Task<Довідники.ПакуванняОдиниціВиміру_Pointer> ОсновнаОдиницяПакування(Довідники.ПакуванняОдиниціВиміру_Pointer value)
+        public static async Task<Довідники.КласифікаторОдиницьВиміру_Pointer> ОсновнаОдиницяВиміруЗаКласифікатором(Довідники.КласифікаторОдиницьВиміру_Pointer value)
         {
             await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_a7", value.UniqueID.UGuid);
             return value;
@@ -2344,6 +2345,17 @@ namespace GeneratedCode.Константи
             await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_o7", value);
             return value;
         }
+        public static async Task<int> КласифікаторОдиницьВиміру()
+        {
+            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_m4");
+            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
+        }
+
+        public static async Task<int> КласифікаторОдиницьВиміру(int value)
+        {
+            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_m4", value);
+            return value;
+        }
              
     }
     #endregion
@@ -2976,12 +2988,14 @@ namespace GeneratedCode.Довідники
         public const string Папка = "col_a5";
         public const string ОсновнаКартинкаФайл = "col_a7";
         public const string Категорія = "col_a6";
+        public const string БазоваОдиницяВиміру = "col_a8";
+        public const string ОдиницяДляЗвітів = "col_b6";
     }
 
     public class Номенклатура_Object : DirectoryObject
     {
         public Номенклатура_Object() : base(Config.Kernel, "tab_a03", Номенклатура_Const.TYPE,
-             ["col_b1", "col_b2", "col_b4", "col_a1", "col_b3", "col_b5", "col_a2", "col_a3", "col_a4", "col_a5", "col_a7", "col_a6", ], true)
+             ["col_b1", "col_b2", "col_b4", "col_a1", "col_b3", "col_b5", "col_a2", "col_a3", "col_a4", "col_a5", "col_a7", "col_a6", "col_a8", "col_b6", ], true)
         {
             
                 //Табличні частини
@@ -3014,6 +3028,8 @@ namespace GeneratedCode.Довідники
                 Папка = new Довідники.Номенклатура_Папки_Pointer(base.FieldValue["col_a5"]);
                 ОсновнаКартинкаФайл = new Довідники.Файли_Pointer(base.FieldValue["col_a7"]);
                 Категорія = new Довідники.Категорії_Pointer(base.FieldValue["col_a6"]);
+                БазоваОдиницяВиміру = new Довідники.КласифікаторОдиницьВиміру_Pointer(base.FieldValue["col_a8"]);
+                ОдиницяДляЗвітів = new Довідники.ПакуванняОдиниціВиміру_Pointer(base.FieldValue["col_b6"]);
                 
                 BaseClear();
                 
@@ -3032,6 +3048,8 @@ namespace GeneratedCode.Довідники
         
         public async Task<bool> Save()
         {
+            
+                await Номенклатура_Triggers.BeforeSave(this);
             base.FieldValue["col_b1"] = Назва;
             base.FieldValue["col_b2"] = Код;
             base.FieldValue["col_b4"] = НазваПовна;
@@ -3044,10 +3062,14 @@ namespace GeneratedCode.Довідники
             base.FieldValue["col_a5"] = Папка.UniqueID.UGuid;
             base.FieldValue["col_a7"] = ОсновнаКартинкаФайл.UniqueID.UGuid;
             base.FieldValue["col_a6"] = Категорія.UniqueID.UGuid;
+            base.FieldValue["col_a8"] = БазоваОдиницяВиміру.UniqueID.UGuid;
+            base.FieldValue["col_b6"] = ОдиницяДляЗвітів.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
             {
+                
+                await Номенклатура_Triggers.AfterSave(this);     
                 
                 await BaseWriteFullTextSearch(GetBasis(), [Назва, НазваПовна, Опис, Артикул, ]);
                 
@@ -3072,6 +3094,8 @@ namespace GeneratedCode.Довідники
                 Папка = Папка.Copy(),
                 ОсновнаКартинкаФайл = ОсновнаКартинкаФайл.Copy(),
                 Категорія = Категорія.Copy(),
+                БазоваОдиницяВиміру = БазоваОдиницяВиміру.Copy(),
+                ОдиницяДляЗвітів = ОдиницяДляЗвітів.Copy(),
                 
             };
             
@@ -3123,6 +3147,8 @@ namespace GeneratedCode.Довідники
         public Довідники.Номенклатура_Папки_Pointer Папка { get; set; } = new Довідники.Номенклатура_Папки_Pointer();
         public Довідники.Файли_Pointer ОсновнаКартинкаФайл { get; set; } = new Довідники.Файли_Pointer();
         public Довідники.Категорії_Pointer Категорія { get; set; } = new Довідники.Категорії_Pointer();
+        public Довідники.КласифікаторОдиницьВиміру_Pointer БазоваОдиницяВиміру { get; set; } = new Довідники.КласифікаторОдиницьВиміру_Pointer();
+        public Довідники.ПакуванняОдиниціВиміру_Pointer ОдиницяДляЗвітів { get; set; } = new Довідники.ПакуванняОдиниціВиміру_Pointer();
         
         //Табличні частини
         public Номенклатура_Файли_TablePart Файли_TablePart { get; private set; }
@@ -3205,6 +3231,8 @@ namespace GeneratedCode.Довідники
         public Довідники.Номенклатура_Папки_Pointer Папка { get { var obj = getValue("col_a5"); return new Довідники.Номенклатура_Папки_Pointer(obj); } }
         public Довідники.Файли_Pointer ОсновнаКартинкаФайл { get { var obj = getValue("col_a7"); return new Довідники.Файли_Pointer(obj); } }
         public Довідники.Категорії_Pointer Категорія { get { var obj = getValue("col_a6"); return new Довідники.Категорії_Pointer(obj); } }
+        public Довідники.КласифікаторОдиницьВиміру_Pointer БазоваОдиницяВиміру { get { var obj = getValue("col_a8"); return new Довідники.КласифікаторОдиницьВиміру_Pointer(obj); } }
+        public Довідники.ПакуванняОдиниціВиміру_Pointer ОдиницяДляЗвітів { get { var obj = getValue("col_b6"); return new Довідники.ПакуванняОдиниціВиміру_Pointer(obj); } }
         
     }
 
@@ -3731,13 +3759,17 @@ namespace GeneratedCode.Довідники
         public const string Назва = "col_c1";
         public const string Код = "col_c2";
         public const string НазваПовна = "col_c3";
-        public const string КількістьУпаковок = "col_c4";
+        public const string ОдиницяЗаКласифікатором = "col_a1";
+        public const string Коєфіціент = "col_a2";
+        public const string Вага = "col_a3";
+        public const string Обєм = "col_a4";
+        public const string Номенклатура = "col_a5";
     }
 
     public class ПакуванняОдиниціВиміру_Object : DirectoryObject
     {
         public ПакуванняОдиниціВиміру_Object() : base(Config.Kernel, "tab_a06", ПакуванняОдиниціВиміру_Const.TYPE,
-             ["col_c1", "col_c2", "col_c3", "col_c4", ], true)
+             ["col_c1", "col_c2", "col_c3", "col_a1", "col_a2", "col_a3", "col_a4", "col_a5", ], true)
         {
             
         }
@@ -3758,7 +3790,11 @@ namespace GeneratedCode.Довідники
                 Назва = base.FieldValue["col_c1"].ToString() ?? "";
                 Код = base.FieldValue["col_c2"].ToString() ?? "";
                 НазваПовна = base.FieldValue["col_c3"].ToString() ?? "";
-                КількістьУпаковок = (base.FieldValue["col_c4"] != DBNull.Value) ? (int)base.FieldValue["col_c4"] : 0;
+                ОдиницяЗаКласифікатором = new Довідники.КласифікаторОдиницьВиміру_Pointer(base.FieldValue["col_a1"]);
+                Коєфіціент = (base.FieldValue["col_a2"] != DBNull.Value) ? (decimal)base.FieldValue["col_a2"] : 0;
+                Вага = (base.FieldValue["col_a3"] != DBNull.Value) ? (decimal)base.FieldValue["col_a3"] : 0;
+                Обєм = (base.FieldValue["col_a4"] != DBNull.Value) ? (decimal)base.FieldValue["col_a4"] : 0;
+                Номенклатура = new Довідники.Номенклатура_Pointer(base.FieldValue["col_a5"]);
                 
                 BaseClear();
                 
@@ -3776,7 +3812,11 @@ namespace GeneratedCode.Довідники
             base.FieldValue["col_c1"] = Назва;
             base.FieldValue["col_c2"] = Код;
             base.FieldValue["col_c3"] = НазваПовна;
-            base.FieldValue["col_c4"] = КількістьУпаковок;
+            base.FieldValue["col_a1"] = ОдиницяЗаКласифікатором.UniqueID.UGuid;
+            base.FieldValue["col_a2"] = Коєфіціент;
+            base.FieldValue["col_a3"] = Вага;
+            base.FieldValue["col_a4"] = Обєм;
+            base.FieldValue["col_a5"] = Номенклатура.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
@@ -3796,7 +3836,11 @@ namespace GeneratedCode.Довідники
                 Назва = Назва,
                 Код = Код,
                 НазваПовна = НазваПовна,
-                КількістьУпаковок = КількістьУпаковок,
+                ОдиницяЗаКласифікатором = ОдиницяЗаКласифікатором.Copy(),
+                Коєфіціент = Коєфіціент,
+                Вага = Вага,
+                Обєм = Обєм,
+                Номенклатура = Номенклатура.Copy(),
                 
             };
             
@@ -3826,7 +3870,11 @@ namespace GeneratedCode.Довідники
         public string Назва { get; set; } = "";
         public string Код { get; set; } = "";
         public string НазваПовна { get; set; } = "";
-        public int КількістьУпаковок { get; set; } = 0;
+        public Довідники.КласифікаторОдиницьВиміру_Pointer ОдиницяЗаКласифікатором { get; set; } = new Довідники.КласифікаторОдиницьВиміру_Pointer();
+        public decimal Коєфіціент { get; set; } = 0;
+        public decimal Вага { get; set; } = 0;
+        public decimal Обєм { get; set; } = 0;
+        public Довідники.Номенклатура_Pointer Номенклатура { get; set; } = new Довідники.Номенклатура_Pointer();
         
     }
 
@@ -3895,7 +3943,11 @@ namespace GeneratedCode.Довідники
         public string Назва { get { var obj = getValue("col_c1"); return obj.ToString() ?? ""; } }
         public string Код { get { var obj = getValue("col_c2"); return obj.ToString() ?? ""; } }
         public string НазваПовна { get { var obj = getValue("col_c3"); return obj.ToString() ?? ""; } }
-        public int КількістьУпаковок { get { var obj = getValue("col_c4"); return (obj != DBNull.Value) ? (int)obj : 0; } }
+        public Довідники.КласифікаторОдиницьВиміру_Pointer ОдиницяЗаКласифікатором { get { var obj = getValue("col_a1"); return new Довідники.КласифікаторОдиницьВиміру_Pointer(obj); } }
+        public decimal Коєфіціент { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public decimal Вага { get { var obj = getValue("col_a3"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public decimal Обєм { get { var obj = getValue("col_a4"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
+        public Довідники.Номенклатура_Pointer Номенклатура { get { var obj = getValue("col_a5"); return new Довідники.Номенклатура_Pointer(obj); } }
         
     }
 
@@ -13918,6 +13970,187 @@ namespace GeneratedCode.Довідники
    
     #endregion
     
+    #region DIRECTORY "КласифікаторОдиницьВиміру"
+    public static class КласифікаторОдиницьВиміру_Const
+    {
+        public const string TABLE = "tab_c40";
+        public const string TYPE = "КласифікаторОдиницьВиміру"; /* Назва вказівника */
+        public const string POINTER = "Довідники.КласифікаторОдиницьВиміру"; /* Повна назва вказівника */
+        public const string FULLNAME = "Класифікатор одиниць виміру"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public readonly static string[] PRESENTATION_FIELDS = ["col_a2", ];
+        
+        public const string Код = "col_a1";
+        public const string Назва = "col_a2";
+        public const string ПовнаНазва = "col_a3";
+        public const string МіжнароднеСкорочення = "col_a4";
+    }
+
+    public class КласифікаторОдиницьВиміру_Object : DirectoryObject
+    {
+        public КласифікаторОдиницьВиміру_Object() : base(Config.Kernel, "tab_c40", КласифікаторОдиницьВиміру_Const.TYPE,
+             ["col_a1", "col_a2", "col_a3", "col_a4", ])
+        {
+            
+        }
+        
+        public async Task New()
+        {
+            BaseNew();
+            Caption = КласифікаторОдиницьВиміру_Const.FULLNAME + " *";
+            
+                await КласифікаторОдиницьВиміру_Triggers.New(this);
+              
+        }
+
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Код = base.FieldValue["col_a1"].ToString() ?? "";
+                Назва = base.FieldValue["col_a2"].ToString() ?? "";
+                ПовнаНазва = base.FieldValue["col_a3"].ToString() ?? "";
+                МіжнароднеСкорочення = base.FieldValue["col_a4"].ToString() ?? "";
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async Task<bool> Save()
+        {
+            base.FieldValue["col_a1"] = Код;
+            base.FieldValue["col_a2"] = Назва;
+            base.FieldValue["col_a3"] = ПовнаНазва;
+            base.FieldValue["col_a4"] = МіжнароднеСкорочення;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async Task<КласифікаторОдиницьВиміру_Object> Copy(bool copyTableParts = false)
+        {
+            КласифікаторОдиницьВиміру_Object copy = new()
+            {
+                Код = Код,
+                Назва = Назва,
+                ПовнаНазва = ПовнаНазва,
+                МіжнароднеСкорочення = МіжнароднеСкорочення,
+                
+            };
+            
+
+            await copy.New();
+            
+            await КласифікаторОдиницьВиміру_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async Task SetDeletionLabel(bool label = true)
+        {
+            
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async Task Delete()
+        {
+            
+            await base.BaseDelete([]);
+        }
+        
+        public КласифікаторОдиницьВиміру_Pointer GetDirectoryPointer() => new(UniqueID);
+        public async Task<string> GetPresentation() => await base.BasePresentation(КласифікаторОдиницьВиміру_Const.PRESENTATION_FIELDS);
+        
+        public string Код { get; set; } = "";
+        public string Назва { get; set; } = "";
+        public string ПовнаНазва { get; set; } = "";
+        public string МіжнароднеСкорочення { get; set; } = "";
+        
+    }
+
+    public class КласифікаторОдиницьВиміру_Pointer : DirectoryPointer
+    {
+        public КласифікаторОдиницьВиміру_Pointer() : base(Config.Kernel, "tab_c40", КласифікаторОдиницьВиміру_Const.TYPE) => base.Init(new UniqueID());
+        public КласифікаторОдиницьВиміру_Pointer(object? uid) : base(Config.Kernel, "tab_c40", КласифікаторОдиницьВиміру_Const.TYPE) => base.Init(new UniqueID(uid));
+        public КласифікаторОдиницьВиміру_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_c40", КласифікаторОдиницьВиміру_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public КласифікаторОдиницьВиміру_Pointer(UniqueID uid) : base(Config.Kernel, "tab_c40", КласифікаторОдиницьВиміру_Const.TYPE) => base.Init(uid);
+        public КласифікаторОдиницьВиміру_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_c40", КласифікаторОдиницьВиміру_Const.TYPE) => base.Init(uid, fields);
+        public КласифікаторОдиницьВиміру_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_c40", КласифікаторОдиницьВиміру_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public async Task<КласифікаторОдиницьВиміру_Object?> GetDirectoryObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            КласифікаторОдиницьВиміру_Object obj = new();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+        public КласифікаторОдиницьВиміру_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(КласифікаторОдиницьВиміру_Const.PRESENTATION_FIELDS);
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [КласифікаторОдиницьВиміру_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{КласифікаторОдиницьВиміру_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(КласифікаторОдиницьВиміру_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
+        public async Task SetDeletionLabel(bool label = true)
+        {
+            
+            await base.BaseDeletionLabel(label);
+        }
+        public КласифікаторОдиницьВиміру_Pointer GetEmptyPointer() => new();
+    }
+    
+    public class КласифікаторОдиницьВиміру_Select : DirectorySelect
+    {
+        public КласифікаторОдиницьВиміру_Select() : base(Config.Kernel, "tab_c40", КласифікаторОдиницьВиміру_Const.TYPE, КласифікаторОдиницьВиміру_Const.PRESENTATION_FIELDS) { }        
+        public async Task<bool> Select() => await base.BaseSelect();
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new КласифікаторОдиницьВиміру_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
+        public КласифікаторОдиницьВиміру_Pointer? Current { get; private set; }
+        
+        public async Task<КласифікаторОдиницьВиміру_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return result && MoveNext() && Current != null ? Current : new();
+        }
+        
+        public async Task<List<КласифікаторОдиницьВиміру_Pointer>> FindListByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            List<КласифікаторОдиницьВиміру_Pointer> list = [];
+            if (await base.BaseFindListByField(name, value, funcToField, funcToField_Param1))
+                while(MoveNext()) if (Current != null) list.Add(Current);
+            return list;
+        }
+
+        public async Task<bool> SelectByField(string[] selectFields, string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            bool result = await base.BaseSelectByField(selectFields, name, value, funcToField, funcToField_Param1);
+            return result && MoveNext() && Current != null;
+        }
+        
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Код { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public string Назва { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
+        public string ПовнаНазва { get { var obj = getValue("col_a3"); return obj.ToString() ?? ""; } }
+        public string МіжнароднеСкорочення { get { var obj = getValue("col_a4"); return obj.ToString() ?? ""; } }
+        
+    }
+
+    
+   
+    #endregion
+    
 }
 
 namespace GeneratedCode.Перелічення
@@ -15785,7 +16018,7 @@ namespace GeneratedCode.Документи
         public const string Номенклатура = "col_o4";
         public const string ХарактеристикаНоменклатури = "col_a1";
         public const string Пакування = "col_a2";
-        public const string КількістьУпаковок = "col_a3";
+        public const string Коєфіціент = "col_a3";
         public const string Кількість = "col_a4";
         public const string ДатаПоступлення = "col_a5";
         public const string Ціна = "col_a6";
@@ -15847,7 +16080,7 @@ namespace GeneratedCode.Документи
                     Номенклатура = new Довідники.Номенклатура_Pointer(fieldValue["col_o4"]),
                     ХарактеристикаНоменклатури = new Довідники.ХарактеристикиНоменклатури_Pointer(fieldValue["col_a1"]),
                     Пакування = new Довідники.ПакуванняОдиниціВиміру_Pointer(fieldValue["col_a2"]),
-                    КількістьУпаковок = (fieldValue["col_a3"] != DBNull.Value) ? (int)fieldValue["col_a3"] : 0,
+                    Коєфіціент = (fieldValue["col_a3"] != DBNull.Value) ? (decimal)fieldValue["col_a3"] : 0,
                     Кількість = (fieldValue["col_a4"] != DBNull.Value) ? (decimal)fieldValue["col_a4"] : 0,
                     ДатаПоступлення = (fieldValue["col_a5"] != DBNull.Value) ? DateTime.Parse(fieldValue["col_a5"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue,
                     Ціна = (fieldValue["col_a6"] != DBNull.Value) ? (decimal)fieldValue["col_a6"] : 0,
@@ -15904,7 +16137,7 @@ namespace GeneratedCode.Документи
                     {"col_o4", record.Номенклатура.UniqueID.UGuid},
                     {"col_a1", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
                     {"col_a2", record.Пакування.UniqueID.UGuid},
-                    {"col_a3", record.КількістьУпаковок},
+                    {"col_a3", record.Коєфіціент},
                     {"col_a4", record.Кількість},
                     {"col_a5", record.ДатаПоступлення},
                     {"col_a6", record.Ціна},
@@ -15940,7 +16173,7 @@ namespace GeneratedCode.Документи
                     Номенклатура = original.Номенклатура.Copy(),
                     ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
                     Пакування = original.Пакування.Copy(),
-                    КількістьУпаковок = original.КількістьУпаковок,
+                    Коєфіціент = original.Коєфіціент,
                     Кількість = original.Кількість,
                     ДатаПоступлення = original.ДатаПоступлення,
                     Ціна = original.Ціна,
@@ -15961,7 +16194,7 @@ namespace GeneratedCode.Документи
             public Довідники.Номенклатура_Pointer Номенклатура { get; set; } = new Довідники.Номенклатура_Pointer();
             public Довідники.ХарактеристикиНоменклатури_Pointer ХарактеристикаНоменклатури { get; set; } = new Довідники.ХарактеристикиНоменклатури_Pointer();
             public Довідники.ПакуванняОдиниціВиміру_Pointer Пакування { get; set; } = new Довідники.ПакуванняОдиниціВиміру_Pointer();
-            public int КількістьУпаковок { get; set; } = 0;
+            public decimal Коєфіціент { get; set; } = 0;
             public decimal Кількість { get; set; } = 0;
             public DateTime ДатаПоступлення { get; set; } = DateTime.MinValue;
             public decimal Ціна { get; set; } = 0;
@@ -16091,12 +16324,12 @@ namespace GeneratedCode.Документи
                                 xmlWriter.WriteCData(await record.Пакування.GetPresentation());
                               
                         xmlWriter.WriteEndElement(); //Пакування
-                        xmlWriter.WriteStartElement("КількістьУпаковок");
-                        xmlWriter.WriteAttributeString("type", "integer");
+                        xmlWriter.WriteStartElement("Коєфіціент");
+                        xmlWriter.WriteAttributeString("type", "numeric");
                         
-                            xmlWriter.WriteValue(record.КількістьУпаковок);
+                            xmlWriter.WriteValue(record.Коєфіціент);
                           
-                        xmlWriter.WriteEndElement(); //КількістьУпаковок
+                        xmlWriter.WriteEndElement(); //Коєфіціент
                         xmlWriter.WriteStartElement("Кількість");
                         xmlWriter.WriteAttributeString("type", "numeric");
                         
@@ -16644,7 +16877,7 @@ namespace GeneratedCode.Документи
         public const string ХарактеристикаНоменклатури = "col_b1";
         public const string Серія = "col_b4";
         public const string Пакування = "col_a1";
-        public const string КількістьУпаковок = "col_a2";
+        public const string Коєфіціент = "col_a2";
         public const string Кількість = "col_a3";
         public const string Ціна = "col_a4";
         public const string Сума = "col_a5";
@@ -16717,7 +16950,7 @@ namespace GeneratedCode.Документи
                     ХарактеристикаНоменклатури = new Довідники.ХарактеристикиНоменклатури_Pointer(fieldValue["col_b1"]),
                     Серія = new Довідники.СеріїНоменклатури_Pointer(fieldValue["col_b4"]),
                     Пакування = new Довідники.ПакуванняОдиниціВиміру_Pointer(fieldValue["col_a1"]),
-                    КількістьУпаковок = (fieldValue["col_a2"] != DBNull.Value) ? (int)fieldValue["col_a2"] : 0,
+                    Коєфіціент = (fieldValue["col_a2"] != DBNull.Value) ? (decimal)fieldValue["col_a2"] : 0,
                     Кількість = (fieldValue["col_a3"] != DBNull.Value) ? (decimal)fieldValue["col_a3"] : 0,
                     Ціна = (fieldValue["col_a4"] != DBNull.Value) ? (decimal)fieldValue["col_a4"] : 0,
                     Сума = (fieldValue["col_a5"] != DBNull.Value) ? (decimal)fieldValue["col_a5"] : 0,
@@ -16779,7 +17012,7 @@ namespace GeneratedCode.Документи
                     {"col_b1", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
                     {"col_b4", record.Серія.UniqueID.UGuid},
                     {"col_a1", record.Пакування.UniqueID.UGuid},
-                    {"col_a2", record.КількістьУпаковок},
+                    {"col_a2", record.Коєфіціент},
                     {"col_a3", record.Кількість},
                     {"col_a4", record.Ціна},
                     {"col_a5", record.Сума},
@@ -16817,7 +17050,7 @@ namespace GeneratedCode.Документи
                     ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
                     Серія = original.Серія.Copy(),
                     Пакування = original.Пакування.Copy(),
-                    КількістьУпаковок = original.КількістьУпаковок,
+                    Коєфіціент = original.Коєфіціент,
                     Кількість = original.Кількість,
                     Ціна = original.Ціна,
                     Сума = original.Сума,
@@ -16840,7 +17073,7 @@ namespace GeneratedCode.Документи
             public Довідники.ХарактеристикиНоменклатури_Pointer ХарактеристикаНоменклатури { get; set; } = new Довідники.ХарактеристикиНоменклатури_Pointer();
             public Довідники.СеріїНоменклатури_Pointer Серія { get; set; } = new Довідники.СеріїНоменклатури_Pointer();
             public Довідники.ПакуванняОдиниціВиміру_Pointer Пакування { get; set; } = new Довідники.ПакуванняОдиниціВиміру_Pointer();
-            public int КількістьУпаковок { get; set; } = 0;
+            public decimal Коєфіціент { get; set; } = 0;
             public decimal Кількість { get; set; } = 0;
             public decimal Ціна { get; set; } = 0;
             public decimal Сума { get; set; } = 0;
@@ -16857,7 +17090,7 @@ namespace GeneratedCode.Документи
     public class ПоступленняТоварівТаПослуг_Проводки_TablePart : DocumentTablePart
     {
         public ПоступленняТоварівТаПослуг_Проводки_TablePart(ПоступленняТоварівТаПослуг_Object owner) : base(Config.Kernel, "tab_b71",
-             ["col_a1", "col_a2", "col_a3", "col_a7", "col_a8", "col_a9", "col_b1", "col_b2", "col_a4", ])
+             ["col_a1", "col_a2", "col_b1", "col_a5", "col_b2", "col_a4", "col_a3", "col_a7", "col_a8", "col_a6", "col_b3", "col_b4", "col_b5", "col_a9", ])
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
@@ -16870,13 +17103,18 @@ namespace GeneratedCode.Документи
         
         public const string НомерРядка = "col_a1";
         public const string Рахунок = "col_a2";
+        public const string Дебет = "col_b1";
+        public const string Кредит = "col_a5";
+        public const string Кількість = "col_b2";
+        public const string ВидПроводки = "col_a4";
         public const string Аналітика1 = "col_a3";
         public const string Аналітика2 = "col_a7";
         public const string Аналітика3 = "col_a8";
+        public const string КореспондуючийРахунок = "col_a6";
+        public const string КорАналітика1 = "col_b3";
+        public const string КорАналітика2 = "col_b4";
+        public const string КорАналітика3 = "col_b5";
         public const string Податки = "col_a9";
-        public const string Сума = "col_b1";
-        public const string Кількість = "col_b2";
-        public const string ВидПроводки = "col_a4";
 
         public ПоступленняТоварівТаПослуг_Object Owner { get; private set; }
         
@@ -16913,7 +17151,19 @@ namespace GeneratedCode.Документи
                       QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({TABLE}.{Аналітика3})", "Аналітика3"));
                   
                       /* pointer */
-                      Довідники.ВидиПодатків_Pointer.GetJoin(QuerySelect, Податки, $"{TABLE}", "join_tab_6", "Податки");
+                      Довідники.ПланРахунків_Pointer.GetJoin(QuerySelect, КореспондуючийРахунок, $"{TABLE}", "join_tab_10", "КореспондуючийРахунок");
+                  
+                      /* composite_pointer */
+                      QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({TABLE}.{КорАналітика1})", "КорАналітика1"));
+                  
+                      /* composite_pointer */
+                      QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({TABLE}.{КорАналітика2})", "КорАналітика2"));
+                  
+                      /* composite_pointer */
+                      QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({TABLE}.{КорАналітика3})", "КорАналітика3"));
+                  
+                      /* pointer */
+                      Довідники.ВидиПодатків_Pointer.GetJoin(QuerySelect, Податки, $"{TABLE}", "join_tab_14", "Податки");
                   
         }
 
@@ -16929,13 +17179,18 @@ namespace GeneratedCode.Документи
                     UID = (Guid)fieldValue["uid"],
                     НомерРядка = (fieldValue["col_a1"] != DBNull.Value) ? (int)fieldValue["col_a1"] : 0,
                     Рахунок = new Довідники.ПланРахунків_Pointer(fieldValue["col_a2"]),
+                    Дебет = (fieldValue["col_b1"] != DBNull.Value) ? (decimal)fieldValue["col_b1"] : 0,
+                    Кредит = (fieldValue["col_a5"] != DBNull.Value) ? (decimal)fieldValue["col_a5"] : 0,
+                    Кількість = (fieldValue["col_b2"] != DBNull.Value) ? (decimal)fieldValue["col_b2"] : 0,
+                    ВидПроводки = (fieldValue["col_a4"] != DBNull.Value) ? (Перелічення.ВидиПроводок)fieldValue["col_a4"] : 0,
                     Аналітика1 = (fieldValue["col_a3"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a3"] : new UuidAndText(),
                     Аналітика2 = (fieldValue["col_a7"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a7"] : new UuidAndText(),
                     Аналітика3 = (fieldValue["col_a8"] != DBNull.Value) ? (UuidAndText)fieldValue["col_a8"] : new UuidAndText(),
+                    КореспондуючийРахунок = new Довідники.ПланРахунків_Pointer(fieldValue["col_a6"]),
+                    КорАналітика1 = (fieldValue["col_b3"] != DBNull.Value) ? (UuidAndText)fieldValue["col_b3"] : new UuidAndText(),
+                    КорАналітика2 = (fieldValue["col_b4"] != DBNull.Value) ? (UuidAndText)fieldValue["col_b4"] : new UuidAndText(),
+                    КорАналітика3 = (fieldValue["col_b5"] != DBNull.Value) ? (UuidAndText)fieldValue["col_b5"] : new UuidAndText(),
                     Податки = new Довідники.ВидиПодатків_Pointer(fieldValue["col_a9"]),
-                    Сума = (fieldValue["col_b1"] != DBNull.Value) ? (decimal)fieldValue["col_b1"] : 0,
-                    Кількість = (fieldValue["col_b2"] != DBNull.Value) ? (decimal)fieldValue["col_b2"] : 0,
-                    ВидПроводки = (fieldValue["col_a4"] != DBNull.Value) ? (Перелічення.ВидиПроводок)fieldValue["col_a4"] : 0,
                     
                 };
                 Records.Add(record);
@@ -16947,6 +17202,10 @@ namespace GeneratedCode.Документи
                       record.Аналітика1.Name = ItemValue["Аналітика1"];
                       record.Аналітика2.Name = ItemValue["Аналітика2"];
                       record.Аналітика3.Name = ItemValue["Аналітика3"];
+                      record.КореспондуючийРахунок.Name = ItemValue["КореспондуючийРахунок"];
+                      record.КорАналітика1.Name = ItemValue["КорАналітика1"];
+                      record.КорАналітика2.Name = ItemValue["КорАналітика2"];
+                      record.КорАналітика3.Name = ItemValue["КорАналітика3"];
                       record.Податки.Name = ItemValue["Податки"];
                       
                 }
@@ -16979,13 +17238,18 @@ namespace GeneratedCode.Документи
                 {
                     {"col_a1", record.НомерРядка},
                     {"col_a2", record.Рахунок.UniqueID.UGuid},
+                    {"col_b1", record.Дебет},
+                    {"col_a5", record.Кредит},
+                    {"col_b2", record.Кількість},
+                    {"col_a4", (int)record.ВидПроводки},
                     {"col_a3", record.Аналітика1},
                     {"col_a7", record.Аналітика2},
                     {"col_a8", record.Аналітика3},
+                    {"col_a6", record.КореспондуючийРахунок.UniqueID.UGuid},
+                    {"col_b3", record.КорАналітика1},
+                    {"col_b4", record.КорАналітика2},
+                    {"col_b5", record.КорАналітика3},
                     {"col_a9", record.Податки.UniqueID.UGuid},
-                    {"col_b1", record.Сума},
-                    {"col_b2", record.Кількість},
-                    {"col_a4", (int)record.ВидПроводки},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -17010,13 +17274,18 @@ namespace GeneratedCode.Документи
                 {
                     НомерРядка = original.НомерРядка,
                     Рахунок = original.Рахунок.Copy(),
+                    Дебет = original.Дебет,
+                    Кредит = original.Кредит,
+                    Кількість = original.Кількість,
+                    ВидПроводки = original.ВидПроводки,
                     Аналітика1 = original.Аналітика1.Copy(),
                     Аналітика2 = original.Аналітика2.Copy(),
                     Аналітика3 = original.Аналітика3.Copy(),
+                    КореспондуючийРахунок = original.КореспондуючийРахунок.Copy(),
+                    КорАналітика1 = original.КорАналітика1.Copy(),
+                    КорАналітика2 = original.КорАналітика2.Copy(),
+                    КорАналітика3 = original.КорАналітика3.Copy(),
                     Податки = original.Податки.Copy(),
-                    Сума = original.Сума,
-                    Кількість = original.Кількість,
-                    ВидПроводки = original.ВидПроводки,
                      
                 });
             }
@@ -17028,13 +17297,18 @@ namespace GeneratedCode.Документи
         {
             public int НомерРядка { get; set; } = 0;
             public Довідники.ПланРахунків_Pointer Рахунок { get; set; } = new Довідники.ПланРахунків_Pointer();
+            public decimal Дебет { get; set; } = 0;
+            public decimal Кредит { get; set; } = 0;
+            public decimal Кількість { get; set; } = 0;
+            public Перелічення.ВидиПроводок ВидПроводки { get; set; } = 0;
             public UuidAndText Аналітика1 { get; set; } = new UuidAndText();
             public UuidAndText Аналітика2 { get; set; } = new UuidAndText();
             public UuidAndText Аналітика3 { get; set; } = new UuidAndText();
+            public Довідники.ПланРахунків_Pointer КореспондуючийРахунок { get; set; } = new Довідники.ПланРахунків_Pointer();
+            public UuidAndText КорАналітика1 { get; set; } = new UuidAndText();
+            public UuidAndText КорАналітика2 { get; set; } = new UuidAndText();
+            public UuidAndText КорАналітика3 { get; set; } = new UuidAndText();
             public Довідники.ВидиПодатків_Pointer Податки { get; set; } = new Довідники.ВидиПодатків_Pointer();
-            public decimal Сума { get; set; } = 0;
-            public decimal Кількість { get; set; } = 0;
-            public Перелічення.ВидиПроводок ВидПроводки { get; set; } = 0;
             
         }
     }
@@ -17165,12 +17439,12 @@ namespace GeneratedCode.Документи
                                 xmlWriter.WriteCData(await record.Пакування.GetPresentation());
                               
                         xmlWriter.WriteEndElement(); //Пакування
-                        xmlWriter.WriteStartElement("КількістьУпаковок");
-                        xmlWriter.WriteAttributeString("type", "integer");
+                        xmlWriter.WriteStartElement("Коєфіціент");
+                        xmlWriter.WriteAttributeString("type", "numeric");
                         
-                            xmlWriter.WriteValue(record.КількістьУпаковок);
+                            xmlWriter.WriteValue(record.Коєфіціент);
                           
-                        xmlWriter.WriteEndElement(); //КількістьУпаковок
+                        xmlWriter.WriteEndElement(); //Коєфіціент
                         xmlWriter.WriteStartElement("Кількість");
                         xmlWriter.WriteAttributeString("type", "numeric");
                         
@@ -17678,7 +17952,7 @@ namespace GeneratedCode.Документи
         public const string Номенклатура = "col_b9";
         public const string ХарактеристикаНоменклатури = "col_c1";
         public const string Пакування = "col_c2";
-        public const string КількістьУпаковок = "col_c3";
+        public const string Коєфіціент = "col_c3";
         public const string Кількість = "col_c4";
         public const string ВидЦіни = "col_c5";
         public const string Ціна = "col_c6";
@@ -17739,7 +18013,7 @@ namespace GeneratedCode.Документи
                     Номенклатура = new Довідники.Номенклатура_Pointer(fieldValue["col_b9"]),
                     ХарактеристикаНоменклатури = new Довідники.ХарактеристикиНоменклатури_Pointer(fieldValue["col_c1"]),
                     Пакування = new Довідники.ПакуванняОдиниціВиміру_Pointer(fieldValue["col_c2"]),
-                    КількістьУпаковок = (fieldValue["col_c3"] != DBNull.Value) ? (int)fieldValue["col_c3"] : 0,
+                    Коєфіціент = (fieldValue["col_c3"] != DBNull.Value) ? (decimal)fieldValue["col_c3"] : 0,
                     Кількість = (fieldValue["col_c4"] != DBNull.Value) ? (decimal)fieldValue["col_c4"] : 0,
                     ВидЦіни = new Довідники.ВидиЦін_Pointer(fieldValue["col_c5"]),
                     Ціна = (fieldValue["col_c6"] != DBNull.Value) ? (decimal)fieldValue["col_c6"] : 0,
@@ -17795,7 +18069,7 @@ namespace GeneratedCode.Документи
                     {"col_b9", record.Номенклатура.UniqueID.UGuid},
                     {"col_c1", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
                     {"col_c2", record.Пакування.UniqueID.UGuid},
-                    {"col_c3", record.КількістьУпаковок},
+                    {"col_c3", record.Коєфіціент},
                     {"col_c4", record.Кількість},
                     {"col_c5", record.ВидЦіни.UniqueID.UGuid},
                     {"col_c6", record.Ціна},
@@ -17830,7 +18104,7 @@ namespace GeneratedCode.Документи
                     Номенклатура = original.Номенклатура.Copy(),
                     ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
                     Пакування = original.Пакування.Copy(),
-                    КількістьУпаковок = original.КількістьУпаковок,
+                    Коєфіціент = original.Коєфіціент,
                     Кількість = original.Кількість,
                     ВидЦіни = original.ВидЦіни.Copy(),
                     Ціна = original.Ціна,
@@ -17850,7 +18124,7 @@ namespace GeneratedCode.Документи
             public Довідники.Номенклатура_Pointer Номенклатура { get; set; } = new Довідники.Номенклатура_Pointer();
             public Довідники.ХарактеристикиНоменклатури_Pointer ХарактеристикаНоменклатури { get; set; } = new Довідники.ХарактеристикиНоменклатури_Pointer();
             public Довідники.ПакуванняОдиниціВиміру_Pointer Пакування { get; set; } = new Довідники.ПакуванняОдиниціВиміру_Pointer();
-            public int КількістьУпаковок { get; set; } = 0;
+            public decimal Коєфіціент { get; set; } = 0;
             public decimal Кількість { get; set; } = 0;
             public Довідники.ВидиЦін_Pointer ВидЦіни { get; set; } = new Довідники.ВидиЦін_Pointer();
             public decimal Ціна { get; set; } = 0;
@@ -17979,12 +18253,12 @@ namespace GeneratedCode.Документи
                                 xmlWriter.WriteCData(await record.Пакування.GetPresentation());
                               
                         xmlWriter.WriteEndElement(); //Пакування
-                        xmlWriter.WriteStartElement("КількістьУпаковок");
-                        xmlWriter.WriteAttributeString("type", "integer");
+                        xmlWriter.WriteStartElement("Коєфіціент");
+                        xmlWriter.WriteAttributeString("type", "numeric");
                         
-                            xmlWriter.WriteValue(record.КількістьУпаковок);
+                            xmlWriter.WriteValue(record.Коєфіціент);
                           
-                        xmlWriter.WriteEndElement(); //КількістьУпаковок
+                        xmlWriter.WriteEndElement(); //Коєфіціент
                         xmlWriter.WriteStartElement("Кількість");
                         xmlWriter.WriteAttributeString("type", "numeric");
                         
@@ -18521,7 +18795,7 @@ namespace GeneratedCode.Документи
         public const string ХарактеристикаНоменклатури = "col_d3";
         public const string Серія = "col_a2";
         public const string Пакування = "col_d4";
-        public const string КількістьУпаковок = "col_d5";
+        public const string Коєфіціент = "col_d5";
         public const string Кількість = "col_d6";
         public const string ВидЦіни = "col_d7";
         public const string Ціна = "col_d8";
@@ -18598,7 +18872,7 @@ namespace GeneratedCode.Документи
                     ХарактеристикаНоменклатури = new Довідники.ХарактеристикиНоменклатури_Pointer(fieldValue["col_d3"]),
                     Серія = new Довідники.СеріїНоменклатури_Pointer(fieldValue["col_a2"]),
                     Пакування = new Довідники.ПакуванняОдиниціВиміру_Pointer(fieldValue["col_d4"]),
-                    КількістьУпаковок = (fieldValue["col_d5"] != DBNull.Value) ? (int)fieldValue["col_d5"] : 0,
+                    Коєфіціент = (fieldValue["col_d5"] != DBNull.Value) ? (decimal)fieldValue["col_d5"] : 0,
                     Кількість = (fieldValue["col_d6"] != DBNull.Value) ? (decimal)fieldValue["col_d6"] : 0,
                     ВидЦіни = new Довідники.ВидиЦін_Pointer(fieldValue["col_d7"]),
                     Ціна = (fieldValue["col_d8"] != DBNull.Value) ? (decimal)fieldValue["col_d8"] : 0,
@@ -18662,7 +18936,7 @@ namespace GeneratedCode.Документи
                     {"col_d3", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
                     {"col_a2", record.Серія.UniqueID.UGuid},
                     {"col_d4", record.Пакування.UniqueID.UGuid},
-                    {"col_d5", record.КількістьУпаковок},
+                    {"col_d5", record.Коєфіціент},
                     {"col_d6", record.Кількість},
                     {"col_d7", record.ВидЦіни.UniqueID.UGuid},
                     {"col_d8", record.Ціна},
@@ -18701,7 +18975,7 @@ namespace GeneratedCode.Документи
                     ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
                     Серія = original.Серія.Copy(),
                     Пакування = original.Пакування.Copy(),
-                    КількістьУпаковок = original.КількістьУпаковок,
+                    Коєфіціент = original.Коєфіціент,
                     Кількість = original.Кількість,
                     ВидЦіни = original.ВидЦіни.Copy(),
                     Ціна = original.Ціна,
@@ -18725,7 +18999,7 @@ namespace GeneratedCode.Документи
             public Довідники.ХарактеристикиНоменклатури_Pointer ХарактеристикаНоменклатури { get; set; } = new Довідники.ХарактеристикиНоменклатури_Pointer();
             public Довідники.СеріїНоменклатури_Pointer Серія { get; set; } = new Довідники.СеріїНоменклатури_Pointer();
             public Довідники.ПакуванняОдиниціВиміру_Pointer Пакування { get; set; } = new Довідники.ПакуванняОдиниціВиміру_Pointer();
-            public int КількістьУпаковок { get; set; } = 0;
+            public decimal Коєфіціент { get; set; } = 0;
             public decimal Кількість { get; set; } = 0;
             public Довідники.ВидиЦін_Pointer ВидЦіни { get; set; } = new Довідники.ВидиЦін_Pointer();
             public decimal Ціна { get; set; } = 0;
@@ -19051,12 +19325,12 @@ namespace GeneratedCode.Документи
                                 xmlWriter.WriteCData(await record.Пакування.GetPresentation());
                               
                         xmlWriter.WriteEndElement(); //Пакування
-                        xmlWriter.WriteStartElement("КількістьУпаковок");
-                        xmlWriter.WriteAttributeString("type", "integer");
+                        xmlWriter.WriteStartElement("Коєфіціент");
+                        xmlWriter.WriteAttributeString("type", "numeric");
                         
-                            xmlWriter.WriteValue(record.КількістьУпаковок);
+                            xmlWriter.WriteValue(record.Коєфіціент);
                           
-                        xmlWriter.WriteEndElement(); //КількістьУпаковок
+                        xmlWriter.WriteEndElement(); //Коєфіціент
                         xmlWriter.WriteStartElement("Кількість");
                         xmlWriter.WriteAttributeString("type", "numeric");
                         
@@ -21517,7 +21791,7 @@ namespace GeneratedCode.Документи
         public const string ХарактеристикаНоменклатури = "col_b4";
         public const string Серія = "col_a1";
         public const string Пакування = "col_b5";
-        public const string КількістьУпаковок = "col_b6";
+        public const string Коєфіціент = "col_b6";
         public const string Кількість = "col_b7";
         public const string Партія = "col_a2";
 
@@ -21575,7 +21849,7 @@ namespace GeneratedCode.Документи
                     ХарактеристикаНоменклатури = new Довідники.ХарактеристикиНоменклатури_Pointer(fieldValue["col_b4"]),
                     Серія = new Довідники.СеріїНоменклатури_Pointer(fieldValue["col_a1"]),
                     Пакування = new Довідники.ПакуванняОдиниціВиміру_Pointer(fieldValue["col_b5"]),
-                    КількістьУпаковок = (fieldValue["col_b6"] != DBNull.Value) ? (int)fieldValue["col_b6"] : 0,
+                    Коєфіціент = (fieldValue["col_b6"] != DBNull.Value) ? (decimal)fieldValue["col_b6"] : 0,
                     Кількість = (fieldValue["col_b7"] != DBNull.Value) ? (decimal)fieldValue["col_b7"] : 0,
                     Партія = new Довідники.ПартіяТоварівКомпозит_Pointer(fieldValue["col_a2"]),
                     
@@ -21628,7 +21902,7 @@ namespace GeneratedCode.Документи
                     {"col_b4", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
                     {"col_a1", record.Серія.UniqueID.UGuid},
                     {"col_b5", record.Пакування.UniqueID.UGuid},
-                    {"col_b6", record.КількістьУпаковок},
+                    {"col_b6", record.Коєфіціент},
                     {"col_b7", record.Кількість},
                     {"col_a2", record.Партія.UniqueID.UGuid},
                     
@@ -21660,7 +21934,7 @@ namespace GeneratedCode.Документи
                     ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
                     Серія = original.Серія.Copy(),
                     Пакування = original.Пакування.Copy(),
-                    КількістьУпаковок = original.КількістьУпаковок,
+                    Коєфіціент = original.Коєфіціент,
                     Кількість = original.Кількість,
                     Партія = original.Партія.Copy(),
                      
@@ -21677,7 +21951,7 @@ namespace GeneratedCode.Документи
             public Довідники.ХарактеристикиНоменклатури_Pointer ХарактеристикаНоменклатури { get; set; } = new Довідники.ХарактеристикиНоменклатури_Pointer();
             public Довідники.СеріїНоменклатури_Pointer Серія { get; set; } = new Довідники.СеріїНоменклатури_Pointer();
             public Довідники.ПакуванняОдиниціВиміру_Pointer Пакування { get; set; } = new Довідники.ПакуванняОдиниціВиміру_Pointer();
-            public int КількістьУпаковок { get; set; } = 0;
+            public decimal Коєфіціент { get; set; } = 0;
             public decimal Кількість { get; set; } = 0;
             public Довідники.ПартіяТоварівКомпозит_Pointer Партія { get; set; } = new Довідники.ПартіяТоварівКомпозит_Pointer();
             
@@ -22323,7 +22597,7 @@ namespace GeneratedCode.Документи
         public const string ХарактеристикаНоменклатури = "col_d9";
         public const string Серія = "col_a3";
         public const string Пакування = "col_e1";
-        public const string КількістьУпаковок = "col_e2";
+        public const string Коєфіціент = "col_e2";
         public const string Кількість = "col_e3";
         public const string Ціна = "col_e4";
         public const string Сума = "col_e5";
@@ -22383,7 +22657,7 @@ namespace GeneratedCode.Документи
                     ХарактеристикаНоменклатури = new Довідники.ХарактеристикиНоменклатури_Pointer(fieldValue["col_d9"]),
                     Серія = new Довідники.СеріїНоменклатури_Pointer(fieldValue["col_a3"]),
                     Пакування = new Довідники.ПакуванняОдиниціВиміру_Pointer(fieldValue["col_e1"]),
-                    КількістьУпаковок = (fieldValue["col_e2"] != DBNull.Value) ? (int)fieldValue["col_e2"] : 0,
+                    Коєфіціент = (fieldValue["col_e2"] != DBNull.Value) ? (decimal)fieldValue["col_e2"] : 0,
                     Кількість = (fieldValue["col_e3"] != DBNull.Value) ? (decimal)fieldValue["col_e3"] : 0,
                     Ціна = (fieldValue["col_e4"] != DBNull.Value) ? (decimal)fieldValue["col_e4"] : 0,
                     Сума = (fieldValue["col_e5"] != DBNull.Value) ? (decimal)fieldValue["col_e5"] : 0,
@@ -22438,7 +22712,7 @@ namespace GeneratedCode.Документи
                     {"col_d9", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
                     {"col_a3", record.Серія.UniqueID.UGuid},
                     {"col_e1", record.Пакування.UniqueID.UGuid},
-                    {"col_e2", record.КількістьУпаковок},
+                    {"col_e2", record.Коєфіціент},
                     {"col_e3", record.Кількість},
                     {"col_e4", record.Ціна},
                     {"col_e5", record.Сума},
@@ -22472,7 +22746,7 @@ namespace GeneratedCode.Документи
                     ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
                     Серія = original.Серія.Copy(),
                     Пакування = original.Пакування.Copy(),
-                    КількістьУпаковок = original.КількістьУпаковок,
+                    Коєфіціент = original.Коєфіціент,
                     Кількість = original.Кількість,
                     Ціна = original.Ціна,
                     Сума = original.Сума,
@@ -22491,7 +22765,7 @@ namespace GeneratedCode.Документи
             public Довідники.ХарактеристикиНоменклатури_Pointer ХарактеристикаНоменклатури { get; set; } = new Довідники.ХарактеристикиНоменклатури_Pointer();
             public Довідники.СеріїНоменклатури_Pointer Серія { get; set; } = new Довідники.СеріїНоменклатури_Pointer();
             public Довідники.ПакуванняОдиниціВиміру_Pointer Пакування { get; set; } = new Довідники.ПакуванняОдиниціВиміру_Pointer();
-            public int КількістьУпаковок { get; set; } = 0;
+            public decimal Коєфіціент { get; set; } = 0;
             public decimal Кількість { get; set; } = 0;
             public decimal Ціна { get; set; } = 0;
             public decimal Сума { get; set; } = 0;
@@ -23115,7 +23389,7 @@ namespace GeneratedCode.Документи
         public const string ХарактеристикаНоменклатури = "col_g4";
         public const string Серія = "col_a1";
         public const string Пакування = "col_g5";
-        public const string КількістьУпаковок = "col_g6";
+        public const string Коєфіціент = "col_g6";
         public const string Кількість = "col_g7";
         public const string Ціна = "col_g8";
         public const string Сума = "col_g9";
@@ -23176,7 +23450,7 @@ namespace GeneratedCode.Документи
                     ХарактеристикаНоменклатури = new Довідники.ХарактеристикиНоменклатури_Pointer(fieldValue["col_g4"]),
                     Серія = new Довідники.СеріїНоменклатури_Pointer(fieldValue["col_a1"]),
                     Пакування = new Довідники.ПакуванняОдиниціВиміру_Pointer(fieldValue["col_g5"]),
-                    КількістьУпаковок = (fieldValue["col_g6"] != DBNull.Value) ? (int)fieldValue["col_g6"] : 0,
+                    Коєфіціент = (fieldValue["col_g6"] != DBNull.Value) ? (decimal)fieldValue["col_g6"] : 0,
                     Кількість = (fieldValue["col_g7"] != DBNull.Value) ? (decimal)fieldValue["col_g7"] : 0,
                     Ціна = (fieldValue["col_g8"] != DBNull.Value) ? (decimal)fieldValue["col_g8"] : 0,
                     Сума = (fieldValue["col_g9"] != DBNull.Value) ? (decimal)fieldValue["col_g9"] : 0,
@@ -23232,7 +23506,7 @@ namespace GeneratedCode.Документи
                     {"col_g4", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
                     {"col_a1", record.Серія.UniqueID.UGuid},
                     {"col_g5", record.Пакування.UniqueID.UGuid},
-                    {"col_g6", record.КількістьУпаковок},
+                    {"col_g6", record.Коєфіціент},
                     {"col_g7", record.Кількість},
                     {"col_g8", record.Ціна},
                     {"col_g9", record.Сума},
@@ -23267,7 +23541,7 @@ namespace GeneratedCode.Документи
                     ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
                     Серія = original.Серія.Copy(),
                     Пакування = original.Пакування.Copy(),
-                    КількістьУпаковок = original.КількістьУпаковок,
+                    Коєфіціент = original.Коєфіціент,
                     Кількість = original.Кількість,
                     Ціна = original.Ціна,
                     Сума = original.Сума,
@@ -23287,7 +23561,7 @@ namespace GeneratedCode.Документи
             public Довідники.ХарактеристикиНоменклатури_Pointer ХарактеристикаНоменклатури { get; set; } = new Довідники.ХарактеристикиНоменклатури_Pointer();
             public Довідники.СеріїНоменклатури_Pointer Серія { get; set; } = new Довідники.СеріїНоменклатури_Pointer();
             public Довідники.ПакуванняОдиниціВиміру_Pointer Пакування { get; set; } = new Довідники.ПакуванняОдиниціВиміру_Pointer();
-            public int КількістьУпаковок { get; set; } = 0;
+            public decimal Коєфіціент { get; set; } = 0;
             public decimal Кількість { get; set; } = 0;
             public decimal Ціна { get; set; } = 0;
             public decimal Сума { get; set; } = 0;
@@ -24792,7 +25066,7 @@ namespace GeneratedCode.Документи
         public const string ХарактеристикаНоменклатури = "col_d7";
         public const string Серія = "col_a1";
         public const string Пакування = "col_d8";
-        public const string КількістьУпаковок = "col_d9";
+        public const string Коєфіціент = "col_d9";
         public const string Кількість = "col_e1";
         public const string Ціна = "col_e2";
         public const string Сума = "col_e3";
@@ -24848,7 +25122,7 @@ namespace GeneratedCode.Документи
                     ХарактеристикаНоменклатури = new Довідники.ХарактеристикиНоменклатури_Pointer(fieldValue["col_d7"]),
                     Серія = new Довідники.СеріїНоменклатури_Pointer(fieldValue["col_a1"]),
                     Пакування = new Довідники.ПакуванняОдиниціВиміру_Pointer(fieldValue["col_d8"]),
-                    КількістьУпаковок = (fieldValue["col_d9"] != DBNull.Value) ? (int)fieldValue["col_d9"] : 0,
+                    Коєфіціент = (fieldValue["col_d9"] != DBNull.Value) ? (decimal)fieldValue["col_d9"] : 0,
                     Кількість = (fieldValue["col_e1"] != DBNull.Value) ? (decimal)fieldValue["col_e1"] : 0,
                     Ціна = (fieldValue["col_e2"] != DBNull.Value) ? (decimal)fieldValue["col_e2"] : 0,
                     Сума = (fieldValue["col_e3"] != DBNull.Value) ? (decimal)fieldValue["col_e3"] : 0,
@@ -24901,7 +25175,7 @@ namespace GeneratedCode.Документи
                     {"col_d7", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
                     {"col_a1", record.Серія.UniqueID.UGuid},
                     {"col_d8", record.Пакування.UniqueID.UGuid},
-                    {"col_d9", record.КількістьУпаковок},
+                    {"col_d9", record.Коєфіціент},
                     {"col_e1", record.Кількість},
                     {"col_e2", record.Ціна},
                     {"col_e3", record.Сума},
@@ -24934,7 +25208,7 @@ namespace GeneratedCode.Документи
                     ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
                     Серія = original.Серія.Copy(),
                     Пакування = original.Пакування.Copy(),
-                    КількістьУпаковок = original.КількістьУпаковок,
+                    Коєфіціент = original.Коєфіціент,
                     Кількість = original.Кількість,
                     Ціна = original.Ціна,
                     Сума = original.Сума,
@@ -24952,7 +25226,7 @@ namespace GeneratedCode.Документи
             public Довідники.ХарактеристикиНоменклатури_Pointer ХарактеристикаНоменклатури { get; set; } = new Довідники.ХарактеристикиНоменклатури_Pointer();
             public Довідники.СеріїНоменклатури_Pointer Серія { get; set; } = new Довідники.СеріїНоменклатури_Pointer();
             public Довідники.ПакуванняОдиниціВиміру_Pointer Пакування { get; set; } = new Довідники.ПакуванняОдиниціВиміру_Pointer();
-            public int КількістьУпаковок { get; set; } = 0;
+            public decimal Коєфіціент { get; set; } = 0;
             public decimal Кількість { get; set; } = 0;
             public decimal Ціна { get; set; } = 0;
             public decimal Сума { get; set; } = 0;
@@ -26833,8 +27107,8 @@ namespace GeneratedCode.Документи
         
         public const string Кількість = "col_i8";
         public const string КількістьФакт = "col_i9";
-        public const string КількістьУпаковок = "col_j1";
-        public const string КількістьУпаковокФакт = "col_j3";
+        public const string Коєфіціент = "col_j1";
+        public const string КоєфіціентФакт = "col_j3";
         public const string Номенклатура = "col_j4";
         public const string Пакування = "col_j5";
         public const string ХарактеристикаНоменклатури = "col_j6";
@@ -26886,8 +27160,8 @@ namespace GeneratedCode.Документи
                     UID = (Guid)fieldValue["uid"],
                     Кількість = (fieldValue["col_i8"] != DBNull.Value) ? (decimal)fieldValue["col_i8"] : 0,
                     КількістьФакт = (fieldValue["col_i9"] != DBNull.Value) ? (decimal)fieldValue["col_i9"] : 0,
-                    КількістьУпаковок = (fieldValue["col_j1"] != DBNull.Value) ? (int)fieldValue["col_j1"] : 0,
-                    КількістьУпаковокФакт = (fieldValue["col_j3"] != DBNull.Value) ? (int)fieldValue["col_j3"] : 0,
+                    Коєфіціент = (fieldValue["col_j1"] != DBNull.Value) ? (decimal)fieldValue["col_j1"] : 0,
+                    КоєфіціентФакт = (fieldValue["col_j3"] != DBNull.Value) ? (decimal)fieldValue["col_j3"] : 0,
                     Номенклатура = new Довідники.Номенклатура_Pointer(fieldValue["col_j4"]),
                     Пакування = new Довідники.ПакуванняОдиниціВиміру_Pointer(fieldValue["col_j5"]),
                     ХарактеристикаНоменклатури = new Довідники.ХарактеристикиНоменклатури_Pointer(fieldValue["col_j6"]),
@@ -26938,8 +27212,8 @@ namespace GeneratedCode.Документи
                 {
                     {"col_i8", record.Кількість},
                     {"col_i9", record.КількістьФакт},
-                    {"col_j1", record.КількістьУпаковок},
-                    {"col_j3", record.КількістьУпаковокФакт},
+                    {"col_j1", record.Коєфіціент},
+                    {"col_j3", record.КоєфіціентФакт},
                     {"col_j4", record.Номенклатура.UniqueID.UGuid},
                     {"col_j5", record.Пакування.UniqueID.UGuid},
                     {"col_j6", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
@@ -26971,8 +27245,8 @@ namespace GeneratedCode.Документи
                 {
                     Кількість = original.Кількість,
                     КількістьФакт = original.КількістьФакт,
-                    КількістьУпаковок = original.КількістьУпаковок,
-                    КількістьУпаковокФакт = original.КількістьУпаковокФакт,
+                    Коєфіціент = original.Коєфіціент,
+                    КоєфіціентФакт = original.КоєфіціентФакт,
                     Номенклатура = original.Номенклатура.Copy(),
                     Пакування = original.Пакування.Copy(),
                     ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
@@ -26989,8 +27263,8 @@ namespace GeneratedCode.Документи
         {
             public decimal Кількість { get; set; } = 0;
             public decimal КількістьФакт { get; set; } = 0;
-            public int КількістьУпаковок { get; set; } = 0;
-            public int КількістьУпаковокФакт { get; set; } = 0;
+            public decimal Коєфіціент { get; set; } = 0;
+            public decimal КоєфіціентФакт { get; set; } = 0;
             public Довідники.Номенклатура_Pointer Номенклатура { get; set; } = new Довідники.Номенклатура_Pointer();
             public Довідники.ПакуванняОдиниціВиміру_Pointer Пакування { get; set; } = new Довідники.ПакуванняОдиниціВиміру_Pointer();
             public Довідники.ХарактеристикиНоменклатури_Pointer ХарактеристикаНоменклатури { get; set; } = new Довідники.ХарактеристикиНоменклатури_Pointer();
@@ -27361,7 +27635,7 @@ namespace GeneratedCode.Документи
         public const string ХарактеристикаНоменклатури = "col_b3";
         public const string Серія = "col_a1";
         public const string Пакування = "col_a4";
-        public const string КількістьУпаковок = "col_a5";
+        public const string Коєфіціент = "col_a5";
         public const string Кількість = "col_b4";
         public const string Ціна = "col_b5";
         public const string Сума = "col_a2";
@@ -27421,7 +27695,7 @@ namespace GeneratedCode.Документи
                     ХарактеристикаНоменклатури = new Довідники.ХарактеристикиНоменклатури_Pointer(fieldValue["col_b3"]),
                     Серія = new Довідники.СеріїНоменклатури_Pointer(fieldValue["col_a1"]),
                     Пакування = new Довідники.ПакуванняОдиниціВиміру_Pointer(fieldValue["col_a4"]),
-                    КількістьУпаковок = (fieldValue["col_a5"] != DBNull.Value) ? (int)fieldValue["col_a5"] : 0,
+                    Коєфіціент = (fieldValue["col_a5"] != DBNull.Value) ? (decimal)fieldValue["col_a5"] : 0,
                     Кількість = (fieldValue["col_b4"] != DBNull.Value) ? (decimal)fieldValue["col_b4"] : 0,
                     Ціна = (fieldValue["col_b5"] != DBNull.Value) ? (decimal)fieldValue["col_b5"] : 0,
                     Сума = (fieldValue["col_a2"] != DBNull.Value) ? (decimal)fieldValue["col_a2"] : 0,
@@ -27476,7 +27750,7 @@ namespace GeneratedCode.Документи
                     {"col_b3", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
                     {"col_a1", record.Серія.UniqueID.UGuid},
                     {"col_a4", record.Пакування.UniqueID.UGuid},
-                    {"col_a5", record.КількістьУпаковок},
+                    {"col_a5", record.Коєфіціент},
                     {"col_b4", record.Кількість},
                     {"col_b5", record.Ціна},
                     {"col_a2", record.Сума},
@@ -27510,7 +27784,7 @@ namespace GeneratedCode.Документи
                     ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
                     Серія = original.Серія.Copy(),
                     Пакування = original.Пакування.Copy(),
-                    КількістьУпаковок = original.КількістьУпаковок,
+                    Коєфіціент = original.Коєфіціент,
                     Кількість = original.Кількість,
                     Ціна = original.Ціна,
                     Сума = original.Сума,
@@ -27529,7 +27803,7 @@ namespace GeneratedCode.Документи
             public Довідники.ХарактеристикиНоменклатури_Pointer ХарактеристикаНоменклатури { get; set; } = new Довідники.ХарактеристикиНоменклатури_Pointer();
             public Довідники.СеріїНоменклатури_Pointer Серія { get; set; } = new Довідники.СеріїНоменклатури_Pointer();
             public Довідники.ПакуванняОдиниціВиміру_Pointer Пакування { get; set; } = new Довідники.ПакуванняОдиниціВиміру_Pointer();
-            public int КількістьУпаковок { get; set; } = 0;
+            public decimal Коєфіціент { get; set; } = 0;
             public decimal Кількість { get; set; } = 0;
             public decimal Ціна { get; set; } = 0;
             public decimal Сума { get; set; } = 0;
@@ -27923,7 +28197,7 @@ namespace GeneratedCode.Документи
         public const string ХарактеристикаНоменклатури = "col_d3";
         public const string Серія = "col_a2";
         public const string Пакування = "col_d4";
-        public const string КількістьУпаковок = "col_d5";
+        public const string Коєфіціент = "col_d5";
         public const string Кількість = "col_d6";
         public const string Ціна = "col_d8";
         public const string Сума = "col_d9";
@@ -27983,7 +28257,7 @@ namespace GeneratedCode.Документи
                     ХарактеристикаНоменклатури = new Довідники.ХарактеристикиНоменклатури_Pointer(fieldValue["col_d3"]),
                     Серія = new Довідники.СеріїНоменклатури_Pointer(fieldValue["col_a2"]),
                     Пакування = new Довідники.ПакуванняОдиниціВиміру_Pointer(fieldValue["col_d4"]),
-                    КількістьУпаковок = (fieldValue["col_d5"] != DBNull.Value) ? (int)fieldValue["col_d5"] : 0,
+                    Коєфіціент = (fieldValue["col_d5"] != DBNull.Value) ? (decimal)fieldValue["col_d5"] : 0,
                     Кількість = (fieldValue["col_d6"] != DBNull.Value) ? (decimal)fieldValue["col_d6"] : 0,
                     Ціна = (fieldValue["col_d8"] != DBNull.Value) ? (decimal)fieldValue["col_d8"] : 0,
                     Сума = (fieldValue["col_d9"] != DBNull.Value) ? (decimal)fieldValue["col_d9"] : 0,
@@ -28038,7 +28312,7 @@ namespace GeneratedCode.Документи
                     {"col_d3", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
                     {"col_a2", record.Серія.UniqueID.UGuid},
                     {"col_d4", record.Пакування.UniqueID.UGuid},
-                    {"col_d5", record.КількістьУпаковок},
+                    {"col_d5", record.Коєфіціент},
                     {"col_d6", record.Кількість},
                     {"col_d8", record.Ціна},
                     {"col_d9", record.Сума},
@@ -28072,7 +28346,7 @@ namespace GeneratedCode.Документи
                     ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
                     Серія = original.Серія.Copy(),
                     Пакування = original.Пакування.Copy(),
-                    КількістьУпаковок = original.КількістьУпаковок,
+                    Коєфіціент = original.Коєфіціент,
                     Кількість = original.Кількість,
                     Ціна = original.Ціна,
                     Сума = original.Сума,
@@ -28091,7 +28365,7 @@ namespace GeneratedCode.Документи
             public Довідники.ХарактеристикиНоменклатури_Pointer ХарактеристикаНоменклатури { get; set; } = new Довідники.ХарактеристикиНоменклатури_Pointer();
             public Довідники.СеріїНоменклатури_Pointer Серія { get; set; } = new Довідники.СеріїНоменклатури_Pointer();
             public Довідники.ПакуванняОдиниціВиміру_Pointer Пакування { get; set; } = new Довідники.ПакуванняОдиниціВиміру_Pointer();
-            public int КількістьУпаковок { get; set; } = 0;
+            public decimal Коєфіціент { get; set; } = 0;
             public decimal Кількість { get; set; } = 0;
             public decimal Ціна { get; set; } = 0;
             public decimal Сума { get; set; } = 0;
@@ -28710,7 +28984,7 @@ namespace GeneratedCode.Документи
         public const string Номенклатура = "col_b9";
         public const string ХарактеристикаНоменклатури = "col_c1";
         public const string Пакування = "col_c2";
-        public const string КількістьУпаковок = "col_c3";
+        public const string Коєфіціент = "col_c3";
         public const string Кількість = "col_c4";
         public const string ВидЦіни = "col_c5";
         public const string Ціна = "col_c6";
@@ -28771,7 +29045,7 @@ namespace GeneratedCode.Документи
                     Номенклатура = new Довідники.Номенклатура_Pointer(fieldValue["col_b9"]),
                     ХарактеристикаНоменклатури = new Довідники.ХарактеристикиНоменклатури_Pointer(fieldValue["col_c1"]),
                     Пакування = new Довідники.ПакуванняОдиниціВиміру_Pointer(fieldValue["col_c2"]),
-                    КількістьУпаковок = (fieldValue["col_c3"] != DBNull.Value) ? (int)fieldValue["col_c3"] : 0,
+                    Коєфіціент = (fieldValue["col_c3"] != DBNull.Value) ? (decimal)fieldValue["col_c3"] : 0,
                     Кількість = (fieldValue["col_c4"] != DBNull.Value) ? (decimal)fieldValue["col_c4"] : 0,
                     ВидЦіни = new Довідники.ВидиЦін_Pointer(fieldValue["col_c5"]),
                     Ціна = (fieldValue["col_c6"] != DBNull.Value) ? (decimal)fieldValue["col_c6"] : 0,
@@ -28827,7 +29101,7 @@ namespace GeneratedCode.Документи
                     {"col_b9", record.Номенклатура.UniqueID.UGuid},
                     {"col_c1", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
                     {"col_c2", record.Пакування.UniqueID.UGuid},
-                    {"col_c3", record.КількістьУпаковок},
+                    {"col_c3", record.Коєфіціент},
                     {"col_c4", record.Кількість},
                     {"col_c5", record.ВидЦіни.UniqueID.UGuid},
                     {"col_c6", record.Ціна},
@@ -28862,7 +29136,7 @@ namespace GeneratedCode.Документи
                     Номенклатура = original.Номенклатура.Copy(),
                     ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
                     Пакування = original.Пакування.Copy(),
-                    КількістьУпаковок = original.КількістьУпаковок,
+                    Коєфіціент = original.Коєфіціент,
                     Кількість = original.Кількість,
                     ВидЦіни = original.ВидЦіни.Copy(),
                     Ціна = original.Ціна,
@@ -28882,7 +29156,7 @@ namespace GeneratedCode.Документи
             public Довідники.Номенклатура_Pointer Номенклатура { get; set; } = new Довідники.Номенклатура_Pointer();
             public Довідники.ХарактеристикиНоменклатури_Pointer ХарактеристикаНоменклатури { get; set; } = new Довідники.ХарактеристикиНоменклатури_Pointer();
             public Довідники.ПакуванняОдиниціВиміру_Pointer Пакування { get; set; } = new Довідники.ПакуванняОдиниціВиміру_Pointer();
-            public int КількістьУпаковок { get; set; } = 0;
+            public decimal Коєфіціент { get; set; } = 0;
             public decimal Кількість { get; set; } = 0;
             public Довідники.ВидиЦін_Pointer ВидЦіни { get; set; } = new Довідники.ВидиЦін_Pointer();
             public decimal Ціна { get; set; } = 0;
@@ -29197,12 +29471,12 @@ namespace GeneratedCode.Документи
                                 xmlWriter.WriteCData(await record.Пакування.GetPresentation());
                               
                         xmlWriter.WriteEndElement(); //Пакування
-                        xmlWriter.WriteStartElement("КількістьУпаковок");
-                        xmlWriter.WriteAttributeString("type", "integer");
+                        xmlWriter.WriteStartElement("Коєфіціент");
+                        xmlWriter.WriteAttributeString("type", "numeric");
                         
-                            xmlWriter.WriteValue(record.КількістьУпаковок);
+                            xmlWriter.WriteValue(record.Коєфіціент);
                           
-                        xmlWriter.WriteEndElement(); //КількістьУпаковок
+                        xmlWriter.WriteEndElement(); //Коєфіціент
                         xmlWriter.WriteStartElement("Кількість");
                         xmlWriter.WriteAttributeString("type", "numeric");
                         
@@ -29587,7 +29861,7 @@ namespace GeneratedCode.Документи
         public const string ХарактеристикаНоменклатури = "col_a3";
         public const string Серія = "col_a4";
         public const string Пакування = "col_a5";
-        public const string КількістьУпаковок = "col_a6";
+        public const string Коєфіціент = "col_a6";
         public const string Кількість = "col_a7";
         public const string Комірка = "col_a8";
 
@@ -29645,7 +29919,7 @@ namespace GeneratedCode.Документи
                     ХарактеристикаНоменклатури = new Довідники.ХарактеристикиНоменклатури_Pointer(fieldValue["col_a3"]),
                     Серія = new Довідники.СеріїНоменклатури_Pointer(fieldValue["col_a4"]),
                     Пакування = new Довідники.ПакуванняОдиниціВиміру_Pointer(fieldValue["col_a5"]),
-                    КількістьУпаковок = (fieldValue["col_a6"] != DBNull.Value) ? (int)fieldValue["col_a6"] : 0,
+                    Коєфіціент = (fieldValue["col_a6"] != DBNull.Value) ? (decimal)fieldValue["col_a6"] : 0,
                     Кількість = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
                     Комірка = new Довідники.СкладськіКомірки_Pointer(fieldValue["col_a8"]),
                     
@@ -29698,7 +29972,7 @@ namespace GeneratedCode.Документи
                     {"col_a3", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
                     {"col_a4", record.Серія.UniqueID.UGuid},
                     {"col_a5", record.Пакування.UniqueID.UGuid},
-                    {"col_a6", record.КількістьУпаковок},
+                    {"col_a6", record.Коєфіціент},
                     {"col_a7", record.Кількість},
                     {"col_a8", record.Комірка.UniqueID.UGuid},
                     
@@ -29730,7 +30004,7 @@ namespace GeneratedCode.Документи
                     ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
                     Серія = original.Серія.Copy(),
                     Пакування = original.Пакування.Copy(),
-                    КількістьУпаковок = original.КількістьУпаковок,
+                    Коєфіціент = original.Коєфіціент,
                     Кількість = original.Кількість,
                     Комірка = original.Комірка.Copy(),
                      
@@ -29747,7 +30021,7 @@ namespace GeneratedCode.Документи
             public Довідники.ХарактеристикиНоменклатури_Pointer ХарактеристикаНоменклатури { get; set; } = new Довідники.ХарактеристикиНоменклатури_Pointer();
             public Довідники.СеріїНоменклатури_Pointer Серія { get; set; } = new Довідники.СеріїНоменклатури_Pointer();
             public Довідники.ПакуванняОдиниціВиміру_Pointer Пакування { get; set; } = new Довідники.ПакуванняОдиниціВиміру_Pointer();
-            public int КількістьУпаковок { get; set; } = 0;
+            public decimal Коєфіціент { get; set; } = 0;
             public decimal Кількість { get; set; } = 0;
             public Довідники.СкладськіКомірки_Pointer Комірка { get; set; } = new Довідники.СкладськіКомірки_Pointer();
             
@@ -30095,7 +30369,7 @@ namespace GeneratedCode.Документи
         public const string ХарактеристикаНоменклатури = "col_a3";
         public const string Серія = "col_a4";
         public const string Пакування = "col_a5";
-        public const string КількістьУпаковок = "col_a6";
+        public const string Коєфіціент = "col_a6";
         public const string Кількість = "col_a7";
         public const string КоміркаВідправник = "col_a8";
         public const string КоміркаОтримувач = "col_a9";
@@ -30157,7 +30431,7 @@ namespace GeneratedCode.Документи
                     ХарактеристикаНоменклатури = new Довідники.ХарактеристикиНоменклатури_Pointer(fieldValue["col_a3"]),
                     Серія = new Довідники.СеріїНоменклатури_Pointer(fieldValue["col_a4"]),
                     Пакування = new Довідники.ПакуванняОдиниціВиміру_Pointer(fieldValue["col_a5"]),
-                    КількістьУпаковок = (fieldValue["col_a6"] != DBNull.Value) ? (int)fieldValue["col_a6"] : 0,
+                    Коєфіціент = (fieldValue["col_a6"] != DBNull.Value) ? (decimal)fieldValue["col_a6"] : 0,
                     Кількість = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
                     КоміркаВідправник = new Довідники.СкладськіКомірки_Pointer(fieldValue["col_a8"]),
                     КоміркаОтримувач = new Довідники.СкладськіКомірки_Pointer(fieldValue["col_a9"]),
@@ -30212,7 +30486,7 @@ namespace GeneratedCode.Документи
                     {"col_a3", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
                     {"col_a4", record.Серія.UniqueID.UGuid},
                     {"col_a5", record.Пакування.UniqueID.UGuid},
-                    {"col_a6", record.КількістьУпаковок},
+                    {"col_a6", record.Коєфіціент},
                     {"col_a7", record.Кількість},
                     {"col_a8", record.КоміркаВідправник.UniqueID.UGuid},
                     {"col_a9", record.КоміркаОтримувач.UniqueID.UGuid},
@@ -30245,7 +30519,7 @@ namespace GeneratedCode.Документи
                     ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
                     Серія = original.Серія.Copy(),
                     Пакування = original.Пакування.Copy(),
-                    КількістьУпаковок = original.КількістьУпаковок,
+                    Коєфіціент = original.Коєфіціент,
                     Кількість = original.Кількість,
                     КоміркаВідправник = original.КоміркаВідправник.Copy(),
                     КоміркаОтримувач = original.КоміркаОтримувач.Copy(),
@@ -30263,7 +30537,7 @@ namespace GeneratedCode.Документи
             public Довідники.ХарактеристикиНоменклатури_Pointer ХарактеристикаНоменклатури { get; set; } = new Довідники.ХарактеристикиНоменклатури_Pointer();
             public Довідники.СеріїНоменклатури_Pointer Серія { get; set; } = new Довідники.СеріїНоменклатури_Pointer();
             public Довідники.ПакуванняОдиниціВиміру_Pointer Пакування { get; set; } = new Довідники.ПакуванняОдиниціВиміру_Pointer();
-            public int КількістьУпаковок { get; set; } = 0;
+            public decimal Коєфіціент { get; set; } = 0;
             public decimal Кількість { get; set; } = 0;
             public Довідники.СкладськіКомірки_Pointer КоміркаВідправник { get; set; } = new Довідники.СкладськіКомірки_Pointer();
             public Довідники.СкладськіКомірки_Pointer КоміркаОтримувач { get; set; } = new Довідники.СкладськіКомірки_Pointer();
@@ -30618,7 +30892,7 @@ namespace GeneratedCode.Документи
         public const string ХарактеристикаНоменклатури = "col_a3";
         public const string Серія = "col_a4";
         public const string Пакування = "col_a5";
-        public const string КількістьУпаковок = "col_a6";
+        public const string Коєфіціент = "col_a6";
         public const string Кількість = "col_a7";
         public const string Комірка = "col_a8";
 
@@ -30676,7 +30950,7 @@ namespace GeneratedCode.Документи
                     ХарактеристикаНоменклатури = new Довідники.ХарактеристикиНоменклатури_Pointer(fieldValue["col_a3"]),
                     Серія = new Довідники.СеріїНоменклатури_Pointer(fieldValue["col_a4"]),
                     Пакування = new Довідники.ПакуванняОдиниціВиміру_Pointer(fieldValue["col_a5"]),
-                    КількістьУпаковок = (fieldValue["col_a6"] != DBNull.Value) ? (int)fieldValue["col_a6"] : 0,
+                    Коєфіціент = (fieldValue["col_a6"] != DBNull.Value) ? (decimal)fieldValue["col_a6"] : 0,
                     Кількість = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
                     Комірка = new Довідники.СкладськіКомірки_Pointer(fieldValue["col_a8"]),
                     
@@ -30729,7 +31003,7 @@ namespace GeneratedCode.Документи
                     {"col_a3", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
                     {"col_a4", record.Серія.UniqueID.UGuid},
                     {"col_a5", record.Пакування.UniqueID.UGuid},
-                    {"col_a6", record.КількістьУпаковок},
+                    {"col_a6", record.Коєфіціент},
                     {"col_a7", record.Кількість},
                     {"col_a8", record.Комірка.UniqueID.UGuid},
                     
@@ -30761,7 +31035,7 @@ namespace GeneratedCode.Документи
                     ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
                     Серія = original.Серія.Copy(),
                     Пакування = original.Пакування.Copy(),
-                    КількістьУпаковок = original.КількістьУпаковок,
+                    Коєфіціент = original.Коєфіціент,
                     Кількість = original.Кількість,
                     Комірка = original.Комірка.Copy(),
                      
@@ -30778,7 +31052,7 @@ namespace GeneratedCode.Документи
             public Довідники.ХарактеристикиНоменклатури_Pointer ХарактеристикаНоменклатури { get; set; } = new Довідники.ХарактеристикиНоменклатури_Pointer();
             public Довідники.СеріїНоменклатури_Pointer Серія { get; set; } = new Довідники.СеріїНоменклатури_Pointer();
             public Довідники.ПакуванняОдиниціВиміру_Pointer Пакування { get; set; } = new Довідники.ПакуванняОдиниціВиміру_Pointer();
-            public int КількістьУпаковок { get; set; } = 0;
+            public decimal Коєфіціент { get; set; } = 0;
             public decimal Кількість { get; set; } = 0;
             public Довідники.СкладськіКомірки_Pointer Комірка { get; set; } = new Довідники.СкладськіКомірки_Pointer();
             
@@ -32314,7 +32588,7 @@ namespace GeneratedCode.Документи
         public const string Номенклатура = "col_b9";
         public const string ХарактеристикаНоменклатури = "col_c1";
         public const string Пакування = "col_c2";
-        public const string КількістьУпаковок = "col_c3";
+        public const string Коєфіціент = "col_c3";
         public const string Кількість = "col_c4";
         public const string Склад = "col_a1";
         public const string Ціна = "col_a3";
@@ -32370,7 +32644,7 @@ namespace GeneratedCode.Документи
                     Номенклатура = new Довідники.Номенклатура_Pointer(fieldValue["col_b9"]),
                     ХарактеристикаНоменклатури = new Довідники.ХарактеристикиНоменклатури_Pointer(fieldValue["col_c1"]),
                     Пакування = new Довідники.ПакуванняОдиниціВиміру_Pointer(fieldValue["col_c2"]),
-                    КількістьУпаковок = (fieldValue["col_c3"] != DBNull.Value) ? (int)fieldValue["col_c3"] : 0,
+                    Коєфіціент = (fieldValue["col_c3"] != DBNull.Value) ? (decimal)fieldValue["col_c3"] : 0,
                     Кількість = (fieldValue["col_c4"] != DBNull.Value) ? (decimal)fieldValue["col_c4"] : 0,
                     Склад = new Довідники.Склади_Pointer(fieldValue["col_a1"]),
                     Ціна = (fieldValue["col_a3"] != DBNull.Value) ? (decimal)fieldValue["col_a3"] : 0,
@@ -32423,7 +32697,7 @@ namespace GeneratedCode.Документи
                     {"col_b9", record.Номенклатура.UniqueID.UGuid},
                     {"col_c1", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
                     {"col_c2", record.Пакування.UniqueID.UGuid},
-                    {"col_c3", record.КількістьУпаковок},
+                    {"col_c3", record.Коєфіціент},
                     {"col_c4", record.Кількість},
                     {"col_a1", record.Склад.UniqueID.UGuid},
                     {"col_a3", record.Ціна},
@@ -32456,7 +32730,7 @@ namespace GeneratedCode.Документи
                     Номенклатура = original.Номенклатура.Copy(),
                     ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
                     Пакування = original.Пакування.Copy(),
-                    КількістьУпаковок = original.КількістьУпаковок,
+                    Коєфіціент = original.Коєфіціент,
                     Кількість = original.Кількість,
                     Склад = original.Склад.Copy(),
                     Ціна = original.Ціна,
@@ -32474,7 +32748,7 @@ namespace GeneratedCode.Документи
             public Довідники.Номенклатура_Pointer Номенклатура { get; set; } = new Довідники.Номенклатура_Pointer();
             public Довідники.ХарактеристикиНоменклатури_Pointer ХарактеристикаНоменклатури { get; set; } = new Довідники.ХарактеристикиНоменклатури_Pointer();
             public Довідники.ПакуванняОдиниціВиміру_Pointer Пакування { get; set; } = new Довідники.ПакуванняОдиниціВиміру_Pointer();
-            public int КількістьУпаковок { get; set; } = 0;
+            public decimal Коєфіціент { get; set; } = 0;
             public decimal Кількість { get; set; } = 0;
             public Довідники.Склади_Pointer Склад { get; set; } = new Довідники.Склади_Pointer();
             public decimal Ціна { get; set; } = 0;
@@ -32865,7 +33139,7 @@ namespace GeneratedCode.Документи
         public const string Номенклатура = "col_b9";
         public const string ХарактеристикаНоменклатури = "col_c1";
         public const string Пакування = "col_c2";
-        public const string КількістьУпаковок = "col_c3";
+        public const string Коєфіціент = "col_c3";
         public const string Кількість = "col_c4";
         public const string Склад = "col_a1";
         public const string Ціна = "col_a3";
@@ -32921,7 +33195,7 @@ namespace GeneratedCode.Документи
                     Номенклатура = new Довідники.Номенклатура_Pointer(fieldValue["col_b9"]),
                     ХарактеристикаНоменклатури = new Довідники.ХарактеристикиНоменклатури_Pointer(fieldValue["col_c1"]),
                     Пакування = new Довідники.ПакуванняОдиниціВиміру_Pointer(fieldValue["col_c2"]),
-                    КількістьУпаковок = (fieldValue["col_c3"] != DBNull.Value) ? (int)fieldValue["col_c3"] : 0,
+                    Коєфіціент = (fieldValue["col_c3"] != DBNull.Value) ? (decimal)fieldValue["col_c3"] : 0,
                     Кількість = (fieldValue["col_c4"] != DBNull.Value) ? (decimal)fieldValue["col_c4"] : 0,
                     Склад = new Довідники.Склади_Pointer(fieldValue["col_a1"]),
                     Ціна = (fieldValue["col_a3"] != DBNull.Value) ? (decimal)fieldValue["col_a3"] : 0,
@@ -32974,7 +33248,7 @@ namespace GeneratedCode.Документи
                     {"col_b9", record.Номенклатура.UniqueID.UGuid},
                     {"col_c1", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
                     {"col_c2", record.Пакування.UniqueID.UGuid},
-                    {"col_c3", record.КількістьУпаковок},
+                    {"col_c3", record.Коєфіціент},
                     {"col_c4", record.Кількість},
                     {"col_a1", record.Склад.UniqueID.UGuid},
                     {"col_a3", record.Ціна},
@@ -33007,7 +33281,7 @@ namespace GeneratedCode.Документи
                     Номенклатура = original.Номенклатура.Copy(),
                     ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
                     Пакування = original.Пакування.Copy(),
-                    КількістьУпаковок = original.КількістьУпаковок,
+                    Коєфіціент = original.Коєфіціент,
                     Кількість = original.Кількість,
                     Склад = original.Склад.Copy(),
                     Ціна = original.Ціна,
@@ -33025,7 +33299,7 @@ namespace GeneratedCode.Документи
             public Довідники.Номенклатура_Pointer Номенклатура { get; set; } = new Довідники.Номенклатура_Pointer();
             public Довідники.ХарактеристикиНоменклатури_Pointer ХарактеристикаНоменклатури { get; set; } = new Довідники.ХарактеристикиНоменклатури_Pointer();
             public Довідники.ПакуванняОдиниціВиміру_Pointer Пакування { get; set; } = new Довідники.ПакуванняОдиниціВиміру_Pointer();
-            public int КількістьУпаковок { get; set; } = 0;
+            public decimal Коєфіціент { get; set; } = 0;
             public decimal Кількість { get; set; } = 0;
             public Довідники.Склади_Pointer Склад { get; set; } = new Довідники.Склади_Pointer();
             public decimal Ціна { get; set; } = 0;
@@ -33416,7 +33690,7 @@ namespace GeneratedCode.Документи
         public const string Номенклатура = "col_b9";
         public const string ХарактеристикаНоменклатури = "col_c1";
         public const string Пакування = "col_c2";
-        public const string КількістьУпаковок = "col_c3";
+        public const string Коєфіціент = "col_c3";
         public const string Кількість = "col_c4";
         public const string Склад = "col_a1";
         public const string Ціна = "col_a3";
@@ -33472,7 +33746,7 @@ namespace GeneratedCode.Документи
                     Номенклатура = new Довідники.Номенклатура_Pointer(fieldValue["col_b9"]),
                     ХарактеристикаНоменклатури = new Довідники.ХарактеристикиНоменклатури_Pointer(fieldValue["col_c1"]),
                     Пакування = new Довідники.ПакуванняОдиниціВиміру_Pointer(fieldValue["col_c2"]),
-                    КількістьУпаковок = (fieldValue["col_c3"] != DBNull.Value) ? (int)fieldValue["col_c3"] : 0,
+                    Коєфіціент = (fieldValue["col_c3"] != DBNull.Value) ? (decimal)fieldValue["col_c3"] : 0,
                     Кількість = (fieldValue["col_c4"] != DBNull.Value) ? (decimal)fieldValue["col_c4"] : 0,
                     Склад = new Довідники.Склади_Pointer(fieldValue["col_a1"]),
                     Ціна = (fieldValue["col_a3"] != DBNull.Value) ? (decimal)fieldValue["col_a3"] : 0,
@@ -33525,7 +33799,7 @@ namespace GeneratedCode.Документи
                     {"col_b9", record.Номенклатура.UniqueID.UGuid},
                     {"col_c1", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
                     {"col_c2", record.Пакування.UniqueID.UGuid},
-                    {"col_c3", record.КількістьУпаковок},
+                    {"col_c3", record.Коєфіціент},
                     {"col_c4", record.Кількість},
                     {"col_a1", record.Склад.UniqueID.UGuid},
                     {"col_a3", record.Ціна},
@@ -33558,7 +33832,7 @@ namespace GeneratedCode.Документи
                     Номенклатура = original.Номенклатура.Copy(),
                     ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
                     Пакування = original.Пакування.Copy(),
-                    КількістьУпаковок = original.КількістьУпаковок,
+                    Коєфіціент = original.Коєфіціент,
                     Кількість = original.Кількість,
                     Склад = original.Склад.Copy(),
                     Ціна = original.Ціна,
@@ -33576,7 +33850,7 @@ namespace GeneratedCode.Документи
             public Довідники.Номенклатура_Pointer Номенклатура { get; set; } = new Довідники.Номенклатура_Pointer();
             public Довідники.ХарактеристикиНоменклатури_Pointer ХарактеристикаНоменклатури { get; set; } = new Довідники.ХарактеристикиНоменклатури_Pointer();
             public Довідники.ПакуванняОдиниціВиміру_Pointer Пакування { get; set; } = new Довідники.ПакуванняОдиниціВиміру_Pointer();
-            public int КількістьУпаковок { get; set; } = 0;
+            public decimal Коєфіціент { get; set; } = 0;
             public decimal Кількість { get; set; } = 0;
             public Довідники.Склади_Pointer Склад { get; set; } = new Довідники.Склади_Pointer();
             public decimal Ціна { get; set; } = 0;
@@ -33958,7 +34232,7 @@ namespace GeneratedCode.Документи
         public const string ХарактеристикаНоменклатури = "col_a3";
         public const string Серія = "col_a4";
         public const string Пакування = "col_a5";
-        public const string КількістьУпаковок = "col_a6";
+        public const string Коєфіціент = "col_a6";
         public const string Кількість = "col_a7";
         public const string Ціна = "col_a8";
         public const string Сума = "col_a9";
@@ -34020,7 +34294,7 @@ namespace GeneratedCode.Документи
                     ХарактеристикаНоменклатури = new Довідники.ХарактеристикиНоменклатури_Pointer(fieldValue["col_a3"]),
                     Серія = new Довідники.СеріїНоменклатури_Pointer(fieldValue["col_a4"]),
                     Пакування = new Довідники.ПакуванняОдиниціВиміру_Pointer(fieldValue["col_a5"]),
-                    КількістьУпаковок = (fieldValue["col_a6"] != DBNull.Value) ? (int)fieldValue["col_a6"] : 0,
+                    Коєфіціент = (fieldValue["col_a6"] != DBNull.Value) ? (decimal)fieldValue["col_a6"] : 0,
                     Кількість = (fieldValue["col_a7"] != DBNull.Value) ? (decimal)fieldValue["col_a7"] : 0,
                     Ціна = (fieldValue["col_a8"] != DBNull.Value) ? (decimal)fieldValue["col_a8"] : 0,
                     Сума = (fieldValue["col_a9"] != DBNull.Value) ? (decimal)fieldValue["col_a9"] : 0,
@@ -34077,7 +34351,7 @@ namespace GeneratedCode.Документи
                     {"col_a3", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
                     {"col_a4", record.Серія.UniqueID.UGuid},
                     {"col_a5", record.Пакування.UniqueID.UGuid},
-                    {"col_a6", record.КількістьУпаковок},
+                    {"col_a6", record.Коєфіціент},
                     {"col_a7", record.Кількість},
                     {"col_a8", record.Ціна},
                     {"col_a9", record.Сума},
@@ -34113,7 +34387,7 @@ namespace GeneratedCode.Документи
                     ХарактеристикаНоменклатури = original.ХарактеристикаНоменклатури.Copy(),
                     Серія = original.Серія.Copy(),
                     Пакування = original.Пакування.Copy(),
-                    КількістьУпаковок = original.КількістьУпаковок,
+                    Коєфіціент = original.Коєфіціент,
                     Кількість = original.Кількість,
                     Ціна = original.Ціна,
                     Сума = original.Сума,
@@ -34134,7 +34408,7 @@ namespace GeneratedCode.Документи
             public Довідники.ХарактеристикиНоменклатури_Pointer ХарактеристикаНоменклатури { get; set; } = new Довідники.ХарактеристикиНоменклатури_Pointer();
             public Довідники.СеріїНоменклатури_Pointer Серія { get; set; } = new Довідники.СеріїНоменклатури_Pointer();
             public Довідники.ПакуванняОдиниціВиміру_Pointer Пакування { get; set; } = new Довідники.ПакуванняОдиниціВиміру_Pointer();
-            public int КількістьУпаковок { get; set; } = 0;
+            public decimal Коєфіціент { get; set; } = 0;
             public decimal Кількість { get; set; } = 0;
             public decimal Ціна { get; set; } = 0;
             public decimal Сума { get; set; } = 0;
@@ -36620,7 +36894,7 @@ namespace GeneratedCode.Документи
     public class ВиготовленняПродукції_ГотовийВиріб_TablePart : DocumentTablePart
     {
         public ВиготовленняПродукції_ГотовийВиріб_TablePart(ВиготовленняПродукції_Object owner) : base(Config.Kernel, "tab_c38",
-             ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", ])
+             ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_a9", "col_b1", "col_b2", ])
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
@@ -36640,6 +36914,8 @@ namespace GeneratedCode.Документи
         public const string ОдиницяВиміру = "col_a7";
         public const string Кількість = "col_a8";
         public const string Коментар = "col_a9";
+        public const string Серія = "col_b1";
+        public const string Коєфіціент = "col_b2";
 
         public ВиготовленняПродукції_Object Owner { get; private set; }
         
@@ -36678,6 +36954,9 @@ namespace GeneratedCode.Документи
                       /* pointer */
                       Довідники.ПакуванняОдиниціВиміру_Pointer.GetJoin(QuerySelect, ОдиницяВиміру, $"{TABLE}", "join_tab_7", "ОдиницяВиміру");
                   
+                      /* pointer */
+                      Довідники.СеріїНоменклатури_Pointer.GetJoin(QuerySelect, Серія, $"{TABLE}", "join_tab_10", "Серія");
+                  
         }
 
         public async Task Read()
@@ -36699,6 +36978,8 @@ namespace GeneratedCode.Документи
                     ОдиницяВиміру = new Довідники.ПакуванняОдиниціВиміру_Pointer(fieldValue["col_a7"]),
                     Кількість = (fieldValue["col_a8"] != DBNull.Value) ? (decimal)fieldValue["col_a8"] : 0,
                     Коментар = fieldValue["col_a9"].ToString() ?? "",
+                    Серія = new Довідники.СеріїНоменклатури_Pointer(fieldValue["col_b1"]),
+                    Коєфіціент = (fieldValue["col_b2"] != DBNull.Value) ? (decimal)fieldValue["col_b2"] : 0,
                     
                 };
                 Records.Add(record);
@@ -36711,6 +36992,7 @@ namespace GeneratedCode.Документи
                       record.Замовлення.Name = ItemValue["Замовлення"];
                       record.Склад.Name = ItemValue["Склад"];
                       record.ОдиницяВиміру.Name = ItemValue["ОдиницяВиміру"];
+                      record.Серія.Name = ItemValue["Серія"];
                       
                 }
                 
@@ -36749,6 +37031,8 @@ namespace GeneratedCode.Документи
                     {"col_a7", record.ОдиницяВиміру.UniqueID.UGuid},
                     {"col_a8", record.Кількість},
                     {"col_a9", record.Коментар},
+                    {"col_b1", record.Серія.UniqueID.UGuid},
+                    {"col_b2", record.Коєфіціент},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -36778,6 +37062,8 @@ namespace GeneratedCode.Документи
                     ОдиницяВиміру = original.ОдиницяВиміру.Copy(),
                     Кількість = original.Кількість,
                     Коментар = original.Коментар,
+                    Серія = original.Серія.Copy(),
+                    Коєфіціент = original.Коєфіціент,
                      
                 });
             }
@@ -36796,6 +37082,8 @@ namespace GeneratedCode.Документи
             public Довідники.ПакуванняОдиниціВиміру_Pointer ОдиницяВиміру { get; set; } = new Довідники.ПакуванняОдиниціВиміру_Pointer();
             public decimal Кількість { get; set; } = 0;
             public string Коментар { get; set; } = "";
+            public Довідники.СеріїНоменклатури_Pointer Серія { get; set; } = new Довідники.СеріїНоменклатури_Pointer();
+            public decimal Коєфіціент { get; set; } = 0;
             
         }
     }
@@ -36825,7 +37113,7 @@ namespace GeneratedCode.Документи
         public const string Кількість = "col_b3";
         public const string Коментар = "col_b4";
         public const string Серія = "col_a2";
-        public const string КількістьУпаковок = "col_a3";
+        public const string Коєфіціент = "col_a3";
 
         public ВиготовленняПродукції_Object Owner { get; private set; }
         
@@ -36889,7 +37177,7 @@ namespace GeneratedCode.Документи
                     Кількість = (fieldValue["col_b3"] != DBNull.Value) ? (decimal)fieldValue["col_b3"] : 0,
                     Коментар = fieldValue["col_b4"].ToString() ?? "",
                     Серія = new Довідники.СеріїНоменклатури_Pointer(fieldValue["col_a2"]),
-                    КількістьУпаковок = (fieldValue["col_a3"] != DBNull.Value) ? (int)fieldValue["col_a3"] : 0,
+                    Коєфіціент = (fieldValue["col_a3"] != DBNull.Value) ? (decimal)fieldValue["col_a3"] : 0,
                     
                 };
                 Records.Add(record);
@@ -36942,7 +37230,7 @@ namespace GeneratedCode.Документи
                     {"col_b3", record.Кількість},
                     {"col_b4", record.Коментар},
                     {"col_a2", record.Серія.UniqueID.UGuid},
-                    {"col_a3", record.КількістьУпаковок},
+                    {"col_a3", record.Коєфіціент},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -36973,7 +37261,7 @@ namespace GeneratedCode.Документи
                     Кількість = original.Кількість,
                     Коментар = original.Коментар,
                     Серія = original.Серія.Copy(),
-                    КількістьУпаковок = original.КількістьУпаковок,
+                    Коєфіціент = original.Коєфіціент,
                      
                 });
             }
@@ -36993,7 +37281,7 @@ namespace GeneratedCode.Документи
             public decimal Кількість { get; set; } = 0;
             public string Коментар { get; set; } = "";
             public Довідники.СеріїНоменклатури_Pointer Серія { get; set; } = new Довідники.СеріїНоменклатури_Pointer();
-            public int КількістьУпаковок { get; set; } = 0;
+            public decimal Коєфіціент { get; set; } = 0;
             
         }
     }
@@ -37002,7 +37290,7 @@ namespace GeneratedCode.Документи
     public class ВиготовленняПродукції_Проводки_TablePart : DocumentTablePart
     {
         public ВиготовленняПродукції_Проводки_TablePart(ВиготовленняПродукції_Object owner) : base(Config.Kernel, "tab_c41",
-             ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_b3", "col_b4", "col_b5", "col_b6", "col_b7", ])
+             ["col_a1", "col_a2", "col_a3", "col_a4", "col_a5", "col_a6", "col_a7", "col_a8", "col_b3", "col_b4", "col_b5", "col_b6", "col_b7", "col_a9", ])
         {
             if (owner == null) throw new Exception("owner null");
             Owner = owner;
@@ -37026,6 +37314,7 @@ namespace GeneratedCode.Документи
         public const string КорАналітика1 = "col_b5";
         public const string КорАналітика2 = "col_b6";
         public const string КорАналітика3 = "col_b7";
+        public const string Податки = "col_a9";
 
         public ВиготовленняПродукції_Object Owner { get; private set; }
         
@@ -37073,6 +37362,9 @@ namespace GeneratedCode.Документи
                       /* composite_pointer */
                       QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({TABLE}.{КорАналітика3})", "КорАналітика3"));
                   
+                      /* pointer */
+                      Довідники.ВидиПодатків_Pointer.GetJoin(QuerySelect, Податки, $"{TABLE}", "join_tab_14", "Податки");
+                  
         }
 
         public async Task Read()
@@ -37098,6 +37390,7 @@ namespace GeneratedCode.Документи
                     КорАналітика1 = (fieldValue["col_b5"] != DBNull.Value) ? (UuidAndText)fieldValue["col_b5"] : new UuidAndText(),
                     КорАналітика2 = (fieldValue["col_b6"] != DBNull.Value) ? (UuidAndText)fieldValue["col_b6"] : new UuidAndText(),
                     КорАналітика3 = (fieldValue["col_b7"] != DBNull.Value) ? (UuidAndText)fieldValue["col_b7"] : new UuidAndText(),
+                    Податки = new Довідники.ВидиПодатків_Pointer(fieldValue["col_a9"]),
                     
                 };
                 Records.Add(record);
@@ -37113,6 +37406,7 @@ namespace GeneratedCode.Документи
                       record.КорАналітика1.Name = ItemValue["КорАналітика1"];
                       record.КорАналітика2.Name = ItemValue["КорАналітика2"];
                       record.КорАналітика3.Name = ItemValue["КорАналітика3"];
+                      record.Податки.Name = ItemValue["Податки"];
                       
                 }
                 
@@ -37155,6 +37449,7 @@ namespace GeneratedCode.Документи
                     {"col_b5", record.КорАналітика1},
                     {"col_b6", record.КорАналітика2},
                     {"col_b7", record.КорАналітика3},
+                    {"col_a9", record.Податки.UniqueID.UGuid},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -37190,6 +37485,7 @@ namespace GeneratedCode.Документи
                     КорАналітика1 = original.КорАналітика1.Copy(),
                     КорАналітика2 = original.КорАналітика2.Copy(),
                     КорАналітика3 = original.КорАналітика3.Copy(),
+                    Податки = original.Податки.Copy(),
                      
                 });
             }
@@ -37212,6 +37508,7 @@ namespace GeneratedCode.Документи
             public UuidAndText КорАналітика1 { get; set; } = new UuidAndText();
             public UuidAndText КорАналітика2 { get; set; } = new UuidAndText();
             public UuidAndText КорАналітика3 { get; set; } = new UuidAndText();
+            public Довідники.ВидиПодатків_Pointer Податки { get; set; } = new Довідники.ВидиПодатків_Pointer();
             
         }
     }

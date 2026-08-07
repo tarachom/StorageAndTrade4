@@ -1,7 +1,7 @@
 
 
 /*     
-        ПакуванняОдиниціВиміру_PointerTablePartCell.cs
+        КласифікаторОдиницьВиміру_PointerTablePartCell.cs
         PointerTablePartCell
 */
 using Gtk;
@@ -11,13 +11,13 @@ using AccountingSoftware;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<PointerTablePartCell>("PointerTablePartCell_btafAekVGHaOwmOh6YLPJw")]
-public partial class ПакуванняОдиниціВиміру_PointerTablePartCell : PointerTablePartCell
+[GObject.Subclass<PointerTablePartCell>("PointerTablePartCell_SdafAZLMxX2bg5jQXJsYw")]
+public partial class КласифікаторОдиницьВиміру_PointerTablePartCell : PointerTablePartCell
 {
-    public static ПакуванняОдиниціВиміру_PointerTablePartCell New() => NewWithProperties([]);
+    public static КласифікаторОдиницьВиміру_PointerTablePartCell New() => NewWithProperties([]);
 
-    ПакуванняОдиниціВиміру_Pointer pointer = new();
-    public ПакуванняОдиниціВиміру_Pointer Pointer
+    КласифікаторОдиницьВиміру_Pointer pointer = new();
+    public КласифікаторОдиницьВиміру_Pointer Pointer
     {
         get => pointer;
         set
@@ -31,13 +31,11 @@ public partial class ПакуванняОдиниціВиміру_PointerTablePa
 
     async Task PointerChange(UniqueID? p)
     {
-        Pointer = new ПакуванняОдиниціВиміру_Pointer(p ?? new UniqueID());
+        Pointer = new КласифікаторОдиницьВиміру_Pointer(p ?? new UniqueID());
         await GetPresentation();
         OnSelect?.Invoke();
     }
 
-    
-    public Номенклатура_Pointer Власник { get; set; } = new Номенклатура_Pointer();
     
 
     protected override async void Select(Button button, EventArgs args)
@@ -48,7 +46,7 @@ public partial class ПакуванняОдиниціВиміру_PointerTablePa
         popover.HeightRequest = 400;
         BeforeClickOpenFunc?.Invoke();
 
-        ПакуванняОдиниціВиміру_ШвидкийВибір page = ПакуванняОдиниціВиміру_ШвидкийВибір.New();
+        КласифікаторОдиницьВиміру_ШвидкийВибір page = КласифікаторОдиницьВиміру_ШвидкийВибір.New();
         page.PopoverParent = popover;
             
         page.DirectoryPointerItem = pointer.UniqueID;
@@ -57,8 +55,6 @@ public partial class ПакуванняОдиниціВиміру_PointerTablePa
             await PointerChange(p);
             AfterSelectFunc?.Invoke();
         };
-        
-        page.Власник.Pointer = Власник;
         
 
         popover.SetChild(page);

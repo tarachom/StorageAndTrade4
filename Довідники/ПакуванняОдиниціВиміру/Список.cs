@@ -14,10 +14,10 @@ using Функції = StorageAndTrade.ПакуванняОдиниціВимі�
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<DirectoryFormJournalFull>("List_pYRWBtMFJ02LUxk1GRow")]
+[GObject.Subclass<DirectoryFormJournalFull>("List_bdafAWnFVXGLfigZaovOQ")]
 partial class ПакуванняОдиниціВиміру_Список : DirectoryFormJournalFull
 {
-    
+    public Номенклатура_PointerControl Власник = Номенклатура_PointerControl.New();
     
     partial void Initialize()
     {
@@ -25,7 +25,17 @@ partial class ПакуванняОдиниціВиміру_Список : Direct
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
 
-        
+        //Власник
+        {
+            Власник.Caption = "Номенклатура:";
+            HBoxTop.Append(Власник);
+            OwnerWhereListFunc = () => Власник.Pointer.IsEmpty() ? [] : [new(ПакуванняОдиниціВиміру_Const.Номенклатура, Comparison.EQ, Власник.Pointer.UniqueID.UGuid)];
+            Власник.AfterSelectFunc = async () =>
+            {
+                PagesClear();
+                await LoadRecords();
+            };
+        }
     }
 
     public static ПакуванняОдиниціВиміру_Список New()
@@ -58,7 +68,7 @@ partial class ПакуванняОдиниціВиміру_Список : Direct
 
     protected override async Task OpenPageElement(bool IsNew, UniqueID? uniqueID = null)
     {
-        await Функції.OpenPageElement(IsNew, uniqueID, CallBack_LoadRecords, CallBack_OnSelectPointer);
+        await Функції.OpenPageElement(IsNew, uniqueID, CallBack_LoadRecords, CallBack_OnSelectPointer, Власник.Pointer);
     }
 
     protected override async Task SetDeletionLabel(UniqueID uniqueID)

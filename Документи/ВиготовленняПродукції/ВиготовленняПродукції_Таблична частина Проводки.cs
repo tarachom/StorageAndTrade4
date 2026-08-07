@@ -259,6 +259,23 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
         UuidAndText КорАналітика3_ = new();
         public Action? Сhanged_КорАналітика3 { get; set; } = null;
 
+
+        /* Податки */
+        public ВидиПодатків_Pointer Податки
+        {
+            get => Податки_;
+            set
+            {
+                if (!Податки_.Equals(value))
+                {
+                    Податки_ = value;
+                    Сhanged_Податки?.Invoke();
+                }
+            }
+        }
+        ВидиПодатків_Pointer Податки_ = new();
+        public Action? Сhanged_Податки { get; set; } = null;
+
         /*
         Функції
         */
@@ -279,6 +296,7 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
             row.КорАналітика1 = КорАналітика1.Copy();
             row.КорАналітика2 = КорАналітика2.Copy();
             row.КорАналітика3 = КорАналітика3.Copy();
+            row.Податки = Податки.Copy();
 
             return row;
         }
@@ -507,9 +525,11 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
                 (ПланРахунків_Pointer РахунокЗапаси, Статті_Pointer _) =
                     await ФункціїДляБух.РахунокЗНоменклатуриАбоСкладу("РахунокОбліку", "СтаттяВитрат", Рядок.Номенклатура, Рядок.Склад, "201");
 
+                decimal Кількість = Рядок.Кількість * Рядок.Коєфіціент;
+
                 decimal? СумаСобівартістьПартії = await ОбчислитиСобівартість(
                     Рядок.НомерРядка, Рядок.Номенклатура, Рядок.ХарактеристикаНоменклатури,
-                    Рядок.Серія, Рядок.Склад, Рядок.Партія, Рядок.Кількість);
+                    Рядок.Серія, Рядок.Склад, Рядок.Партія, Кількість);
 
                 if (!СумаСобівартістьПартії.HasValue) return; //Обриваєм обчислення
 
@@ -520,7 +540,7 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
                     var row = ItemRow.New();
                     row.Рахунок = РахунокЗапаси;
                     row.Кредит = СумаСобівартістьПартії.Value;
-                    row.Кількість = Рядок.Кількість;
+                    row.Кількість = Кількість;
 
                     row.ВидПроводки = ВидиПроводок.Кредит;
                     row.Аналітика1 = new UuidAndText(Рядок.Склад);
@@ -556,6 +576,8 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
                 (ПланРахунків_Pointer РахунокЗапаси, Статті_Pointer _) =
                     await ФункціїДляБух.РахунокЗНоменклатуриАбоСкладу("РахунокОбліку", "СтаттяВитрат", Рядок.Номенклатура, Рядок.Склад, "26");
 
+                decimal Кількість = Рядок.Кількість * Рядок.Коєфіціент;
+
                 //Кредит
                 {
                     var row = ItemRow.New();
@@ -578,7 +600,7 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
                     var row = ItemRow.New();
                     row.Рахунок = РахунокЗапаси;
                     row.Дебет = ЗагальнаСумаСобівартістьПартії;
-                    row.Кількість = Рядок.Кількість;
+                    row.Кількість = Кількість;
 
                     row.ВидПроводки = ВидиПроводок.Дебет;
                     row.Аналітика1 = new UuidAndText(Рядок.Склад);
@@ -905,6 +927,36 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
             Grid.AppendColumn(column);
         }
 
+        //Податки
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                var cell = ВидиПодатків_PointerTablePartCell.New();
+
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not ВидиПодатків_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnSelect = () => row.Податки = cell.Pointer;
+                (row.Сhanged_Податки = () => cell.Pointer = row.Податки).Invoke();
+
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("Податки", factory);
+            column.Resizable = true;
+            column.FixedWidth = 300;
+
+            column.Visible = false;
+            ПереключательВидимостіКолонок.OnToggled += (_, _) => column.Visible = ПереключательВидимостіКолонок.Active;
+
+            Grid.AppendColumn(column);
+        }
+
         { /* Пуста колонка для заповнення вільного простору */
             ColumnViewColumn column = ColumnViewColumn.New(null, null);
             column.Resizable = true;
@@ -939,6 +991,7 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
                 row.КорАналітика1 = record.КорАналітика1;
                 row.КорАналітика2 = record.КорАналітика2;
                 row.КорАналітика3 = record.КорАналітика3;
+                row.Податки = record.Податки;
 
                 Store.Append(row);
 
@@ -977,6 +1030,7 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
                         КорАналітика1 = row.КорАналітика1,
                         КорАналітика2 = row.КорАналітика2,
                         КорАналітика3 = row.КорАналітика3,
+                        Податки = row.Податки,
                     });
                 }
             }
@@ -1006,6 +1060,7 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
                     row.КорАналітика1 = x.КорАналітика1;
                     row.КорАналітика2 = x.КорАналітика2;
                     row.КорАналітика3 = x.КорАналітика3;
+                    row.Податки = x.Податки;
 
                     return row;
                 });

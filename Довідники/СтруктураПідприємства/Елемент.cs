@@ -72,12 +72,13 @@ partial class СтруктураПідприємства_Елемент : Direct
 
     #region Interface
 
-    FunctionForInterfaces.DirectoryElementSmall Interface = FunctionForInterfaces.ForDirectorySmall();
+    FunctionForInterfaces.DirectoryElement Interface = FunctionForInterfaces.ForDirectory();
 
     protected override void BuildInterface()
     {
         Append(Interface.MainBox);
         CreateStart(Interface.TopStartBox);
+        CreateEnd(Interface.TopEndBox);
     }
 
     void CreateStart(Box vBox)
@@ -91,11 +92,14 @@ partial class СтруктураПідприємства_Елемент : Direct
         // Родич
         CreateField(vBox, null, Родич);
 
-        // Склад
-        CreateField(vBox, null, Склад);
-
         // Категорія
         CreateField(vBox, null, Категорія);
+    }
+
+    void CreateEnd(Box vBox)
+    {
+        // Склад
+        CreateField(vBox, null, Склад);
 
         // Керівник
         CreateField(vBox, null, Керівник);

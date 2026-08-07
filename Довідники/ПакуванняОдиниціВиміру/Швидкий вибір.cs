@@ -14,11 +14,11 @@ using Функції = StorageAndTrade.ПакуванняОдиниціВимі�
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<DirectoryFormJournalSmall>("SmallList_POgvDJ36DUia8OvfcSRbpw")]
+[GObject.Subclass<DirectoryFormJournalSmall>("SmallList_bdafAdPs0HaZzhL0vgpZQ")]
 partial class ПакуванняОдиниціВиміру_ШвидкийВибір : DirectoryFormJournalSmall
 {
-    
-    
+    public Номенклатура_PointerControl Власник = Номенклатура_PointerControl.New();
+
     partial void Initialize()
     {
         TypeName = ПакуванняОдиниціВиміру_Const.POINTER;
@@ -26,7 +26,26 @@ partial class ПакуванняОдиниціВиміру_ШвидкийВиб�
         ТабличнийСписок.AddColumn(this);
         SetPagesSettings(50);
 
-        
+        //Власник
+        {
+            Власник.Caption = "Номенклатура:";
+            HBoxTop.Append(Власник);
+            OwnerWhereListFunc = () => Власник.Pointer.IsEmpty() ? [] : [new(ПакуванняОдиниціВиміру_Const.Номенклатура, Comparison.EQ, Власник.Pointer.UniqueID.UGuid)];
+            Власник.AfterSelectFunc = async () =>
+            {
+                PagesClear();
+                await LoadRecords();
+            };
+        }
+    }
+
+    /// <summary>
+    /// Приховує певні елементи форми. 
+    /// Використовується коли форма втроєна як елемент інших форм
+    /// </summary>
+    public void ПриховатиЕлементиФорми()
+    {
+        HBoxTop.Visible = false;
     }
 
     public static ПакуванняОдиниціВиміру_ШвидкийВибір New()
@@ -41,7 +60,7 @@ partial class ПакуванняОдиниціВиміру_ШвидкийВиб�
     {
         await ТабличнийСписок.LoadRecords(this);
     }
-    
+
     public override async Task UpdateRecords()
     {
         await ТабличнийСписок.UpdateRecords(this);
@@ -59,12 +78,12 @@ partial class ПакуванняОдиниціВиміру_ШвидкийВиб�
 
     protected override async Task OpenPageList(UniqueID? uniqueID = null)
     {
-        await Функції.OpenPageList(uniqueID, AllowedContentSelection, OpenFolder, CallBack_OnSelectPointer);
+        await Функції.OpenPageList(uniqueID, AllowedContentSelection, OpenFolder, CallBack_OnSelectPointer, Власник.Pointer);
     }
 
     protected override async Task OpenPageElement(bool IsNew, UniqueID? uniqueID = null)
     {
-        await Функції.OpenPageElement(IsNew, uniqueID, CallBack_LoadRecords, CallBack_OnSelectPointer);
+        await Функції.OpenPageElement(IsNew, uniqueID, CallBack_LoadRecords, CallBack_OnSelectPointer, Власник.Pointer);
     }
 
     protected override async Task SetDeletionLabel(UniqueID uniqueID)
@@ -77,4 +96,3 @@ partial class ПакуванняОдиниціВиміру_ШвидкийВиб�
         return await Функції.Copy(uniqueID);
     }
 }
-    

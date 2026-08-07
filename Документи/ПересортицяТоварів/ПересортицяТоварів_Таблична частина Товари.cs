@@ -17,7 +17,7 @@ namespace StorageAndTrade;
 partial class ПересортицяТоварів_ТабличнаЧастина_Товари : DocumentFormTablePart
 {
     #region Data
-    
+
     [GObject.Subclass<GObject.Object>("ItemRow_lTCcxWMwqUOJYr02kw3Q")]
     public partial class ItemRow : IRowSubclassTablePart
     {
@@ -39,7 +39,7 @@ partial class ПересортицяТоварів_ТабличнаЧастин�
         UniqueID UnigueID_ = new();
         public Action? Сhanged_UnigueID { get; set; } = null;
 
-    
+
         /* НомерРядка */
         public int НомерРядка
         {
@@ -56,7 +56,7 @@ partial class ПересортицяТоварів_ТабличнаЧастин�
         int НомерРядка_ = 0;
         public Action? Сhanged_НомерРядка { get; set; } = null;
 
-    
+
         /* Номенклатура */
         public Номенклатура_Pointer Номенклатура
         {
@@ -73,7 +73,7 @@ partial class ПересортицяТоварів_ТабличнаЧастин�
         Номенклатура_Pointer Номенклатура_ = new();
         public Action? Сhanged_Номенклатура { get; set; } = null;
 
-    
+
         /* ХарактеристикаНоменклатури */
         public ХарактеристикиНоменклатури_Pointer ХарактеристикаНоменклатури
         {
@@ -90,7 +90,7 @@ partial class ПересортицяТоварів_ТабличнаЧастин�
         ХарактеристикиНоменклатури_Pointer ХарактеристикаНоменклатури_ = new();
         public Action? Сhanged_ХарактеристикаНоменклатури { get; set; } = null;
 
-    
+
         /* Кількість */
         public decimal Кількість
         {
@@ -107,7 +107,7 @@ partial class ПересортицяТоварів_ТабличнаЧастин�
         decimal Кількість_ = 0;
         public Action? Сhanged_Кількість { get; set; } = null;
 
-    
+
         /* Ціна */
         public decimal Ціна
         {
@@ -124,12 +124,12 @@ partial class ПересортицяТоварів_ТабличнаЧастин�
         decimal Ціна_ = 0;
         public Action? Сhanged_Ціна { get; set; } = null;
 
-    
+
 
         /*
         Функції
         */
-        
+
         public GObject.Object Copy()
         {
             var row = New();
@@ -138,17 +138,15 @@ partial class ПересортицяТоварів_ТабличнаЧастин�
             row.ХарактеристикаНоменклатури = ХарактеристикаНоменклатури.Copy();
             row.Кількість = Кількість;
             row.Ціна = Ціна;
-            
+
             return row;
         }
     }
 
     #endregion
 
-    
     public ПересортицяТоварів_Object? ЕлементВласник { get; set; }
-        
-    
+
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());
 
     partial void Initialize()
@@ -169,7 +167,6 @@ partial class ПересортицяТоварів_ТабличнаЧастин�
 
     protected override void Columns()
     {
-        
         //НомерРядка
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
@@ -177,9 +174,9 @@ partial class ПересортицяТоварів_ТабличнаЧастин�
             {
                 if (args.Object is not ListItem listItem) return;
                 var cell = LabelTablePartCell.New();
-                
+
                 cell.Halign = Align.End;
-                    
+
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
@@ -187,16 +184,16 @@ partial class ПересортицяТоварів_ТабличнаЧастин�
                 if (args.Object is not ListItem listItem) return;
                 if (listItem.Child is not LabelTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
-                
+
                 (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke();
-                    
+
             };
             ColumnViewColumn column = ColumnViewColumn.New("№", factory);
             column.Resizable = true;
-            
+
             Grid.AppendColumn(column);
         }
-        
+
         //Номенклатура
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
@@ -204,7 +201,7 @@ partial class ПересортицяТоварів_ТабличнаЧастин�
             {
                 if (args.Object is not ListItem listItem) return;
                 var cell = Номенклатура_PointerTablePartCell.New();
-                
+
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
@@ -212,19 +209,19 @@ partial class ПересортицяТоварів_ТабличнаЧастин�
                 if (args.Object is not ListItem listItem) return;
                 if (listItem.Child is not Номенклатура_PointerTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
-                
+
                 cell.OnSelect = () => row.Номенклатура = cell.Pointer;
                 (row.Сhanged_Номенклатура = () => cell.Pointer = row.Номенклатура).Invoke();
-                    
+
             };
             ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
             column.Resizable = true;
-            
+
             column.FixedWidth = 300;
-            
+
             Grid.AppendColumn(column);
         }
-        
+
         //ХарактеристикаНоменклатури
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
@@ -232,7 +229,7 @@ partial class ПересортицяТоварів_ТабличнаЧастин�
             {
                 if (args.Object is not ListItem listItem) return;
                 var cell = ХарактеристикиНоменклатури_PointerTablePartCell.New();
-                
+
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
@@ -240,21 +237,21 @@ partial class ПересортицяТоварів_ТабличнаЧастин�
                 if (args.Object is not ListItem listItem) return;
                 if (listItem.Child is not ХарактеристикиНоменклатури_PointerTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
-                
-                cell.BeforeClickOpenFunc = () => cell.Власник  = row.Номенклатура;
-                        
+
+                cell.BeforeClickOpenFunc = () => cell.Власник = row.Номенклатура;
+
                 cell.OnSelect = () => row.ХарактеристикаНоменклатури = cell.Pointer;
                 (row.Сhanged_ХарактеристикаНоменклатури = () => cell.Pointer = row.ХарактеристикаНоменклатури).Invoke();
-                    
+
             };
             ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
             column.Resizable = true;
-            
+
             column.FixedWidth = 300;
-            
+
             Grid.AppendColumn(column);
         }
-        
+
         //Кількість
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
@@ -262,7 +259,7 @@ partial class ПересортицяТоварів_ТабличнаЧастин�
             {
                 if (args.Object is not ListItem listItem) return;
                 var cell = NumericTablePartCell.New();
-                
+
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
@@ -270,17 +267,17 @@ partial class ПересортицяТоварів_ТабличнаЧастин�
                 if (args.Object is not ListItem listItem) return;
                 if (listItem.Child is not NumericTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
-                
+
                 cell.OnСhanged = () => row.Кількість = cell.Value;
                 (row.Сhanged_Кількість = () => cell.Value = row.Кількість).Invoke();
-                    
+
             };
             ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
             column.Resizable = true;
-            
+
             Grid.AppendColumn(column);
         }
-        
+
         //Ціна
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
@@ -288,7 +285,7 @@ partial class ПересортицяТоварів_ТабличнаЧастин�
             {
                 if (args.Object is not ListItem listItem) return;
                 var cell = NumericTablePartCell.New();
-                
+
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
@@ -296,17 +293,17 @@ partial class ПересортицяТоварів_ТабличнаЧастин�
                 if (args.Object is not ListItem listItem) return;
                 if (listItem.Child is not NumericTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
-                
+
                 cell.OnСhanged = () => row.Ціна = cell.Value;
                 (row.Сhanged_Ціна = () => cell.Value = row.Ціна).Invoke();
-                    
+
             };
             ColumnViewColumn column = ColumnViewColumn.New("Ціна", factory);
             column.Resizable = true;
-            
+
             Grid.AppendColumn(column);
         }
-        
+
         { /* Пуста колонка для заповнення вільного простору */
             ColumnViewColumn column = ColumnViewColumn.New(null, null);
             column.Resizable = true;
@@ -317,15 +314,15 @@ partial class ПересортицяТоварів_ТабличнаЧастин�
 
     public override async Task LoadRecords()
     {
-        
-        if (ЕлементВласник != null) 
+
+        if (ЕлементВласник != null)
         {
-            
+
             ЕлементВласник.Товари_TablePart.FillJoin([ПересортицяТоварів_Товари_TablePart.НомерРядка,]);
             await ЕлементВласник.Товари_TablePart.Read();
-            
+
             Store.RemoveAll();
-        
+
             foreach (var record in ЕлементВласник.Товари_TablePart.Records)
             {
                 var row = ItemRow.New();
@@ -335,7 +332,7 @@ partial class ПересортицяТоварів_ТабличнаЧастин�
                 row.ХарактеристикаНоменклатури = record.ХарактеристикаНоменклатури;
                 row.Кількість = record.Кількість;
                 row.Ціна = record.Ціна;
-                
+
                 Store.Append(row);
 
                 if (SelectPosition > 0)
@@ -349,10 +346,10 @@ partial class ПересортицяТоварів_ТабличнаЧастин�
 
     public override async Task SaveRecords()
     {
-        
+
         if (ЕлементВласник != null)
         {
-        ЕлементВласник.Товари_TablePart.Records.Clear();
+            ЕлементВласник.Товари_TablePart.Records.Clear();
             for (uint i = 0; i <= Store.GetNItems(); i++)
             {
                 ItemRow? row = (ItemRow?)Store.GetObject(i);
@@ -366,7 +363,7 @@ partial class ПересортицяТоварів_ТабличнаЧастин�
                         ХарактеристикаНоменклатури = row.ХарактеристикаНоменклатури,
                         Кількість = row.Кількість,
                         Ціна = row.Ціна,
-                        
+
                     });
                 }
             }
@@ -388,7 +385,7 @@ partial class ПересортицяТоварів_ТабличнаЧастин�
                     row.ХарактеристикаНоменклатури = x.ХарактеристикаНоменклатури;
                     row.Кількість = x.Кількість;
                     row.Ціна = x.Ціна;
-                    
+
                     return row;
                 });
 
@@ -400,7 +397,7 @@ partial class ПересортицяТоварів_ТабличнаЧастин�
                 //Виділення рядків після оновлення
                 foreach (var position in selection)
                     Grid.Model.SelectItem(position, false);
-                
+
             }
         }
     }
@@ -411,4 +408,3 @@ partial class ПересортицяТоварів_ТабличнаЧастин�
         return true;
     }
 }
-    

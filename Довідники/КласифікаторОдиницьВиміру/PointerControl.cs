@@ -1,6 +1,6 @@
 
 /*     
-        ПакуванняОдиниціВиміру_PointerControl.cs
+        КласифікаторОдиницьВиміру_PointerControl.cs
         PointerControl
 */
 
@@ -11,22 +11,22 @@ using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<PointerControl>("PointerControl_btafAVEAGXqE6Srrv7doIg")]
-public partial class ПакуванняОдиниціВиміру_PointerControl : PointerControl
+[GObject.Subclass<PointerControl>("PointerControl_SdafAe0CeHC3f8kSXzTonw")]
+public partial class КласифікаторОдиницьВиміру_PointerControl : PointerControl
 {
-    event EventHandler<ПакуванняОдиниціВиміру_Pointer>? PointerChanged;
+    event EventHandler<КласифікаторОдиницьВиміру_Pointer>? PointerChanged;
 
     partial void Initialize()
     {
         WidthPresentation = 300;
-        Caption = $"{ПакуванняОдиниціВиміру_Const.FULLNAME}:";
+        Caption = $"{КласифікаторОдиницьВиміру_Const.FULLNAME}:";
         PointerChanged += async (_, pointer) => Presentation = !pointer.IsEmpty() ? await pointer.GetPresentation() : "";
     }
 
-    public static ПакуванняОдиниціВиміру_PointerControl New() => NewWithProperties([]);
+    public static КласифікаторОдиницьВиміру_PointerControl New() => NewWithProperties([]);
 
-    ПакуванняОдиниціВиміру_Pointer pointer = new();
-    public ПакуванняОдиниціВиміру_Pointer Pointer
+    КласифікаторОдиницьВиміру_Pointer pointer = new();
+    public КласифікаторОдиницьВиміру_Pointer Pointer
     {
         get => pointer;
         set
@@ -36,8 +36,8 @@ public partial class ПакуванняОдиниціВиміру_PointerControl
         }
     }
 
-    public Номенклатура_Pointer Власник { get; set; } = new Номенклатура_Pointer();
     
+
     public ConfigurationDirectories.HierarchicalContentType? AllowedContentSelection { get; set; }
 
     protected override async void OpenSelect(Button button, EventArgs args)
@@ -48,19 +48,17 @@ public partial class ПакуванняОдиниціВиміру_PointerControl
         popover.HeightRequest = 400;
         BeforeClickOpenFunc?.Invoke();
 
-        ПакуванняОдиниціВиміру_ШвидкийВибір page = ПакуванняОдиниціВиміру_ШвидкийВибір.New();
+        КласифікаторОдиницьВиміру_ШвидкийВибір page = КласифікаторОдиницьВиміру_ШвидкийВибір.New();
         page.PopoverParent = popover;
         page.DirectoryPointerItem = Pointer.UniqueID;
         page.AllowedContentSelection = AllowedContentSelection;
         page.OpenFolder = OpenFolder;
         page.CallBack_OnSelectPointer = selectPointer =>
         {
-            Pointer = new ПакуванняОдиниціВиміру_Pointer(selectPointer);
+            Pointer = new КласифікаторОдиницьВиміру_Pointer(selectPointer);
             AfterSelectFunc?.Invoke();
         };
 
-        
-        page.Власник.Pointer = Власник;
         
         popover.SetChild(page);
         popover.Show();
@@ -70,7 +68,7 @@ public partial class ПакуванняОдиниціВиміру_PointerControl
 
     protected override void OnClear(Button button, EventArgs args)
     {
-        Pointer = new ПакуванняОдиниціВиміру_Pointer();
+        Pointer = new КласифікаторОдиницьВиміру_Pointer();
         AfterSelectFunc?.Invoke();
         AfterClearFunc?.Invoke();
     }

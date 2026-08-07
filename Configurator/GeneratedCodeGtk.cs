@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 05.08.2026 15:07:13
+ * Дата конфігурації: 07.08.2026 13:28:56
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон Gtk4.xslt
@@ -59,6 +59,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -80,6 +81,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -265,6 +267,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -286,6 +289,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -307,6 +311,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Пакування", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -328,6 +333,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Тип", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -349,6 +355,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Категорія", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -370,6 +377,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Залишок", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -391,6 +399,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("В резерві", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -412,6 +421,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Під замовлення", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -433,6 +443,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("В комірках", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -719,6 +730,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -740,6 +752,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -761,6 +774,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Пакування", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -782,6 +796,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Тип", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -803,6 +818,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Залишок", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -824,6 +840,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("В резерві", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -845,6 +862,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Під замовлення", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -1106,6 +1124,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -1127,6 +1146,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -1312,6 +1332,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -1333,6 +1354,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -1518,6 +1540,29 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ОдиницяЗаКласифікатором, "За класифікатором"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("pointer");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ОдиницяЗаКласифікатором"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("За класифікатором", factory);
+                column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -1539,16 +1584,17 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                column.FixedWidth = 300;
                 form.Grid.AppendColumn(column);
             }
         
-            //Назва: КількістьУпаковок, "Коєфіціент"
+            //Назва: Коєфіціент, "Коєфіціент"
             {
                 SignalListItemFactory factory = SignalListItemFactory.New();
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartCell.NewFromType("integer");
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
                 };
                 factory.OnBind += (_, args) =>
                 {
@@ -1556,20 +1602,21 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (cell != null && row != null)
-                        cell.SetText(row.Fields["КількістьУпаковок"]);
+                        cell.SetText(row.Fields["Коєфіціент"]);
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коєфіціент", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
-            //Назва: НазваПовна, "Опис"
+            //Назва: Вага, "Вага"
             {
                 SignalListItemFactory factory = SignalListItemFactory.New();
                 factory.OnSetup += (_, args) =>
                 {
                     ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
                 };
                 factory.OnBind += (_, args) =>
                 {
@@ -1577,10 +1624,33 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
                     DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
                     if (cell != null && row != null)
-                        cell.SetText(row.Fields["НазваПовна"]);
+                        cell.SetText(row.Fields["Вага"]);
                 };
-                ColumnViewColumn column = ColumnViewColumn.New("Опис", factory);
+                ColumnViewColumn column = ColumnViewColumn.New("Вага", factory);
                 column.Resizable = true;
+                
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Обєм, "Обєм"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("numeric");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Обєм"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Обєм", factory);
+                column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -1625,14 +1695,19 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     "deletion_label",
                     /*Код*/ Довідники.ПакуванняОдиниціВиміру_Const.Код,
                     /*Назва*/ Довідники.ПакуванняОдиниціВиміру_Const.Назва,
-                    /*КількістьУпаковок*/ Довідники.ПакуванняОдиниціВиміру_Const.КількістьУпаковок,
-                    /*НазваПовна*/ Довідники.ПакуванняОдиниціВиміру_Const.НазваПовна,
+                    /*Коєфіціент*/ Довідники.ПакуванняОдиниціВиміру_Const.Коєфіціент,
+                    /*Вага*/ Довідники.ПакуванняОдиниціВиміру_Const.Вага,
+                    /*Обєм*/ Довідники.ПакуванняОдиниціВиміру_Const.Обєм,
                     
                 ]);
             
                     /* Сортування */
                     ПакуванняОдиниціВиміру_Select.QuerySelect.Order.Add(Довідники.ПакуванняОдиниціВиміру_Const.Назва, SelectOrder.ASC);
                 
+                            /* Приєднання pointer */
+                            Довідники.КласифікаторОдиницьВиміру_Pointer.GetJoin(ПакуванняОдиниціВиміру_Select.QuerySelect, Довідники.ПакуванняОдиниціВиміру_Const.ОдиницяЗаКласифікатором,
+                            ПакуванняОдиниціВиміру_Select.QuerySelect.Table, "join_tab_1", "ОдиницяЗаКласифікатором");
+                        
 
             /* Відбори */
             ПакуванняОдиниціВиміру_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
@@ -1649,9 +1724,11 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.UniqueID = curr.UniqueID;
                     row.DeletionLabel = (bool)Fields["deletion_label"];
                     row.Fields.Add("Код", Fields[ПакуванняОдиниціВиміру_Const.Код].ToString());
+                    row.Fields.Add("ОдиницяЗаКласифікатором", Fields["ОдиницяЗаКласифікатором"].ToString());
                     row.Fields.Add("Назва", Fields[ПакуванняОдиниціВиміру_Const.Назва].ToString());
-                    row.Fields.Add("КількістьУпаковок", Fields[ПакуванняОдиниціВиміру_Const.КількістьУпаковок].ToString());
-                    row.Fields.Add("НазваПовна", Fields[ПакуванняОдиниціВиміру_Const.НазваПовна].ToString());
+                    row.Fields.Add("Коєфіціент", Fields[ПакуванняОдиниціВиміру_Const.Коєфіціент].ToString());
+                    row.Fields.Add("Вага", Fields[ПакуванняОдиниціВиміру_Const.Вага].ToString());
+                    row.Fields.Add("Обєм", Fields[ПакуванняОдиниціВиміру_Const.Обєм].ToString());
                     
                     if (storeMap.TryGetValue(curr.UniqueID.UGuid, out uint index))
                     {
@@ -1682,14 +1759,19 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     "deletion_label",
                     /*Код*/ Довідники.ПакуванняОдиниціВиміру_Const.Код,
                     /*Назва*/ Довідники.ПакуванняОдиниціВиміру_Const.Назва,
-                    /*КількістьУпаковок*/ Довідники.ПакуванняОдиниціВиміру_Const.КількістьУпаковок,
-                    /*НазваПовна*/ Довідники.ПакуванняОдиниціВиміру_Const.НазваПовна,
+                    /*Коєфіціент*/ Довідники.ПакуванняОдиниціВиміру_Const.Коєфіціент,
+                    /*Вага*/ Довідники.ПакуванняОдиниціВиміру_Const.Вага,
+                    /*Обєм*/ Довідники.ПакуванняОдиниціВиміру_Const.Обєм,
                     
                 ]);
             
                     /* Сортування */
                     ПакуванняОдиниціВиміру_Select.QuerySelect.Order.Add(Довідники.ПакуванняОдиниціВиміру_Const.Назва, SelectOrder.ASC);
                 
+                            /* Приєднання pointer */
+                            Довідники.КласифікаторОдиницьВиміру_Pointer.GetJoin(ПакуванняОдиниціВиміру_Select.QuerySelect, Довідники.ПакуванняОдиниціВиміру_Const.ОдиницяЗаКласифікатором,
+                            ПакуванняОдиниціВиміру_Select.QuerySelect.Table, "join_tab_1", "ОдиницяЗаКласифікатором");
+                        
 
             /* Відбори */
             if (form.WhereList != null) ПакуванняОдиниціВиміру_Select.QuerySelect.Where.AddRange(form.WhereList);
@@ -1698,6 +1780,10 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             if (form.ParentWhereList != null && !form.IsUseHierarchy() && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
                 ПакуванняОдиниціВиміру_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
 
+            
+            /* Додатковий відбір Owner */
+            if (form.OwnerWhereListFunc != null && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
+                ПакуванняОдиниціВиміру_Select.QuerySelect.Where.AddRange(form.OwnerWhereListFunc.Invoke());
             
             /* Cторінки */
             await form.SplitPages(ПакуванняОдиниціВиміру_Select.SplitSelectToPages, ПакуванняОдиниціВиміру_Select.QuerySelect, unigueIDSelect);
@@ -1718,9 +1804,11 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                     row.UniqueID = curr.UniqueID;
                     row.DeletionLabel = (bool)Fields["deletion_label"];
                     row.Fields.Add("Код", Fields[Довідники.ПакуванняОдиниціВиміру_Const.Код].ToString());
+                    row.Fields.Add("ОдиницяЗаКласифікатором", Fields["ОдиницяЗаКласифікатором"].ToString());
                     row.Fields.Add("Назва", Fields[Довідники.ПакуванняОдиниціВиміру_Const.Назва].ToString());
-                    row.Fields.Add("КількістьУпаковок", Fields[Довідники.ПакуванняОдиниціВиміру_Const.КількістьУпаковок].ToString());
-                    row.Fields.Add("НазваПовна", Fields[Довідники.ПакуванняОдиниціВиміру_Const.НазваПовна].ToString());
+                    row.Fields.Add("Коєфіціент", Fields[Довідники.ПакуванняОдиниціВиміру_Const.Коєфіціент].ToString());
+                    row.Fields.Add("Вага", Fields[Довідники.ПакуванняОдиниціВиміру_Const.Вага].ToString());
+                    row.Fields.Add("Обєм", Fields[Довідники.ПакуванняОдиниціВиміру_Const.Обєм].ToString());
                     
                     form.Store.Append(row);
                     if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
@@ -1774,6 +1862,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -1795,6 +1884,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -1816,6 +1906,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коротка  назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -1837,6 +1928,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("R030", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -1858,6 +1950,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Показувати на стартовій", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -2086,6 +2179,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -2107,6 +2201,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -2128,6 +2223,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коротка назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -2317,6 +2413,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -2338,6 +2435,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -2359,6 +2457,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Папка", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -2380,6 +2479,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Постачальник", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -2401,6 +2501,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Покупець", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -2635,6 +2736,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -2656,6 +2758,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -2841,6 +2944,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -2862,6 +2966,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -2883,6 +2988,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Тип cкладу", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -2904,6 +3010,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Адресне зберігання", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -3134,6 +3241,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -3155,6 +3263,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -3340,6 +3449,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -3361,6 +3471,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -3382,6 +3493,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -3597,6 +3709,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -3778,6 +3891,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -3799,6 +3913,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -3984,6 +4099,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -4005,6 +4121,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                column.FixedWidth = 500;
                 form.Grid.AppendColumn(column);
             }
         
@@ -4190,6 +4307,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -4211,6 +4329,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -4424,6 +4543,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -4449,6 +4569,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -4474,6 +4595,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -4499,6 +4621,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Категорія", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -4766,6 +4889,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -4787,6 +4911,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -4972,6 +5097,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -4993,6 +5119,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -5014,6 +5141,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва файлу", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -5035,6 +5163,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Розмір", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -5056,6 +5185,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата створення", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -5249,6 +5379,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -5430,6 +5561,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -5451,6 +5583,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -5472,6 +5605,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -5493,6 +5627,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Залишки", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -5514,6 +5649,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("В резерві", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -5535,6 +5671,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Під замовлення", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -5786,6 +5923,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -5811,6 +5949,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -6045,6 +6184,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -6070,6 +6210,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -6308,6 +6449,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -6333,6 +6475,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -6571,6 +6714,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -6596,6 +6740,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -6806,6 +6951,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -6827,6 +6973,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -6848,6 +6995,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -6869,6 +7017,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Залишок", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -7092,6 +7241,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -7113,6 +7263,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -7134,6 +7285,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -7329,6 +7481,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -7350,6 +7503,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -7371,6 +7525,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -7590,6 +7745,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -7611,6 +7767,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -7632,6 +7789,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -7653,6 +7811,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Тип", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -7890,6 +8049,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -7911,6 +8071,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -7932,6 +8093,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Тип", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -8131,6 +8293,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -8152,6 +8315,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -8173,6 +8337,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -8392,6 +8557,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -8413,6 +8579,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -8434,6 +8601,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("КореспондуючийРахунок", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -8455,6 +8623,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("ВидРухуКоштів", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -8675,6 +8844,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -8856,6 +9026,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -8877,6 +9048,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -8898,6 +9070,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Тип документу", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -8919,6 +9092,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Прибуткова накладна", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -8940,6 +9114,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Введення залишків", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -8961,6 +9136,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Виготовлення продукції", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -8982,6 +9158,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Залишки", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -9232,6 +9409,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -9253,6 +9431,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -9438,6 +9617,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -9459,6 +9639,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -9644,6 +9825,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -9665,6 +9847,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -9686,6 +9869,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Повна назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -9707,6 +9891,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код МФО", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -9728,6 +9913,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("ЄДРПОУ", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -9749,6 +9935,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер ліцензії", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -9770,6 +9957,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата ліцензії", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -9791,6 +9979,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Статус", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -9812,6 +10001,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Тип населеного пункту", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -9833,6 +10023,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Унікальний код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -9854,6 +10045,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Поштовий індекс", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -9875,6 +10067,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Населений пункт", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -9896,6 +10089,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Адреса", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -9917,6 +10111,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Телефон", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -9938,6 +10133,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата відкриття установи", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -9959,6 +10155,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата закриття установи", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -9980,6 +10177,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код НБУ", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -10001,6 +10199,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("КодСтатусу", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -10022,6 +10221,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("ДатаЗапису", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -10271,6 +10471,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -10292,6 +10493,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -10477,6 +10679,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -10498,6 +10701,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -10519,6 +10723,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Налаштування", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -10756,6 +10961,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -10777,6 +10983,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Приміщення", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -10798,6 +11005,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Лінія", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -10819,6 +11027,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Позиція", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -10840,6 +11049,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Стелаж", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -10861,6 +11071,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Ярус", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -10882,6 +11093,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Тип комірки", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -10903,6 +11115,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Типорозмір", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -10924,6 +11137,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Папка", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -11179,6 +11393,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -11200,6 +11415,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Приміщення", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -11395,6 +11611,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -11416,6 +11633,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Приміщення", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -11607,6 +11825,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -11628,6 +11847,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Висота", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -11649,6 +11869,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Глибина", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -11670,6 +11891,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Вантажопідйомність", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -11691,6 +11913,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Обєм", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -11712,6 +11935,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Ширина", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -11941,6 +12165,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -11966,6 +12191,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -11991,6 +12217,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Власник", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -12216,6 +12443,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -12237,6 +12465,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -12258,6 +12487,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -12447,6 +12677,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -12468,6 +12699,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Додано", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -12489,6 +12721,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -12510,6 +12743,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Користувач", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -12713,6 +12947,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -12734,6 +12969,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -12755,6 +12991,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Тип", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -12776,6 +13013,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -13009,6 +13247,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Клас", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -13034,6 +13273,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -13059,6 +13299,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -13084,6 +13325,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Кількісний", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -13109,6 +13351,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сумовий", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -13134,6 +13377,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валютний", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -13159,6 +13403,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Забалансовий", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -13184,6 +13429,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Субконто 1", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -13209,6 +13455,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Субконто 2", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -13234,6 +13481,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Субконто 3", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -13614,6 +13862,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -13639,6 +13888,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -13664,6 +13914,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Метод списання", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -13689,6 +13940,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Рахунок обліку", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -13714,6 +13966,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Рахунок доходів", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -13739,6 +13992,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Стаття доходів", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -13764,6 +14018,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Рахунок витрат", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -13789,6 +14044,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Стаття витрат", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -14087,6 +14343,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -14112,6 +14369,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -14328,6 +14586,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -14349,6 +14608,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -14534,6 +14794,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -14555,6 +14816,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -14740,6 +15002,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -14761,6 +15024,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -14946,6 +15210,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -14967,6 +15232,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -15152,6 +15418,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -15173,6 +15440,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -15358,6 +15626,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -15379,6 +15648,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -15592,6 +15862,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -15797,6 +16068,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -15818,6 +16090,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -16003,6 +16276,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -16024,6 +16298,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -16209,6 +16484,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -16230,6 +16506,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -16376,6 +16653,266 @@ namespace GeneratedCode.Довідники.ТабличніСписки
         
     #endregion
     
+    #region DIRECTORY "КласифікаторОдиницьВиміру"
+        
+    public static class КласифікаторОдиницьВиміру_Записи
+    {
+        
+        public static void AddColumn(DirectoryFormJournalBase form)
+        {
+            
+            //Image
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
+                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("", factory);
+                form.Grid.AppendColumn(column);
+            }
+  
+            //Назва: Код, "Код"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Код"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Код", factory);
+                column.Resizable = true;
+                
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: Назва, "Назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["Назва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
+                column.Resizable = true;
+                column.FixedWidth = 300;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: МіжнароднеСкорочення, "Міжнародне\nскорочення"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["МіжнароднеСкорочення"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Міжнародне\nскорочення", factory);
+                column.Resizable = true;
+                column.FixedWidth = 100;
+                form.Grid.AppendColumn(column);
+            }
+        
+            //Назва: ПовнаНазва, "Повна назва"
+            {
+                SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    listItem.Child = LabelTablePartCell.NewFromType("string");
+                };
+                factory.OnBind += (_, args) =>
+                {
+                    ListItem listItem = (ListItem)args.Object;
+                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
+                    DirectoryRowJournal? row = (DirectoryRowJournal?)listItem.Item;
+                    if (cell != null && row != null)
+                        cell.SetText(row.Fields["ПовнаНазва"]);
+                };
+                ColumnViewColumn column = ColumnViewColumn.New("Повна назва", factory);
+                column.Resizable = true;
+                column.FixedWidth = 300;
+                form.Grid.AppendColumn(column);
+            }
+        
+            { /* Пуста колонка для заповнення вільного простору */
+                ColumnViewColumn column = ColumnViewColumn.New(null, null);
+                column.Resizable = true;
+                column.Expand = true;
+                form.Grid.AppendColumn(column);
+            }
+  
+        }
+
+        public static void CreateFilter(DirectoryFormJournalBase form)
+        {
+            
+        }
+
+        public static async Task UpdateRecords(DirectoryFormJournalBase form)
+        {
+            
+            List<ObjectChanged> records = [];
+            lock (form.Loсked)
+            {
+                while(form.RecordsChangedQueue.Count > 0) //Видобуваю все із черги
+                    records.AddRange(form.RecordsChangedQueue.Dequeue());
+            }
+
+            if (records.Count == 0) return;
+
+            //Словник для швидкого пошуку
+            Dictionary<Guid, uint> storeMap = [];
+            for (uint i = 0; i < form.Store.GetNItems(); i++)
+            {
+                DirectoryRowJournal? item = (DirectoryRowJournal?)form.Store.GetObject(i);
+                if (item != null) storeMap.Add(item.UniqueID.UGuid, i);
+            }
+            
+            /* Вибірка */
+            Довідники.КласифікаторОдиницьВиміру_Select КласифікаторОдиницьВиміру_Select = new();
+            КласифікаторОдиницьВиміру_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.КласифікаторОдиницьВиміру_Const.Код,
+                    /*Назва*/ Довідники.КласифікаторОдиницьВиміру_Const.Назва,
+                    /*МіжнароднеСкорочення*/ Довідники.КласифікаторОдиницьВиміру_Const.МіжнароднеСкорочення,
+                    /*ПовнаНазва*/ Довідники.КласифікаторОдиницьВиміру_Const.ПовнаНазва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    КласифікаторОдиницьВиміру_Select.QuerySelect.Order.Add(Довідники.КласифікаторОдиницьВиміру_Const.Назва, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            КласифікаторОдиницьВиміру_Select.QuerySelect.Where.Add(new Where("uid", Comparison.IN, "'" + string.Join("', '", records.Select(x => x.Uid)) + "'", true));
+
+            
+            await КласифікаторОдиницьВиміру_Select.Select();
+            while (КласифікаторОдиницьВиміру_Select.MoveNext())
+            {
+                Довідники.КласифікаторОдиницьВиміру_Pointer? curr = КласифікаторОдиницьВиміру_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRowJournal row = DirectoryRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Fields.Add("Код", Fields[КласифікаторОдиницьВиміру_Const.Код].ToString());
+                    row.Fields.Add("Назва", Fields[КласифікаторОдиницьВиміру_Const.Назва].ToString());
+                    row.Fields.Add("МіжнароднеСкорочення", Fields[КласифікаторОдиницьВиміру_Const.МіжнароднеСкорочення].ToString());
+                    row.Fields.Add("ПовнаНазва", Fields[КласифікаторОдиницьВиміру_Const.ПовнаНазва].ToString());
+                    
+                    if (storeMap.TryGetValue(curr.UniqueID.UGuid, out uint index))
+                    {
+                        bool sel = form.Grid.Model.IsSelected(index);
+                        form.Store.Splice(index, 1, [row], 1);
+                        if (sel) form.Grid.Model.SelectItem(index, false);
+                    }
+                    else if (records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid))?.Type == TypeObjectChanged.Add)
+                        form.Store.Append(row);
+                }
+            }
+            
+        }
+
+        
+
+        public static async Task LoadRecords(DirectoryFormJournalBase form)
+        {
+            form.BeforeLoadRecords();
+
+            //Вибраний елемент
+            UniqueID? unigueIDSelect = form.SelectPointerItem ?? form.DirectoryPointerItem;
+
+            /* Вибірка */
+            Довідники.КласифікаторОдиницьВиміру_Select КласифікаторОдиницьВиміру_Select = new();
+            КласифікаторОдиницьВиміру_Select.QuerySelect.Field.AddRange(
+                [
+                    "deletion_label",
+                    /*Код*/ Довідники.КласифікаторОдиницьВиміру_Const.Код,
+                    /*Назва*/ Довідники.КласифікаторОдиницьВиміру_Const.Назва,
+                    /*МіжнароднеСкорочення*/ Довідники.КласифікаторОдиницьВиміру_Const.МіжнароднеСкорочення,
+                    /*ПовнаНазва*/ Довідники.КласифікаторОдиницьВиміру_Const.ПовнаНазва,
+                    
+                ]);
+            
+                    /* Сортування */
+                    КласифікаторОдиницьВиміру_Select.QuerySelect.Order.Add(Довідники.КласифікаторОдиницьВиміру_Const.Назва, SelectOrder.ASC);
+                
+
+            /* Відбори */
+            if (form.WhereList != null) КласифікаторОдиницьВиміру_Select.QuerySelect.Where.AddRange(form.WhereList);
+
+            /* Додатковий відбір Parent */
+            if (form.ParentWhereList != null && !form.IsUseHierarchy() && form.TypeWhereState == InterfaceGtk4.FormJournal.TypeWhere.Standart)
+                КласифікаторОдиницьВиміру_Select.QuerySelect.Where.AddRange(form.ParentWhereList);
+
+            
+            /* Cторінки */
+            await form.SplitPages(КласифікаторОдиницьВиміру_Select.SplitSelectToPages, КласифікаторОдиницьВиміру_Select.QuerySelect, unigueIDSelect);
+            uint selectPosition = 0;
+                
+            await КласифікаторОдиницьВиміру_Select.Select();
+            if (form.Store.GetNItems() > 0) form.Store.RemoveAll();
+
+            
+
+            while (КласифікаторОдиницьВиміру_Select.MoveNext())
+            {
+                Довідники.КласифікаторОдиницьВиміру_Pointer? curr = КласифікаторОдиницьВиміру_Select.Current;
+                if (curr != null)
+                {
+                    Dictionary<string, object> Fields = curr.Fields;
+                    DirectoryRowJournal row = DirectoryRowJournal.New();
+                    row.UniqueID = curr.UniqueID;
+                    row.DeletionLabel = (bool)Fields["deletion_label"];
+                    row.Fields.Add("Код", Fields[Довідники.КласифікаторОдиницьВиміру_Const.Код].ToString());
+                    row.Fields.Add("Назва", Fields[Довідники.КласифікаторОдиницьВиміру_Const.Назва].ToString());
+                    row.Fields.Add("МіжнароднеСкорочення", Fields[Довідники.КласифікаторОдиницьВиміру_Const.МіжнароднеСкорочення].ToString());
+                    row.Fields.Add("ПовнаНазва", Fields[Довідники.КласифікаторОдиницьВиміру_Const.ПовнаНазва].ToString());
+                    
+                    form.Store.Append(row);
+                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                        
+                }
+            }
+            
+            form.AfterLoadRecords(selectPosition);
+                
+        }
+    }
+        
+    #endregion
+    
 }
 
 namespace GeneratedCode.Документи.ТабличніСписки
@@ -16432,6 +16969,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -16453,6 +16991,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -16474,6 +17013,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -16495,6 +17035,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -16516,6 +17057,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -16537,6 +17079,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -16558,6 +17101,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -16579,6 +17123,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -16600,6 +17145,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -16621,6 +17167,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -16954,6 +17501,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -16975,6 +17523,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -16996,6 +17545,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -17017,6 +17567,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -17038,6 +17589,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -17059,6 +17611,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -17080,6 +17633,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -17101,6 +17655,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Каса", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -17122,6 +17677,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -17143,6 +17699,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -17164,6 +17721,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -17514,6 +18072,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -17535,6 +18094,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -17556,6 +18116,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -17577,6 +18138,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -17598,6 +18160,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -17619,6 +18182,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -17640,6 +18204,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -17661,6 +18226,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Каса", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -17682,6 +18248,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -17703,6 +18270,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -18053,6 +18621,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -18074,6 +18643,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -18095,6 +18665,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -18116,6 +18687,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -18137,6 +18709,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -18158,6 +18731,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -18179,6 +18753,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Каса", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -18200,6 +18775,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -18221,6 +18797,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -18242,6 +18819,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -18263,6 +18841,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -18617,6 +19196,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -18638,6 +19218,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -18659,6 +19240,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -18680,6 +19262,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -18701,6 +19284,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -18722,6 +19306,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -18743,6 +19328,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Каса", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -18764,6 +19350,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -18785,6 +19372,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -18806,6 +19394,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -18827,6 +19416,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -19181,6 +19771,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -19202,6 +19793,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -19223,6 +19815,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -19244,6 +19837,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -19265,6 +19859,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -19286,6 +19881,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Вид ціни", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -19307,6 +19903,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -19328,6 +19925,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -19626,6 +20224,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -19647,6 +20246,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -19668,6 +20268,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -19689,6 +20290,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -19710,6 +20312,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -19731,6 +20334,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Каса", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -19752,6 +20356,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -19773,6 +20378,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -19794,6 +20400,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Операція", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -19815,6 +20422,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -19836,6 +20444,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -20173,6 +20782,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -20194,6 +20804,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -20215,6 +20826,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -20236,6 +20848,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -20257,6 +20870,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -20278,6 +20892,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -20299,6 +20914,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Каса", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -20320,6 +20936,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -20341,6 +20958,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Операція", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -20362,6 +20980,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -20383,6 +21002,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -20720,6 +21340,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -20741,6 +21362,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -20762,6 +21384,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -20783,6 +21406,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -20804,6 +21428,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад відправник", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -20825,6 +21450,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад отримувач", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -20846,6 +21472,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -20867,6 +21494,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -21165,6 +21793,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -21186,6 +21815,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -21207,6 +21837,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -21228,6 +21859,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -21249,6 +21881,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -21270,6 +21903,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -21291,6 +21925,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Каса", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -21312,6 +21947,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -21333,6 +21969,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -21354,6 +21991,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -21375,6 +22013,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -21729,6 +22368,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -21750,6 +22390,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -21771,6 +22412,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -21792,6 +22434,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -21813,6 +22456,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -21834,6 +22478,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Каса", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -21855,6 +22500,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -21876,6 +22522,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -21897,6 +22544,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -21918,6 +22566,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -21939,6 +22588,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -22293,6 +22943,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -22314,6 +22965,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -22335,6 +22987,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -22356,6 +23009,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -22377,6 +23031,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -22398,6 +23053,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Каса", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -22419,6 +23075,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -22440,6 +23097,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -22461,6 +23119,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -22482,6 +23141,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -22815,6 +23475,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -22836,6 +23497,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("НомерДок", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -22857,6 +23519,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("ДатаДок", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -22878,6 +23541,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -22899,6 +23563,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -22920,6 +23585,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -22941,6 +23607,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -22962,6 +23629,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -22983,6 +23651,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -23302,6 +23971,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -23323,6 +23993,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -23344,6 +24015,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -23365,6 +24037,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -23386,6 +24059,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -23407,6 +24081,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -23428,6 +24103,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -23705,6 +24381,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -23726,6 +24403,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("НомерДок", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -23747,6 +24425,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("ДатаДок", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -23768,6 +24447,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -23789,6 +24469,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -23810,6 +24491,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -23831,6 +24513,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -24108,6 +24791,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -24129,6 +24813,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -24150,6 +24835,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -24171,6 +24857,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -24192,6 +24879,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -24213,6 +24901,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Відповідальний", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -24234,6 +24923,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -24255,6 +24945,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -24553,6 +25244,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -24574,6 +25266,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -24595,6 +25288,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -24616,6 +25310,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -24637,6 +25332,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -24658,6 +25354,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -24679,6 +25376,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -24700,6 +25398,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -24991,6 +25690,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -25012,6 +25712,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -25033,6 +25734,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -25054,6 +25756,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -25075,6 +25778,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -25096,6 +25800,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -25117,6 +25822,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -25138,6 +25844,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -25159,6 +25866,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -25471,6 +26179,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -25492,6 +26201,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -25513,6 +26223,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -25534,6 +26245,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -25555,6 +26267,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -25576,6 +26289,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -25597,6 +26311,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Каса", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -25618,6 +26333,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -25639,6 +26355,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -25660,6 +26377,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -25681,6 +26399,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -26035,6 +26754,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -26056,6 +26776,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -26077,6 +26798,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -26098,6 +26820,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -26119,6 +26842,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Документ поступлення", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -26140,6 +26864,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -26161,6 +26886,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -26438,6 +27164,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -26459,6 +27186,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -26480,6 +27208,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -26501,6 +27230,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -26522,6 +27252,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -26543,6 +27274,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -26564,6 +27296,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -26841,6 +27574,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -26862,6 +27596,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -26883,6 +27618,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -26904,6 +27640,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -26925,6 +27662,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Документ реалізації", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -26946,6 +27684,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -26967,6 +27706,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -27244,6 +27984,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -27265,6 +28006,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -27286,6 +28028,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -27307,6 +28050,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -27328,6 +28072,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -27349,6 +28094,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -27370,6 +28116,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -27647,6 +28394,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -27668,6 +28416,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("НомерДок", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -27689,6 +28438,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("ДатаДок", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -27710,6 +28460,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -27731,6 +28482,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -27752,6 +28504,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -28008,6 +28761,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -28029,6 +28783,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -28050,6 +28805,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -28071,6 +28827,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -28092,6 +28849,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -28113,6 +28871,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -28134,6 +28893,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Каса", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -28155,6 +28915,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -28176,6 +28937,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -28197,6 +28959,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Причина", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -28218,6 +28981,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -28239,6 +29003,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -28611,6 +29376,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -28632,6 +29398,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -28653,6 +29420,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -28674,6 +29442,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -28695,6 +29464,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -28716,6 +29486,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -28737,6 +29508,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Каса", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -28758,6 +29530,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -28779,6 +29552,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -28800,6 +29574,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -28821,6 +29596,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -29175,6 +29951,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -29196,6 +29973,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -29217,6 +29995,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -29238,6 +30017,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -29259,6 +30039,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -29280,6 +30061,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -29301,6 +30083,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Каса", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -29322,6 +30105,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -29343,6 +30127,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -29364,6 +30149,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Причина", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -29385,6 +30171,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -29406,6 +30193,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -29778,6 +30566,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -29799,6 +30588,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -29820,6 +30610,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -29841,6 +30632,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -29862,6 +30654,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -29883,6 +30676,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -29904,6 +30698,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума без знижки", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -29925,6 +30720,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Знижка", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -29946,6 +30742,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -29967,6 +30764,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -29988,6 +30786,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("КасаККМ", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -30009,6 +30808,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -30278,6 +31078,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -30299,6 +31100,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -30320,6 +31122,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -30341,6 +31144,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -30362,6 +31166,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -30383,6 +31188,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -30404,6 +31210,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Основа", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -30635,6 +31442,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -30656,6 +31464,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -30677,6 +31486,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -30698,6 +31508,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -30719,6 +31530,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Фізична особа", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -30740,6 +31552,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -30761,6 +31574,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -30782,6 +31596,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Призначення авансу", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -30803,6 +31618,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -31088,6 +31904,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -31109,6 +31926,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -31130,6 +31948,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -31151,6 +31970,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -31172,6 +31992,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -31193,6 +32014,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -31449,6 +32271,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -31470,6 +32293,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -31491,6 +32315,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -31512,6 +32337,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -31533,6 +32359,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -31554,6 +32381,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -31810,6 +32638,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -31831,6 +32660,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -31852,6 +32682,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -31873,6 +32704,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -32074,6 +32906,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -32095,6 +32928,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -32116,6 +32950,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -32137,6 +32972,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -32158,6 +32994,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Підрозділ", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -32179,6 +33016,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -32200,6 +33038,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -32477,6 +33316,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -32498,6 +33338,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -32519,6 +33360,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -32540,6 +33382,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -32741,6 +33584,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -32762,6 +33606,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -32783,6 +33628,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -32804,6 +33650,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -33005,6 +33852,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -33026,6 +33874,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -33047,6 +33896,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -33068,6 +33918,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -33269,6 +34120,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -33290,6 +34142,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -33311,6 +34164,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -33332,6 +34186,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -33533,6 +34388,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -33554,6 +34410,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -33575,6 +34432,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -33596,6 +34454,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -33797,6 +34656,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -33818,6 +34678,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -33839,6 +34700,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -33860,6 +34722,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -34061,6 +34924,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -34082,6 +34946,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -34103,6 +34968,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -34124,6 +34990,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -34325,6 +35192,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -34346,6 +35214,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -34367,6 +35236,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -34388,6 +35258,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -34589,6 +35460,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -34610,6 +35482,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -34631,6 +35504,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -34652,6 +35526,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -34853,6 +35728,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -34874,6 +35750,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -34895,6 +35772,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -34916,6 +35794,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -35117,6 +35996,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -35138,6 +36018,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -35159,6 +36040,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -35180,6 +36062,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -35381,6 +36264,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -35402,6 +36286,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -35423,6 +36308,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -35444,6 +36330,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -35645,6 +36532,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -35666,6 +36554,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -35687,6 +36576,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -35708,6 +36598,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -35909,6 +36800,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -35930,6 +36822,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -35951,6 +36844,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -35972,6 +36866,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -36173,6 +37068,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -36194,6 +37090,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -36215,6 +37112,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -36236,6 +37134,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -36437,6 +37336,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -36458,6 +37358,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -36479,6 +37380,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -36500,6 +37402,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -36701,6 +37604,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -36722,6 +37626,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -36743,6 +37648,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -36764,6 +37670,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -36965,6 +37872,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -36986,6 +37894,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -37007,6 +37916,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -37028,6 +37938,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -37229,6 +38140,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -37250,6 +38162,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -37271,6 +38184,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -37292,6 +38206,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -37493,6 +38408,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -37514,6 +38430,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -37535,6 +38452,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -37556,6 +38474,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -37757,6 +38676,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -37778,6 +38698,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -37799,6 +38720,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -37820,6 +38742,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -38021,6 +38944,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -38042,6 +38966,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -38063,6 +38988,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -38084,6 +39010,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -38285,6 +39212,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -38306,6 +39234,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -38327,6 +39256,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -38348,6 +39278,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -38549,6 +39480,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -38570,6 +39502,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -38591,6 +39524,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -38612,6 +39546,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -38813,6 +39748,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -38834,6 +39770,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -38855,6 +39792,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -38876,6 +39814,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -39077,6 +40016,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -39098,6 +40038,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -39119,6 +40060,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -39140,6 +40082,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -39341,6 +40284,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -39362,6 +40306,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -39383,6 +40328,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -39404,6 +40350,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -39605,6 +40552,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -39626,6 +40574,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -39647,6 +40596,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -39668,6 +40618,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -39869,6 +40820,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -39890,6 +40842,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -39911,6 +40864,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -39932,6 +40886,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -40133,6 +41088,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -40154,6 +41110,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -40175,6 +41132,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -40196,6 +41154,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -40397,6 +41356,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -40418,6 +41378,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -40439,6 +41400,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -40460,6 +41422,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -40661,6 +41624,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -40682,6 +41646,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -40703,6 +41668,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -40724,6 +41690,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -40925,6 +41892,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -40946,6 +41914,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -40967,6 +41936,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -40988,6 +41958,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -41189,6 +42160,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -41210,6 +42182,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -41231,6 +42204,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -41252,6 +42226,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -41453,6 +42428,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -41474,6 +42450,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -41495,6 +42472,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -41516,6 +42494,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -41717,6 +42696,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -41738,6 +42718,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -41759,6 +42740,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -41780,6 +42762,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -41981,6 +42964,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -42002,6 +42986,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -42023,6 +43008,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -42044,6 +43030,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -42245,6 +43232,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -42266,6 +43254,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -42287,6 +43276,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -42308,6 +43298,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -42509,6 +43500,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -42530,6 +43522,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -42551,6 +43544,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -42572,6 +43566,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -42773,6 +43768,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -42794,6 +43790,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -42815,6 +43812,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -42836,6 +43834,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -43037,6 +44036,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -43058,6 +44058,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -43079,6 +44080,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -43100,6 +44102,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -43301,6 +44304,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -43322,6 +44326,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -43343,6 +44348,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -43364,6 +44370,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -43565,6 +44572,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -43586,6 +44594,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -43607,6 +44616,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -43628,6 +44638,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -43829,6 +44840,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -43850,6 +44862,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -43871,6 +44884,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -43892,6 +44906,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -44093,6 +45108,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -44114,6 +45130,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -44135,6 +45152,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -44156,6 +45174,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -44357,6 +45376,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -44378,6 +45398,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -44399,6 +45420,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -44420,6 +45442,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -44621,6 +45644,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -44642,6 +45666,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номер", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -44663,6 +45688,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дата", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -44684,6 +45710,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -44945,6 +45972,7 @@ namespace GeneratedCode.РегістриВідомостей.ТабличніС�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -44966,6 +45994,7 @@ namespace GeneratedCode.РегістриВідомостей.ТабличніС�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -44987,6 +46016,7 @@ namespace GeneratedCode.РегістриВідомостей.ТабличніС�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("ВидЦіни", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -45008,6 +46038,7 @@ namespace GeneratedCode.РегістриВідомостей.ТабличніС�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Ціна", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -45029,6 +46060,7 @@ namespace GeneratedCode.РегістриВідомостей.ТабличніС�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Пакування", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -45050,6 +46082,7 @@ namespace GeneratedCode.РегістриВідомостей.ТабличніС�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -45304,6 +46337,7 @@ namespace GeneratedCode.РегістриВідомостей.ТабличніС�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -45325,6 +46359,7 @@ namespace GeneratedCode.РегістриВідомостей.ТабличніС�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Курс", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -45346,6 +46381,7 @@ namespace GeneratedCode.РегістриВідомостей.ТабличніС�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Кратність", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -45519,6 +46555,7 @@ namespace GeneratedCode.РегістриВідомостей.ТабличніС�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Штрихкод", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -45540,6 +46577,7 @@ namespace GeneratedCode.РегістриВідомостей.ТабличніС�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -45561,6 +46599,7 @@ namespace GeneratedCode.РегістриВідомостей.ТабличніС�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -45582,6 +46621,7 @@ namespace GeneratedCode.РегістриВідомостей.ТабличніС�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Пакування", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -45756,6 +46796,7 @@ namespace GeneratedCode.РегістриВідомостей.ТабличніС�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Файл", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -45927,6 +46968,7 @@ namespace GeneratedCode.РегістриВідомостей.ТабличніС�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -45948,6 +46990,7 @@ namespace GeneratedCode.РегістриВідомостей.ТабличніС�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -45969,6 +47012,7 @@ namespace GeneratedCode.РегістриВідомостей.ТабличніС�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Приміщення", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -45990,6 +47034,7 @@ namespace GeneratedCode.РегістриВідомостей.ТабличніС�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Комірка", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -46211,6 +47256,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -46232,6 +47278,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -46253,6 +47300,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -46274,6 +47322,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Серія", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -46295,6 +47344,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("В наявності", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -46571,6 +47621,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Замовлення клієнта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -46592,6 +47643,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -46613,6 +47665,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -46634,6 +47687,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -46655,6 +47709,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Замовлено", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -46676,6 +47731,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -46953,6 +48009,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -46974,6 +48031,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -46995,6 +48053,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -47247,6 +48306,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -47268,6 +48328,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -47289,6 +48350,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -47310,6 +48372,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Договір", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -47331,6 +48394,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -47352,6 +48416,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -47373,6 +48438,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -47394,6 +48460,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -47415,6 +48482,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Собівартість", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -47717,6 +48785,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -47738,6 +48807,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -47759,6 +48829,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -47780,6 +48851,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("В наявності", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -47801,6 +48873,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("В резерві зі складу", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -47822,6 +48895,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("В резерві під замовлення", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -48088,6 +49162,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Замовлення постачальнику", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -48109,6 +49184,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -48130,6 +49206,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -48151,6 +49228,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -48172,6 +49250,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Замовлено", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -48448,6 +49527,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -48469,6 +49549,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -48490,6 +49571,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -48742,6 +49824,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -48763,6 +49846,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Каса", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -48784,6 +49868,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -48805,6 +49890,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -49069,6 +50155,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -49090,6 +50177,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Партія", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -49111,6 +50199,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -49132,6 +50221,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -49153,6 +50243,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Серія", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -49174,6 +50265,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -49195,6 +50287,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Рядок", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -49216,6 +50309,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -49237,6 +50331,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Собівартість", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -49258,6 +50353,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Списана собівартість", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -49561,6 +50657,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -49582,6 +50679,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -49603,6 +50701,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -49624,6 +50723,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Договір", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -49645,6 +50745,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -49666,6 +50767,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -49687,6 +50789,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -49708,6 +50811,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -49729,6 +50833,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дохід", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -49750,6 +50855,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Собівартість", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -50053,6 +51159,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -50074,6 +51181,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -50095,6 +51203,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Пакування", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -50116,6 +51225,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Комірка", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -50137,6 +51247,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Серія", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -50158,6 +51269,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("В наявності", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -50446,6 +51558,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -50467,6 +51580,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Каса ККМ", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -50488,6 +51602,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -50509,6 +51624,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -50773,6 +51889,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Вид", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -50794,6 +51911,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Рахунок", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -50815,6 +51933,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Аналітика 1", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -50836,6 +51955,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Аналітика 2", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -50857,6 +51977,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Аналітика 3", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -50878,6 +51999,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Кореспондуючий рахунок", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -50899,6 +52021,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Кор аналітика 1", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -50920,6 +52043,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Кор аналітика 2", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -50941,6 +52065,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Кор аналітика 3", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -50962,6 +52087,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Податок", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -50983,6 +52109,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Журнал", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -51004,6 +52131,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума податку", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -51025,6 +52153,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Тип бух операції", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -51046,6 +52175,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -51067,6 +52197,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -51088,6 +52219,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -51109,6 +52241,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума в валюті", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -51130,6 +52263,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума ПО", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -51151,6 +52285,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Курс валюти", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -51172,6 +52307,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -51193,6 +52329,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -51214,6 +52351,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -51432,6 +52570,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -51453,6 +52592,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -51474,6 +52614,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -51495,6 +52636,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Серія", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -51516,6 +52658,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("В наявності", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -51640,6 +52783,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Замовлення клієнта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -51661,6 +52805,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -51682,6 +52827,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -51703,6 +52849,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -51724,6 +52871,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Замовлено", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -51745,6 +52893,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -51870,6 +53019,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -51891,6 +53041,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -51912,6 +53063,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -52034,6 +53186,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -52055,6 +53208,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -52076,6 +53230,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -52097,6 +53252,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Договір", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -52118,6 +53274,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -52139,6 +53296,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -52160,6 +53318,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -52181,6 +53340,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -52202,6 +53362,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Собівартість", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -52330,6 +53491,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -52351,6 +53513,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -52372,6 +53535,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -52393,6 +53557,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("В наявності", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -52414,6 +53579,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("В резерві зі складу", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -52435,6 +53601,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("В резерві під замовлення", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -52560,6 +53727,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Замовлення постачальнику", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -52581,6 +53749,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -52602,6 +53771,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -52623,6 +53793,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -52644,6 +53815,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Замовлено", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -52768,6 +53940,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -52789,6 +53962,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -52810,6 +53984,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -52932,6 +54107,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -52953,6 +54129,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Каса", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -52974,6 +54151,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -52995,6 +54173,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -53118,6 +54297,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -53139,6 +54319,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Партія", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -53160,6 +54341,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -53181,6 +54363,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -53202,6 +54385,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Серія", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -53223,6 +54407,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -53244,6 +54429,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Рядок", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -53265,6 +54451,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -53286,6 +54473,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Собівартість", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -53307,6 +54495,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Списана собівартість", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -53436,6 +54625,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -53457,6 +54647,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -53478,6 +54669,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Контрагент", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -53499,6 +54691,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Договір", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -53520,6 +54713,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -53541,6 +54735,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -53562,6 +54757,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -53583,6 +54779,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -53604,6 +54801,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Дохід", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -53625,6 +54823,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Собівартість", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -53754,6 +54953,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -53775,6 +54975,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -53796,6 +54997,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Пакування", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -53817,6 +55019,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Комірка", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -53838,6 +55041,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Серія", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -53859,6 +55063,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("В наявності", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -53984,6 +55189,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -54005,6 +55211,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Каса ККМ", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -54026,6 +55233,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -54047,6 +55255,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -54170,6 +55379,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Вид", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -54191,6 +55401,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Рахунок", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -54212,6 +55423,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Аналітика 1", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -54233,6 +55445,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Аналітика 2", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -54254,6 +55467,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Аналітика 3", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -54275,6 +55489,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Кореспондуючий рахунок", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -54296,6 +55511,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Кор аналітика 1", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -54317,6 +55533,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Кор аналітика 2", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -54338,6 +55555,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Кор аналітика 3", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -54359,6 +55577,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Податок", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -54380,6 +55599,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Журнал", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -54401,6 +55621,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума податку", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -54422,6 +55643,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Тип бух операції", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -54443,6 +55665,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Валюта", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -54464,6 +55687,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -54485,6 +55709,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -54506,6 +55731,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума в валюті", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -54527,6 +55753,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Сума ПО", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -54548,6 +55775,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Курс валюти", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -54569,6 +55797,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -54590,6 +55819,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Автор", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         
@@ -54611,6 +55841,7 @@ namespace GeneratedCode.РегістриНакопичення.ДрукПров�
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Організація", factory);
                 column.Resizable = true;
+                
                 form.Grid.AppendColumn(column);
             }
         

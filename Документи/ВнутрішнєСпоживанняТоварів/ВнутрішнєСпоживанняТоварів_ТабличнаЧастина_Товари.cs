@@ -107,21 +107,21 @@ partial class ВнутрішнєСпоживанняТоварів_Таблич�
         public Action? Сhanged_Серія { get; set; } = null;
 
 
-        /* КількістьУпаковок */
-        public int КількістьУпаковок
+        /* Коєфіціент */
+        public decimal Коєфіціент
         {
-            get => КількістьУпаковок_;
+            get => Коєфіціент_;
             set
             {
-                if (!КількістьУпаковок_.Equals(value))
+                if (!Коєфіціент_.Equals(value))
                 {
-                    КількістьУпаковок_ = value;
-                    Сhanged_КількістьУпаковок?.Invoke();
+                    Коєфіціент_ = value;
+                    Сhanged_Коєфіціент?.Invoke();
                 }
             }
         }
-        int КількістьУпаковок_ = 0;
-        public Action? Сhanged_КількістьУпаковок { get; set; } = null;
+        decimal Коєфіціент_ = 0;
+        public Action? Сhanged_Коєфіціент { get; set; } = null;
 
 
         /* Пакування */
@@ -221,7 +221,7 @@ partial class ВнутрішнєСпоживанняТоварів_Таблич�
             row.Номенклатура = Номенклатура.Copy();
             row.ХарактеристикаНоменклатури = ХарактеристикаНоменклатури.Copy();
             row.Серія = Серія.Copy();
-            row.КількістьУпаковок = КількістьУпаковок;
+            row.Коєфіціент = Коєфіціент;
             row.Пакування = Пакування.Copy();
             row.Кількість = Кількість;
             row.Ціна = Ціна;
@@ -270,9 +270,9 @@ partial class ВнутрішнєСпоживанняТоварів_Таблич�
         {
             ПакуванняОдиниціВиміру_Object? обєкт = await row.Пакування.GetDirectoryObject();
             if (обєкт != null)
-                row.КількістьУпаковок = (обєкт.КількістьУпаковок > 0) ? обєкт.КількістьУпаковок : 1;
+                row.Коєфіціент = (обєкт.Коєфіціент > 0) ? обєкт.Коєфіціент : 1;
             else
-                row.КількістьУпаковок = 1;
+                row.Коєфіціент = 1;
         }
 
         ПісляЗміни_КількістьАбоЦіна(row);
@@ -478,24 +478,24 @@ partial class ВнутрішнєСпоживанняТоварів_Таблич�
             Grid.AppendColumn(column);
         }
 
-        //КількістьУпаковок
+        //Коєфіціент
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
                 if (args.Object is not ListItem listItem) return;
-                var cell = IntegerTablePartCell.New();
+                var cell = NumericTablePartCell.New();
 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
                 if (args.Object is not ListItem listItem) return;
-                if (listItem.Child is not IntegerTablePartCell cell) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
 
-                cell.OnСhanged = () => row.КількістьУпаковок = cell.Value;
-                (row.Сhanged_КількістьУпаковок = () => cell.Value = row.КількістьУпаковок).Invoke();
+                cell.OnСhanged = () => row.Коєфіціент = cell.Value;
+                (row.Сhanged_Коєфіціент = () => cell.Value = row.Коєфіціент).Invoke();
 
             };
             ColumnViewColumn column = ColumnViewColumn.New("Коєфіціент", factory);
@@ -521,6 +521,7 @@ partial class ВнутрішнєСпоживанняТоварів_Таблич�
                 if (listItem.Child is not ПакуванняОдиниціВиміру_PointerTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
 
+                cell.BeforeClickOpenFunc = async () => cell.Власник = row.Номенклатура;
                 cell.OnSelect = async () =>
                 {
                     row.Пакування = cell.Pointer;
@@ -696,7 +697,7 @@ partial class ВнутрішнєСпоживанняТоварів_Таблич�
                 row.Номенклатура = record.Номенклатура;
                 row.ХарактеристикаНоменклатури = record.ХарактеристикаНоменклатури;
                 row.Серія = record.Серія;
-                row.КількістьУпаковок = record.КількістьУпаковок;
+                row.Коєфіціент = record.Коєфіціент;
                 row.Пакування = record.Пакування;
                 row.Кількість = record.Кількість;
                 row.Ціна = record.Ціна;
@@ -731,7 +732,7 @@ partial class ВнутрішнєСпоживанняТоварів_Таблич�
                         Номенклатура = row.Номенклатура,
                         ХарактеристикаНоменклатури = row.ХарактеристикаНоменклатури,
                         Серія = row.Серія,
-                        КількістьУпаковок = row.КількістьУпаковок,
+                        Коєфіціент = row.Коєфіціент,
                         Пакування = row.Пакування,
                         Кількість = row.Кількість,
                         Ціна = row.Ціна,
@@ -759,7 +760,7 @@ partial class ВнутрішнєСпоживанняТоварів_Таблич�
                     row.Номенклатура = x.Номенклатура;
                     row.ХарактеристикаНоменклатури = x.ХарактеристикаНоменклатури;
                     row.Серія = x.Серія;
-                    row.КількістьУпаковок = x.КількістьУпаковок;
+                    row.Коєфіціент = x.Коєфіціент;
                     row.Пакування = x.Пакування;
                     row.Кількість = x.Кількість;
                     row.Ціна = x.Ціна;

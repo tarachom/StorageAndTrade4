@@ -140,6 +140,23 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
         public Action? Сhanged_Склад { get; set; } = null;
 
 
+        /* Коєфіціент */
+        public decimal Коєфіціент
+        {
+            get => Коєфіціент_;
+            set
+            {
+                if (!Коєфіціент_.Equals(value))
+                {
+                    Коєфіціент_ = value;
+                    Сhanged_Коєфіціент?.Invoke();
+                }
+            }
+        }
+        decimal Коєфіціент_ = 0;
+        public Action? Сhanged_Коєфіціент { get; set; } = null;
+
+
         /* ОдиницяВиміру */
         public ПакуванняОдиниціВиміру_Pointer ОдиницяВиміру
         {
@@ -207,24 +224,6 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
         СеріїНоменклатури_Pointer Серія_ = new();
         public Action? Сhanged_Серія { get; set; } = null;
 
-
-        /* КількістьУпаковок */
-        public int КількістьУпаковок
-        {
-            get => КількістьУпаковок_;
-            set
-            {
-                if (!КількістьУпаковок_.Equals(value))
-                {
-                    КількістьУпаковок_ = value;
-                    Сhanged_КількістьУпаковок?.Invoke();
-                }
-            }
-        }
-        int КількістьУпаковок_ = 0;
-        public Action? Сhanged_КількістьУпаковок { get; set; } = null;
-
-
         /*
         Функції
         */
@@ -238,11 +237,11 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
             row.ХарактеристикаНоменклатури = ХарактеристикаНоменклатури.Copy();
             row.Партія = Партія.Copy();
             row.Склад = Склад.Copy();
+            row.Коєфіціент = Коєфіціент;
             row.ОдиницяВиміру = ОдиницяВиміру.Copy();
             row.Кількість = Кількість;
             row.Коментар = Коментар;
             row.Серія = Серія.Copy();
-            row.КількістьУпаковок = КількістьУпаковок;
 
             return row;
         }
@@ -297,9 +296,9 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
         {
             ПакуванняОдиниціВиміру_Object? обєкт = await row.ОдиницяВиміру.GetDirectoryObject();
             if (обєкт != null)
-                row.КількістьУпаковок = (обєкт.КількістьУпаковок > 0) ? обєкт.КількістьУпаковок : 1;
+                row.Коєфіціент = (обєкт.Коєфіціент > 0) ? обєкт.Коєфіціент : 1;
             else
-                row.КількістьУпаковок = 1;
+                row.Коєфіціент = 1;
         }
     }
 
@@ -498,24 +497,24 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
             Grid.AppendColumn(column);
         }
 
-        //КількістьУпаковок
+        //Коєфіціент
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
                 if (args.Object is not ListItem listItem) return;
-                var cell = IntegerTablePartCell.New();
+                var cell = NumericTablePartCell.New();
 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
                 if (args.Object is not ListItem listItem) return;
-                if (listItem.Child is not IntegerTablePartCell cell) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
 
-                cell.OnСhanged = () => row.КількістьУпаковок = cell.Value;
-                (row.Сhanged_КількістьУпаковок = () => cell.Value = row.КількістьУпаковок).Invoke();
+                cell.OnСhanged = () => row.Коєфіціент = cell.Value;
+                (row.Сhanged_Коєфіціент = () => cell.Value = row.Коєфіціент).Invoke();
 
             };
             ColumnViewColumn column = ColumnViewColumn.New("Коєфіціент", factory);
@@ -541,6 +540,7 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
                 if (listItem.Child is not ПакуванняОдиниціВиміру_PointerTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
 
+                cell.BeforeClickOpenFunc = async () => cell.Власник = row.Номенклатура;
                 cell.OnSelect = async () =>
                 {
                     row.ОдиницяВиміру = cell.Pointer;
@@ -713,7 +713,7 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
                 row.Кількість = record.Кількість;
                 row.Коментар = record.Коментар;
                 row.Серія = record.Серія;
-                row.КількістьУпаковок = record.КількістьУпаковок;
+                row.Коєфіціент = record.Коєфіціент;
 
                 Store.Append(row);
 
@@ -750,7 +750,7 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
                     Кількість = row.Кількість,
                     Коментар = row.Коментар,
                     Серія = row.Серія,
-                    КількістьУпаковок = row.КількістьУпаковок,
+                    Коєфіціент = row.Коєфіціент,
                 });
         }
 
@@ -787,7 +787,7 @@ partial class ВиготовленняПродукції_ТабличнаЧас�
                     row.Кількість = x.Кількість;
                     row.Коментар = x.Коментар;
                     row.Серія = x.Серія;
-                    row.КількістьУпаковок = x.КількістьУпаковок;
+                    row.Коєфіціент = x.Коєфіціент;
 
                     return row;
                 });
