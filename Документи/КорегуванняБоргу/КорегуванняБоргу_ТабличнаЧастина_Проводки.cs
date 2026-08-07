@@ -74,6 +74,56 @@ partial class КорегуванняБоргу_ТабличнаЧастина_П
         public Action? Сhanged_Рахунок { get; set; } = null;
 
 
+        /* Дебет */
+        public decimal Дебет
+        {
+            get => Дебет_;
+            set
+            {
+                if (!Дебет_.Equals(value))
+                {
+                    Дебет_ = value;
+                    Сhanged_Дебет?.Invoke();
+                }
+            }
+        }
+        decimal Дебет_ = 0;
+        public Action? Сhanged_Дебет { get; set; } = null;
+
+
+        /* Кредит */
+        public decimal Кредит
+        {
+            get => Кредит_;
+            set
+            {
+                if (!Кредит_.Equals(value))
+                {
+                    Кредит_ = value;
+                    Сhanged_Кредит?.Invoke();
+                }
+            }
+        }
+        decimal Кредит_ = 0;
+        public Action? Сhanged_Кредит { get; set; } = null;
+
+
+        /* Кількість */
+        public decimal Кількість
+        {
+            get => Кількість_;
+            set
+            {
+                if (!Кількість_.Equals(value))
+                {
+                    Кількість_ = value;
+                    Сhanged_Кількість?.Invoke();
+                }
+            }
+        }
+        decimal Кількість_ = 0;
+        public Action? Сhanged_Кількість { get; set; } = null;
+
         /* ВидПроводки */
         public ВидиПроводок ВидПроводки
         {
@@ -142,6 +192,74 @@ partial class КорегуванняБоргу_ТабличнаЧастина_П
         public Action? Сhanged_Аналітика3 { get; set; } = null;
 
 
+        /* КореспондуючийРахунок */
+        public ПланРахунків_Pointer КореспондуючийРахунок
+        {
+            get => КореспондуючийРахунок_;
+            set
+            {
+                if (!КореспондуючийРахунок_.Equals(value))
+                {
+                    КореспондуючийРахунок_ = value;
+                    Сhanged_КореспондуючийРахунок?.Invoke();
+                }
+            }
+        }
+        ПланРахунків_Pointer КореспондуючийРахунок_ = new();
+        public Action? Сhanged_КореспондуючийРахунок { get; set; } = null;
+
+
+        /* КорАналітика1 */
+        public UuidAndText КорАналітика1
+        {
+            get => КорАналітика1_;
+            set
+            {
+                if (!КорАналітика1_.Equals(value))
+                {
+                    КорАналітика1_ = value;
+                    Сhanged_КорАналітика1?.Invoke();
+                }
+            }
+        }
+        UuidAndText КорАналітика1_ = new();
+        public Action? Сhanged_КорАналітика1 { get; set; } = null;
+
+
+        /* КорАналітика2 */
+        public UuidAndText КорАналітика2
+        {
+            get => КорАналітика2_;
+            set
+            {
+                if (!КорАналітика2_.Equals(value))
+                {
+                    КорАналітика2_ = value;
+                    Сhanged_КорАналітика2?.Invoke();
+                }
+            }
+        }
+        UuidAndText КорАналітика2_ = new();
+        public Action? Сhanged_КорАналітика2 { get; set; } = null;
+
+
+        /* КорАналітика3 */
+        public UuidAndText КорАналітика3
+        {
+            get => КорАналітика3_;
+            set
+            {
+                if (!КорАналітика3_.Equals(value))
+                {
+                    КорАналітика3_ = value;
+                    Сhanged_КорАналітика3?.Invoke();
+                }
+            }
+        }
+        UuidAndText КорАналітика3_ = new();
+        public Action? Сhanged_КорАналітика3 { get; set; } = null;
+
+
         /* Податки */
         public ВидиПодатків_Pointer Податки
         {
@@ -158,42 +276,6 @@ partial class КорегуванняБоргу_ТабличнаЧастина_П
         ВидиПодатків_Pointer Податки_ = new();
         public Action? Сhanged_Податки { get; set; } = null;
 
-
-        /* Сума */
-        public decimal Сума
-        {
-            get => Сума_;
-            set
-            {
-                if (!Сума_.Equals(value))
-                {
-                    Сума_ = value;
-                    Сhanged_Сума?.Invoke();
-                }
-            }
-        }
-        decimal Сума_ = 0;
-        public Action? Сhanged_Сума { get; set; } = null;
-
-
-        /* Кількість */
-        public decimal Кількість
-        {
-            get => Кількість_;
-            set
-            {
-                if (!Кількість_.Equals(value))
-                {
-                    Кількість_ = value;
-                    Сhanged_Кількість?.Invoke();
-                }
-            }
-        }
-        decimal Кількість_ = 0;
-        public Action? Сhanged_Кількість { get; set; } = null;
-
-
-
         /*
         Функції
         */
@@ -203,13 +285,18 @@ partial class КорегуванняБоргу_ТабличнаЧастина_П
             var row = New();
             row.НомерРядка = НомерРядка;
             row.Рахунок = Рахунок.Copy();
+            row.Дебет = Дебет;
+            row.Кредит = Кредит;
+            row.Кількість = Кількість;
             row.ВидПроводки = ВидПроводки;
             row.Аналітика1 = Аналітика1.Copy();
             row.Аналітика2 = Аналітика2.Copy();
             row.Аналітика3 = Аналітика3.Copy();
+            row.КореспондуючийРахунок = КореспондуючийРахунок.Copy();
+            row.КорАналітика1 = КорАналітика1.Copy();
+            row.КорАналітика2 = КорАналітика2.Copy();
+            row.КорАналітика3 = КорАналітика3.Copy();
             row.Податки = Податки.Copy();
-            row.Сума = Сума;
-            row.Кількість = Кількість;
 
             return row;
         }
@@ -235,16 +322,31 @@ partial class КорегуванняБоргу_ТабличнаЧастина_П
         }
     }
 
-    void ПісляЗміни_СумаАбоКількість(ItemRow row)
+    void ПісляЗміни_ДебетКредитКількість(ItemRow row)
     {
         Підсумок.Recount();
+    }
+
+    async Task ПісляЗміни_КореспондуючийРахунок(ItemRow row)
+    {
+        var РахунокОбєкт = await row.КореспондуючийРахунок.GetDirectoryObject();
+        if (РахунокОбєкт != null)
+        {
+            row.КорАналітика1 = ФункціїДляДокументів.ЗадатиТипАналітики(row.КорАналітика1, РахунокОбєкт.Субконто1);
+            row.КорАналітика2 = ФункціїДляДокументів.ЗадатиТипАналітики(row.КорАналітика2, РахунокОбєкт.Субконто2);
+            row.КорАналітика3 = ФункціїДляДокументів.ЗадатиТипАналітики(row.КорАналітика3, РахунокОбєкт.Субконто3);
+        }
     }
 
     #endregion
 
     public КорегуванняБоргу_Object? ЕлементВласник { get; set; }
+    public КорегуванняБоргу_Елемент? ЕлементВласникФорма { get; set; }
+    public Func<Task<bool>>? ФункціяЗберегтиДокумент { get; set; }
+
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());
     TotalControl Підсумок = TotalControl.New();
+    CheckButton ПереключательВидимостіКолонок = CheckButton.NewWithLabel("Всі колонки");
 
     partial void Initialize()
     {
@@ -260,23 +362,91 @@ partial class КорегуванняБоргу_ТабличнаЧастина_П
         model.OnItemsChanged += (_, _) => Підсумок.Recount();
         Підсумок.QuantifyFunc = () =>
         {
-            decimal Сума = 0, Кількість = 0;
+            decimal Дебет = 0, Кредит = 0;
 
             for (uint i = 0; i <= Store.GetNItems(); i++)
             {
                 ItemRow? row = (ItemRow?)Store.GetObject(i);
                 if (row != null)
                 {
-                    Сума += row.Сума;
-                    Кількість += row.Кількість;
+                    Дебет += row.Дебет;
+                    Кредит += row.Кредит;
                 }
             }
 
-            return new("Сума: <b>{0}</b> Кількість: <b>{1}</b>", Сума, Кількість);
+            return new("Дебет: <b>{0}</b> Кредит: <b>{1}</b>", Дебет, Кредит);
         };
 
         Append(Підсумок);
+
+        //
+        // Кнопки
+        //
+
+        {
+            Separator separator = Separator.New(Orientation.Vertical);
+            separator.MarginStart = 5;
+            separator.MarginEnd = 10;
+            HBoxToolbarTop.Append(separator);
+        }
+
+        //Заповнити
+        {
+            Button button = Button.NewWithLabel("Заповнити");
+            button.AddCssClass("toolbar");
+            button.OnClicked += async (_, _) =>
+            {
+                button.Sensitive = false;
+
+                if (Store.GetNItems() == 0)
+                    await ЗаповнитиПроводки();
+                else
+                    Message.Request(NotebookFunc?.BasicForm, "Очистити табличну частину?",
+                        "В табличній частині вже є дані. Щоб продовжити заповнення потрібно спочатку очистити табличну частину!",
+                        async x =>
+                        {
+                            if (x == Message.YesNo.Yes)
+                                await ЗаповнитиПроводки();
+                        });
+
+                button.Sensitive = true;
+            };
+            HBoxToolbarTop.Append(button);
+        }
+
+        //
+        // Видимість колонок
+        //
+
+        ПереключательВидимостіКолонок.MarginStart = 50;
+        HBoxToolbarTop.Append(ПереключательВидимостіКолонок);
+
+        //
+        // Лінки
+        //
+
+        CreateLink(HBoxToolbarTop, "Відкрити документ Бух операція", async () =>
+        {
+            if (ЕлементВласник != null && !ЕлементВласник.ДокументБухгалтерськаОперація.IsEmpty())
+                await БухгалтерськаОперація_Функції.OpenPageElement(false, ЕлементВласник.ДокументБухгалтерськаОперація.UniqueID);
+            else
+                Message.Error(Program.BasicForm,
+                    "Не знайдено документ Бух операція",
+                    "Можливо документ ще не записаний чи не проведений або не встановлена галочка 'Відобразити в бух обліку'");
+        });
     }
+
+    #region Функції обчислення
+
+    async Task ЗаповнитиПроводки()
+    {
+        if (ЕлементВласник != null && ЕлементВласникФорма != null && ФункціяЗберегтиДокумент != null)
+        {
+
+        }
+    }
+
+    #endregion
 
     public static КорегуванняБоргу_ТабличнаЧастина_Проводки New()
     {
@@ -315,32 +485,6 @@ partial class КорегуванняБоргу_ТабличнаЧастина_П
             Grid.AppendColumn(column);
         }
 
-        //ВидПроводки
-        {
-            SignalListItemFactory factory = SignalListItemFactory.New();
-            factory.OnSetup += (_, args) =>
-            {
-                if (args.Object is not ListItem listItem) return;
-                var cell = DropDownTablePartCell.NewWithValues(ПсевдонімиПерелічення.ВидиПроводок_Dict());
-
-                listItem.Child = cell;
-            };
-            factory.OnBind += (_, args) =>
-            {
-                if (args.Object is not ListItem listItem) return;
-                if (listItem.Child is not DropDownTablePartCell cell) return;
-                if (listItem.Item is not ItemRow row) return;
-
-                cell.OnСhanged = () => row.ВидПроводки = ПсевдонімиПерелічення.ВидиПроводок_FindByName(cell.Value);
-                (row.Сhanged_ВидПроводки = () => cell.Value = row.ВидПроводки.ToString()).Invoke();
-
-            };
-            ColumnViewColumn column = ColumnViewColumn.New("Вид", factory);
-            column.Resizable = true;
-
-            Grid.AppendColumn(column);
-        }
-
         //Рахунок
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
@@ -370,6 +514,131 @@ partial class КорегуванняБоргу_ТабличнаЧастина_П
             ColumnViewColumn column = ColumnViewColumn.New("Рахунок", factory);
             column.Resizable = true;
             column.FixedWidth = 300;
+
+            Grid.AppendColumn(column);
+        }
+
+        //Дебет
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                var cell = NumericTablePartCell.New();
+
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnСhanged = () =>
+                {
+                    row.Дебет = cell.Value;
+                    ПісляЗміни_ДебетКредитКількість(row);
+                };
+
+                (row.Сhanged_Дебет = () => cell.Value = row.Дебет).Invoke();
+
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("Дебет", factory);
+            column.Resizable = true;
+            column.FixedWidth = 150;
+
+            Grid.AppendColumn(column);
+        }
+
+        //Кредит
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                var cell = NumericTablePartCell.New();
+
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnСhanged = () =>
+                {
+                    row.Кредит = cell.Value;
+                    ПісляЗміни_ДебетКредитКількість(row);
+                };
+
+                (row.Сhanged_Кредит = () => cell.Value = row.Кредит).Invoke();
+
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("Кредит", factory);
+            column.Resizable = true;
+            column.FixedWidth = 150;
+
+            Grid.AppendColumn(column);
+        }
+
+        //Кількість
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                var cell = NumericTablePartCell.New();
+
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnСhanged = () =>
+                {
+                    row.Кількість = cell.Value;
+                    ПісляЗміни_ДебетКредитКількість(row);
+                };
+
+                (row.Сhanged_Кількість = () => cell.Value = row.Кількість).Invoke();
+
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
+            column.Resizable = true;
+            column.FixedWidth = 150;
+
+            Grid.AppendColumn(column);
+        }
+
+        //ВидПроводки
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                var cell = DropDownTablePartCell.NewWithValues(ПсевдонімиПерелічення.ВидиПроводок_Dict());
+
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not DropDownTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnСhanged = () => row.ВидПроводки = ПсевдонімиПерелічення.ВидиПроводок_FindByName(cell.Value);
+                (row.Сhanged_ВидПроводки = () => cell.Value = row.ВидПроводки.ToString()).Invoke();
+
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("Вид", factory);
+            column.Resizable = true;
+
+            column.Visible = false;
+            ПереключательВидимостіКолонок.OnToggled += (_, _) => column.Visible = ПереключательВидимостіКолонок.Active;
 
             Grid.AppendColumn(column);
         }
@@ -408,6 +677,84 @@ partial class КорегуванняБоргу_ТабличнаЧастина_П
             column.Resizable = true;
             column.FixedWidth = 300;
 
+            column.Visible = false;
+            ПереключательВидимостіКолонок.OnToggled += (_, _) => column.Visible = ПереключательВидимостіКолонок.Active;
+
+            Grid.AppendColumn(column);
+        }
+
+        //КореспондуючийРахунок
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                var cell = ПланРахунків_PointerTablePartCell.New();
+
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not ПланРахунків_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                //Після вибору рахунку
+                cell.OnSelect = async () =>
+                {
+                    row.КореспондуючийРахунок = cell.Pointer;
+                    await ПісляЗміни_КореспондуючийРахунок(row);
+                };
+
+                (row.Сhanged_КореспондуючийРахунок = () => cell.Pointer = row.КореспондуючийРахунок).Invoke();
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("Кореспондуючий\nрахунок", factory);
+            column.Resizable = true;
+            column.FixedWidth = 200;
+
+            column.Visible = false;
+            ПереключательВидимостіКолонок.OnToggled += (_, _) => column.Visible = ПереключательВидимостіКолонок.Active;
+
+            Grid.AppendColumn(column);
+        }
+
+        //КорАналітика1, КорАналітика2, КорАналітика3
+        {
+            SignalListItemFactory factory = SignalListItemFactory.New();
+            factory.OnSetup += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                var cell = Група_Аналітика.New();
+
+                cell.Аналітика1.BoundConfType = "Документи.КорегуванняБоргу.Проводки.КорАналітика1";
+                cell.Аналітика2.BoundConfType = "Документи.КорегуванняБоргу.Проводки.КорАналітика2";
+                cell.Аналітика3.BoundConfType = "Документи.КорегуванняБоргу.Проводки.КорАналітика3";
+
+                listItem.Child = cell;
+            };
+            factory.OnBind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not Група_Аналітика cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.Аналітика1.OnSelect = () => row.КорАналітика1 = cell.Аналітика1.Pointer;
+                (row.Сhanged_КорАналітика1 = () => cell.Аналітика1.Pointer = row.КорАналітика1).Invoke();
+
+                cell.Аналітика2.OnSelect = () => row.КорАналітика2 = cell.Аналітика2.Pointer;
+                (row.Сhanged_КорАналітика2 = () => cell.Аналітика2.Pointer = row.КорАналітика2).Invoke();
+
+                cell.Аналітика3.OnSelect = () => row.КорАналітика3 = cell.Аналітика3.Pointer;
+                (row.Сhanged_КорАналітика3 = () => cell.Аналітика3.Pointer = row.КорАналітика3).Invoke();
+
+            };
+            ColumnViewColumn column = ColumnViewColumn.New("Кор аналітика 1\nКор аналітика 2\nКор аналітика 3", factory);
+            column.Resizable = true;
+            column.FixedWidth = 300;
+
+            column.Visible = false;
+            ПереключательВидимостіКолонок.OnToggled += (_, _) => column.Visible = ПереключательВидимостіКолонок.Active;
+
             Grid.AppendColumn(column);
         }
 
@@ -435,69 +782,8 @@ partial class КорегуванняБоргу_ТабличнаЧастина_П
             column.Resizable = true;
             column.FixedWidth = 300;
 
-            Grid.AppendColumn(column);
-        }
-
-        //Сума
-        {
-            SignalListItemFactory factory = SignalListItemFactory.New();
-            factory.OnSetup += (_, args) =>
-            {
-                if (args.Object is not ListItem listItem) return;
-                var cell = NumericTablePartCell.New();
-
-                listItem.Child = cell;
-            };
-            factory.OnBind += (_, args) =>
-            {
-                if (args.Object is not ListItem listItem) return;
-                if (listItem.Child is not NumericTablePartCell cell) return;
-                if (listItem.Item is not ItemRow row) return;
-
-                cell.OnСhanged = () =>
-                {
-                    row.Сума = cell.Value;
-                    ПісляЗміни_СумаАбоКількість(row);
-                };
-
-                (row.Сhanged_Сума = () => cell.Value = row.Сума).Invoke();
-
-            };
-            ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
-            column.Resizable = true;
-            column.FixedWidth = 100;
-
-            Grid.AppendColumn(column);
-        }
-
-        //Кількість
-        {
-            SignalListItemFactory factory = SignalListItemFactory.New();
-            factory.OnSetup += (_, args) =>
-            {
-                if (args.Object is not ListItem listItem) return;
-                var cell = NumericTablePartCell.New();
-
-                listItem.Child = cell;
-            };
-            factory.OnBind += (_, args) =>
-            {
-                if (args.Object is not ListItem listItem) return;
-                if (listItem.Child is not NumericTablePartCell cell) return;
-                if (listItem.Item is not ItemRow row) return;
-
-                cell.OnСhanged = () =>
-                {
-                    row.Кількість = cell.Value;
-                    ПісляЗміни_СумаАбоКількість(row);
-                };
-
-                (row.Сhanged_Кількість = () => cell.Value = row.Кількість).Invoke();
-
-            };
-            ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
-            column.Resizable = true;
-            column.FixedWidth = 100;
+            column.Visible = false;
+            ПереключательВидимостіКолонок.OnToggled += (_, _) => column.Visible = ПереключательВидимостіКолонок.Active;
 
             Grid.AppendColumn(column);
         }
@@ -525,13 +811,18 @@ partial class КорегуванняБоргу_ТабличнаЧастина_П
                 row.UniqueID = new(record.UID);
                 row.НомерРядка = record.НомерРядка;
                 row.Рахунок = record.Рахунок;
+                row.Дебет = record.Дебет;
+                row.Кредит = record.Кредит;
+                row.Кількість = record.Кількість;
                 row.ВидПроводки = record.ВидПроводки;
                 row.Аналітика1 = record.Аналітика1;
                 row.Аналітика2 = record.Аналітика2;
                 row.Аналітика3 = record.Аналітика3;
+                row.КореспондуючийРахунок = record.КореспондуючийРахунок;
+                row.КорАналітика1 = record.КорАналітика1;
+                row.КорАналітика2 = record.КорАналітика2;
+                row.КорАналітика3 = record.КорАналітика3;
                 row.Податки = record.Податки;
-                row.Сума = record.Сума;
-                row.Кількість = record.Кількість;
 
                 Store.Append(row);
 
@@ -559,13 +850,18 @@ partial class КорегуванняБоргу_ТабличнаЧастина_П
                         UID = row.UniqueID.UGuid,
                         НомерРядка = row.НомерРядка,
                         Рахунок = row.Рахунок,
+                        Дебет = row.Дебет,
+                        Кредит = row.Кредит,
+                        Кількість = row.Кількість,
                         ВидПроводки = row.ВидПроводки,
                         Аналітика1 = row.Аналітика1,
                         Аналітика2 = row.Аналітика2,
                         Аналітика3 = row.Аналітика3,
+                        КореспондуючийРахунок = row.КореспондуючийРахунок,
+                        КорАналітика1 = row.КорАналітика1,
+                        КорАналітика2 = row.КорАналітика2,
+                        КорАналітика3 = row.КорАналітика3,
                         Податки = row.Податки,
-                        Сума = row.Сума,
-                        Кількість = row.Кількість,
                     });
                 }
             }
@@ -585,14 +881,19 @@ partial class КорегуванняБоргу_ТабличнаЧастина_П
                     row.UniqueID = new(x.UID);
                     row.НомерРядка = x.НомерРядка;
                     row.Рахунок = x.Рахунок;
+                    row.Дебет = x.Дебет;
+                    row.Кредит = x.Кредит;
+                    row.Кількість = x.Кількість;
                     row.ВидПроводки = x.ВидПроводки;
                     row.Аналітика1 = x.Аналітика1;
                     row.Аналітика2 = x.Аналітика2;
                     row.Аналітика3 = x.Аналітика3;
+                    row.КореспондуючийРахунок = x.КореспондуючийРахунок;
+                    row.КорАналітика1 = x.КорАналітика1;
+                    row.КорАналітика2 = x.КорАналітика2;
+                    row.КорАналітика3 = x.КорАналітика3;
                     row.Податки = x.Податки;
-                    row.Сума = x.Сума;
-                    row.Кількість = x.Кількість;
-
+                    
                     return row;
                 });
 

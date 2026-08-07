@@ -7,7 +7,7 @@
   <Author>Тарахомин Юрій Іванович, accounting.org.ua</Author>
   <Desc>Конфігурація "Зберігання та Торгівля"
 https://accounting.org.ua/storage_and_trade.html</Desc>
-  <DateTimeSave>07.08.2026 13:28:56</DateTimeSave>
+  <DateTimeSave>07.08.2026 19:42:02</DateTimeSave>
   <DictTSearch>simple</DictTSearch>
   <GtkVersion>Gtk4</GtkVersion>
   <ConstantsBlocks>
@@ -22919,8 +22919,8 @@ FROM
               <IsExport>0</IsExport>
             </Field>
             <Field>
-              <Name>Сума</Name>
-              <FullName>Сума</FullName>
+              <Name>Дебет</Name>
+              <FullName>Дебет</FullName>
               <NameInTable>col_b1</NameInTable>
               <Type>numeric</Type>
               <IsIndex>0</IsIndex>
@@ -22948,6 +22948,60 @@ FROM
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>Кредит</Name>
+              <FullName>Кредит</FullName>
+              <NameInTable>col_a5</NameInTable>
+              <Type>numeric</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>КореспондуючийРахунок</Name>
+              <FullName>Кореспондуючий рахунок</FullName>
+              <NameInTable>col_a6</NameInTable>
+              <Type>pointer</Type>
+              <Pointer>Довідники.ПланРахунків</Pointer>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>КорАналітика1</Name>
+              <FullName>КорАналітика 1</FullName>
+              <NameInTable>col_b3</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>КорАналітика2</Name>
+              <FullName>КорАналітика 2</FullName>
+              <NameInTable>col_b4</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>КорАналітика3</Name>
+              <FullName>КорАналітика 3</FullName>
+              <NameInTable>col_b5</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
             </Field>
           </Fields>
           <TabularLists />
@@ -23026,15 +23080,6 @@ FROM
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
-                </Field>
-                <Field>
-                  <Name>Сума</Name>
-                  <Caption>Сума</Caption>
-                  <Size>0</Size>
-                  <Height>0</Height>
-                  <SortNum>100</SortNum>
-                  <ReadOnly>0</ReadOnly>
-                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Кількість</Name>
@@ -24661,8 +24706,8 @@ FROM
               <IsExport>0</IsExport>
             </Field>
             <Field>
-              <Name>Сума</Name>
-              <FullName>Сума</FullName>
+              <Name>Дебет</Name>
+              <FullName>Дебет</FullName>
               <NameInTable>col_a7</NameInTable>
               <Type>numeric</Type>
               <IsIndex>0</IsIndex>
@@ -24690,6 +24735,60 @@ FROM
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>Кредит</Name>
+              <FullName>Кредит</FullName>
+              <NameInTable>col_b1</NameInTable>
+              <Type>numeric</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>КореспондуючийРахунок</Name>
+              <FullName>Кореспондуючий рахунок</FullName>
+              <NameInTable>col_b2</NameInTable>
+              <Type>pointer</Type>
+              <Pointer>Довідники.ПланРахунків</Pointer>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>КорАналітика1</Name>
+              <FullName>КорАналітика 1</FullName>
+              <NameInTable>col_b3</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>КорАналітика2</Name>
+              <FullName>КорАналітика 2</FullName>
+              <NameInTable>col_b4</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>КорАналітика3</Name>
+              <FullName>КорАналітика 3</FullName>
+              <NameInTable>col_b5</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
             </Field>
           </Fields>
           <TabularLists />
@@ -24778,15 +24877,6 @@ FROM
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
-                </Field>
-                <Field>
-                  <Name>Сума</Name>
-                  <Caption>Сума</Caption>
-                  <Size>0</Size>
-                  <Height>0</Height>
-                  <SortNum>100</SortNum>
-                  <ReadOnly>0</ReadOnly>
-                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Кількість</Name>
@@ -25710,8 +25800,8 @@ FROM
               <IsExport>0</IsExport>
             </Field>
             <Field>
-              <Name>Сума</Name>
-              <FullName>Сума</FullName>
+              <Name>Дебет</Name>
+              <FullName>Дебет</FullName>
               <NameInTable>col_a7</NameInTable>
               <Type>numeric</Type>
               <IsIndex>0</IsIndex>
@@ -25739,6 +25829,60 @@ FROM
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>Кредит</Name>
+              <FullName>Кредит</FullName>
+              <NameInTable>col_b1</NameInTable>
+              <Type>numeric</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>КореспондуючийРахунок</Name>
+              <FullName>Кореспондуючий рахунок</FullName>
+              <NameInTable>col_b2</NameInTable>
+              <Type>pointer</Type>
+              <Pointer>Довідники.ПланРахунків</Pointer>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>КорАналітика1</Name>
+              <FullName>КорАналітика 1</FullName>
+              <NameInTable>col_b3</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>КорАналітика2</Name>
+              <FullName>КорАналітика 1</FullName>
+              <NameInTable>col_b4</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>КорАналітика3</Name>
+              <FullName>КорАналітика 3</FullName>
+              <NameInTable>col_b5</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
             </Field>
           </Fields>
           <TabularLists />
@@ -25827,15 +25971,6 @@ FROM
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
-                </Field>
-                <Field>
-                  <Name>Сума</Name>
-                  <Caption>Сума</Caption>
-                  <Size>0</Size>
-                  <Height>0</Height>
-                  <SortNum>100</SortNum>
-                  <ReadOnly>0</ReadOnly>
-                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Кількість</Name>
@@ -26910,8 +27045,8 @@ FROM
               <IsExport>0</IsExport>
             </Field>
             <Field>
-              <Name>Сума</Name>
-              <FullName>Сума</FullName>
+              <Name>Дебет</Name>
+              <FullName>Дебет</FullName>
               <NameInTable>col_a7</NameInTable>
               <Type>numeric</Type>
               <IsIndex>0</IsIndex>
@@ -26939,6 +27074,60 @@ FROM
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>Кредит</Name>
+              <FullName>Кредит</FullName>
+              <NameInTable>col_b1</NameInTable>
+              <Type>numeric</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>КореспондуючийРахунок</Name>
+              <FullName>Кореспондуючий рахунок</FullName>
+              <NameInTable>col_b2</NameInTable>
+              <Type>pointer</Type>
+              <Pointer>Довідники.ПланРахунків</Pointer>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>КорАналітика1</Name>
+              <FullName>КорАналітика 1</FullName>
+              <NameInTable>col_b3</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>КорАналітика2</Name>
+              <FullName>КорАналітика 2</FullName>
+              <NameInTable>col_b4</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>КорАналітика3</Name>
+              <FullName>КорАналітика 3</FullName>
+              <NameInTable>col_b5</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
             </Field>
           </Fields>
           <TabularLists />
@@ -27027,15 +27216,6 @@ FROM
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
-                </Field>
-                <Field>
-                  <Name>Сума</Name>
-                  <Caption>Сума</Caption>
-                  <Size>0</Size>
-                  <Height>0</Height>
-                  <SortNum>100</SortNum>
-                  <ReadOnly>0</ReadOnly>
-                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Кількість</Name>
@@ -28152,8 +28332,8 @@ FROM
               <IsExport>0</IsExport>
             </Field>
             <Field>
-              <Name>Сума</Name>
-              <FullName>Сума</FullName>
+              <Name>Дебет</Name>
+              <FullName>Дебет</FullName>
               <NameInTable>col_a7</NameInTable>
               <Type>numeric</Type>
               <IsIndex>0</IsIndex>
@@ -28181,6 +28361,60 @@ FROM
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>Кредит</Name>
+              <FullName>Кредит</FullName>
+              <NameInTable>col_b1</NameInTable>
+              <Type>numeric</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>КореспондуючийРахунок</Name>
+              <FullName>Кореспондуючий рахунок</FullName>
+              <NameInTable>col_b2</NameInTable>
+              <Type>pointer</Type>
+              <Pointer>Довідники.ПланРахунків</Pointer>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>КорАналітика1</Name>
+              <FullName>КорАналітика 1</FullName>
+              <NameInTable>col_b3</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>КорАналітика2</Name>
+              <FullName>КорАналітика 2</FullName>
+              <NameInTable>col_b4</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>КорАналітика3</Name>
+              <FullName>КорАналітика 3</FullName>
+              <NameInTable>col_b5</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
             </Field>
           </Fields>
           <TabularLists />
@@ -28269,15 +28503,6 @@ FROM
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
-                </Field>
-                <Field>
-                  <Name>Сума</Name>
-                  <Caption>Сума</Caption>
-                  <Size>0</Size>
-                  <Height>0</Height>
-                  <SortNum>100</SortNum>
-                  <ReadOnly>0</ReadOnly>
-                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Кількість</Name>
@@ -29421,8 +29646,8 @@ FROM
               <IsExport>0</IsExport>
             </Field>
             <Field>
-              <Name>Сума</Name>
-              <FullName>Сума</FullName>
+              <Name>Дебет</Name>
+              <FullName>Дебет</FullName>
               <NameInTable>col_a7</NameInTable>
               <Type>numeric</Type>
               <IsIndex>0</IsIndex>
@@ -29450,6 +29675,60 @@ FROM
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>Кредит</Name>
+              <FullName>Кредит</FullName>
+              <NameInTable>col_b1</NameInTable>
+              <Type>numeric</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>КореспондуючийРахунок</Name>
+              <FullName>Кореспондуючий рахунок</FullName>
+              <NameInTable>col_b2</NameInTable>
+              <Type>pointer</Type>
+              <Pointer>Довідники.ПланРахунків</Pointer>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>КорАналітика1</Name>
+              <FullName>КорАналітика 1</FullName>
+              <NameInTable>col_b3</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>КорАналітика2</Name>
+              <FullName>КорАналітика 2</FullName>
+              <NameInTable>col_b4</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>КорАналітика3</Name>
+              <FullName>КорАналітика 3</FullName>
+              <NameInTable>col_b5</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
             </Field>
           </Fields>
           <TabularLists />
@@ -29538,15 +29817,6 @@ FROM
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
-                </Field>
-                <Field>
-                  <Name>Сума</Name>
-                  <Caption>Сума</Caption>
-                  <Size>0</Size>
-                  <Height>0</Height>
-                  <SortNum>100</SortNum>
-                  <ReadOnly>0</ReadOnly>
-                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Кількість</Name>
@@ -30533,8 +30803,8 @@ FROM
               <IsExport>0</IsExport>
             </Field>
             <Field>
-              <Name>Сума</Name>
-              <FullName>Сума</FullName>
+              <Name>Дебет</Name>
+              <FullName>Дебет</FullName>
               <NameInTable>col_a7</NameInTable>
               <Type>numeric</Type>
               <IsIndex>0</IsIndex>
@@ -30562,6 +30832,60 @@ FROM
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>Кредит</Name>
+              <FullName>Кредит</FullName>
+              <NameInTable>col_b1</NameInTable>
+              <Type>numeric</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>КореспондуючийРахунок</Name>
+              <FullName>Кореспондуючий рахунок</FullName>
+              <NameInTable>col_b2</NameInTable>
+              <Type>pointer</Type>
+              <Pointer>Довідники.ПланРахунків</Pointer>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>КорАналітика1</Name>
+              <FullName>КорАналітика 1</FullName>
+              <NameInTable>col_b3</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>КорАналітика2</Name>
+              <FullName>КорАналітика 2</FullName>
+              <NameInTable>col_b4</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>КорАналітика3</Name>
+              <FullName>КорАналітика 3</FullName>
+              <NameInTable>col_b5</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
             </Field>
           </Fields>
           <TabularLists />
@@ -30650,15 +30974,6 @@ FROM
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
-                </Field>
-                <Field>
-                  <Name>Сума</Name>
-                  <Caption>Сума</Caption>
-                  <Size>0</Size>
-                  <Height>0</Height>
-                  <SortNum>100</SortNum>
-                  <ReadOnly>0</ReadOnly>
-                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Кількість</Name>
@@ -32017,8 +32332,8 @@ FROM
               <IsExport>0</IsExport>
             </Field>
             <Field>
-              <Name>Сума</Name>
-              <FullName>Сума</FullName>
+              <Name>Дебет</Name>
+              <FullName>Дебет</FullName>
               <NameInTable>col_a7</NameInTable>
               <Type>numeric</Type>
               <IsIndex>0</IsIndex>
@@ -32046,6 +32361,60 @@ FROM
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>Кредит</Name>
+              <FullName>Кредит</FullName>
+              <NameInTable>col_b1</NameInTable>
+              <Type>numeric</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>КореспондуючийРахунок</Name>
+              <FullName>Кореспондуючий рахунок</FullName>
+              <NameInTable>col_b2</NameInTable>
+              <Type>pointer</Type>
+              <Pointer>Довідники.ПланРахунків</Pointer>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>КорАналітика1</Name>
+              <FullName>КорАналітика 1</FullName>
+              <NameInTable>col_b3</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>КорАналітика2</Name>
+              <FullName>КорАналітика 2</FullName>
+              <NameInTable>col_b4</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>КорАналітика3</Name>
+              <FullName>КорАналітика 3</FullName>
+              <NameInTable>col_b5</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
             </Field>
           </Fields>
           <TabularLists />
@@ -32134,15 +32503,6 @@ FROM
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
-                </Field>
-                <Field>
-                  <Name>Сума</Name>
-                  <Caption>Сума</Caption>
-                  <Size>0</Size>
-                  <Height>0</Height>
-                  <SortNum>100</SortNum>
-                  <ReadOnly>0</ReadOnly>
-                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Кількість</Name>
@@ -35660,8 +36020,8 @@ FROM
               <IsExport>0</IsExport>
             </Field>
             <Field>
-              <Name>Сума</Name>
-              <FullName>Сума</FullName>
+              <Name>Дебет</Name>
+              <FullName>Дебет</FullName>
               <NameInTable>col_a7</NameInTable>
               <Type>numeric</Type>
               <IsIndex>0</IsIndex>
@@ -35689,6 +36049,60 @@ FROM
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>Кредит</Name>
+              <FullName>Кредит</FullName>
+              <NameInTable>col_b1</NameInTable>
+              <Type>numeric</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>КореспондуючийРахунок</Name>
+              <FullName>Кореспондуючий рахунок</FullName>
+              <NameInTable>col_b2</NameInTable>
+              <Type>pointer</Type>
+              <Pointer>Довідники.ПланРахунків</Pointer>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>КорАналітика1</Name>
+              <FullName>КорАналітика 1</FullName>
+              <NameInTable>col_b3</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>КорАналітика2</Name>
+              <FullName>КорАналітика 2</FullName>
+              <NameInTable>col_b4</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>КорАналітика3</Name>
+              <FullName>КорАналітика 3</FullName>
+              <NameInTable>col_b5</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
             </Field>
           </Fields>
           <TabularLists />
@@ -35777,15 +36191,6 @@ FROM
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
-                </Field>
-                <Field>
-                  <Name>Сума</Name>
-                  <Caption>Сума</Caption>
-                  <Size>0</Size>
-                  <Height>0</Height>
-                  <SortNum>100</SortNum>
-                  <ReadOnly>0</ReadOnly>
-                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Кількість</Name>
@@ -36819,8 +37224,8 @@ FROM
               <IsExport>0</IsExport>
             </Field>
             <Field>
-              <Name>Сума</Name>
-              <FullName>Сума</FullName>
+              <Name>Дебет</Name>
+              <FullName>Дебет</FullName>
               <NameInTable>col_a7</NameInTable>
               <Type>numeric</Type>
               <IsIndex>0</IsIndex>
@@ -36848,6 +37253,60 @@ FROM
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>Кредит</Name>
+              <FullName>Кредит</FullName>
+              <NameInTable>col_b1</NameInTable>
+              <Type>numeric</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>КореспондуючийРахунок</Name>
+              <FullName>Кореспондуючий рахунок</FullName>
+              <NameInTable>col_b2</NameInTable>
+              <Type>pointer</Type>
+              <Pointer>Довідники.ПланРахунків</Pointer>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>КорАналітика1</Name>
+              <FullName>КорАналітика 1</FullName>
+              <NameInTable>col_b3</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>КорАналітика2</Name>
+              <FullName>КорАналітика 2</FullName>
+              <NameInTable>col_b4</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>КорАналітика3</Name>
+              <FullName>КорАналітика 3</FullName>
+              <NameInTable>col_b5</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
             </Field>
           </Fields>
           <TabularLists />
@@ -36936,15 +37395,6 @@ FROM
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
-                </Field>
-                <Field>
-                  <Name>Сума</Name>
-                  <Caption>Сума</Caption>
-                  <Size>0</Size>
-                  <Height>0</Height>
-                  <SortNum>100</SortNum>
-                  <ReadOnly>0</ReadOnly>
-                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Кількість</Name>
@@ -40409,8 +40859,8 @@ FROM
               <IsExport>0</IsExport>
             </Field>
             <Field>
-              <Name>Сума</Name>
-              <FullName>Сума</FullName>
+              <Name>Дебет</Name>
+              <FullName>Дебет</FullName>
               <NameInTable>col_a7</NameInTable>
               <Type>numeric</Type>
               <IsIndex>0</IsIndex>
@@ -40438,6 +40888,60 @@ FROM
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>Кредит</Name>
+              <FullName>Кредит</FullName>
+              <NameInTable>col_b1</NameInTable>
+              <Type>numeric</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>КореспондуючийРахунок</Name>
+              <FullName>Кореспондуючий рахунок</FullName>
+              <NameInTable>col_b2</NameInTable>
+              <Type>pointer</Type>
+              <Pointer>Довідники.ПланРахунків</Pointer>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>КорАналітика1</Name>
+              <FullName>КорАналітика 1</FullName>
+              <NameInTable>col_b3</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>КорАналітика2</Name>
+              <FullName>КорАналітика 2</FullName>
+              <NameInTable>col_b4</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>КорАналітика3</Name>
+              <FullName>КорАналітика 3</FullName>
+              <NameInTable>col_b5</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
             </Field>
           </Fields>
           <TabularLists />
@@ -40526,15 +41030,6 @@ FROM
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
-                </Field>
-                <Field>
-                  <Name>Сума</Name>
-                  <Caption>Сума</Caption>
-                  <Size>0</Size>
-                  <Height>0</Height>
-                  <SortNum>100</SortNum>
-                  <ReadOnly>0</ReadOnly>
-                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Кількість</Name>
@@ -45397,8 +45892,8 @@ FROM
               <IsExport>0</IsExport>
             </Field>
             <Field>
-              <Name>Сума</Name>
-              <FullName>Сума</FullName>
+              <Name>Дебет</Name>
+              <FullName>Дебет</FullName>
               <NameInTable>col_a7</NameInTable>
               <Type>numeric</Type>
               <IsIndex>0</IsIndex>
@@ -45426,6 +45921,60 @@ FROM
               <IsFullTextSearch>0</IsFullTextSearch>
               <IsSearch>0</IsSearch>
               <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>Кредит</Name>
+              <FullName>Кредит</FullName>
+              <NameInTable>col_b1</NameInTable>
+              <Type>numeric</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>КореспондуючийРахунок</Name>
+              <FullName>Кореспондуючий рахунок</FullName>
+              <NameInTable>col_b2</NameInTable>
+              <Type>pointer</Type>
+              <Pointer>Довідники.ПланРахунків</Pointer>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+            </Field>
+            <Field>
+              <Name>КорАналітика1</Name>
+              <FullName>КорАналітика 1</FullName>
+              <NameInTable>col_b3</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>КорАналітика2</Name>
+              <FullName>КорАналітика 2</FullName>
+              <NameInTable>col_b4</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
+            </Field>
+            <Field>
+              <Name>КорАналітика3</Name>
+              <FullName>КорАналітика 3</FullName>
+              <NameInTable>col_b5</NameInTable>
+              <Type>composite_pointer</Type>
+              <IsIndex>0</IsIndex>
+              <IsFullTextSearch>0</IsFullTextSearch>
+              <IsSearch>0</IsSearch>
+              <IsExport>0</IsExport>
+              <CompositePointerNotUseDocuments>1</CompositePointerNotUseDocuments>
             </Field>
           </Fields>
           <TabularLists />
@@ -45514,15 +46063,6 @@ FROM
                   <PresetntationFields Count="1">
                     <Field>Назва</Field>
                   </PresetntationFields>
-                </Field>
-                <Field>
-                  <Name>Сума</Name>
-                  <Caption>Сума</Caption>
-                  <Size>0</Size>
-                  <Height>0</Height>
-                  <SortNum>100</SortNum>
-                  <ReadOnly>0</ReadOnly>
-                  <Type>numeric</Type>
                 </Field>
                 <Field>
                   <Name>Кількість</Name>
